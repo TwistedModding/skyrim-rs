@@ -10,6 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 skse.workspace = true
+hook.workspace = true
 
 [lints]
 workspace = true
