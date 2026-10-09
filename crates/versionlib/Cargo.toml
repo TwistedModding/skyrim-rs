@@ -1,0 +1,11 @@
+[package]
+name = "versionlib"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+memmap2 = "0.9"
+
+[lints]
+workspace = true
