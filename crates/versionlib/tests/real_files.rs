@@ -61,6 +61,16 @@ fn ae_1_7_99_v5() {
 }
 
 #[test]
+fn ae_1_7_104_v5() {
+    let Some(db) = open("versionlib-1-7-104-0.bin") else { return };
+    check(&db, 5, [1, 7, 104, 0]);
+    assert_eq!(db.len(), 565_759);
+    assert_eq!(db.iter().count(), 435_162);
+    assert_eq!(db.iter().last(), Some((565_758, 0x0202_17B0)));
+    assert_eq!(db.offset(14617), Some(0x001E_5860));
+}
+
+#[test]
 fn ae_ids_are_stable_across_1_6_and_1_7() {
     let (Some(old), Some(new)) = (open("versionlib-1-6-1170-0.bin"), open("versionlib-1-7-104-0.bin")) else {
         return;
