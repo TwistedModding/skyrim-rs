@@ -5,6 +5,30 @@ use core::ffi::c_void;
 
 use super::vtables;
 
+/// `AIProcess`: size 0x140 (exact).
+/// Meaning: AI process of an actor (SKSE: ActorProcessManager); null for actors without AI (high, actors pass).
+/// Evidence: AI process of an actor (SKSE: ActorProcessManager); null for actors without AI; allocated with 0x140 at 0x6af862 in Actor::ctor_sub0 (2,558 allocations in run-actors, one per Actor::ctor), constructed by 0x6e66a0 and stored at Actor+0xf8; 0x720660 reads the middle-high data at +8, 0x6eb4a0/0x6eb4b0 the equipped objects at +0xf0/+0xf8, Actor::IsAlerted_Impl bit 3 of the byte at +0x136; live process.bin.
+#[repr(C)]
+pub struct AIProcess {
+    pub unknown_0: [u8; 8],
+    /// +0x8 `ptr:MiddleHighProcessData`, semantic; middle-high process data (high)
+    pub middleHigh: *mut MiddleHighProcessData,
+    pub unknown_10: [u8; 224],
+    /// +0xF0 `ptr:TESForm`, semantic; object in the left hand (high)
+    pub equippedLeft: *mut TESForm,
+    /// +0xF8 `ptr:TESForm`, semantic; object in the right hand (high)
+    pub equippedRight: *mut TESForm,
+    pub unknown_100: [u8; 54],
+    /// +0x136 `undefined1`, semantic; process flags; bit 3 alerted (medium)
+    pub flags: u8,
+    pub unknown_137: [u8; 9],
+}
+const _: () = assert!(size_of::<AIProcess>() == 0x140);
+const _: () = assert!(core::mem::offset_of!(AIProcess, middleHigh) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AIProcess, equippedLeft) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(AIProcess, equippedRight) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(AIProcess, flags) == 0x136);
+
 /// `AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>`: size 0x160 (exact, low).
 /// Evidence: lower bound field field_158 meets upper bound first own field of CombatNavmeshSearch at 0x160 (soft).
 /// Packed: a field lies below its natural alignment.
@@ -591,6 +615,7 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_84) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_88) == 0x88);
 
 /// `Actor`: size 0x2B8 (exact, medium); primary base `TESObjectREFR`.
+/// Meaning: reference with AI, actor values, inventory and state; Character and PlayerCharacter derive from it (high, actors pass).
 /// Evidence: lower bound Character (size 0x2B8 at 0x0) adds no fields or bases meets upper bound derived Character size 0x2B8 at 0x0.
 /// Bases: `TESObjectREFR`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `BSHandleRefObject`@0x20, `NiRefObject`@0x20, `BSTEventSink<BSAnimationGraphEvent>`@0x30, `IAnimationGraphManagerHolder`@0x38, `MagicTarget`@0xA0, `ActorValueOwner`@0xB8, `ActorState`@0xC0, `IMovementState`@0xC0, `IMovementInterface`@0xC0, `BSTEventSink<BSTransformDeltaEvent>`@0xD0, `BSTEventSink<bhkCharacterMoveFinishEvent>`@0xD8, `IPostAnimationChannelUpdateFunctor`@0xE0.
 #[repr(C)]
@@ -610,31 +635,37 @@ pub struct Actor {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Actor:20`, rtti
     pub __vftable_20: *const vtables::Actor_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Actor:30`, rtti
     pub __vftable_30: *const vtables::Actor_vtable_30,
     /// +0x38 `vtbl:Actor:38`, rtti
     pub __vftable_38: *const vtables::Actor_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -651,19 +682,25 @@ pub struct Actor {
     pub __vftable_B8: *const vtables::Actor_vtable_B8,
     /// +0xC0 `vtbl:Actor:C0`, rtti
     pub __vftable_C0: *const vtables::Actor_vtable_C0,
-    /// +0xC8 `undefined4`, base ActorState
-    pub field_C8: u32,
-    /// +0xCC `undefined4`, base ActorState
-    pub field_CC: u32,
+    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
+    pub flags1: u32,
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
+    pub flags2: u32,
     /// +0xD0 `vtbl:Actor:D0`, rtti
     pub __vftable_D0: *const vtables::Actor_vtable_D0,
     /// +0xD8 `vtbl:Actor:D8`, rtti
     pub __vftable_D8: *const vtables::Actor_vtable_D8,
     /// +0xE0 `vtbl:Actor:E0`, rtti
     pub __vftable_E0: *const vtables::Actor_vtable_E0,
-    pub unknown_E8: [u8; 24],
-    /// +0x100 `undefined8`, ctor store
-    pub field_100: u64,
+    /// +0xE8 `undefined4`, semantic, runtime; actor flags; see the flag rows (high)
+    pub boolFlags: u32,
+    pub unknown_EC: [u8; 12],
+    /// +0xF8 `ptr:AIProcess`, semantic, runtime; the AI process; null for actors without AI (high)
+    pub currentProcess: *mut AIProcess,
+    /// +0x100 `undefined4`, ctor store, semantic; handle of the dialogue target (medium)
+    pub dialogueTargetHandle: u32,
+    /// +0x104 `undefined4`, semantic; handle of the combat target (medium)
+    pub combatTargetHandle: u32,
     /// +0x108 `undefined4`, ctor store
     pub field_108: u32,
     pub unknown_10C: [u8; 28],
@@ -672,9 +709,12 @@ pub struct Actor {
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
     pub unknown_134: [u8; 28],
-    /// +0x150 `undefined8`, ctor store
-    pub field_150: u64,
-    pub unknown_158: [u8; 24],
+    /// +0x150 `ptr:MovementControllerNPC`, ctor store, semantic, runtime; movement controller (medium)
+    pub movementController: *mut MovementControllerNPC,
+    pub unknown_158: [u8; 8],
+    /// +0x160 `pointer`, semantic, runtime; combat controller; null out of combat (medium)
+    pub combatController: *mut c_void,
+    pub unknown_168: [u8; 8],
     /// +0x170 `undefined4`, ctor store
     pub field_170: u32,
     pub unknown_174: [u8; 28],
@@ -683,7 +723,24 @@ pub struct Actor {
     pub unknown_194: [u8; 92],
     /// +0x1F0 `undefined4`, ctor store
     pub field_1F0: u32,
-    pub unknown_1F4: [u8; 116],
+    pub unknown_1F4: [u8; 4],
+    /// +0x1F8 `ptr:TESRace`, semantic, runtime; the actor's race (high)
+    pub race: *mut TESRace,
+    pub unknown_200: [u8; 4],
+    /// +0x204 `undefined4`, semantic, runtime; second flag word: bit 1 tested by IsOnMount, bit 18 essential (medium)
+    pub boolFlags2: u32,
+    /// +0x208 `class:ActorValueStorage`, semantic, runtime; cache and modifiers of the sparse actor values (high)
+    pub avStorage: ActorValueStorage,
+    pub unknown_228: [u8; 8],
+    /// +0x230 `undefined12`, semantic, runtime; float[3] modifiers of Health: permanent, temporary, damage (high)
+    pub healthModifiers: [u8; 12],
+    /// +0x23C `undefined12`, semantic, runtime; float[3] modifiers of Magicka (high)
+    pub magickaModifiers: [u8; 12],
+    /// +0x248 `undefined12`, semantic, runtime; float[3] modifiers of Stamina (high)
+    pub staminaModifiers: [u8; 12],
+    /// +0x254 `undefined12`, semantic; float[3] modifiers of VoicePoints (high)
+    pub voicePointsModifiers: [u8; 12],
+    pub unknown_260: [u8; 8],
     /// +0x268 `undefined8`, ctor store
     pub field_268: u64,
     pub unknown_270: [u8; 16],
@@ -691,7 +748,9 @@ pub struct Actor {
     pub field_280: u64,
     /// +0x288 `undefined4`, ctor store
     pub field_288: u32,
-    pub unknown_28C: [u8; 44],
+    pub unknown_28C: [u8; 4],
+    /// +0x290 `undefined40`, semantic; CRITICAL_SECTION (high)
+    pub criticalSection: [u8; 40],
 }
 const _: () = assert!(size_of::<Actor>() == 0x2B8);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable) == 0x0);
@@ -701,18 +760,21 @@ const _: () = assert!(core::mem::offset_of!(Actor, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(Actor, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Actor, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Actor, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Actor, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(Actor, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Actor, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(Actor, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(Actor, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(Actor, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(Actor, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(Actor, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(Actor, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(Actor, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(Actor, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(Actor, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Actor, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(Actor, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(Actor, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(Actor, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Actor, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(Actor, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(Actor, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Actor, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Actor, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(Actor, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(Actor, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_A0) == 0xA0);
@@ -720,22 +782,34 @@ const _: () = assert!(core::mem::offset_of!(Actor, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(Actor, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(Actor, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(Actor, field_CC) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(Actor, flags1) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(Actor, flags2) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(Actor, field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(Actor, boolFlags) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(Actor, currentProcess) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(Actor, dialogueTargetHandle) == 0x100);
+const _: () = assert!(core::mem::offset_of!(Actor, combatTargetHandle) == 0x104);
 const _: () = assert!(core::mem::offset_of!(Actor, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(Actor, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(Actor, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(Actor, field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(Actor, movementController) == 0x150);
+const _: () = assert!(core::mem::offset_of!(Actor, combatController) == 0x160);
 const _: () = assert!(core::mem::offset_of!(Actor, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(Actor, field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(Actor, field_1F0) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(Actor, race) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(Actor, boolFlags2) == 0x204);
+const _: () = assert!(core::mem::offset_of!(Actor, avStorage) == 0x208);
+const _: () = assert!(core::mem::offset_of!(Actor, healthModifiers) == 0x230);
+const _: () = assert!(core::mem::offset_of!(Actor, magickaModifiers) == 0x23C);
+const _: () = assert!(core::mem::offset_of!(Actor, staminaModifiers) == 0x248);
+const _: () = assert!(core::mem::offset_of!(Actor, voicePointsModifiers) == 0x254);
 const _: () = assert!(core::mem::offset_of!(Actor, field_268) == 0x268);
 const _: () = assert!(core::mem::offset_of!(Actor, field_280) == 0x280);
 const _: () = assert!(core::mem::offset_of!(Actor, field_288) == 0x288);
+const _: () = assert!(core::mem::offset_of!(Actor, criticalSection) == 0x290);
 
 /// `Actor::ForEachSpellVisitor`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of GatherSpellsFunctor at 0x8.
@@ -922,23 +996,25 @@ const _: () = assert!(size_of::<ActorPackageData>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(ActorPackageData, __vftable) == 0x0);
 
 /// `ActorState`: size 0x10 (exact, medium); primary base `IMovementState`.
+/// Meaning: movement and weapon state bits of an actor (high, actors pass).
 /// Evidence: lower bound field field_C meets upper bound next base of Actor at 0xD0.
 /// Bases: `IMovementState`@0x0, `IMovementInterface`@0x0.
 #[repr(C)]
 pub struct ActorState {
     /// +0x0 `vtbl:ActorState:0`, rtti
     pub __vftable: *const vtables::ActorState_vtable,
-    /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
-    /// +0xC `undefined4`, ctor store
-    pub field_C: u32,
+    /// +0x8 `undefined4`, ctor store, semantic, runtime; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
+    pub flags1: u32,
+    /// +0xC `undefined4`, ctor store, semantic, runtime; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
+    pub flags2: u32,
 }
 const _: () = assert!(size_of::<ActorState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ActorState, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ActorState, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ActorState, field_C) == 0xC);
+const _: () = assert!(core::mem::offset_of!(ActorState, flags1) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ActorState, flags2) == 0xC);
 
 /// `ActorValueInfo`: size 0x128 (exact, medium); primary base `TESForm`.
+/// Meaning: AVIF form describing one actor value (high, actors pass).
 /// Evidence: runtime: 0x128 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x20, `BaseFormComponent`@0x20, `TESDescription`@0x30, `BaseFormComponent`@0x30, `TESIcon`@0x40, `TESTexture`@0x40, `BaseFormComponent`@0x40.
 #[repr(C)]
@@ -967,11 +1043,11 @@ pub struct ActorValueInfo {
     /// +0x40 `vtbl:ActorValueInfo:40`, rtti
     pub __vftable_40: *const vtables::ActorValueInfo_vtable_40,
     pub unknown_48: [u8; 8],
-    /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
+    /// +0x50 `pointer`, ctor store, semantic, runtime; const char* editor name of the value (high)
+    pub name: *mut c_void,
     pub unknown_58: [u8; 8],
-    /// +0x60 `undefined4`, ctor store
-    pub field_60: u32,
+    /// +0x60 `undefined4`, ctor store, semantic, runtime; AVIF flags from the builder table (high)
+    pub flags: u32,
     pub unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
@@ -1049,8 +1125,8 @@ const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __vftable_20) == 0x2
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, name) == 0x50);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, flags) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_74) == 0x74);
@@ -1082,6 +1158,19 @@ const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_100) == 0x100)
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_118) == 0x118);
+
+/// `ActorValueList`: size 0x530 (exact).
+/// Meaning: the 164 ActorValueInfo pointers indexed by ActorValue (medium, actors pass).
+/// Evidence: the 164 ActorValueInfo pointers indexed by ActorValue; the ctor 0x442ea0 stores this in g_ActorValueList_ptr, zeroes 164 pointers at +8 and calls the table builder 0x443660; 0x4432f0 indexes +8 by id below 0xa4; +0 unknown; the 0x530 bytes behind the global were read in run-actors (avlist.bin).
+#[repr(C)]
+pub struct ActorValueList {
+    pub unknown_0: [u8; 8],
+    /// +0x8 `pointer`, semantic; ActorValueInfo*[164] indexed by ActorValue (high)
+    pub infos: *mut c_void,
+    pub unknown_10: [u8; 1312],
+}
+const _: () = assert!(size_of::<ActorValueList>() == 0x530);
+const _: () = assert!(core::mem::offset_of!(ActorValueList, infos) == 0x8);
 
 /// `ActorValueMeter`: size 0x50 (exact, high); primary base `HUDMeter`.
 /// Evidence: runtime: 0x50 at 3 allocation sites.
@@ -1122,6 +1211,7 @@ const _: () = assert!(core::mem::offset_of!(ActorValueMeter, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ActorValueMeter, field_48) == 0x48);
 
 /// `ActorValueOwner`: size 0x8 (exact, medium).
+/// Meaning: actor value interface (vtable only) (high, actors pass).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of Actor at 0xC0.
 #[repr(C)]
 pub struct ActorValueOwner {
@@ -1130,6 +1220,21 @@ pub struct ActorValueOwner {
 }
 const _: () = assert!(size_of::<ActorValueOwner>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(ActorValueOwner, __vftable) == 0x0);
+
+/// `ActorValueStorage`: size 0x20 (exact).
+/// Meaning: per-actor sparse storage of base-value cache and modifiers for values other than health, magicka, stamina and voice points (high, actors pass).
+/// Evidence: per-actor sparse storage of base-value cache and modifiers for values other than health, magicka, stamina and voice points; embedded at Actor+0x208 (Actor::ctor_sub3 0x6e2b60 builds two {BSFixedString, pointer} pairs); 0x6e3500 looks an actor value up in the byte string at +0x10 (keys are value+1, sorted) and returns float[3] at +0x18 + index*12; live keys [44, 135] with values [50, 0, 0] and [0.7, 0, 0] = FrostResist 50 (Nord) and CombatHealthRegenMult (run-actors avkeys.bin, avvals.bin).
+#[repr(C)]
+pub struct ActorValueStorage {
+    pub unknown_0: [u8; 16],
+    /// +0x10 `pointer`, semantic; sorted byte string of (ActorValue + 1) keys, 0-terminated (high)
+    pub modifierKeys: *mut c_void,
+    /// +0x18 `pointer`, semantic; float[3] per key: permanent, temporary, damage (high)
+    pub modifierValues: *mut c_void,
+}
+const _: () = assert!(size_of::<ActorValueStorage>() == 0x20);
+const _: () = assert!(core::mem::offset_of!(ActorValueStorage, modifierKeys) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ActorValueStorage, modifierValues) == 0x18);
 
 /// `AddCellGrassTask`: size 0x50 (exact, medium); primary base `QueuedFile`.
 /// Evidence: runtime: 0x50 at 1 allocation sites.
@@ -1291,10 +1396,10 @@ pub struct AlchemyItem {
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:AlchemyItem:40`, rtti
     pub __vftable_40: *const vtables::AlchemyItem_vtable_40,
-    /// +0x48 `undefined8`, base BGSKeywordForm
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BGSKeywordForm
-    pub field_50: u32,
+    /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
@@ -1370,8 +1475,8 @@ const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, keywords) == 0x48);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, numKeywords) == 0x50);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_80) == 0x80);
@@ -1793,31 +1898,37 @@ pub struct ArrowProjectile {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ArrowProjectile:20`, rtti
     pub __vftable_20: *const vtables::ArrowProjectile_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ArrowProjectile:30`, rtti
     pub __vftable_30: *const vtables::ArrowProjectile_vtable_30,
     /// +0x38 `vtbl:ArrowProjectile:38`, rtti
     pub __vftable_38: *const vtables::ArrowProjectile_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -1936,18 +2047,21 @@ const _: () = assert!(core::mem::offset_of!(ArrowProjectile, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_A0) == 0xA0);
@@ -5592,10 +5706,10 @@ pub struct BGSApparatus {
     pub field_E0: u64,
     /// +0xE8 `vtbl:BGSApparatus:E8`, rtti
     pub __vftable_E8: *const vtables::BGSApparatus_vtable_E8,
-    /// +0xF0 `undefined8`, base BGSKeywordForm
-    pub field_F0: u64,
-    /// +0xF8 `undefined4`, base BGSKeywordForm
-    pub field_F8: u32,
+    /// +0xF0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_FC: [u8; 4],
     /// +0x100 `vtbl:BGSApparatus:100`, rtti
     pub __vftable_100: *const vtables::BGSApparatus_vtable_100,
@@ -5638,8 +5752,8 @@ const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable_D0) == 0xD0)
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(BGSApparatus, keywords) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(BGSApparatus, numKeywords) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable_100) == 0x100);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable_110) == 0x110);
@@ -6191,7 +6305,8 @@ pub struct BGSColorForm {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSColorForm:20`, rtti
     pub __vftable_20: *const vtables::BGSColorForm_vtable_20,
-    pub unknown_28: [u8; 8],
+    /// +0x28 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
+    pub name: *mut c_void,
     /// +0x30 `undefined1`, base TESFullName
     pub field_30: u8,
     /// +0x31 `undefined1`, base TESFullName
@@ -6208,6 +6323,7 @@ const _: () = assert!(core::mem::offset_of!(BGSColorForm, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, __vftable_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSColorForm, name) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_31) == 0x31);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_32) == 0x32);
@@ -7260,7 +7376,7 @@ pub struct BGSKeyword {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `pointer`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; BSFixedString editor id of the keyword (high)
+    /// +0x20 `pointer`, ctor store, semantic, runtime; BSFixedString editor id of the keyword (high)
     pub keyword: *mut c_void,
 }
 const _: () = assert!(size_of::<BGSKeyword>() == 0x28);
@@ -7280,9 +7396,9 @@ const _: () = assert!(core::mem::offset_of!(BGSKeyword, keyword) == 0x20);
 pub struct BGSKeywordForm {
     /// +0x0 `vtbl:BGSKeywordForm:0`, rtti
     pub __vftable: *const vtables::BGSKeywordForm_vtable,
-    /// +0x8 `pointer`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; BGSKeyword*[numKeywords] (high)
+    /// +0x8 `pointer`, ctor store, semantic, runtime; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
-    /// +0x10 `undefined4`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; number of keywords (high)
+    /// +0x10 `undefined4`, ctor store, semantic, runtime; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_14: [u8; 4],
 }
@@ -7371,9 +7487,9 @@ pub struct BGSListForm {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `class:BSTArray`, semantic, semantic, semantic, semantic, semantic, semantic; BSTArray<TESForm*> of the list entries (high)
+    /// +0x20 `class:BSTArray`, semantic; BSTArray<TESForm*> of the list entries (high)
     pub forms: BSTArray,
-    /// +0x38 `pointer`, ctor store, semantic, semantic, semantic, semantic, semantic, semantic; array of script-added form ids {uint* ids @0, uint count @0x10}, null when none (medium)
+    /// +0x38 `pointer`, ctor store, semantic; array of script-added form ids {uint* ids @0, uint count @0x10}, null when none (medium)
     pub addedForms: *mut c_void,
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
@@ -7484,10 +7600,10 @@ pub struct BGSLocation {
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:BGSLocation:30`, rtti
     pub __vftable_30: *const vtables::BGSLocation_vtable_30,
-    /// +0x38 `undefined8`, base BGSKeywordForm
-    pub field_38: u64,
-    /// +0x40 `undefined4`, base BGSKeywordForm
-    pub field_40: u32,
+    /// +0x38 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x40 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_44: [u8; 4],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
@@ -7527,8 +7643,8 @@ const _: () = assert!(core::mem::offset_of!(BGSLocation, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSLocation, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BGSLocation, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSLocation, keywords) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSLocation, numKeywords) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, field_58) == 0x58);
@@ -12329,10 +12445,10 @@ pub struct BGSTalkingActivator {
     pub __vftable_88: *const vtables::BGSTalkingActivator_vtable_88,
     /// +0x90 `vtbl:BGSTalkingActivator:90`, rtti
     pub __vftable_90: *const vtables::BGSTalkingActivator_vtable_90,
-    /// +0x98 `undefined8`, base BGSKeywordForm
-    pub field_98: u64,
-    /// +0xA0 `undefined4`, base BGSKeywordForm
-    pub field_A0: u32,
+    /// +0x98 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0xA0 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, base TESObjectACTI
     pub field_A8: u64,
@@ -12368,8 +12484,8 @@ const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __vftable_78) =
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __vftable_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, keywords) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, numKeywords) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_B8) == 0xB8);
@@ -15339,15 +15455,19 @@ const _: () = assert!(core::mem::offset_of!(BSEffectShaderPropertyFloatControlle
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderPropertyFloatController, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderPropertyFloatController, field_48) == 0x48);
 
-/// `BSExtraData`: size 0x8 (exact, low).
-/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of ExtraAction at 0x8 (soft).
+/// `BSExtraData`: size 0x10 (exact, high).
+/// Meaning: base of every extra data node (high, actors pass).
+/// Evidence: actors pass (runtime): singly linked node: vtable, next at +8; slot 1 returns the type code (0x17e840 compares it with the requested type); derived data starts at +0x10; live nodes read in run-actors (extra-head.bin, extra1.bin).
 #[repr(C)]
 pub struct BSExtraData {
     /// +0x0 `vtbl:BSExtraData:0`, rtti
     pub __vftable: *const vtables::BSExtraData_vtable,
+    /// +0x8 `ptr:BSExtraData`, semantic, runtime; next node (high)
+    pub next: *mut BSExtraData,
 }
-const _: () = assert!(size_of::<BSExtraData>() == 0x8);
+const _: () = assert!(size_of::<BSExtraData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSExtraData, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSExtraData, next) == 0x8);
 
 /// `BSFaceGenAnimationData`: size 0x230 (exact, high); primary base `NiExtraData`.
 /// Evidence: runtime: 0x230 at 2 allocation sites; agrees with the static allocation sites.
@@ -16865,16 +16985,21 @@ const _: () = assert!(core::mem::offset_of!(BSGrassShaderProperty, field_1B8) ==
 const _: () = assert!(core::mem::offset_of!(BSGrassShaderProperty, field_1C0) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(BSGrassShaderProperty, field_1C8) == 0x1C8);
 
-/// `BSHandleRefObject`: size 0x8 (exact, low); primary base `NiRefObject`.
-/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of TESObjectREFR at 0x28 (soft).
+/// `BSHandleRefObject`: size 0x10 (exact, high); primary base `NiRefObject`.
+/// Meaning: ref-counted object that can be addressed by a handle (high, actors pass).
+/// Evidence: actors pass (runtime): sub-object at TESObjectREFR+0x20 (NiRefObject layout: vtable, u32 at +8); the count word holds the ref count in bits 0-9, 'handle set' in bit 10 and the handle index from bit 11 (0x17e640, 0x17ebe0, 0x2f60c0); live 0x404 on the player = 4 refs, handle index 0 (run-actors).
 /// Bases: `NiRefObject`@0x0.
 #[repr(C)]
 pub struct BSHandleRefObject {
     /// +0x0 `vtbl:BSHandleRefObject:0`, rtti
     pub __vftable: *const vtables::BSHandleRefObject_vtable,
+    /// +0x8 `undefined4`, semantic, runtime; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
+    pub unknown_C: [u8; 4],
 }
-const _: () = assert!(size_of::<BSHandleRefObject>() == 0x8);
+const _: () = assert!(size_of::<BSHandleRefObject>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSHandleRefObject, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSHandleRefObject, refCount) == 0x8);
 
 /// `BSIDirectAtModifierSingleton`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of BSDirectAtModifierInterface at 0x8.
@@ -61397,31 +61522,37 @@ pub struct BarrierProjectile {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BarrierProjectile:20`, rtti
     pub __vftable_20: *const vtables::BarrierProjectile_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BarrierProjectile:30`, rtti
     pub __vftable_30: *const vtables::BarrierProjectile_vtable_30,
     /// +0x38 `vtbl:BarrierProjectile:38`, rtti
     pub __vftable_38: *const vtables::BarrierProjectile_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -61534,18 +61665,21 @@ const _: () = assert!(core::mem::offset_of!(BarrierProjectile, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_A0) == 0xA0);
@@ -61751,21 +61885,24 @@ const _: () = assert!(core::mem::offset_of!(BarterMenu, field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BarterMenu, field_A4) == 0xA4);
 
 /// `BaseExtraList`: size 0x20 (exact, high).
+/// Meaning: extra data list of a reference (ExtraDataList) (high, actors pass).
 /// Evidence: runtime: 0x20 at 8 allocation sites; agrees with the static allocation sites.
 #[repr(C)]
 pub struct BaseExtraList {
     /// +0x0 `vtbl:BaseExtraList:0`, rtti
     pub __vftable: *const vtables::BaseExtraList_vtable,
-    /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
-    /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
-    pub unknown_18: [u8; 8],
+    /// +0x8 `ptr:BSExtraData`, ctor store, semantic, runtime; first extra data node (high)
+    pub head: *mut BSExtraData,
+    /// +0x10 `pointer`, ctor store, semantic, runtime; 0x17-byte bitfield of present types; null when empty (high)
+    pub presence: *mut c_void,
+    /// +0x18 `class:BSReadWriteLock`, semantic, runtime; lock of the list (high)
+    pub lock: BSReadWriteLock,
 }
 const _: () = assert!(size_of::<BaseExtraList>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BaseExtraList, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BaseExtraList, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BaseExtraList, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BaseExtraList, head) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BaseExtraList, presence) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BaseExtraList, lock) == 0x18);
 
 /// `BaseFormComponent`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of BGSExplosion at 0x88.
@@ -61845,31 +61982,37 @@ pub struct BeamProjectile {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BeamProjectile:20`, rtti
     pub __vftable_20: *const vtables::BeamProjectile_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BeamProjectile:30`, rtti
     pub __vftable_30: *const vtables::BeamProjectile_vtable_30,
     /// +0x38 `vtbl:BeamProjectile:38`, rtti
     pub __vftable_38: *const vtables::BeamProjectile_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -61986,18 +62129,21 @@ const _: () = assert!(core::mem::offset_of!(BeamProjectile, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_A0) == 0xA0);
@@ -62684,31 +62830,37 @@ pub struct ChainExplosion {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ChainExplosion:20`, rtti
     pub __vftable_20: *const vtables::ChainExplosion_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ChainExplosion:30`, rtti
     pub __vftable_30: *const vtables::ChainExplosion_vtable_30,
     /// +0x38 `vtbl:ChainExplosion:38`, rtti
     pub __vftable_38: *const vtables::ChainExplosion_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -62814,18 +62966,21 @@ const _: () = assert!(core::mem::offset_of!(ChainExplosion, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_A0) == 0xA0);
@@ -62895,6 +63050,7 @@ const _: () = assert!(size_of::<ChairFurnitureExitHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ChairFurnitureExitHandler, __vftable) == 0x0);
 
 /// `Character`: size 0x2B8 (exact, high); primary base `Actor`.
+/// Meaning: NPC actor (ACHR); adds nothing to Actor (high, actors pass).
 /// Evidence: runtime: 0x2B8 at 4 allocation sites; agrees with the static allocation sites.
 /// Bases: `Actor`@0x0, `TESObjectREFR`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `BSHandleRefObject`@0x20, `NiRefObject`@0x20, `BSTEventSink<BSAnimationGraphEvent>`@0x30, `IAnimationGraphManagerHolder`@0x38, `MagicTarget`@0xA0, `ActorValueOwner`@0xB8, `ActorState`@0xC0, `IMovementState`@0xC0, `IMovementInterface`@0xC0, `BSTEventSink<BSTransformDeltaEvent>`@0xD0, `BSTEventSink<bhkCharacterMoveFinishEvent>`@0xD8, `IPostAnimationChannelUpdateFunctor`@0xE0.
 /// Packed: a field lies below its natural alignment.
@@ -62915,31 +63071,37 @@ pub struct Character {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Character:20`, rtti
     pub __vftable_20: *const vtables::Character_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Character:30`, rtti
     pub __vftable_30: *const vtables::Character_vtable_30,
     /// +0x38 `vtbl:Character:38`, rtti
     pub __vftable_38: *const vtables::Character_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -62956,21 +63118,25 @@ pub struct Character {
     pub __vftable_B8: *const vtables::Character_vtable_B8,
     /// +0xC0 `vtbl:Character:C0`, rtti
     pub __vftable_C0: *const vtables::Character_vtable_C0,
-    /// +0xC8 `undefined4`, base ActorState
-    pub field_C8: u32,
-    /// +0xCC `undefined4`, base ActorState
-    pub field_CC: u32,
+    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
+    pub flags1: u32,
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
+    pub flags2: u32,
     /// +0xD0 `vtbl:Character:D0`, rtti
     pub __vftable_D0: *const vtables::Character_vtable_D0,
     /// +0xD8 `vtbl:Character:D8`, rtti
     pub __vftable_D8: *const vtables::Character_vtable_D8,
     /// +0xE0 `vtbl:Character:E0`, rtti
     pub __vftable_E0: *const vtables::Character_vtable_E0,
-    /// +0xE8 `undefined4`, ctor store
-    pub field_E8: u32,
-    pub unknown_EC: [u8; 20],
-    /// +0x100 `undefined8`, base Actor
-    pub field_100: u64,
+    /// +0xE8 `undefined4`, base Actor, semantic; actor flags; see the flag rows (high)
+    pub boolFlags: u32,
+    pub unknown_EC: [u8; 12],
+    /// +0xF8 `ptr:AIProcess`, base Actor, semantic; the AI process; null for actors without AI (high)
+    pub currentProcess: *mut AIProcess,
+    /// +0x100 `undefined4`, base Actor, semantic; handle of the dialogue target (medium)
+    pub dialogueTargetHandle: u32,
+    /// +0x104 `undefined4`, base Actor, semantic; handle of the combat target (medium)
+    pub combatTargetHandle: u32,
     /// +0x108 `undefined4`, base Actor
     pub field_108: u32,
     pub unknown_10C: [u8; 12],
@@ -62982,9 +63148,12 @@ pub struct Character {
     /// +0x130 `undefined4`, base Actor
     pub field_130: u32,
     pub unknown_134: [u8; 28],
-    /// +0x150 `undefined8`, base Actor
-    pub field_150: u64,
-    pub unknown_158: [u8; 24],
+    /// +0x150 `ptr:MovementControllerNPC`, base Actor, semantic; movement controller (medium)
+    pub movementController: *mut MovementControllerNPC,
+    pub unknown_158: [u8; 8],
+    /// +0x160 `pointer`, base Actor, semantic; combat controller; null out of combat (medium)
+    pub combatController: *mut c_void,
+    pub unknown_168: [u8; 8],
     /// +0x170 `undefined4`, base Actor
     pub field_170: u32,
     pub unknown_174: [u8; 28],
@@ -62993,7 +63162,24 @@ pub struct Character {
     pub unknown_194: [u8; 92],
     /// +0x1F0 `undefined4`, base Actor
     pub field_1F0: u32,
-    pub unknown_1F4: [u8; 116],
+    pub unknown_1F4: [u8; 4],
+    /// +0x1F8 `ptr:TESRace`, base Actor, semantic; the actor's race (high)
+    pub race: *mut TESRace,
+    pub unknown_200: [u8; 4],
+    /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 tested by IsOnMount, bit 18 essential (medium)
+    pub boolFlags2: u32,
+    /// +0x208 `class:ActorValueStorage`, base Actor, semantic; cache and modifiers of the sparse actor values (high)
+    pub avStorage: ActorValueStorage,
+    pub unknown_228: [u8; 8],
+    /// +0x230 `undefined12`, base Actor, semantic; float[3] modifiers of Health: permanent, temporary, damage (high)
+    pub healthModifiers: [u8; 12],
+    /// +0x23C `undefined12`, base Actor, semantic; float[3] modifiers of Magicka (high)
+    pub magickaModifiers: [u8; 12],
+    /// +0x248 `undefined12`, base Actor, semantic; float[3] modifiers of Stamina (high)
+    pub staminaModifiers: [u8; 12],
+    /// +0x254 `undefined12`, base Actor, semantic; float[3] modifiers of VoicePoints (high)
+    pub voicePointsModifiers: [u8; 12],
+    pub unknown_260: [u8; 8],
     /// +0x268 `undefined8`, base Actor
     pub field_268: u64,
     /// +0x270 `undefined4`, ctor store
@@ -63008,7 +63194,9 @@ pub struct Character {
     pub field_280: u64,
     /// +0x288 `undefined4`, base Actor
     pub field_288: u32,
-    pub unknown_28C: [u8; 44],
+    pub unknown_28C: [u8; 4],
+    /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
+    pub criticalSection: [u8; 40],
 }
 const _: () = assert!(size_of::<Character>() == 0x2B8);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable) == 0x0);
@@ -63018,18 +63206,21 @@ const _: () = assert!(core::mem::offset_of!(Character, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(Character, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Character, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Character, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Character, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(Character, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Character, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(Character, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(Character, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(Character, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(Character, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(Character, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(Character, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(Character, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(Character, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(Character, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Character, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(Character, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(Character, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(Character, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Character, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(Character, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(Character, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Character, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Character, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(Character, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(Character, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_A0) == 0xA0);
@@ -63037,27 +63228,38 @@ const _: () = assert!(core::mem::offset_of!(Character, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(Character, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(Character, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(Character, field_CC) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(Character, flags1) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(Character, flags2) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(Character, field_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(Character, field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(Character, boolFlags) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(Character, currentProcess) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(Character, dialogueTargetHandle) == 0x100);
+const _: () = assert!(core::mem::offset_of!(Character, combatTargetHandle) == 0x104);
 const _: () = assert!(core::mem::offset_of!(Character, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(Character, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(Character, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(Character, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(Character, field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(Character, movementController) == 0x150);
+const _: () = assert!(core::mem::offset_of!(Character, combatController) == 0x160);
 const _: () = assert!(core::mem::offset_of!(Character, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(Character, field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(Character, field_1F0) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(Character, race) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(Character, boolFlags2) == 0x204);
+const _: () = assert!(core::mem::offset_of!(Character, avStorage) == 0x208);
+const _: () = assert!(core::mem::offset_of!(Character, healthModifiers) == 0x230);
+const _: () = assert!(core::mem::offset_of!(Character, magickaModifiers) == 0x23C);
+const _: () = assert!(core::mem::offset_of!(Character, staminaModifiers) == 0x248);
+const _: () = assert!(core::mem::offset_of!(Character, voicePointsModifiers) == 0x254);
 const _: () = assert!(core::mem::offset_of!(Character, field_268) == 0x268);
 const _: () = assert!(core::mem::offset_of!(Character, field_270) == 0x270);
 const _: () = assert!(core::mem::offset_of!(Character, field_274) == 0x274);
 const _: () = assert!(core::mem::offset_of!(Character, field_279) == 0x279);
 const _: () = assert!(core::mem::offset_of!(Character, field_280) == 0x280);
 const _: () = assert!(core::mem::offset_of!(Character, field_288) == 0x288);
+const _: () = assert!(core::mem::offset_of!(Character, criticalSection) == 0x290);
 
 /// `CheckWithinMultiBoundTask`: size 0x38 (exact, medium); primary base `IOTask`.
 /// Evidence: allocation sites (medium): {'56': 1}.
@@ -75112,31 +75314,37 @@ pub struct ConeProjectile {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ConeProjectile:20`, rtti
     pub __vftable_20: *const vtables::ConeProjectile_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ConeProjectile:30`, rtti
     pub __vftable_30: *const vtables::ConeProjectile_vtable_30,
     /// +0x38 `vtbl:ConeProjectile:38`, rtti
     pub __vftable_38: *const vtables::ConeProjectile_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -75260,18 +75468,21 @@ const _: () = assert!(core::mem::offset_of!(ConeProjectile, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_A0) == 0xA0);
@@ -75530,6 +75741,22 @@ const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_B9) == 0xB9);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_BA) == 0xBA);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_BC) == 0xBC);
+
+/// `ContainerObject`: size 0x18 (exact).
+/// Meaning: one base container entry: count and object (medium, actors pass).
+/// Evidence: one base container entry: count and object; entry layout from 0x1e0b10 (count at +0, form at +8); +0x10 is a pointer to per-entry owner data (SKSE's ContainerObject::Data, not read here); live entries {10, Gold001 0xf} and {1, Iron War Axe} in run-actors.
+#[repr(C)]
+pub struct ContainerObject {
+    /// +0x0 `undefined4`, semantic; item count (high)
+    pub count: u32,
+    pub unknown_4: [u8; 4],
+    /// +0x8 `ptr:TESForm`, semantic; the item (high)
+    pub form: *mut TESForm,
+    pub unknown_10: [u8; 8],
+}
+const _: () = assert!(size_of::<ContainerObject>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(ContainerObject, count) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ContainerObject, form) == 0x8);
 
 /// `CraftingSubMenus::AlchemyMenu`: size 0x1A0 (exact, medium); primary base `CraftingSubMenus::CraftingSubMenu`.
 /// Evidence: allocation sites (medium): {'416': 1}.
@@ -78112,10 +78339,10 @@ pub struct EffectSetting {
     pub field_38: u64,
     /// +0x40 `vtbl:EffectSetting:40`, rtti
     pub __vftable_40: *const vtables::EffectSetting_vtable_40,
-    /// +0x48 `undefined8`, base BGSKeywordForm
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BGSKeywordForm
-    pub field_50: u32,
+    /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
@@ -78211,8 +78438,8 @@ const _: () = assert!(core::mem::offset_of!(EffectSetting, __vftable_20) == 0x20
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, keywords) == 0x48);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, numKeywords) == 0x50);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_68) == 0x68);
@@ -78311,10 +78538,10 @@ pub struct EnchantmentItem {
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:EnchantmentItem:40`, rtti
     pub __vftable_40: *const vtables::EnchantmentItem_vtable_40,
-    /// +0x48 `undefined8`, base BGSKeywordForm
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BGSKeywordForm
-    pub field_50: u32,
+    /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
@@ -78361,8 +78588,8 @@ const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, keywords) == 0x48);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, numKeywords) == 0x50);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_80) == 0x80);
@@ -78654,31 +78881,37 @@ pub struct Explosion {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Explosion:20`, rtti
     pub __vftable_20: *const vtables::Explosion_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Explosion:30`, rtti
     pub __vftable_30: *const vtables::Explosion_vtable_30,
     /// +0x38 `vtbl:Explosion:38`, rtti
     pub __vftable_38: *const vtables::Explosion_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -78756,18 +78989,21 @@ const _: () = assert!(core::mem::offset_of!(Explosion, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(Explosion, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Explosion, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Explosion, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Explosion, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Explosion, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(Explosion, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(Explosion, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(Explosion, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(Explosion, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(Explosion, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(Explosion, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Explosion, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(Explosion, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(Explosion, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(Explosion, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Explosion, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(Explosion, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(Explosion, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Explosion, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(Explosion, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(Explosion, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(Explosion, field_A0) == 0xA0);
@@ -79135,6 +79371,7 @@ const _: () = assert!(size_of::<ExtraCombatStyle>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCombatStyle, __vftable) == 0x0);
 
 /// `ExtraContainerChanges`: size 0x18 (exact, high); primary base `BSExtraData`.
+/// Meaning: extra data carrying a reference's inventory changes (high, actors pass).
 /// Evidence: runtime: 0x18 at 2 allocation sites.
 /// Bases: `BSExtraData`@0x0.
 #[repr(C)]
@@ -79143,13 +79380,13 @@ pub struct ExtraContainerChanges {
     pub __vftable: *const vtables::ExtraContainerChanges_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
-    /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
+    /// +0x10 `ptr:InventoryChanges`, ctor store, semantic, runtime; the inventory changes (high)
+    pub changes: *mut InventoryChanges,
 }
 const _: () = assert!(size_of::<ExtraContainerChanges>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraContainerChanges, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraContainerChanges, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ExtraContainerChanges, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ExtraContainerChanges, changes) == 0x10);
 
 /// `ExtraCount`: size 0x18 (exact, high); primary base `BSExtraData`.
 /// Evidence: runtime: 0x18 at 2 allocation sites; agrees with the static allocation sites.
@@ -80901,31 +81138,37 @@ pub struct FlameProjectile {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:FlameProjectile:20`, rtti
     pub __vftable_20: *const vtables::FlameProjectile_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:FlameProjectile:30`, rtti
     pub __vftable_30: *const vtables::FlameProjectile_vtable_30,
     /// +0x38 `vtbl:FlameProjectile:38`, rtti
     pub __vftable_38: *const vtables::FlameProjectile_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -81037,18 +81280,21 @@ const _: () = assert!(core::mem::offset_of!(FlameProjectile, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_A0) == 0xA0);
@@ -81973,31 +82219,37 @@ pub struct GrenadeProjectile {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:GrenadeProjectile:20`, rtti
     pub __vftable_20: *const vtables::GrenadeProjectile_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:GrenadeProjectile:30`, rtti
     pub __vftable_30: *const vtables::GrenadeProjectile_vtable_30,
     /// +0x38 `vtbl:GrenadeProjectile:38`, rtti
     pub __vftable_38: *const vtables::GrenadeProjectile_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -82112,18 +82364,21 @@ const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_A0) == 0xA0);
@@ -82581,6 +82836,21 @@ pub struct HUDObject {
 const _: () = assert!(size_of::<HUDObject>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(HUDObject, __vftable) == 0x0);
 
+/// `HandleEntry`: size 0x10 (exact).
+/// Meaning: one slot of the reference handle table (high, actors pass).
+/// Evidence: one slot of the reference handle table; 0x10-byte entries of the table at g_HandleTable: u32 at +0 (next free index in bits 0-19 while free, age in bits 20-25, active bit 26) and a smart pointer to the BSHandleRefObject sub-object at +8 (0x17e640 fills it, 0x17ebe0 reads it and subtracts 0x20); a handle is index | age << 20; live: the player's handle is 0x100000 and resolved back to the player (run-actors scratch.bin).
+#[repr(C)]
+pub struct HandleEntry {
+    /// +0x0 `undefined4`, semantic; bits 0-19 next free index, 20-25 age, 26 active (high)
+    pub ageAndNext: u32,
+    pub unknown_4: [u8; 4],
+    /// +0x8 `pointer`, semantic; NiPointer<BSHandleRefObject> (high)
+    pub ref_: *mut c_void,
+}
+const _: () = assert!(size_of::<HandleEntry>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(HandleEntry, ageAndNext) == 0x0);
+const _: () = assert!(core::mem::offset_of!(HandleEntry, ref_) == 0x8);
+
 /// `HandlerCreationMissPolicy<BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of BSTObjectDictionary<BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI,HandlerCreationMissPolicy,NoInitializationPolicy> at 0x8.
 #[repr(C)]
@@ -82644,31 +82914,37 @@ pub struct Hazard {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Hazard:20`, rtti
     pub __vftable_20: *const vtables::Hazard_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Hazard:30`, rtti
     pub __vftable_30: *const vtables::Hazard_vtable_30,
     /// +0x38 `vtbl:Hazard:38`, rtti
     pub __vftable_38: *const vtables::Hazard_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -82704,18 +82980,21 @@ const _: () = assert!(core::mem::offset_of!(Hazard, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(Hazard, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Hazard, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Hazard, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Hazard, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Hazard, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(Hazard, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(Hazard, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(Hazard, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(Hazard, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(Hazard, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(Hazard, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Hazard, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(Hazard, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(Hazard, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(Hazard, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Hazard, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(Hazard, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(Hazard, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Hazard, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(Hazard, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(Hazard, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(Hazard, field_A0) == 0xA0);
@@ -85776,10 +86055,10 @@ pub struct IngredientItem {
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:IngredientItem:40`, rtti
     pub __vftable_40: *const vtables::IngredientItem_vtable_40,
-    /// +0x48 `undefined8`, base BGSKeywordForm
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BGSKeywordForm
-    pub field_50: u32,
+    /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
@@ -85850,8 +86129,8 @@ const _: () = assert!(core::mem::offset_of!(IngredientItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(IngredientItem, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(IngredientItem, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, keywords) == 0x48);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, numKeywords) == 0x50);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, field_80) == 0x80);
@@ -85958,6 +86237,45 @@ pub struct InterruptCastHandler {
 }
 const _: () = assert!(size_of::<InterruptCastHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(InterruptCastHandler, __vftable) == 0x0);
+
+/// `InventoryChanges`: size 0x20 (exact).
+/// Meaning: the items a reference gained or lost relative to its base container (medium, actors pass).
+/// Evidence: the items a reference gained or lost relative to its base container; 0x240fe0 reads the entry list head at +0 and the owner reference at +8; +0x10 and +0x14 are floats (live -1.0 and 96.5 on the player, SKSE names them totalWeight and armorWeight); size 0x20 from those fields only (run-actors changes.bin).
+#[repr(C)]
+pub struct InventoryChanges {
+    /// +0x0 `ptr:BSSimpleListNode`, semantic; list of InventoryEntryData* (high)
+    pub entries: *mut BSSimpleListNode,
+    /// +0x8 `ptr:TESObjectREFR`, semantic; the reference owning the changes (high)
+    pub owner: *mut TESObjectREFR,
+    /// +0x10 `float`, semantic; cached total weight, -1 when stale (medium)
+    pub totalWeight: f32,
+    /// +0x14 `float`, semantic; cached worn armor weight (medium)
+    pub armorWeight: f32,
+    pub unknown_18: [u8; 8],
+}
+const _: () = assert!(size_of::<InventoryChanges>() == 0x20);
+const _: () = assert!(core::mem::offset_of!(InventoryChanges, entries) == 0x0);
+const _: () = assert!(core::mem::offset_of!(InventoryChanges, owner) == 0x8);
+const _: () = assert!(core::mem::offset_of!(InventoryChanges, totalWeight) == 0x10);
+const _: () = assert!(core::mem::offset_of!(InventoryChanges, armorWeight) == 0x14);
+
+/// `InventoryEntryData`: size 0x18 (exact).
+/// Meaning: one inventory entry: object, per-stack extra lists, count delta (high, actors pass).
+/// Evidence: one inventory entry: object, per-stack extra lists, count delta; 0x240fe0 reads the object at +0 and the count delta at +0x10; +8 is the list of extra data lists of the stacks (SKSE's extendDataList); live entries: {Iron War Axe, lists, 0} in the player's list and {Iron War Axe, lists, 1} as the process's right-hand entry (run-actors entry0.bin, equipped-entry.bin).
+#[repr(C)]
+pub struct InventoryEntryData {
+    /// +0x0 `ptr:TESForm`, semantic; the item (TESBoundObject) (high)
+    pub object: *mut TESForm,
+    /// +0x8 `pointer`, semantic; list of BaseExtraList* of the stacks (high)
+    pub extraLists: *mut c_void,
+    /// +0x10 `undefined4`, semantic; count relative to the base container (high)
+    pub countDelta: u32,
+    pub unknown_14: [u8; 4],
+}
+const _: () = assert!(size_of::<InventoryEntryData>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(InventoryEntryData, object) == 0x0);
+const _: () = assert!(core::mem::offset_of!(InventoryEntryData, extraLists) == 0x8);
+const _: () = assert!(core::mem::offset_of!(InventoryEntryData, countDelta) == 0x10);
 
 /// `InventoryMenu`: size 0x88 (exact, medium); primary base `IMenu`.
 /// Evidence: conflict, allocation size kept: allocation size 0x88 below lower bound 0xC0 (base IMenu at 0x0).
@@ -87373,6 +87691,18 @@ const _: () = assert!(core::mem::offset_of!(LoadedAreaBound, field_94) == 0x94);
 const _: () = assert!(core::mem::offset_of!(LoadedAreaBound, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(LoadedAreaBound, field_9C) == 0x9C);
 
+/// `LoadedReferenceData`: size 0x70 (exact).
+/// Meaning: 3D and loaded-state data of a reference (SKSE: LoadedState) (high, actors pass).
+/// Evidence: 3D and loaded-state data of a reference (SKSE: LoadedState); object behind TESObjectREFR+0x68 while the reference is loaded; TESObjectREFR::vfunc_112 (Get3D) returns the pointer at +0x68 of it; the ctor zeroes +0x18 and sets +0x20 to -FLT_MAX; live loadedstate.bin: +0x68 = BSFadeNode 'Skeleton.nif' (run-actors node.bin, nodename.bin).
+#[repr(C)]
+pub struct LoadedReferenceData {
+    pub unknown_0: [u8; 104],
+    /// +0x68 `ptr:NiNode`, semantic; root node of the reference's 3D (high)
+    pub node3D: *mut NiNode,
+}
+const _: () = assert!(size_of::<LoadedReferenceData>() == 0x70);
+const _: () = assert!(core::mem::offset_of!(LoadedReferenceData, node3D) == 0x68);
+
 /// `LoadingMenu`: size 0x80 (exact, medium); primary base `IMenu`.
 /// Evidence: conflict, allocation size kept: allocation size 0x80 below lower bound 0xC0 (base IMenu at 0x0).
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
@@ -87943,10 +88273,10 @@ pub struct MagicItem {
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:MagicItem:40`, rtti
     pub __vftable_40: *const vtables::MagicItem_vtable_40,
-    /// +0x48 `undefined8`, base BGSKeywordForm
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BGSKeywordForm
-    pub field_50: u32,
+    /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_54: [u8; 28],
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
@@ -87974,8 +88304,8 @@ const _: () = assert!(core::mem::offset_of!(MagicItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(MagicItem, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(MagicItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(MagicItem, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(MagicItem, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(MagicItem, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(MagicItem, keywords) == 0x48);
+const _: () = assert!(core::mem::offset_of!(MagicItem, numKeywords) == 0x50);
 const _: () = assert!(core::mem::offset_of!(MagicItem, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(MagicItem, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(MagicItem, field_80) == 0x80);
@@ -88916,6 +89246,22 @@ const _: () = assert!(core::mem::offset_of!(MessageHandler, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MessageHandler, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MessageHandler, field_20) == 0x20);
 
+/// `MiddleHighProcessData`: size 0x268 (exact).
+/// Meaning: middle-high process data: equipped entries and much more (medium, actors pass).
+/// Evidence: middle-high process data: equipped entries and much more; object behind AIProcess+8; 0x720660 reads the left-hand entry at +0x220 and the right-hand entry at +0x260; size unknown, 0x268 is the extent of the named fields; live middlehigh.bin: +0x260 -> the Iron War Axe entry, +0x220 null (run-actors).
+#[repr(C)]
+pub struct MiddleHighProcessData {
+    pub unknown_0: [u8; 544],
+    /// +0x220 `ptr:InventoryEntryData`, semantic; inventory entry equipped in the left hand (high)
+    pub leftHandEntry: *mut InventoryEntryData,
+    pub unknown_228: [u8; 56],
+    /// +0x260 `ptr:InventoryEntryData`, semantic; inventory entry equipped in the right hand (high)
+    pub rightHandEntry: *mut InventoryEntryData,
+}
+const _: () = assert!(size_of::<MiddleHighProcessData>() == 0x268);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEntry) == 0x220);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEntry) == 0x260);
+
 /// `MissileProjectile`: size 0x1E8 (exact, high); primary base `Projectile`.
 /// Evidence: allocation sites (high): {'488': 3}.
 /// Bases: `Projectile`@0x0, `TESObjectREFR`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `BSHandleRefObject`@0x20, `NiRefObject`@0x20, `BSTEventSink<BSAnimationGraphEvent>`@0x30, `IAnimationGraphManagerHolder`@0x38.
@@ -88937,31 +89283,37 @@ pub struct MissileProjectile {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:MissileProjectile:20`, rtti
     pub __vftable_20: *const vtables::MissileProjectile_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:MissileProjectile:30`, rtti
     pub __vftable_30: *const vtables::MissileProjectile_vtable_30,
     /// +0x38 `vtbl:MissileProjectile:38`, rtti
     pub __vftable_38: *const vtables::MissileProjectile_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -89076,18 +89428,21 @@ const _: () = assert!(core::mem::offset_of!(MissileProjectile, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_A0) == 0xA0);
@@ -102515,6 +102870,7 @@ const _: () = assert!(size_of::<PlayerChairEnterHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PlayerChairEnterHandler, __vftable) == 0x0);
 
 /// `PlayerCharacter`: size 0xBF0 (exact, medium); primary base `Character`.
+/// Meaning: the player; one instance behind g_PlayerCharacter_ptr (high, actors pass).
 /// Evidence: runtime: 0xBF0 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `Character`@0x0, `Actor`@0x0, `TESObjectREFR`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `BSHandleRefObject`@0x20, `NiRefObject`@0x20, `BSTEventSink<BSAnimationGraphEvent>`@0x30, `IAnimationGraphManagerHolder`@0x38, `MagicTarget`@0xA0, `ActorValueOwner`@0xB8, `ActorState`@0xC0, `IMovementState`@0xC0, `IMovementInterface`@0xC0, `BSTEventSink<BSTransformDeltaEvent>`@0xD0, `BSTEventSink<bhkCharacterMoveFinishEvent>`@0xD8, `IPostAnimationChannelUpdateFunctor`@0xE0, `BSTEventSource<BGSActorCellEvent>`@0x2E0, `BSTEventSource<BGSActorDeathEvent>`@0x338, `BSTEventSource<PositionPlayerEvent>`@0x390, `BSTEventSink<MenuOpenCloseEvent>`@0x2B8, `BSTEventSink<MenuModeChangeEvent>`@0x2C0, `BSTEventSink<UserEventEnabledEvent>`@0x2C8, `BSTEventSink<TESTrackedStatsEvent>`@0x2D0, `BSTEventSink<BSSystemEvent>`@0x2D8.
 /// Packed: a field lies below its natural alignment.
@@ -102535,31 +102891,37 @@ pub struct PlayerCharacter {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:PlayerCharacter:20`, rtti
     pub __vftable_20: *const vtables::PlayerCharacter_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:PlayerCharacter:30`, rtti
     pub __vftable_30: *const vtables::PlayerCharacter_vtable_30,
     /// +0x38 `vtbl:PlayerCharacter:38`, rtti
     pub __vftable_38: *const vtables::PlayerCharacter_vtable_38,
-    /// +0x40 `ptr:TESNPC`, base TESObjectREFR, runtime
-    pub field_40: *mut TESNPC,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, runtime
-    pub field_60: *mut TESObjectCELL,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -102576,21 +102938,25 @@ pub struct PlayerCharacter {
     pub __vftable_B8: *const vtables::PlayerCharacter_vtable_B8,
     /// +0xC0 `vtbl:PlayerCharacter:C0`, rtti
     pub __vftable_C0: *const vtables::PlayerCharacter_vtable_C0,
-    /// +0xC8 `undefined4`, base ActorState
-    pub field_C8: u32,
-    /// +0xCC `undefined4`, base ActorState
-    pub field_CC: u32,
+    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
+    pub flags1: u32,
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
+    pub flags2: u32,
     /// +0xD0 `vtbl:PlayerCharacter:D0`, rtti
     pub __vftable_D0: *const vtables::PlayerCharacter_vtable_D0,
     /// +0xD8 `vtbl:PlayerCharacter:D8`, rtti
     pub __vftable_D8: *const vtables::PlayerCharacter_vtable_D8,
     /// +0xE0 `vtbl:PlayerCharacter:E0`, rtti
     pub __vftable_E0: *const vtables::PlayerCharacter_vtable_E0,
-    /// +0xE8 `undefined4`, base Character
-    pub field_E8: u32,
-    pub unknown_EC: [u8; 20],
-    /// +0x100 `undefined8`, base Actor
-    pub field_100: u64,
+    /// +0xE8 `undefined4`, base Actor, semantic; actor flags; see the flag rows (high)
+    pub boolFlags: u32,
+    pub unknown_EC: [u8; 12],
+    /// +0xF8 `ptr:AIProcess`, base Actor, semantic; the AI process; null for actors without AI (high)
+    pub currentProcess: *mut AIProcess,
+    /// +0x100 `undefined4`, base Actor, semantic; handle of the dialogue target (medium)
+    pub dialogueTargetHandle: u32,
+    /// +0x104 `undefined4`, base Actor, semantic; handle of the combat target (medium)
+    pub combatTargetHandle: u32,
     /// +0x108 `undefined4`, base Actor
     pub field_108: u32,
     pub unknown_10C: [u8; 12],
@@ -102604,9 +102970,12 @@ pub struct PlayerCharacter {
     pub unknown_134: [u8; 20],
     /// +0x148 `ptr:ActorMover`, runtime
     pub field_148: *mut ActorMover,
-    /// +0x150 `ptr:MovementControllerNPC`, base Actor, runtime
-    pub field_150: *mut MovementControllerNPC,
-    pub unknown_158: [u8; 24],
+    /// +0x150 `ptr:MovementControllerNPC`, base Actor, semantic; movement controller (medium)
+    pub movementController: *mut MovementControllerNPC,
+    pub unknown_158: [u8; 8],
+    /// +0x160 `pointer`, base Actor, semantic; combat controller; null out of combat (medium)
+    pub combatController: *mut c_void,
+    pub unknown_168: [u8; 8],
     /// +0x170 `undefined4`, base Actor
     pub field_170: u32,
     pub unknown_174: [u8; 28],
@@ -102621,9 +102990,23 @@ pub struct PlayerCharacter {
     /// +0x1F0 `undefined4`, base Actor
     pub field_1F0: u32,
     pub unknown_1F4: [u8; 4],
-    /// +0x1F8 `ptr:TESRace`, runtime
-    pub field_1F8: *mut TESRace,
-    pub unknown_200: [u8; 104],
+    /// +0x1F8 `ptr:TESRace`, base Actor, semantic; the actor's race (high)
+    pub race: *mut TESRace,
+    pub unknown_200: [u8; 4],
+    /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 tested by IsOnMount, bit 18 essential (medium)
+    pub boolFlags2: u32,
+    /// +0x208 `class:ActorValueStorage`, base Actor, semantic; cache and modifiers of the sparse actor values (high)
+    pub avStorage: ActorValueStorage,
+    pub unknown_228: [u8; 8],
+    /// +0x230 `undefined12`, base Actor, semantic; float[3] modifiers of Health: permanent, temporary, damage (high)
+    pub healthModifiers: [u8; 12],
+    /// +0x23C `undefined12`, base Actor, semantic; float[3] modifiers of Magicka (high)
+    pub magickaModifiers: [u8; 12],
+    /// +0x248 `undefined12`, base Actor, semantic; float[3] modifiers of Stamina (high)
+    pub staminaModifiers: [u8; 12],
+    /// +0x254 `undefined12`, base Actor, semantic; float[3] modifiers of VoicePoints (high)
+    pub voicePointsModifiers: [u8; 12],
+    pub unknown_260: [u8; 8],
     /// +0x268 `undefined8`, base Actor
     pub field_268: u64,
     /// +0x270 `undefined4`, base Character
@@ -102638,7 +103021,9 @@ pub struct PlayerCharacter {
     pub field_280: u64,
     /// +0x288 `undefined4`, base Actor
     pub field_288: u32,
-    pub unknown_28C: [u8; 44],
+    pub unknown_28C: [u8; 4],
+    /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
+    pub criticalSection: [u8; 40],
     /// +0x2B8 `vtbl:PlayerCharacter:2B8`, rtti
     pub __vftable_2B8: *const vtables::PlayerCharacter_vtable_2B8,
     /// +0x2C0 `vtbl:PlayerCharacter:2C0`, rtti
@@ -102758,8 +103143,8 @@ pub struct PlayerCharacter {
     /// +0x630 `undefined4`, ctor store
     pub field_630: u32,
     pub unknown_634: [u8; 4],
-    /// +0x638 `ptr:TESWorldSpace`, ctor store, runtime
-    pub field_638: *mut TESWorldSpace,
+    /// +0x638 `ptr:TESWorldSpace`, ctor store, runtime, semantic; the player's current worldspace (medium)
+    pub worldSpace: *mut TESWorldSpace,
     /// +0x640 `float`, ctor store
     pub field_640: f32,
     /// +0x644 `float`, ctor store
@@ -103047,8 +103432,8 @@ pub struct PlayerCharacter {
     /// +0xAD0 `undefined4`, ctor store
     pub field_AD0: u32,
     pub unknown_AD4: [u8; 4],
-    /// +0xAD8 `ptr:BGSLocation`, ctor store, runtime
-    pub field_AD8: *mut BGSLocation,
+    /// +0xAD8 `ptr:BGSLocation`, ctor store, runtime, semantic; the player's current location (high)
+    pub currentLocation: *mut BGSLocation,
     /// +0xAE0 `undefined4`, ctor store
     pub field_AE0: u32,
     /// +0xAE4 `undefined4`, ctor store
@@ -103129,18 +103514,21 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_A0) == 0xA0);
@@ -103148,31 +103536,41 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_CC) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, flags1) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, flags2) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, boolFlags) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, currentProcess) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, dialogueTargetHandle) == 0x100);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, combatTargetHandle) == 0x104);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_148) == 0x148);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, movementController) == 0x150);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, combatController) == 0x160);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1B8) == 0x1B8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1C0) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, race) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, boolFlags2) == 0x204);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, avStorage) == 0x208);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, healthModifiers) == 0x230);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, magickaModifiers) == 0x23C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, staminaModifiers) == 0x248);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, voicePointsModifiers) == 0x254);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_268) == 0x268);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_270) == 0x270);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_274) == 0x274);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_279) == 0x279);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_280) == 0x280);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_288) == 0x288);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, criticalSection) == 0x290);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_2B8) == 0x2B8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_2C0) == 0x2C0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_2C8) == 0x2C8);
@@ -103224,7 +103622,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, m_NiTMap_618) == 0x
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_620) == 0x620);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, m_NiTMapBase_628) == 0x628);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_630) == 0x630);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_638) == 0x638);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, worldSpace) == 0x638);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_640) == 0x640);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_644) == 0x644);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_648) == 0x648);
@@ -103357,7 +103755,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A18) == 0xA18
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A20) == 0xA20);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A28) == 0xA28);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AD0) == 0xAD0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AD8) == 0xAD8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, currentLocation) == 0xAD8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AE0) == 0xAE0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AE4) == 0xAE4);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AE8) == 0xAE8);
@@ -103461,31 +103859,37 @@ pub struct Projectile {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Projectile:20`, rtti
     pub __vftable_20: *const vtables::Projectile_vtable_20,
-    /// +0x28 `undefined4`, base TESObjectREFR
-    pub field_28: u32,
+    /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Projectile:30`, rtti
     pub __vftable_30: *const vtables::Projectile_vtable_30,
     /// +0x38 `vtbl:Projectile:38`, rtti
     pub __vftable_38: *const vtables::Projectile_vtable_38,
-    /// +0x40 `undefined8`, base TESObjectREFR
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base TESObjectREFR
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base TESObjectREFR
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base TESObjectREFR
-    pub field_58: u64,
-    /// +0x60 `undefined8`, base TESObjectREFR
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base TESObjectREFR
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, base TESObjectREFR
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, base TESObjectREFR, semantic; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, base TESObjectREFR, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, base TESObjectREFR, semantic; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, base TESObjectREFR, semantic; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, base TESObjectREFR, semantic; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, base TESObjectREFR, semantic; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, base TESObjectREFR, semantic; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, base TESObjectREFR, semantic; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
     pub field_90: u64,
-    /// +0x98 `undefined2`, base TESObjectREFR
-    pub field_98: u16,
+    /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, base TESObjectREFR
     pub field_9A: u8,
     /// +0x9B `undefined1`, base TESObjectREFR
@@ -103595,18 +103999,21 @@ const _: () = assert!(core::mem::offset_of!(Projectile, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(Projectile, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Projectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Projectile, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Projectile, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Projectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(Projectile, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(Projectile, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(Projectile, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(Projectile, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(Projectile, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(Projectile, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Projectile, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(Projectile, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(Projectile, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(Projectile, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Projectile, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(Projectile, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(Projectile, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Projectile, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(Projectile, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(Projectile, field_9B) == 0x9B);
 const _: () = assert!(core::mem::offset_of!(Projectile, field_A0) == 0xA0);
@@ -105360,10 +105767,10 @@ pub struct ScrollItem {
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:ScrollItem:40`, rtti
     pub __vftable_40: *const vtables::ScrollItem_vtable_40,
-    /// +0x48 `undefined8`, base BGSKeywordForm
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BGSKeywordForm
-    pub field_50: u32,
+    /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
@@ -105449,8 +105856,8 @@ const _: () = assert!(core::mem::offset_of!(ScrollItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ScrollItem, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(ScrollItem, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, keywords) == 0x48);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, numKeywords) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, field_80) == 0x80);
@@ -107200,10 +107607,10 @@ pub struct SpellItem {
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:SpellItem:40`, rtti
     pub __vftable_40: *const vtables::SpellItem_vtable_40,
-    /// +0x48 `undefined8`, base BGSKeywordForm
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BGSKeywordForm
-    pub field_50: u32,
+    /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
@@ -107258,8 +107665,8 @@ const _: () = assert!(core::mem::offset_of!(SpellItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(SpellItem, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(SpellItem, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(SpellItem, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(SpellItem, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(SpellItem, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(SpellItem, keywords) == 0x48);
+const _: () = assert!(core::mem::offset_of!(SpellItem, numKeywords) == 0x50);
 const _: () = assert!(core::mem::offset_of!(SpellItem, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(SpellItem, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(SpellItem, field_80) == 0x80);
@@ -108563,12 +108970,16 @@ pub struct TESActorBase {
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESActorBase:30`, rtti
     pub __vftable_30: *const vtables::TESActorBase_vtable_30,
-    /// +0x38 `undefined8`, base TESActorBaseData
-    pub field_38: u64,
-    /// +0x40 `undefined4`, base TESActorBaseData
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base TESActorBaseData
-    pub field_44: u32,
+    /// +0x38 `undefined4`, base TESActorBaseData, semantic; ACBS flags; see the flag rows (high)
+    pub flags: u32,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `undefined2`, base TESActorBaseData, semantic; level, or level multiplier x1000 with PCLevelMult (high)
+    pub level: u16,
+    /// +0x42 `undefined2`, base TESActorBaseData, semantic; minimum level with PCLevelMult (high)
+    pub minLevel: u16,
+    /// +0x44 `undefined2`, base TESActorBaseData, semantic; maximum level with PCLevelMult (high)
+    pub maxLevel: u16,
+    pub unknown_46: [u8; 2],
     /// +0x48 `undefined2`, base TESActorBaseData
     pub field_48: u16,
     /// +0x4A `undefined2`, base TESActorBaseData
@@ -108579,8 +108990,8 @@ pub struct TESActorBase {
     pub field_4E: u16,
     /// +0x50 `undefined8`, base TESActorBaseData
     pub field_50: u64,
-    /// +0x58 `undefined8`, base TESActorBaseData
-    pub field_58: u64,
+    /// +0x58 `ptr:BGSVoiceType`, base TESActorBaseData, semantic; voice type (high)
+    pub voiceType: *mut BGSVoiceType,
     /// +0x60 `undefined8`, base TESActorBaseData
     pub field_60: u64,
     /// +0x68 `undefined4`, base TESActorBaseData
@@ -108588,10 +108999,10 @@ pub struct TESActorBase {
     pub unknown_6C: [u8; 28],
     /// +0x88 `vtbl:TESActorBase:88`, rtti
     pub __vftable_88: *const vtables::TESActorBase_vtable_88,
-    /// +0x90 `undefined8`, base TESContainer
-    pub field_90: u64,
-    /// +0x98 `undefined4`, base TESContainer
-    pub field_98: u32,
+    /// +0x90 `pointer`, base TESContainer, semantic; ContainerObject*[numEntries] (high)
+    pub entries: *mut c_void,
+    /// +0x98 `undefined4`, base TESContainer, semantic; number of entries (high)
+    pub numEntries: u32,
     /// +0x9C `undefined1`, base TESContainer
     pub field_9C: u8,
     pub unknown_9D: [u8; 3],
@@ -108623,10 +109034,10 @@ pub struct TESActorBase {
     pub field_108: u64,
     /// +0x110 `vtbl:TESActorBase:110`, rtti
     pub __vftable_110: *const vtables::TESActorBase_vtable_110,
-    /// +0x118 `undefined8`, base BGSKeywordForm
-    pub field_118: u64,
-    /// +0x120 `undefined4`, base BGSKeywordForm
-    pub field_120: u32,
+    /// +0x118 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x120 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_124: [u8; 4],
     /// +0x128 `vtbl:TESActorBase:128`, rtti
     pub __vftable_128: *const vtables::TESActorBase_vtable_128,
@@ -108654,20 +109065,21 @@ const _: () = assert!(core::mem::offset_of!(TESActorBase, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, flags) == 0x38);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, level) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, minLevel) == 0x42);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, maxLevel) == 0x44);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_4A) == 0x4A);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_4E) == 0x4E);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, voiceType) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, entries) == 0x90);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, numEntries) == 0x98);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_A8) == 0xA8);
@@ -108682,13 +109094,64 @@ const _: () = assert!(core::mem::offset_of!(TESActorBase, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_100) == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, keywords) == 0x118);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, numKeywords) == 0x120);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_140) == 0x140);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_148) == 0x148);
+
+/// `TESActorBaseData`: size 0x58 (exact, high); primary base `BaseFormComponent`.
+/// Meaning: actor base data component: flags, level, voice type (high, actors pass).
+/// Evidence: actors pass (runtime): component at TESNPC+0x30; 0x58 bytes because TESContainer follows at +0x88 (rtti base displacements); fields from 0x1dd3b0 (level, flags bit 7, min/max level) and the Papyrus natives GetSex/IsEssential/IsUnique; live values on the player's base in run-actors.
+/// Bases: `BaseFormComponent`@0x0.
+#[repr(C)]
+pub struct TESActorBaseData {
+    /// +0x0 `vtbl:TESActorBaseData:0`, rtti
+    pub __vftable: *const vtables::TESActorBaseData_vtable,
+    /// +0x8 `undefined4`, ctor store, semantic, runtime; ACBS flags; see the flag rows (high)
+    pub flags: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined2`, ctor store, semantic, runtime; level, or level multiplier x1000 with PCLevelMult (high)
+    pub level: u16,
+    /// +0x12 `undefined2`, semantic, runtime; minimum level with PCLevelMult (high)
+    pub minLevel: u16,
+    /// +0x14 `undefined2`, ctor store, semantic, runtime; maximum level with PCLevelMult (high)
+    pub maxLevel: u16,
+    pub unknown_16: [u8; 2],
+    /// +0x18 `undefined2`, ctor store
+    pub field_18: u16,
+    /// +0x1A `undefined2`, ctor store
+    pub field_1A: u16,
+    /// +0x1C `undefined2`, ctor store
+    pub field_1C: u16,
+    /// +0x1E `undefined2`, ctor store
+    pub field_1E: u16,
+    /// +0x20 `undefined8`, ctor store
+    pub field_20: u64,
+    /// +0x28 `ptr:BGSVoiceType`, ctor store, semantic, runtime; voice type (high)
+    pub voiceType: *mut BGSVoiceType,
+    /// +0x30 `undefined8`, ctor store
+    pub field_30: u64,
+    /// +0x38 `undefined4`, ctor store
+    pub field_38: u32,
+    pub unknown_3C: [u8; 28],
+}
+const _: () = assert!(size_of::<TESActorBaseData>() == 0x58);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, flags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, level) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, minLevel) == 0x12);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, maxLevel) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_1E) == 0x1E);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, voiceType) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_38) == 0x38);
 
 /// `TESAmbushPackageData`: size 0x10 (exact, medium); primary base `TESPackageData`.
 /// Evidence: allocation sites (medium): {'16': 1}.
@@ -108782,10 +109245,10 @@ pub struct TESAmmo {
     pub unknown_F4: [u8; 4],
     /// +0xF8 `vtbl:TESAmmo:F8`, rtti
     pub __vftable_F8: *const vtables::TESAmmo_vtable_F8,
-    /// +0x100 `undefined8`, base BGSKeywordForm
-    pub field_100: u64,
-    /// +0x108 `undefined4`, base BGSKeywordForm
-    pub field_108: u32,
+    /// +0x100 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x108 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_10C: [u8; 28],
 }
 const _: () = assert!(size_of::<TESAmmo>() == 0x128);
@@ -108820,8 +109283,8 @@ const _: () = assert!(core::mem::offset_of!(TESAmmo, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESAmmo, __vftable_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(TESAmmo, field_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESAmmo, __vftable_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(TESAmmo, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(TESAmmo, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(TESAmmo, keywords) == 0x100);
+const _: () = assert!(core::mem::offset_of!(TESAmmo, numKeywords) == 0x108);
 
 /// `TESAttackDamageForm`: size 0x10 (exact, medium); primary base `BaseFormComponent`.
 /// Evidence: lower bound field field_8 meets upper bound next base of TESObjectWEAP at 0xD0.
@@ -109201,24 +109664,25 @@ const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_9C) == 0x9C);
 
 /// `TESContainer`: size 0x18 (exact, medium); primary base `BaseFormComponent`.
+/// Meaning: base container component: the items an NPC_ or CONT record starts with (high, actors pass).
 /// Evidence: runtime: 0x18 at 1 allocation sites.
 /// Bases: `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct TESContainer {
     /// +0x0 `vtbl:TESContainer:0`, rtti
     pub __vftable: *const vtables::TESContainer_vtable,
-    /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
-    /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    /// +0x8 `pointer`, ctor store, semantic, runtime; ContainerObject*[numEntries] (high)
+    pub entries: *mut c_void,
+    /// +0x10 `undefined4`, ctor store, semantic, runtime; number of entries (high)
+    pub numEntries: u32,
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 3],
 }
 const _: () = assert!(size_of::<TESContainer>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESContainer, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESContainer, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESContainer, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESContainer, entries) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESContainer, numEntries) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESContainer, field_14) == 0x14);
 
 /// `TESCustomPackageData`: size 0x40 (exact, medium); primary base `TESPackageData`.
@@ -109752,10 +110216,10 @@ pub struct TESFlora {
     pub __vftable_88: *const vtables::TESFlora_vtable_88,
     /// +0x90 `vtbl:TESFlora:90`, rtti
     pub __vftable_90: *const vtables::TESFlora_vtable_90,
-    /// +0x98 `undefined8`, base BGSKeywordForm
-    pub field_98: u64,
-    /// +0xA0 `undefined4`, base BGSKeywordForm
-    pub field_A0: u32,
+    /// +0x98 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0xA0 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, base TESObjectACTI
     pub field_A8: u64,
@@ -109798,8 +110262,8 @@ const _: () = assert!(core::mem::offset_of!(TESFlora, __vftable_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESFlora, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESFlora, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESFlora, __vftable_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESFlora, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(TESFlora, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(TESFlora, keywords) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESFlora, numKeywords) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESFlora, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(TESFlora, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(TESFlora, field_B8) == 0xB8);
@@ -109835,15 +110299,15 @@ const _: () = assert!(core::mem::offset_of!(TESFollowPackageData, field_10) == 0
 pub struct TESForm {
     /// +0x0 `vtbl:TESForm:0`, rtti
     pub __vftable: *const vtables::TESForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; array of the files this form was read from; null for runtime-created forms (high)
+    /// +0x8 `ptr:TESFileArray`, ctor store, semantic, runtime; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; record flags; see the flag rows (high)
+    /// +0x10 `undefined4`, ctor store, semantic, runtime; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; the form id (high)
+    /// +0x14 `undefined4`, semantic, runtime; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
+    /// +0x18 `undefined2`, ctor store, semantic, runtime; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; FormType of the record (high)
+    /// +0x1A `undefined1`, ctor store, semantic, runtime; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
 }
@@ -109911,13 +110375,15 @@ const _: () = assert!(size_of::<TESFormUIData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFormUIData, __vftable) == 0x0);
 
 /// `TESFullName`: size 0x18 (exact, high); primary base `BaseFormComponent`.
+/// Meaning: full name component (high, actors pass).
 /// Evidence: runtime: 0x18 at 3 allocation sites; agrees with the static allocation sites; upper bound 0x10 (next base of ActorValueInfo at 0x30) was wrong.
 /// Bases: `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct TESFullName {
     /// +0x0 `vtbl:TESFullName:0`, rtti
     pub __vftable: *const vtables::TESFullName_vtable,
-    pub unknown_8: [u8; 8],
+    /// +0x8 `pointer`, semantic, runtime; BSFixedString full name (high)
+    pub name: *mut c_void,
     /// +0x10 `undefined1`, ctor store (widths [1, 4])
     pub field_10: u8,
     /// +0x11 `undefined1`, ctor store
@@ -109928,6 +110394,7 @@ pub struct TESFullName {
 }
 const _: () = assert!(size_of::<TESFullName>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFullName, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESFullName, name) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESFullName, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESFullName, field_11) == 0x11);
 const _: () = assert!(core::mem::offset_of!(TESFullName, field_12) == 0x12);
@@ -109985,10 +110452,10 @@ pub struct TESFurniture {
     pub __vftable_88: *const vtables::TESFurniture_vtable_88,
     /// +0x90 `vtbl:TESFurniture:90`, rtti
     pub __vftable_90: *const vtables::TESFurniture_vtable_90,
-    /// +0x98 `undefined8`, base BGSKeywordForm
-    pub field_98: u64,
-    /// +0xA0 `undefined4`, base BGSKeywordForm
-    pub field_A0: u32,
+    /// +0x98 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0xA0 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, base TESObjectACTI
     pub field_A8: u64,
@@ -110029,8 +110496,8 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, __vftable_78) == 0x78)
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, __vftable_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, keywords) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, numKeywords) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_B8) == 0xB8);
@@ -110063,10 +110530,10 @@ pub struct TESGlobal {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined1`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; type character of the global (s, l, f) (medium)
+    /// +0x30 `undefined1`, ctor store, semantic, runtime; type character of the global (s, l, f) (medium)
     pub valueType: u8,
     pub unknown_31: [u8; 3],
-    /// +0x34 `float`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; the value, stored as float (high)
+    /// +0x34 `float`, ctor store, semantic, runtime; the value, stored as float (high)
     pub value: f32,
 }
 const _: () = assert!(size_of::<TESGlobal>() == 0x38);
@@ -110480,10 +110947,10 @@ pub struct TESKey {
     pub field_E0: u64,
     /// +0xE8 `vtbl:TESKey:E8`, rtti
     pub __vftable_E8: *const vtables::TESKey_vtable_E8,
-    /// +0xF0 `undefined8`, base BGSKeywordForm
-    pub field_F0: u64,
-    /// +0xF8 `undefined4`, base BGSKeywordForm
-    pub field_F8: u32,
+    /// +0xF0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_FC: [u8; 4],
 }
 const _: () = assert!(size_of::<TESKey>() == 0x100);
@@ -110516,8 +110983,8 @@ const _: () = assert!(core::mem::offset_of!(TESKey, __vftable_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(TESKey, field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(TESKey, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESKey, __vftable_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(TESKey, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(TESKey, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(TESKey, keywords) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(TESKey, numKeywords) == 0xF8);
 
 /// `TESLandTexture`: size 0x50 (exact, high); primary base `TESForm`.
 /// Evidence: runtime: 0x50 at 2 allocation sites.
@@ -110926,6 +111393,7 @@ const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, field_28) == 0x
 const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, field_30) == 0x30);
 
 /// `TESNPC`: size 0x268 (exact, high); primary base `TESActorBase`.
+/// Meaning: NPC_ record, the base object of every Character (high, actors pass).
 /// Evidence: runtime: 0x268 at 3 allocation sites.
 /// Bases: `TESActorBase`@0x0, `TESBoundAnimObject`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESActorBaseData`@0x30, `BaseFormComponent`@0x30, `TESContainer`@0x88, `BaseFormComponent`@0x88, `TESSpellList`@0xA0, `BaseFormComponent`@0xA0, `TESAIForm`@0xB0, `BaseFormComponent`@0xB0, `TESFullName`@0xD8, `BaseFormComponent`@0xD8, `ActorValueOwner`@0xE8, `BGSDestructibleObjectForm`@0xF0, `BaseFormComponent`@0xF0, `BGSSkinForm`@0x100, `BaseFormComponent`@0x100, `BGSKeywordForm`@0x110, `BaseFormComponent`@0x110, `BGSAttackDataForm`@0x128, `BaseFormComponent`@0x128, `BGSPerkRankArray`@0x138, `BaseFormComponent`@0x138, `TESRaceForm`@0x150, `BaseFormComponent`@0x150, `BGSOverridePackCollection`@0x160, `BaseFormComponent`@0x160, `BSTEventSink<MenuOpenCloseEvent>`@0x188.
 #[repr(C)]
@@ -110958,12 +111426,16 @@ pub struct TESNPC {
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESNPC:30`, rtti
     pub __vftable_30: *const vtables::TESNPC_vtable_30,
-    /// +0x38 `undefined8`, base TESActorBaseData
-    pub field_38: u64,
-    /// +0x40 `undefined4`, base TESActorBaseData
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base TESActorBaseData
-    pub field_44: u32,
+    /// +0x38 `undefined4`, base TESActorBaseData, semantic; ACBS flags; see the flag rows (high)
+    pub flags: u32,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `undefined2`, base TESActorBaseData, semantic; level, or level multiplier x1000 with PCLevelMult (high)
+    pub level: u16,
+    /// +0x42 `undefined2`, base TESActorBaseData, semantic; minimum level with PCLevelMult (high)
+    pub minLevel: u16,
+    /// +0x44 `undefined2`, base TESActorBaseData, semantic; maximum level with PCLevelMult (high)
+    pub maxLevel: u16,
+    pub unknown_46: [u8; 2],
     /// +0x48 `undefined2`, base TESActorBaseData
     pub field_48: u16,
     /// +0x4A `undefined2`, base TESActorBaseData
@@ -110974,8 +111446,8 @@ pub struct TESNPC {
     pub field_4E: u16,
     /// +0x50 `undefined8`, base TESActorBaseData
     pub field_50: u64,
-    /// +0x58 `ptr:BGSVoiceType`, base TESActorBaseData, runtime
-    pub field_58: *mut BGSVoiceType,
+    /// +0x58 `ptr:BGSVoiceType`, base TESActorBaseData, semantic; voice type (high)
+    pub voiceType: *mut BGSVoiceType,
     /// +0x60 `undefined8`, base TESActorBaseData
     pub field_60: u64,
     /// +0x68 `undefined4`, base TESActorBaseData
@@ -110983,10 +111455,10 @@ pub struct TESNPC {
     pub unknown_6C: [u8; 28],
     /// +0x88 `vtbl:TESNPC:88`, rtti
     pub __vftable_88: *const vtables::TESNPC_vtable_88,
-    /// +0x90 `undefined8`, base TESContainer
-    pub field_90: u64,
-    /// +0x98 `undefined4`, base TESContainer
-    pub field_98: u32,
+    /// +0x90 `pointer`, base TESContainer, semantic; ContainerObject*[numEntries] (high)
+    pub entries: *mut c_void,
+    /// +0x98 `undefined4`, base TESContainer, semantic; number of entries (high)
+    pub numEntries: u32,
     /// +0x9C `undefined1`, base TESContainer
     pub field_9C: u8,
     pub unknown_9D: [u8; 3],
@@ -111005,7 +111477,8 @@ pub struct TESNPC {
     pub unknown_C2: [u8; 22],
     /// +0xD8 `vtbl:TESNPC:D8`, rtti
     pub __vftable_D8: *const vtables::TESNPC_vtable_D8,
-    pub unknown_E0: [u8; 8],
+    /// +0xE0 `pointer`, semantic, runtime; the NPC's full name (BSFixedString) (high)
+    pub fullName: *mut c_void,
     /// +0xE8 `vtbl:TESNPC:E8`, rtti
     pub __vftable_E8: *const vtables::TESNPC_vtable_E8,
     /// +0xF0 `vtbl:TESNPC:F0`, rtti
@@ -111018,10 +111491,10 @@ pub struct TESNPC {
     pub field_108: u64,
     /// +0x110 `vtbl:TESNPC:110`, rtti
     pub __vftable_110: *const vtables::TESNPC_vtable_110,
-    /// +0x118 `undefined8`, base BGSKeywordForm
-    pub field_118: u64,
-    /// +0x120 `undefined4`, base BGSKeywordForm
-    pub field_120: u32,
+    /// +0x118 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x120 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_124: [u8; 4],
     /// +0x128 `vtbl:TESNPC:128`, rtti
     pub __vftable_128: *const vtables::TESNPC_vtable_128,
@@ -111036,8 +111509,8 @@ pub struct TESNPC {
     pub unknown_14C: [u8; 4],
     /// +0x150 `vtbl:TESNPC:150`, rtti
     pub __vftable_150: *const vtables::TESNPC_vtable_150,
-    /// +0x158 `ptr:TESRace`, base TESRaceForm, runtime
-    pub field_158: *mut TESRace,
+    /// +0x158 `ptr:TESRace`, base TESRaceForm, runtime, semantic; the NPC's race (high)
+    pub race: *mut TESRace,
     /// +0x160 `vtbl:TESNPC:160`, rtti
     pub __vftable_160: *const vtables::TESNPC_vtable_160,
     /// +0x168 `undefined8`, base BGSOverridePackCollection
@@ -111051,12 +111524,17 @@ pub struct TESNPC {
     /// +0x188 `vtbl:TESNPC:188`, rtti
     pub __vftable_188: *const vtables::TESNPC_vtable_188,
     pub unknown_190: [u8; 48],
-    /// +0x1C0 `ptr:TESClass`, runtime
-    pub field_1C0: *mut TESClass,
+    /// +0x1C0 `ptr:TESClass`, runtime, semantic; the NPC's class (high)
+    pub npcClass: *mut TESClass,
     pub unknown_1C8: [u8; 16],
     /// +0x1D8 `ptr:TESCombatStyle`, runtime
     pub field_1D8: *mut TESCombatStyle,
-    pub unknown_1E0: [u8; 136],
+    pub unknown_1E0: [u8; 24],
+    /// +0x1F8 `float`, semantic, runtime; height multiplier (high)
+    pub height: f32,
+    /// +0x1FC `float`, semantic, runtime; weight (0-100) (medium)
+    pub weight: f32,
+    pub unknown_200: [u8; 104],
 }
 const _: () = assert!(size_of::<TESNPC>() == 0x268);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable) == 0x0);
@@ -111072,20 +111550,21 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(TESNPC, flags) == 0x38);
+const _: () = assert!(core::mem::offset_of!(TESNPC, level) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESNPC, minLevel) == 0x42);
+const _: () = assert!(core::mem::offset_of!(TESNPC, maxLevel) == 0x44);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_4A) == 0x4A);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_4E) == 0x4E);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(TESNPC, voiceType) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESNPC, entries) == 0x90);
+const _: () = assert!(core::mem::offset_of!(TESNPC, numEntries) == 0x98);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_A8) == 0xA8);
@@ -111094,29 +111573,32 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_BC) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(TESNPC, fullName) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_100) == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(TESNPC, keywords) == 0x118);
+const _: () = assert!(core::mem::offset_of!(TESNPC, numKeywords) == 0x120);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_140) == 0x140);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_148) == 0x148);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_150) == 0x150);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_158) == 0x158);
+const _: () = assert!(core::mem::offset_of!(TESNPC, race) == 0x158);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_168) == 0x168);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_178) == 0x178);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_180) == 0x180);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_188) == 0x188);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(TESNPC, npcClass) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(TESNPC, height) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(TESNPC, weight) == 0x1FC);
 
 /// `TESObject`: size 0x20 (exact, medium); primary base `TESForm`.
 /// Evidence: lower bound base TESForm at 0x0 meets upper bound next base of TESObjectARMA at 0x20.
@@ -111198,10 +111680,10 @@ pub struct TESObjectACTI {
     pub __vftable_88: *const vtables::TESObjectACTI_vtable_88,
     /// +0x90 `vtbl:TESObjectACTI:90`, rtti
     pub __vftable_90: *const vtables::TESObjectACTI_vtable_90,
-    /// +0x98 `undefined8`, base BGSKeywordForm
-    pub field_98: u64,
-    /// +0xA0 `undefined4`, base BGSKeywordForm
-    pub field_A0: u32,
+    /// +0x98 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0xA0 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
@@ -111235,8 +111717,8 @@ const _: () = assert!(core::mem::offset_of!(TESObjectACTI, __vftable_78) == 0x78
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, __vftable_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(TESObjectACTI, keywords) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESObjectACTI, numKeywords) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_B8) == 0xB8);
@@ -111456,10 +111938,10 @@ pub struct TESObjectARMO {
     pub field_1D0: u64,
     /// +0x1D8 `vtbl:TESObjectARMO:1D8`, rtti
     pub __vftable_1D8: *const vtables::TESObjectARMO_vtable_1D8,
-    /// +0x1E0 `undefined8`, base BGSKeywordForm
-    pub field_1E0: u64,
-    /// +0x1E8 `undefined4`, base BGSKeywordForm
-    pub field_1E8: u32,
+    /// +0x1E0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x1E8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_1EC: [u8; 4],
     /// +0x1F0 `vtbl:TESObjectARMO:1F0`, rtti
     pub __vftable_1F0: *const vtables::TESObjectARMO_vtable_1F0,
@@ -111506,8 +111988,8 @@ const _: () = assert!(core::mem::offset_of!(TESObjectARMO, __vftable_1C0) == 0x1
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1C8) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1D0) == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, __vftable_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1E0) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1E8) == 0x1E8);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMO, keywords) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMO, numKeywords) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, __vftable_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1F8) == 0x1F8);
 
@@ -111589,10 +112071,10 @@ pub struct TESObjectBOOK {
     pub field_F0: u64,
     /// +0xF8 `vtbl:TESObjectBOOK:F8`, rtti
     pub __vftable_F8: *const vtables::TESObjectBOOK_vtable_F8,
-    /// +0x100 `undefined8`, base BGSKeywordForm
-    pub field_100: u64,
-    /// +0x108 `undefined4`, base BGSKeywordForm
-    pub field_108: u32,
+    /// +0x100 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x108 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_10C: [u8; 44],
 }
 const _: () = assert!(size_of::<TESObjectBOOK>() == 0x138);
@@ -111627,8 +112109,8 @@ const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, __vftable_E0) == 0xE0
 const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, __vftable_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, keywords) == 0x100);
+const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, numKeywords) == 0x108);
 
 /// `TESObjectCELL`: size 0x148 (exact, high); primary base `TESForm`.
 /// Evidence: runtime: 0x148 at 3 allocation sites; agrees with the static allocation sites.
@@ -111650,7 +112132,8 @@ pub struct TESObjectCELL {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectCELL:20`, rtti
     pub __vftable_20: *const vtables::TESObjectCELL_vtable_20,
-    pub unknown_28: [u8; 8],
+    /// +0x28 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
+    pub name: *mut c_void,
     /// +0x30 `undefined1`, base TESFullName
     pub field_30: u8,
     /// +0x31 `undefined1`, base TESFullName
@@ -111718,6 +112201,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCELL, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, __vftable_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESObjectCELL, name) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_31) == 0x31);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_32) == 0x32);
@@ -111777,10 +112261,10 @@ pub struct TESObjectCONT {
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectCONT:30`, rtti
     pub __vftable_30: *const vtables::TESObjectCONT_vtable_30,
-    /// +0x38 `undefined8`, base TESContainer
-    pub field_38: u64,
-    /// +0x40 `undefined4`, base TESContainer
-    pub field_40: u32,
+    /// +0x38 `pointer`, base TESContainer, semantic; ContainerObject*[numEntries] (high)
+    pub entries: *mut c_void,
+    /// +0x40 `undefined4`, base TESContainer, semantic; number of entries (high)
+    pub numEntries: u32,
     /// +0x44 `undefined1`, base TESContainer
     pub field_44: u8,
     pub unknown_45: [u8; 3],
@@ -111832,8 +112316,8 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESObjectCONT, entries) == 0x38);
+const _: () = assert!(core::mem::offset_of!(TESObjectCONT, numEntries) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, __vftable_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, __vftable_58) == 0x58);
@@ -112153,10 +112637,10 @@ pub struct TESObjectMISC {
     pub field_E0: u64,
     /// +0xE8 `vtbl:TESObjectMISC:E8`, rtti
     pub __vftable_E8: *const vtables::TESObjectMISC_vtable_E8,
-    /// +0xF0 `undefined8`, base BGSKeywordForm
-    pub field_F0: u64,
-    /// +0xF8 `undefined4`, base BGSKeywordForm
-    pub field_F8: u32,
+    /// +0xF0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_FC: [u8; 4],
 }
 const _: () = assert!(size_of::<TESObjectMISC>() == 0x100);
@@ -112189,10 +112673,11 @@ const _: () = assert!(core::mem::offset_of!(TESObjectMISC, __vftable_D0) == 0xD0
 const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESObjectMISC, __vftable_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(TESObjectMISC, keywords) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(TESObjectMISC, numKeywords) == 0xF8);
 
 /// `TESObjectREFR`: size 0xA0 (exact, high); primary base `TESForm`.
+/// Meaning: placed reference: a form with a base object, a cell, a transform, a handle and an extra data list (high, actors pass).
 /// Evidence: runtime: 0xA0 at 11 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `BSHandleRefObject`@0x20, `NiRefObject`@0x20, `BSTEventSink<BSAnimationGraphEvent>`@0x30, `IAnimationGraphManagerHolder`@0x38.
 #[repr(C)]
@@ -112212,31 +112697,37 @@ pub struct TESObjectREFR {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectREFR:20`, rtti
     pub __vftable_20: *const vtables::TESObjectREFR_vtable_20,
-    /// +0x28 `undefined4`, ctor store
-    pub field_28: u32,
+    /// +0x28 `undefined4`, ctor store, semantic, runtime; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
+    pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectREFR:30`, rtti
     pub __vftable_30: *const vtables::TESObjectREFR_vtable_30,
     /// +0x38 `vtbl:TESObjectREFR:38`, rtti
     pub __vftable_38: *const vtables::TESObjectREFR_vtable_38,
-    /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
-    /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
-    /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
-    /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
-    /// +0x60 `undefined8`, ctor store
-    pub field_60: u64,
-    /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
-    /// +0x70 `class:BaseExtraList`, member ctor BaseExtraList
-    pub m_BaseExtraList_70: BaseExtraList,
+    /// +0x40 `ptr:TESForm`, ctor store, semantic, runtime; the base form (TESNPC for actors) (high)
+    pub baseObject: *mut TESForm,
+    /// +0x48 `float`, ctor store, semantic, runtime; rotation about X, radians (high)
+    pub rotX: f32,
+    /// +0x4C `float`, semantic; rotation about Y, radians (high)
+    pub rotY: f32,
+    /// +0x50 `float`, ctor store, semantic, runtime; rotation about Z (heading), radians (high)
+    pub rotZ: f32,
+    /// +0x54 `float`, semantic, runtime; world position X (high)
+    pub posX: f32,
+    /// +0x58 `float`, ctor store, semantic, runtime; world position Y (high)
+    pub posY: f32,
+    /// +0x5C `float`, semantic, runtime; world position Z (high)
+    pub posZ: f32,
+    /// +0x60 `ptr:TESObjectCELL`, ctor store, semantic, runtime; the cell the reference is in; null when not loaded (high)
+    pub parentCell: *mut TESObjectCELL,
+    /// +0x68 `ptr:LoadedReferenceData`, ctor store, semantic, runtime; loaded-state data holding the 3D root; null when the reference has no 3D (high)
+    pub loadedData: *mut LoadedReferenceData,
+    /// +0x70 `class:BaseExtraList`, member ctor BaseExtraList, semantic, runtime; the reference's extra data list (high)
+    pub extraList: BaseExtraList,
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
-    /// +0x98 `undefined2`, ctor store
-    pub field_98: u16,
+    /// +0x98 `undefined2`, ctor store, semantic, runtime; scale in percent (high)
+    pub refScale: u16,
     /// +0x9A `undefined1`, ctor store
     pub field_9A: u8,
     /// +0x9B `undefined1`, ctor store
@@ -112251,18 +112742,21 @@ const _: () = assert!(core::mem::offset_of!(TESObjectREFR, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, refCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, m_BaseExtraList_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, baseObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, rotX) == 0x48);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, rotY) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, rotZ) == 0x50);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, posX) == 0x54);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, posY) == 0x58);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, posZ) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, parentCell) == 0x60);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, loadedData) == 0x68);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, extraList) == 0x70);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, refScale) == 0x98);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_9A) == 0x9A);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_9B) == 0x9B);
 
@@ -112638,10 +113132,10 @@ pub struct TESObjectWEAP {
     pub field_138: u64,
     /// +0x140 `vtbl:TESObjectWEAP:140`, rtti
     pub __vftable_140: *const vtables::TESObjectWEAP_vtable_140,
-    /// +0x148 `undefined8`, base BGSKeywordForm
-    pub field_148: u64,
-    /// +0x150 `undefined4`, base BGSKeywordForm
-    pub field_150: u32,
+    /// +0x148 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x150 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_154: [u8; 4],
     /// +0x158 `vtbl:TESObjectWEAP:158`, rtti
     pub __vftable_158: *const vtables::TESObjectWEAP_vtable_158,
@@ -112690,8 +113184,8 @@ const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_128) == 0x1
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_148) == 0x148);
-const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, keywords) == 0x148);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, numKeywords) == 0x150);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_160) == 0x160);
 
@@ -112851,7 +113345,8 @@ pub struct TESQuest {
     pub unknown_24: [u8; 4],
     /// +0x28 `vtbl:TESQuest:28`, rtti
     pub __vftable_28: *const vtables::TESQuest_vtable_28,
-    pub unknown_30: [u8; 8],
+    /// +0x30 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
+    pub name: *mut c_void,
     /// +0x38 `undefined1`, base TESFullName
     pub field_38: u8,
     /// +0x39 `undefined1`, base TESFullName
@@ -112942,6 +113437,7 @@ const _: () = assert!(core::mem::offset_of!(TESQuest, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESQuest, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESQuest, __vftable_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESQuest, name) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_39) == 0x39);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_3A) == 0x3A);
@@ -113017,10 +113513,10 @@ pub struct TESRace {
     pub field_6C: u32,
     /// +0x70 `vtbl:TESRace:70`, rtti
     pub __vftable_70: *const vtables::TESRace_vtable_70,
-    /// +0x78 `undefined8`, base BGSKeywordForm
-    pub field_78: u64,
-    /// +0x80 `undefined4`, base BGSKeywordForm
-    pub field_80: u32,
+    /// +0x78 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x80 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_84: [u8; 4],
     /// +0x88 `vtbl:TESRace:88`, rtti
     pub __vftable_88: *const vtables::TESRace_vtable_88,
@@ -113060,8 +113556,8 @@ const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_6C) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(TESRace, keywords) == 0x78);
+const _: () = assert!(core::mem::offset_of!(TESRace, numKeywords) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_168) == 0x168);
@@ -113488,10 +113984,10 @@ pub struct TESSoulGem {
     pub field_E0: u64,
     /// +0xE8 `vtbl:TESSoulGem:E8`, rtti
     pub __vftable_E8: *const vtables::TESSoulGem_vtable_E8,
-    /// +0xF0 `undefined8`, base BGSKeywordForm
-    pub field_F0: u64,
-    /// +0xF8 `undefined4`, base BGSKeywordForm
-    pub field_F8: u32,
+    /// +0xF0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
     pub unknown_FC: [u8; 20],
 }
 const _: () = assert!(size_of::<TESSoulGem>() == 0x110);
@@ -113524,8 +114020,8 @@ const _: () = assert!(core::mem::offset_of!(TESSoulGem, __vftable_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESSoulGem, __vftable_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(TESSoulGem, keywords) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(TESSoulGem, numKeywords) == 0xF8);
 
 /// `TESSound`: size 0x38 (exact, medium); primary base `TESBoundAnimObject`.
 /// Evidence: runtime: 0x38 at 1 allocation sites.
@@ -113622,7 +114118,8 @@ pub struct TESTopic {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESTopic:20`, rtti
     pub __vftable_20: *const vtables::TESTopic_vtable_20,
-    pub unknown_28: [u8; 8],
+    /// +0x28 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
+    pub name: *mut c_void,
     /// +0x30 `undefined1`, base TESFullName
     pub field_30: u8,
     /// +0x31 `undefined1`, base TESFullName
@@ -113650,6 +114147,7 @@ const _: () = assert!(core::mem::offset_of!(TESTopic, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESTopic, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESTopic, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESTopic, __vftable_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESTopic, name) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESTopic, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESTopic, field_31) == 0x31);
 const _: () = assert!(core::mem::offset_of!(TESTopic, field_32) == 0x32);
@@ -114407,7 +114905,8 @@ pub struct TESWordOfPower {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWordOfPower:20`, rtti
     pub __vftable_20: *const vtables::TESWordOfPower_vtable_20,
-    pub unknown_28: [u8; 8],
+    /// +0x28 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
+    pub name: *mut c_void,
     /// +0x30 `undefined1`, base TESFullName
     pub field_30: u8,
     /// +0x31 `undefined1`, base TESFullName
@@ -114424,6 +114923,7 @@ const _: () = assert!(core::mem::offset_of!(TESWordOfPower, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, __vftable_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESWordOfPower, name) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_31) == 0x31);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_32) == 0x32);
@@ -186904,50 +187404,6 @@ pub mod partial {
     const _: () = assert!(core::mem::offset_of!(TESActionData, field_68) == 0x68);
     const _: () = assert!(core::mem::offset_of!(TESActionData, field_70) == 0x70);
     const _: () = assert!(core::mem::offset_of!(TESActionData, field_80) == 0x80);
-
-    /// `TESActorBaseData`: size >= 0x40 (lower bound, upper bound 0x58); partial, the struct stops at the lower bound; primary base `BaseFormComponent`.
-    /// Evidence: lower field field_38; upper next base of TESActorBase at 0x88.
-    /// Bases: `BaseFormComponent`@0x0.
-    #[repr(C)]
-    pub struct TESActorBaseData {
-        /// +0x0 `vtbl:TESActorBaseData:0`, rtti
-        pub __vftable: *const vtables::TESActorBaseData_vtable,
-        /// +0x8 `undefined8`, ctor store
-        pub field_8: u64,
-        /// +0x10 `undefined4`, ctor store
-        pub field_10: u32,
-        /// +0x14 `undefined4`, ctor store
-        pub field_14: u32,
-        /// +0x18 `undefined2`, ctor store
-        pub field_18: u16,
-        /// +0x1A `undefined2`, ctor store
-        pub field_1A: u16,
-        /// +0x1C `undefined2`, ctor store
-        pub field_1C: u16,
-        /// +0x1E `undefined2`, ctor store
-        pub field_1E: u16,
-        /// +0x20 `undefined8`, ctor store
-        pub field_20: u64,
-        /// +0x28 `undefined8`, ctor store
-        pub field_28: u64,
-        /// +0x30 `undefined8`, ctor store
-        pub field_30: u64,
-        /// +0x38 `undefined4`, ctor store
-        pub field_38: u32,
-        pub unknown_3C: [u8; 4],
-    }
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_14) == 0x14);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_1A) == 0x1A);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_1C) == 0x1C);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_1E) == 0x1E);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_20) == 0x20);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_28) == 0x28);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_30) == 0x30);
-    const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_38) == 0x38);
 
     /// `TESAnimGroup`: size >= 0x58 (lower bound); partial, the struct stops at the lower bound; primary base `NiRefObject`.
     /// Evidence: field field_50.

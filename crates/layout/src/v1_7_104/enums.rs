@@ -576,6 +576,583 @@ impl FormType {
     }
 }
 
+/// actor value ids; 0xa4 (164) means none (actors pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ActorValue {
+    /// `Aggression`
+    Aggression = 0,
+    /// `Confidence`
+    Confidence = 1,
+    /// `Energy`
+    Energy = 2,
+    /// `Morality`
+    Morality = 3,
+    /// `Mood`
+    Mood = 4,
+    /// `Assistance`
+    Assistance = 5,
+    /// `OneHanded`
+    OneHanded = 6,
+    /// `TwoHanded`
+    TwoHanded = 7,
+    /// `Marksman`
+    Marksman = 8,
+    /// `Block`
+    Block = 9,
+    /// `Smithing`
+    Smithing = 10,
+    /// `HeavyArmor`
+    HeavyArmor = 11,
+    /// `LightArmor`
+    LightArmor = 12,
+    /// `Pickpocket`
+    Pickpocket = 13,
+    /// `Lockpicking`
+    Lockpicking = 14,
+    /// `Sneak`
+    Sneak = 15,
+    /// `Alchemy`
+    Alchemy = 16,
+    /// `Speechcraft`
+    Speechcraft = 17,
+    /// `Alteration`
+    Alteration = 18,
+    /// `Conjuration`
+    Conjuration = 19,
+    /// `Destruction`
+    Destruction = 20,
+    /// `Illusion`
+    Illusion = 21,
+    /// `Restoration`
+    Restoration = 22,
+    /// `Enchanting`
+    Enchanting = 23,
+    /// `Health`
+    Health = 24,
+    /// `Magicka`
+    Magicka = 25,
+    /// `Stamina`
+    Stamina = 26,
+    /// `HealRate`
+    HealRate = 27,
+    /// `MagickaRate`
+    MagickaRate = 28,
+    /// `StaminaRate`
+    StaminaRate = 29,
+    /// `SpeedMult`
+    SpeedMult = 30,
+    /// `InventoryWeight`
+    InventoryWeight = 31,
+    /// `CarryWeight`
+    CarryWeight = 32,
+    /// `CritChance`
+    CritChance = 33,
+    /// `MeleeDamage`
+    MeleeDamage = 34,
+    /// `UnarmedDamage`
+    UnarmedDamage = 35,
+    /// `Mass`
+    Mass = 36,
+    /// `VoicePoints`
+    VoicePoints = 37,
+    /// `VoiceRate`
+    VoiceRate = 38,
+    /// `DamageResist`
+    DamageResist = 39,
+    /// `PoisonResist`
+    PoisonResist = 40,
+    /// `FireResist`
+    FireResist = 41,
+    /// `ElectricResist`
+    ElectricResist = 42,
+    /// `FrostResist`
+    FrostResist = 43,
+    /// `MagicResist`
+    MagicResist = 44,
+    /// `DiseaseResist`
+    DiseaseResist = 45,
+    /// `PerceptionCondition`
+    PerceptionCondition = 46,
+    /// `EnduranceCondition`
+    EnduranceCondition = 47,
+    /// `LeftAttackCondition`
+    LeftAttackCondition = 48,
+    /// `RightAttackCondition`
+    RightAttackCondition = 49,
+    /// `LeftMobilityCondition`
+    LeftMobilityCondition = 50,
+    /// `RightMobilityCondition`
+    RightMobilityCondition = 51,
+    /// `BrainCondition`
+    BrainCondition = 52,
+    /// `Paralysis`
+    Paralysis = 53,
+    /// `Invisibility`
+    Invisibility = 54,
+    /// `NightEye`
+    NightEye = 55,
+    /// `DetectLifeRange`
+    DetectLifeRange = 56,
+    /// `WaterBreathing`
+    WaterBreathing = 57,
+    /// `WaterWalking`
+    WaterWalking = 58,
+    /// `IgnoreCrippledLimbs`
+    IgnoreCrippledLimbs = 59,
+    /// `Fame`
+    Fame = 60,
+    /// `Infamy`
+    Infamy = 61,
+    /// `JumpingBonus`
+    JumpingBonus = 62,
+    /// `WardPower`
+    WardPower = 63,
+    /// `RightItemCharge`
+    RightItemCharge = 64,
+    /// `ArmorPerks`
+    ArmorPerks = 65,
+    /// `ShieldPerks`
+    ShieldPerks = 66,
+    /// `WardDeflection`
+    WardDeflection = 67,
+    /// `Variable01`
+    Variable01 = 68,
+    /// `Variable02`
+    Variable02 = 69,
+    /// `Variable03`
+    Variable03 = 70,
+    /// `Variable04`
+    Variable04 = 71,
+    /// `Variable05`
+    Variable05 = 72,
+    /// `Variable06`
+    Variable06 = 73,
+    /// `Variable07`
+    Variable07 = 74,
+    /// `Variable08`
+    Variable08 = 75,
+    /// `Variable09`
+    Variable09 = 76,
+    /// `Variable10`
+    Variable10 = 77,
+    /// `BowSpeedBonus`
+    BowSpeedBonus = 78,
+    /// `FavorActive`
+    FavorActive = 79,
+    /// `FavorsPerDay`
+    FavorsPerDay = 80,
+    /// `FavorsPerDayTimer`
+    FavorsPerDayTimer = 81,
+    /// `LeftItemCharge`
+    LeftItemCharge = 82,
+    /// `AbsorbChance`
+    AbsorbChance = 83,
+    /// `Blindness`
+    Blindness = 84,
+    /// `WeaponSpeedMult`
+    WeaponSpeedMult = 85,
+    /// `ShoutRecoveryMult`
+    ShoutRecoveryMult = 86,
+    /// `BowStaggerBonus`
+    BowStaggerBonus = 87,
+    /// `Telekinesis`
+    Telekinesis = 88,
+    /// `FavorPointsBonus`
+    FavorPointsBonus = 89,
+    /// `LastBribedIntimidated`
+    LastBribedIntimidated = 90,
+    /// `LastFlattered`
+    LastFlattered = 91,
+    /// `MovementNoiseMult`
+    MovementNoiseMult = 92,
+    /// `BypassVendorStolenCheck`
+    BypassVendorStolenCheck = 93,
+    /// `BypassVendorKeywordCheck`
+    BypassVendorKeywordCheck = 94,
+    /// `WaitingForPlayer`
+    WaitingForPlayer = 95,
+    /// `OneHandedMod`
+    OneHandedMod = 96,
+    /// `TwoHandedMod`
+    TwoHandedMod = 97,
+    /// `MarksmanMod`
+    MarksmanMod = 98,
+    /// `BlockMod`
+    BlockMod = 99,
+    /// `SmithingMod`
+    SmithingMod = 100,
+    /// `HeavyArmorMod`
+    HeavyArmorMod = 101,
+    /// `LightArmorMod`
+    LightArmorMod = 102,
+    /// `PickPocketMod`
+    PickPocketMod = 103,
+    /// `LockpickingMod`
+    LockpickingMod = 104,
+    /// `SneakMod`
+    SneakMod = 105,
+    /// `AlchemyMod`
+    AlchemyMod = 106,
+    /// `SpeechcraftMod`
+    SpeechcraftMod = 107,
+    /// `AlterationMod`
+    AlterationMod = 108,
+    /// `ConjurationMod`
+    ConjurationMod = 109,
+    /// `DestructionMod`
+    DestructionMod = 110,
+    /// `IllusionMod`
+    IllusionMod = 111,
+    /// `RestorationMod`
+    RestorationMod = 112,
+    /// `EnchantingMod`
+    EnchantingMod = 113,
+    /// `OneHandedSkillAdvance`
+    OneHandedSkillAdvance = 114,
+    /// `TwoHandedSkillAdvance`
+    TwoHandedSkillAdvance = 115,
+    /// `MarksmanSkillAdvance`
+    MarksmanSkillAdvance = 116,
+    /// `BlockSkillAdvance`
+    BlockSkillAdvance = 117,
+    /// `SmithingSkillAdvance`
+    SmithingSkillAdvance = 118,
+    /// `HeavyArmorSkillAdvance`
+    HeavyArmorSkillAdvance = 119,
+    /// `LightArmorSkillAdvance`
+    LightArmorSkillAdvance = 120,
+    /// `PickPocketSkillAdvance`
+    PickPocketSkillAdvance = 121,
+    /// `LockpickingSkillAdvance`
+    LockpickingSkillAdvance = 122,
+    /// `SneakSkillAdvance`
+    SneakSkillAdvance = 123,
+    /// `AlchemySkillAdvance`
+    AlchemySkillAdvance = 124,
+    /// `SpeechcraftSkillAdvance`
+    SpeechcraftSkillAdvance = 125,
+    /// `AlterationSkillAdvance`
+    AlterationSkillAdvance = 126,
+    /// `ConjurationSkillAdvance`
+    ConjurationSkillAdvance = 127,
+    /// `DestructionSkillAdvance`
+    DestructionSkillAdvance = 128,
+    /// `IllusionSkillAdvance`
+    IllusionSkillAdvance = 129,
+    /// `RestorationSkillAdvance`
+    RestorationSkillAdvance = 130,
+    /// `EnchantingSkillAdvance`
+    EnchantingSkillAdvance = 131,
+    /// `LeftWeaponSpeedMult`
+    LeftWeaponSpeedMult = 132,
+    /// `DragonSouls`
+    DragonSouls = 133,
+    /// `CombatHealthRegenMult`
+    CombatHealthRegenMult = 134,
+    /// `OneHandedPowerMod`
+    OneHandedPowerMod = 135,
+    /// `TwoHandedPowerMod`
+    TwoHandedPowerMod = 136,
+    /// `MarksmanPowerMod`
+    MarksmanPowerMod = 137,
+    /// `BlockPowerMod`
+    BlockPowerMod = 138,
+    /// `SmithingPowerMod`
+    SmithingPowerMod = 139,
+    /// `HeavyArmorPowerMod`
+    HeavyArmorPowerMod = 140,
+    /// `LightArmorPowerMod`
+    LightArmorPowerMod = 141,
+    /// `PickPocketPowerMod`
+    PickPocketPowerMod = 142,
+    /// `LockpickingPowerMod`
+    LockpickingPowerMod = 143,
+    /// `SneakPowerMod`
+    SneakPowerMod = 144,
+    /// `AlchemyPowerMod`
+    AlchemyPowerMod = 145,
+    /// `SpeechcraftPowerMod`
+    SpeechcraftPowerMod = 146,
+    /// `AlterationPowerMod`
+    AlterationPowerMod = 147,
+    /// `ConjurationPowerMod`
+    ConjurationPowerMod = 148,
+    /// `DestructionPowerMod`
+    DestructionPowerMod = 149,
+    /// `IllusionPowerMod`
+    IllusionPowerMod = 150,
+    /// `RestorationPowerMod`
+    RestorationPowerMod = 151,
+    /// `EnchantingPowerMod`
+    EnchantingPowerMod = 152,
+    /// `DragonRend`
+    DragonRend = 153,
+    /// `AttackDamageMult`
+    AttackDamageMult = 154,
+    /// `HealRateMult`
+    HealRateMult = 155,
+    /// `MagickaRateMult`
+    MagickaRateMult = 156,
+    /// `StaminaRateMult`
+    StaminaRateMult = 157,
+    /// `WerewolfPerks`
+    WerewolfPerks = 158,
+    /// `VampirePerks`
+    VampirePerks = 159,
+    /// `GrabActorOffset`
+    GrabActorOffset = 160,
+    /// `Grabbed`
+    Grabbed = 161,
+    /// `DEPRECATED05`
+    DEPRECATED05 = 162,
+    /// `ReflectDamage`
+    ReflectDamage = 163,
+}
+
+impl ActorValue {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Aggression),
+            1 => Some(Self::Confidence),
+            2 => Some(Self::Energy),
+            3 => Some(Self::Morality),
+            4 => Some(Self::Mood),
+            5 => Some(Self::Assistance),
+            6 => Some(Self::OneHanded),
+            7 => Some(Self::TwoHanded),
+            8 => Some(Self::Marksman),
+            9 => Some(Self::Block),
+            10 => Some(Self::Smithing),
+            11 => Some(Self::HeavyArmor),
+            12 => Some(Self::LightArmor),
+            13 => Some(Self::Pickpocket),
+            14 => Some(Self::Lockpicking),
+            15 => Some(Self::Sneak),
+            16 => Some(Self::Alchemy),
+            17 => Some(Self::Speechcraft),
+            18 => Some(Self::Alteration),
+            19 => Some(Self::Conjuration),
+            20 => Some(Self::Destruction),
+            21 => Some(Self::Illusion),
+            22 => Some(Self::Restoration),
+            23 => Some(Self::Enchanting),
+            24 => Some(Self::Health),
+            25 => Some(Self::Magicka),
+            26 => Some(Self::Stamina),
+            27 => Some(Self::HealRate),
+            28 => Some(Self::MagickaRate),
+            29 => Some(Self::StaminaRate),
+            30 => Some(Self::SpeedMult),
+            31 => Some(Self::InventoryWeight),
+            32 => Some(Self::CarryWeight),
+            33 => Some(Self::CritChance),
+            34 => Some(Self::MeleeDamage),
+            35 => Some(Self::UnarmedDamage),
+            36 => Some(Self::Mass),
+            37 => Some(Self::VoicePoints),
+            38 => Some(Self::VoiceRate),
+            39 => Some(Self::DamageResist),
+            40 => Some(Self::PoisonResist),
+            41 => Some(Self::FireResist),
+            42 => Some(Self::ElectricResist),
+            43 => Some(Self::FrostResist),
+            44 => Some(Self::MagicResist),
+            45 => Some(Self::DiseaseResist),
+            46 => Some(Self::PerceptionCondition),
+            47 => Some(Self::EnduranceCondition),
+            48 => Some(Self::LeftAttackCondition),
+            49 => Some(Self::RightAttackCondition),
+            50 => Some(Self::LeftMobilityCondition),
+            51 => Some(Self::RightMobilityCondition),
+            52 => Some(Self::BrainCondition),
+            53 => Some(Self::Paralysis),
+            54 => Some(Self::Invisibility),
+            55 => Some(Self::NightEye),
+            56 => Some(Self::DetectLifeRange),
+            57 => Some(Self::WaterBreathing),
+            58 => Some(Self::WaterWalking),
+            59 => Some(Self::IgnoreCrippledLimbs),
+            60 => Some(Self::Fame),
+            61 => Some(Self::Infamy),
+            62 => Some(Self::JumpingBonus),
+            63 => Some(Self::WardPower),
+            64 => Some(Self::RightItemCharge),
+            65 => Some(Self::ArmorPerks),
+            66 => Some(Self::ShieldPerks),
+            67 => Some(Self::WardDeflection),
+            68 => Some(Self::Variable01),
+            69 => Some(Self::Variable02),
+            70 => Some(Self::Variable03),
+            71 => Some(Self::Variable04),
+            72 => Some(Self::Variable05),
+            73 => Some(Self::Variable06),
+            74 => Some(Self::Variable07),
+            75 => Some(Self::Variable08),
+            76 => Some(Self::Variable09),
+            77 => Some(Self::Variable10),
+            78 => Some(Self::BowSpeedBonus),
+            79 => Some(Self::FavorActive),
+            80 => Some(Self::FavorsPerDay),
+            81 => Some(Self::FavorsPerDayTimer),
+            82 => Some(Self::LeftItemCharge),
+            83 => Some(Self::AbsorbChance),
+            84 => Some(Self::Blindness),
+            85 => Some(Self::WeaponSpeedMult),
+            86 => Some(Self::ShoutRecoveryMult),
+            87 => Some(Self::BowStaggerBonus),
+            88 => Some(Self::Telekinesis),
+            89 => Some(Self::FavorPointsBonus),
+            90 => Some(Self::LastBribedIntimidated),
+            91 => Some(Self::LastFlattered),
+            92 => Some(Self::MovementNoiseMult),
+            93 => Some(Self::BypassVendorStolenCheck),
+            94 => Some(Self::BypassVendorKeywordCheck),
+            95 => Some(Self::WaitingForPlayer),
+            96 => Some(Self::OneHandedMod),
+            97 => Some(Self::TwoHandedMod),
+            98 => Some(Self::MarksmanMod),
+            99 => Some(Self::BlockMod),
+            100 => Some(Self::SmithingMod),
+            101 => Some(Self::HeavyArmorMod),
+            102 => Some(Self::LightArmorMod),
+            103 => Some(Self::PickPocketMod),
+            104 => Some(Self::LockpickingMod),
+            105 => Some(Self::SneakMod),
+            106 => Some(Self::AlchemyMod),
+            107 => Some(Self::SpeechcraftMod),
+            108 => Some(Self::AlterationMod),
+            109 => Some(Self::ConjurationMod),
+            110 => Some(Self::DestructionMod),
+            111 => Some(Self::IllusionMod),
+            112 => Some(Self::RestorationMod),
+            113 => Some(Self::EnchantingMod),
+            114 => Some(Self::OneHandedSkillAdvance),
+            115 => Some(Self::TwoHandedSkillAdvance),
+            116 => Some(Self::MarksmanSkillAdvance),
+            117 => Some(Self::BlockSkillAdvance),
+            118 => Some(Self::SmithingSkillAdvance),
+            119 => Some(Self::HeavyArmorSkillAdvance),
+            120 => Some(Self::LightArmorSkillAdvance),
+            121 => Some(Self::PickPocketSkillAdvance),
+            122 => Some(Self::LockpickingSkillAdvance),
+            123 => Some(Self::SneakSkillAdvance),
+            124 => Some(Self::AlchemySkillAdvance),
+            125 => Some(Self::SpeechcraftSkillAdvance),
+            126 => Some(Self::AlterationSkillAdvance),
+            127 => Some(Self::ConjurationSkillAdvance),
+            128 => Some(Self::DestructionSkillAdvance),
+            129 => Some(Self::IllusionSkillAdvance),
+            130 => Some(Self::RestorationSkillAdvance),
+            131 => Some(Self::EnchantingSkillAdvance),
+            132 => Some(Self::LeftWeaponSpeedMult),
+            133 => Some(Self::DragonSouls),
+            134 => Some(Self::CombatHealthRegenMult),
+            135 => Some(Self::OneHandedPowerMod),
+            136 => Some(Self::TwoHandedPowerMod),
+            137 => Some(Self::MarksmanPowerMod),
+            138 => Some(Self::BlockPowerMod),
+            139 => Some(Self::SmithingPowerMod),
+            140 => Some(Self::HeavyArmorPowerMod),
+            141 => Some(Self::LightArmorPowerMod),
+            142 => Some(Self::PickPocketPowerMod),
+            143 => Some(Self::LockpickingPowerMod),
+            144 => Some(Self::SneakPowerMod),
+            145 => Some(Self::AlchemyPowerMod),
+            146 => Some(Self::SpeechcraftPowerMod),
+            147 => Some(Self::AlterationPowerMod),
+            148 => Some(Self::ConjurationPowerMod),
+            149 => Some(Self::DestructionPowerMod),
+            150 => Some(Self::IllusionPowerMod),
+            151 => Some(Self::RestorationPowerMod),
+            152 => Some(Self::EnchantingPowerMod),
+            153 => Some(Self::DragonRend),
+            154 => Some(Self::AttackDamageMult),
+            155 => Some(Self::HealRateMult),
+            156 => Some(Self::MagickaRateMult),
+            157 => Some(Self::StaminaRateMult),
+            158 => Some(Self::WerewolfPerks),
+            159 => Some(Self::VampirePerks),
+            160 => Some(Self::GrabActorOffset),
+            161 => Some(Self::Grabbed),
+            162 => Some(Self::DEPRECATED05),
+            163 => Some(Self::ReflectDamage),
+            _ => None,
+        }
+    }
+}
+
+/// Named bits of `Actor.boolFlags` (actors pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct Actor_boolFlags(pub u32);
+
+impl Actor_boolFlags {
+    /// current follower of the player (high)
+    pub const PLAYER_TEAMMATE: Self = Self(0x4000000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `ActorState.flags1` (actors pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct ActorState_flags1(pub u32);
+
+impl ActorState_flags1 {
+    /// sprinting (high)
+    pub const SPRINTING: Self = Self(0x100);
+    /// sneaking (high)
+    pub const SNEAKING: Self = Self(0x200);
+    /// swimming (medium)
+    pub const SWIMMING: Self = Self(0x400);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `TESActorBaseData.flags` (actors pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct TESActorBaseData_flags(pub u32);
+
+impl TESActorBaseData_flags {
+    /// female (high)
+    pub const FEMALE: Self = Self(0x1);
+    /// essential (high)
+    pub const ESSENTIAL: Self = Self(0x2);
+    /// unique (high)
+    pub const UNIQUE: Self = Self(0x20);
+    /// level is a multiplier of the player's (high)
+    pub const PC_LEVEL_MULT: Self = Self(0x80);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `TESFile.fileFlags` (forms pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -610,6 +1187,8 @@ impl TESForm_formFlags {
     pub const DELETED: Self = Self(0x20);
     /// known to the player (medium)
     pub const PLAYER_KNOWS: Self = Self(0x40);
+    /// reference disabled (high)
+    pub const DISABLED: Self = Self(0x800);
     /// form is kept out of the form id map (high)
     pub const NOT_IN_FORM_MAP: Self = Self(0x4000);
 

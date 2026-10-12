@@ -5,6 +5,22 @@ use core::ffi::{c_char, c_void};
 
 use super::classes;
 
+/// `AIProcess::GetEquippedEntry` at 0x720660 (runtime, high); signature (untiered): `longlong * GetEquippedEntry(longlong param_1, char param_2)`; equipped weapon entry of a hand (high); semantic signature: `InventoryEntryData* AIProcess::GetEquippedEntry(AIProcess* this, bool leftHand)`
+pub const AIProcess__GetEquippedEntry: u64 = 39806;
+/// `AIProcess::GetEquippedEntry` as a function pointer type (high).
+pub type AIProcess__GetEquippedEntry_fn = unsafe extern "C" fn(this: *mut classes::AIProcess, leftHand: bool) -> *mut classes::InventoryEntryData;
+/// `AIProcess::GetEquippedLeftObject` at 0x6eb4a0 (semantic, high); signature (untiered): `undefined8 GetEquippedLeftObject(longlong param_1)`; object in the left hand (high); semantic signature: `TESForm* AIProcess::GetEquippedLeftObject(AIProcess* this)`
+pub const AIProcess__GetEquippedLeftObject: u64 = 39195;
+/// `AIProcess::GetEquippedLeftObject` as a function pointer type (high).
+pub type AIProcess__GetEquippedLeftObject_fn = unsafe extern "C" fn(this: *mut classes::AIProcess) -> *mut classes::TESForm;
+/// `AIProcess::GetEquippedRightObject` at 0x6eb4b0 (semantic, high); signature (untiered): `undefined8 GetEquippedRightObject(longlong param_1)`; object in the right hand (high); semantic signature: `TESForm* AIProcess::GetEquippedRightObject(AIProcess* this)`
+pub const AIProcess__GetEquippedRightObject: u64 = 39196;
+/// `AIProcess::GetEquippedRightObject` as a function pointer type (high).
+pub type AIProcess__GetEquippedRightObject_fn = unsafe extern "C" fn(this: *mut classes::AIProcess) -> *mut classes::TESForm;
+/// `AIProcess::ctor` at 0x6e66a0 (runtime, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; constructs an AI process (high); semantic signature: `AIProcess* AIProcess::ctor(AIProcess* this)`
+pub const AIProcess__ctor: u64 = 39107;
+/// `AIProcess::ctor` as a function pointer type (high).
+pub type AIProcess__ctor_fn = unsafe extern "C" fn(this: *mut classes::AIProcess) -> *mut classes::AIProcess;
 /// `AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>::ctor` at 0x4e8ee0 (layout_inference, medium); signature (high): `AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3> * ctor(AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3> * this)`
 pub const AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3__ctor: u64 = 31011;
 /// `AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>::dtor` at 0x4e91f0 (layout_inference, high); signature (low): `undefined dtor(AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -293,20 +309,32 @@ pub const Actor__ActorState_vfunc_7: u64 = 38027;
 pub const Actor__ActorState_vfunc_8: u64 = 38029;
 /// `Actor::ActorState_vfunc_9` at 0x6b5b00 (rtti, medium); signature (high): `float ActorState_vfunc_9(Actor * this)`
 pub const Actor__ActorState_vfunc_9: u64 = 38034;
+/// `Actor::ActorValueOwner_GetActorValue` at 0x6c4cb0 (runtime, high); signature (untiered): `undefined8 ActorValueOwner_GetActorValue(Actor * this, int param_2)`; current actor value (high); semantic signature: `float Actor::ActorValueOwner_GetActorValue(ActorValueOwner* this, int value)`
+pub const Actor__ActorValueOwner_GetActorValue: u64 = 38462;
+/// `Actor::ActorValueOwner_GetActorValue` as a function pointer type (high).
+pub type Actor__ActorValueOwner_GetActorValue_fn = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32) -> f32;
+/// `Actor::ActorValueOwner_GetBaseActorValue` at 0x6c4ef0 (runtime, high); signature (untiered): `ulonglong ActorValueOwner_GetBaseActorValue(Actor * this, uint param_2)`; base actor value (high); semantic signature: `float Actor::ActorValueOwner_GetBaseActorValue(ActorValueOwner* this, int value)`
+pub const Actor__ActorValueOwner_GetBaseActorValue: u64 = 38464;
+/// `Actor::ActorValueOwner_GetBaseActorValue` as a function pointer type (high).
+pub type Actor__ActorValueOwner_GetBaseActorValue_fn = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32) -> f32;
+/// `Actor::ActorValueOwner_GetPermanentActorValue` at 0x6c4e20 (runtime, high); signature (untiered): `float ActorValueOwner_GetPermanentActorValue(Actor * this, int param_1)`; base plus permanent modifier (high); semantic signature: `float Actor::ActorValueOwner_GetPermanentActorValue(ActorValueOwner* this, int value)`
+pub const Actor__ActorValueOwner_GetPermanentActorValue: u64 = 38463;
+/// `Actor::ActorValueOwner_GetPermanentActorValue` as a function pointer type (high).
+pub type Actor__ActorValueOwner_GetPermanentActorValue_fn = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32) -> f32;
+/// `Actor::ActorValueOwner_ModActorValue` at 0x6c51f0 (runtime, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(Actor * this, int param_1, undefined8 param_2, float param_3)`; adds to a modifier (high); semantic signature: `void Actor::ActorValueOwner_ModActorValue(ActorValueOwner* this, int modifier, int value, float delta)`
+pub const Actor__ActorValueOwner_ModActorValue: u64 = 38467;
+/// `Actor::ActorValueOwner_ModActorValue` as a function pointer type (high).
+pub type Actor__ActorValueOwner_ModActorValue_fn = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, modifier: i32, value: i32, delta: f32);
+/// `Actor::ActorValueOwner_ModBaseActorValue` at 0x6c5100 (semantic, high); signature (untiered): `undefined ActorValueOwner_ModBaseActorValue(Actor * this, int param_1, float param_2)`; adds to the base value (high); semantic signature: `void Actor::ActorValueOwner_ModBaseActorValue(ActorValueOwner* this, int value, float delta)`
+pub const Actor__ActorValueOwner_ModBaseActorValue: u64 = 38466;
+/// `Actor::ActorValueOwner_ModBaseActorValue` as a function pointer type (high).
+pub type Actor__ActorValueOwner_ModBaseActorValue_fn = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32, delta: f32);
+/// `Actor::ActorValueOwner_SetBaseActorValue` at 0x6c5030 (semantic, high); signature (untiered): `undefined ActorValueOwner_SetBaseActorValue(Actor * this, int param_1, float param_2)`; sets the base value (high); semantic signature: `void Actor::ActorValueOwner_SetBaseActorValue(ActorValueOwner* this, int value, float amount)`
+pub const Actor__ActorValueOwner_SetBaseActorValue: u64 = 38465;
+/// `Actor::ActorValueOwner_SetBaseActorValue` as a function pointer type (high).
+pub type Actor__ActorValueOwner_SetBaseActorValue_fn = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32, amount: f32);
 /// `Actor::ActorValueOwner_vdtor` at 0x6bbd14 (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(Actor * this)`
 pub const Actor__ActorValueOwner_vdtor: u64 = 38193;
-/// `Actor::ActorValueOwner_vfunc_1` at 0x6c4cb0 (rtti, medium); signature (low): `undefined8 ActorValueOwner_vfunc_1(Actor * this, int param_2)`
-pub const Actor__ActorValueOwner_vfunc_1: u64 = 38462;
-/// `Actor::ActorValueOwner_vfunc_2` at 0x6c4e20 (rtti, medium); signature (low): `float ActorValueOwner_vfunc_2(Actor * this, int param_1)`
-pub const Actor__ActorValueOwner_vfunc_2: u64 = 38463;
-/// `Actor::ActorValueOwner_vfunc_3` at 0x6c4ef0 (rtti, medium); signature (low): `ulonglong ActorValueOwner_vfunc_3(Actor * this, uint param_2)`
-pub const Actor__ActorValueOwner_vfunc_3: u64 = 38464;
-/// `Actor::ActorValueOwner_vfunc_4` at 0x6c5030 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_4(Actor * this, int param_1, float param_2)`
-pub const Actor__ActorValueOwner_vfunc_4: u64 = 38465;
-/// `Actor::ActorValueOwner_vfunc_5` at 0x6c5100 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_5(Actor * this, int param_1, float param_2)`
-pub const Actor__ActorValueOwner_vfunc_5: u64 = 38466;
-/// `Actor::ActorValueOwner_vfunc_6` at 0x6c51f0 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_6(Actor * this, int param_1, undefined8 param_2, float param_3)`
-pub const Actor__ActorValueOwner_vfunc_6: u64 = 38467;
 /// `Actor::BSHandleRefObject_vdtor` at 0x6bbce4 (slot_propagation, medium); signature (high): `undefined BSHandleRefObject_vdtor(Actor * this)`
 pub const Actor__BSHandleRefObject_vdtor: u64 = 38189;
 /// `Actor::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x6bbcf0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Actor * this)`
@@ -333,6 +361,28 @@ pub const Actor__ForEachSpellVisitor__dtor_3: u64 = 44945;
 pub const Actor__ForEachSpellVisitor__dtor_4: u64 = 52069;
 /// `Actor::ForEachSpellVisitor::vdtor` at 0x6dabd0 (layout_inference, medium); signature (low): `ForEachSpellVisitor * vdtor(ForEachSpellVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const Actor__ForEachSpellVisitor__vdtor: u64 = 38859;
+/// `Actor::GetActorValueModifier` at 0x6c5440 (semantic, high); signature (untiered): `undefined4 GetActorValueModifier(longlong param_1, int param_2, int param_3)`; one modifier of a value (high); semantic signature: `float Actor::GetActorValueModifier(Actor* this, int modifier, int value)`
+pub const Actor__GetActorValueModifier: u64 = 38469;
+/// `Actor::GetActorValueModifier` as a function pointer type (high).
+pub type Actor__GetActorValueModifier_fn = unsafe extern "C" fn(this: *mut classes::Actor, modifier: i32, value: i32) -> f32;
+/// `Actor::GetActorValuePercentage` at 0x679a00 (semantic, medium); signature (untiered): `float GetActorValuePercentage(longlong param_1, undefined4 param_2)`; current / permanent value (medium); semantic signature: `float Actor::GetActorValuePercentage(Actor* this, int value)`
+pub const Actor__GetActorValuePercentage: u64 = 37337;
+/// `Actor::GetCombatState` at 0x6c90b0 (runtime, medium); signature (untiered): `undefined8 GetCombatState(longlong * param_1)`; 0 none, 1 combat, 2 searching (medium); semantic signature: `uint Actor::GetCombatState(Actor* this)`
+pub const Actor__GetCombatState: u64 = 38556;
+/// `Actor::GetEquippedObject` at 0x6ca140 (runtime, high); signature (untiered): `longlong GetEquippedObject(longlong param_1, char param_2)`; equipped weapon of a hand (high); semantic signature: `TESForm* Actor::GetEquippedObject(Actor* this, bool leftHand)`
+pub const Actor__GetEquippedObject: u64 = 38574;
+/// `Actor::GetEquippedObject` as a function pointer type (high).
+pub type Actor__GetEquippedObject_fn = unsafe extern "C" fn(this: *mut classes::Actor, leftHand: bool) -> *mut classes::TESForm;
+/// `Actor::GetLevel` at 0x6797a0 (runtime, high); signature (untiered): `undefined GetLevel(longlong param_1)`; the actor's level (high); semantic signature: `ushort Actor::GetLevel(Actor* this)`
+pub const Actor__GetLevel: u64 = 37334;
+/// `Actor::GetLevel` as a function pointer type (high).
+pub type Actor__GetLevel_fn = unsafe extern "C" fn(this: *mut classes::Actor) -> u16;
+/// `Actor::GetPermanentActorValueImpl` at 0x6c62e0 (runtime, high); signature (untiered): `float GetPermanentActorValueImpl(longlong param_1, int param_2)`; base plus permanent modifier (high); semantic signature: `float Actor::GetPermanentActorValueImpl(Actor* this, int value)`
+pub const Actor__GetPermanentActorValueImpl: u64 = 38484;
+/// `Actor::GetPermanentActorValueImpl` as a function pointer type (high).
+pub type Actor__GetPermanentActorValueImpl_fn = unsafe extern "C" fn(this: *mut classes::Actor, value: i32) -> f32;
+/// `Actor::HasKeyword` at 0x671bf0 (slot_propagation, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
+pub const Actor__HasKeyword: u64 = 37183;
 /// `Actor::IAnimationGraphManagerHolder_vdtor` at 0x6bbcfc (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(Actor * this)`
 pub const Actor__IAnimationGraphManagerHolder_vdtor: u64 = 38191;
 /// `Actor::IAnimationGraphManagerHolder_vfunc_1` at 0x6b61a0 (rtti, medium); signature (untiered): `undefined1 IAnimationGraphManagerHolder_vfunc_1(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -373,6 +423,26 @@ pub const Actor__IPostAnimationChannelUpdateFunctor_vfunc_0: u64 = 38197;
 pub const Actor__IPostAnimationChannelUpdateFunctor_vfunc_1: u64 = 38053;
 /// `Actor::IPostAnimationChannelUpdateFunctor_vfunc_1_sub0` at 0x6f31a0 (callgraph, medium); signature (untiered): `undefined IPostAnimationChannelUpdateFunctor_vfunc_1_sub0(longlong param_1, longlong param_2, undefined8 param_3, ulonglong param_4)`
 pub const Actor__IPostAnimationChannelUpdateFunctor_vfunc_1_sub0: u64 = 39299;
+/// `Actor::IsChild` at 0x6be280 (semantic, high); signature (untiered): `undefined1 IsChild(void)`
+pub const Actor__IsChild: u64 = 38304;
+/// `Actor::IsDead` at 0x6879a0 (runtime, high); signature (untiered): `ulonglong IsDead(Actor * this, char param_1)`; whether dead or dying (high); semantic signature: `bool Actor::IsDead(const Actor* this, bool ignoreBleedout)`
+pub const Actor__IsDead: u64 = 37483;
+/// `Actor::IsDead` as a function pointer type (high).
+pub type Actor__IsDead_fn = unsafe extern "C" fn(this: *const classes::Actor, ignoreBleedout: bool) -> bool;
+/// `Actor::IsGhost` at 0x6756b0 (semantic, medium); signature (untiered): `uint IsGhost(longlong param_1)`; whether the actor is a ghost (medium); semantic signature: `bool Actor::IsGhost(Actor* this)`
+pub const Actor__IsGhost: u64 = 37275;
+/// `Actor::IsInCombat` at 0x6c9850 (runtime, high); signature (untiered): `longlong IsInCombat(Actor * this)`; whether in combat (high); semantic signature: `bool Actor::IsInCombat(const Actor* this)`
+pub const Actor__IsInCombat: u64 = 38562;
+/// `Actor::IsInCombat` as a function pointer type (high).
+pub type Actor__IsInCombat_fn = unsafe extern "C" fn(this: *const classes::Actor) -> bool;
+/// `Actor::IsOnMount` at 0x285a30 (runtime, high); signature (untiered): `undefined8 IsOnMount(longlong param_1)`; whether riding (high); semantic signature: `bool Actor::IsOnMount(Actor* this)`
+pub const Actor__IsOnMount: u64 = 17965;
+/// `Actor::IsOnMount` as a function pointer type (high).
+pub type Actor__IsOnMount_fn = unsafe extern "C" fn(this: *mut classes::Actor) -> bool;
+/// `Actor::IsRunning` at 0x6742a0 (runtime, high); signature (untiered): `bool IsRunning(longlong param_1)`; whether moving at run speed (high); semantic signature: `bool Actor::IsRunning(Actor* this)`
+pub const Actor__IsRunning: u64 = 37234;
+/// `Actor::IsRunning` as a function pointer type (high).
+pub type Actor__IsRunning_fn = unsafe extern "C" fn(this: *mut classes::Actor) -> bool;
 /// `Actor::LoadGame` at 0x699900 (slot_propagation, medium); signature (untiered): `undefined LoadGame(Actor * this, TESObjectREFR_vtbl * param_1)`
 pub const Actor__LoadGame: u64 = 37650;
 /// `Actor::MagicTarget_vfunc_0` at 0x6bbd08 (rtti, high); signature (high): `undefined MagicTarget_vfunc_0(Actor * this)`
@@ -399,6 +469,10 @@ pub const Actor__MagicTarget_vfunc_7: u64 = 38795;
 pub const Actor__MagicTarget_vfunc_8: u64 = 38739;
 /// `Actor::MagicTarget_vfunc_9` at 0x6d51c0 (rtti, medium); signature (low): `undefined MagicTarget_vfunc_9(Actor * this, longlong param_1)`
 pub const Actor__MagicTarget_vfunc_9: u64 = 38740;
+/// `Actor::ModActorValueImpl` at 0x6c5220 (runtime, high); signature (untiered): `undefined ModActorValueImpl(longlong * param_1, int param_2, undefined8 param_3, float param_4, undefined8 param_5)`; applies a modifier change (high); semantic signature: `void Actor::ModActorValueImpl(Actor* this, int modifier, int value, float delta, void* source)`
+pub const Actor__ModActorValueImpl: u64 = 38468;
+/// `Actor::ModActorValueImpl` as a function pointer type (high).
+pub type Actor__ModActorValueImpl_fn = unsafe extern "C" fn(this: *mut classes::Actor, modifier: i32, value: i32, delta: f32, source: *mut c_void);
 /// `Actor::SaveGame` at 0x699230 (slot_propagation, medium); signature (untiered): `undefined SaveGame(Actor * this, longlong * param_1)`
 pub const Actor__SaveGame: u64 = 37649;
 /// `Actor::ctor` at 0x670c60 (layout_inference, high); signature (low): `Actor * ctor(Actor * this, ulonglong param_1, uint * param_2, longlong * param_3)`
@@ -505,8 +579,6 @@ pub const Actor__vfunc_14_sub5: u64 = 39429;
 pub const Actor__vfunc_150: u64 = 37289;
 /// `Actor::vfunc_152` at 0x676c60 (rtti, medium); signature (low): `undefined vfunc_152(Actor * this, longlong * param_1)`
 pub const Actor__vfunc_152: u64 = 37304;
-/// `Actor::vfunc_153` at 0x6879a0 (rtti, medium); signature (low): `ulonglong vfunc_153(Actor * this, char param_1)`
-pub const Actor__vfunc_153: u64 = 37483;
 /// `Actor::vfunc_156` at 0x696bc0 (rtti, medium); signature (low): `ulonglong vfunc_156(Actor * this, longlong param_2, undefined8 param_3, undefined4 param_4)`
 pub const Actor__vfunc_156: u64 = 37629;
 /// `Actor::vfunc_157` at 0x696d20 (rtti, medium); signature (low): `undefined8 vfunc_157(Actor * this, float param_1, float * param_2, undefined8 param_3)`
@@ -691,8 +763,6 @@ pub const Actor__vfunc_224_sub0: u64 = 39458;
 pub const Actor__vfunc_225: u64 = 38722;
 /// `Actor::vfunc_226` at 0x6d45a0 (rtti, medium); signature (low): `undefined4 vfunc_226(Actor * this)`
 pub const Actor__vfunc_226: u64 = 38723;
-/// `Actor::vfunc_227` at 0x6c9850 (rtti, medium); signature (high): `longlong vfunc_227(Actor * this)`
-pub const Actor__vfunc_227: u64 = 38562;
 /// `Actor::vfunc_228` at 0x6c98f0 (rtti, medium); signature (low): `undefined vfunc_228(Actor * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
 pub const Actor__vfunc_228: u64 = 38565;
 /// `Actor::vfunc_229` at 0x6c9b20 (rtti, medium); signature (low): `undefined vfunc_229(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -855,8 +925,6 @@ pub const Actor__vfunc_64: u64 = 37544;
 pub const Actor__vfunc_65: u64 = 37200;
 /// `Actor::vfunc_69` at 0x690e90 (rtti, medium); signature (high): `longlong vfunc_69(Actor * this)`
 pub const Actor__vfunc_69: u64 = 37565;
-/// `Actor::vfunc_72` at 0x671bf0 (rtti, medium); signature (low): `bool vfunc_72(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
-pub const Actor__vfunc_72: u64 = 37183;
 /// `Actor::vfunc_73` at 0x67f620 (rtti, medium); signature (high): `undefined8 vfunc_73(Actor * this)`
 pub const Actor__vfunc_73: u64 = 37398;
 /// `Actor::vfunc_73_sub0` at 0x172f60 (callgraph, medium); signature (untiered): `undefined vfunc_73_sub0(longlong param_1, undefined8 param_2)`
@@ -893,8 +961,6 @@ pub const Actor__vfunc_91: u64 = 37605;
 pub const Actor__vfunc_92: u64 = 38732;
 /// `Actor::vfunc_93` at 0x6d8550 (rtti, medium); signature (high): `Actor_vtbl_A0 * * vfunc_93(Actor * this)`
 pub const Actor__vfunc_93: u64 = 38793;
-/// `Actor::vfunc_94` at 0x6be280 (rtti, high); signature (low): `undefined1 vfunc_94(void)`
-pub const Actor__vfunc_94: u64 = 38304;
 /// `Actor::vfunc_99` at 0x69bba0 (rtti, high); signature (high): `longlong vfunc_99(Actor * this)`
 pub const Actor__vfunc_99: u64 = 37655;
 /// `Actor::vfunc_99_sub0` at 0x720640 (callgraph, medium); signature (untiered): `undefined8 vfunc_99_sub0(longlong param_1)`
@@ -1107,6 +1173,10 @@ pub const ActorPackageData__vfunc_4: u64 = 29762;
 pub const ActorPackageData__vfunc_7: u64 = 29765;
 /// `ActorPackageData::vfunc_8` at 0x4a2330 (rtti, medium); signature (low): `undefined vfunc_8(void)`
 pub const ActorPackageData__vfunc_8: u64 = 29766;
+/// `ActorState::HasFlags` at 0x6e1530 (runtime, high); signature (untiered): `undefined4 HasFlags(longlong param_1, ushort param_2)`; whether every bit of the mask is set in flags1 (high); semantic signature: `bool ActorState::HasFlags(const ActorState* this, ushort mask)`
+pub const ActorState__HasFlags: u64 = 38986;
+/// `ActorState::HasFlags` as a function pointer type (high).
+pub type ActorState__HasFlags_fn = unsafe extern "C" fn(this: *const classes::ActorState, mask: u16) -> bool;
 /// `ActorState::ctor` at 0x6e1460 (layout_inference, medium); signature (high): `ActorState * ctor(ActorState * this)`
 pub const ActorState__ctor: u64 = 38981;
 /// `ActorState::vdtor` at 0x6e1ad0 (layout_inference, medium); signature (low): `ActorState * vdtor(ActorState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -1143,8 +1213,10 @@ pub const ActorValueInfo__TESFullName_vdtor: u64 = 27274;
 pub const ActorValueInfo__TESIcon_vdtor: u64 = 27276;
 /// `ActorValueInfo::TESIcon_vfunc_6` at 0x446200 (rtti, high); signature (low): `char * TESIcon_vfunc_6(void)`
 pub const ActorValueInfo__TESIcon_vfunc_6: u64 = 27252;
-/// `ActorValueInfo::ctor` at 0x445700 (layout_inference, high); signature (low): `ActorValueInfo * ctor(ActorValueInfo * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+/// `ActorValueInfo::ctor` at 0x445700 (layout_inference, high); signature (low): `ActorValueInfo * ctor(ActorValueInfo * this, undefined8 param_1, uint * param_2, longlong * param_3)`; constructs an AVIF form (high); semantic signature: `ActorValueInfo* ActorValueInfo::ctor(ActorValueInfo* this, uint value, const char* name)`
 pub const ActorValueInfo__ctor: u64 = 27246;
+/// `ActorValueInfo::ctor` as a function pointer type (high).
+pub type ActorValueInfo__ctor_fn = unsafe extern "C" fn(this: *mut classes::ActorValueInfo, value: u32, name: *const c_char) -> *mut classes::ActorValueInfo;
 /// `ActorValueInfo::dtor` at 0x4459a0 (layout_inference, high); signature (low): `undefined dtor(ActorValueInfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ActorValueInfo__dtor: u64 = 27247;
 /// `ActorValueInfo::vdtor` at 0x446cb0 (slot_propagation, medium); signature (low): `ActorValueInfo * vdtor(ActorValueInfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -1171,6 +1243,30 @@ pub const ActorValueInfo__vfunc_6_sub0: u64 = 27265;
 pub const ActorValueInfo__vfunc_6_sub1: u64 = 36283;
 /// `ActorValueInfo::vfunc_6_sub2` at 0x645790 (callgraph, medium); signature (untiered): `undefined8 vfunc_6_sub2(longlong param_1, longlong param_2)`
 pub const ActorValueInfo__vfunc_6_sub2: u64 = 36284;
+/// `ActorValueList::AddActorValue` at 0x445550 (runtime, high); signature (untiered): `longlong AddActorValue(longlong param_1, int param_2, undefined4 * param_3, undefined8 param_4, uint param_5, undefined8 param_6, int param_7)`; creates one actor value entry (high); semantic signature: `ActorValueInfo* ActorValueList::AddActorValue(ActorValueList* this, uint value, const char* name, uint category, uint flags, void* callback, void* arg)`
+pub const ActorValueList__AddActorValue: u64 = 27245;
+/// `ActorValueList::AddActorValue` as a function pointer type (high).
+pub type ActorValueList__AddActorValue_fn = unsafe extern "C" fn(this: *mut classes::ActorValueList, value: u32, name: *const c_char, category: u32, flags: u32, callback: *mut c_void, arg: *mut c_void) -> *mut classes::ActorValueInfo;
+/// `ActorValueList::AddAllActorValues` at 0x443660 (semantic, high); signature (untiered): `undefined AddAllActorValues(undefined8 param_1)`; builds the 164 ActorValueInfo forms (high); semantic signature: `void ActorValueList::AddAllActorValues(ActorValueList* this)`
+pub const ActorValueList__AddAllActorValues: u64 = 27232;
+/// `ActorValueList::AddAllActorValues` as a function pointer type (high).
+pub type ActorValueList__AddAllActorValues_fn = unsafe extern "C" fn(this: *mut classes::ActorValueList);
+/// `ActorValueList::GetActorValueInfo` at 0x4432f0 (runtime, high); signature (untiered): `undefined8 GetActorValueInfo(uint param_1)`; the AVIF form of a value (high); semantic signature: `ActorValueInfo* ActorValueList::GetActorValueInfo(uint value)`
+pub const ActorValueList__GetActorValueInfo: u64 = 27202;
+/// `ActorValueList::GetActorValueInfo` as a function pointer type (high).
+pub type ActorValueList__GetActorValueInfo_fn = unsafe extern "C" fn(value: u32) -> *mut classes::ActorValueInfo;
+/// `ActorValueList::GetActorValueName` at 0x4430e0 (semantic, high); signature (untiered): `undefined8 GetActorValueName(uint param_1)`; editor name of a value (high); semantic signature: `const char* ActorValueList::GetActorValueName(uint value)`
+pub const ActorValueList__GetActorValueName: u64 = 27195;
+/// `ActorValueList::GetActorValueName` as a function pointer type (high).
+pub type ActorValueList__GetActorValueName_fn = unsafe extern "C" fn(value: u32) -> *const c_char;
+/// `ActorValueList::LookupActorValueByName` at 0x443320 (runtime, high); signature (untiered): `int LookupActorValueByName(char * param_1)`; actor value id by editor name, 0xa4 when unknown (high); semantic signature: `int ActorValueList::LookupActorValueByName(const char* name)`
+pub const ActorValueList__LookupActorValueByName: u64 = 27203;
+/// `ActorValueList::LookupActorValueByName` as a function pointer type (high).
+pub type ActorValueList__LookupActorValueByName_fn = unsafe extern "C" fn(name: *const c_char) -> i32;
+/// `ActorValueList::ctor` at 0x442ea0 (runtime, high); signature (untiered): `longlong ctor(longlong param_1)`; constructs the actor value list (high); semantic signature: `ActorValueList* ActorValueList::ctor(ActorValueList* this)`
+pub const ActorValueList__ctor: u64 = 27190;
+/// `ActorValueList::ctor` as a function pointer type (high).
+pub type ActorValueList__ctor_fn = unsafe extern "C" fn(this: *mut classes::ActorValueList) -> *mut classes::ActorValueList;
 /// `ActorValueMeter::ctor` at 0x937d80 (layout_inference, high); signature (low): `ActorValueMeter * ctor(ActorValueMeter * this, longlong * param_1, undefined4 param_2)`
 pub const ActorValueMeter__ctor: u64 = 51659;
 /// `ActorValueMeter::vfunc_0` at 0x93bc00 (rtti, high); signature (low): `ActorValueMeter * vfunc_0(ActorValueMeter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -1179,26 +1275,28 @@ pub const ActorValueMeter__vfunc_0: u64 = 51710;
 pub const ActorValueMeter__vfunc_2: u64 = 51661;
 /// `ActorValueMeter::vfunc_5` at 0x937dc0 (rtti, high); signature (low): `undefined8 vfunc_5(ActorValueMeter * this)`
 pub const ActorValueMeter__vfunc_5: u64 = 51660;
+/// `ActorValueOwner::GetActorValue` at 0x3cc610 (runtime, high); signature (untiered): `undefined8 GetActorValue(void)`
+pub const ActorValueOwner__GetActorValue: u64 = 24901;
+/// `ActorValueOwner::GetBaseActorValue` at 0x3cc630 (runtime, high); signature (untiered): `undefined8 GetBaseActorValue(void)`
+pub const ActorValueOwner__GetBaseActorValue: u64 = 24903;
+/// `ActorValueOwner::GetPermanentActorValue` at 0x3cc6f0 (runtime, high); signature (untiered): `undefined8 GetPermanentActorValue(void)`
+pub const ActorValueOwner__GetPermanentActorValue: u64 = 24909;
+/// `ActorValueOwner::ModActorValue` at 0x3ccb40 (runtime, high); signature (untiered): `undefined ModActorValue(void)`
+pub const ActorValueOwner__ModActorValue: u64 = 24918;
+/// `ActorValueOwner::ModBaseActorValue` at 0x3ccb60 (semantic, high); signature (untiered): `undefined ModBaseActorValue(void)`
+pub const ActorValueOwner__ModBaseActorValue: u64 = 24920;
+/// `ActorValueOwner::SetActorValue` at 0x3cd850 (semantic, high); signature (untiered): `undefined SetActorValue(ActorValueOwner * this)`
+pub const ActorValueOwner__SetActorValue: u64 = 24932;
+/// `ActorValueOwner::SetBaseActorValue` at 0x3cd8b0 (semantic, high); signature (untiered): `undefined SetBaseActorValue(void)`
+pub const ActorValueOwner__SetBaseActorValue: u64 = 24935;
 /// `ActorValueOwner::dtor` at 0x3cb640 (layout_inference, high); signature (high): `undefined dtor(ActorValueOwner * this)`
 pub const ActorValueOwner__dtor: u64 = 24848;
 /// `ActorValueOwner::vdtor` at 0x3cbb40 (layout_inference, medium); signature (low): `ActorValueOwner * vdtor(ActorValueOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ActorValueOwner__vdtor: u64 = 24883;
-/// `ActorValueOwner::vfunc_1` at 0x3cc610 (rtti, high); signature (low): `undefined8 vfunc_1(void)`
-pub const ActorValueOwner__vfunc_1: u64 = 24901;
-/// `ActorValueOwner::vfunc_2` at 0x3cc6f0 (rtti, high); signature (low): `undefined8 vfunc_2(void)`
-pub const ActorValueOwner__vfunc_2: u64 = 24909;
-/// `ActorValueOwner::vfunc_3` at 0x3cc630 (rtti, high); signature (low): `undefined8 vfunc_3(void)`
-pub const ActorValueOwner__vfunc_3: u64 = 24903;
-/// `ActorValueOwner::vfunc_4` at 0x3cd8b0 (rtti, high); signature (low): `undefined vfunc_4(void)`
-pub const ActorValueOwner__vfunc_4: u64 = 24935;
-/// `ActorValueOwner::vfunc_5` at 0x3ccb60 (rtti, high); signature (low): `undefined vfunc_5(void)`
-pub const ActorValueOwner__vfunc_5: u64 = 24920;
-/// `ActorValueOwner::vfunc_6` at 0x3ccb40 (rtti, high); signature (low): `undefined vfunc_6(void)`
-pub const ActorValueOwner__vfunc_6: u64 = 24918;
-/// `ActorValueOwner::vfunc_7` at 0x3cd850 (rtti, medium); signature (high): `undefined vfunc_7(ActorValueOwner * this)`
-pub const ActorValueOwner__vfunc_7: u64 = 24932;
-/// `ActorValueOwner::vfunc_8` at 0x447170 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-pub const ActorValueOwner__vfunc_8: u64 = 27283;
+/// `ActorValueStorage::FindModifiers` at 0x6e3500 (runtime, high); signature (untiered): `longlong FindModifiers(longlong param_1, char param_2)`; the float[3] modifiers of a stored value, or null (high); semantic signature: `float* ActorValueStorage::FindModifiers(ActorValueStorage* this, char value)`
+pub const ActorValueStorage__FindModifiers: u64 = 39020;
+/// `ActorValueStorage::FindModifiers` as a function pointer type (high).
+pub type ActorValueStorage__FindModifiers_fn = unsafe extern "C" fn(this: *mut classes::ActorValueStorage, value: c_char) -> *mut f32;
 /// `AddCallbackVisitor::vdtor` at 0x117b210 (layout_inference, medium); signature (low): `AddCallbackVisitor * vdtor(AddCallbackVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AddCallbackVisitor__vdtor: u64 = 82652;
 /// `AddCallbackVisitor::vfunc_1` at 0x117b440 (rtti, high); signature (low): `undefined vfunc_1(AddCallbackVisitor * this, ulonglong * param_1, undefined8 param_2)`
@@ -15025,6 +15123,12 @@ pub const BSPlayerDistanceCheckController__vfunc_23: u64 = 40195;
 pub const BSPlayerDistanceCheckController__vfunc_39: u64 = 40201;
 /// `BSPlayerDistanceCheckController::vfunc_46` at 0x738270 (rtti, high); signature (high): `undefined * vfunc_46(BSPlayerDistanceCheckController * this)`
 pub const BSPlayerDistanceCheckController__vfunc_46: u64 = 40202;
+/// `BSPointerHandleManager::CreateHandle` at 0x17e640 (runtime, high); signature (untiered): `uint * CreateHandle(uint * param_1, longlong param_2)`; allocates a handle table entry for a reference (high); semantic signature: `uint* BSPointerHandleManager::CreateHandle(uint* out, TESObjectREFR* ref)`
+pub const BSPointerHandleManager__CreateHandle: u64 = 12326;
+/// `BSPointerHandleManager::CreateHandle` as a function pointer type (high).
+pub type BSPointerHandleManager__CreateHandle_fn = unsafe extern "C" fn(out: *mut u32, ref_: *mut classes::TESObjectREFR) -> *mut u32;
+/// `BSPointerHandleManager::CreateHandle_2` at 0x17e4b0 (runtime, medium); signature (untiered): `uint * CreateHandle_2(uint * param_1, longlong param_2)`; second copy of CreateHandle (medium); semantic signature: `uint* BSPointerHandleManager::CreateHandle_2(uint* out, TESObjectREFR* ref)`
+pub const BSPointerHandleManager__CreateHandle_2: u64 = 12325;
 /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::dtor` at 0x4aad90 (layout_inference, high); signature (low): `undefined dtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSPointerListBase_BSTempEffectDebris____ptr64__dtor: u64 = 30039;
 /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vdtor` at 0x4aa1c0 (slot_propagation, medium); signature (low): `BSPointerListBase<BSTempEffectDebris*___ptr64> * vdtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -25347,6 +25451,28 @@ pub const BarterMenu__vfunc_4_sub2: u64 = 50957;
 pub const BarterMenu__vfunc_4_sub3: u64 = 50958;
 /// `BarterMenu::vfunc_6` at 0x901020 (rtti, high); signature (high): `undefined vfunc_6(BarterMenu * this)`
 pub const BarterMenu__vfunc_6: u64 = 50946;
+/// `BaseExtraList::GetByType` at 0x17e840 (runtime, high); signature (untiered): `longlong * GetByType(longlong param_1, ulonglong param_2)`; the node of a type, or null (high); semantic signature: `BSExtraData* BaseExtraList::GetByType(BaseExtraList* this, uint type)`
+pub const BaseExtraList__GetByType: u64 = 12329;
+/// `BaseExtraList::GetByType` as a function pointer type (high).
+pub type BaseExtraList__GetByType_fn = unsafe extern "C" fn(this: *mut classes::BaseExtraList, type_: u32) -> *mut classes::BSExtraData;
+/// `BaseExtraList::GetLeveledCreatureBase` at 0x169670 (runtime, high); signature (untiered): `longlong GetLeveledCreatureBase(longlong param_1)`; base form resolved from a leveled creature, or null (high); semantic signature: `TESForm* BaseExtraList::GetLeveledCreatureBase(BaseExtraList* this)`
+pub const BaseExtraList__GetLeveledCreatureBase: u64 = 11810;
+/// `BaseExtraList::GetLeveledCreatureBase` as a function pointer type (high).
+pub type BaseExtraList__GetLeveledCreatureBase_fn = unsafe extern "C" fn(this: *mut classes::BaseExtraList) -> *mut classes::TESForm;
+/// `BaseExtraList::GetLocation` at 0x16a1f0 (semantic, medium); signature (untiered): `longlong GetLocation(longlong param_1)`; location recorded by ExtraLocation (medium); semantic signature: `BGSLocation* BaseExtraList::GetLocation(BaseExtraList* this)`
+pub const BaseExtraList__GetLocation: u64 = 11830;
+/// `BaseExtraList::GetPersistentCell` at 0x164e50 (semantic, medium); signature (untiered): `longlong GetPersistentCell(longlong param_1)`; cell recorded by ExtraPersistentCell (medium); semantic signature: `TESObjectCELL* BaseExtraList::GetPersistentCell(BaseExtraList* this)`
+pub const BaseExtraList__GetPersistentCell: u64 = 11728;
+/// `BaseExtraList::GetReferenceHandle` at 0x164c80 (semantic, medium); signature (untiered): `undefined4 * GetReferenceHandle(longlong param_1, undefined4 * param_2)`; handle recorded by ExtraReferenceHandle (medium); semantic signature: `uint* BaseExtraList::GetReferenceHandle(BaseExtraList* this, uint* out)`
+pub const BaseExtraList__GetReferenceHandle: u64 = 11719;
+/// `BaseExtraList::HasType` at 0x1573e0 (runtime, high); signature (untiered): `ulonglong HasType(longlong param_1, uint param_2)`; whether a type is present (high); semantic signature: `bool BaseExtraList::HasType(const BaseExtraList* this, uint type)`
+pub const BaseExtraList__HasType: u64 = 11582;
+/// `BaseExtraList::HasType` as a function pointer type (high).
+pub type BaseExtraList__HasType_fn = unsafe extern "C" fn(this: *const classes::BaseExtraList, type_: u32) -> bool;
+/// `BaseExtraList::SetInventoryChanges` at 0x161520 (runtime, high); signature (untiered): `undefined SetInventoryChanges(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; attaches inventory changes to a reference (high); semantic signature: `void BaseExtraList::SetInventoryChanges(BaseExtraList* this, InventoryChanges* changes)`
+pub const BaseExtraList__SetInventoryChanges: u64 = 11629;
+/// `BaseExtraList::SetInventoryChanges` as a function pointer type (high).
+pub type BaseExtraList__SetInventoryChanges_fn = unsafe extern "C" fn(this: *mut classes::BaseExtraList, changes: *mut classes::InventoryChanges);
 /// `BaseExtraList::ctor` at 0x157420 (layout_inference, medium); signature (high): `BaseExtraList * ctor(BaseExtraList * this)`
 pub const BaseExtraList__ctor: u64 = 11583;
 /// `BaseExtraList::dtor` at 0x156960 (layout_inference, high); signature (low): `undefined dtor(BaseExtraList * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -25755,6 +25881,8 @@ pub const Character__BSTEventSink_bhkCharacterMoveFinishEvent_vdtor: u64 = 40284
 pub const Character__IAnimationGraphManagerHolder_vdtor: u64 = 40279;
 /// `Character::IPostAnimationChannelUpdateFunctor_vfunc_0` at 0x73aafc (rtti, high); signature (low): `undefined IPostAnimationChannelUpdateFunctor_vfunc_0(Character * this, undefined4 * param_1, ulonglong param_2, ulonglong param_3)`
 pub const Character__IPostAnimationChannelUpdateFunctor_vfunc_0: u64 = 40285;
+/// `Character::IsChild` at 0x73a9d0 (slot_propagation, high); signature (untiered): `uint IsChild(Character * this)`
+pub const Character__IsChild: u64 = 40272;
 /// `Character::LoadGame` at 0x73a880 (slot_propagation, medium); signature (untiered): `undefined LoadGame(Character * this, TESObjectREFR_vtbl * param_1)`
 pub const Character__LoadGame: u64 = 40267;
 /// `Character::MagicTarget_vfunc_0` at 0x73aac0 (rtti, high); signature (high): `undefined MagicTarget_vfunc_0(Character * this)`
@@ -25807,8 +25935,6 @@ pub const Character__vfunc_296: u64 = 40262;
 pub const Character__vfunc_297: u64 = 40296;
 /// `Character::vfunc_59` at 0x739380 (rtti, medium); signature (low): `uint vfunc_59(Character * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
 pub const Character__vfunc_59: u64 = 40247;
-/// `Character::vfunc_94` at 0x73a9d0 (rtti, medium); signature (high): `uint vfunc_94(Character * this)`
-pub const Character__vfunc_94: u64 = 40272;
 /// `Character::vfunc_97` at 0x73a250 (rtti, medium); signature (high): `longlong vfunc_97(Character * this)`
 pub const Character__vfunc_97: u64 = 40259;
 /// `Character::vfunc_99` at 0x73a2f0 (rtti, medium); signature (high): `undefined8 vfunc_99(Character * this)`
@@ -64509,10 +64635,18 @@ pub const Inventory3DManager__vfunc_6: u64 = 51770;
 pub const Inventory__StatInventoryVisitor__vdtor: u64 = 16191;
 /// `Inventory::StatInventoryVisitor::vfunc_1` at 0x242440 (rtti, high); signature (low): `undefined8 vfunc_1(StatInventoryVisitor * this, longlong param_1)`
 pub const Inventory__StatInventoryVisitor__vfunc_1: u64 = 16236;
+/// `InventoryChanges::CountItem` at 0x240fe0 (runtime, high); signature (untiered): `int CountItem(longlong param_1, undefined8 * param_2, longlong * param_3)`; count of an item, base plus delta (high); semantic signature: `int InventoryChanges::CountItem(TESForm* item, InventoryChanges* changes, ItemFilter* filter)`
+pub const InventoryChanges__CountItem: u64 = 16214;
+/// `InventoryChanges::CountItemsWithKeyword` at 0x239750 (semantic, medium); signature (untiered): `ulonglong CountItemsWithKeyword(undefined8 * param_1, longlong param_2)`; count of items carrying a keyword (medium); semantic signature: `uint InventoryChanges::CountItemsWithKeyword(InventoryChanges* this, BGSKeyword* keyword)`
+pub const InventoryChanges__CountItemsWithKeyword: u64 = 16111;
 /// `InventoryChanges::FindBestSoulGemVisitor::vdtor` at 0x6daba0 (layout_inference, medium); signature (low): `FindBestSoulGemVisitor * vdtor(FindBestSoulGemVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const InventoryChanges__FindBestSoulGemVisitor__vdtor: u64 = 38858;
 /// `InventoryChanges::FindBestSoulGemVisitor::vfunc_1` at 0x237180 (rtti, high); signature (low): `undefined8 vfunc_1(FindBestSoulGemVisitor * this, longlong * param_1)`
 pub const InventoryChanges__FindBestSoulGemVisitor__vfunc_1: u64 = 16094;
+/// `InventoryChanges::GetItemCount` at 0x2395c0 (runtime, high); signature (untiered): `undefined GetItemCount(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; count of an item in the inventory (high); semantic signature: `int InventoryChanges::GetItemCount(InventoryChanges* this, TESForm* item)`
+pub const InventoryChanges__GetItemCount: u64 = 16108;
+/// `InventoryChanges::GetItemCount` as a function pointer type (high).
+pub type InventoryChanges__GetItemCount_fn = unsafe extern "C" fn(this: *mut classes::InventoryChanges, item: *mut classes::TESForm) -> i32;
 /// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240230 (layout_inference, high); signature (low): `undefined dtor(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const InventoryChanges__IItemChangeVisitor__dtor: u64 = 16167;
 /// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240260 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
@@ -65331,6 +65465,8 @@ pub const LookHandler__vfunc_3_sub0: u64 = 523962;
 pub const LookHandler__vfunc_4: u64 = 523968;
 /// `LookHandler::vfunc_5` at 0x7b3270 (rtti, high); signature (low): `undefined vfunc_5(LookHandler * this, longlong param_1, longlong param_2)`
 pub const LookHandler__vfunc_5: u64 = 42424;
+/// `LookupActorByHandle` at 0x2676c0 (runtime, high); signature (untiered): `bool LookupActorByHandle(uint * param_1, longlong * param_2)`; resolves an actor handle (high); semantic signature: `bool LookupActorByHandle(const uint* handle, NiPointer<Actor>* out)`
+pub const LookupActorByHandle: u64 = 17201;
 /// `LookupFormByEditorID` at 0x1e5a30 (runtime, high); signature (untiered): `undefined8 LookupFormByEditorID(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; returns the form registered under that editor id or null; only the 31 classes overriding slot 50 register (high); semantic signature: `TESForm* LookupFormByEditorID(const char* editorID)`
 pub const LookupFormByEditorID: u64 = 14620;
 /// `LookupFormByEditorID` as a function pointer type (high).
@@ -65341,6 +65477,12 @@ pub const LookupFormByEditorID_BSFixedString: u64 = 14618;
 pub const LookupFormByID: u64 = 14617;
 /// `LookupFormByID` as a function pointer type (high).
 pub type LookupFormByID_fn = unsafe extern "C" fn(formID: u32) -> *mut classes::TESForm;
+/// `LookupREFRByHandle` at 0x17ebe0 (runtime, high); signature (untiered): `bool LookupREFRByHandle(uint * param_1, longlong * param_2)`; resolves a reference handle, zeroing a stale handle (high); semantic signature: `bool LookupREFRByHandle(uint* handle, NiPointer<TESObjectREFR>* out)`
+pub const LookupREFRByHandle: u64 = 12331;
+/// `LookupREFRByHandleConst` at 0x17ed00 (runtime, high); signature (untiered): `bool LookupREFRByHandleConst(uint * param_1, longlong * param_2)`; resolves a reference handle without modifying it (high); semantic signature: `bool LookupREFRByHandleConst(const uint* handle, NiPointer<TESObjectREFR>* out)`
+pub const LookupREFRByHandleConst: u64 = 12332;
+/// `LookupREFRByHandle_2` at 0x18ff80 (runtime, medium); signature (untiered): `bool LookupREFRByHandle_2(uint * param_1, longlong * param_2)`; second copy of LookupREFRByHandle (medium); semantic signature: `bool LookupREFRByHandle_2(uint* handle, NiPointer<TESObjectREFR>* out)`
+pub const LookupREFRByHandle_2: u64 = 12922;
 /// `MTStateHandler::vdtor` at 0x7d4330 (layout_inference, medium); signature (low): `MTStateHandler * vdtor(MTStateHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MTStateHandler__vdtor: u64 = 43347;
 /// `MTStateHandler::vfunc_1` at 0x7cf450 (rtti, high); signature (low): `undefined1 vfunc_1(MTStateHandler * this, longlong param_1)`
@@ -78253,8 +78395,6 @@ pub const PlayerCharacter__ActorState_vfunc_21: u64 = 40752;
 pub const PlayerCharacter__ActorState_vfunc_4: u64 = 40743;
 /// `PlayerCharacter::ActorValueOwner_vdtor` at 0x769320 (slot_propagation, medium); signature (low): `undefined ActorValueOwner_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
 pub const PlayerCharacter__ActorValueOwner_vdtor: u64 = 40935;
-/// `PlayerCharacter::ActorValueOwner_vfunc_8` at 0x75c2b0 (rtti, high); signature (low): `undefined1 ActorValueOwner_vfunc_8(void)`
-pub const PlayerCharacter__ActorValueOwner_vfunc_8: u64 = 40691;
 /// `PlayerCharacter::BSHandleRefObject_vdtor` at 0x7692b4 (slot_propagation, medium); signature (high): `undefined BSHandleRefObject_vdtor(PlayerCharacter * this)`
 pub const PlayerCharacter__BSHandleRefObject_vdtor: u64 = 40927;
 /// `PlayerCharacter::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x7692fc (slot_propagation, medium); signature (low): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
@@ -78285,6 +78425,8 @@ pub const PlayerCharacter__BSTEventSink_UserEventEnabledEvent_vdtor: u64 = 40930
 pub const PlayerCharacter__BSTEventSink_UserEventEnabledEvent_vfunc_1: u64 = 40739;
 /// `PlayerCharacter::BSTEventSink_bhkCharacterMoveFinishEvent_vdtor` at 0x769344 (slot_propagation, medium); signature (low): `undefined BSTEventSink_bhkCharacterMoveFinishEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
 pub const PlayerCharacter__BSTEventSink_bhkCharacterMoveFinishEvent_vdtor: u64 = 40938;
+/// `PlayerCharacter::Get3D` at 0x747af0 (slot_propagation, high); signature (untiered): `undefined Get3D(PlayerCharacter * this)`
+pub const PlayerCharacter__Get3D: u64 = 40462;
 /// `PlayerCharacter::IAnimationGraphManagerHolder_vdtor` at 0x769308 (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
 pub const PlayerCharacter__IAnimationGraphManagerHolder_vdtor: u64 = 40933;
 /// `PlayerCharacter::IAnimationGraphManagerHolder_vfunc_11` at 0x760f50 (rtti, high); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_11(PlayerCharacter * this, longlong * param_1)`
@@ -78297,6 +78439,8 @@ pub const PlayerCharacter__IAnimationGraphManagerHolder_vfunc_5: u64 = 40753;
 pub const PlayerCharacter__IAnimationGraphManagerHolder_vfunc_7: u64 = 40756;
 /// `PlayerCharacter::IPostAnimationChannelUpdateFunctor_vfunc_0` at 0x769350 (rtti, high); signature (low): `undefined IPostAnimationChannelUpdateFunctor_vfunc_0(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
 pub const PlayerCharacter__IPostAnimationChannelUpdateFunctor_vfunc_0: u64 = 40939;
+/// `PlayerCharacter::IsInCombat` at 0x76b0c0 (slot_propagation, high); signature (untiered): `byte IsInCombat(PlayerCharacter * this)`
+pub const PlayerCharacter__IsInCombat: u64 = 41024;
 /// `PlayerCharacter::LoadGame` at 0x74e600 (slot_propagation, medium); signature (untiered): `undefined LoadGame(PlayerCharacter * this, TESObjectREFR_vtbl * param_1)`
 pub const PlayerCharacter__LoadGame: u64 = 40540;
 /// `PlayerCharacter::MagicTarget_vfunc_0` at 0x769314 (rtti, high); signature (low): `undefined MagicTarget_vfunc_0(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
@@ -78337,8 +78481,6 @@ pub const PlayerCharacter__vfunc_108_sub0: u64 = 50792;
 pub const PlayerCharacter__vfunc_108_sub1: u64 = 67670;
 /// `PlayerCharacter::vfunc_111` at 0x747b70 (rtti, high); signature (low): `undefined8 vfunc_111(PlayerCharacter * this, char param_1)`
 pub const PlayerCharacter__vfunc_111: u64 = 40464;
-/// `PlayerCharacter::vfunc_112` at 0x747af0 (rtti, high); signature (high): `undefined vfunc_112(PlayerCharacter * this)`
-pub const PlayerCharacter__vfunc_112: u64 = 40462;
 /// `PlayerCharacter::vfunc_113` at 0x76b0b0 (rtti, high); signature (high): `byte vfunc_113(PlayerCharacter * this)`
 pub const PlayerCharacter__vfunc_113: u64 = 41023;
 /// `PlayerCharacter::vfunc_114` at 0x74c180 (rtti, high); signature (low): `ulonglong vfunc_114(PlayerCharacter * this, undefined8 param_1, longlong param_2)`
@@ -78577,8 +78719,6 @@ pub const PlayerCharacter__vfunc_220: u64 = 41018;
 pub const PlayerCharacter__vfunc_222: u64 = 40487;
 /// `PlayerCharacter::vfunc_224` at 0x746dc0 (rtti, high); signature (high): `undefined vfunc_224(PlayerCharacter * this)`
 pub const PlayerCharacter__vfunc_224: u64 = 40453;
-/// `PlayerCharacter::vfunc_227` at 0x76b0c0 (rtti, high); signature (high): `byte vfunc_227(PlayerCharacter * this)`
-pub const PlayerCharacter__vfunc_227: u64 = 41024;
 /// `PlayerCharacter::vfunc_228` at 0x774cf0 (rtti, high); signature (low): `undefined vfunc_228(void)`
 pub const PlayerCharacter__vfunc_228: u64 = 41166;
 /// `PlayerCharacter::vfunc_229` at 0x773240 (rtti, high); signature (untiered): `undefined vfunc_229(longlong * param_1)`
@@ -78829,6 +78969,8 @@ pub const ProcessLists__GetActorsFilter__vdtor: u64 = 34475;
 pub const Projectile__BSHandleRefObject_vdtor: u64 = 44251;
 /// `Projectile::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x804c80 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Projectile * this)`
 pub const Projectile__BSTEventSink_BSAnimationGraphEvent_vdtor: u64 = 44252;
+/// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
+pub const Projectile__HasKeyword: u64 = 44170;
 /// `Projectile::IAnimationGraphManagerHolder_vdtor` at 0x804c8c (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(Projectile * this)`
 pub const Projectile__IAnimationGraphManagerHolder_vdtor: u64 = 44253;
 /// `Projectile::LaunchData::ctor` at 0x5d0030 (layout_inference, medium); signature (high): `LaunchData * ctor(LaunchData * this)`
@@ -78945,8 +79087,6 @@ pub const Projectile__vfunc_193: u64 = 44226;
 pub const Projectile__vfunc_6: u64 = 44132;
 /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
 pub const Projectile__vfunc_71: u64 = 44131;
-/// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
-pub const Projectile__vfunc_72: u64 = 44170;
 /// `Projectile::vfunc_80` at 0x7fc040 (rtti, medium); signature (low): `undefined vfunc_80(Projectile * this, void * param_1, undefined8 param_2, undefined8 param_3)`
 pub const Projectile__vfunc_80: u64 = 44142;
 /// `Projectile::vfunc_81` at 0x7fc070 (rtti, medium); signature (high): `undefined8 vfunc_81(Projectile * this)`
@@ -83025,26 +83165,24 @@ pub const TESActionData__vfunc_3: u64 = 41556;
 pub const TESActionData__vfunc_4: u64 = 41553;
 /// `TESActionData::vfunc_5` at 0x78db80 (rtti, high); signature (high): `undefined vfunc_5(TESActionData * this)`
 pub const TESActionData__vfunc_5: u64 = 41557;
+/// `TESActorBase::ActorValueOwner_GetActorValue` at 0x3b00c0 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetActorValue(TESActorBase * this, undefined4 param_1)`
+pub const TESActorBase__ActorValueOwner_GetActorValue: u64 = 24380;
+/// `TESActorBase::ActorValueOwner_GetBaseActorValue` at 0x3cc640 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
+pub const TESActorBase__ActorValueOwner_GetBaseActorValue: u64 = 24904;
+/// `TESActorBase::ActorValueOwner_GetPermanentActorValue` at 0x3cc700 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
+pub const TESActorBase__ActorValueOwner_GetPermanentActorValue: u64 = 24910;
+/// `TESActorBase::ActorValueOwner_ModActorValue` at 0x3ccb50 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(void)`
+pub const TESActorBase__ActorValueOwner_ModActorValue: u64 = 24919;
+/// `TESActorBase::ActorValueOwner_ModBaseActorValue` at 0x3b0350 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_ModBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
+pub const TESActorBase__ActorValueOwner_ModBaseActorValue: u64 = 24382;
+/// `TESActorBase::ActorValueOwner_SetActorValue` at 0x3cd860 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetActorValue(TESActorBase * this)`
+pub const TESActorBase__ActorValueOwner_SetActorValue: u64 = 24933;
+/// `TESActorBase::ActorValueOwner_SetBaseActorValue` at 0x3b0240 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
+pub const TESActorBase__ActorValueOwner_SetBaseActorValue: u64 = 24381;
 /// `TESActorBase::ActorValueOwner_vdtor` at 0x3cba48 (slot_propagation, medium); signature (low): `undefined ActorValueOwner_vdtor(TESActorBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESActorBase__ActorValueOwner_vdtor: u64 = 24866;
-/// `TESActorBase::ActorValueOwner_vfunc_1` at 0x3b00c0 (rtti, high); signature (low): `undefined ActorValueOwner_vfunc_1(TESActorBase * this, undefined4 param_1)`
-pub const TESActorBase__ActorValueOwner_vfunc_1: u64 = 24380;
 /// `TESActorBase::ActorValueOwner_vfunc_1_sub0` at 0x1de9a0 (callgraph, medium); signature (untiered): `uint ActorValueOwner_vfunc_1_sub0(longlong param_1)`
 pub const TESActorBase__ActorValueOwner_vfunc_1_sub0: u64 = 14453;
-/// `TESActorBase::ActorValueOwner_vfunc_2` at 0x3cc700 (rtti, medium); signature (high): `undefined ActorValueOwner_vfunc_2(TESActorBase * this)`
-pub const TESActorBase__ActorValueOwner_vfunc_2: u64 = 24910;
-/// `TESActorBase::ActorValueOwner_vfunc_3` at 0x3cc640 (rtti, medium); signature (high): `undefined ActorValueOwner_vfunc_3(TESActorBase * this)`
-pub const TESActorBase__ActorValueOwner_vfunc_3: u64 = 24904;
-/// `TESActorBase::ActorValueOwner_vfunc_4` at 0x3b0240 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_4(TESActorBase * this, undefined4 param_1, float param_2)`
-pub const TESActorBase__ActorValueOwner_vfunc_4: u64 = 24381;
-/// `TESActorBase::ActorValueOwner_vfunc_5` at 0x3b0350 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_5(TESActorBase * this, undefined4 param_1, float param_2)`
-pub const TESActorBase__ActorValueOwner_vfunc_5: u64 = 24382;
-/// `TESActorBase::ActorValueOwner_vfunc_6` at 0x3ccb50 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_6(void)`
-pub const TESActorBase__ActorValueOwner_vfunc_6: u64 = 24919;
-/// `TESActorBase::ActorValueOwner_vfunc_7` at 0x3cd860 (rtti, high); signature (high): `undefined ActorValueOwner_vfunc_7(TESActorBase * this)`
-pub const TESActorBase__ActorValueOwner_vfunc_7: u64 = 24933;
-/// `TESActorBase::ActorValueOwner_vfunc_8` at 0x3b03a0 (rtti, medium); signature (high): `bool ActorValueOwner_vfunc_8(TESActorBase * this)`
-pub const TESActorBase__ActorValueOwner_vfunc_8: u64 = 24383;
 /// `TESActorBase::BGSAttackDataForm_vdtor` at 0x3cb9f4 (slot_propagation, medium); signature (low): `undefined BGSAttackDataForm_vdtor(TESActorBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESActorBase__BGSAttackDataForm_vdtor: u64 = 24859;
 /// `TESActorBase::BGSDestructibleObjectForm_vdtor` at 0x3cba54 (slot_propagation, medium); signature (low): `undefined BGSDestructibleObjectForm_vdtor(TESActorBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -83101,6 +83239,10 @@ pub const TESActorBase__vfunc_84: u64 = 24905;
 pub const TESActorBase__vfunc_85: u64 = 24936;
 /// `TESActorBase::vfunc_86` at 0x3cc620 (rtti, medium); signature (high): `TESActorBase * vfunc_86(TESActorBase * this)`
 pub const TESActorBase__vfunc_86: u64 = 24902;
+/// `TESActorBaseData::GetLevel` at 0x1dd3b0 (runtime, high); signature (untiered): `uint GetLevel(longlong param_1)`; effective level (high); semantic signature: `uint TESActorBaseData::GetLevel(const TESActorBaseData* this)`
+pub const TESActorBaseData__GetLevel: u64 = 14384;
+/// `TESActorBaseData::GetLevel` as a function pointer type (high).
+pub type TESActorBaseData__GetLevel_fn = unsafe extern "C" fn(this: *const classes::TESActorBaseData) -> u32;
 /// `TESActorBaseData::ctor` at 0x1dc4c0 (layout_inference, medium); signature (high): `TESActorBaseData * ctor(TESActorBaseData * this)`
 pub const TESActorBaseData__ctor: u64 = 14358;
 /// `TESActorBaseData::dtor` at 0x1dc550 (layout_inference, high); signature (low): `undefined dtor(TESActorBaseData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -83347,6 +83489,10 @@ pub const TESCombatStyle__vfunc_6_sub0: u64 = 17302;
 pub const TESCombatStyle__vfunc_6_sub1: u64 = 17303;
 /// `TESCombatStyle::vfunc_6_sub2` at 0x26a780 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub2(longlong param_1, uint * param_2)`
 pub const TESCombatStyle__vfunc_6_sub2: u64 = 17305;
+/// `TESContainer::CountObjectsInContainer` at 0x1e0b10 (runtime, high); signature (untiered): `int CountObjectsInContainer(longlong param_1, longlong param_2)`; count of an item in the base container (high); semantic signature: `int TESContainer::CountObjectsInContainer(TESContainer* this, TESForm* item)`
+pub const TESContainer__CountObjectsInContainer: u64 = 14529;
+/// `TESContainer::CountObjectsInContainer` as a function pointer type (high).
+pub type TESContainer__CountObjectsInContainer_fn = unsafe extern "C" fn(this: *mut classes::TESContainer, item: *mut classes::TESForm) -> i32;
 /// `TESContainer::ctor` at 0x1dffe0 (layout_inference, medium); signature (high): `TESContainer * ctor(TESContainer * this)`
 pub const TESContainer__ctor: u64 = 14510;
 /// `TESContainer::dtor` at 0x1e0000 (layout_inference, high); signature (high): `undefined dtor(TESContainer * this)`
@@ -83811,6 +83957,14 @@ pub const TESFormMaps__Destroy: u64 = 441564;
 pub type TESFormMaps__Destroy_fn = unsafe extern "C" fn();
 /// `TESFormUIData::vdtor` at 0x98d900 (layout_inference, medium); signature (low): `TESFormUIData * vdtor(TESFormUIData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESFormUIData__vdtor: u64 = 52838;
+/// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`; the name (high); semantic signature: `const char* TESFullName::GetFullName(const TESFullName* this)`
+pub const TESFullName__GetFullName: u64 = 10880;
+/// `TESFullName::GetFullName` as a function pointer type (high).
+pub type TESFullName__GetFullName_fn = unsafe extern "C" fn(this: *const classes::TESFullName) -> *const c_char;
+/// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`; length of the name (high); semantic signature: `uint TESFullName::GetFullNameLength(const TESFullName* this)`
+pub const TESFullName__GetFullNameLength: u64 = 10881;
+/// `TESFullName::GetFullNameLength` as a function pointer type (high).
+pub type TESFullName__GetFullNameLength_fn = unsafe extern "C" fn(this: *const classes::TESFullName) -> u32;
 /// `TESFullName::ctor` at 0x190870 (layout_inference, medium); signature (low): `TESFullName * ctor(TESFullName * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESFullName__ctor: u64 = 12945;
 /// `TESFullName::ctor` at 0x995970 (layout_inference, medium); signature (low): `TESFullName * ctor(TESFullName * this, longlong param_1)`
@@ -83827,10 +83981,6 @@ pub const TESFullName__vfunc_1: u64 = 14714;
 pub const TESFullName__vfunc_2: u64 = 14715;
 /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
 pub const TESFullName__vfunc_3: u64 = 14716;
-/// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
-pub const TESFullName__vfunc_4: u64 = 10881;
-/// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
-pub const TESFullName__vfunc_5: u64 = 10880;
 /// `TESFurniture::BGSDestructibleObjectForm_vdtor` at 0x26fe80 (slot_propagation, medium); signature (high): `undefined BGSDestructibleObjectForm_vdtor(TESFurniture * this)`
 pub const TESFurniture__BGSDestructibleObjectForm_vdtor: u64 = 17436;
 /// `TESFurniture::BGSKeywordForm_vdtor` at 0x26fe98 (slot_propagation, medium); signature (high): `undefined BGSKeywordForm_vdtor(TESFurniture * this)`
@@ -84261,12 +84411,12 @@ pub const TESModelTri__ctor: u64 = 23640;
 pub const TESModelTri__vdtor: u64 = 23648;
 /// `TESModelTri::vfunc_5` at 0x1ee380 (rtti, high); signature (low): `undefined vfunc_5(TESModelTri * this, char * param_1)`
 pub const TESModelTri__vfunc_5: u64 = 14856;
+/// `TESNPC::ActorValueOwner_GetActorValue` at 0x3c71f0 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetActorValue(TESNPC * this, int param_1)`
+pub const TESNPC__ActorValueOwner_GetActorValue: u64 = 24774;
+/// `TESNPC::ActorValueOwner_SetActorValue` at 0x3c7460 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetActorValue(TESNPC * this, int param_1, float param_2)`
+pub const TESNPC__ActorValueOwner_SetActorValue: u64 = 24775;
 /// `TESNPC::ActorValueOwner_vdtor` at 0x3cbaf0 (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(TESNPC * this)`
 pub const TESNPC__ActorValueOwner_vdtor: u64 = 24880;
-/// `TESNPC::ActorValueOwner_vfunc_1` at 0x3c71f0 (rtti, high); signature (low): `undefined ActorValueOwner_vfunc_1(TESNPC * this, int param_1)`
-pub const TESNPC__ActorValueOwner_vfunc_1: u64 = 24774;
-/// `TESNPC::ActorValueOwner_vfunc_7` at 0x3c7460 (rtti, high); signature (low): `undefined ActorValueOwner_vfunc_7(TESNPC * this, int param_1, float param_2)`
-pub const TESNPC__ActorValueOwner_vfunc_7: u64 = 24775;
 /// `TESNPC::BGSAttackDataForm_vdtor` at 0x3cba78 (slot_propagation, medium); signature (high): `undefined BGSAttackDataForm_vdtor(TESNPC * this)`
 pub const TESNPC__BGSAttackDataForm_vdtor: u64 = 24870;
 /// `TESNPC::BGSDestructibleObjectForm_vdtor` at 0x3cbafc (slot_propagation, medium); signature (high): `undefined BGSDestructibleObjectForm_vdtor(TESNPC * this)`
@@ -84283,6 +84433,14 @@ pub const TESNPC__BGSSkinForm_vdtor: u64 = 24868;
 pub const TESNPC__BSTEventSink_MenuOpenCloseEvent_vdtor: u64 = 24874;
 /// `TESNPC::BSTEventSink_MenuOpenCloseEvent_vfunc_1` at 0x3beed0 (rtti, high); signature (low): `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(TESNPC * this, longlong * param_1)`
 pub const TESNPC__BSTEventSink_MenuOpenCloseEvent_vfunc_1: u64 = 24681;
+/// `TESNPC::GetHeight` at 0x3c65c0 (semantic, high); signature (untiered): `float GetHeight(longlong param_1)`; race height times the NPC height multiplier (high); semantic signature: `float TESNPC::GetHeight(const TESNPC* this)`
+pub const TESNPC__GetHeight: u64 = 24763;
+/// `TESNPC::GetHeight` as a function pointer type (high).
+pub type TESNPC__GetHeight_fn = unsafe extern "C" fn(this: *const classes::TESNPC) -> f32;
+/// `TESNPC::GetSex` at 0x3afeb0 (runtime, high); signature (untiered): `uint GetSex(longlong param_1)`; 0 male, 1 female, -1 for a non-NPC form (high); semantic signature: `uint TESNPC::GetSex(const TESNPC* this)`
+pub const TESNPC__GetSex: u64 = 24374;
+/// `TESNPC::GetSex` as a function pointer type (high).
+pub type TESNPC__GetSex_fn = unsafe extern "C" fn(this: *const classes::TESNPC) -> u32;
 /// `TESNPC::LoadGame` at 0x3c7b10 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESNPC * this, undefined8 * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
 pub const TESNPC__LoadGame: u64 = 24778;
 /// `TESNPC::SaveGame` at 0x3c7640 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESNPC * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -84857,14 +85015,42 @@ pub const TESObjectREFR__BSHandleRefObject_vdtor: u64 = 19919;
 pub const TESObjectREFR__BSTEventSink_BSAnimationGraphEvent_vdtor: u64 = 19920;
 /// `TESObjectREFR::BSTEventSink_BSAnimationGraphEvent_vfunc_1` at 0x2fcb80 (rtti, medium); signature (low): `undefined8 BSTEventSink_BSAnimationGraphEvent_vfunc_1(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESObjectREFR__BSTEventSink_BSAnimationGraphEvent_vfunc_1: u64 = 20102;
+/// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
+pub const TESObjectREFR__Get3D: u64 = 19735;
+/// `TESObjectREFR::GetContainer` at 0x2e8660 (runtime, high); signature (untiered): `longlong GetContainer(longlong param_1)`; the base container component (high); semantic signature: `TESContainer* TESObjectREFR::GetContainer(TESObjectREFR* this)`
+pub const TESObjectREFR__GetContainer: u64 = 19702;
+/// `TESObjectREFR::GetContainer` as a function pointer type (high).
+pub type TESObjectREFR__GetContainer_fn = unsafe extern "C" fn(this: *mut classes::TESObjectREFR) -> *mut classes::TESContainer;
+/// `TESObjectREFR::GetCurrentLocation` at 0x2f3b70 (runtime, high); signature (untiered): `longlong GetCurrentLocation(longlong * param_1)`; the location the reference is in (high); semantic signature: `BGSLocation* TESObjectREFR::GetCurrentLocation(TESObjectREFR* this)`
+pub const TESObjectREFR__GetCurrentLocation: u64 = 19812;
+/// `TESObjectREFR::GetCurrentLocation` as a function pointer type (high).
+pub type TESObjectREFR__GetCurrentLocation_fn = unsafe extern "C" fn(this: *mut classes::TESObjectREFR) -> *mut classes::BGSLocation;
 /// `TESObjectREFR::GetFormDetailedString` at 0x2f0730 (slot_propagation, high); signature (untiered): `undefined GetFormDetailedString(TESObjectREFR * this, undefined8 param_1, ulonglong param_2)`
 pub const TESObjectREFR__GetFormDetailedString: u64 = 19779;
 /// `TESObjectREFR::GetFormEditorID` at 0x2f0670 (slot_propagation, high); signature (untiered): `char * GetFormEditorID(TESObjectREFR * this)`
 pub const TESObjectREFR__GetFormEditorID: u64 = 19778;
 /// `TESObjectREFR::GetFormType` at 0x2e39d0 (slot_propagation, high); signature (untiered): `undefined4 GetFormType(TESObjectREFR * this)`
 pub const TESObjectREFR__GetFormType: u64 = 19545;
+/// `TESObjectREFR::GetHandle` at 0x2f60c0 (runtime, high); signature (untiered): `undefined4 * GetHandle(longlong param_1, undefined4 * param_2)`; handle of a reference, created on first use (high); semantic signature: `uint* TESObjectREFR::GetHandle(TESObjectREFR* this, uint* out)`
+pub const TESObjectREFR__GetHandle: u64 = 19846;
+/// `TESObjectREFR::GetHandle` as a function pointer type (high).
+pub type TESObjectREFR__GetHandle_fn = unsafe extern "C" fn(this: *mut classes::TESObjectREFR, out: *mut u32) -> *mut u32;
+/// `TESObjectREFR::GetInventoryChanges` at 0x22b2c0 (runtime, high); signature (untiered): `longlong GetInventoryChanges(longlong param_1)`; the reference's inventory changes, or null (high); semantic signature: `InventoryChanges* TESObjectREFR::GetInventoryChanges(TESObjectREFR* this)`
+pub const TESObjectREFR__GetInventoryChanges: u64 = 16039;
+/// `TESObjectREFR::GetInventoryChanges` as a function pointer type (high).
+pub type TESObjectREFR__GetInventoryChanges_fn = unsafe extern "C" fn(this: *mut classes::TESObjectREFR) -> *mut classes::InventoryChanges;
+/// `TESObjectREFR::GetScale` at 0x2e6f30 (runtime, high); signature (untiered): `float GetScale(longlong param_1)`; effective scale (high); semantic signature: `float TESObjectREFR::GetScale(TESObjectREFR* this)`
+pub const TESObjectREFR__GetScale: u64 = 19664;
+/// `TESObjectREFR::GetScale` as a function pointer type (high).
+pub type TESObjectREFR__GetScale_fn = unsafe extern "C" fn(this: *mut classes::TESObjectREFR) -> f32;
 /// `TESObjectREFR::GetTriggerObjectCount_Impl_sub0` at 0x407e00 (callgraph, medium); signature (untiered): `undefined4 GetTriggerObjectCount_Impl_sub0(longlong param_1, int * param_2)`
 pub const TESObjectREFR__GetTriggerObjectCount_Impl_sub0: u64 = 26060;
+/// `TESObjectREFR::GetWorldspace` at 0x2f3e00 (runtime, high); signature (untiered): `undefined8 GetWorldspace(longlong * param_1)`; the worldspace, null in interiors (high); semantic signature: `TESWorldSpace* TESObjectREFR::GetWorldspace(TESObjectREFR* this)`
+pub const TESObjectREFR__GetWorldspace: u64 = 19816;
+/// `TESObjectREFR::GetWorldspace` as a function pointer type (high).
+pub type TESObjectREFR__GetWorldspace_fn = unsafe extern "C" fn(this: *mut classes::TESObjectREFR) -> *mut classes::TESWorldSpace;
+/// `TESObjectREFR::HasKeyword` at 0x2e6620 (runtime, high); signature (untiered): `undefined HasKeyword(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+pub const TESObjectREFR__HasKeyword: u64 = 19645;
 /// `TESObjectREFR::IAnimationGraphManagerHolder_vdtor` at 0x2f8c00 (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(TESObjectREFR * this)`
 pub const TESObjectREFR__IAnimationGraphManagerHolder_vdtor: u64 = 19921;
 /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
@@ -84881,6 +85067,10 @@ pub const TESObjectREFR__IAnimationGraphManagerHolder_vfunc_5: u64 = 20108;
 pub const TESObjectREFR__IAnimationGraphManagerHolder_vfunc_8: u64 = 20112;
 /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
 pub const TESObjectREFR__IAnimationGraphManagerHolder_vfunc_9: u64 = 20113;
+/// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
+pub const TESObjectREFR__IsChild: u64 = 19713;
+/// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
+pub const TESObjectREFR__IsDead: u64 = 19820;
 /// `TESObjectREFR::LoadGame` at 0x2e0c70 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectREFR * this, TESObjectREFR_vtbl * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
 pub const TESObjectREFR__LoadGame: u64 = 19529;
 /// `TESObjectREFR::SaveGame` at 0x2e0b10 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -84915,8 +85105,6 @@ pub const TESObjectREFR__vfunc_109: u64 = 19733;
 pub const TESObjectREFR__vfunc_110: u64 = 19734;
 /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
 pub const TESObjectREFR__vfunc_111: u64 = 19985;
-/// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
-pub const TESObjectREFR__vfunc_112: u64 = 19735;
 /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
 pub const TESObjectREFR__vfunc_113: u64 = 20023;
 /// `TESObjectREFR::vfunc_114` at 0x2fc9e0 (rtti, medium); signature (low): `undefined8 vfunc_114(TESObjectREFR * this, longlong param_1, longlong param_2, undefined8 param_3)`
@@ -85003,8 +85191,6 @@ pub const TESObjectREFR__vfunc_150: u64 = 19809;
 pub const TESObjectREFR__vfunc_151: u64 = 19817;
 /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
 pub const TESObjectREFR__vfunc_152: u64 = 19818;
-/// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
-pub const TESObjectREFR__vfunc_153: u64 = 19820;
 /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESObjectREFR__vfunc_154: u64 = 19835;
 /// `TESObjectREFR::vfunc_155` at 0x2f56b0 (rtti, medium); signature (high): `longlong vfunc_155(TESObjectREFR * this)`
@@ -85103,8 +85289,6 @@ pub const TESObjectREFR__vfunc_69: u64 = 19566;
 pub const TESObjectREFR__vfunc_70: u64 = 20045;
 /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
 pub const TESObjectREFR__vfunc_71: u64 = 19601;
-/// `TESObjectREFR::vfunc_72` at 0x2e6620 (rtti, medium); signature (low): `undefined vfunc_72(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
-pub const TESObjectREFR__vfunc_72: u64 = 19645;
 /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
 pub const TESObjectREFR__vfunc_73: u64 = 19977;
 /// `TESObjectREFR::vfunc_74` at 0x2e6a90 (rtti, medium); signature (high): `undefined vfunc_74(TESObjectREFR * this)`
@@ -85155,8 +85339,6 @@ pub const TESObjectREFR__vfunc_91: u64 = 19709;
 pub const TESObjectREFR__vfunc_92: u64 = 19710;
 /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
 pub const TESObjectREFR__vfunc_93: u64 = 19711;
-/// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
-pub const TESObjectREFR__vfunc_94: u64 = 19713;
 /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
 pub const TESObjectREFR__vfunc_95: u64 = 20017;
 /// `TESObjectREFR::vfunc_96` at 0x2fbdd0 (rtti, medium); signature (low): `undefined vfunc_96(void)`
@@ -85959,12 +86141,12 @@ pub const TESTexture__vfunc_6: u64 = 14969;
 pub const TESTopic__GetFormEditorID: u64 = 25548;
 /// `TESTopic::SetFormEditorID` at 0x3efd20 (slot_propagation, high); signature (untiered): `bool SetFormEditorID(TESTopic * this, char * param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESTopic__SetFormEditorID: u64 = 25549;
+/// `TESTopic::TESFullName_GetFullName` at 0x3ee420 (slot_propagation, high); signature (untiered): `char * TESFullName_GetFullName(TESTopic * this)`
+pub const TESTopic__TESFullName_GetFullName: u64 = 25529;
+/// `TESTopic::TESFullName_GetFullNameLength` at 0x3ee3d0 (slot_propagation, high); signature (untiered): `undefined TESFullName_GetFullNameLength(TESTopic * this)`
+pub const TESTopic__TESFullName_GetFullNameLength: u64 = 25528;
 /// `TESTopic::TESFullName_vdtor` at 0x3f0874 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESTopic * this)`
 pub const TESTopic__TESFullName_vdtor: u64 = 25569;
-/// `TESTopic::TESFullName_vfunc_4` at 0x3ee3d0 (rtti, high); signature (high): `undefined TESFullName_vfunc_4(TESTopic * this)`
-pub const TESTopic__TESFullName_vfunc_4: u64 = 25528;
-/// `TESTopic::TESFullName_vfunc_5` at 0x3ee420 (rtti, high); signature (high): `char * TESFullName_vfunc_5(TESTopic * this)`
-pub const TESTopic__TESFullName_vfunc_5: u64 = 25529;
 /// `TESTopic::ctor` at 0x3ed7e0 (layout_inference, high); signature (low): `TESTopic * ctor(TESTopic * this, undefined8 param_1, uint * param_2, longlong * param_3)`
 pub const TESTopic__ctor: u64 = 25515;
 /// `TESTopic::dtor` at 0x3ed880 (layout_inference, high); signature (low): `undefined dtor(TESTopic * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`

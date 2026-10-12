@@ -623,7 +623,7 @@ pub struct Actor_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Actor::vfunc_72` at 0x671bf0 (rtti, medium); signature (low): `bool vfunc_72(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
+    /// `Actor::HasKeyword` at 0x671bf0 (slot_propagation, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
     pub slot_72: *const c_void,
     /// `Actor::vfunc_73` at 0x67f620 (rtti, medium); signature (high): `undefined8 vfunc_73(Actor * this)`
     pub slot_73: *const c_void,
@@ -667,7 +667,7 @@ pub struct Actor_vtable {
     pub slot_92: *const c_void,
     /// `Actor::vfunc_93` at 0x6d8550 (rtti, medium); signature (high): `Actor_vtbl_A0 * * vfunc_93(Actor * this)`
     pub slot_93: *const c_void,
-    /// `Actor::vfunc_94` at 0x6be280 (rtti, high); signature (low): `undefined1 vfunc_94(void)`
+    /// `Actor::IsChild` at 0x6be280 (semantic, high); signature (untiered): `undefined1 IsChild(void)`; `IsChild`: whether the actor is a child (high); semantic signature: `bool IsChild(const Actor* this)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -703,7 +703,7 @@ pub struct Actor_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -785,7 +785,7 @@ pub struct Actor_vtable {
     pub slot_151: *const c_void,
     /// `Actor::vfunc_152` at 0x676c60 (rtti, medium); signature (low): `undefined vfunc_152(Actor * this, longlong * param_1)`
     pub slot_152: *const c_void,
-    /// `Actor::vfunc_153` at 0x6879a0 (rtti, medium); signature (low): `ulonglong vfunc_153(Actor * this, char param_1)`
+    /// `Actor::IsDead` at 0x6879a0 (runtime, high); signature (untiered): `ulonglong IsDead(Actor * this, char param_1)`; `IsDead`: whether the actor is dead or dying (high); semantic signature: `bool IsDead(const Actor* this, bool ignoreBleedout)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -933,7 +933,7 @@ pub struct Actor_vtable {
     pub slot_225: *const c_void,
     /// `Actor::vfunc_226` at 0x6d45a0 (rtti, medium); signature (low): `undefined4 vfunc_226(Actor * this)`
     pub slot_226: *const c_void,
-    /// `Actor::vfunc_227` at 0x6c9850 (rtti, medium); signature (high): `longlong vfunc_227(Actor * this)`
+    /// `Actor::IsInCombat` at 0x6c9850 (runtime, high); signature (untiered): `longlong IsInCombat(Actor * this)`; `IsInCombat`: whether the actor has a combat controller (high); semantic signature: `bool IsInCombat(const Actor* this)`
     pub slot_227: *const c_void,
     /// `Actor::vfunc_228` at 0x6c98f0 (rtti, medium); signature (low): `undefined vfunc_228(Actor * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
     pub slot_228: *const c_void,
@@ -1074,7 +1074,31 @@ pub struct Actor_vtable {
 }
 impl Actor_vtable {
     pub const ID: u64 = 207511;
+    pub const SLOT_IsChild: usize = 94;
+    /// Slot 94 as `Actor_vtable_IsChild`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsChild(&self) -> Option<Actor_vtable_IsChild> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_IsChild>>(self.slot_94) }
+    }
+    pub const SLOT_IsDead: usize = 153;
+    /// Slot 153 as `Actor_vtable_IsDead`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsDead(&self) -> Option<Actor_vtable_IsDead> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_IsDead>>(self.slot_153) }
+    }
+    pub const SLOT_IsInCombat: usize = 227;
+    /// Slot 227 as `Actor_vtable_IsInCombat`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsInCombat(&self) -> Option<Actor_vtable_IsInCombat> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_IsInCombat>>(self.slot_227) }
+    }
 }
+/// `Actor::IsChild`, slot 94: whether the actor is a child (high).
+pub type Actor_vtable_IsChild = unsafe extern "C" fn(this: *const classes::Actor) -> bool;
+/// `Actor::IsDead`, slot 153: whether the actor is dead or dying (high).
+pub type Actor_vtable_IsDead = unsafe extern "C" fn(this: *const classes::Actor, ignoreBleedout: bool) -> bool;
+/// `Actor::IsInCombat`, slot 227: whether the actor has a combat controller (high).
+pub type Actor_vtable_IsInCombat = unsafe extern "C" fn(this: *const classes::Actor) -> bool;
 
 /// `Actor::vftable_20` at 0x191be90, id 207513 (rtti, high); 2 slots.
 #[repr(C)]
@@ -1183,21 +1207,21 @@ impl Actor_vtable_A0 {
 pub struct Actor_vtable_B8 {
     /// `Actor::ActorValueOwner_vdtor` at 0x6bbd14 (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(Actor * this)`
     pub slot_0: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_1` at 0x6c4cb0 (rtti, medium); signature (low): `undefined8 ActorValueOwner_vfunc_1(Actor * this, int param_2)`
+    /// `Actor::ActorValueOwner_GetActorValue` at 0x6c4cb0 (runtime, high); signature (untiered): `undefined8 ActorValueOwner_GetActorValue(Actor * this, int param_2)`
     pub slot_1: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_2` at 0x6c4e20 (rtti, medium); signature (low): `float ActorValueOwner_vfunc_2(Actor * this, int param_1)`
+    /// `Actor::ActorValueOwner_GetPermanentActorValue` at 0x6c4e20 (runtime, high); signature (untiered): `float ActorValueOwner_GetPermanentActorValue(Actor * this, int param_1)`
     pub slot_2: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_3` at 0x6c4ef0 (rtti, medium); signature (low): `ulonglong ActorValueOwner_vfunc_3(Actor * this, uint param_2)`
+    /// `Actor::ActorValueOwner_GetBaseActorValue` at 0x6c4ef0 (runtime, high); signature (untiered): `ulonglong ActorValueOwner_GetBaseActorValue(Actor * this, uint param_2)`
     pub slot_3: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_4` at 0x6c5030 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_4(Actor * this, int param_1, float param_2)`
+    /// `Actor::ActorValueOwner_SetBaseActorValue` at 0x6c5030 (semantic, high); signature (untiered): `undefined ActorValueOwner_SetBaseActorValue(Actor * this, int param_1, float param_2)`
     pub slot_4: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_5` at 0x6c5100 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_5(Actor * this, int param_1, float param_2)`
+    /// `Actor::ActorValueOwner_ModBaseActorValue` at 0x6c5100 (semantic, high); signature (untiered): `undefined ActorValueOwner_ModBaseActorValue(Actor * this, int param_1, float param_2)`
     pub slot_5: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_6` at 0x6c51f0 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_6(Actor * this, int param_1, undefined8 param_2, float param_3)`
+    /// `Actor::ActorValueOwner_ModActorValue` at 0x6c51f0 (runtime, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(Actor * this, int param_1, undefined8 param_2, float param_3)`
     pub slot_6: *const c_void,
-    /// `ActorValueOwner::vfunc_7` at 0x3cd850 (rtti, medium); signature (high): `undefined vfunc_7(ActorValueOwner * this)`
+    /// `ActorValueOwner::SetActorValue` at 0x3cd850 (semantic, high); signature (untiered): `undefined SetActorValue(ActorValueOwner * this)`
     pub slot_7: *const c_void,
-    /// `ActorValueOwner::vfunc_8` at 0x447170 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `ActorValueOwner::UsesPCLevelMult` at 0x447170 (semantic, low); signature (untiered): `undefined1 UsesPCLevelMult(void)`
     pub slot_8: *const c_void,
 }
 impl Actor_vtable_B8 {
@@ -1879,9 +1903,9 @@ pub struct ActorValueInfo_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl ActorValueInfo_vtable_20 {
@@ -1951,26 +1975,83 @@ impl ActorValueMeter_vtable {
 pub struct ActorValueOwner_vtable {
     /// `ActorValueOwner::vdtor` at 0x3cbb40 (layout_inference, medium); signature (low): `ActorValueOwner * vdtor(ActorValueOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ActorValueOwner::vfunc_1` at 0x3cc610 (rtti, high); signature (low): `undefined8 vfunc_1(void)`
+    /// `ActorValueOwner::GetActorValue` at 0x3cc610 (runtime, high); signature (untiered): `undefined8 GetActorValue(void)`; `GetActorValue`: current value (high); semantic signature: `float GetActorValue(const ActorValueOwner* this, int value)`
     pub slot_1: *const c_void,
-    /// `ActorValueOwner::vfunc_2` at 0x3cc6f0 (rtti, high); signature (low): `undefined8 vfunc_2(void)`
+    /// `ActorValueOwner::GetPermanentActorValue` at 0x3cc6f0 (runtime, high); signature (untiered): `undefined8 GetPermanentActorValue(void)`; `GetPermanentActorValue`: base plus permanent modifier (high); semantic signature: `float GetPermanentActorValue(const ActorValueOwner* this, int value)`
     pub slot_2: *const c_void,
-    /// `ActorValueOwner::vfunc_3` at 0x3cc630 (rtti, high); signature (low): `undefined8 vfunc_3(void)`
+    /// `ActorValueOwner::GetBaseActorValue` at 0x3cc630 (runtime, high); signature (untiered): `undefined8 GetBaseActorValue(void)`; `GetBaseActorValue`: base value (high); semantic signature: `float GetBaseActorValue(const ActorValueOwner* this, int value)`
     pub slot_3: *const c_void,
-    /// `ActorValueOwner::vfunc_4` at 0x3cd8b0 (rtti, high); signature (low): `undefined vfunc_4(void)`
+    /// `ActorValueOwner::SetBaseActorValue` at 0x3cd8b0 (semantic, high); signature (untiered): `undefined SetBaseActorValue(void)`; `SetBaseActorValue`: sets the base value (high); semantic signature: `void SetBaseActorValue(ActorValueOwner* this, int value, float amount)`
     pub slot_4: *const c_void,
-    /// `ActorValueOwner::vfunc_5` at 0x3ccb60 (rtti, high); signature (low): `undefined vfunc_5(void)`
+    /// `ActorValueOwner::ModBaseActorValue` at 0x3ccb60 (semantic, high); signature (untiered): `undefined ModBaseActorValue(void)`; `ModBaseActorValue`: adds to the base value (high); semantic signature: `void ModBaseActorValue(ActorValueOwner* this, int value, float delta)`
     pub slot_5: *const c_void,
-    /// `ActorValueOwner::vfunc_6` at 0x3ccb40 (rtti, high); signature (low): `undefined vfunc_6(void)`
+    /// `ActorValueOwner::ModActorValue` at 0x3ccb40 (runtime, high); signature (untiered): `undefined ModActorValue(void)`; `ModActorValue`: adds to a modifier (0 permanent, 1 temporary, 2 damage) (high); semantic signature: `void ModActorValue(ActorValueOwner* this, int modifier, int value, float delta)`
     pub slot_6: *const c_void,
-    /// `ActorValueOwner::vfunc_7` at 0x3cd850 (rtti, medium); signature (high): `undefined vfunc_7(ActorValueOwner * this)`
+    /// `ActorValueOwner::SetActorValue` at 0x3cd850 (semantic, high); signature (untiered): `undefined SetActorValue(ActorValueOwner * this)`; `SetActorValue`: sets the value (base in the default implementation) (high); semantic signature: `void SetActorValue(ActorValueOwner* this, int value, float amount)`
     pub slot_7: *const c_void,
-    /// `ActorValueOwner::vfunc_8` at 0x447170 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `ActorValueOwner::UsesPCLevelMult` at 0x447170 (semantic, low); signature (untiered): `undefined1 UsesPCLevelMult(void)`; `UsesPCLevelMult`: whether values scale with the player level (low); semantic signature: `bool UsesPCLevelMult(const ActorValueOwner* this)`
     pub slot_8: *const c_void,
 }
 impl ActorValueOwner_vtable {
     pub const ID: u64 = 195788;
+    pub const SLOT_GetActorValue: usize = 1;
+    /// Slot 1 as `ActorValueOwner_vtable_GetActorValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetActorValue(&self) -> Option<ActorValueOwner_vtable_GetActorValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorValueOwner_vtable_GetActorValue>>(self.slot_1) }
+    }
+    pub const SLOT_GetPermanentActorValue: usize = 2;
+    /// Slot 2 as `ActorValueOwner_vtable_GetPermanentActorValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetPermanentActorValue(&self) -> Option<ActorValueOwner_vtable_GetPermanentActorValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorValueOwner_vtable_GetPermanentActorValue>>(self.slot_2) }
+    }
+    pub const SLOT_GetBaseActorValue: usize = 3;
+    /// Slot 3 as `ActorValueOwner_vtable_GetBaseActorValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetBaseActorValue(&self) -> Option<ActorValueOwner_vtable_GetBaseActorValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorValueOwner_vtable_GetBaseActorValue>>(self.slot_3) }
+    }
+    pub const SLOT_SetBaseActorValue: usize = 4;
+    /// Slot 4 as `ActorValueOwner_vtable_SetBaseActorValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetBaseActorValue(&self) -> Option<ActorValueOwner_vtable_SetBaseActorValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorValueOwner_vtable_SetBaseActorValue>>(self.slot_4) }
+    }
+    pub const SLOT_ModBaseActorValue: usize = 5;
+    /// Slot 5 as `ActorValueOwner_vtable_ModBaseActorValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn ModBaseActorValue(&self) -> Option<ActorValueOwner_vtable_ModBaseActorValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorValueOwner_vtable_ModBaseActorValue>>(self.slot_5) }
+    }
+    pub const SLOT_ModActorValue: usize = 6;
+    /// Slot 6 as `ActorValueOwner_vtable_ModActorValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn ModActorValue(&self) -> Option<ActorValueOwner_vtable_ModActorValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorValueOwner_vtable_ModActorValue>>(self.slot_6) }
+    }
+    pub const SLOT_SetActorValue: usize = 7;
+    /// Slot 7 as `ActorValueOwner_vtable_SetActorValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetActorValue(&self) -> Option<ActorValueOwner_vtable_SetActorValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorValueOwner_vtable_SetActorValue>>(self.slot_7) }
+    }
+    pub const SLOT_UsesPCLevelMult: usize = 8;
 }
+/// `ActorValueOwner::GetActorValue`, slot 1: current value (high).
+pub type ActorValueOwner_vtable_GetActorValue = unsafe extern "C" fn(this: *const classes::ActorValueOwner, value: i32) -> f32;
+/// `ActorValueOwner::GetPermanentActorValue`, slot 2: base plus permanent modifier (high).
+pub type ActorValueOwner_vtable_GetPermanentActorValue = unsafe extern "C" fn(this: *const classes::ActorValueOwner, value: i32) -> f32;
+/// `ActorValueOwner::GetBaseActorValue`, slot 3: base value (high).
+pub type ActorValueOwner_vtable_GetBaseActorValue = unsafe extern "C" fn(this: *const classes::ActorValueOwner, value: i32) -> f32;
+/// `ActorValueOwner::SetBaseActorValue`, slot 4: sets the base value (high).
+pub type ActorValueOwner_vtable_SetBaseActorValue = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32, amount: f32);
+/// `ActorValueOwner::ModBaseActorValue`, slot 5: adds to the base value (high).
+pub type ActorValueOwner_vtable_ModBaseActorValue = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32, delta: f32);
+/// `ActorValueOwner::ModActorValue`, slot 6: adds to a modifier (0 permanent, 1 temporary, 2 damage) (high).
+pub type ActorValueOwner_vtable_ModActorValue = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, modifier: i32, value: i32, delta: f32);
+/// `ActorValueOwner::SetActorValue`, slot 7: sets the value (base in the default implementation) (high).
+pub type ActorValueOwner_vtable_SetActorValue = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32, amount: f32);
 
 /// `AddCallbackVisitor::vftable` at 0x1a9c2f0, id 242195 (rtti, high); 2 slots.
 #[repr(C)]
@@ -2409,9 +2490,9 @@ pub struct AlchemyItem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl AlchemyItem_vtable_30 {
@@ -3393,7 +3474,7 @@ pub struct ArrowProjectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -3437,7 +3518,7 @@ pub struct ArrowProjectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -3473,7 +3554,7 @@ pub struct ArrowProjectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -3555,7 +3636,7 @@ pub struct ArrowProjectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -21255,9 +21336,9 @@ pub struct BGSApparatus_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSApparatus_vtable_30 {
@@ -22719,9 +22800,9 @@ pub struct BGSColorForm_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSColorForm_vtable_20 {
@@ -24257,9 +24338,9 @@ pub struct BGSExplosion_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSExplosion_vtable_30 {
@@ -24923,9 +25004,9 @@ pub struct BGSHazard_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSHazard_vtable_30 {
@@ -25125,9 +25206,9 @@ pub struct BGSHeadPart_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSHeadPart_vtable_20 {
@@ -26447,9 +26528,9 @@ pub struct BGSLocation_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSLocation_vtable_20 {
@@ -27191,9 +27272,9 @@ pub struct BGSMessage_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSMessage_vtable_20 {
@@ -27243,9 +27324,9 @@ pub struct BGSMovableStatic_vtable {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSMovableStatic_vtable {
@@ -28541,9 +28622,9 @@ pub struct BGSNote_vtable_58 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSNote_vtable_58 {
@@ -29955,9 +30036,9 @@ pub struct BGSPerk_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSPerk_vtable_20 {
@@ -36839,9 +36920,9 @@ pub struct BGSProjectile_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSProjectile_vtable_30 {
@@ -38441,9 +38522,9 @@ pub struct BGSSoundCategory_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSSoundCategory_vtable_20 {
@@ -39997,9 +40078,9 @@ pub struct BGSTalkingActivator_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl BGSTalkingActivator_vtable_30 {
@@ -106905,7 +106986,7 @@ pub struct BarrierProjectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -106949,7 +107030,7 @@ pub struct BarrierProjectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -106985,7 +107066,7 @@ pub struct BarrierProjectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -107067,7 +107148,7 @@ pub struct BarrierProjectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -107751,7 +107832,7 @@ pub struct BeamProjectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -107795,7 +107876,7 @@ pub struct BeamProjectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -107831,7 +107912,7 @@ pub struct BeamProjectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -107913,7 +107994,7 @@ pub struct BeamProjectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -108903,7 +108984,7 @@ pub struct ChainExplosion_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `TESObjectREFR::vfunc_72` at 0x2e6620 (rtti, medium); signature (low): `undefined vfunc_72(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+    /// `TESObjectREFR::HasKeyword` at 0x2e6620 (runtime, high); signature (untiered): `undefined HasKeyword(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -108947,7 +109028,7 @@ pub struct ChainExplosion_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -108983,7 +109064,7 @@ pub struct ChainExplosion_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -109065,7 +109146,7 @@ pub struct ChainExplosion_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -109361,7 +109442,7 @@ pub struct Character_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Actor::vfunc_72` at 0x671bf0 (rtti, medium); signature (low): `bool vfunc_72(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
+    /// `Actor::HasKeyword` at 0x671bf0 (slot_propagation, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
     pub slot_72: *const c_void,
     /// `Actor::vfunc_73` at 0x67f620 (rtti, medium); signature (high): `undefined8 vfunc_73(Actor * this)`
     pub slot_73: *const c_void,
@@ -109405,7 +109486,7 @@ pub struct Character_vtable {
     pub slot_92: *const c_void,
     /// `Actor::vfunc_93` at 0x6d8550 (rtti, medium); signature (high): `Actor_vtbl_A0 * * vfunc_93(Actor * this)`
     pub slot_93: *const c_void,
-    /// `Character::vfunc_94` at 0x73a9d0 (rtti, medium); signature (high): `uint vfunc_94(Character * this)`
+    /// `Character::IsChild` at 0x73a9d0 (slot_propagation, high); signature (untiered): `uint IsChild(Character * this)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -109441,7 +109522,7 @@ pub struct Character_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -109523,7 +109604,7 @@ pub struct Character_vtable {
     pub slot_151: *const c_void,
     /// `Actor::vfunc_152` at 0x676c60 (rtti, medium); signature (low): `undefined vfunc_152(Actor * this, longlong * param_1)`
     pub slot_152: *const c_void,
-    /// `Actor::vfunc_153` at 0x6879a0 (rtti, medium); signature (low): `ulonglong vfunc_153(Actor * this, char param_1)`
+    /// `Actor::IsDead` at 0x6879a0 (runtime, high); signature (untiered): `ulonglong IsDead(Actor * this, char param_1)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -109671,7 +109752,7 @@ pub struct Character_vtable {
     pub slot_225: *const c_void,
     /// `Actor::vfunc_226` at 0x6d45a0 (rtti, medium); signature (low): `undefined4 vfunc_226(Actor * this)`
     pub slot_226: *const c_void,
-    /// `Actor::vfunc_227` at 0x6c9850 (rtti, medium); signature (high): `longlong vfunc_227(Actor * this)`
+    /// `Actor::IsInCombat` at 0x6c9850 (runtime, high); signature (untiered): `longlong IsInCombat(Actor * this)`
     pub slot_227: *const c_void,
     /// `Actor::vfunc_228` at 0x6c98f0 (rtti, medium); signature (low): `undefined vfunc_228(Actor * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
     pub slot_228: *const c_void,
@@ -109925,21 +110006,21 @@ impl Character_vtable_A0 {
 pub struct Character_vtable_B8 {
     /// `Character::ActorValueOwner_vdtor` at 0x73aacc (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(Character * this)`
     pub slot_0: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_1` at 0x6c4cb0 (rtti, medium); signature (low): `undefined8 ActorValueOwner_vfunc_1(Actor * this, int param_2)`
+    /// `Actor::ActorValueOwner_GetActorValue` at 0x6c4cb0 (runtime, high); signature (untiered): `undefined8 ActorValueOwner_GetActorValue(Actor * this, int param_2)`
     pub slot_1: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_2` at 0x6c4e20 (rtti, medium); signature (low): `float ActorValueOwner_vfunc_2(Actor * this, int param_1)`
+    /// `Actor::ActorValueOwner_GetPermanentActorValue` at 0x6c4e20 (runtime, high); signature (untiered): `float ActorValueOwner_GetPermanentActorValue(Actor * this, int param_1)`
     pub slot_2: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_3` at 0x6c4ef0 (rtti, medium); signature (low): `ulonglong ActorValueOwner_vfunc_3(Actor * this, uint param_2)`
+    /// `Actor::ActorValueOwner_GetBaseActorValue` at 0x6c4ef0 (runtime, high); signature (untiered): `ulonglong ActorValueOwner_GetBaseActorValue(Actor * this, uint param_2)`
     pub slot_3: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_4` at 0x6c5030 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_4(Actor * this, int param_1, float param_2)`
+    /// `Actor::ActorValueOwner_SetBaseActorValue` at 0x6c5030 (semantic, high); signature (untiered): `undefined ActorValueOwner_SetBaseActorValue(Actor * this, int param_1, float param_2)`
     pub slot_4: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_5` at 0x6c5100 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_5(Actor * this, int param_1, float param_2)`
+    /// `Actor::ActorValueOwner_ModBaseActorValue` at 0x6c5100 (semantic, high); signature (untiered): `undefined ActorValueOwner_ModBaseActorValue(Actor * this, int param_1, float param_2)`
     pub slot_5: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_6` at 0x6c51f0 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_6(Actor * this, int param_1, undefined8 param_2, float param_3)`
+    /// `Actor::ActorValueOwner_ModActorValue` at 0x6c51f0 (runtime, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(Actor * this, int param_1, undefined8 param_2, float param_3)`
     pub slot_6: *const c_void,
-    /// `ActorValueOwner::vfunc_7` at 0x3cd850 (rtti, medium); signature (high): `undefined vfunc_7(ActorValueOwner * this)`
+    /// `ActorValueOwner::SetActorValue` at 0x3cd850 (semantic, high); signature (untiered): `undefined SetActorValue(ActorValueOwner * this)`
     pub slot_7: *const c_void,
-    /// `ActorValueOwner::vfunc_8` at 0x447170 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `ActorValueOwner::UsesPCLevelMult` at 0x447170 (semantic, low); signature (untiered): `undefined1 UsesPCLevelMult(void)`
     pub slot_8: *const c_void,
 }
 impl Character_vtable_B8 {
@@ -131555,7 +131636,7 @@ pub struct ConeProjectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -131599,7 +131680,7 @@ pub struct ConeProjectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -131635,7 +131716,7 @@ pub struct ConeProjectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -131717,7 +131798,7 @@ pub struct ConeProjectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -133867,9 +133948,9 @@ pub struct EffectSetting_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl EffectSetting_vtable_20 {
@@ -134205,9 +134286,9 @@ pub struct EnchantmentItem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl EnchantmentItem_vtable_30 {
@@ -134609,7 +134690,7 @@ pub struct Explosion_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `TESObjectREFR::vfunc_72` at 0x2e6620 (rtti, medium); signature (low): `undefined vfunc_72(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+    /// `TESObjectREFR::HasKeyword` at 0x2e6620 (runtime, high); signature (untiered): `undefined HasKeyword(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -134653,7 +134734,7 @@ pub struct Explosion_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -134689,7 +134770,7 @@ pub struct Explosion_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -134771,7 +134852,7 @@ pub struct Explosion_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -137783,7 +137864,7 @@ pub struct FlameProjectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -137827,7 +137908,7 @@ pub struct FlameProjectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -137863,7 +137944,7 @@ pub struct FlameProjectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -137945,7 +138026,7 @@ pub struct FlameProjectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -139499,7 +139580,7 @@ pub struct GrenadeProjectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -139543,7 +139624,7 @@ pub struct GrenadeProjectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -139579,7 +139660,7 @@ pub struct GrenadeProjectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -139661,7 +139742,7 @@ pub struct GrenadeProjectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -140487,7 +140568,7 @@ pub struct Hazard_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `TESObjectREFR::vfunc_72` at 0x2e6620 (rtti, medium); signature (low): `undefined vfunc_72(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+    /// `TESObjectREFR::HasKeyword` at 0x2e6620 (runtime, high); signature (untiered): `undefined HasKeyword(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -140531,7 +140612,7 @@ pub struct Hazard_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -140567,7 +140648,7 @@ pub struct Hazard_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -140649,7 +140730,7 @@ pub struct Hazard_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -144767,9 +144848,9 @@ pub struct IngredientItem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl IngredientItem_vtable_30 {
@@ -147131,9 +147212,9 @@ pub struct MagicItem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl MagicItem_vtable_30 {
@@ -148275,7 +148356,7 @@ pub struct MissileProjectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -148319,7 +148400,7 @@ pub struct MissileProjectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -148355,7 +148436,7 @@ pub struct MissileProjectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -148437,7 +148518,7 @@ pub struct MissileProjectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -178143,7 +178224,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_70: *const c_void,
     /// `PlayerCharacter::vfunc_71` at 0x75d4f0 (rtti, high); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Actor::vfunc_72` at 0x671bf0 (rtti, medium); signature (low): `bool vfunc_72(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
+    /// `Actor::HasKeyword` at 0x671bf0 (slot_propagation, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
     pub slot_72: *const c_void,
     /// `Actor::vfunc_73` at 0x67f620 (rtti, medium); signature (high): `undefined8 vfunc_73(Actor * this)`
     pub slot_73: *const c_void,
@@ -178187,7 +178268,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_92: *const c_void,
     /// `Actor::vfunc_93` at 0x6d8550 (rtti, medium); signature (high): `Actor_vtbl_A0 * * vfunc_93(Actor * this)`
     pub slot_93: *const c_void,
-    /// `Character::vfunc_94` at 0x73a9d0 (rtti, medium); signature (high): `uint vfunc_94(Character * this)`
+    /// `Character::IsChild` at 0x73a9d0 (slot_propagation, high); signature (untiered): `uint IsChild(Character * this)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -178223,7 +178304,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_110: *const c_void,
     /// `PlayerCharacter::vfunc_111` at 0x747b70 (rtti, high); signature (low): `undefined8 vfunc_111(PlayerCharacter * this, char param_1)`
     pub slot_111: *const c_void,
-    /// `PlayerCharacter::vfunc_112` at 0x747af0 (rtti, high); signature (high): `undefined vfunc_112(PlayerCharacter * this)`
+    /// `PlayerCharacter::Get3D` at 0x747af0 (slot_propagation, high); signature (untiered): `undefined Get3D(PlayerCharacter * this)`
     pub slot_112: *const c_void,
     /// `PlayerCharacter::vfunc_113` at 0x76b0b0 (rtti, high); signature (high): `byte vfunc_113(PlayerCharacter * this)`
     pub slot_113: *const c_void,
@@ -178305,7 +178386,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_151: *const c_void,
     /// `PlayerCharacter::vfunc_152` at 0x747d60 (rtti, high); signature (low): `undefined vfunc_152(PlayerCharacter * this, PlayerCharacter * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_152: *const c_void,
-    /// `Actor::vfunc_153` at 0x6879a0 (rtti, medium); signature (low): `ulonglong vfunc_153(Actor * this, char param_1)`
+    /// `Actor::IsDead` at 0x6879a0 (runtime, high); signature (untiered): `ulonglong IsDead(Actor * this, char param_1)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -178453,7 +178534,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_225: *const c_void,
     /// `Actor::vfunc_226` at 0x6d45a0 (rtti, medium); signature (low): `undefined4 vfunc_226(Actor * this)`
     pub slot_226: *const c_void,
-    /// `PlayerCharacter::vfunc_227` at 0x76b0c0 (rtti, high); signature (high): `byte vfunc_227(PlayerCharacter * this)`
+    /// `PlayerCharacter::IsInCombat` at 0x76b0c0 (slot_propagation, high); signature (untiered): `byte IsInCombat(PlayerCharacter * this)`
     pub slot_227: *const c_void,
     /// `PlayerCharacter::vfunc_228` at 0x774cf0 (rtti, high); signature (low): `undefined vfunc_228(void)`
     pub slot_228: *const c_void,
@@ -178717,21 +178798,21 @@ impl PlayerCharacter_vtable_A0 {
 pub struct PlayerCharacter_vtable_B8 {
     /// `PlayerCharacter::ActorValueOwner_vdtor` at 0x769320 (slot_propagation, medium); signature (low): `undefined ActorValueOwner_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     pub slot_0: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_1` at 0x6c4cb0 (rtti, medium); signature (low): `undefined8 ActorValueOwner_vfunc_1(Actor * this, int param_2)`
+    /// `Actor::ActorValueOwner_GetActorValue` at 0x6c4cb0 (runtime, high); signature (untiered): `undefined8 ActorValueOwner_GetActorValue(Actor * this, int param_2)`
     pub slot_1: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_2` at 0x6c4e20 (rtti, medium); signature (low): `float ActorValueOwner_vfunc_2(Actor * this, int param_1)`
+    /// `Actor::ActorValueOwner_GetPermanentActorValue` at 0x6c4e20 (runtime, high); signature (untiered): `float ActorValueOwner_GetPermanentActorValue(Actor * this, int param_1)`
     pub slot_2: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_3` at 0x6c4ef0 (rtti, medium); signature (low): `ulonglong ActorValueOwner_vfunc_3(Actor * this, uint param_2)`
+    /// `Actor::ActorValueOwner_GetBaseActorValue` at 0x6c4ef0 (runtime, high); signature (untiered): `ulonglong ActorValueOwner_GetBaseActorValue(Actor * this, uint param_2)`
     pub slot_3: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_4` at 0x6c5030 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_4(Actor * this, int param_1, float param_2)`
+    /// `Actor::ActorValueOwner_SetBaseActorValue` at 0x6c5030 (semantic, high); signature (untiered): `undefined ActorValueOwner_SetBaseActorValue(Actor * this, int param_1, float param_2)`
     pub slot_4: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_5` at 0x6c5100 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_5(Actor * this, int param_1, float param_2)`
+    /// `Actor::ActorValueOwner_ModBaseActorValue` at 0x6c5100 (semantic, high); signature (untiered): `undefined ActorValueOwner_ModBaseActorValue(Actor * this, int param_1, float param_2)`
     pub slot_5: *const c_void,
-    /// `Actor::ActorValueOwner_vfunc_6` at 0x6c51f0 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_6(Actor * this, int param_1, undefined8 param_2, float param_3)`
+    /// `Actor::ActorValueOwner_ModActorValue` at 0x6c51f0 (runtime, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(Actor * this, int param_1, undefined8 param_2, float param_3)`
     pub slot_6: *const c_void,
-    /// `ActorValueOwner::vfunc_7` at 0x3cd850 (rtti, medium); signature (high): `undefined vfunc_7(ActorValueOwner * this)`
+    /// `ActorValueOwner::SetActorValue` at 0x3cd850 (semantic, high); signature (untiered): `undefined SetActorValue(ActorValueOwner * this)`
     pub slot_7: *const c_void,
-    /// `PlayerCharacter::ActorValueOwner_vfunc_8` at 0x75c2b0 (rtti, high); signature (low): `undefined1 ActorValueOwner_vfunc_8(void)`
+    /// `PlayerCharacter::ActorValueOwner_UsesPCLevelMult` at 0x75c2b0 (slot_propagation, low); signature (untiered): `undefined1 ActorValueOwner_UsesPCLevelMult(void)`
     pub slot_8: *const c_void,
 }
 impl PlayerCharacter_vtable_B8 {
@@ -179353,7 +179434,7 @@ pub struct Projectile_vtable {
     pub slot_70: *const c_void,
     /// `Projectile::vfunc_71` at 0x7fafe0 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Projectile::vfunc_72` at 0x7fe2b0 (rtti, medium); signature (high): `undefined8 vfunc_72(Projectile * this)`
+    /// `Projectile::HasKeyword` at 0x7fe2b0 (slot_propagation, high); signature (untiered): `undefined8 HasKeyword(Projectile * this)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -179397,7 +179478,7 @@ pub struct Projectile_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -179433,7 +179514,7 @@ pub struct Projectile_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -179515,7 +179596,7 @@ pub struct Projectile_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -182259,9 +182340,9 @@ pub struct ScrollItem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl ScrollItem_vtable_30 {
@@ -186467,9 +186548,9 @@ pub struct SpellItem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl SpellItem_vtable_30 {
@@ -187863,9 +187944,9 @@ pub struct TESActorBase_vtable_D8 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESActorBase_vtable_D8 {
@@ -187877,21 +187958,21 @@ impl TESActorBase_vtable_D8 {
 pub struct TESActorBase_vtable_E8 {
     /// `TESActorBase::ActorValueOwner_vdtor` at 0x3cba48 (slot_propagation, medium); signature (low): `undefined ActorValueOwner_vdtor(TESActorBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_1` at 0x3b00c0 (rtti, high); signature (low): `undefined ActorValueOwner_vfunc_1(TESActorBase * this, undefined4 param_1)`
+    /// `TESActorBase::ActorValueOwner_GetActorValue` at 0x3b00c0 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetActorValue(TESActorBase * this, undefined4 param_1)`
     pub slot_1: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_2` at 0x3cc700 (rtti, medium); signature (high): `undefined ActorValueOwner_vfunc_2(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_GetPermanentActorValue` at 0x3cc700 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
     pub slot_2: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_3` at 0x3cc640 (rtti, medium); signature (high): `undefined ActorValueOwner_vfunc_3(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_GetBaseActorValue` at 0x3cc640 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
     pub slot_3: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_4` at 0x3b0240 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_4(TESActorBase * this, undefined4 param_1, float param_2)`
+    /// `TESActorBase::ActorValueOwner_SetBaseActorValue` at 0x3b0240 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     pub slot_4: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_5` at 0x3b0350 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_5(TESActorBase * this, undefined4 param_1, float param_2)`
+    /// `TESActorBase::ActorValueOwner_ModBaseActorValue` at 0x3b0350 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_ModBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     pub slot_5: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_6` at 0x3ccb50 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_6(void)`
+    /// `TESActorBase::ActorValueOwner_ModActorValue` at 0x3ccb50 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(void)`
     pub slot_6: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_7` at 0x3cd860 (rtti, high); signature (high): `undefined ActorValueOwner_vfunc_7(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_SetActorValue` at 0x3cd860 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetActorValue(TESActorBase * this)`
     pub slot_7: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_8` at 0x3b03a0 (rtti, medium); signature (high): `bool ActorValueOwner_vfunc_8(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_UsesPCLevelMult` at 0x3b03a0 (slot_propagation, low); signature (untiered): `bool ActorValueOwner_UsesPCLevelMult(TESActorBase * this)`
     pub slot_8: *const c_void,
 }
 impl TESActorBase_vtable_E8 {
@@ -188213,9 +188294,9 @@ pub struct TESAmmo_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESAmmo_vtable_30 {
@@ -188975,9 +189056,9 @@ pub struct TESClass_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESClass_vtable_20 {
@@ -189667,9 +189748,9 @@ pub struct TESEyes_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESEyes_vtable_20 {
@@ -189835,9 +189916,9 @@ pub struct TESFaction_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESFaction_vtable_20 {
@@ -190045,9 +190126,9 @@ pub struct TESFlora_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESFlora_vtable_30 {
@@ -190364,14 +190445,30 @@ pub struct TESFullName_vtable {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`; `GetFullNameLength`: length of the name (high); semantic signature: `uint GetFullNameLength(const TESFullName* this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`; `GetFullName`: the name (high); semantic signature: `const char* GetFullName(const TESFullName* this)`
     pub slot_5: *const c_void,
 }
 impl TESFullName_vtable {
     pub const ID: u64 = 186366;
+    pub const SLOT_GetFullNameLength: usize = 4;
+    /// Slot 4 as `TESFullName_vtable_GetFullNameLength`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetFullNameLength(&self) -> Option<TESFullName_vtable_GetFullNameLength> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TESFullName_vtable_GetFullNameLength>>(self.slot_4) }
+    }
+    pub const SLOT_GetFullName: usize = 5;
+    /// Slot 5 as `TESFullName_vtable_GetFullName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetFullName(&self) -> Option<TESFullName_vtable_GetFullName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TESFullName_vtable_GetFullName>>(self.slot_5) }
+    }
 }
+/// `TESFullName::GetFullNameLength`, slot 4: length of the name (high).
+pub type TESFullName_vtable_GetFullNameLength = unsafe extern "C" fn(this: *const classes::TESFullName) -> u32;
+/// `TESFullName::GetFullName`, slot 5: the name (high).
+pub type TESFullName_vtable_GetFullName = unsafe extern "C" fn(this: *const classes::TESFullName) -> *const c_char;
 
 /// `TESFurniture::vftable` at 0x1811840, id 189309 (rtti, high); 83 slots.
 #[repr(C)]
@@ -190558,9 +190655,9 @@ pub struct TESFurniture_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESFurniture_vtable_30 {
@@ -191640,9 +191737,9 @@ pub struct TESKey_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESKey_vtable_30 {
@@ -193150,9 +193247,9 @@ pub struct TESNPC_vtable_D8 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESNPC_vtable_D8 {
@@ -193164,21 +193261,21 @@ impl TESNPC_vtable_D8 {
 pub struct TESNPC_vtable_E8 {
     /// `TESNPC::ActorValueOwner_vdtor` at 0x3cbaf0 (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(TESNPC * this)`
     pub slot_0: *const c_void,
-    /// `TESNPC::ActorValueOwner_vfunc_1` at 0x3c71f0 (rtti, high); signature (low): `undefined ActorValueOwner_vfunc_1(TESNPC * this, int param_1)`
+    /// `TESNPC::ActorValueOwner_GetActorValue` at 0x3c71f0 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetActorValue(TESNPC * this, int param_1)`
     pub slot_1: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_2` at 0x3cc700 (rtti, medium); signature (high): `undefined ActorValueOwner_vfunc_2(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_GetPermanentActorValue` at 0x3cc700 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
     pub slot_2: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_3` at 0x3cc640 (rtti, medium); signature (high): `undefined ActorValueOwner_vfunc_3(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_GetBaseActorValue` at 0x3cc640 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
     pub slot_3: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_4` at 0x3b0240 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_4(TESActorBase * this, undefined4 param_1, float param_2)`
+    /// `TESActorBase::ActorValueOwner_SetBaseActorValue` at 0x3b0240 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     pub slot_4: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_5` at 0x3b0350 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_5(TESActorBase * this, undefined4 param_1, float param_2)`
+    /// `TESActorBase::ActorValueOwner_ModBaseActorValue` at 0x3b0350 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_ModBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     pub slot_5: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_6` at 0x3ccb50 (rtti, medium); signature (low): `undefined ActorValueOwner_vfunc_6(void)`
+    /// `TESActorBase::ActorValueOwner_ModActorValue` at 0x3ccb50 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(void)`
     pub slot_6: *const c_void,
-    /// `TESNPC::ActorValueOwner_vfunc_7` at 0x3c7460 (rtti, high); signature (low): `undefined ActorValueOwner_vfunc_7(TESNPC * this, int param_1, float param_2)`
+    /// `TESNPC::ActorValueOwner_SetActorValue` at 0x3c7460 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetActorValue(TESNPC * this, int param_1, float param_2)`
     pub slot_7: *const c_void,
-    /// `TESActorBase::ActorValueOwner_vfunc_8` at 0x3b03a0 (rtti, medium); signature (high): `bool ActorValueOwner_vfunc_8(TESActorBase * this)`
+    /// `TESActorBase::ActorValueOwner_UsesPCLevelMult` at 0x3b03a0 (slot_propagation, low); signature (untiered): `bool ActorValueOwner_UsesPCLevelMult(TESActorBase * this)`
     pub slot_8: *const c_void,
 }
 impl TESNPC_vtable_E8 {
@@ -193650,9 +193747,9 @@ pub struct TESObjectACTI_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectACTI_vtable_30 {
@@ -194250,9 +194347,9 @@ pub struct TESObjectARMO_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectARMO_vtable_30 {
@@ -194646,9 +194743,9 @@ pub struct TESObjectBOOK_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectBOOK_vtable_30 {
@@ -194952,9 +195049,9 @@ pub struct TESObjectCELL_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectCELL_vtable_20 {
@@ -195174,9 +195271,9 @@ pub struct TESObjectCONT_vtable_48 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectCONT_vtable_48 {
@@ -195438,9 +195535,9 @@ pub struct TESObjectDOOR_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectDOOR_vtable_30 {
@@ -195824,9 +195921,9 @@ pub struct TESObjectLIGH_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectLIGH_vtable_30 {
@@ -196152,9 +196249,9 @@ pub struct TESObjectMISC_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectMISC_vtable_30 {
@@ -196452,7 +196549,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `TESObjectREFR::vfunc_72` at 0x2e6620 (rtti, medium); signature (low): `undefined vfunc_72(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+    /// `TESObjectREFR::HasKeyword` at 0x2e6620 (runtime, high); signature (untiered): `undefined HasKeyword(TESObjectREFR * this, undefined8 param_1, longlong param_2, undefined8 param_3)`; `HasKeyword`: whether the reference or its base carries the keyword (high); semantic signature: `bool HasKeyword(const TESObjectREFR* this, const BGSKeyword* keyword)`
     pub slot_72: *const c_void,
     /// `TESObjectREFR::vfunc_73` at 0x2f9e70 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
     pub slot_73: *const c_void,
@@ -196496,7 +196593,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_92: *const c_void,
     /// `TESObjectREFR::vfunc_93` at 0x2e8dd0 (rtti, medium); signature (high): `longlong * vfunc_93(TESObjectREFR * this)`
     pub slot_93: *const c_void,
-    /// `TESObjectREFR::vfunc_94` at 0x2e8f70 (rtti, medium); signature (low): `undefined1 vfunc_94(void)`
+    /// `TESObjectREFR::IsChild` at 0x2e8f70 (slot_propagation, high); signature (untiered): `undefined1 IsChild(void)`
     pub slot_94: *const c_void,
     /// `TESObjectREFR::vfunc_95` at 0x2fa250 (rtti, medium); signature (low): `undefined8 vfunc_95(void)`
     pub slot_95: *const c_void,
@@ -196532,7 +196629,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_110: *const c_void,
     /// `TESObjectREFR::vfunc_111` at 0x2f9f40 (rtti, medium); signature (high): `undefined vfunc_111(TESObjectREFR * this)`
     pub slot_111: *const c_void,
-    /// `TESObjectREFR::vfunc_112` at 0x2ebce0 (rtti, medium); signature (high): `undefined8 vfunc_112(TESObjectREFR * this)`
+    /// `TESObjectREFR::Get3D` at 0x2ebce0 (runtime, high); signature (untiered): `undefined8 Get3D(TESObjectREFR * this)`; `Get3D`: root 3D node, null when not loaded (high); semantic signature: `NiNode* Get3D(const TESObjectREFR* this)`
     pub slot_112: *const c_void,
     /// `TESObjectREFR::vfunc_113` at 0x2fa2d0 (rtti, medium); signature (low): `undefined1 vfunc_113(void)`
     pub slot_113: *const c_void,
@@ -196614,7 +196711,7 @@ pub struct TESObjectREFR_vtable {
     pub slot_151: *const c_void,
     /// `TESObjectREFR::vfunc_152` at 0x2f3e70 (rtti, medium); signature (low): `undefined vfunc_152(TESObjectREFR * this, longlong param_1)`
     pub slot_152: *const c_void,
-    /// `TESObjectREFR::vfunc_153` at 0x2f4060 (rtti, medium); signature (high): `uint vfunc_153(TESObjectREFR * this)`
+    /// `TESObjectREFR::IsDead` at 0x2f4060 (slot_propagation, high); signature (untiered): `uint IsDead(TESObjectREFR * this)`
     pub slot_153: *const c_void,
     /// `TESObjectREFR::vfunc_154` at 0x2f5520 (rtti, medium); signature (low): `longlong vfunc_154(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_154: *const c_void,
@@ -196635,7 +196732,23 @@ pub struct TESObjectREFR_vtable {
 }
 impl TESObjectREFR_vtable {
     pub const ID: u64 = 190259;
+    pub const SLOT_HasKeyword: usize = 72;
+    /// Slot 72 as `TESObjectREFR_vtable_HasKeyword`, `None` when the slot is null.
+    #[must_use]
+    pub fn HasKeyword(&self) -> Option<TESObjectREFR_vtable_HasKeyword> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TESObjectREFR_vtable_HasKeyword>>(self.slot_72) }
+    }
+    pub const SLOT_Get3D: usize = 112;
+    /// Slot 112 as `TESObjectREFR_vtable_Get3D`, `None` when the slot is null.
+    #[must_use]
+    pub fn Get3D(&self) -> Option<TESObjectREFR_vtable_Get3D> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TESObjectREFR_vtable_Get3D>>(self.slot_112) }
+    }
 }
+/// `TESObjectREFR::HasKeyword`, slot 72: whether the reference or its base carries the keyword (high).
+pub type TESObjectREFR_vtable_HasKeyword = unsafe extern "C" fn(this: *const classes::TESObjectREFR, keyword: *const classes::BGSKeyword) -> bool;
+/// `TESObjectREFR::Get3D`, slot 112: root 3D node, null when not loaded (high).
+pub type TESObjectREFR_vtable_Get3D = unsafe extern "C" fn(this: *const classes::TESObjectREFR) -> *mut classes::NiNode;
 
 /// `TESObjectREFR::vftable_20` at 0x1827cd8, id 190261 (rtti, high); 2 slots.
 #[repr(C)]
@@ -197236,9 +197349,9 @@ pub struct TESObjectTREE_vtable_58 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectTREE_vtable_58 {
@@ -197446,9 +197559,9 @@ pub struct TESObjectWEAP_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESObjectWEAP_vtable_30 {
@@ -198058,9 +198171,9 @@ pub struct TESQuest_vtable_28 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESQuest_vtable_28 {
@@ -198204,9 +198317,9 @@ pub struct TESRace_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESRace_vtable_20 {
@@ -198920,9 +199033,9 @@ pub struct TESShout_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESShout_vtable_20 {
@@ -199174,9 +199287,9 @@ pub struct TESSoulGem_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESSoulGem_vtable_30 {
@@ -199698,9 +199811,9 @@ pub struct TESTopic_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESTopic::TESFullName_vfunc_4` at 0x3ee3d0 (rtti, high); signature (high): `undefined TESFullName_vfunc_4(TESTopic * this)`
+    /// `TESTopic::TESFullName_GetFullNameLength` at 0x3ee3d0 (slot_propagation, high); signature (untiered): `undefined TESFullName_GetFullNameLength(TESTopic * this)`
     pub slot_4: *const c_void,
-    /// `TESTopic::TESFullName_vfunc_5` at 0x3ee420 (rtti, high); signature (high): `char * TESFullName_vfunc_5(TESTopic * this)`
+    /// `TESTopic::TESFullName_GetFullName` at 0x3ee420 (slot_propagation, high); signature (untiered): `char * TESFullName_GetFullName(TESTopic * this)`
     pub slot_5: *const c_void,
 }
 impl TESTopic_vtable_20 {
@@ -200098,9 +200211,9 @@ pub struct TESWaterForm_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESWaterForm_vtable_20 {
@@ -200480,9 +200593,9 @@ pub struct TESWordOfPower_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESWordOfPower_vtable_20 {
@@ -200626,9 +200739,9 @@ pub struct TESWorldSpace_vtable_20 {
     pub slot_2: *const c_void,
     /// `TESFullName::vfunc_3` at 0x1e82d0 (rtti, medium); signature (low): `undefined vfunc_3(TESFullName * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESFullName::vfunc_4` at 0x146730 (rtti, medium); signature (high): `undefined vfunc_4(TESFullName * this)`
+    /// `TESFullName::GetFullNameLength` at 0x146730 (runtime, high); signature (untiered): `undefined GetFullNameLength(TESFullName * this)`
     pub slot_4: *const c_void,
-    /// `TESFullName::vfunc_5` at 0x146720 (rtti, medium); signature (high): `undefined vfunc_5(TESFullName * this)`
+    /// `TESFullName::GetFullName` at 0x146720 (runtime, high); signature (untiered): `undefined GetFullName(TESFullName * this)`
     pub slot_5: *const c_void,
 }
 impl TESWorldSpace_vtable_20 {

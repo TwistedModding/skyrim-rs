@@ -10691,6 +10691,10 @@ pub const INISetting_uiWaitCellReadyTime_General: u64 = 358951;
 pub const RegSetting_sBasePath: u64 = 381024;
 /// `g_ActorMediator_ptr` at 0x3230a38 (xref_inference, medium)
 pub const g_ActorMediator_ptr: u64 = 403567;
+/// `g_ActorValueList_ptr` at 0x219dec8 (runtime, high); pointer to `ActorValueList`: pointer to the actor value list singleton; pointer to the actor value list singleton (high); type `ptr:ActorValueList`
+pub const g_ActorValueList_ptr: u64 = 400267;
+/// `g_ActorValueStorageLock` at 0x3243f88 (semantic, high); lock of every actor's ActorValueStorage (high); type `class:BSReadWriteLock`
+pub const g_ActorValueStorageLock: u64 = 404014;
 /// `g_AnimationClipDataSingleton_ptr` at 0x31e09f0 (xref_inference, medium)
 pub const g_AnimationClipDataSingleton_ptr: u64 = 401553;
 /// `g_AnimationFileManagerSingleton_ptr` at 0x31e0b30 (xref_inference, medium)
@@ -11931,6 +11935,14 @@ pub const g_FormTypeSignatures: u64 = 187799;
 pub const g_GRefCountImplCore: u64 = 390206;
 /// `g_GarbageCollector_ptr` at 0x219e5d0 (xref_inference, medium)
 pub const g_GarbageCollector_ptr: u64 = 400329;
+/// `g_HandleFreeHead` at 0x21a426c (runtime, high); head of the handle free list (high); type `undefined4`
+pub const g_HandleFreeHead: u64 = 400619;
+/// `g_HandleFreeTail` at 0x21a4270 (runtime, high); tail of the handle free list (high); type `undefined4`
+pub const g_HandleFreeTail: u64 = 400620;
+/// `g_HandleTable` at 0x21a4280 (runtime, high); first entry of the reference handle table (2^20 entries) (high); type `class:HandleEntry`
+pub const g_HandleTable: u64 = 400622;
+/// `g_HandleTableLock` at 0x21a4278 (semantic, high); lock of the handle table (high); type `class:BSReadWriteLock`
+pub const g_HandleTableLock: u64 = 400621;
 /// `g_HelpMessageManager` at 0x3257c90 (layout_inference, medium)
 pub const g_HelpMessageManager: u64 = 406161;
 /// `g_IBSTCreator_CombatObject` at 0x3254768 (layout_inference, medium)
@@ -11985,6 +11997,8 @@ pub const g_IPathBuilderFactoryBase_3: u64 = 405686;
 pub const g_IPathBuilderFactoryBase_4: u64 = 405787;
 /// `g_InstalledContent_ptr` at 0x3210eb0 (xref_inference, medium)
 pub const g_InstalledContent_ptr: u64 = 503225;
+/// `g_InvalidRefHandle` at 0x219e55c (runtime, high); the null handle value (0) (high); type `undefined4`
+pub const g_InvalidRefHandle: u64 = 400312;
 /// `g_Inventory3DManager_ptr` at 0x32309f8 (xref_inference, medium)
 pub const g_Inventory3DManager_ptr: u64 = 403559;
 /// `g_JobListManager_ServingThread` at 0x3220aa0 (layout_inference, medium)
@@ -12055,7 +12069,7 @@ pub const g_PathManagerPositionPlayerAdapter: u64 = 381076;
 pub const g_Pathing_ptr: u64 = 401037;
 /// `g_PlayerCamera_ptr` at 0x31a5478 (xref_inference, medium)
 pub const g_PlayerCamera_ptr: u64 = 400802;
-/// `g_PlayerCharacter_ptr` at 0x3230778 (xref_inference, medium); pointer to `PlayerCharacter`: object has BSTEventSource<PositionPlayerEvent> at 0x390, as RTTI class PlayerCharacter
+/// `g_PlayerCharacter_ptr` at 0x3230778 (runtime, high); pointer to `PlayerCharacter`: pointer to the player; pointer to the player (high); type `ptr:PlayerCharacter`
 pub const g_PlayerCharacter_ptr: u64 = 403521;
 /// `g_PlayerControls_ptr` at 0x31a5698 (xref_inference, medium)
 pub const g_PlayerControls_ptr: u64 = 400864;
