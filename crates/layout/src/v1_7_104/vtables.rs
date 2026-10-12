@@ -43170,7 +43170,7 @@ pub struct BSBlastNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -44408,13 +44408,13 @@ pub struct BSCullingProcess_vtable {
     pub slot_20: *const c_void,
     /// `BSCullingProcess::vdtor` at 0xfeee10 (slot_propagation, medium); signature (low): `BSCullingProcess * vdtor(BSCullingProcess * this, ulonglong param_1, ulonglong * param_2, undefined8 param_3)`
     pub slot_21: *const c_void,
-    /// `BSCullingProcess::vfunc_22` at 0xfeda70 (rtti, medium); signature (low): `undefined vfunc_22(BSCullingProcess * this, longlong * param_1, undefined4 param_2)`
+    /// `BSCullingProcess::CullNode` at 0xfeda70 (semantic, high); signature (untiered): `undefined CullNode(BSCullingProcess * this, longlong * param_1, undefined4 param_2)`; `CullNode`: tests the node against the frustum and portals by cullMode and calls the node's slot 52 (OnVisible) when it passes (high); semantic signature: `void (BSCullingProcess* this, NiAVObject* node, u32 planeMask)`
     pub slot_22: *const c_void,
-    /// `BSCullingProcess::vfunc_23` at 0xfedd70 (rtti, medium); signature (low): `undefined vfunc_23(BSCullingProcess * this, longlong param_1, longlong param_2, longlong param_3)`
+    /// `BSCullingProcess::Process` at 0xfedd70 (runtime, high); signature (untiered): `undefined Process(BSCullingProcess * this, longlong param_1, longlong param_2, longlong param_3)`; `Process`: stores the camera, sets up the planes, culls the scene root (through NiAVObject::Cull when the cull is parallel) (high); semantic signature: `void (BSCullingProcess* this, NiCamera* camera, NiAVObject* scene, BSShaderAccumulator* accumulator)`
     pub slot_23: *const c_void,
     /// `BSCullingProcess::vfunc_24` at 0xfedfc0 (rtti, medium); signature (low): `undefined vfunc_24(BSCullingProcess * this, undefined8 param_1, int param_2)`
     pub slot_24: *const c_void,
-    /// `BSCullingProcess::vfunc_25` at 0xfedf50 (rtti, high); signature (low): `undefined vfunc_25(BSCullingProcess * this, longlong param_1)`
+    /// `BSCullingProcess::AppendGeometry` at 0xfedf50 (semantic, high); signature (untiered): `undefined AppendGeometry(BSCullingProcess * this, longlong param_1)`; `AppendGeometry`: adds an accepted geometry to visibleGeometry (high); semantic signature: `void (BSCullingProcess* this, BSGeometry* geometry)`
     pub slot_25: *const c_void,
     /// `BSCullingProcess::vfunc_26` at 0xfeea30 (rtti, medium); signature (low): `undefined vfunc_26(BSCullingProcess * this, longlong param_1)`
     pub slot_26: *const c_void,
@@ -44425,7 +44425,31 @@ pub struct BSCullingProcess_vtable {
 }
 impl BSCullingProcess_vtable {
     pub const ID: u64 = 238422;
+    pub const SLOT_CullNode: usize = 22;
+    /// Slot 22 as `BSCullingProcess_vtable_CullNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn CullNode(&self) -> Option<BSCullingProcess_vtable_CullNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSCullingProcess_vtable_CullNode>>(self.slot_22) }
+    }
+    pub const SLOT_Process: usize = 23;
+    /// Slot 23 as `BSCullingProcess_vtable_Process`, `None` when the slot is null.
+    #[must_use]
+    pub fn Process(&self) -> Option<BSCullingProcess_vtable_Process> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSCullingProcess_vtable_Process>>(self.slot_23) }
+    }
+    pub const SLOT_AppendGeometry: usize = 25;
+    /// Slot 25 as `BSCullingProcess_vtable_AppendGeometry`, `None` when the slot is null.
+    #[must_use]
+    pub fn AppendGeometry(&self) -> Option<BSCullingProcess_vtable_AppendGeometry> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSCullingProcess_vtable_AppendGeometry>>(self.slot_25) }
+    }
 }
+/// `BSCullingProcess::CullNode`, slot 22: tests the node against the frustum and portals by cullMode and calls the node's slot 52 (OnVisible) when it passes (high).
+pub type BSCullingProcess_vtable_CullNode = unsafe extern "C" fn(this: *mut classes::BSCullingProcess, node: *mut classes::NiAVObject, planeMask: u32);
+/// `BSCullingProcess::Process`, slot 23: stores the camera, sets up the planes, culls the scene root (through NiAVObject::Cull when the cull is parallel) (high).
+pub type BSCullingProcess_vtable_Process = unsafe extern "C" fn(this: *mut classes::BSCullingProcess, camera: *mut classes::NiCamera, scene: *mut classes::NiAVObject, accumulator: *mut classes::BSShaderAccumulator);
+/// `BSCullingProcess::AppendGeometry`, slot 25: adds an accepted geometry to visibleGeometry (high).
+pub type BSCullingProcess_vtable_AppendGeometry = unsafe extern "C" fn(this: *mut classes::BSCullingProcess, geometry: *mut classes::BSGeometry);
 
 /// `BSCyclicBlendTransitionGenerator::vftable` at 0x1a03548, id 232641 (rtti, high); 28 slots.
 #[repr(C)]
@@ -44612,7 +44636,7 @@ pub struct BSDamageStage_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -44746,7 +44770,7 @@ pub struct BSDebrisNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -47172,7 +47196,7 @@ pub struct BSFaceGenNiNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -47560,7 +47584,7 @@ pub struct BSFlattenedBoneTree_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -48196,9 +48220,9 @@ pub struct BSGeometryListCullingProcess_vtable {
     pub slot_20: *const c_void,
     /// `BSGeometryListCullingProcess::vdtor` at 0x410290 (slot_propagation, medium); signature (low): `BSGeometryListCullingProcess * vdtor(BSGeometryListCullingProcess * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_21: *const c_void,
-    /// `BSCullingProcess::vfunc_22` at 0xfeda70 (rtti, medium); signature (low): `undefined vfunc_22(BSCullingProcess * this, longlong * param_1, undefined4 param_2)`
+    /// `BSCullingProcess::CullNode` at 0xfeda70 (semantic, high); signature (untiered): `undefined CullNode(BSCullingProcess * this, longlong * param_1, undefined4 param_2)`
     pub slot_22: *const c_void,
-    /// `BSCullingProcess::vfunc_23` at 0xfedd70 (rtti, medium); signature (low): `undefined vfunc_23(BSCullingProcess * this, longlong param_1, longlong param_2, longlong param_3)`
+    /// `BSCullingProcess::Process` at 0xfedd70 (runtime, high); signature (untiered): `undefined Process(BSCullingProcess * this, longlong param_1, longlong param_2, longlong param_3)`
     pub slot_23: *const c_void,
     /// `BSCullingProcess::vfunc_24` at 0xfedfc0 (rtti, medium); signature (low): `undefined vfunc_24(BSCullingProcess * this, undefined8 param_1, int param_2)`
     pub slot_24: *const c_void,
@@ -60898,12 +60922,20 @@ pub struct BSLight_vtable {
     pub slot_1: *const c_void,
     /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSLight::vfunc_3` at 0x1578880 (rtti, high); signature (low): `undefined1 vfunc_3(void)`
+    /// `BSLight::IsShadowLight` at 0x1578880 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`; `IsShadowLight`: false for a plain light, true for every BSShadowLight (high); semantic signature: `bool (BSLight* this)`
     pub slot_3: *const c_void,
 }
 impl BSLight_vtable {
     pub const ID: u64 = 255404;
+    pub const SLOT_IsShadowLight: usize = 3;
+    /// Slot 3 as `BSLight_vtable_IsShadowLight`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsShadowLight(&self) -> Option<BSLight_vtable_IsShadowLight> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSLight_vtable_IsShadowLight>>(self.slot_3) }
+    }
 }
+/// `BSLight::IsShadowLight`, slot 3: false for a plain light, true for every BSShadowLight (high).
+pub type BSLight_vtable_IsShadowLight = unsafe extern "C" fn(this: *mut classes::BSLight) -> bool;
 
 /// `BSLightingShader::vftable` at 0x1b47420, id 255053 (rtti, high); 10 slots.
 #[repr(C)]
@@ -61548,7 +61580,7 @@ pub struct BSLightingShaderProperty_vtable {
     pub slot_41: *const c_void,
     /// `BSLightingShaderProperty::vfunc_42` at 0x151a160 (rtti, high); signature (low): `longlong * vfunc_42(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`
     pub slot_42: *const c_void,
-    /// `BSLightingShaderProperty::vfunc_43` at 0x151b1e0 (rtti, high); signature (low): `longlong * vfunc_43(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`
+    /// `BSLightingShaderProperty::GetRenderPasses` at 0x151b1e0 (runtime, high); signature (untiered): `longlong * GetRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetRenderPasses`: pass list for an accumulator mode; modes 0xc-0xf are the depth/shadow modes and yield no pass when flags & 0x8004, an alpha-blended alpha property, or a fade below 1 (without stipple fade) (high); semantic signature: `BSRenderPass* (BSLightingShaderProperty* this, BSGeometry* geometry, u32 mode, BSShaderAccumulator* accumulator)`
     pub slot_43: *const c_void,
     /// `BSLightingShaderProperty::vfunc_44` at 0x151bcb0 (rtti, medium); signature (low): `undefined8 * vfunc_44(BSLightingShaderProperty * this, longlong param_1, int param_2)`
     pub slot_44: *const c_void,
@@ -61591,6 +61623,7 @@ pub struct BSLightingShaderProperty_vtable {
 }
 impl BSLightingShaderProperty_vtable {
     pub const ID: u64 = 254668;
+    pub const SLOT_GetRenderPasses: usize = 43;
 }
 
 /// `BSLightingShaderPropertyColorController::vftable` at 0x1b4d330, id 255443 (rtti, high); 62 slots.
@@ -62750,7 +62783,7 @@ pub struct BSMasterParticleSystem_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -64818,7 +64851,7 @@ pub struct BSNiNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -67404,7 +67437,7 @@ pub struct BSParticleSystemManager_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `BSParticleSystemManager::vfunc_53` at 0xfef670 (rtti, high); signature (low): `undefined vfunc_53(BSParticleSystemManager * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -69774,7 +69807,7 @@ pub struct BSRangeNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -71430,7 +71463,7 @@ pub struct BSSceneGraph_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -71935,16 +71968,25 @@ impl BSScript__ISavePatcherInterface_vtable {
 pub struct BSScript__IStackCallbackFunctor_vtable {
     /// `BSScript::IStackCallbackFunctor::vfunc_0` at 0x9f0920 (rtti, high); signature (low): `IStackCallbackFunctor * vfunc_0(IStackCallbackFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `operator()`: called with the returned Variable when the stack completes; the callee may move out of it (the adapter resets it) (high); semantic signature: `void (BSScript::IStackCallbackFunctor* this, BSScript::Variable* result)`
     pub slot_1: *const c_void,
     /// `BSScript::IStackCallbackFunctor::vfunc_2` at 0x149c7a0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
     pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `SetObject`: hands the functor the object the call ran on (medium); semantic signature: `void (BSScript::IStackCallbackFunctor* this, BSTSmartPointer<BSScript::Object>* object)`
     pub slot_3: *const c_void,
 }
 impl BSScript__IStackCallbackFunctor_vtable {
     pub const ID: u64 = 216921;
+    pub const SLOT_operator: usize = 1;
+    /// Slot 1 as `BSScript__IStackCallbackFunctor_vtable_operator`, `None` when the slot is null.
+    #[must_use]
+    pub fn operator(&self) -> Option<BSScript__IStackCallbackFunctor_vtable_operator> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__IStackCallbackFunctor_vtable_operator>>(self.slot_1) }
+    }
+    pub const SLOT_SetObject: usize = 3;
 }
+/// `BSScript::IStackCallbackFunctor::operator()`, slot 1: called with the returned Variable when the stack completes; the callee may move out of it (the adapter resets it) (high).
+pub type BSScript__IStackCallbackFunctor_vtable_operator = unsafe extern "C" fn(this: *mut classes::BSScript__IStackCallbackFunctor, result: *mut classes::BSScript__Variable);
 
 /// `BSScript::IStackCallbackSaveInterface::vftable` at 0x1990ef8, id 216931 (rtti, high); 3 slots.
 #[repr(C)]
@@ -72461,7 +72503,7 @@ pub struct BSScript__Internal__VirtualMachine_vtable {
     pub slot_7: *const c_void,
     /// `BSScript::Internal::VirtualMachine::RegisterObjectType` at 0x14b0c30 (runtime, high); signature (untiered): `byte RegisterObjectType(VirtualMachine * this, uint param_1, char * param_2)`; `RegisterObjectType`: records className for typeID in the two maps at +0x190 (typeID -> name) and +0x1c0 (name -> typeID); returns false when either was already registered (high); semantic signature: `bool (BSScript::Internal::VirtualMachine* this, u32 typeID, const char* className)`
     pub slot_8: *const c_void,
-    /// `BSScript::Internal::VirtualMachine::GetScriptObjectType` at 0x14b0f80 (runtime, high); signature (untiered): `undefined1 GetScriptObjectType(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`; `GetScriptObjectType`: looks the type up in the name map at +0x160; when it is missing or not linked, asks the linker (+0xc8) to load and link <className>.pex first; false when no script exists (high); semantic signature: `bool (BSScript::Internal::VirtualMachine* this, const BSFixedString* className, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
+    /// `BSScript::Internal::VirtualMachine::GetScriptObjectType` at 0x14b0f80 (runtime, high); signature (untiered): `undefined1 GetScriptObjectType(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`; `GetScriptObjectType`: looks the type up in the name map at +0x160; when it is missing or not linked, asks the linker (+0xc8) to load and link <className>.pex first; false when no script exists; a type already in the map with link state 2 or 3 is returned without relinking, so a type a failed link left in state 2 is handed back by later lookups (worker 0x14bc440, follow-up 5b) (high); semantic signature: `bool (BSScript::Internal::VirtualMachine* this, const BSFixedString* className, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
     pub slot_9: *const c_void,
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeByID` at 0x14b0e40 (semantic, medium); signature (untiered): `bool GetScriptObjectTypeByID(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`; `GetScriptObjectTypeByID`: the typeID variant of GetScriptObjectType (name from the +0x190 map, then the same load path); NativeFunction<N>::ctor uses it to type form parameters and returns (medium); semantic signature: `bool (BSScript::Internal::VirtualMachine* this, u32 typeID, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
     pub slot_10: *const c_void,
@@ -72557,32 +72599,88 @@ impl BSScript__Internal__VirtualMachine_vtable {
     pub const SLOT_TraceStack: usize = 2;
     pub const SLOT_LogError: usize = 3;
     pub const SLOT_RegisterObjectType: usize = 8;
+    /// Slot 8 as `BSScript__Internal__VirtualMachine_vtable_RegisterObjectType`, `None` when the slot is null.
+    #[must_use]
+    pub fn RegisterObjectType(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_RegisterObjectType> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_RegisterObjectType>>(self.slot_8) }
+    }
     pub const SLOT_GetScriptObjectType: usize = 9;
     pub const SLOT_GetScriptObjectTypeByID: usize = 10;
     pub const SLOT_GetScriptObjectTypeNoLoad: usize = 11;
     pub const SLOT_GetScriptObjectTypeNoLoadByID: usize = 12;
     pub const SLOT_GetTypeIDForScriptObject: usize = 13;
+    /// Slot 13 as `BSScript__Internal__VirtualMachine_vtable_GetTypeIDForScriptObject`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetTypeIDForScriptObject(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_GetTypeIDForScriptObject> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_GetTypeIDForScriptObject>>(self.slot_13) }
+    }
     pub const SLOT_GetScriptObjectsWithATypeID: usize = 14;
     pub const SLOT_LinkScript: usize = 17;
     pub const SLOT_CreateObject: usize = 21;
     pub const SLOT_CreateArray: usize = 22;
     pub const SLOT_BindNativeMethod: usize = 24;
+    /// Slot 24 as `BSScript__Internal__VirtualMachine_vtable_BindNativeMethod`, `None` when the slot is null.
+    #[must_use]
+    pub fn BindNativeMethod(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_BindNativeMethod> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_BindNativeMethod>>(self.slot_24) }
+    }
     pub const SLOT_SetCallableFromTaskletsInState: usize = 25;
     pub const SLOT_SetCallableFromTasklets: usize = 26;
+    /// Slot 26 as `BSScript__Internal__VirtualMachine_vtable_SetCallableFromTasklets`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetCallableFromTasklets(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_SetCallableFromTasklets> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_SetCallableFromTasklets>>(self.slot_26) }
+    }
     pub const SLOT_ForEachBoundObject: usize = 27;
     pub const SLOT_FindBoundObject: usize = 28;
     pub const SLOT_SendEvent: usize = 36;
+    /// Slot 36 as `BSScript__Internal__VirtualMachine_vtable_SendEvent`, `None` when the slot is null.
+    #[must_use]
+    pub fn SendEvent(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_SendEvent> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_SendEvent>>(self.slot_36) }
+    }
     pub const SLOT_SendEventAll: usize = 37;
     pub const SLOT_DispatchStaticCall: usize = 38;
     pub const SLOT_DispatchMethodCall: usize = 39;
     pub const SLOT_DispatchMethodCallByHandle: usize = 40;
     pub const SLOT_ReturnFromLatent: usize = 43;
     pub const SLOT_GetErrorLogger: usize = 44;
+    /// Slot 44 as `BSScript__Internal__VirtualMachine_vtable_GetErrorLogger`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetErrorLogger(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_GetErrorLogger> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_GetErrorLogger>>(self.slot_44) }
+    }
     pub const SLOT_GetObjectHandlePolicy: usize = 45;
+    /// Slot 45 as `BSScript__Internal__VirtualMachine_vtable_GetObjectHandlePolicy`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetObjectHandlePolicy(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_GetObjectHandlePolicy> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_GetObjectHandlePolicy>>(self.slot_45) }
+    }
     pub const SLOT_GetObjectHandlePolicyConst: usize = 46;
     pub const SLOT_GetObjectBindPolicy: usize = 47;
+    /// Slot 47 as `BSScript__Internal__VirtualMachine_vtable_GetObjectBindPolicy`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetObjectBindPolicy(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_GetObjectBindPolicy> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_GetObjectBindPolicy>>(self.slot_47) }
+    }
     pub const SLOT_GetObjectBindPolicyConst: usize = 48;
 }
+/// `BSScript::Internal::VirtualMachine::RegisterObjectType`, slot 8: records className for typeID in the two maps at +0x190 (typeID -> name) and +0x1c0 (name -> typeID); returns false when either was already registered (high).
+pub type BSScript__Internal__VirtualMachine_vtable_RegisterObjectType = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, typeID: u32, className: *const c_char) -> bool;
+/// `BSScript::Internal::VirtualMachine::GetTypeIDForScriptObject`, slot 13: name -> typeID through the map at +0x1c0 (the form type for form classes; 0x8b-0x8e for aliases and active effects) (high).
+pub type BSScript__Internal__VirtualMachine_vtable_GetTypeIDForScriptObject = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, className: *const classes::BSFixedString, typeID: *mut u32) -> bool;
+/// `BSScript::Internal::VirtualMachine::BindNativeMethod`, slot 24: registers a native: takes a reference, fetches the class through function->GetObjectTypeName (slot 2), creates the ObjectTypeInfo (0x38 bytes, unlinked) when the class is unknown and inserts it in the +0x160 map, then ObjectTypeInfo::BindNativeFunction; the registration call site is [vtable+0xc0] (high).
+pub type BSScript__Internal__VirtualMachine_vtable_BindNativeMethod = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, function: *mut classes::BSScript__IFunction) -> bool;
+/// `BSScript::Internal::VirtualMachine::SetCallableFromTasklets`, slot 26: SetCallableFromTaskletsInState with the empty state; every engine RegisterFuncs calls it right after BindNativeMethod ([vtable+0xd0]) for the natives the tasklet VM may run (high).
+pub type BSScript__Internal__VirtualMachine_vtable_SetCallableFromTasklets = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, className: *const c_char, fnName: *const c_char, callable: bool);
+/// `BSScript::Internal::VirtualMachine::SendEvent`, slot 36: queues eventName on every script object bound to the handle with the arguments the functor produces; the SkyrimVM event handlers call it (e.g. ProcessEquipEvent sends OnObjectEquipped) (high).
+pub type BSScript__Internal__VirtualMachine_vtable_SendEvent = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, handle: u64, eventName: *const classes::BSFixedString, args: *mut classes::BSScript__IFunctionArguments);
+/// `BSScript::Internal::VirtualMachine::GetErrorLogger`, slot 44: the logger at +0x80 (high).
+pub type BSScript__Internal__VirtualMachine_vtable_GetErrorLogger = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine) -> *mut classes::BSScript__ErrorLogger;
+/// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicy`, slot 45: the handle policy at +0x90 (SkyrimVM+0x338) (high).
+pub type BSScript__Internal__VirtualMachine_vtable_GetObjectHandlePolicy = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine) -> *mut classes::partial::BSScript__IObjectHandlePolicy;
+/// `BSScript::Internal::VirtualMachine::GetObjectBindPolicy`, slot 47: the bind policy at +0x98 (SkyrimVM+0x3a8) (high).
+pub type BSScript__Internal__VirtualMachine_vtable_GetObjectBindPolicy = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine) -> *mut classes::partial::BSScript__ObjectBindPolicy;
 
 /// `BSScript::Internal::VirtualMachine::vftable_10` at 0x1b29ba0, id 252633 (rtti, high); 11 slots.
 #[repr(C)]
@@ -72773,27 +72871,132 @@ pub struct BSScript__NF_util__NativeFunctionBase_vtable {
 impl BSScript__NF_util__NativeFunctionBase_vtable {
     pub const ID: u64 = 252545;
     pub const SLOT_GetName: usize = 1;
+    /// Slot 1 as `BSScript__NF_util__NativeFunctionBase_vtable_GetName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetName(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetName>>(self.slot_1) }
+    }
     pub const SLOT_GetObjectTypeName: usize = 2;
+    /// Slot 2 as `BSScript__NF_util__NativeFunctionBase_vtable_GetObjectTypeName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetObjectTypeName(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetObjectTypeName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetObjectTypeName>>(self.slot_2) }
+    }
     pub const SLOT_GetStateName: usize = 3;
+    /// Slot 3 as `BSScript__NF_util__NativeFunctionBase_vtable_GetStateName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetStateName(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetStateName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetStateName>>(self.slot_3) }
+    }
     pub const SLOT_GetReturnType: usize = 4;
+    /// Slot 4 as `BSScript__NF_util__NativeFunctionBase_vtable_GetReturnType`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetReturnType(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetReturnType> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetReturnType>>(self.slot_4) }
+    }
     pub const SLOT_GetParamCount: usize = 5;
+    /// Slot 5 as `BSScript__NF_util__NativeFunctionBase_vtable_GetParamCount`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetParamCount(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetParamCount> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetParamCount>>(self.slot_5) }
+    }
     pub const SLOT_GetParam: usize = 6;
+    /// Slot 6 as `BSScript__NF_util__NativeFunctionBase_vtable_GetParam`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetParam(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetParam> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetParam>>(self.slot_6) }
+    }
     pub const SLOT_GetStackFrameSize: usize = 7;
+    /// Slot 7 as `BSScript__NF_util__NativeFunctionBase_vtable_GetStackFrameSize`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetStackFrameSize(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetStackFrameSize> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetStackFrameSize>>(self.slot_7) }
+    }
     pub const SLOT_GetIsNative: usize = 8;
+    /// Slot 8 as `BSScript__NF_util__NativeFunctionBase_vtable_GetIsNative`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetIsNative(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetIsNative> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetIsNative>>(self.slot_8) }
+    }
     pub const SLOT_GetIsStatic: usize = 9;
+    /// Slot 9 as `BSScript__NF_util__NativeFunctionBase_vtable_GetIsStatic`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetIsStatic(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetIsStatic> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetIsStatic>>(self.slot_9) }
+    }
     pub const SLOT_GetIsEmpty: usize = 10;
     pub const SLOT_GetFunctionType: usize = 11;
     pub const SLOT_GetUserFlags: usize = 12;
+    /// Slot 12 as `BSScript__NF_util__NativeFunctionBase_vtable_GetUserFlags`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetUserFlags(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetUserFlags> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetUserFlags>>(self.slot_12) }
+    }
     pub const SLOT_GetDocString: usize = 13;
+    /// Slot 13 as `BSScript__NF_util__NativeFunctionBase_vtable_GetDocString`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetDocString(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetDocString> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetDocString>>(self.slot_13) }
+    }
     pub const SLOT_InsertLocals: usize = 14;
     pub const SLOT_Call: usize = 15;
     pub const SLOT_GetSourceFilename: usize = 16;
     pub const SLOT_GetParamName: usize = 18;
+    /// Slot 18 as `BSScript__NF_util__NativeFunctionBase_vtable_GetParamName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetParamName(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetParamName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetParamName>>(self.slot_18) }
+    }
     pub const SLOT_GetIsCallableFromTasklet: usize = 19;
+    /// Slot 19 as `BSScript__NF_util__NativeFunctionBase_vtable_GetIsCallableFromTasklet`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetIsCallableFromTasklet(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_GetIsCallableFromTasklet> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_GetIsCallableFromTasklet>>(self.slot_19) }
+    }
     pub const SLOT_SetIsCallableFromTasklet: usize = 20;
     pub const SLOT_HasCallback: usize = 21;
+    /// Slot 21 as `BSScript__NF_util__NativeFunctionBase_vtable_HasCallback`, `None` when the slot is null.
+    #[must_use]
+    pub fn HasCallback(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_HasCallback> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_HasCallback>>(self.slot_21) }
+    }
     pub const SLOT_Run: usize = 22;
+    /// Slot 22 as `BSScript__NF_util__NativeFunctionBase_vtable_Run`, `None` when the slot is null.
+    #[must_use]
+    pub fn Run(&self) -> Option<BSScript__NF_util__NativeFunctionBase_vtable_Run> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__NF_util__NativeFunctionBase_vtable_Run>>(self.slot_22) }
+    }
 }
+/// `BSScript::NF_util::NativeFunctionBase::GetName`, slot 1: the function name at +0x10 (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetName = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> *mut classes::BSFixedString;
+/// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName`, slot 2: the script class name at +0x18; BindNativeMethod uses it to find or create the type (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> *mut classes::BSFixedString;
+/// `BSScript::NF_util::NativeFunctionBase::GetStateName`, slot 3: the state name at +0x20 (empty for natives) (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetStateName = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> *mut classes::BSFixedString;
+/// `BSScript::NF_util::NativeFunctionBase::GetReturnType`, slot 4: copies +0x28 into out and returns out (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetReturnType = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, out: *mut classes::BSScript__TypeInfo) -> *mut classes::BSScript__TypeInfo;
+/// `BSScript::NF_util::NativeFunctionBase::GetParamCount`, slot 5: the total variable count at +0x3a (parameters plus locals, equal to the parameter count for natives) (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetParamCount = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> u16;
+/// `BSScript::NF_util::NativeFunctionBase::GetParam`, slot 6: name and type of parameter index from the array at +0x30 (0x10 per entry); an index past +0x38 yields the empty name (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetParam = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, index: u32, name: *mut classes::BSFixedString, type_: *mut classes::BSScript__TypeInfo);
+/// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize`, slot 7: the variable count at +0x3a: the number of Variables the frame holds (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetStackFrameSize = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> u16;
+/// `BSScript::NF_util::NativeFunctionBase::GetIsNative`, slot 8: true (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsNative = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> bool;
+/// `BSScript::NF_util::NativeFunctionBase::GetIsStatic`, slot 9: +0x40, set from the ctor's isStatic argument (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsStatic = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> bool;
+/// `BSScript::NF_util::NativeFunctionBase::GetUserFlags`, slot 12: +0x44 (0 for every native) (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetUserFlags = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> u32;
+/// `BSScript::NF_util::NativeFunctionBase::GetDocString`, slot 13: +0x48 (empty for natives) (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetDocString = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> *mut classes::BSFixedString;
+/// `BSScript::NF_util::NativeFunctionBase::GetParamName`, slot 18: the name of parameter index, false (and the empty name) past the count (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetParamName = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, index: u32, out: *mut classes::BSFixedString) -> bool;
+/// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet`, slot 19: +0x41 (never set on a native: the VM keeps the flag in the type's function table) (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> bool;
+/// `BSScript::NF_util::NativeFunctionBase::HasCallback`, slot 21: pure here; every NativeFunction<N> instantiation returns +0x50 != 0 (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_HasCallback = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> bool;
+/// `BSScript::NF_util::NativeFunctionBase::Run`, slot 22: pure here; each NativeFunction<N> instantiation reads its arguments from the frame (Stack::GetStackFrameVariable(stack, frame, i, Stack::GetPageForFrame(stack, frame)) for i below frame+0x38), converts self through the handle policy, calls the C callback at +0x50 as callback(vm, stackId, self, args...) and writes the converted return value into result; false when self could not be converted (high).
+pub type BSScript__NF_util__NativeFunctionBase_vtable_Run = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, self_: *mut classes::BSScript__Variable, vm: *mut classes::BSScript__Internal__VirtualMachine, stackId: u32, result: *mut classes::BSScript__Variable, frame: *mut classes::BSScript__StackFrame) -> bool;
 
 /// `BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>::vftable` at 0x1993180, id 217310 (rtti, high); 23 slots.
 #[repr(C)]
@@ -92256,23 +92459,23 @@ pub struct BSShadowDirectionalLight_vtable {
     pub slot_1: *const c_void,
     /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSShadowLight::vfunc_3` at 0x155dbd0 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
+    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
     pub slot_3: *const c_void,
     /// `BSShadowDirectionalLight::vfunc_4` at 0x1582010 (rtti, high); signature (low): `undefined1 vfunc_4(void)`
     pub slot_4: *const c_void,
     /// `BSShadowLight::vfunc_5` at 0x155dbb0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
     pub slot_5: *const c_void,
-    /// `BSShadowDirectionalLight::vfunc_6` at 0x1582020 (rtti, high); signature (low): `undefined1 vfunc_6(void)`
+    /// `BSShadowDirectionalLight::IsDirectionalLight` at 0x1582020 (semantic, medium); signature (untiered): `undefined1 IsDirectionalLight(void)`; `IsDirectionalLight`: true only for the directional light (medium); semantic signature: `bool (BSShadowLight* this)`
     pub slot_6: *const c_void,
     /// `BSShadowLight::vfunc_7` at 0x155dbc0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
     /// `BSShadowLight::vfunc_8` at 0x155dba0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
     pub slot_8: *const c_void,
-    /// `BSShadowDirectionalLight::vfunc_9` at 0x157ead0 (rtti, high); signature (low): `undefined vfunc_9(BSShadowDirectionalLight * this, uint * param_1)`
+    /// `BSShadowDirectionalLight::CullCasters` at 0x157ead0 (runtime, high); signature (untiered): `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`; `CullCasters`: for each map: tags its accumulator with the map index (+0x160 index+1, +0x164 bit, +0x168 cascade) and culls the casters into it through 0x155cea0 with the map's camera (high); semantic signature: `void (BSShadowLight* this, u32* counter, ...)`
     pub slot_9: *const c_void,
-    /// `BSShadowDirectionalLight::vfunc_10` at 0x157ebb0 (rtti, high); signature (low): `undefined vfunc_10(BSShadowDirectionalLight * this, int * param_1)`
+    /// `BSShadowDirectionalLight::RenderShadowMaps` at 0x157ebb0 (runtime, high); signature (untiered): `undefined RenderShadowMaps(BSShadowDirectionalLight * this, int * param_1)`; `RenderShadowMaps`: renders each map into depth target 2 slice k (and target 3 with iEnableShadowCastingFlag 2), then the focus maps into target 4 when focusShadowsActive (high); semantic signature: `void (BSShadowLight* this, u32* counter)`
     pub slot_10: *const c_void,
-    /// `BSShadowLight::vfunc_11` at 0x155c850 (rtti, medium); signature (low): `undefined vfunc_11(BSShadowLight * this, uint param_1)`
+    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
     pub slot_11: *const c_void,
     /// `BSShadowDirectionalLight::vfunc_12` at 0x157ed20 (rtti, high); signature (high): `undefined vfunc_12(BSShadowDirectionalLight * this)`
     pub slot_12: *const c_void,
@@ -92280,14 +92483,33 @@ pub struct BSShadowDirectionalLight_vtable {
     pub slot_13: *const c_void,
     /// `BSShadowDirectionalLight::vfunc_14` at 0x1582030 (rtti, high); signature (low): `undefined1 vfunc_14(void)`
     pub slot_14: *const c_void,
-    /// `BSShadowDirectionalLight::vfunc_15` at 0x157ea50 (rtti, high); signature (low): `undefined vfunc_15(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`
+    /// `BSShadowDirectionalLight::UpdateCascadeFrusta` at 0x157ea50 (semantic, medium); signature (untiered): `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`; `UpdateCascadeFrusta`: computes the cascade frusta once per update (+0xd0 marks done) (medium); semantic signature: `void (BSShadowDirectionalLight* this, ...)`
     pub slot_15: *const c_void,
-    /// `BSShadowDirectionalLight::vfunc_16` at 0x157f080 (rtti, high); signature (low): `undefined8 vfunc_16(BSShadowDirectionalLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSShadowDirectionalLight::UpdateForCamera` at 0x157f080 (runtime, high); signature (untiered): `undefined8 UpdateForCamera(BSShadowDirectionalLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `UpdateForCamera`: per-frame setup against the scene camera: sun direction, cascade split and camera placement (bDisableShadowJumps, fSunStaticTimeUpdateScale) (high); semantic signature: `bool (BSShadowLight* this, NiCamera* camera)`
     pub slot_16: *const c_void,
 }
 impl BSShadowDirectionalLight_vtable {
     pub const ID: u64 = 255466;
+    pub const SLOT_IsDirectionalLight: usize = 6;
+    pub const SLOT_CullCasters: usize = 9;
+    pub const SLOT_RenderShadowMaps: usize = 10;
+    /// Slot 10 as `BSShadowDirectionalLight_vtable_RenderShadowMaps`, `None` when the slot is null.
+    #[must_use]
+    pub fn RenderShadowMaps(&self) -> Option<BSShadowDirectionalLight_vtable_RenderShadowMaps> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSShadowDirectionalLight_vtable_RenderShadowMaps>>(self.slot_10) }
+    }
+    pub const SLOT_UpdateCascadeFrusta: usize = 15;
+    pub const SLOT_UpdateForCamera: usize = 16;
+    /// Slot 16 as `BSShadowDirectionalLight_vtable_UpdateForCamera`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateForCamera(&self) -> Option<BSShadowDirectionalLight_vtable_UpdateForCamera> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSShadowDirectionalLight_vtable_UpdateForCamera>>(self.slot_16) }
+    }
 }
+/// `BSShadowDirectionalLight::RenderShadowMaps`, slot 10: renders each map into depth target 2 slice k (and target 3 with iEnableShadowCastingFlag 2), then the focus maps into target 4 when focusShadowsActive (high).
+pub type BSShadowDirectionalLight_vtable_RenderShadowMaps = unsafe extern "C" fn(this: *mut classes::BSShadowLight, counter: *mut u32);
+/// `BSShadowDirectionalLight::UpdateForCamera`, slot 16: per-frame setup against the scene camera: sun direction, cascade split and camera placement (bDisableShadowJumps, fSunStaticTimeUpdateScale) (high).
+pub type BSShadowDirectionalLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut classes::BSShadowLight, camera: *mut classes::NiCamera) -> bool;
 
 /// `BSShadowFrustumLight::vftable` at 0x1b4efe0, id 255531 (rtti, high); 17 slots.
 #[repr(C)]
@@ -92298,11 +92520,11 @@ pub struct BSShadowFrustumLight_vtable {
     pub slot_1: *const c_void,
     /// `BSShadowFrustumLight::vfunc_2` at 0x1587ae0 (rtti, high); signature (low): `undefined vfunc_2(BSShadowFrustumLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSShadowLight::vfunc_3` at 0x155dbd0 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
+    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
     pub slot_3: *const c_void,
     /// `BSShadowFrustumLight::vfunc_4` at 0x1587f70 (rtti, high); signature (low): `undefined1 vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `BSShadowFrustumLight::vfunc_5` at 0x1587f80 (rtti, high); signature (low): `undefined1 vfunc_5(void)`
+    /// `BSShadowFrustumLight::IsFrustumLight` at 0x1587f80 (semantic, medium); signature (untiered): `undefined1 IsFrustumLight(void)`; `IsFrustumLight`: true only for the frustum light (medium); semantic signature: `bool (BSShadowLight* this)`
     pub slot_5: *const c_void,
     /// `BSShadowLight::vfunc_6` at 0x155db90 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -92314,9 +92536,9 @@ pub struct BSShadowFrustumLight_vtable {
     pub slot_9: *const c_void,
     /// `BSShadowFrustumLight::vfunc_10` at 0x1587a30 (rtti, high); signature (low): `undefined vfunc_10(BSShadowFrustumLight * this, int * param_1)`
     pub slot_10: *const c_void,
-    /// `BSShadowLight::vfunc_11` at 0x155c850 (rtti, medium); signature (low): `undefined vfunc_11(BSShadowLight * this, uint param_1)`
+    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
     pub slot_11: *const c_void,
-    /// `BSShadowLight::vfunc_12` at 0x155c990 (rtti, medium); signature (high): `undefined vfunc_12(BSShadowLight * this)`
+    /// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (untiered): `undefined ReleaseShadowMaps(BSShadowLight * this)`
     pub slot_12: *const c_void,
     /// `BSShadowLight::vfunc_13` at 0x155dbf0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -92329,6 +92551,7 @@ pub struct BSShadowFrustumLight_vtable {
 }
 impl BSShadowFrustumLight_vtable {
     pub const ID: u64 = 255531;
+    pub const SLOT_IsFrustumLight: usize = 5;
 }
 
 /// `BSShadowLight::vftable` at 0x1b49b30, id 255256 (rtti, high); 17 slots.
@@ -92340,7 +92563,7 @@ pub struct BSShadowLight_vtable {
     pub slot_1: *const c_void,
     /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSShadowLight::vfunc_3` at 0x155dbd0 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
+    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`; `IsShadowLight`: true (high); semantic signature: `bool (BSLight* this)`
     pub slot_3: *const c_void,
     /// `BSShadowLight::vfunc_4` at 0x155d960 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -92356,9 +92579,9 @@ pub struct BSShadowLight_vtable {
     pub slot_9: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_10: *const c_void,
-    /// `BSShadowLight::vfunc_11` at 0x155c850 (rtti, medium); signature (low): `undefined vfunc_11(BSShadowLight * this, uint param_1)`
+    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`; `SetShadowMapCount`: resizes shadowMaps and initialises new records (+0xcc 1.0, +0xe8 1, accumulator released) (high); semantic signature: `void (BSShadowLight* this, u32 count)`
     pub slot_11: *const c_void,
-    /// `BSShadowLight::vfunc_12` at 0x155c990 (rtti, medium); signature (high): `undefined vfunc_12(BSShadowLight * this)`
+    /// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (untiered): `undefined ReleaseShadowMaps(BSShadowLight * this)`; `ReleaseShadowMaps`: returns every map's depth slice to the free mask 0x20d8ff8 and marks the record unassigned (+0x54 = -1) (medium); semantic signature: `void (BSShadowLight* this)`
     pub slot_12: *const c_void,
     /// `BSShadowLight::vfunc_13` at 0x155dbf0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
     pub slot_13: *const c_void,
@@ -92371,7 +92594,24 @@ pub struct BSShadowLight_vtable {
 }
 impl BSShadowLight_vtable {
     pub const ID: u64 = 255256;
+    pub const SLOT_IsShadowLight: usize = 3;
+    /// Slot 3 as `BSShadowLight_vtable_IsShadowLight`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsShadowLight(&self) -> Option<BSShadowLight_vtable_IsShadowLight> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSShadowLight_vtable_IsShadowLight>>(self.slot_3) }
+    }
+    pub const SLOT_SetShadowMapCount: usize = 11;
+    /// Slot 11 as `BSShadowLight_vtable_SetShadowMapCount`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetShadowMapCount(&self) -> Option<BSShadowLight_vtable_SetShadowMapCount> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSShadowLight_vtable_SetShadowMapCount>>(self.slot_11) }
+    }
+    pub const SLOT_ReleaseShadowMaps: usize = 12;
 }
+/// `BSShadowLight::IsShadowLight`, slot 3: true (high).
+pub type BSShadowLight_vtable_IsShadowLight = unsafe extern "C" fn(this: *mut classes::BSLight) -> bool;
+/// `BSShadowLight::SetShadowMapCount`, slot 11: resizes shadowMaps and initialises new records (+0xcc 1.0, +0xe8 1, accumulator released) (high).
+pub type BSShadowLight_vtable_SetShadowMapCount = unsafe extern "C" fn(this: *mut classes::BSShadowLight, count: u32);
 
 /// `BSShadowParabolicLight::vftable` at 0x1b4f0f0, id 255534 (rtti, high); 17 slots.
 #[repr(C)]
@@ -92382,7 +92622,7 @@ pub struct BSShadowParabolicLight_vtable {
     pub slot_1: *const c_void,
     /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
     pub slot_2: *const c_void,
-    /// `BSShadowLight::vfunc_3` at 0x155dbd0 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
+    /// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
     pub slot_3: *const c_void,
     /// `BSShadowLight::vfunc_4` at 0x155d960 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
     pub slot_4: *const c_void,
@@ -92390,15 +92630,15 @@ pub struct BSShadowParabolicLight_vtable {
     pub slot_5: *const c_void,
     /// `BSShadowLight::vfunc_6` at 0x155db90 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BSShadowParabolicLight::vfunc_7` at 0x1588e30 (rtti, high); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSShadowParabolicLight::IsParabolicLight` at 0x1588e30 (semantic, medium); signature (untiered): `undefined1 IsParabolicLight(void)`; `IsParabolicLight`: true only for the parabolic light (medium); semantic signature: `bool (BSShadowLight* this)`
     pub slot_7: *const c_void,
-    /// `BSShadowParabolicLight::vfunc_8` at 0x1588e20 (rtti, high); signature (high): `bool vfunc_8(BSShadowParabolicLight * this)`
+    /// `BSShadowParabolicLight::UsesTwoMaps` at 0x1588e20 (semantic, high); signature (untiered): `bool UsesTwoMaps(BSShadowParabolicLight * this)`; `UsesTwoMaps`: shadowMapCount == 2 (both hemispheres) (high); semantic signature: `bool (BSShadowParabolicLight* this)`
     pub slot_8: *const c_void,
     /// `BSShadowParabolicLight::vfunc_9` at 0x15888d0 (rtti, high); signature (low): `undefined vfunc_9(BSShadowParabolicLight * this, uint * param_1, int param_2, longlong * param_3)`
     pub slot_9: *const c_void,
     /// `BSShadowParabolicLight::vfunc_10` at 0x1588c80 (rtti, high); signature (low): `undefined vfunc_10(BSShadowParabolicLight * this, int * param_1)`
     pub slot_10: *const c_void,
-    /// `BSShadowLight::vfunc_11` at 0x155c850 (rtti, medium); signature (low): `undefined vfunc_11(BSShadowLight * this, uint param_1)`
+    /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
     pub slot_11: *const c_void,
     /// `BSShadowParabolicLight::vfunc_12` at 0x1588d50 (rtti, high); signature (high): `undefined vfunc_12(BSShadowParabolicLight * this)`
     pub slot_12: *const c_void,
@@ -92413,7 +92653,16 @@ pub struct BSShadowParabolicLight_vtable {
 }
 impl BSShadowParabolicLight_vtable {
     pub const ID: u64 = 255534;
+    pub const SLOT_IsParabolicLight: usize = 7;
+    pub const SLOT_UsesTwoMaps: usize = 8;
+    /// Slot 8 as `BSShadowParabolicLight_vtable_UsesTwoMaps`, `None` when the slot is null.
+    #[must_use]
+    pub fn UsesTwoMaps(&self) -> Option<BSShadowParabolicLight_vtable_UsesTwoMaps> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSShadowParabolicLight_vtable_UsesTwoMaps>>(self.slot_8) }
+    }
 }
+/// `BSShadowParabolicLight::UsesTwoMaps`, slot 8: shadowMapCount == 2 (both hemispheres) (high).
+pub type BSShadowParabolicLight_vtable_UsesTwoMaps = unsafe extern "C" fn(this: *mut classes::BSShadowParabolicLight) -> bool;
 
 /// `BSShapeConstructor::vftable` at 0x1b4c2b8, id 255373 (rtti, high); 3 slots.
 #[repr(C)]
@@ -104120,7 +104369,7 @@ pub struct BSTempNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -104252,7 +104501,7 @@ pub struct BSTempNodeManager_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -105318,7 +105567,7 @@ pub struct BSValueNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -162732,7 +162981,7 @@ pub struct NiNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`; `OnVisible`: visits every child through NiAVObject::Cull when the bound radius is non-zero or flag bit 11 is set (high); semantic signature: `void (NiNode* this, NiCullingProcess* culler)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -162755,7 +163004,15 @@ pub struct NiNode_vtable {
 }
 impl NiNode_vtable {
     pub const ID: u64 = 237098;
+    pub const SLOT_OnVisible: usize = 52;
+    /// Slot 52 as `NiNode_vtable_OnVisible`, `None` when the slot is null.
+    #[must_use]
+    pub fn OnVisible(&self) -> Option<NiNode_vtable_OnVisible> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiNode_vtable_OnVisible>>(self.slot_52) }
+    }
 }
+/// `NiNode::OnVisible`, slot 52: visits every child through NiAVObject::Cull when the bound radius is non-zero or flag bit 11 is set (high).
+pub type NiNode_vtable_OnVisible = unsafe extern "C" fn(this: *mut classes::NiNode, culler: *mut classes::partial::NiCullingProcess);
 
 /// `NiOBBLeaf::vftable` at 0x1a51460, id 237519 (rtti, high); 5 slots.
 #[repr(C)]
@@ -178352,11 +178609,11 @@ pub struct PlayerCharacter_vtable {
     pub slot_109: *const c_void,
     /// `TESObjectREFR::vfunc_110` at 0x2ebcd0 (rtti, medium); signature (low): `undefined vfunc_110(void)`
     pub slot_110: *const c_void,
-    /// `PlayerCharacter::vfunc_111` at 0x747b70 (rtti, high); signature (low): `undefined8 vfunc_111(PlayerCharacter * this, char param_1)`
+    /// `PlayerCharacter::Get3DFor` at 0x747b70 (runtime, high); signature (untiered): `undefined8 Get3DFor(PlayerCharacter * this, char param_1)`; `Get3DFor`: the first-person root (+0x900) for true, the third-person root (loadedData->node3D) for false (high); semantic signature: `NiNode* (PlayerCharacter* this, bool firstPerson)`
     pub slot_111: *const c_void,
     /// `PlayerCharacter::Get3D` at 0x747af0 (slot_propagation, high); signature (untiered): `undefined Get3D(PlayerCharacter * this)`
     pub slot_112: *const c_void,
-    /// `PlayerCharacter::vfunc_113` at 0x76b0b0 (rtti, high); signature (high): `byte vfunc_113(PlayerCharacter * this)`
+    /// `PlayerCharacter::IsThirdPerson` at 0x76b0b0 (runtime, high); signature (untiered): `byte IsThirdPerson(PlayerCharacter * this)`; `IsThirdPerson`: bit 0 of +0xbeb; Get3D (slot 112) returns the first-person root when this is false (high); semantic signature: `bool (PlayerCharacter* this)`
     pub slot_113: *const c_void,
     /// `PlayerCharacter::vfunc_114` at 0x74c180 (rtti, high); signature (low): `ulonglong vfunc_114(PlayerCharacter * this, undefined8 param_1, longlong param_2)`
     pub slot_114: *const c_void,
@@ -178739,7 +178996,23 @@ pub struct PlayerCharacter_vtable {
 }
 impl PlayerCharacter_vtable {
     pub const ID: u64 = 208040;
+    pub const SLOT_Get3DFor: usize = 111;
+    /// Slot 111 as `PlayerCharacter_vtable_Get3DFor`, `None` when the slot is null.
+    #[must_use]
+    pub fn Get3DFor(&self) -> Option<PlayerCharacter_vtable_Get3DFor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_Get3DFor>>(self.slot_111) }
+    }
+    pub const SLOT_IsThirdPerson: usize = 113;
+    /// Slot 113 as `PlayerCharacter_vtable_IsThirdPerson`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsThirdPerson(&self) -> Option<PlayerCharacter_vtable_IsThirdPerson> {
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_IsThirdPerson>>(self.slot_113) }
+    }
 }
+/// `PlayerCharacter::Get3DFor`, slot 111: the first-person root (+0x900) for true, the third-person root (loadedData->node3D) for false (high).
+pub type PlayerCharacter_vtable_Get3DFor = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, firstPerson: bool) -> *mut classes::NiNode;
+/// `PlayerCharacter::IsThirdPerson`, slot 113: bit 0 of +0xbeb; Get3D (slot 112) returns the first-person root when this is false (high).
+pub type PlayerCharacter_vtable_IsThirdPerson = unsafe extern "C" fn(this: *mut classes::PlayerCharacter) -> bool;
 
 /// `PlayerCharacter::vftable_20` at 0x192a040, id 208042 (rtti, high); 2 slots.
 #[repr(C)]
@@ -181826,7 +182099,7 @@ pub struct SceneGraph_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -183980,7 +184253,7 @@ pub struct SkyrimScript__HandlePolicy_vtable {
     pub slot_0: *const c_void,
     /// `SkyrimScript::HandlePolicy::HandleIsType` at 0x9b92f0 (runtime, high); signature (untiered): `bool HandleIsType(HandlePolicy * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`; `HandleIsType`: whether the handle names an object of typeID: form handles (bits 32-47 == 0xffff) compare the form's formType (0 accepts any form, 0x3d any reference, 0x18 armor/arms/outfit, 0x20 containers...), item handles (bit 48) accept 0 or 0x3d, active effects (bit 49) 0x8e, alias handles 0x8b-0x8d (high); semantic signature: `bool (SkyrimScript::HandlePolicy* this, u32 typeID, u64 handle)`
     pub slot_1: *const c_void,
-    /// `SkyrimScript::HandlePolicy::IsHandleObjectAvailable` at 0x9b9520 (runtime, high); signature (untiered): `undefined1 IsHandleObjectAvailable(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `IsHandleObjectAvailable`: whether the object behind the handle exists and is not marked unavailable (form flags bit 21 clear) (high); semantic signature: `bool (SkyrimScript::HandlePolicy* this, u64 handle)`
+    /// `SkyrimScript::HandlePolicy::IsHandleObjectAvailable` at 0x9b9520 (runtime, high); signature (untiered): `undefined1 IsHandleObjectAvailable(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `IsHandleObjectAvailable`: whether the object behind the handle exists and is not marked unavailable (form flags bit 21 clear); the invalid handle returns true (its first test is handle == GetInvalidHandle), so callers test HandleIsType first (high); semantic signature: `bool (SkyrimScript::HandlePolicy* this, u64 handle)`
     pub slot_2: *const c_void,
     /// `SkyrimScript::HandlePolicy::GetInvalidHandle` at 0x9b95f0 (runtime, high); signature (untiered): `undefined8 GetInvalidHandle(void)`; `GetInvalidHandle`: 0xffff00000000: the form-handle pattern with form id 0 (high); semantic signature: `u64 (SkyrimScript::HandlePolicy* this)`
     pub slot_3: *const c_void,
@@ -184004,17 +184277,66 @@ pub struct SkyrimScript__HandlePolicy_vtable {
 impl SkyrimScript__HandlePolicy_vtable {
     pub const ID: u64 = 216935;
     pub const SLOT_HandleIsType: usize = 1;
+    /// Slot 1 as `SkyrimScript__HandlePolicy_vtable_HandleIsType`, `None` when the slot is null.
+    #[must_use]
+    pub fn HandleIsType(&self) -> Option<SkyrimScript__HandlePolicy_vtable_HandleIsType> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript__HandlePolicy_vtable_HandleIsType>>(self.slot_1) }
+    }
     pub const SLOT_IsHandleObjectAvailable: usize = 2;
+    /// Slot 2 as `SkyrimScript__HandlePolicy_vtable_IsHandleObjectAvailable`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsHandleObjectAvailable(&self) -> Option<SkyrimScript__HandlePolicy_vtable_IsHandleObjectAvailable> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript__HandlePolicy_vtable_IsHandleObjectAvailable>>(self.slot_2) }
+    }
     pub const SLOT_GetInvalidHandle: usize = 3;
+    /// Slot 3 as `SkyrimScript__HandlePolicy_vtable_GetInvalidHandle`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetInvalidHandle(&self) -> Option<SkyrimScript__HandlePolicy_vtable_GetInvalidHandle> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript__HandlePolicy_vtable_GetInvalidHandle>>(self.slot_3) }
+    }
     pub const SLOT_GetHandleForObject: usize = 4;
+    /// Slot 4 as `SkyrimScript__HandlePolicy_vtable_GetHandleForObject`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetHandleForObject(&self) -> Option<SkyrimScript__HandlePolicy_vtable_GetHandleForObject> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript__HandlePolicy_vtable_GetHandleForObject>>(self.slot_4) }
+    }
     pub const SLOT_HandleIsReference: usize = 5;
+    /// Slot 5 as `SkyrimScript__HandlePolicy_vtable_HandleIsReference`, `None` when the slot is null.
+    #[must_use]
+    pub fn HandleIsReference(&self) -> Option<SkyrimScript__HandlePolicy_vtable_HandleIsReference> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript__HandlePolicy_vtable_HandleIsReference>>(self.slot_5) }
+    }
     pub const SLOT_GetBaseObjectHandle: usize = 6;
     pub const SLOT_GetItemReferenceHandle: usize = 7;
     pub const SLOT_GetObjectForHandle: usize = 8;
+    /// Slot 8 as `SkyrimScript__HandlePolicy_vtable_GetObjectForHandle`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetObjectForHandle(&self) -> Option<SkyrimScript__HandlePolicy_vtable_GetObjectForHandle> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript__HandlePolicy_vtable_GetObjectForHandle>>(self.slot_8) }
+    }
     pub const SLOT_PersistHandle: usize = 9;
     pub const SLOT_ReleaseHandle: usize = 10;
     pub const SLOT_ConvertHandleToString: usize = 11;
+    /// Slot 11 as `SkyrimScript__HandlePolicy_vtable_ConvertHandleToString`, `None` when the slot is null.
+    #[must_use]
+    pub fn ConvertHandleToString(&self) -> Option<SkyrimScript__HandlePolicy_vtable_ConvertHandleToString> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SkyrimScript__HandlePolicy_vtable_ConvertHandleToString>>(self.slot_11) }
+    }
 }
+/// `SkyrimScript::HandlePolicy::HandleIsType`, slot 1: whether the handle names an object of typeID: form handles (bits 32-47 == 0xffff) compare the form's formType (0 accepts any form, 0x3d any reference, 0x18 armor/arms/outfit, 0x20 containers...), item handles (bit 48) accept 0 or 0x3d, active effects (bit 49) 0x8e, alias handles 0x8b-0x8d (high).
+pub type SkyrimScript__HandlePolicy_vtable_HandleIsType = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, typeID: u32, handle: u64) -> bool;
+/// `SkyrimScript::HandlePolicy::IsHandleObjectAvailable`, slot 2: whether the object behind the handle exists and is not marked unavailable (form flags bit 21 clear); the invalid handle returns true (its first test is handle == GetInvalidHandle), so callers test HandleIsType first (high).
+pub type SkyrimScript__HandlePolicy_vtable_IsHandleObjectAvailable = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, handle: u64) -> bool;
+/// `SkyrimScript::HandlePolicy::GetInvalidHandle`, slot 3: 0xffff00000000: the form-handle pattern with form id 0 (high).
+pub type SkyrimScript__HandlePolicy_vtable_GetInvalidHandle = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy) -> u64;
+/// `SkyrimScript::HandlePolicy::GetHandleForObject`, slot 4: form: formID | 0xffff << 32 (a reference carrying an ExtraUniqueID instead gets formID | uniqueID << 32 | 1 << 48); 0x8b-0x8d alias: quest formID | aliasID << 32; 0x8e active effect: caster formID | uniqueID << 32 | 2 << 48; null object: the invalid handle (high).
+pub type SkyrimScript__HandlePolicy_vtable_GetHandleForObject = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, typeID: u32, object: *const c_void) -> u64;
+/// `SkyrimScript::HandlePolicy::HandleIsReference`, slot 5: HandleIsType(0x3d, handle) (high).
+pub type SkyrimScript__HandlePolicy_vtable_HandleIsReference = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, handle: u64) -> bool;
+/// `SkyrimScript::HandlePolicy::GetObjectForHandle`, slot 8: the object the handle names when HandleIsType holds: LookupFormByID for form handles, the alias of the quest for 0x8b-0x8d, the inventory item reference for bit 48, the ActiveEffect found on the actor's magic target for bit 49; null otherwise (high).
+pub type SkyrimScript__HandlePolicy_vtable_GetObjectForHandle = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, typeID: u32, handle: u64) -> *mut c_void;
+/// `SkyrimScript::HandlePolicy::ConvertHandleToString`, slot 11: the log form of a handle: None, 'Item %d in container %s (%08X)', 'Active effect %d on %s (%08X)', 'alias %s on quest %s (%08X)', the form's editor id, or 'Unknown handle (%016I64X)' (high).
+pub type SkyrimScript__HandlePolicy_vtable_ConvertHandleToString = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, handle: u64, out: *mut classes::BSFixedString);
 
 /// `SkyrimScript::Internal::AnimationCallbacks::vftable` at 0x198a548, id 216706 (rtti, high); 2 slots.
 #[repr(C)]

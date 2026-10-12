@@ -471,7 +471,7 @@ pub const Actor__MagicTarget_vfunc_9: u64 = 38740;
 pub const Actor__ModActorValueImpl: u64 = 38468;
 /// `Actor::ModActorValueImpl` as a function pointer type (high).
 pub type Actor__ModActorValueImpl_fn = unsafe extern "C" fn(this: *mut classes::Actor, modifier: i32, value: i32, delta: f32, source: *mut c_void);
-/// `Actor::ProcessAnimationGraphEvent` at 0x6b2000 (runtime, high); signature (untiered): `ulonglong ProcessAnimationGraphEvent(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; handles the actor's own animation events after TESObjectREFR's handler and re-dispatches them through the global source behind 0x32309c8 (high); semantic signature: `BSEventNotifyControl (Actor::sink_30* this, const BSAnimationGraphEvent* event, BSTEventSource<BSAnimationGraphEvent>* source)`
+/// `Actor::ProcessAnimationGraphEvent` at 0x6b2000 (runtime, high); signature (untiered): `ulonglong ProcessAnimationGraphEvent(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; handles the actor's own animation events after TESObjectREFR's handler; a tag found in the footstep source's filter list (BSTArray<BSFixedString> at source+0x60, tested by 0x737040) is re-sent as a BGSFootstepEvent {actor handle, tag} through g_FootstepEventSource_ptr (high); semantic signature: `BSEventNotifyControl (Actor::sink_30* this, const BSAnimationGraphEvent* event, BSTEventSource<BSAnimationGraphEvent>* source)`
 pub const Actor__ProcessAnimationGraphEvent: u64 = 37997;
 /// `Actor::SaveGame` at 0x699230 (slot_propagation, medium); signature (untiered): `undefined SaveGame(Actor * this, longlong * param_1)`
 pub const Actor__SaveGame: u64 = 37649;
@@ -9719,6 +9719,12 @@ pub const BSCubeMapCamera__vfunc_2: u64 = 107566;
 pub const BSCubeMapCamera__vfunc_53: u64 = 107562;
 /// `BSCubeMapCamera::vfunc_53_sub0` at 0x1559ea0 (callgraph, medium); signature (untiered): `undefined vfunc_53_sub0(longlong * param_1, uint param_2, char param_3, char param_4, char param_5)`
 pub const BSCubeMapCamera__vfunc_53_sub0: u64 = 107564;
+/// `BSCullingProcess::AppendGeometry` at 0xfedf50 (semantic, high); signature (untiered): `undefined AppendGeometry(BSCullingProcess * this, longlong param_1)`
+pub const BSCullingProcess__AppendGeometry: u64 = 76555;
+/// `BSCullingProcess::CullNode` at 0xfeda70 (semantic, high); signature (untiered): `undefined CullNode(BSCullingProcess * this, longlong * param_1, undefined4 param_2)`
+pub const BSCullingProcess__CullNode: u64 = 76553;
+/// `BSCullingProcess::Process` at 0xfedd70 (runtime, high); signature (untiered): `undefined Process(BSCullingProcess * this, longlong param_1, longlong param_2, longlong param_3)`
+pub const BSCullingProcess__Process: u64 = 76554;
 /// `BSCullingProcess::ctor` at 0xfed6e0 (layout_inference, high); signature (high): `BSCullingProcess * ctor(BSCullingProcess * this)`
 pub const BSCullingProcess__ctor: u64 = 76551;
 /// `BSCullingProcess::ctor_sub0` at 0xfeed10 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -9729,14 +9735,8 @@ pub const BSCullingProcess__dtor: u64 = 76552;
 pub const BSCullingProcess__vdtor: u64 = 76576;
 /// `BSCullingProcess::vfunc_0` at 0xfeef60 (rtti, high); signature (low): `TypeNode * vfunc_0(void)`
 pub const BSCullingProcess__vfunc_0: u64 = 76579;
-/// `BSCullingProcess::vfunc_22` at 0xfeda70 (rtti, medium); signature (low): `undefined vfunc_22(BSCullingProcess * this, longlong * param_1, undefined4 param_2)`
-pub const BSCullingProcess__vfunc_22: u64 = 76553;
-/// `BSCullingProcess::vfunc_23` at 0xfedd70 (rtti, medium); signature (low): `undefined vfunc_23(BSCullingProcess * this, longlong param_1, longlong param_2, longlong param_3)`
-pub const BSCullingProcess__vfunc_23: u64 = 76554;
 /// `BSCullingProcess::vfunc_24` at 0xfedfc0 (rtti, medium); signature (low): `undefined vfunc_24(BSCullingProcess * this, undefined8 param_1, int param_2)`
 pub const BSCullingProcess__vfunc_24: u64 = 76556;
-/// `BSCullingProcess::vfunc_25` at 0xfedf50 (rtti, high); signature (low): `undefined vfunc_25(BSCullingProcess * this, longlong param_1)`
-pub const BSCullingProcess__vfunc_25: u64 = 76555;
 /// `BSCullingProcess::vfunc_26` at 0xfeea30 (rtti, medium); signature (low): `undefined vfunc_26(BSCullingProcess * this, longlong param_1)`
 pub const BSCullingProcess__vfunc_26: u64 = 76566;
 /// `BSCullingProcess::vfunc_27` at 0xfeea10 (rtti, medium); signature (low): `undefined vfunc_27(BSCullingProcess * this, longlong * param_1)`
@@ -10549,12 +10549,20 @@ pub const BSFile__vfunc_8: u64 = 69425;
 pub const BSFile__vfunc_9: u64 = 69426;
 /// `BSFixedString::assign` at 0xeb11e0 (semantic, high); signature (untiered): `longlong * assign(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; replaces the string: adds a reference to the new entry, releases the old one (high); semantic signature: `BSFixedString* (BSFixedString* this, const BSFixedString* other)`
 pub const BSFixedString__assign: u64 = 69166;
+/// `BSFixedString::assign` as a function pointer type (high).
+pub type BSFixedString__assign_fn = unsafe extern "C" fn(this: *mut classes::BSFixedString, other: *const classes::BSFixedString) -> *mut classes::BSFixedString;
 /// `BSFixedString::copy` at 0xeb1040 (semantic, high); signature (untiered): `longlong * copy(longlong * param_1, longlong * param_2)`; copies the pointer and adds a reference (unless the count is pinned at 0x7fff) (high); semantic signature: `BSFixedString* (BSFixedString* this, const BSFixedString* other)`
 pub const BSFixedString__copy: u64 = 69162;
+/// `BSFixedString::copy` as a function pointer type (high).
+pub type BSFixedString__copy_fn = unsafe extern "C" fn(this: *mut classes::BSFixedString, other: *const classes::BSFixedString) -> *mut classes::BSFixedString;
 /// `BSFixedString::ctor` at 0xeb0f90 (semantic, high); signature (untiered): `longlong * ctor(longlong * param_1, char * param_2)`; interns text: 16-bit case-folded CRC, then BSStringPool::GetEntry; stores entry+0x18 (null for a null text) (high); semantic signature: `BSFixedString* (BSFixedString* this, const char* text)`
 pub const BSFixedString__ctor: u64 = 69161;
+/// `BSFixedString::ctor` as a function pointer type (high).
+pub type BSFixedString__ctor_fn = unsafe extern "C" fn(this: *mut classes::BSFixedString, text: *const c_char) -> *mut classes::BSFixedString;
 /// `BSFixedString::release` at 0xeb1100 (semantic, high); signature (untiered): `undefined release(void)`; drops one reference through BSStringPool::Entry::release (high); semantic signature: `void (BSFixedString* this)`
 pub const BSFixedString__release: u64 = 69164;
+/// `BSFixedString::release` as a function pointer type (high).
+pub type BSFixedString__release_fn = unsafe extern "C" fn(this: *mut classes::BSFixedString);
 /// `BSFlatQuadConstructor::vfunc_0` at 0x1573f90 (rtti, high); signature (low): `BSFlatQuadConstructor * vfunc_0(BSFlatQuadConstructor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFlatQuadConstructor__vfunc_0: u64 = 108227;
 /// `BSFlatQuadConstructor::vfunc_1` at 0x15934b0 (rtti, high); signature (low): `undefined8 vfunc_1(BSFlatQuadConstructor * this, longlong param_1, undefined8 param_2, longlong param_3)`
@@ -12411,6 +12419,8 @@ pub const BSLeafAnimNode__vfunc_63: u64 = 105592;
 pub const BSLensFlareSpriteRenderData__vdtor: u64 = 17063;
 /// `BSLensFlareSpriteRenderData::vfunc_2` at 0x152e5b0 (rtti, high); signature (high): `undefined vfunc_2(BSLensFlareSpriteRenderData * this)`
 pub const BSLensFlareSpriteRenderData__vfunc_2: u64 = 106984;
+/// `BSLight::IsShadowLight` at 0x1578880 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
+pub const BSLight__IsShadowLight: u64 = 108313;
 /// `BSLight::ctor` at 0x1575930 (layout_inference, high); signature (low): `BSLight * ctor(BSLight * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSLight__ctor: u64 = 108276;
 /// `BSLight::ctor_sub0` at 0x15786f0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -12425,8 +12435,6 @@ pub const BSLight__dtor: u64 = 108277;
 pub const BSLight__vdtor: u64 = 108312;
 /// `BSLight::vfunc_2` at 0x1576ad0 (rtti, medium); signature (low): `undefined vfunc_2(BSLight * this, longlong * param_1)`
 pub const BSLight__vfunc_2: u64 = 108289;
-/// `BSLight::vfunc_3` at 0x1578880 (rtti, high); signature (low): `undefined1 vfunc_3(void)`
-pub const BSLight__vfunc_3: u64 = 108313;
 /// `BSLightingShader::NiBoneMatrixSetterI_vdtor` at 0x154cf08 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSLightingShader * this)`
 pub const BSLightingShader__NiBoneMatrixSetterI_vdtor: u64 = 107355;
 /// `BSLightingShader::ctor` at 0x1547210 (layout_inference, high); signature (low): `BSLightingShader * ctor(BSLightingShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -12761,6 +12769,8 @@ pub const BSLightingShaderMaterialSnow__vfunc_4: u64 = 106828;
 pub const BSLightingShaderMaterialSnow__vfunc_6: u64 = 106829;
 /// `BSLightingShaderProperty::Create` at 0x15187c0 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSLightingShaderProperty__Create: u64 = 106492;
+/// `BSLightingShaderProperty::GetRenderPasses` at 0x151b1e0 (runtime, high); signature (untiered): `longlong * GetRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`
+pub const BSLightingShaderProperty__GetRenderPasses: u64 = 106517;
 /// `BSLightingShaderProperty::ctor` at 0x1518dd0 (layout_inference, high); signature (high): `BSLightingShaderProperty * ctor(BSLightingShaderProperty * this)`
 pub const BSLightingShaderProperty__ctor: u64 = 106499;
 /// `BSLightingShaderProperty::dtor` at 0x1518fc0 (layout_inference, high); signature (low): `undefined dtor(BSLightingShaderProperty * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -12795,8 +12805,6 @@ pub const BSLightingShaderProperty__vfunc_42: u64 = 106516;
 pub const BSLightingShaderProperty__vfunc_42_sub0: u64 = 105553;
 /// `BSLightingShaderProperty::vfunc_42_sub1` at 0x14e8480 (callgraph, medium); signature (untiered): `undefined8 vfunc_42_sub1(float param_1, float param_2, float param_3, float param_4, float * param_5, undefined4 * param_6)`
 pub const BSLightingShaderProperty__vfunc_42_sub1: u64 = 105554;
-/// `BSLightingShaderProperty::vfunc_43` at 0x151b1e0 (rtti, high); signature (low): `longlong * vfunc_43(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`
-pub const BSLightingShaderProperty__vfunc_43: u64 = 106517;
 /// `BSLightingShaderProperty::vfunc_44` at 0x151bcb0 (rtti, medium); signature (low): `undefined8 * vfunc_44(BSLightingShaderProperty * this, longlong param_1, int param_2)`
 pub const BSLightingShaderProperty__vfunc_44: u64 = 106518;
 /// `BSLightingShaderProperty::vfunc_45` at 0x151bf00 (rtti, medium); signature (low): `undefined8 * vfunc_45(BSLightingShaderProperty * this, longlong param_1)`
@@ -17165,6 +17173,8 @@ pub const BSScript__NF_util__NativeFunctionBase__SetIsCallableFromTasklet: u64 =
 pub const BSScript__NF_util__NativeFunctionBase__ctor: u64 = 104652;
 /// `BSScript::NF_util::NativeFunctionBase::ctor` at 0x14aa0f0 (semantic, high); signature (low): `NativeFunctionBase * ctor(NativeFunctionBase * this, char * param_1, char * param_2, undefined8 param_3, uint param_4)`; refCount 0, the base vtable, the three strings (state empty), returnType 0, the parameter array of paramCount entries named a0.., isStatic, +0x41/+0x44 0, empty doc string (high); semantic signature: `BSScript::NF_util::NativeFunctionBase* (BSScript::NF_util::NativeFunctionBase* this, const char* name, const char* className, bool isStatic, u32 paramCount)`
 pub const BSScript__NF_util__NativeFunctionBase__ctor_2: u64 = 104653;
+/// `BSScript::NF_util::NativeFunctionBase::ctor` as a function pointer type (high).
+pub type BSScript__NF_util__NativeFunctionBase__ctor_2_fn = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, name: *const c_char, className: *const c_char, isStatic: bool, paramCount: u32) -> *mut classes::BSScript__NF_util__NativeFunctionBase;
 /// `BSScript::NF_util::NativeFunctionBase::dtor` at 0xa54dc0 (callgraph, high); signature (untiered): `undefined dtor(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__dtor: u64 = 56408;
 /// `BSScript::NF_util::NativeFunctionBase::dtor` at 0x14aa340 (layout_inference, high); signature (high): `undefined dtor(NativeFunctionBase * this)`
@@ -17175,6 +17185,8 @@ pub const BSScript__NF_util__NativeFunctionBase__vdtor: u64 = 104658;
 pub const BSScript__NF_util__NativeFunctionBase__vfunc_17: u64 = 104647;
 /// `BSScript::NF_util::SignaturesMatch` at 0x1496bb0 (semantic, high); signature (untiered): `undefined8 SignaturesMatch(longlong * param_1, ulonglong * param_2, undefined8 param_3, longlong * param_4)`; same isStatic (slot 9), same parameter count (slot 5), every parameter type equal (slot 6 on both) and the same return type (slot 4) (high); semantic signature: `bool (BSScript::IFunction* declared, BSScript::IFunction* native)`
 pub const BSScript__NF_util__SignaturesMatch: u64 = 104359;
+/// `BSScript::NF_util::SignaturesMatch` as a function pointer type (high).
+pub type BSScript__NF_util__SignaturesMatch_fn = unsafe extern "C" fn(declared: *mut classes::BSScript__IFunction, native: *mut classes::BSScript__IFunction) -> bool;
 /// `BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>::vdtor` at 0x9fdcd0 (slot_propagation, medium); signature (low): `NativeFunction0<ActiveEffect,Actor*___ptr64> * vdtor(NativeFunction0<ActiveEffect,Actor*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__NativeFunction0_ActiveEffect_Actor____ptr64__vdtor: u64 = 54606;
 /// `BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>::vfunc_21` at 0x9fe0d0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction0<ActiveEffect,Actor*___ptr64> * this)`
@@ -19309,12 +19321,22 @@ pub const BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____pt
 pub const BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float__vdtor: u64 = 55263;
 /// `BSScript::Object::DecRef` at 0x148ef60 (semantic, high); signature (untiered): `int DecRef(longlong param_1)`; drops a reference and returns the new count; the 2 -> 1 transition calls IObjectHandlePolicy::ReleaseHandle; the caller destroys the object at 0 (high); semantic signature: `u32 (BSScript::Object* this)`
 pub const BSScript__Object__DecRef: u64 = 104253;
+/// `BSScript::Object::DecRef` as a function pointer type (high).
+pub type BSScript__Object__DecRef_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Object) -> u32;
 /// `BSScript::Object::Destroy` at 0x148e1a0 (semantic, medium); signature (untiered): `undefined Destroy(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; resets the variables after the header when bit 0 of +0 is set, drops the stack and type references (medium); semantic signature: `void (BSScript::Object* this)`
 pub const BSScript__Object__Destroy: u64 = 104246;
 /// `BSScript::Object::GetHandle` at 0x148e250 (semantic, high); signature (untiered): `undefined8 GetHandle(longlong param_1)`; the handle at +0x20, read under the lock bit of +0x28 (high); semantic signature: `u64 (BSScript::Object* this)`
 pub const BSScript__Object__GetHandle: u64 = 104247;
+/// `BSScript::Object::GetHandle` as a function pointer type (high).
+pub type BSScript__Object__GetHandle_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Object) -> u64;
 /// `BSScript::Object::IncRef` at 0x148eeb0 (semantic, high); signature (untiered): `ulonglong IncRef(longlong param_1)`; adds a reference (bit 31 of +0x28 as the lock); the 1 -> 2 transition calls IObjectHandlePolicy::PersistHandle (high); semantic signature: `u32 (BSScript::Object* this)`
 pub const BSScript__Object__IncRef: u64 = 104252;
+/// `BSScript::Object::IncRef` as a function pointer type (high).
+pub type BSScript__Object__IncRef_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Object) -> u32;
+/// `BSScript::Object::ctor` at 0x148f060 (semantic, high); signature (untiered): `uint * ctor(uint * param_1, undefined8 * param_2, longlong * param_3, undefined8 param_4)`; fills the header: flags variableCount * 8 | 4, the type (with a reference), a string at +0x10, no stack, handle = policy->GetInvalidHandle(), count 0; stores policy in g_IObjectHandlePolicy_ptr (high); semantic signature: `BSScript::Object* (BSScript::Object* this, BSTSmartPointer<BSScript::ObjectTypeInfo>* type, BSScript::IObjectHandlePolicy* policy, u32 variableCount)`
+pub const BSScript__Object__ctor: u64 = 104255;
+/// `BSScript::ObjectBindPolicy::BindObject` at 0x1489b40 (semantic, high); signature (untiered): `undefined BindObject(longlong param_1)`; binds a script object to a handle: forwards its arguments to slot 3 of the VM's bind interface held at +0x10 (high); semantic signature: `void (BSScript::ObjectBindPolicy* this, BSTSmartPointer<BSScript::Object>* object, u64 handle)`
+pub const BSScript__ObjectBindPolicy__BindObject: u64 = 104184;
 /// `BSScript::ObjectBindPolicy::dtor` at 0x1488250 (layout_inference, high); signature (low): `undefined8 * dtor(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ObjectBindPolicy__dtor: u64 = 104173;
 /// `BSScript::ObjectBindPolicy::dtor_sub0` at 0x9f1920 (callgraph, medium); signature (untiered): `undefined dtor_sub0(void)`
@@ -19323,10 +19345,14 @@ pub const BSScript__ObjectBindPolicy__dtor_sub0: u64 = 54417;
 pub const BSScript__ObjectBindPolicy__vfunc_0: u64 = 54381;
 /// `BSScript::ObjectTypeInfo::BindNativeFunction` at 0x1494c60 (semantic, high); signature (untiered): `ulonglong BindNativeFunction(longlong param_1, ulonglong * param_2, longlong * param_3, longlong * param_4)`; checks the function's class name matches and that it is native, then: linked type -> finds the declared function of the same name (static table, empty state or the named state), compares signatures (0x1496bb0) and installs the native in its slot; unlinked type -> replaces a native of the same name in the list at +0x30 or prepends a new {next, function} node; the error strings 'Attempting to bind a non-native function %s', 'Native function %s in empty state could find no matching function on linked type %s', 'does not match existing signature', 'Replacing native function %s on unlinked object %s' (high); semantic signature: `bool (BSScript::ObjectTypeInfo* this, BSScript::IFunction* function, BSScript::ErrorLogger* logger)`
 pub const BSScript__ObjectTypeInfo__BindNativeFunction: u64 = 104325;
-/// `BSScript::ObjectTypeInfo::GetFunction` at 0x1492470 (semantic, high); signature (untiered): `undefined8 GetFunction(longlong param_1, longlong * param_2, longlong * param_3, char param_4)`; on a linked type the function of that name from the tables; on an unlinked one only non-static natives from the pending list; false otherwise (so DispatchStaticCall needs the script loaded) (high); semantic signature: `bool (BSScript::ObjectTypeInfo* this, const BSFixedString* name, BSTSmartPointer<BSScript::IFunction>* out, bool isStatic)`
+/// `BSScript::ObjectTypeInfo::BindNativeFunction` as a function pointer type (high).
+pub type BSScript__ObjectTypeInfo__BindNativeFunction_fn = unsafe extern "C" fn(this: *mut classes::BSScript__ObjectTypeInfo, function: *mut classes::BSScript__IFunction, logger: *mut classes::BSScript__ErrorLogger) -> bool;
+/// `BSScript::ObjectTypeInfo::GetFunction` at 0x1492470 (semantic, high); signature (untiered): `undefined8 GetFunction(longlong param_1, longlong * param_2, longlong * param_3, char param_4)`; finds a static (global) function by name: on a type in link state 3 (or state 2 when linkedOnly is false) through ID_104355 (the skyrim-rs papyrus run got static natives for either flag value and no method on a linked type); on an unlinked type, only when linkedOnly is false, the pending native whose IFunction slot 9 (GetIsStatic) is true, so DispatchStaticCall needs the script loaded (high); semantic signature: `bool (BSScript::ObjectTypeInfo* this, const BSFixedString* name, BSTSmartPointer<BSScript::IFunction>* out, bool linkedOnly)`
 pub const BSScript__ObjectTypeInfo__GetFunction: u64 = 104311;
 /// `BSScript::ObjectTypeInfo::GetTotalNumVariables` at 0x1492b90 (semantic, high); the variable count of the type and its linked parents (bits 8-17 of +0x20 along +0x10) (high); semantic signature: `u32 (const BSScript::ObjectTypeInfo* this)`
 pub const BSScript__ObjectTypeInfo__GetTotalNumVariables: u64 = 104317;
+/// `BSScript::ObjectTypeInfo::GetTotalNumVariables` as a function pointer type (high).
+pub type BSScript__ObjectTypeInfo__GetTotalNumVariables_fn = unsafe extern "C" fn(this: *const classes::BSScript__ObjectTypeInfo) -> u32;
 /// `BSScript::ObjectTypeInfo::dtor` at 0x1491e00 (semantic, medium); signature (untiered): `undefined dtor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; releases the tables, the name, the parent and the doc string (medium); semantic signature: `void (BSScript::ObjectTypeInfo* this)`
 pub const BSScript__ObjectTypeInfo__dtor: u64 = 104299;
 /// `BSScript::SimpleAllocMemoryPagePolicy::ctor` at 0x14a3bc0 (layout_inference, medium); signature (low): `SimpleAllocMemoryPagePolicy * ctor(SimpleAllocMemoryPagePolicy * this, undefined4 param_1, undefined4 param_2, undefined4 param_3)`
@@ -19343,8 +19369,12 @@ pub const BSScript__SimpleAllocMemoryPagePolicy__vfunc_3: u64 = 104567;
 pub const BSScript__SimpleAllocMemoryPagePolicy__vfunc_4: u64 = 104568;
 /// `BSScript::Stack::GetPageForFrame` at 0x149e7f0 (semantic, high); signature (untiered): `ulonglong GetPageForFrame(longlong param_1, uint * param_2)`; index of the page that holds the frame (searches the page array at +0x20) (high); semantic signature: `u32 (BSScript::Stack* this, const BSScript::StackFrame* frame)`
 pub const BSScript__Stack__GetPageForFrame: u64 = 104483;
+/// `BSScript::Stack::GetPageForFrame` as a function pointer type (high).
+pub type BSScript__Stack__GetPageForFrame_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Stack, frame: *const classes::BSScript__StackFrame) -> u32;
 /// `BSScript::Stack::GetStackFrameVariable` at 0x149e860 (semantic, high); signature (untiered): `longlong GetStackFrameVariable(longlong param_1, undefined8 param_2, undefined8 param_3, uint param_4)`; address of Variable index of the frame: page data + the frame's offset + 0x3c + index * 0x10, crossing into the next page when needed (high); semantic signature: `BSScript::Variable* (BSScript::Stack* this, const BSScript::StackFrame* frame, u32 index, u32 page)`
 pub const BSScript__Stack__GetStackFrameVariable: u64 = 104484;
+/// `BSScript::Stack::GetStackFrameVariable` as a function pointer type (high).
+pub type BSScript__Stack__GetStackFrameVariable_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Stack, frame: *const classes::BSScript__StackFrame, index: u32, page: u32) -> *mut classes::BSScript__Variable;
 /// `BSScript::UnlinkedTypes::Function::ConvertTypeFunctor::ctor` at 0x14a1510 (callgraph, high); signature (untiered): `undefined ctor(ConvertTypeFunctor * this)`
 pub const BSScript__UnlinkedTypes__Function__ConvertTypeFunctor__ctor: u64 = 104508;
 /// `BSScript::UnlinkedTypes::Function::ConvertTypeFunctor::ctor` at 0x14e36b0 (callgraph, high); signature (untiered): `undefined ctor(ConvertTypeFunctor * this)`
@@ -19407,8 +19437,12 @@ pub const BSScript__Variable__GetString: u64 = 104285;
 pub const BSScript__Variable__SetObject: u64 = 104288;
 /// `BSScript::Variable::assign` at 0x1491b00 (semantic, high); signature (untiered): `undefined assign(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, ulonglong param_4)`; resets this, then copies other by type: arrays and objects add a reference, strings copy the BSFixedString, scalars copy the qword (high); semantic signature: `void (BSScript::Variable* this, const BSScript::Variable* other)`
 pub const BSScript__Variable__assign: u64 = 104297;
+/// `BSScript::Variable::assign` as a function pointer type (high).
+pub type BSScript__Variable__assign_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Variable, other: *const classes::BSScript__Variable);
 /// `BSScript::Variable::reset` at 0x1491a00 (semantic, high); signature (untiered): `undefined reset(ulonglong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; releases the payload by type (array, string, object) and zeroes +8; the type stays (high); semantic signature: `void (BSScript::Variable* this)`
 pub const BSScript__Variable__reset: u64 = 104296;
+/// `BSScript::Variable::reset` as a function pointer type (high).
+pub type BSScript__Variable__reset_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Variable);
 /// `BSScript::ZeroFunctionArguments::vfunc_0` at 0x384d40 (rtti, high); signature (low): `ZeroFunctionArguments * vfunc_0(ZeroFunctionArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ZeroFunctionArguments__vfunc_0: u64 = 23294;
 /// `BSScript::ZeroFunctionArguments::vfunc_1` at 0x1496d10 (rtti, high); signature (low): `undefined8 vfunc_1(ZeroFunctionArguments * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -19479,6 +19513,10 @@ pub const BSShader__vfunc_5: u64 = 108316;
 pub const BSShader__vfunc_8: u64 = 108320;
 /// `BSShader::vfunc_9` at 0x1578e40 (rtti, medium); signature (untiered): `undefined vfunc_9(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSShader__vfunc_9: u64 = 108324;
+/// `BSShaderAccumulator::RegisterDepthGeometry` at 0x151ec10 (runtime, high); signature (untiered): `undefined8 RegisterDepthGeometry(longlong param_1, longlong param_2, longlong * param_3)`; for the depth and shadow modes: skips properties with flags 0xc000000 (unless allowed), asks the property for its passes in renderMode (slot 43), stamps passFrame and batches the passes (high); semantic signature: `bool (BSShaderAccumulator* this, BSGeometry* geometry, BSShaderProperty* property)`
+pub const BSShaderAccumulator__RegisterDepthGeometry: u64 = 106576;
+/// `BSShaderAccumulator::RegisterDepthGeometry` as a function pointer type (high).
+pub type BSShaderAccumulator__RegisterDepthGeometry_fn = unsafe extern "C" fn(this: *mut classes::BSShaderAccumulator, geometry: *mut classes::BSGeometry, property: *mut classes::BSShaderProperty) -> bool;
 /// `BSShaderAccumulator::ctor` at 0x151dea0 (layout_inference, high); signature (low): `BSShaderAccumulator * ctor(BSShaderAccumulator * this, undefined4 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShaderAccumulator__ctor: u64 = 106564;
 /// `BSShaderAccumulator::ctor` at 0x151e180 (layout_inference, medium); signature (low): `undefined ctor(BSShaderAccumulator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -19733,36 +19771,40 @@ pub const BSShaderTextureSet__vfunc_37: u64 = 107169;
 pub const BSShaderTextureSet__vfunc_38: u64 = 107170;
 /// `BSShaderTextureSet::vfunc_39` at 0x153b4c0 (rtti, high); signature (low): `undefined vfunc_39(BSShaderTextureSet * this, int param_1, char * param_2)`
 pub const BSShaderTextureSet__vfunc_39: u64 = 107171;
+/// `BSShadowDirectionalLight::CullCasters` at 0x157ead0 (runtime, high); signature (untiered): `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`
+pub const BSShadowDirectionalLight__CullCasters: u64 = 108488;
+/// `BSShadowDirectionalLight::CullGeometryLists` at 0x157ed80 (runtime, high); signature (untiered): `undefined CullGeometryLists(longlong param_1, longlong * param_2, longlong param_3)`; one job per culling job: the job's BSGeometryListCullingProcess (cullMode 3 or 4) walks the scene roots with lightCamera; waits for the jobs before returning (high); semantic signature: `void (BSShadowDirectionalLight* this, BSTArray* lists, ...)`
+pub const BSShadowDirectionalLight__CullGeometryLists: u64 = 108492;
+/// `BSShadowDirectionalLight::IsDirectionalLight` at 0x1582020 (semantic, medium); signature (untiered): `undefined1 IsDirectionalLight(void)`
+pub const BSShadowDirectionalLight__IsDirectionalLight: u64 = 108503;
+/// `BSShadowDirectionalLight::RenderShadowMaps` at 0x157ebb0 (runtime, high); signature (untiered): `undefined RenderShadowMaps(BSShadowDirectionalLight * this, int * param_1)`
+pub const BSShadowDirectionalLight__RenderShadowMaps: u64 = 108489;
+/// `BSShadowDirectionalLight::UpdateCascadeFrusta` at 0x157ea50 (semantic, medium); signature (untiered): `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`
+pub const BSShadowDirectionalLight__UpdateCascadeFrusta: u64 = 108487;
+/// `BSShadowDirectionalLight::UpdateForCamera` at 0x157f080 (runtime, high); signature (untiered): `undefined8 UpdateForCamera(BSShadowDirectionalLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSShadowDirectionalLight__UpdateForCamera: u64 = 108496;
 /// `BSShadowDirectionalLight::ctor` at 0x157e490 (layout_inference, medium); signature (low): `BSShadowDirectionalLight * ctor(BSShadowDirectionalLight * this, uint param_1, ulonglong param_2, undefined8 param_3)`
 pub const BSShadowDirectionalLight__ctor: u64 = 108485;
 /// `BSShadowDirectionalLight::ctor` at 0x157e8f0 (layout_inference, medium); signature (low): `undefined ctor(BSShadowDirectionalLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShadowDirectionalLight__ctor_2: u64 = 108486;
 /// `BSShadowDirectionalLight::vdtor` at 0x1581e90 (slot_propagation, medium); signature (low): `BSShadowDirectionalLight * vdtor(BSShadowDirectionalLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShadowDirectionalLight__vdtor: u64 = 108501;
-/// `BSShadowDirectionalLight::vfunc_10` at 0x157ebb0 (rtti, high); signature (low): `undefined vfunc_10(BSShadowDirectionalLight * this, int * param_1)`
-pub const BSShadowDirectionalLight__vfunc_10: u64 = 108489;
 /// `BSShadowDirectionalLight::vfunc_12` at 0x157ed20 (rtti, high); signature (high): `undefined vfunc_12(BSShadowDirectionalLight * this)`
 pub const BSShadowDirectionalLight__vfunc_12: u64 = 108491;
 /// `BSShadowDirectionalLight::vfunc_13` at 0x157ed10 (rtti, high); signature (low): `undefined4 vfunc_13(BSShadowDirectionalLight * this, undefined4 param_1)`
 pub const BSShadowDirectionalLight__vfunc_13: u64 = 108490;
 /// `BSShadowDirectionalLight::vfunc_14` at 0x1582030 (rtti, high); signature (low): `undefined1 vfunc_14(void)`
 pub const BSShadowDirectionalLight__vfunc_14: u64 = 108504;
-/// `BSShadowDirectionalLight::vfunc_15` at 0x157ea50 (rtti, high); signature (low): `undefined vfunc_15(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`
-pub const BSShadowDirectionalLight__vfunc_15: u64 = 108487;
 /// `BSShadowDirectionalLight::vfunc_15_sub0` at 0x1516c40 (callgraph, medium); signature (untiered): `undefined vfunc_15_sub0(float * param_1, undefined8 * param_2, longlong param_3)`
 pub const BSShadowDirectionalLight__vfunc_15_sub0: u64 = 106454;
-/// `BSShadowDirectionalLight::vfunc_16` at 0x157f080 (rtti, high); signature (low): `undefined8 vfunc_16(BSShadowDirectionalLight * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSShadowDirectionalLight__vfunc_16: u64 = 108496;
 /// `BSShadowDirectionalLight::vfunc_16_sub0` at 0x1581730 (callgraph, medium); signature (untiered): `undefined vfunc_16_sub0(longlong param_1, float * param_2, int param_3)`
 pub const BSShadowDirectionalLight__vfunc_16_sub0: u64 = 108497;
 /// `BSShadowDirectionalLight::vfunc_16_sub1` at 0x1581a80 (callgraph, medium); signature (untiered): `undefined vfunc_16_sub1(undefined8 param_1, longlong param_2, longlong param_3, uint * param_4, uint param_5, float * param_6, float * param_7, uint param_8)`
 pub const BSShadowDirectionalLight__vfunc_16_sub1: u64 = 108499;
 /// `BSShadowDirectionalLight::vfunc_4` at 0x1582010 (rtti, high); signature (low): `undefined1 vfunc_4(void)`
 pub const BSShadowDirectionalLight__vfunc_4: u64 = 108502;
-/// `BSShadowDirectionalLight::vfunc_6` at 0x1582020 (rtti, high); signature (low): `undefined1 vfunc_6(void)`
-pub const BSShadowDirectionalLight__vfunc_6: u64 = 108503;
-/// `BSShadowDirectionalLight::vfunc_9` at 0x157ead0 (rtti, high); signature (low): `undefined vfunc_9(BSShadowDirectionalLight * this, uint * param_1)`
-pub const BSShadowDirectionalLight__vfunc_9: u64 = 108488;
+/// `BSShadowFrustumLight::IsFrustumLight` at 0x1587f80 (semantic, medium); signature (untiered): `undefined1 IsFrustumLight(void)`
+pub const BSShadowFrustumLight__IsFrustumLight: u64 = 108621;
 /// `BSShadowFrustumLight::ctor` at 0x15872e0 (layout_inference, medium); signature (low): `BSShadowFrustumLight * ctor(BSShadowFrustumLight * this, float param_1, undefined8 param_2, float param_3, float param_4)`
 pub const BSShadowFrustumLight__ctor: u64 = 108612;
 /// `BSShadowFrustumLight::ctor` at 0x1587620 (layout_inference, medium); signature (low): `BSShadowFrustumLight * ctor(BSShadowFrustumLight * this, float param_1, float param_2, undefined8 param_3, float param_4, float param_5)`
@@ -19781,10 +19823,22 @@ pub const BSShadowFrustumLight__vfunc_16_sub0: u64 = 108306;
 pub const BSShadowFrustumLight__vfunc_2: u64 = 108617;
 /// `BSShadowFrustumLight::vfunc_4` at 0x1587f70 (rtti, high); signature (low): `undefined1 vfunc_4(void)`
 pub const BSShadowFrustumLight__vfunc_4: u64 = 108620;
-/// `BSShadowFrustumLight::vfunc_5` at 0x1587f80 (rtti, high); signature (low): `undefined1 vfunc_5(void)`
-pub const BSShadowFrustumLight__vfunc_5: u64 = 108621;
 /// `BSShadowFrustumLight::vfunc_9` at 0x15879d0 (rtti, high); signature (low): `undefined vfunc_9(BSShadowFrustumLight * this, uint * param_1, int param_2)`
 pub const BSShadowFrustumLight__vfunc_9: u64 = 108615;
+/// `BSShadowLight::IsShadowLight` at 0x155dbd0 (semantic, high); signature (untiered): `undefined1 IsShadowLight(void)`
+pub const BSShadowLight__IsShadowLight: u64 = 107620;
+/// `BSShadowLight::ReleaseShadowMaps` at 0x155c990 (runtime, medium); signature (untiered): `undefined ReleaseShadowMaps(BSShadowLight * this)`
+pub const BSShadowLight__ReleaseShadowMaps: u64 = 107600;
+/// `BSShadowLight::RenderShadowMap` at 0x155d270 (semantic, high); signature (untiered): `undefined RenderShadowMap(longlong * param_1, undefined1[16] * param_2, int * param_3, uint param_4)`; assigns a slice when the record has none (target 4 from the free mask 0x20d8ff8), binds and clears the depth target when clearBeforeRender, draws the accumulator with the map's camera (0x1515230) and scales the frustum to the viewport (high); semantic signature: `void (BSShadowLight* this, ShadowMapData* map, u32* counter, u32 flags)`
+pub const BSShadowLight__RenderShadowMap: u64 = 107604;
+/// `BSShadowLight::RenderShadowMap` as a function pointer type (high).
+pub type BSShadowLight__RenderShadowMap_fn = unsafe extern "C" fn(this: *mut classes::BSShadowLight, map: *mut classes::ShadowMapData, counter: *mut u32, flags: u32);
+/// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
+pub const BSShadowLight__SetShadowMapCount: u64 = 107599;
+/// `BSShadowLight::SetupFocusShadows` at 0x155ca00 (semantic, high); signature (untiered): `undefined SetupFocusShadows(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; aims each focus map's camera at a focus actor and sizes its viewport by distance (ffocusShadowMapDoubleEveryXUnit, at most iShadowMapResolution) (high); semantic signature: `void (BSShadowLight* this, NiAVObject* camera)`
+pub const BSShadowLight__SetupFocusShadows: u64 = 107601;
+/// `BSShadowLight::SetupFocusShadows` as a function pointer type (high).
+pub type BSShadowLight__SetupFocusShadows_fn = unsafe extern "C" fn(this: *mut classes::BSShadowLight, camera: *mut classes::NiAVObject);
 /// `BSShadowLight::ctor` at 0x155c4b0 (layout_inference, high); signature (high): `BSShadowLight * ctor(BSShadowLight * this)`
 pub const BSShadowLight__ctor: u64 = 107594;
 /// `BSShadowLight::ctor_cb0` at 0x155c6a0 (callgraph, medium); signature (untiered): `longlong ctor_cb0(longlong param_1)`
@@ -19795,18 +19849,12 @@ pub const BSShadowLight__ctor_sub0: u64 = 107609;
 pub const BSShadowLight__dtor: u64 = 107595;
 /// `BSShadowLight::vdtor` at 0x155d890 (slot_propagation, medium); signature (low): `BSShadowLight * vdtor(BSShadowLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShadowLight__vdtor: u64 = 107611;
-/// `BSShadowLight::vfunc_11` at 0x155c850 (rtti, medium); signature (low): `undefined vfunc_11(BSShadowLight * this, uint param_1)`
-pub const BSShadowLight__vfunc_11: u64 = 107599;
-/// `BSShadowLight::vfunc_12` at 0x155c990 (rtti, medium); signature (high): `undefined vfunc_12(BSShadowLight * this)`
-pub const BSShadowLight__vfunc_12: u64 = 107600;
 /// `BSShadowLight::vfunc_13` at 0x155dbf0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
 pub const BSShadowLight__vfunc_13: u64 = 107622;
 /// `BSShadowLight::vfunc_14` at 0x155dbe0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
 pub const BSShadowLight__vfunc_14: u64 = 107621;
 /// `BSShadowLight::vfunc_15` at 0x155dd20 (rtti, medium); signature (low): `undefined vfunc_15(void)`
 pub const BSShadowLight__vfunc_15: u64 = 107624;
-/// `BSShadowLight::vfunc_3` at 0x155dbd0 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
-pub const BSShadowLight__vfunc_3: u64 = 107620;
 /// `BSShadowLight::vfunc_4` at 0x155d960 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
 pub const BSShadowLight__vfunc_4: u64 = 107612;
 /// `BSShadowLight::vfunc_5` at 0x155dbb0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
@@ -19817,6 +19865,10 @@ pub const BSShadowLight__vfunc_6: u64 = 107616;
 pub const BSShadowLight__vfunc_7: u64 = 107619;
 /// `BSShadowLight::vfunc_8` at 0x155dba0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
 pub const BSShadowLight__vfunc_8: u64 = 107617;
+/// `BSShadowParabolicLight::IsParabolicLight` at 0x1588e30 (semantic, medium); signature (untiered): `undefined1 IsParabolicLight(void)`
+pub const BSShadowParabolicLight__IsParabolicLight: u64 = 108633;
+/// `BSShadowParabolicLight::UsesTwoMaps` at 0x1588e20 (semantic, high); signature (untiered): `bool UsesTwoMaps(BSShadowParabolicLight * this)`
+pub const BSShadowParabolicLight__UsesTwoMaps: u64 = 108632;
 /// `BSShadowParabolicLight::ctor` at 0x1587f90 (layout_inference, medium); signature (low): `BSShadowParabolicLight * ctor(BSShadowParabolicLight * this, byte param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSShadowParabolicLight__ctor: u64 = 108622;
 /// `BSShadowParabolicLight::vdtor` at 0x1588dc0 (layout_inference, medium); signature (low): `BSShadowParabolicLight * vdtor(BSShadowParabolicLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -19831,10 +19883,6 @@ pub const BSShadowParabolicLight__vfunc_13: u64 = 108635;
 pub const BSShadowParabolicLight__vfunc_14: u64 = 108634;
 /// `BSShadowParabolicLight::vfunc_16` at 0x1588590 (rtti, high); signature (low): `undefined8 vfunc_16(BSShadowParabolicLight * this, longlong param_1)`
 pub const BSShadowParabolicLight__vfunc_16: u64 = 108625;
-/// `BSShadowParabolicLight::vfunc_7` at 0x1588e30 (rtti, high); signature (low): `undefined1 vfunc_7(void)`
-pub const BSShadowParabolicLight__vfunc_7: u64 = 108633;
-/// `BSShadowParabolicLight::vfunc_8` at 0x1588e20 (rtti, high); signature (high): `bool vfunc_8(BSShadowParabolicLight * this)`
-pub const BSShadowParabolicLight__vfunc_8: u64 = 108632;
 /// `BSShadowParabolicLight::vfunc_9` at 0x15888d0 (rtti, high); signature (low): `undefined vfunc_9(BSShadowParabolicLight * this, uint * param_1, int param_2, longlong * param_3)`
 pub const BSShadowParabolicLight__vfunc_9: u64 = 108626;
 /// `BSShapeConstructor::ctor` at 0x1573d70 (callgraph, high); signature (untiered): `undefined ctor(BSShapeConstructor * this)`
@@ -20007,6 +20055,8 @@ pub const BSSphereConstructor__vfunc_1: u64 = 109073;
 pub const BSSphereConstructor__vfunc_2: u64 = 109074;
 /// `BSSpinLock::Lock` at 0x199fa0 (semantic, high); signature (untiered): `undefined8 * Lock(undefined8 * param_1, DWORD * param_2)`; acquires the lock for the current thread (recursive) and returns it for the inline unlock sequence (high); semantic signature: `BSSpinLock* (BSSpinLock** out, BSSpinLock* lock)`
 pub const BSSpinLock__Lock: u64 = 13129;
+/// `BSSpinLock::Lock` as a function pointer type (high).
+pub type BSSpinLock__Lock_fn = unsafe extern "C" fn(out: *mut *mut classes::BSSpinLock, lock: *mut classes::BSSpinLock) -> *mut classes::BSSpinLock;
 /// `BSSpinLock::LockTimed` at 0x1b4d80 (semantic, medium); signature (untiered): `DWORD LockTimed(DWORD * param_1, uint param_2)`; the variant the second set of template instances uses, called with 0 (medium); semantic signature: `uint32 (BSSpinLock* lock, uint32 timeout)`
 pub const BSSpinLock__LockTimed: u64 = 13663;
 /// `BSSplatterExtraData::vdtor` at 0x24dac0 (slot_propagation, medium); signature (low): `BSSplatterExtraData * vdtor(BSSplatterExtraData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -20083,6 +20133,8 @@ pub const BSStreamSystemUtility__vfunc_6: u64 = 416437;
 pub const BSStreamSystemUtility__vfunc_7: u64 = 416438;
 /// `BSStringPool::Entry::release` at 0xeb2360 (semantic, high); signature (untiered): `undefined release(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; decrements the reference count; at 1 it takes the bucket lock, unlinks the entry and frees it; pinned entries are untouched (high); semantic signature: `void (BSFixedString* str)`
 pub const BSStringPool__Entry__release: u64 = 69192;
+/// `BSStringPool::Entry::release` as a function pointer type (high).
+pub type BSStringPool__Entry__release_fn = unsafe extern "C" fn(str: *mut classes::BSFixedString);
 /// `BSStringPool::GetEntry` at 0xeb2bb0 (semantic, high); signature (untiered): `longlong * GetEntry(undefined8 * param_1, char * param_2, uint param_3, int param_4)`; finds the narrow entry with the same text (_stricmp) in bucket hash, adding a reference, or creates one; holds the bucket lock hash & 0x1f (high); semantic signature: `void (BSStringPool::Entry** out, const char* text, uint32 hash, int length)`
 pub const BSStringPool__GetEntry: u64 = 69201;
 /// `BSStringPool::IterationCallback::vdtor` at 0xeb27a0 (layout_inference, medium); signature (low): `IterationCallback * vdtor(IterationCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -24021,18 +24073,18 @@ pub const BSTEventSource_BGSEventProcessedEvent__AddEventSink: u64 = 39773;
 pub const BSTEventSource_BGSEventProcessedEvent__Notify: u64 = 32532;
 /// `BSTEventSource<BGSEventProcessedEvent>::RemoveEventSink` at 0x9cc910 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BGSEventProcessedEvent>* this, BSTEventSink<BGSEventProcessedEvent>* sink)`
 pub const BSTEventSource_BGSEventProcessedEvent__RemoveEventSink: u64 = 53779;
+/// `BSTEventSource<BGSFootstepEvent>::AddEventSink` at 0x662fb0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BGSFootstepEvent>* this, BSTEventSink<BGSFootstepEvent>* sink)`
+pub const BSTEventSource_BGSFootstepEvent__AddEventSink: u64 = 36782;
+/// `BSTEventSource<BGSFootstepEvent>::Notify` at 0x6beb50 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<BGSFootstepEvent>* this, const BGSFootstepEvent* event)`
+pub const BSTEventSource_BGSFootstepEvent__Notify: u64 = 38311;
+/// `BSTEventSource<BGSFootstepEvent>::RemoveEventSink` at 0x664370 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BGSFootstepEvent>* this, BSTEventSink<BGSFootstepEvent>* sink)`
+pub const BSTEventSource_BGSFootstepEvent__RemoveEventSink: u64 = 36801;
 /// `BSTEventSource<BGSSaveLoadManagerEvent>::AddEventSink` at 0x5b9680 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, BSTEventSink<BGSSaveLoadManagerEvent>* sink)`
 pub const BSTEventSource_BGSSaveLoadManagerEvent__AddEventSink: u64 = 34011;
 /// `BSTEventSource<BGSSaveLoadManagerEvent>::Notify` at 0x62f290 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, const BGSSaveLoadManagerEvent* event)`
 pub const BSTEventSource_BGSSaveLoadManagerEvent__Notify: u64 = 35869;
 /// `BSTEventSource<BGSSaveLoadManagerEvent>::RemoveEventSink` at 0x5b9a40 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, BSTEventSink<BGSSaveLoadManagerEvent>* sink)`
 pub const BSTEventSource_BGSSaveLoadManagerEvent__RemoveEventSink: u64 = 34015;
-/// `BSTEventSource<BSAnimationGraphEvent>::AddEventSink` at 0x662fb0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* this, BSTEventSink<BSAnimationGraphEvent>* sink)`
-pub const BSTEventSource_BSAnimationGraphEvent__AddEventSink: u64 = 36782;
-/// `BSTEventSource<BSAnimationGraphEvent>::Notify` at 0x6beb50 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* this, const BSAnimationGraphEvent* event)`
-pub const BSTEventSource_BSAnimationGraphEvent__Notify: u64 = 38311;
-/// `BSTEventSource<BSAnimationGraphEvent>::RemoveEventSink` at 0x664370 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* this, BSTEventSink<BSAnimationGraphEvent>* sink)`
-pub const BSTEventSource_BSAnimationGraphEvent__RemoveEventSink: u64 = 36801;
 /// `BSTEventSource<BSGamerProfileEvent>::AddEventSink` at 0x5b9800 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSGamerProfileEvent>* this, BSTEventSink<BSGamerProfileEvent>* sink)`
 pub const BSTEventSource_BSGamerProfileEvent__AddEventSink: u64 = 34012;
 /// `BSTEventSource<BSGamerProfileEvent>::Notify` at 0xd03100 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSGamerProfileEvent>* this, const BSGamerProfileEvent* event)`
@@ -38711,6 +38763,12 @@ pub const CstringArrayImplementation__vdtor: u64 = 65916;
 pub const CstringArrayImplementation__vfunc_11: u64 = 65971;
 /// `CstringArrayImplementation::vfunc_12` at 0xc639c0 (rtti, high); signature (low): `undefined vfunc_12(CstringArrayImplementation * this, int param_1, longlong param_2)`
 pub const CstringArrayImplementation__vfunc_12: u64 = 66157;
+/// `CullShadowCastersAndScene` at 0x1537fd0 (runtime, high); signature (untiered): `undefined CullShadowCastersAndScene(longlong * param_1, undefined8 param_2, longlong param_3, ulonglong param_4)`; the shadow step: sun slot 16, the sun's geometry list cull (0x157ed80), the main camera cull jobs over the scene roots, the other shadow lights and the sun's cascade caster culls (slot 9 inside 0x15389b0); the first-person root stays hidden throughout (high); semantic signature: `void (NiCamera* camera, ...)`
+pub const CullShadowCastersAndScene: u64 = 107132;
+/// `CullShadowLights` at 0x15389b0 (runtime, high); signature (untiered): `undefined CullShadowLights(void)`; updates and culls the casters of the scene's shadow lights and runs the sun's slot 9 (cascade caster cull) while the main camera cull jobs run (high); semantic signature: `void (void)`
+pub const CullShadowLights: u64 = 107137;
+/// `CullShadowLights` as a function pointer type (high).
+pub type CullShadowLights_fn = unsafe extern "C" fn();
 /// `CureEffect::ctor` at 0x5c5140 (layout_inference, high); signature (low): `CureEffect * ctor(CureEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3, undefined4 param_4)`
 pub const CureEffect__ctor: u64 = 34268;
 /// `CureEffect::ctor` at 0x5c5180 (layout_inference, high); signature (low): `CureEffect * ctor(CureEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3, undefined4 param_4)`
@@ -39259,12 +39317,18 @@ pub const EtherealizationEffect__vfunc_21: u64 = 34330;
 pub const EtherealizationEffect__vfunc_4: u64 = 34328;
 /// `EventSourceHolder_Input::Update` at 0xcf95f0 (runtime, high); signature (untiered): `undefined Update(longlong param_1, undefined4 param_2)`; polls the six devices, dispatches the frame's InputEvent list through the source at +0 and the remote gamepad event through +0x98 (high); semantic signature: `void (EventSourceHolder_Input* this, float delta)`
 pub const EventSourceHolder_Input__Update: u64 = 68617;
+/// `EventSourceHolder_Input::Update` as a function pointer type (high).
+pub type EventSourceHolder_Input__Update_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input, delta: f32);
 /// `EventSourceHolder_MenuOpenClose::ProcessMessages` at 0x1169d20 (runtime, high); signature (untiered): `undefined ProcessMessages(longlong param_1, undefined8 param_2, undefined8 param_3, longlong * param_4)`; drains the UI message queue: shows and hides menus and notifies the three UI sources (high); semantic signature: `void (EventSourceHolder_MenuOpenClose* this, ...)`
 pub const EventSourceHolder_MenuOpenClose__ProcessMessages: u64 = 82082;
 /// `EventSourceHolder_TES::GetSingleton` at 0x1da8f0 (runtime, high); signature (untiered): `undefined * GetSingleton(void)`; returns the static holder of the 56 script event sources (high); semantic signature: `EventSourceHolder_TES* ()`
 pub const EventSourceHolder_TES__GetSingleton: u64 = 14298;
+/// `EventSourceHolder_TES::GetSingleton` as a function pointer type (high).
+pub type EventSourceHolder_TES__GetSingleton_fn = unsafe extern "C" fn() -> *mut classes::EventSourceHolder_TES;
 /// `EventSourceHolder_TES::ctor` at 0x1acfc0 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; constructs the 56 sources in place (high); semantic signature: `EventSourceHolder_TES* (EventSourceHolder_TES* this)`
 pub const EventSourceHolder_TES__ctor: u64 = 13458;
+/// `EventSourceHolder_TES::ctor` as a function pointer type (high).
+pub type EventSourceHolder_TES__ctor_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_TES) -> *mut classes::EventSourceHolder_TES;
 /// `ExitCartBeginHandler::vdtor` at 0x7d3dc0 (layout_inference, medium); signature (low): `ExitCartBeginHandler * vdtor(ExitCartBeginHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ExitCartBeginHandler__vdtor: u64 = 43318;
 /// `ExitCartBeginHandler::vfunc_1` at 0x7cede0 (rtti, high); signature (low): `undefined1 vfunc_1(ExitCartBeginHandler * this, longlong * param_1)`
@@ -69769,6 +69833,10 @@ pub const NewInventoryMenuItemLoadTask__vdtor: u64 = 51788;
 pub const NewInventoryMenuItemLoadTask__vfunc_13: u64 = 51793;
 /// `NewInventoryMenuItemLoadTask::vfunc_14` at 0x93f990 (rtti, high); signature (high): `undefined vfunc_14(NewInventoryMenuItemLoadTask * this)`
 pub const NewInventoryMenuItemLoadTask__vfunc_14: u64 = 51794;
+/// `NiAVObject::Cull` at 0xee0f30 (runtime, high); signature (untiered): `undefined Cull(longlong param_1, longlong * param_2)`; the only gate every culling process passes a node through: does nothing when flags bit 0 (hidden) is set, else culler slot 22 (CullNode) (high); semantic signature: `void (NiAVObject* this, NiCullingProcess* culler)`
+pub const NiAVObject__Cull: u64 = 70267;
+/// `NiAVObject::Cull` as a function pointer type (high).
+pub type NiAVObject__Cull_fn = unsafe extern "C" fn(this: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess);
 /// `NiAVObject::ctor` at 0xee10b0 (layout_inference, high); signature (low): `NiAVObject * ctor(NiAVObject * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiAVObject__ctor: u64 = 524204;
 /// `NiAVObject::ctor_sub0` at 0xee1220 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1)`
@@ -72479,6 +72547,8 @@ pub const NiMultiTargetTransformController__vfunc_57: u64 = 72587;
 pub const NiMultiTargetTransformController__vfunc_58: u64 = 72588;
 /// `NiMultiTargetTransformController::vfunc_59` at 0xf5e530 (rtti, high); signature (low): `undefined vfunc_59(NiMultiTargetTransformController * this, longlong * param_1)`
 pub const NiMultiTargetTransformController__vfunc_59: u64 = 72592;
+/// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`
+pub const NiNode__OnVisible: u64 = 70307;
 /// `NiNode::ctor` at 0xee1940 (layout_inference, high); signature (low): `NiNode * ctor(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiNode__ctor: u64 = 70287;
 /// `NiNode::dtor` at 0xee19d0 (layout_inference, high); signature (high): `undefined dtor(NiNode * this)`
@@ -72523,8 +72593,6 @@ pub const NiNode__vfunc_46: u64 = 70305;
 pub const NiNode__vfunc_47: u64 = 70304;
 /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
 pub const NiNode__vfunc_49: u64 = 70306;
-/// `NiNode::vfunc_52` at 0xee2cc0 (rtti, medium); signature (low): `undefined vfunc_52(NiNode * this, longlong * param_1)`
-pub const NiNode__vfunc_52: u64 = 70307;
 /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
 pub const NiNode__vfunc_53: u64 = 70289;
 /// `NiNode::vfunc_54` at 0xee1c70 (rtti, medium); signature (low): `undefined vfunc_54(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
@@ -74921,6 +74989,8 @@ pub const NiSkinData__vfunc_27_sub0: u64 = 70764;
 pub const NiSkinData__vfunc_28: u64 = 71282;
 /// `NiSkinInstance::Create` at 0xf09a10 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const NiSkinInstance__Create: u64 = 71207;
+/// `NiSkinInstance::UpdatePalette` at 0x1015800 (runtime, high); signature (untiered): `undefined UpdatePalette(longlong param_1, float * param_2)`; rebuilds the bone matrix palette once per render frame (paletteFrame against g_RenderFrameCounter), keeping the previous palette (high); semantic signature: `void (NiSkinInstance* this, const NiTransform* view)`
+pub const NiSkinInstance__UpdatePalette: u64 = 77461;
 /// `NiSkinInstance::ctor` at 0xf09ab0 (layout_inference, high); signature (low): `NiSkinInstance * ctor(NiSkinInstance * this, longlong param_1, longlong param_2, undefined8 param_3)`
 pub const NiSkinInstance__ctor: u64 = 71208;
 /// `NiSkinInstance::ctor` at 0xf0a690 (layout_inference, high); signature (high): `NiSkinInstance * ctor(NiSkinInstance * this)`
@@ -76969,6 +77039,8 @@ pub const PairedStopHandler__vfunc_1_sub0: u64 = 41533;
 pub const Papyrus__ActiveMagicEffect__AddInventoryEventFilter: u64 = 54576;
 /// `Papyrus::ActiveMagicEffect::Dispel` at 0x9fded0 (runtime, high); signature (untiered): `void Dispel(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`; the Dispel native of ActiveMagicEffect (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, ActiveEffect* self)`
 pub const Papyrus__ActiveMagicEffect__Dispel: u64 = 54614;
+/// `Papyrus::ActiveMagicEffect::Dispel` as a function pointer type (high).
+pub type Papyrus__ActiveMagicEffect__Dispel_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut classes::ActiveEffect);
 /// `Papyrus::ActiveMagicEffect::GetBaseObject` at 0x9fdee0 (papyrus_native, high); signature (medium): `EffectSetting * GetBaseObject(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 pub const Papyrus__ActiveMagicEffect__GetBaseObject: u64 = 54615;
 /// `Papyrus::ActiveMagicEffect::GetCasterActor` at 0x9fbb50 (papyrus_native, high); signature (medium): `Actor * GetCasterActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
@@ -77003,6 +77075,8 @@ pub const Papyrus__ActiveMagicEffect__RemoveAllInventoryEventFilters: u64 = 5458
 pub const Papyrus__ActiveMagicEffect__RemoveInventoryEventFilter: u64 = 54590;
 /// `Papyrus::ActiveMagicEffect::SelfFromVariable` at 0x9fdef0 (semantic, high); signature (untiered): `undefined8 SelfFromVariable(uint * param_1)`; the ActiveEffect an object Variable names: Object::GetHandle, HandleIsType(0x8e), IsHandleObjectAvailable, GetObjectForHandle(0x8e) through g_IObjectHandlePolicy_ptr; null when any step fails (high); semantic signature: `ActiveEffect* (const BSScript::Variable* self)`
 pub const Papyrus__ActiveMagicEffect__SelfFromVariable: u64 = 54616;
+/// `Papyrus::ActiveMagicEffect::SelfFromVariable` as a function pointer type (high).
+pub type Papyrus__ActiveMagicEffect__SelfFromVariable_fn = unsafe extern "C" fn(self_: *const classes::BSScript__Variable) -> *mut classes::ActiveEffect;
 /// `Papyrus::ActiveMagicEffect::StartObjectProfiling` at 0x9fc150 (papyrus_native, high); signature (medium): `void StartObjectProfiling(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 pub const Papyrus__ActiveMagicEffect__StartObjectProfiling: u64 = 54591;
 /// `Papyrus::ActiveMagicEffect::StopObjectProfiling` at 0x9fc1e0 (papyrus_native, high); signature (medium): `void StopObjectProfiling(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
@@ -77441,10 +77515,14 @@ pub const Papyrus__Alias__RegisterForSingleLOSGain: u64 = 55129;
 pub const Papyrus__Alias__RegisterForSingleLOSLost: u64 = 55130;
 /// `Papyrus::Alias::RegisterForSingleUpdate` at 0xa13b70 (runtime, high); signature (untiered): `void RegisterForSingleUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`; the RegisterForSingleUpdate native of Alias (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSBaseAlias* self, float a0)`
 pub const Papyrus__Alias__RegisterForSingleUpdate: u64 = 55131;
+/// `Papyrus::Alias::RegisterForSingleUpdate` as a function pointer type (high).
+pub type Papyrus__Alias__RegisterForSingleUpdate_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut classes::partial::BGSBaseAlias, a0: f32);
 /// `Papyrus::Alias::RegisterForSingleUpdateGameTime` at 0xa13bd0 (papyrus_native, high); signature (medium): `void RegisterForSingleUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
 pub const Papyrus__Alias__RegisterForSingleUpdateGameTime: u64 = 55132;
 /// `Papyrus::Alias::RegisterForSleep` at 0xa13c30 (runtime, high); signature (untiered): `void RegisterForSleep(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`; the RegisterForSleep native of Alias (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSBaseAlias* self)`
 pub const Papyrus__Alias__RegisterForSleep: u64 = 55133;
+/// `Papyrus::Alias::RegisterForSleep` as a function pointer type (high).
+pub type Papyrus__Alias__RegisterForSleep_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut classes::partial::BGSBaseAlias);
 /// `Papyrus::Alias::RegisterForTrackedStatsEvent` at 0xa13c80 (papyrus_native, high); signature (medium): `void RegisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 pub const Papyrus__Alias__RegisterForTrackedStatsEvent: u64 = 55134;
 /// `Papyrus::Alias::RegisterForUpdate` at 0xa13cd0 (papyrus_native, high); signature (medium): `void RegisterForUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
@@ -77889,6 +77967,8 @@ pub const Papyrus__Game__UsingGamepad: u64 = 55585;
 pub const Papyrus__GlobalVariable__GetValue: u64 = 55930;
 /// `Papyrus::GlobalVariable::SetValue` at 0xa39ec0 (runtime, high); signature (untiered): `void SetValue(IVirtualMachine * vm, uint stackId, TESGlobal * self, float a0)`; the SetValue native of GlobalVariable (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, TESGlobal* self, float a0)`
 pub const Papyrus__GlobalVariable__SetValue: u64 = 55923;
+/// `Papyrus::GlobalVariable::SetValue` as a function pointer type (high).
+pub type Papyrus__GlobalVariable__SetValue_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut classes::TESGlobal, a0: f32);
 /// `Papyrus::ImageSpaceModifier::Apply` at 0xa3a510 (papyrus_native, high); signature (medium): `void Apply(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, float a0)`
 pub const Papyrus__ImageSpaceModifier__Apply: u64 = 55936;
 /// `Papyrus::ImageSpaceModifier::ApplyCrossFade` at 0xa3a530 (papyrus_native, high); signature (medium): `void ApplyCrossFade(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, float a0)`
@@ -78037,6 +78117,8 @@ pub const Papyrus__ObjectReference__AddInventoryEventFilter: u64 = 56140;
 pub const Papyrus__ObjectReference__AddItem: u64 = 56145;
 /// `Papyrus::ObjectReference::AddToMap` at 0xa44d40 (runtime, high); signature (untiered): `void AddToMap(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`; the AddToMap native of ObjectReference (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, TESObjectREFR* self, bool a0)`
 pub const Papyrus__ObjectReference__AddToMap: u64 = 56146;
+/// `Papyrus::ObjectReference::AddToMap` as a function pointer type (high).
+pub type Papyrus__ObjectReference__AddToMap_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut classes::TESObjectREFR, a0: bool);
 /// `Papyrus::ObjectReference::ApplyHavokImpulse` at 0xa44e70 (papyrus_native, high); signature (medium): `bool ApplyHavokImpulse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2, float a3)`
 pub const Papyrus__ObjectReference__ApplyHavokImpulse: u64 = 56147;
 /// `Papyrus::ObjectReference::BlockActivation` at 0xa450a0 (papyrus_native, high); signature (medium): `void BlockActivation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
@@ -78233,6 +78315,8 @@ pub const Papyrus__ObjectReference__Reset: u64 = 56219;
 pub const Papyrus__ObjectReference__Say: u64 = 56220;
 /// `Papyrus::ObjectReference::SelfFromVariable` at 0xa56b20 (semantic, high); signature (untiered): `undefined8 SelfFromVariable(uint * param_1)`; the reference an object Variable names (typeID 0x3d through g_IObjectHandlePolicy_ptr) (high); semantic signature: `TESObjectREFR* (const BSScript::Variable* self)`
 pub const Papyrus__ObjectReference__SelfFromVariable: u64 = 56493;
+/// `Papyrus::ObjectReference::SelfFromVariable` as a function pointer type (high).
+pub type Papyrus__ObjectReference__SelfFromVariable_fn = unsafe extern "C" fn(self_: *const classes::BSScript__Variable) -> *mut classes::TESObjectREFR;
 /// `Papyrus::ObjectReference::SendStealAlarm` at 0xa48990 (papyrus_native, high); signature (medium): `void SendStealAlarm(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
 pub const Papyrus__ObjectReference__SendStealAlarm: u64 = 56221;
 /// `Papyrus::ObjectReference::SetActorCause` at 0xa48a20 (papyrus_native, high); signature (medium): `void SetActorCause(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
@@ -78283,6 +78367,8 @@ pub const Papyrus__ObjectReference__TranslateTo_sub0: u64 = 12808;
 pub const Papyrus__ObjectReference__WaitForAnimationEvent: u64 = 56235;
 /// `Papyrus::PackFormToVariable` at 0xa291d0 (semantic, high); signature (untiered): `ulonglong * PackFormToVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`; the return path of a form-returning native: GetScriptObjectTypeByID for the form's class (1 when unknown), GetHandleForObject(0, form), FindBoundObject(handle, className) or CreateObject + GetTypeIDForScriptObject + HandleIsType + ObjectBindPolicy::BindObject (bind interface slot 3), then Variable::assign {type, 0} and SetObject (high); semantic signature: `BSScript::Variable* (BSScript::Variable* out, TESForm* form, BSScript::Internal::VirtualMachine* vm)`
 pub const Papyrus__PackFormToVariable: u64 = 55511;
+/// `Papyrus::PackFormToVariable` as a function pointer type (high).
+pub type Papyrus__PackFormToVariable_fn = unsafe extern "C" fn(out: *mut classes::BSScript__Variable, form: *mut classes::TESForm, vm: *mut classes::BSScript__Internal__VirtualMachine) -> *mut classes::BSScript__Variable;
 /// `Papyrus::Package::GetOwningQuest` at 0xa5f3b0 (papyrus_native, high); signature (medium): `TESQuest * GetOwningQuest(IVirtualMachine * vm, uint stackId, TESPackage * self)`
 pub const Papyrus__Package__GetOwningQuest: u64 = 56673;
 /// `Papyrus::Package::GetTemplate` at 0xa5e930 (papyrus_native, high); signature (medium): `TESPackage * GetTemplate(IVirtualMachine * vm, uint stackId, TESPackage * self)`
@@ -78349,6 +78435,8 @@ pub const Papyrus__Quest__UpdateCurrentInstanceGlobal: u64 = 56736;
 pub const Papyrus__ReferenceAlias__AddInventoryEventFilter: u64 = 55285;
 /// `Papyrus::ReferenceAlias::Clear` at 0xa1b5d0 (runtime, high); signature (untiered): `void Clear(IVirtualMachine * vm, uint stackId, BGSRefAlias * self)`; the Clear native of ReferenceAlias (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSRefAlias* self)`
 pub const Papyrus__ReferenceAlias__Clear: u64 = 55286;
+/// `Papyrus::ReferenceAlias::Clear` as a function pointer type (high).
+pub type Papyrus__ReferenceAlias__Clear_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut classes::BGSRefAlias);
 /// `Papyrus::ReferenceAlias::ForceRefTo` at 0xa1b6a0 (papyrus_native, high); signature (medium): `void ForceRefTo(IVirtualMachine * vm, uint stackId, BGSRefAlias * self, TESObjectREFR * a0)`
 pub const Papyrus__ReferenceAlias__ForceRefTo: u64 = 55288;
 /// `Papyrus::ReferenceAlias::GetReference` at 0xa1b620 (papyrus_native, high); signature (medium): `TESObjectREFR * GetReference(IVirtualMachine * vm, uint stackId, BGSRefAlias * self)`
@@ -79289,6 +79377,8 @@ pub const PlayerCharacter__BSTEventSink_UserEventEnabledEvent_vfunc_1: u64 = 407
 pub const PlayerCharacter__BSTEventSink_bhkCharacterMoveFinishEvent_vdtor: u64 = 40938;
 /// `PlayerCharacter::Get3D` at 0x747af0 (slot_propagation, high); signature (untiered): `undefined Get3D(PlayerCharacter * this)`
 pub const PlayerCharacter__Get3D: u64 = 40462;
+/// `PlayerCharacter::Get3DFor` at 0x747b70 (runtime, high); signature (untiered): `undefined8 Get3DFor(PlayerCharacter * this, char param_1)`
+pub const PlayerCharacter__Get3DFor: u64 = 40464;
 /// `PlayerCharacter::IAnimationGraphManagerHolder_vdtor` at 0x769308 (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
 pub const PlayerCharacter__IAnimationGraphManagerHolder_vdtor: u64 = 40933;
 /// `PlayerCharacter::IAnimationGraphManagerHolder_vfunc_11` at 0x760f50 (rtti, high); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_11(PlayerCharacter * this, longlong * param_1)`
@@ -79303,6 +79393,8 @@ pub const PlayerCharacter__IAnimationGraphManagerHolder_vfunc_7: u64 = 40756;
 pub const PlayerCharacter__IPostAnimationChannelUpdateFunctor_vfunc_0: u64 = 40939;
 /// `PlayerCharacter::IsInCombat` at 0x76b0c0 (slot_propagation, high); signature (untiered): `byte IsInCombat(PlayerCharacter * this)`
 pub const PlayerCharacter__IsInCombat: u64 = 41024;
+/// `PlayerCharacter::IsThirdPerson` at 0x76b0b0 (runtime, high); signature (untiered): `byte IsThirdPerson(PlayerCharacter * this)`
+pub const PlayerCharacter__IsThirdPerson: u64 = 41023;
 /// `PlayerCharacter::LoadGame` at 0x74e600 (slot_propagation, medium); signature (untiered): `undefined LoadGame(PlayerCharacter * this, TESObjectREFR_vtbl * param_1)`
 pub const PlayerCharacter__LoadGame: u64 = 40540;
 /// `PlayerCharacter::MagicTarget_vfunc_0` at 0x769314 (rtti, high); signature (low): `undefined MagicTarget_vfunc_0(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
@@ -79315,6 +79407,10 @@ pub const PlayerCharacter__MagicTarget_vfunc_8: u64 = 40762;
 pub const PlayerCharacter__ProcessMenuOpenCloseEvent: u64 = 40740;
 /// `PlayerCharacter::SaveGame` at 0x74cec0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(PlayerCharacter * this, longlong * param_1)`
 pub const PlayerCharacter__SaveGame: u64 = 40538;
+/// `PlayerCharacter::SetFirstPerson` at 0x748d10 (runtime, high); signature (untiered): `undefined SetFirstPerson(longlong * param_1, byte param_2, undefined8 param_3, undefined8 param_4)`; switches the player's visible root: sets flags bit 0 on the root not shown and clears it on the other, stores !firstPerson in bit 0 of +0xbeb, copies the reference position and heading into both roots' local transforms and reattaches the camera (high); semantic signature: `void (PlayerCharacter* this, bool firstPerson)`
+pub const PlayerCharacter__SetFirstPerson: u64 = 40476;
+/// `PlayerCharacter::SetFirstPerson` as a function pointer type (high).
+pub type PlayerCharacter__SetFirstPerson_fn = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, firstPerson: bool);
 /// `PlayerCharacter::ctor` at 0x73f670 (layout_inference, medium); signature (low): `PlayerCharacter * ctor(PlayerCharacter * this, undefined8 param_1, byte * param_2, byte * param_3)`
 pub const PlayerCharacter__ctor: u64 = 40411;
 /// `PlayerCharacter::dtor` at 0x740690 (layout_inference, high); signature (low): `undefined dtor(PlayerCharacter * this, undefined8 param_1, ulonglong param_2, ulonglong param_3)`
@@ -79343,10 +79439,6 @@ pub const PlayerCharacter__vfunc_108: u64 = 40465;
 pub const PlayerCharacter__vfunc_108_sub0: u64 = 50792;
 /// `PlayerCharacter::vfunc_108_sub1` at 0xccb690 (callgraph, medium); signature (untiered): `DWORD vfunc_108_sub1(longlong param_1, ulonglong param_2)`
 pub const PlayerCharacter__vfunc_108_sub1: u64 = 67670;
-/// `PlayerCharacter::vfunc_111` at 0x747b70 (rtti, high); signature (low): `undefined8 vfunc_111(PlayerCharacter * this, char param_1)`
-pub const PlayerCharacter__vfunc_111: u64 = 40464;
-/// `PlayerCharacter::vfunc_113` at 0x76b0b0 (rtti, high); signature (high): `byte vfunc_113(PlayerCharacter * this)`
-pub const PlayerCharacter__vfunc_113: u64 = 41023;
 /// `PlayerCharacter::vfunc_114` at 0x74c180 (rtti, high); signature (low): `ulonglong vfunc_114(PlayerCharacter * this, undefined8 param_1, longlong param_2)`
 pub const PlayerCharacter__vfunc_114: u64 = 40523;
 /// `PlayerCharacter::vfunc_121` at 0x761440 (rtti, high); signature (low): `undefined vfunc_121(PlayerCharacter * this, longlong param_1)`
@@ -79805,6 +79897,10 @@ pub const Precipitation__vfunc_0: u64 = 26191;
 pub const PreloadResponsesInitializationPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStr_3cfe82a6de7f: u64 = 43635;
 /// `PreloadResponsesInitializationPolicy<BSTSmartPointer<BSResponse<BSFixedStringCI,Actor,BSFixedStringCI,DoNothingUnhandledPolicy>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>::vdtor` at 0x7db160 (layout_inference, medium); signature (low): `PreloadResponsesInitializationPolicy<BSTSmartPointer<BSResponse<BSFixedStringCI,Actor,BSFixedStringCI,DoNothingUnhandledPolicy>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI> * vdtor(PreloadResponsesInitializationPolicy<BSTSmartPointer<BSResponse<BSFixedStringCI,Actor,BSFixedStringCI,DoNothingUnhandledPolicy>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const PreloadResponsesInitializationPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStr_fda976c0f8d5: u64 = 43643;
+/// `PresentFrame` at 0x1009f70 (runtime, high); signature (untiered): `undefined PresentFrame(void)`; presents the swap chain (slot 8 of the IDXGISwapChain behind 0x3330198+0x18 with the sync interval) and increments g_RenderFrameCounter (high); semantic signature: `void (void)`
+pub const PresentFrame: u64 = 77246;
+/// `PresentFrame` as a function pointer type (high).
+pub type PresentFrame_fn = unsafe extern "C" fn();
 /// `ProcessCallbackAdapter::vdtor` at 0x6bc830 (layout_inference, medium); signature (low): `ProcessCallbackAdapter * vdtor(ProcessCallbackAdapter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ProcessCallbackAdapter__vdtor: u64 = 38236;
 /// `ProcessCallbackAdapter::vfunc_1` at 0x6bd900 (rtti, high); signature (low): `undefined vfunc_1(ProcessCallbackAdapter * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
@@ -79831,6 +79927,10 @@ pub const ProcessLists__GetActorsFilter__dtor_3: u64 = 36425;
 pub const ProcessLists__GetActorsFilter__dtor_4: u64 = 40922;
 /// `ProcessLists::GetActorsFilter::vdtor` at 0x5d0210 (layout_inference, medium); signature (low): `GetActorsFilter * vdtor(GetActorsFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ProcessLists__GetActorsFilter__vdtor: u64 = 34475;
+/// `ProcessShadowSceneNodeQueues` at 0x150e040 (runtime, high); signature (untiered): `undefined ProcessShadowSceneNodeQueues(longlong param_1, undefined8 param_2, ulonglong param_3)`; ShadowSceneNode::ProcessQueues on each of the four g_ShadowSceneNode entries (high); semantic signature: `void (BSCullingProcess* culler)`
+pub const ProcessShadowSceneNodeQueues: u64 = 106337;
+/// `ProcessShadowSceneNodeQueues` as a function pointer type (high).
+pub type ProcessShadowSceneNodeQueues_fn = unsafe extern "C" fn(culler: *mut classes::BSCullingProcess);
 /// `Projectile::BSHandleRefObject_vdtor` at 0x804c74 (slot_propagation, medium); signature (high): `undefined BSHandleRefObject_vdtor(Projectile * this)`
 pub const Projectile__BSHandleRefObject_vdtor: u64 = 44251;
 /// `Projectile::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x804c80 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Projectile * this)`
@@ -80585,6 +80685,24 @@ pub const RemoveCallbackVisitor__vfunc_1_sub0: u64 = 82658;
 pub const RemoveRagdollHandler__vdtor: u64 = 43361;
 /// `RemoveRagdollHandler::vfunc_1` at 0x7ce8c0 (rtti, high); signature (low): `undefined8 vfunc_1(RemoveRagdollHandler * this, longlong * param_1)`
 pub const RemoveRagdollHandler__vfunc_1: u64 = 42877;
+/// `RenderFirstPerson` at 0x1537b10 (runtime, high); signature (untiered): `undefined RenderFirstPerson(byte param_1, char param_2)`; draws the first-person root (arms and weapon) after the main scene; runs only when the first-person root is shown at frame start and the camera is not the free camera (high); semantic signature: `void (void* renderTargets, bool)`
+pub const RenderFirstPerson: u64 = 107129;
+/// `RenderFrame` at 0x6565b0 (runtime, high); signature (untiered): `undefined RenderFrame(longlong * param_1, undefined8 param_2, longlong * * param_3, longlong * * param_4)`; per-frame render: world draw when the player's 3D is loaded (0x656d10), menus, screenshots, then PresentFrame (high); semantic signature: `void (void* owner)`
+pub const RenderFrame: u64 = 36555;
+/// `RenderFrame` as a function pointer type (high).
+pub type RenderFrame_fn = unsafe extern "C" fn(owner: *mut c_void);
+/// `RenderShadowMaps` at 0x1538430 (runtime, high); signature (untiered): `undefined RenderShadowMaps(void)`; draws the shadow maps: the sun's slot 10 (cascades and focus maps) and the other shadow lights (high); semantic signature: `void (...)`
+pub const RenderShadowMaps: u64 = 107133;
+/// `RenderTargets_CreateDepthStencil` at 0x1015470 (semantic, medium); signature (untiered): `undefined RenderTargets_CreateDepthStencil(longlong param_1, uint param_2, undefined8 * param_3)`; creates depth-stencil target id from {width, height, array slices, flags} (medium); semantic signature: `void (void* renderTargets, u32 id, const u32* properties)`
+pub const RenderTargets_CreateDepthStencil: u64 = 77446;
+/// `RenderWorld` at 0x656d10 (runtime, high); signature (untiered): `undefined RenderWorld(undefined8 param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`; sets the rendering flag, copies the camera position into the world ShadowSceneNode (+0x2f4) and draws the world scene (0x656e60) (high); semantic signature: `void (void* owner, u32 flags)`
+pub const RenderWorld: u64 = 36558;
+/// `RenderWorld` as a function pointer type (high).
+pub type RenderWorld_fn = unsafe extern "C" fn(owner: *mut c_void, flags: u32);
+/// `RenderWorldScene` at 0x656e60 (runtime, high); signature (untiered): `undefined RenderWorldScene(longlong param_1, undefined8 param_2, undefined8 param_3)`; the world scene: render context, water, light queues, shadow culls, shadow maps, main draw, first-person draw; hides the first-person root (flags bit 0) around the scene culls and the shadow passes and shows it for the first-person draw (high); semantic signature: `void (void* owner, u32 flags, bool menuOpen)`
+pub const RenderWorldScene: u64 = 36559;
+/// `RenderWorldScene` as a function pointer type (high).
+pub type RenderWorldScene_fn = unsafe extern "C" fn(owner: *mut c_void, flags: u32, menuOpen: bool);
 /// `Reset3DMobIterator::vdtor` at 0x3b0760 (layout_inference, medium); signature (low): `Reset3DMobIterator * vdtor(Reset3DMobIterator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const Reset3DMobIterator__vdtor: u64 = 24392;
 /// `Reset3DMobIterator::vfunc_1` at 0x3b0790 (rtti, high); signature (low): `undefined vfunc_1(Reset3DMobIterator * this, longlong param_1)`
@@ -80907,6 +81025,8 @@ pub const SettingT_INIPrefSettingCollection__vdtor: u64 = 13276;
 pub const SettingT_INISettingCollection__vdtor: u64 = 12996;
 /// `SettingT<RegSettingCollection>::vdtor` at 0x6508a0 (layout_inference, medium); signature (low): `SettingT<RegSettingCollection> * vdtor(SettingT<RegSettingCollection> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SettingT_RegSettingCollection__vdtor: u64 = 36507;
+/// `SetupWorldRenderContext` at 0x657c90 (runtime, medium); signature (untiered): `ulonglong SetupWorldRenderContext(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; fills the frame's render context (first-person root +0x18, third-person root +0x20, world ShadowSceneNode +0x30, the two field-of-view values) and sorts the focus-shadow actors by distance (fMaxFocusShadowMapDistance) (medium); semantic signature: `void* (void* owner)`
+pub const SetupWorldRenderContext: u64 = 36561;
 /// `ShaderReferenceEffect::ctor` at 0x5de110 (layout_inference, high); signature (high): `ShaderReferenceEffect * ctor(ShaderReferenceEffect * this)`
 pub const ShaderReferenceEffect__ctor: u64 = 34909;
 /// `ShaderReferenceEffect::ctor` at 0x5de270 (layout_inference, high); signature (low): `ShaderReferenceEffect * ctor(ShaderReferenceEffect * this, longlong * param_1)`
@@ -80969,6 +81089,16 @@ pub const ShaderReferenceEffect__vfunc_60: u64 = 34919;
 pub const ShaderReferenceEffect__vfunc_62: u64 = 34928;
 /// `ShaderReferenceEffect::vfunc_62_sub0` at 0x6690a0 (callgraph, medium); signature (untiered): `undefined vfunc_62_sub0(longlong param_1, longlong * param_2)`
 pub const ShaderReferenceEffect__vfunc_62_sub0: u64 = 36965;
+/// `ShadowSceneNode::AddLight` at 0x150cbf0 (semantic, high); signature (untiered): `longlong * AddLight(longlong param_1, longlong * param_2)`; finds the light by its NiLight in lights or shadowLights (chosen by slot 3) and updates it, or appends it and updates it (high); semantic signature: `BSLight* (ShadowSceneNode* this, BSLight* light)`
+pub const ShadowSceneNode__AddLight: u64 = 106328;
+/// `ShadowSceneNode::AddLight` as a function pointer type (high).
+pub type ShadowSceneNode__AddLight_fn = unsafe extern "C" fn(this: *mut classes::ShadowSceneNode, light: *mut classes::BSLight) -> *mut classes::BSLight;
+/// `ShadowSceneNode::ProcessQueues` at 0x150d410 (runtime, high); signature (untiered): `longlong * ProcessQueues(longlong param_1, longlong param_2, ulonglong param_3)`; under lightQueueLock: updates the queued lights, applies the queued removals and geometry changes, empties the queues (high); semantic signature: `void (ShadowSceneNode* this, BSCullingProcess* culler, ...)`
+pub const ShadowSceneNode__ProcessQueues: u64 = 106335;
+/// `ShadowSceneNode::UpdateLight` at 0x150e400 (runtime, high); signature (untiered): `undefined UpdateLight(longlong param_1, longlong * param_2)`; drops a hidden or zero-radius light, else stores the portal graph in the light and culls its receivers (0x1512540 with a parabolic culler or 0x1513290) (high); semantic signature: `void (ShadowSceneNode* this, BSLight* light)`
+pub const ShadowSceneNode__UpdateLight: u64 = 106342;
+/// `ShadowSceneNode::UpdateLight` as a function pointer type (high).
+pub type ShadowSceneNode__UpdateLight_fn = unsafe extern "C" fn(this: *mut classes::ShadowSceneNode, light: *mut classes::BSLight);
 /// `ShadowSceneNode::ctor` at 0x150ba50 (layout_inference, high); signature (low): `ShadowSceneNode * ctor(ShadowSceneNode * this, int param_1, undefined8 param_2, undefined8 param_3, int param_4, int param_5, int param_6)`
 pub const ShadowSceneNode__ctor: u64 = 106320;
 /// `ShadowSceneNode::ctor` at 0x150c000 (layout_inference, medium); signature (low): `undefined ctor(ShadowSceneNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -82319,6 +82449,8 @@ pub const SkyrimVM__ProcessEquipEvent: u64 = 53970;
 pub const SkyrimVM__ProcessHitEvent: u64 = 53974;
 /// `SkyrimVM::RegisterEventSinks` at 0x9e27f0 (runtime, high); signature (untiered): `undefined RegisterEventSinks(longlong param_1)`; registers the VM's 49 holder sinks (every SkyrimVM+0x10+8*i except InitScript, which the ctor registers) (high); semantic signature: `void (SkyrimVM* vm)`
 pub const SkyrimVM__RegisterEventSinks: u64 = 54028;
+/// `SkyrimVM::RegisterEventSinks` as a function pointer type (high).
+pub type SkyrimVM__RegisterEventSinks_fn = unsafe extern "C" fn(vm: *mut classes::partial::SkyrimVM);
 /// `SkyrimVM::SleepStartEventFunctor::vfunc_0` at 0x9f0dd0 (rtti, high); signature (low): `SleepStartEventFunctor * vfunc_0(SleepStartEventFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__SleepStartEventFunctor__vfunc_0: u64 = 54393;
 /// `SkyrimVM::SleepStartEventFunctor::vfunc_1` at 0x9e7970 (rtti, high); signature (low): `undefined8 vfunc_1(SleepStartEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
@@ -82329,6 +82461,8 @@ pub const SkyrimVM__SleepStopEventFunctor__vfunc_0: u64 = 54394;
 pub const SkyrimVM__SleepStopEventFunctor__vfunc_1: u64 = 54066;
 /// `SkyrimVM::UnregisterEventSinks` at 0x9e2e30 (runtime, high); signature (untiered): `undefined UnregisterEventSinks(longlong param_1)`; the matching RemoveEventSink calls (high); semantic signature: `void (SkyrimVM* vm)`
 pub const SkyrimVM__UnregisterEventSinks: u64 = 54029;
+/// `SkyrimVM::UnregisterEventSinks` as a function pointer type (high).
+pub type SkyrimVM__UnregisterEventSinks_fn = unsafe extern "C" fn(vm: *mut classes::partial::SkyrimVM);
 /// `SkyrimVM::ctor` at 0x9d5760 (layout_inference, high); signature (high): `SkyrimVM * ctor(SkyrimVM * this)`
 pub const SkyrimVM__ctor: u64 = 53919;
 /// `SkyrimVM::ctor_sub0` at 0x9b2a80 (callgraph, medium); signature (untiered): `longlong ctor_sub0(longlong param_1)`

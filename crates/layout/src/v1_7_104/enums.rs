@@ -1413,6 +1413,60 @@ impl VMTypeID {
     }
 }
 
+/// index of a player camera state: PlayerCamera+0xb8 + 8 * id holds the state object and the state stores its id; values from data/camerastates.json (render pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum CameraState {
+    /// `FirstPerson`
+    FirstPerson = 0,
+    /// `AutoVanity`
+    AutoVanity = 1,
+    /// `VATS`
+    VATS = 2,
+    /// `Free`
+    Free = 3,
+    /// `IronSights`
+    IronSights = 4,
+    /// `Furniture`
+    Furniture = 5,
+    /// `PlayerCameraTransition`
+    PlayerCameraTransition = 6,
+    /// `TweenMenu`
+    TweenMenu = 7,
+    /// `ThirdPersonAlt`
+    ThirdPersonAlt = 8,
+    /// `ThirdPerson`
+    ThirdPerson = 9,
+    /// `Horse`
+    Horse = 10,
+    /// `Bleedout`
+    Bleedout = 11,
+    /// `Dragon`
+    Dragon = 12,
+}
+
+impl CameraState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::FirstPerson),
+            1 => Some(Self::AutoVanity),
+            2 => Some(Self::VATS),
+            3 => Some(Self::Free),
+            4 => Some(Self::IronSights),
+            5 => Some(Self::Furniture),
+            6 => Some(Self::PlayerCameraTransition),
+            7 => Some(Self::TweenMenu),
+            8 => Some(Self::ThirdPersonAlt),
+            9 => Some(Self::ThirdPerson),
+            10 => Some(Self::Horse),
+            11 => Some(Self::Bleedout),
+            12 => Some(Self::Dragon),
+            _ => None,
+        }
+    }
+}
+
 /// Named bits of `Actor.boolFlags` (actors pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]

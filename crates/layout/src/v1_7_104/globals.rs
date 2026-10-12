@@ -10699,8 +10699,6 @@ pub const g_ActorValueStorageLock: u64 = 404014;
 pub const g_AnimationClipDataSingleton_ptr: u64 = 401553;
 /// `g_AnimationFileManagerSingleton_ptr` at 0x31e0b30 (xref_inference, medium)
 pub const g_AnimationFileManagerSingleton_ptr: u64 = 401579;
-/// `g_AnimationGraphEventSource_ptr` at 0x32309c8 (xref_inference, medium); pointer to `BSTEventSource`: pointer to the global BSTEventSource actors notify from their graph event handler; its event is not a BSAnimationGraphEvent: the live payload is {actor handle u32, tag BSFixedString, pointer to the static at 0x3241930} and reading it as BSAnimationGraphEvent crashed (skyrim-rs docs/subsystems/events.md); the per-graph BSTEventSource<BSAnimationGraphEvent> sits at BShkbAnimationGraph+0x68; pointer to the global BSTEventSource actors notify from their graph event handler; its event is not a BSAnimationGraphEvent: the live payload is {actor handle u32, tag BSFixedString, pointer to the static at 0x3241930} and reading it as BSAnimationGraphEvent crashed (skyrim-rs docs/subsystems/events.md); the per-graph BSTEventSource<BSAnimationGraphEvent> sits at BShkbAnimationGraph+0x68 (low); type `ptr:BSTEventSource`
-pub const g_AnimationGraphEventSource_ptr: u64 = 403553;
 /// `g_AppResourceCaching__anon_AE50F340_Manager` at 0x3230110 (layout_inference, medium)
 pub const g_AppResourceCaching__anon_AE50F340_Manager: u64 = 403360;
 /// `g_AutoRegisterCombatObject_CombatAimController` at 0x32542d8 (layout_inference, medium)
@@ -11933,8 +11931,12 @@ pub const g_EventSourceHolder_User_ptr: u64 = 400863;
 pub const g_FOCollisionListener_ptr: u64 = 400444;
 /// `g_FOIslandActivationListener_ptr` at 0x31def30 (xref_inference, medium)
 pub const g_FOIslandActivationListener_ptr: u64 = 400944;
+/// `g_FootstepEventSource_ptr` at 0x32309c8 (semantic, high); pointer to `BSTEventSource`: pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink; pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink (high); type `ptr:BSTEventSource`
+pub const g_FootstepEventSource_ptr: u64 = 403553;
 /// `g_FormTypeSignatures` at 0x17f95a0 (string, high)
 pub const g_FormTypeSignatures: u64 = 187799;
+/// `g_FreeShadowMapSlices` at 0x20d8ff8 (semantic, high); bit mask of free slices of depth target 4 (focus and local shadow maps) (high); type `undefined4`
+pub const g_FreeShadowMapSlices: u64 = 391715;
 /// `g_GRefCountImplCore` at 0x20ce5c8 (layout_inference, medium)
 pub const g_GRefCountImplCore: u64 = 390206;
 /// `g_GarbageCollector_ptr` at 0x219e5d0 (xref_inference, medium)
@@ -11991,7 +11993,7 @@ pub const g_IBSTCreator_CombatObject_9: u64 = 405196;
 pub const g_IConvexOverlapImpl: u64 = 389561;
 /// `g_IOManager_ptr` at 0x331f570 (xref_inference, medium)
 pub const g_IOManager_ptr: u64 = 411121;
-/// `g_IObjectHandlePolicy_ptr` at 0x33d3750 (runtime, high); pointer to `SkyrimScript::HandlePolicy`: the VM's handle policy, set when the VM is created; the native executors and Object::IncRef/DecRef use it instead of asking the VM; the VM's handle policy, set when the VM is created; the native executors and Object::IncRef/DecRef use it instead of asking the VM (high); type `ptr:SkyrimScript::HandlePolicy`; accessor id 104810
+/// `g_IObjectHandlePolicy_ptr` at 0x33d3750 (runtime, high); pointer to `SkyrimScript::HandlePolicy`: the VM's handle policy; written only by BSScript::Object::ctor (0x148f060), so it stays null until the first script object exists (after the natives are registered, hence null in the SKSE registration callback); the native executors and Object::IncRef/DecRef use it instead of asking the VM; the VM's handle policy; written only by BSScript::Object::ctor (0x148f060), so it stays null until the first script object exists (after the natives are registered, hence null in the SKSE registration callback); the native executors and Object::IncRef/DecRef use it instead of asking the VM (high); type `ptr:SkyrimScript::HandlePolicy`; accessor id 104810
 pub const g_IObjectHandlePolicy_ptr: u64 = 414391;
 /// `g_IPathBuilderFactoryBase` at 0x3254b70 (layout_inference, medium)
 pub const g_IPathBuilderFactoryBase: u64 = 405272;
@@ -12095,6 +12097,10 @@ pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_A5EEF477_Stage
 pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_A86607C4_ScenePhaseResultsCallBack: u64 = 401386;
 /// `g_RagdollFurnitureListener` at 0x209e320 (layout_inference, medium)
 pub const g_RagdollFurnitureListener: u64 = 370090;
+/// `g_RenderFrameCounter` at 0x33363f4 (runtime, high); render frame number, incremented by PresentFrame; skin palettes and shader pass lists are cached per value (high); type `undefined4`
+pub const g_RenderFrameCounter: u64 = 411489;
+/// `g_RenderTargets` at 0x3335600 (semantic, medium); the render and depth-stencil target tables; the shadow maps use depth-stencil ids 2, 3 and 4 (medium); type `undefined1`
+pub const g_RenderTargets: u64 = 411451;
 /// `g_ScriptCommandTable` at 0x207ea90 (console_cmd, high)
 pub const g_ScriptCommandTable: u64 = 361120;
 /// `g_SettingT_INIPrefSettingCollection` at 0x20b3068 (layout_inference, medium)
@@ -12145,6 +12151,8 @@ pub const g_SettingT_INISettingCollection_6: u64 = 383332;
 pub const g_SettingT_INISettingCollection_7: u64 = 388975;
 /// `g_SettingT_INISettingCollection_8` at 0x20d02f8 (layout_inference, medium)
 pub const g_SettingT_INISettingCollection_8: u64 = 388978;
+/// `g_ShadowSceneNode` at 0x20d68b0 (runtime, high); pointer to `ShadowSceneNode`: the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty; the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty (high); type `ptr:ShadowSceneNode`
+pub const g_ShadowSceneNode: u64 = 390951;
 /// `g_Sky_ptr` at 0x31e0d80 (xref_inference, medium)
 pub const g_Sky_ptr: u64 = 401652;
 /// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_0D8D4B7E_AttachAshPileFunctor_14` at 0x20bcb70 (layout_inference, medium)
