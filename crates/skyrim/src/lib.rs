@@ -12,6 +12,7 @@ pub mod actors;
 pub mod events;
 pub mod forms;
 pub mod papyrus;
+pub mod render;
 pub mod string;
 
 #[derive(Debug)]
@@ -47,6 +48,7 @@ struct Runtime {
     actors: actors::Fns,
     events: events::Fns,
     papyrus: papyrus::Fns,
+    render: render::Fns,
     strings: string::Fns,
 }
 
@@ -81,8 +83,9 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     let actors = actors::Fns::resolve(&reloc)?;
     let events = events::Fns::resolve(&reloc)?;
     let papyrus = papyrus::Fns::resolve(&reloc)?;
+    let render = render::Fns::resolve(&reloc)?;
     let strings = string::Fns::resolve(&reloc)?;
-    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, strings });
+    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, strings });
     Ok(())
 }
 

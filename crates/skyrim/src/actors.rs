@@ -613,6 +613,35 @@ impl PlayerCharacter {
     pub fn get() -> Option<&'static Self> {
         unsafe { (*fns().player).cast::<Self>().as_ref() }
     }
+
+    fn player_vtable(&self) -> &vtables::PlayerCharacter_vtable {
+        unsafe { &*self.0.__vftable }
+    }
+
+    /// The first-person skeleton root (`firstPersonRoot`, +0x900), `None` before the 3D is loaded.
+    #[must_use]
+    pub fn first_person_root(&self) -> Option<&crate::render::NiNode> {
+        unsafe { self.0.firstPersonRoot.cast::<crate::render::NiNode>().as_ref() }
+    }
+
+    /// The third-person root, `loadedData->node3D`.
+    #[must_use]
+    pub fn third_person_root(&self) -> Option<&crate::render::NiNode> {
+        self.loaded_node_3d().map(|n| unsafe { &*core::ptr::from_ref(n).cast::<crate::render::NiNode>() })
+    }
+
+    /// Slot 111 `Get3DFor(firstPerson)`: the first-person root for `true`, the third-person root otherwise.
+    #[must_use]
+    pub fn node_3d_for(&self, first_person: bool) -> Option<&crate::render::NiNode> {
+        let get = self.player_vtable().Get3DFor()?;
+        unsafe { get(self.as_ptr().cast_mut(), first_person).cast::<crate::render::NiNode>().as_ref() }
+    }
+
+    /// Slot 113: bit 0 of `viewFlags` (+0xbeb), set in third person.
+    #[must_use]
+    pub fn is_third_person(&self) -> bool {
+        self.player_vtable().IsThirdPerson().is_some_and(|f| unsafe { f(self.as_ptr().cast_mut()) })
+    }
 }
 
 /// The modifier slots of an actor value.
