@@ -4,9 +4,11 @@
 //! game against it, resolves every Address Library id the modules need once, and keeps the
 //! [`hook::Reloc`] for the mod's own use.
 
+use core::ffi::c_void;
 use std::fmt;
 use std::sync::OnceLock;
 
+pub mod actors;
 pub mod forms;
 
 #[derive(Debug)]
@@ -39,6 +41,7 @@ impl From<hook::Error> for Error {
 struct Runtime {
     reloc: hook::Reloc,
     forms: forms::Fns,
+    actors: actors::Fns,
 }
 
 static RUNTIME: OnceLock<Runtime> = OnceLock::new();
@@ -69,7 +72,8 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     }
     let reloc = hook::Reloc::open(skse.runtime_version)?;
     let forms = forms::Fns::resolve(&reloc)?;
-    let _ = RUNTIME.set(Runtime { reloc, forms });
+    let actors = actors::Fns::resolve(&reloc)?;
+    let _ = RUNTIME.set(Runtime { reloc, forms, actors });
     Ok(())
 }
 
@@ -80,4 +84,14 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
 #[must_use]
 pub fn reloc() -> &'static hook::Reloc {
     &runtime().reloc
+}
+
+/// The ledger's vtable for a live object, from the vtable pointer in its first 8 bytes.
+///
+/// # Safety
+/// `object` must point to a live object of a class with a vtable at offset 0.
+pub(crate) unsafe fn class_of(object: *const c_void) -> Option<&'static layout::Vtable> {
+    let vtable = unsafe { *object.cast::<usize>() };
+    let rva = u32::try_from(vtable.checked_sub(reloc().base())?).ok()?;
+    layout::v1_7_104::vtables::find(rva)
 }

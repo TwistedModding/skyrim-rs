@@ -16,6 +16,7 @@ use std::fmt;
 
 use layout::v1_7_104::{classes, enums, fns, globals, vtables};
 
+pub use crate::actors::TESObjectREFR;
 pub use enums::{FormType, TESFile_fileFlags as FileFlags, TESForm_formFlags as FormFlags};
 
 /// Light files resolve to `0xFE` in the mod index byte, runtime-created forms to `0xFF`.
@@ -64,7 +65,7 @@ fn fns() -> &'static Fns {
 /// # Safety
 /// `data` must point to `len` pointers that stay readable and unchanged for `'a`, each null or
 /// pointing to a live `T` (a `#[repr(transparent)]` wrapper of the pointee's layout).
-unsafe fn ptr_slice<'a, T>(data: *const c_void, len: u32) -> &'a [Option<&'a T>] {
+pub(crate) unsafe fn ptr_slice<'a, T>(data: *const c_void, len: u32) -> &'a [Option<&'a T>] {
     if data.is_null() || len == 0 {
         return &[];
     }
@@ -171,6 +172,12 @@ impl TESForm {
         &raw const self.0
     }
 
+    /// The form's dynamic class from its vtable pointer, `None` when the vtable is not in the ledger.
+    #[must_use]
+    pub fn class(&self) -> Option<&'static layout::Vtable> {
+        unsafe { crate::class_of(self.as_ptr().cast()) }
+    }
+
     fn vtable(&self) -> &vtables::TESForm_vtable {
         unsafe { &*self.0.__vftable }
     }
@@ -271,6 +278,8 @@ macro_rules! form_class {
         impl core::ops::Deref for $name {
             type Target = TESForm;
 
+            // A packed layout struct has alignment 1; the live object is 8-aligned.
+            #[allow(clippy::cast_ptr_alignment)]
             fn deref(&self) -> &TESForm {
                 unsafe { &*(&raw const self.0).cast::<TESForm>() }
             }
@@ -309,28 +318,29 @@ form_class!(
     TESObjectWEAP(TESObjectWEAP), WEAP, as_weapon
 );
 form_class!(
-    /// An `NPC_` form; only the `TESForm` base and the keyword component are described by pass 1.
+    /// An `NPC_` form; the keyword component from pass 1, the actor base fields from pass 2 (`skyrim::actors`).
     TESNPC(TESNPC), NPC_, as_npc
 );
-
-/// A placed reference (`REFR`, `ACHR`, ...), reached through [`TESForm::as_reference`]; pass 2 names its fields.
-#[repr(transparent)]
-pub struct TESObjectREFR(classes::TESObjectREFR);
-
-impl TESObjectREFR {
-    #[must_use]
-    pub fn raw(&self) -> &classes::TESObjectREFR {
-        &self.0
-    }
-}
-
-impl core::ops::Deref for TESObjectREFR {
-    type Target = TESForm;
-
-    fn deref(&self) -> &TESForm {
-        unsafe { &*(&raw const self.0).cast::<TESForm>() }
-    }
-}
+form_class!(
+    /// A `RACE` form; only the `TESForm` base is described.
+    TESRace(TESRace), RACE, as_race
+);
+form_class!(
+    /// A `CLAS` form; only the `TESForm` base is described.
+    TESClass(TESClass), CLAS, as_class
+);
+form_class!(
+    /// A `CELL` form; only the `TESForm` base is described.
+    TESObjectCELL(TESObjectCELL), CELL, as_cell
+);
+form_class!(
+    /// A `WRLD` form; only the `TESForm` base is described.
+    TESWorldSpace(TESWorldSpace), WRLD, as_worldspace
+);
+form_class!(
+    /// An `LCTN` form; only the `TESForm` base is described.
+    BGSLocation(BGSLocation), LCTN, as_location
+);
 
 impl BGSKeyword {
     /// The keyword's editor id from its `keyword` string; null until a game is loaded.
