@@ -1104,6 +1104,315 @@ impl BSEventNotifyControl {
     }
 }
 
+/// the raw BSScript::TypeInfo codes: 0 None, 1 Object, 2 String, 3 Int, 4 Float, 5 Bool, 11-15 the arrays of 1-5; values from data/papyrustypes.json (papyrus pass).
+#[repr(u8)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum PapyrusType {
+    /// `None`
+    None = 0,
+    /// `Object`
+    Object = 1,
+    /// `String`
+    String = 2,
+    /// `Int`
+    Int = 3,
+    /// `Float`
+    Float = 4,
+    /// `Bool`
+    Bool = 5,
+    /// `ObjectArray`
+    ObjectArray = 11,
+    /// `StringArray`
+    StringArray = 12,
+    /// `IntArray`
+    IntArray = 13,
+    /// `FloatArray`
+    FloatArray = 14,
+    /// `BoolArray`
+    BoolArray = 15,
+}
+
+impl PapyrusType {
+    #[must_use]
+    pub const fn from_u8(value: u8) -> Option<Self> {
+        match value {
+            0 => Some(Self::None),
+            1 => Some(Self::Object),
+            2 => Some(Self::String),
+            3 => Some(Self::Int),
+            4 => Some(Self::Float),
+            5 => Some(Self::Bool),
+            11 => Some(Self::ObjectArray),
+            12 => Some(Self::StringArray),
+            13 => Some(Self::IntArray),
+            14 => Some(Self::FloatArray),
+            15 => Some(Self::BoolArray),
+            _ => None,
+        }
+    }
+}
+
+/// the typeID RegisterObjectType pairs with each script class (the FormType for forms, 0x8b Alias, 0x8c ReferenceAlias, 0x8d LocationAlias, 0x8e ActiveMagicEffect); values from data/vmtypeids.json (papyrus pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum VMTypeID {
+    /// `Form`
+    Form = 0,
+    /// `Keyword`
+    Keyword = 4,
+    /// `LocationRefType`
+    LocationRefType = 5,
+    /// `Action`
+    Action = 6,
+    /// `TextureSet`
+    TextureSet = 7,
+    /// `GlobalVariable`
+    GlobalVariable = 9,
+    /// `Class`
+    Class = 10,
+    /// `Faction`
+    Faction = 11,
+    /// `HeadPart`
+    HeadPart = 12,
+    /// `Race`
+    Race = 14,
+    /// `Sound`
+    Sound = 15,
+    /// `MagicEffect`
+    MagicEffect = 18,
+    /// `Enchantment`
+    Enchantment = 21,
+    /// `Spell`
+    Spell = 22,
+    /// `Scroll`
+    Scroll = 23,
+    /// `Activator`
+    Activator = 24,
+    /// `TalkingActivator`
+    TalkingActivator = 25,
+    /// `Armor`
+    Armor = 26,
+    /// `Book`
+    Book = 27,
+    /// `Container`
+    Container = 28,
+    /// `Door`
+    Door = 29,
+    /// `Ingredient`
+    Ingredient = 30,
+    /// `Light`
+    Light = 31,
+    /// `MiscObject`
+    MiscObject = 32,
+    /// `Apparatus`
+    Apparatus = 33,
+    /// `Static`
+    Static = 34,
+    /// `TreeObject`
+    TreeObject = 38,
+    /// `Flora`
+    Flora = 39,
+    /// `Furniture`
+    Furniture = 40,
+    /// `Weapon`
+    Weapon = 41,
+    /// `Ammo`
+    Ammo = 42,
+    /// `ActorBase`
+    ActorBase = 43,
+    /// `LeveledActor`
+    LeveledActor = 44,
+    /// `Key`
+    Key = 45,
+    /// `Potion`
+    Potion = 46,
+    /// `ConstructibleObject`
+    ConstructibleObject = 49,
+    /// `Projectile`
+    Projectile = 50,
+    /// `Hazard`
+    Hazard = 51,
+    /// `SoulGem`
+    SoulGem = 52,
+    /// `LeveledItem`
+    LeveledItem = 53,
+    /// `Weather`
+    Weather = 54,
+    /// `ShaderParticleGeometry`
+    ShaderParticleGeometry = 56,
+    /// `VisualEffect`
+    VisualEffect = 57,
+    /// `Cell`
+    Cell = 60,
+    /// `ObjectReference`
+    ObjectReference = 61,
+    /// `Actor`
+    Actor = 62,
+    /// `WorldSpace`
+    WorldSpace = 71,
+    /// `Topic`
+    Topic = 75,
+    /// `TopicInfo`
+    TopicInfo = 76,
+    /// `Quest`
+    Quest = 77,
+    /// `Idle`
+    Idle = 78,
+    /// `Package`
+    Package = 79,
+    /// `CombatStyle`
+    CombatStyle = 80,
+    /// `LeveledSpell`
+    LeveledSpell = 82,
+    /// `EffectShader`
+    EffectShader = 85,
+    /// `Explosion`
+    Explosion = 87,
+    /// `ImageSpaceModifier`
+    ImageSpaceModifier = 90,
+    /// `FormList`
+    FormList = 91,
+    /// `Perk`
+    Perk = 92,
+    /// `ActorValueInfo`
+    ActorValueInfo = 95,
+    /// `VoiceType`
+    VoiceType = 98,
+    /// `ImpactDataSet`
+    ImpactDataSet = 101,
+    /// `ArmorAddon`
+    ArmorAddon = 102,
+    /// `EncounterZone`
+    EncounterZone = 103,
+    /// `Location`
+    Location = 104,
+    /// `Message`
+    Message = 105,
+    /// `DefaultObjectManager`
+    DefaultObjectManager = 107,
+    /// `MusicType`
+    MusicType = 109,
+    /// `WordOfPower`
+    WordOfPower = 118,
+    /// `Shout`
+    Shout = 119,
+    /// `EquipSlot`
+    EquipSlot = 120,
+    /// `Scene`
+    Scene = 122,
+    /// `AssociationType`
+    AssociationType = 123,
+    /// `Outfit`
+    Outfit = 124,
+    /// `Art`
+    Art = 125,
+    /// `SoundDescriptor`
+    SoundDescriptor = 128,
+    /// `SoundCategory`
+    SoundCategory = 130,
+    /// `ColorForm`
+    ColorForm = 133,
+    /// `Alias`
+    Alias = 139,
+    /// `ReferenceAlias`
+    ReferenceAlias = 140,
+    /// `LocationAlias`
+    LocationAlias = 141,
+    /// `ActiveMagicEffect`
+    ActiveMagicEffect = 142,
+}
+
+impl VMTypeID {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Form),
+            4 => Some(Self::Keyword),
+            5 => Some(Self::LocationRefType),
+            6 => Some(Self::Action),
+            7 => Some(Self::TextureSet),
+            9 => Some(Self::GlobalVariable),
+            10 => Some(Self::Class),
+            11 => Some(Self::Faction),
+            12 => Some(Self::HeadPart),
+            14 => Some(Self::Race),
+            15 => Some(Self::Sound),
+            18 => Some(Self::MagicEffect),
+            21 => Some(Self::Enchantment),
+            22 => Some(Self::Spell),
+            23 => Some(Self::Scroll),
+            24 => Some(Self::Activator),
+            25 => Some(Self::TalkingActivator),
+            26 => Some(Self::Armor),
+            27 => Some(Self::Book),
+            28 => Some(Self::Container),
+            29 => Some(Self::Door),
+            30 => Some(Self::Ingredient),
+            31 => Some(Self::Light),
+            32 => Some(Self::MiscObject),
+            33 => Some(Self::Apparatus),
+            34 => Some(Self::Static),
+            38 => Some(Self::TreeObject),
+            39 => Some(Self::Flora),
+            40 => Some(Self::Furniture),
+            41 => Some(Self::Weapon),
+            42 => Some(Self::Ammo),
+            43 => Some(Self::ActorBase),
+            44 => Some(Self::LeveledActor),
+            45 => Some(Self::Key),
+            46 => Some(Self::Potion),
+            49 => Some(Self::ConstructibleObject),
+            50 => Some(Self::Projectile),
+            51 => Some(Self::Hazard),
+            52 => Some(Self::SoulGem),
+            53 => Some(Self::LeveledItem),
+            54 => Some(Self::Weather),
+            56 => Some(Self::ShaderParticleGeometry),
+            57 => Some(Self::VisualEffect),
+            60 => Some(Self::Cell),
+            61 => Some(Self::ObjectReference),
+            62 => Some(Self::Actor),
+            71 => Some(Self::WorldSpace),
+            75 => Some(Self::Topic),
+            76 => Some(Self::TopicInfo),
+            77 => Some(Self::Quest),
+            78 => Some(Self::Idle),
+            79 => Some(Self::Package),
+            80 => Some(Self::CombatStyle),
+            82 => Some(Self::LeveledSpell),
+            85 => Some(Self::EffectShader),
+            87 => Some(Self::Explosion),
+            90 => Some(Self::ImageSpaceModifier),
+            91 => Some(Self::FormList),
+            92 => Some(Self::Perk),
+            95 => Some(Self::ActorValueInfo),
+            98 => Some(Self::VoiceType),
+            101 => Some(Self::ImpactDataSet),
+            102 => Some(Self::ArmorAddon),
+            103 => Some(Self::EncounterZone),
+            104 => Some(Self::Location),
+            105 => Some(Self::Message),
+            107 => Some(Self::DefaultObjectManager),
+            109 => Some(Self::MusicType),
+            118 => Some(Self::WordOfPower),
+            119 => Some(Self::Shout),
+            120 => Some(Self::EquipSlot),
+            122 => Some(Self::Scene),
+            123 => Some(Self::AssociationType),
+            124 => Some(Self::Outfit),
+            125 => Some(Self::Art),
+            128 => Some(Self::SoundDescriptor),
+            130 => Some(Self::SoundCategory),
+            133 => Some(Self::ColorForm),
+            139 => Some(Self::Alias),
+            140 => Some(Self::ReferenceAlias),
+            141 => Some(Self::LocationAlias),
+            142 => Some(Self::ActiveMagicEffect),
+            _ => None,
+        }
+    }
+}
+
 /// Named bits of `Actor.boolFlags` (actors pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]

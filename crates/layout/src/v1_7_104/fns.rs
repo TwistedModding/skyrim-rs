@@ -16919,6 +16919,62 @@ pub const BSScript__Internal__VirtualMachine__BSScript_IVMSaveLoadInterface_vfun
 pub const BSScript__Internal__VirtualMachine__BSScript_IVMSaveLoadInterface_vfunc_8: u64 = 104835;
 /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_9` at 0x14b8b70 (rtti, high); signature (low): `undefined BSScript_IVMSaveLoadInterface_vfunc_9(void)`
 pub const BSScript__Internal__VirtualMachine__BSScript_IVMSaveLoadInterface_vfunc_9: u64 = 104836;
+/// `BSScript::Internal::VirtualMachine::BindNativeMethod` at 0x14b1ff0 (runtime, high); signature (untiered): `ulonglong BindNativeMethod(VirtualMachine * this, ulonglong * param_1, undefined8 param_2, longlong * param_3)`
+pub const BSScript__Internal__VirtualMachine__BindNativeMethod: u64 = 104788;
+/// `BSScript::Internal::VirtualMachine::CreateArray` at 0x14b1f00 (semantic, medium); signature (untiered): `undefined1 CreateArray(VirtualMachine * this, ulonglong * param_1, undefined4 param_2, undefined8 param_3)`
+pub const BSScript__Internal__VirtualMachine__CreateArray: u64 = 104787;
+/// `BSScript::Internal::VirtualMachine::CreateObject` at 0x14b1cc0 (runtime, high); signature (untiered): `char CreateObject(VirtualMachine * this, undefined8 param_1, ulonglong * param_2)`
+pub const BSScript__Internal__VirtualMachine__CreateObject: u64 = 104784;
+/// `BSScript::Internal::VirtualMachine::DispatchMethodCall` at 0x14b40e0 (runtime, high); signature (untiered): `undefined8 DispatchMethodCall(VirtualMachine * this, ulonglong * param_1, RawFuncCallQuery * * param_2, longlong * param_3, longlong * param_4)`
+pub const BSScript__Internal__VirtualMachine__DispatchMethodCall: u64 = 104804;
+/// `BSScript::Internal::VirtualMachine::DispatchMethodCallByHandle` at 0x14b3ff0 (runtime, high); signature (untiered): `undefined1 DispatchMethodCallByHandle(VirtualMachine * this, uint * * param_1, undefined8 * param_2, undefined8 param_3, uint * * param_4)`
+pub const BSScript__Internal__VirtualMachine__DispatchMethodCallByHandle: u64 = 104803;
+/// `BSScript::Internal::VirtualMachine::DispatchStaticCall` at 0x14b3ca0 (runtime, high); signature (untiered): `undefined8 DispatchStaticCall(VirtualMachine * this, ulonglong * param_1, ulonglong * param_2, RawFuncCallQuery_vtbl * param_3, longlong * param_4)`
+pub const BSScript__Internal__VirtualMachine__DispatchStaticCall: u64 = 104802;
+/// `BSScript::Internal::VirtualMachine::FindBoundObject` at 0x14b2710 (runtime, high); signature (untiered): `undefined1 FindBoundObject(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSScript__Internal__VirtualMachine__FindBoundObject: u64 = 104792;
+/// `BSScript::Internal::VirtualMachine::ForEachBoundObject` at 0x14b2600 (semantic, medium); signature (untiered): `ulonglong ForEachBoundObject(VirtualMachine * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
+pub const BSScript__Internal__VirtualMachine__ForEachBoundObject: u64 = 104791;
+/// `BSScript::Internal::VirtualMachine::GetErrorLogger` at 0x14b4bd0 (semantic, high); signature (untiered): `undefined8 GetErrorLogger(VirtualMachine * this)`
+pub const BSScript__Internal__VirtualMachine__GetErrorLogger: u64 = 104808;
+/// `BSScript::Internal::VirtualMachine::GetObjectBindPolicy` at 0x14b4c10 (runtime, high); signature (untiered): `undefined8 GetObjectBindPolicy(VirtualMachine * this)`
+pub const BSScript__Internal__VirtualMachine__GetObjectBindPolicy: u64 = 104812;
+/// `BSScript::Internal::VirtualMachine::GetObjectBindPolicyConst` at 0x14b4c00 (semantic, high); signature (untiered): `undefined8 GetObjectBindPolicyConst(VirtualMachine * this)`
+pub const BSScript__Internal__VirtualMachine__GetObjectBindPolicyConst: u64 = 104811;
+/// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicy` at 0x14b4bf0 (runtime, high); signature (untiered): `undefined8 GetObjectHandlePolicy(VirtualMachine * this)`
+pub const BSScript__Internal__VirtualMachine__GetObjectHandlePolicy: u64 = 104810;
+/// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicyConst` at 0x14b4be0 (semantic, high); signature (untiered): `undefined8 GetObjectHandlePolicyConst(VirtualMachine * this)`
+pub const BSScript__Internal__VirtualMachine__GetObjectHandlePolicyConst: u64 = 104809;
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectType` at 0x14b0f80 (runtime, high); signature (untiered): `undefined1 GetScriptObjectType(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
+pub const BSScript__Internal__VirtualMachine__GetScriptObjectType: u64 = 104775;
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeByID` at 0x14b0e40 (semantic, medium); signature (untiered): `bool GetScriptObjectTypeByID(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+pub const BSScript__Internal__VirtualMachine__GetScriptObjectTypeByID: u64 = 104774;
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoad` at 0x14b11e0 (semantic, medium); signature (untiered): `bool GetScriptObjectTypeNoLoad(VirtualMachine * this, ulonglong * param_1, longlong * param_2)`
+pub const BSScript__Internal__VirtualMachine__GetScriptObjectTypeNoLoad: u64 = 104777;
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoadByID` at 0x14b1050 (semantic, medium); signature (untiered): `bool GetScriptObjectTypeNoLoadByID(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+pub const BSScript__Internal__VirtualMachine__GetScriptObjectTypeNoLoadByID: u64 = 104776;
+/// `BSScript::Internal::VirtualMachine::GetScriptObjectsWithATypeID` at 0x14b13d0 (semantic, medium); signature (untiered): `longlong * GetScriptObjectsWithATypeID(VirtualMachine * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSScript__Internal__VirtualMachine__GetScriptObjectsWithATypeID: u64 = 104779;
+/// `BSScript::Internal::VirtualMachine::GetTypeIDForScriptObject` at 0x14b1300 (runtime, high); signature (untiered): `undefined1 GetTypeIDForScriptObject(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
+pub const BSScript__Internal__VirtualMachine__GetTypeIDForScriptObject: u64 = 104778;
+/// `BSScript::Internal::VirtualMachine::LinkScript` at 0x14b18e0 (semantic, medium); signature (untiered): `bool LinkScript(VirtualMachine * this, char * param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSScript__Internal__VirtualMachine__LinkScript: u64 = 104782;
+/// `BSScript::Internal::VirtualMachine::LogError` at 0x14b0ab0 (semantic, medium); signature (untiered): `undefined LogError(VirtualMachine * this, char * param_1, int param_2)`
+pub const BSScript__Internal__VirtualMachine__LogError: u64 = 104771;
+/// `BSScript::Internal::VirtualMachine::RegisterObjectType` at 0x14b0c30 (runtime, high); signature (untiered): `byte RegisterObjectType(VirtualMachine * this, uint param_1, char * param_2)`
+pub const BSScript__Internal__VirtualMachine__RegisterObjectType: u64 = 104773;
+/// `BSScript::Internal::VirtualMachine::ReturnFromLatent` at 0x14b4840 (semantic, medium); signature (untiered): `int * ReturnFromLatent(VirtualMachine * this, uint param_1, ulonglong * param_2, ulonglong param_3)`
+pub const BSScript__Internal__VirtualMachine__ReturnFromLatent: u64 = 104807;
+/// `BSScript::Internal::VirtualMachine::SendEvent` at 0x14b3800 (semantic, high); signature (untiered): `undefined SendEvent(VirtualMachine * this, ulonglong * * * param_1, ulonglong * * * * param_2, undefined8 param_3)`
+pub const BSScript__Internal__VirtualMachine__SendEvent: u64 = 104800;
+/// `BSScript::Internal::VirtualMachine::SendEventAll` at 0x14b3b50 (semantic, medium); signature (untiered): `undefined8 * SendEventAll(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
+pub const BSScript__Internal__VirtualMachine__SendEventAll: u64 = 104801;
+/// `BSScript::Internal::VirtualMachine::SetCallableFromTasklets` at 0x14b2260 (runtime, high); signature (untiered): `undefined SetCallableFromTasklets(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined1 param_3)`
+pub const BSScript__Internal__VirtualMachine__SetCallableFromTasklets: u64 = 104789;
+/// `BSScript::Internal::VirtualMachine::SetCallableFromTaskletsInState` at 0x14b2290 (semantic, medium); signature (untiered): `undefined SetCallableFromTaskletsInState(VirtualMachine * this, longlong * * param_1, char * param_2, longlong * * param_3, byte param_4)`
+pub const BSScript__Internal__VirtualMachine__SetCallableFromTaskletsInState: u64 = 104790;
+/// `BSScript::Internal::VirtualMachine::TraceStack` at 0x14b0b10 (semantic, medium); signature (untiered): `undefined TraceStack(VirtualMachine * this, char * param_1, uint param_2, uint param_3)`
+pub const BSScript__Internal__VirtualMachine__TraceStack: u64 = 104772;
 /// `BSScript::Internal::VirtualMachine::ctor` at 0x14af8d0 (layout_inference, high); signature (low): `VirtualMachine * ctor(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined8 param_7, undefined8 param_8)`
 pub const BSScript__Internal__VirtualMachine__ctor: u64 = 104763;
 /// `BSScript::Internal::VirtualMachine::ctor_sub0` at 0x14aafc0 (callgraph, medium); signature (untiered): `undefined8 * ctor_sub0(undefined8 * param_1, undefined4 param_2)`
@@ -16953,24 +17009,12 @@ pub const BSScript__Internal__VirtualMachine__dtor_sub0: u64 = 104689;
 pub const BSScript__Internal__VirtualMachine__vdtor: u64 = 105033;
 /// `BSScript::Internal::VirtualMachine::vfunc_1` at 0x14cd4a0 (rtti, high); signature (low): `DWORD vfunc_1(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_1: u64 = 105137;
-/// `BSScript::Internal::VirtualMachine::vfunc_10` at 0x14b0e40 (rtti, high); signature (low): `bool vfunc_10(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_10: u64 = 104774;
-/// `BSScript::Internal::VirtualMachine::vfunc_11` at 0x14b11e0 (rtti, high); signature (low): `bool vfunc_11(VirtualMachine * this, ulonglong * param_1, longlong * param_2)`
-pub const BSScript__Internal__VirtualMachine__vfunc_11: u64 = 104777;
-/// `BSScript::Internal::VirtualMachine::vfunc_12` at 0x14b1050 (rtti, high); signature (low): `bool vfunc_12(VirtualMachine * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_12: u64 = 104776;
-/// `BSScript::Internal::VirtualMachine::vfunc_13` at 0x14b1300 (rtti, high); signature (low): `undefined1 vfunc_13(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
-pub const BSScript__Internal__VirtualMachine__vfunc_13: u64 = 104778;
 /// `BSScript::Internal::VirtualMachine::vfunc_13_sub0` at 0x14ca030 (callgraph, medium); signature (untiered): `undefined1 vfunc_13_sub0(longlong param_1, ulonglong * param_2, undefined4 * param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_13_sub0: u64 = 105077;
-/// `BSScript::Internal::VirtualMachine::vfunc_14` at 0x14b13d0 (rtti, high); signature (low): `longlong * vfunc_14(VirtualMachine * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_14: u64 = 104779;
 /// `BSScript::Internal::VirtualMachine::vfunc_15` at 0x14b15b0 (rtti, high); signature (low): `char vfunc_15(VirtualMachine * this, longlong param_1, undefined8 * param_2)`
 pub const BSScript__Internal__VirtualMachine__vfunc_15: u64 = 104780;
 /// `BSScript::Internal::VirtualMachine::vfunc_16` at 0x14b1850 (rtti, high); signature (low): `undefined8 vfunc_16(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_16: u64 = 104781;
-/// `BSScript::Internal::VirtualMachine::vfunc_17` at 0x14b18e0 (rtti, high); signature (low): `bool vfunc_17(VirtualMachine * this, char * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_17: u64 = 104782;
 /// `BSScript::Internal::VirtualMachine::vfunc_18` at 0x14bb1c0 (rtti, high); signature (low): `undefined8 * vfunc_18(VirtualMachine * this, longlong * param_1)`
 pub const BSScript__Internal__VirtualMachine__vfunc_18: u64 = 104855;
 /// `BSScript::Internal::VirtualMachine::vfunc_19` at 0x14b1a80 (rtti, high); signature (low): `undefined vfunc_19(VirtualMachine * this, longlong param_1, undefined8 param_2)`
@@ -16983,32 +17027,14 @@ pub const BSScript__Internal__VirtualMachine__vfunc_19_sub1: u64 = 104974;
 pub const BSScript__Internal__VirtualMachine__vfunc_19_sub2: u64 = 104992;
 /// `BSScript::Internal::VirtualMachine::vfunc_19_sub3` at 0x14cac60 (callgraph, medium); signature (untiered): `undefined vfunc_19_sub3(longlong * param_1, int * * param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSScript__Internal__VirtualMachine__vfunc_19_sub3: u64 = 105108;
-/// `BSScript::Internal::VirtualMachine::vfunc_2` at 0x14b0b10 (rtti, high); signature (low): `undefined vfunc_2(VirtualMachine * this, char * param_1, uint param_2, uint param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_2: u64 = 104772;
 /// `BSScript::Internal::VirtualMachine::vfunc_20` at 0x14b1d20 (rtti, high); signature (low): `undefined8 vfunc_20(VirtualMachine * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_20: u64 = 104785;
-/// `BSScript::Internal::VirtualMachine::vfunc_21` at 0x14b1cc0 (rtti, high); signature (low): `char vfunc_21(VirtualMachine * this, undefined8 param_1, ulonglong * param_2)`
-pub const BSScript__Internal__VirtualMachine__vfunc_21: u64 = 104784;
-/// `BSScript::Internal::VirtualMachine::vfunc_22` at 0x14b1f00 (rtti, high); signature (low): `undefined1 vfunc_22(VirtualMachine * this, ulonglong * param_1, undefined4 param_2, undefined8 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_22: u64 = 104787;
 /// `BSScript::Internal::VirtualMachine::vfunc_23` at 0x14b1de0 (rtti, high); signature (low): `undefined1 vfunc_23(VirtualMachine * this, uint param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`
 pub const BSScript__Internal__VirtualMachine__vfunc_23: u64 = 104786;
-/// `BSScript::Internal::VirtualMachine::vfunc_24` at 0x14b1ff0 (rtti, high); signature (low): `ulonglong vfunc_24(VirtualMachine * this, ulonglong * param_1, undefined8 param_2, longlong * param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_24: u64 = 104788;
-/// `BSScript::Internal::VirtualMachine::vfunc_25` at 0x14b2290 (rtti, high); signature (low): `undefined vfunc_25(VirtualMachine * this, longlong * * param_1, char * param_2, longlong * * param_3, byte param_4)`
-pub const BSScript__Internal__VirtualMachine__vfunc_25: u64 = 104790;
-/// `BSScript::Internal::VirtualMachine::vfunc_26` at 0x14b2260 (rtti, high); signature (low): `undefined vfunc_26(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined1 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_26: u64 = 104789;
-/// `BSScript::Internal::VirtualMachine::vfunc_27` at 0x14b2600 (rtti, high); signature (low): `ulonglong vfunc_27(VirtualMachine * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_27: u64 = 104791;
-/// `BSScript::Internal::VirtualMachine::vfunc_28` at 0x14b2710 (rtti, high); signature (low): `undefined1 vfunc_28(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_28: u64 = 104792;
 /// `BSScript::Internal::VirtualMachine::vfunc_29` at 0x14b27c0 (rtti, high); signature (low): `undefined vfunc_29(VirtualMachine * this, uint * * * * param_1, uint * * * * param_2, ulonglong * param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_29: u64 = 104793;
 /// `BSScript::Internal::VirtualMachine::vfunc_29_sub0` at 0x14c6220 (callgraph, medium); signature (untiered): `undefined8 vfunc_29_sub0(longlong param_1, ulonglong * param_2, int * param_3, int * param_4)`
 pub const BSScript__Internal__VirtualMachine__vfunc_29_sub0: u64 = 104940;
-/// `BSScript::Internal::VirtualMachine::vfunc_3` at 0x14b0ab0 (rtti, high); signature (low): `undefined vfunc_3(VirtualMachine * this, char * param_1, int param_2)`
-pub const BSScript__Internal__VirtualMachine__vfunc_3: u64 = 104771;
 /// `BSScript::Internal::VirtualMachine::vfunc_30` at 0x14b2a80 (rtti, high); signature (low): `ulonglong vfunc_30(VirtualMachine * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_30: u64 = 104794;
 /// `BSScript::Internal::VirtualMachine::vfunc_30_sub0` at 0x148f3c0 (callgraph, medium); signature (untiered): `uint vfunc_30_sub0(longlong param_1)`
@@ -17025,36 +17051,14 @@ pub const BSScript__Internal__VirtualMachine__vfunc_33: u64 = 104797;
 pub const BSScript__Internal__VirtualMachine__vfunc_34: u64 = 104799;
 /// `BSScript::Internal::VirtualMachine::vfunc_35` at 0x14b3630 (rtti, high); signature (low): `undefined1 vfunc_35(VirtualMachine * this, uint * * param_1, ulonglong * param_2, ulonglong param_3, uint * * param_4)`
 pub const BSScript__Internal__VirtualMachine__vfunc_35: u64 = 104798;
-/// `BSScript::Internal::VirtualMachine::vfunc_36` at 0x14b3800 (rtti, high); signature (low): `undefined vfunc_36(VirtualMachine * this, ulonglong * * * param_1, ulonglong * * * * param_2, undefined8 param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_36: u64 = 104800;
-/// `BSScript::Internal::VirtualMachine::vfunc_37` at 0x14b3b50 (rtti, high); signature (low): `undefined8 * vfunc_37(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
-pub const BSScript__Internal__VirtualMachine__vfunc_37: u64 = 104801;
-/// `BSScript::Internal::VirtualMachine::vfunc_38` at 0x14b3ca0 (rtti, high); signature (low): `undefined8 vfunc_38(VirtualMachine * this, ulonglong * param_1, ulonglong * param_2, RawFuncCallQuery_vtbl * param_3, longlong * param_4)`
-pub const BSScript__Internal__VirtualMachine__vfunc_38: u64 = 104802;
-/// `BSScript::Internal::VirtualMachine::vfunc_39` at 0x14b40e0 (rtti, high); signature (low): `undefined8 vfunc_39(VirtualMachine * this, ulonglong * param_1, RawFuncCallQuery * * param_2, longlong * param_3, longlong * param_4)`
-pub const BSScript__Internal__VirtualMachine__vfunc_39: u64 = 104804;
 /// `BSScript::Internal::VirtualMachine::vfunc_4` at 0x14b0220 (rtti, high); signature (low): `longlong * vfunc_4(VirtualMachine * this, float param_1, longlong * param_2, longlong * param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_4: u64 = 104767;
-/// `BSScript::Internal::VirtualMachine::vfunc_40` at 0x14b3ff0 (rtti, high); signature (low): `undefined1 vfunc_40(VirtualMachine * this, uint * * param_1, undefined8 * param_2, undefined8 param_3, uint * * param_4)`
-pub const BSScript__Internal__VirtualMachine__vfunc_40: u64 = 104803;
 /// `BSScript::Internal::VirtualMachine::vfunc_41` at 0x14b4460 (rtti, high); signature (low): `ulonglong vfunc_41(VirtualMachine * this, VirtualMachine_vtbl_10 * param_1, uint * * param_2, uint * * param_3, undefined8 param_4, undefined8 * param_5)`
 pub const BSScript__Internal__VirtualMachine__vfunc_41: u64 = 104805;
 /// `BSScript::Internal::VirtualMachine::vfunc_42` at 0x14b4770 (rtti, high); signature (low): `undefined1 vfunc_42(VirtualMachine * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_42: u64 = 104806;
-/// `BSScript::Internal::VirtualMachine::vfunc_43` at 0x14b4840 (rtti, high); signature (low): `int * vfunc_43(VirtualMachine * this, uint param_1, ulonglong * param_2, ulonglong param_3)`
-pub const BSScript__Internal__VirtualMachine__vfunc_43: u64 = 104807;
 /// `BSScript::Internal::VirtualMachine::vfunc_43_sub0` at 0x14ccc00 (callgraph, medium); signature (untiered): `undefined8 vfunc_43_sub0(longlong param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSScript__Internal__VirtualMachine__vfunc_43_sub0: u64 = 105128;
-/// `BSScript::Internal::VirtualMachine::vfunc_44` at 0x14b4bd0 (rtti, high); signature (high): `undefined8 vfunc_44(VirtualMachine * this)`
-pub const BSScript__Internal__VirtualMachine__vfunc_44: u64 = 104808;
-/// `BSScript::Internal::VirtualMachine::vfunc_45` at 0x14b4bf0 (rtti, high); signature (high): `undefined8 vfunc_45(VirtualMachine * this)`
-pub const BSScript__Internal__VirtualMachine__vfunc_45: u64 = 104810;
-/// `BSScript::Internal::VirtualMachine::vfunc_46` at 0x14b4be0 (rtti, high); signature (high): `undefined8 vfunc_46(VirtualMachine * this)`
-pub const BSScript__Internal__VirtualMachine__vfunc_46: u64 = 104809;
-/// `BSScript::Internal::VirtualMachine::vfunc_47` at 0x14b4c10 (rtti, high); signature (high): `undefined8 vfunc_47(VirtualMachine * this)`
-pub const BSScript__Internal__VirtualMachine__vfunc_47: u64 = 104812;
-/// `BSScript::Internal::VirtualMachine::vfunc_48` at 0x14b4c00 (rtti, high); signature (high): `undefined8 vfunc_48(VirtualMachine * this)`
-pub const BSScript__Internal__VirtualMachine__vfunc_48: u64 = 104811;
 /// `BSScript::Internal::VirtualMachine::vfunc_49` at 0x14b4c20 (rtti, high); signature (high): `undefined8 vfunc_49(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__vfunc_49: u64 = 104813;
 /// `BSScript::Internal::VirtualMachine::vfunc_4_sub0` at 0x14bb2c0 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1, float param_2, ulonglong param_3, ulonglong param_4)`
@@ -17095,14 +17099,10 @@ pub const BSScript__Internal__VirtualMachine__vfunc_5_sub0: u64 = 104945;
 pub const BSScript__Internal__VirtualMachine__vfunc_6: u64 = 104769;
 /// `BSScript::Internal::VirtualMachine::vfunc_7` at 0x14b0a30 (rtti, high); signature (high): `bool vfunc_7(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__vfunc_7: u64 = 104770;
-/// `BSScript::Internal::VirtualMachine::vfunc_8` at 0x14b0c30 (rtti, high); signature (low): `byte vfunc_8(VirtualMachine * this, uint param_1, char * param_2)`
-pub const BSScript__Internal__VirtualMachine__vfunc_8: u64 = 104773;
 /// `BSScript::Internal::VirtualMachine::vfunc_8_sub0` at 0x14c5500 (callgraph, medium); signature (untiered): `undefined8 vfunc_8_sub0(longlong param_1, uint * param_2, longlong * param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_8_sub0: u64 = 104933;
 /// `BSScript::Internal::VirtualMachine::vfunc_8_sub1` at 0x14c56a0 (callgraph, medium); signature (untiered): `undefined8 vfunc_8_sub1(longlong param_1, ulonglong * param_2, uint * param_3)`
 pub const BSScript__Internal__VirtualMachine__vfunc_8_sub1: u64 = 104934;
-/// `BSScript::Internal::VirtualMachine::vfunc_9` at 0x14b0f80 (rtti, high); signature (low): `undefined1 vfunc_9(VirtualMachine * this, undefined8 param_1, undefined8 param_2)`
-pub const BSScript__Internal__VirtualMachine__vfunc_9: u64 = 104775;
 /// `BSScript::Internal::_anon_16AAB8A9::OneVariableArgument::vfunc_0` at 0x14c89c0 (rtti, high); signature (low): `OneVariableArgument * vfunc_0(OneVariableArgument * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal___anon_16AAB8A9__OneVariableArgument__vfunc_0: u64 = 105031;
 /// `BSScript::Internal::_anon_16AAB8A9::OneVariableArgument::vfunc_1` at 0x14c81c0 (rtti, high); signature (low): `undefined8 vfunc_1(OneVariableArgument * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
@@ -17123,9 +17123,47 @@ pub const BSScript__LinkerProcessor__vfunc_2: u64 = 105447;
 pub const BSScript__LinkerProcessor__vfunc_3: u64 = 105381;
 /// `BSScript::LinkerProcessor::vfunc_3_sub0` at 0x14e1430 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4)`
 pub const BSScript__LinkerProcessor__vfunc_3_sub0: u64 = 105389;
+/// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (semantic, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+pub const BSScript__NF_util__NativeFunctionBase__Call: u64 = 104651;
+/// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetDocString: u64 = 104644;
+/// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+pub const BSScript__NF_util__NativeFunctionBase__GetFunctionType: u64 = 104642;
+/// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetIsCallableFromTasklet: u64 = 104649;
+/// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+pub const BSScript__NF_util__NativeFunctionBase__GetIsEmpty: u64 = 104641;
+/// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+pub const BSScript__NF_util__NativeFunctionBase__GetIsNative: u64 = 104639;
+/// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetIsStatic: u64 = 104640;
+/// `BSScript::NF_util::NativeFunctionBase::GetName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetName(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetName: u64 = 104632;
+/// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetObjectTypeName: u64 = 104633;
+/// `BSScript::NF_util::NativeFunctionBase::GetParam` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParam(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+pub const BSScript__NF_util__NativeFunctionBase__GetParam: u64 = 104637;
+/// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetParamCount: u64 = 104636;
+/// `BSScript::NF_util::NativeFunctionBase::GetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool GetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+pub const BSScript__NF_util__NativeFunctionBase__GetParamName: u64 = 104648;
+/// `BSScript::NF_util::NativeFunctionBase::GetReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * GetReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+pub const BSScript__NF_util__NativeFunctionBase__GetReturnType: u64 = 104635;
+/// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+pub const BSScript__NF_util__NativeFunctionBase__GetSourceFilename: u64 = 104646;
+/// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetStackFrameSize: u64 = 104638;
+/// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetStateName: u64 = 104634;
+/// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+pub const BSScript__NF_util__NativeFunctionBase__GetUserFlags: u64 = 104643;
+/// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+pub const BSScript__NF_util__NativeFunctionBase__InsertLocals: u64 = 104645;
+/// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+pub const BSScript__NF_util__NativeFunctionBase__SetIsCallableFromTasklet: u64 = 104650;
 /// `BSScript::NF_util::NativeFunctionBase::ctor` at 0x14a9fc0 (layout_inference, medium); signature (low): `NativeFunctionBase * ctor(NativeFunctionBase * this, char * param_1, char * param_2, char * param_3, undefined1 param_4, uint param_5)`
 pub const BSScript__NF_util__NativeFunctionBase__ctor: u64 = 104652;
-/// `BSScript::NF_util::NativeFunctionBase::ctor` at 0x14aa0f0 (layout_inference, medium); signature (low): `NativeFunctionBase * ctor(NativeFunctionBase * this, char * param_1, char * param_2, undefined8 param_3, uint param_4)`
+/// `BSScript::NF_util::NativeFunctionBase::ctor` at 0x14aa0f0 (semantic, high); signature (low): `NativeFunctionBase * ctor(NativeFunctionBase * this, char * param_1, char * param_2, undefined8 param_3, uint param_4)`; refCount 0, the base vtable, the three strings (state empty), returnType 0, the parameter array of paramCount entries named a0.., isStatic, +0x41/+0x44 0, empty doc string (high); semantic signature: `BSScript::NF_util::NativeFunctionBase* (BSScript::NF_util::NativeFunctionBase* this, const char* name, const char* className, bool isStatic, u32 paramCount)`
 pub const BSScript__NF_util__NativeFunctionBase__ctor_2: u64 = 104653;
 /// `BSScript::NF_util::NativeFunctionBase::dtor` at 0xa54dc0 (callgraph, high); signature (untiered): `undefined dtor(NativeFunctionBase * this)`
 pub const BSScript__NF_util__NativeFunctionBase__dtor: u64 = 56408;
@@ -17133,46 +17171,10 @@ pub const BSScript__NF_util__NativeFunctionBase__dtor: u64 = 56408;
 pub const BSScript__NF_util__NativeFunctionBase__dtor_2: u64 = 104655;
 /// `BSScript::NF_util::NativeFunctionBase::vdtor` at 0x14aa3d0 (layout_inference, medium); signature (low): `NativeFunctionBase * vdtor(NativeFunctionBase * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__NF_util__NativeFunctionBase__vdtor: u64 = 104658;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_1` at 0x14a99b0 (rtti, medium); signature (high): `undefined1 * vfunc_1(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_1: u64 = 104632;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_10` at 0x14a9aa0 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_10: u64 = 104641;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_11` at 0x14a9ab0 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_11: u64 = 104642;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_12` at 0x14a9ac0 (rtti, medium); signature (high): `undefined4 vfunc_12(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_12: u64 = 104643;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_13` at 0x14a9ad0 (rtti, medium); signature (high): `undefined1 * vfunc_13(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_13: u64 = 104644;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_14` at 0x14a9ae0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_14: u64 = 104645;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_15` at 0x14a9c10 (rtti, medium); signature (low): `undefined8 vfunc_15(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_15: u64 = 104651;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_16` at 0x14a9af0 (rtti, medium); signature (low): `undefined * vfunc_16(void)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_16: u64 = 104646;
 /// `BSScript::NF_util::NativeFunctionBase::vfunc_17` at 0x14a9b00 (rtti, medium); signature (low): `undefined1 vfunc_17(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
 pub const BSScript__NF_util__NativeFunctionBase__vfunc_17: u64 = 104647;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_18` at 0x14a9b10 (rtti, medium); signature (low): `bool vfunc_18(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_18: u64 = 104648;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_19` at 0x14a9bf0 (rtti, medium); signature (high): `undefined1 vfunc_19(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_19: u64 = 104649;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_2` at 0x14a99c0 (rtti, medium); signature (high): `undefined1 * vfunc_2(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_2: u64 = 104633;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_20` at 0x14a9c00 (rtti, medium); signature (low): `undefined vfunc_20(NativeFunctionBase * this, undefined1 param_1)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_20: u64 = 104650;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_3` at 0x14a99d0 (rtti, medium); signature (high): `undefined1 * vfunc_3(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_3: u64 = 104634;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_4` at 0x14a99e0 (rtti, medium); signature (low): `undefined8 * vfunc_4(NativeFunctionBase * this, undefined8 * param_1)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_4: u64 = 104635;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_5` at 0x14a9a00 (rtti, medium); signature (high): `undefined2 vfunc_5(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_5: u64 = 104636;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_6` at 0x14a9a10 (rtti, medium); signature (low): `undefined vfunc_6(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_6: u64 = 104637;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_7` at 0x14a9a70 (rtti, medium); signature (high): `undefined2 vfunc_7(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_7: u64 = 104638;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_8` at 0x14a9a80 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_8: u64 = 104639;
-/// `BSScript::NF_util::NativeFunctionBase::vfunc_9` at 0x14a9a90 (rtti, medium); signature (high): `undefined1 vfunc_9(NativeFunctionBase * this)`
-pub const BSScript__NF_util__NativeFunctionBase__vfunc_9: u64 = 104640;
+/// `BSScript::NF_util::SignaturesMatch` at 0x1496bb0 (semantic, high); signature (untiered): `undefined8 SignaturesMatch(longlong * param_1, ulonglong * param_2, undefined8 param_3, longlong * param_4)`; same isStatic (slot 9), same parameter count (slot 5), every parameter type equal (slot 6 on both) and the same return type (slot 4) (high); semantic signature: `bool (BSScript::IFunction* declared, BSScript::IFunction* native)`
+pub const BSScript__NF_util__SignaturesMatch: u64 = 104359;
 /// `BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>::vdtor` at 0x9fdcd0 (slot_propagation, medium); signature (low): `NativeFunction0<ActiveEffect,Actor*___ptr64> * vdtor(NativeFunction0<ActiveEffect,Actor*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__NativeFunction0_ActiveEffect_Actor____ptr64__vdtor: u64 = 54606;
 /// `BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>::vfunc_21` at 0x9fe0d0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction0<ActiveEffect,Actor*___ptr64> * this)`
@@ -19305,12 +19307,28 @@ pub const BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const
 pub const BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool__vdtor: u64 = 56486;
 /// `BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>::vdtor` at 0xa1a5c0 (slot_propagation, medium); signature (low): `NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float> * vdtor(NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float__vdtor: u64 = 55263;
+/// `BSScript::Object::DecRef` at 0x148ef60 (semantic, high); signature (untiered): `int DecRef(longlong param_1)`; drops a reference and returns the new count; the 2 -> 1 transition calls IObjectHandlePolicy::ReleaseHandle; the caller destroys the object at 0 (high); semantic signature: `u32 (BSScript::Object* this)`
+pub const BSScript__Object__DecRef: u64 = 104253;
+/// `BSScript::Object::Destroy` at 0x148e1a0 (semantic, medium); signature (untiered): `undefined Destroy(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; resets the variables after the header when bit 0 of +0 is set, drops the stack and type references (medium); semantic signature: `void (BSScript::Object* this)`
+pub const BSScript__Object__Destroy: u64 = 104246;
+/// `BSScript::Object::GetHandle` at 0x148e250 (semantic, high); signature (untiered): `undefined8 GetHandle(longlong param_1)`; the handle at +0x20, read under the lock bit of +0x28 (high); semantic signature: `u64 (BSScript::Object* this)`
+pub const BSScript__Object__GetHandle: u64 = 104247;
+/// `BSScript::Object::IncRef` at 0x148eeb0 (semantic, high); signature (untiered): `ulonglong IncRef(longlong param_1)`; adds a reference (bit 31 of +0x28 as the lock); the 1 -> 2 transition calls IObjectHandlePolicy::PersistHandle (high); semantic signature: `u32 (BSScript::Object* this)`
+pub const BSScript__Object__IncRef: u64 = 104252;
 /// `BSScript::ObjectBindPolicy::dtor` at 0x1488250 (layout_inference, high); signature (low): `undefined8 * dtor(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ObjectBindPolicy__dtor: u64 = 104173;
 /// `BSScript::ObjectBindPolicy::dtor_sub0` at 0x9f1920 (callgraph, medium); signature (untiered): `undefined dtor_sub0(void)`
 pub const BSScript__ObjectBindPolicy__dtor_sub0: u64 = 54417;
 /// `BSScript::ObjectBindPolicy::vfunc_0` at 0x9f0a60 (rtti, high); signature (low): `ObjectBindPolicy * vfunc_0(ObjectBindPolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ObjectBindPolicy__vfunc_0: u64 = 54381;
+/// `BSScript::ObjectTypeInfo::BindNativeFunction` at 0x1494c60 (semantic, high); signature (untiered): `ulonglong BindNativeFunction(longlong param_1, ulonglong * param_2, longlong * param_3, longlong * param_4)`; checks the function's class name matches and that it is native, then: linked type -> finds the declared function of the same name (static table, empty state or the named state), compares signatures (0x1496bb0) and installs the native in its slot; unlinked type -> replaces a native of the same name in the list at +0x30 or prepends a new {next, function} node; the error strings 'Attempting to bind a non-native function %s', 'Native function %s in empty state could find no matching function on linked type %s', 'does not match existing signature', 'Replacing native function %s on unlinked object %s' (high); semantic signature: `bool (BSScript::ObjectTypeInfo* this, BSScript::IFunction* function, BSScript::ErrorLogger* logger)`
+pub const BSScript__ObjectTypeInfo__BindNativeFunction: u64 = 104325;
+/// `BSScript::ObjectTypeInfo::GetFunction` at 0x1492470 (semantic, high); signature (untiered): `undefined8 GetFunction(longlong param_1, longlong * param_2, longlong * param_3, char param_4)`; on a linked type the function of that name from the tables; on an unlinked one only non-static natives from the pending list; false otherwise (so DispatchStaticCall needs the script loaded) (high); semantic signature: `bool (BSScript::ObjectTypeInfo* this, const BSFixedString* name, BSTSmartPointer<BSScript::IFunction>* out, bool isStatic)`
+pub const BSScript__ObjectTypeInfo__GetFunction: u64 = 104311;
+/// `BSScript::ObjectTypeInfo::GetTotalNumVariables` at 0x1492b90 (semantic, high); the variable count of the type and its linked parents (bits 8-17 of +0x20 along +0x10) (high); semantic signature: `u32 (const BSScript::ObjectTypeInfo* this)`
+pub const BSScript__ObjectTypeInfo__GetTotalNumVariables: u64 = 104317;
+/// `BSScript::ObjectTypeInfo::dtor` at 0x1491e00 (semantic, medium); signature (untiered): `undefined dtor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; releases the tables, the name, the parent and the doc string (medium); semantic signature: `void (BSScript::ObjectTypeInfo* this)`
+pub const BSScript__ObjectTypeInfo__dtor: u64 = 104299;
 /// `BSScript::SimpleAllocMemoryPagePolicy::ctor` at 0x14a3bc0 (layout_inference, medium); signature (low): `SimpleAllocMemoryPagePolicy * ctor(SimpleAllocMemoryPagePolicy * this, undefined4 param_1, undefined4 param_2, undefined4 param_3)`
 pub const BSScript__SimpleAllocMemoryPagePolicy__ctor: u64 = 104563;
 /// `BSScript::SimpleAllocMemoryPagePolicy::vdtor` at 0x14a3f80 (layout_inference, medium); signature (low): `SimpleAllocMemoryPagePolicy * vdtor(SimpleAllocMemoryPagePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -19323,6 +19341,10 @@ pub const BSScript__SimpleAllocMemoryPagePolicy__vfunc_2: u64 = 104566;
 pub const BSScript__SimpleAllocMemoryPagePolicy__vfunc_3: u64 = 104567;
 /// `BSScript::SimpleAllocMemoryPagePolicy::vfunc_4` at 0x14a3e50 (rtti, high); signature (low): `int * vfunc_4(SimpleAllocMemoryPagePolicy * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__SimpleAllocMemoryPagePolicy__vfunc_4: u64 = 104568;
+/// `BSScript::Stack::GetPageForFrame` at 0x149e7f0 (semantic, high); signature (untiered): `ulonglong GetPageForFrame(longlong param_1, uint * param_2)`; index of the page that holds the frame (searches the page array at +0x20) (high); semantic signature: `u32 (BSScript::Stack* this, const BSScript::StackFrame* frame)`
+pub const BSScript__Stack__GetPageForFrame: u64 = 104483;
+/// `BSScript::Stack::GetStackFrameVariable` at 0x149e860 (semantic, high); signature (untiered): `longlong GetStackFrameVariable(longlong param_1, undefined8 param_2, undefined8 param_3, uint param_4)`; address of Variable index of the frame: page data + the frame's offset + 0x3c + index * 0x10, crossing into the next page when needed (high); semantic signature: `BSScript::Variable* (BSScript::Stack* this, const BSScript::StackFrame* frame, u32 index, u32 page)`
+pub const BSScript__Stack__GetStackFrameVariable: u64 = 104484;
 /// `BSScript::UnlinkedTypes::Function::ConvertTypeFunctor::ctor` at 0x14a1510 (callgraph, high); signature (untiered): `undefined ctor(ConvertTypeFunctor * this)`
 pub const BSScript__UnlinkedTypes__Function__ConvertTypeFunctor__ctor: u64 = 104508;
 /// `BSScript::UnlinkedTypes::Function::ConvertTypeFunctor::ctor` at 0x14e36b0 (callgraph, high); signature (untiered): `undefined ctor(ConvertTypeFunctor * this)`
@@ -19377,6 +19399,16 @@ pub const BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor__vfu
 pub const BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor__vfunc_1_sub0: u64 = 104544;
 /// `BSScript::UnlinkedTypes::_anon_E61FEF15::WriteInstructionsFunctor::vfunc_2` at 0x14dbb70 (rtti, high); signature (low): `undefined8 vfunc_2(WriteInstructionsFunctor * this, undefined4 param_1, undefined4 param_2)`
 pub const BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor__vfunc_2: u64 = 105315;
+/// `BSScript::Variable::GetObjectPtr` at 0x1490780 (semantic, high); signature (untiered): `uint * GetObjectPtr(uint * param_1)`; address of the Object* payload when the type is an object, else a static null (high); semantic signature: `BSTSmartPointer<BSScript::Object>* (BSScript::Variable* this)`
+pub const BSScript__Variable__GetObjectPtr: u64 = 104287;
+/// `BSScript::Variable::GetString` at 0x1490600 (semantic, high); signature (untiered): `uint * GetString(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; the string payload for a String Variable, else the empty string (high); semantic signature: `const BSFixedString* (const BSScript::Variable* this)`
+pub const BSScript__Variable__GetString: u64 = 104285;
+/// `BSScript::Variable::SetObject` at 0x1490830 (semantic, high); signature (untiered): `undefined SetObject(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; for an object-typed Variable: reset, store the Object* and IncRef it (high); semantic signature: `void (BSScript::Variable* this, BSTSmartPointer<BSScript::Object>* object)`
+pub const BSScript__Variable__SetObject: u64 = 104288;
+/// `BSScript::Variable::assign` at 0x1491b00 (semantic, high); signature (untiered): `undefined assign(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, ulonglong param_4)`; resets this, then copies other by type: arrays and objects add a reference, strings copy the BSFixedString, scalars copy the qword (high); semantic signature: `void (BSScript::Variable* this, const BSScript::Variable* other)`
+pub const BSScript__Variable__assign: u64 = 104297;
+/// `BSScript::Variable::reset` at 0x1491a00 (semantic, high); signature (untiered): `undefined reset(ulonglong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; releases the payload by type (array, string, object) and zeroes +8; the type stays (high); semantic signature: `void (BSScript::Variable* this)`
+pub const BSScript__Variable__reset: u64 = 104296;
 /// `BSScript::ZeroFunctionArguments::vfunc_0` at 0x384d40 (rtti, high); signature (low): `ZeroFunctionArguments * vfunc_0(ZeroFunctionArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ZeroFunctionArguments__vfunc_0: u64 = 23294;
 /// `BSScript::ZeroFunctionArguments::vfunc_1` at 0x1496d10 (rtti, high); signature (low): `undefined8 vfunc_1(ZeroFunctionArguments * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -76935,6 +76967,8 @@ pub const PairedStopHandler__vfunc_1: u64 = 42868;
 pub const PairedStopHandler__vfunc_1_sub0: u64 = 41533;
 /// `Papyrus::ActiveMagicEffect::AddInventoryEventFilter` at 0x9fba70 (papyrus_native, high); signature (medium): `void AddInventoryEventFilter(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESForm * a0)`
 pub const Papyrus__ActiveMagicEffect__AddInventoryEventFilter: u64 = 54576;
+/// `Papyrus::ActiveMagicEffect::Dispel` at 0x9fded0 (runtime, high); signature (untiered): `void Dispel(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`; the Dispel native of ActiveMagicEffect (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, ActiveEffect* self)`
+pub const Papyrus__ActiveMagicEffect__Dispel: u64 = 54614;
 /// `Papyrus::ActiveMagicEffect::GetBaseObject` at 0x9fdee0 (papyrus_native, high); signature (medium): `EffectSetting * GetBaseObject(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 pub const Papyrus__ActiveMagicEffect__GetBaseObject: u64 = 54615;
 /// `Papyrus::ActiveMagicEffect::GetCasterActor` at 0x9fbb50 (papyrus_native, high); signature (medium): `Actor * GetCasterActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
@@ -76967,6 +77001,8 @@ pub const Papyrus__ActiveMagicEffect__RegisterFuncs: u64 = 54600;
 pub const Papyrus__ActiveMagicEffect__RemoveAllInventoryEventFilters: u64 = 54589;
 /// `Papyrus::ActiveMagicEffect::RemoveInventoryEventFilter` at 0x9fc0e0 (papyrus_native, high); signature (medium): `void RemoveInventoryEventFilter(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESForm * a0)`
 pub const Papyrus__ActiveMagicEffect__RemoveInventoryEventFilter: u64 = 54590;
+/// `Papyrus::ActiveMagicEffect::SelfFromVariable` at 0x9fdef0 (semantic, high); signature (untiered): `undefined8 SelfFromVariable(uint * param_1)`; the ActiveEffect an object Variable names: Object::GetHandle, HandleIsType(0x8e), IsHandleObjectAvailable, GetObjectForHandle(0x8e) through g_IObjectHandlePolicy_ptr; null when any step fails (high); semantic signature: `ActiveEffect* (const BSScript::Variable* self)`
+pub const Papyrus__ActiveMagicEffect__SelfFromVariable: u64 = 54616;
 /// `Papyrus::ActiveMagicEffect::StartObjectProfiling` at 0x9fc150 (papyrus_native, high); signature (medium): `void StartObjectProfiling(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 pub const Papyrus__ActiveMagicEffect__StartObjectProfiling: u64 = 54591;
 /// `Papyrus::ActiveMagicEffect::StopObjectProfiling` at 0x9fc1e0 (papyrus_native, high); signature (medium): `void StopObjectProfiling(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
@@ -77403,8 +77439,12 @@ pub const Papyrus__Alias__RegisterForLOS: u64 = 55128;
 pub const Papyrus__Alias__RegisterForSingleLOSGain: u64 = 55129;
 /// `Papyrus::Alias::RegisterForSingleLOSLost` at 0xa13ae0 (papyrus_native, high); signature (medium): `void RegisterForSingleLOSLost(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
 pub const Papyrus__Alias__RegisterForSingleLOSLost: u64 = 55130;
+/// `Papyrus::Alias::RegisterForSingleUpdate` at 0xa13b70 (runtime, high); signature (untiered): `void RegisterForSingleUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`; the RegisterForSingleUpdate native of Alias (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSBaseAlias* self, float a0)`
+pub const Papyrus__Alias__RegisterForSingleUpdate: u64 = 55131;
 /// `Papyrus::Alias::RegisterForSingleUpdateGameTime` at 0xa13bd0 (papyrus_native, high); signature (medium): `void RegisterForSingleUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
 pub const Papyrus__Alias__RegisterForSingleUpdateGameTime: u64 = 55132;
+/// `Papyrus::Alias::RegisterForSleep` at 0xa13c30 (runtime, high); signature (untiered): `void RegisterForSleep(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`; the RegisterForSleep native of Alias (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSBaseAlias* self)`
+pub const Papyrus__Alias__RegisterForSleep: u64 = 55133;
 /// `Papyrus::Alias::RegisterForTrackedStatsEvent` at 0xa13c80 (papyrus_native, high); signature (medium): `void RegisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 pub const Papyrus__Alias__RegisterForTrackedStatsEvent: u64 = 55134;
 /// `Papyrus::Alias::RegisterForUpdate` at 0xa13cd0 (papyrus_native, high); signature (medium): `void RegisterForUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
@@ -77479,6 +77519,8 @@ pub const Papyrus__Debug__DebugChannelNotify: u64 = 55371;
 pub const Papyrus__Debug__DumpAliasData: u64 = 55372;
 /// `Papyrus::Debug::DumpAliasData_sub0` at 0xa213a0 (callgraph, medium); signature (untiered): `undefined8 DumpAliasData_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4)`
 pub const Papyrus__Debug__DumpAliasData_sub0: u64 = 55396;
+/// `Papyrus::Debug::GetConfigName` at 0xa1f310 (runtime, high); signature (untiered): `bool GetConfigName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; the latent GetConfigName native of Debug (returns its string through ReturnFromLatent) (high); semantic signature: `bool (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
+pub const Papyrus__Debug__GetConfigName: u64 = 55373;
 /// `Papyrus::Debug::GetPlatformName` at 0xa1f3c0 (papyrus_native, high); signature (medium): `bool GetPlatformName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 pub const Papyrus__Debug__GetPlatformName: u64 = 55374;
 /// `Papyrus::Debug::GetPlatformName_sub0` at 0xeac650 (callgraph, medium); signature (untiered): `char * GetPlatformName_sub0(void)`
@@ -77493,6 +77535,8 @@ pub const Papyrus__Debug__Notification: u64 = 55377;
 pub const Papyrus__Debug__OpenUserLog: u64 = 55378;
 /// `Papyrus::Debug::PlayerMoveToAndWait` at 0xa1f000 (papyrus_native, high); signature (medium): `bool PlayerMoveToAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 pub const Papyrus__Debug__PlayerMoveToAndWait: u64 = 55369;
+/// `Papyrus::Debug::QuitGame` at 0xa1f600 (runtime, high); signature (untiered): `void QuitGame(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; the QuitGame native of Debug (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
+pub const Papyrus__Debug__QuitGame: u64 = 55379;
 /// `Papyrus::Debug::RegisterFuncs` at 0xa1fbf0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Papyrus__Debug__RegisterFuncs: u64 = 55394;
 /// `Papyrus::Debug::SendAnimationEvent` at 0xa1f620 (papyrus_native, high); signature (medium): `void SendAnimationEvent(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, BSFixedString * a1)`
@@ -77841,10 +77885,10 @@ pub const Papyrus__Game__TriggerScreenBlood: u64 = 55584;
 pub const Papyrus__Game__UnlockWord: u64 = 55501;
 /// `Papyrus::Game::UsingGamepad` at 0xa2aee0 (papyrus_native, high); signature (medium): `bool UsingGamepad(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 pub const Papyrus__Game__UsingGamepad: u64 = 55585;
-/// `Papyrus::GetValue::SetValue` at 0xa39ec0 (papyrus_native, high); signature (medium): `void SetValue(IVirtualMachine * vm, uint stackId, TESGlobal * self, float a0)`
-pub const Papyrus__GetValue__SetValue: u64 = 55923;
 /// `Papyrus::GlobalVariable::GetValue` at 0xa3a270 (papyrus_native, high); signature (medium): `float GetValue(IVirtualMachine * vm, uint stackId, TESGlobal * self)`
 pub const Papyrus__GlobalVariable__GetValue: u64 = 55930;
+/// `Papyrus::GlobalVariable::SetValue` at 0xa39ec0 (runtime, high); signature (untiered): `void SetValue(IVirtualMachine * vm, uint stackId, TESGlobal * self, float a0)`; the SetValue native of GlobalVariable (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, TESGlobal* self, float a0)`
+pub const Papyrus__GlobalVariable__SetValue: u64 = 55923;
 /// `Papyrus::ImageSpaceModifier::Apply` at 0xa3a510 (papyrus_native, high); signature (medium): `void Apply(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, float a0)`
 pub const Papyrus__ImageSpaceModifier__Apply: u64 = 55936;
 /// `Papyrus::ImageSpaceModifier::ApplyCrossFade` at 0xa3a530 (papyrus_native, high); signature (medium): `void ApplyCrossFade(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, float a0)`
@@ -77935,6 +77979,8 @@ pub const Papyrus__LocationAlias__RegisterFuncs: u64 = 55195;
 pub const Papyrus__MagicEffect__GetAssociatedSkill: u64 = 55431;
 /// `Papyrus::MagicEffect::RegisterFuncs` at 0xa22a80 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Papyrus__MagicEffect__RegisterFuncs: u64 = 55433;
+/// `Papyrus::Math::Ceiling` at 0xa30800 (runtime, high); signature (untiered): `int Ceiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`; the Ceiling native of Math (high); semantic signature: `int (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self, float a0)`
+pub const Papyrus__Math__Ceiling: u64 = 55700;
 /// `Papyrus::Math::DegreesToRadians` at 0xa30890 (papyrus_native, high); signature (medium): `float DegreesToRadians(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
 pub const Papyrus__Math__DegreesToRadians: u64 = 55703;
 /// `Papyrus::Math::Floor` at 0xa308b0 (papyrus_native, high); signature (medium): `int Floor(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
@@ -77989,6 +78035,8 @@ pub const Papyrus__ObjectReference__AddDependentAnimatedObjectReference_sub0: u6
 pub const Papyrus__ObjectReference__AddInventoryEventFilter: u64 = 56140;
 /// `Papyrus::ObjectReference::AddItem` at 0xa44bb0 (papyrus_native, high); signature (medium): `bool AddItem(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1, bool a2)`
 pub const Papyrus__ObjectReference__AddItem: u64 = 56145;
+/// `Papyrus::ObjectReference::AddToMap` at 0xa44d40 (runtime, high); signature (untiered): `void AddToMap(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`; the AddToMap native of ObjectReference (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, TESObjectREFR* self, bool a0)`
+pub const Papyrus__ObjectReference__AddToMap: u64 = 56146;
 /// `Papyrus::ObjectReference::ApplyHavokImpulse` at 0xa44e70 (papyrus_native, high); signature (medium): `bool ApplyHavokImpulse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2, float a3)`
 pub const Papyrus__ObjectReference__ApplyHavokImpulse: u64 = 56147;
 /// `Papyrus::ObjectReference::BlockActivation` at 0xa450a0 (papyrus_native, high); signature (medium): `void BlockActivation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
@@ -78183,6 +78231,8 @@ pub const Papyrus__ObjectReference__RemoveItem: u64 = 56218;
 pub const Papyrus__ObjectReference__Reset: u64 = 56219;
 /// `Papyrus::ObjectReference::Say` at 0xa485f0 (papyrus_native, high); signature (medium): `void Say(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESTopic * a0, Actor * a1, bool a2)`
 pub const Papyrus__ObjectReference__Say: u64 = 56220;
+/// `Papyrus::ObjectReference::SelfFromVariable` at 0xa56b20 (semantic, high); signature (untiered): `undefined8 SelfFromVariable(uint * param_1)`; the reference an object Variable names (typeID 0x3d through g_IObjectHandlePolicy_ptr) (high); semantic signature: `TESObjectREFR* (const BSScript::Variable* self)`
+pub const Papyrus__ObjectReference__SelfFromVariable: u64 = 56493;
 /// `Papyrus::ObjectReference::SendStealAlarm` at 0xa48990 (papyrus_native, high); signature (medium): `void SendStealAlarm(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
 pub const Papyrus__ObjectReference__SendStealAlarm: u64 = 56221;
 /// `Papyrus::ObjectReference::SetActorCause` at 0xa48a20 (papyrus_native, high); signature (medium): `void SetActorCause(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
@@ -78231,6 +78281,8 @@ pub const Papyrus__ObjectReference__TranslateTo: u64 = 56237;
 pub const Papyrus__ObjectReference__TranslateTo_sub0: u64 = 12808;
 /// `Papyrus::ObjectReference::WaitForAnimationEvent` at 0xa49640 (papyrus_native, high); signature (medium): `bool WaitForAnimationEvent(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
 pub const Papyrus__ObjectReference__WaitForAnimationEvent: u64 = 56235;
+/// `Papyrus::PackFormToVariable` at 0xa291d0 (semantic, high); signature (untiered): `ulonglong * PackFormToVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`; the return path of a form-returning native: GetScriptObjectTypeByID for the form's class (1 when unknown), GetHandleForObject(0, form), FindBoundObject(handle, className) or CreateObject + GetTypeIDForScriptObject + HandleIsType + ObjectBindPolicy::BindObject (bind interface slot 3), then Variable::assign {type, 0} and SetObject (high); semantic signature: `BSScript::Variable* (BSScript::Variable* out, TESForm* form, BSScript::Internal::VirtualMachine* vm)`
+pub const Papyrus__PackFormToVariable: u64 = 55511;
 /// `Papyrus::Package::GetOwningQuest` at 0xa5f3b0 (papyrus_native, high); signature (medium): `TESQuest * GetOwningQuest(IVirtualMachine * vm, uint stackId, TESPackage * self)`
 pub const Papyrus__Package__GetOwningQuest: u64 = 56673;
 /// `Papyrus::Package::GetTemplate` at 0xa5e930 (papyrus_native, high); signature (medium): `TESPackage * GetTemplate(IVirtualMachine * vm, uint stackId, TESPackage * self)`
@@ -78295,6 +78347,8 @@ pub const Papyrus__Quest__Stop: u64 = 56686;
 pub const Papyrus__Quest__UpdateCurrentInstanceGlobal: u64 = 56736;
 /// `Papyrus::ReferenceAlias::AddInventoryEventFilter` at 0xa1b4f0 (papyrus_native, high); signature (medium): `void AddInventoryEventFilter(IVirtualMachine * vm, uint stackId, BGSRefAlias * self, TESForm * a0)`
 pub const Papyrus__ReferenceAlias__AddInventoryEventFilter: u64 = 55285;
+/// `Papyrus::ReferenceAlias::Clear` at 0xa1b5d0 (runtime, high); signature (untiered): `void Clear(IVirtualMachine * vm, uint stackId, BGSRefAlias * self)`; the Clear native of ReferenceAlias (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSRefAlias* self)`
+pub const Papyrus__ReferenceAlias__Clear: u64 = 55286;
 /// `Papyrus::ReferenceAlias::ForceRefTo` at 0xa1b6a0 (papyrus_native, high); signature (medium): `void ForceRefTo(IVirtualMachine * vm, uint stackId, BGSRefAlias * self, TESObjectREFR * a0)`
 pub const Papyrus__ReferenceAlias__ForceRefTo: u64 = 55288;
 /// `Papyrus::ReferenceAlias::GetReference` at 0xa1b620 (papyrus_native, high); signature (medium): `TESObjectREFR * GetReference(IVirtualMachine * vm, uint stackId, BGSRefAlias * self)`
@@ -81333,34 +81387,34 @@ pub const SkyrimScript__DelayFunctor__vfunc_6: u64 = 53420;
 pub const SkyrimScript__DelayFunctorFactory__dtor: u64 = 53421;
 /// `SkyrimScript::DelayFunctorFactory::vdtor` at 0x9b2a50 (layout_inference, medium); signature (low): `DelayFunctorFactory * vdtor(DelayFunctorFactory * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimScript__DelayFunctorFactory__vdtor: u64 = 53426;
+/// `SkyrimScript::HandlePolicy::ConvertHandleToString` at 0x9b9ff0 (semantic, high); signature (untiered): `undefined ConvertHandleToString(HandlePolicy * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+pub const SkyrimScript__HandlePolicy__ConvertHandleToString: u64 = 53515;
+/// `SkyrimScript::HandlePolicy::GetBaseObjectHandle` at 0x9b9760 (semantic, medium); signature (untiered): `ulonglong GetBaseObjectHandle(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const SkyrimScript__HandlePolicy__GetBaseObjectHandle: u64 = 53510;
+/// `SkyrimScript::HandlePolicy::GetHandleForObject` at 0x9b9610 (runtime, high); signature (untiered): `ulonglong GetHandleForObject(HandlePolicy * this, int param_1, longlong * param_2)`
+pub const SkyrimScript__HandlePolicy__GetHandleForObject: u64 = 53508;
+/// `SkyrimScript::HandlePolicy::GetInvalidHandle` at 0x9b95f0 (runtime, high); signature (untiered): `undefined8 GetInvalidHandle(void)`
+pub const SkyrimScript__HandlePolicy__GetInvalidHandle: u64 = 53507;
+/// `SkyrimScript::HandlePolicy::GetItemReferenceHandle` at 0x9b9900 (semantic, medium); signature (untiered): `ulonglong GetItemReferenceHandle(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const SkyrimScript__HandlePolicy__GetItemReferenceHandle: u64 = 53511;
+/// `SkyrimScript::HandlePolicy::GetObjectForHandle` at 0x9b9970 (runtime, high); signature (untiered): `ulonglong GetObjectForHandle(HandlePolicy * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
+pub const SkyrimScript__HandlePolicy__GetObjectForHandle: u64 = 53512;
+/// `SkyrimScript::HandlePolicy::HandleIsReference` at 0x9b9740 (semantic, high); signature (untiered): `undefined HandleIsReference(HandlePolicy * this, undefined8 param_1)`
+pub const SkyrimScript__HandlePolicy__HandleIsReference: u64 = 53509;
+/// `SkyrimScript::HandlePolicy::HandleIsType` at 0x9b92f0 (runtime, high); signature (untiered): `bool HandleIsType(HandlePolicy * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
+pub const SkyrimScript__HandlePolicy__HandleIsType: u64 = 53505;
+/// `SkyrimScript::HandlePolicy::IsHandleObjectAvailable` at 0x9b9520 (runtime, high); signature (untiered): `undefined1 IsHandleObjectAvailable(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const SkyrimScript__HandlePolicy__IsHandleObjectAvailable: u64 = 53506;
+/// `SkyrimScript::HandlePolicy::PersistHandle` at 0x9b9b00 (semantic, medium); signature (untiered): `undefined PersistHandle(HandlePolicy * this, void * param_1)`
+pub const SkyrimScript__HandlePolicy__PersistHandle: u64 = 53513;
+/// `SkyrimScript::HandlePolicy::ReleaseHandle` at 0x9b9cc0 (semantic, medium); signature (untiered): `HandlePolicy_vtbl * ReleaseHandle(HandlePolicy * this, void * param_1)`
+pub const SkyrimScript__HandlePolicy__ReleaseHandle: u64 = 53514;
 /// `SkyrimScript::HandlePolicy::dtor` at 0x9ed220 (layout_inference, high); signature (low): `undefined dtor(HandlePolicy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimScript__HandlePolicy__dtor: u64 = 54202;
 /// `SkyrimScript::HandlePolicy::vdtor` at 0x9f0760 (layout_inference, medium); signature (low): `HandlePolicy * vdtor(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimScript__HandlePolicy__vdtor: u64 = 54369;
-/// `SkyrimScript::HandlePolicy::vfunc_1` at 0x9b92f0 (rtti, high); signature (low): `bool vfunc_1(HandlePolicy * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
-pub const SkyrimScript__HandlePolicy__vfunc_1: u64 = 53505;
-/// `SkyrimScript::HandlePolicy::vfunc_10` at 0x9b9cc0 (rtti, high); signature (low): `HandlePolicy_vtbl * vfunc_10(HandlePolicy * this, void * param_1)`
-pub const SkyrimScript__HandlePolicy__vfunc_10: u64 = 53514;
-/// `SkyrimScript::HandlePolicy::vfunc_11` at 0x9b9ff0 (rtti, high); signature (low): `undefined vfunc_11(HandlePolicy * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-pub const SkyrimScript__HandlePolicy__vfunc_11: u64 = 53515;
 /// `SkyrimScript::HandlePolicy::vfunc_1_sub0` at 0x9bb520 (callgraph, medium); signature (untiered): `longlong vfunc_1_sub0(ushort param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const SkyrimScript__HandlePolicy__vfunc_1_sub0: u64 = 53543;
-/// `SkyrimScript::HandlePolicy::vfunc_2` at 0x9b9520 (rtti, high); signature (low): `undefined1 vfunc_2(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const SkyrimScript__HandlePolicy__vfunc_2: u64 = 53506;
-/// `SkyrimScript::HandlePolicy::vfunc_3` at 0x9b95f0 (rtti, high); signature (low): `undefined8 vfunc_3(void)`
-pub const SkyrimScript__HandlePolicy__vfunc_3: u64 = 53507;
-/// `SkyrimScript::HandlePolicy::vfunc_4` at 0x9b9610 (rtti, high); signature (low): `ulonglong vfunc_4(HandlePolicy * this, int param_1, longlong * param_2)`
-pub const SkyrimScript__HandlePolicy__vfunc_4: u64 = 53508;
-/// `SkyrimScript::HandlePolicy::vfunc_5` at 0x9b9740 (rtti, high); signature (low): `undefined vfunc_5(HandlePolicy * this, undefined8 param_1)`
-pub const SkyrimScript__HandlePolicy__vfunc_5: u64 = 53509;
-/// `SkyrimScript::HandlePolicy::vfunc_6` at 0x9b9760 (rtti, high); signature (low): `ulonglong vfunc_6(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const SkyrimScript__HandlePolicy__vfunc_6: u64 = 53510;
-/// `SkyrimScript::HandlePolicy::vfunc_7` at 0x9b9900 (rtti, high); signature (low): `ulonglong vfunc_7(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const SkyrimScript__HandlePolicy__vfunc_7: u64 = 53511;
-/// `SkyrimScript::HandlePolicy::vfunc_8` at 0x9b9970 (rtti, high); signature (low): `ulonglong vfunc_8(HandlePolicy * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
-pub const SkyrimScript__HandlePolicy__vfunc_8: u64 = 53512;
-/// `SkyrimScript::HandlePolicy::vfunc_9` at 0x9b9b00 (rtti, high); signature (low): `undefined vfunc_9(HandlePolicy * this, void * param_1)`
-pub const SkyrimScript__HandlePolicy__vfunc_9: u64 = 53513;
 /// `SkyrimScript::Internal::AnimationCallbacks::ctor` at 0x9ae5e0 (layout_inference, medium); signature (low): `AnimationCallbacks * ctor(AnimationCallbacks * this, undefined8 param_1, undefined4 param_2, longlong * param_3)`
 pub const SkyrimScript__Internal__AnimationCallbacks__ctor: u64 = 53354;
 /// `SkyrimScript::Internal::AnimationCallbacks::dtor` at 0x9ae640 (layout_inference, high); signature (low): `undefined dtor(AnimationCallbacks * this, AnimationCallbacks * param_1, undefined8 param_2, undefined8 param_3)`

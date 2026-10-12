@@ -10699,7 +10699,7 @@ pub const g_ActorValueStorageLock: u64 = 404014;
 pub const g_AnimationClipDataSingleton_ptr: u64 = 401553;
 /// `g_AnimationFileManagerSingleton_ptr` at 0x31e0b30 (xref_inference, medium)
 pub const g_AnimationFileManagerSingleton_ptr: u64 = 401579;
-/// `g_AnimationGraphEventSource_ptr` at 0x32309c8 (xref_inference, medium); pointer to `BSTEventSource`: pointer to the global BSTEventSource<BSAnimationGraphEvent> that actors re-dispatch their graph events through; pointer to the global BSTEventSource<BSAnimationGraphEvent> that actors re-dispatch their graph events through (medium); type `ptr:BSTEventSource`
+/// `g_AnimationGraphEventSource_ptr` at 0x32309c8 (xref_inference, medium); pointer to `BSTEventSource`: pointer to the global BSTEventSource actors notify from their graph event handler; its event is not a BSAnimationGraphEvent: the live payload is {actor handle u32, tag BSFixedString, pointer to the static at 0x3241930} and reading it as BSAnimationGraphEvent crashed (skyrim-rs docs/subsystems/events.md); the per-graph BSTEventSource<BSAnimationGraphEvent> sits at BShkbAnimationGraph+0x68; pointer to the global BSTEventSource actors notify from their graph event handler; its event is not a BSAnimationGraphEvent: the live payload is {actor handle u32, tag BSFixedString, pointer to the static at 0x3241930} and reading it as BSAnimationGraphEvent crashed (skyrim-rs docs/subsystems/events.md); the per-graph BSTEventSource<BSAnimationGraphEvent> sits at BShkbAnimationGraph+0x68 (low); type `ptr:BSTEventSource`
 pub const g_AnimationGraphEventSource_ptr: u64 = 403553;
 /// `g_AppResourceCaching__anon_AE50F340_Manager` at 0x3230110 (layout_inference, medium)
 pub const g_AppResourceCaching__anon_AE50F340_Manager: u64 = 403360;
@@ -11991,6 +11991,8 @@ pub const g_IBSTCreator_CombatObject_9: u64 = 405196;
 pub const g_IConvexOverlapImpl: u64 = 389561;
 /// `g_IOManager_ptr` at 0x331f570 (xref_inference, medium)
 pub const g_IOManager_ptr: u64 = 411121;
+/// `g_IObjectHandlePolicy_ptr` at 0x33d3750 (runtime, high); pointer to `SkyrimScript::HandlePolicy`: the VM's handle policy, set when the VM is created; the native executors and Object::IncRef/DecRef use it instead of asking the VM; the VM's handle policy, set when the VM is created; the native executors and Object::IncRef/DecRef use it instead of asking the VM (high); type `ptr:SkyrimScript::HandlePolicy`; accessor id 104810
+pub const g_IObjectHandlePolicy_ptr: u64 = 414391;
 /// `g_IPathBuilderFactoryBase` at 0x3254b70 (layout_inference, medium)
 pub const g_IPathBuilderFactoryBase: u64 = 405272;
 /// `g_IPathBuilderFactoryBase_2` at 0x3255020 (layout_inference, medium)
