@@ -353,7 +353,10 @@ event_structs! {
     TESActorLocationChangeEvent;
     /// A lock's state changed.
     TESLockChangedEvent;
-    /// A behaviour graph raised an animation event; registered through the global re-dispatch source.
+    /// A behaviour graph raised an animation event. Its proven sources are the per-graph ones
+    /// (`BShkbAnimationGraph` + 0x68, pass 7), so `source()` is `None`; register with
+    /// [`BSTEventSource::from_ptr`] on a graph's source. The global source behind
+    /// `g_AnimationGraphEventSource_ptr` carries [`AnimationGraphRedispatchEvent`] instead.
     BSAnimationGraphEvent;
     /// The player entered or left a cell (medium: read live twice during a load).
     BGSActorCellEvent;
@@ -430,6 +433,13 @@ event_structs! {
 }
 
 opaque_events! {
+    /// What the global source behind `g_AnimationGraphEventSource_ptr` (id 403553, medium) sends
+    /// when an actor's graph raises an event. `events.json` types the source as
+    /// `BSTEventSource<BSAnimationGraphEvent>`, but the event read live on 1.7.104 (the RE repo's
+    /// `run-events/dump-2` rows through 0x6beb50 and the test plugin's run) is a different 0x18-byte
+    /// struct: a handle-like dword at +0, the tag's string pointer at +8 and a module static at
+    /// +0x10. Opaque until a pass describes it.
+    AnimationGraphRedispatchEvent;
     /// No layout in pass 3; a sink can only count these.
     BGSEventProcessedEvent;
     /// No layout in pass 3; a sink can only count these.
@@ -524,7 +534,7 @@ pub struct InputEventList(*mut classes::InputEvent);
 
 impl InputEventList {
     pub fn iter(&self) -> impl Iterator<Item = &InputEvent> {
-        let mut next = unsafe { self.0.cast::<InputEvent>().as_ref() };
+        let mut next = self.first();
         core::iter::from_fn(move || {
             let e = next?;
             next = e.next();
@@ -533,10 +543,17 @@ impl InputEventList {
     }
 }
 
+impl InputEventList {
+    /// The first event of the frame, `None` for an empty list.
+    #[must_use]
+    pub fn first(&self) -> Option<&InputEvent> {
+        unsafe { self.0.cast::<InputEvent>().as_ref() }
+    }
+}
+
 impl fmt::Debug for InputEventList {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let first = self.iter().next().map(|e| (e.device(), e.event_type()));
-        write!(f, "InputEventList {{ events: {}, first: {first:?} }}", self.iter().count())
+        write!(f, "InputEventList {{ head: {:p}, first: {:?} }}", self.0, self.first().map(|e| (e.device(), e.event_type())))
     }
 }
 
@@ -580,9 +597,8 @@ sources! { OTHER_IDS;
     MenuOpenCloseEvent => ui_source(|ui| &raw const ui.source_MenuOpenCloseEvent), BSTEventSource_MenuOpenCloseEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
     MenuModeChangeEvent => ui_source(|ui| &raw const ui.source_MenuModeChangeEvent), BSTEventSource_MenuModeChangeEvent__AddEventSink, BSTEventSource_MenuModeChangeEvent__RemoveEventSink;
     InputEventList => EventSourceHolderInput::get().map_or(core::ptr::null(), |i| &raw const i.0.source_InputEvent), BSTEventSource_InputEvent____ptr64__AddEventSink, BSTEventSource_InputEvent____ptr64__RemoveEventSink;
-    // The global source actors re-dispatch their graph events through (medium); the per-graph
-    // sources at BShkbAnimationGraph+0x68 are pass 7's.
-    BSAnimationGraphEvent => *fns().animation_graph, BSTEventSource_BSAnimationGraphEvent__AddEventSink, BSTEventSource_BSAnimationGraphEvent__RemoveEventSink;
+    BSAnimationGraphEvent => core::ptr::null(), BSTEventSource_BSAnimationGraphEvent__AddEventSink, BSTEventSource_BSAnimationGraphEvent__RemoveEventSink;
+    AnimationGraphRedispatchEvent => *fns().animation_graph, BSTEventSource_BSAnimationGraphEvent__AddEventSink, BSTEventSource_BSAnimationGraphEvent__RemoveEventSink;
     BGSActorCellEvent => player_source(|p| &raw const (*p).source_BGSActorCellEvent), BSTEventSource_BGSActorCellEvent__AddEventSink, BSTEventSource_BGSActorCellEvent__RemoveEventSink;
     PositionPlayerEvent => player_source(|p| &raw const (*p).source_PositionPlayerEvent), BSTEventSource_PositionPlayerEvent__AddEventSink, BSTEventSource_PositionPlayerEvent__RemoveEventSink;
 }

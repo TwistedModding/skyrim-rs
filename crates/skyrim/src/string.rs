@@ -1,11 +1,12 @@
 //! `BSFixedString`, the engine's interned string, pinned by subsystem pass 3 because events, menus
 //! and forms carry it.
 //!
-//! The value is one pointer to the characters of a `BSStringPool::Entry`; the entry header
-//! (`next`, `flags`, `length`) lies 0x18 bytes before them. Interning folds case, so two strings
-//! that compare equal case-insensitively share one entry and one pointer, which is how the engine
-//! itself compares menu names. The header fields are rated medium in `events.json`: the test
-//! plugin reads them on `VendorItemWeapon` and `TweenMenu`.
+//! The value is one pointer to the NUL-terminated characters of a `BSStringPool::Entry`; the
+//! entry header (`next`, `flags`, `length`) lies 0x18 bytes before them. Interning folds case, so
+//! two strings that compare equal case-insensitively share one entry and one pointer, which is how
+//! the engine itself compares menu names. The text is read up to its NUL; the header fields are
+//! rated medium in `events.json` and only [`entry`](BSFixedString::entry), [`ref_count`](BSFixedString::ref_count)
+//! and [`is_wide`](BSFixedString::is_wide) read them.
 
 use core::ffi::{CStr, c_char};
 use std::ffi::CString;
@@ -92,10 +93,10 @@ impl BSFixedString {
         unsafe { self.0.data.cast::<classes::BSStringPool__Entry>().sub(1).as_ref() }
     }
 
-    /// Character count without the terminator.
+    /// Byte count up to the NUL.
     #[must_use]
     pub fn len(&self) -> usize {
-        self.entry().map_or(0, |e| e.length as usize)
+        self.as_bytes().len()
     }
 
     /// Whether the entry holds `wchar_t` characters.
@@ -110,25 +111,22 @@ impl BSFixedString {
         self.entry().map_or(0, |e| e.flags & PINNED)
     }
 
-    /// The bytes of a narrow string; empty for the empty string and for wide entries.
+    /// The bytes up to the NUL; empty for the empty string, one character of a wide entry.
     #[must_use]
     pub fn as_bytes(&self) -> &[u8] {
-        if self.is_empty() || self.is_wide() {
-            return &[];
-        }
-        unsafe { core::slice::from_raw_parts(self.0.data.cast::<u8>(), self.len()) }
+        self.as_c_str().map_or(&[], CStr::to_bytes)
     }
 
-    /// The text when it is narrow and UTF-8.
+    /// The text when it is UTF-8.
     #[must_use]
     pub fn to_str(&self) -> Option<&str> {
         core::str::from_utf8(self.as_bytes()).ok()
     }
 
-    /// The NUL-terminated characters of a narrow string.
+    /// The NUL-terminated characters, `None` for the empty string.
     #[must_use]
     pub fn as_c_str(&self) -> Option<&CStr> {
-        if self.is_empty() || self.is_wide() {
+        if self.is_empty() {
             return None;
         }
         Some(unsafe { CStr::from_ptr(self.as_ptr()) })
@@ -175,9 +173,6 @@ impl PartialEq<str> for BSFixedString {
 
 impl fmt::Display for BSFixedString {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        if self.is_wide() {
-            return write!(f, "<wide string of {} characters>", self.len());
-        }
         f.write_str(&String::from_utf8_lossy(self.as_bytes()))
     }
 }
