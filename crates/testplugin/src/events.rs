@@ -1,0 +1,395 @@
+//! One test per `skyrim::events` API. `SETUP` runs at `DataLoaded`: the holder and UI structure,
+//! add/remove on a scratch sink, the `BSFixedString` round trip, then the registration of the
+//! recorders. `TESTS` runs at the save that ends the scenario of the RE repo's
+//! `docs/subsystems/events-verify.md` and checks what the recorders received, in order.
+
+use core::marker::PhantomData;
+use std::fmt;
+use std::sync::Mutex;
+use std::sync::atomic::{AtomicU32, Ordering};
+
+use layout::v1_7_104::globals;
+use skyrim::actors::PlayerCharacter;
+use skyrim::events::{
+    BGSActorCellEvent, BSAnimationGraphEvent, BSEventNotifyControl, BSFixedString, BSTEventSource, Event, EventSink, EventSourceHolderMenuOpenClose, EventSourceHolderTes,
+    InputEventList, MenuModeChangeEvent, MenuOpenCloseEvent, Registration, Sink, TESActivateEvent, TESActorLocationChangeEvent, TESCellAttachDetachEvent, TESCombatEvent,
+    TESContainerChangedEvent, TESEquipEvent, TESFurnitureEvent, TESHitEvent, TESInitScriptEvent, TESLoadGameEvent, TESLockChangedEvent, TESObjectLoadedEvent, TESPackageEvent,
+};
+use skyrim::forms::{FormId, lookup_form_by_editor_id};
+
+use crate::{PLAYER, Test, check};
+
+const GOLD: FormId = FormId(0xF);
+const TORCH: FormId = FormId(0x1D4EC);
+const FLAMES: FormId = FormId(0x12FCD);
+const FLAMES_PROJECTILE: FormId = FormId(0x12FCF);
+const RIVERWOOD_CELL: FormId = FormId(0x9732);
+const RIVERWOOD_COC_MARKER: FormId = FormId(0x13806);
+
+/// Game loads since `DataLoaded`, counted by the SKSE message handler.
+pub static LOADS: AtomicU32 = AtomicU32::new(0);
+
+pub const SETUP: &[(&str, Test)] = &[("holder", holder), ("ui", ui), ("add_remove", add_remove), ("fixed_string", fixed_string), ("register", register)];
+
+pub const TESTS: &[(&str, Test)] = &[
+    ("source_identity", source_identity),
+    ("menu_open_close", menu_open_close),
+    ("menu_mode_change", menu_mode_change),
+    ("equip", equip),
+    ("container_changed", container_changed),
+    ("remove_sink", remove_sink),
+    ("activate", activate),
+    ("hit", hit),
+    ("load_game", load_game),
+    ("cell_attach_detach", cell_attach_detach),
+    ("actor_cell", actor_cell),
+    ("object_loaded", object_loaded),
+    ("animation_graph", animation_graph),
+    ("npc_events", npc_events),
+    ("fixed_string", fixed_string),
+];
+
+struct Record {
+    kind: &'static str,
+    detail: String,
+    source_ok: bool,
+}
+
+static RECEIVED: Mutex<Vec<Record>> = Mutex::new(Vec::new());
+
+/// Logs every event of `E` it receives and remembers it for the tests.
+struct Recorder<E> {
+    kind: &'static str,
+    verbose: bool,
+    _event: PhantomData<fn(&E)>,
+}
+
+impl<E> Recorder<E> {
+    const fn new(kind: &'static str, verbose: bool) -> Self {
+        Self { kind, verbose, _event: PhantomData }
+    }
+}
+
+impl<E: Event + fmt::Debug> EventSink<E> for Recorder<E> {
+    fn process(&self, event: &E, source: &BSTEventSource<E>) -> BSEventNotifyControl {
+        let detail = format!("{event:?}");
+        if self.verbose {
+            log!("event {}: {detail}", self.kind);
+        }
+        let source_ok = E::source().is_some_and(|s| core::ptr::eq(s, source));
+        RECEIVED.lock().unwrap().push(Record { kind: self.kind, detail, source_ok });
+        BSEventNotifyControl::Continue
+    }
+}
+
+/// A `TESContainerChangedEvent` sink that unregisters itself from inside its handler when the
+/// scenario's `AddItem(gold, 10)` arrives.
+struct SelfRemoving;
+
+static CONTAINER_B_REGISTRATION: Mutex<Option<Registration<TESContainerChangedEvent>>> = Mutex::new(None);
+
+impl EventSink<TESContainerChangedEvent> for SelfRemoving {
+    fn process(&self, event: &TESContainerChangedEvent, source: &BSTEventSource<TESContainerChangedEvent>) -> BSEventNotifyControl {
+        RECEIVED.lock().unwrap().push(Record { kind: "container B", detail: format!("{event:?}"), source_ok: true });
+        if event.item_count() == 10 && event.new_container() == PLAYER {
+            let registration = CONTAINER_B_REGISTRATION.lock().unwrap().take();
+            drop(registration);
+            log!("sink B removed itself while notifying={}: pendingUnregisterCount={} sinkCount={}", source.is_notifying(), source.raw().pendingUnregisterCount, source.sink_count());
+        }
+        BSEventNotifyControl::Continue
+    }
+}
+
+static MENU: Sink<MenuOpenCloseEvent, Recorder<MenuOpenCloseEvent>> = Sink::new(Recorder::new("menu", true));
+static MENU_MODE: Sink<MenuModeChangeEvent, Recorder<MenuModeChangeEvent>> = Sink::new(Recorder::new("menu mode", true));
+static EQUIP: Sink<TESEquipEvent, Recorder<TESEquipEvent>> = Sink::new(Recorder::new("equip", true));
+static CONTAINER_A: Sink<TESContainerChangedEvent, Recorder<TESContainerChangedEvent>> = Sink::new(Recorder::new("container A", true));
+static CONTAINER_B: Sink<TESContainerChangedEvent, SelfRemoving> = Sink::new(SelfRemoving);
+static ACTIVATE: Sink<TESActivateEvent, Recorder<TESActivateEvent>> = Sink::new(Recorder::new("activate", true));
+static HIT: Sink<TESHitEvent, Recorder<TESHitEvent>> = Sink::new(Recorder::new("hit", true));
+static LOAD_GAME: Sink<TESLoadGameEvent, Recorder<TESLoadGameEvent>> = Sink::new(Recorder::new("load game", true));
+static CELL: Sink<TESCellAttachDetachEvent, Recorder<TESCellAttachDetachEvent>> = Sink::new(Recorder::new("cell", false));
+static ACTOR_CELL: Sink<BGSActorCellEvent, Recorder<BGSActorCellEvent>> = Sink::new(Recorder::new("actor cell", true));
+static OBJECT_LOADED: Sink<TESObjectLoadedEvent, Recorder<TESObjectLoadedEvent>> = Sink::new(Recorder::new("object loaded", false));
+static ANIMATION: Sink<BSAnimationGraphEvent, Recorder<BSAnimationGraphEvent>> = Sink::new(Recorder::new("animation", false));
+static INIT_SCRIPT: Sink<TESInitScriptEvent, Recorder<TESInitScriptEvent>> = Sink::new(Recorder::new("init script", false));
+static COMBAT: Sink<TESCombatEvent, Recorder<TESCombatEvent>> = Sink::new(Recorder::new("combat", true));
+static FURNITURE: Sink<TESFurnitureEvent, Recorder<TESFurnitureEvent>> = Sink::new(Recorder::new("furniture", true));
+static PACKAGE: Sink<TESPackageEvent, Recorder<TESPackageEvent>> = Sink::new(Recorder::new("package", false));
+static LOCATION: Sink<TESActorLocationChangeEvent, Recorder<TESActorLocationChangeEvent>> = Sink::new(Recorder::new("location", true));
+static LOCK: Sink<TESLockChangedEvent, Recorder<TESLockChangedEvent>> = Sink::new(Recorder::new("lock", true));
+static INPUT: Sink<InputEventList, Recorder<InputEventList>> = Sink::new(Recorder::new("input", false));
+static SCRATCH: Sink<TESEquipEvent, Recorder<TESEquipEvent>> = Sink::new(Recorder::new("scratch", false));
+
+fn source<E: Event>(name: &str) -> Result<&'static BSTEventSource<E>, String> {
+    E::source().ok_or_else(|| format!("{name}::source() is None"))
+}
+
+fn records(kind: &str) -> Vec<String> {
+    RECEIVED.lock().unwrap().iter().filter(|r| r.kind == kind).map(|r| r.detail.clone()).collect()
+}
+
+fn count(kind: &str) -> usize {
+    RECEIVED.lock().unwrap().iter().filter(|r| r.kind == kind).count()
+}
+
+fn holder() -> Result<String, String> {
+    let holder = EventSourceHolderTes::get();
+    let global = skyrim::reloc().address(globals::g_EventSourceHolder_TES).map_err(|e| e.to_string())?;
+    check(core::ptr::from_ref(holder.raw()) as usize == global, "GetSingleton did not return g_EventSourceHolder_TES")?;
+    let counts: Vec<u32> = (0..56).map(|i| holder.source_at(i).map_or(0, |s| s.sinkCount)).collect();
+    let empty: Vec<usize> = (1..56).filter(|&i| counts[i] == 0).collect();
+    check(empty.is_empty(), &format!("sources without a sink at the main menu: {empty:?}"))?;
+    let vm = skyrim::reloc().address(globals::g_SkyrimVM).map_err(|e| e.to_string())?;
+    let activate = source::<TESActivateEvent>("TESActivateEvent")?;
+    check(activate.sinks().first().copied() == Some((vm + 0x10) as *const _), "sinks[0] of the TESActivateEvent source is not g_SkyrimVM + 0x10")?;
+    let equip = source::<TESEquipEvent>("TESEquipEvent")?;
+    check(core::ptr::from_ref(equip.raw()) as usize == global + 0x478, "the TESEquipEvent source is not holder + 0x478")?;
+    check(holder.source_at(56).is_none(), "source_at(56) returned a source")?;
+    Ok(format!("holder at {global:#x} = g_EventSourceHolder_TES, sink counts {counts:?}; TESActivateEvent sinks[0] = g_SkyrimVM + 0x10, TESEquipEvent source = holder + 0x478"))
+}
+
+fn ui() -> Result<String, String> {
+    let ui = EventSourceHolderMenuOpenClose::get().ok_or("g_EventSourceHolder_MenuOpenClose_ptr is null")?;
+    let open_close = source::<MenuOpenCloseEvent>("MenuOpenCloseEvent")?;
+    let mode = source::<MenuModeChangeEvent>("MenuModeChangeEvent")?;
+    let base = core::ptr::from_ref(ui.raw()) as usize;
+    check(core::ptr::from_ref(open_close.raw()) as usize == base + 8 && core::ptr::from_ref(mode.raw()) as usize == base + 0x60, "the UI sources are not at +8 and +0x60")?;
+    let counts = [open_close.sink_count(), mode.sink_count(), ui.raw().source_unknown_B8.sinkCount];
+    check(counts == [6, 4, 0], &format!("UI sink counts {counts:?}, expected [6, 4, 0] at the main menu with DevBench"))?;
+    let input = source::<InputEventList>("InputEventList")?;
+    let animation = source::<BSAnimationGraphEvent>("BSAnimationGraphEvent")?;
+    let player = PlayerCharacter::get().ok_or("no player")?;
+    let actor_cell = source::<BGSActorCellEvent>("BGSActorCellEvent")?;
+    check(core::ptr::from_ref(actor_cell.raw()) as usize == player.as_ptr() as usize + 0x2E0, "the BGSActorCellEvent source is not player + 0x2e0")?;
+    Ok(format!(
+        "UI at {base:#x}: sinks +8={} +0x60={} +0xb8={} numPausesGame={}; input source sinks={}, animation graph source sinks={}, player BGSActorCellEvent source sinks={}",
+        counts[0],
+        counts[1],
+        counts[2],
+        ui.num_pauses_game(),
+        input.sink_count(),
+        animation.sink_count(),
+        actor_cell.sink_count()
+    ))
+}
+
+fn add_remove() -> Result<String, String> {
+    let src = source::<TESEquipEvent>("TESEquipEvent")?;
+    let before = src.sink_count();
+    let first = src.add_sink(&SCRATCH);
+    check(src.sink_count() == before + 1 && src.contains(&SCRATCH), "AddEventSink did not append the sink")?;
+    check(src.sinks().last().copied() == Some(core::ptr::from_ref(&SCRATCH).cast()), "the sink is not the last entry")?;
+    let second = src.add_sink(&SCRATCH);
+    check(src.sink_count() == before + 1, "a second AddEventSink added the sink again")?;
+    second.leak();
+    drop(first);
+    check(src.sink_count() == before && !src.contains(&SCRATCH), "RemoveEventSink did not restore the array")?;
+    Ok(format!("TESEquipEvent sinks {before} -> {} -> {} (duplicate ignored) -> {before}", before + 1, before + 1))
+}
+
+fn fixed_string() -> Result<String, String> {
+    let keyword = lookup_form_by_editor_id("VendorItemWeapon").and_then(|f| f.as_keyword()).ok_or("VendorItemWeapon did not resolve")?;
+    let name = keyword.name();
+    let before = name.ref_count();
+    let s = BSFixedString::new("VendorItemWeapon");
+    check(s.to_str() == Some("VendorItemWeapon") && s.len() == 16 && !s.is_wide() && !s.is_empty(), &format!("constructed {s:?}"))?;
+    check(s.ptr_eq(name) && s == *name, "the constructed string is not the keyword's entry")?;
+    let pinned = before == skyrim::string::PINNED;
+    let after = s.ref_count();
+    let copy = s.clone();
+    let after_copy = s.ref_count();
+    drop(copy);
+    let after_drop = s.ref_count();
+    if !pinned {
+        check(after == before + 1 && after_copy == before + 2 && after_drop == before + 1, &format!("refcount {before} -> {after} -> {after_copy} -> {after_drop}"))?;
+    }
+    drop(s);
+    let released = name.ref_count();
+    check(pinned || released == before, &format!("refcount after release {released}, before {before}"))?;
+    let folded = BSFixedString::new("vendoritemweapon");
+    check(folded.ptr_eq(name), "interning is not case-folded")?;
+    let fresh = BSFixedString::new("skyrim-rs events probe");
+    check(fresh.ref_count() == 1 && fresh.len() == 22, &format!("fresh entry {fresh:?} refcount {}", fresh.ref_count()))?;
+    let empty = BSFixedString::new("");
+    check(!empty.ptr_eq(&fresh), "the empty string shares the probe's entry")?;
+    Ok(format!(
+        "VendorItemWeapon interned at {:p}: len 16, narrow, refcount {before} -> {after} -> {after_copy} -> {after_drop} -> {released}{}; case-folded lookup shares the entry; fresh entry refcount 1; \"\" -> {empty:?}",
+        name.as_ptr(),
+        if pinned { " (pinned)" } else { "" }
+    ))
+}
+
+fn register() -> Result<String, String> {
+    source::<MenuOpenCloseEvent>("MenuOpenCloseEvent")?.add_sink(&MENU).leak();
+    source::<MenuModeChangeEvent>("MenuModeChangeEvent")?.add_sink(&MENU_MODE).leak();
+    source::<TESEquipEvent>("TESEquipEvent")?.add_sink(&EQUIP).leak();
+    let container = source::<TESContainerChangedEvent>("TESContainerChangedEvent")?;
+    container.add_sink(&CONTAINER_A).leak();
+    *CONTAINER_B_REGISTRATION.lock().unwrap() = Some(container.add_sink(&CONTAINER_B));
+    source::<TESActivateEvent>("TESActivateEvent")?.add_sink(&ACTIVATE).leak();
+    source::<TESHitEvent>("TESHitEvent")?.add_sink(&HIT).leak();
+    source::<TESLoadGameEvent>("TESLoadGameEvent")?.add_sink(&LOAD_GAME).leak();
+    source::<TESCellAttachDetachEvent>("TESCellAttachDetachEvent")?.add_sink(&CELL).leak();
+    source::<BGSActorCellEvent>("BGSActorCellEvent")?.add_sink(&ACTOR_CELL).leak();
+    source::<TESObjectLoadedEvent>("TESObjectLoadedEvent")?.add_sink(&OBJECT_LOADED).leak();
+    source::<BSAnimationGraphEvent>("BSAnimationGraphEvent")?.add_sink(&ANIMATION).leak();
+    source::<TESInitScriptEvent>("TESInitScriptEvent")?.add_sink(&INIT_SCRIPT).leak();
+    source::<TESCombatEvent>("TESCombatEvent")?.add_sink(&COMBAT).leak();
+    source::<TESFurnitureEvent>("TESFurnitureEvent")?.add_sink(&FURNITURE).leak();
+    source::<TESPackageEvent>("TESPackageEvent")?.add_sink(&PACKAGE).leak();
+    source::<TESActorLocationChangeEvent>("TESActorLocationChangeEvent")?.add_sink(&LOCATION).leak();
+    source::<TESLockChangedEvent>("TESLockChangedEvent")?.add_sink(&LOCK).leak();
+    source::<InputEventList>("InputEventList")?.add_sink(&INPUT).leak();
+    check(container.sink_count() >= 2 && container.contains(&CONTAINER_A) && container.contains(&CONTAINER_B), "the two container sinks are not registered")?;
+    Ok(format!("20 sinks registered; TESContainerChangedEvent sinks={} MenuOpenCloseEvent sinks={}", container.sink_count(), source::<MenuOpenCloseEvent>("")?.sink_count()))
+}
+
+fn source_identity() -> Result<String, String> {
+    let received = RECEIVED.lock().unwrap();
+    let mismatched: Vec<&Record> = received.iter().filter(|r| !r.source_ok).collect();
+    check(mismatched.is_empty(), &format!("{} events arrived from another source, first {}: {}", mismatched.len(), mismatched[0].kind, mismatched[0].detail))?;
+    let mut kinds: Vec<(&str, usize)> = Vec::new();
+    for r in received.iter() {
+        match kinds.iter_mut().find(|k| k.0 == r.kind) {
+            Some(k) => k.1 += 1,
+            None => kinds.push((r.kind, 1)),
+        }
+    }
+    Ok(format!("{} events, every one from the source its type names: {}", received.len(), kinds.iter().map(|(k, n)| format!("{k}={n}")).collect::<Vec<_>>().join(" ")))
+}
+
+fn menu_sequence(kind: &str, flag: &str) -> Vec<String> {
+    records(kind)
+        .iter()
+        .filter_map(|d| {
+            let name = d.split('"').nth(1)?;
+            let value = d.split(&format!("{flag}: ")).nth(1)?.trim_end_matches(" }");
+            Some(format!("{name}:{}", u8::from(value == "true")))
+        })
+        .collect()
+}
+
+fn pointer_of(detail: &str) -> Option<&str> {
+    detail.split('@').nth(1)?.split(',').next()
+}
+
+fn menu_open_close() -> Result<String, String> {
+    let menus = records("menu");
+    let open = menus.iter().find(|d| d.starts_with("MenuOpenCloseEvent { menuName: \"TweenMenu\"@") && d.ends_with("opening: true }")).ok_or("no TweenMenu open")?;
+    let close = menus.iter().find(|d| d.starts_with("MenuOpenCloseEvent { menuName: \"TweenMenu\"@") && d.ends_with("opening: false }")).ok_or("no TweenMenu close")?;
+    check(menus.iter().position(|d| d == open) < menus.iter().position(|d| d == close), "the close came before the open")?;
+    let pointer = pointer_of(open).ok_or("no pointer in the record")?;
+    check(pointer_of(close) == Some(pointer), "open and close carried different menuName pointers")?;
+    let interned = BSFixedString::new("TweenMenu");
+    check(format!("{:p}", interned.as_ptr()) == pointer, &format!("BSFixedString::new(\"TweenMenu\") is at {:p}, the event's name at {pointer}", interned.as_ptr()))?;
+    let sequence = menu_sequence("menu", "opening");
+    Ok(format!("{} menu events; TweenMenu open then close with the same interned name {pointer} = BSFixedString::new(\"TweenMenu\"); sequence=[{}]", menus.len(), sequence.join(",")))
+}
+
+fn menu_mode_change() -> Result<String, String> {
+    let sequence = menu_sequence("menu mode", "inMenuMode");
+    let enter = sequence.iter().position(|s| s == "TweenMenu:1").ok_or("no TweenMenu enter")?;
+    let leave = sequence.iter().position(|s| s == "TweenMenu:0").ok_or("no TweenMenu leave")?;
+    check(enter < leave, "the leave came before the enter")?;
+    check(sequence.contains(&"Loading Menu:1".to_owned()) && sequence.contains(&"Loading Menu:0".to_owned()), "no Loading Menu transitions")?;
+    Ok(format!("{} mode changes; TweenMenu 1 then 0; sequence=[{}]", sequence.len(), sequence.join(",")))
+}
+
+fn equip() -> Result<String, String> {
+    let player: Vec<String> = records("equip").into_iter().filter(|d| d.contains("actor: ACHR 00000014")).collect();
+    let on = player.iter().position(|d| d.contains("baseObject: 0001D4EC, originalRefr: 00000000, uniqueID: 0, equipped: true")).ok_or("no torch equip by the player")?;
+    let off = player.iter().position(|d| d.contains("baseObject: 0001D4EC, originalRefr: 00000000, uniqueID: 0, equipped: false")).ok_or("no torch unequip by the player")?;
+    check(on < off, "the unequip came before the equip")?;
+    Ok(format!("{} equip events by the player, {} in all; torch {TORCH} equipped then unequipped: {} | {}", player.len(), count("equip"), player[on], player[off]))
+}
+
+fn container_changed() -> Result<String, String> {
+    let a = records("container A");
+    let added = a.iter().position(|d| d.contains("oldContainer: 00000000, newContainer: 00000014, baseObject: 0000000F, itemCount: 10, reference: 00000000, uniqueID: 0")).ok_or("no AddItem(gold, 10)")?;
+    let removed = a.iter().position(|d| d.contains("oldContainer: 00000014, newContainer: 00000000, baseObject: 0000000F, itemCount: 5, reference: 00000000, uniqueID: 0")).ok_or("no RemoveItem(gold, 5)")?;
+    check(added < removed, "the removal came before the addition")?;
+    Ok(format!("{} container events; gold {GOLD} +10 then -5 on the player: {} | {}", a.len(), a[added], a[removed]))
+}
+
+fn remove_sink() -> Result<String, String> {
+    let b = records("container B");
+    check(b.iter().any(|d| d.contains("itemCount: 10")), "sink B never saw the AddItem(gold, 10)")?;
+    check(!b.iter().any(|d| d.contains("itemCount: 5")), "sink B still received the RemoveItem(gold, 5) after unregistering")?;
+    check(CONTAINER_B_REGISTRATION.lock().unwrap().is_none(), "sink B's registration is still held")?;
+    let src = source::<TESContainerChangedEvent>("TESContainerChangedEvent")?;
+    check(!src.contains(&CONTAINER_B) && src.contains(&CONTAINER_A), "the source still lists sink B, or lost sink A")?;
+    let last = b.last().ok_or("no records")?;
+    check(last.contains("itemCount: 10"), &format!("sink B's last event is not the AddItem: {last}"))?;
+    Ok(format!("sink B received {} events up to the AddItem(gold, 10), unregistered itself from inside ProcessEvent and received nothing after; sink A received {}", b.len(), count("container A")))
+}
+
+fn activate() -> Result<String, String> {
+    let all = records("activate");
+    let marker = all.iter().find(|d| d.contains("objectActivated: STAT 00013806") && d.contains("actionRef: ACHR 00000014")).ok_or("no activation of the COC marker by the player")?;
+    check(all.iter().all(|d| !d.contains("objectActivated: null")), "an activate event had a null objectActivated")?;
+    Ok(format!("{} activate events; {RIVERWOOD_COC_MARKER} activated by the player: {marker}; first {}", all.len(), all[0]))
+}
+
+fn hit() -> Result<String, String> {
+    let hits = records("hit");
+    let flames: Vec<&String> = hits.iter().filter(|d| d.contains("cause: ACHR 00000014, source: 00012FCD, projectile: 00012FCF, flags: 0x0")).collect();
+    check(!flames.is_empty(), &format!("no Flames hit by the player among {} hits", hits.len()))?;
+    check(flames.iter().all(|d| !d.contains("target: null")), "a Flames hit had a null target")?;
+    Ok(format!("{} hit events, {} by the player's Flames {FLAMES} with projectile {FLAMES_PROJECTILE} and no attack flags; first {}", hits.len(), flames.len(), flames[0]))
+}
+
+fn load_game() -> Result<String, String> {
+    let n = count("load game");
+    let loads = LOADS.load(Ordering::Relaxed);
+    check(n == 2 && loads == 2, &format!("{n} TESLoadGameEvent for {loads} loads, expected 2 and 2"))?;
+    Ok(format!("{n} TESLoadGameEvent for {loads} game loads since DataLoaded"))
+}
+
+fn cell_attach_detach() -> Result<String, String> {
+    let cells = records("cell");
+    let attached = cells.iter().filter(|d| d.ends_with("attached: true }")).count();
+    let detached = cells.len() - attached;
+    check(attached > 0 && detached > 0, &format!("{attached} attached, {detached} detached"))?;
+    let bad: Vec<&String> = cells.iter().filter(|d| !(d.contains("reference: REFR ") || d.contains("reference: ACHR "))).collect();
+    check(bad.is_empty(), &format!("{} events with a reference that is not REFR or ACHR, first {}", bad.len(), bad[0]))?;
+    Ok(format!("{} cell events: {attached} attached, {detached} detached, every reference a REFR or ACHR; first {}", cells.len(), cells[0]))
+}
+
+fn actor_cell() -> Result<String, String> {
+    let events = records("actor cell");
+    let player = PlayerCharacter::get().ok_or("no player")?;
+    let handle = player.handle();
+    let entered = events.iter().position(|d| d == &format!("BGSActorCellEvent {{ actorHandle: {handle}, cell: {RIVERWOOD_CELL}, attached: true }}")).ok_or_else(|| format!("no enter of Riverwood by handle {handle}: {events:?}"))?;
+    let left = events.iter().position(|d| d.contains("attached: false")).ok_or("no detach")?;
+    Ok(format!("{} actor cell events: entered Riverwood {RIVERWOOD_CELL} with the player's handle {handle} at #{entered}, a detach at #{left}; sequence {events:?}", events.len()))
+}
+
+fn object_loaded() -> Result<String, String> {
+    let events = records("object loaded");
+    check(events.iter().any(|d| d == "TESObjectLoadedEvent { formID: 00000014, loaded: false }"), "the player was never reported unloaded at the second load")?;
+    let loaded = events.iter().filter(|d| d.ends_with("loaded: true }")).count();
+    Ok(format!("{} object loaded events, {loaded} loaded and {} unloaded, including {{ 0x14, 0 }} before the second load", events.len(), events.len() - loaded))
+}
+
+fn animation_graph() -> Result<String, String> {
+    let events = records("animation");
+    check(!events.is_empty(), "no animation graph events")?;
+    let mut tags: Vec<String> = events.iter().filter_map(|d| d.split('"').nth(1).map(str::to_owned)).collect();
+    tags.sort();
+    tags.dedup();
+    check(!tags.is_empty() && tags.iter().all(|t| !t.is_empty()), "an event had an empty tag")?;
+    check(events.iter().all(|d| !d.contains("holder: 0x0,")), "an event had a null holder")?;
+    Ok(format!("{} animation graph events with {} distinct tags, first {:?}; first event {}", events.len(), tags.len(), &tags[..tags.len().min(8)], events[0]))
+}
+
+fn npc_events() -> Result<String, String> {
+    let kinds = ["combat", "furniture", "package", "location", "lock", "init script", "input"];
+    let counts: Vec<String> = kinds.iter().map(|k| format!("{k}={}", count(k))).collect();
+    let null_actor = RECEIVED.lock().unwrap().iter().filter(|r| ["combat", "furniture", "package", "location"].contains(&r.kind) && r.detail.contains("actor: null")).count();
+    check(null_actor == 0, &format!("{null_actor} NPC events with a null actor"))?;
+    check(count("init script") > 0, "no TESInitScriptEvent")?;
+    let input = records("input");
+    let empty = input.iter().filter(|d| d.contains("events: 0,")).count();
+    Ok(format!("{}; every actor non-null; {empty} input notifications with an empty list, first {:?}", counts.join(" "), input.first()))
+}

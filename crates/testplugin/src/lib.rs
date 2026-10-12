@@ -2,10 +2,10 @@
 //! `PASS name: detail` / `FAIL name: detail` and a `summary <suite> <phase>` line per run.
 //! `forms` runs at `DataLoaded` and after a game is loaded; `actors` runs after a game is loaded
 //! and again when the game is saved, by which time the `DevBench` scenario has put the player into
-//! sneak with the weapon drawn. `scripts/verify.ps1` compares the log against `DevBench`'s answers.
+//! sneak with the weapon drawn; `events` registers its sinks at `DataLoaded` and checks what they
+//! received at the save. `scripts/verify.ps1` compares the log against `DevBench`'s answers.
 
 use std::fs::File;
-use std::io::Write;
 use std::sync::Mutex;
 use std::sync::atomic::Ordering;
 
@@ -22,13 +22,15 @@ static LOG: Mutex<Option<File>> = Mutex::new(None);
 
 macro_rules! log {
     ($($arg:tt) => {
-        if let Some(f) = LOG.lock().unwrap().as_mut() {
+        if let Some(f) = $crate::LOG.lock().unwrap().as_mut() {
+            use ::std::io::Write;
             let _ = writeln!(f, $($arg);
         }
     };
 }
 
 mod actors;
+mod events;
 mod forms;
 
 const PLAYER: FormId = FormId(0x14);
@@ -65,8 +67,12 @@ fn run(suite: &str, phase: &str, tests: &[(&str, Test)]) {
 unsafe extern "C" fn on_message(msg: *mut skse::Message) {
     let msg = unsafe { &*msg };
     match msg.kind {
-        skse::MessagingInterface::DATA_LOADED => run("forms", "dataLoaded", forms::TESTS),
+        skse::MessagingInterface::DATA_LOADED => {
+            run("forms", "dataLoaded", forms::TESTS);
+            run("events", "dataLoaded", events::SETUP);
+        }
         skse::MessagingInterface::POST_LOAD_GAME => {
+            events::LOADS.fetch_add(1, Ordering::Relaxed);
             run("forms", "postLoadGame", forms::TESTS);
             actors::STATE_CHANGED.store(false, Ordering::Relaxed);
             run("actors", "postLoadGame", actors::TESTS);
@@ -74,6 +80,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
         skse::MessagingInterface::SAVE_GAME => {
             actors::STATE_CHANGED.store(true, Ordering::Relaxed);
             run("actors", "saveGame", actors::TESTS);
+            run("events", "saveGame", events::TESTS);
         }
         _ => {}
     }
@@ -90,7 +97,7 @@ fn load(skse: &skse::Interface) -> bool {
         log!("FAIL init: {e}");
         return false;
     }
-    log!("PASS init: skyrim::forms and skyrim::actors ids resolved, module base {:#x}", skyrim::reloc().base());
+    log!("PASS init: skyrim::forms, skyrim::actors and skyrim::events ids resolved, module base {:#x}", skyrim::reloc().base());
     match skse.messaging() {
         Some(m) if m.listen_skse(skse.plugin_handle(), on_message) => true,
         _ => {

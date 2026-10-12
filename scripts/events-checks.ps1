@@ -1,0 +1,33 @@
+# DevBench comparisons for the events suite (step indices of events-steps.json); dot-sourced by verify.ps1.
+# The plugin registers its sinks at DataLoaded and checks what they received at the save that ends the scenario.
+$Phases = "dataLoaded", "saveGame"
+
+$stream = (Get-Content "$OutDir\events.json" -Raw | ConvertFrom-Json).events
+$dataLoadedSeq = ($stream | Where-Object { $_.topic -eq "lifecycle" -and $_.data.event -eq "dataLoaded" } | Select-Object -First 1).seq
+$dbMenus = @($stream | Where-Object { $_.topic -eq "menu" -and $_.seq -gt $dataLoadedSeq } | ForEach-Object { "$($_.data.name):$([int]$_.data.opening)" })
+$pluginMenus = @((Captured (Detail "menu_open_close") 'sequence=\[([^\]]*)\]') -split ',')
+$dbLoads = @($stream | Where-Object { $_.topic -eq "lifecycle" -and $_.data.event -eq "postLoadGame" }).Count
+$dbCells = @($stream | Where-Object { $_.topic -eq "scene.cellLoaded" })
+$pluginLoads = Captured (Detail "load_game") '^(\d+) TESLoadGameEvent'
+function Hex8($n) { "0x" + ("{0:X8}" -f [int]$n) }
+
+$rows = @(
+    @{ name = "menu sequence";   plugin = ($pluginMenus -join ","); devbench = "menu events after dataLoaded (seq $dataLoadedSeq): $($dbMenus -join ',')";
+       ok = ($pluginMenus.Count -gt 0 -and (($pluginMenus -join ",") -eq ($dbMenus -join ","))) }
+    @{ name = "equip";           plugin = (Detail "equip"); devbench = "EquipItem called=$((Step 4).called), UnequipItem called=$((Step 6).called)";
+       ok = ($plugin["equip"].ok -and (Step 4).called -eq $true -and (Step 6).called -eq $true) }
+    @{ name = "container";       plugin = (Detail "container_changed"); devbench = "AddItem called=$((Step 8).called), RemoveItem called=$((Step 10).called), GetItemCount(gold) = $(Returned 12)";
+       ok = ($plugin["container_changed"].ok -and (Returned 12) -eq 145) }
+    @{ name = "menu open/close"; plugin = (Detail "menu_mode_change"); devbench = "menu open: $((Step 13) | ConvertTo-Json -Compress), close: $((Step 15) | ConvertTo-Json -Compress)";
+       ok = ($plugin["menu_open_close"].ok -and $plugin["menu_mode_change"].ok -and $null -ne (Step 13) -and $null -ne (Step 15)) }
+    @{ name = "activate";        plugin = (Detail "activate"); devbench = "ObjectReference.Activate(0x13806, player) = $(Returned 17)";
+       ok = ($plugin["activate"].ok -and (Step 17).called -eq $true) }
+    @{ name = "hit";             plugin = (Detail "hit"); devbench = "Spell.Cast(Flames, player, Alvor) called=$((Step 19).called)";
+       ok = ($plugin["hit"].ok -and (Step 19).called -eq $true) }
+    @{ name = "load game";       plugin = (Detail "load_game"); devbench = "postLoadGame lifecycle events: $dbLoads, cells loaded: $(($dbCells | ForEach-Object { "$($_.data.cell) $(Hex8 $_.data.formID)" }) -join ', ')";
+       ok = ($pluginLoads -eq 2 -and $dbLoads -eq 2 -and $dbCells.Count -eq 2) }
+    @{ name = "actor cell";      plugin = (Detail "actor_cell"); devbench = "scene.cellLoaded formID $(if ($dbCells.Count) { Hex8 $dbCells[0].data.formID })";
+       ok = ($plugin["actor_cell"].ok -and $dbCells.Count -gt 0 -and $dbCells[0].data.formID -eq 0x9732) }
+    @{ name = "save trigger";    plugin = ($summaries -match 'events saveGame') -join ' '; devbench = "console save: $((Step 28) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 29 }).satisfied)";
+       ok = ((($steps | Where-Object { $_.index -eq 29 }).satisfied -eq $true)) }
+)

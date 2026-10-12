@@ -2,7 +2,7 @@
 # plugin's PASS lines with DevBench's own answers from the same session as scripts/<suite>-checks.ps1 lists them.
 # See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
 )
