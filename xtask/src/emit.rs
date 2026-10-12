@@ -489,12 +489,13 @@ fn fn_type(signature: &str, classes: &BTreeMap<&str, Class>) -> Option<String> {
             "bool" => "bool".to_owned(),
             "uchar" => "u8".to_owned(),
             "ushort" => "u16".to_owned(),
-            "uint" => "u32".to_owned(),
-            "int" => "i32".to_owned(),
-            "float" => "f32".to_owned(),
-            "double" => "f64".to_owned(),
-            "ulonglong" => "u64".to_owned(),
-            "longlong" => "i64".to_owned(),
+            "uint" | "u32" => "u32".to_owned(),
+            "int" | "i32" => "i32".to_owned(),
+            "float" | "f32" => "f32".to_owned(),
+            "double" | "f64" => "f64".to_owned(),
+            "ulonglong" | "u64" => "u64".to_owned(),
+            "longlong" | "i64" => "i64".to_owned(),
+            "u8" | "u16" | "i8" | "i16" => base.to_owned(),
             other => (depth > 0).then(|| classes.get(other).map(Class::path))??,
         };
         let mut out = inner;
@@ -505,7 +506,7 @@ fn fn_type(signature: &str, classes: &BTreeMap<&str, Class>) -> Option<String> {
     };
     let (head, tail) = signature.split_once('(')?;
     let params = tail.strip_suffix(')')?;
-    let (ret_c, _) = head.trim().rsplit_once(char::is_whitespace)?;
+    let ret_c = head.trim().rsplit_once(char::is_whitespace).map_or(head.trim(), |(ret, _)| ret);
     let ret = if ret_c.trim() == "void" { String::new() } else { format!(" -> {}", c_type(ret_c)?) };
     let mut args = Vec::new();
     if !matches!(params.trim(), "" | "void") {
