@@ -1,4 +1,4 @@
 /target
 crates/versionlib/tests/data/
 /devbench-out/
-/verify-forms-out/
+/verify-*-out/
