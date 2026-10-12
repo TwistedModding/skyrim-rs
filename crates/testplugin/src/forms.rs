@@ -29,7 +29,7 @@ pub const TESTS: &[(&str, Test)] = &[
 ];
 
 fn names(keywords: &[Option<&skyrim::forms::BGSKeyword>]) -> Vec<String> {
-    keywords.iter().map(|k| k.and_then(|k| k.name()).map_or("null".into(), |n| n.to_string_lossy().into_owned())).collect()
+    keywords.iter().map(|k| k.map_or("null".into(), |k| k.name().to_string())).collect()
 }
 
 fn form_id() -> Result<String, String> {
@@ -73,8 +73,8 @@ fn editor_id_keyword() -> Result<String, String> {
     check(keyword.form_type() == Some(FormType::KYWD), "formType is not KYWD")?;
     let via_slot = keyword.editor_id().map(|s| s.to_string_lossy().into_owned());
     check(via_slot.as_deref() == Some("VendorItemWeapon"), "GetFormEditorID did not return VendorItemWeapon")?;
-    let via_field = keyword.as_keyword().and_then(|k| k.name()).map(|s| s.to_string_lossy().into_owned());
-    check(via_field.as_deref() == Some("VendorItemWeapon"), "BGSKeyword.keyword is not VendorItemWeapon (null before a game is loaded)")?;
+    let via_field = keyword.as_keyword().and_then(|k| k.name().to_str());
+    check(via_field == Some("VendorItemWeapon"), "BGSKeyword.keyword is not VendorItemWeapon (empty before a game is loaded)")?;
     check(lookup_form_by_editor_id("vendoritemweapon").map(TESForm::form_id) == Some(VENDOR_ITEM_WEAPON), "lookup is not case-insensitive")?;
     Ok(format!("formID={} type=4 (KYWD) editor_id=VendorItemWeapon keyword=VendorItemWeapon", keyword.form_id()))
 }

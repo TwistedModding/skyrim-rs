@@ -9,7 +9,9 @@ use std::fmt;
 use std::sync::OnceLock;
 
 pub mod actors;
+pub mod events;
 pub mod forms;
+pub mod string;
 
 #[derive(Debug)]
 pub enum Error {
@@ -42,6 +44,8 @@ struct Runtime {
     reloc: hook::Reloc,
     forms: forms::Fns,
     actors: actors::Fns,
+    events: events::Fns,
+    strings: string::Fns,
 }
 
 static RUNTIME: OnceLock<Runtime> = OnceLock::new();
@@ -73,7 +77,9 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     let reloc = hook::Reloc::open(skse.runtime_version)?;
     let forms = forms::Fns::resolve(&reloc)?;
     let actors = actors::Fns::resolve(&reloc)?;
-    let _ = RUNTIME.set(Runtime { reloc, forms, actors });
+    let events = events::Fns::resolve(&reloc)?;
+    let strings = string::Fns::resolve(&reloc)?;
+    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, strings });
     Ok(())
 }
 

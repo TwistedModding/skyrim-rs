@@ -10,13 +10,14 @@
 //!
 //! Items rated below high confidence in `export/semantic/forms.json` say so in their docs.
 
-use core::ffi::{CStr, c_char, c_void};
+use core::ffi::{CStr, c_void};
 use std::ffi::CString;
 use std::fmt;
 
 use layout::v1_7_104::{classes, enums, fns, globals, vtables};
 
 pub use crate::actors::TESObjectREFR;
+pub use crate::string::BSFixedString;
 pub use enums::{FormType, TESFile_fileFlags as FileFlags, TESForm_formFlags as FormFlags};
 
 /// Light files resolve to `0xFE` in the mod index byte, runtime-created forms to `0xFF`.
@@ -343,11 +344,10 @@ form_class!(
 );
 
 impl BGSKeyword {
-    /// The keyword's editor id from its `keyword` string; null until a game is loaded.
+    /// The keyword's editor id from its `keyword` string; empty until a game is loaded.
     #[must_use]
-    pub fn name(&self) -> Option<&CStr> {
-        let p = self.0.keyword.cast::<c_char>().cast_const();
-        if p.is_null() { None } else { Some(unsafe { CStr::from_ptr(p) }) }
+    pub fn name(&self) -> &BSFixedString {
+        unsafe { BSFixedString::from_ptr((&raw const self.0.keyword).cast()) }
     }
 }
 
