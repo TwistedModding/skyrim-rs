@@ -12,6 +12,7 @@ skse = { path = "crates/skse", version = "0.1.0" }
 versionlib = { path = "crates/versionlib", version = "0.1.0" }
 hook = { path = "crates/hook", version = "0.1.0" }
 layout = { path = "crates/layout", version = "0.1.0" }
+skyrim = { path = "crates/skyrim", version = "0.1.0" }
 windows-sys = "0.61"
 
 [workspace.lints.rust]
