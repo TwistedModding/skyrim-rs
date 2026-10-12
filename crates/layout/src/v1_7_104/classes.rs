@@ -597,15 +597,15 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_88) == 0x88);
 pub struct Actor {
     /// +0x0 `vtbl:Actor:0`, rtti
     pub __vftable: *const vtables::Actor_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Actor:20`, rtti
@@ -945,15 +945,15 @@ const _: () = assert!(core::mem::offset_of!(ActorState, field_C) == 0xC);
 pub struct ActorValueInfo {
     /// +0x0 `vtbl:ActorValueInfo:0`, rtti
     pub __vftable: *const vtables::ActorValueInfo_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ActorValueInfo:20`, rtti
@@ -1185,15 +1185,15 @@ const _: () = assert!(core::mem::offset_of!(AddRagdollHandler, __vftable) == 0x0
 pub struct AlarmPackage {
     /// +0x0 `vtbl:AlarmPackage:0`, rtti
     pub __vftable: *const vtables::AlarmPackage_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
@@ -1262,15 +1262,15 @@ const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_F0) == 0xF0);
 pub struct AlchemyItem {
     /// +0x0 `vtbl:AlchemyItem:0`, rtti
     pub __vftable: *const vtables::AlchemyItem_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -1780,15 +1780,15 @@ const _: () = assert!(core::mem::offset_of!(ArrowDetachHandler, __vftable) == 0x
 pub struct ArrowProjectile {
     /// +0x0 `vtbl:ArrowProjectile:0`, rtti
     pub __vftable: *const vtables::ArrowProjectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ArrowProjectile:20`, rtti
@@ -5285,15 +5285,15 @@ const _: () = assert!(core::mem::offset_of!(BGSAbilityPerkEntry, __vftable) == 0
 pub struct BGSAcousticSpace {
     /// +0x0 `vtbl:BGSAcousticSpace:0`, rtti
     pub __vftable: *const vtables::BGSAcousticSpace_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -5379,18 +5379,18 @@ const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_48) 
 pub struct BGSAction {
     /// +0x0 `vtbl:BGSAction:0`, rtti
     pub __vftable: *const vtables::BGSAction_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `pointer`, base BGSKeyword, semantic
+    /// +0x20 `pointer`, base BGSKeyword, semantic; BSFixedString editor id of the keyword (high)
     pub keyword: *mut c_void,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
@@ -5455,15 +5455,15 @@ const _: () = assert!(core::mem::offset_of!(BGSActionData, field_58) == 0x58);
 pub struct BGSAddonNode {
     /// +0x0 `vtbl:BGSAddonNode:0`, rtti
     pub __vftable: *const vtables::BGSAddonNode_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -5526,15 +5526,15 @@ const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_78) == 0x78);
 pub struct BGSApparatus {
     /// +0x0 `vtbl:BGSApparatus:0`, rtti
     pub __vftable: *const vtables::BGSApparatus_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -5652,15 +5652,15 @@ const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_118) == 0x118);
 pub struct BGSArtObject {
     /// +0x0 `vtbl:BGSArtObject:0`, rtti
     pub __vftable: *const vtables::BGSArtObject_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -5782,15 +5782,15 @@ const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_88) == 
 pub struct BGSAssociationType {
     /// +0x0 `vtbl:BGSAssociationType:0`, rtti
     pub __vftable: *const vtables::BGSAssociationType_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 37],
     /// +0x40 `undefined4`, ctor store
@@ -5936,15 +5936,15 @@ const _: () = assert!(core::mem::offset_of!(BGSBlockBashData, field_10) == 0x10)
 pub struct BGSBodyPartData {
     /// +0x0 `vtbl:BGSBodyPartData:0`, rtti
     pub __vftable: *const vtables::BGSBodyPartData_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSBodyPartData:20`, rtti
@@ -5995,15 +5995,15 @@ const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_80) == 0x80);
 pub struct BGSCameraPath {
     /// +0x0 `vtbl:BGSCameraPath:0`, rtti
     pub __vftable: *const vtables::BGSCameraPath_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 13],
     /// +0x28 `undefined8`, ctor store
@@ -6042,15 +6042,15 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_50) == 0x50);
 pub struct BGSCameraShot {
     /// +0x0 `vtbl:BGSCameraShot:0`, rtti
     pub __vftable: *const vtables::BGSCameraShot_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSCameraShot:20`, rtti
@@ -6129,15 +6129,15 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraShot, field_B8) == 0xB8);
 pub struct BGSCollisionLayer {
     /// +0x0 `vtbl:BGSCollisionLayer:0`, rtti
     pub __vftable: *const vtables::BGSCollisionLayer_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSCollisionLayer:20`, rtti
@@ -6178,15 +6178,15 @@ const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_58) == 0x58
 pub struct BGSColorForm {
     /// +0x0 `vtbl:BGSColorForm:0`, rtti
     pub __vftable: *const vtables::BGSColorForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSColorForm:20`, rtti
@@ -6219,15 +6219,15 @@ const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_32) == 0x32);
 pub struct BGSConstructibleObject {
     /// +0x0 `vtbl:BGSConstructibleObject:0`, rtti
     pub __vftable: *const vtables::BGSConstructibleObject_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, member ctor TESContainer
@@ -6260,15 +6260,15 @@ const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_50) ==
 pub struct BGSDebris {
     /// +0x0 `vtbl:BGSDebris:0`, rtti
     pub __vftable: *const vtables::BGSDebris_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSDebris:20`, rtti
@@ -6416,15 +6416,15 @@ const _: () = assert!(core::mem::offset_of!(BGSDestructibleObjectForm, field_8) 
 pub struct BGSDialogueBranch {
     /// +0x0 `vtbl:BGSDialogueBranch:0`, rtti
     pub __vftable: *const vtables::BGSDialogueBranch_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
@@ -6457,15 +6457,15 @@ const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_38) == 0x38
 pub struct BGSDualCastData {
     /// +0x0 `vtbl:BGSDualCastData:0`, rtti
     pub __vftable: *const vtables::BGSDualCastData_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -6522,15 +6522,15 @@ const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_58) == 0x58);
 pub struct BGSEncounterZone {
     /// +0x0 `vtbl:BGSEncounterZone:0`, rtti
     pub __vftable: *const vtables::BGSEncounterZone_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -6671,15 +6671,15 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointPerkEntry, __vftable) =
 pub struct BGSEquipSlot {
     /// +0x0 `vtbl:BGSEquipSlot:0`, rtti
     pub __vftable: *const vtables::BGSEquipSlot_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
@@ -6720,15 +6720,15 @@ const _: () = assert!(core::mem::offset_of!(BGSEquipType, field_8) == 0x8);
 pub struct BGSExplosion {
     /// +0x0 `vtbl:BGSExplosion:0`, rtti
     pub __vftable: *const vtables::BGSExplosion_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -6828,15 +6828,15 @@ const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_E0) == 0xE0);
 pub struct BGSFootstep {
     /// +0x0 `vtbl:BGSFootstep:0`, rtti
     pub __vftable: *const vtables::BGSFootstep_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -6861,15 +6861,15 @@ const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_28) == 0x28);
 pub struct BGSFootstepSet {
     /// +0x0 `vtbl:BGSFootstepSet:0`, rtti
     pub __vftable: *const vtables::BGSFootstepSet_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 125],
 }
@@ -6888,15 +6888,15 @@ const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, formType) == 0x1A);
 pub struct BGSHazard {
     /// +0x0 `vtbl:BGSHazard:0`, rtti
     pub __vftable: *const vtables::BGSHazard_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -6979,15 +6979,15 @@ const _: () = assert!(core::mem::offset_of!(BGSHazard, field_B0) == 0xB0);
 pub struct BGSHeadPart {
     /// +0x0 `vtbl:BGSHeadPart:0`, rtti
     pub __vftable: *const vtables::BGSHeadPart_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSHeadPart:20`, rtti
@@ -7068,15 +7068,15 @@ const _: () = assert!(core::mem::offset_of!(BGSIdleCollection, field_18) == 0x18
 pub struct BGSIdleMarker {
     /// +0x0 `vtbl:BGSIdleMarker:0`, rtti
     pub __vftable: *const vtables::BGSIdleMarker_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -7136,15 +7136,15 @@ const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_70) == 0x70);
 pub struct BGSImpactData {
     /// +0x0 `vtbl:BGSImpactData:0`, rtti
     pub __vftable: *const vtables::BGSImpactData_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSImpactData:20`, rtti
@@ -7204,15 +7204,15 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_80) == 0x80);
 pub struct BGSImpactDataSet {
     /// +0x0 `vtbl:BGSImpactDataSet:0`, rtti
     pub __vftable: *const vtables::BGSImpactDataSet_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSImpactDataSet:20`, rtti
@@ -7242,24 +7242,25 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_40) == 0x40)
 const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_50) == 0x50);
 
 /// `BGSKeyword`: size 0x28 (exact, medium); primary base `TESForm`.
+/// Meaning: KYWD form (medium, forms pass).
 /// Evidence: runtime: 0x28 at 1 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct BGSKeyword {
     /// +0x0 `vtbl:BGSKeyword:0`, rtti
     pub __vftable: *const vtables::BGSKeyword_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `pointer`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x20 `pointer`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; BSFixedString editor id of the keyword (high)
     pub keyword: *mut c_void,
 }
 const _: () = assert!(size_of::<BGSKeyword>() == 0x28);
@@ -7272,15 +7273,16 @@ const _: () = assert!(core::mem::offset_of!(BGSKeyword, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSKeyword, keyword) == 0x20);
 
 /// `BGSKeywordForm`: size 0x18 (exact, medium); primary base `BaseFormComponent`.
+/// Meaning: component carrying a form's keyword array (high, forms pass).
 /// Evidence: runtime: 0x18 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct BGSKeywordForm {
     /// +0x0 `vtbl:BGSKeywordForm:0`, rtti
     pub __vftable: *const vtables::BGSKeywordForm_vtable,
-    /// +0x8 `pointer`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x8 `pointer`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
-    /// +0x10 `undefined4`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x10 `undefined4`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_14: [u8; 4],
 }
@@ -7297,15 +7299,15 @@ const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, numKeywords) == 0x10
 pub struct BGSLightingTemplate {
     /// +0x0 `vtbl:BGSLightingTemplate:0`, rtti
     pub __vftable: *const vtables::BGSLightingTemplate_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -7351,26 +7353,27 @@ const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_74) == 0x
 const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_78) == 0x78);
 
 /// `BGSListForm`: size 0x48 (exact, high); primary base `TESForm`.
+/// Meaning: FLST form (high, forms pass).
 /// Evidence: runtime: 0x48 at 3 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct BGSListForm {
     /// +0x0 `vtbl:BGSListForm:0`, rtti
     pub __vftable: *const vtables::BGSListForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `class:BSTArray`, semantic, semantic, semantic, semantic, semantic, semantic
+    /// +0x20 `class:BSTArray`, semantic, semantic, semantic, semantic, semantic, semantic; BSTArray<TESForm*> of the list entries (high)
     pub forms: BSTArray,
-    /// +0x38 `pointer`, ctor store, semantic, semantic, semantic, semantic, semantic, semantic
+    /// +0x38 `pointer`, ctor store, semantic, semantic, semantic, semantic, semantic, semantic; array of script-added form ids {uint* ids @0, uint count @0x10}, null when none (medium)
     pub addedForms: *mut c_void,
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
@@ -7465,15 +7468,15 @@ const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_58) == 0x58);
 pub struct BGSLocation {
     /// +0x0 `vtbl:BGSLocation:0`, rtti
     pub __vftable: *const vtables::BGSLocation_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSLocation:20`, rtti
@@ -7546,18 +7549,18 @@ const _: () = assert!(core::mem::offset_of!(BGSLocation, field_EC) == 0xEC);
 pub struct BGSLocationRefType {
     /// +0x0 `vtbl:BGSLocationRefType:0`, rtti
     pub __vftable: *const vtables::BGSLocationRefType_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `pointer`, base BGSKeyword, semantic
+    /// +0x20 `pointer`, base BGSKeyword, semantic; BSFixedString editor id of the keyword (high)
     pub keyword: *mut c_void,
 }
 const _: () = assert!(size_of::<BGSLocationRefType>() == 0x28);
@@ -7577,15 +7580,15 @@ const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, keyword) == 0x20
 pub struct BGSMaterialObject {
     /// +0x0 `vtbl:BGSMaterialObject:0`, rtti
     pub __vftable: *const vtables::BGSMaterialObject_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMaterialObject:20`, rtti
@@ -7644,15 +7647,15 @@ const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_7C) == 0x7C
 pub struct BGSMaterialType {
     /// +0x0 `vtbl:BGSMaterialType:0`, rtti
     pub __vftable: *const vtables::BGSMaterialType_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -7706,15 +7709,15 @@ const _: () = assert!(core::mem::offset_of!(BGSMenuDisplayObject, field_8) == 0x
 pub struct BGSMessage {
     /// +0x0 `vtbl:BGSMessage:0`, rtti
     pub __vftable: *const vtables::BGSMessage_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMessage:20`, rtti
@@ -7855,15 +7858,15 @@ const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_A8) == 0xA8)
 pub struct BGSMovementType {
     /// +0x0 `vtbl:BGSMovementType:0`, rtti
     pub __vftable: *const vtables::BGSMovementType_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -8107,15 +8110,15 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicTrack, field_18) == 0x18);
 pub struct BGSMusicTrackFormWrapper {
     /// +0x0 `vtbl:BGSMusicTrackFormWrapper:0`, rtti
     pub __vftable: *const vtables::BGSMusicTrackFormWrapper_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMusicTrackFormWrapper:20`, rtti
@@ -8145,15 +8148,15 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, field_30) 
 pub struct BGSMusicType {
     /// +0x0 `vtbl:BGSMusicType:0`, rtti
     pub __vftable: *const vtables::BGSMusicType_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMusicType:20`, rtti
@@ -8244,15 +8247,15 @@ const _: () = assert!(core::mem::offset_of!(BGSOpenCloseForm, __vftable) == 0x0)
 pub struct BGSOutfit {
     /// +0x0 `vtbl:BGSOutfit:0`, rtti
     pub __vftable: *const vtables::BGSOutfit_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
@@ -8522,15 +8525,15 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleObjectCloneTask, __vftabl
 pub struct BGSPerk {
     /// +0x0 `vtbl:BGSPerk:0`, rtti
     pub __vftable: *const vtables::BGSPerk_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSPerk:20`, rtti
@@ -10783,15 +10786,15 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureWanderExecState, field_2
 pub struct BGSProjectile {
     /// +0x0 `vtbl:BGSProjectile:0`, rtti
     pub __vftable: *const vtables::BGSProjectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -11100,15 +11103,15 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainUpgrade, field_14) =
 pub struct BGSRagdoll {
     /// +0x0 `vtbl:BGSRagdoll:0`, rtti
     pub __vftable: *const vtables::BGSRagdoll_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSRagdoll:20`, rtti
@@ -11272,15 +11275,15 @@ const _: () = assert!(core::mem::offset_of!(BGSRefAlias, field_40) == 0x40);
 pub struct BGSReferenceEffect {
     /// +0x0 `vtbl:BGSReferenceEffect:0`, rtti
     pub __vftable: *const vtables::BGSReferenceEffect_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -11309,15 +11312,15 @@ const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_30) == 0x3
 pub struct BGSRelationship {
     /// +0x0 `vtbl:BGSRelationship:0`, rtti
     pub __vftable: *const vtables::BGSRelationship_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -11349,15 +11352,15 @@ const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_38) == 0x38);
 pub struct BGSReverbParameters {
     /// +0x0 `vtbl:BGSReverbParameters:0`, rtti
     pub __vftable: *const vtables::BGSReverbParameters_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSReverbParameters:20`, rtti
@@ -11597,15 +11600,15 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_410) == 0x
 pub struct BGSScene {
     /// +0x0 `vtbl:BGSScene:0`, rtti
     pub __vftable: *const vtables::BGSScene_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
@@ -11728,15 +11731,15 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneActionTimer, field_28) == 0x
 pub struct BGSShaderParticleGeometryData {
     /// +0x0 `vtbl:BGSShaderParticleGeometryData:0`, rtti
     pub __vftable: *const vtables::BGSShaderParticleGeometryData_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
@@ -11814,15 +11817,15 @@ const _: () = assert!(core::mem::offset_of!(BGSSkinForm, field_8) == 0x8);
 pub struct BGSSoundCategory {
     /// +0x0 `vtbl:BGSSoundCategory:0`, rtti
     pub __vftable: *const vtables::BGSSoundCategory_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSSoundCategory:20`, rtti
@@ -11878,15 +11881,15 @@ const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptor, __vftable) == 0x
 pub struct BGSSoundDescriptorForm {
     /// +0x0 `vtbl:BGSSoundDescriptorForm:0`, rtti
     pub __vftable: *const vtables::BGSSoundDescriptorForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSSoundDescriptorForm:20`, rtti
@@ -11911,15 +11914,15 @@ const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, field_28) ==
 pub struct BGSSoundOutput {
     /// +0x0 `vtbl:BGSSoundOutput:0`, rtti
     pub __vftable: *const vtables::BGSSoundOutput_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSSoundOutput:20`, rtti
@@ -12003,15 +12006,15 @@ const _: () = assert!(core::mem::offset_of!(BGSStandardSoundDef, field_54) == 0x
 pub struct BGSStoryManagerBranchNode {
     /// +0x0 `vtbl:BGSStoryManagerBranchNode:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerBranchNode_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 69],
 }
@@ -12030,15 +12033,15 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, formType)
 pub struct BGSStoryManagerEventNode {
     /// +0x0 `vtbl:BGSStoryManagerEventNode:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerEventNode_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 77],
 }
@@ -12057,15 +12060,15 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, formType) 
 pub struct BGSStoryManagerNodeBase {
     /// +0x0 `vtbl:BGSStoryManagerNodeBase:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerNodeBase_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 197],
 }
@@ -12100,15 +12103,15 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestFinder, field_30
 pub struct BGSStoryManagerQuestNode {
     /// +0x0 `vtbl:BGSStoryManagerQuestNode:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerQuestNode_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 197],
 }
@@ -12127,15 +12130,15 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, formType) 
 pub struct BGSStoryManagerTreeForm {
     /// +0x0 `vtbl:BGSStoryManagerTreeForm:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerTreeForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
 }
@@ -12280,15 +12283,15 @@ const _: () = assert!(core::mem::offset_of!(BGSSynchronizedAnimationInstance, fi
 pub struct BGSTalkingActivator {
     /// +0x0 `vtbl:BGSTalkingActivator:0`, rtti
     pub __vftable: *const vtables::BGSTalkingActivator_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -12381,15 +12384,15 @@ const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_D0) == 0x
 pub struct BGSTextureSet {
     /// +0x0 `vtbl:BGSTextureSet:0`, rtti
     pub __vftable: *const vtables::BGSTextureSet_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -12918,15 +12921,15 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureWanderExecS
 pub struct BGSVoiceType {
     /// +0x0 `vtbl:BGSVoiceType:0`, rtti
     pub __vftable: *const vtables::BGSVoiceType_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined1`, ctor store
@@ -12956,15 +12959,15 @@ const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_30) == 0x30);
 pub struct BGSVolumetricLighting {
     /// +0x0 `vtbl:BGSVolumetricLighting:0`, rtti
     pub __vftable: *const vtables::BGSVolumetricLighting_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 53],
 }
@@ -42932,12 +42935,13 @@ const _: () = assert!(core::mem::offset_of!(BSRangeNode, field_124) == 0x124);
 const _: () = assert!(core::mem::offset_of!(BSRangeNode, field_128) == 0x128);
 
 /// `BSReadWriteLock`: size 0x8 (exact).
+/// Meaning: recursive reader/writer spin lock (high, forms pass).
 /// Evidence: recursive reader/writer spin lock; 0xce3250/0xce3510 (read) and 0xce32d0/0xce3520 (write) operate on a thread id at +0 and a count at +4 with 0x80000000 marking a writer.
 #[repr(C)]
 pub struct BSReadWriteLock {
-    /// +0x0 `undefined4`, semantic
+    /// +0x0 `undefined4`, semantic; thread id of the writer, 0 when none (high)
     pub writerThread: u32,
-    /// +0x4 `undefined4`, semantic
+    /// +0x4 `undefined4`, semantic; reader count, or 0x80000000 | depth while written (high)
     pub lockCount: u32,
 }
 const _: () = assert!(size_of::<BSReadWriteLock>() == 0x8);
@@ -55965,12 +55969,13 @@ const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_54C) =
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_558) == 0x558);
 
 /// `BSSimpleListNode`: size 0x10 (exact).
+/// Meaning: list node: item pointer then next pointer; the head node is embedded in the owner (high, forms pass).
 /// Evidence: list node: item pointer then next pointer; the head node is embedded in the owner; node of the singly linked lists in TESDataHandler (+0xd60, 0x10-byte nodes freed in 0x1b6530 and 0x1ce6f0) and TESFile (+0x440); run-forms peek dh-menu +0xd60 = item 0x2434fa63070 (Skyrim.esm), next 0x24366971290 whose item is Update.esm (filelist-node1).
 #[repr(C)]
 pub struct BSSimpleListNode {
-    /// +0x0 `pointer`, semantic
+    /// +0x0 `pointer`, semantic; the element (high)
     pub item: *mut c_void,
-    /// +0x8 `pointer`, semantic
+    /// +0x8 `pointer`, semantic; next node or null (high)
     pub next: *mut c_void,
 }
 const _: () = assert!(size_of::<BSSimpleListNode>() == 0x10);
@@ -56909,15 +56914,16 @@ const _: () = assert!(size_of::<BSTAnimationGraphDataChannel_Actor_float_ActorTu
 const _: () = assert!(core::mem::offset_of!(BSTAnimationGraphDataChannel_Actor_float_ActorTurnDeltaChannel, __vftable) == 0x0);
 
 /// `BSTArray`: size 0x18 (exact).
+/// Meaning: growable array of 8-byte elements with a heap allocator; the element type is given per field (high, forms pass).
 /// Evidence: growable array of 8-byte elements with a heap allocator; the element type is given per field; layout from the array code in 0x1bfa80 and 0x1bdb30 (data at +0, capacity at +8, size at +0x10 passed to the grow helper); the form arrays in TESDataHandler sit at that stride and their live data/capacity/size triples were read in run-forms (dh-menu: KYWD data=0x242c7021de0 cap=2048 size=1290).
 #[repr(C)]
 pub struct BSTArray {
-    /// +0x0 `pointer`, semantic
+    /// +0x0 `pointer`, semantic; element array (high)
     pub data: *mut c_void,
-    /// +0x8 `undefined4`, semantic
+    /// +0x8 `undefined4`, semantic; allocated elements (high)
     pub capacity: u32,
     pub unknown_C: [u8; 4],
-    /// +0x10 `undefined4`, semantic
+    /// +0x10 `undefined4`, semantic; used elements (high)
     pub size: u32,
     pub unknown_14: [u8; 4],
 }
@@ -61378,15 +61384,15 @@ const _: () = assert!(core::mem::offset_of!(BanishEffect, field_94) == 0x94);
 pub struct BarrierProjectile {
     /// +0x0 `vtbl:BarrierProjectile:0`, rtti
     pub __vftable: *const vtables::BarrierProjectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BarrierProjectile:20`, rtti
@@ -61826,15 +61832,15 @@ const _: () = assert!(core::mem::offset_of!(BasicArrayImplementation_unsigned_ch
 pub struct BeamProjectile {
     /// +0x0 `vtbl:BeamProjectile:0`, rtti
     pub __vftable: *const vtables::BeamProjectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BeamProjectile:20`, rtti
@@ -62665,15 +62671,15 @@ const _: () = assert!(core::mem::offset_of!(CellMopp, field_EC) == 0xEC);
 pub struct ChainExplosion {
     /// +0x0 `vtbl:ChainExplosion:0`, rtti
     pub __vftable: *const vtables::ChainExplosion_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ChainExplosion:20`, rtti
@@ -62896,15 +62902,15 @@ const _: () = assert!(core::mem::offset_of!(ChairFurnitureExitHandler, __vftable
 pub struct Character {
     /// +0x0 `vtbl:Character:0`, rtti
     pub __vftable: *const vtables::Character_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Character:20`, rtti
@@ -75093,15 +75099,15 @@ const _: () = assert!(core::mem::offset_of!(ConcussionEffect, field_88) == 0x88)
 pub struct ConeProjectile {
     /// +0x0 `vtbl:ConeProjectile:0`, rtti
     pub __vftable: *const vtables::ConeProjectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ConeProjectile:20`, rtti
@@ -77367,15 +77373,15 @@ const _: () = assert!(core::mem::offset_of!(DetectionState, field_44) == 0x44);
 pub struct DialoguePackage {
     /// +0x0 `vtbl:DialoguePackage:0`, rtti
     pub __vftable: *const vtables::DialoguePackage_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
@@ -78086,15 +78092,15 @@ const _: () = assert!(core::mem::offset_of!(DualValueModifierEffect, field_98) =
 pub struct EffectSetting {
     /// +0x0 `vtbl:EffectSetting:0`, rtti
     pub __vftable: *const vtables::EffectSetting_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:EffectSetting:20`, rtti
@@ -78276,15 +78282,15 @@ const _: () = assert!(core::mem::offset_of!(EnableCharacterPitchHandler, __vftab
 pub struct EnchantmentItem {
     /// +0x0 `vtbl:EnchantmentItem:0`, rtti
     pub __vftable: *const vtables::EnchantmentItem_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -78635,15 +78641,15 @@ const _: () = assert!(core::mem::offset_of!(ExitCartEndHandler, __vftable) == 0x
 pub struct Explosion {
     /// +0x0 `vtbl:Explosion:0`, rtti
     pub __vftable: *const vtables::Explosion_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Explosion:20`, rtti
@@ -80882,15 +80888,15 @@ const _: () = assert!(core::mem::offset_of!(FirstPersonState, __vftable_20) == 0
 pub struct FlameProjectile {
     /// +0x0 `vtbl:FlameProjectile:0`, rtti
     pub __vftable: *const vtables::FlameProjectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:FlameProjectile:20`, rtti
@@ -81099,15 +81105,15 @@ const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_1E0) == 0x1E0
 pub struct FleePackage {
     /// +0x0 `vtbl:FleePackage:0`, rtti
     pub __vftable: *const vtables::FleePackage_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
@@ -81954,15 +81960,15 @@ const _: () = assert!(core::mem::offset_of!(GrabActorEffect, field_94) == 0x94);
 pub struct GrenadeProjectile {
     /// +0x0 `vtbl:GrenadeProjectile:0`, rtti
     pub __vftable: *const vtables::GrenadeProjectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:GrenadeProjectile:20`, rtti
@@ -82625,15 +82631,15 @@ const _: () = assert!(core::mem::offset_of!(HavokStreambufFactory, __vftable) ==
 pub struct Hazard {
     /// +0x0 `vtbl:Hazard:0`, rtti
     pub __vftable: *const vtables::Hazard_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Hazard:20`, rtti
@@ -85741,15 +85747,15 @@ const _: () = assert!(core::mem::offset_of!(InfiniteList, field_80) == 0x80);
 pub struct IngredientItem {
     /// +0x0 `vtbl:IngredientItem:0`, rtti
     pub __vftable: *const vtables::IngredientItem_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -87908,15 +87914,15 @@ const _: () = assert!(core::mem::offset_of!(MagicCaster, field_44) == 0x44);
 pub struct MagicItem {
     /// +0x0 `vtbl:MagicItem:0`, rtti
     pub __vftable: *const vtables::MagicItem_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -88918,15 +88924,15 @@ const _: () = assert!(core::mem::offset_of!(MessageHandler, field_20) == 0x20);
 pub struct MissileProjectile {
     /// +0x0 `vtbl:MissileProjectile:0`, rtti
     pub __vftable: *const vtables::MissileProjectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:MissileProjectile:20`, rtti
@@ -91803,15 +91809,15 @@ const _: () = assert!(core::mem::offset_of!(NPCDetachHandler, __vftable) == 0x0)
 pub struct NavMesh {
     /// +0x0 `vtbl:NavMesh:0`, rtti
     pub __vftable: *const vtables::NavMesh_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:NavMesh:20`, rtti
@@ -91851,15 +91857,15 @@ const _: () = assert!(core::mem::offset_of!(NavMesh, field_138) == 0x138);
 pub struct NavMeshInfoMap {
     /// +0x0 `vtbl:NavMeshInfoMap:0`, rtti
     pub __vftable: *const vtables::NavMeshInfoMap_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:NavMeshInfoMap:20`, rtti
@@ -102516,15 +102522,15 @@ const _: () = assert!(core::mem::offset_of!(PlayerChairEnterHandler, __vftable) 
 pub struct PlayerCharacter {
     /// +0x0 `vtbl:PlayerCharacter:0`, rtti
     pub __vftable: *const vtables::PlayerCharacter_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:PlayerCharacter:20`, rtti
@@ -103442,15 +103448,15 @@ const _: () = assert!(core::mem::offset_of!(Precipitation, field_88) == 0x88);
 pub struct Projectile {
     /// +0x0 `vtbl:Projectile:0`, rtti
     pub __vftable: *const vtables::Projectile_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Projectile:20`, rtti
@@ -105170,15 +105176,15 @@ const _: () = assert!(core::mem::offset_of!(ScreenshotHandler, __vftable) == 0x0
 pub struct Script {
     /// +0x0 `vtbl:Script:0`, rtti
     pub __vftable: *const vtables::Script_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -105325,15 +105331,15 @@ const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_98) == 0x98);
 pub struct ScrollItem {
     /// +0x0 `vtbl:ScrollItem:0`, rtti
     pub __vftable: *const vtables::ScrollItem_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -107069,15 +107075,15 @@ const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_88) == 0x88
 pub struct SpectatorPackage {
     /// +0x0 `vtbl:SpectatorPackage:0`, rtti
     pub __vftable: *const vtables::SpectatorPackage_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
@@ -107165,15 +107171,15 @@ const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_118) == 0x11
 pub struct SpellItem {
     /// +0x0 `vtbl:SpellItem:0`, rtti
     pub __vftable: *const vtables::SpellItem_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -108531,15 +108537,15 @@ const _: () = assert!(core::mem::offset_of!(TES, field_2B8) == 0x2B8);
 pub struct TESActorBase {
     /// +0x0 `vtbl:TESActorBase:0`, rtti
     pub __vftable: *const vtables::TESActorBase_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -108705,15 +108711,15 @@ const _: () = assert!(core::mem::offset_of!(TESAmbushPackageData, field_8) == 0x
 pub struct TESAmmo {
     /// +0x0 `vtbl:TESAmmo:0`, rtti
     pub __vftable: *const vtables::TESAmmo_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -108839,15 +108845,15 @@ const _: () = assert!(core::mem::offset_of!(TESAttackDamageForm, field_8) == 0x8
 pub struct TESBoundAnimObject {
     /// +0x0 `vtbl:TESBoundAnimObject:0`, rtti
     pub __vftable: *const vtables::TESBoundAnimObject_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -108885,15 +108891,15 @@ const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_2A) == 0x2
 pub struct TESBoundObject {
     /// +0x0 `vtbl:TESBoundObject:0`, rtti
     pub __vftable: *const vtables::TESBoundObject_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, ctor store
@@ -108979,15 +108985,15 @@ const _: () = assert!(core::mem::offset_of!(TESChildCell, __vftable) == 0x0);
 pub struct TESClass {
     /// +0x0 `vtbl:TESClass:0`, rtti
     pub __vftable: *const vtables::TESClass_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESClass:20`, rtti
@@ -109040,15 +109046,15 @@ const _: () = assert!(core::mem::offset_of!(TESClass, field_70) == 0x70);
 pub struct TESClimate {
     /// +0x0 `vtbl:TESClimate:0`, rtti
     pub __vftable: *const vtables::TESClimate_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `class:TESModel`, member ctor TESModel
@@ -109078,15 +109084,15 @@ const _: () = assert!(core::mem::offset_of!(TESClimate, field_7C) == 0x7C);
 pub struct TESCombatStyle {
     /// +0x0 `vtbl:TESCombatStyle:0`, rtti
     pub __vftable: *const vtables::TESCombatStyle_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store (widths [4, 16])
@@ -109241,40 +109247,41 @@ const _: () = assert!(core::mem::offset_of!(TESCustomPackageData, field_30) == 0
 const _: () = assert!(core::mem::offset_of!(TESCustomPackageData, field_38) == 0x38);
 
 /// `TESDataHandler`: size 0xDD8 (exact).
+/// Meaning: the loaded files and the per-type form arrays; one static instance (high, forms pass).
 /// Evidence: the loaded files and the per-type form arrays; one static instance; static object at rva 0x21a2890 (placeholder ID_400457), constructed by 0x1b6290 with this=0x21a2890 (hit dump 01-menu: 1 hit, caller TES::ctor 0x19f45f, arg 21a2890); the ctor initialises fields up to 0xdd0 and the next static symbol lies at 0x21a3668 = +0xdd8; run-forms peek dh-menu read 0xdd8 bytes consistent with every field below.
 #[repr(C)]
 pub struct TESDataHandler {
     pub unknown_0: [u8; 16],
-    /// +0x10 `undefined1`, semantic
+    /// +0x10 `undefined1`, semantic; BSTArray<TESForm*>[138] indexed by FormType, stride 0x18 (high)
     pub formArrays: [u8; 3312],
-    /// +0xD00 `ptr:TESRegionList`, semantic
+    /// +0xD00 `ptr:TESRegionList`, semantic; region list (high)
     pub regionList: *mut TESRegionList,
-    /// +0xD08 `undefined1`, semantic
+    /// +0xD08 `undefined1`, semantic; NiTPrimitiveArray<TESObjectCELL*>: vtable, data, size, capacity (medium)
     pub cells: [u8; 24],
-    /// +0xD20 `undefined1`, semantic
+    /// +0xD20 `undefined1`, semantic; NiTPrimitiveArray<BGSAddonNode*> (medium)
     pub addonNodes: [u8; 24],
     pub unknown_D38: [u8; 24],
-    /// +0xD50 `undefined4`, semantic
+    /// +0xD50 `undefined4`, semantic; next form id for runtime-created forms, in the 0xFF load index (high)
     pub nextFormID: u32,
     pub unknown_D54: [u8; 4],
-    /// +0xD58 `ptr:TESFile`, semantic
+    /// +0xD58 `ptr:TESFile`, semantic; file currently being loaded, null outside loading (medium)
     pub activeFile: *mut TESFile,
-    /// +0xD60 `class:BSSimpleListNode`, semantic
+    /// +0xD60 `class:BSSimpleListNode`, semantic; head node of the list of every TESFile found in Data, masters first (high)
     pub files: BSSimpleListNode,
-    /// +0xD70 `class:BSTArray`, semantic
+    /// +0xD70 `class:BSTArray`, semantic; BSTArray<TESFile*> of regular files; the index is the file's compile index (high)
     pub compiledFiles: BSTArray,
-    /// +0xD88 `class:BSTArray`, semantic
+    /// +0xD88 `class:BSTArray`, semantic; BSTArray<TESFile*> of light files; the index is the file's light index (high)
     pub lightFiles: BSTArray,
     pub unknown_DA0: [u8; 8],
-    /// +0xDA8 `undefined1`, semantic
+    /// +0xDA8 `undefined1`, semantic; when set, new forms get no id and are not registered (medium)
     pub skipFormRegistration: u8,
-    /// +0xDA9 `undefined1`, semantic
+    /// +0xDA9 `undefined1`, semantic; when set, freed form ids are not reused (medium)
     pub lockNextFormID: u8,
     pub unknown_DAA: [u8; 6],
-    /// +0xDB0 `ptr:TESRegionDataManager`, semantic
+    /// +0xDB0 `ptr:TESRegionDataManager`, semantic; region data manager (high)
     pub regionDataManager: *mut TESRegionDataManager,
     pub unknown_DB8: [u8; 8],
-    /// +0xDC0 `class:BSTArray`, semantic
+    /// +0xDC0 `class:BSTArray`, semantic; BSTArray<TESFile*> of the files named by the plugin list (medium)
     pub selectedFiles: BSTArray,
 }
 const _: () = assert!(size_of::<TESDataHandler>() == 0xDD8);
@@ -109360,20 +109367,21 @@ const _: () = assert!(core::mem::offset_of!(TESEatPackageData, __vftable) == 0x0
 const _: () = assert!(core::mem::offset_of!(TESEatPackageData, field_8) == 0x8);
 
 /// `TESEditorIDMap`: size 0x30 (exact).
+/// Meaning: hash map editor id to TESForm*; only forms whose class implements GetFormEditorID are in it (high, forms pass).
 /// Evidence: hash map editor id to TESForm*; only forms whose class implements GetFormEditorID are in it; same box layout as TESFormIDMap, allocated by 0x1e6eb0 with capacity 0x1000 and grown since (run-forms peek edidmap: cap=32768 free=10969 sentinel=rva 0x2078f38); keys are BSFixedString (interned char*, compared by pointer in 0x1e7bf0).
 #[repr(C)]
 pub struct TESEditorIDMap {
     pub unknown_0: [u8; 12],
-    /// +0xC `undefined4`, semantic
+    /// +0xC `undefined4`, semantic; bucket count, a power of two (high)
     pub capacity: u32,
-    /// +0x10 `undefined4`, semantic
+    /// +0x10 `undefined4`, semantic; unused buckets (high)
     pub free: u32,
-    /// +0x14 `undefined4`, semantic
+    /// +0x14 `undefined4`, semantic; scan position for the next free bucket (medium)
     pub freeScan: u32,
-    /// +0x18 `pointer`, semantic
+    /// +0x18 `pointer`, semantic; end-of-chain marker (a static byte in .rdata) (high)
     pub sentinel: *mut c_void,
     pub unknown_20: [u8; 8],
-    /// +0x28 `pointer`, semantic
+    /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
     pub entries: *mut c_void,
 }
 const _: () = assert!(size_of::<TESEditorIDMap>() == 0x30);
@@ -109384,14 +109392,15 @@ const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, sentinel) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, entries) == 0x28);
 
 /// `TESEditorIDMapEntry`: size 0x18 (exact).
+/// Meaning: editor id map bucket (high, forms pass).
 /// Evidence: editor id map bucket; entry layout from 0x1e7bf0 and 0x1c5fb0 (BSFixedString key at +0, TESForm* at +8, chain at +0x10).
 #[repr(C)]
 pub struct TESEditorIDMapEntry {
-    /// +0x0 `pointer`, semantic
+    /// +0x0 `pointer`, semantic; BSFixedString key (interned, case-insensitive) (high)
     pub editorID: *mut c_void,
-    /// +0x8 `ptr:TESForm`, semantic
+    /// +0x8 `ptr:TESForm`, semantic; value (high)
     pub form: *mut TESForm,
-    /// +0x10 `pointer`, semantic
+    /// +0x10 `pointer`, semantic; chain (high)
     pub next: *mut c_void,
 }
 const _: () = assert!(size_of::<TESEditorIDMapEntry>() == 0x18);
@@ -109407,15 +109416,15 @@ const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, next) == 0x10);
 pub struct TESEffectShader {
     /// +0x0 `vtbl:TESEffectShader:0`, rtti
     pub __vftable: *const vtables::TESEffectShader_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 153],
     /// +0xB4 `undefined8`, ctor store
@@ -109480,15 +109489,15 @@ const _: () = assert!(core::mem::offset_of!(TESEscortPackageData, field_10) == 0
 pub struct TESEyes {
     /// +0x0 `vtbl:TESEyes:0`, rtti
     pub __vftable: *const vtables::TESEyes_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESEyes:20`, rtti
@@ -109519,15 +109528,15 @@ const _: () = assert!(core::mem::offset_of!(TESEyes, field_40) == 0x40);
 pub struct TESFaction {
     /// +0x0 `vtbl:TESFaction:0`, rtti
     pub __vftable: *const vtables::TESFaction_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESFaction:20`, rtti
@@ -109629,36 +109638,37 @@ const _: () = assert!(core::mem::offset_of!(TESFaction, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(TESFaction, field_FC) == 0xFC);
 
 /// `TESFile`: size 0x4C8 (exact).
+/// Meaning: one loaded plugin file (high, forms pass).
 /// Evidence: one loaded plugin file; 0x4c8 bytes: allocated with 0x4c8 in 0x1cf680 and freed with 0x4c8 in 0x1ce6f0 and 0x1bdd00; the ctor 0x1c9b20 was hit 10 times in run-forms, once per plugin in the Data folder; name and index fields read live (file-skyrim, file-update, file-curios, file-fish, cfile-*, lfile-*).
 #[repr(C)]
 pub struct TESFile {
     pub unknown_0: [u8; 88],
-    /// +0x58 `undefined1`, semantic
+    /// +0x58 `undefined1`, semantic; file name, NUL-terminated (high)
     pub name: [u8; 260],
-    /// +0x15C `undefined1`, semantic
+    /// +0x15C `undefined1`, semantic; directory of the file (high)
     pub path: [u8; 260],
     pub unknown_260: [u8; 460],
-    /// +0x42C `float`, semantic
+    /// +0x42C `float`, semantic; header version (medium)
     pub version: f32,
     pub unknown_430: [u8; 4],
-    /// +0x434 `undefined4`, semantic
+    /// +0x434 `undefined4`, semantic; form id counter of the file; the top byte is the compile index (high)
     pub currentFormID: u32,
-    /// +0x438 `undefined4`, semantic
+    /// +0x438 `undefined4`, semantic; file flags; see the flag rows (high)
     pub fileFlags: u32,
     pub unknown_43C: [u8; 4],
-    /// +0x440 `class:BSSimpleListNode`, semantic
+    /// +0x440 `class:BSSimpleListNode`, semantic; head node of the list of master file names (char*) (high)
     pub masterNames: BSSimpleListNode,
     pub unknown_450: [u8; 16],
-    /// +0x460 `undefined4`, semantic
+    /// +0x460 `undefined4`, semantic; number of masters (high)
     pub masterCount: u32,
     pub unknown_464: [u8; 4],
-    /// +0x468 `pointer`, semantic
+    /// +0x468 `pointer`, semantic; TESFile*[masterCount] (high)
     pub masters: *mut c_void,
     pub unknown_470: [u8; 8],
-    /// +0x478 `undefined1`, semantic
+    /// +0x478 `undefined1`, semantic; load index; 0xff not loaded, 0xfe light (high)
     pub compileIndex: u8,
     pub unknown_479: [u8; 1],
-    /// +0x47A `undefined2`, semantic
+    /// +0x47A `undefined2`, semantic; index among light files, valid when compileIndex is 0xfe (high)
     pub lightIndex: u16,
     pub unknown_47C: [u8; 76],
 }
@@ -109675,12 +109685,13 @@ const _: () = assert!(core::mem::offset_of!(TESFile, compileIndex) == 0x478);
 const _: () = assert!(core::mem::offset_of!(TESFile, lightIndex) == 0x47A);
 
 /// `TESFileArray`: size 0x10 (exact).
+/// Meaning: the files a form was loaded from, last one wins (high, forms pass).
 /// Evidence: the files a form was loaded from, last one wins; object behind TESForm+0x8: 0x1e5ae0 reads a pointer array at +0 and a count at +8; run-forms peek sourcefiles = {0x2436194cca8, 1}.
 #[repr(C)]
 pub struct TESFileArray {
-    /// +0x0 `pointer`, semantic
+    /// +0x0 `pointer`, semantic; TESFile*[count] (high)
     pub files: *mut c_void,
-    /// +0x8 `undefined4`, semantic
+    /// +0x8 `undefined4`, semantic; number of files (high)
     pub count: u32,
     pub unknown_C: [u8; 4],
 }
@@ -109695,15 +109706,15 @@ const _: () = assert!(core::mem::offset_of!(TESFileArray, count) == 0x8);
 pub struct TESFlora {
     /// +0x0 `vtbl:TESFlora:0`, rtti
     pub __vftable: *const vtables::TESFlora_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -109817,21 +109828,22 @@ const _: () = assert!(core::mem::offset_of!(TESFollowPackageData, field_8) == 0x
 const _: () = assert!(core::mem::offset_of!(TESFollowPackageData, field_10) == 0x10);
 
 /// `TESForm`: size 0x20 (exact, high); primary base `BaseFormComponent`.
+/// Meaning: base of every record form (high, forms pass).
 /// Evidence: runtime: 0x20 at 2 allocation sites.
 /// Bases: `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct TESForm {
     /// +0x0 `vtbl:TESForm:0`, rtti
     pub __vftable: *const vtables::TESForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x8 `ptr:TESFileArray`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x10 `undefined4`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x14 `undefined4`, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x18 `undefined2`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x1A `undefined1`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
 }
@@ -109844,20 +109856,21 @@ const _: () = assert!(core::mem::offset_of!(TESForm, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESForm, formType) == 0x1A);
 
 /// `TESFormIDMap`: size 0x30 (exact).
+/// Meaning: hash map form id to TESForm*, the global form table (high, forms pass).
 /// Evidence: hash map form id to TESForm*, the global form table; 0x30-byte box allocated by 0x1e6eb0 (capacity 0x40000 entries of 0x18); the lookup 0x1e5860 reads capacity at +0xc, the end-of-chain sentinel at +0x18 and the entry array at +0x28; insert/remove take the map at +8; run-forms peek formmap: cap=262144 free=72601 good=154813 sentinel=rva 0x2078f3c entries=0x24340e00020.
 #[repr(C)]
 pub struct TESFormIDMap {
     pub unknown_0: [u8; 12],
-    /// +0xC `undefined4`, semantic
+    /// +0xC `undefined4`, semantic; bucket count, a power of two (high)
     pub capacity: u32,
-    /// +0x10 `undefined4`, semantic
+    /// +0x10 `undefined4`, semantic; unused buckets (high)
     pub free: u32,
-    /// +0x14 `undefined4`, semantic
+    /// +0x14 `undefined4`, semantic; scan position for the next free bucket (medium)
     pub freeScan: u32,
-    /// +0x18 `pointer`, semantic
+    /// +0x18 `pointer`, semantic; end-of-chain marker (a static byte in .rdata) (high)
     pub sentinel: *mut c_void,
     pub unknown_20: [u8; 8],
-    /// +0x28 `pointer`, semantic
+    /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
     pub entries: *mut c_void,
 }
 const _: () = assert!(size_of::<TESFormIDMap>() == 0x30);
@@ -109868,15 +109881,16 @@ const _: () = assert!(core::mem::offset_of!(TESFormIDMap, sentinel) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFormIDMap, entries) == 0x28);
 
 /// `TESFormIDMapEntry`: size 0x18 (exact).
+/// Meaning: form map bucket; next == sentinel ends a chain, next == 0 marks an unused bucket (high, forms pass).
 /// Evidence: form map bucket; next == sentinel ends a chain, next == 0 marks an unused bucket; entry layout from 0x1e5860 (key compare at +0, value at +8, chain pointer at +0x10, stride 0x18); run-forms peek formmap-entries entry 3 = {0x100e41, 0x2435ff1c550, sentinel} and the form at 0x2435ff1c550 has formID 0x100e41.
 #[repr(C)]
 pub struct TESFormIDMapEntry {
-    /// +0x0 `undefined4`, semantic
+    /// +0x0 `undefined4`, semantic; key (high)
     pub formID: u32,
     pub unknown_4: [u8; 4],
-    /// +0x8 `ptr:TESForm`, semantic
+    /// +0x8 `ptr:TESForm`, semantic; value (high)
     pub form: *mut TESForm,
-    /// +0x10 `pointer`, semantic
+    /// +0x10 `pointer`, semantic; chain (high)
     pub next: *mut c_void,
 }
 const _: () = assert!(size_of::<TESFormIDMapEntry>() == 0x18);
@@ -109925,15 +109939,15 @@ const _: () = assert!(core::mem::offset_of!(TESFullName, field_12) == 0x12);
 pub struct TESFurniture {
     /// +0x0 `vtbl:TESFurniture:0`, rtti
     pub __vftable: *const vtables::TESFurniture_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -110026,21 +110040,22 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, field_E4) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_E8) == 0xE8);
 
 /// `TESGlobal`: size 0x38 (exact, high); primary base `TESForm`.
+/// Meaning: GLOB form (medium, forms pass).
 /// Evidence: runtime: 0x38 at 8 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct TESGlobal {
     /// +0x0 `vtbl:TESGlobal:0`, rtti
     pub __vftable: *const vtables::TESGlobal_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -110048,10 +110063,10 @@ pub struct TESGlobal {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined1`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x30 `undefined1`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; type character of the global (s, l, f) (medium)
     pub valueType: u8,
     pub unknown_31: [u8; 3],
-    /// +0x34 `float`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    /// +0x34 `float`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime; the value, stored as float (high)
     pub value: f32,
 }
 const _: () = assert!(size_of::<TESGlobal>() == 0x38);
@@ -110073,15 +110088,15 @@ const _: () = assert!(core::mem::offset_of!(TESGlobal, value) == 0x34);
 pub struct TESGrass {
     /// +0x0 `vtbl:TESGrass:0`, rtti
     pub __vftable: *const vtables::TESGrass_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -110157,15 +110172,15 @@ const _: () = assert!(core::mem::offset_of!(TESGrass, field_74) == 0x74);
 pub struct TESIdleForm {
     /// +0x0 `vtbl:TESIdleForm:0`, rtti
     pub __vftable: *const vtables::TESIdleForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, ctor store
@@ -110216,15 +110231,15 @@ const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_60) == 0x60);
 pub struct TESImageSpace {
     /// +0x0 `vtbl:TESImageSpace:0`, rtti
     pub __vftable: *const vtables::TESImageSpace_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
@@ -110303,15 +110318,15 @@ const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifiableForm, field_8
 pub struct TESImageSpaceModifier {
     /// +0x0 `vtbl:TESImageSpaceModifier:0`, rtti
     pub __vftable: *const vtables::TESImageSpaceModifier_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined1`, ctor store
@@ -110399,15 +110414,15 @@ const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_2D8) ==
 pub struct TESKey {
     /// +0x0 `vtbl:TESKey:0`, rtti
     pub __vftable: *const vtables::TESKey_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -110511,15 +110526,15 @@ const _: () = assert!(core::mem::offset_of!(TESKey, field_F8) == 0xF8);
 pub struct TESLandTexture {
     /// +0x0 `vtbl:TESLandTexture:0`, rtti
     pub __vftable: *const vtables::TESLandTexture_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -110561,15 +110576,15 @@ const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_48) == 0x48);
 pub struct TESLevCharacter {
     /// +0x0 `vtbl:TESLevCharacter:0`, rtti
     pub __vftable: *const vtables::TESLevCharacter_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -110638,15 +110653,15 @@ const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_88) == 0x88);
 pub struct TESLevItem {
     /// +0x0 `vtbl:TESLevItem:0`, rtti
     pub __vftable: *const vtables::TESLevItem_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -110700,15 +110715,15 @@ const _: () = assert!(core::mem::offset_of!(TESLevItem, field_50) == 0x50);
 pub struct TESLevSpell {
     /// +0x0 `vtbl:TESLevSpell:0`, rtti
     pub __vftable: *const vtables::TESLevSpell_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -110786,15 +110801,15 @@ const _: () = assert!(core::mem::offset_of!(TESLeveledList, field_20) == 0x20);
 pub struct TESLoadScreen {
     /// +0x0 `vtbl:TESLoadScreen:0`, rtti
     pub __vftable: *const vtables::TESLoadScreen_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 13],
     /// +0x28 `undefined8`, ctor store
@@ -110917,15 +110932,15 @@ const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, field_30) == 0x
 pub struct TESNPC {
     /// +0x0 `vtbl:TESNPC:0`, rtti
     pub __vftable: *const vtables::TESNPC_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -111110,15 +111125,15 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, field_1D8) == 0x1D8);
 pub struct TESObject {
     /// +0x0 `vtbl:TESObject:0`, rtti
     pub __vftable: *const vtables::TESObject_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
 }
@@ -111137,15 +111152,15 @@ const _: () = assert!(core::mem::offset_of!(TESObject, formType) == 0x1A);
 pub struct TESObjectACTI {
     /// +0x0 `vtbl:TESObjectACTI:0`, rtti
     pub __vftable: *const vtables::TESObjectACTI_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -111234,15 +111249,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_C0) == 0xC0);
 pub struct TESObjectANIO {
     /// +0x0 `vtbl:TESObjectANIO:0`, rtti
     pub __vftable: *const vtables::TESObjectANIO_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectANIO:20`, rtti
@@ -111280,15 +111295,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_58) == 0x58);
 pub struct TESObjectARMA {
     /// +0x0 `vtbl:TESObjectARMA:0`, rtti
     pub __vftable: *const vtables::TESObjectARMA_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectARMA:20`, rtti
@@ -111359,15 +111374,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectARMA, field_170) == 0x170);
 pub struct TESObjectARMO {
     /// +0x0 `vtbl:TESObjectARMO:0`, rtti
     pub __vftable: *const vtables::TESObjectARMO_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -111503,15 +111518,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1F8) == 0x1F8);
 pub struct TESObjectBOOK {
     /// +0x0 `vtbl:TESObjectBOOK:0`, rtti
     pub __vftable: *const vtables::TESObjectBOOK_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -111622,15 +111637,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_108) == 0x108);
 pub struct TESObjectCELL {
     /// +0x0 `vtbl:TESObjectCELL:0`, rtti
     pub __vftable: *const vtables::TESObjectCELL_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectCELL:20`, rtti
@@ -111736,15 +111751,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_140) == 0x140);
 pub struct TESObjectCONT {
     /// +0x0 `vtbl:TESObjectCONT:0`, rtti
     pub __vftable: *const vtables::TESObjectCONT_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -111841,15 +111856,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_C8) == 0xC8);
 pub struct TESObjectDOOR {
     /// +0x0 `vtbl:TESObjectDOOR:0`, rtti
     pub __vftable: *const vtables::TESObjectDOOR_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -111929,15 +111944,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_B0) == 0xB0);
 pub struct TESObjectLAND {
     /// +0x0 `vtbl:TESObjectLAND:0`, rtti
     pub __vftable: *const vtables::TESObjectLAND_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectLAND:20`, rtti
@@ -111972,15 +111987,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_40) == 0x40);
 pub struct TESObjectLIGH {
     /// +0x0 `vtbl:TESObjectLIGH:0`, rtti
     pub __vftable: *const vtables::TESObjectLIGH_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -112072,15 +112087,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_D8) == 0xD8);
 pub struct TESObjectMISC {
     /// +0x0 `vtbl:TESObjectMISC:0`, rtti
     pub __vftable: *const vtables::TESObjectMISC_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -112184,15 +112199,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_F8) == 0xF8);
 pub struct TESObjectREFR {
     /// +0x0 `vtbl:TESObjectREFR:0`, rtti
     pub __vftable: *const vtables::TESObjectREFR_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectREFR:20`, rtti
@@ -112341,15 +112356,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncControlle
 pub struct TESObjectSTAT {
     /// +0x0 `vtbl:TESObjectSTAT:0`, rtti
     pub __vftable: *const vtables::TESObjectSTAT_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -112419,15 +112434,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_7B) == 0x7B);
 pub struct TESObjectTREE {
     /// +0x0 `vtbl:TESObjectTREE:0`, rtti
     pub __vftable: *const vtables::TESObjectTREE_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -112533,15 +112548,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_C0) == 0xC0);
 pub struct TESObjectWEAP {
     /// +0x0 `vtbl:TESObjectWEAP:0`, rtti
     pub __vftable: *const vtables::TESObjectWEAP_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -112688,15 +112703,15 @@ const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_160) == 0x160);
 pub struct TESPackage {
     /// +0x0 `vtbl:TESPackage:0`, rtti
     pub __vftable: *const vtables::TESPackage_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
@@ -112820,15 +112835,15 @@ const _: () = assert!(core::mem::offset_of!(TESQualityForm, field_8) == 0x8);
 pub struct TESQuest {
     /// +0x0 `vtbl:TESQuest:0`, rtti
     pub __vftable: *const vtables::TESQuest_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
@@ -112967,15 +112982,15 @@ const _: () = assert!(core::mem::offset_of!(TESQuest, field_260) == 0x260);
 pub struct TESRace {
     /// +0x0 `vtbl:TESRace:0`, rtti
     pub __vftable: *const vtables::TESRace_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESRace:20`, rtti
@@ -113098,15 +113113,15 @@ const _: () = assert!(core::mem::offset_of!(TESReactionForm, field_18) == 0x18);
 pub struct TESRegion {
     /// +0x0 `vtbl:TESRegion:0`, rtti
     pub __vftable: *const vtables::TESRegion_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -113327,15 +113342,15 @@ const _: () = assert!(core::mem::offset_of!(TESRegionObjectList, field_1C) == 0x
 pub struct TESShout {
     /// +0x0 `vtbl:TESShout:0`, rtti
     pub __vftable: *const vtables::TESShout_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESShout:20`, rtti
@@ -113407,15 +113422,15 @@ const _: () = assert!(core::mem::offset_of!(TESShout, field_A0) == 0xA0);
 pub struct TESSoulGem {
     /// +0x0 `vtbl:TESSoulGem:0`, rtti
     pub __vftable: *const vtables::TESSoulGem_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -113519,15 +113534,15 @@ const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_F8) == 0xF8);
 pub struct TESSound {
     /// +0x0 `vtbl:TESSound:0`, rtti
     pub __vftable: *const vtables::TESSound_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
@@ -113594,15 +113609,15 @@ const _: () = assert!(core::mem::offset_of!(TESTexture, __vftable) == 0x0);
 pub struct TESTopic {
     /// +0x0 `vtbl:TESTopic:0`, rtti
     pub __vftable: *const vtables::TESTopic_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESTopic:20`, rtti
@@ -113653,15 +113668,15 @@ const _: () = assert!(core::mem::offset_of!(TESTopic, field_58) == 0x58);
 pub struct TESTopicInfo {
     /// +0x0 `vtbl:TESTopicInfo:0`, rtti
     pub __vftable: *const vtables::TESTopicInfo_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
@@ -113849,15 +113864,15 @@ const _: () = assert!(core::mem::offset_of!(TESWaterDisplacement, field_28) == 0
 pub struct TESWaterForm {
     /// +0x0 `vtbl:TESWaterForm:0`, rtti
     pub __vftable: *const vtables::TESWaterForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWaterForm:20`, rtti
@@ -114158,15 +114173,15 @@ const _: () = assert!(core::mem::offset_of!(TESWaterReflections, field_80) == 0x
 pub struct TESWeather {
     /// +0x0 `vtbl:TESWeather:0`, rtti
     pub __vftable: *const vtables::TESWeather_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 517],
     /// +0x220 `undefined8`, ctor store
@@ -114379,15 +114394,15 @@ const _: () = assert!(core::mem::offset_of!(TESWindListener, field_10) == 0x10);
 pub struct TESWordOfPower {
     /// +0x0 `vtbl:TESWordOfPower:0`, rtti
     pub __vftable: *const vtables::TESWordOfPower_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWordOfPower:20`, rtti
@@ -114421,15 +114436,15 @@ const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_32) == 0x32);
 pub struct TESWorldSpace {
     /// +0x0 `vtbl:TESWorldSpace:0`, rtti
     pub __vftable: *const vtables::TESWorldSpace_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWorldSpace:20`, rtti
@@ -115206,15 +115221,15 @@ const _: () = assert!(core::mem::offset_of!(TrapTargetEntry, __vftable) == 0x0);
 pub struct TrespassPackage {
     /// +0x0 `vtbl:TrespassPackage:0`, rtti
     pub __vftable: *const vtables::TrespassPackage_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
     pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
     pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
     pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
@@ -138707,15 +138722,15 @@ pub mod partial {
     pub struct BGSDefaultObjectManager {
         /// +0x0 `vtbl:BGSDefaultObjectManager:0`, rtti
         pub __vftable: *const vtables::BGSDefaultObjectManager_vtable,
-        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
         pub sourceFiles: *mut super::TESFileArray,
-        /// +0x10 `undefined4`, base TESForm, semantic
+        /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
         pub formFlags: u32,
-        /// +0x14 `undefined4`, base TESForm, semantic
+        /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
         pub formID: u32,
-        /// +0x18 `undefined2`, base TESForm, semantic
+        /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
         pub inGameFlags: u16,
-        /// +0x1A `undefined1`, base TESForm, semantic
+        /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
         pub formType: u8,
         pub unknown_1B: [u8; 5],
     }
@@ -138979,15 +138994,15 @@ pub mod partial {
     pub struct BGSLensFlare {
         /// +0x0 `vtbl:BGSLensFlare:0`, rtti
         pub __vftable: *const vtables::BGSLensFlare_vtable,
-        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
         pub sourceFiles: *mut super::TESFileArray,
-        /// +0x10 `undefined4`, base TESForm, semantic
+        /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
         pub formFlags: u32,
-        /// +0x14 `undefined4`, base TESForm, semantic
+        /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
         pub formID: u32,
-        /// +0x18 `undefined2`, base TESForm, semantic
+        /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
         pub inGameFlags: u16,
-        /// +0x1A `undefined1`, base TESForm, semantic
+        /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
         pub formType: u8,
         pub unknown_1B: [u8; 5],
         /// +0x20 `undefined4`, ctor store
@@ -139085,15 +139100,15 @@ pub mod partial {
     pub struct BGSMenuIcon {
         /// +0x0 `vtbl:BGSMenuIcon:0`, rtti
         pub __vftable: *const vtables::BGSMenuIcon_vtable,
-        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
         pub sourceFiles: *mut super::TESFileArray,
-        /// +0x10 `undefined4`, base TESForm, semantic
+        /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
         pub formFlags: u32,
-        /// +0x14 `undefined4`, base TESForm, semantic
+        /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
         pub formID: u32,
-        /// +0x18 `undefined2`, base TESForm, semantic
+        /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
         pub inGameFlags: u16,
-        /// +0x1A `undefined1`, base TESForm, semantic
+        /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
         pub formType: u8,
         pub unknown_1B: [u8; 5],
         /// +0x20 `vtbl:BGSMenuIcon:20`, rtti
@@ -139202,15 +139217,15 @@ pub mod partial {
     pub struct BGSNote {
         /// +0x0 `vtbl:BGSNote:0`, rtti
         pub __vftable: *const vtables::BGSNote_vtable,
-        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
         pub sourceFiles: *mut super::TESFileArray,
-        /// +0x10 `undefined4`, base TESForm, semantic
+        /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
         pub formFlags: u32,
-        /// +0x14 `undefined4`, base TESForm, semantic
+        /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
         pub formID: u32,
-        /// +0x18 `undefined2`, base TESForm, semantic
+        /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
         pub inGameFlags: u16,
-        /// +0x1A `undefined1`, base TESForm, semantic
+        /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
         pub formType: u8,
         pub unknown_1B: [u8; 5],
         /// +0x20 `undefined2`, base TESBoundObject
@@ -140056,15 +140071,15 @@ pub mod partial {
     pub struct BGSStaticCollection {
         /// +0x0 `vtbl:BGSStaticCollection:0`, rtti
         pub __vftable: *const vtables::BGSStaticCollection_vtable,
-        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
         pub sourceFiles: *mut super::TESFileArray,
-        /// +0x10 `undefined4`, base TESForm, semantic
+        /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
         pub formFlags: u32,
-        /// +0x14 `undefined4`, base TESForm, semantic
+        /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
         pub formID: u32,
-        /// +0x18 `undefined2`, base TESForm, semantic
+        /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
         pub inGameFlags: u16,
-        /// +0x1A `undefined1`, base TESForm, semantic
+        /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
         pub formType: u8,
         pub unknown_1B: [u8; 5],
         /// +0x20 `undefined2`, base TESBoundObject

@@ -3,6 +3,7 @@
 
 /// Record signatures indexed by form type, from `g_FormTypeSignatures` at 0x17f95a0 (string, high).
 /// The `u8` width is the generator's choice for a table of this length; the ledger does not record the field width.
+/// TESForm.formType values (forms pass).
 #[repr(u8)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum FormType {
@@ -572,5 +573,53 @@ impl FormType {
             Self::LSPR => "LSPR",
             Self::VOLI => "VOLI",
         }
+    }
+}
+
+/// Named bits of `TESFile.fileFlags` (forms pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct TESFile_fileFlags(pub u32);
+
+impl TESFile_fileFlags {
+    /// ESM flag of the header (high)
+    pub const MASTER: Self = Self(0x1);
+    /// file selected for loading (high)
+    pub const ACTIVE: Self = Self(0x4);
+    /// ESL flag of the header (high)
+    pub const LIGHT: Self = Self(0x200);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `TESForm.formFlags` (forms pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct TESForm_formFlags(pub u32);
+
+impl TESForm_formFlags {
+    /// record deleted (medium)
+    pub const DELETED: Self = Self(0x20);
+    /// known to the player (medium)
+    pub const PLAYER_KNOWS: Self = Self(0x40);
+    /// form is kept out of the form id map (high)
+    pub const NOT_IN_FORM_MAP: Self = Self(0x4000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
     }
 }

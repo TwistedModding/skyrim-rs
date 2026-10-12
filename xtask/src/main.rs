@@ -21,17 +21,22 @@ fn main() -> ExitCode {
         println!("wrote {} ({} bytes)", path.display(), text.len());
     }
     println!(
-        "classes {} exact + {} partial, fields {}, asserts {} size + {} offset, vtables {} with {} slots, functions {}, globals {}, enum values {}",
+        "classes {} exact + {} partial, fields {} ({} with a semantic meaning), asserts {} size + {} offset, vtables {} with {} slots ({} named, {} typed), functions {} ({} typed), globals {}, enum values {}, flags {}",
         stats.exact_classes,
         stats.partial_classes,
         stats.fields,
+        stats.field_meanings,
         stats.size_asserts,
         stats.offset_asserts,
         stats.vtables,
         stats.slots,
+        stats.named_slots,
+        stats.typed_slots,
         stats.functions,
+        stats.typed_functions,
         stats.globals,
-        stats.enum_values
+        stats.enum_values,
+        stats.flags
     );
     ExitCode::SUCCESS
 }

@@ -12195,21 +12195,21 @@ pub const g_StaticAvoidNodeManager_ptr: u64 = 403562;
 pub const g_SystemEventAdapter: u64 = 381088;
 /// `g_TESAudio_ScriptedMusicState` at 0x3211aa0 (layout_inference, medium)
 pub const g_TESAudio_ScriptedMusicState: u64 = 403008;
-/// `g_TESDataHandler` at 0x21a2890 (runtime, high)
+/// `g_TESDataHandler` at 0x21a2890 (runtime, high); the data handler object itself (static storage) (high); type `class:TESDataHandler`
 pub const g_TESDataHandler: u64 = 400457;
-/// `g_TESDataHandlerPostBuildFileListEventSource_ptr` at 0x21a36d8 (runtime, high); pointer to `BSTEventSource`: event source for the post-build-file-list event, valid only during TES initialisation
+/// `g_TESDataHandlerPostBuildFileListEventSource_ptr` at 0x21a36d8 (runtime, high); pointer to `BSTEventSource`: event source for the post-build-file-list event, valid only during TES initialisation; event source for the post-build-file-list event, valid only during TES initialisation (high); type `ptr:BSTEventSource`
 pub const g_TESDataHandlerPostBuildFileListEventSource_ptr: u64 = 400474;
-/// `g_TESDataHandler_ptr` at 0x219ded8 (runtime, high); pointer to `TESDataHandler`: pointer to the data handler singleton
+/// `g_TESDataHandler_ptr` at 0x219ded8 (runtime, high); pointer to `TESDataHandler`: pointer to the data handler singleton; pointer to the data handler singleton (high); type `ptr:TESDataHandler`
 pub const g_TESDataHandler_ptr: u64 = 400269;
-/// `g_TESEditorIDMapLock` at 0x21a3ca0 (semantic, high)
+/// `g_TESEditorIDMapLock` at 0x21a3ca0 (semantic, high); lock of the editor id map (high); type `class:BSReadWriteLock`
 pub const g_TESEditorIDMapLock: u64 = 400518;
-/// `g_TESEditorIDMap_ptr` at 0x21a3c60 (runtime, high); pointer to `TESEditorIDMap`: pointer to the editor id map
+/// `g_TESEditorIDMap_ptr` at 0x21a3c60 (runtime, high); pointer to `TESEditorIDMap`: pointer to the editor id map; pointer to the editor id map (high); type `ptr:TESEditorIDMap`
 pub const g_TESEditorIDMap_ptr: u64 = 400509;
-/// `g_TESFormIDMapLock` at 0x21a3c98 (semantic, high)
+/// `g_TESFormIDMapLock` at 0x21a3c98 (semantic, high); lock of the form id map (high); type `class:BSReadWriteLock`
 pub const g_TESFormIDMapLock: u64 = 400517;
-/// `g_TESFormIDMap_ptr` at 0x21a3808 (runtime, high); pointer to `TESFormIDMap`: pointer to the form id map
+/// `g_TESFormIDMap_ptr` at 0x21a3808 (runtime, high); pointer to `TESFormIDMap`: pointer to the form id map; pointer to the form id map (high); type `ptr:TESFormIDMap`
 pub const g_TESFormIDMap_ptr: u64 = 400507;
-/// `g_TESFormInstanceCount` at 0x21a3804 (semantic, medium)
+/// `g_TESFormInstanceCount` at 0x21a3804 (semantic, medium); number of live TESForm objects (medium); type `undefined4`
 pub const g_TESFormInstanceCount: u64 = 400506;
 /// `g_TES_ptr` at 0x32303b8 (xref_inference, medium)
 pub const g_TES_ptr: u64 = 403450;
