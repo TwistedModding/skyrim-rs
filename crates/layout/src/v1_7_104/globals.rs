@@ -10699,6 +10699,8 @@ pub const g_ActorValueStorageLock: u64 = 404014;
 pub const g_AnimationClipDataSingleton_ptr: u64 = 401553;
 /// `g_AnimationFileManagerSingleton_ptr` at 0x31e0b30 (xref_inference, medium)
 pub const g_AnimationFileManagerSingleton_ptr: u64 = 401579;
+/// `g_AnimationGraphEventSource_ptr` at 0x32309c8 (xref_inference, medium); pointer to `BSTEventSource`: pointer to the global BSTEventSource<BSAnimationGraphEvent> that actors re-dispatch their graph events through; pointer to the global BSTEventSource<BSAnimationGraphEvent> that actors re-dispatch their graph events through (medium); type `ptr:BSTEventSource`
+pub const g_AnimationGraphEventSource_ptr: u64 = 403553;
 /// `g_AppResourceCaching__anon_AE50F340_Manager` at 0x3230110 (layout_inference, medium)
 pub const g_AppResourceCaching__anon_AE50F340_Manager: u64 = 403360;
 /// `g_AutoRegisterCombatObject_CombatAimController` at 0x32542d8 (layout_inference, medium)
@@ -11919,11 +11921,13 @@ pub const g_DoorObstacleAdapter: u64 = 381087;
 pub const g_EffectSettingCollection: u64 = 433120;
 /// `g_EventSourceHolder_BGSActorCell_ptr` at 0x32119e8 (xref_inference, medium); pointer to `EventSourceHolder_BGSActorCell`: object holding BSTEventSource<BGSActorCellEvent> at 0x0
 pub const g_EventSourceHolder_BGSActorCell_ptr: u64 = 402987;
-/// `g_EventSourceHolder_Input_ptr` at 0x3204b30 (xref_inference, medium); pointer to `EventSourceHolder_Input`: object holding BSTEventSource<InputEvent*___ptr64> at 0x0, BSTEventSource<BSRemoteGamepadEvent> at 0x98
+/// `g_EventSourceHolder_Input_ptr` at 0x3204b30 (runtime, high); pointer to `EventSourceHolder_Input`: pointer to the input device manager; pointer to the input device manager (high); type `ptr:EventSourceHolder_Input`
 pub const g_EventSourceHolder_Input_ptr: u64 = 402776;
-/// `g_EventSourceHolder_MenuOpenClose_ptr` at 0x219e5c0 (xref_inference, medium); pointer to `EventSourceHolder_MenuOpenClose`: object holding BSTEventSource<MenuOpenCloseEvent> at 0x8, BSTEventSource<MenuModeChangeEvent> at 0x60
+/// `g_EventSourceHolder_MenuOpenClose_ptr` at 0x219e5c0 (runtime, high); pointer to `EventSourceHolder_MenuOpenClose`: pointer to the UI singleton; pointer to the UI singleton (high); type `ptr:EventSourceHolder_MenuOpenClose`
 pub const g_EventSourceHolder_MenuOpenClose_ptr: u64 = 400327;
-/// `g_EventSourceHolder_User_ptr` at 0x31a5690 (xref_inference, medium); pointer to `EventSourceHolder_User`: object holding BSTEventSource<UserEventEnabledEvent> at 0x8
+/// `g_EventSourceHolder_TES` at 0x219f250 (runtime, high); the holder object (static storage) (high); type `class:EventSourceHolder_TES`; accessor id 14298
+pub const g_EventSourceHolder_TES: u64 = 400420;
+/// `g_EventSourceHolder_User_ptr` at 0x31a5690 (runtime, high); pointer to `EventSourceHolder_User`: pointer to the user-event holder (UserEventEnabledEvent at +8); pointer to the user-event holder (UserEventEnabledEvent at +8) (high); type `ptr:EventSourceHolder_User`
 pub const g_EventSourceHolder_User_ptr: u64 = 400863;
 /// `g_FOCollisionListener_ptr` at 0x21a05b8 (xref_inference, medium)
 pub const g_FOCollisionListener_ptr: u64 = 400444;
@@ -12201,6 +12205,8 @@ pub const g_SkyrimScript_SoundCallbackMgr_ptr: u64 = 406751;
 pub const g_SkyrimScript__anon_3A897AB3_LatentPlayerMover: u64 = 383768;
 /// `g_SkyrimSpeechRecognition_ptr` at 0x32113e8 (xref_inference, medium)
 pub const g_SkyrimSpeechRecognition_ptr: u64 = 402858;
+/// `g_SkyrimVM` at 0x32316d0 (runtime, high); the Papyrus VM singleton (static storage); its sink sub-objects at +0x10.. are the first sinks of 50 holder sources (high); type `class:SkyrimVM`
+pub const g_SkyrimVM: u64 = 403618;
 /// `g_SkyrimVM_ptr_2` at 0x21a36e0 (xref_inference, medium)
 pub const g_SkyrimVM_ptr_2: u64 = 400475;
 /// `g_StaticAvoidNodeManager_ptr` at 0x3230a10 (xref_inference, medium)

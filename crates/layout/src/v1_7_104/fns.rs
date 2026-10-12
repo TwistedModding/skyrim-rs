@@ -339,8 +339,6 @@ pub const Actor__ActorValueOwner_vdtor: u64 = 38193;
 pub const Actor__BSHandleRefObject_vdtor: u64 = 38189;
 /// `Actor::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x6bbcf0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Actor * this)`
 pub const Actor__BSTEventSink_BSAnimationGraphEvent_vdtor: u64 = 38190;
-/// `Actor::BSTEventSink_BSAnimationGraphEvent_vfunc_1` at 0x6b2000 (rtti, medium); signature (low): `ulonglong BSTEventSink_BSAnimationGraphEvent_vfunc_1(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const Actor__BSTEventSink_BSAnimationGraphEvent_vfunc_1: u64 = 37997;
 /// `Actor::BSTEventSink_BSTransformDeltaEvent_vdtor` at 0x6bbd2c (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSTransformDeltaEvent_vdtor(Actor * this)`
 pub const Actor__BSTEventSink_BSTransformDeltaEvent_vdtor: u64 = 38195;
 /// `Actor::BSTEventSink_BSTransformDeltaEvent_vfunc_1` at 0x6b1ab0 (rtti, medium); signature (low): `undefined8 BSTEventSink_BSTransformDeltaEvent_vfunc_1(Actor * this, uint * param_1)`
@@ -473,6 +471,8 @@ pub const Actor__MagicTarget_vfunc_9: u64 = 38740;
 pub const Actor__ModActorValueImpl: u64 = 38468;
 /// `Actor::ModActorValueImpl` as a function pointer type (high).
 pub type Actor__ModActorValueImpl_fn = unsafe extern "C" fn(this: *mut classes::Actor, modifier: i32, value: i32, delta: f32, source: *mut c_void);
+/// `Actor::ProcessAnimationGraphEvent` at 0x6b2000 (runtime, high); signature (untiered): `ulonglong ProcessAnimationGraphEvent(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; handles the actor's own animation events after TESObjectREFR's handler and re-dispatches them through the global source behind 0x32309c8 (high); semantic signature: `BSEventNotifyControl (Actor::sink_30* this, const BSAnimationGraphEvent* event, BSTEventSource<BSAnimationGraphEvent>* source)`
+pub const Actor__ProcessAnimationGraphEvent: u64 = 37997;
 /// `Actor::SaveGame` at 0x699230 (slot_propagation, medium); signature (untiered): `undefined SaveGame(Actor * this, longlong * param_1)`
 pub const Actor__SaveGame: u64 = 37649;
 /// `Actor::ctor` at 0x670c60 (layout_inference, high); signature (low): `Actor * ctor(Actor * this, ulonglong param_1, uint * param_2, longlong * param_3)`
@@ -967,6 +967,18 @@ pub const Actor__vfunc_99: u64 = 37655;
 pub const Actor__vfunc_99_sub0: u64 = 39805;
 /// `Actor::vfunc_99_sub1` at 0x727db0 (callgraph, medium); signature (untiered): `undefined vfunc_99_sub1(longlong param_1, undefined8 param_2)`
 pub const Actor__vfunc_99_sub1: u64 = 40000;
+/// `ActorItemEquipped::GetEventSource` at 0x6c0ae0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ActorItemEquipped::Event events (medium); semantic signature: `BSTEventSource<ActorItemEquipped::Event>* ()`
+pub const ActorItemEquipped__GetEventSource: u64 = 38337;
+/// `ActorItemEquipped::RegisterSink` at 0x66f9a0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ActorItemEquipped::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ActorItemEquipped::Event>* sink)`
+pub const ActorItemEquipped__RegisterSink: u64 = 37152;
+/// `ActorItemEquipped::UnregisterSink` at 0x66f9d0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ActorItemEquipped::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ActorItemEquipped::Event>* sink)`
+pub const ActorItemEquipped__UnregisterSink: u64 = 37153;
+/// `ActorKill::GetEventSource` at 0x6c0bd0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ActorKill::Event events (medium); semantic signature: `BSTEventSource<ActorKill::Event>* ()`
+pub const ActorKill__GetEventSource: u64 = 38338;
+/// `ActorKill::RegisterSink` at 0x66fa00 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ActorKill::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ActorKill::Event>* sink)`
+pub const ActorKill__RegisterSink: u64 = 37154;
+/// `ActorKill::UnregisterSink` at 0x66fa30 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ActorKill::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ActorKill::Event>* sink)`
+pub const ActorKill__UnregisterSink: u64 = 37155;
 /// `ActorKnowledge::ctor` at 0x7c3a80 (layout_inference, high); signature (high): `ActorKnowledge * ctor(ActorKnowledge * this)`
 pub const ActorKnowledge__ctor: u64 = 42698;
 /// `ActorKnowledge::ctor` at 0x7c3b20 (layout_inference, high); signature (low): `ActorKnowledge * ctor(ActorKnowledge * this, longlong param_1, longlong param_2)`
@@ -1079,8 +1091,6 @@ pub const ActorMagicCaster__vfunc_9: u64 = 34144;
 pub const ActorMagicCaster__vfunc_9_sub0: u64 = 11315;
 /// `ActorMagicCaster::vfunc_9_sub1` at 0x5c2800 (callgraph, medium); signature (untiered): `undefined vfunc_9_sub1(longlong * param_1)`
 pub const ActorMagicCaster__vfunc_9_sub1: u64 = 34189;
-/// `ActorMagicCaster::vfunc_9_sub2` at 0x5c2d10 (callgraph, medium); signature (untiered): `ulonglong vfunc_9_sub2(longlong * param_1, undefined8 param_2)`
-pub const ActorMagicCaster__vfunc_9_sub2: u64 = 34206;
 /// `ActorMagicCaster::vfunc_9_sub3` at 0x6d4dd0 (callgraph, medium); signature (untiered): `undefined vfunc_9_sub3(longlong param_1, longlong * param_2)`
 pub const ActorMagicCaster__vfunc_9_sub3: u64 = 38736;
 /// `ActorMediator::ctor` at 0x6dfb70 (layout_inference, medium); signature (high): `ActorMediator * ctor(ActorMediator * this)`
@@ -1755,6 +1765,12 @@ pub const ArrowScroller__vfunc_3: u64 = 454225;
 pub const ArrowScroller__vfunc_4: u64 = 454233;
 /// `ArrowScroller::vfunc_7` at 0x15ebfc0 (rtti, high); signature (medium): `undefined vfunc_7(ArrowScroller * this, float param_1, float param_2)`
 pub const ArrowScroller__vfunc_7: u64 = 454232;
+/// `AssaultCrime::GetEventSource` at 0x6c0cc0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of AssaultCrime::Event events (medium); semantic signature: `BSTEventSource<AssaultCrime::Event>* ()`
+pub const AssaultCrime__GetEventSource: u64 = 38339;
+/// `AssaultCrime::RegisterSink` at 0x66fa60 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a AssaultCrime::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<AssaultCrime::Event>* sink)`
+pub const AssaultCrime__RegisterSink: u64 = 37156;
+/// `AssaultCrime::UnregisterSink` at 0x66fa90 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a AssaultCrime::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<AssaultCrime::Event>* sink)`
+pub const AssaultCrime__UnregisterSink: u64 = 37157;
 /// `Atmosphere::ctor` at 0x40b4f0 (layout_inference, high); signature (high): `Atmosphere * ctor(Atmosphere * this)`
 pub const Atmosphere__ctor: u64 = 26139;
 /// `Atmosphere::ctor` at 0x40b5d0 (layout_inference, medium); signature (high): `undefined ctor(Atmosphere * this)`
@@ -4803,8 +4819,6 @@ pub const BGSDefaultObjectManager__ctor: u64 = 20766;
 pub const BGSDefaultObjectManager__vdtor: u64 = 20777;
 /// `BGSDefaultObjectManager::vfunc_19` at 0x31bad0 (rtti, high); signature (low): `undefined vfunc_19(BGSDefaultObjectManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSDefaultObjectManager__vfunc_19: u64 = 20770;
-/// `BGSDefaultObjectManager::vfunc_19_sub0` at 0x31be40 (callgraph, medium); signature (untiered): `ulonglong vfunc_19_sub0(longlong * param_1, undefined8 param_2)`
-pub const BGSDefaultObjectManager__vfunc_19_sub0: u64 = 20780;
 /// `BGSDefaultObjectManager::vfunc_6` at 0x31b8b0 (rtti, high); signature (low): `undefined8 vfunc_6(BGSDefaultObjectManager * this, longlong param_1, ulonglong param_2, ulonglong param_3)`
 pub const BGSDefaultObjectManager__vfunc_6: u64 = 20768;
 /// `BGSDestructibleObjectForm::ctor` at 0x1d26d0 (layout_inference, medium); signature (high): `BGSDestructibleObjectForm * ctor(BGSDestructibleObjectForm * this)`
@@ -8423,8 +8437,6 @@ pub const BGSSceneActionTimer__vfunc_13: u64 = 24273;
 pub const BGSSceneActionTimer__vfunc_17: u64 = 24271;
 /// `BGSSceneActionTimer::vfunc_17_sub0` at 0x3ad390 (callgraph, medium); signature (untiered): `undefined vfunc_17_sub0(longlong * param_1)`
 pub const BGSSceneActionTimer__vfunc_17_sub0: u64 = 24280;
-/// `BGSSceneActionTimer::vfunc_17_sub1` at 0x3ad4e0 (callgraph, medium); signature (untiered): `ulonglong vfunc_17_sub1(longlong * param_1, undefined8 param_2)`
-pub const BGSSceneActionTimer__vfunc_17_sub1: u64 = 24285;
 /// `BGSSceneActionTimer::vfunc_19` at 0x3ad140 (rtti, high); signature (high): `undefined vfunc_19(BGSSceneActionTimer * this)`
 pub const BGSSceneActionTimer__vfunc_19: u64 = 24272;
 /// `BGSSceneActionTimer::vfunc_4` at 0x3acf40 (rtti, high); signature (untiered): `undefined vfunc_4(BGSSceneActionTimer * this)`
@@ -10535,6 +10547,14 @@ pub const BSFile__vfunc_7: u64 = 69433;
 pub const BSFile__vfunc_8: u64 = 69425;
 /// `BSFile::vfunc_9` at 0xebee00 (rtti, medium); signature (low): `undefined1 vfunc_9(BSFile * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFile__vfunc_9: u64 = 69426;
+/// `BSFixedString::assign` at 0xeb11e0 (semantic, high); signature (untiered): `longlong * assign(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; replaces the string: adds a reference to the new entry, releases the old one (high); semantic signature: `BSFixedString* (BSFixedString* this, const BSFixedString* other)`
+pub const BSFixedString__assign: u64 = 69166;
+/// `BSFixedString::copy` at 0xeb1040 (semantic, high); signature (untiered): `longlong * copy(longlong * param_1, longlong * param_2)`; copies the pointer and adds a reference (unless the count is pinned at 0x7fff) (high); semantic signature: `BSFixedString* (BSFixedString* this, const BSFixedString* other)`
+pub const BSFixedString__copy: u64 = 69162;
+/// `BSFixedString::ctor` at 0xeb0f90 (semantic, high); signature (untiered): `longlong * ctor(longlong * param_1, char * param_2)`; interns text: 16-bit case-folded CRC, then BSStringPool::GetEntry; stores entry+0x18 (null for a null text) (high); semantic signature: `BSFixedString* (BSFixedString* this, const char* text)`
+pub const BSFixedString__ctor: u64 = 69161;
+/// `BSFixedString::release` at 0xeb1100 (semantic, high); signature (untiered): `undefined release(void)`; drops one reference through BSStringPool::Entry::release (high); semantic signature: `void (BSFixedString* this)`
+pub const BSFixedString__release: u64 = 69164;
 /// `BSFlatQuadConstructor::vfunc_0` at 0x1573f90 (rtti, high); signature (low): `BSFlatQuadConstructor * vfunc_0(BSFlatQuadConstructor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFlatQuadConstructor__vfunc_0: u64 = 108227;
 /// `BSFlatQuadConstructor::vfunc_1` at 0x15934b0 (rtti, high); signature (low): `undefined8 vfunc_1(BSFlatQuadConstructor * this, longlong param_1, undefined8 param_2, longlong param_3)`
@@ -17051,8 +17071,6 @@ pub const BSScript__Internal__VirtualMachine__vfunc_4_sub4: u64 = 104878;
 pub const BSScript__Internal__VirtualMachine__vfunc_4_sub5: u64 = 105060;
 /// `BSScript::Internal::VirtualMachine::vfunc_4_sub6` at 0x14c9b60 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub6(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSScript__Internal__VirtualMachine__vfunc_4_sub6: u64 = 105065;
-/// `BSScript::Internal::VirtualMachine::vfunc_4_sub7` at 0x14ca970 (callgraph, medium); signature (untiered): `ulonglong vfunc_4_sub7(longlong * param_1, undefined8 param_2)`
-pub const BSScript__Internal__VirtualMachine__vfunc_4_sub7: u64 = 105105;
 /// `BSScript::Internal::VirtualMachine::vfunc_5` at 0x14b0890 (rtti, high); signature (high): `undefined vfunc_5(VirtualMachine * this)`
 pub const BSScript__Internal__VirtualMachine__vfunc_5: u64 = 104768;
 /// `BSScript::Internal::VirtualMachine::vfunc_50` at 0x14b4c30 (rtti, high); signature (high): `undefined vfunc_50(VirtualMachine * this)`
@@ -19955,6 +19973,10 @@ pub const BSSphereConstructor__vfunc_0: u64 = 108231;
 pub const BSSphereConstructor__vfunc_1: u64 = 109073;
 /// `BSSphereConstructor::vfunc_2` at 0x15909c0 (rtti, high); signature (low): `undefined8 vfunc_2(BSSphereConstructor * this, longlong param_1, undefined8 param_2, longlong param_3)`
 pub const BSSphereConstructor__vfunc_2: u64 = 109074;
+/// `BSSpinLock::Lock` at 0x199fa0 (semantic, high); signature (untiered): `undefined8 * Lock(undefined8 * param_1, DWORD * param_2)`; acquires the lock for the current thread (recursive) and returns it for the inline unlock sequence (high); semantic signature: `BSSpinLock* (BSSpinLock** out, BSSpinLock* lock)`
+pub const BSSpinLock__Lock: u64 = 13129;
+/// `BSSpinLock::LockTimed` at 0x1b4d80 (semantic, medium); signature (untiered): `DWORD LockTimed(DWORD * param_1, uint param_2)`; the variant the second set of template instances uses, called with 0 (medium); semantic signature: `uint32 (BSSpinLock* lock, uint32 timeout)`
+pub const BSSpinLock__LockTimed: u64 = 13663;
 /// `BSSplatterExtraData::vdtor` at 0x24dac0 (slot_propagation, medium); signature (low): `BSSplatterExtraData * vdtor(BSSplatterExtraData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSSplatterExtraData__vdtor: u64 = 16414;
 /// `BSSplatterExtraData::vfunc_2` at 0x24db00 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -20027,6 +20049,10 @@ pub const BSStreamSystemUtility__vfunc_5: u64 = 416436;
 pub const BSStreamSystemUtility__vfunc_6: u64 = 416437;
 /// `BSStreamSystemUtility::vfunc_7` at 0x159df80 (rtti, high); signature (low): `undefined1 vfunc_7(void)`
 pub const BSStreamSystemUtility__vfunc_7: u64 = 416438;
+/// `BSStringPool::Entry::release` at 0xeb2360 (semantic, high); signature (untiered): `undefined release(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; decrements the reference count; at 1 it takes the bucket lock, unlinks the entry and frees it; pinned entries are untouched (high); semantic signature: `void (BSFixedString* str)`
+pub const BSStringPool__Entry__release: u64 = 69192;
+/// `BSStringPool::GetEntry` at 0xeb2bb0 (semantic, high); signature (untiered): `longlong * GetEntry(undefined8 * param_1, char * param_2, uint param_3, int param_4)`; finds the narrow entry with the same text (_stricmp) in bucket hash, adding a reference, or creates one; holds the bucket lock hash & 0x1f (high); semantic signature: `void (BSStringPool::Entry** out, const char* text, uint32 hash, int length)`
+pub const BSStringPool__GetEntry: u64 = 69201;
 /// `BSStringPool::IterationCallback::vdtor` at 0xeb27a0 (layout_inference, medium); signature (low): `IterationCallback * vdtor(IterationCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSStringPool__IterationCallback__vdtor: u64 = 69196;
 /// `BSStripPSysData::Create` at 0xfbe300 (string, high); signature (low): `NiPSysData * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -23931,64 +23957,694 @@ pub const BSTEventSink_WordUnlocked__Event__vdtor: u64 = 37031;
 pub const BSTEventSink_bhkCharacterMoveFinishEvent__dtor: u64 = 38123;
 /// `BSTEventSink<bhkCharacterMoveFinishEvent>::vdtor` at 0x6bc170 (layout_inference, medium); signature (low): `BSTEventSink<bhkCharacterMoveFinishEvent> * vdtor(BSTEventSink<bhkCharacterMoveFinishEvent> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTEventSink_bhkCharacterMoveFinishEvent__vdtor: u64 = 38212;
-/// `BSTEventSource<BGSEventProcessedEvent>::AddEventSink` at 0x71f010 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<ActorItemEquipped::Event>::AddEventSink` at 0x6c11f0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ActorItemEquipped::Event>* this, BSTEventSink<ActorItemEquipped::Event>* sink)`
+pub const BSTEventSource_ActorItemEquipped__Event__AddEventSink: u64 = 38348;
+/// `BSTEventSource<ActorItemEquipped::Event>::Notify` at 0x6bedf0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ActorItemEquipped::Event>* this, const ActorItemEquipped::Event* event)`
+pub const BSTEventSource_ActorItemEquipped__Event__Notify: u64 = 38312;
+/// `BSTEventSource<ActorItemEquipped::Event>::RemoveEventSink` at 0x6c2f60 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ActorItemEquipped::Event>* this, BSTEventSink<ActorItemEquipped::Event>* sink)`
+pub const BSTEventSource_ActorItemEquipped__Event__RemoveEventSink: u64 = 38403;
+/// `BSTEventSource<ActorKill::Event>::AddEventSink` at 0x6c1370 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ActorKill::Event>* this, BSTEventSink<ActorKill::Event>* sink)`
+pub const BSTEventSource_ActorKill__Event__AddEventSink: u64 = 38349;
+/// `BSTEventSource<ActorKill::Event>::Notify` at 0x6bf030 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ActorKill::Event>* this, const ActorKill::Event* event)`
+pub const BSTEventSource_ActorKill__Event__Notify: u64 = 38313;
+/// `BSTEventSource<ActorKill::Event>::RemoveEventSink` at 0x6c30f0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ActorKill::Event>* this, BSTEventSink<ActorKill::Event>* sink)`
+pub const BSTEventSource_ActorKill__Event__RemoveEventSink: u64 = 38404;
+/// `BSTEventSource<AssaultCrime::Event>::AddEventSink` at 0x6c14f0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<AssaultCrime::Event>* this, BSTEventSink<AssaultCrime::Event>* sink)`
+pub const BSTEventSource_AssaultCrime__Event__AddEventSink: u64 = 38350;
+/// `BSTEventSource<AssaultCrime::Event>::Notify` at 0x6bf270 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<AssaultCrime::Event>* this, const AssaultCrime::Event* event)`
+pub const BSTEventSource_AssaultCrime__Event__Notify: u64 = 38314;
+/// `BSTEventSource<AssaultCrime::Event>::RemoveEventSink` at 0x6c3280 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<AssaultCrime::Event>* this, BSTEventSink<AssaultCrime::Event>* sink)`
+pub const BSTEventSource_AssaultCrime__Event__RemoveEventSink: u64 = 38405;
+/// `BSTEventSource<BGSActorCellEvent>::AddEventSink` at 0x5eb300 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BGSActorCellEvent>* this, BSTEventSink<BGSActorCellEvent>* sink)`
+pub const BSTEventSource_BGSActorCellEvent__AddEventSink: u64 = 35181;
+/// `BSTEventSource<BGSActorCellEvent>::Notify` at 0x76b190 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<BGSActorCellEvent>* this, const BGSActorCellEvent* event)`
+pub const BSTEventSource_BGSActorCellEvent__Notify: u64 = 41034;
+/// `BSTEventSource<BGSActorCellEvent>::RemoveEventSink` at 0x5eba40 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BGSActorCellEvent>* this, BSTEventSink<BGSActorCellEvent>* sink)`
+pub const BSTEventSource_BGSActorCellEvent__RemoveEventSink: u64 = 35188;
+/// `BSTEventSource<BGSActorDeathEvent>::Notify` at 0x76b430 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BGSActorDeathEvent>* this, const BGSActorDeathEvent* event)`
+pub const BSTEventSource_BGSActorDeathEvent__Notify: u64 = 41035;
+/// `BSTEventSource<BGSEventProcessedEvent>::AddEventSink` at 0x71f010 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BGSEventProcessedEvent>* this, BSTEventSink<BGSEventProcessedEvent>* sink)`
 pub const BSTEventSource_BGSEventProcessedEvent__AddEventSink: u64 = 39773;
-/// `BSTEventSource<BGSEventProcessedEvent>::RemoveEventSink` at 0x9cc910 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BGSEventProcessedEvent>::Notify` at 0x53d510 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BGSEventProcessedEvent>* this, const BGSEventProcessedEvent* event)`
+pub const BSTEventSource_BGSEventProcessedEvent__Notify: u64 = 32532;
+/// `BSTEventSource<BGSEventProcessedEvent>::RemoveEventSink` at 0x9cc910 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BGSEventProcessedEvent>* this, BSTEventSink<BGSEventProcessedEvent>* sink)`
 pub const BSTEventSource_BGSEventProcessedEvent__RemoveEventSink: u64 = 53779;
-/// `BSTEventSource<BGSSaveLoadManagerEvent>::AddEventSink` at 0x5b9680 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BGSSaveLoadManagerEvent>::AddEventSink` at 0x5b9680 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, BSTEventSink<BGSSaveLoadManagerEvent>* sink)`
 pub const BSTEventSource_BGSSaveLoadManagerEvent__AddEventSink: u64 = 34011;
-/// `BSTEventSource<BGSSaveLoadManagerEvent>::RemoveEventSink` at 0x5b9a40 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BGSSaveLoadManagerEvent>::Notify` at 0x62f290 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, const BGSSaveLoadManagerEvent* event)`
+pub const BSTEventSource_BGSSaveLoadManagerEvent__Notify: u64 = 35869;
+/// `BSTEventSource<BGSSaveLoadManagerEvent>::RemoveEventSink` at 0x5b9a40 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, BSTEventSink<BGSSaveLoadManagerEvent>* sink)`
 pub const BSTEventSource_BGSSaveLoadManagerEvent__RemoveEventSink: u64 = 34015;
-/// `BSTEventSource<BSGamerProfileEvent>::AddEventSink` at 0x5b9800 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSAnimationGraphEvent>::AddEventSink` at 0x662fb0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* this, BSTEventSink<BSAnimationGraphEvent>* sink)`
+pub const BSTEventSource_BSAnimationGraphEvent__AddEventSink: u64 = 36782;
+/// `BSTEventSource<BSAnimationGraphEvent>::Notify` at 0x6beb50 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* this, const BSAnimationGraphEvent* event)`
+pub const BSTEventSource_BSAnimationGraphEvent__Notify: u64 = 38311;
+/// `BSTEventSource<BSAnimationGraphEvent>::RemoveEventSink` at 0x664370 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* this, BSTEventSink<BSAnimationGraphEvent>* sink)`
+pub const BSTEventSource_BSAnimationGraphEvent__RemoveEventSink: u64 = 36801;
+/// `BSTEventSource<BSGamerProfileEvent>::AddEventSink` at 0x5b9800 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSGamerProfileEvent>* this, BSTEventSink<BSGamerProfileEvent>* sink)`
 pub const BSTEventSource_BSGamerProfileEvent__AddEventSink: u64 = 34012;
-/// `BSTEventSource<BSGamerProfileEvent>::RemoveEventSink` at 0x5b9bd0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSGamerProfileEvent>::Notify` at 0xd03100 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSGamerProfileEvent>* this, const BSGamerProfileEvent* event)`
+pub const BSTEventSource_BSGamerProfileEvent__Notify: u64 = 68731;
+/// `BSTEventSource<BSGamerProfileEvent>::RemoveEventSink` at 0x5b9bd0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSGamerProfileEvent>* this, BSTEventSink<BSGamerProfileEvent>* sink)`
 pub const BSTEventSource_BSGamerProfileEvent__RemoveEventSink: u64 = 34016;
-/// `BSTEventSource<BSRemoteGamepadEvent>::AddEventSink` at 0x93c990 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSMusicEvent>::Notify` at 0x644ca0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSMusicEvent>* this, const BSMusicEvent* event)`
+pub const BSTEventSource_BSMusicEvent__Notify: u64 = 36270;
+/// `BSTEventSource<BSPathEvent>::AddEventSink` at 0x9c2c00 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSPathEvent>* this, BSTEventSink<BSPathEvent>* sink)`
+pub const BSTEventSource_BSPathEvent__AddEventSink: u64 = 53653;
+/// `BSTEventSource<BSPathEvent>::RemoveEventSink` at 0x9c3070 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSPathEvent>* this, BSTEventSink<BSPathEvent>* sink)`
+pub const BSTEventSource_BSPathEvent__RemoveEventSink: u64 = 53656;
+/// `BSTEventSource<BSRemoteGamepadEvent>::AddEventSink` at 0x93c990 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSRemoteGamepadEvent>* this, BSTEventSink<BSRemoteGamepadEvent>* sink)`
 pub const BSTEventSource_BSRemoteGamepadEvent__AddEventSink: u64 = 51733;
-/// `BSTEventSource<BSRemoteGamepadEvent>::RemoveEventSink` at 0x93d020 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSRemoteGamepadEvent>::RemoveEventSink` at 0x93d020 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSRemoteGamepadEvent>* this, BSTEventSink<BSRemoteGamepadEvent>* sink)`
 pub const BSTEventSource_BSRemoteGamepadEvent__RemoveEventSink: u64 = 51742;
-/// `BSTEventSource<BSSaveDataEvent>::AddEventSink` at 0x62f900 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSResource::ArchiveRegisteredEvent>::AddEventSink` at 0xed2f90 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSResource::ArchiveRegisteredEvent>* this, BSTEventSink<BSResource::ArchiveRegisteredEvent>* sink)`
+pub const BSTEventSource_BSResource__ArchiveRegisteredEvent__AddEventSink: u64 = 69951;
+/// `BSTEventSource<BSResource::ArchiveRegisteredEvent>::Notify` at 0xed2640 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSResource::ArchiveRegisteredEvent>* this, const BSResource::ArchiveRegisteredEvent* event)`
+pub const BSTEventSource_BSResource__ArchiveRegisteredEvent__Notify: u64 = 69945;
+/// `BSTEventSource<BSResource::ArchiveRegisteredEvent>::RemoveEventSink` at 0xed3730 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSResource::ArchiveRegisteredEvent>* this, BSTEventSink<BSResource::ArchiveRegisteredEvent>* sink)`
+pub const BSTEventSource_BSResource__ArchiveRegisteredEvent__RemoveEventSink: u64 = 69958;
+/// `BSTEventSource<BSResource::NameFoundEvent>::AddEventSink` at 0xed3290 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSResource::NameFoundEvent>* this, BSTEventSink<BSResource::NameFoundEvent>* sink)`
+pub const BSTEventSource_BSResource__NameFoundEvent__AddEventSink: u64 = 69953;
+/// `BSTEventSource<BSResource::NameFoundEvent>::Notify` at 0xed2ac0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSResource::NameFoundEvent>* this, const BSResource::NameFoundEvent* event)`
+pub const BSTEventSource_BSResource__NameFoundEvent__Notify: u64 = 69947;
+/// `BSTEventSource<BSResource::NameFoundEvent>::RemoveEventSink` at 0xed3a50 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSResource::NameFoundEvent>* this, BSTEventSink<BSResource::NameFoundEvent>* sink)`
+pub const BSTEventSource_BSResource__NameFoundEvent__RemoveEventSink: u64 = 69960;
+/// `BSTEventSource<BSSaveDataEvent>::AddEventSink` at 0x62f900 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSSaveDataEvent>* this, BSTEventSink<BSSaveDataEvent>* sink)`
 pub const BSTEventSource_BSSaveDataEvent__AddEventSink: u64 = 35877;
-/// `BSTEventSource<BSSaveDataEvent>::RemoveEventSink` at 0x6309a0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSSaveDataEvent>::RemoveEventSink` at 0x6309a0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSSaveDataEvent>* this, BSTEventSink<BSSaveDataEvent>* sink)`
 pub const BSTEventSource_BSSaveDataEvent__RemoveEventSink: u64 = 35892;
-/// `BSTEventSource<BSSystemEvent>::AddEventSink` at 0x1b5440 (xref_inference, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSScript::StatsEvent>::Notify` at 0x14ca970 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSScript::StatsEvent>* this, const BSScript::StatsEvent* event)`
+pub const BSTEventSource_BSScript__StatsEvent__Notify: u64 = 105105;
+/// `BSTEventSource<BSSystemEvent>::AddEventSink` at 0x1b5440 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<BSSystemEvent>* this, BSTEventSink<BSSystemEvent>* sink)`
 pub const BSTEventSource_BSSystemEvent__AddEventSink: u64 = 13670;
-/// `BSTEventSource<BSSystemEvent>::RemoveEventSink` at 0x1b5f10 (xref_inference, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSSystemEvent>::RemoveEventSink` at 0x1b5f10 (xref_inference, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSSystemEvent>* this, BSTEventSink<BSSystemEvent>* sink)`
 pub const BSTEventSource_BSSystemEvent__RemoveEventSink: u64 = 13677;
-/// `BSTEventSource<InputEvent*___ptr64>::AddEventSink` at 0x644f40 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<BSTaskManagerWaitAction>::Notify` at 0xfc5470 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSTaskManagerWaitAction>* this, const BSTaskManagerWaitAction* event)`
+pub const BSTEventSource_BSTaskManagerWaitAction__Notify: u64 = 75686;
+/// `BSTEventSource<BSThreadEvent::ThreadEvent>::AddEventSink` at 0xceb960 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSThreadEvent::ThreadEvent>* this, BSTEventSink<BSThreadEvent::ThreadEvent>* sink)`
+pub const BSTEventSource_BSThreadEvent__ThreadEvent__AddEventSink: u64 = 68463;
+/// `BSTEventSource<BSThreadEvent::ThreadEvent>::Notify` at 0xceb720 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSThreadEvent::ThreadEvent>* this, const BSThreadEvent::ThreadEvent* event)`
+pub const BSTEventSource_BSThreadEvent__ThreadEvent__Notify: u64 = 68462;
+/// `BSTEventSource<BSThreadEvent::ThreadEvent>::RemoveEventSink` at 0xcebb40 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSThreadEvent::ThreadEvent>* this, BSTEventSink<BSThreadEvent::ThreadEvent>* sink)`
+pub const BSTEventSource_BSThreadEvent__ThreadEvent__RemoveEventSink: u64 = 68465;
+/// `BSTEventSource<BeamProjectileImpactEvent>::Notify` at 0x7e11c0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BeamProjectileImpactEvent>* this, const BeamProjectileImpactEvent* event)`
+pub const BSTEventSource_BeamProjectileImpactEvent__Notify: u64 = 43779;
+/// `BSTEventSource<BooksRead::Event>::AddEventSink` at 0x280cc0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BooksRead::Event>* this, BSTEventSink<BooksRead::Event>* sink)`
+pub const BSTEventSource_BooksRead__Event__AddEventSink: u64 = 17866;
+/// `BSTEventSource<BooksRead::Event>::Notify` at 0x280990 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BooksRead::Event>* this, const BooksRead::Event* event)`
+pub const BSTEventSource_BooksRead__Event__Notify: u64 = 17864;
+/// `BSTEventSource<BooksRead::Event>::RemoveEventSink` at 0x280f10 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BooksRead::Event>* this, BSTEventSink<BooksRead::Event>* sink)`
+pub const BSTEventSource_BooksRead__Event__RemoveEventSink: u64 = 17869;
+/// `BSTEventSource<Bounty::Event>::AddEventSink` at 0x76f860 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<Bounty::Event>* this, BSTEventSink<Bounty::Event>* sink)`
+pub const BSTEventSource_Bounty__Event__AddEventSink: u64 = 41079;
+/// `BSTEventSource<Bounty::Event>::Notify` at 0x76b6d0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<Bounty::Event>* this, const Bounty::Event* event)`
+pub const BSTEventSource_Bounty__Event__Notify: u64 = 41036;
+/// `BSTEventSource<Bounty::Event>::RemoveEventSink` at 0x773250 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<Bounty::Event>* this, BSTEventSink<Bounty::Event>* sink)`
+pub const BSTEventSource_Bounty__Event__RemoveEventSink: u64 = 41148;
+/// `BSTEventSource<ChestsLooted::Event>::AddEventSink` at 0x915800 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ChestsLooted::Event>* this, BSTEventSink<ChestsLooted::Event>* sink)`
+pub const BSTEventSource_ChestsLooted__Event__AddEventSink: u64 = 51184;
+/// `BSTEventSource<ChestsLooted::Event>::Notify` at 0x9151a0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ChestsLooted::Event>* this, const ChestsLooted::Event* event)`
+pub const BSTEventSource_ChestsLooted__Event__Notify: u64 = 51180;
+/// `BSTEventSource<ChestsLooted::Event>::RemoveEventSink` at 0x915c20 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ChestsLooted::Event>* this, BSTEventSink<ChestsLooted::Event>* sink)`
+pub const BSTEventSource_ChestsLooted__Event__RemoveEventSink: u64 = 51189;
+/// `BSTEventSource<ContractedDisease::Event>::AddEventSink` at 0x6d19c0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ContractedDisease::Event>* this, BSTEventSink<ContractedDisease::Event>* sink)`
+pub const BSTEventSource_ContractedDisease__Event__AddEventSink: u64 = 38673;
+/// `BSTEventSource<ContractedDisease::Event>::Notify` at 0x6d0eb0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ContractedDisease::Event>* this, const ContractedDisease::Event* event)`
+pub const BSTEventSource_ContractedDisease__Event__Notify: u64 = 38666;
+/// `BSTEventSource<ContractedDisease::Event>::RemoveEventSink` at 0x6d2110 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ContractedDisease::Event>* this, BSTEventSink<ContractedDisease::Event>* sink)`
+pub const BSTEventSource_ContractedDisease__Event__RemoveEventSink: u64 = 38682;
+/// `BSTEventSource<CriticalHitEvent::Event>::AddEventSink` at 0x6d1b40 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<CriticalHitEvent::Event>* this, BSTEventSink<CriticalHitEvent::Event>* sink)`
+pub const BSTEventSource_CriticalHitEvent__Event__AddEventSink: u64 = 38674;
+/// `BSTEventSource<CriticalHitEvent::Event>::Notify` at 0x6d10f0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<CriticalHitEvent::Event>* this, const CriticalHitEvent::Event* event)`
+pub const BSTEventSource_CriticalHitEvent__Event__Notify: u64 = 38667;
+/// `BSTEventSource<CriticalHitEvent::Event>::RemoveEventSink` at 0x6d22a0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<CriticalHitEvent::Event>* this, BSTEventSink<CriticalHitEvent::Event>* sink)`
+pub const BSTEventSource_CriticalHitEvent__Event__RemoveEventSink: u64 = 38683;
+/// `BSTEventSource<DaysJailed::Event>::AddEventSink` at 0x76f9e0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<DaysJailed::Event>* this, BSTEventSink<DaysJailed::Event>* sink)`
+pub const BSTEventSource_DaysJailed__Event__AddEventSink: u64 = 41080;
+/// `BSTEventSource<DaysJailed::Event>::Notify` at 0x76b910 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<DaysJailed::Event>* this, const DaysJailed::Event* event)`
+pub const BSTEventSource_DaysJailed__Event__Notify: u64 = 41037;
+/// `BSTEventSource<DaysJailed::Event>::RemoveEventSink` at 0x7733e0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<DaysJailed::Event>* this, BSTEventSink<DaysJailed::Event>* sink)`
+pub const BSTEventSource_DaysJailed__Event__RemoveEventSink: u64 = 41149;
+/// `BSTEventSource<DaysPassed::Event>::AddEventSink` at 0x6471b0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<DaysPassed::Event>* this, BSTEventSink<DaysPassed::Event>* sink)`
+pub const BSTEventSource_DaysPassed__Event__AddEventSink: u64 = 36330;
+/// `BSTEventSource<DaysPassed::Event>::Notify` at 0x646e80 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<DaysPassed::Event>* this, const DaysPassed::Event* event)`
+pub const BSTEventSource_DaysPassed__Event__Notify: u64 = 36328;
+/// `BSTEventSource<DaysPassed::Event>::RemoveEventSink` at 0x647390 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<DaysPassed::Event>* this, BSTEventSink<DaysPassed::Event>* sink)`
+pub const BSTEventSource_DaysPassed__Event__RemoveEventSink: u64 = 36332;
+/// `BSTEventSource<DefaultObjectsReadyEvent::Event>::AddEventSink` at 0x31c170 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<DefaultObjectsReadyEvent::Event>* this, BSTEventSink<DefaultObjectsReadyEvent::Event>* sink)`
+pub const BSTEventSource_DefaultObjectsReadyEvent__Event__AddEventSink: u64 = 20782;
+/// `BSTEventSource<DefaultObjectsReadyEvent::Event>::Notify` at 0x31be40 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<DefaultObjectsReadyEvent::Event>* this, const DefaultObjectsReadyEvent::Event* event)`
+pub const BSTEventSource_DefaultObjectsReadyEvent__Event__Notify: u64 = 20780;
+/// `BSTEventSource<DefaultObjectsReadyEvent::Event>::RemoveEventSink` at 0x31c350 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<DefaultObjectsReadyEvent::Event>* this, BSTEventSink<DefaultObjectsReadyEvent::Event>* sink)`
+pub const BSTEventSource_DefaultObjectsReadyEvent__Event__RemoveEventSink: u64 = 20784;
+/// `BSTEventSource<DisarmedEvent::Event>::AddEventSink` at 0x6c1670 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<DisarmedEvent::Event>* this, BSTEventSink<DisarmedEvent::Event>* sink)`
+pub const BSTEventSource_DisarmedEvent__Event__AddEventSink: u64 = 38351;
+/// `BSTEventSource<DisarmedEvent::Event>::Notify` at 0x6bf4b0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<DisarmedEvent::Event>* this, const DisarmedEvent::Event* event)`
+pub const BSTEventSource_DisarmedEvent__Event__Notify: u64 = 38315;
+/// `BSTEventSource<DisarmedEvent::Event>::RemoveEventSink` at 0x6c3410 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<DisarmedEvent::Event>* this, BSTEventSink<DisarmedEvent::Event>* sink)`
+pub const BSTEventSource_DisarmedEvent__Event__RemoveEventSink: u64 = 38406;
+/// `BSTEventSource<DragonSoulGained::Event>::AddEventSink` at 0x6c7770 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<DragonSoulGained::Event>* this, BSTEventSink<DragonSoulGained::Event>* sink)`
+pub const BSTEventSource_DragonSoulGained__Event__AddEventSink: u64 = 38521;
+/// `BSTEventSource<DragonSoulGained::Event>::Notify` at 0x6c7440 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<DragonSoulGained::Event>* this, const DragonSoulGained::Event* event)`
+pub const BSTEventSource_DragonSoulGained__Event__Notify: u64 = 38519;
+/// `BSTEventSource<DragonSoulGained::Event>::RemoveEventSink` at 0x6c7950 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<DragonSoulGained::Event>* this, BSTEventSink<DragonSoulGained::Event>* sink)`
+pub const BSTEventSource_DragonSoulGained__Event__RemoveEventSink: u64 = 38523;
+/// `BSTEventSource<FinePaid::Event>::AddEventSink` at 0x76fb60 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<FinePaid::Event>* this, BSTEventSink<FinePaid::Event>* sink)`
+pub const BSTEventSource_FinePaid__Event__AddEventSink: u64 = 41081;
+/// `BSTEventSource<FinePaid::Event>::Notify` at 0x76bb50 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<FinePaid::Event>* this, const FinePaid::Event* event)`
+pub const BSTEventSource_FinePaid__Event__Notify: u64 = 41038;
+/// `BSTEventSource<FinePaid::Event>::RemoveEventSink` at 0x773570 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<FinePaid::Event>* this, BSTEventSink<FinePaid::Event>* sink)`
+pub const BSTEventSource_FinePaid__Event__RemoveEventSink: u64 = 41150;
+/// `BSTEventSource<GrandTheftHorse::Event>::AddEventSink` at 0x6c1970 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<GrandTheftHorse::Event>* this, BSTEventSink<GrandTheftHorse::Event>* sink)`
+pub const BSTEventSource_GrandTheftHorse__Event__AddEventSink: u64 = 38353;
+/// `BSTEventSource<GrandTheftHorse::Event>::Notify` at 0x6bf930 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<GrandTheftHorse::Event>* this, const GrandTheftHorse::Event* event)`
+pub const BSTEventSource_GrandTheftHorse__Event__Notify: u64 = 38317;
+/// `BSTEventSource<GrandTheftHorse::Event>::RemoveEventSink` at 0x6c3730 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<GrandTheftHorse::Event>* this, BSTEventSink<GrandTheftHorse::Event>* sink)`
+pub const BSTEventSource_GrandTheftHorse__Event__RemoveEventSink: u64 = 38408;
+/// `BSTEventSource<HoursPassed::Event>::AddEventSink` at 0x975c30 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<HoursPassed::Event>* this, BSTEventSink<HoursPassed::Event>* sink)`
+pub const BSTEventSource_HoursPassed__Event__AddEventSink: u64 = 52502;
+/// `BSTEventSource<HoursPassed::Event>::Notify` at 0x975900 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<HoursPassed::Event>* this, const HoursPassed::Event* event)`
+pub const BSTEventSource_HoursPassed__Event__Notify: u64 = 52500;
+/// `BSTEventSource<HoursPassed::Event>::RemoveEventSink` at 0x975e10 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<HoursPassed::Event>* this, BSTEventSink<HoursPassed::Event>* sink)`
+pub const BSTEventSource_HoursPassed__Event__RemoveEventSink: u64 = 52504;
+/// `BSTEventSource<InputEvent*___ptr64>::AddEventSink` at 0x644f40 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<InputEvent*___ptr64>* this, BSTEventSink<InputEvent*___ptr64>* sink)`
 pub const BSTEventSource_InputEvent____ptr64__AddEventSink: u64 = 36271;
-/// `BSTEventSource<MenuModeChangeEvent>::AddEventSink` at 0x5eb480 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<InputEvent*___ptr64>::RemoveEventSink` at 0x645140 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<InputEvent*___ptr64>* this, BSTEventSink<InputEvent*___ptr64>* sink)`
+pub const BSTEventSource_InputEvent____ptr64__RemoveEventSink: u64 = 36275;
+/// `BSTEventSource<Inventory::Event>::AddEventSink` at 0x241b90 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<Inventory::Event>* this, BSTEventSink<Inventory::Event>* sink)`
+pub const BSTEventSource_Inventory__Event__AddEventSink: u64 = 16226;
+/// `BSTEventSource<Inventory::Event>::Notify` at 0x2411a0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<Inventory::Event>* this, const Inventory::Event* event)`
+pub const BSTEventSource_Inventory__Event__Notify: u64 = 16221;
+/// `BSTEventSource<Inventory::Event>::RemoveEventSink` at 0x2420e0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<Inventory::Event>* this, BSTEventSink<Inventory::Event>* sink)`
+pub const BSTEventSource_Inventory__Event__RemoveEventSink: u64 = 16231;
+/// `BSTEventSource<ItemCrafted::Event>::AddEventSink` at 0x924a40 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ItemCrafted::Event>* this, BSTEventSink<ItemCrafted::Event>* sink)`
+pub const BSTEventSource_ItemCrafted__Event__AddEventSink: u64 = 51405;
+/// `BSTEventSource<ItemCrafted::Event>::Notify` at 0x9242d0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ItemCrafted::Event>* this, const ItemCrafted::Event* event)`
+pub const BSTEventSource_ItemCrafted__Event__Notify: u64 = 51397;
+/// `BSTEventSource<ItemCrafted::Event>::RemoveEventSink` at 0x926df0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ItemCrafted::Event>* this, BSTEventSink<ItemCrafted::Event>* sink)`
+pub const BSTEventSource_ItemCrafted__Event__RemoveEventSink: u64 = 51445;
+/// `BSTEventSource<ItemSteal::Event>::AddEventSink` at 0x76fce0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ItemSteal::Event>* this, BSTEventSink<ItemSteal::Event>* sink)`
+pub const BSTEventSource_ItemSteal__Event__AddEventSink: u64 = 41082;
+/// `BSTEventSource<ItemSteal::Event>::Notify` at 0x76bd90 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ItemSteal::Event>* this, const ItemSteal::Event* event)`
+pub const BSTEventSource_ItemSteal__Event__Notify: u64 = 41039;
+/// `BSTEventSource<ItemSteal::Event>::RemoveEventSink` at 0x773700 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ItemSteal::Event>* this, BSTEventSink<ItemSteal::Event>* sink)`
+pub const BSTEventSource_ItemSteal__Event__RemoveEventSink: u64 = 41151;
+/// `BSTEventSource<ItemsPickpocketed::Event>::AddEventSink` at 0x915980 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ItemsPickpocketed::Event>* this, BSTEventSink<ItemsPickpocketed::Event>* sink)`
+pub const BSTEventSource_ItemsPickpocketed__Event__AddEventSink: u64 = 51185;
+/// `BSTEventSource<ItemsPickpocketed::Event>::Notify` at 0x9153e0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ItemsPickpocketed::Event>* this, const ItemsPickpocketed::Event* event)`
+pub const BSTEventSource_ItemsPickpocketed__Event__Notify: u64 = 51181;
+/// `BSTEventSource<ItemsPickpocketed::Event>::RemoveEventSink` at 0x915db0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ItemsPickpocketed::Event>* this, BSTEventSink<ItemsPickpocketed::Event>* sink)`
+pub const BSTEventSource_ItemsPickpocketed__Event__RemoveEventSink: u64 = 51190;
+/// `BSTEventSource<JailEscape::Event>::AddEventSink` at 0x76fe60 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<JailEscape::Event>* this, BSTEventSink<JailEscape::Event>* sink)`
+pub const BSTEventSource_JailEscape__Event__AddEventSink: u64 = 41083;
+/// `BSTEventSource<JailEscape::Event>::Notify` at 0x76bfd0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<JailEscape::Event>* this, const JailEscape::Event* event)`
+pub const BSTEventSource_JailEscape__Event__Notify: u64 = 41040;
+/// `BSTEventSource<JailEscape::Event>::RemoveEventSink` at 0x773890 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<JailEscape::Event>* this, BSTEventSink<JailEscape::Event>* sink)`
+pub const BSTEventSource_JailEscape__Event__RemoveEventSink: u64 = 41152;
+/// `BSTEventSource<Jailing::Event>::AddEventSink` at 0x76ffe0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<Jailing::Event>* this, BSTEventSink<Jailing::Event>* sink)`
+pub const BSTEventSource_Jailing__Event__AddEventSink: u64 = 41084;
+/// `BSTEventSource<Jailing::Event>::Notify` at 0x76c210 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<Jailing::Event>* this, const Jailing::Event* event)`
+pub const BSTEventSource_Jailing__Event__Notify: u64 = 41041;
+/// `BSTEventSource<Jailing::Event>::RemoveEventSink` at 0x773a20 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<Jailing::Event>* this, BSTEventSink<Jailing::Event>* sink)`
+pub const BSTEventSource_Jailing__Event__RemoveEventSink: u64 = 41153;
+/// `BSTEventSource<LevelIncrease::Event>::AddEventSink` at 0x73b9e0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<LevelIncrease::Event>* this, BSTEventSink<LevelIncrease::Event>* sink)`
+pub const BSTEventSource_LevelIncrease__Event__AddEventSink: u64 = 40321;
+/// `BSTEventSource<LevelIncrease::Event>::Notify` at 0x73b380 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<LevelIncrease::Event>* this, const LevelIncrease::Event* event)`
+pub const BSTEventSource_LevelIncrease__Event__Notify: u64 = 40317;
+/// `BSTEventSource<LevelIncrease::Event>::RemoveEventSink` at 0x73bda0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<LevelIncrease::Event>* this, BSTEventSink<LevelIncrease::Event>* sink)`
+pub const BSTEventSource_LevelIncrease__Event__RemoveEventSink: u64 = 40325;
+/// `BSTEventSource<LocationCleared::Event>::AddEventSink` at 0x29d390 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<LocationCleared::Event>* this, BSTEventSink<LocationCleared::Event>* sink)`
+pub const BSTEventSource_LocationCleared__Event__AddEventSink: u64 = 18436;
+/// `BSTEventSource<LocationCleared::Event>::Notify` at 0x29d060 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<LocationCleared::Event>* this, const LocationCleared::Event* event)`
+pub const BSTEventSource_LocationCleared__Event__Notify: u64 = 18434;
+/// `BSTEventSource<LocationCleared::Event>::RemoveEventSink` at 0x29e1f0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<LocationCleared::Event>* this, BSTEventSink<LocationCleared::Event>* sink)`
+pub const BSTEventSource_LocationCleared__Event__RemoveEventSink: u64 = 18447;
+/// `BSTEventSource<LocationDiscovery::Event>::AddEventSink` at 0x770160 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<LocationDiscovery::Event>* this, BSTEventSink<LocationDiscovery::Event>* sink)`
+pub const BSTEventSource_LocationDiscovery__Event__AddEventSink: u64 = 41085;
+/// `BSTEventSource<LocationDiscovery::Event>::Notify` at 0x76c450 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<LocationDiscovery::Event>* this, const LocationDiscovery::Event* event)`
+pub const BSTEventSource_LocationDiscovery__Event__Notify: u64 = 41042;
+/// `BSTEventSource<LocationDiscovery::Event>::RemoveEventSink` at 0x773bb0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<LocationDiscovery::Event>* this, BSTEventSink<LocationDiscovery::Event>* sink)`
+pub const BSTEventSource_LocationDiscovery__Event__RemoveEventSink: u64 = 41154;
+/// `BSTEventSource<LocksPicked::Event>::AddEventSink` at 0x950c90 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<LocksPicked::Event>* this, BSTEventSink<LocksPicked::Event>* sink)`
+pub const BSTEventSource_LocksPicked__Event__AddEventSink: u64 = 51998;
+/// `BSTEventSource<LocksPicked::Event>::Notify` at 0x950960 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<LocksPicked::Event>* this, const LocksPicked::Event* event)`
+pub const BSTEventSource_LocksPicked__Event__Notify: u64 = 51996;
+/// `BSTEventSource<LocksPicked::Event>::RemoveEventSink` at 0x950e70 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<LocksPicked::Event>* this, BSTEventSink<LocksPicked::Event>* sink)`
+pub const BSTEventSource_LocksPicked__Event__RemoveEventSink: u64 = 52000;
+/// `BSTEventSource<MenuModeChangeEvent>::AddEventSink` at 0x5eb480 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<MenuModeChangeEvent>* this, BSTEventSink<MenuModeChangeEvent>* sink)`
 pub const BSTEventSource_MenuModeChangeEvent__AddEventSink: u64 = 35182;
-/// `BSTEventSource<MenuModeChangeEvent>::RemoveEventSink` at 0x5ebbd0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<MenuModeChangeEvent>::RemoveEventSink` at 0x5ebbd0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<MenuModeChangeEvent>* this, BSTEventSink<MenuModeChangeEvent>* sink)`
 pub const BSTEventSource_MenuModeChangeEvent__RemoveEventSink: u64 = 35189;
-/// `BSTEventSource<MenuOpenCloseEvent>::AddEventSink` at 0x3ccde0 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<MenuOpenCloseEvent>::AddEventSink` at 0x3ccde0 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<MenuOpenCloseEvent>* this, BSTEventSink<MenuOpenCloseEvent>* sink)`
 pub const BSTEventSource_MenuOpenCloseEvent__AddEventSink: u64 = 24925;
-/// `BSTEventSource<MenuOpenCloseEvent>::RemoveEventSink` at 0x3cd9e0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<MenuOpenCloseEvent>::RemoveEventSink` at 0x3cd9e0 (runtime, high); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (high); semantic signature: `void (BSTEventSource<MenuOpenCloseEvent>* this, BSTEventSink<MenuOpenCloseEvent>* sink)`
 pub const BSTEventSource_MenuOpenCloseEvent__RemoveEventSink: u64 = 24940;
-/// `BSTEventSource<PositionPlayerEvent>::AddEventSink` at 0x4b8a50 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<MurderCrime::Event>::AddEventSink` at 0x6c1af0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<MurderCrime::Event>* this, BSTEventSink<MurderCrime::Event>* sink)`
+pub const BSTEventSource_MurderCrime__Event__AddEventSink: u64 = 38354;
+/// `BSTEventSource<MurderCrime::Event>::Notify` at 0x6bfb70 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<MurderCrime::Event>* this, const MurderCrime::Event* event)`
+pub const BSTEventSource_MurderCrime__Event__Notify: u64 = 38318;
+/// `BSTEventSource<MurderCrime::Event>::RemoveEventSink` at 0x6c38c0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<MurderCrime::Event>* this, BSTEventSink<MurderCrime::Event>* sink)`
+pub const BSTEventSource_MurderCrime__Event__RemoveEventSink: u64 = 38409;
+/// `BSTEventSource<ObjectiveState::Event>::AddEventSink` at 0x39c430 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ObjectiveState::Event>* this, BSTEventSink<ObjectiveState::Event>* sink)`
+pub const BSTEventSource_ObjectiveState__Event__AddEventSink: u64 = 23952;
+/// `BSTEventSource<ObjectiveState::Event>::Notify` at 0x39c100 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ObjectiveState::Event>* this, const ObjectiveState::Event* event)`
+pub const BSTEventSource_ObjectiveState__Event__Notify: u64 = 23950;
+/// `BSTEventSource<ObjectiveState::Event>::RemoveEventSink` at 0x39c610 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ObjectiveState::Event>* this, BSTEventSink<ObjectiveState::Event>* sink)`
+pub const BSTEventSource_ObjectiveState__Event__RemoveEventSink: u64 = 23954;
+/// `BSTEventSource<Pickpocket::Event>::AddEventSink` at 0x7702e0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<Pickpocket::Event>* this, BSTEventSink<Pickpocket::Event>* sink)`
+pub const BSTEventSource_Pickpocket__Event__AddEventSink: u64 = 41086;
+/// `BSTEventSource<Pickpocket::Event>::Notify` at 0x76c690 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<Pickpocket::Event>* this, const Pickpocket::Event* event)`
+pub const BSTEventSource_Pickpocket__Event__Notify: u64 = 41043;
+/// `BSTEventSource<Pickpocket::Event>::RemoveEventSink` at 0x773d40 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<Pickpocket::Event>* this, BSTEventSink<Pickpocket::Event>* sink)`
+pub const BSTEventSource_Pickpocket__Event__RemoveEventSink: u64 = 41155;
+/// `BSTEventSource<PoisonedWeapon::Event>::AddEventSink` at 0x770460 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<PoisonedWeapon::Event>* this, BSTEventSink<PoisonedWeapon::Event>* sink)`
+pub const BSTEventSource_PoisonedWeapon__Event__AddEventSink: u64 = 41087;
+/// `BSTEventSource<PoisonedWeapon::Event>::Notify` at 0x76c8d0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<PoisonedWeapon::Event>* this, const PoisonedWeapon::Event* event)`
+pub const BSTEventSource_PoisonedWeapon__Event__Notify: u64 = 41044;
+/// `BSTEventSource<PoisonedWeapon::Event>::RemoveEventSink` at 0x773ed0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<PoisonedWeapon::Event>* this, BSTEventSink<PoisonedWeapon::Event>* sink)`
+pub const BSTEventSource_PoisonedWeapon__Event__RemoveEventSink: u64 = 41156;
+/// `BSTEventSource<PositionPlayerEvent>::AddEventSink` at 0x4b8a50 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<PositionPlayerEvent>* this, BSTEventSink<PositionPlayerEvent>* sink)`
 pub const BSTEventSource_PositionPlayerEvent__AddEventSink: u64 = 30206;
-/// `BSTEventSource<TESCellReadyToApplyDecalsEvent>::RemoveEventSink` at 0x2d6650 (xref_inference, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<PositionPlayerEvent>::RemoveEventSink` at 0x4b8c50 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<PositionPlayerEvent>* this, BSTEventSink<PositionPlayerEvent>* sink)`
+pub const BSTEventSource_PositionPlayerEvent__RemoveEventSink: u64 = 30209;
+/// `BSTEventSource<QuestStatus::Event>::AddEventSink` at 0x3e0040 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<QuestStatus::Event>* this, BSTEventSink<QuestStatus::Event>* sink)`
+pub const BSTEventSource_QuestStatus__Event__AddEventSink: u64 = 25199;
+/// `BSTEventSource<QuestStatus::Event>::Notify` at 0x3dfa20 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<QuestStatus::Event>* this, const QuestStatus::Event* event)`
+pub const BSTEventSource_QuestStatus__Event__Notify: u64 = 25192;
+/// `BSTEventSource<QuestStatus::Event>::RemoveEventSink` at 0x3e0cc0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<QuestStatus::Event>* this, BSTEventSink<QuestStatus::Event>* sink)`
+pub const BSTEventSource_QuestStatus__Event__RemoveEventSink: u64 = 25214;
+/// `BSTEventSource<RaceSexMenuEvent::NameChangedEvent>::AddEventSink` at 0x9744e0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<RaceSexMenuEvent::NameChangedEvent>* this, BSTEventSink<RaceSexMenuEvent::NameChangedEvent>* sink)`
+pub const BSTEventSource_RaceSexMenuEvent__NameChangedEvent__AddEventSink: u64 = 52467;
+/// `BSTEventSource<RaceSexMenuEvent::NameChangedEvent>::Notify` at 0x9742a0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<RaceSexMenuEvent::NameChangedEvent>* this, const RaceSexMenuEvent::NameChangedEvent* event)`
+pub const BSTEventSource_RaceSexMenuEvent__NameChangedEvent__Notify: u64 = 52466;
+/// `BSTEventSource<RaceSexMenuEvent::NameChangedEvent>::RemoveEventSink` at 0x9746c0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<RaceSexMenuEvent::NameChangedEvent>* this, BSTEventSink<RaceSexMenuEvent::NameChangedEvent>* sink)`
+pub const BSTEventSource_RaceSexMenuEvent__NameChangedEvent__RemoveEventSink: u64 = 52469;
+/// `BSTEventSource<ShoutAttack::Event>::AddEventSink` at 0x770760 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ShoutAttack::Event>* this, BSTEventSink<ShoutAttack::Event>* sink)`
+pub const BSTEventSource_ShoutAttack__Event__AddEventSink: u64 = 41089;
+/// `BSTEventSource<ShoutAttack::Event>::Notify` at 0x76cd50 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ShoutAttack::Event>* this, const ShoutAttack::Event* event)`
+pub const BSTEventSource_ShoutAttack__Event__Notify: u64 = 41046;
+/// `BSTEventSource<ShoutAttack::Event>::RemoveEventSink` at 0x7741f0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ShoutAttack::Event>* this, BSTEventSink<ShoutAttack::Event>* sink)`
+pub const BSTEventSource_ShoutAttack__Event__RemoveEventSink: u64 = 41158;
+/// `BSTEventSource<ShoutMastered::Event>::AddEventSink` at 0x7708e0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<ShoutMastered::Event>* this, BSTEventSink<ShoutMastered::Event>* sink)`
+pub const BSTEventSource_ShoutMastered__Event__AddEventSink: u64 = 41090;
+/// `BSTEventSource<ShoutMastered::Event>::Notify` at 0x76cf90 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<ShoutMastered::Event>* this, const ShoutMastered::Event* event)`
+pub const BSTEventSource_ShoutMastered__Event__Notify: u64 = 41047;
+/// `BSTEventSource<ShoutMastered::Event>::RemoveEventSink` at 0x774380 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<ShoutMastered::Event>* this, BSTEventSink<ShoutMastered::Event>* sink)`
+pub const BSTEventSource_ShoutMastered__Event__RemoveEventSink: u64 = 41159;
+/// `BSTEventSource<SkillIncrease::Event>::AddEventSink` at 0x73bb60 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<SkillIncrease::Event>* this, BSTEventSink<SkillIncrease::Event>* sink)`
+pub const BSTEventSource_SkillIncrease__Event__AddEventSink: u64 = 40322;
+/// `BSTEventSource<SkillIncrease::Event>::Notify` at 0x73b5c0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<SkillIncrease::Event>* this, const SkillIncrease::Event* event)`
+pub const BSTEventSource_SkillIncrease__Event__Notify: u64 = 40318;
+/// `BSTEventSource<SkillIncrease::Event>::RemoveEventSink` at 0x73bf30 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<SkillIncrease::Event>* this, BSTEventSink<SkillIncrease::Event>* sink)`
+pub const BSTEventSource_SkillIncrease__Event__RemoveEventSink: u64 = 40326;
+/// `BSTEventSource<SoulGemsUsed::Event>::AddEventSink` at 0x946c20 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<SoulGemsUsed::Event>* this, BSTEventSink<SoulGemsUsed::Event>* sink)`
+pub const BSTEventSource_SoulGemsUsed__Event__AddEventSink: u64 = 51889;
+/// `BSTEventSource<SoulGemsUsed::Event>::Notify` at 0x9468f0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<SoulGemsUsed::Event>* this, const SoulGemsUsed::Event* event)`
+pub const BSTEventSource_SoulGemsUsed__Event__Notify: u64 = 51887;
+/// `BSTEventSource<SoulGemsUsed::Event>::RemoveEventSink` at 0x946e00 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<SoulGemsUsed::Event>* this, BSTEventSink<SoulGemsUsed::Event>* sink)`
+pub const BSTEventSource_SoulGemsUsed__Event__RemoveEventSink: u64 = 51891;
+/// `BSTEventSource<SoulsTrapped::Event>::AddEventSink` at 0x6db7c0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<SoulsTrapped::Event>* this, BSTEventSink<SoulsTrapped::Event>* sink)`
+pub const BSTEventSource_SoulsTrapped__Event__AddEventSink: u64 = 38875;
+/// `BSTEventSource<SoulsTrapped::Event>::Notify` at 0x6daea0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<SoulsTrapped::Event>* this, const SoulsTrapped::Event* event)`
+pub const BSTEventSource_SoulsTrapped__Event__Notify: u64 = 38869;
+/// `BSTEventSource<SoulsTrapped::Event>::RemoveEventSink` at 0x6dbb80 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<SoulsTrapped::Event>* this, BSTEventSink<SoulsTrapped::Event>* sink)`
+pub const BSTEventSource_SoulsTrapped__Event__RemoveEventSink: u64 = 38879;
+/// `BSTEventSource<SpellAttack::Event>::AddEventSink` at 0x7b4850 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<SpellAttack::Event>* this, BSTEventSink<SpellAttack::Event>* sink)`
+pub const BSTEventSource_SpellAttack__Event__AddEventSink: u64 = 42445;
+/// `BSTEventSource<SpellAttack::Event>::Notify` at 0x7b4500 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<SpellAttack::Event>* this, const SpellAttack::Event* event)`
+pub const BSTEventSource_SpellAttack__Event__Notify: u64 = 42441;
+/// `BSTEventSource<SpellAttack::Event>::RemoveEventSink` at 0x7b54f0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<SpellAttack::Event>* this, BSTEventSink<SpellAttack::Event>* sink)`
+pub const BSTEventSource_SpellAttack__Event__RemoveEventSink: u64 = 42467;
+/// `BSTEventSource<SpellsLearned::Event>::AddEventSink` at 0x6db940 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<SpellsLearned::Event>* this, BSTEventSink<SpellsLearned::Event>* sink)`
+pub const BSTEventSource_SpellsLearned__Event__AddEventSink: u64 = 38876;
+/// `BSTEventSource<SpellsLearned::Event>::Notify` at 0x6db0e0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<SpellsLearned::Event>* this, const SpellsLearned::Event* event)`
+pub const BSTEventSource_SpellsLearned__Event__Notify: u64 = 38870;
+/// `BSTEventSource<SpellsLearned::Event>::RemoveEventSink` at 0x6dbd10 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<SpellsLearned::Event>* this, BSTEventSink<SpellsLearned::Event>* sink)`
+pub const BSTEventSource_SpellsLearned__Event__RemoveEventSink: u64 = 38880;
+/// `BSTEventSource<TESActivateEvent>::AddEventSink` at 0x9f1eb0 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESActivateEvent>* this, BSTEventSink<TESActivateEvent>* sink)`
+pub const BSTEventSource_TESActivateEvent__AddEventSink: u64 = 54425;
+/// `BSTEventSource<TESActivateEvent>::Notify` at 0x2fa990 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESActivateEvent>* this, const TESActivateEvent* event)`
+pub const BSTEventSource_TESActivateEvent__Notify: u64 = 20038;
+/// `BSTEventSource<TESActivateEvent>::RemoveEventSink` at 0x9f7730 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESActivateEvent>* this, BSTEventSink<TESActivateEvent>* sink)`
+pub const BSTEventSource_TESActivateEvent__RemoveEventSink: u64 = 54522;
+/// `BSTEventSource<TESActiveEffectApplyRemoveEvent>::AddEventSink` at 0x9f2020 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESActiveEffectApplyRemoveEvent>* this, BSTEventSink<TESActiveEffectApplyRemoveEvent>* sink)`
+pub const BSTEventSource_TESActiveEffectApplyRemoveEvent__AddEventSink: u64 = 54426;
+/// `BSTEventSource<TESActiveEffectApplyRemoveEvent>::RemoveEventSink` at 0x9f78b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESActiveEffectApplyRemoveEvent>* this, BSTEventSink<TESActiveEffectApplyRemoveEvent>* sink)`
+pub const BSTEventSource_TESActiveEffectApplyRemoveEvent__RemoveEventSink: u64 = 54523;
+/// `BSTEventSource<TESActorLocationChangeEvent>::AddEventSink` at 0x9f2190 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESActorLocationChangeEvent>* this, BSTEventSink<TESActorLocationChangeEvent>* sink)`
+pub const BSTEventSource_TESActorLocationChangeEvent__AddEventSink: u64 = 54427;
+/// `BSTEventSource<TESActorLocationChangeEvent>::Notify` at 0x2fabd0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESActorLocationChangeEvent>* this, const TESActorLocationChangeEvent* event)`
+pub const BSTEventSource_TESActorLocationChangeEvent__Notify: u64 = 20039;
+/// `BSTEventSource<TESActorLocationChangeEvent>::RemoveEventSink` at 0x9f7a30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESActorLocationChangeEvent>* this, BSTEventSink<TESActorLocationChangeEvent>* sink)`
+pub const BSTEventSource_TESActorLocationChangeEvent__RemoveEventSink: u64 = 54524;
+/// `BSTEventSource<TESAmiiboForcedStopDetectionEvent>::AddEventSink` at 0x9f2300 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESAmiiboForcedStopDetectionEvent>* this, BSTEventSink<TESAmiiboForcedStopDetectionEvent>* sink)`
+pub const BSTEventSource_TESAmiiboForcedStopDetectionEvent__AddEventSink: u64 = 524046;
+/// `BSTEventSource<TESAmiiboTouchEvent>::AddEventSink` at 0x9f2470 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESAmiiboTouchEvent>* this, BSTEventSink<TESAmiiboTouchEvent>* sink)`
+pub const BSTEventSource_TESAmiiboTouchEvent__AddEventSink: u64 = 524047;
+/// `BSTEventSource<TESAmiiboTouchEvent>::Notify` at 0x384ef0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESAmiiboTouchEvent>* this, const TESAmiiboTouchEvent* event)`
+pub const BSTEventSource_TESAmiiboTouchEvent__Notify: u64 = 523559;
+/// `BSTEventSource<TESBookReadEvent>::AddEventSink` at 0x9f25e0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESBookReadEvent>* this, BSTEventSink<TESBookReadEvent>* sink)`
+pub const BSTEventSource_TESBookReadEvent__AddEventSink: u64 = 54428;
+/// `BSTEventSource<TESBookReadEvent>::Notify` at 0x908df0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESBookReadEvent>* this, const TESBookReadEvent* event)`
+pub const BSTEventSource_TESBookReadEvent__Notify: u64 = 51075;
+/// `BSTEventSource<TESBookReadEvent>::RemoveEventSink` at 0x9f7bb0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESBookReadEvent>* this, BSTEventSink<TESBookReadEvent>* sink)`
+pub const BSTEventSource_TESBookReadEvent__RemoveEventSink: u64 = 54525;
+/// `BSTEventSource<TESCellAttachDetachEvent>::AddEventSink` at 0x9f2750 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESCellAttachDetachEvent>* this, BSTEventSink<TESCellAttachDetachEvent>* sink)`
+pub const BSTEventSource_TESCellAttachDetachEvent__AddEventSink: u64 = 54429;
+/// `BSTEventSource<TESCellAttachDetachEvent>::Notify` at 0x2d4c90 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESCellAttachDetachEvent>* this, const TESCellAttachDetachEvent* event)`
+pub const BSTEventSource_TESCellAttachDetachEvent__Notify: u64 = 19362;
+/// `BSTEventSource<TESCellAttachDetachEvent>::RemoveEventSink` at 0x9f7d30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESCellAttachDetachEvent>* this, BSTEventSink<TESCellAttachDetachEvent>* sink)`
+pub const BSTEventSource_TESCellAttachDetachEvent__RemoveEventSink: u64 = 54526;
+/// `BSTEventSource<TESCellFullyLoadedEvent>::AddEventSink` at 0x9f28c0 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESCellFullyLoadedEvent>* this, BSTEventSink<TESCellFullyLoadedEvent>* sink)`
+pub const BSTEventSource_TESCellFullyLoadedEvent__AddEventSink: u64 = 54430;
+/// `BSTEventSource<TESCellFullyLoadedEvent>::Notify` at 0x1b4e50 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESCellFullyLoadedEvent>* this, const TESCellFullyLoadedEvent* event)`
+pub const BSTEventSource_TESCellFullyLoadedEvent__Notify: u64 = 13664;
+/// `BSTEventSource<TESCellFullyLoadedEvent>::RemoveEventSink` at 0x9f7eb0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESCellFullyLoadedEvent>* this, BSTEventSink<TESCellFullyLoadedEvent>* sink)`
+pub const BSTEventSource_TESCellFullyLoadedEvent__RemoveEventSink: u64 = 54527;
+/// `BSTEventSource<TESCellReadyToApplyDecalsEvent>::AddEventSink` at 0x2d57d0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESCellReadyToApplyDecalsEvent>* this, BSTEventSink<TESCellReadyToApplyDecalsEvent>* sink)`
+pub const BSTEventSource_TESCellReadyToApplyDecalsEvent__AddEventSink: u64 = 19367;
+/// `BSTEventSource<TESCellReadyToApplyDecalsEvent>::Notify` at 0x2d4ee0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESCellReadyToApplyDecalsEvent>* this, const TESCellReadyToApplyDecalsEvent* event)`
+pub const BSTEventSource_TESCellReadyToApplyDecalsEvent__Notify: u64 = 19363;
+/// `BSTEventSource<TESCellReadyToApplyDecalsEvent>::RemoveEventSink` at 0x2d6650 (xref_inference, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESCellReadyToApplyDecalsEvent>* this, BSTEventSink<TESCellReadyToApplyDecalsEvent>* sink)`
 pub const BSTEventSource_TESCellReadyToApplyDecalsEvent__RemoveEventSink: u64 = 19386;
-/// `BSTEventSource<TESDataHandlerPostBuildFileListEvent>::RemoveEventSink` at 0x63e1e0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESCombatEvent>::AddEventSink` at 0x9f2a30 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESCombatEvent>* this, BSTEventSink<TESCombatEvent>* sink)`
+pub const BSTEventSource_TESCombatEvent__AddEventSink: u64 = 54431;
+/// `BSTEventSource<TESCombatEvent>::Notify` at 0x564b70 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESCombatEvent>* this, const TESCombatEvent* event)`
+pub const BSTEventSource_TESCombatEvent__Notify: u64 = 33305;
+/// `BSTEventSource<TESCombatEvent>::RemoveEventSink` at 0x9f8030 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESCombatEvent>* this, BSTEventSink<TESCombatEvent>* sink)`
+pub const BSTEventSource_TESCombatEvent__RemoveEventSink: u64 = 54528;
+/// `BSTEventSource<TESContainerChangedEvent>::AddEventSink` at 0x9f2ba0 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESContainerChangedEvent>* this, BSTEventSink<TESContainerChangedEvent>* sink)`
+pub const BSTEventSource_TESContainerChangedEvent__AddEventSink: u64 = 54432;
+/// `BSTEventSource<TESContainerChangedEvent>::Notify` at 0x2413e0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESContainerChangedEvent>* this, const TESContainerChangedEvent* event)`
+pub const BSTEventSource_TESContainerChangedEvent__Notify: u64 = 16222;
+/// `BSTEventSource<TESContainerChangedEvent>::RemoveEventSink` at 0x9f81b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESContainerChangedEvent>* this, BSTEventSink<TESContainerChangedEvent>* sink)`
+pub const BSTEventSource_TESContainerChangedEvent__RemoveEventSink: u64 = 54529;
+/// `BSTEventSource<TESDataHandlerPostBuildFileListEvent>::AddEventSink` at 0x63d8d0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESDataHandlerPostBuildFileListEvent>* this, BSTEventSink<TESDataHandlerPostBuildFileListEvent>* sink)`
+pub const BSTEventSource_TESDataHandlerPostBuildFileListEvent__AddEventSink: u64 = 36149;
+/// `BSTEventSource<TESDataHandlerPostBuildFileListEvent>::RemoveEventSink` at 0x63e1e0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESDataHandlerPostBuildFileListEvent>* this, BSTEventSink<TESDataHandlerPostBuildFileListEvent>* sink)`
 pub const BSTEventSource_TESDataHandlerPostBuildFileListEvent__RemoveEventSink: u64 = 36154;
-/// `BSTEventSource<TESFurnitureEvent>::AddEventSink` at 0x7b49d0 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESDeathEvent>::AddEventSink` at 0x9f2d10 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESDeathEvent>* this, BSTEventSink<TESDeathEvent>* sink)`
+pub const BSTEventSource_TESDeathEvent__AddEventSink: u64 = 54433;
+/// `BSTEventSource<TESDeathEvent>::Notify` at 0x6bfdb0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESDeathEvent>* this, const TESDeathEvent* event)`
+pub const BSTEventSource_TESDeathEvent__Notify: u64 = 38319;
+/// `BSTEventSource<TESDeathEvent>::RemoveEventSink` at 0x9f8330 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESDeathEvent>* this, BSTEventSink<TESDeathEvent>* sink)`
+pub const BSTEventSource_TESDeathEvent__RemoveEventSink: u64 = 54530;
+/// `BSTEventSource<TESDestructionStageChangedEvent>::AddEventSink` at 0x9f2e80 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESDestructionStageChangedEvent>* this, BSTEventSink<TESDestructionStageChangedEvent>* sink)`
+pub const BSTEventSource_TESDestructionStageChangedEvent__AddEventSink: u64 = 54434;
+/// `BSTEventSource<TESDestructionStageChangedEvent>::Notify` at 0x1d6b10 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESDestructionStageChangedEvent>* this, const TESDestructionStageChangedEvent* event)`
+pub const BSTEventSource_TESDestructionStageChangedEvent__Notify: u64 = 14204;
+/// `BSTEventSource<TESDestructionStageChangedEvent>::RemoveEventSink` at 0x9f84b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESDestructionStageChangedEvent>* this, BSTEventSink<TESDestructionStageChangedEvent>* sink)`
+pub const BSTEventSource_TESDestructionStageChangedEvent__RemoveEventSink: u64 = 54531;
+/// `BSTEventSource<TESEnterBleedoutEvent>::AddEventSink` at 0x9f2ff0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESEnterBleedoutEvent>* this, BSTEventSink<TESEnterBleedoutEvent>* sink)`
+pub const BSTEventSource_TESEnterBleedoutEvent__AddEventSink: u64 = 54435;
+/// `BSTEventSource<TESEnterBleedoutEvent>::Notify` at 0x6bfff0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESEnterBleedoutEvent>* this, const TESEnterBleedoutEvent* event)`
+pub const BSTEventSource_TESEnterBleedoutEvent__Notify: u64 = 38320;
+/// `BSTEventSource<TESEnterBleedoutEvent>::RemoveEventSink` at 0x9f8630 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESEnterBleedoutEvent>* this, BSTEventSink<TESEnterBleedoutEvent>* sink)`
+pub const BSTEventSource_TESEnterBleedoutEvent__RemoveEventSink: u64 = 54532;
+/// `BSTEventSource<TESEquipEvent>::AddEventSink` at 0x9f3160 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESEquipEvent>* this, BSTEventSink<TESEquipEvent>* sink)`
+pub const BSTEventSource_TESEquipEvent__AddEventSink: u64 = 54436;
+/// `BSTEventSource<TESEquipEvent>::Notify` at 0x6c0230 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESEquipEvent>* this, const TESEquipEvent* event)`
+pub const BSTEventSource_TESEquipEvent__Notify: u64 = 38321;
+/// `BSTEventSource<TESEquipEvent>::RemoveEventSink` at 0x9f87b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESEquipEvent>* this, BSTEventSink<TESEquipEvent>* sink)`
+pub const BSTEventSource_TESEquipEvent__RemoveEventSink: u64 = 54533;
+/// `BSTEventSource<TESFastTravelEndEvent>::AddEventSink` at 0x9f32d0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESFastTravelEndEvent>* this, BSTEventSink<TESFastTravelEndEvent>* sink)`
+pub const BSTEventSource_TESFastTravelEndEvent__AddEventSink: u64 = 54437;
+/// `BSTEventSource<TESFastTravelEndEvent>::Notify` at 0x76db30 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESFastTravelEndEvent>* this, const TESFastTravelEndEvent* event)`
+pub const BSTEventSource_TESFastTravelEndEvent__Notify: u64 = 41052;
+/// `BSTEventSource<TESFastTravelEndEvent>::RemoveEventSink` at 0x9f8930 (runtime, high); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (high); semantic signature: `void (BSTEventSource<TESFastTravelEndEvent>* this, BSTEventSink<TESFastTravelEndEvent>* sink)`
+pub const BSTEventSource_TESFastTravelEndEvent__RemoveEventSink: u64 = 54534;
+/// `BSTEventSource<TESFormDeleteEvent>::AddEventSink` at 0x9f3440 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESFormDeleteEvent>* this, BSTEventSink<TESFormDeleteEvent>* sink)`
+pub const BSTEventSource_TESFormDeleteEvent__AddEventSink: u64 = 54438;
+/// `BSTEventSource<TESFormDeleteEvent>::Notify` at 0x2fae10 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESFormDeleteEvent>* this, const TESFormDeleteEvent* event)`
+pub const BSTEventSource_TESFormDeleteEvent__Notify: u64 = 20040;
+/// `BSTEventSource<TESFormDeleteEvent>::RemoveEventSink` at 0x9f8ab0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESFormDeleteEvent>* this, BSTEventSink<TESFormDeleteEvent>* sink)`
+pub const BSTEventSource_TESFormDeleteEvent__RemoveEventSink: u64 = 54535;
+/// `BSTEventSource<TESFurnitureEvent>::AddEventSink` at 0x7b49d0 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESFurnitureEvent>* this, BSTEventSink<TESFurnitureEvent>* sink)`
 pub const BSTEventSource_TESFurnitureEvent__AddEventSink: u64 = 42446;
-/// `BSTEventSource<TESFurnitureEvent>::RemoveEventSink` at 0x7b5680 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESFurnitureEvent>::Notify` at 0x736480 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESFurnitureEvent>* this, const TESFurnitureEvent* event)`
+pub const BSTEventSource_TESFurnitureEvent__Notify: u64 = 40155;
+/// `BSTEventSource<TESFurnitureEvent>::RemoveEventSink` at 0x7b5680 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESFurnitureEvent>* this, BSTEventSink<TESFurnitureEvent>* sink)`
 pub const BSTEventSource_TESFurnitureEvent__RemoveEventSink: u64 = 42468;
-/// `BSTEventSource<TESQuestStartStopEvent>::RemoveEventSink` at 0x9ccaa0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESGrabReleaseEvent>::AddEventSink` at 0x9f35b0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESGrabReleaseEvent>* this, BSTEventSink<TESGrabReleaseEvent>* sink)`
+pub const BSTEventSource_TESGrabReleaseEvent__AddEventSink: u64 = 54439;
+/// `BSTEventSource<TESGrabReleaseEvent>::Notify` at 0x76dd70 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESGrabReleaseEvent>* this, const TESGrabReleaseEvent* event)`
+pub const BSTEventSource_TESGrabReleaseEvent__Notify: u64 = 41053;
+/// `BSTEventSource<TESGrabReleaseEvent>::RemoveEventSink` at 0x9f8c30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESGrabReleaseEvent>* this, BSTEventSink<TESGrabReleaseEvent>* sink)`
+pub const BSTEventSource_TESGrabReleaseEvent__RemoveEventSink: u64 = 54536;
+/// `BSTEventSource<TESHarvestEvent::ItemHarvested>::AddEventSink` at 0x1ef250 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESHarvestEvent::ItemHarvested>* this, BSTEventSink<TESHarvestEvent::ItemHarvested>* sink)`
+pub const BSTEventSource_TESHarvestEvent__ItemHarvested__AddEventSink: u64 = 14876;
+/// `BSTEventSource<TESHarvestEvent::ItemHarvested>::Notify` at 0x1eef20 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESHarvestEvent::ItemHarvested>* this, const TESHarvestEvent::ItemHarvested* event)`
+pub const BSTEventSource_TESHarvestEvent__ItemHarvested__Notify: u64 = 14874;
+/// `BSTEventSource<TESHarvestEvent::ItemHarvested>::RemoveEventSink` at 0x1ef430 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESHarvestEvent::ItemHarvested>* this, BSTEventSink<TESHarvestEvent::ItemHarvested>* sink)`
+pub const BSTEventSource_TESHarvestEvent__ItemHarvested__RemoveEventSink: u64 = 14878;
+/// `BSTEventSource<TESHitEvent>::AddEventSink` at 0x9f3720 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESHitEvent>* this, BSTEventSink<TESHitEvent>* sink)`
+pub const BSTEventSource_TESHitEvent__AddEventSink: u64 = 54440;
+/// `BSTEventSource<TESHitEvent>::Notify` at 0x6d1330 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESHitEvent>* this, const TESHitEvent* event)`
+pub const BSTEventSource_TESHitEvent__Notify: u64 = 38668;
+/// `BSTEventSource<TESHitEvent>::RemoveEventSink` at 0x9f8db0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESHitEvent>* this, BSTEventSink<TESHitEvent>* sink)`
+pub const BSTEventSource_TESHitEvent__RemoveEventSink: u64 = 54537;
+/// `BSTEventSource<TESInitScriptEvent>::AddEventSink` at 0x9f3890 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESInitScriptEvent>* this, BSTEventSink<TESInitScriptEvent>* sink)`
+pub const BSTEventSource_TESInitScriptEvent__AddEventSink: u64 = 54441;
+/// `BSTEventSource<TESInitScriptEvent>::Notify` at 0x2fb050 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESInitScriptEvent>* this, const TESInitScriptEvent* event)`
+pub const BSTEventSource_TESInitScriptEvent__Notify: u64 = 20041;
+/// `BSTEventSource<TESInitScriptEvent>::RemoveEventSink` at 0x9f8f30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESInitScriptEvent>* this, BSTEventSink<TESInitScriptEvent>* sink)`
+pub const BSTEventSource_TESInitScriptEvent__RemoveEventSink: u64 = 54538;
+/// `BSTEventSource<TESLoadGameEvent>::AddEventSink` at 0x60b0a0 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESLoadGameEvent>* this, BSTEventSink<TESLoadGameEvent>* sink)`
+pub const BSTEventSource_TESLoadGameEvent__AddEventSink: u64 = 442486;
+/// `BSTEventSource<TESLoadGameEvent>::Notify` at 0x62f530 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESLoadGameEvent>* this, const TESLoadGameEvent* event)`
+pub const BSTEventSource_TESLoadGameEvent__Notify: u64 = 35870;
+/// `BSTEventSource<TESLoadGameEvent>::RemoveEventSink` at 0x60b2e0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESLoadGameEvent>* this, BSTEventSink<TESLoadGameEvent>* sink)`
+pub const BSTEventSource_TESLoadGameEvent__RemoveEventSink: u64 = 442488;
+/// `BSTEventSource<TESLockChangedEvent>::AddEventSink` at 0x9f3a00 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESLockChangedEvent>* this, BSTEventSink<TESLockChangedEvent>* sink)`
+pub const BSTEventSource_TESLockChangedEvent__AddEventSink: u64 = 54443;
+/// `BSTEventSource<TESLockChangedEvent>::Notify` at 0x2fb290 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESLockChangedEvent>* this, const TESLockChangedEvent* event)`
+pub const BSTEventSource_TESLockChangedEvent__Notify: u64 = 20042;
+/// `BSTEventSource<TESLockChangedEvent>::RemoveEventSink` at 0x9f90b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESLockChangedEvent>* this, BSTEventSink<TESLockChangedEvent>* sink)`
+pub const BSTEventSource_TESLockChangedEvent__RemoveEventSink: u64 = 54540;
+/// `BSTEventSource<TESMagicEffectApplyEvent>::AddEventSink` at 0x9f3b70 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESMagicEffectApplyEvent>* this, BSTEventSink<TESMagicEffectApplyEvent>* sink)`
+pub const BSTEventSource_TESMagicEffectApplyEvent__AddEventSink: u64 = 54444;
+/// `BSTEventSource<TESMagicEffectApplyEvent>::Notify` at 0x5d4e30 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESMagicEffectApplyEvent>* this, const TESMagicEffectApplyEvent* event)`
+pub const BSTEventSource_TESMagicEffectApplyEvent__Notify: u64 = 34604;
+/// `BSTEventSource<TESMagicEffectApplyEvent>::RemoveEventSink` at 0x9f9230 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESMagicEffectApplyEvent>* this, BSTEventSink<TESMagicEffectApplyEvent>* sink)`
+pub const BSTEventSource_TESMagicEffectApplyEvent__RemoveEventSink: u64 = 54541;
+/// `BSTEventSource<TESMagicWardHitEvent>::AddEventSink` at 0x9f3ce0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESMagicWardHitEvent>* this, BSTEventSink<TESMagicWardHitEvent>* sink)`
+pub const BSTEventSource_TESMagicWardHitEvent__AddEventSink: u64 = 54445;
+/// `BSTEventSource<TESMagicWardHitEvent>::Notify` at 0x6db320 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESMagicWardHitEvent>* this, const TESMagicWardHitEvent* event)`
+pub const BSTEventSource_TESMagicWardHitEvent__Notify: u64 = 38871;
+/// `BSTEventSource<TESMagicWardHitEvent>::RemoveEventSink` at 0x9f93b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESMagicWardHitEvent>* this, BSTEventSink<TESMagicWardHitEvent>* sink)`
+pub const BSTEventSource_TESMagicWardHitEvent__RemoveEventSink: u64 = 54542;
+/// `BSTEventSource<TESMoveAttachDetachEvent>::AddEventSink` at 0x9f3e50 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESMoveAttachDetachEvent>* this, BSTEventSink<TESMoveAttachDetachEvent>* sink)`
+pub const BSTEventSource_TESMoveAttachDetachEvent__AddEventSink: u64 = 54446;
+/// `BSTEventSource<TESMoveAttachDetachEvent>::Notify` at 0x2fb4d0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESMoveAttachDetachEvent>* this, const TESMoveAttachDetachEvent* event)`
+pub const BSTEventSource_TESMoveAttachDetachEvent__Notify: u64 = 20043;
+/// `BSTEventSource<TESMoveAttachDetachEvent>::RemoveEventSink` at 0x9f9530 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESMoveAttachDetachEvent>* this, BSTEventSink<TESMoveAttachDetachEvent>* sink)`
+pub const BSTEventSource_TESMoveAttachDetachEvent__RemoveEventSink: u64 = 54543;
+/// `BSTEventSource<TESObjectLoadedEvent>::AddEventSink` at 0x9f3fc0 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESObjectLoadedEvent>* this, BSTEventSink<TESObjectLoadedEvent>* sink)`
+pub const BSTEventSource_TESObjectLoadedEvent__AddEventSink: u64 = 54447;
+/// `BSTEventSource<TESObjectLoadedEvent>::Notify` at 0x1b50a0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESObjectLoadedEvent>* this, const TESObjectLoadedEvent* event)`
+pub const BSTEventSource_TESObjectLoadedEvent__Notify: u64 = 13665;
+/// `BSTEventSource<TESObjectLoadedEvent>::RemoveEventSink` at 0x9f96b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESObjectLoadedEvent>* this, BSTEventSink<TESObjectLoadedEvent>* sink)`
+pub const BSTEventSource_TESObjectLoadedEvent__RemoveEventSink: u64 = 54544;
+/// `BSTEventSource<TESObjectREFRTranslationEvent>::AddEventSink` at 0x9f4130 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESObjectREFRTranslationEvent>* this, BSTEventSink<TESObjectREFRTranslationEvent>* sink)`
+pub const BSTEventSource_TESObjectREFRTranslationEvent__AddEventSink: u64 = 54448;
+/// `BSTEventSource<TESObjectREFRTranslationEvent>::Notify` at 0x2d5130 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESObjectREFRTranslationEvent>* this, const TESObjectREFRTranslationEvent* event)`
+pub const BSTEventSource_TESObjectREFRTranslationEvent__Notify: u64 = 19364;
+/// `BSTEventSource<TESObjectREFRTranslationEvent>::RemoveEventSink` at 0x9f9830 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESObjectREFRTranslationEvent>* this, BSTEventSink<TESObjectREFRTranslationEvent>* sink)`
+pub const BSTEventSource_TESObjectREFRTranslationEvent__RemoveEventSink: u64 = 54545;
+/// `BSTEventSource<TESOpenCloseEvent>::AddEventSink` at 0x663730 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESOpenCloseEvent>* this, BSTEventSink<TESOpenCloseEvent>* sink)`
+pub const BSTEventSource_TESOpenCloseEvent__AddEventSink: u64 = 36787;
+/// `BSTEventSource<TESOpenCloseEvent>::RemoveEventSink` at 0x9f99b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESOpenCloseEvent>* this, BSTEventSink<TESOpenCloseEvent>* sink)`
+pub const BSTEventSource_TESOpenCloseEvent__RemoveEventSink: u64 = 54546;
+/// `BSTEventSource<TESPackageEvent>::AddEventSink` at 0x9f42a0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESPackageEvent>* this, BSTEventSink<TESPackageEvent>* sink)`
+pub const BSTEventSource_TESPackageEvent__AddEventSink: u64 = 54449;
+/// `BSTEventSource<TESPackageEvent>::Notify` at 0x71e7c0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESPackageEvent>* this, const TESPackageEvent* event)`
+pub const BSTEventSource_TESPackageEvent__Notify: u64 = 39769;
+/// `BSTEventSource<TESPackageEvent>::RemoveEventSink` at 0x9f9b30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESPackageEvent>* this, BSTEventSink<TESPackageEvent>* sink)`
+pub const BSTEventSource_TESPackageEvent__RemoveEventSink: u64 = 54547;
+/// `BSTEventSource<TESPerkEntryRunEvent>::AddEventSink` at 0x9f4410 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESPerkEntryRunEvent>* this, BSTEventSink<TESPerkEntryRunEvent>* sink)`
+pub const BSTEventSource_TESPerkEntryRunEvent__AddEventSink: u64 = 54450;
+/// `BSTEventSource<TESPerkEntryRunEvent>::Notify` at 0x38ef00 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESPerkEntryRunEvent>* this, const TESPerkEntryRunEvent* event)`
+pub const BSTEventSource_TESPerkEntryRunEvent__Notify: u64 = 23587;
+/// `BSTEventSource<TESPerkEntryRunEvent>::RemoveEventSink` at 0x9f9cb0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESPerkEntryRunEvent>* this, BSTEventSink<TESPerkEntryRunEvent>* sink)`
+pub const BSTEventSource_TESPerkEntryRunEvent__RemoveEventSink: u64 = 54548;
+/// `BSTEventSource<TESPlayerBowShotEvent>::AddEventSink` at 0x9f4580 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESPlayerBowShotEvent>* this, BSTEventSink<TESPlayerBowShotEvent>* sink)`
+pub const BSTEventSource_TESPlayerBowShotEvent__AddEventSink: u64 = 54451;
+/// `BSTEventSource<TESPlayerBowShotEvent>::Notify` at 0x28e820 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESPlayerBowShotEvent>* this, const TESPlayerBowShotEvent* event)`
+pub const BSTEventSource_TESPlayerBowShotEvent__Notify: u64 = 18149;
+/// `BSTEventSource<TESPlayerBowShotEvent>::RemoveEventSink` at 0x9f9e30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESPlayerBowShotEvent>* this, BSTEventSink<TESPlayerBowShotEvent>* sink)`
+pub const BSTEventSource_TESPlayerBowShotEvent__RemoveEventSink: u64 = 54549;
+/// `BSTEventSource<TESQuestInitEvent>::AddEventSink` at 0x9f46f0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESQuestInitEvent>* this, BSTEventSink<TESQuestInitEvent>* sink)`
+pub const BSTEventSource_TESQuestInitEvent__AddEventSink: u64 = 54452;
+/// `BSTEventSource<TESQuestInitEvent>::Notify` at 0x53d760 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESQuestInitEvent>* this, const TESQuestInitEvent* event)`
+pub const BSTEventSource_TESQuestInitEvent__Notify: u64 = 32533;
+/// `BSTEventSource<TESQuestInitEvent>::RemoveEventSink` at 0x9f9fb0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESQuestInitEvent>* this, BSTEventSink<TESQuestInitEvent>* sink)`
+pub const BSTEventSource_TESQuestInitEvent__RemoveEventSink: u64 = 54550;
+/// `BSTEventSource<TESQuestStageEvent>::AddEventSink` at 0x9f4860 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESQuestStageEvent>* this, BSTEventSink<TESQuestStageEvent>* sink)`
+pub const BSTEventSource_TESQuestStageEvent__AddEventSink: u64 = 54453;
+/// `BSTEventSource<TESQuestStageEvent>::Notify` at 0x3e24e0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESQuestStageEvent>* this, const TESQuestStageEvent* event)`
+pub const BSTEventSource_TESQuestStageEvent__Notify: u64 = 25271;
+/// `BSTEventSource<TESQuestStageEvent>::RemoveEventSink` at 0x9fa130 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESQuestStageEvent>* this, BSTEventSink<TESQuestStageEvent>* sink)`
+pub const BSTEventSource_TESQuestStageEvent__RemoveEventSink: u64 = 54551;
+/// `BSTEventSource<TESQuestStageItemDoneEvent>::AddEventSink` at 0x53d9b0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESQuestStageItemDoneEvent>* this, BSTEventSink<TESQuestStageItemDoneEvent>* sink)`
+pub const BSTEventSource_TESQuestStageItemDoneEvent__AddEventSink: u64 = 32534;
+/// `BSTEventSource<TESQuestStageItemDoneEvent>::Notify` at 0x3e2720 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESQuestStageItemDoneEvent>* this, const TESQuestStageItemDoneEvent* event)`
+pub const BSTEventSource_TESQuestStageItemDoneEvent__Notify: u64 = 25272;
+/// `BSTEventSource<TESQuestStageItemDoneEvent>::RemoveEventSink` at 0x53dfa0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESQuestStageItemDoneEvent>* this, BSTEventSink<TESQuestStageItemDoneEvent>* sink)`
+pub const BSTEventSource_TESQuestStageItemDoneEvent__RemoveEventSink: u64 = 32541;
+/// `BSTEventSource<TESQuestStartStopEvent>::AddEventSink` at 0x9cb930 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESQuestStartStopEvent>* this, BSTEventSink<TESQuestStartStopEvent>* sink)`
+pub const BSTEventSource_TESQuestStartStopEvent__AddEventSink: u64 = 53769;
+/// `BSTEventSource<TESQuestStartStopEvent>::Notify` at 0x3dfc60 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESQuestStartStopEvent>* this, const TESQuestStartStopEvent* event)`
+pub const BSTEventSource_TESQuestStartStopEvent__Notify: u64 = 25193;
+/// `BSTEventSource<TESQuestStartStopEvent>::RemoveEventSink` at 0x9ccaa0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESQuestStartStopEvent>* this, BSTEventSink<TESQuestStartStopEvent>* sink)`
 pub const BSTEventSource_TESQuestStartStopEvent__RemoveEventSink: u64 = 53780;
-/// `BSTEventSource<TESSpellCastEvent>::AddEventSink` at 0x485650 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESResetEvent>::AddEventSink` at 0x9f49d0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESResetEvent>* this, BSTEventSink<TESResetEvent>* sink)`
+pub const BSTEventSource_TESResetEvent__AddEventSink: u64 = 54454;
+/// `BSTEventSource<TESResetEvent>::Notify` at 0x2d5380 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESResetEvent>* this, const TESResetEvent* event)`
+pub const BSTEventSource_TESResetEvent__Notify: u64 = 19365;
+/// `BSTEventSource<TESResetEvent>::RemoveEventSink` at 0x9fa2b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESResetEvent>* this, BSTEventSink<TESResetEvent>* sink)`
+pub const BSTEventSource_TESResetEvent__RemoveEventSink: u64 = 54552;
+/// `BSTEventSource<TESResolveNPCTemplatesEvent>::AddEventSink` at 0x9f4b40 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESResolveNPCTemplatesEvent>* this, BSTEventSink<TESResolveNPCTemplatesEvent>* sink)`
+pub const BSTEventSource_TESResolveNPCTemplatesEvent__AddEventSink: u64 = 54455;
+/// `BSTEventSource<TESResolveNPCTemplatesEvent>::Notify` at 0x3ccba0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESResolveNPCTemplatesEvent>* this, const TESResolveNPCTemplatesEvent* event)`
+pub const BSTEventSource_TESResolveNPCTemplatesEvent__Notify: u64 = 24924;
+/// `BSTEventSource<TESResolveNPCTemplatesEvent>::RemoveEventSink` at 0x9fa430 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESResolveNPCTemplatesEvent>* this, BSTEventSink<TESResolveNPCTemplatesEvent>* sink)`
+pub const BSTEventSource_TESResolveNPCTemplatesEvent__RemoveEventSink: u64 = 54553;
+/// `BSTEventSource<TESSceneActionEvent>::AddEventSink` at 0x9f4cb0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESSceneActionEvent>* this, BSTEventSink<TESSceneActionEvent>* sink)`
+pub const BSTEventSource_TESSceneActionEvent__AddEventSink: u64 = 54456;
+/// `BSTEventSource<TESSceneActionEvent>::Notify` at 0x3ad4e0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESSceneActionEvent>* this, const TESSceneActionEvent* event)`
+pub const BSTEventSource_TESSceneActionEvent__Notify: u64 = 24285;
+/// `BSTEventSource<TESSceneActionEvent>::RemoveEventSink` at 0x9fa5b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESSceneActionEvent>* this, BSTEventSink<TESSceneActionEvent>* sink)`
+pub const BSTEventSource_TESSceneActionEvent__RemoveEventSink: u64 = 54554;
+/// `BSTEventSource<TESSceneEvent>::AddEventSink` at 0x9f4e20 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESSceneEvent>* this, BSTEventSink<TESSceneEvent>* sink)`
+pub const BSTEventSource_TESSceneEvent__AddEventSink: u64 = 54457;
+/// `BSTEventSource<TESSceneEvent>::Notify` at 0x3aa810 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESSceneEvent>* this, const TESSceneEvent* event)`
+pub const BSTEventSource_TESSceneEvent__Notify: u64 = 24194;
+/// `BSTEventSource<TESSceneEvent>::RemoveEventSink` at 0x9fa730 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESSceneEvent>* this, BSTEventSink<TESSceneEvent>* sink)`
+pub const BSTEventSource_TESSceneEvent__RemoveEventSink: u64 = 54555;
+/// `BSTEventSource<TESScenePhaseEvent>::AddEventSink` at 0x9f4f90 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESScenePhaseEvent>* this, BSTEventSink<TESScenePhaseEvent>* sink)`
+pub const BSTEventSource_TESScenePhaseEvent__AddEventSink: u64 = 54458;
+/// `BSTEventSource<TESScenePhaseEvent>::Notify` at 0x3ae2b0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESScenePhaseEvent>* this, const TESScenePhaseEvent* event)`
+pub const BSTEventSource_TESScenePhaseEvent__Notify: u64 = 24315;
+/// `BSTEventSource<TESScenePhaseEvent>::RemoveEventSink` at 0x9fa8b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESScenePhaseEvent>* this, BSTEventSink<TESScenePhaseEvent>* sink)`
+pub const BSTEventSource_TESScenePhaseEvent__RemoveEventSink: u64 = 54556;
+/// `BSTEventSource<TESSellEvent>::AddEventSink` at 0x9f5100 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESSellEvent>* this, BSTEventSink<TESSellEvent>* sink)`
+pub const BSTEventSource_TESSellEvent__AddEventSink: u64 = 54459;
+/// `BSTEventSource<TESSellEvent>::Notify` at 0x241620 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESSellEvent>* this, const TESSellEvent* event)`
+pub const BSTEventSource_TESSellEvent__Notify: u64 = 16223;
+/// `BSTEventSource<TESSellEvent>::RemoveEventSink` at 0x9faa30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESSellEvent>* this, BSTEventSink<TESSellEvent>* sink)`
+pub const BSTEventSource_TESSellEvent__RemoveEventSink: u64 = 54557;
+/// `BSTEventSource<TESSleepStartEvent>::AddEventSink` at 0x6638b0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESSleepStartEvent>* this, BSTEventSink<TESSleepStartEvent>* sink)`
+pub const BSTEventSource_TESSleepStartEvent__AddEventSink: u64 = 36788;
+/// `BSTEventSource<TESSleepStartEvent>::Notify` at 0x76dfb0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESSleepStartEvent>* this, const TESSleepStartEvent* event)`
+pub const BSTEventSource_TESSleepStartEvent__Notify: u64 = 41054;
+/// `BSTEventSource<TESSleepStartEvent>::RemoveEventSink` at 0x9fabb0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESSleepStartEvent>* this, BSTEventSink<TESSleepStartEvent>* sink)`
+pub const BSTEventSource_TESSleepStartEvent__RemoveEventSink: u64 = 54558;
+/// `BSTEventSource<TESSleepStopEvent>::AddEventSink` at 0x663a30 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESSleepStopEvent>* this, BSTEventSink<TESSleepStopEvent>* sink)`
+pub const BSTEventSource_TESSleepStopEvent__AddEventSink: u64 = 36789;
+/// `BSTEventSource<TESSleepStopEvent>::Notify` at 0x76e1f0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESSleepStopEvent>* this, const TESSleepStopEvent* event)`
+pub const BSTEventSource_TESSleepStopEvent__Notify: u64 = 41055;
+/// `BSTEventSource<TESSleepStopEvent>::RemoveEventSink` at 0x9fad30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESSleepStopEvent>* this, BSTEventSink<TESSleepStopEvent>* sink)`
+pub const BSTEventSource_TESSleepStopEvent__RemoveEventSink: u64 = 54559;
+/// `BSTEventSource<TESSpellCastEvent>::AddEventSink` at 0x485650 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESSpellCastEvent>* this, BSTEventSink<TESSpellCastEvent>* sink)`
 pub const BSTEventSource_TESSpellCastEvent__AddEventSink: u64 = 29115;
-/// `BSTEventSource<TESSpellCastEvent>::RemoveEventSink` at 0x485830 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESSpellCastEvent>::Notify` at 0x5c2d10 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESSpellCastEvent>* this, const TESSpellCastEvent* event)`
+pub const BSTEventSource_TESSpellCastEvent__Notify: u64 = 34206;
+/// `BSTEventSource<TESSpellCastEvent>::RemoveEventSink` at 0x485830 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESSpellCastEvent>* this, BSTEventSink<TESSpellCastEvent>* sink)`
 pub const BSTEventSource_TESSpellCastEvent__RemoveEventSink: u64 = 29117;
-/// `BSTEventSource<TESTrackedStatsEvent>::AddEventSink` at 0x770ee0 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESSwitchRaceCompleteEvent>::AddEventSink` at 0x9f5270 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESSwitchRaceCompleteEvent>* this, BSTEventSink<TESSwitchRaceCompleteEvent>* sink)`
+pub const BSTEventSource_TESSwitchRaceCompleteEvent__AddEventSink: u64 = 54460;
+/// `BSTEventSource<TESSwitchRaceCompleteEvent>::Notify` at 0x5d61c0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESSwitchRaceCompleteEvent>* this, const TESSwitchRaceCompleteEvent* event)`
+pub const BSTEventSource_TESSwitchRaceCompleteEvent__Notify: u64 = 34643;
+/// `BSTEventSource<TESSwitchRaceCompleteEvent>::RemoveEventSink` at 0x9faeb0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESSwitchRaceCompleteEvent>* this, BSTEventSink<TESSwitchRaceCompleteEvent>* sink)`
+pub const BSTEventSource_TESSwitchRaceCompleteEvent__RemoveEventSink: u64 = 54560;
+/// `BSTEventSource<TESTopicInfoEvent>::AddEventSink` at 0x9f53e0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESTopicInfoEvent>* this, BSTEventSink<TESTopicInfoEvent>* sink)`
+pub const BSTEventSource_TESTopicInfoEvent__AddEventSink: u64 = 54461;
+/// `BSTEventSource<TESTopicInfoEvent>::Notify` at 0x3f4800 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESTopicInfoEvent>* this, const TESTopicInfoEvent* event)`
+pub const BSTEventSource_TESTopicInfoEvent__Notify: u64 = 25658;
+/// `BSTEventSource<TESTopicInfoEvent>::RemoveEventSink` at 0x9fb030 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESTopicInfoEvent>* this, BSTEventSink<TESTopicInfoEvent>* sink)`
+pub const BSTEventSource_TESTopicInfoEvent__RemoveEventSink: u64 = 54561;
+/// `BSTEventSource<TESTrackedStatsEvent>::AddEventSink` at 0x770ee0 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESTrackedStatsEvent>* this, BSTEventSink<TESTrackedStatsEvent>* sink)`
 pub const BSTEventSource_TESTrackedStatsEvent__AddEventSink: u64 = 41094;
-/// `BSTEventSource<TESTrackedStatsEvent>::RemoveEventSink` at 0x7749c0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESTrackedStatsEvent>::RemoveEventSink` at 0x7749c0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESTrackedStatsEvent>* this, BSTEventSink<TESTrackedStatsEvent>* sink)`
 pub const BSTEventSource_TESTrackedStatsEvent__RemoveEventSink: u64 = 41163;
-/// `BSTEventSource<UserEventEnabledEvent>::AddEventSink` at 0x771060 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<TESTrapHitEvent>::AddEventSink` at 0x9f5550 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESTrapHitEvent>* this, BSTEventSink<TESTrapHitEvent>* sink)`
+pub const BSTEventSource_TESTrapHitEvent__AddEventSink: u64 = 54462;
+/// `BSTEventSource<TESTrapHitEvent>::Notify` at 0x409000 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESTrapHitEvent>* this, const TESTrapHitEvent* event)`
+pub const BSTEventSource_TESTrapHitEvent__Notify: u64 = 26104;
+/// `BSTEventSource<TESTrapHitEvent>::RemoveEventSink` at 0x9fb1b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESTrapHitEvent>* this, BSTEventSink<TESTrapHitEvent>* sink)`
+pub const BSTEventSource_TESTrapHitEvent__RemoveEventSink: u64 = 54562;
+/// `BSTEventSource<TESTriggerEnterEvent>::AddEventSink` at 0x9f56c0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESTriggerEnterEvent>* this, BSTEventSink<TESTriggerEnterEvent>* sink)`
+pub const BSTEventSource_TESTriggerEnterEvent__AddEventSink: u64 = 54463;
+/// `BSTEventSource<TESTriggerEnterEvent>::Notify` at 0x409240 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESTriggerEnterEvent>* this, const TESTriggerEnterEvent* event)`
+pub const BSTEventSource_TESTriggerEnterEvent__Notify: u64 = 26105;
+/// `BSTEventSource<TESTriggerEnterEvent>::RemoveEventSink` at 0x9fb330 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESTriggerEnterEvent>* this, BSTEventSink<TESTriggerEnterEvent>* sink)`
+pub const BSTEventSource_TESTriggerEnterEvent__RemoveEventSink: u64 = 54563;
+/// `BSTEventSource<TESTriggerEvent>::AddEventSink` at 0x9f5830 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESTriggerEvent>* this, BSTEventSink<TESTriggerEvent>* sink)`
+pub const BSTEventSource_TESTriggerEvent__AddEventSink: u64 = 54464;
+/// `BSTEventSource<TESTriggerEvent>::Notify` at 0x409480 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESTriggerEvent>* this, const TESTriggerEvent* event)`
+pub const BSTEventSource_TESTriggerEvent__Notify: u64 = 26106;
+/// `BSTEventSource<TESTriggerEvent>::RemoveEventSink` at 0x9fb4b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESTriggerEvent>* this, BSTEventSink<TESTriggerEvent>* sink)`
+pub const BSTEventSource_TESTriggerEvent__RemoveEventSink: u64 = 54564;
+/// `BSTEventSource<TESTriggerLeaveEvent>::AddEventSink` at 0x9f59a0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESTriggerLeaveEvent>* this, BSTEventSink<TESTriggerLeaveEvent>* sink)`
+pub const BSTEventSource_TESTriggerLeaveEvent__AddEventSink: u64 = 54465;
+/// `BSTEventSource<TESTriggerLeaveEvent>::Notify` at 0x4096c0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESTriggerLeaveEvent>* this, const TESTriggerLeaveEvent* event)`
+pub const BSTEventSource_TESTriggerLeaveEvent__Notify: u64 = 26107;
+/// `BSTEventSource<TESTriggerLeaveEvent>::RemoveEventSink` at 0x9fb630 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESTriggerLeaveEvent>* this, BSTEventSink<TESTriggerLeaveEvent>* sink)`
+pub const BSTEventSource_TESTriggerLeaveEvent__RemoveEventSink: u64 = 54565;
+/// `BSTEventSource<TESUniqueIDChangeEvent>::AddEventSink` at 0x9f5b10 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESUniqueIDChangeEvent>* this, BSTEventSink<TESUniqueIDChangeEvent>* sink)`
+pub const BSTEventSource_TESUniqueIDChangeEvent__AddEventSink: u64 = 54466;
+/// `BSTEventSource<TESUniqueIDChangeEvent>::Notify` at 0x241860 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESUniqueIDChangeEvent>* this, const TESUniqueIDChangeEvent* event)`
+pub const BSTEventSource_TESUniqueIDChangeEvent__Notify: u64 = 16224;
+/// `BSTEventSource<TESUniqueIDChangeEvent>::RemoveEventSink` at 0x9fb7b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESUniqueIDChangeEvent>* this, BSTEventSink<TESUniqueIDChangeEvent>* sink)`
+pub const BSTEventSource_TESUniqueIDChangeEvent__RemoveEventSink: u64 = 54566;
+/// `BSTEventSource<TESWaitStartEvent>::AddEventSink` at 0x663bb0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESWaitStartEvent>* this, BSTEventSink<TESWaitStartEvent>* sink)`
+pub const BSTEventSource_TESWaitStartEvent__AddEventSink: u64 = 36790;
+/// `BSTEventSource<TESWaitStartEvent>::Notify` at 0x76e430 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESWaitStartEvent>* this, const TESWaitStartEvent* event)`
+pub const BSTEventSource_TESWaitStartEvent__Notify: u64 = 41056;
+/// `BSTEventSource<TESWaitStopEvent>::AddEventSink` at 0x663d30 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESWaitStopEvent>* this, BSTEventSink<TESWaitStopEvent>* sink)`
+pub const BSTEventSource_TESWaitStopEvent__AddEventSink: u64 = 36791;
+/// `BSTEventSource<TESWaitStopEvent>::Notify` at 0x76e670 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESWaitStopEvent>* this, const TESWaitStopEvent* event)`
+pub const BSTEventSource_TESWaitStopEvent__Notify: u64 = 41057;
+/// `BSTEventSource<TimesBartered::Event>::AddEventSink` at 0x905990 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TimesBartered::Event>* this, BSTEventSink<TimesBartered::Event>* sink)`
+pub const BSTEventSource_TimesBartered__Event__AddEventSink: u64 = 51032;
+/// `BSTEventSource<TimesBartered::Event>::Notify` at 0x9054c0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TimesBartered::Event>* this, const TimesBartered::Event* event)`
+pub const BSTEventSource_TimesBartered__Event__Notify: u64 = 51027;
+/// `BSTEventSource<TimesBartered::Event>::RemoveEventSink` at 0x905d30 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TimesBartered::Event>* this, BSTEventSink<TimesBartered::Event>* sink)`
+pub const BSTEventSource_TimesBartered__Event__RemoveEventSink: u64 = 51039;
+/// `BSTEventSource<TimesTrained::Event>::AddEventSink` at 0x986850 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TimesTrained::Event>* this, BSTEventSink<TimesTrained::Event>* sink)`
+pub const BSTEventSource_TimesTrained__Event__AddEventSink: u64 = 52681;
+/// `BSTEventSource<TimesTrained::Event>::Notify` at 0x986520 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TimesTrained::Event>* this, const TimesTrained::Event* event)`
+pub const BSTEventSource_TimesTrained__Event__Notify: u64 = 52679;
+/// `BSTEventSource<TimesTrained::Event>::RemoveEventSink` at 0x986a30 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TimesTrained::Event>* this, BSTEventSink<TimesTrained::Event>* sink)`
+pub const BSTEventSource_TimesTrained__Event__RemoveEventSink: u64 = 52683;
+/// `BSTEventSource<Trespass::Event>::AddEventSink` at 0x7c36c0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<Trespass::Event>* this, BSTEventSink<Trespass::Event>* sink)`
+pub const BSTEventSource_Trespass__Event__AddEventSink: u64 = 42692;
+/// `BSTEventSource<Trespass::Event>::Notify` at 0x7c3390 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<Trespass::Event>* this, const Trespass::Event* event)`
+pub const BSTEventSource_Trespass__Event__Notify: u64 = 42690;
+/// `BSTEventSource<Trespass::Event>::RemoveEventSink` at 0x7c38a0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<Trespass::Event>* this, BSTEventSink<Trespass::Event>* sink)`
+pub const BSTEventSource_Trespass__Event__RemoveEventSink: u64 = 42694;
+/// `BSTEventSource<UserEventEnabledEvent>::AddEventSink` at 0x771060 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<UserEventEnabledEvent>* this, BSTEventSink<UserEventEnabledEvent>* sink)`
 pub const BSTEventSource_UserEventEnabledEvent__AddEventSink: u64 = 41095;
-/// `BSTEventSource<UserEventEnabledEvent>::RemoveEventSink` at 0x774b50 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`
+/// `BSTEventSource<UserEventEnabledEvent>::RemoveEventSink` at 0x774b50 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<UserEventEnabledEvent>* this, BSTEventSink<UserEventEnabledEvent>* sink)`
 pub const BSTEventSource_UserEventEnabledEvent__RemoveEventSink: u64 = 41164;
+/// `BSTEventSource<WeaponAttack::Event>::AddEventSink` at 0x770a60 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<WeaponAttack::Event>* this, BSTEventSink<WeaponAttack::Event>* sink)`
+pub const BSTEventSource_WeaponAttack__Event__AddEventSink: u64 = 41091;
+/// `BSTEventSource<WeaponAttack::Event>::Notify` at 0x76d1d0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<WeaponAttack::Event>* this, const WeaponAttack::Event* event)`
+pub const BSTEventSource_WeaponAttack__Event__Notify: u64 = 41048;
+/// `BSTEventSource<WeaponAttack::Event>::RemoveEventSink` at 0x774510 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<WeaponAttack::Event>* this, BSTEventSink<WeaponAttack::Event>* sink)`
+pub const BSTEventSource_WeaponAttack__Event__RemoveEventSink: u64 = 41160;
+/// `BSTEventSource<WordLearned::Event>::AddEventSink` at 0x770be0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<WordLearned::Event>* this, BSTEventSink<WordLearned::Event>* sink)`
+pub const BSTEventSource_WordLearned__Event__AddEventSink: u64 = 41092;
+/// `BSTEventSource<WordLearned::Event>::Notify` at 0x76d410 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<WordLearned::Event>* this, const WordLearned::Event* event)`
+pub const BSTEventSource_WordLearned__Event__Notify: u64 = 41049;
+/// `BSTEventSource<WordLearned::Event>::RemoveEventSink` at 0x7746a0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<WordLearned::Event>* this, BSTEventSink<WordLearned::Event>* sink)`
+pub const BSTEventSource_WordLearned__Event__RemoveEventSink: u64 = 41161;
+/// `BSTEventSource<WordUnlocked::Event>::AddEventSink` at 0x770d60 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<WordUnlocked::Event>* this, BSTEventSink<WordUnlocked::Event>* sink)`
+pub const BSTEventSource_WordUnlocked__Event__AddEventSink: u64 = 41093;
+/// `BSTEventSource<WordUnlocked::Event>::Notify` at 0x76d650 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<WordUnlocked::Event>* this, const WordUnlocked::Event* event)`
+pub const BSTEventSource_WordUnlocked__Event__Notify: u64 = 41050;
+/// `BSTEventSource<WordUnlocked::Event>::RemoveEventSink` at 0x774830 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<WordUnlocked::Event>* this, BSTEventSink<WordUnlocked::Event>* sink)`
+pub const BSTEventSource_WordUnlocked__Event__RemoveEventSink: u64 = 41162;
 /// `BSTFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType>::dtor` at 0x6ba8b0 (layout_inference, high); signature (high): `undefined dtor(BSTFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType> * this)`
 pub const BSTFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType__dtor: u64 = 38124;
 /// `BSTFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType>::vdtor` at 0x6bc1a0 (layout_inference, medium); signature (low): `BSTFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType> * vdtor(BSTFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -25611,8 +26267,6 @@ pub const BeamProjectile__vfunc_18: u64 = 43754;
 pub const BeamProjectile__vfunc_184: u64 = 43755;
 /// `BeamProjectile::vfunc_189` at 0x7e0460 (rtti, high); signature (low): `TESObjectREFR * vfunc_189(BeamProjectile * this, TESObjectREFR * param_1, float * param_2, undefined4 * param_3, longlong * param_4, uint param_5, undefined1 param_6)`
 pub const BeamProjectile__vfunc_189: u64 = 43757;
-/// `BeamProjectile::vfunc_189_sub0` at 0x7e11c0 (callgraph, medium); signature (untiered): `ulonglong vfunc_189_sub0(longlong * param_1, undefined8 param_2)`
-pub const BeamProjectile__vfunc_189_sub0: u64 = 43779;
 /// `BeamProjectile::vfunc_192` at 0x7e05b0 (rtti, high); signature (high): `undefined vfunc_192(BeamProjectile * this)`
 pub const BeamProjectile__vfunc_192: u64 = 43758;
 /// `BeamProjectile::vfunc_192_sub0` at 0x7e0970 (callgraph, medium); signature (untiered): `ulonglong vfunc_192_sub0(longlong * param_1, longlong * param_2)`
@@ -25677,6 +26331,12 @@ pub const BookMenu__vfunc_7: u64 = 51052;
 pub const BookMenu__vfunc_7_sub0: u64 = 105680;
 /// `BookMenu::vfunc_8` at 0x907280 (rtti, high); signature (untiered): `undefined vfunc_8(BookMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
 pub const BookMenu__vfunc_8: u64 = 523995;
+/// `BooksRead::GetEventSource` at 0x280bd0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of BooksRead::Event events (medium); semantic signature: `BSTEventSource<BooksRead::Event>* ()`
+pub const BooksRead__GetEventSource: u64 = 17865;
+/// `BooksRead::RegisterSink` at 0x27f4c0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a BooksRead::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<BooksRead::Event>* sink)`
+pub const BooksRead__RegisterSink: u64 = 17826;
+/// `BooksRead::UnregisterSink` at 0x27f4f0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a BooksRead::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<BooksRead::Event>* sink)`
+pub const BooksRead__UnregisterSink: u64 = 17827;
 /// `BoundItemEffect::BSTEventSink_ActorInventoryEvent_vdtor` at 0x5c3f6c (slot_propagation, medium); signature (high): `undefined BSTEventSink_ActorInventoryEvent_vdtor(BoundItemEffect * this)`
 pub const BoundItemEffect__BSTEventSink_ActorInventoryEvent_vdtor: u64 = 34236;
 /// `BoundItemEffect::BSTEventSink_ActorInventoryEvent_vfunc_1` at 0x5c35d0 (rtti, high); signature (low): `undefined8 BSTEventSink_ActorInventoryEvent_vfunc_1(BoundItemEffect * this, uint * param_1)`
@@ -25713,6 +26373,12 @@ pub const BoundItemEffect__vfunc_8_sub0: u64 = 38916;
 pub const BoundItemEffect__vfunc_9: u64 = 34223;
 /// `BoundItemEffect::vfunc_9_sub0` at 0x6ddb90 (callgraph, medium); signature (untiered): `undefined vfunc_9_sub0(undefined8 * param_1, longlong * param_2)`
 pub const BoundItemEffect__vfunc_9_sub0: u64 = 38917;
+/// `Bounty::GetEventSource` at 0x76e8e0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of Bounty::Event events (medium); semantic signature: `BSTEventSource<Bounty::Event>* ()`
+pub const Bounty__GetEventSource: u64 = 41061;
+/// `Bounty::RegisterSink` at 0x73e3c0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a Bounty::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Bounty::Event>* sink)`
+pub const Bounty__RegisterSink: u64 = 40387;
+/// `Bounty::UnregisterSink` at 0x73e3f0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a Bounty::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Bounty::Event>* sink)`
+pub const Bounty__UnregisterSink: u64 = 40388;
 /// `BowDrawnHandler::vdtor` at 0x7d3a90 (layout_inference, medium); signature (low): `BowDrawnHandler * vdtor(BowDrawnHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BowDrawnHandler__vdtor: u64 = 43301;
 /// `BowDrawnHandler::vfunc_1` at 0x7cdb70 (rtti, high); signature (low): `undefined1 vfunc_1(BowDrawnHandler * this, longlong param_1)`
@@ -25999,6 +26665,12 @@ pub const CheckWithinMultiBoundTask__vfunc_2: u64 = 19863;
 pub const CheckWithinMultiBoundTask__vfunc_6: u64 = 19864;
 /// `CheckWithinMultiBoundTask::vfunc_6_sub0` at 0x2c9b00 (callgraph, medium); signature (untiered): `undefined8 vfunc_6_sub0(uint * param_1)`
 pub const CheckWithinMultiBoundTask__vfunc_6_sub0: u64 = 19162;
+/// `ChestsLooted::GetEventSource` at 0x915620 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ChestsLooted::Event events (medium); semantic signature: `BSTEventSource<ChestsLooted::Event>* ()`
+pub const ChestsLooted__GetEventSource: u64 = 51182;
+/// `ChestsLooted::RegisterSink` at 0x90fb70 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ChestsLooted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ChestsLooted::Event>* sink)`
+pub const ChestsLooted__RegisterSink: u64 = 51120;
+/// `ChestsLooted::UnregisterSink` at 0x90fba0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ChestsLooted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ChestsLooted::Event>* sink)`
+pub const ChestsLooted__UnregisterSink: u64 = 51121;
 /// `ClickHandler::vdtor` at 0x960b20 (layout_inference, medium); signature (low): `ClickHandler * vdtor(ClickHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ClickHandler__vdtor: u64 = 52233;
 /// `ClickHandler::vfunc_1` at 0x962000 (rtti, high); signature (low): `bool vfunc_1(ClickHandler * this, longlong * param_1)`
@@ -28169,8 +28841,6 @@ pub const Cmd__MoveToMarker_Execute: u64 = 22278;
 pub const Cmd__MoveToQuestTarget_Execute: u64 = 22974;
 /// `Cmd::OnAmiiboTouch_Execute` at 0x381e60 (console_cmd, high); signature (low): `ulonglong OnAmiiboTouch_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__OnAmiiboTouch_Execute: u64 = 523550;
-/// `Cmd::OnAmiiboTouch_Execute_sub0` at 0x384ef0 (callgraph, medium); signature (untiered): `ulonglong OnAmiiboTouch_Execute_sub0(longlong * param_1, undefined8 param_2)`
-pub const Cmd__OnAmiiboTouch_Execute_sub0: u64 = 523559;
 /// `Cmd::OpenActorContainer_Execute` at 0x363b80 (console_cmd, high); signature (low): `undefined8 OpenActorContainer_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__OpenActorContainer_Execute: u64 = 22526;
 /// `Cmd::OutputAllocations_Execute` at 0x371f20 (console_cmd, high); signature (low): `undefined1 OutputAllocations_Execute(void)`
@@ -37763,6 +38433,12 @@ pub const ContentMenu__errorCallback__vdtor: u64 = 418716;
 pub const ContentMenu__errorCallback__vfunc_1: u64 = 418715;
 /// `ContentMenu::vfunc_0` at 0x573950 (rtti, high); signature (low): `undefined vfunc_0(ContentMenu * this, int param_1, int param_2, undefined8 param_3)`
 pub const ContentMenu__vfunc_0: u64 = 418678;
+/// `ContractedDisease::GetEventSource` at 0x6d1660 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ContractedDisease::Event events (medium); semantic signature: `BSTEventSource<ContractedDisease::Event>* ()`
+pub const ContractedDisease__GetEventSource: u64 = 38670;
+/// `ContractedDisease::RegisterSink` at 0x6c7b90 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ContractedDisease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ContractedDisease::Event>* sink)`
+pub const ContractedDisease__RegisterSink: u64 = 38529;
+/// `ContractedDisease::UnregisterSink` at 0x6c7bc0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ContractedDisease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ContractedDisease::Event>* sink)`
+pub const ContractedDisease__UnregisterSink: u64 = 38530;
 /// `CraftingMenu::ctor` at 0x916040 (layout_inference, high); signature (high): `CraftingMenu * ctor(CraftingMenu * this)`
 pub const CraftingMenu__ctor: u64 = 51198;
 /// `CraftingMenu::ctor` at 0x916140 (layout_inference, medium); signature (low): `undefined ctor(CraftingMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -37989,6 +38665,12 @@ pub const CreditsMenu__dtor: u64 = 51486;
 pub const CreditsMenu__vdtor: u64 = 51493;
 /// `CreditsMenu::vfunc_4` at 0x9293e0 (rtti, high); signature (low): `undefined8 vfunc_4(CreditsMenu * this, longlong param_1)`
 pub const CreditsMenu__vfunc_4: u64 = 51487;
+/// `CriticalHitEvent::GetEventSource` at 0x6d1750 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of CriticalHitEvent::Event events (medium); semantic signature: `BSTEventSource<CriticalHitEvent::Event>* ()`
+pub const CriticalHitEvent__GetEventSource: u64 = 38671;
+/// `CriticalHitEvent::RegisterSink` at 0x6c7bf0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a CriticalHitEvent::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<CriticalHitEvent::Event>* sink)`
+pub const CriticalHitEvent__RegisterSink: u64 = 38531;
+/// `CriticalHitEvent::UnregisterSink` at 0x6c7c20 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a CriticalHitEvent::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<CriticalHitEvent::Event>* sink)`
+pub const CriticalHitEvent__UnregisterSink: u64 = 38532;
 /// `CstringArrayImplementation::dtor` at 0xc5d850 (layout_inference, high); signature (high): `undefined dtor(CstringArrayImplementation * this)`
 pub const CstringArrayImplementation__dtor: u64 = 65905;
 /// `CstringArrayImplementation::vdtor` at 0xc5e060 (slot_propagation, medium); signature (low): `CstringArrayImplementation * vdtor(CstringArrayImplementation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -38079,6 +38761,18 @@ pub const DarknessEffect__vdtor: u64 = 34280;
 pub const DarknessEffect__vfunc_20: u64 = 34278;
 /// `DarknessEffect::vfunc_21` at 0x5c57b0 (rtti, high); signature (high): `undefined vfunc_21(DarknessEffect * this)`
 pub const DarknessEffect__vfunc_21: u64 = 34279;
+/// `DaysJailed::GetEventSource` at 0x76e9d0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of DaysJailed::Event events (medium); semantic signature: `BSTEventSource<DaysJailed::Event>* ()`
+pub const DaysJailed__GetEventSource: u64 = 41062;
+/// `DaysJailed::RegisterSink` at 0x73e540 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a DaysJailed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DaysJailed::Event>* sink)`
+pub const DaysJailed__RegisterSink: u64 = 40395;
+/// `DaysJailed::UnregisterSink` at 0x73e570 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a DaysJailed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DaysJailed::Event>* sink)`
+pub const DaysJailed__UnregisterSink: u64 = 40396;
+/// `DaysPassed::GetEventSource` at 0x6470c0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of DaysPassed::Event events (medium); semantic signature: `BSTEventSource<DaysPassed::Event>* ()`
+pub const DaysPassed__GetEventSource: u64 = 36329;
+/// `DaysPassed::RegisterSink` at 0x645c20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a DaysPassed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DaysPassed::Event>* sink)`
+pub const DaysPassed__RegisterSink: u64 = 36287;
+/// `DaysPassed::UnregisterSink` at 0x645c50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a DaysPassed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DaysPassed::Event>* sink)`
+pub const DaysPassed__UnregisterSink: u64 = 36288;
 /// `DeathEmoteHandler::vdtor` at 0x7d3c40 (layout_inference, medium); signature (low): `DeathEmoteHandler * vdtor(DeathEmoteHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const DeathEmoteHandler__vdtor: u64 = 43310;
 /// `DeathEmoteHandler::vfunc_1` at 0x7ce440 (rtti, high); signature (low): `undefined1 vfunc_1(DeathEmoteHandler * this, longlong param_1)`
@@ -38123,6 +38817,10 @@ pub const DecapitateHandler__vdtor: u64 = 43312;
 pub const DecapitateHandler__vfunc_1: u64 = 42839;
 /// `DecapitateHandler::vfunc_1_sub0` at 0x697c50 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong * param_1)`
 pub const DecapitateHandler__vfunc_1_sub0: u64 = 37639;
+/// `DefaultObjectsReadyEvent::GetEventSource` at 0x31c080 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of DefaultObjectsReadyEvent::Event events (medium); semantic signature: `BSTEventSource<DefaultObjectsReadyEvent::Event>* ()`
+pub const DefaultObjectsReadyEvent__GetEventSource: u64 = 20781;
+/// `DefaultObjectsReadyEvent::RegisterSink` at 0x31b7d0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a DefaultObjectsReadyEvent::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DefaultObjectsReadyEvent::Event>* sink)`
+pub const DefaultObjectsReadyEvent__RegisterSink: u64 = 20764;
 /// `DemoralizeEffect::vdtor` at 0x5e5ab0 (slot_propagation, medium); signature (low): `DemoralizeEffect * vdtor(DemoralizeEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const DemoralizeEffect__vdtor: u64 = 35037;
 /// `DemoralizeEffect::vfunc_33` at 0x5e5c00 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
@@ -38253,6 +38951,12 @@ pub const DisarmEffect__vfunc_20: u64 = 34286;
 pub const DisarmEffect__vfunc_4: u64 = 34287;
 /// `DisarmEffect::vfunc_4_sub0` at 0x6695d0 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
 pub const DisarmEffect__vfunc_4_sub0: u64 = 36985;
+/// `DisarmedEvent::GetEventSource` at 0x6c0db0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of DisarmedEvent::Event events (medium); semantic signature: `BSTEventSource<DisarmedEvent::Event>* ()`
+pub const DisarmedEvent__GetEventSource: u64 = 38340;
+/// `DisarmedEvent::RegisterSink` at 0x66fb80 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a DisarmedEvent::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DisarmedEvent::Event>* sink)`
+pub const DisarmedEvent__RegisterSink: u64 = 37162;
+/// `DisarmedEvent::UnregisterSink` at 0x66fbb0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a DisarmedEvent::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DisarmedEvent::Event>* sink)`
+pub const DisarmedEvent__UnregisterSink: u64 = 37163;
 /// `DisguiseEffect::DetectionChecker::ctor` at 0x5c6150 (layout_inference, high); signature (low): `DetectionChecker * ctor(DetectionChecker * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const DisguiseEffect__DetectionChecker__ctor: u64 = 34298;
 /// `DisguiseEffect::DetectionChecker::vdtor` at 0x5c6460 (slot_propagation, medium); signature (low): `DetectionChecker * vdtor(DetectionChecker * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -38349,6 +39053,12 @@ pub const DragonCameraState__vfunc_7: u64 = 33114;
 pub const DragonCameraState__vfunc_8: u64 = 33115;
 /// `DragonCameraState::vfunc_9` at 0x55cbb0 (rtti, high); signature (low): `undefined vfunc_9(DragonCameraState * this, undefined4 * param_1)`
 pub const DragonCameraState__vfunc_9: u64 = 33117;
+/// `DragonSoulGained::GetEventSource` at 0x6c7680 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of DragonSoulGained::Event events (medium); semantic signature: `BSTEventSource<DragonSoulGained::Event>* ()`
+pub const DragonSoulGained__GetEventSource: u64 = 38520;
+/// `DragonSoulGained::RegisterSink` at 0x6c4490 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a DragonSoulGained::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DragonSoulGained::Event>* sink)`
+pub const DragonSoulGained__RegisterSink: u64 = 38448;
+/// `DragonSoulGained::UnregisterSink` at 0x6c44c0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a DragonSoulGained::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<DragonSoulGained::Event>* sink)`
+pub const DragonSoulGained__UnregisterSink: u64 = 38449;
 /// `DualValueModifierEffect::ctor` at 0x5c6820 (layout_inference, high); signature (low): `DualValueModifierEffect * ctor(DualValueModifierEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const DualValueModifierEffect__ctor: u64 = 34315;
 /// `DualValueModifierEffect::vdtor` at 0x5c6ca0 (slot_propagation, medium); signature (low): `DualValueModifierEffect * vdtor(DualValueModifierEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -38515,8 +39225,14 @@ pub const EtherealizationEffect__vfunc_20: u64 = 34329;
 pub const EtherealizationEffect__vfunc_21: u64 = 34330;
 /// `EtherealizationEffect::vfunc_4` at 0x5c6df0 (rtti, high); signature (low): `undefined vfunc_4(void)`
 pub const EtherealizationEffect__vfunc_4: u64 = 34328;
-/// `EventSourceHolder_TES::GetSingleton` at 0x1da8f0 (xref_inference, medium); signature (untiered): `undefined * GetSingleton(void)`
+/// `EventSourceHolder_Input::Update` at 0xcf95f0 (runtime, high); signature (untiered): `undefined Update(longlong param_1, undefined4 param_2)`; polls the six devices, dispatches the frame's InputEvent list through the source at +0 and the remote gamepad event through +0x98 (high); semantic signature: `void (EventSourceHolder_Input* this, float delta)`
+pub const EventSourceHolder_Input__Update: u64 = 68617;
+/// `EventSourceHolder_MenuOpenClose::ProcessMessages` at 0x1169d20 (runtime, high); signature (untiered): `undefined ProcessMessages(longlong param_1, undefined8 param_2, undefined8 param_3, longlong * param_4)`; drains the UI message queue: shows and hides menus and notifies the three UI sources (high); semantic signature: `void (EventSourceHolder_MenuOpenClose* this, ...)`
+pub const EventSourceHolder_MenuOpenClose__ProcessMessages: u64 = 82082;
+/// `EventSourceHolder_TES::GetSingleton` at 0x1da8f0 (runtime, high); signature (untiered): `undefined * GetSingleton(void)`; returns the static holder of the 56 script event sources (high); semantic signature: `EventSourceHolder_TES* ()`
 pub const EventSourceHolder_TES__GetSingleton: u64 = 14298;
+/// `EventSourceHolder_TES::ctor` at 0x1acfc0 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; constructs the 56 sources in place (high); semantic signature: `EventSourceHolder_TES* (EventSourceHolder_TES* this)`
+pub const EventSourceHolder_TES__ctor: u64 = 13458;
 /// `ExitCartBeginHandler::vdtor` at 0x7d3dc0 (layout_inference, medium); signature (low): `ExitCartBeginHandler * vdtor(ExitCartBeginHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ExitCartBeginHandler__vdtor: u64 = 43318;
 /// `ExitCartBeginHandler::vfunc_1` at 0x7cede0 (rtti, high); signature (low): `undefined1 vfunc_1(ExitCartBeginHandler * this, longlong * param_1)`
@@ -39749,6 +40465,12 @@ pub const FindTriangleForLocationWaterFilter__ctor: u64 = 90392;
 pub const FindTriangleForLocationWaterFilter__vdtor: u64 = 90500;
 /// `FindTriangleForLocationWaterFilter::vfunc_1` at 0x11b8fe0 (rtti, high); signature (low): `undefined8 vfunc_1(FindTriangleForLocationWaterFilter * this, longlong param_1, longlong param_2, ushort param_3, longlong param_4)`
 pub const FindTriangleForLocationWaterFilter__vfunc_1: u64 = 90393;
+/// `FinePaid::GetEventSource` at 0x76eac0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of FinePaid::Event events (medium); semantic signature: `BSTEventSource<FinePaid::Event>* ()`
+pub const FinePaid__GetEventSource: u64 = 41063;
+/// `FinePaid::RegisterSink` at 0x73e2a0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a FinePaid::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<FinePaid::Event>* sink)`
+pub const FinePaid__RegisterSink: u64 = 40381;
+/// `FinePaid::UnregisterSink` at 0x73e2d0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a FinePaid::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<FinePaid::Event>* sink)`
+pub const FinePaid__UnregisterSink: u64 = 40382;
 /// `FinishActiveEffectVisitor::vdtor` at 0x5ba920 (layout_inference, medium); signature (low): `FinishActiveEffectVisitor * vdtor(FinishActiveEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const FinishActiveEffectVisitor__vdtor: u64 = 34047;
 /// `FinishActiveEffectVisitor::vfunc_1` at 0x5ba820 (rtti, high); signature (low): `undefined4 vfunc_1(FinishActiveEffectVisitor * this, FinishActiveEffectVisitor_vtbl * param_1)`
@@ -54571,6 +55293,12 @@ pub const GrabActorEffect__vfunc_4: u64 = 34334;
 pub const GrabActorEffect__vfunc_4_sub0: u64 = 34341;
 /// `GrabActorEffect::vfunc_8` at 0x5c7470 (rtti, high); signature (low): `undefined vfunc_8(GrabActorEffect * this, longlong param_1)`
 pub const GrabActorEffect__vfunc_8: u64 = 34336;
+/// `GrandTheftHorse::GetEventSource` at 0x6c0f90 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of GrandTheftHorse::Event events (medium); semantic signature: `BSTEventSource<GrandTheftHorse::Event>* ()`
+pub const GrandTheftHorse__GetEventSource: u64 = 38342;
+/// `GrandTheftHorse::RegisterSink` at 0x66fb20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a GrandTheftHorse::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
+pub const GrandTheftHorse__RegisterSink: u64 = 37160;
+/// `GrandTheftHorse::UnregisterSink` at 0x66fb50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a GrandTheftHorse::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
+pub const GrandTheftHorse__UnregisterSink: u64 = 37161;
 /// `GrenadeProjectile::BSHandleRefObject_vdtor` at 0x7eccfc (slot_propagation, medium); signature (high): `undefined BSHandleRefObject_vdtor(GrenadeProjectile * this)`
 pub const GrenadeProjectile__BSHandleRefObject_vdtor: u64 = 43937;
 /// `GrenadeProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x7ecd08 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(GrenadeProjectile * this)`
@@ -55019,6 +55747,12 @@ pub const HorseCameraState__vfunc_7: u64 = 50765;
 pub const HorseCameraState__vfunc_8: u64 = 50766;
 /// `HorseCameraState::vfunc_9` at 0x8f7100 (rtti, high); signature (low): `undefined vfunc_9(HorseCameraState * this, undefined4 * param_1)`
 pub const HorseCameraState__vfunc_9: u64 = 50768;
+/// `HoursPassed::GetEventSource` at 0x975b40 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of HoursPassed::Event events (medium); semantic signature: `BSTEventSource<HoursPassed::Event>* ()`
+pub const HoursPassed__GetEventSource: u64 = 52501;
+/// `HoursPassed::RegisterSink` at 0x974c20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a HoursPassed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<HoursPassed::Event>* sink)`
+pub const HoursPassed__RegisterSink: u64 = 52482;
+/// `HoursPassed::UnregisterSink` at 0x974c50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a HoursPassed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<HoursPassed::Event>* sink)`
+pub const HoursPassed__UnregisterSink: u64 = 52483;
 /// `IAITarget::IPackageData_vdtor` at 0x44e7d8 (slot_propagation, medium); signature (low): `undefined IPackageData_vdtor(IAITarget * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IAITarget__IPackageData_vdtor: u64 = 27546;
 /// `IAITarget::vdtor` at 0x44d580 (layout_inference, medium); signature (low): `IAITarget * vdtor(IAITarget * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -64583,14 +65317,14 @@ pub const InputEvent__vdtor: u64 = 42400;
 pub const InputEvent__vfunc_1: u64 = 42440;
 /// `InputEvent::vfunc_2` at 0x7b4840 (rtti, medium); signature (untiered): `undefined8 * vfunc_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const InputEvent__vfunc_2: u64 = 42444;
+/// `InstalledContent::ProcessLoadGameEvent` at 0x609560 (runtime, high); signature (untiered): `undefined8 ProcessLoadGameEvent(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`; forwards to 0x60b6c0 when the byte at +0x18 is set; returns 0 (high); semantic signature: `BSEventNotifyControl (InstalledContent* this, const TESLoadGameEvent* event, BSTEventSource<TESLoadGameEvent>* source)`
+pub const InstalledContent__ProcessLoadGameEvent: u64 = 442465;
 /// `InstalledContent::ctor` at 0x607ce0 (layout_inference, medium); signature (low): `InstalledContent * ctor(InstalledContent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const InstalledContent__ctor: u64 = 442446;
 /// `InstalledContent::dtor` at 0x607df0 (layout_inference, high); signature (low): `undefined dtor(InstalledContent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const InstalledContent__dtor: u64 = 442447;
 /// `InstalledContent::vdtor` at 0x60ae60 (slot_propagation, medium); signature (low): `InstalledContent * vdtor(InstalledContent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const InstalledContent__vdtor: u64 = 442482;
-/// `InstalledContent::vfunc_1` at 0x609560 (rtti, high); signature (low): `undefined8 vfunc_1(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`
-pub const InstalledContent__vfunc_1: u64 = 442465;
 /// `InstantInteractionCallback::ctor` at 0x71a730 (layout_inference, medium); signature (low): `InstantInteractionCallback * ctor(InstantInteractionCallback * this, undefined8 param_1, longlong * param_2)`
 pub const InstantInteractionCallback__ctor: u64 = 39688;
 /// `InstantInteractionCallback::vdtor` at 0x71d1d0 (layout_inference, medium); signature (low): `InstantInteractionCallback * vdtor(InstantInteractionCallback * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -64631,10 +65365,16 @@ pub const Inventory3DManager__vfunc_1: u64 = 51768;
 pub const Inventory3DManager__vfunc_5: u64 = 51769;
 /// `Inventory3DManager::vfunc_6` at 0x93e620 (rtti, high); signature (low): `undefined1 vfunc_6(Inventory3DManager * this, longlong param_1)`
 pub const Inventory3DManager__vfunc_6: u64 = 51770;
+/// `Inventory::GetEventSource` at 0x241aa0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of Inventory::Event events (medium); semantic signature: `BSTEventSource<Inventory::Event>* ()`
+pub const Inventory__GetEventSource: u64 = 16225;
+/// `Inventory::RegisterSink` at 0x227e00 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a Inventory::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Inventory::Event>* sink)`
+pub const Inventory__RegisterSink: u64 = 15978;
 /// `Inventory::StatInventoryVisitor::vdtor` at 0x240740 (layout_inference, medium); signature (low): `StatInventoryVisitor * vdtor(StatInventoryVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const Inventory__StatInventoryVisitor__vdtor: u64 = 16191;
 /// `Inventory::StatInventoryVisitor::vfunc_1` at 0x242440 (rtti, high); signature (low): `undefined8 vfunc_1(StatInventoryVisitor * this, longlong param_1)`
 pub const Inventory__StatInventoryVisitor__vfunc_1: u64 = 16236;
+/// `Inventory::UnregisterSink` at 0x227e30 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a Inventory::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Inventory::Event>* sink)`
+pub const Inventory__UnregisterSink: u64 = 15979;
 /// `InventoryChanges::CountItem` at 0x240fe0 (runtime, high); signature (untiered): `int CountItem(longlong param_1, undefined8 * param_2, longlong * param_3)`; count of an item, base plus delta (high); semantic signature: `int InventoryChanges::CountItem(TESForm* item, InventoryChanges* changes, ItemFilter* filter)`
 pub const InventoryChanges__CountItem: u64 = 16214;
 /// `InventoryChanges::CountItemsWithKeyword` at 0x239750 (semantic, medium); signature (untiered): `ulonglong CountItemsWithKeyword(undefined8 * param_1, longlong param_2)`; count of items carrying a keyword (medium); semantic signature: `uint InventoryChanges::CountItemsWithKeyword(InventoryChanges* this, BGSKeyword* keyword)`
@@ -64815,6 +65555,36 @@ pub const IsSpellTargetFunctor__vfunc_1: u64 = 34578;
 pub const IsSpellTypeTargetFunctor__vdtor: u64 = 34594;
 /// `IsSpellTypeTargetFunctor::vfunc_1` at 0x5d4520 (rtti, high); signature (low): `byte vfunc_1(IsSpellTypeTargetFunctor * this, longlong param_1)`
 pub const IsSpellTypeTargetFunctor__vfunc_1: u64 = 34579;
+/// `ItemCrafted::GetEventSource` at 0x924920 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ItemCrafted::Event events (medium); semantic signature: `BSTEventSource<ItemCrafted::Event>* ()`
+pub const ItemCrafted__GetEventSource: u64 = 51403;
+/// `ItemCrafted::RegisterSink` at 0x915fe0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ItemCrafted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemCrafted::Event>* sink)`
+pub const ItemCrafted__RegisterSink: u64 = 51196;
+/// `ItemCrafted::UnregisterSink` at 0x916010 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ItemCrafted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemCrafted::Event>* sink)`
+pub const ItemCrafted__UnregisterSink: u64 = 51197;
+/// `ItemSteal::GetEventSource` at 0x76ebb0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ItemSteal::Event events (medium); semantic signature: `BSTEventSource<ItemSteal::Event>* ()`
+pub const ItemSteal__GetEventSource: u64 = 41064;
+/// `ItemSteal::RegisterSink` at 0x73e150 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ItemSteal::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemSteal::Event>* sink)`
+pub const ItemSteal__RegisterSink: u64 = 40374;
+/// `ItemSteal::UnregisterSink` at 0x73e180 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ItemSteal::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemSteal::Event>* sink)`
+pub const ItemSteal__UnregisterSink: u64 = 40375;
+/// `ItemsPickpocketed::GetEventSource` at 0x915710 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ItemsPickpocketed::Event events (medium); semantic signature: `BSTEventSource<ItemsPickpocketed::Event>* ()`
+pub const ItemsPickpocketed__GetEventSource: u64 = 51183;
+/// `ItemsPickpocketed::RegisterSink` at 0x90fbd0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ItemsPickpocketed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemsPickpocketed::Event>* sink)`
+pub const ItemsPickpocketed__RegisterSink: u64 = 51122;
+/// `ItemsPickpocketed::UnregisterSink` at 0x90fc00 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ItemsPickpocketed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemsPickpocketed::Event>* sink)`
+pub const ItemsPickpocketed__UnregisterSink: u64 = 51123;
+/// `JailEscape::GetEventSource` at 0x76eca0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of JailEscape::Event events (medium); semantic signature: `BSTEventSource<JailEscape::Event>* ()`
+pub const JailEscape__GetEventSource: u64 = 41065;
+/// `JailEscape::RegisterSink` at 0x73e360 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a JailEscape::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<JailEscape::Event>* sink)`
+pub const JailEscape__RegisterSink: u64 = 40385;
+/// `JailEscape::UnregisterSink` at 0x73e390 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a JailEscape::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<JailEscape::Event>* sink)`
+pub const JailEscape__UnregisterSink: u64 = 40386;
+/// `Jailing::GetEventSource` at 0x76ed90 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of Jailing::Event events (medium); semantic signature: `BSTEventSource<Jailing::Event>* ()`
+pub const Jailing__GetEventSource: u64 = 41066;
+/// `Jailing::RegisterSink` at 0x73e300 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a Jailing::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Jailing::Event>* sink)`
+pub const Jailing__RegisterSink: u64 = 40383;
+/// `Jailing::UnregisterSink` at 0x73e330 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a Jailing::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Jailing::Event>* sink)`
+pub const Jailing__UnregisterSink: u64 = 40384;
 /// `JobListManager::ServingThread::vdtor` at 0x60f130 (layout_inference, medium); signature (low): `ServingThread * vdtor(ServingThread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const JobListManager__ServingThread__vdtor: u64 = 35420;
 /// `JobListManager::ServingThread::vfunc_1` at 0x60f1e0 (rtti, high); signature (low): `undefined8 vfunc_1(ServingThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -65103,6 +65873,12 @@ pub const LeftHandSpellCastHandler__vfunc_1: u64 = 42819;
 pub const LeftHandSpellFireHandler__vdtor: u64 = 43346;
 /// `LeftHandSpellFireHandler::vfunc_1` at 0x7cc6b0 (rtti, high); signature (low): `undefined8 vfunc_1(LeftHandSpellFireHandler * this, longlong * param_1)`
 pub const LeftHandSpellFireHandler__vfunc_1: u64 = 42816;
+/// `LevelIncrease::GetEventSource` at 0x73b800 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of LevelIncrease::Event events (medium); semantic signature: `BSTEventSource<LevelIncrease::Event>* ()`
+pub const LevelIncrease__GetEventSource: u64 = 40319;
+/// `LevelIncrease::RegisterSink` at 0x73af80 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a LevelIncrease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LevelIncrease::Event>* sink)`
+pub const LevelIncrease__RegisterSink: u64 = 40304;
+/// `LevelIncrease::UnregisterSink` at 0x73afb0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a LevelIncrease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LevelIncrease::Event>* sink)`
+pub const LevelIncrease__UnregisterSink: u64 = 40305;
 /// `LevelUpMenu::ctor` at 0x94a920 (layout_inference, high); signature (high): `LevelUpMenu * ctor(LevelUpMenu * this)`
 pub const LevelUpMenu__ctor: u64 = 51908;
 /// `LevelUpMenu::vdtor` at 0x94aeb0 (slot_propagation, medium); signature (low): `LevelUpMenu * vdtor(LevelUpMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -65389,6 +66165,18 @@ pub const LocalMapMenu__InputHandler__vfunc_5: u64 = 52977;
 pub const LocalMapMenu__InputHandler__vfunc_6: u64 = 52979;
 /// `LocalMapMenu::InputHandler::vfunc_7` at 0x994a30 (rtti, high); signature (low): `undefined8 vfunc_7(InputHandler * this, longlong * param_1)`
 pub const LocalMapMenu__InputHandler__vfunc_7: u64 = 52978;
+/// `LocationCleared::GetEventSource` at 0x29d2a0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of LocationCleared::Event events (medium); semantic signature: `BSTEventSource<LocationCleared::Event>* ()`
+pub const LocationCleared__GetEventSource: u64 = 18435;
+/// `LocationCleared::RegisterSink` at 0x298090 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a LocationCleared::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocationCleared::Event>* sink)`
+pub const LocationCleared__RegisterSink: u64 = 18348;
+/// `LocationCleared::UnregisterSink` at 0x2980c0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a LocationCleared::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocationCleared::Event>* sink)`
+pub const LocationCleared__UnregisterSink: u64 = 18349;
+/// `LocationDiscovery::GetEventSource` at 0x76ee80 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of LocationDiscovery::Event events (medium); semantic signature: `BSTEventSource<LocationDiscovery::Event>* ()`
+pub const LocationDiscovery__GetEventSource: u64 = 41067;
+/// `LocationDiscovery::RegisterSink` at 0x73e1e0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a LocationDiscovery::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocationDiscovery::Event>* sink)`
+pub const LocationDiscovery__RegisterSink: u64 = 40377;
+/// `LocationDiscovery::UnregisterSink` at 0x73e210 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a LocationDiscovery::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocationDiscovery::Event>* sink)`
+pub const LocationDiscovery__UnregisterSink: u64 = 40378;
 /// `LockEffect::ctor` at 0x5c9d00 (layout_inference, high); signature (low): `LockEffect * ctor(LockEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const LockEffect__ctor: u64 = 34393;
 /// `LockEffect::vdtor` at 0x5c9f10 (slot_propagation, medium); signature (low): `LockEffect * vdtor(LockEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -65429,6 +66217,12 @@ pub const LockpickingMenu__vfunc_4_sub2: u64 = 51968;
 pub const LockpickingMenu__vfunc_6: u64 = 51951;
 /// `LockpickingMenu::vfunc_8` at 0x94d630 (rtti, high); signature (untiered): `undefined vfunc_8(LockpickingMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
 pub const LockpickingMenu__vfunc_8: u64 = 524005;
+/// `LocksPicked::GetEventSource` at 0x950ba0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of LocksPicked::Event events (medium); semantic signature: `BSTEventSource<LocksPicked::Event>* ()`
+pub const LocksPicked__GetEventSource: u64 = 51997;
+/// `LocksPicked::RegisterSink` at 0x94cdc0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a LocksPicked::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocksPicked::Event>* sink)`
+pub const LocksPicked__RegisterSink: u64 = 51946;
+/// `LocksPicked::UnregisterSink` at 0x94cdf0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a LocksPicked::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocksPicked::Event>* sink)`
+pub const LocksPicked__UnregisterSink: u64 = 51947;
 /// `LoginMenu::errorCallback::vdtor` at 0x57dff0 (layout_inference, medium); signature (low): `errorCallback * vdtor(errorCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const LoginMenu__errorCallback__vdtor: u64 = 441694;
 /// `LoginMenu::errorCallback::vfunc_1` at 0x57dfb0 (rtti, high); signature (high): `undefined vfunc_1(errorCallback * this)`
@@ -65473,6 +66267,8 @@ pub const LookupFormByEditorID: u64 = 14620;
 pub type LookupFormByEditorID_fn = unsafe extern "C" fn(editorID: *const c_char) -> *mut classes::TESForm;
 /// `LookupFormByEditorID_BSFixedString` at 0x1e5910 (semantic, high); signature (untiered): `ulonglong LookupFormByEditorID_BSFixedString(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; LookupFormByEditorID taking an interned string (high); semantic signature: `TESForm* LookupFormByEditorID_BSFixedString(const BSFixedString* editorID)`
 pub const LookupFormByEditorID_BSFixedString: u64 = 14618;
+/// `LookupFormByEditorID_BSFixedString` as a function pointer type (high).
+pub type LookupFormByEditorID_BSFixedString_fn = unsafe extern "C" fn(editorID: *const classes::BSFixedString) -> *mut classes::TESForm;
 /// `LookupFormByID` at 0x1e5860 (runtime, high); signature (untiered): `undefined8 LookupFormByID(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; returns the form with that id or null (high); semantic signature: `TESForm* LookupFormByID(uint formID)`
 pub const LookupFormByID: u64 = 14617;
 /// `LookupFormByID` as a function pointer type (high).
@@ -65819,8 +66615,6 @@ pub const MagicTarget__vfunc_11: u64 = 34545;
 pub const MagicTarget__vfunc_1_sub0: u64 = 34547;
 /// `MagicTarget::vfunc_1_sub1` at 0x5d4180 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub1(longlong * param_1)`
 pub const MagicTarget__vfunc_1_sub1: u64 = 34570;
-/// `MagicTarget::vfunc_1_sub2` at 0x5d4e30 (callgraph, medium); signature (untiered): `ulonglong vfunc_1_sub2(longlong * param_1, undefined8 param_2)`
-pub const MagicTarget__vfunc_1_sub2: u64 = 34604;
 /// `MagicTarget::vfunc_2` at 0x17ee10 (rtti, high); signature (low): `undefined8 vfunc_2(void)`
 pub const MagicTarget__vfunc_2: u64 = 12333;
 /// `MagicTarget::vfunc_3` at 0x17eea0 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
@@ -65843,8 +66637,6 @@ pub const Main__BSTEventSink_BSGamerProfileEvent_vfunc_1_sub0: u64 = 68663;
 pub const Main__ctor: u64 = 36545;
 /// `Main::dtor` at 0x652600 (layout_inference, high); signature (low): `undefined dtor(Main * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
 pub const Main__dtor: u64 = 36546;
-/// `Main::dtor_sub0` at 0x664370 (callgraph, medium); signature (untiered): `undefined8 * dtor_sub0(longlong * param_1, longlong param_2)`
-pub const Main__dtor_sub0: u64 = 36801;
 /// `Main::dtor_sub1` at 0x669850 (callgraph, medium); signature (untiered): `undefined dtor_sub1(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Main__dtor_sub1: u64 = 36990;
 /// `Main::dtor_sub2` at 0xeb51b0 (callgraph, medium); signature (untiered): `undefined dtor_sub2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -68727,6 +69519,12 @@ pub const MultiBoundMarkerData__vdtor: u64 = 12968;
 pub const MultiBoundMarkerData__vfunc_1: u64 = 12967;
 /// `MultiBoundMarkerData::vfunc_2` at 0x191710 (rtti, high); signature (low): `undefined1 vfunc_2(MultiBoundMarkerData * this, longlong param_1)`
 pub const MultiBoundMarkerData__vfunc_2: u64 = 12966;
+/// `MurderCrime::GetEventSource` at 0x6c1080 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of MurderCrime::Event events (medium); semantic signature: `BSTEventSource<MurderCrime::Event>* ()`
+pub const MurderCrime__GetEventSource: u64 = 38343;
+/// `MurderCrime::RegisterSink` at 0x66fac0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a MurderCrime::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<MurderCrime::Event>* sink)`
+pub const MurderCrime__RegisterSink: u64 = 37158;
+/// `MurderCrime::UnregisterSink` at 0x66faf0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a MurderCrime::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<MurderCrime::Event>* sink)`
+pub const MurderCrime__UnregisterSink: u64 = 37159;
 /// `NPCAttachHandler::vdtor` at 0x7d43c0 (layout_inference, medium); signature (low): `NPCAttachHandler * vdtor(NPCAttachHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const NPCAttachHandler__vdtor: u64 = 43350;
 /// `NPCAttachHandler::vfunc_1` at 0x7cee40 (rtti, high); signature (low): `undefined8 vfunc_1(NPCAttachHandler * this, longlong * param_1, ulonglong * param_2)`
@@ -75967,6 +76765,12 @@ pub const ObjectListItem__vfunc_7: u64 = 27678;
 pub const ObjectListItem__vfunc_8: u64 = 27679;
 /// `ObjectListItem::vfunc_9` at 0x451150 (rtti, high); signature (low): `undefined vfunc_9(void)`
 pub const ObjectListItem__vfunc_9: u64 = 27680;
+/// `ObjectiveState::GetEventSource` at 0x39c340 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ObjectiveState::Event events (medium); semantic signature: `BSTEventSource<ObjectiveState::Event>* ()`
+pub const ObjectiveState__GetEventSource: u64 = 23951;
+/// `ObjectiveState::RegisterSink` at 0x39b9a0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ObjectiveState::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ObjectiveState::Event>* sink)`
+pub const ObjectiveState__RegisterSink: u64 = 23937;
+/// `ObjectiveState::UnregisterSink` at 0x39b9d0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ObjectiveState::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ObjectiveState::Event>* sink)`
+pub const ObjectiveState__UnregisterSink: u64 = 23938;
 /// `ObstacleTaskData::ctor` at 0x4d5510 (layout_inference, medium); signature (low): `ObstacleTaskData * ctor(ObstacleTaskData * this, undefined8 param_1)`
 pub const ObstacleTaskData__ctor: u64 = 30606;
 /// `ObstacleTaskData::ctor` at 0x4d55d0 (layout_inference, medium); signature (low): `undefined ctor(ObstacleTaskData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -78345,6 +79149,12 @@ pub const PeakValueModifierEffect__vfunc_5: u64 = 34740;
 pub const PickNewIdleHandler__vdtor: u64 = 43353;
 /// `PickNewIdleHandler::vfunc_1` at 0x7ce130 (rtti, high); signature (low): `undefined1 vfunc_1(PickNewIdleHandler * this, longlong param_1)`
 pub const PickNewIdleHandler__vfunc_1: u64 = 42864;
+/// `Pickpocket::GetEventSource` at 0x76ef70 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of Pickpocket::Event events (medium); semantic signature: `BSTEventSource<Pickpocket::Event>* ()`
+pub const Pickpocket__GetEventSource: u64 = 41068;
+/// `Pickpocket::RegisterSink` at 0x73e0c0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a Pickpocket::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Pickpocket::Event>* sink)`
+pub const Pickpocket__RegisterSink: u64 = 40371;
+/// `Pickpocket::UnregisterSink` at 0x73e0f0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a Pickpocket::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Pickpocket::Event>* sink)`
+pub const Pickpocket__UnregisterSink: u64 = 40372;
 /// `PitchOverrideEndHandler::vdtor` at 0x7d4480 (layout_inference, medium); signature (low): `PitchOverrideEndHandler * vdtor(PitchOverrideEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const PitchOverrideEndHandler__vdtor: u64 = 43354;
 /// `PitchOverrideEndHandler::vfunc_1` at 0x7cf420 (rtti, high); signature (low): `undefined8 vfunc_1(void)`
@@ -78411,8 +79221,6 @@ pub const PlayerCharacter__BSTEventSink_MenuModeChangeEvent_vdtor: u64 = 40929;
 pub const PlayerCharacter__BSTEventSink_MenuModeChangeEvent_vfunc_1: u64 = 40741;
 /// `PlayerCharacter::BSTEventSink_MenuOpenCloseEvent_vdtor` at 0x7692c0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(PlayerCharacter * this)`
 pub const PlayerCharacter__BSTEventSink_MenuOpenCloseEvent_vdtor: u64 = 40928;
-/// `PlayerCharacter::BSTEventSink_MenuOpenCloseEvent_vfunc_1` at 0x75eb40 (rtti, high); signature (low): `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(PlayerCharacter * this, longlong * param_1)`
-pub const PlayerCharacter__BSTEventSink_MenuOpenCloseEvent_vfunc_1: u64 = 40740;
 /// `PlayerCharacter::BSTEventSink_MenuOpenCloseEvent_vfunc_1_sub0` at 0x700d80 (callgraph, medium); signature (untiered): `undefined BSTEventSink_MenuOpenCloseEvent_vfunc_1_sub0(longlong param_1, undefined1 param_2)`
 pub const PlayerCharacter__BSTEventSink_MenuOpenCloseEvent_vfunc_1_sub0: u64 = 39544;
 /// `PlayerCharacter::BSTEventSink_TESTrackedStatsEvent_vdtor` at 0x7692e4 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESTrackedStatsEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
@@ -78449,6 +79257,8 @@ pub const PlayerCharacter__MagicTarget_vfunc_0: u64 = 40934;
 pub const PlayerCharacter__MagicTarget_vfunc_4: u64 = 40504;
 /// `PlayerCharacter::MagicTarget_vfunc_8` at 0x761690 (rtti, high); signature (low): `undefined MagicTarget_vfunc_8(PlayerCharacter * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
 pub const PlayerCharacter__MagicTarget_vfunc_8: u64 = 40762;
+/// `PlayerCharacter::ProcessMenuOpenCloseEvent` at 0x75eb40 (runtime, high); signature (untiered): `undefined8 ProcessMenuOpenCloseEvent(PlayerCharacter * this, longlong * param_1)`; compares event->menuName.data with the UI string table entries and reacts to the console, journal and container menus; returns 0 (high); semantic signature: `BSEventNotifyControl (PlayerCharacter::sink_2B8* this, const MenuOpenCloseEvent* event, BSTEventSource<MenuOpenCloseEvent>* source)`
+pub const PlayerCharacter__ProcessMenuOpenCloseEvent: u64 = 40740;
 /// `PlayerCharacter::SaveGame` at 0x74cec0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(PlayerCharacter * this, longlong * param_1)`
 pub const PlayerCharacter__SaveGame: u64 = 40538;
 /// `PlayerCharacter::ctor` at 0x73f670 (layout_inference, medium); signature (low): `PlayerCharacter * ctor(PlayerCharacter * this, undefined8 param_1, byte * param_2, byte * param_3)`
@@ -78531,8 +79341,6 @@ pub const PlayerCharacter__vfunc_152_sub1: u64 = 20468;
 pub const PlayerCharacter__vfunc_152_sub2: u64 = 20482;
 /// `PlayerCharacter::vfunc_152_sub3` at 0x530350 (callgraph, medium); signature (untiered): `uint * vfunc_152_sub3(uint * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const PlayerCharacter__vfunc_152_sub3: u64 = 32288;
-/// `PlayerCharacter::vfunc_152_sub4` at 0x76b190 (callgraph, medium); signature (untiered): `ulonglong vfunc_152_sub4(longlong * param_1, undefined8 param_2)`
-pub const PlayerCharacter__vfunc_152_sub4: u64 = 41034;
 /// `PlayerCharacter::vfunc_152_sub5` at 0x8fad00 (callgraph, medium); signature (untiered): `undefined vfunc_152_sub5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const PlayerCharacter__vfunc_152_sub5: u64 = 50833;
 /// `PlayerCharacter::vfunc_156` at 0x7427f0 (rtti, high); signature (low): `ulonglong vfunc_156(PlayerCharacter * this, longlong param_2, float param_3, undefined4 param_4)`
@@ -78757,8 +79565,6 @@ pub const PlayerCharacter__vfunc_261: u64 = 41258;
 pub const PlayerCharacter__vfunc_265: u64 = 40734;
 /// `PlayerCharacter::vfunc_270` at 0x75e300 (rtti, high); signature (low): `undefined vfunc_270(PlayerCharacter * this, Actor * param_1, undefined8 param_2, ulonglong param_3, char param_4)`
 pub const PlayerCharacter__vfunc_270: u64 = 40733;
-/// `PlayerCharacter::vfunc_270_sub0` at 0x76b430 (callgraph, medium); signature (untiered): `ulonglong vfunc_270_sub0(longlong * param_1, undefined8 param_2)`
-pub const PlayerCharacter__vfunc_270_sub0: u64 = 41035;
 /// `PlayerCharacter::vfunc_271` at 0x75c250 (rtti, high); signature (low): `ulonglong vfunc_271(PlayerCharacter * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const PlayerCharacter__vfunc_271: u64 = 40690;
 /// `PlayerCharacter::vfunc_272` at 0x7494c0 (rtti, high); signature (low): `undefined8 vfunc_272(PlayerCharacter * this, longlong * param_1, undefined1 param_2, int * param_3)`
@@ -78927,6 +79733,12 @@ pub const PointerArrayImplementation__vfunc_21: u64 = 65961;
 pub const PointerArrayImplementation__vfunc_22: u64 = 66141;
 /// `PointerArrayImplementation::vfunc_6` at 0xc60940 (rtti, high); signature (high): `undefined8 vfunc_6(PointerArrayImplementation * this)`
 pub const PointerArrayImplementation__vfunc_6: u64 = 66020;
+/// `PoisonedWeapon::GetEventSource` at 0x76f060 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of PoisonedWeapon::Event events (medium); semantic signature: `BSTEventSource<PoisonedWeapon::Event>* ()`
+pub const PoisonedWeapon__GetEventSource: u64 = 41069;
+/// `PoisonedWeapon::RegisterSink` at 0x73e4e0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a PoisonedWeapon::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<PoisonedWeapon::Event>* sink)`
+pub const PoisonedWeapon__RegisterSink: u64 = 40393;
+/// `PoisonedWeapon::UnregisterSink` at 0x73e510 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a PoisonedWeapon::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<PoisonedWeapon::Event>* sink)`
+pub const PoisonedWeapon__UnregisterSink: u64 = 40394;
 /// `Precipitation::ctor` at 0x40eda0 (layout_inference, medium); signature (high): `Precipitation * ctor(Precipitation * this)`
 pub const Precipitation__ctor: u64 = 26177;
 /// `Precipitation::ctor` at 0x40ee10 (layout_inference, medium); signature (low): `undefined ctor(Precipitation * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -79099,6 +79911,12 @@ pub const ProjectilePickCache__ctor: u64 = 44069;
 pub const ProjectilePickCache__dtor: u64 = 44070;
 /// `ProjectilePickCache::vdtor` at 0x804d10 (slot_propagation, medium); signature (low): `ProjectilePickCache * vdtor(ProjectilePickCache * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`
 pub const ProjectilePickCache__vdtor: u64 = 44256;
+/// `QuestStatus::GetEventSource` at 0x3dfec0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of QuestStatus::Event events (medium); semantic signature: `BSTEventSource<QuestStatus::Event>* ()`
+pub const QuestStatus__GetEventSource: u64 = 25196;
+/// `QuestStatus::RegisterSink` at 0x3cdeb0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a QuestStatus::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<QuestStatus::Event>* sink)`
+pub const QuestStatus__RegisterSink: u64 = 24961;
+/// `QuestStatus::UnregisterSink` at 0x3cdee0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a QuestStatus::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<QuestStatus::Event>* sink)`
+pub const QuestStatus__UnregisterSink: u64 = 24962;
 /// `QueuedActor::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0x19ba4c (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(QueuedActor * this)`
 pub const QueuedActor__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 13181;
 /// `QueuedActor::ctor` at 0x198630 (layout_inference, high); signature (low): `QueuedActor * ctor(QueuedActor * this, undefined4 * param_1, undefined4 param_2)`
@@ -79485,6 +80303,10 @@ pub const RaceSexMenu__vfunc_2_sub1: u64 = 52408;
 pub const RaceSexMenu__vfunc_4: u64 = 52345;
 /// `RaceSexMenu::vfunc_5` at 0x968830 (rtti, high); signature (low): `undefined vfunc_5(RaceSexMenu * this, undefined4 param_2, uint param_3)`
 pub const RaceSexMenu__vfunc_5: u64 = 52346;
+/// `RaceSexMenuEvent::GetEventSource` at 0x9676e0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of RaceSexMenuEvent::NameChangedEvent events (medium); semantic signature: `BSTEventSource<RaceSexMenuEvent::NameChangedEvent>* ()`
+pub const RaceSexMenuEvent__GetEventSource: u64 = 52339;
+/// `RaceSexMenuEvent::UnregisterSink` at 0x967680 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a RaceSexMenuEvent::NameChangedEvent sink with the singleton source (medium); semantic signature: `void (BSTEventSink<RaceSexMenuEvent::NameChangedEvent>* sink)`
+pub const RaceSexMenuEvent__UnregisterSink: u64 = 52337;
 /// `RagdollFurnitureListener::hkpEntityListener_vdtor` at 0x403a3c (slot_propagation, medium); signature (high): `undefined hkpEntityListener_vdtor(RagdollFurnitureListener * this)`
 pub const RagdollFurnitureListener__hkpEntityListener_vdtor: u64 = 25976;
 /// `RagdollFurnitureListener::hkpEntityListener_vfunc_2` at 0x403b60 (rtti, high); signature (low): `undefined hkpEntityListener_vfunc_2(RagdollFurnitureListener * this, longlong param_1)`
@@ -80107,6 +80929,12 @@ pub const ShadowSceneNode__vdtor: u64 = 106409;
 pub const ShadowSceneNode__vfunc_2: u64 = 106415;
 /// `ShadowSceneNode::vfunc_52` at 0x150c280 (rtti, high); signature (low): `undefined vfunc_52(ShadowSceneNode * this, longlong * param_1, ulonglong param_2)`
 pub const ShadowSceneNode__vfunc_52: u64 = 106322;
+/// `ShoutAttack::GetEventSource` at 0x76f240 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ShoutAttack::Event events (medium); semantic signature: `BSTEventSource<ShoutAttack::Event>* ()`
+pub const ShoutAttack__GetEventSource: u64 = 41071;
+/// `ShoutAttack::RegisterSink` at 0x73e480 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ShoutAttack::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ShoutAttack::Event>* sink)`
+pub const ShoutAttack__RegisterSink: u64 = 40391;
+/// `ShoutAttack::UnregisterSink` at 0x73e4b0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ShoutAttack::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ShoutAttack::Event>* sink)`
+pub const ShoutAttack__UnregisterSink: u64 = 40392;
 /// `ShoutHandler::vdtor` at 0x7b1ce0 (layout_inference, medium); signature (low): `ShoutHandler * vdtor(ShoutHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const ShoutHandler__vdtor: u64 = 42407;
 /// `ShoutHandler::vfunc_1` at 0x7b50c0 (rtti, high); signature (low): `undefined8 vfunc_1(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -80115,6 +80943,12 @@ pub const ShoutHandler__vfunc_1: u64 = 42461;
 pub const ShoutHandler__vfunc_6: u64 = 42430;
 /// `ShoutHandler::vfunc_6_sub0` at 0x758200 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const ShoutHandler__vfunc_6_sub0: u64 = 40628;
+/// `ShoutMastered::GetEventSource` at 0x76f330 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ShoutMastered::Event events (medium); semantic signature: `BSTEventSource<ShoutMastered::Event>* ()`
+pub const ShoutMastered__GetEventSource: u64 = 41072;
+/// `ShoutMastered::RegisterSink` at 0x73e6c0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ShoutMastered::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ShoutMastered::Event>* sink)`
+pub const ShoutMastered__RegisterSink: u64 = 40403;
+/// `ShoutMastered::UnregisterSink` at 0x73e6f0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ShoutMastered::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ShoutMastered::Event>* sink)`
+pub const ShoutMastered__UnregisterSink: u64 = 40404;
 /// `ShoutMeter::vfunc_0` at 0x93c1c0 (rtti, high); signature (low): `ShoutMeter * vfunc_0(ShoutMeter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const ShoutMeter__vfunc_0: u64 = 51720;
 /// `ShoutMeter::vfunc_2` at 0x9380c0 (rtti, high); signature (low): `undefined8 vfunc_2(ShoutMeter * this, longlong param_1)`
@@ -80225,6 +81059,12 @@ pub const Sizing__mpSizer__vfunc_28: u64 = 454731;
 pub const Sizing__mpSizer__vfunc_4: u64 = 454728;
 /// `Sizing::mpSizer::vfunc_8` at 0x15f92e0 (rtti, medium); signature (low): `undefined vfunc_8(mpSizer * this, undefined4 * param_1)`
 pub const Sizing__mpSizer__vfunc_8: u64 = 454729;
+/// `SkillIncrease::GetEventSource` at 0x73b8f0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of SkillIncrease::Event events (medium); semantic signature: `BSTEventSource<SkillIncrease::Event>* ()`
+pub const SkillIncrease__GetEventSource: u64 = 40320;
+/// `SkillIncrease::RegisterSink` at 0x73aef0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a SkillIncrease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SkillIncrease::Event>* sink)`
+pub const SkillIncrease__RegisterSink: u64 = 40301;
+/// `SkillIncrease::UnregisterSink` at 0x73af20 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a SkillIncrease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SkillIncrease::Event>* sink)`
+pub const SkillIncrease__UnregisterSink: u64 = 40302;
 /// `Sky::ctor` at 0x410cd0 (layout_inference, medium); signature (low): `Sky * ctor(Sky * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const Sky__ctor: u64 = 26219;
 /// `Sky::ctor` at 0x411280 (layout_inference, medium); signature (low): `undefined ctor(Sky * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -81171,8 +82011,6 @@ pub const SkyrimVM__BSTEventSink_PositionPlayerEvent_vfunc_1: u64 = 54005;
 pub const SkyrimVM__BSTEventSink_PositionPlayerEvent_vfunc_1_sub0: u64 = 53930;
 /// `SkyrimVM::BSTEventSink_TESActivateEvent_vdtor` at 0x9ef6dc (slot_propagation, medium); signature (high): `undefined BSTEventSink_TESActivateEvent_vdtor(SkyrimVM * this)`
 pub const SkyrimVM__BSTEventSink_TESActivateEvent_vdtor: u64 = 54256;
-/// `SkyrimVM::BSTEventSink_TESActivateEvent_vfunc_1` at 0x9db090 (rtti, high); signature (low): `undefined8 BSTEventSink_TESActivateEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
-pub const SkyrimVM__BSTEventSink_TESActivateEvent_vfunc_1: u64 = 53959;
 /// `SkyrimVM::BSTEventSink_TESActiveEffectApplyRemoveEvent_vdtor` at 0x9ef7a8 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESActiveEffectApplyRemoveEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__BSTEventSink_TESActiveEffectApplyRemoveEvent_vdtor: u64 = 54273;
 /// `SkyrimVM::BSTEventSink_TESActiveEffectApplyRemoveEvent_vfunc_1` at 0x9db230 (rtti, high); signature (low): `undefined8 BSTEventSink_TESActiveEffectApplyRemoveEvent_vfunc_1(SkyrimVM * this, longlong param_1)`
@@ -81211,8 +82049,6 @@ pub const SkyrimVM__BSTEventSink_TESCombatEvent_vdtor: u64 = 54282;
 pub const SkyrimVM__BSTEventSink_TESCombatEvent_vfunc_1: u64 = 53965;
 /// `SkyrimVM::BSTEventSink_TESContainerChangedEvent_vdtor` at 0x9ef838 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESContainerChangedEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__BSTEventSink_TESContainerChangedEvent_vdtor: u64 = 54283;
-/// `SkyrimVM::BSTEventSink_TESContainerChangedEvent_vfunc_1` at 0x9dbac0 (rtti, high); signature (low): `undefined8 BSTEventSink_TESContainerChangedEvent_vfunc_1(SkyrimVM * this, uint * param_1, undefined8 param_2, longlong param_3)`
-pub const SkyrimVM__BSTEventSink_TESContainerChangedEvent_vfunc_1: u64 = 53966;
 /// `SkyrimVM::BSTEventSink_TESDeathEvent_vdtor` at 0x9ef844 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESDeathEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__BSTEventSink_TESDeathEvent_vdtor: u64 = 54284;
 /// `SkyrimVM::BSTEventSink_TESDeathEvent_vfunc_1` at 0x9dbf40 (rtti, high); signature (low): `undefined8 BSTEventSink_TESDeathEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
@@ -81227,8 +82063,6 @@ pub const SkyrimVM__BSTEventSink_TESEnterBleedoutEvent_vdtor: u64 = 54286;
 pub const SkyrimVM__BSTEventSink_TESEnterBleedoutEvent_vfunc_1: u64 = 53969;
 /// `SkyrimVM::BSTEventSink_TESEquipEvent_vdtor` at 0x9ef868 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESEquipEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__BSTEventSink_TESEquipEvent_vdtor: u64 = 54287;
-/// `SkyrimVM::BSTEventSink_TESEquipEvent_vfunc_1` at 0x9dc4a0 (rtti, high); signature (low): `undefined8 BSTEventSink_TESEquipEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
-pub const SkyrimVM__BSTEventSink_TESEquipEvent_vfunc_1: u64 = 53970;
 /// `SkyrimVM::BSTEventSink_TESFastTravelEndEvent_vdtor` at 0x9ef7d8 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESFastTravelEndEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__BSTEventSink_TESFastTravelEndEvent_vdtor: u64 = 54277;
 /// `SkyrimVM::BSTEventSink_TESFastTravelEndEvent_vfunc_1` at 0x9e0ff0 (rtti, high); signature (low): `undefined8 BSTEventSink_TESFastTravelEndEvent_vfunc_1(SkyrimVM * this, undefined4 * param_1)`
@@ -81247,8 +82081,6 @@ pub const SkyrimVM__BSTEventSink_TESGrabReleaseEvent_vdtor: u64 = 54290;
 pub const SkyrimVM__BSTEventSink_TESGrabReleaseEvent_vfunc_1: u64 = 53973;
 /// `SkyrimVM::BSTEventSink_TESHitEvent_vdtor` at 0x9ef898 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESHitEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__BSTEventSink_TESHitEvent_vdtor: u64 = 54291;
-/// `SkyrimVM::BSTEventSink_TESHitEvent_vfunc_1` at 0x9dce00 (rtti, high); signature (low): `undefined8 BSTEventSink_TESHitEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
-pub const SkyrimVM__BSTEventSink_TESHitEvent_vfunc_1: u64 = 53974;
 /// `SkyrimVM::BSTEventSink_TESInitScriptEvent_vdtor` at 0x9ef8a4 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESInitScriptEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__BSTEventSink_TESInitScriptEvent_vdtor: u64 = 54292;
 /// `SkyrimVM::BSTEventSink_TESInitScriptEvent_vfunc_1` at 0x9dcf60 (rtti, high); signature (low): `undefined8 BSTEventSink_TESInitScriptEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
@@ -81423,6 +82255,16 @@ pub const SkyrimVM__EventRelayFunctor__vfunc_1: u64 = 54030;
 pub const SkyrimVM__InventoryEventFilter__vfunc_0: u64 = 54076;
 /// `SkyrimVM::InventoryEventFilter::vfunc_0_sub0` at 0x9e8110 (callgraph, medium); signature (untiered): `ulonglong vfunc_0_sub0(longlong param_1, longlong param_2, ulonglong param_3)`
 pub const SkyrimVM__InventoryEventFilter__vfunc_0_sub0: u64 = 54072;
+/// `SkyrimVM::ProcessActivateEvent` at 0x9db090 (runtime, high); signature (untiered): `undefined8 ProcessActivateEvent(SkyrimVM * this, longlong * param_1)`; sends Papyrus OnActivate(actionRef) to objectActivated (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_10* this, const TESActivateEvent* event, BSTEventSource<TESActivateEvent>* source)`
+pub const SkyrimVM__ProcessActivateEvent: u64 = 53959;
+/// `SkyrimVM::ProcessContainerChangedEvent` at 0x9dbac0 (runtime, high); signature (untiered): `undefined8 ProcessContainerChangedEvent(SkyrimVM * this, uint * param_1, undefined8 param_2, longlong param_3)`; sends OnContainerChanged to the item, OnItemRemoved to the old container and OnItemAdded to the new one (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_48* this, const TESContainerChangedEvent* event, BSTEventSource<TESContainerChangedEvent>* source)`
+pub const SkyrimVM__ProcessContainerChangedEvent: u64 = 53966;
+/// `SkyrimVM::ProcessEquipEvent` at 0x9dc4a0 (runtime, high); signature (untiered): `undefined8 ProcessEquipEvent(SkyrimVM * this, longlong * param_1)`; sends OnObjectEquipped / OnObjectUnequipped to the actor and OnEquipped / OnUnequipped to the item; returns 0 (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_68* this, const TESEquipEvent* event, BSTEventSource<TESEquipEvent>* source)`
+pub const SkyrimVM__ProcessEquipEvent: u64 = 53970;
+/// `SkyrimVM::ProcessHitEvent` at 0x9dce00 (runtime, high); signature (untiered): `undefined8 ProcessHitEvent(SkyrimVM * this, longlong * param_1)`; sends OnHit(aggressor, source, projectile, powerAttack, sneakAttack, bash, blocked) to the target through HitArguments (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_88* this, const TESHitEvent* event, BSTEventSource<TESHitEvent>* source)`
+pub const SkyrimVM__ProcessHitEvent: u64 = 53974;
+/// `SkyrimVM::RegisterEventSinks` at 0x9e27f0 (runtime, high); signature (untiered): `undefined RegisterEventSinks(longlong param_1)`; registers the VM's 49 holder sinks (every SkyrimVM+0x10+8*i except InitScript, which the ctor registers) (high); semantic signature: `void (SkyrimVM* vm)`
+pub const SkyrimVM__RegisterEventSinks: u64 = 54028;
 /// `SkyrimVM::SleepStartEventFunctor::vfunc_0` at 0x9f0dd0 (rtti, high); signature (low): `SleepStartEventFunctor * vfunc_0(SleepStartEventFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__SleepStartEventFunctor__vfunc_0: u64 = 54393;
 /// `SkyrimVM::SleepStartEventFunctor::vfunc_1` at 0x9e7970 (rtti, high); signature (low): `undefined8 vfunc_1(SleepStartEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
@@ -81431,6 +82273,8 @@ pub const SkyrimVM__SleepStartEventFunctor__vfunc_1: u64 = 54064;
 pub const SkyrimVM__SleepStopEventFunctor__vfunc_0: u64 = 54394;
 /// `SkyrimVM::SleepStopEventFunctor::vfunc_1` at 0x9e7b30 (rtti, high); signature (low): `undefined8 vfunc_1(SleepStopEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const SkyrimVM__SleepStopEventFunctor__vfunc_1: u64 = 54066;
+/// `SkyrimVM::UnregisterEventSinks` at 0x9e2e30 (runtime, high); signature (untiered): `undefined UnregisterEventSinks(longlong param_1)`; the matching RemoveEventSink calls (high); semantic signature: `void (SkyrimVM* vm)`
+pub const SkyrimVM__UnregisterEventSinks: u64 = 54029;
 /// `SkyrimVM::ctor` at 0x9d5760 (layout_inference, high); signature (high): `SkyrimVM * ctor(SkyrimVM * this)`
 pub const SkyrimVM__ctor: u64 = 53919;
 /// `SkyrimVM::ctor_sub0` at 0x9b2a80 (callgraph, medium); signature (untiered): `longlong ctor_sub0(longlong param_1)`
@@ -81443,8 +82287,6 @@ pub const SkyrimVM__ctor_sub10: u64 = 54170;
 pub const SkyrimVM__ctor_sub11: u64 = 54177;
 /// `SkyrimVM::ctor_sub12` at 0x9eccc0 (callgraph, medium); signature (untiered): `undefined ctor_sub12(void)`
 pub const SkyrimVM__ctor_sub12: u64 = 54178;
-/// `SkyrimVM::ctor_sub13` at 0x9f3890 (callgraph, medium); signature (untiered): `ulonglong ctor_sub13(longlong * param_1, longlong param_2)`
-pub const SkyrimVM__ctor_sub13: u64 = 54441;
 /// `SkyrimVM::ctor_sub14` at 0xa325a0 (callgraph, medium); signature (untiered): `undefined ctor_sub14(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const SkyrimVM__ctor_sub14: u64 = 55739;
 /// `SkyrimVM::ctor_sub15` at 0x1496e70 (callgraph, medium); signature (untiered): `undefined8 ctor_sub15(longlong * param_1, longlong * param_2, longlong * param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined8 param_7, undefined8 param_8, undefined8 param_9, undefined8 param_10, undefined8 param_11)`
@@ -81475,8 +82317,6 @@ pub const SkyrimVM__dtor_sub0_2: u64 = 54172;
 pub const SkyrimVM__dtor_sub1: u64 = 54114;
 /// `SkyrimVM::dtor_sub1` at 0x9eca30 (callgraph, medium); signature (untiered): `undefined dtor_sub1(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const SkyrimVM__dtor_sub1_2: u64 = 54173;
-/// `SkyrimVM::dtor_sub2` at 0x9f8f30 (callgraph, medium); signature (untiered): `ulonglong dtor_sub2(longlong * param_1, longlong param_2)`
-pub const SkyrimVM__dtor_sub2: u64 = 54538;
 /// `SkyrimVM::dtor_sub3` at 0xa32960 (callgraph, medium); signature (untiered): `undefined dtor_sub3(undefined8 param_1)`
 pub const SkyrimVM__dtor_sub3: u64 = 55740;
 /// `SkyrimVM::vfunc_0` at 0x9f0d90 (rtti, high); signature (low): `SkyrimVM * vfunc_0(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -81515,12 +82355,24 @@ pub const SneakHandler__vfunc_1: u64 = 42462;
 pub const SneakHandler__vfunc_6: u64 = 42431;
 /// `SneakHandler::vfunc_6_sub0` at 0x75dc50 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(undefined8 param_1, undefined8 param_2)`
 pub const SneakHandler__vfunc_6_sub0: u64 = 40719;
+/// `SoulGemsUsed::GetEventSource` at 0x946b30 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of SoulGemsUsed::Event events (medium); semantic signature: `BSTEventSource<SoulGemsUsed::Event>* ()`
+pub const SoulGemsUsed__GetEventSource: u64 = 51888;
+/// `SoulGemsUsed::RegisterSink` at 0x9428a0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a SoulGemsUsed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SoulGemsUsed::Event>* sink)`
+pub const SoulGemsUsed__RegisterSink: u64 = 51844;
+/// `SoulGemsUsed::UnregisterSink` at 0x9428d0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a SoulGemsUsed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SoulGemsUsed::Event>* sink)`
+pub const SoulGemsUsed__UnregisterSink: u64 = 51845;
 /// `SoulTrapEffect::vdtor` at 0x5e2b80 (slot_propagation, medium); signature (low): `SoulTrapEffect * vdtor(SoulTrapEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SoulTrapEffect__vdtor: u64 = 34978;
 /// `SoulTrapEffect::vfunc_21` at 0x5e2ae0 (rtti, high); signature (low): `undefined vfunc_21(SoulTrapEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const SoulTrapEffect__vfunc_21: u64 = 34977;
 /// `SoulTrapEffect::vfunc_4` at 0x5e2a10 (rtti, high); signature (high): `undefined vfunc_4(SoulTrapEffect * this)`
 pub const SoulTrapEffect__vfunc_4: u64 = 34976;
+/// `SoulsTrapped::GetEventSource` at 0x6db5e0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of SoulsTrapped::Event events (medium); semantic signature: `BSTEventSource<SoulsTrapped::Event>* ()`
+pub const SoulsTrapped__GetEventSource: u64 = 38873;
+/// `SoulsTrapped::RegisterSink` at 0x6d3bc0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a SoulsTrapped::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SoulsTrapped::Event>* sink)`
+pub const SoulsTrapped__RegisterSink: u64 = 38710;
+/// `SoulsTrapped::UnregisterSink` at 0x6d3bf0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a SoulsTrapped::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SoulsTrapped::Event>* sink)`
+pub const SoulsTrapped__UnregisterSink: u64 = 38711;
 /// `SpawnHazardEffect::vdtor` at 0x666c80 (layout_inference, medium); signature (low): `SpawnHazardEffect * vdtor(SpawnHazardEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SpawnHazardEffect__vdtor: u64 = 36882;
 /// `SpawnHazardEffect::vfunc_15` at 0x666bf0 (rtti, high); signature (high): `undefined vfunc_15(SpawnHazardEffect * this)`
@@ -81551,6 +82403,12 @@ pub const SpectatorPackage__ctor_sub0: u64 = 42669;
 pub const SpectatorPackage__vdtor: u64 = 42670;
 /// `SpectatorPackage::vfunc_47` at 0x7c0a90 (rtti, high); signature (low): `undefined vfunc_47(SpectatorPackage * this, undefined8 param_1)`
 pub const SpectatorPackage__vfunc_47: u64 = 42653;
+/// `SpellAttack::GetEventSource` at 0x7b4740 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of SpellAttack::Event events (medium); semantic signature: `BSTEventSource<SpellAttack::Event>* ()`
+pub const SpellAttack__GetEventSource: u64 = 42442;
+/// `SpellAttack::RegisterSink` at 0x7ad3d0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a SpellAttack::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SpellAttack::Event>* sink)`
+pub const SpellAttack__RegisterSink: u64 = 42333;
+/// `SpellAttack::UnregisterSink` at 0x7ad400 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a SpellAttack::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SpellAttack::Event>* sink)`
+pub const SpellAttack__UnregisterSink: u64 = 42334;
 /// `SpellItem::BGSEquipType_vdtor` at 0x155bf4 (slot_propagation, medium); signature (high): `undefined BGSEquipType_vdtor(SpellItem * this)`
 pub const SpellItem__BGSEquipType_vdtor: u64 = 11509;
 /// `SpellItem::BGSKeywordForm_vdtor` at 0x155be8 (slot_propagation, medium); signature (high): `undefined BGSKeywordForm_vdtor(SpellItem * this)`
@@ -81627,6 +82485,12 @@ pub const SpellItem__vfunc_95: u64 = 11488;
 pub const SpellItem__vfunc_96: u64 = 11495;
 /// `SpellItem::vfunc_99` at 0x1554c0 (rtti, medium); signature (low): `undefined vfunc_99(SpellItem * this, float * param_1, longlong param_2)`
 pub const SpellItem__vfunc_99: u64 = 11494;
+/// `SpellsLearned::GetEventSource` at 0x6db6d0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of SpellsLearned::Event events (medium); semantic signature: `BSTEventSource<SpellsLearned::Event>* ()`
+pub const SpellsLearned__GetEventSource: u64 = 38874;
+/// `SpellsLearned::RegisterSink` at 0x6d3c20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a SpellsLearned::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SpellsLearned::Event>* sink)`
+pub const SpellsLearned__RegisterSink: u64 = 38712;
+/// `SpellsLearned::UnregisterSink` at 0x6d3c50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a SpellsLearned::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<SpellsLearned::Event>* sink)`
+pub const SpellsLearned__UnregisterSink: u64 = 38713;
 /// `SprintHandler::vdtor` at 0x7b1db0 (layout_inference, medium); signature (low): `SprintHandler * vdtor(SprintHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SprintHandler__vdtor: u64 = 42409;
 /// `SprintHandler::vfunc_1` at 0x7b5170 (rtti, high); signature (low): `bool vfunc_1(SprintHandler * this, longlong * param_1)`
@@ -82001,12 +82865,8 @@ pub const StaticInit_7330_cb0: u64 = 52678;
 pub const StaticInit_7331_cb0: u64 = 52700;
 /// `StaticInit_7335_cb0` at 0x989000 (callgraph, medium); signature (high): `void StaticInit_7335_cb0(void)`
 pub const StaticInit_7335_cb0: u64 = 52723;
-/// `StaticInit_7510_sub0` at 0x73e420 (callgraph, medium); signature (untiered): `undefined StaticInit_7510_sub0(undefined8 param_1)`
-pub const StaticInit_7510_sub0: u64 = 40389;
 /// `StaticInit_7510_sub1` at 0x9a45f0 (callgraph, medium); signature (untiered): `undefined StaticInit_7510_sub1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const StaticInit_7510_sub1: u64 = 53220;
-/// `StaticInit_7511_sub0` at 0x7ad3d0 (callgraph, medium); signature (untiered): `undefined StaticInit_7511_sub0(undefined8 param_1)`
-pub const StaticInit_7511_sub0: u64 = 42333;
 /// `StaticInit_7511_sub1` at 0x9a4590 (callgraph, medium); signature (untiered): `undefined StaticInit_7511_sub1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const StaticInit_7511_sub1: u64 = 53219;
 /// `StaticInit_7512_sub0` at 0x9a4650 (callgraph, medium); signature (untiered): `undefined StaticInit_7512_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -83609,6 +84469,8 @@ pub const TESEditorIDMap__Find: u64 = 14705;
 pub type TESEditorIDMap__Find_fn = unsafe extern "C" fn(map: *mut classes::TESEditorIDMap, editorID: *const c_char, out: *mut *mut classes::TESForm) -> bool;
 /// `TESEditorIDMap::Insert` at 0x1c5fb0 (runtime, high); signature (untiered): `undefined8 Insert(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; bucket insert of the editor id map (high); semantic signature: `bool TESEditorIDMap::Insert(void* mapPlus8, const BSFixedString* editorID, TESForm** form)`
 pub const TESEditorIDMap__Insert: u64 = 13808;
+/// `TESEditorIDMap::Insert` as a function pointer type (high).
+pub type TESEditorIDMap__Insert_fn = unsafe extern "C" fn(mapPlus8: *mut c_void, editorID: *const classes::BSFixedString, form: *mut *mut classes::TESForm) -> bool;
 /// `TESEditorIDMap::InsertEditorID` at 0x1c94c0 (runtime, high); signature (untiered): `ulonglong InsertEditorID(longlong param_1, char * param_2, ulonglong param_3, undefined8 param_4)`; registers a form's editor id (high); semantic signature: `bool TESEditorIDMap::InsertEditorID(TESEditorIDMap* map, const char* editorID, TESForm* form)`
 pub const TESEditorIDMap__InsertEditorID: u64 = 13907;
 /// `TESEditorIDMap::InsertEditorID` as a function pointer type (high).
@@ -84099,6 +84961,12 @@ pub const TESGrass__vfunc_97: u64 = 17482;
 pub const TESGrass__vfunc_98: u64 = 17460;
 /// `TESGrass::vfunc_99` at 0x2708f0 (rtti, high); signature (low): `undefined4 vfunc_99(TESGrass * this)`
 pub const TESGrass__vfunc_99: u64 = 17478;
+/// `TESHarvestEvent::GetEventSource` at 0x1ef160 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of TESHarvestEvent::ItemHarvested events (medium); semantic signature: `BSTEventSource<TESHarvestEvent::ItemHarvested>* ()`
+pub const TESHarvestEvent__GetEventSource: u64 = 14875;
+/// `TESHarvestEvent::RegisterSink` at 0x1ee3e0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a TESHarvestEvent::ItemHarvested sink with the singleton source (medium); semantic signature: `void (BSTEventSink<TESHarvestEvent::ItemHarvested>* sink)`
+pub const TESHarvestEvent__RegisterSink: u64 = 14857;
+/// `TESHarvestEvent::UnregisterSink` at 0x1ee410 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a TESHarvestEvent::ItemHarvested sink with the singleton source (medium); semantic signature: `void (BSTEventSink<TESHarvestEvent::ItemHarvested>* sink)`
+pub const TESHarvestEvent__UnregisterSink: u64 = 14858;
 /// `TESHealthForm::vdtor` at 0x1e8570 (layout_inference, medium); signature (low): `TESHealthForm * vdtor(TESHealthForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESHealthForm__vdtor: u64 = 14727;
 /// `TESHealthForm::vfunc_1` at 0x1e84e0 (rtti, high); signature (high): `undefined vfunc_1(TESHealthForm * this)`
@@ -84459,8 +85327,6 @@ pub const TESNPC__TESActorBaseData_vfunc_4_sub1: u64 = 14365;
 pub const TESNPC__TESActorBaseData_vfunc_4_sub10: u64 = 14449;
 /// `TESNPC::TESActorBaseData_vfunc_4_sub11` at 0x1de940 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub11(longlong param_1, longlong param_2)`
 pub const TESNPC__TESActorBaseData_vfunc_4_sub11: u64 = 14450;
-/// `TESNPC::TESActorBaseData_vfunc_4_sub12` at 0x3ccba0 (callgraph, medium); signature (untiered): `ulonglong TESActorBaseData_vfunc_4_sub12(longlong * param_1, undefined8 param_2)`
-pub const TESNPC__TESActorBaseData_vfunc_4_sub12: u64 = 24924;
 /// `TESNPC::TESActorBaseData_vfunc_4_sub2` at 0x1dcb30 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub2(longlong param_1, undefined8 param_2)`
 pub const TESNPC__TESActorBaseData_vfunc_4_sub2: u64 = 14370;
 /// `TESNPC::TESActorBaseData_vfunc_4_sub3` at 0x1dcb50 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub3(longlong param_1, undefined2 param_2)`
@@ -86529,6 +87395,18 @@ pub const ThirdPersonState__vfunc_8: u64 = 50910;
 pub const ThirdPersonState__vfunc_9: u64 = 33134;
 /// `ThumbstickEvent::vdtor` at 0x973150 (layout_inference, medium); signature (low): `ThumbstickEvent * vdtor(ThumbstickEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const ThumbstickEvent__vdtor: u64 = 52451;
+/// `TimesBartered::GetEventSource` at 0x905840 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of TimesBartered::Event events (medium); semantic signature: `BSTEventSource<TimesBartered::Event>* ()`
+pub const TimesBartered__GetEventSource: u64 = 51030;
+/// `TimesBartered::RegisterSink` at 0x9002f0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a TimesBartered::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<TimesBartered::Event>* sink)`
+pub const TimesBartered__RegisterSink: u64 = 50941;
+/// `TimesBartered::UnregisterSink` at 0x900320 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a TimesBartered::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<TimesBartered::Event>* sink)`
+pub const TimesBartered__UnregisterSink: u64 = 50942;
+/// `TimesTrained::GetEventSource` at 0x986760 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of TimesTrained::Event events (medium); semantic signature: `BSTEventSource<TimesTrained::Event>* ()`
+pub const TimesTrained__GetEventSource: u64 = 52680;
+/// `TimesTrained::RegisterSink` at 0x985330 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a TimesTrained::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<TimesTrained::Event>* sink)`
+pub const TimesTrained__RegisterSink: u64 = 52657;
+/// `TimesTrained::UnregisterSink` at 0x985360 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a TimesTrained::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<TimesTrained::Event>* sink)`
+pub const TimesTrained__UnregisterSink: u64 = 52658;
 /// `TitleSequenceMenu::ctor` at 0x984f00 (layout_inference, high); signature (high): `TitleSequenceMenu * ctor(TitleSequenceMenu * this)`
 pub const TitleSequenceMenu__ctor: u64 = 52649;
 /// `TitleSequenceMenu::vdtor` at 0x985200 (layout_inference, medium); signature (low): `TitleSequenceMenu * vdtor(TitleSequenceMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -86581,6 +87459,12 @@ pub const TrapTargetEntry__vdtor: u64 = 25726;
 pub const TrapTargetEntry__vfunc_1: u64 = 26032;
 /// `TrapTargetEntry::vfunc_2` at 0x4060e0 (rtti, high); signature (low): `undefined vfunc_2(TrapTargetEntry * this, longlong param_1, char param_2)`
 pub const TrapTargetEntry__vfunc_2: u64 = 26033;
+/// `Trespass::GetEventSource` at 0x7c35d0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of Trespass::Event events (medium); semantic signature: `BSTEventSource<Trespass::Event>* ()`
+pub const Trespass__GetEventSource: u64 = 42691;
+/// `Trespass::RegisterSink` at 0x7c2d80 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a Trespass::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Trespass::Event>* sink)`
+pub const Trespass__RegisterSink: u64 = 42674;
+/// `Trespass::UnregisterSink` at 0x7c2db0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a Trespass::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Trespass::Event>* sink)`
+pub const Trespass__UnregisterSink: u64 = 42675;
 /// `TrespassPackage::LoadGame` at 0x7c30c0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TrespassPackage * this, longlong param_1)`
 pub const TrespassPackage__LoadGame: u64 = 42682;
 /// `TrespassPackage::SaveGame` at 0x7c2ff0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TrespassPackage * this, longlong param_1)`
@@ -87427,6 +88311,12 @@ pub const WeaponAnimationLoadedCallback__ctor: u64 = 40109;
 pub const WeaponAnimationLoadedCallback__vdtor: u64 = 40144;
 /// `WeaponAnimationLoadedCallback::vfunc_1` at 0x7342c0 (rtti, high); signature (low): `undefined vfunc_1(WeaponAnimationLoadedCallback * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
 pub const WeaponAnimationLoadedCallback__vfunc_1: u64 = 40110;
+/// `WeaponAttack::GetEventSource` at 0x76f420 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of WeaponAttack::Event events (medium); semantic signature: `BSTEventSource<WeaponAttack::Event>* ()`
+pub const WeaponAttack__GetEventSource: u64 = 41073;
+/// `WeaponAttack::RegisterSink` at 0x73e420 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a WeaponAttack::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<WeaponAttack::Event>* sink)`
+pub const WeaponAttack__RegisterSink: u64 = 40389;
+/// `WeaponAttack::UnregisterSink` at 0x73e450 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a WeaponAttack::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<WeaponAttack::Event>* sink)`
+pub const WeaponAttack__UnregisterSink: u64 = 40390;
 /// `WeaponBeginDrawRightHandler::vdtor` at 0x7d47b0 (layout_inference, medium); signature (low): `WeaponBeginDrawRightHandler * vdtor(WeaponBeginDrawRightHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const WeaponBeginDrawRightHandler__vdtor: u64 = 43371;
 /// `WeaponBeginDrawRightHandler::vfunc_1` at 0x7cc9a0 (rtti, high); signature (low): `undefined8 vfunc_1(WeaponBeginDrawRightHandler * this, longlong * param_1, undefined4 * param_2, longlong param_3)`
@@ -87515,6 +88405,18 @@ pub const WerewolfEffect__vfunc_21: u64 = 35092;
 pub const WerewolfFeedEffect__vdtor: u64 = 35095;
 /// `WerewolfFeedEffect::vfunc_20` at 0x5e7d30 (rtti, high); signature (low): `undefined vfunc_20(WerewolfFeedEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const WerewolfFeedEffect__vfunc_20: u64 = 35094;
+/// `WordLearned::GetEventSource` at 0x76f510 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of WordLearned::Event events (medium); semantic signature: `BSTEventSource<WordLearned::Event>* ()`
+pub const WordLearned__GetEventSource: u64 = 41074;
+/// `WordLearned::RegisterSink` at 0x73e5a0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a WordLearned::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<WordLearned::Event>* sink)`
+pub const WordLearned__RegisterSink: u64 = 40397;
+/// `WordLearned::UnregisterSink` at 0x73e5d0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a WordLearned::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<WordLearned::Event>* sink)`
+pub const WordLearned__UnregisterSink: u64 = 40398;
+/// `WordUnlocked::GetEventSource` at 0x76f600 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of WordUnlocked::Event events (medium); semantic signature: `BSTEventSource<WordUnlocked::Event>* ()`
+pub const WordUnlocked__GetEventSource: u64 = 41075;
+/// `WordUnlocked::RegisterSink` at 0x73e630 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a WordUnlocked::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<WordUnlocked::Event>* sink)`
+pub const WordUnlocked__RegisterSink: u64 = 40400;
+/// `WordUnlocked::UnregisterSink` at 0x73e660 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a WordUnlocked::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<WordUnlocked::Event>* sink)`
+pub const WordUnlocked__UnregisterSink: u64 = 40401;
 /// `Wrap_AcquireSRWLockExclusive` at 0x13821f0 (os_api, medium); signature (untiered): `void Wrap_AcquireSRWLockExclusive(PSRWLOCK SRWLock)`
 pub const Wrap_AcquireSRWLockExclusive: u64 = 449030;
 /// `Wrap_AcquireSRWLockShared` at 0x1382200 (os_api, medium); signature (untiered): `void Wrap_AcquireSRWLockShared(PSRWLOCK SRWLock)`
@@ -90701,8 +91603,6 @@ pub const _void___cdecl_BSResource__RegisterPrefix_char_const____ptr64_char_cons
 pub const _void___cdecl_BSResource__RegisterPrefix_char_const____ptr64_char_const____ptr64_BSResource__Loc_c2b1a006ceae: u64 = 69949;
 /// ``void___cdecl_BSResource::RegisterPrefix(char_const*___ptr64,char_const*___ptr64,BSResource::Location*___ptr64)'::__l2::Traverser::vfunc_0_sub0` at 0xecd730 (callgraph, medium); signature (untiered): `undefined8 vfunc_0_sub0(undefined8 param_1, longlong param_2, ulonglong * param_3, longlong * param_4)`
 pub const _void___cdecl_BSResource__RegisterPrefix_char_const____ptr64_char_const____ptr64_BSResource__Loc_7aaf7c18fda4: u64 = 69805;
-/// ``void___cdecl_BSResource::RegisterPrefix(char_const*___ptr64,char_const*___ptr64,BSResource::Location*___ptr64)'::__l2::Traverser::vfunc_0_sub1` at 0xed2ac0 (callgraph, medium); signature (untiered): `ulonglong vfunc_0_sub1(longlong * param_1, undefined8 param_2)`
-pub const _void___cdecl_BSResource__RegisterPrefix_char_const____ptr64_char_const____ptr64_BSResource__Loc_3424bc2527a6: u64 = 69947;
 /// `ahkpBreakableConstraintData::vdtor` at 0x10bc700 (slot_propagation, medium); signature (low): `ahkpBreakableConstraintData * vdtor(ahkpBreakableConstraintData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const ahkpBreakableConstraintData__vdtor: u64 = 79880;
 /// `ahkpCharacterProxy::hkpEntityListener_vdtor` at 0x10deeb0 (slot_propagation, medium); signature (high): `undefined hkpEntityListener_vdtor(ahkpCharacterProxy * this)`
@@ -97095,8 +97995,6 @@ pub const g_anon_3B6C7024_MemoryManagerFileFactory__init: u64 = 5916;
 pub const g_anon_5E019490_DecalApplier__atexit: u64 = 166187;
 /// `g_anon_5E019490_DecalApplier__init` at 0x1a870 (crt_init, medium); signature (high): `void g_anon_5E019490_DecalApplier__init(void)`
 pub const g_anon_5E019490_DecalApplier__init: u64 = 983;
-/// `g_anon_5E019490_DecalApplier__init_sub0` at 0x2d57d0 (callgraph, medium); signature (untiered): `ulonglong g_anon_5E019490_DecalApplier__init_sub0(longlong * param_1, longlong param_2)`
-pub const g_anon_5E019490_DecalApplier__init_sub0: u64 = 19367;
 /// `g_anon_7816FE07_TESObjectREFRFactory__init` at 0x1ba20 (crt_init, medium); signature (high): `void g_anon_7816FE07_TESObjectREFRFactory__init(void)`
 pub const g_anon_7816FE07_TESObjectREFRFactory__init: u64 = 1061;
 /// `g_anon_7816FE07_TESObjectREFRFactory__init_cb0` at 0x1749510 (callgraph, medium); signature (untiered): `void g_anon_7816FE07_TESObjectREFRFactory__init_cb0(void)`

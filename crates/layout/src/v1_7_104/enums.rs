@@ -1083,6 +1083,27 @@ impl ActorValue {
     }
 }
 
+/// ProcessEvent result: 0 continue the walk, 1 stop it (events pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum BSEventNotifyControl {
+    /// `Continue`
+    Continue = 0,
+    /// `Stop`
+    Stop = 1,
+}
+
+impl BSEventNotifyControl {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Continue),
+            1 => Some(Self::Stop),
+            _ => None,
+        }
+    }
+}
+
 /// Named bits of `Actor.boolFlags` (actors pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -1115,6 +1136,26 @@ impl ActorState_flags1 {
     pub const SNEAKING: Self = Self(0x200);
     /// swimming (medium)
     pub const SWIMMING: Self = Self(0x400);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BSStringPool::Entry.flags` (events pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BSStringPool__Entry_flags(pub u32);
+
+impl BSStringPool__Entry_flags {
+    /// the characters are wchar_t (medium)
+    pub const WIDE: Self = Self(0x8000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {
@@ -1191,6 +1232,32 @@ impl TESForm_formFlags {
     pub const DISABLED: Self = Self(0x800);
     /// form is kept out of the form id map (high)
     pub const NOT_IN_FORM_MAP: Self = Self(0x4000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `TESHitEvent.flags` (events pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct TESHitEvent_flags(pub u32);
+
+impl TESHitEvent_flags {
+    /// power attack (high)
+    pub const POWER_ATTACK: Self = Self(0x1);
+    /// sneak attack (high)
+    pub const SNEAK_ATTACK: Self = Self(0x2);
+    /// bash (high)
+    pub const BASH: Self = Self(0x4);
+    /// the hit was blocked (high)
+    pub const BLOCKED: Self = Self(0x8);
 
     #[must_use]
     pub const fn bits(self) -> u32 {

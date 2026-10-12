@@ -1117,7 +1117,7 @@ impl Actor_vtable_20 {
 pub struct Actor_vtable_30 {
     /// `Actor::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x6bbcf0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Actor * this)`
     pub slot_0: *const c_void,
-    /// `Actor::BSTEventSink_BSAnimationGraphEvent_vfunc_1` at 0x6b2000 (rtti, medium); signature (low): `ulonglong BSTEventSink_BSAnimationGraphEvent_vfunc_1(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+    /// `Actor::ProcessAnimationGraphEvent` at 0x6b2000 (runtime, high); signature (untiered): `ulonglong ProcessAnimationGraphEvent(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
     pub slot_1: *const c_void,
 }
 impl Actor_vtable_30 {
@@ -109916,7 +109916,7 @@ impl Character_vtable_20 {
 pub struct Character_vtable_30 {
     /// `Character::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x73aaa8 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Character * this)`
     pub slot_0: *const c_void,
-    /// `Actor::BSTEventSink_BSAnimationGraphEvent_vfunc_1` at 0x6b2000 (rtti, medium); signature (low): `ulonglong BSTEventSink_BSAnimationGraphEvent_vfunc_1(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+    /// `Actor::ProcessAnimationGraphEvent` at 0x6b2000 (runtime, high); signature (untiered): `ulonglong ProcessAnimationGraphEvent(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
     pub slot_1: *const c_void,
 }
 impl Character_vtable_30 {
@@ -145038,7 +145038,7 @@ impl InputEvent_vtable {
 pub struct InstalledContent_vtable {
     /// `InstalledContent::vdtor` at 0x60ae60 (slot_propagation, medium); signature (low): `InstalledContent * vdtor(InstalledContent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `InstalledContent::vfunc_1` at 0x609560 (rtti, high); signature (low): `undefined8 vfunc_1(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`
+    /// `InstalledContent::ProcessLoadGameEvent` at 0x609560 (runtime, high); signature (untiered): `undefined8 ProcessLoadGameEvent(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
 }
 impl InstalledContent_vtable {
@@ -178708,7 +178708,7 @@ impl PlayerCharacter_vtable_20 {
 pub struct PlayerCharacter_vtable_30 {
     /// `PlayerCharacter::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x7692fc (slot_propagation, medium); signature (low): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     pub slot_0: *const c_void,
-    /// `Actor::BSTEventSink_BSAnimationGraphEvent_vfunc_1` at 0x6b2000 (rtti, medium); signature (low): `ulonglong BSTEventSink_BSAnimationGraphEvent_vfunc_1(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+    /// `Actor::ProcessAnimationGraphEvent` at 0x6b2000 (runtime, high); signature (untiered): `ulonglong ProcessAnimationGraphEvent(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
     pub slot_1: *const c_void,
 }
 impl PlayerCharacter_vtable_30 {
@@ -178912,7 +178912,7 @@ impl PlayerCharacter_vtable_E0 {
 pub struct PlayerCharacter_vtable_2B8 {
     /// `PlayerCharacter::BSTEventSink_MenuOpenCloseEvent_vdtor` at 0x7692c0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(PlayerCharacter * this)`
     pub slot_0: *const c_void,
-    /// `PlayerCharacter::BSTEventSink_MenuOpenCloseEvent_vfunc_1` at 0x75eb40 (rtti, high); signature (low): `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(PlayerCharacter * this, longlong * param_1)`
+    /// `PlayerCharacter::ProcessMenuOpenCloseEvent` at 0x75eb40 (runtime, high); signature (untiered): `undefined8 ProcessMenuOpenCloseEvent(PlayerCharacter * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl PlayerCharacter_vtable_2B8 {
@@ -185246,7 +185246,7 @@ impl SkyrimVM_vtable_8 {
 pub struct SkyrimVM_vtable_10 {
     /// `SkyrimVM::BSTEventSink_TESActivateEvent_vdtor` at 0x9ef6dc (slot_propagation, medium); signature (high): `undefined BSTEventSink_TESActivateEvent_vdtor(SkyrimVM * this)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::BSTEventSink_TESActivateEvent_vfunc_1` at 0x9db090 (rtti, high); signature (low): `undefined8 BSTEventSink_TESActivateEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
+    /// `SkyrimVM::ProcessActivateEvent` at 0x9db090 (runtime, high); signature (untiered): `undefined8 ProcessActivateEvent(SkyrimVM * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM_vtable_10 {
@@ -185330,7 +185330,7 @@ impl SkyrimVM_vtable_40 {
 pub struct SkyrimVM_vtable_48 {
     /// `SkyrimVM::BSTEventSink_TESContainerChangedEvent_vdtor` at 0x9ef838 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESContainerChangedEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::BSTEventSink_TESContainerChangedEvent_vfunc_1` at 0x9dbac0 (rtti, high); signature (low): `undefined8 BSTEventSink_TESContainerChangedEvent_vfunc_1(SkyrimVM * this, uint * param_1, undefined8 param_2, longlong param_3)`
+    /// `SkyrimVM::ProcessContainerChangedEvent` at 0x9dbac0 (runtime, high); signature (untiered): `undefined8 ProcessContainerChangedEvent(SkyrimVM * this, uint * param_1, undefined8 param_2, longlong param_3)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM_vtable_48 {
@@ -185378,7 +185378,7 @@ impl SkyrimVM_vtable_60 {
 pub struct SkyrimVM_vtable_68 {
     /// `SkyrimVM::BSTEventSink_TESEquipEvent_vdtor` at 0x9ef868 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESEquipEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::BSTEventSink_TESEquipEvent_vfunc_1` at 0x9dc4a0 (rtti, high); signature (low): `undefined8 BSTEventSink_TESEquipEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
+    /// `SkyrimVM::ProcessEquipEvent` at 0x9dc4a0 (runtime, high); signature (untiered): `undefined8 ProcessEquipEvent(SkyrimVM * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM_vtable_68 {
@@ -185426,7 +185426,7 @@ impl SkyrimVM_vtable_80 {
 pub struct SkyrimVM_vtable_88 {
     /// `SkyrimVM::BSTEventSink_TESHitEvent_vdtor` at 0x9ef898 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESHitEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::BSTEventSink_TESHitEvent_vfunc_1` at 0x9dce00 (rtti, high); signature (low): `undefined8 BSTEventSink_TESHitEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
+    /// `SkyrimVM::ProcessHitEvent` at 0x9dce00 (runtime, high); signature (untiered): `undefined8 ProcessHitEvent(SkyrimVM * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM_vtable_88 {
