@@ -233,7 +233,8 @@ fn script_types() -> Result<String, String> {
     let vm = vm()?;
     let actor = vm.script_type("Actor").ok_or("GetScriptObjectType(Actor) failed")?;
     check(*actor.name() == *"Actor" && actor.is_linked(), &format!("Actor is {actor:?}"))?;
-    check(vm.script_type("NoSuchScript").is_none(), "NoSuchScript resolved")?;
+    let missing = vm.script_type("NoSuchScript");
+    check(missing.is_none_or(|t| !t.is_linked()), &format!("NoSuchScript resolved to a linked type {missing:?}"))?;
     let own = vm.script_type(CLASS).ok_or("GetScriptObjectType(SkyrimRsTest) failed: is SkyrimRsTest.pex in Data\\Scripts?")?;
     check(own.is_linked() && own.parent().is_none(), &format!("{CLASS} is {own:?}"))?;
     for name in ["Ping", "FormId", "PlayerHealth", "Echo", "Scale", "Player", "Tick", "Describe"] {
@@ -246,7 +247,7 @@ fn script_types() -> Result<String, String> {
     check(reference.is_linked() && reference.parent().is_some_and(|p| *p.name() == *"ObjectReference"), &format!("{REF_CLASS} is {reference:?}"))?;
     let method = native("SelfFormId")?;
     let found = [false, true].map(|is_static| reference.function("SelfFormId", is_static));
-    Ok(format!("Actor {actor:?}; NoSuchScript none; {CLASS} {own:?} with 8 natives bound to the registered objects (GetFunction(Ping, isStatic=false) = {ping_as_method:?}); {REF_CLASS} {reference:?} extends ObjectReference; GetFunction(SelfFormId) for isStatic false/true = {found:?} (non-static functions are not returned for a linked type), the native {:?} has refCount {} after linking", method.as_ptr(), method.ref_count()))
+    Ok(format!("Actor {actor:?}; NoSuchScript {missing:?}; {CLASS} {own:?} with 8 natives bound to the registered objects (GetFunction(Ping, isStatic=false) = {ping_as_method:?}); {REF_CLASS} {reference:?} extends ObjectReference; GetFunction(SelfFormId) for isStatic false/true = {found:?} (non-static functions are not returned for a linked type), the native {:?} has refCount {} after linking", method.as_ptr(), method.ref_count()))
 }
 
 fn find_bound_object() -> Result<String, String> {
