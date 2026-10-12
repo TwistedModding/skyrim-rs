@@ -9,10 +9,9 @@ use std::sync::Mutex;
 use std::sync::atomic::{AtomicU32, Ordering};
 
 use layout::v1_7_104::globals;
-use layout::v1_7_104::classes;
 use skyrim::actors::{PlayerCharacter, RefHandle};
 use skyrim::events::{
-    AnimationGraphRedispatchEvent, BGSActorCellEvent, BSAnimationGraphEvent, BSEventNotifyControl, BSFixedString, BSTEventSource, Event, EventSink, EventSourceHolderMenuOpenClose, EventSourceHolderTes,
+    BGSActorCellEvent, BGSFootstepEvent, BSEventNotifyControl, BSFixedString, BSTEventSource, Event, EventSink, EventSourceHolderMenuOpenClose, EventSourceHolderTes,
     InputEventList, MenuModeChangeEvent, MenuOpenCloseEvent, Registration, Sink, TESActivateEvent, TESActorLocationChangeEvent, TESCellAttachDetachEvent, TESCombatEvent,
     TESContainerChangedEvent, TESEquipEvent, TESFurnitureEvent, TESHitEvent, TESInitScriptEvent, TESLoadGameEvent, TESLockChangedEvent, TESObjectLoadedEvent, TESPackageEvent,
 };
@@ -45,7 +44,7 @@ pub const TESTS: &[(&str, Test)] = &[
     ("cell_attach_detach", cell_attach_detach),
     ("actor_cell", actor_cell),
     ("object_loaded", object_loaded),
-    ("animation_redispatch", animation_redispatch),
+    ("footsteps", footsteps),
     ("npc_events", npc_events),
     ("fixed_string", fixed_string),
 ];
@@ -105,20 +104,19 @@ impl EventSink<TESContainerChangedEvent> for SelfRemoving {
 
 const ALL: u32 = u32::MAX;
 
-/// Records the three words of the opaque re-dispatched graph event; the test reads them.
-struct AnimationProbe {
+/// Records the footstep events of the global source: the actor's handle and the tag.
+struct FootstepProbe {
     seen: AtomicU32,
 }
 
-impl EventSink<AnimationGraphRedispatchEvent> for AnimationProbe {
-    fn process(&self, event: &AnimationGraphRedispatchEvent, source: &BSTEventSource<AnimationGraphRedispatchEvent>) -> BSEventNotifyControl {
-        let [a, b, c] = unsafe { core::ptr::from_ref(event).cast::<[u64; 3]>().read_unaligned() };
-        let detail = format!("{a:#x} {b:#x} {c:#x}");
+impl EventSink<BGSFootstepEvent> for FootstepProbe {
+    fn process(&self, event: &BGSFootstepEvent, source: &BSTEventSource<BGSFootstepEvent>) -> BSEventNotifyControl {
+        let detail = format!("{} {}", event.actor_handle(), event.tag().to_str().unwrap_or("?"));
         if self.seen.fetch_add(1, Ordering::Relaxed) < 3 {
-            log!("event animation: words {detail}");
+            log!("event footstep: {event:?}");
         }
-        let source_ok = AnimationGraphRedispatchEvent::source().is_some_and(|s| core::ptr::eq(s, source));
-        RECEIVED.lock().unwrap().push(Record { kind: "animation", detail, source_ok });
+        let source_ok = BGSFootstepEvent::source().is_some_and(|s| core::ptr::eq(s, source));
+        RECEIVED.lock().unwrap().push(Record { kind: "footstep", detail, source_ok });
         BSEventNotifyControl::Continue
     }
 }
@@ -134,7 +132,7 @@ static LOAD_GAME: Sink<TESLoadGameEvent, Recorder<TESLoadGameEvent>> = Sink::new
 static CELL: Sink<TESCellAttachDetachEvent, Recorder<TESCellAttachDetachEvent>> = Sink::new(Recorder::new("cell", 3));
 static ACTOR_CELL: Sink<BGSActorCellEvent, Recorder<BGSActorCellEvent>> = Sink::new(Recorder::new("actor cell", ALL));
 static OBJECT_LOADED: Sink<TESObjectLoadedEvent, Recorder<TESObjectLoadedEvent>> = Sink::new(Recorder::new("object loaded", 3));
-static ANIMATION: Sink<AnimationGraphRedispatchEvent, AnimationProbe> = Sink::new(AnimationProbe { seen: AtomicU32::new(0) });
+static FOOTSTEP: Sink<BGSFootstepEvent, FootstepProbe> = Sink::new(FootstepProbe { seen: AtomicU32::new(0) });
 static INIT_SCRIPT: Sink<TESInitScriptEvent, Recorder<TESInitScriptEvent>> = Sink::new(Recorder::new("init script", 3));
 static COMBAT: Sink<TESCombatEvent, Recorder<TESCombatEvent>> = Sink::new(Recorder::new("combat", ALL));
 static FURNITURE: Sink<TESFurnitureEvent, Recorder<TESFurnitureEvent>> = Sink::new(Recorder::new("furniture", ALL));
@@ -181,19 +179,18 @@ fn ui() -> Result<String, String> {
     let counts = [open_close.sink_count(), mode.sink_count(), ui.raw().source_unknown_B8.sinkCount];
     check(counts == [6, 4, 0], &format!("UI sink counts {counts:?}, expected [6, 4, 0] at the main menu with DevBench"))?;
     let input = source::<InputEventList>("InputEventList")?;
-    let animation = source::<AnimationGraphRedispatchEvent>("AnimationGraphRedispatchEvent")?;
-    check(BSAnimationGraphEvent::source().is_none(), "BSAnimationGraphEvent has a default source")?;
+    let footstep = source::<BGSFootstepEvent>("BGSFootstepEvent")?;
     let player = PlayerCharacter::get().ok_or("no player")?;
     let actor_cell = source::<BGSActorCellEvent>("BGSActorCellEvent")?;
     check(core::ptr::from_ref(actor_cell.raw()) as usize == player.as_ptr() as usize + 0x2E0, "the BGSActorCellEvent source is not player + 0x2e0")?;
     Ok(format!(
-        "UI at {base:#x}: sinks +8={} +0x60={} +0xb8={} numPausesGame={}; input source sinks={}, animation graph source sinks={}, player BGSActorCellEvent source sinks={}",
+        "UI at {base:#x}: sinks +8={} +0x60={} +0xb8={} numPausesGame={}; input source sinks={}, footstep source sinks={}, player BGSActorCellEvent source sinks={}",
         counts[0],
         counts[1],
         counts[2],
         ui.num_pauses_game(),
         input.sink_count(),
-        animation.sink_count(),
+        footstep.sink_count(),
         actor_cell.sink_count()
     ))
 }
@@ -260,7 +257,7 @@ fn register() -> Result<String, String> {
     source::<TESCellAttachDetachEvent>("TESCellAttachDetachEvent")?.add_sink(&CELL).leak();
     source::<BGSActorCellEvent>("BGSActorCellEvent")?.add_sink(&ACTOR_CELL).leak();
     source::<TESObjectLoadedEvent>("TESObjectLoadedEvent")?.add_sink(&OBJECT_LOADED).leak();
-    source::<AnimationGraphRedispatchEvent>("AnimationGraphRedispatchEvent")?.add_sink(&ANIMATION).leak();
+    source::<BGSFootstepEvent>("BGSFootstepEvent")?.add_sink(&FOOTSTEP).leak();
     source::<TESInitScriptEvent>("TESInitScriptEvent")?.add_sink(&INIT_SCRIPT).leak();
     source::<TESCombatEvent>("TESCombatEvent")?.add_sink(&COMBAT).leak();
     source::<TESFurnitureEvent>("TESFurnitureEvent")?.add_sink(&FURNITURE).leak();
@@ -408,35 +405,23 @@ fn object_loaded() -> Result<String, String> {
     Ok(format!("{} object loaded events: {loaded} loaded, {unloaded} unloaded; the player's: {player:?}; first {}", events.len(), events[0]))
 }
 
-/// The re-dispatched graph event is opaque to the library; this reads its first event's words as
-/// the RE repo's capture suggests (a handle at +0, the tag's string pointer at +8, a module static
-/// at +0x10) to record what they are.
-fn animation_redispatch() -> Result<String, String> {
-    let events = records("animation");
-    check(!events.is_empty(), "no re-dispatched animation graph events")?;
-    let words: Vec<u64> = events[0].split(' ').filter_map(|w| u64::from_str_radix(w.trim_start_matches("0x"), 16).ok()).collect();
-    check(words.len() == 3, &format!("could not parse {}", events[0]))?;
-    let handle = RefHandle(u32::try_from(words[0] & 0xFFFF_FFFF).unwrap_or(0));
-    let actor = handle.lookup().ok_or_else(|| format!("the low dword {handle} of word 0 is not a live handle"))?;
+/// The footstep source re-sends the graph events whose tag is in its filter list, as
+/// `{actor handle, tag}`; the first one must name a live actor and an ASCII tag.
+fn footsteps() -> Result<String, String> {
+    let events = records("footstep");
+    check(!events.is_empty(), "no footstep events through the global source")?;
+    let (handle, tag) = events[0].split_once(' ').ok_or_else(|| format!("could not parse {}", events[0]))?;
+    let handle = RefHandle(u32::from_str_radix(handle, 16).map_err(|e| format!("handle {handle}: {e}"))?);
+    let actor = handle.lookup().ok_or_else(|| format!("{handle} is not a live handle"))?;
     let actor = format!("{:?}", *actor);
-    let data = words[1] as *mut core::ffi::c_void;
-    let tag = unsafe { BSFixedString::from_ptr((&raw const data).cast::<classes::BSFixedString>()) };
-    check(tag.to_str().is_some_and(|t| !t.is_empty() && t.is_ascii()), &format!("word 1 {:#x} is not a string pointer", words[1]))?;
-    let base = u64::try_from(skyrim::reloc().base()).unwrap_or(0);
-    let rva = words[2].wrapping_sub(base);
-    check(rva < 0x400_0000, &format!("word 2 {:#x} is not in the module", words[2]))?;
+    check(!tag.is_empty() && tag.is_ascii(), &format!("tag {tag:?}"))?;
     let distinct = {
         let mut tags: Vec<&str> = events.iter().filter_map(|d| d.split(' ').nth(1)).collect();
         tags.sort_unstable();
         tags.dedup();
         tags.len()
     };
-    Ok(format!(
-        "{} re-dispatched events through the global source, {distinct} distinct word-1 pointers; first: word 0 {:#x} low dword = handle {handle} -> {actor}, word 1 = interned string {:?}, word 2 = module + {rva:#x}",
-        events.len(),
-        words[0],
-        tag.to_str().unwrap_or("")
-    ))
+    Ok(format!("{} footstep events, {distinct} distinct tags; first: handle {handle} -> {actor}, tag {tag:?}", events.len()))
 }
 
 fn npc_events() -> Result<String, String> {

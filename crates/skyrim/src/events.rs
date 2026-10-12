@@ -1,6 +1,6 @@
 //! Events (subsystem pass 3): `BSTEventSource<E>` with sink registration, the [`EventSink`] trait a
 //! mod implements, the typed sources the engine notifies (the TES holder's 56, the UI's two, the
-//! input manager's, the player's, the animation graph re-dispatch and the 46 story-event
+//! input manager's, the player's, the global footstep source and the 46 story-event
 //! singletons) and the event structs pass 3 read on the wire.
 //!
 //! A sink is a `#[repr(C)]` object whose first word points at a two-slot vtable (destructor,
@@ -35,7 +35,7 @@ pub(crate) struct Fns {
     tes_holder: GetTesHolder,
     ui: *const *const classes::EventSourceHolder_MenuOpenClose,
     input: *const *const classes::EventSourceHolder_Input,
-    animation_graph: *const *const classes::BSTEventSource,
+    footstep: *const *const classes::BSTEventSource,
 }
 
 unsafe impl Send for Fns {}
@@ -51,7 +51,7 @@ impl Fns {
                 tes_holder: crate::resolve(reloc, fns::EventSourceHolder_TES__GetSingleton)?,
                 ui: reloc.address(globals::g_EventSourceHolder_MenuOpenClose_ptr)? as *const *const classes::EventSourceHolder_MenuOpenClose,
                 input: reloc.address(globals::g_EventSourceHolder_Input_ptr)? as *const *const classes::EventSourceHolder_Input,
-                animation_graph: reloc.address(globals::g_AnimationGraphEventSource_ptr)? as *const *const classes::BSTEventSource,
+                footstep: reloc.address(globals::g_FootstepEventSource_ptr)? as *const *const classes::BSTEventSource,
             })
         }
     }
@@ -353,11 +353,14 @@ event_structs! {
     TESActorLocationChangeEvent;
     /// A lock's state changed.
     TESLockChangedEvent;
-    /// A behaviour graph raised an animation event. Its proven sources are the per-graph ones
-    /// (`BShkbAnimationGraph` + 0x68, pass 7), so `source()` is `None`; register with
-    /// [`BSTEventSource::from_ptr`] on a graph's source. The global source behind
-    /// `g_AnimationGraphEventSource_ptr` carries [`AnimationGraphRedispatchEvent`] instead.
+    /// A behaviour graph raised an animation event. Its sources are the per-graph ones
+    /// (`BShkbAnimationGraph` + 0x68, pass 7); no registration function is named for them yet, so
+    /// the struct has accessors but no [`Event`] impl.
     BSAnimationGraphEvent;
+    /// A footstep: an actor's graph event whose tag is in the footstep source's filter list,
+    /// re-sent by `Actor::ProcessAnimationGraphEvent` through the global source behind
+    /// `g_FootstepEventSource_ptr` (`BGSImpactManager` is the engine's sink).
+    BGSFootstepEvent;
     /// The player entered or left a cell (medium: read live twice during a load).
     BGSActorCellEvent;
     /// Static evidence only (`Actor::vfunc_270`, which stores `dead = 0`): `actorDying`, `actorKiller`, `dead`.
@@ -433,13 +436,6 @@ event_structs! {
 }
 
 opaque_events! {
-    /// What the global source behind `g_AnimationGraphEventSource_ptr` (id 403553, medium) sends
-    /// when an actor's graph raises an event. `events.json` types the source as
-    /// `BSTEventSource<BSAnimationGraphEvent>`, but the event read live on 1.7.104 (the RE repo's
-    /// `run-events/dump-2` rows through 0x6beb50 and the test plugin's run) is a different 0x18-byte
-    /// struct: a handle-like dword at +0, the tag's string pointer at +8 and a module static at
-    /// +0x10. Opaque until a pass describes it.
-    AnimationGraphRedispatchEvent;
     /// No layout in pass 3; a sink can only count these.
     BGSEventProcessedEvent;
     /// No layout in pass 3; a sink can only count these.
@@ -597,8 +593,7 @@ sources! { OTHER_IDS;
     MenuOpenCloseEvent => ui_source(|ui| &raw const ui.source_MenuOpenCloseEvent), BSTEventSource_MenuOpenCloseEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
     MenuModeChangeEvent => ui_source(|ui| &raw const ui.source_MenuModeChangeEvent), BSTEventSource_MenuModeChangeEvent__AddEventSink, BSTEventSource_MenuModeChangeEvent__RemoveEventSink;
     InputEventList => EventSourceHolderInput::get().map_or(core::ptr::null(), |i| &raw const i.0.source_InputEvent), BSTEventSource_InputEvent____ptr64__AddEventSink, BSTEventSource_InputEvent____ptr64__RemoveEventSink;
-    BSAnimationGraphEvent => core::ptr::null(), BSTEventSource_BSAnimationGraphEvent__AddEventSink, BSTEventSource_BSAnimationGraphEvent__RemoveEventSink;
-    AnimationGraphRedispatchEvent => *fns().animation_graph, BSTEventSource_BSAnimationGraphEvent__AddEventSink, BSTEventSource_BSAnimationGraphEvent__RemoveEventSink;
+    BGSFootstepEvent => *fns().footstep, BSTEventSource_BGSFootstepEvent__AddEventSink, BSTEventSource_BGSFootstepEvent__RemoveEventSink;
     BGSActorCellEvent => player_source(|p| &raw const (*p).source_BGSActorCellEvent), BSTEventSource_BGSActorCellEvent__AddEventSink, BSTEventSource_BGSActorCellEvent__RemoveEventSink;
     PositionPlayerEvent => player_source(|p| &raw const (*p).source_PositionPlayerEvent), BSTEventSource_PositionPlayerEvent__AddEventSink, BSTEventSource_PositionPlayerEvent__RemoveEventSink;
 }
@@ -1112,6 +1107,26 @@ impl BSAnimationGraphEvent {
 impl fmt::Debug for BSAnimationGraphEvent {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "BSAnimationGraphEvent {{ tag: {:?}, holder: {:p}, payload: {:?} }}", self.tag(), self.holder(), self.payload())
+    }
+}
+
+impl BGSFootstepEvent {
+    /// The handle of the actor whose animation produced the footstep.
+    #[must_use]
+    pub fn actor_handle(&self) -> RefHandle {
+        RefHandle(self.0.actorHandle)
+    }
+
+    /// The animation event name, a copy of the graph event's tag.
+    #[must_use]
+    pub fn tag(&self) -> &BSFixedString {
+        unsafe { BSFixedString::from_ptr(&raw const self.0.tag) }
+    }
+}
+
+impl fmt::Debug for BGSFootstepEvent {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "BGSFootstepEvent {{ actor: {}, tag: {:?} }}", self.actor_handle(), self.tag())
     }
 }
 
