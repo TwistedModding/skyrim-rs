@@ -1,0 +1,8 @@
+# Inputs of crates/layout/src/v1_7_104, recorded by `cargo xtask gen`.
+repo SkyrimRE-1.7.104
+commit 730fb846ce5d4290fb756878e02b441f7f2dbe9d
+sha256 59efe12b8ec61f1d001ae1f1d5596561a964ad47f1d658c1198a7d33606460bd export/symbols.csv
+sha256 e303447bb8a87744c454aa3b6f0856d52fa16b97547a4008f3b54ede0cbdad80 data/layouts.json
+sha256 9504d895dbf5c9507374180d18d07f1ad2ef71aa90351c86affdf3c1c61efb4b data/class_structs.json
+sha256 3fe6a0886de31e1564d5d260a77293df6851d3e4898fcdb41cc53a61288fdc02 data/rtti.json
+sha256 55e5da2bde64118722ad1c2941a337e9cf39a57d8bb7e7d63041cefbe6eda6e8 data/formtypes.json
