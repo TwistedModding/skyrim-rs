@@ -26,7 +26,9 @@ pub fn re_dir() -> PathBuf {
     std::env::var_os("SKYRIMRE_DIR").map_or_else(|| workspace_root().parent().unwrap().join(RE_REPO), PathBuf::from)
 }
 
-fn commit_of(re_dir: &Path) -> String {
+/// `HEAD` of the RE repository, `unknown` without git.
+#[must_use]
+pub fn commit_of(re_dir: &Path) -> String {
     Command::new("git")
         .args(["-C", &re_dir.to_string_lossy(), "rev-parse", "HEAD"])
         .output()
@@ -35,11 +37,10 @@ fn commit_of(re_dir: &Path) -> String {
         .map_or_else(|| "unknown".to_owned(), |o| String::from_utf8_lossy(&o.stdout).trim().to_owned())
 }
 
-/// Generated files keyed by path relative to the workspace root.
-pub fn generate(re_dir: &Path) -> Result<(BTreeMap<String, String>, Stats), Box<dyn Error>> {
+/// Generated files keyed by path relative to the workspace root; `commit` is recorded as the inputs' provenance.
+pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>, Stats), Box<dyn Error>> {
     let inputs = inputs::read(re_dir)?;
-    let commit = commit_of(re_dir);
-    let (modules, stats) = emit::all(&inputs, &commit);
+    let (modules, stats) = emit::all(&inputs, commit);
     let mut files: BTreeMap<String, String> =
         modules.into_iter().map(|(name, text)| (format!("{MODULE_DIR}/{name}"), text)).collect();
     let mut lock = format!("# Inputs of {MODULE_DIR}, recorded by `cargo xtask gen`.\nrepo {RE_REPO}\ncommit {commit}\n");
@@ -61,8 +62,10 @@ mod tests {
             eprintln!("skipped: {} not present (set SKYRIMRE_DIR)", re.display());
             return;
         }
-        let (files, _) = generate(&re).unwrap();
         let root = workspace_root();
+        let lock = std::fs::read_to_string(root.join(LOCK)).unwrap_or_default();
+        let commit = lock.lines().find_map(|l| l.strip_prefix("commit ")).map_or_else(|| commit_of(&re), str::to_owned);
+        let (files, _) = generate(&re, &commit).unwrap();
         for (path, text) in files {
             let on_disk = std::fs::read_to_string(root.join(&path)).unwrap_or_default();
             assert!(on_disk == text, "{path} is stale; run `cargo xtask gen`");

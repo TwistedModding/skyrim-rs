@@ -1,6 +1,6 @@
 # xtask
 
-`cargo xtask gen` turns the SkyrimRE-1.7.104 ledgers into `crates/layout/src/v1_7_104/` and `crates/layout/generated.lock`. The RE repository is found through `SKYRIMRE_DIR` or, by default, as `../SkyrimRE-1.7.104` next to this workspace. The output is committed; `cargo test -p xtask` regenerates in memory and fails if anything on disk differs (it skips with a message when the RE repository is absent).
+`cargo xtask gen` turns the SkyrimRE-1.7.104 ledgers into `crates/layout/src/v1_7_104/` and `crates/layout/generated.lock`. The RE repository is found through `SKYRIMRE_DIR` or, by default, as `../SkyrimRE-1.7.104` next to this workspace. The output is committed; `cargo test -p xtask` regenerates in memory with the commit recorded in `generated.lock` and fails if anything on disk differs, so the test depends on the input files alone and the recorded commit moves only when `cargo xtask gen` runs (it skips with a message when the RE repository is absent).
 
 ## Inputs
 

@@ -6,7 +6,7 @@ fn main() -> ExitCode {
         return ExitCode::FAILURE;
     }
     let re = xtask::re_dir();
-    let (files, stats) = match xtask::generate(&re) {
+    let (files, stats) = match xtask::generate(&re, &xtask::commit_of(&re)) {
         Ok(r) => r,
         Err(e) => {
             eprintln!("{e}");
