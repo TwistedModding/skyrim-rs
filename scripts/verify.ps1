@@ -1,8 +1,9 @@
 # Runs the skyrim-rs test plugin in the 1.7.104 game through DevBench (scripts/<suite>-steps.json), then compares the
 # plugin's PASS lines with DevBench's own answers from the same session as scripts/<suite>-checks.ps1 lists them.
+# The papyrus suite also compiles crates/testplugin/papyrus and installs the .pex files into Data\Scripts for the run.
 # See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
 )
@@ -10,6 +11,7 @@ $ErrorActionPreference = "Stop"
 $MyGames = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition"
 $SkseLogs = "$MyGames\SKSE"
 $Plugins = "$GameDir\Data\SKSE\Plugins"
+$Scripts = "$GameDir\Data\Scripts"
 $Root = Split-Path $PSScriptRoot -Parent
 $Dll = "$Root\target\release\skyrim_rs_test.dll"
 $PluginLog = "skyrim-rs-test.log"
@@ -19,6 +21,8 @@ $TestSave = "skyrim-rs-$Suite"
 if (Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue) { throw "SkyrimSE is already running" }
 Push-Location $Root
 try { cargo build --release -p testplugin; if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
+$Pex = @()
+if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1") }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $OutDir = (Resolve-Path $OutDir).Path
 $Backup = Join-Path $OutDir "backup"
@@ -27,6 +31,7 @@ foreach ($f in $Logs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f"
 Remove-Item "$SkseLogs\$PluginLog" -ErrorAction SilentlyContinue
 
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
+foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" }; Copy-Item $p $Scripts -Force }
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
 try {
@@ -34,6 +39,7 @@ try {
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
     Remove-Item "$Plugins\skyrim_rs_test.dll" -ErrorAction SilentlyContinue
+    foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
     Remove-Item "$MyGames\Saves\$TestSave.*" -ErrorAction SilentlyContinue
     if (Test-Path "$SkseLogs\$PluginLog") { Copy-Item "$SkseLogs\$PluginLog" "$OutDir\$PluginLog" -Force }

@@ -1,0 +1,21 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 3000},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "Ping", "args": [41]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "FormId", "args": [{"form": "0x14"}]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "FormId", "args": [{"form": "0x12eb7"}]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "PlayerHealth", "args": [{"form": "0x14"}]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "Echo", "args": ["hello skyrim"]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "Scale", "args": [2.5, true]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "Player"}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "Describe", "args": [{"form": "0x14"}, 3, "swords", false]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "Ping", "args": [1]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "GetActorValue", "self": {"form": "0x14"}, "args": ["Health"]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Game", "function": "GetForm", "args": [20]}},
+  {"wait": 1500},
+  {"tool": "console", "args": {"command": "save skyrim-rs-papyrus"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000}
+]
