@@ -1,9 +1,11 @@
 # DevBench comparisons for the papyrus suite (step indices of papyrus-steps.json); dot-sourced by verify.ps1.
 # The plugin registers its natives in the SKSE PapyrusInterface callback, checks handles and script types after
-# the load and the calls DevBench made at the save.
+# the load and the calls DevBench made at the save. The equip-counter mod runs alongside and answers its own natives.
 $Phases = "register", "postLoadGame", "saveGame"
 
 $pluginLines = Get-Content "$OutDir\$PluginLog"
+$modLog = "$OutDir\skyrim-rs-equip-counter.log"
+$modLines = if (Test-Path $modLog) { Get-Content $modLog } else { @() }
 function NativeLine($name, $needle) { ($pluginLines | Where-Object { $_ -match "^native $name \(stack \d+\): .*$([regex]::Escape($needle))" } | Select-Object -First 1) }
 $health = Captured (NativeLine "PlayerHealth" "ACHR 00000014") '-> ([0-9.]+)$'
 
@@ -18,12 +20,14 @@ $rows = @(
        ok = ((Returned 8) -eq "hello skyrim") }
     @{ name = "scale";         plugin = (NativeLine "Scale" "x=2.5"); devbench = "Scale(2.5, true) = $(Returned 9) ($((Step 9).returnedType))";
        ok = (Near (Returned 9) 5.0 0.001) }
-    @{ name = "player_form";   plugin = (NativeLine "Player" "ACHR"); devbench = "Player() = $((Returned 10).formId) $((Returned 10).name) ($((Step 10).returnedType)), Game.GetForm(20) = $((Returned 14).formId)";
+    @{ name = "player_form";   plugin = (NativeLine "Player" "ACHR"); devbench = "Player() = $((Returned 10).formId) ($((Step 10).returnedType)), Game.GetForm(20) = $((Returned 14).formId)";
        ok = ((Returned 10).formId -eq "0x00000014" -and (Returned 14).formId -eq "0x00000014") }
     @{ name = "describe";      plugin = (NativeLine "Describe" "swords"); devbench = "Describe(0x14, 3, 'swords', false) = '$(Returned 11)'";
        ok = ((Returned 11) -eq "00000014 x3 swords flag=false") }
     @{ name = "dispatch";      plugin = (Detail "dispatch"); devbench = "two Ping calls answered: $((Step 4).called), $((Step 12).called)";
        ok = ($plugin["dispatch"].ok -and (Step 4).called -eq $true -and (Step 12).called -eq $true) }
-    @{ name = "save trigger";  plugin = ($summaries -match 'papyrus saveGame') -join ' '; devbench = "console save: $((Step 16) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 17 }).satisfied)";
-       ok = ((($steps | Where-Object { $_.index -eq 17 }).satisfied -eq $true)) }
+    @{ name = "equip counter"; plugin = ($modLines -match '^(registered|listening|equip )') -join ' | '; devbench = "GetEquipCount before = $(Returned 15), EquipItem(torch) called=$((Step 16).called), UnequipItem called=$((Step 18).called), GetEquipCount after = $(Returned 20), GetLastEquipped = $((Returned 21).formId)";
+       ok = ((Returned 15) -eq 0 -and (Returned 20) -eq 1 -and (Returned 21).formId -eq "0x0001D4EC" -and ($modLines -match '^equip 1: 0001D4EC$').Count -eq 1) }
+    @{ name = "save trigger";  plugin = ($summaries -match 'papyrus saveGame') -join ' '; devbench = "console save: $((Step 23) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 24 }).satisfied)";
+       ok = ((($steps | Where-Object { $_.index -eq 24 }).satisfied -eq $true)) }
 )

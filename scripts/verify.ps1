@@ -1,6 +1,7 @@
 # Runs the skyrim-rs test plugin in the 1.7.104 game through DevBench (scripts/<suite>-steps.json), then compares the
 # plugin's PASS lines with DevBench's own answers from the same session as scripts/<suite>-checks.ps1 lists them.
-# The papyrus suite also compiles crates/testplugin/papyrus and installs the .pex files into Data\Scripts for the run.
+# The papyrus suite also builds the equip-counter mod, compiles both crates' papyrus folders and installs the mod DLL and
+# the .pex files for the run.
 # See docs/subsystems/<suite>.md.
 param(
     [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus")][string]$Suite,
@@ -14,23 +15,26 @@ $Plugins = "$GameDir\Data\SKSE\Plugins"
 $Scripts = "$GameDir\Data\Scripts"
 $Root = Split-Path $PSScriptRoot -Parent
 $Dll = "$Root\target\release\skyrim_rs_test.dll"
+$ModDll = "$Root\target\release\skyrim_rs_equip_counter.dll"
 $PluginLog = "skyrim-rs-test.log"
-$Logs = "skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog
+$ModLog = "skyrim-rs-equip-counter.log"
+$Logs = "skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog, $ModLog
 $TestSave = "skyrim-rs-$Suite"
 
 if (Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue) { throw "SkyrimSE is already running" }
 Push-Location $Root
-try { cargo build --release -p testplugin; if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
+try { cargo build --release -p testplugin -p equip-counter; if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
 $Pex = @()
-if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1") }
+if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $OutDir = (Resolve-Path $OutDir).Path
 $Backup = Join-Path $OutDir "backup"
 New-Item -ItemType Directory -Force $Backup | Out-Null
 foreach ($f in $Logs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$Backup\$f" -Force } }
-Remove-Item "$SkseLogs\$PluginLog" -ErrorAction SilentlyContinue
+Remove-Item "$SkseLogs\$PluginLog", "$SkseLogs\$ModLog" -ErrorAction SilentlyContinue
 
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
+if ($Suite -eq "papyrus") { Copy-Item $ModDll "$Plugins\skyrim_rs_equip_counter.dll" -Force }
 foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" }; Copy-Item $p $Scripts -Force }
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
@@ -38,18 +42,18 @@ try {
     & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -OutDir $OutDir
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
-    Remove-Item "$Plugins\skyrim_rs_test.dll" -ErrorAction SilentlyContinue
+    Remove-Item "$Plugins\skyrim_rs_test.dll", "$Plugins\skyrim_rs_equip_counter.dll" -ErrorAction SilentlyContinue
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
     Remove-Item "$MyGames\Saves\$TestSave.*" -ErrorAction SilentlyContinue
-    if (Test-Path "$SkseLogs\$PluginLog") { Copy-Item "$SkseLogs\$PluginLog" "$OutDir\$PluginLog" -Force }
+    foreach ($f in $PluginLog, $ModLog) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$OutDir\$f" -Force } }
     foreach ($f in $Logs) {
         if (Test-Path "$Backup\$f") { Copy-Item "$Backup\$f" "$SkseLogs\$f" -Force }
-        elseif ($f -eq $PluginLog) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
+        elseif ($f -in $PluginLog, $ModLog) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
     }
 }
 
-# The plugin's PASS/FAIL lines per "<suite> <phase>" run (the summary line closes a run) and the last one per test.
+# The plugin's PASS/FAIL lines per "<suite> <phase>" run (the summary line closes a run) and, for the chosen suite, the last one per test.
 $plugin = @{}
 $runs = @{}
 $pending = @{}
@@ -58,7 +62,7 @@ foreach ($line in Get-Content "$OutDir\$PluginLog") {
     if ($line -match '^(PASS|FAIL) (\w+): (.*)$') { $pending[$Matches[2]] = @{ ok = ($Matches[1] -eq "PASS"); detail = $Matches[3] } }
     elseif ($line -match '^summary (\w+ \w+): ') {
         $runs[$Matches[1]] = $pending
-        foreach ($k in $pending.Keys) { $plugin[$k] = $pending[$k] }
+        if ($Matches[1] -like "$Suite *") { foreach ($k in $pending.Keys) { $plugin[$k] = $pending[$k] } }
         $pending = @{}
         $summaries += $line
     }

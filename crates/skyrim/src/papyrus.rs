@@ -81,7 +81,6 @@ pub(crate) struct Fns {
     pack_form: PackFormToVariable,
     type_function: TypeGetFunction,
     skyrim_vm: *const classes::partial::SkyrimVM,
-    handle_policy: *const *const PolicyRaw,
     vtable: [*const c_void; IFUNCTION_SLOTS],
 }
 
@@ -108,7 +107,6 @@ impl Fns {
                 pack_form: crate::resolve(reloc, fns::Papyrus__PackFormToVariable)?,
                 type_function: crate::resolve(reloc, fns::BSScript__ObjectTypeInfo__GetFunction)?,
                 skyrim_vm: reloc.address(globals::g_SkyrimVM)? as *const classes::partial::SkyrimVM,
-                handle_policy: reloc.address(globals::g_IObjectHandlePolicy_ptr)? as *const *const PolicyRaw,
                 vtable,
             })
         }
@@ -190,15 +188,17 @@ impl fmt::Display for Handle {
     }
 }
 
-/// `SkyrimScript::HandlePolicy`, the VM's `IObjectHandlePolicy` at `g_SkyrimVM + 0x338`.
+/// `SkyrimScript::HandlePolicy`, the VM's `IObjectHandlePolicy` at `g_SkyrimVM + 0x338`; the same
+/// object sits behind `g_IObjectHandlePolicy_ptr` once the VM has finished constructing (it is
+/// still null during the SKSE registration callback).
 #[repr(transparent)]
 pub struct HandlePolicy(PolicyRaw);
 
 impl HandlePolicy {
-    /// The policy behind `g_IObjectHandlePolicy_ptr` (id 414391), `None` before the VM exists.
+    /// The VM's policy through [`VirtualMachine::handle_policy`], `None` before the VM exists.
     #[must_use]
     pub fn get() -> Option<&'static Self> {
-        unsafe { (*fns().handle_policy).cast::<Self>().as_ref() }
+        VirtualMachine::get().map(VirtualMachine::handle_policy)
     }
 
     #[must_use]

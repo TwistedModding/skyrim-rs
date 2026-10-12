@@ -22,11 +22,11 @@ if (-not (Test-Path "$Base\TESV_Papyrus_Flags.flg")) {
         }
     } finally { $zip.Dispose() }
 }
-$imports = (($Source | ForEach-Object { (Resolve-Path $_).Path }) + @("$GameDir\Data\Scripts\Source", $Base)) -join ";"
+$imports = (@($Source | ForEach-Object { (Resolve-Path $_).Path }) + @("$GameDir\Data\Scripts\Source", $Base)) -join ";"
 $pex = @()
 foreach ($dir in $Source) {
     foreach ($psc in Get-ChildItem (Resolve-Path $dir).Path -Filter *.psc) {
-        $out = & $Compiler $psc.FullName -f="TESV_Papyrus_Flags.flg" -i="$imports" -o="$OutDir"
+        $out = & $Compiler $psc.FullName "-f=TESV_Papyrus_Flags.flg" "-i=$imports" "-o=$OutDir"
         if ($LASTEXITCODE -ne 0) { throw "PapyrusCompiler failed on $($psc.Name):`n$($out -join "`n")" }
         $pex += Join-Path $OutDir ($psc.BaseName + ".pex")
     }

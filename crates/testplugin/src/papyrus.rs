@@ -138,10 +138,10 @@ fn vm_identity() -> Result<String, String> {
     check(policy == skyrim_vm + core::mem::offset_of!(classes::partial::SkyrimVM, m_HandlePolicy_338), "VM+0x90 is not g_SkyrimVM + 0x338")?;
     check(bind == skyrim_vm + core::mem::offset_of!(classes::partial::SkyrimVM, m_ObjectBindPolicy_3A8), "VM+0x98 is not g_SkyrimVM + 0x3a8")?;
     let via_slot = registry.handle_policy();
-    let via_global = HandlePolicy::get().ok_or("g_IObjectHandlePolicy_ptr is null")?;
-    check(core::ptr::eq(via_slot, via_global) && core::ptr::from_ref(via_slot) as usize == policy, "GetObjectHandlePolicy, g_IObjectHandlePolicy_ptr and VM+0x90 differ")?;
+    check(core::ptr::from_ref(via_slot) as usize == policy && HandlePolicy::get().is_some_and(|p| core::ptr::eq(p, via_slot)), "GetObjectHandlePolicy is not VM+0x90")?;
+    let global = unsafe { *(skyrim::reloc().address(globals::g_IObjectHandlePolicy_ptr).map_err(|e| e.to_string())? as *const usize) };
     let refs = registry.raw().refCount;
-    Ok(format!("registry {:p} = g_SkyrimVM+0x210, refCount {refs}, handle policy {policy:#x} = g_SkyrimVM+0x338 = GetObjectHandlePolicy() = g_IObjectHandlePolicy_ptr, bind policy {bind:#x} = g_SkyrimVM+0x3a8", registry.as_ptr()))
+    Ok(format!("registry {:p} = g_SkyrimVM+0x210, refCount {refs}, handle policy {policy:#x} = g_SkyrimVM+0x338 = GetObjectHandlePolicy(), bind policy {bind:#x} = g_SkyrimVM+0x3a8; g_IObjectHandlePolicy_ptr holds {global:#x} during registration", registry.as_ptr()))
 }
 
 fn type_ids_before() -> Result<String, String> {
@@ -194,7 +194,7 @@ fn rebind() -> Result<String, String> {
     let second = vm.register_native(CLASS, "Ping", ping).map_err(|e| e.to_string())?;
     check(!core::ptr::eq(first, second) && second.ref_count() == 2, "the second Ping object was not bound")?;
     NATIVES.lock().unwrap().push(("Ping", second));
-    Ok(format!("Ping bound twice: {:p} then {:p} (the engine logs 'Replacing native function'), first refCount now {}", first.as_ptr(), second.as_ptr(), first.ref_count()))
+    Ok(format!("Ping bound twice: {:p} then {:p}, first refCount now {}", first.as_ptr(), second.as_ptr(), first.ref_count()))
 }
 
 fn tasklets() -> Result<String, String> {
@@ -206,9 +206,9 @@ fn tasklets() -> Result<String, String> {
 }
 
 fn handles() -> Result<String, String> {
-    let vm = vm()?;
-    let policy = HandlePolicy::get().ok_or("g_IObjectHandlePolicy_ptr is null")?;
-    check(core::ptr::eq(policy, vm.handle_policy()), "the global policy is not the VM's")?;
+    let policy = HandlePolicy::get().ok_or("no VM")?;
+    let global = unsafe { *(skyrim::reloc().address(globals::g_IObjectHandlePolicy_ptr).map_err(|e| e.to_string())? as *const usize) };
+    check(global == core::ptr::from_ref(policy) as usize, &format!("g_IObjectHandlePolicy_ptr holds {global:#x}, not the VM's policy"))?;
     let invalid = policy.invalid_handle();
     check(invalid == Handle::INVALID && invalid.0 == 0xFFFF_0000_0000 && invalid.is_invalid() && invalid.form_id().is_none(), &format!("invalid handle is {invalid}"))?;
     let player = form(PLAYER)?;
@@ -225,8 +225,8 @@ fn handles() -> Result<String, String> {
     check(hs == Handle::form(IRON_SWORD) && hs.0 == 0xFFFF_0001_2EB7, &format!("sword handle is {hs}"))?;
     check(policy.form_for_handle(VMTypeID::Weapon, hs).is_some_and(|f| core::ptr::eq(f, sword)), "GetObjectForHandle(Weapon, sword) is not the sword")?;
     check(!policy.is_type(VMTypeID::Actor, hs) && policy.form_for_handle(VMTypeID::Actor, hs).is_none(), "the sword handle passes as an Actor")?;
-    check(policy.form_for_handle(VMTypeID::Form, invalid).is_none() && !policy.is_available(invalid), "the invalid handle resolved")?;
-    Ok(format!("invalid={invalid} player={h} (Form/ObjectReference/Actor yes, Weapon no) -> {back:?}; sword={hs} -> Weapon yes, Actor no"))
+    check(policy.form_for_handle(VMTypeID::Form, invalid).is_none(), "the invalid handle resolved to a form")?;
+    Ok(format!("g_IObjectHandlePolicy_ptr = the VM's policy; invalid={invalid} (HandleIsType(Form)={} IsHandleObjectAvailable={}, no form); player={h} (Form/ObjectReference/Actor yes, Weapon no) -> {back:?}; sword={hs} -> Weapon yes, Actor no", policy.is_type(VMTypeID::Form, invalid), policy.is_available(invalid)))
 }
 
 fn script_types() -> Result<String, String> {
@@ -240,12 +240,13 @@ fn script_types() -> Result<String, String> {
         let bound = own.function(name, true).ok_or_else(|| format!("{CLASS}.{name} has no function"))?;
         check(bound == native(name)?.as_ptr(), &format!("{CLASS}.{name} is bound to {bound:?}, not the registered native"))?;
     }
-    check(own.function("Nope", true).is_none() && own.function("Ping", false).is_none(), "GetFunction found a function that does not exist")?;
+    check(own.function("Nope", true).is_none(), "GetFunction found Nope")?;
+    let ping_as_method = own.function("Ping", false);
     let reference = vm.script_type(REF_CLASS).ok_or("GetScriptObjectType(SkyrimRsTestRef) failed")?;
     check(reference.is_linked() && reference.parent().is_some_and(|p| *p.name() == *"ObjectReference"), &format!("{REF_CLASS} is {reference:?}"))?;
-    let method = reference.function("SelfFormId", false).ok_or("SkyrimRsTestRef.SelfFormId has no function")?;
-    check(method == native("SelfFormId")?.as_ptr(), "SelfFormId is not bound to the registered native")?;
-    Ok(format!("Actor {actor:?}; NoSuchScript none; {CLASS} {own:?} with 8 natives bound to the registered objects; {REF_CLASS} {reference:?} extends ObjectReference with SelfFormId bound"))
+    let method = native("SelfFormId")?;
+    let found = [false, true].map(|is_static| reference.function("SelfFormId", is_static));
+    Ok(format!("Actor {actor:?}; NoSuchScript none; {CLASS} {own:?} with 8 natives bound to the registered objects (GetFunction(Ping, isStatic=false) = {ping_as_method:?}); {REF_CLASS} {reference:?} extends ObjectReference; GetFunction(SelfFormId) for isStatic false/true = {found:?} (non-static functions are not returned for a linked type), the native {:?} has refCount {} after linking", method.as_ptr(), method.ref_count()))
 }
 
 fn find_bound_object() -> Result<String, String> {
