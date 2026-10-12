@@ -1,0 +1,17 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 3000},
+  {"tool": "inspect", "args": {"kind": "mods"}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Game", "function": "GetForm", "args": [77495]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Game", "function": "GetFormFromFile", "args": [77495, "Skyrim.esm"]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Game", "function": "GetFormFromFile", "args": [2048, "ccBGSSSE037-Curios.esl"]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Game", "function": "GetFormFromFile", "args": [2048, "ccBGSSSE001-Fish.esm"]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Game", "function": "GetFormFromFile", "args": [2048, "NoSuchFile.esp"]}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Form", "function": "GetFormID", "self": {"form": "VendorItemWeapon"}}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Form", "function": "HasKeyword", "self": {"form": "0x12eb7"}, "args": [{"form": "VendorItemWeapon"}]}},
+  {"tool": "console", "args": {"command": "help VendorItemWeapon 4", "capture": true}},
+  {"tool": "console", "args": {"command": "help IronSword 4", "capture": true}},
+  {"tool": "console", "args": {"command": "help GameHour 3", "capture": true}}
+]
