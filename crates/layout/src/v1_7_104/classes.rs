@@ -597,14 +597,16 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_88) == 0x88);
 pub struct Actor {
     /// +0x0 `vtbl:Actor:0`, rtti
     pub __vftable: *const vtables::Actor_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Actor:20`, rtti
     pub __vftable_20: *const vtables::Actor_vtable_20,
@@ -693,10 +695,11 @@ pub struct Actor {
 }
 const _: () = assert!(size_of::<Actor>() == 0x2B8);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Actor, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Actor, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Actor, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(Actor, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(Actor, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Actor, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Actor, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(Actor, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Actor, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(Actor, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable_30) == 0x30);
@@ -942,14 +945,16 @@ const _: () = assert!(core::mem::offset_of!(ActorState, field_C) == 0xC);
 pub struct ActorValueInfo {
     /// +0x0 `vtbl:ActorValueInfo:0`, rtti
     pub __vftable: *const vtables::ActorValueInfo_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ActorValueInfo:20`, rtti
     pub __vftable_20: *const vtables::ActorValueInfo_vtable_20,
@@ -1035,10 +1040,11 @@ pub struct ActorValueInfo {
 }
 const _: () = assert!(size_of::<ActorValueInfo>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_38) == 0x38);
@@ -1179,14 +1185,16 @@ const _: () = assert!(core::mem::offset_of!(AddRagdollHandler, __vftable) == 0x0
 pub struct AlarmPackage {
     /// +0x0 `vtbl:AlarmPackage:0`, rtti
     pub __vftable: *const vtables::AlarmPackage_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
     pub field_20: u32,
@@ -1226,10 +1234,11 @@ pub struct AlarmPackage {
 }
 const _: () = assert!(size_of::<AlarmPackage>() == 0xF8);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(AlarmPackage, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AlarmPackage, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(AlarmPackage, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(AlarmPackage, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(AlarmPackage, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_25) == 0x25);
@@ -1253,14 +1262,16 @@ const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_F0) == 0xF0);
 pub struct AlchemyItem {
     /// +0x0 `vtbl:AlchemyItem:0`, rtti
     pub __vftable: *const vtables::AlchemyItem_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -1346,10 +1357,11 @@ pub struct AlchemyItem {
 }
 const _: () = assert!(size_of::<AlchemyItem>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(AlchemyItem, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_24) == 0x24);
@@ -1768,14 +1780,16 @@ const _: () = assert!(core::mem::offset_of!(ArrowDetachHandler, __vftable) == 0x
 pub struct ArrowProjectile {
     /// +0x0 `vtbl:ArrowProjectile:0`, rtti
     pub __vftable: *const vtables::ArrowProjectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ArrowProjectile:20`, rtti
     pub __vftable_20: *const vtables::ArrowProjectile_vtable_20,
@@ -1916,10 +1930,11 @@ pub struct ArrowProjectile {
 }
 const _: () = assert!(size_of::<ArrowProjectile>() == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ArrowProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ArrowProjectile, __vftable_30) == 0x30);
@@ -5270,14 +5285,16 @@ const _: () = assert!(core::mem::offset_of!(BGSAbilityPerkEntry, __vftable) == 0
 pub struct BGSAcousticSpace {
     /// +0x0 `vtbl:BGSAcousticSpace:0`, rtti
     pub __vftable: *const vtables::BGSAcousticSpace_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -5301,10 +5318,11 @@ pub struct BGSAcousticSpace {
 }
 const _: () = assert!(size_of::<BGSAcousticSpace>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, field_24) == 0x24);
@@ -5361,28 +5379,31 @@ const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_48) 
 pub struct BGSAction {
     /// +0x0 `vtbl:BGSAction:0`, rtti
     pub __vftable: *const vtables::BGSAction_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `undefined8`, base BGSKeyword
-    pub field_20: u64,
+    /// +0x20 `pointer`, base BGSKeyword, semantic
+    pub keyword: *mut c_void,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
 }
 const _: () = assert!(size_of::<BGSAction>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSAction, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSAction, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSAction, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSAction, field_1A) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(BGSAction, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSAction, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSAction, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSAction, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSAction, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSAction, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSAction, keyword) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSAction, field_28) == 0x28);
 
 /// `BGSActionData`: size 0x60 (exact, low); primary base `ActionInput`.
@@ -5434,14 +5455,16 @@ const _: () = assert!(core::mem::offset_of!(BGSActionData, field_58) == 0x58);
 pub struct BGSAddonNode {
     /// +0x0 `vtbl:BGSAddonNode:0`, rtti
     pub __vftable: *const vtables::BGSAddonNode_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -5477,10 +5500,11 @@ pub struct BGSAddonNode {
 }
 const _: () = assert!(size_of::<BGSAddonNode>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSAddonNode, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSAddonNode, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSAddonNode, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSAddonNode, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSAddonNode, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_24) == 0x24);
@@ -5502,14 +5526,16 @@ const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_78) == 0x78);
 pub struct BGSApparatus {
     /// +0x0 `vtbl:BGSApparatus:0`, rtti
     pub __vftable: *const vtables::BGSApparatus_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -5584,10 +5610,11 @@ pub struct BGSApparatus {
 }
 const _: () = assert!(size_of::<BGSApparatus>() == 0x120);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSApparatus, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSApparatus, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSApparatus, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSApparatus, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSApparatus, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_24) == 0x24);
@@ -5625,14 +5652,16 @@ const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_118) == 0x118);
 pub struct BGSArtObject {
     /// +0x0 `vtbl:BGSArtObject:0`, rtti
     pub __vftable: *const vtables::BGSArtObject_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -5664,10 +5693,11 @@ pub struct BGSArtObject {
 }
 const _: () = assert!(size_of::<BGSArtObject>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSArtObject, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSArtObject, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSArtObject, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSArtObject, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSArtObject, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_24) == 0x24);
@@ -5752,14 +5782,16 @@ const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_88) == 
 pub struct BGSAssociationType {
     /// +0x0 `vtbl:BGSAssociationType:0`, rtti
     pub __vftable: *const vtables::BGSAssociationType_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 37],
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
@@ -5767,10 +5799,11 @@ pub struct BGSAssociationType {
 }
 const _: () = assert!(size_of::<BGSAssociationType>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSAssociationType, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSAssociationType, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSAssociationType, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSAssociationType, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSAssociationType, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSAssociationType, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSAssociationType, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSAssociationType, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSAssociationType, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSAssociationType, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSAssociationType, field_40) == 0x40);
 
 /// `BGSAttackData`: size 0x50 (exact, medium); primary base `NiRefObject`.
@@ -5903,14 +5936,16 @@ const _: () = assert!(core::mem::offset_of!(BGSBlockBashData, field_10) == 0x10)
 pub struct BGSBodyPartData {
     /// +0x0 `vtbl:BGSBodyPartData:0`, rtti
     pub __vftable: *const vtables::BGSBodyPartData_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSBodyPartData:20`, rtti
     pub __vftable_20: *const vtables::BGSBodyPartData_vtable_20,
@@ -5937,10 +5972,11 @@ pub struct BGSBodyPartData {
 }
 const _: () = assert!(size_of::<BGSBodyPartData>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable_48) == 0x48);
@@ -5959,14 +5995,16 @@ const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_80) == 0x80);
 pub struct BGSCameraPath {
     /// +0x0 `vtbl:BGSCameraPath:0`, rtti
     pub __vftable: *const vtables::BGSCameraPath_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 13],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
@@ -5984,10 +6022,11 @@ pub struct BGSCameraPath {
 }
 const _: () = assert!(size_of::<BGSCameraPath>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSCameraPath, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSCameraPath, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSCameraPath, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSCameraPath, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSCameraPath, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSCameraPath, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_38) == 0x38);
@@ -6003,14 +6042,16 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraPath, field_50) == 0x50);
 pub struct BGSCameraShot {
     /// +0x0 `vtbl:BGSCameraShot:0`, rtti
     pub __vftable: *const vtables::BGSCameraShot_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSCameraShot:20`, rtti
     pub __vftable_20: *const vtables::BGSCameraShot_vtable_20,
@@ -6056,10 +6097,11 @@ pub struct BGSCameraShot {
 }
 const _: () = assert!(size_of::<BGSCameraShot>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSCameraShot, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSCameraShot, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __vftable_48) == 0x48);
@@ -6087,14 +6129,16 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraShot, field_B8) == 0xB8);
 pub struct BGSCollisionLayer {
     /// +0x0 `vtbl:BGSCollisionLayer:0`, rtti
     pub __vftable: *const vtables::BGSCollisionLayer_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSCollisionLayer:20`, rtti
     pub __vftable_20: *const vtables::BGSCollisionLayer_vtable_20,
@@ -6115,10 +6159,11 @@ pub struct BGSCollisionLayer {
 }
 const _: () = assert!(size_of::<BGSCollisionLayer>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_30) == 0x30);
@@ -6133,14 +6178,16 @@ const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_58) == 0x58
 pub struct BGSColorForm {
     /// +0x0 `vtbl:BGSColorForm:0`, rtti
     pub __vftable: *const vtables::BGSColorForm_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSColorForm:20`, rtti
     pub __vftable_20: *const vtables::BGSColorForm_vtable_20,
@@ -6155,10 +6202,11 @@ pub struct BGSColorForm {
 }
 const _: () = assert!(size_of::<BGSColorForm>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSColorForm, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSColorForm, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSColorForm, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSColorForm, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSColorForm, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_31) == 0x31);
@@ -6171,14 +6219,16 @@ const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_32) == 0x32);
 pub struct BGSConstructibleObject {
     /// +0x0 `vtbl:BGSConstructibleObject:0`, rtti
     pub __vftable: *const vtables::BGSConstructibleObject_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, member ctor TESContainer
     pub m_TESContainer_20: u64,
@@ -6193,10 +6243,11 @@ pub struct BGSConstructibleObject {
 }
 const _: () = assert!(size_of::<BGSConstructibleObject>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, m_TESContainer_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_48) == 0x48);
@@ -6209,14 +6260,16 @@ const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_50) ==
 pub struct BGSDebris {
     /// +0x0 `vtbl:BGSDebris:0`, rtti
     pub __vftable: *const vtables::BGSDebris_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSDebris:20`, rtti
     pub __vftable_20: *const vtables::BGSDebris_vtable_20,
@@ -6227,10 +6280,11 @@ pub struct BGSDebris {
 }
 const _: () = assert!(size_of::<BGSDebris>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSDebris, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSDebris, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSDebris, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSDebris, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSDebris, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSDebris, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSDebris, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSDebris, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSDebris, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSDebris, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSDebris, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSDebris, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSDebris, field_30) == 0x30);
@@ -6362,14 +6416,16 @@ const _: () = assert!(core::mem::offset_of!(BGSDestructibleObjectForm, field_8) 
 pub struct BGSDialogueBranch {
     /// +0x0 `vtbl:BGSDialogueBranch:0`, rtti
     pub __vftable: *const vtables::BGSDialogueBranch_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
@@ -6384,10 +6440,11 @@ pub struct BGSDialogueBranch {
 }
 const _: () = assert!(size_of::<BGSDialogueBranch>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_30) == 0x30);
@@ -6400,14 +6457,16 @@ const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_38) == 0x38
 pub struct BGSDualCastData {
     /// +0x0 `vtbl:BGSDualCastData:0`, rtti
     pub __vftable: *const vtables::BGSDualCastData_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -6438,10 +6497,11 @@ pub struct BGSDualCastData {
 }
 const _: () = assert!(size_of::<BGSDualCastData>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSDualCastData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSDualCastData, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSDualCastData, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSDualCastData, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSDualCastData, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSDualCastData, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_24) == 0x24);
@@ -6462,14 +6522,16 @@ const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_58) == 0x58);
 pub struct BGSEncounterZone {
     /// +0x0 `vtbl:BGSEncounterZone:0`, rtti
     pub __vftable: *const vtables::BGSEncounterZone_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -6484,10 +6546,11 @@ pub struct BGSEncounterZone {
 }
 const _: () = assert!(size_of::<BGSEncounterZone>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, field_30) == 0x30);
@@ -6608,14 +6671,16 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointPerkEntry, __vftable) =
 pub struct BGSEquipSlot {
     /// +0x0 `vtbl:BGSEquipSlot:0`, rtti
     pub __vftable: *const vtables::BGSEquipSlot_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
@@ -6626,10 +6691,11 @@ pub struct BGSEquipSlot {
 }
 const _: () = assert!(size_of::<BGSEquipSlot>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, field_38) == 0x38);
 
@@ -6654,14 +6720,16 @@ const _: () = assert!(core::mem::offset_of!(BGSEquipType, field_8) == 0x8);
 pub struct BGSExplosion {
     /// +0x0 `vtbl:BGSExplosion:0`, rtti
     pub __vftable: *const vtables::BGSExplosion_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -6722,10 +6790,11 @@ pub struct BGSExplosion {
 }
 const _: () = assert!(size_of::<BGSExplosion>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSExplosion, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSExplosion, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSExplosion, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSExplosion, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSExplosion, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_24) == 0x24);
@@ -6759,14 +6828,16 @@ const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_E0) == 0xE0);
 pub struct BGSFootstep {
     /// +0x0 `vtbl:BGSFootstep:0`, rtti
     pub __vftable: *const vtables::BGSFootstep_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -6775,10 +6846,11 @@ pub struct BGSFootstep {
 }
 const _: () = assert!(size_of::<BGSFootstep>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSFootstep, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSFootstep, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSFootstep, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSFootstep, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSFootstep, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSFootstep, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_28) == 0x28);
 
@@ -6789,22 +6861,25 @@ const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_28) == 0x28);
 pub struct BGSFootstepSet {
     /// +0x0 `vtbl:BGSFootstepSet:0`, rtti
     pub __vftable: *const vtables::BGSFootstepSet_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 125],
 }
 const _: () = assert!(size_of::<BGSFootstepSet>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, formType) == 0x1A);
 
 /// `BGSHazard`: size 0xB8 (exact, medium); primary base `TESBoundObject`.
 /// Evidence: runtime: 0xB8 at 1 allocation sites.
@@ -6813,14 +6888,16 @@ const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, field_1A) == 0x1A);
 pub struct BGSHazard {
     /// +0x0 `vtbl:BGSHazard:0`, rtti
     pub __vftable: *const vtables::BGSHazard_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -6869,10 +6946,11 @@ pub struct BGSHazard {
 }
 const _: () = assert!(size_of::<BGSHazard>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSHazard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSHazard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSHazard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSHazard, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSHazard, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSHazard, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSHazard, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSHazard, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSHazard, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, field_24) == 0x24);
@@ -6901,14 +6979,16 @@ const _: () = assert!(core::mem::offset_of!(BGSHazard, field_B0) == 0xB0);
 pub struct BGSHeadPart {
     /// +0x0 `vtbl:BGSHeadPart:0`, rtti
     pub __vftable: *const vtables::BGSHeadPart_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSHeadPart:20`, rtti
     pub __vftable_20: *const vtables::BGSHeadPart_vtable_20,
@@ -6942,10 +7022,11 @@ pub struct BGSHeadPart {
 }
 const _: () = assert!(size_of::<BGSHeadPart>() == 0x120);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSHeadPart, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSHeadPart, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSHeadPart, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSHeadPart, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSHeadPart, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_40) == 0x40);
@@ -6987,14 +7068,16 @@ const _: () = assert!(core::mem::offset_of!(BGSIdleCollection, field_18) == 0x18
 pub struct BGSIdleMarker {
     /// +0x0 `vtbl:BGSIdleMarker:0`, rtti
     pub __vftable: *const vtables::BGSIdleMarker_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -7028,10 +7111,11 @@ pub struct BGSIdleMarker {
 }
 const _: () = assert!(size_of::<BGSIdleMarker>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_24) == 0x24);
@@ -7052,14 +7136,16 @@ const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_70) == 0x70);
 pub struct BGSImpactData {
     /// +0x0 `vtbl:BGSImpactData:0`, rtti
     pub __vftable: *const vtables::BGSImpactData_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSImpactData:20`, rtti
     pub __vftable_20: *const vtables::BGSImpactData_vtable_20,
@@ -7092,10 +7178,11 @@ pub struct BGSImpactData {
 }
 const _: () = assert!(size_of::<BGSImpactData>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSImpactData, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSImpactData, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSImpactData, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSImpactData, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSImpactData, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_48) == 0x48);
@@ -7117,14 +7204,16 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_80) == 0x80);
 pub struct BGSImpactDataSet {
     /// +0x0 `vtbl:BGSImpactDataSet:0`, rtti
     pub __vftable: *const vtables::BGSImpactDataSet_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSImpactDataSet:20`, rtti
     pub __vftable_20: *const vtables::BGSImpactDataSet_vtable_20,
@@ -7141,10 +7230,11 @@ pub struct BGSImpactDataSet {
 }
 const _: () = assert!(size_of::<BGSImpactDataSet>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_3C) == 0x3C);
@@ -7158,25 +7248,28 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_50) == 0x50)
 pub struct BGSKeyword {
     /// +0x0 `vtbl:BGSKeyword:0`, rtti
     pub __vftable: *const vtables::BGSKeyword_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
+    /// +0x20 `pointer`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub keyword: *mut c_void,
 }
 const _: () = assert!(size_of::<BGSKeyword>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSKeyword, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSKeyword, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSKeyword, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSKeyword, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSKeyword, field_1A) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(BGSKeyword, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSKeyword, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSKeyword, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSKeyword, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSKeyword, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSKeyword, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSKeyword, keyword) == 0x20);
 
 /// `BGSKeywordForm`: size 0x18 (exact, medium); primary base `BaseFormComponent`.
 /// Evidence: runtime: 0x18 at 1 allocation sites; agrees with the static allocation sites.
@@ -7185,16 +7278,16 @@ const _: () = assert!(core::mem::offset_of!(BGSKeyword, field_20) == 0x20);
 pub struct BGSKeywordForm {
     /// +0x0 `vtbl:BGSKeywordForm:0`, rtti
     pub __vftable: *const vtables::BGSKeywordForm_vtable,
-    /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
-    /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    /// +0x8 `pointer`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub keywords: *mut c_void,
+    /// +0x10 `undefined4`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub numKeywords: u32,
     pub unknown_14: [u8; 4],
 }
 const _: () = assert!(size_of::<BGSKeywordForm>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, keywords) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, numKeywords) == 0x10);
 
 /// `BGSLightingTemplate`: size 0xA0 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0xA0 at 1 allocation sites; agrees with the static allocation sites.
@@ -7204,14 +7297,16 @@ const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, field_10) == 0x10);
 pub struct BGSLightingTemplate {
     /// +0x0 `vtbl:BGSLightingTemplate:0`, rtti
     pub __vftable: *const vtables::BGSLightingTemplate_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -7239,10 +7334,11 @@ pub struct BGSLightingTemplate {
 }
 const _: () = assert!(size_of::<BGSLightingTemplate>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_30) == 0x30);
@@ -7261,32 +7357,34 @@ const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_78) == 0x
 pub struct BGSListForm {
     /// +0x0 `vtbl:BGSListForm:0`, rtti
     pub __vftable: *const vtables::BGSListForm_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
-    pub unknown_1B: [u8; 21],
-    /// +0x30 `undefined4`, ctor store
-    pub field_30: u32,
-    pub unknown_34: [u8; 4],
-    /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
+    pub unknown_1B: [u8; 5],
+    /// +0x20 `class:BSTArray`, semantic, semantic, semantic, semantic, semantic, semantic
+    pub forms: BSTArray,
+    /// +0x38 `pointer`, ctor store, semantic, semantic, semantic, semantic, semantic, semantic
+    pub addedForms: *mut c_void,
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
 }
 const _: () = assert!(size_of::<BGSListForm>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSListForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSListForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSListForm, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSListForm, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSListForm, field_1A) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(BGSListForm, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSListForm, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSListForm, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSListForm, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSListForm, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSListForm, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSListForm, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSListForm, forms) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSListForm, addedForms) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSListForm, field_40) == 0x40);
 
 /// `BGSLoadGameBuffer`: size 0x28 (exact, medium).
@@ -7367,14 +7465,16 @@ const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_58) == 0x58);
 pub struct BGSLocation {
     /// +0x0 `vtbl:BGSLocation:0`, rtti
     pub __vftable: *const vtables::BGSLocation_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSLocation:20`, rtti
     pub __vftable_20: *const vtables::BGSLocation_vtable_20,
@@ -7417,10 +7517,11 @@ pub struct BGSLocation {
 }
 const _: () = assert!(size_of::<BGSLocation>() == 0xF0);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSLocation, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSLocation, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSLocation, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSLocation, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSLocation, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSLocation, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSLocation, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSLocation, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSLocation, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, field_38) == 0x38);
@@ -7445,25 +7546,28 @@ const _: () = assert!(core::mem::offset_of!(BGSLocation, field_EC) == 0xEC);
 pub struct BGSLocationRefType {
     /// +0x0 `vtbl:BGSLocationRefType:0`, rtti
     pub __vftable: *const vtables::BGSLocationRefType_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
-    /// +0x20 `undefined8`, base BGSKeyword
-    pub field_20: u64,
+    /// +0x20 `pointer`, base BGSKeyword, semantic
+    pub keyword: *mut c_void,
 }
 const _: () = assert!(size_of::<BGSLocationRefType>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, field_1A) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, keyword) == 0x20);
 
 /// `BGSMaterialObject`: size 0xB8 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0xB8 at 1 allocation sites.
@@ -7473,14 +7577,16 @@ const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, field_20) == 0x2
 pub struct BGSMaterialObject {
     /// +0x0 `vtbl:BGSMaterialObject:0`, rtti
     pub __vftable: *const vtables::BGSMaterialObject_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMaterialObject:20`, rtti
     pub __vftable_20: *const vtables::BGSMaterialObject_vtable_20,
@@ -7512,10 +7618,11 @@ pub struct BGSMaterialObject {
 }
 const _: () = assert!(size_of::<BGSMaterialObject>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __vftable_48) == 0x48);
@@ -7537,14 +7644,16 @@ const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_7C) == 0x7C
 pub struct BGSMaterialType {
     /// +0x0 `vtbl:BGSMaterialType:0`, rtti
     pub __vftable: *const vtables::BGSMaterialType_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -7563,10 +7672,11 @@ pub struct BGSMaterialType {
 }
 const _: () = assert!(size_of::<BGSMaterialType>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialType, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialType, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialType, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialType, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialType, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialType, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialType, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialType, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialType, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialType, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialType, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialType, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialType, field_30) == 0x30);
@@ -7596,14 +7706,16 @@ const _: () = assert!(core::mem::offset_of!(BGSMenuDisplayObject, field_8) == 0x
 pub struct BGSMessage {
     /// +0x0 `vtbl:BGSMessage:0`, rtti
     pub __vftable: *const vtables::BGSMessage_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMessage:20`, rtti
     pub __vftable_20: *const vtables::BGSMessage_vtable_20,
@@ -7628,10 +7740,11 @@ pub struct BGSMessage {
 }
 const _: () = assert!(size_of::<BGSMessage>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSMessage, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSMessage, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSMessage, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSMessage, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSMessage, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSMessage, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSMessage, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSMessage, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSMessage, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, field_38) == 0x38);
@@ -7742,14 +7855,16 @@ const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_A8) == 0xA8)
 pub struct BGSMovementType {
     /// +0x0 `vtbl:BGSMovementType:0`, rtti
     pub __vftable: *const vtables::BGSMovementType_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -7767,10 +7882,11 @@ pub struct BGSMovementType {
 }
 const _: () = assert!(size_of::<BGSMovementType>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSMovementType, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSMovementType, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSMovementType, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSMovementType, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSMovementType, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSMovementType, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSMovementType, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSMovementType, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSMovementType, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSMovementType, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSMovementType, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSMovementType, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSMovementType, field_50) == 0x50);
@@ -7991,14 +8107,16 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicTrack, field_18) == 0x18);
 pub struct BGSMusicTrackFormWrapper {
     /// +0x0 `vtbl:BGSMusicTrackFormWrapper:0`, rtti
     pub __vftable: *const vtables::BGSMusicTrackFormWrapper_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMusicTrackFormWrapper:20`, rtti
     pub __vftable_20: *const vtables::BGSMusicTrackFormWrapper_vtable_20,
@@ -8010,10 +8128,11 @@ pub struct BGSMusicTrackFormWrapper {
 }
 const _: () = assert!(size_of::<BGSMusicTrackFormWrapper>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, field_30) == 0x30);
@@ -8026,14 +8145,16 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, field_30) 
 pub struct BGSMusicType {
     /// +0x0 `vtbl:BGSMusicType:0`, rtti
     pub __vftable: *const vtables::BGSMusicType_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMusicType:20`, rtti
     pub __vftable_20: *const vtables::BGSMusicType_vtable_20,
@@ -8052,10 +8173,11 @@ pub struct BGSMusicType {
 }
 const _: () = assert!(size_of::<BGSMusicType>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSMusicType, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSMusicType, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSMusicType, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSMusicType, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSMusicType, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSMusicType, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSMusicType, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSMusicType, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSMusicType, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, field_2C) == 0x2C);
@@ -8122,14 +8244,16 @@ const _: () = assert!(core::mem::offset_of!(BGSOpenCloseForm, __vftable) == 0x0)
 pub struct BGSOutfit {
     /// +0x0 `vtbl:BGSOutfit:0`, rtti
     pub __vftable: *const vtables::BGSOutfit_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
@@ -8137,10 +8261,11 @@ pub struct BGSOutfit {
 }
 const _: () = assert!(size_of::<BGSOutfit>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSOutfit, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSOutfit, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSOutfit, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSOutfit, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSOutfit, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSOutfit, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSOutfit, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSOutfit, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSOutfit, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSOutfit, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSOutfit, field_30) == 0x30);
 
 /// `BGSOverridePackCollection`: size 0x28 (exact, medium); primary base `BaseFormComponent`.
@@ -8397,14 +8522,16 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleObjectCloneTask, __vftabl
 pub struct BGSPerk {
     /// +0x0 `vtbl:BGSPerk:0`, rtti
     pub __vftable: *const vtables::BGSPerk_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSPerk:20`, rtti
     pub __vftable_20: *const vtables::BGSPerk_vtable_20,
@@ -8427,10 +8554,11 @@ pub struct BGSPerk {
 }
 const _: () = assert!(size_of::<BGSPerk>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSPerk, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSPerk, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSPerk, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSPerk, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSPerk, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSPerk, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSPerk, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSPerk, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSPerk, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSPerk, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSPerk, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSPerk, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSPerk, field_38) == 0x38);
@@ -10655,14 +10783,16 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureWanderExecState, field_2
 pub struct BGSProjectile {
     /// +0x0 `vtbl:BGSProjectile:0`, rtti
     pub __vftable: *const vtables::BGSProjectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -10739,10 +10869,11 @@ pub struct BGSProjectile {
 }
 const _: () = assert!(size_of::<BGSProjectile>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSProjectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSProjectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSProjectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSProjectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_24) == 0x24);
@@ -10969,14 +11100,16 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainUpgrade, field_14) =
 pub struct BGSRagdoll {
     /// +0x0 `vtbl:BGSRagdoll:0`, rtti
     pub __vftable: *const vtables::BGSRagdoll_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSRagdoll:20`, rtti
     pub __vftable_20: *const vtables::BGSRagdoll_vtable_20,
@@ -11057,10 +11190,11 @@ pub struct BGSRagdoll {
 }
 const _: () = assert!(size_of::<BGSRagdoll>() == 0x1B8);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_58) == 0x58);
@@ -11138,14 +11272,16 @@ const _: () = assert!(core::mem::offset_of!(BGSRefAlias, field_40) == 0x40);
 pub struct BGSReferenceEffect {
     /// +0x0 `vtbl:BGSReferenceEffect:0`, rtti
     pub __vftable: *const vtables::BGSReferenceEffect_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -11157,10 +11293,11 @@ pub struct BGSReferenceEffect {
 }
 const _: () = assert!(size_of::<BGSReferenceEffect>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_30) == 0x30);
@@ -11172,14 +11309,16 @@ const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_30) == 0x3
 pub struct BGSRelationship {
     /// +0x0 `vtbl:BGSRelationship:0`, rtti
     pub __vftable: *const vtables::BGSRelationship_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -11193,10 +11332,11 @@ pub struct BGSRelationship {
 }
 const _: () = assert!(size_of::<BGSRelationship>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSRelationship, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSRelationship, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSRelationship, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSRelationship, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSRelationship, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSRelationship, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_30) == 0x30);
@@ -11209,14 +11349,16 @@ const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_38) == 0x38);
 pub struct BGSReverbParameters {
     /// +0x0 `vtbl:BGSReverbParameters:0`, rtti
     pub __vftable: *const vtables::BGSReverbParameters_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSReverbParameters:20`, rtti
     pub __vftable_20: *const vtables::BGSReverbParameters_vtable_20,
@@ -11230,10 +11372,11 @@ pub struct BGSReverbParameters {
 }
 const _: () = assert!(size_of::<BGSReverbParameters>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, field_2C) == 0x2C);
@@ -11454,14 +11597,16 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_410) == 0x
 pub struct BGSScene {
     /// +0x0 `vtbl:BGSScene:0`, rtti
     pub __vftable: *const vtables::BGSScene_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
@@ -11496,10 +11641,11 @@ pub struct BGSScene {
 }
 const _: () = assert!(size_of::<BGSScene>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(BGSScene, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSScene, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSScene, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSScene, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSScene, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSScene, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSScene, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSScene, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSScene, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSScene, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSScene, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSScene, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSScene, field_60) == 0x60);
@@ -11582,14 +11728,16 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneActionTimer, field_28) == 0x
 pub struct BGSShaderParticleGeometryData {
     /// +0x0 `vtbl:BGSShaderParticleGeometryData:0`, rtti
     pub __vftable: *const vtables::BGSShaderParticleGeometryData_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
@@ -11599,10 +11747,11 @@ pub struct BGSShaderParticleGeometryData {
 }
 const _: () = assert!(size_of::<BGSShaderParticleGeometryData>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, m_TESTexture_38) == 0x38);
 
@@ -11665,14 +11814,16 @@ const _: () = assert!(core::mem::offset_of!(BGSSkinForm, field_8) == 0x8);
 pub struct BGSSoundCategory {
     /// +0x0 `vtbl:BGSSoundCategory:0`, rtti
     pub __vftable: *const vtables::BGSSoundCategory_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSSoundCategory:20`, rtti
     pub __vftable_20: *const vtables::BGSSoundCategory_vtable_20,
@@ -11695,10 +11846,11 @@ pub struct BGSSoundCategory {
 }
 const _: () = assert!(size_of::<BGSSoundCategory>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, field_38) == 0x38);
@@ -11726,14 +11878,16 @@ const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptor, __vftable) == 0x
 pub struct BGSSoundDescriptorForm {
     /// +0x0 `vtbl:BGSSoundDescriptorForm:0`, rtti
     pub __vftable: *const vtables::BGSSoundDescriptorForm_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSSoundDescriptorForm:20`, rtti
     pub __vftable_20: *const vtables::BGSSoundDescriptorForm_vtable_20,
@@ -11742,10 +11896,11 @@ pub struct BGSSoundDescriptorForm {
 }
 const _: () = assert!(size_of::<BGSSoundDescriptorForm>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, field_28) == 0x28);
 
@@ -11756,14 +11911,16 @@ const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, field_28) ==
 pub struct BGSSoundOutput {
     /// +0x0 `vtbl:BGSSoundOutput:0`, rtti
     pub __vftable: *const vtables::BGSSoundOutput_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSSoundOutput:20`, rtti
     pub __vftable_20: *const vtables::BGSSoundOutput_vtable_20,
@@ -11776,10 +11933,11 @@ pub struct BGSSoundOutput {
 }
 const _: () = assert!(size_of::<BGSSoundOutput>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, field_30) == 0x30);
@@ -11845,22 +12003,25 @@ const _: () = assert!(core::mem::offset_of!(BGSStandardSoundDef, field_54) == 0x
 pub struct BGSStoryManagerBranchNode {
     /// +0x0 `vtbl:BGSStoryManagerBranchNode:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerBranchNode_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 69],
 }
 const _: () = assert!(size_of::<BGSStoryManagerBranchNode>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, formType) == 0x1A);
 
 /// `BGSStoryManagerEventNode`: size 0x68 (exact, medium); primary base `BGSStoryManagerBranchNode`.
 /// Evidence: runtime: 0x68 at 1 allocation sites.
@@ -11869,22 +12030,25 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, field_1A)
 pub struct BGSStoryManagerEventNode {
     /// +0x0 `vtbl:BGSStoryManagerEventNode:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerEventNode_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 77],
 }
 const _: () = assert!(size_of::<BGSStoryManagerEventNode>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, formType) == 0x1A);
 
 /// `BGSStoryManagerNodeBase`: size 0xE0 (exact, medium); primary base `BGSStoryManagerTreeForm`.
 /// Evidence: conflict, allocation size kept: allocation size 0xE0 above upper bound 0x60 (derived BGSStoryManagerBranchNode size 0x60 at 0x0).
@@ -11893,22 +12057,25 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, field_1A) 
 pub struct BGSStoryManagerNodeBase {
     /// +0x0 `vtbl:BGSStoryManagerNodeBase:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerNodeBase_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 197],
 }
 const _: () = assert!(size_of::<BGSStoryManagerNodeBase>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, formType) == 0x1A);
 
 /// `BGSStoryManagerQuestFinder`: size 0xC0 (exact, medium); primary base `BGSStoryManagerTreeVisitor`.
 /// Evidence: runtime: 0xC0 at 1 allocation sites.
@@ -11933,22 +12100,25 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestFinder, field_30
 pub struct BGSStoryManagerQuestNode {
     /// +0x0 `vtbl:BGSStoryManagerQuestNode:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerQuestNode_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 197],
 }
 const _: () = assert!(size_of::<BGSStoryManagerQuestNode>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, formType) == 0x1A);
 
 /// `BGSStoryManagerTreeForm`: size 0x20 (exact, low); primary base `TESForm`.
 /// Evidence: lower bound base TESForm at 0x0 meets upper bound first own field of TESQuest at 0x20 (soft).
@@ -11957,22 +12127,25 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, field_1A) 
 pub struct BGSStoryManagerTreeForm {
     /// +0x0 `vtbl:BGSStoryManagerTreeForm:0`, rtti
     pub __vftable: *const vtables::BGSStoryManagerTreeForm_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
 }
 const _: () = assert!(size_of::<BGSStoryManagerTreeForm>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, formType) == 0x1A);
 
 /// `BGSStoryManagerTreeVisitor`: size 0xC0 (exact, medium).
 /// Evidence: allocation sites (medium): {'192': 1}.
@@ -12107,14 +12280,16 @@ const _: () = assert!(core::mem::offset_of!(BGSSynchronizedAnimationInstance, fi
 pub struct BGSTalkingActivator {
     /// +0x0 `vtbl:BGSTalkingActivator:0`, rtti
     pub __vftable: *const vtables::BGSTalkingActivator_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -12170,10 +12345,11 @@ pub struct BGSTalkingActivator {
 }
 const _: () = assert!(size_of::<BGSTalkingActivator>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_24) == 0x24);
@@ -12205,14 +12381,16 @@ const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_D0) == 0x
 pub struct BGSTextureSet {
     /// +0x0 `vtbl:BGSTextureSet:0`, rtti
     pub __vftable: *const vtables::BGSTextureSet_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -12265,10 +12443,11 @@ pub struct BGSTextureSet {
 }
 const _: () = assert!(size_of::<BGSTextureSet>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_24) == 0x24);
@@ -12739,14 +12918,16 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureWanderExecS
 pub struct BGSVoiceType {
     /// +0x0 `vtbl:BGSVoiceType:0`, rtti
     pub __vftable: *const vtables::BGSVoiceType_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
@@ -12759,10 +12940,11 @@ pub struct BGSVoiceType {
 }
 const _: () = assert!(size_of::<BGSVoiceType>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSVoiceType, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSVoiceType, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSVoiceType, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSVoiceType, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSVoiceType, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSVoiceType, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_30) == 0x30);
@@ -12774,22 +12956,25 @@ const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_30) == 0x30);
 pub struct BGSVolumetricLighting {
     /// +0x0 `vtbl:BGSVolumetricLighting:0`, rtti
     pub __vftable: *const vtables::BGSVolumetricLighting_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 53],
 }
 const _: () = assert!(size_of::<BGSVolumetricLighting>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, formType) == 0x1A);
 
 /// `BGSWaterCollisionManager::BGSWaterUpdateI`: size 0x50 (exact, medium).
 /// Evidence: lower bound BGSWaterCollisionManager::bhkPlaceableWater (size 0x70 at 0x20) adds no fields or bases meets upper bound derived BGSWaterCollisionManager::bhkPlaceableWater size 0x70 at 0x20.
@@ -42746,6 +42931,19 @@ const _: () = assert!(core::mem::offset_of!(BSRangeNode, field_122) == 0x122);
 const _: () = assert!(core::mem::offset_of!(BSRangeNode, field_124) == 0x124);
 const _: () = assert!(core::mem::offset_of!(BSRangeNode, field_128) == 0x128);
 
+/// `BSReadWriteLock`: size 0x8 (exact).
+/// Evidence: recursive reader/writer spin lock; 0xce3250/0xce3510 (read) and 0xce32d0/0xce3520 (write) operate on a thread id at +0 and a count at +4 with 0x80000000 marking a writer.
+#[repr(C)]
+pub struct BSReadWriteLock {
+    /// +0x0 `undefined4`, semantic
+    pub writerThread: u32,
+    /// +0x4 `undefined4`, semantic
+    pub lockCount: u32,
+}
+const _: () = assert!(size_of::<BSReadWriteLock>() == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSReadWriteLock, writerThread) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSReadWriteLock, lockCount) == 0x4);
+
 /// `BSReference`: size 0x18 (exact, medium); primary base `NiObject`.
 /// Evidence: allocation sites (medium): {'24': 1}.
 /// Bases: `NiObject`@0x0, `NiRefObject`@0x0.
@@ -55766,6 +55964,19 @@ const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_544) =
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_54C) == 0x54C);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_558) == 0x558);
 
+/// `BSSimpleListNode`: size 0x10 (exact).
+/// Evidence: list node: item pointer then next pointer; the head node is embedded in the owner; node of the singly linked lists in TESDataHandler (+0xd60, 0x10-byte nodes freed in 0x1b6530 and 0x1ce6f0) and TESFile (+0x440); run-forms peek dh-menu +0xd60 = item 0x2434fa63070 (Skyrim.esm), next 0x24366971290 whose item is Update.esm (filelist-node1).
+#[repr(C)]
+pub struct BSSimpleListNode {
+    /// +0x0 `pointer`, semantic
+    pub item: *mut c_void,
+    /// +0x8 `pointer`, semantic
+    pub next: *mut c_void,
+}
+const _: () = assert!(size_of::<BSSimpleListNode>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSSimpleListNode, item) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSSimpleListNode, next) == 0x8);
+
 /// `BSSimpleScaleController`: size 0x58 (exact, medium); primary base `NiTimeController`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
 /// Bases: `NiTimeController`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
@@ -56696,6 +56907,24 @@ pub struct BSTAnimationGraphDataChannel_Actor_float_ActorTurnDeltaChannel {
 }
 const _: () = assert!(size_of::<BSTAnimationGraphDataChannel_Actor_float_ActorTurnDeltaChannel>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSTAnimationGraphDataChannel_Actor_float_ActorTurnDeltaChannel, __vftable) == 0x0);
+
+/// `BSTArray`: size 0x18 (exact).
+/// Evidence: growable array of 8-byte elements with a heap allocator; the element type is given per field; layout from the array code in 0x1bfa80 and 0x1bdb30 (data at +0, capacity at +8, size at +0x10 passed to the grow helper); the form arrays in TESDataHandler sit at that stride and their live data/capacity/size triples were read in run-forms (dh-menu: KYWD data=0x242c7021de0 cap=2048 size=1290).
+#[repr(C)]
+pub struct BSTArray {
+    /// +0x0 `pointer`, semantic
+    pub data: *mut c_void,
+    /// +0x8 `undefined4`, semantic
+    pub capacity: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined4`, semantic
+    pub size: u32,
+    pub unknown_14: [u8; 4],
+}
+const _: () = assert!(size_of::<BSTArray>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSTArray, data) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSTArray, capacity) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSTArray, size) == 0x10);
 
 /// `BSTDerivedCreator<BSXAudio2Audio,BSAudio>`: size 0x8 (exact, medium); primary base `IBSTCreator<BSAudio>`.
 /// Evidence: lower bound AutoRegisterCreator<BSXAudio2Audio,BSTCreateFactoryManager<BSFixedStringCI,BSAudio,4>_> (size 0x8 at 0x0) adds no fields or bases meets upper bound derived AutoRegisterCreator<BSXAudio2Audio,BSTCreateFactoryManager<BSFixedStringCI,BSAudio,4>_> size 0x8 at 0x0.
@@ -61149,14 +61378,16 @@ const _: () = assert!(core::mem::offset_of!(BanishEffect, field_94) == 0x94);
 pub struct BarrierProjectile {
     /// +0x0 `vtbl:BarrierProjectile:0`, rtti
     pub __vftable: *const vtables::BarrierProjectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BarrierProjectile:20`, rtti
     pub __vftable_20: *const vtables::BarrierProjectile_vtable_20,
@@ -61291,10 +61522,11 @@ pub struct BarrierProjectile {
 }
 const _: () = assert!(size_of::<BarrierProjectile>() == 0x200);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BarrierProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BarrierProjectile, __vftable_30) == 0x30);
@@ -61594,14 +61826,16 @@ const _: () = assert!(core::mem::offset_of!(BasicArrayImplementation_unsigned_ch
 pub struct BeamProjectile {
     /// +0x0 `vtbl:BeamProjectile:0`, rtti
     pub __vftable: *const vtables::BeamProjectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BeamProjectile:20`, rtti
     pub __vftable_20: *const vtables::BeamProjectile_vtable_20,
@@ -61740,10 +61974,11 @@ pub struct BeamProjectile {
 }
 const _: () = assert!(size_of::<BeamProjectile>() == 0x248);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BeamProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, __vftable_30) == 0x30);
@@ -62430,14 +62665,16 @@ const _: () = assert!(core::mem::offset_of!(CellMopp, field_EC) == 0xEC);
 pub struct ChainExplosion {
     /// +0x0 `vtbl:ChainExplosion:0`, rtti
     pub __vftable: *const vtables::ChainExplosion_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ChainExplosion:20`, rtti
     pub __vftable_20: *const vtables::ChainExplosion_vtable_20,
@@ -62565,10 +62802,11 @@ pub struct ChainExplosion {
 }
 const _: () = assert!(size_of::<ChainExplosion>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ChainExplosion, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ChainExplosion, __vftable_30) == 0x30);
@@ -62658,14 +62896,16 @@ const _: () = assert!(core::mem::offset_of!(ChairFurnitureExitHandler, __vftable
 pub struct Character {
     /// +0x0 `vtbl:Character:0`, rtti
     pub __vftable: *const vtables::Character_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Character:20`, rtti
     pub __vftable_20: *const vtables::Character_vtable_20,
@@ -62766,10 +63006,11 @@ pub struct Character {
 }
 const _: () = assert!(size_of::<Character>() == 0x2B8);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Character, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Character, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Character, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(Character, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(Character, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Character, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Character, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(Character, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Character, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(Character, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable_30) == 0x30);
@@ -74852,14 +75093,16 @@ const _: () = assert!(core::mem::offset_of!(ConcussionEffect, field_88) == 0x88)
 pub struct ConeProjectile {
     /// +0x0 `vtbl:ConeProjectile:0`, rtti
     pub __vftable: *const vtables::ConeProjectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ConeProjectile:20`, rtti
     pub __vftable_20: *const vtables::ConeProjectile_vtable_20,
@@ -75005,10 +75248,11 @@ pub struct ConeProjectile {
 }
 const _: () = assert!(size_of::<ConeProjectile>() == 0x220);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ConeProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ConeProjectile, __vftable_30) == 0x30);
@@ -77123,14 +77367,16 @@ const _: () = assert!(core::mem::offset_of!(DetectionState, field_44) == 0x44);
 pub struct DialoguePackage {
     /// +0x0 `vtbl:DialoguePackage:0`, rtti
     pub __vftable: *const vtables::DialoguePackage_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
     pub field_20: u32,
@@ -77179,10 +77425,11 @@ pub struct DialoguePackage {
 }
 const _: () = assert!(size_of::<DialoguePackage>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(DialoguePackage, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(DialoguePackage, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(DialoguePackage, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(DialoguePackage, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(DialoguePackage, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_25) == 0x25);
@@ -77839,14 +78086,16 @@ const _: () = assert!(core::mem::offset_of!(DualValueModifierEffect, field_98) =
 pub struct EffectSetting {
     /// +0x0 `vtbl:EffectSetting:0`, rtti
     pub __vftable: *const vtables::EffectSetting_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:EffectSetting:20`, rtti
     pub __vftable_20: *const vtables::EffectSetting_vtable_20,
@@ -77947,10 +78196,11 @@ pub struct EffectSetting {
 }
 const _: () = assert!(size_of::<EffectSetting>() == 0x198);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_38) == 0x38);
@@ -78026,14 +78276,16 @@ const _: () = assert!(core::mem::offset_of!(EnableCharacterPitchHandler, __vftab
 pub struct EnchantmentItem {
     /// +0x0 `vtbl:EnchantmentItem:0`, rtti
     pub __vftable: *const vtables::EnchantmentItem_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -78090,10 +78342,11 @@ pub struct EnchantmentItem {
 }
 const _: () = assert!(size_of::<EnchantmentItem>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(EnchantmentItem, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_24) == 0x24);
@@ -78382,14 +78635,16 @@ const _: () = assert!(core::mem::offset_of!(ExitCartEndHandler, __vftable) == 0x
 pub struct Explosion {
     /// +0x0 `vtbl:Explosion:0`, rtti
     pub __vftable: *const vtables::Explosion_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Explosion:20`, rtti
     pub __vftable_20: *const vtables::Explosion_vtable_20,
@@ -78489,10 +78744,11 @@ pub struct Explosion {
 }
 const _: () = assert!(size_of::<Explosion>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(Explosion, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(Explosion, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(Explosion, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Explosion, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Explosion, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(Explosion, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Explosion, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Explosion, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(Explosion, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Explosion, __vftable_30) == 0x30);
@@ -80626,14 +80882,16 @@ const _: () = assert!(core::mem::offset_of!(FirstPersonState, __vftable_20) == 0
 pub struct FlameProjectile {
     /// +0x0 `vtbl:FlameProjectile:0`, rtti
     pub __vftable: *const vtables::FlameProjectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:FlameProjectile:20`, rtti
     pub __vftable_20: *const vtables::FlameProjectile_vtable_20,
@@ -80767,10 +81025,11 @@ pub struct FlameProjectile {
 }
 const _: () = assert!(size_of::<FlameProjectile>() == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(FlameProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, __vftable_30) == 0x30);
@@ -80840,14 +81099,16 @@ const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_1E0) == 0x1E0
 pub struct FleePackage {
     /// +0x0 `vtbl:FleePackage:0`, rtti
     pub __vftable: *const vtables::FleePackage_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
     pub field_20: u32,
@@ -80903,10 +81164,11 @@ pub struct FleePackage {
 }
 const _: () = assert!(size_of::<FleePackage>() == 0x118);
 const _: () = assert!(core::mem::offset_of!(FleePackage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(FleePackage, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(FleePackage, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(FleePackage, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(FleePackage, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(FleePackage, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(FleePackage, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(FleePackage, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(FleePackage, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(FleePackage, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(FleePackage, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(FleePackage, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(FleePackage, field_25) == 0x25);
@@ -81692,14 +81954,16 @@ const _: () = assert!(core::mem::offset_of!(GrabActorEffect, field_94) == 0x94);
 pub struct GrenadeProjectile {
     /// +0x0 `vtbl:GrenadeProjectile:0`, rtti
     pub __vftable: *const vtables::GrenadeProjectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:GrenadeProjectile:20`, rtti
     pub __vftable_20: *const vtables::GrenadeProjectile_vtable_20,
@@ -81836,10 +82100,11 @@ pub struct GrenadeProjectile {
 }
 const _: () = assert!(size_of::<GrenadeProjectile>() == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, __vftable_30) == 0x30);
@@ -82360,14 +82625,16 @@ const _: () = assert!(core::mem::offset_of!(HavokStreambufFactory, __vftable) ==
 pub struct Hazard {
     /// +0x0 `vtbl:Hazard:0`, rtti
     pub __vftable: *const vtables::Hazard_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Hazard:20`, rtti
     pub __vftable_20: *const vtables::Hazard_vtable_20,
@@ -82425,10 +82692,11 @@ pub struct Hazard {
 }
 const _: () = assert!(size_of::<Hazard>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(Hazard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(Hazard, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(Hazard, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Hazard, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Hazard, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(Hazard, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Hazard, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Hazard, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(Hazard, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Hazard, __vftable_30) == 0x30);
@@ -85473,14 +85741,16 @@ const _: () = assert!(core::mem::offset_of!(InfiniteList, field_80) == 0x80);
 pub struct IngredientItem {
     /// +0x0 `vtbl:IngredientItem:0`, rtti
     pub __vftable: *const vtables::IngredientItem_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -85561,10 +85831,11 @@ pub struct IngredientItem {
 }
 const _: () = assert!(size_of::<IngredientItem>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(IngredientItem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(IngredientItem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(IngredientItem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(IngredientItem, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(IngredientItem, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(IngredientItem, field_24) == 0x24);
@@ -87637,14 +87908,16 @@ const _: () = assert!(core::mem::offset_of!(MagicCaster, field_44) == 0x44);
 pub struct MagicItem {
     /// +0x0 `vtbl:MagicItem:0`, rtti
     pub __vftable: *const vtables::MagicItem_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -87682,10 +87955,11 @@ pub struct MagicItem {
 }
 const _: () = assert!(size_of::<MagicItem>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(MagicItem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MagicItem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(MagicItem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(MagicItem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(MagicItem, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(MagicItem, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MagicItem, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(MagicItem, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(MagicItem, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(MagicItem, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(MagicItem, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(MagicItem, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(MagicItem, field_24) == 0x24);
@@ -88644,14 +88918,16 @@ const _: () = assert!(core::mem::offset_of!(MessageHandler, field_20) == 0x20);
 pub struct MissileProjectile {
     /// +0x0 `vtbl:MissileProjectile:0`, rtti
     pub __vftable: *const vtables::MissileProjectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:MissileProjectile:20`, rtti
     pub __vftable_20: *const vtables::MissileProjectile_vtable_20,
@@ -88788,10 +89064,11 @@ pub struct MissileProjectile {
 }
 const _: () = assert!(size_of::<MissileProjectile>() == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(MissileProjectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, __vftable_30) == 0x30);
@@ -91526,14 +91803,16 @@ const _: () = assert!(core::mem::offset_of!(NPCDetachHandler, __vftable) == 0x0)
 pub struct NavMesh {
     /// +0x0 `vtbl:NavMesh:0`, rtti
     pub __vftable: *const vtables::NavMesh_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:NavMesh:20`, rtti
     pub __vftable_20: *const vtables::NavMesh_vtable_20,
@@ -91552,10 +91831,11 @@ pub struct NavMesh {
 }
 const _: () = assert!(size_of::<NavMesh>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(NavMesh, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMesh, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMesh, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMesh, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMesh, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NavMesh, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMesh, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMesh, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(NavMesh, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMesh, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NavMesh, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NavMesh, __vftable_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMesh, field_30) == 0x30);
@@ -91571,14 +91851,16 @@ const _: () = assert!(core::mem::offset_of!(NavMesh, field_138) == 0x138);
 pub struct NavMeshInfoMap {
     /// +0x0 `vtbl:NavMeshInfoMap:0`, rtti
     pub __vftable: *const vtables::NavMeshInfoMap_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:NavMeshInfoMap:20`, rtti
     pub __vftable_20: *const vtables::NavMeshInfoMap_vtable_20,
@@ -91612,10 +91894,11 @@ pub struct NavMeshInfoMap {
 }
 const _: () = assert!(size_of::<NavMeshInfoMap>() == 0xF0);
 const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, field_8C) == 0x8C);
@@ -102233,14 +102516,16 @@ const _: () = assert!(core::mem::offset_of!(PlayerChairEnterHandler, __vftable) 
 pub struct PlayerCharacter {
     /// +0x0 `vtbl:PlayerCharacter:0`, rtti
     pub __vftable: *const vtables::PlayerCharacter_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:PlayerCharacter:20`, rtti
     pub __vftable_20: *const vtables::PlayerCharacter_vtable_20,
@@ -102832,10 +103117,11 @@ pub struct PlayerCharacter {
 }
 const _: () = assert!(size_of::<PlayerCharacter>() == 0xBF0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_30) == 0x30);
@@ -103156,14 +103442,16 @@ const _: () = assert!(core::mem::offset_of!(Precipitation, field_88) == 0x88);
 pub struct Projectile {
     /// +0x0 `vtbl:Projectile:0`, rtti
     pub __vftable: *const vtables::Projectile_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Projectile:20`, rtti
     pub __vftable_20: *const vtables::Projectile_vtable_20,
@@ -103295,10 +103583,11 @@ pub struct Projectile {
 }
 const _: () = assert!(size_of::<Projectile>() == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(Projectile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(Projectile, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(Projectile, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Projectile, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Projectile, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(Projectile, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Projectile, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Projectile, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(Projectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Projectile, __vftable_30) == 0x30);
@@ -104881,14 +105170,16 @@ const _: () = assert!(core::mem::offset_of!(ScreenshotHandler, __vftable) == 0x0
 pub struct Script {
     /// +0x0 `vtbl:Script:0`, rtti
     pub __vftable: *const vtables::Script_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -104919,10 +105210,11 @@ pub struct Script {
 }
 const _: () = assert!(size_of::<Script>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(Script, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Script, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Script, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Script, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(Script, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(Script, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Script, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Script, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(Script, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Script, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(Script, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(Script, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Script, field_30) == 0x30);
@@ -105033,14 +105325,16 @@ const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_98) == 0x98);
 pub struct ScrollItem {
     /// +0x0 `vtbl:ScrollItem:0`, rtti
     pub __vftable: *const vtables::ScrollItem_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -105136,10 +105430,11 @@ pub struct ScrollItem {
 }
 const _: () = assert!(size_of::<ScrollItem>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ScrollItem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ScrollItem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ScrollItem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ScrollItem, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ScrollItem, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, field_24) == 0x24);
@@ -106774,14 +107069,16 @@ const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_88) == 0x88
 pub struct SpectatorPackage {
     /// +0x0 `vtbl:SpectatorPackage:0`, rtti
     pub __vftable: *const vtables::SpectatorPackage_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
     pub field_20: u32,
@@ -106834,10 +107131,11 @@ pub struct SpectatorPackage {
 }
 const _: () = assert!(size_of::<SpectatorPackage>() == 0x120);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(SpectatorPackage, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SpectatorPackage, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(SpectatorPackage, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(SpectatorPackage, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(SpectatorPackage, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_25) == 0x25);
@@ -106867,14 +107165,16 @@ const _: () = assert!(core::mem::offset_of!(SpectatorPackage, field_118) == 0x11
 pub struct SpellItem {
     /// +0x0 `vtbl:SpellItem:0`, rtti
     pub __vftable: *const vtables::SpellItem_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -106939,10 +107239,11 @@ pub struct SpellItem {
 }
 const _: () = assert!(size_of::<SpellItem>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(SpellItem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SpellItem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(SpellItem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(SpellItem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(SpellItem, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(SpellItem, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SpellItem, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(SpellItem, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(SpellItem, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(SpellItem, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(SpellItem, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(SpellItem, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(SpellItem, field_24) == 0x24);
@@ -108230,14 +108531,16 @@ const _: () = assert!(core::mem::offset_of!(TES, field_2B8) == 0x2B8);
 pub struct TESActorBase {
     /// +0x0 `vtbl:TESActorBase:0`, rtti
     pub __vftable: *const vtables::TESActorBase_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -108333,10 +108636,11 @@ pub struct TESActorBase {
 }
 const _: () = assert!(size_of::<TESActorBase>() == 0x150);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_24) == 0x24);
@@ -108401,14 +108705,16 @@ const _: () = assert!(core::mem::offset_of!(TESAmbushPackageData, field_8) == 0x
 pub struct TESAmmo {
     /// +0x0 `vtbl:TESAmmo:0`, rtti
     pub __vftable: *const vtables::TESAmmo_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -108478,10 +108784,11 @@ pub struct TESAmmo {
 }
 const _: () = assert!(size_of::<TESAmmo>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(TESAmmo, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESAmmo, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESAmmo, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESAmmo, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESAmmo, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESAmmo, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESAmmo, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESAmmo, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESAmmo, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESAmmo, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESAmmo, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESAmmo, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESAmmo, field_24) == 0x24);
@@ -108532,14 +108839,16 @@ const _: () = assert!(core::mem::offset_of!(TESAttackDamageForm, field_8) == 0x8
 pub struct TESBoundAnimObject {
     /// +0x0 `vtbl:TESBoundAnimObject:0`, rtti
     pub __vftable: *const vtables::TESBoundAnimObject_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -108557,10 +108866,11 @@ pub struct TESBoundAnimObject {
 }
 const _: () = assert!(size_of::<TESBoundAnimObject>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_24) == 0x24);
@@ -108575,14 +108885,16 @@ const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_2A) == 0x2
 pub struct TESBoundObject {
     /// +0x0 `vtbl:TESBoundObject:0`, rtti
     pub __vftable: *const vtables::TESBoundObject_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, ctor store
     pub field_20: u16,
@@ -108600,10 +108912,11 @@ pub struct TESBoundObject {
 }
 const _: () = assert!(size_of::<TESBoundObject>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESBoundObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESBoundObject, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESBoundObject, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESBoundObject, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESBoundObject, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESBoundObject, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_24) == 0x24);
@@ -108666,14 +108979,16 @@ const _: () = assert!(core::mem::offset_of!(TESChildCell, __vftable) == 0x0);
 pub struct TESClass {
     /// +0x0 `vtbl:TESClass:0`, rtti
     pub __vftable: *const vtables::TESClass_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESClass:20`, rtti
     pub __vftable_20: *const vtables::TESClass_vtable_20,
@@ -108702,10 +109017,11 @@ pub struct TESClass {
 }
 const _: () = assert!(size_of::<TESClass>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESClass, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESClass, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESClass, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESClass, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESClass, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESClass, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESClass, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESClass, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESClass, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESClass, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESClass, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESClass, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESClass, field_38) == 0x38);
@@ -108724,14 +109040,16 @@ const _: () = assert!(core::mem::offset_of!(TESClass, field_70) == 0x70);
 pub struct TESClimate {
     /// +0x0 `vtbl:TESClimate:0`, rtti
     pub __vftable: *const vtables::TESClimate_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `class:TESModel`, member ctor TESModel
     pub m_TESModel_20: TESModel,
@@ -108744,10 +109062,11 @@ pub struct TESClimate {
 }
 const _: () = assert!(size_of::<TESClimate>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESClimate, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESClimate, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESClimate, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESClimate, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESClimate, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESClimate, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESClimate, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESClimate, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESClimate, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESClimate, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESClimate, m_TESModel_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESClimate, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESClimate, field_7C) == 0x7C);
@@ -108759,14 +109078,16 @@ const _: () = assert!(core::mem::offset_of!(TESClimate, field_7C) == 0x7C);
 pub struct TESCombatStyle {
     /// +0x0 `vtbl:TESCombatStyle:0`, rtti
     pub __vftable: *const vtables::TESCombatStyle_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store (widths [4, 16])
     pub field_20: u32,
@@ -108835,10 +109156,11 @@ pub struct TESCombatStyle {
 }
 const _: () = assert!(size_of::<TESCombatStyle>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESCombatStyle, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESCombatStyle, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESCombatStyle, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESCombatStyle, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESCombatStyle, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESCombatStyle, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_28) == 0x28);
@@ -108918,6 +109240,58 @@ const _: () = assert!(core::mem::offset_of!(TESCustomPackageData, field_28) == 0
 const _: () = assert!(core::mem::offset_of!(TESCustomPackageData, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESCustomPackageData, field_38) == 0x38);
 
+/// `TESDataHandler`: size 0xDD8 (exact).
+/// Evidence: the loaded files and the per-type form arrays; one static instance; static object at rva 0x21a2890 (placeholder ID_400457), constructed by 0x1b6290 with this=0x21a2890 (hit dump 01-menu: 1 hit, caller TES::ctor 0x19f45f, arg 21a2890); the ctor initialises fields up to 0xdd0 and the next static symbol lies at 0x21a3668 = +0xdd8; run-forms peek dh-menu read 0xdd8 bytes consistent with every field below.
+#[repr(C)]
+pub struct TESDataHandler {
+    pub unknown_0: [u8; 16],
+    /// +0x10 `undefined1`, semantic
+    pub formArrays: [u8; 3312],
+    /// +0xD00 `ptr:TESRegionList`, semantic
+    pub regionList: *mut TESRegionList,
+    /// +0xD08 `undefined1`, semantic
+    pub cells: [u8; 24],
+    /// +0xD20 `undefined1`, semantic
+    pub addonNodes: [u8; 24],
+    pub unknown_D38: [u8; 24],
+    /// +0xD50 `undefined4`, semantic
+    pub nextFormID: u32,
+    pub unknown_D54: [u8; 4],
+    /// +0xD58 `ptr:TESFile`, semantic
+    pub activeFile: *mut TESFile,
+    /// +0xD60 `class:BSSimpleListNode`, semantic
+    pub files: BSSimpleListNode,
+    /// +0xD70 `class:BSTArray`, semantic
+    pub compiledFiles: BSTArray,
+    /// +0xD88 `class:BSTArray`, semantic
+    pub lightFiles: BSTArray,
+    pub unknown_DA0: [u8; 8],
+    /// +0xDA8 `undefined1`, semantic
+    pub skipFormRegistration: u8,
+    /// +0xDA9 `undefined1`, semantic
+    pub lockNextFormID: u8,
+    pub unknown_DAA: [u8; 6],
+    /// +0xDB0 `ptr:TESRegionDataManager`, semantic
+    pub regionDataManager: *mut TESRegionDataManager,
+    pub unknown_DB8: [u8; 8],
+    /// +0xDC0 `class:BSTArray`, semantic
+    pub selectedFiles: BSTArray,
+}
+const _: () = assert!(size_of::<TESDataHandler>() == 0xDD8);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, formArrays) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, regionList) == 0xD00);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, cells) == 0xD08);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, addonNodes) == 0xD20);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, nextFormID) == 0xD50);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, activeFile) == 0xD58);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, files) == 0xD60);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, compiledFiles) == 0xD70);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, lightFiles) == 0xD88);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, skipFormRegistration) == 0xDA8);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, lockNextFormID) == 0xDA9);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, regionDataManager) == 0xDB0);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, selectedFiles) == 0xDC0);
+
 /// `TESDescription`: size 0x10 (exact, medium); primary base `BaseFormComponent`.
 /// Evidence: lower bound BGSApparatus (size 0x120 at 0x110) adds no fields or bases meets upper bound derived BGSApparatus size 0x120 at 0x110.
 /// Bases: `BaseFormComponent`@0x0.
@@ -108985,6 +109359,46 @@ const _: () = assert!(size_of::<TESEatPackageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESEatPackageData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESEatPackageData, field_8) == 0x8);
 
+/// `TESEditorIDMap`: size 0x30 (exact).
+/// Evidence: hash map editor id to TESForm*; only forms whose class implements GetFormEditorID are in it; same box layout as TESFormIDMap, allocated by 0x1e6eb0 with capacity 0x1000 and grown since (run-forms peek edidmap: cap=32768 free=10969 sentinel=rva 0x2078f38); keys are BSFixedString (interned char*, compared by pointer in 0x1e7bf0).
+#[repr(C)]
+pub struct TESEditorIDMap {
+    pub unknown_0: [u8; 12],
+    /// +0xC `undefined4`, semantic
+    pub capacity: u32,
+    /// +0x10 `undefined4`, semantic
+    pub free: u32,
+    /// +0x14 `undefined4`, semantic
+    pub freeScan: u32,
+    /// +0x18 `pointer`, semantic
+    pub sentinel: *mut c_void,
+    pub unknown_20: [u8; 8],
+    /// +0x28 `pointer`, semantic
+    pub entries: *mut c_void,
+}
+const _: () = assert!(size_of::<TESEditorIDMap>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, capacity) == 0xC);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, free) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, freeScan) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, sentinel) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, entries) == 0x28);
+
+/// `TESEditorIDMapEntry`: size 0x18 (exact).
+/// Evidence: editor id map bucket; entry layout from 0x1e7bf0 and 0x1c5fb0 (BSFixedString key at +0, TESForm* at +8, chain at +0x10).
+#[repr(C)]
+pub struct TESEditorIDMapEntry {
+    /// +0x0 `pointer`, semantic
+    pub editorID: *mut c_void,
+    /// +0x8 `ptr:TESForm`, semantic
+    pub form: *mut TESForm,
+    /// +0x10 `pointer`, semantic
+    pub next: *mut c_void,
+}
+const _: () = assert!(size_of::<TESEditorIDMapEntry>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, editorID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, form) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, next) == 0x10);
+
 /// `TESEffectShader`: size 0x220 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0x220 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
@@ -108993,14 +109407,16 @@ const _: () = assert!(core::mem::offset_of!(TESEatPackageData, field_8) == 0x8);
 pub struct TESEffectShader {
     /// +0x0 `vtbl:TESEffectShader:0`, rtti
     pub __vftable: *const vtables::TESEffectShader_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 153],
     /// +0xB4 `undefined8`, ctor store
     pub field_B4: u64,
@@ -109012,10 +109428,11 @@ pub struct TESEffectShader {
 }
 const _: () = assert!(size_of::<TESEffectShader>() == 0x220);
 const _: () = assert!(core::mem::offset_of!(TESEffectShader, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESEffectShader, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESEffectShader, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESEffectShader, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESEffectShader, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESEffectShader, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESEffectShader, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESEffectShader, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESEffectShader, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESEffectShader, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESEffectShader, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(TESEffectShader, field_BC) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(TESEffectShader, field_C4) == 0xC4);
@@ -109063,14 +109480,16 @@ const _: () = assert!(core::mem::offset_of!(TESEscortPackageData, field_10) == 0
 pub struct TESEyes {
     /// +0x0 `vtbl:TESEyes:0`, rtti
     pub __vftable: *const vtables::TESEyes_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESEyes:20`, rtti
     pub __vftable_20: *const vtables::TESEyes_vtable_20,
@@ -109084,10 +109503,11 @@ pub struct TESEyes {
 }
 const _: () = assert!(size_of::<TESEyes>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(TESEyes, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESEyes, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESEyes, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESEyes, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESEyes, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESEyes, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESEyes, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESEyes, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESEyes, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESEyes, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESEyes, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESEyes, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESEyes, field_40) == 0x40);
@@ -109099,14 +109519,16 @@ const _: () = assert!(core::mem::offset_of!(TESEyes, field_40) == 0x40);
 pub struct TESFaction {
     /// +0x0 `vtbl:TESFaction:0`, rtti
     pub __vftable: *const vtables::TESFaction_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESFaction:20`, rtti
     pub __vftable_20: *const vtables::TESFaction_vtable_20,
@@ -109172,10 +109594,11 @@ pub struct TESFaction {
 }
 const _: () = assert!(size_of::<TESFaction>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESFaction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESFaction, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESFaction, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESFaction, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESFaction, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESFaction, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESFaction, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESFaction, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESFaction, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESFaction, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESFaction, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESFaction, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESFaction, field_38) == 0x38);
@@ -109205,6 +109628,66 @@ const _: () = assert!(core::mem::offset_of!(TESFaction, field_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESFaction, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(TESFaction, field_FC) == 0xFC);
 
+/// `TESFile`: size 0x4C8 (exact).
+/// Evidence: one loaded plugin file; 0x4c8 bytes: allocated with 0x4c8 in 0x1cf680 and freed with 0x4c8 in 0x1ce6f0 and 0x1bdd00; the ctor 0x1c9b20 was hit 10 times in run-forms, once per plugin in the Data folder; name and index fields read live (file-skyrim, file-update, file-curios, file-fish, cfile-*, lfile-*).
+#[repr(C)]
+pub struct TESFile {
+    pub unknown_0: [u8; 88],
+    /// +0x58 `undefined1`, semantic
+    pub name: [u8; 260],
+    /// +0x15C `undefined1`, semantic
+    pub path: [u8; 260],
+    pub unknown_260: [u8; 460],
+    /// +0x42C `float`, semantic
+    pub version: f32,
+    pub unknown_430: [u8; 4],
+    /// +0x434 `undefined4`, semantic
+    pub currentFormID: u32,
+    /// +0x438 `undefined4`, semantic
+    pub fileFlags: u32,
+    pub unknown_43C: [u8; 4],
+    /// +0x440 `class:BSSimpleListNode`, semantic
+    pub masterNames: BSSimpleListNode,
+    pub unknown_450: [u8; 16],
+    /// +0x460 `undefined4`, semantic
+    pub masterCount: u32,
+    pub unknown_464: [u8; 4],
+    /// +0x468 `pointer`, semantic
+    pub masters: *mut c_void,
+    pub unknown_470: [u8; 8],
+    /// +0x478 `undefined1`, semantic
+    pub compileIndex: u8,
+    pub unknown_479: [u8; 1],
+    /// +0x47A `undefined2`, semantic
+    pub lightIndex: u16,
+    pub unknown_47C: [u8; 76],
+}
+const _: () = assert!(size_of::<TESFile>() == 0x4C8);
+const _: () = assert!(core::mem::offset_of!(TESFile, name) == 0x58);
+const _: () = assert!(core::mem::offset_of!(TESFile, path) == 0x15C);
+const _: () = assert!(core::mem::offset_of!(TESFile, version) == 0x42C);
+const _: () = assert!(core::mem::offset_of!(TESFile, currentFormID) == 0x434);
+const _: () = assert!(core::mem::offset_of!(TESFile, fileFlags) == 0x438);
+const _: () = assert!(core::mem::offset_of!(TESFile, masterNames) == 0x440);
+const _: () = assert!(core::mem::offset_of!(TESFile, masterCount) == 0x460);
+const _: () = assert!(core::mem::offset_of!(TESFile, masters) == 0x468);
+const _: () = assert!(core::mem::offset_of!(TESFile, compileIndex) == 0x478);
+const _: () = assert!(core::mem::offset_of!(TESFile, lightIndex) == 0x47A);
+
+/// `TESFileArray`: size 0x10 (exact).
+/// Evidence: the files a form was loaded from, last one wins; object behind TESForm+0x8: 0x1e5ae0 reads a pointer array at +0 and a count at +8; run-forms peek sourcefiles = {0x2436194cca8, 1}.
+#[repr(C)]
+pub struct TESFileArray {
+    /// +0x0 `pointer`, semantic
+    pub files: *mut c_void,
+    /// +0x8 `undefined4`, semantic
+    pub count: u32,
+    pub unknown_C: [u8; 4],
+}
+const _: () = assert!(size_of::<TESFileArray>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESFileArray, files) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESFileArray, count) == 0x8);
+
 /// `TESFlora`: size 0xE8 (exact, medium); primary base `TESObjectACTI`.
 /// Evidence: runtime: 0xE8 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESObjectACTI`@0x0, `TESBoundAnimObject`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x30, `BaseFormComponent`@0x30, `TESModelTextureSwap`@0x40, `TESModel`@0x40, `BaseFormComponent`@0x40, `TESMagicTargetForm`@0xA8, `BGSDestructibleObjectForm`@0x78, `BaseFormComponent`@0x78, `BGSOpenCloseForm`@0x88, `BGSKeywordForm`@0x90, `BaseFormComponent`@0x90, `TESProduceForm`@0xC8, `BaseFormComponent`@0xC8.
@@ -109212,14 +109695,16 @@ const _: () = assert!(core::mem::offset_of!(TESFaction, field_FC) == 0xFC);
 pub struct TESFlora {
     /// +0x0 `vtbl:TESFlora:0`, rtti
     pub __vftable: *const vtables::TESFlora_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -109282,10 +109767,11 @@ pub struct TESFlora {
 }
 const _: () = assert!(size_of::<TESFlora>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(TESFlora, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESFlora, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESFlora, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESFlora, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESFlora, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESFlora, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESFlora, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESFlora, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESFlora, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESFlora, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESFlora, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESFlora, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESFlora, field_24) == 0x24);
@@ -109337,22 +109823,66 @@ const _: () = assert!(core::mem::offset_of!(TESFollowPackageData, field_10) == 0
 pub struct TESForm {
     /// +0x0 `vtbl:TESForm:0`, rtti
     pub __vftable: *const vtables::TESForm_vtable,
-    /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
-    /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
-    /// +0x18 `undefined2`, ctor store
-    pub field_18: u16,
-    /// +0x1A `undefined1`, ctor store
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub formID: u32,
+    /// +0x18 `undefined2`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
 }
 const _: () = assert!(size_of::<TESForm>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESForm, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESForm, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESForm, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESForm, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESForm, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESForm, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESForm, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESForm, formType) == 0x1A);
+
+/// `TESFormIDMap`: size 0x30 (exact).
+/// Evidence: hash map form id to TESForm*, the global form table; 0x30-byte box allocated by 0x1e6eb0 (capacity 0x40000 entries of 0x18); the lookup 0x1e5860 reads capacity at +0xc, the end-of-chain sentinel at +0x18 and the entry array at +0x28; insert/remove take the map at +8; run-forms peek formmap: cap=262144 free=72601 good=154813 sentinel=rva 0x2078f3c entries=0x24340e00020.
+#[repr(C)]
+pub struct TESFormIDMap {
+    pub unknown_0: [u8; 12],
+    /// +0xC `undefined4`, semantic
+    pub capacity: u32,
+    /// +0x10 `undefined4`, semantic
+    pub free: u32,
+    /// +0x14 `undefined4`, semantic
+    pub freeScan: u32,
+    /// +0x18 `pointer`, semantic
+    pub sentinel: *mut c_void,
+    pub unknown_20: [u8; 8],
+    /// +0x28 `pointer`, semantic
+    pub entries: *mut c_void,
+}
+const _: () = assert!(size_of::<TESFormIDMap>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMap, capacity) == 0xC);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMap, free) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMap, freeScan) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMap, sentinel) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMap, entries) == 0x28);
+
+/// `TESFormIDMapEntry`: size 0x18 (exact).
+/// Evidence: form map bucket; next == sentinel ends a chain, next == 0 marks an unused bucket; entry layout from 0x1e5860 (key compare at +0, value at +8, chain pointer at +0x10, stride 0x18); run-forms peek formmap-entries entry 3 = {0x100e41, 0x2435ff1c550, sentinel} and the form at 0x2435ff1c550 has formID 0x100e41.
+#[repr(C)]
+pub struct TESFormIDMapEntry {
+    /// +0x0 `undefined4`, semantic
+    pub formID: u32,
+    pub unknown_4: [u8; 4],
+    /// +0x8 `ptr:TESForm`, semantic
+    pub form: *mut TESForm,
+    /// +0x10 `pointer`, semantic
+    pub next: *mut c_void,
+}
+const _: () = assert!(size_of::<TESFormIDMapEntry>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, formID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, form) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, next) == 0x10);
 
 /// `TESFormUIData`: size 0x18 (exact, medium); primary base `IUIMessageData`.
 /// Evidence: runtime: 0x18 at 1 allocation sites.
@@ -109395,14 +109925,16 @@ const _: () = assert!(core::mem::offset_of!(TESFullName, field_12) == 0x12);
 pub struct TESFurniture {
     /// +0x0 `vtbl:TESFurniture:0`, rtti
     pub __vftable: *const vtables::TESFurniture_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -109463,10 +109995,11 @@ pub struct TESFurniture {
 }
 const _: () = assert!(size_of::<TESFurniture>() == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_24) == 0x24);
@@ -109499,36 +110032,39 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, field_E8) == 0xE8);
 pub struct TESGlobal {
     /// +0x0 `vtbl:TESGlobal:0`, rtti
     pub __vftable: *const vtables::TESGlobal_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined1`, ctor store
-    pub field_30: u8,
+    /// +0x30 `undefined1`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub valueType: u8,
     pub unknown_31: [u8; 3],
-    /// +0x34 `undefined4`, ctor store
-    pub field_34: u32,
+    /// +0x34 `float`, ctor store, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime, semantic, runtime
+    pub value: f32,
 }
 const _: () = assert!(size_of::<TESGlobal>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESGlobal, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESGlobal, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESGlobal, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESGlobal, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESGlobal, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESGlobal, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESGlobal, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESGlobal, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESGlobal, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESGlobal, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESGlobal, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESGlobal, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(TESGlobal, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESGlobal, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(TESGlobal, valueType) == 0x30);
+const _: () = assert!(core::mem::offset_of!(TESGlobal, value) == 0x34);
 
 /// `TESGrass`: size 0x78 (exact, medium); primary base `TESBoundObject`.
 /// Evidence: runtime: 0x78 at 1 allocation sites.
@@ -109537,14 +110073,16 @@ const _: () = assert!(core::mem::offset_of!(TESGlobal, field_34) == 0x34);
 pub struct TESGrass {
     /// +0x0 `vtbl:TESGrass:0`, rtti
     pub __vftable: *const vtables::TESGrass_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -109589,10 +110127,11 @@ pub struct TESGrass {
 }
 const _: () = assert!(size_of::<TESGrass>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESGrass, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESGrass, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESGrass, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESGrass, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESGrass, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESGrass, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESGrass, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESGrass, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESGrass, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESGrass, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESGrass, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESGrass, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESGrass, field_24) == 0x24);
@@ -109618,14 +110157,16 @@ const _: () = assert!(core::mem::offset_of!(TESGrass, field_74) == 0x74);
 pub struct TESIdleForm {
     /// +0x0 `vtbl:TESIdleForm:0`, rtti
     pub __vftable: *const vtables::TESIdleForm_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, ctor store
     pub field_28: u16,
@@ -109652,10 +110193,11 @@ pub struct TESIdleForm {
 }
 const _: () = assert!(size_of::<TESIdleForm>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_2C) == 0x2C);
@@ -109674,14 +110216,16 @@ const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_60) == 0x60);
 pub struct TESImageSpace {
     /// +0x0 `vtbl:TESImageSpace:0`, rtti
     pub __vftable: *const vtables::TESImageSpace_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
@@ -109717,10 +110261,11 @@ pub struct TESImageSpace {
 }
 const _: () = assert!(size_of::<TESImageSpace>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(TESImageSpace, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESImageSpace, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESImageSpace, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESImageSpace, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESImageSpace, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESImageSpace, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESImageSpace, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESImageSpace, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESImageSpace, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESImageSpace, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESImageSpace, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESImageSpace, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(TESImageSpace, field_28) == 0x28);
@@ -109758,14 +110303,16 @@ const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifiableForm, field_8
 pub struct TESImageSpaceModifier {
     /// +0x0 `vtbl:TESImageSpaceModifier:0`, rtti
     pub __vftable: *const vtables::TESImageSpaceModifier_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
@@ -109818,10 +110365,11 @@ pub struct TESImageSpaceModifier {
 }
 const _: () = assert!(size_of::<TESImageSpaceModifier>() == 0x2E0);
 const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_E8) == 0xE8);
@@ -109851,14 +110399,16 @@ const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_2D8) ==
 pub struct TESKey {
     /// +0x0 `vtbl:TESKey:0`, rtti
     pub __vftable: *const vtables::TESKey_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -109923,10 +110473,11 @@ pub struct TESKey {
 }
 const _: () = assert!(size_of::<TESKey>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESKey, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESKey, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESKey, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESKey, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESKey, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESKey, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESKey, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESKey, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESKey, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESKey, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESKey, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESKey, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESKey, field_24) == 0x24);
@@ -109960,14 +110511,16 @@ const _: () = assert!(core::mem::offset_of!(TESKey, field_F8) == 0xF8);
 pub struct TESLandTexture {
     /// +0x0 `vtbl:TESLandTexture:0`, rtti
     pub __vftable: *const vtables::TESLandTexture_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -109988,10 +110541,11 @@ pub struct TESLandTexture {
 }
 const _: () = assert!(size_of::<TESLandTexture>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TESLandTexture, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESLandTexture, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESLandTexture, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESLandTexture, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESLandTexture, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESLandTexture, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_30) == 0x30);
@@ -110007,14 +110561,16 @@ const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_48) == 0x48);
 pub struct TESLevCharacter {
     /// +0x0 `vtbl:TESLevCharacter:0`, rtti
     pub __vftable: *const vtables::TESLevCharacter_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -110054,10 +110610,11 @@ pub struct TESLevCharacter {
 }
 const _: () = assert!(size_of::<TESLevCharacter>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(TESLevCharacter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESLevCharacter, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESLevCharacter, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESLevCharacter, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESLevCharacter, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESLevCharacter, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_24) == 0x24);
@@ -110081,14 +110638,16 @@ const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_88) == 0x88);
 pub struct TESLevItem {
     /// +0x0 `vtbl:TESLevItem:0`, rtti
     pub __vftable: *const vtables::TESLevItem_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -110117,10 +110676,11 @@ pub struct TESLevItem {
 }
 const _: () = assert!(size_of::<TESLevItem>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESLevItem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESLevItem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESLevItem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESLevItem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESLevItem, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESLevItem, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESLevItem, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESLevItem, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESLevItem, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESLevItem, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESLevItem, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESLevItem, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESLevItem, field_24) == 0x24);
@@ -110140,14 +110700,16 @@ const _: () = assert!(core::mem::offset_of!(TESLevItem, field_50) == 0x50);
 pub struct TESLevSpell {
     /// +0x0 `vtbl:TESLevSpell:0`, rtti
     pub __vftable: *const vtables::TESLevSpell_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -110176,10 +110738,11 @@ pub struct TESLevSpell {
 }
 const _: () = assert!(size_of::<TESLevSpell>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESLevSpell, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESLevSpell, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESLevSpell, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESLevSpell, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESLevSpell, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESLevSpell, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESLevSpell, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESLevSpell, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESLevSpell, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESLevSpell, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESLevSpell, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESLevSpell, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESLevSpell, field_24) == 0x24);
@@ -110223,14 +110786,16 @@ const _: () = assert!(core::mem::offset_of!(TESLeveledList, field_20) == 0x20);
 pub struct TESLoadScreen {
     /// +0x0 `vtbl:TESLoadScreen:0`, rtti
     pub __vftable: *const vtables::TESLoadScreen_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 13],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
@@ -110238,10 +110803,11 @@ pub struct TESLoadScreen {
 }
 const _: () = assert!(size_of::<TESLoadScreen>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESLoadScreen, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESLoadScreen, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESLoadScreen, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESLoadScreen, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESLoadScreen, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESLoadScreen, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESLoadScreen, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESLoadScreen, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESLoadScreen, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESLoadScreen, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESLoadScreen, field_28) == 0x28);
 
 /// `TESModel`: size 0x18 (exact, medium); primary base `BaseFormComponent`.
@@ -110351,14 +110917,16 @@ const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, field_30) == 0x
 pub struct TESNPC {
     /// +0x0 `vtbl:TESNPC:0`, rtti
     pub __vftable: *const vtables::TESNPC_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -110477,10 +111045,11 @@ pub struct TESNPC {
 }
 const _: () = assert!(size_of::<TESNPC>() == 0x268);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESNPC, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESNPC, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESNPC, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESNPC, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESNPC, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_24) == 0x24);
@@ -110541,22 +111110,25 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, field_1D8) == 0x1D8);
 pub struct TESObject {
     /// +0x0 `vtbl:TESObject:0`, rtti
     pub __vftable: *const vtables::TESObject_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
 }
 const _: () = assert!(size_of::<TESObject>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObject, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObject, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObject, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObject, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObject, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObject, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObject, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObject, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObject, formType) == 0x1A);
 
 /// `TESObjectACTI`: size 0xC8 (exact, high); primary base `TESBoundAnimObject`.
 /// Evidence: runtime: 0xC8 at 5 allocation sites; agrees with the static allocation sites.
@@ -110565,14 +111137,16 @@ const _: () = assert!(core::mem::offset_of!(TESObject, field_1A) == 0x1A);
 pub struct TESObjectACTI {
     /// +0x0 `vtbl:TESObjectACTI:0`, rtti
     pub __vftable: *const vtables::TESObjectACTI_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -110626,10 +111200,11 @@ pub struct TESObjectACTI {
 }
 const _: () = assert!(size_of::<TESObjectACTI>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectACTI, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectACTI, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectACTI, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectACTI, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectACTI, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_24) == 0x24);
@@ -110659,14 +111234,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_C0) == 0xC0);
 pub struct TESObjectANIO {
     /// +0x0 `vtbl:TESObjectANIO:0`, rtti
     pub __vftable: *const vtables::TESObjectANIO_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectANIO:20`, rtti
     pub __vftable_20: *const vtables::TESObjectANIO_vtable_20,
@@ -110685,10 +111262,11 @@ pub struct TESObjectANIO {
 }
 const _: () = assert!(size_of::<TESObjectANIO>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESObjectANIO, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectANIO, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectANIO, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectANIO, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectANIO, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectANIO, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectANIO, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_48) == 0x48);
@@ -110702,14 +111280,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_58) == 0x58);
 pub struct TESObjectARMA {
     /// +0x0 `vtbl:TESObjectARMA:0`, rtti
     pub __vftable: *const vtables::TESObjectARMA_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectARMA:20`, rtti
     pub __vftable_20: *const vtables::TESObjectARMA_vtable_20,
@@ -110750,10 +111330,11 @@ pub struct TESObjectARMA {
 }
 const _: () = assert!(size_of::<TESObjectARMA>() == 0x178);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMA, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMA, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMA, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMA, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMA, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMA, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMA, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMA, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMA, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMA, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMA, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMA, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMA, __vftable_30) == 0x30);
@@ -110778,14 +111359,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectARMA, field_170) == 0x170);
 pub struct TESObjectARMO {
     /// +0x0 `vtbl:TESObjectARMO:0`, rtti
     pub __vftable: *const vtables::TESObjectARMO_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -110871,10 +111454,11 @@ pub struct TESObjectARMO {
 }
 const _: () = assert!(size_of::<TESObjectARMO>() == 0x228);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMO, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMO, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMO, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMO, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectARMO, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_24) == 0x24);
@@ -110919,14 +111503,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1F8) == 0x1F8);
 pub struct TESObjectBOOK {
     /// +0x0 `vtbl:TESObjectBOOK:0`, rtti
     pub __vftable: *const vtables::TESObjectBOOK_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -110996,10 +111582,11 @@ pub struct TESObjectBOOK {
 }
 const _: () = assert!(size_of::<TESObjectBOOK>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_24) == 0x24);
@@ -111035,14 +111622,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, field_108) == 0x108);
 pub struct TESObjectCELL {
     /// +0x0 `vtbl:TESObjectCELL:0`, rtti
     pub __vftable: *const vtables::TESObjectCELL_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectCELL:20`, rtti
     pub __vftable_20: *const vtables::TESObjectCELL_vtable_20,
@@ -111108,10 +111697,11 @@ pub struct TESObjectCELL {
 }
 const _: () = assert!(size_of::<TESObjectCELL>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectCELL, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectCELL, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectCELL, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectCELL, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectCELL, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_31) == 0x31);
@@ -111146,14 +111736,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_140) == 0x140);
 pub struct TESObjectCONT {
     /// +0x0 `vtbl:TESObjectCONT:0`, rtti
     pub __vftable: *const vtables::TESObjectCONT_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -111213,10 +111805,11 @@ pub struct TESObjectCONT {
 }
 const _: () = assert!(size_of::<TESObjectCONT>() == 0xD0);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectCONT, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectCONT, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectCONT, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectCONT, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectCONT, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_24) == 0x24);
@@ -111248,14 +111841,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_C8) == 0xC8);
 pub struct TESObjectDOOR {
     /// +0x0 `vtbl:TESObjectDOOR:0`, rtti
     pub __vftable: *const vtables::TESObjectDOOR_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -111303,10 +111898,11 @@ pub struct TESObjectDOOR {
 }
 const _: () = assert!(size_of::<TESObjectDOOR>() == 0xD0);
 const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_24) == 0x24);
@@ -111333,14 +111929,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_B0) == 0xB0);
 pub struct TESObjectLAND {
     /// +0x0 `vtbl:TESObjectLAND:0`, rtti
     pub __vftable: *const vtables::TESObjectLAND_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectLAND:20`, rtti
     pub __vftable_20: *const vtables::TESObjectLAND_vtable_20,
@@ -111356,10 +111954,11 @@ pub struct TESObjectLAND {
 }
 const _: () = assert!(size_of::<TESObjectLAND>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(TESObjectLAND, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectLAND, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLAND, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectLAND, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectLAND, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectLAND, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectLAND, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_30) == 0x30);
@@ -111373,14 +111972,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_40) == 0x40);
 pub struct TESObjectLIGH {
     /// +0x0 `vtbl:TESObjectLIGH:0`, rtti
     pub __vftable: *const vtables::TESObjectLIGH_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -111437,10 +112038,11 @@ pub struct TESObjectLIGH {
 }
 const _: () = assert!(size_of::<TESObjectLIGH>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_24) == 0x24);
@@ -111470,14 +112072,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_D8) == 0xD8);
 pub struct TESObjectMISC {
     /// +0x0 `vtbl:TESObjectMISC:0`, rtti
     pub __vftable: *const vtables::TESObjectMISC_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -111542,10 +112146,11 @@ pub struct TESObjectMISC {
 }
 const _: () = assert!(size_of::<TESObjectMISC>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESObjectMISC, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectMISC, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectMISC, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectMISC, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectMISC, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectMISC, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_24) == 0x24);
@@ -111579,14 +112184,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectMISC, field_F8) == 0xF8);
 pub struct TESObjectREFR {
     /// +0x0 `vtbl:TESObjectREFR:0`, rtti
     pub __vftable: *const vtables::TESObjectREFR_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectREFR:20`, rtti
     pub __vftable_20: *const vtables::TESObjectREFR_vtable_20,
@@ -111623,10 +112230,11 @@ pub struct TESObjectREFR {
 }
 const _: () = assert!(size_of::<TESObjectREFR>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __vftable_30) == 0x30);
@@ -111733,14 +112341,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncControlle
 pub struct TESObjectSTAT {
     /// +0x0 `vtbl:TESObjectSTAT:0`, rtti
     pub __vftable: *const vtables::TESObjectSTAT_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -111781,10 +112391,11 @@ pub struct TESObjectSTAT {
 }
 const _: () = assert!(size_of::<TESObjectSTAT>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_24) == 0x24);
@@ -111808,14 +112419,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_7B) == 0x7B);
 pub struct TESObjectTREE {
     /// +0x0 `vtbl:TESObjectTREE:0`, rtti
     pub __vftable: *const vtables::TESObjectTREE_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -111880,10 +112493,11 @@ pub struct TESObjectTREE {
 }
 const _: () = assert!(size_of::<TESObjectTREE>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectTREE, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectTREE, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectTREE, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectTREE, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectTREE, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_24) == 0x24);
@@ -111919,14 +112533,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_C0) == 0xC0);
 pub struct TESObjectWEAP {
     /// +0x0 `vtbl:TESObjectWEAP:0`, rtti
     pub __vftable: *const vtables::TESObjectWEAP_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -112020,10 +112636,11 @@ pub struct TESObjectWEAP {
 }
 const _: () = assert!(size_of::<TESObjectWEAP>() == 0x220);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_24) == 0x24);
@@ -112071,14 +112688,16 @@ const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_160) == 0x160);
 pub struct TESPackage {
     /// +0x0 `vtbl:TESPackage:0`, rtti
     pub __vftable: *const vtables::TESPackage_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
@@ -112111,10 +112730,11 @@ pub struct TESPackage {
 }
 const _: () = assert!(size_of::<TESPackage>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESPackage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESPackage, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESPackage, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESPackage, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESPackage, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESPackage, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESPackage, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESPackage, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESPackage, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESPackage, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESPackage, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESPackage, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(TESPackage, field_25) == 0x25);
@@ -112200,14 +112820,16 @@ const _: () = assert!(core::mem::offset_of!(TESQualityForm, field_8) == 0x8);
 pub struct TESQuest {
     /// +0x0 `vtbl:TESQuest:0`, rtti
     pub __vftable: *const vtables::TESQuest_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
@@ -112298,10 +112920,11 @@ pub struct TESQuest {
 }
 const _: () = assert!(size_of::<TESQuest>() == 0x268);
 const _: () = assert!(core::mem::offset_of!(TESQuest, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESQuest, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESQuest, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESQuest, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESQuest, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESQuest, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESQuest, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESQuest, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESQuest, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESQuest, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESQuest, __vftable_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_38) == 0x38);
@@ -112344,14 +112967,16 @@ const _: () = assert!(core::mem::offset_of!(TESQuest, field_260) == 0x260);
 pub struct TESRace {
     /// +0x0 `vtbl:TESRace:0`, rtti
     pub __vftable: *const vtables::TESRace_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESRace:20`, rtti
     pub __vftable_20: *const vtables::TESRace_vtable_20,
@@ -112404,10 +113029,11 @@ pub struct TESRace {
 }
 const _: () = assert!(size_of::<TESRace>() == 0x4B8);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESRace, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESRace, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESRace, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESRace, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESRace, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_38) == 0x38);
@@ -112472,14 +113098,16 @@ const _: () = assert!(core::mem::offset_of!(TESReactionForm, field_18) == 0x18);
 pub struct TESRegion {
     /// +0x0 `vtbl:TESRegion:0`, rtti
     pub __vftable: *const vtables::TESRegion_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -112497,10 +113125,11 @@ pub struct TESRegion {
 }
 const _: () = assert!(size_of::<TESRegion>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TESRegion, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESRegion, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESRegion, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESRegion, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESRegion, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESRegion, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESRegion, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESRegion, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESRegion, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESRegion, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESRegion, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESRegion, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESRegion, field_30) == 0x30);
@@ -112698,14 +113327,16 @@ const _: () = assert!(core::mem::offset_of!(TESRegionObjectList, field_1C) == 0x
 pub struct TESShout {
     /// +0x0 `vtbl:TESShout:0`, rtti
     pub __vftable: *const vtables::TESShout_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESShout:20`, rtti
     pub __vftable_20: *const vtables::TESShout_vtable_20,
@@ -112747,10 +113378,11 @@ pub struct TESShout {
 }
 const _: () = assert!(size_of::<TESShout>() == 0xA8);
 const _: () = assert!(core::mem::offset_of!(TESShout, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESShout, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESShout, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESShout, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESShout, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESShout, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESShout, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESShout, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESShout, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESShout, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESShout, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESShout, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESShout, field_38) == 0x38);
@@ -112775,14 +113407,16 @@ const _: () = assert!(core::mem::offset_of!(TESShout, field_A0) == 0xA0);
 pub struct TESSoulGem {
     /// +0x0 `vtbl:TESSoulGem:0`, rtti
     pub __vftable: *const vtables::TESSoulGem_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -112847,10 +113481,11 @@ pub struct TESSoulGem {
 }
 const _: () = assert!(size_of::<TESSoulGem>() == 0x110);
 const _: () = assert!(core::mem::offset_of!(TESSoulGem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESSoulGem, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESSoulGem, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESSoulGem, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESSoulGem, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESSoulGem, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_24) == 0x24);
@@ -112884,14 +113519,16 @@ const _: () = assert!(core::mem::offset_of!(TESSoulGem, field_F8) == 0xF8);
 pub struct TESSound {
     /// +0x0 `vtbl:TESSound:0`, rtti
     pub __vftable: *const vtables::TESSound_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
@@ -112911,10 +113548,11 @@ pub struct TESSound {
 }
 const _: () = assert!(size_of::<TESSound>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESSound, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESSound, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESSound, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESSound, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESSound, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESSound, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESSound, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESSound, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESSound, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESSound, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESSound, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESSound, field_22) == 0x22);
 const _: () = assert!(core::mem::offset_of!(TESSound, field_24) == 0x24);
@@ -112956,14 +113594,16 @@ const _: () = assert!(core::mem::offset_of!(TESTexture, __vftable) == 0x0);
 pub struct TESTopic {
     /// +0x0 `vtbl:TESTopic:0`, rtti
     pub __vftable: *const vtables::TESTopic_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESTopic:20`, rtti
     pub __vftable_20: *const vtables::TESTopic_vtable_20,
@@ -112989,10 +113629,11 @@ pub struct TESTopic {
 }
 const _: () = assert!(size_of::<TESTopic>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(TESTopic, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESTopic, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESTopic, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESTopic, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESTopic, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESTopic, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESTopic, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESTopic, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESTopic, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESTopic, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESTopic, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESTopic, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESTopic, field_31) == 0x31);
@@ -113012,14 +113653,16 @@ const _: () = assert!(core::mem::offset_of!(TESTopic, field_58) == 0x58);
 pub struct TESTopicInfo {
     /// +0x0 `vtbl:TESTopicInfo:0`, rtti
     pub __vftable: *const vtables::TESTopicInfo_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -113036,10 +113679,11 @@ pub struct TESTopicInfo {
 }
 const _: () = assert!(size_of::<TESTopicInfo>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TESTopicInfo, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESTopicInfo, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESTopicInfo, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESTopicInfo, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESTopicInfo, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESTopicInfo, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESTopicInfo, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESTopicInfo, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESTopicInfo, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESTopicInfo, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESTopicInfo, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESTopicInfo, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESTopicInfo, field_38) == 0x38);
@@ -113205,14 +113849,16 @@ const _: () = assert!(core::mem::offset_of!(TESWaterDisplacement, field_28) == 0
 pub struct TESWaterForm {
     /// +0x0 `vtbl:TESWaterForm:0`, rtti
     pub __vftable: *const vtables::TESWaterForm_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWaterForm:20`, rtti
     pub __vftable_20: *const vtables::TESWaterForm_vtable_20,
@@ -113302,10 +113948,11 @@ pub struct TESWaterForm {
 }
 const _: () = assert!(size_of::<TESWaterForm>() == 0x260);
 const _: () = assert!(core::mem::offset_of!(TESWaterForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESWaterForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESWaterForm, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESWaterForm, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESWaterForm, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESWaterForm, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESWaterForm, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESWaterForm, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESWaterForm, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESWaterForm, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESWaterForm, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESWaterForm, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESWaterForm, field_38) == 0x38);
@@ -113511,14 +114158,16 @@ const _: () = assert!(core::mem::offset_of!(TESWaterReflections, field_80) == 0x
 pub struct TESWeather {
     /// +0x0 `vtbl:TESWeather:0`, rtti
     pub __vftable: *const vtables::TESWeather_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 517],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
@@ -113631,10 +114280,11 @@ pub struct TESWeather {
 }
 const _: () = assert!(size_of::<TESWeather>() == 0x8D8);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESWeather, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESWeather, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESWeather, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESWeather, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESWeather, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_220) == 0x220);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_228) == 0x228);
 const _: () = assert!(core::mem::offset_of!(TESWeather, field_230) == 0x230);
@@ -113729,14 +114379,16 @@ const _: () = assert!(core::mem::offset_of!(TESWindListener, field_10) == 0x10);
 pub struct TESWordOfPower {
     /// +0x0 `vtbl:TESWordOfPower:0`, rtti
     pub __vftable: *const vtables::TESWordOfPower_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWordOfPower:20`, rtti
     pub __vftable_20: *const vtables::TESWordOfPower_vtable_20,
@@ -113751,10 +114403,11 @@ pub struct TESWordOfPower {
 }
 const _: () = assert!(size_of::<TESWordOfPower>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESWordOfPower, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESWordOfPower, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESWordOfPower, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESWordOfPower, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESWordOfPower, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_31) == 0x31);
@@ -113768,14 +114421,16 @@ const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_32) == 0x32);
 pub struct TESWorldSpace {
     /// +0x0 `vtbl:TESWorldSpace:0`, rtti
     pub __vftable: *const vtables::TESWorldSpace_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWorldSpace:20`, rtti
     pub __vftable_20: *const vtables::TESWorldSpace_vtable_20,
@@ -113916,10 +114571,11 @@ pub struct TESWorldSpace {
 }
 const _: () = assert!(size_of::<TESWorldSpace>() == 0x358);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESWorldSpace, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESWorldSpace, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESWorldSpace, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESWorldSpace, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESWorldSpace, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_40) == 0x40);
@@ -114550,14 +115206,16 @@ const _: () = assert!(core::mem::offset_of!(TrapTargetEntry, __vftable) == 0x0);
 pub struct TrespassPackage {
     /// +0x0 `vtbl:TrespassPackage:0`, rtti
     pub __vftable: *const vtables::TrespassPackage_vtable,
-    /// +0x8 `undefined8`, base TESForm
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base TESForm
-    pub field_10: u64,
-    /// +0x18 `undefined2`, base TESForm
-    pub field_18: u16,
-    /// +0x1A `undefined1`, base TESForm
-    pub field_1A: u8,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+    pub sourceFiles: *mut TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic
+    pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
     pub field_20: u32,
@@ -114601,10 +115259,11 @@ pub struct TrespassPackage {
 }
 const _: () = assert!(size_of::<TrespassPackage>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TrespassPackage, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TrespassPackage, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TrespassPackage, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TrespassPackage, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TrespassPackage, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, field_25) == 0x25);
@@ -138048,21 +138707,24 @@ pub mod partial {
     pub struct BGSDefaultObjectManager {
         /// +0x0 `vtbl:BGSDefaultObjectManager:0`, rtti
         pub __vftable: *const vtables::BGSDefaultObjectManager_vtable,
-        /// +0x8 `undefined8`, base TESForm
-        pub field_8: u64,
-        /// +0x10 `undefined8`, base TESForm
-        pub field_10: u64,
-        /// +0x18 `undefined2`, base TESForm
-        pub field_18: u16,
-        /// +0x1A `undefined1`, base TESForm
-        pub field_1A: u8,
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        pub sourceFiles: *mut super::TESFileArray,
+        /// +0x10 `undefined4`, base TESForm, semantic
+        pub formFlags: u32,
+        /// +0x14 `undefined4`, base TESForm, semantic
+        pub formID: u32,
+        /// +0x18 `undefined2`, base TESForm, semantic
+        pub inGameFlags: u16,
+        /// +0x1A `undefined1`, base TESForm, semantic
+        pub formType: u8,
         pub unknown_1B: [u8; 5],
     }
     const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, field_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, field_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, field_1A) == 0x1A);
+    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, sourceFiles) == 0x8);
+    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, formFlags) == 0x10);
+    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, formID) == 0x14);
+    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, inGameFlags) == 0x18);
+    const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, formType) == 0x1A);
 
     /// `BGSFootIkRaycastInterfaceDB`: size >= 0x40 (lower bound); partial, the struct stops at the lower bound; primary base `BSIFootIkRaycastInterfaceDB`.
     /// Evidence: field field_38.
@@ -138317,14 +138979,16 @@ pub mod partial {
     pub struct BGSLensFlare {
         /// +0x0 `vtbl:BGSLensFlare:0`, rtti
         pub __vftable: *const vtables::BGSLensFlare_vtable,
-        /// +0x8 `undefined8`, base TESForm
-        pub field_8: u64,
-        /// +0x10 `undefined8`, base TESForm
-        pub field_10: u64,
-        /// +0x18 `undefined2`, base TESForm
-        pub field_18: u16,
-        /// +0x1A `undefined1`, base TESForm
-        pub field_1A: u8,
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        pub sourceFiles: *mut super::TESFileArray,
+        /// +0x10 `undefined4`, base TESForm, semantic
+        pub formFlags: u32,
+        /// +0x14 `undefined4`, base TESForm, semantic
+        pub formID: u32,
+        /// +0x18 `undefined2`, base TESForm, semantic
+        pub inGameFlags: u16,
+        /// +0x1A `undefined1`, base TESForm, semantic
+        pub formType: u8,
         pub unknown_1B: [u8; 5],
         /// +0x20 `undefined4`, ctor store
         pub field_20: u32,
@@ -138336,10 +139000,11 @@ pub mod partial {
         pub unknown_3C: [u8; 4],
     }
     const _: () = assert!(core::mem::offset_of!(BGSLensFlare, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_1A) == 0x1A);
+    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, sourceFiles) == 0x8);
+    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, formFlags) == 0x10);
+    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, formID) == 0x14);
+    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, inGameFlags) == 0x18);
+    const _: () = assert!(core::mem::offset_of!(BGSLensFlare, formType) == 0x1A);
     const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_20) == 0x20);
     const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_24) == 0x24);
     const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_38) == 0x38);
@@ -138420,23 +139085,26 @@ pub mod partial {
     pub struct BGSMenuIcon {
         /// +0x0 `vtbl:BGSMenuIcon:0`, rtti
         pub __vftable: *const vtables::BGSMenuIcon_vtable,
-        /// +0x8 `undefined8`, base TESForm
-        pub field_8: u64,
-        /// +0x10 `undefined8`, base TESForm
-        pub field_10: u64,
-        /// +0x18 `undefined2`, base TESForm
-        pub field_18: u16,
-        /// +0x1A `undefined1`, base TESForm
-        pub field_1A: u8,
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        pub sourceFiles: *mut super::TESFileArray,
+        /// +0x10 `undefined4`, base TESForm, semantic
+        pub formFlags: u32,
+        /// +0x14 `undefined4`, base TESForm, semantic
+        pub formID: u32,
+        /// +0x18 `undefined2`, base TESForm, semantic
+        pub inGameFlags: u16,
+        /// +0x1A `undefined1`, base TESForm, semantic
+        pub formType: u8,
         pub unknown_1B: [u8; 5],
         /// +0x20 `vtbl:BGSMenuIcon:20`, rtti
         pub __vftable_20: *const vtables::BGSMenuIcon_vtable_20,
     }
     const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, field_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, field_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, field_1A) == 0x1A);
+    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, sourceFiles) == 0x8);
+    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, formFlags) == 0x10);
+    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, formID) == 0x14);
+    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, inGameFlags) == 0x18);
+    const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, formType) == 0x1A);
     const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, __vftable_20) == 0x20);
 
     /// `BGSMessageIcon`: size >= 0x8 (lower bound, upper bound 0x18); partial, the struct stops at the lower bound; primary base `BaseFormComponent`.
@@ -138534,14 +139202,16 @@ pub mod partial {
     pub struct BGSNote {
         /// +0x0 `vtbl:BGSNote:0`, rtti
         pub __vftable: *const vtables::BGSNote_vtable,
-        /// +0x8 `undefined8`, base TESForm
-        pub field_8: u64,
-        /// +0x10 `undefined8`, base TESForm
-        pub field_10: u64,
-        /// +0x18 `undefined2`, base TESForm
-        pub field_18: u16,
-        /// +0x1A `undefined1`, base TESForm
-        pub field_1A: u8,
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        pub sourceFiles: *mut super::TESFileArray,
+        /// +0x10 `undefined4`, base TESForm, semantic
+        pub formFlags: u32,
+        /// +0x14 `undefined4`, base TESForm, semantic
+        pub formID: u32,
+        /// +0x18 `undefined2`, base TESForm, semantic
+        pub inGameFlags: u16,
+        /// +0x1A `undefined1`, base TESForm, semantic
+        pub formType: u8,
         pub unknown_1B: [u8; 5],
         /// +0x20 `undefined2`, base TESBoundObject
         pub field_20: u16,
@@ -138587,10 +139257,11 @@ pub mod partial {
         pub unknown_B2: [u8; 6],
     }
     const _: () = assert!(core::mem::offset_of!(BGSNote, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(BGSNote, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(BGSNote, field_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(BGSNote, field_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(BGSNote, field_1A) == 0x1A);
+    const _: () = assert!(core::mem::offset_of!(BGSNote, sourceFiles) == 0x8);
+    const _: () = assert!(core::mem::offset_of!(BGSNote, formFlags) == 0x10);
+    const _: () = assert!(core::mem::offset_of!(BGSNote, formID) == 0x14);
+    const _: () = assert!(core::mem::offset_of!(BGSNote, inGameFlags) == 0x18);
+    const _: () = assert!(core::mem::offset_of!(BGSNote, formType) == 0x1A);
     const _: () = assert!(core::mem::offset_of!(BGSNote, field_20) == 0x20);
     const _: () = assert!(core::mem::offset_of!(BGSNote, field_22) == 0x22);
     const _: () = assert!(core::mem::offset_of!(BGSNote, field_24) == 0x24);
@@ -139385,14 +140056,16 @@ pub mod partial {
     pub struct BGSStaticCollection {
         /// +0x0 `vtbl:BGSStaticCollection:0`, rtti
         pub __vftable: *const vtables::BGSStaticCollection_vtable,
-        /// +0x8 `undefined8`, base TESForm
-        pub field_8: u64,
-        /// +0x10 `undefined8`, base TESForm
-        pub field_10: u64,
-        /// +0x18 `undefined2`, base TESForm
-        pub field_18: u16,
-        /// +0x1A `undefined1`, base TESForm
-        pub field_1A: u8,
+        /// +0x8 `ptr:TESFileArray`, base TESForm, semantic
+        pub sourceFiles: *mut super::TESFileArray,
+        /// +0x10 `undefined4`, base TESForm, semantic
+        pub formFlags: u32,
+        /// +0x14 `undefined4`, base TESForm, semantic
+        pub formID: u32,
+        /// +0x18 `undefined2`, base TESForm, semantic
+        pub inGameFlags: u16,
+        /// +0x1A `undefined1`, base TESForm, semantic
+        pub formType: u8,
         pub unknown_1B: [u8; 5],
         /// +0x20 `undefined2`, base TESBoundObject
         pub field_20: u16,
@@ -139420,10 +140093,11 @@ pub mod partial {
         pub unknown_64: [u8; 4],
     }
     const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_1A) == 0x1A);
+    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, sourceFiles) == 0x8);
+    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, formFlags) == 0x10);
+    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, formID) == 0x14);
+    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, inGameFlags) == 0x18);
+    const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, formType) == 0x1A);
     const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_20) == 0x20);
     const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_22) == 0x22);
     const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_24) == 0x24);
@@ -186343,15 +187017,6 @@ pub mod partial {
     }
     const _: () = assert!(core::mem::offset_of!(TESCameraState, __vftable) == 0x0);
     const _: () = assert!(core::mem::offset_of!(TESCameraState, m_PlayerInputHandler_20) == 0x20);
-
-    /// `TESDataHandler`: size >= 0x58 (lower bound); partial, the struct stops at the lower bound.
-    /// Evidence: object holding BSTEventSource<TESDataHandlerPostBuildFileListEvent> at 0x0.
-    #[repr(C)]
-    pub struct TESDataHandler {
-        /// +0x0 `class:BSTEventSource`
-        pub source_TESDataHandlerPostBuildFileListEvent: super::BSTEventSource,
-    }
-    const _: () = assert!(core::mem::offset_of!(TESDataHandler, source_TESDataHandlerPostBuildFileListEvent) == 0x0);
 
     /// `TESHealthForm`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BaseFormComponent`.
     /// Evidence: vptr at 0x0.

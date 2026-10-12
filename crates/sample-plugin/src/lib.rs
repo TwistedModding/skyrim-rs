@@ -97,8 +97,8 @@ fn describe(form: *const classes::TESForm) -> String {
             |v| format!("{}::vftable{} (vtable id {})", v.class, if v.offset == 0 { String::new() } else { format!("_{:X}", v.offset) }, v.id),
         );
     format!(
-        "{form:p}: {class}, TESForm {{ field_8: {:#x}, field_10: {:#x}, field_18: {:#x}, field_1A: {:#x} }}",
-        f.field_8, f.field_10, f.field_18, f.field_1A
+        "{form:p}: {class}, TESForm {{ sourceFiles: {:p}, formFlags: {:#x}, formID: {:#x}, inGameFlags: {:#x}, formType: {:#x} }}",
+        f.sourceFiles, f.formFlags, f.formID, f.inGameFlags, f.formType
     )
 }
 
