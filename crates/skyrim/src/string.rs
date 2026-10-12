@@ -59,6 +59,20 @@ impl BSFixedString {
         Self(s)
     }
 
+    /// The empty string: a null pointer, which the engine treats as "".
+    #[must_use]
+    pub const fn empty() -> Self {
+        Self(classes::BSFixedString { data: core::ptr::null_mut() })
+    }
+
+    /// Gives the reference up to an engine object that will hold it from now on.
+    #[must_use]
+    pub fn into_raw(self) -> classes::BSFixedString {
+        let raw = classes::BSFixedString { data: self.0.data };
+        core::mem::forget(self);
+        raw
+    }
+
     /// A view of a `BSFixedString` the engine owns.
     ///
     /// # Safety

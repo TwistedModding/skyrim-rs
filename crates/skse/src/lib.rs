@@ -139,7 +139,9 @@ impl SerializationInterface {
     pub const VERSION: u32 = 4;
 }
 
-/// Receives the game's `VMClassRegistry`; its layout is per-mod reverse-engineering territory.
+/// Receives the game's `BSScript::Internal::VirtualMachine` (`skyrim::papyrus::VirtualMachine::from_ptr`
+/// checks and types it); the loader calls it on the game's main thread while the engine registers
+/// its own natives, before `DataLoaded`.
 pub type RegisterFunctions = unsafe extern "C" fn(registry: *mut c_void) -> bool;
 
 #[repr(C)]
@@ -150,6 +152,12 @@ pub struct PapyrusInterface {
 
 impl PapyrusInterface {
     pub const VERSION: u32 = 1;
+
+    /// Queues `callback` for the registration pass; `false` when the loader refused it.
+    #[must_use]
+    pub fn register(&self, callback: RegisterFunctions) -> bool {
+        unsafe { (self.register)(callback) }
+    }
 }
 
 pub mod independence {

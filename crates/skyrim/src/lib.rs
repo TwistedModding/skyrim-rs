@@ -11,6 +11,7 @@ use std::sync::OnceLock;
 pub mod actors;
 pub mod events;
 pub mod forms;
+pub mod papyrus;
 pub mod string;
 
 #[derive(Debug)]
@@ -45,6 +46,7 @@ struct Runtime {
     forms: forms::Fns,
     actors: actors::Fns,
     events: events::Fns,
+    papyrus: papyrus::Fns,
     strings: string::Fns,
 }
 
@@ -78,8 +80,9 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     let forms = forms::Fns::resolve(&reloc)?;
     let actors = actors::Fns::resolve(&reloc)?;
     let events = events::Fns::resolve(&reloc)?;
+    let papyrus = papyrus::Fns::resolve(&reloc)?;
     let strings = string::Fns::resolve(&reloc)?;
-    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, strings });
+    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, strings });
     Ok(())
 }
 
