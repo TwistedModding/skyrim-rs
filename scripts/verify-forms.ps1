@@ -60,8 +60,9 @@ if ($mods) {
 $pluginFiles = @()
 $filesDetail = Detail "files"
 if ($filesDetail -match 'compiled=\[([^\]]*)\] light=\[([^\]]*)\]') {
-    $pluginFiles += ($Matches[1] -split ',') | ForEach-Object { if ($_ -match '^(\d+):([^:]+):') { "compiled $($Matches[1]):$($Matches[2])" } }
-    $pluginFiles += ($Matches[2] -split ',') | ForEach-Object { if ($_ -match '^(\d+):([^:]+):') { "light $($Matches[1]):$($Matches[2])" } }
+    $compiled, $light = $Matches[1], $Matches[2]
+    $pluginFiles += ($compiled -split ',') | ForEach-Object { if ($_ -match '^(\d+):([^:]+):') { "compiled $($Matches[1]):$($Matches[2])" } }
+    $pluginFiles += ($light -split ',') | ForEach-Object { if ($_ -match '^(\d+):([^:]+):') { "light $($Matches[1]):$($Matches[2])" } }
 }
 $hour = $null
 if ((Lines 14) -match 'GameHour = ([0-9.]+)') { $hour = [double]$Matches[1] }
