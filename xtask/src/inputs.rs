@@ -134,6 +134,7 @@ pub struct SemEnumValue {
 #[derive(Deserialize)]
 pub struct SemEnum {
     pub name: String,
+    pub width: u64,
     pub meaning: String,
     pub values: Vec<SemEnumValue>,
 }

@@ -720,8 +720,7 @@ fn enums_rs(inp: &Inputs, stats: &mut Stats) -> String {
     }
     out.push_str(".\n/// The `u8` width is the generator's choice for a table of this length; the ledger does not record the field width.\n");
     for pass in &inp.semantic {
-        for e in &pass.enums {
-            assert!(e.name == "FormType", "{}: the generator only knows the FormType enum", e.name);
+        for e in pass.enums.iter().filter(|e| e.name == "FormType") {
             for v in &e.values {
                 let f = forms.iter().find(|f| f.id == v.value).unwrap_or_else(|| panic!("FormType {} is not in formtypes.json", v.value));
                 assert!(f.sig == v.name, "FormType {}: {} in the {} pass, {} in formtypes.json", v.value, v.name, pass.subsystem, f.sig);
@@ -747,6 +746,32 @@ fn enums_rs(inp: &Inputs, stats: &mut Stats) -> String {
         writeln!(out, "            Self::{id} => {:?},", f.sig).unwrap();
     }
     out.push_str("        }\n    }\n}\n");
+
+    for pass in &inp.semantic {
+        for e in pass.enums.iter().filter(|e| e.name != "FormType") {
+            let repr = match e.width {
+                1 => "u8",
+                2 => "u16",
+                4 => "u32",
+                8 => "u64",
+                w => panic!("enum {}: width {w}", e.name),
+            };
+            let mut values: Vec<_> = e.values.iter().collect();
+            values.sort_by_key(|v| v.value);
+            let mut idents: Vec<String> = values.iter().map(|v| ident(&v.name)).collect();
+            unique(&mut idents);
+            writeln!(out, "\n/// {} ({} pass).\n#[repr({repr})]\n#[derive(Clone, Copy, PartialEq, Eq, Debug)]\npub enum {} {{", doc(&e.meaning), pass.subsystem, e.name).unwrap();
+            for (v, id) in values.iter().zip(&idents) {
+                writeln!(out, "    /// `{}`\n    {id} = {},", v.name, v.value).unwrap();
+                stats.enum_values += 1;
+            }
+            writeln!(out, "}}\n\nimpl {} {{\n    #[must_use]\n    pub const fn from_{repr}(value: {repr}) -> Option<Self> {{\n        match value {{", e.name).unwrap();
+            for (v, id) in values.iter().zip(&idents) {
+                writeln!(out, "            {} => Some(Self::{id}),", v.value).unwrap();
+            }
+            out.push_str("            _ => None,\n        }\n    }\n}\n");
+        }
+    }
 
     let mut sets: Vec<_> = inp.semantic.iter().flat_map(|p| p.flags.iter().map(move |f| (f, p.subsystem.as_str()))).collect();
     sets.sort_by(|a, b| a.0.name.cmp(&b.0.name));
