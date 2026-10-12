@@ -181,12 +181,18 @@ impl TESObjectREFR {
         unsafe { self.0.parentCell.cast::<TESObjectCELL>().as_ref() }
     }
 
-    /// The root of the reference's 3D through vtable slot 112 (`Get3D`), `None` when not loaded;
-    /// the same node `loadedData->node3D` holds.
+    /// The root of the reference's 3D through vtable slot 112 (`Get3D`), `None` when not loaded.
     #[must_use]
     pub fn node_3d(&self) -> Option<&NiNode> {
         let get = self.vtable().Get3D()?;
         unsafe { get(self.as_ptr()).cast::<NiNode>().as_ref() }
+    }
+
+    /// The root node `loadedData->node3D` holds, `None` when the reference has no loaded data.
+    #[must_use]
+    pub fn loaded_node_3d(&self) -> Option<&NiNode> {
+        let loaded = unsafe { self.0.loadedData.as_ref() }?;
+        unsafe { loaded.node3D.cast::<NiNode>().as_ref() }
     }
 
     #[must_use]
@@ -920,10 +926,12 @@ impl ActorValueList {
         &self.0
     }
 
-    /// The `infos` array, indexed by [`ActorValue`].
+    /// The 164 `ActorValueInfo` pointers indexed by [`ActorValue`]; they lie inline from +8, the
+    /// generated `infos` field being the first of them (the ledger records the array by its first
+    /// element).
     #[must_use]
     pub fn infos(&self) -> &[Option<&ActorValueInfo>] {
-        unsafe { ptr_slice(self.0.infos, ActorValue::ReflectDamage as u32 + 1) }
+        unsafe { ptr_slice((&raw const self.0.infos).cast(), ActorValue::ReflectDamage as u32 + 1) }
     }
 }
 

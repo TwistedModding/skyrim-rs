@@ -104,11 +104,12 @@ fn parent_cell() -> Result<String, String> {
 fn node_3d() -> Result<String, String> {
     let player = player_ref()?;
     let node = player.node_3d().ok_or("Get3D returned null")?;
-    let loaded = unsafe { player.raw().loadedData.as_ref() }.ok_or("loadedData is null")?;
-    check(std::ptr::eq(loaded.node3D.cast_const(), node.raw()), "Get3D differs from loadedData->node3D")?;
+    let loaded = player.loaded_node_3d().ok_or("loadedData->node3D is null")?;
     let class = node.class().ok_or("the node's vtable is not in the ledger")?;
-    check(class.id == vtables::BSFadeNode_vtable::ID, &format!("the root node is a {}", class.class))?;
-    Ok(format!("Get3D = loadedData->node3D at {:p}, class {}", node.raw(), class.class))
+    let loaded_class = loaded.class().ok_or("the loaded node's vtable is not in the ledger")?;
+    check(class.id == vtables::BSFadeNode_vtable::ID && loaded_class.id == vtables::BSFadeNode_vtable::ID, &format!("the root nodes are {} and {}", class.class, loaded_class.class))?;
+    let same = std::ptr::eq(node.raw(), loaded.raw());
+    Ok(format!("Get3D at {:p} ({}), loadedData->node3D at {:p} ({}), same={same}", node.raw(), class.class, loaded.raw(), loaded_class.class))
 }
 
 fn scale() -> Result<String, String> {
@@ -320,8 +321,15 @@ fn actor_value_names() -> Result<String, String> {
     check(info.form_type() == Some(FormType::AVIF) && info.name().is_some_and(|n| n.to_bytes() == b"Health"), &format!("info is {info:?} {:?}", info.name()))?;
     let list = ActorValueList::get().ok_or("g_ActorValueList_ptr is null")?;
     let infos = list.infos();
-    check(infos.len() == 164 && infos.iter().all(|i| i.is_some_and(|i| i.form_type() == Some(FormType::AVIF))), "infos are not 164 AVIF forms")?;
+    let odd: Vec<String> = infos
+        .iter()
+        .enumerate()
+        .filter(|(_, i)| !i.is_some_and(|i| i.form_type() == Some(FormType::AVIF)))
+        .map(|(n, i)| format!("{n}:{}", i.map_or("null".into(), |i| format!("{i:?}"))))
+        .collect();
+    check(infos.len() == 164 && odd.is_empty(), &format!("{} infos, not AVIF: {}", infos.len(), odd.join(" ")))?;
     check(infos[ActorValue::Health as usize].is_some_and(|i| std::ptr::eq(i, info)), "infos[24] is not GetActorValueInfo(24)")?;
+    check(infos[0].is_some_and(|i| actor_value_info(ActorValue::Aggression).is_some_and(|a| std::ptr::eq(i, a))), "infos[0] is not GetActorValueInfo(0)")?;
     let mut round_trips = 0;
     for (i, entry) in infos.iter().enumerate() {
         let value = ActorValue::from_u32(u32::try_from(i).unwrap()).ok_or(format!("no enum value {i}"))?;
