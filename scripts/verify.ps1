@@ -32,7 +32,7 @@ $OutDir = (Resolve-Path $OutDir).Path
 $Backup = Join-Path $OutDir "backup"
 New-Item -ItemType Directory -Force $Backup | Out-Null
 foreach ($f in $Logs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$Backup\$f" -Force } }
-Remove-Item (@("$SkseLogs\$PluginLog") + @($ModLogs | ForEach-Object { "$SkseLogs\$_" })) -ErrorAction SilentlyContinue
+foreach ($f in @($PluginLog) + $ModLogs) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
 
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
 if ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
@@ -43,7 +43,7 @@ try {
     & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -OutDir $OutDir
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
-    Remove-Item (@("$Plugins\skyrim_rs_test.dll") + @($Mods.Values | ForEach-Object { "$Plugins\$($_.dll)" })) -ErrorAction SilentlyContinue
+    foreach ($f in @("skyrim_rs_test.dll") + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
     Remove-Item "$MyGames\Saves\$TestSave.*" -ErrorAction SilentlyContinue
