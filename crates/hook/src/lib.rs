@@ -1,4 +1,4 @@
-//! Detours through `MinHook` and Address Library relocation against the running module.
+//! Detours through `MinHook`, rel32 call-site patches and Address Library relocation against the running module.
 
 use core::ffi::c_void;
 use std::fmt;
@@ -7,12 +7,17 @@ use std::io;
 use minhook::{MH_STATUS, MinHook};
 use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
 
+mod site;
+
+pub use site::{CallSite, Trampoline, find_call, write_branch, write_call};
+
 #[derive(Debug)]
 pub enum Error {
     MinHook(MH_STATUS),
     VersionLib(versionlib::Error),
     Io(io::Error),
     UnknownId(u64),
+    NotRel32(usize),
 }
 
 impl fmt::Display for Error {
@@ -22,6 +27,7 @@ impl fmt::Display for Error {
             Self::VersionLib(e) => e.fmt(f),
             Self::Io(e) => write!(f, "hook: {e}"),
             Self::UnknownId(id) => write!(f, "address library has no id {id}"),
+            Self::NotRel32(site) => write!(f, "no call or jump rel32 at {site:#x}"),
         }
     }
 }
