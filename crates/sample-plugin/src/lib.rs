@@ -1,5 +1,5 @@
 //! Smallest complete plugin on the generated layouts: resolves ids through `layout`, installs
-//! two pass-through hooks, and reads live forms through the generated `TESForm` struct.
+//! two pass-through entry hooks and one call-site patch, and reads live forms through the generated `TESForm` struct.
 
 use core::ffi::c_void;
 use std::fs::File;
@@ -22,13 +22,18 @@ type AddEventSink = extern "C" fn(source: *mut c_void, sink: *mut c_void) -> *mu
 /// `LookupFormByID` is still the unnamed `ID_14617` in the ledger, so `fns` has no constant for it.
 const LOOKUP_FORM_BY_ID_SE: u64 = 14461;
 const LOOKUP_FORM_BY_ID_AE: u64 = 14617;
+/// Size of `PlayerCharacter::ctor` in the ledger (`data/funcs.json`, rva 0x73f670); the function holds one
+/// direct call to `BSTEventSource<MenuOpenCloseEvent>::AddEventSink`.
+const PLAYER_CHARACTER_CTOR_LEN: usize = 0x1012;
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 static RELOC: OnceLock<hook::Reloc> = OnceLock::new();
 static LOOKUP: OnceLock<hook::Hook<LookupFormById>> = OnceLock::new();
 static ADD_SINK: OnceLock<hook::Hook<AddEventSink>> = OnceLock::new();
+static ADD_SINK_SITE: OnceLock<hook::CallSite<AddEventSink>> = OnceLock::new();
 static LOOKUP_CALLS: AtomicU64 = AtomicU64::new(0);
 static ADD_SINK_CALLS: AtomicU64 = AtomicU64::new(0);
+static ADD_SINK_SITE_CALLS: AtomicU64 = AtomicU64::new(0);
 
 macro_rules! log {
     ($($arg:tt) => {
@@ -46,6 +51,35 @@ extern "C" fn lookup_detour(form_id: u32) -> *mut c_void {
 extern "C" fn add_sink_detour(source: *mut c_void, sink: *mut c_void) -> *mut c_void {
     ADD_SINK_CALLS.fetch_add(1, Ordering::Relaxed);
     ADD_SINK.get().unwrap().original()(source, sink)
+}
+
+extern "C" fn add_sink_site_detour(source: *mut c_void, sink: *mut c_void) -> *mut c_void {
+    ADD_SINK_SITE_CALLS.fetch_add(1, Ordering::Relaxed);
+    ADD_SINK_SITE.get().unwrap().original()(source, sink)
+}
+
+/// Redirects the `call AddEventSink` inside `PlayerCharacter::ctor` through `add_sink_site_detour`.
+fn patch_add_sink_call(reloc: &hook::Reloc, add_sink: usize) {
+    let ctor = match reloc.address(fns::PlayerCharacter__ctor) {
+        Ok(a) => a,
+        Err(e) => return log!("{e}"),
+    };
+    let Some(site) = hook::find_call(ctor, PLAYER_CHARACTER_CTOR_LEN, add_sink) else {
+        return log!("no direct call to AddEventSink in PlayerCharacter::ctor at {ctor:#x}");
+    };
+    match unsafe { hook::CallSite::install(site, add_sink_site_detour as AddEventSink) } {
+        Ok(c) => {
+            log!(
+                "patched the call to AddEventSink at {:#x} (PlayerCharacter::ctor, fns id {}, + {:#x}), previous target {:#x}",
+                c.site(),
+                fns::PlayerCharacter__ctor,
+                site - ctor,
+                c.original() as usize
+            );
+            let _ = ADD_SINK_SITE.set(c);
+        }
+        Err(e) => log!("{e}"),
+    }
 }
 
 /// What the generated `TESForm` layout says about a live object: its vtable's class and the raw fields.
@@ -88,9 +122,10 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
     let msg = unsafe { &*msg };
     if msg.kind == skse::MessagingInterface::DATA_LOADED {
         log!(
-            "data loaded, LookupFormByID ran {} times, BSTEventSource<MenuOpenCloseEvent>::AddEventSink ran {} times",
+            "data loaded, LookupFormByID ran {} times, BSTEventSource<MenuOpenCloseEvent>::AddEventSink ran {} times, its call site in PlayerCharacter::ctor ran {} times",
             LOOKUP_CALLS.load(Ordering::Relaxed),
-            ADD_SINK_CALLS.load(Ordering::Relaxed)
+            ADD_SINK_CALLS.load(Ordering::Relaxed),
+            ADD_SINK_SITE_CALLS.load(Ordering::Relaxed)
         );
         if ADD_SINK.get().is_some() {
             read_layouts();
@@ -139,6 +174,7 @@ fn load(skse: &skse::Interface) -> bool {
         match unsafe { reloc.hook(id, add_sink_detour as AddEventSink) } {
             Ok(h) => {
                 log!("hooked BSTEventSource<MenuOpenCloseEvent>::AddEventSink (fns id {id}) at {:#x}", h.target());
+                patch_add_sink_call(reloc, h.target());
                 let _ = ADD_SINK.set(h);
             }
             Err(e) => log!("{e}"),
