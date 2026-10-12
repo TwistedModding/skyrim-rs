@@ -1,10 +1,10 @@
 # Runs the skyrim-rs test plugin in the 1.7.104 game through DevBench (scripts/<suite>-steps.json), then compares the
 # plugin's PASS lines with DevBench's own answers from the same session as scripts/<suite>-checks.ps1 lists them.
 # The papyrus suite also builds the equip-counter mod, compiles both crates' papyrus folders and installs the mod DLL and
-# the .pex files for the run.
+# the .pex files for the run; the shadows suite installs the first-person-shadows mod next to the test plugin.
 # See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
 )
@@ -23,7 +23,8 @@ $TestSave = "skyrim-rs-$Suite"
 
 if (Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue) { throw "SkyrimSE is already running" }
 Push-Location $Root
-try { cargo build --release -p testplugin -p equip-counter; if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
+$crates = @("testplugin") + @(if ($Mod) { $Mod.crate })
+try { cargo build --release @($crates | ForEach-Object { "-p"; $_ }); if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
 $Pex = @()
 if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
@@ -31,10 +32,10 @@ $OutDir = (Resolve-Path $OutDir).Path
 $Backup = Join-Path $OutDir "backup"
 New-Item -ItemType Directory -Force $Backup | Out-Null
 foreach ($f in $Logs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$Backup\$f" -Force } }
-Remove-Item "$SkseLogs\$PluginLog", "$SkseLogs\$ModLog" -ErrorAction SilentlyContinue
+Remove-Item (@("$SkseLogs\$PluginLog") + @($ModLogs | ForEach-Object { "$SkseLogs\$_" })) -ErrorAction SilentlyContinue
 
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
-if ($Suite -eq "papyrus") { Copy-Item $ModDll "$Plugins\skyrim_rs_equip_counter.dll" -Force }
+if ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
 foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" }; Copy-Item $p $Scripts -Force }
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
@@ -42,14 +43,14 @@ try {
     & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -OutDir $OutDir
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
-    Remove-Item "$Plugins\skyrim_rs_test.dll", "$Plugins\skyrim_rs_equip_counter.dll" -ErrorAction SilentlyContinue
+    Remove-Item (@("$Plugins\skyrim_rs_test.dll") + @($Mods.Values | ForEach-Object { "$Plugins\$($_.dll)" })) -ErrorAction SilentlyContinue
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
     Remove-Item "$MyGames\Saves\$TestSave.*" -ErrorAction SilentlyContinue
-    foreach ($f in $PluginLog, $ModLog) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$OutDir\$f" -Force } }
+    foreach ($f in @($PluginLog) + $ModLogs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$OutDir\$f" -Force } }
     foreach ($f in $Logs) {
         if (Test-Path "$Backup\$f") { Copy-Item "$Backup\$f" "$SkseLogs\$f" -Force }
-        elseif ($f -in $PluginLog, $ModLog) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
+        elseif ($f -in @($PluginLog) + $ModLogs) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
     }
 }
 
