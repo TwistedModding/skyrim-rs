@@ -8,6 +8,9 @@ pub mod runtime;
 pub type PluginHandle = u32;
 pub const INVALID_HANDLE: PluginHandle = u32::MAX;
 
+/// A plugin's name and version as the loader keeps them (0x18 bytes). 2.0.19 has the plugin fill it
+/// in `SKSEPlugin_Query` and reads only the name and version; 2.3.1 fills it from the version data
+/// after every plugin's `SKSEPlugin_Load` has run.
 #[repr(C)]
 pub struct PluginInfo {
     pub info_version: u32,
@@ -31,17 +34,31 @@ pub enum InterfaceId {
     Trampoline,
 }
 
+/// The struct handed to `SKSEPlugin_Query`, `SKSEPlugin_Preload` and `SKSEPlugin_Load` (0x30 bytes):
+/// one constant object in the loader's read-only data, the same for every plugin and call.
 #[repr(C)]
 pub struct Interface {
+    /// Packed loader version (0x02030010 for 2.3.1).
     pub skse_version: u32,
+    /// Packed runtime version (0x01070680 for 1.7.104).
     pub runtime_version: u32,
-    pub editor_version: u32,
-    pub is_editor: u32,
+    /// Always 0; the loader never reads them.
+    pub reserved: [u32; 2],
+    /// The table for ids 1 to 7, null (and a log line) for any other id.
     pub query_interface: unsafe extern "C" fn(id: u32) -> *mut c_void,
+    /// The calling plugin's handle. Only valid inside `Query`, `Preload` and `Load`: outside them
+    /// the loader logs the misuse and crashes on purpose.
     pub get_plugin_handle: unsafe extern "C" fn() -> PluginHandle,
+    /// The loader's release index (75 for 2.3.1).
     pub get_release_index: unsafe extern "C" fn() -> u32,
+    /// A loaded plugin's info by name, case-insensitive; null for an unknown name and, on 2.3.1,
+    /// for every name until all `Load` calls have returned.
     pub get_plugin_info: unsafe extern "C" fn(name: *const c_char) -> *const PluginInfo,
 }
+
+const _: () = assert!(size_of::<Interface>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(Interface, query_interface) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Interface, get_plugin_info) == 0x28);
 
 impl Interface {
     /// # Safety
@@ -72,6 +89,7 @@ impl Interface {
     }
 }
 
+/// A message as a listener receives it (0x18 bytes).
 #[repr(C)]
 pub struct Message {
     pub sender: *const c_char,
@@ -82,9 +100,12 @@ pub struct Message {
 
 pub type MessageCallback = unsafe extern "C" fn(msg: *mut Message);
 
+/// Interface id 5. Every table starts with a qword whose low dword is the table version.
 #[repr(C)]
 pub struct MessagingInterface {
     pub interface_version: u32,
+    /// `sender` matches case-insensitively, "SKSE" being the loader (handle 0); null listens to
+    /// every plugin except the loader and the caller.
     pub register_listener:
         unsafe extern "C" fn(listener: PluginHandle, sender: *const c_char, handler: MessageCallback) -> bool,
     pub dispatch: unsafe extern "C" fn(
@@ -94,22 +115,32 @@ pub struct MessagingInterface {
         data_len: u32,
         receiver: *const c_char,
     ) -> bool,
+    /// Ids 0 to 4 return event sources the loader owns; any other id logs and returns null.
     pub get_event_dispatcher: unsafe extern "C" fn(dispatcher: u32) -> *mut c_void,
 }
 
 impl MessagingInterface {
     pub const VERSION: u32 = 2;
-    /// Message kinds as the loader logs them (`dispatch message (N) to plugin listeners`): 0, 1, 6
-    /// and 8 arrive at startup in that order, 2 before and 3 after a save load, 4 at a save
-    /// (all seen in the in-game runs); 5 and 7 are retained from the first build and unverified.
-    pub const POST_LOAD: u32 = 0;
-    pub const POST_POST_LOAD: u32 = 1;
+    /// Kinds the loader sends as sender "SKSE"; at startup 0, 1, 6 and 8 arrive in that order.
+    /// After every plugin's `Load`, before any game hook; no data.
+    pub const PLUGINS_LOADED: u32 = 0;
+    /// Right after [`Self::PLUGINS_LOADED`]; no data.
+    pub const PLUGINS_LOADED_2: u32 = 1;
+    /// Before the game loads a save; the save name, `data_len` its length.
     pub const PRE_LOAD_GAME: u32 = 2;
+    /// After the load returns, the co-save already read; the result as a bool in the `data` field
+    /// itself, `data_len` 1.
     pub const POST_LOAD_GAME: u32 = 3;
+    /// Before the game saves, the co-save written after; the save name.
     pub const SAVE_GAME: u32 = 4;
+    /// Before a save is deleted; the save name (static only, never observed).
     pub const DELETE_GAME: u32 = 5;
-    pub const INPUT_LOADED: u32 = 6;
+    /// After the player controls are constructed; no data.
+    pub const CONTROLS_READY: u32 = 6;
+    /// A new game started from the main menu; an 8-byte value in the `data` field (static only).
     pub const NEW_GAME: u32 = 7;
+    /// After a step of the game's init thread, before the main menu, with the data files loaded
+    /// (form lookups succeed); no data.
     pub const DATA_LOADED: u32 = 8;
 
     #[must_use]
@@ -119,23 +150,29 @@ impl MessagingInterface {
 }
 
 pub type SerializationCallback = unsafe extern "C" fn(intfc: *const SerializationInterface);
-pub type FormDeleteCallback = unsafe extern "C" fn(handle: u64);
+pub type HandleDeleteCallback = unsafe extern "C" fn(vm_handle: u64);
 
+/// Interface id 3, the co-save (`<save>.skse`, written after [`MessagingInterface::SAVE_GAME`] and
+/// read before [`MessagingInterface::POST_LOAD_GAME`]).
 #[repr(C)]
 pub struct SerializationInterface {
     pub version: u32,
-    pub set_unique_id: unsafe extern "C" fn(plugin: PluginHandle, uid: u32),
+    pub set_uid: unsafe extern "C" fn(plugin: PluginHandle, uid: u32),
     pub set_revert_callback: unsafe extern "C" fn(plugin: PluginHandle, callback: SerializationCallback),
     pub set_save_callback: unsafe extern "C" fn(plugin: PluginHandle, callback: SerializationCallback),
     pub set_load_callback: unsafe extern "C" fn(plugin: PluginHandle, callback: SerializationCallback),
-    pub set_form_delete_callback: unsafe extern "C" fn(plugin: PluginHandle, callback: FormDeleteCallback),
+    /// Called from the loader's hook on the game's script handle release.
+    pub set_handle_delete_callback: unsafe extern "C" fn(plugin: PluginHandle, callback: HandleDeleteCallback),
     pub write_record: unsafe extern "C" fn(kind: u32, version: u32, buf: *const c_void, len: u32) -> bool,
     pub open_record: unsafe extern "C" fn(kind: u32, version: u32) -> bool,
     pub write_record_data: unsafe extern "C" fn(buf: *const c_void, len: u32) -> bool,
-    pub get_next_record_info: unsafe extern "C" fn(kind: *mut u32, version: *mut u32, len: *mut u32) -> bool,
+    pub read_record_header: unsafe extern "C" fn(kind: *mut u32, version: *mut u32, len: *mut u32) -> bool,
+    /// Clamped to the current record.
     pub read_record_data: unsafe extern "C" fn(buf: *mut c_void, len: u32) -> u32,
-    pub resolve_handle: unsafe extern "C" fn(handle: u64, out: *mut u64) -> bool,
-    pub resolve_form_id: unsafe extern "C" fn(form_id: u32, out: *mut u32) -> bool,
+    pub remap_handle: unsafe extern "C" fn(old: u64, new: *mut u64) -> bool,
+    /// Maps a saved form id's load-order byte (or 0xFE light prefix and index) to the current one;
+    /// 0xFF ids are unchanged.
+    pub remap_form_id: unsafe extern "C" fn(old: u32, new: *mut u32) -> bool,
 }
 
 impl SerializationInterface {
@@ -143,9 +180,9 @@ impl SerializationInterface {
 }
 
 /// Receives the game's `BSScript::Internal::VirtualMachine` (`skyrim::papyrus::VirtualMachine::from_ptr`
-/// checks and types it); the loader calls it on the game's main thread while the engine registers
-/// its own natives, before `DataLoaded`.
-pub type RegisterFunctions = unsafe extern "C" fn(registry: *mut c_void) -> bool;
+/// checks and types it); the loader calls it from its hook in the game's script VM constructor,
+/// after the engine's and the loader's own natives, before `DataLoaded`.
+pub type RegisterFunctions = unsafe extern "C" fn(registry: *mut c_void);
 
 #[repr(C)]
 pub struct PapyrusInterface {
@@ -156,54 +193,59 @@ pub struct PapyrusInterface {
 impl PapyrusInterface {
     pub const VERSION: u32 = 1;
 
-    /// Queues `callback` for the registration pass; `false` when the loader refused it.
+    /// Queues `callback` for the registration pass (the loader always answers `true`).
     #[must_use]
     pub fn register(&self, callback: RegisterFunctions) -> bool {
         unsafe { (self.register)(callback) }
     }
 }
 
-/// The two flag words of the version data, named by what SKSE 2.3.1 does with each bit.
-/// `independence` is the word at +0x304,
-/// `independence_ex` the word at +0x308.
-pub mod independence {
-    /// +0x304 bit 0: set by most plugins that resolve addresses through the Address Library; with
-    /// it set the loader does not require [`EX_STRUCTS_1_6_629`] on a runtime the plugin does not list.
-    pub const ADDRESS_LIBRARY: u32 = 1 << 0;
+/// The two bit words of the version data as SKSE 2.3.1 reads them: the flags at +0x304 and the
+/// "version independence method" at +0x308 (the loader's own words). A method bit above 2 is
+/// "disabled, unsupported version independence method".
+pub mod compat {
+    /// +0x304 bit 0: passes the 1.6.629 test, as [`METHOD_STRUCTS_1_6_629`] does.
+    pub const FLAG_STRUCTS_1_6_629: u32 = 1 << 0;
     /// +0x304 bit 1: skips the link-timestamp gate ("must be recompiled for new address library").
-    pub const SIGNATURES: u32 = 1 << 1;
-    /// +0x308 bit 0: the plugin reads Address Library ids; the runtime's file must exist
-    /// ("address library needs to be updated" otherwise) and the build must postdate the id change
-    /// unless [`SIGNATURES`] is set.
-    pub const EX_ADDRESS_LIBRARY_IDS: u32 = 1 << 0;
-    /// +0x308 bit 1: version independent without Address Library ids.
-    pub const EX_NO_ADDRESS_LIBRARY: u32 = 1 << 1;
-    /// +0x308 bit 2: built for the structure layouts of 1.6.629 and later ("only compatible with
-    /// versions earlier than 1.6.629" without it or [`ADDRESS_LIBRARY`] on an unlisted runtime).
-    pub const EX_STRUCTS_1_6_629: u32 = 1 << 2;
+    pub const FLAG_NO_TIMESTAMP_GATE: u32 = 1 << 1;
+    /// +0x308 bit 0: the plugin reads Address Library ids. The runtime's `versionlib` file must
+    /// open ("address library needs to be updated" otherwise), then the timestamp gate applies
+    /// unless [`FLAG_NO_TIMESTAMP_GATE`] is set or the runtime is in the compatible list.
+    pub const METHOD_ADDRESS_LIBRARY: u32 = 1 << 0;
+    /// +0x308 bit 1: version independent with no file check.
+    pub const METHOD_NO_FILE_CHECK: u32 = 1 << 1;
+    /// +0x308 bit 2: built for the structure layouts of 1.6.629 and later. A plugin with method
+    /// bit 0 or 1 needs it or [`FLAG_STRUCTS_1_6_629`] ("only compatible with versions earlier
+    /// than 1.6.629"), whatever its compatible list says.
+    pub const METHOD_STRUCTS_1_6_629: u32 = 1 << 2;
 }
 
-/// The data behind the exported `SKSEPlugin_Version` symbol, 0x350 bytes: the layout every field
-/// of which was read from at least two real plugin DLLs.
+/// The data behind the exported `SKSEPlugin_Version` symbol, 0x350 bytes, which SKSE 2.3.1 copies
+/// before any plugin code runs (2.0.19 never reads it).
 #[repr(C)]
 pub struct PluginVersionData {
+    /// Only zero ("disabled, bad version data") or non-zero is tested.
     pub data_version: u32,
     pub plugin_version: u32,
+    /// Empty is "disabled, no name specified".
     pub name: [u8; 256],
+    /// Where real plugins put the author; the loader never reads it.
     pub author: [u8; 256],
+    /// Where real plugins put a contact address; the loader never reads it.
     pub support_email: [u8; 252],
-    /// +0x304, the `independence` bits.
-    pub independence: u32,
-    /// +0x308, the `independence_ex` bits.
-    pub independence_ex: u32,
-    /// Packed runtime versions the plugin was built for, zero-terminated.
+    /// +0x304, [`compat`]`::FLAG_*`.
+    pub flags: u32,
+    /// +0x308, [`compat`]`::METHOD_*`.
+    pub method: u32,
+    /// Packed runtime versions the plugin was built for, zero-terminated; read only when the
+    /// method has neither bit 0 nor bit 1, or to excuse a failed timestamp gate.
     pub compatible_versions: [u32; 16],
     /// Packed minimum SKSE version ("requires newer script extender" below it), 0 for none.
     pub minimum_skse: u32,
 }
 
-const _: () = assert!(core::mem::offset_of!(PluginVersionData, independence) == 0x304);
-const _: () = assert!(core::mem::offset_of!(PluginVersionData, independence_ex) == 0x308);
+const _: () = assert!(core::mem::offset_of!(PluginVersionData, flags) == 0x304);
+const _: () = assert!(core::mem::offset_of!(PluginVersionData, method) == 0x308);
 const _: () = assert!(core::mem::offset_of!(PluginVersionData, compatible_versions) == 0x30C);
 const _: () = assert!(core::mem::offset_of!(PluginVersionData, minimum_skse) == 0x34C);
 
@@ -213,15 +255,15 @@ impl PluginVersionData {
     pub const VERSION: u32 = 1;
 
     #[must_use]
-    pub const fn new(name: &str, author: &str, plugin_version: u32, independence: u32, independence_ex: u32) -> Self {
+    pub const fn new(name: &str, author: &str, plugin_version: u32, flags: u32, method: u32) -> Self {
         Self {
             data_version: Self::VERSION,
             plugin_version,
             name: fill(name),
             author: fill(author),
             support_email: [0; 252],
-            independence,
-            independence_ex,
+            flags,
+            method,
             compatible_versions: [0; 16],
             minimum_skse: 0,
         }
@@ -240,9 +282,10 @@ const fn fill<const N: usize>(s: &str) -> [u8; N] {
     out
 }
 
-/// Declares a plugin: exports `SKSEPlugin_Version`, which SKSE 2.3.1 reads before any code runs,
-/// and `SKSEPlugin_Query` / `SKSEPlugin_Load`, which SKSE 2.0.19 calls in that order (both seen in
-/// the loader logs of the two installs).
+/// Declares a plugin: exports `SKSEPlugin_Version`, which SKSE 2.3.1 reads before any code runs
+/// and then calls `SKSEPlugin_Load` on, and `SKSEPlugin_Query`, which SKSE 2.0.19 calls before
+/// `SKSEPlugin_Load`. 2.3.1 also calls an optional `SKSEPlugin_Preload` before any `Load`; the
+/// macro does not export one.
 ///
 /// ```ignore
 /// skse::plugin! {
@@ -254,10 +297,10 @@ const fn fill<const N: usize>(s: &str) -> [u8; N] {
 /// fn load(skse: &skse::Interface) -> bool { true }
 /// ```
 ///
-/// The defaults (`independence` = `SIGNATURES`, `independence_ex` = `EX_ADDRESS_LIBRARY_IDS |
-/// EX_STRUCTS_1_6_629`) are what a mod on `layout` needs on every runtime SKSE 2.3.1 accepts:
-/// the Address Library file must exist, the 1.6.629 structure check passes, and the link-timestamp
-/// gate is skipped. Pass `independence:` and `independence_ex:` to override both.
+/// The defaults (`flags` = `FLAG_NO_TIMESTAMP_GATE`, `method` = `METHOD_ADDRESS_LIBRARY |
+/// METHOD_STRUCTS_1_6_629`) are what a mod on `layout` needs on every runtime SKSE 2.3.1 accepts:
+/// the Address Library file must exist, the 1.6.629 test passes, and the link-timestamp gate is
+/// skipped. Pass `flags:` and `method:` to override both.
 #[macro_export]
 macro_rules! plugin {
     (
@@ -265,7 +308,7 @@ macro_rules! plugin {
         author: $author:literal,
         version: $version:expr,
         load: $load:path
-        $(, independence: $ind:expr, independence_ex: $ex:expr)?
+        $(, flags: $flags:expr, method: $method:expr)?
         $(,)?
     ) => {
         #[unsafe(no_mangle)]
@@ -274,17 +317,17 @@ macro_rules! plugin {
             $name,
             $author,
             $version,
-            $crate::plugin!(@ind $($ind)?),
-            $crate::plugin!(@ex $($ex)?),
+            $crate::plugin!(@flags $($flags)?),
+            $crate::plugin!(@method $($method)?),
         );
 
         #[unsafe(no_mangle)]
         #[allow(non_snake_case)]
-        pub extern "C" fn SKSEPlugin_Query(skse: &$crate::Interface, info: &mut $crate::PluginInfo) -> bool {
+        pub extern "C" fn SKSEPlugin_Query(_: &$crate::Interface, info: &mut $crate::PluginInfo) -> bool {
             info.info_version = $crate::PluginInfo::VERSION;
             info.name = concat!($name, "\0").as_ptr().cast();
             info.version = $version;
-            skse.is_editor == 0
+            true
         }
 
         #[unsafe(no_mangle)]
@@ -293,16 +336,16 @@ macro_rules! plugin {
             $load(skse)
         }
     };
-    (@ind) => {
-        $crate::independence::SIGNATURES
+    (@flags) => {
+        $crate::compat::FLAG_NO_TIMESTAMP_GATE
     };
-    (@ind $e:expr) => {
+    (@flags $e:expr) => {
         $e
     };
-    (@ex) => {
-        $crate::independence::EX_ADDRESS_LIBRARY_IDS | $crate::independence::EX_STRUCTS_1_6_629
+    (@method) => {
+        $crate::compat::METHOD_ADDRESS_LIBRARY | $crate::compat::METHOD_STRUCTS_1_6_629
     };
-    (@ex $e:expr) => {
+    (@method $e:expr) => {
         $e
     };
 }

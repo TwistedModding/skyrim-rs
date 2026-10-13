@@ -57,10 +57,10 @@ fn get_last_equipped() -> Option<&'static TESForm> {
     FormId(LAST.load(Ordering::Relaxed)).lookup()
 }
 
-unsafe extern "C" fn on_register(registry: *mut c_void) -> bool {
+unsafe extern "C" fn on_register(registry: *mut c_void) {
     let Some(vm) = (unsafe { VirtualMachine::from_ptr(registry) }) else {
         log!("the registry is not the VM");
-        return false;
+        return;
     };
     for (name, result) in [
         ("GetEquipCount", vm.register_native(CLASS, "GetEquipCount", get_equip_count).map(|_| ())),
@@ -71,7 +71,6 @@ unsafe extern "C" fn on_register(registry: *mut c_void) -> bool {
             Err(e) => log!("failed to register {CLASS}.{name}: {e}"),
         }
     }
-    true
 }
 
 unsafe extern "C" fn on_message(msg: *mut skse::Message) {

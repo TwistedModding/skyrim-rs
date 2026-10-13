@@ -151,10 +151,9 @@ fn probe_interfaces(skse: &skse::Interface) {
     log!("interfaces: {}; plugin handle {}, release index {}", answers.join(" "), skse.plugin_handle(), unsafe { (skse.get_release_index)() });
 }
 
-unsafe extern "C" fn on_register(registry: *mut core::ffi::c_void) -> bool {
+unsafe extern "C" fn on_register(registry: *mut core::ffi::c_void) {
     papyrus::REGISTRY.store(registry, Ordering::Relaxed);
     run("papyrus", "register", papyrus::REGISTER);
-    true
 }
 
 fn load(skse: &skse::Interface) -> bool {
