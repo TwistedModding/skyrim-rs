@@ -33,6 +33,7 @@ macro_rules! log {
 }
 
 mod actors;
+mod crash;
 mod events;
 mod forms;
 mod papyrus;
@@ -85,6 +86,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             run("papyrus", "postLoadGame", papyrus::TESTS);
             render::reset();
             run("render", "postLoadGame", render::TESTS);
+            render::SAVES.store(0, Ordering::Relaxed);
         }
         skse::MessagingInterface::PRE_LOAD_GAME | skse::MessagingInterface::NEW_GAME => render::suspend(),
         skse::MessagingInterface::SAVE_GAME => {
@@ -92,7 +94,9 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             run("actors", "saveGame", actors::TESTS);
             run("events", "saveGame", events::TESTS);
             run("papyrus", "saveGame", papyrus::CALLS_TESTS);
-            run("render", "saveGame", render::CASTER_TESTS);
+            let save = render::SAVES.fetch_add(1, Ordering::Relaxed) + 1;
+            run("render", &format!("save{save}"), render::TESTS);
+            run("render", &format!("save{save}"), render::CASTER_TESTS);
         }
         _ => {}
     }
@@ -109,6 +113,7 @@ fn load(skse: &skse::Interface) -> bool {
         return false;
     };
     *LOG.lock().unwrap() = Some(file);
+    crash::install();
     let [major, minor, build, store] = skse::runtime::unpack(skse.runtime_version);
     log!("runtime {major}.{minor}.{build} store {store}, skse {:08x}", skse.skse_version);
     if let Err(e) = skyrim::init(skse) {
