@@ -7243,7 +7243,7 @@ pub const INIPrefSetting_iShadowMapResolution_Display: u64 = 391717;
 pub const INIPrefSetting_iShadowMaskQuarter_Display: u64 = 391268;
 /// `INIPrefSetting_iStoryManagerLoggingEvent_General` at 0x20b3b20 (setting, high)
 pub const INIPrefSetting_iStoryManagerLoggingEvent_General: u64 = 380106;
-/// `INIPrefSetting_iVSyncPresentInterval_Display` at 0x20d03a0 (setting, high)
+/// `INIPrefSetting_iVSyncPresentInterval_Display` at 0x20d03a0 (setting, high); Setting 'iVSyncPresentInterval:Display' (value at +8); feeds Renderer+0x40 at init only (high); type `undefined8`
 pub const INIPrefSetting_iVSyncPresentInterval_Display: u64 = 388999;
 /// `INIPrefSetting_iVolumetricLightingQuality_Display` at 0x20d70c0 (setting, high)
 pub const INIPrefSetting_iVolumetricLightingQuality_Display: u64 = 391202;
@@ -7721,7 +7721,7 @@ pub const INISetting_bLoadEsmInMemory_Archive: u64 = 359064;
 pub const INISetting_bLoadHelmetsInBackground_BackgroundLoad: u64 = 359663;
 /// `INISetting_bLoadMarkers_Display` at 0x20b6140 (setting, high)
 pub const INISetting_bLoadMarkers_Display: u64 = 381021;
-/// `INISetting_bLockFramerate_Display` at 0x20d01f8 (setting, high)
+/// `INISetting_bLockFramerate_Display` at 0x20d01f8 (setting, high); Setting 'bLockFramerate:Display'; PresentFrame spins before Present while set (high); type `undefined8`
 pub const INISetting_bLockFramerate_Display: u64 = 388954;
 /// `INISetting_bLodZPrepass_Display` at 0x20d6cb0 (setting, high)
 pub const INISetting_bLodZPrepass_Display: u64 = 391098;
@@ -11581,6 +11581,10 @@ pub const g_BSThreadEvent__anon_939FB6BB_Source: u64 = 410210;
 pub const g_BSWin32GamerProfile: u64 = 410253;
 /// `g_BSWin32SaveDataSystemUtility` at 0x3699c20 (layout_inference, medium)
 pub const g_BSWin32SaveDataSystemUtility: u64 = 415512;
+/// `g_BloodSplatterShader` at 0x33d3e30 (semantic, high); pointer to `BSBloodSplatterShader`: holder; holder (high); type `ptr:BSBloodSplatterShader`
+pub const g_BloodSplatterShader: u64 = 414614;
+/// `g_BloodSplatterShaderInstance` at 0x3435c08 (semantic, high); pointer to `BSBloodSplatterShader`: instance pointer; instance pointer (high); type `ptr:BSBloodSplatterShader`
+pub const g_BloodSplatterShaderInstance: u64 = 414854;
 /// `g_CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t` at 0x3699470 (layout_inference, medium)
 pub const g_CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t: u64 = 415503;
 /// `g_CCallbackImpl_1` at 0x3699420 (layout_inference, medium)
@@ -11911,12 +11915,36 @@ pub const g_ConcreteTempEffectFactory_ShaderReferenceEffect_10: u64 = 380361;
 pub const g_ConcreteTempEffectFactory_SummonPlacementEffect_11: u64 = 380362;
 /// `g_ConsoleCommandTable` at 0x208d130 (console_cmd, high)
 pub const g_ConsoleCommandTable: u64 = 365650;
+/// `g_CurrentMaterial` at 0x36939e0 (semantic, high); pointer to `BSShaderMaterial`: material last handed to SetupMaterial; material last handed to SetupMaterial (high); type `ptr:BSShaderMaterial`
+pub const g_CurrentMaterial: u64 = 415274;
+/// `g_CurrentRenderWindow` at 0x3330198 (runtime, high); pointer to `RenderWindow`: window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38); window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38) (high); type `ptr:RenderWindow`
+pub const g_CurrentRenderWindow: u64 = 411349;
+/// `g_CurrentShader` at 0x36939d8 (semantic, high); pointer to `BSShader`: shader of the technique currently set up; shader of the technique currently set up (high); type `ptr:BSShader`
+pub const g_CurrentShader: u64 = 415273;
 /// `g_DebugText_ptr` at 0x333c570 (xref_inference, medium)
 pub const g_DebugText_ptr: u64 = 412090;
+/// `g_DefaultEffectMaterial` at 0x34866e0 (xref_inference, medium); pointer to `BSEffectShaderMaterial`: default effect material; default effect material (medium); type `ptr:BSEffectShaderMaterial`
+pub const g_DefaultEffectMaterial: u64 = 415165;
+/// `g_DefaultFadeNode` at 0x33d3ca0 (semantic, high); pointer to `BSFadeNode`: fade node every shader property starts with (fade 1.0); fade node every shader property starts with (fade 1.0) (high); type `ptr:BSFadeNode`
+pub const g_DefaultFadeNode: u64 = 414561;
+/// `g_DefaultLightingMaterial` at 0x33d4db0 (xref_inference, medium); pointer to `BSLightingShaderMaterialBase`: default lighting material; default lighting material (medium); type `ptr:BSLightingShaderMaterialBase`
+pub const g_DefaultLightingMaterial: u64 = 414779;
+/// `g_DefaultShaderMaterial` at 0x3698be8 (xref_inference, medium); pointer to `BSShaderMaterial`: default base material; default base material (medium); type `ptr:BSShaderMaterial`
+pub const g_DefaultShaderMaterial: u64 = 415311;
+/// `g_DepthAccumulator2` at 0x3436248 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, decals off; only Main and Msg_LODTrees reference it; renderMode 0xc, decals off; only Main and Msg_LODTrees reference it (high); type `ptr:BSShaderAccumulator`
+pub const g_DepthAccumulator2: u64 = 415012;
+/// `g_DistantTreeShader` at 0x33d3df0 (semantic, high); pointer to `BSDistantTreeShader`: holder; holder (high); type `ptr:BSDistantTreeShader`
+pub const g_DistantTreeShader: u64 = 414610;
+/// `g_DistantTreeShaderInstance` at 0x3486710 (semantic, high); pointer to `BSDistantTreeShader`: instance pointer; instance pointer (high); type `ptr:BSDistantTreeShader`
+pub const g_DistantTreeShaderInstance: u64 = 415171;
 /// `g_DoorObstacleAdapter` at 0x20b6368 (layout_inference, medium)
 pub const g_DoorObstacleAdapter: u64 = 381087;
 /// `g_EffectSettingCollection` at 0x2076648 (layout_inference, medium)
 pub const g_EffectSettingCollection: u64 = 433120;
+/// `g_EffectShader` at 0x33d3dd8 (semantic, high); pointer to `BSEffectShader`: holder; holder (high); type `ptr:BSEffectShader`
+pub const g_EffectShader: u64 = 414607;
+/// `g_EffectShaderInstance` at 0x34866e8 (semantic, high); pointer to `BSEffectShader`: instance pointer; instance pointer (high); type `ptr:BSEffectShader`
+pub const g_EffectShaderInstance: u64 = 415166;
 /// `g_EventSourceHolder_BGSActorCell_ptr` at 0x32119e8 (xref_inference, medium); pointer to `EventSourceHolder_BGSActorCell`: object holding BSTEventSource<BGSActorCellEvent> at 0x0
 pub const g_EventSourceHolder_BGSActorCell_ptr: u64 = 402987;
 /// `g_EventSourceHolder_Input_ptr` at 0x3204b30 (runtime, high); pointer to `EventSourceHolder_Input`: pointer to the input device manager; pointer to the input device manager (high); type `ptr:EventSourceHolder_Input`
@@ -11931,16 +11959,28 @@ pub const g_EventSourceHolder_User_ptr: u64 = 400863;
 pub const g_FOCollisionListener_ptr: u64 = 400444;
 /// `g_FOIslandActivationListener_ptr` at 0x31def30 (xref_inference, medium)
 pub const g_FOIslandActivationListener_ptr: u64 = 400944;
+/// `g_FirstPersonAccumulator` at 0x3436240 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10); renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10) (high); type `ptr:BSShaderAccumulator`
+pub const g_FirstPersonAccumulator: u64 = 415011;
+/// `g_FirstPersonCamera` at 0x3436220 (xref_inference, medium); pointer to `NiCamera`: camera of the first-person draws; camera of the first-person draws (medium); type `ptr:NiCamera`
+pub const g_FirstPersonCamera: u64 = 415007;
 /// `g_FootstepEventSource_ptr` at 0x32309c8 (semantic, high); pointer to `BSTEventSource`: pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink; pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink (high); type `ptr:BSTEventSource`
 pub const g_FootstepEventSource_ptr: u64 = 403553;
 /// `g_FormTypeSignatures` at 0x17f95a0 (string, high)
 pub const g_FormTypeSignatures: u64 = 187799;
+/// `g_FrameDelta` at 0x3275608 (runtime, high); seconds of the last frame times the time multiplier; the delta the camera states integrate (chase, zoom, dolly, collision, damping, auto vanity timer) (high); type `float`
+pub const g_FrameDelta: u64 = 410199;
+/// `g_FrameTimer` at 0x32755f0 (semantic, high); the frame timer: +0x18 delta, +0x1c real delta, +0x20 elapsed ms (high); type `undefined1`
+pub const g_FrameTimer: u64 = 410196;
 /// `g_FreeShadowMapSlices` at 0x20d8ff8 (semantic, high); bit mask of free slices of depth target 4 (focus and local shadow maps) (high); type `undefined4`
 pub const g_FreeShadowMapSlices: u64 = 391715;
 /// `g_GRefCountImplCore` at 0x20ce5c8 (layout_inference, medium)
 pub const g_GRefCountImplCore: u64 = 390206;
 /// `g_GarbageCollector_ptr` at 0x219e5d0 (xref_inference, medium)
 pub const g_GarbageCollector_ptr: u64 = 400329;
+/// `g_GrassShader` at 0x33d3de0 (semantic, high); pointer to `BSGrassShader`: holder; holder (high); type `ptr:BSGrassShader`
+pub const g_GrassShader: u64 = 414608;
+/// `g_GrassShaderInstance` at 0x33d4c30 (semantic, high); pointer to `BSGrassShader`: instance pointer; instance pointer (high); type `ptr:BSGrassShader`
+pub const g_GrassShaderInstance: u64 = 414752;
 /// `g_HandleFreeHead` at 0x21a426c (runtime, high); head of the handle free list (high); type `undefined4`
 pub const g_HandleFreeHead: u64 = 400619;
 /// `g_HandleFreeTail` at 0x21a4270 (runtime, high); tail of the handle free list (high); type `undefined4`
@@ -12003,6 +12043,8 @@ pub const g_IPathBuilderFactoryBase_2: u64 = 405407;
 pub const g_IPathBuilderFactoryBase_3: u64 = 405686;
 /// `g_IPathBuilderFactoryBase_4` at 0x3255aa8 (layout_inference, medium)
 pub const g_IPathBuilderFactoryBase_4: u64 = 405787;
+/// `g_ImageSpaceState` at 0x33d40a0 (xref_inference, medium); pointer to `ImageSpaceState`: the 0x220-byte image space state created in InitShaders (0x14ed370): the image space effects by id at +0x20 and the current parameters at +0xc8, which the lighting shader's SetupGeometry also reads (+0xe0); the 0x220-byte image space state created in InitShaders (0x14ed370): the image space effects by id at +0x20 and the current parameters at +0xc8, which the lighting shader's SetupGeometry also reads (+0xe0) (low); type `ptr:ImageSpaceState`
+pub const g_ImageSpaceState: u64 = 414660;
 /// `g_InstalledContent_ptr` at 0x3210eb0 (xref_inference, medium)
 pub const g_InstalledContent_ptr: u64 = 503225;
 /// `g_InvalidRefHandle` at 0x219e55c (runtime, high); the null handle value (0) (high); type `undefined4`
@@ -12013,6 +12055,10 @@ pub const g_Inventory3DManager_ptr: u64 = 403559;
 pub const g_JobListManager_ServingThread: u64 = 403109;
 /// `g_JournalInputMapping_RemapHandler` at 0x20bc728 (layout_inference, medium)
 pub const g_JournalInputMapping_RemapHandler: u64 = 383628;
+/// `g_LightingShader` at 0x33d3e28 (semantic, high); pointer to `BSLightingShader`: refcounted holder of the lighting shader; refcounted holder of the lighting shader (high); type `ptr:BSLightingShader`
+pub const g_LightingShader: u64 = 414613;
+/// `g_LightingShaderInstance` at 0x3436400 (semantic, high); pointer to `BSLightingShader`: instance pointer set by the ctor; instance pointer set by the ctor (high); type `ptr:BSLightingShader`
+pub const g_LightingShaderInstance: u64 = 415094;
 /// `g_LipSynchAnimDB_LipAudioInterface` at 0x2079f38 (layout_inference, medium)
 pub const g_LipSynchAnimDB_LipAudioInterface: u64 = 359693;
 /// `g_MagicFavorites` at 0x323a1d0 (layout_inference, medium)
@@ -12021,6 +12067,8 @@ pub const g_MagicFavorites: u64 = 403620;
 pub const g_MenuControls_ptr: u64 = 401263;
 /// `g_MenuTopicManager_ptr` at 0x31df408 (xref_inference, medium)
 pub const g_MenuTopicManager_ptr: u64 = 401099;
+/// `g_Mode10Accumulator` at 0x3436238 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x10, decals off; used only by Msg_LODTrees in the references found; renderMode 0x10, decals off; used only by Msg_LODTrees in the references found (high); type `ptr:BSShaderAccumulator`
+pub const g_Mode10Accumulator: u64 = 415010;
 /// `g_MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta` at 0x3350fe0 (layout_inference, medium)
 pub const g_MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta: u64 = 412324;
 /// `g_MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerUpdateDataSmallDelta` at 0x3350ff0 (layout_inference, medium)
@@ -12071,11 +12119,17 @@ pub const g_NullMovementState: u64 = 412263;
 pub const g_NullPathBuilderTracker: u64 = 412226;
 /// `g_PackageCreator` at 0x20b2bc8 (layout_inference, medium)
 pub const g_PackageCreator: u64 = 379696;
+/// `g_ParticleShader` at 0x33d3df8 (semantic, high); pointer to `BSParticleShader`: holder; holder (high); type `ptr:BSParticleShader`
+pub const g_ParticleShader: u64 = 414611;
+/// `g_ParticleShaderInstance` at 0x3698c10 (semantic, high); pointer to `BSParticleShader`: instance pointer; instance pointer (high); type `ptr:BSParticleShader`
+pub const g_ParticleShaderInstance: u64 = 415316;
 /// `g_PathManagerPositionPlayerAdapter` at 0x20b6310 (layout_inference, medium)
 pub const g_PathManagerPositionPlayerAdapter: u64 = 381076;
 /// `g_Pathing_ptr` at 0x31df208 (xref_inference, medium)
 pub const g_Pathing_ptr: u64 = 401037;
-/// `g_PlayerCamera_ptr` at 0x31a5478 (xref_inference, medium)
+/// `g_PlaceholderTexture` at 0x3336448 (xref_inference, medium); pointer to `NiSourceTexture`: texture used when a material texture is missing; texture used when a material texture is missing (low); type `ptr:NiSourceTexture`
+pub const g_PlaceholderTexture: u64 = 411503;
+/// `g_PlayerCamera_ptr` at 0x31a5478 (runtime, high); pointer to `PlayerCamera`: the player camera singleton; the player camera singleton (high); type `ptr:PlayerCamera`
 pub const g_PlayerCamera_ptr: u64 = 400802;
 /// `g_PlayerCharacter_ptr` at 0x3230778 (runtime, high); pointer to `PlayerCharacter`: pointer to the player; pointer to the player (high); type `ptr:PlayerCharacter`
 pub const g_PlayerCharacter_ptr: u64 = 403521;
@@ -12101,6 +12155,10 @@ pub const g_RagdollFurnitureListener: u64 = 370090;
 pub const g_RenderFrameCounter: u64 = 411489;
 /// `g_RenderTargets` at 0x3335600 (semantic, medium); the render and depth-stencil target tables; the shadow maps use depth-stencil ids 2, 3 and 4 (medium); type `undefined1`
 pub const g_RenderTargets: u64 = 411451;
+/// `g_SceneGraph` at 0x3230740 (runtime, high); pointer to `SceneGraph`: world scene graph (0x150); +0x128 is the frame NiCamera; world scene graph (0x150); +0x128 is the frame NiCamera (high); type `ptr:SceneGraph`
+pub const g_SceneGraph: u64 = 403513;
+/// `g_ScreenSplatterAccumulator` at 0x3436250 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x17, batch kind 100: the screen blood splatter (0x31a5000) drawn in sub17 and after image space in sub20 (techniques 0x5c006073..74); renderMode 0x17, batch kind 100: the screen blood splatter (0x31a5000) drawn in sub17 and after image space in sub20 (techniques 0x5c006073..74) (high); type `ptr:BSShaderAccumulator`
+pub const g_ScreenSplatterAccumulator: u64 = 415013;
 /// `g_ScriptCommandTable` at 0x207ea90 (console_cmd, high)
 pub const g_ScriptCommandTable: u64 = 361120;
 /// `g_SettingT_INIPrefSettingCollection` at 0x20b3068 (layout_inference, medium)
@@ -12153,7 +12211,11 @@ pub const g_SettingT_INISettingCollection_7: u64 = 388975;
 pub const g_SettingT_INISettingCollection_8: u64 = 388978;
 /// `g_ShadowSceneNode` at 0x20d68b0 (runtime, high); pointer to `ShadowSceneNode`: the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty; the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty (high); type `ptr:ShadowSceneNode`
 pub const g_ShadowSceneNode: u64 = 390951;
-/// `g_Sky_ptr` at 0x31e0d80 (xref_inference, medium)
+/// `g_SkyShader` at 0x33d3e20 (semantic, high); pointer to `BSSkyShader`: holder; holder (high); type `ptr:BSSkyShader`
+pub const g_SkyShader: u64 = 414612;
+/// `g_SkyShaderInstance` at 0x34364f0 (semantic, high); pointer to `BSSkyShader`: instance pointer; RenderPassImmediately's SetupPassGeometryState skips the alpha update for it; instance pointer; RenderPassImmediately's SetupPassGeometryState skips the alpha update for it (high); type `ptr:BSSkyShader`
+pub const g_SkyShaderInstance: u64 = 415143;
+/// `g_Sky_ptr` at 0x31e0d80 (semantic, high); pointer to `Sky`: sky singleton; sky singleton (high); type `ptr:Sky`
 pub const g_Sky_ptr: u64 = 401652;
 /// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_0D8D4B7E_AttachAshPileFunctor_14` at 0x20bcb70 (layout_inference, medium)
 pub const g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_0D8D4B7E_AttachAshPileFunctor_14: u64 = 383759;
@@ -13067,6 +13129,18 @@ pub const g_TypeNode_hkPackedNiTriStripsData: u64 = 411603;
 pub const g_UIBlurManager_ptr: u64 = 403350;
 /// `g_UISaveLoadManager_ptr` at 0x31e0140 (xref_inference, medium)
 pub const g_UISaveLoadManager_ptr: u64 = 401336;
+/// `g_UtilityShader` at 0x33d3de8 (semantic, high); pointer to `BSUtilityShader`: holder; holder (high); type `ptr:BSUtilityShader`
+pub const g_UtilityShader: u64 = 414609;
+/// `g_UtilityShaderInstance` at 0x3698b60 (semantic, high); pointer to `BSUtilityShader`: instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes; instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes (high); type `ptr:BSUtilityShader`
+pub const g_UtilityShaderInstance: u64 = 415300;
+/// `g_WaterShader` at 0x33d3e58 (semantic, high); pointer to `BSWaterShader`: holder; holder (high); type `ptr:BSWaterShader`
+pub const g_WaterShader: u64 = 414615;
+/// `g_WaterShaderInstance` at 0x3436458 (semantic, high); pointer to `BSWaterShader`: instance pointer; instance pointer (high); type `ptr:BSWaterShader`
+pub const g_WaterShaderInstance: u64 = 415108;
+/// `g_WorldAccumulator` at 0x3436230 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition; renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition (high); type `ptr:BSShaderAccumulator`
+pub const g_WorldAccumulator: u64 = 415009;
+/// `g_WorldDepthAccumulator` at 0x3436228 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, drawSkinnedDecals 1: the world depth pre-pass (step 12) and RenderShadowMaps' camera-depth draws; renderMode 0xc, drawSkinnedDecals 1: the world depth pre-pass (step 12) and RenderShadowMaps' camera-depth draws (high); type `ptr:BSShaderAccumulator`
+pub const g_WorldDepthAccumulator: u64 = 415008;
 /// `g_anon_025735F6_ScriptFoundCallback` at 0x20bcb10 (layout_inference, medium)
 pub const g_anon_025735F6_ScriptFoundCallback: u64 = 383748;
 /// `g_anon_11B7475C_PlayerParentCellListener` at 0x20b3a58 (layout_inference, medium)

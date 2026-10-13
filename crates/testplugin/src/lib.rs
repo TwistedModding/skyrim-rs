@@ -6,7 +6,9 @@
 //! received at the save; `papyrus` registers its natives in the SKSE `PapyrusInterface` callback,
 //! checks handles and script types after a load and the calls it received at the save; `render`
 //! detours `NiAVObject::Cull` at `DataLoaded`, reads the scene after a load and reports the caster
-//! counts at the save. `scripts/verify.ps1` compares the log against `DevBench`'s answers.
+//! counts at the save; `frame` detours `TESCamera::Update` and `PresentFrame`, samples the camera
+//! per state and reads the scene graph, shaders, accumulators, window and sky at the saves.
+//! `scripts/verify.ps1` compares the log against `DevBench`'s answers.
 //!
 //! A run mode in `Data\SKSE\Plugins\skyrim-rs-test.mode` next to the DLL bisects a crash:
 //! `nohook` skips the render detours, `passive` installs them but never counts.
@@ -45,6 +47,7 @@ mod actors;
 mod crash;
 mod events;
 mod forms;
+mod frame;
 mod papyrus;
 mod render;
 
@@ -89,6 +92,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
                 log!("render hooks skipped (mode nohook)");
             } else {
                 run("render", "dataLoaded", &[("install", render::install)]);
+                run("frame", "dataLoaded", &[("install", frame::install)]);
             }
         }
         skse::MessagingInterface::POST_LOAD_GAME => {
@@ -99,6 +103,8 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             run("papyrus", "postLoadGame", papyrus::TESTS);
             render::reset(mode() != "passive");
             run("render", "postLoadGame", render::TESTS);
+            frame::reset();
+            run("frame", "postLoadGame", frame::TESTS);
             render::SAVES.store(0, Ordering::Relaxed);
         }
         skse::MessagingInterface::PRE_LOAD_GAME | skse::MessagingInterface::NEW_GAME => render::suspend(),
@@ -109,6 +115,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             run("papyrus", "saveGame", papyrus::CALLS_TESTS);
             let save = render::SAVES.fetch_add(1, Ordering::Relaxed) + 1;
             run("render", &format!("save{save}"), &[render::TESTS, render::CASTER_TESTS].concat());
+            run("frame", &format!("save{save}"), &[frame::TESTS, frame::SAMPLE_TESTS].concat());
         }
         _ => {}
     }

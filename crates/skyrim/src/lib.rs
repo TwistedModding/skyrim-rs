@@ -9,6 +9,7 @@ use std::fmt;
 use std::sync::OnceLock;
 
 pub mod actors;
+pub mod camera;
 pub mod events;
 pub mod forms;
 pub mod papyrus;
@@ -49,6 +50,7 @@ struct Runtime {
     events: events::Fns,
     papyrus: papyrus::Fns,
     render: render::Fns,
+    camera: camera::Fns,
     strings: string::Fns,
 }
 
@@ -84,8 +86,9 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     let events = events::Fns::resolve(&reloc)?;
     let papyrus = papyrus::Fns::resolve(&reloc)?;
     let render = render::Fns::resolve(&reloc)?;
+    let camera = camera::Fns::resolve(&reloc)?;
     let strings = string::Fns::resolve(&reloc)?;
-    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, strings });
+    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, camera, strings });
     Ok(())
 }
 

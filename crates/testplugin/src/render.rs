@@ -9,7 +9,8 @@ use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 
 use layout::v1_7_104::{classes, vtables};
 use skyrim::actors::PlayerCharacter;
-use skyrim::render::{CameraState, CullFn, CullingProcess, NiAVObject, PlayerCamera, SetFirstPersonFn, ShadowSceneNode, frame_counter};
+use skyrim::camera::{CameraState, PlayerCamera};
+use skyrim::render::{CullFn, CullingProcess, NiAVObject, SetFirstPersonFn, ShadowSceneNode, frame_counter};
 
 use crate::{Test, check};
 

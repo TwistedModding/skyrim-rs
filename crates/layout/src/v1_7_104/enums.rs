@@ -1104,6 +1104,552 @@ impl BSEventNotifyControl {
     }
 }
 
+/// values in data/shadermaterialtypes.json (frame pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ShaderMaterialType {
+    /// `Base`
+    Base = 0,
+    /// `Effect`
+    Effect = 1,
+    /// `Lighting`
+    Lighting = 2,
+    /// `Water`
+    Water = 3,
+}
+
+impl ShaderMaterialType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Base),
+            1 => Some(Self::Effect),
+            2 => Some(Self::Lighting),
+            3 => Some(Self::Water),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/lightingmaterialfeatures.json (frame pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum LightingMaterialFeature {
+    /// `None`
+    None = 0,
+    /// `EnvMap`
+    EnvMap = 1,
+    /// `Glowmap`
+    Glowmap = 2,
+    /// `Parallax`
+    Parallax = 3,
+    /// `Facegen`
+    Facegen = 4,
+    /// `FacegenRGBTint`
+    FacegenRGBTint = 5,
+    /// `HairTint`
+    HairTint = 6,
+    /// `ParallaxOcc`
+    ParallaxOcc = 7,
+    /// `MultiTexLand`
+    MultiTexLand = 8,
+    /// `LODLand`
+    LODLand = 9,
+    /// `Snow`
+    Snow = 10,
+    /// `MultiLayerParallax`
+    MultiLayerParallax = 11,
+    /// `TreeAnim`
+    TreeAnim = 12,
+    /// `LODObjects`
+    LODObjects = 13,
+    /// `MultiIndexTriShapeSnow`
+    MultiIndexTriShapeSnow = 14,
+    /// `LODObjectsHD`
+    LODObjectsHD = 15,
+    /// `Eye`
+    Eye = 16,
+    /// `Cloud`
+    Cloud = 17,
+    /// `LODLandNoise`
+    LODLandNoise = 18,
+    /// `MultiTexLandLODBlend`
+    MultiTexLandLODBlend = 19,
+}
+
+impl LightingMaterialFeature {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::None),
+            1 => Some(Self::EnvMap),
+            2 => Some(Self::Glowmap),
+            3 => Some(Self::Parallax),
+            4 => Some(Self::Facegen),
+            5 => Some(Self::FacegenRGBTint),
+            6 => Some(Self::HairTint),
+            7 => Some(Self::ParallaxOcc),
+            8 => Some(Self::MultiTexLand),
+            9 => Some(Self::LODLand),
+            10 => Some(Self::Snow),
+            11 => Some(Self::MultiLayerParallax),
+            12 => Some(Self::TreeAnim),
+            13 => Some(Self::LODObjects),
+            14 => Some(Self::MultiIndexTriShapeSnow),
+            15 => Some(Self::LODObjectsHD),
+            16 => Some(Self::Eye),
+            17 => Some(Self::Cloud),
+            18 => Some(Self::LODLandNoise),
+            19 => Some(Self::MultiTexLandLODBlend),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/texturesetslots.json (frame pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum TextureSetSlot {
+    /// `Diffuse`
+    Diffuse = 0,
+    /// `Normal`
+    Normal = 1,
+    /// `GlowRimSoft`
+    GlowRimSoft = 2,
+    /// `Height`
+    Height = 3,
+    /// `Environment`
+    Environment = 4,
+    /// `EnvironmentMask`
+    EnvironmentMask = 5,
+    /// `MultiLayerFacegenExtra`
+    MultiLayerFacegenExtra = 6,
+    /// `SpecularBackLight`
+    SpecularBackLight = 7,
+    /// `Unused`
+    Unused = 8,
+}
+
+impl TextureSetSlot {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Diffuse),
+            1 => Some(Self::Normal),
+            2 => Some(Self::GlowRimSoft),
+            3 => Some(Self::Height),
+            4 => Some(Self::Environment),
+            5 => Some(Self::EnvironmentMask),
+            6 => Some(Self::MultiLayerFacegenExtra),
+            7 => Some(Self::SpecularBackLight),
+            8 => Some(Self::Unused),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/accumulatorrendermodes.json (frame pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum AccumulatorRenderMode {
+    /// `Standard`
+    Standard = 0,
+    /// `DepthPrepass`
+    DepthPrepass = 12,
+    /// `FrustumShadowMap`
+    FrustumShadowMap = 13,
+    /// `DirectionalShadowMap`
+    DirectionalShadowMap = 14,
+    /// `ParabolicShadowMap`
+    ParabolicShadowMap = 15,
+    /// `depth`
+    depth = 16,
+    /// `depth`
+    depth_2 = 17,
+    /// `WorldMap`
+    WorldMap = 18,
+    /// `same`
+    same = 19,
+    /// `GeometryList`
+    GeometryList = 20,
+    /// `register`
+    register = 21,
+    /// `FirstPerson`
+    FirstPerson = 22,
+    /// `ScreenSplatter`
+    ScreenSplatter = 23,
+    /// `property`
+    property = 24,
+    /// `CubeMapPartial`
+    CubeMapPartial = 25,
+    /// `same`
+    same_2 = 26,
+    /// `CubeMap`
+    CubeMap = 27,
+    /// `Precipitation`
+    Precipitation = 28,
+    /// `default`
+    default = 29,
+}
+
+impl AccumulatorRenderMode {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Standard),
+            12 => Some(Self::DepthPrepass),
+            13 => Some(Self::FrustumShadowMap),
+            14 => Some(Self::DirectionalShadowMap),
+            15 => Some(Self::ParabolicShadowMap),
+            16 => Some(Self::depth),
+            17 => Some(Self::depth_2),
+            18 => Some(Self::WorldMap),
+            19 => Some(Self::same),
+            20 => Some(Self::GeometryList),
+            21 => Some(Self::register),
+            22 => Some(Self::FirstPerson),
+            23 => Some(Self::ScreenSplatter),
+            24 => Some(Self::property),
+            25 => Some(Self::CubeMapPartial),
+            26 => Some(Self::same_2),
+            27 => Some(Self::CubeMap),
+            28 => Some(Self::Precipitation),
+            29 => Some(Self::default),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/rendertargetids.json (frame pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum RenderTargetId {
+    /// `back`
+    back = 0,
+    /// `main`
+    main = 1,
+    /// `screen`
+    screen = 2,
+    /// `screen`
+    screen_2 = 3,
+    /// `screen`
+    screen_3 = 4,
+    /// `see`
+    see = 5,
+    /// `water`
+    water = 6,
+    /// `screen`
+    screen_4 = 7,
+    /// `Value8`
+    Value8 = 8,
+    /// `Value9`
+    Value9 = 9,
+    /// `half`
+    half = 12,
+    /// `screen`
+    screen_5 = 13,
+    /// `screen`
+    screen_6 = 14,
+    /// `Valuef`
+    Valuef = 15,
+    /// `half`
+    half_2 = 16,
+    /// `half`
+    half_3 = 17,
+    /// `shadow`
+    shadow = 18,
+    /// `screen`
+    screen_7 = 19,
+    /// `screen`
+    screen_8 = 20,
+    /// `quarter`
+    quarter = 22,
+    /// `quarter`
+    quarter_2 = 23,
+    /// `quarter`
+    quarter_3 = 24,
+    /// `quarter`
+    quarter_4 = 25,
+    /// `Value28`
+    Value28 = 40,
+    /// `screen`
+    screen_9 = 41,
+    /// `screen`
+    screen_10 = 42,
+    /// `screen`
+    screen_11 = 43,
+    /// `screen`
+    screen_12 = 44,
+    /// `screen`
+    screen_13 = 45,
+    /// `screen`
+    screen_14 = 46,
+    /// `half`
+    half_4 = 47,
+    /// `screen`
+    screen_15 = 49,
+    /// `screen`
+    screen_16 = 62,
+    /// `half`
+    half_5 = 63,
+    /// `screen`
+    screen_17 = 64,
+    /// `half`
+    half_6 = 65,
+    /// `screen`
+    screen_18 = 66,
+    /// `half`
+    half_7 = 67,
+    /// `screen`
+    screen_19 = 68,
+    /// `half`
+    half_8 = 69,
+    /// `as`
+    as_ = 70,
+    /// `as`
+    as__2 = 71,
+    /// `as`
+    as__3 = 72,
+    /// `as`
+    as__4 = 73,
+    /// `as`
+    as__5 = 74,
+    /// `save`
+    save = 75,
+    /// `screen`
+    screen_20 = 76,
+    /// `half`
+    half_9 = 77,
+    /// `half`
+    half_10 = 78,
+    /// `quarter`
+    quarter_5 = 79,
+    /// `quarter`
+    quarter_6 = 80,
+    /// `screen`
+    screen_21 = 81,
+    /// `screen`
+    screen_22 = 82,
+    /// `screen`
+    screen_23 = 83,
+    /// `screen`
+    screen_24 = 84,
+    /// `screen`
+    screen_25 = 85,
+    /// `screen`
+    screen_26 = 86,
+    /// `screen`
+    screen_27 = 87,
+    /// `screen`
+    screen_28 = 88,
+    /// `screen`
+    screen_29 = 89,
+    /// `screen`
+    screen_30 = 90,
+    /// `quarter`
+    quarter_7 = 91,
+    /// `quarter`
+    quarter_8 = 92,
+    /// `quarter`
+    quarter_9 = 93,
+    /// `screen`
+    screen_31 = 112,
+    /// `screen`
+    screen_32 = 113,
+}
+
+impl RenderTargetId {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::back),
+            1 => Some(Self::main),
+            2 => Some(Self::screen),
+            3 => Some(Self::screen_2),
+            4 => Some(Self::screen_3),
+            5 => Some(Self::see),
+            6 => Some(Self::water),
+            7 => Some(Self::screen_4),
+            8 => Some(Self::Value8),
+            9 => Some(Self::Value9),
+            12 => Some(Self::half),
+            13 => Some(Self::screen_5),
+            14 => Some(Self::screen_6),
+            15 => Some(Self::Valuef),
+            16 => Some(Self::half_2),
+            17 => Some(Self::half_3),
+            18 => Some(Self::shadow),
+            19 => Some(Self::screen_7),
+            20 => Some(Self::screen_8),
+            22 => Some(Self::quarter),
+            23 => Some(Self::quarter_2),
+            24 => Some(Self::quarter_3),
+            25 => Some(Self::quarter_4),
+            40 => Some(Self::Value28),
+            41 => Some(Self::screen_9),
+            42 => Some(Self::screen_10),
+            43 => Some(Self::screen_11),
+            44 => Some(Self::screen_12),
+            45 => Some(Self::screen_13),
+            46 => Some(Self::screen_14),
+            47 => Some(Self::half_4),
+            49 => Some(Self::screen_15),
+            62 => Some(Self::screen_16),
+            63 => Some(Self::half_5),
+            64 => Some(Self::screen_17),
+            65 => Some(Self::half_6),
+            66 => Some(Self::screen_18),
+            67 => Some(Self::half_7),
+            68 => Some(Self::screen_19),
+            69 => Some(Self::half_8),
+            70 => Some(Self::as_),
+            71 => Some(Self::as__2),
+            72 => Some(Self::as__3),
+            73 => Some(Self::as__4),
+            74 => Some(Self::as__5),
+            75 => Some(Self::save),
+            76 => Some(Self::screen_20),
+            77 => Some(Self::half_9),
+            78 => Some(Self::half_10),
+            79 => Some(Self::quarter_5),
+            80 => Some(Self::quarter_6),
+            81 => Some(Self::screen_21),
+            82 => Some(Self::screen_22),
+            83 => Some(Self::screen_23),
+            84 => Some(Self::screen_24),
+            85 => Some(Self::screen_25),
+            86 => Some(Self::screen_26),
+            87 => Some(Self::screen_27),
+            88 => Some(Self::screen_28),
+            89 => Some(Self::screen_29),
+            90 => Some(Self::screen_30),
+            91 => Some(Self::quarter_7),
+            92 => Some(Self::quarter_8),
+            93 => Some(Self::quarter_9),
+            112 => Some(Self::screen_31),
+            113 => Some(Self::screen_32),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/depthstenciltargetids.json (frame pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum DepthStencilTargetId {
+    /// `scene`
+    scene = 0,
+    /// `second`
+    second = 1,
+    /// `sun`
+    sun = 2,
+    /// `as`
+    as_ = 3,
+    /// `focus`
+    focus = 4,
+    /// `decal`
+    decal = 5,
+    /// `Value6`
+    Value6 = 6,
+    /// `screen`
+    screen = 7,
+    /// `height`
+    height = 9,
+    /// `Valuea`
+    Valuea = 10,
+}
+
+impl DepthStencilTargetId {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::scene),
+            1 => Some(Self::second),
+            2 => Some(Self::sun),
+            3 => Some(Self::as_),
+            4 => Some(Self::focus),
+            5 => Some(Self::decal),
+            6 => Some(Self::Value6),
+            7 => Some(Self::screen),
+            9 => Some(Self::height),
+            10 => Some(Self::Valuea),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/menu3dmodes.json (frame pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum Menu3DMode {
+    /// `journal`
+    journal = 0,
+    /// `Value1`
+    Value1 = 1,
+    /// `magic`
+    magic = 2,
+    /// `book`
+    book = 3,
+    /// `mist`
+    mist = 4,
+    /// `unknown`
+    unknown = 5,
+    /// `stats`
+    stats = 6,
+    /// `lockpicking`
+    lockpicking = 7,
+}
+
+impl Menu3DMode {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::journal),
+            1 => Some(Self::Value1),
+            2 => Some(Self::magic),
+            3 => Some(Self::book),
+            4 => Some(Self::mist),
+            5 => Some(Self::unknown),
+            6 => Some(Self::stats),
+            7 => Some(Self::lockpicking),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/frustumplanes.json (frame pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum FrustumPlane {
+    /// `near`
+    near = 0,
+    /// `far`
+    far = 1,
+    /// `left`
+    left = 2,
+    /// `right`
+    right = 3,
+    /// `top`
+    top = 4,
+    /// `bottom`
+    bottom = 5,
+}
+
+impl FrustumPlane {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::near),
+            1 => Some(Self::far),
+            2 => Some(Self::left),
+            3 => Some(Self::right),
+            4 => Some(Self::top),
+            5 => Some(Self::bottom),
+            _ => None,
+        }
+    }
+}
+
 /// the raw BSScript::TypeInfo codes: 0 None, 1 Object, 2 String, 3 Int, 4 Float, 5 Bool, 11-15 the arrays of 1-5; values from data/papyrustypes.json (papyrus pass).
 #[repr(u8)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
@@ -1511,6 +2057,144 @@ impl ActorState_flags1 {
     }
 }
 
+/// Named bits of `BSCullingProcess.activePlaneMask` (render pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BSCullingProcess_activePlaneMask(pub u32);
+
+impl BSCullingProcess_activePlaneMask {
+    /// testNearPlane (high)
+    pub const TEST_NEAR_PLANE: Self = Self(0x1);
+    /// testFarPlane (high)
+    pub const TEST_FAR_PLANE: Self = Self(0x2);
+    /// testLeftPlane (high)
+    pub const TEST_LEFT_PLANE: Self = Self(0x4);
+    /// testRightPlane (high)
+    pub const TEST_RIGHT_PLANE: Self = Self(0x8);
+    /// testTopPlane (high)
+    pub const TEST_TOP_PLANE: Self = Self(0x10);
+    /// testBottomPlane (high)
+    pub const TEST_BOTTOM_PLANE: Self = Self(0x20);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BSShaderProperty.flags` (render pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BSShaderProperty_flags(pub u64);
+
+impl BSShaderProperty_flags {
+    /// specular (high)
+    pub const SPECULAR: Self = Self(0x1);
+    /// skinned (high)
+    pub const SKINNED: Self = Self(0x2);
+    /// refraction (high)
+    pub const REFRACTION: Self = Self(0x4);
+    /// environmentMap (medium)
+    pub const ENVIRONMENT_MAP: Self = Self(0x80);
+    /// receiveShadows (high)
+    pub const RECEIVE_SHADOWS: Self = Self(0x100);
+    /// castShadows (high)
+    pub const CAST_SHADOWS: Self = Self(0x200);
+    /// facegen (medium)
+    pub const FACEGEN: Self = Self(0x400);
+    /// parallax (high)
+    pub const PARALLAX: Self = Self(0x800);
+    /// modelSpaceNormals (high)
+    pub const MODEL_SPACE_NORMALS: Self = Self(0x1000);
+    /// refractionNormalClamp (low)
+    pub const REFRACTION_NORMAL_CLAMP: Self = Self(0x2000);
+    /// multiTextureLandscape (high)
+    pub const MULTI_TEXTURE_LANDSCAPE: Self = Self(0x4000);
+    /// refraction2 (low)
+    pub const REFRACTION2: Self = Self(0x8000);
+    /// refractionFalloff (low)
+    pub const REFRACTION_FALLOFF: Self = Self(0x10000);
+    /// eye (medium)
+    pub const EYE: Self = Self(0x20000);
+    /// hairTint (medium)
+    pub const HAIR_TINT: Self = Self(0x40000);
+    /// noStippleFade (low)
+    pub const NO_STIPPLE_FADE: Self = Self(0x80000);
+    /// facegenRGBTint (high)
+    pub const FACEGEN_RGB_TINT: Self = Self(0x200000);
+    /// ownsEmitColor (medium)
+    pub const OWNS_EMIT_COLOR: Self = Self(0x400000);
+    /// projectedUV (high)
+    pub const PROJECTED_UV: Self = Self(0x800000);
+    /// noTextureSet (low)
+    pub const NO_TEXTURE_SET: Self = Self(0x1000000);
+    /// decal (medium)
+    pub const DECAL: Self = Self(0x4000000);
+    /// dynamicDecal (medium)
+    pub const DYNAMIC_DECAL: Self = Self(0x8000000);
+    /// parallaxOcclusion (high)
+    pub const PARALLAX_OCCLUSION: Self = Self(0x10000000);
+    /// snow (low)
+    pub const SNOW: Self = Self(0x40000000);
+    /// zBufferTest (high)
+    pub const Z_BUFFER_TEST: Self = Self(0x80000000);
+    /// zBufferWrite (high)
+    pub const Z_BUFFER_WRITE: Self = Self(0x100000000);
+    /// lodLandscape (high)
+    pub const LOD_LANDSCAPE: Self = Self(0x200000000);
+    /// lodObjects (medium)
+    pub const LOD_OBJECTS: Self = Self(0x400000000);
+    /// twoSided (medium)
+    pub const TWO_SIDED: Self = Self(0x1000000000);
+    /// vertexColors (high)
+    pub const VERTEX_COLORS: Self = Self(0x2000000000);
+    /// glowMap (high)
+    pub const GLOW_MAP: Self = Self(0x4000000000);
+    /// characterLight (high)
+    pub const CHARACTER_LIGHT: Self = Self(0x10000000000);
+    /// multiIndexSnow (low)
+    pub const MULTI_INDEX_SNOW: Self = Self(0x20000000000);
+    /// lodLandBlend (medium)
+    pub const LOD_LAND_BLEND: Self = Self(0x400000000000);
+    /// anisotropicLighting (high)
+    pub const ANISOTROPIC_LIGHTING: Self = Self(0x20000000000000);
+    /// batchSubList4 (low)
+    pub const BATCH_SUB_LIST4: Self = Self(0x40000000000000);
+    /// worldMap (medium)
+    pub const WORLD_MAP: Self = Self(0x80000000000000);
+    /// multiLayerParallax (medium)
+    pub const MULTI_LAYER_PARALLAX: Self = Self(0x100000000000000);
+    /// softLighting (high)
+    pub const SOFT_LIGHTING: Self = Self(0x200000000000000);
+    /// rimLighting (high)
+    pub const RIM_LIGHTING: Self = Self(0x400000000000000);
+    /// backLighting (high)
+    pub const BACK_LIGHTING: Self = Self(0x800000000000000);
+    /// projectedSnow (low)
+    pub const PROJECTED_SNOW: Self = Self(0x1000000000000000);
+    /// treeAnim (high)
+    pub const TREE_ANIM: Self = Self(0x2000000000000000);
+    /// effectLighting (low)
+    pub const EFFECT_LIGHTING: Self = Self(0x4000000000000000);
+    /// lodObjectsHD (medium)
+    pub const LOD_OBJECTS_HD: Self = Self(0x8000000000000000);
+
+    #[must_use]
+    pub const fn bits(self) -> u64 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `BSStringPool::Entry.flags` (events pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -1522,6 +2206,82 @@ impl BSStringPool__Entry_flags {
 
     #[must_use]
     pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BSXFlags.flags` (frame pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BSXFlags_flags(pub u32);
+
+impl BSXFlags_flags {
+    /// CanHaveFlames (medium)
+    pub const CAN_HAVE_FLAMES: Self = Self(0x10);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `NiAVObject.flags` (render pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct NiAVObject_flags(pub u32);
+
+impl NiAVObject_flags {
+    /// SelectiveUpdate (medium)
+    pub const SELECTIVE_UPDATE: Self = Self(0x2);
+    /// SelectiveUpdateTransforms (medium)
+    pub const SELECTIVE_UPDATE_TRANSFORMS: Self = Self(0x4);
+    /// SelectiveUpdateControllers (medium)
+    pub const SELECTIVE_UPDATE_CONTROLLERS: Self = Self(0x8);
+    /// SelectiveUpdateRigid (medium)
+    pub const SELECTIVE_UPDATE_RIGID: Self = Self(0x10);
+    /// IgnoreLocalTransform (medium)
+    pub const IGNORE_LOCAL_TRANSFORM: Self = Self(0x200);
+    /// FixedBound (medium)
+    pub const FIXED_BOUND: Self = Self(0x2000);
+    /// FadeComplete (low)
+    pub const FADE_COMPLETE: Self = Self(0x4000);
+    /// lightsAssigned (medium)
+    pub const LIGHTS_ASSIGNED: Self = Self(0x400000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `NiAlphaProperty.flags` (frame pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct NiAlphaProperty_flags(pub u16);
+
+impl NiAlphaProperty_flags {
+    /// alphaBlend (high)
+    pub const ALPHA_BLEND: Self = Self(0x1);
+    /// alphaTest (high)
+    pub const ALPHA_TEST: Self = Self(0x200);
+
+    #[must_use]
+    pub const fn bits(self) -> u16 {
         self.0
     }
 

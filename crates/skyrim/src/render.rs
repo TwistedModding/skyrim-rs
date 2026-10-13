@@ -1,8 +1,11 @@
-//! Renderer (subsystem pass 5): the scene graph node and its flags, the world `ShadowSceneNode`
-//! with its light lists, the sun's `BSShadowDirectionalLight` and its cascade records, the
-//! culling process a node is visited by, the player camera's state, the render frame counter and
-//! the two hooks a first-person shadow mod needs (`NiAVObject::Cull` and
-//! `PlayerCharacter::SetFirstPerson`).
+//! Renderer (subsystem passes 5 and 6): the scene graph node with its name, flags, transforms and
+//! tree edits, the world `ShadowSceneNode` with its light lists, the sun's
+//! `BSShadowDirectionalLight` and its cascade records, the culling process a node is visited by,
+//! the frame camera, shader properties with their flags, materials and texture paths, the render
+//! passes, the accumulators and their modes, the render window with its swap chain, the sky, the
+//! render frame counter and the hooks a visual mod needs (`NiAVObject::Cull`,
+//! `PlayerCharacter::SetFirstPerson`, `RenderWorld`, `PresentFrame`). The player camera is
+//! [`crate::camera`].
 //!
 //! Reads follow the pass's thread model: light lists, roots and flags are stable while the frame
 //! culls (the main thread changes them between frames); a [`CullFn`] detour runs on the job
@@ -14,16 +17,24 @@ use core::ffi::c_void;
 use core::sync::atomic::{AtomicU32, Ordering};
 use std::fmt;
 
+use core::ffi::{CStr, c_char};
+
 use layout::v1_7_104::{classes, enums, fns, globals, vtables};
 
-pub use enums::CameraState;
-pub use fns::PlayerCharacter__SetFirstPerson_fn as SetFirstPersonFn;
+use crate::string::BSFixedString;
 
-/// `NiAVObject::Cull(node, culler, planeMask)`. The pass's signature has two parameters; the
-/// function leaves `r8` untouched and tail-jumps to the culler's slot 22 `CullNode(culler, node,
-/// planeMask)`, so the mask is a third argument a detour must pass through (a two-argument detour
-/// clobbers it and the culls read nonsense).
-pub type CullFn = unsafe extern "C" fn(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess, plane_mask: u32);
+pub use enums::{AccumulatorRenderMode, BSShaderProperty_flags as ShaderFlags, NiAVObject_flags as NodeFlags, NiAlphaProperty_flags as AlphaFlags, ShaderMaterialType};
+pub use fns::PlayerCharacter__SetFirstPerson_fn as SetFirstPersonFn;
+pub use fns::PresentFrame_fn as PresentFn;
+pub use fns::RenderWorld_fn as RenderWorldFn;
+
+/// `NiAVObject::UpdateNode` (id 70251, medium): slot 44 with the update data, then the parent's slot 61.
+type NiAVObjectUpdateNode = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut c_void);
+
+/// `NiAVObject::Cull(node, culler, orderedGroup)`: the third argument passes through `r8` into the
+/// culler's slot 22 and is the index of the node inside a `BSOrderedNode` (0xffffffff elsewhere),
+/// not a plane mask; a detour must pass it through unchanged.
+pub type CullFn = fns::NiAVObject__Cull_fn;
 
 /// `NiAVObject::flags` bit 0: no culling process visits the object.
 pub const HIDDEN: u32 = 1;
@@ -31,8 +42,15 @@ pub const HIDDEN: u32 = 1;
 pub(crate) struct Fns {
     scene_nodes: *const [*mut classes::ShadowSceneNode; 4],
     frame_counter: *const AtomicU32,
-    player_camera: *const *const classes::partial::PlayerCamera,
+    scene_graph: *const *const classes::SceneGraph,
+    window: *const *const classes::RenderWindow,
+    sky: *const *const classes::Sky,
+    accumulators: [*const *const classes::BSShaderAccumulator; 3],
     cull: usize,
+    render_world: usize,
+    present: usize,
+    update_node: NiAVObjectUpdateNode,
+    set_name: fns::NiObjectNET__SetName_fn,
     set_first_person: usize,
 }
 
@@ -44,8 +62,19 @@ impl Fns {
         Ok(Self {
             scene_nodes: reloc.address(globals::g_ShadowSceneNode)? as *const [*mut classes::ShadowSceneNode; 4],
             frame_counter: reloc.address(globals::g_RenderFrameCounter)? as *const AtomicU32,
-            player_camera: reloc.address(globals::g_PlayerCamera_ptr)? as *const *const classes::partial::PlayerCamera,
+            scene_graph: reloc.address(globals::g_SceneGraph)? as *const *const classes::SceneGraph,
+            window: reloc.address(globals::g_CurrentRenderWindow)? as *const *const classes::RenderWindow,
+            sky: reloc.address(globals::g_Sky_ptr)? as *const *const classes::Sky,
+            accumulators: [
+                reloc.address(globals::g_WorldDepthAccumulator)? as *const *const classes::BSShaderAccumulator,
+                reloc.address(globals::g_WorldAccumulator)? as *const *const classes::BSShaderAccumulator,
+                reloc.address(globals::g_FirstPersonAccumulator)? as *const *const classes::BSShaderAccumulator,
+            ],
             cull: reloc.address(fns::NiAVObject__Cull)?,
+            render_world: reloc.address(fns::RenderWorld)?,
+            present: reloc.address(fns::PresentFrame)?,
+            update_node: unsafe { crate::resolve(reloc, fns::NiAVObject__UpdateNode)? },
+            set_name: unsafe { crate::resolve(reloc, fns::NiObjectNET__SetName)? },
             set_first_person: reloc.address(fns::PlayerCharacter__SetFirstPerson)?,
         })
     }
@@ -76,6 +105,25 @@ pub unsafe fn hook_cull(detour: CullFn) -> Result<hook::Hook<CullFn>, hook::Erro
     unsafe { hook::Hook::create(fns().cull, detour) }
 }
 
+/// Creates, disabled, a detour on `RenderWorld` (id 36558): the world draw of a frame, on the main
+/// thread; after the original returns the image space and the splatter have run and the UI is next.
+///
+/// # Safety
+/// Same as [`hook::Hook::create`].
+pub unsafe fn hook_render_world(detour: RenderWorldFn) -> Result<hook::Hook<RenderWorldFn>, hook::Error> {
+    unsafe { hook::Hook::create(fns().render_world, detour) }
+}
+
+/// Creates, disabled, a detour on `PresentFrame` (id 77246): the swap chain present, called by the
+/// frame, the Bink movie loop and the loading screen thread; `g_RenderFrameCounter` is incremented
+/// inside it, so the detour runs on more than one thread.
+///
+/// # Safety
+/// Same as [`hook::Hook::create`].
+pub unsafe fn hook_present(detour: PresentFn) -> Result<hook::Hook<PresentFn>, hook::Error> {
+    unsafe { hook::Hook::create(fns().present, detour) }
+}
+
 /// Creates, disabled, a detour on `PlayerCharacter::SetFirstPerson` (id 40476), called on the
 /// main thread at every switch; store it, then [`hook::Hook::enable`].
 ///
@@ -86,7 +134,7 @@ pub unsafe fn hook_set_first_person(detour: SetFirstPersonFn) -> Result<hook::Ho
 }
 
 /// Three floats at `bytes[0..12]`.
-fn vec3(bytes: &[u8]) -> [f32; 3] {
+pub(crate) fn vec3(bytes: &[u8]) -> [f32; 3] {
     let f = |i: usize| f32::from_le_bytes([bytes[i], bytes[i + 1], bytes[i + 2], bytes[i + 3]]);
     [f(0), f(4), f(8)]
 }
@@ -213,6 +261,43 @@ impl NiAVObject {
         unsafe { self.0.parent.cast::<NiNode>().as_ref() }
     }
 
+    /// The object's name (`NiObjectNET` +0x10), a view that does not touch the string's count.
+    #[must_use]
+    pub fn name(&self) -> &BSFixedString {
+        unsafe { BSFixedString::from_ptr(&raw const self.0.name) }
+    }
+
+    /// Renames the object through `NiObjectNET::SetName` (id 70507). Main thread, between frames.
+    pub fn set_name(&self, name: &BSFixedString) {
+        unsafe { (fns().set_name)(self.as_ptr().cast_mut().cast(), core::ptr::from_ref(name).cast()) }
+    }
+
+    /// The object's index in its parent's children array.
+    #[must_use]
+    pub fn parent_index(&self) -> u32 {
+        self.0.parentIndex
+    }
+
+    #[must_use]
+    pub fn fade_amount(&self) -> f32 {
+        self.0.fadeAmount
+    }
+
+    /// Recomputes the world transforms and bounds after a local transform change
+    /// (`NiAVObject::UpdateNode`: slot 44 on the object, then the parent's slot 61). Main thread, between frames.
+    pub fn update(&self) {
+        let mut data = [0u64; 8];
+        unsafe { (fns().update_node)(self.as_ptr().cast_mut(), data.as_mut_ptr().cast()) }
+    }
+
+    /// Slot 42 `GetObjectByName`: depth-first search by name pointer (the name must be an interned string).
+    #[must_use]
+    pub fn object_by_name(&self, name: &BSFixedString) -> Option<&NiAVObject> {
+        let vtable = unsafe { &*self.0.__vftable };
+        let find = vtable.GetObjectByName()?;
+        unsafe { NiAVObject::from_ptr(find(self.as_ptr().cast_mut(), core::ptr::from_ref(name).cast())) }
+    }
+
     #[must_use]
     pub fn local(&self) -> Transform {
         Transform::from_bytes(&self.0.local)
@@ -309,13 +394,95 @@ node_wrapper!(
 );
 
 impl NiNode {
-    /// The children, null entries included; data at +0x118 and the u16 count at +0x122 of the array.
+    /// The children, null entries included; data at +0x118 and the u16 slots-in-use count at +0x122.
     #[must_use]
     pub fn children(&self) -> &[Option<&NiAVObject>] {
         let b = &self.0.children;
         let data = usize::from_le_bytes(b[8..16].try_into().unwrap()) as *const c_void;
         let size = u16::from_le_bytes([b[18], b[19]]);
         unsafe { crate::forms::ptr_slice(data, u32::from(size)) }
+    }
+
+    /// Capacity, slots in use, non-null children and the grow step of the children array.
+    #[must_use]
+    pub fn children_counts(&self) -> [u16; 4] {
+        let b = &self.0.children;
+        let at = |i: usize| u16::from_le_bytes([b[i], b[i + 1]]);
+        [at(16), at(18), at(20), at(22)]
+    }
+
+    fn vtable(&self) -> &vtables::NiNode_vtable {
+        unsafe { &*self.0.__vftable }
+    }
+
+    /// Slot 53 `AttachChild`: detaches `child` from its old parent and stores it here (in the first
+    /// free slot when `first_free`); transforms are not updated, call [`NiAVObject::update`]. Main thread, between frames.
+    pub fn attach_child(&self, child: &NiAVObject, first_free: bool) {
+        if let Some(attach) = self.vtable().AttachChild() {
+            unsafe { attach(self.as_ptr().cast_mut(), child.as_ptr().cast_mut(), first_free) }
+        }
+    }
+
+    /// Slot 56 `DetachChild`: removes `child` and releases this node's reference. Main thread, between frames.
+    pub fn detach_child(&self, child: &NiAVObject) {
+        if let Some(detach) = self.vtable().DetachChild2() {
+            unsafe { detach(self.as_ptr().cast_mut(), child.as_ptr().cast_mut()) }
+        }
+    }
+}
+
+/// The world scene graph behind `g_SceneGraph` (id 403513); the frame camera is its child at +0x128.
+#[must_use]
+pub fn world_scene_graph() -> Option<&'static NiNode> {
+    unsafe { (*fns().scene_graph).cast::<NiNode>().as_ref() }
+}
+
+impl NiCamera {
+    /// Frustum `[left, right, top, bottom, near, far]`; right is tan(fov / 2), top right times the aspect.
+    #[must_use]
+    pub fn frustum(&self) -> [f32; 6] {
+        [self.0.frustumLeft, self.0.frustumRight, self.0.frustumTop, self.0.frustumBottom, self.0.frustumNear, self.0.frustumFar]
+    }
+
+    #[must_use]
+    pub fn is_orthographic(&self) -> bool {
+        self.0.frustumOrtho != 0
+    }
+
+    /// Viewport `[left, right, top, bottom]` in 0..1 (the full window is `[0, 1, 1, 0]`).
+    #[must_use]
+    pub fn viewport(&self) -> [f32; 4] {
+        [self.0.portLeft, self.0.portRight, self.0.portTop, self.0.portBottom]
+    }
+
+    /// The world-to-clip matrix, row-major 4x4.
+    #[must_use]
+    pub fn world_to_camera(&self) -> [[f32; 4]; 4] {
+        let b = &self.0.worldToCam;
+        let f = |i: usize| f32::from_le_bytes([b[i], b[i + 1], b[i + 2], b[i + 3]]);
+        core::array::from_fn(|r| core::array::from_fn(|c| f((r * 4 + c) * 4)))
+    }
+}
+
+node_wrapper!(
+    /// A fade node: an actor's or object's root with its fade and LOD values.
+    BSFadeNode(BSFadeNode): NiNode
+);
+
+impl BSFadeNode {
+    #[must_use]
+    pub fn current_fade(&self) -> f32 {
+        self.0.currentFade
+    }
+
+    #[must_use]
+    pub fn target_fade(&self) -> f32 {
+        self.0.targetFade
+    }
+
+    #[must_use]
+    pub fn lod_distance(&self) -> f32 {
+        self.0.lodDistance
     }
 }
 
@@ -326,8 +493,13 @@ impl BSGeometry {
     }
 
     #[must_use]
-    pub fn shader_property(&self) -> Option<&classes::BSShaderProperty> {
-        unsafe { self.0.shaderProperty.as_ref() }
+    pub fn shader_property(&self) -> Option<&BSShaderProperty> {
+        unsafe { self.0.shaderProperty.cast::<BSShaderProperty>().as_ref() }
+    }
+
+    #[must_use]
+    pub fn alpha_property(&self) -> Option<&NiAlphaProperty> {
+        unsafe { self.0.alphaProperty.cast::<NiAlphaProperty>().as_ref() }
     }
 
     /// Geometry type byte, 3 for `BSTriShape`.
@@ -615,6 +787,7 @@ impl ShadowSceneNode {
 
     /// As a node (`ShadowSceneNode` derives from `NiNode`).
     #[must_use]
+    #[allow(clippy::cast_ptr_alignment)]
     pub fn node(&self) -> &NiNode {
         unsafe { &*(&raw const self.0).cast::<NiNode>() }
     }
@@ -654,44 +827,311 @@ impl ShadowSceneNode {
     }
 }
 
-/// The player camera: its node and the active state among the 13 at +0xb8.
+/// A geometry's shader property: flags, alpha, the last pass state, the material and the pass list.
 #[repr(transparent)]
-pub struct PlayerCamera(classes::partial::PlayerCamera);
+pub struct BSShaderProperty(classes::BSShaderProperty);
 
-impl PlayerCamera {
+impl BSShaderProperty {
     #[must_use]
-    pub fn raw(&self) -> &classes::partial::PlayerCamera {
+    pub fn raw(&self) -> &classes::BSShaderProperty {
         &self.0
     }
 
-    /// The camera behind `g_PlayerCamera_ptr` (id 400802), `None` before it is constructed.
+    #[must_use]
+    pub fn as_ptr(&self) -> *const classes::BSShaderProperty {
+        &raw const self.0
+    }
+
+    #[must_use]
+    pub fn class(&self) -> Option<&'static layout::Vtable> {
+        unsafe { crate::class_of(self.as_ptr().cast()) }
+    }
+
+    /// The 64-bit shader flags (`ShaderFlags`: skinned, cast and receive shadows, decal, z test and write, ...).
+    #[must_use]
+    pub fn flags(&self) -> ShaderFlags {
+        ShaderFlags(self.0.flags)
+    }
+
+    /// Material alpha times fade, recomputed each frame.
+    #[must_use]
+    pub fn alpha(&self) -> f32 {
+        self.0.alpha
+    }
+
+    /// `renderMode << 8 | shadow light mask` of the last pass that drew the geometry, 0x7fffffff when invalid.
+    #[must_use]
+    pub fn last_render_pass_state(&self) -> u32 {
+        self.0.lastRenderPassState
+    }
+
+    #[must_use]
+    pub fn material(&self) -> Option<&BSShaderMaterial> {
+        unsafe { self.0.material.cast::<BSShaderMaterial>().as_ref() }
+    }
+
+    #[must_use]
+    pub fn fade_node(&self) -> Option<&BSFadeNode> {
+        unsafe { BSFadeNode::from_ptr(self.0.fadeNode) }
+    }
+
+    /// The property's colour pass list, built during the culls; empty between frames.
+    #[must_use]
+    pub fn render_passes(&self) -> Option<&RenderPass> {
+        unsafe { self.0.renderPasses.cast::<RenderPass>().as_ref() }
+    }
+}
+
+/// A material: type, feature and texture coordinate transform; the lighting material adds the texture set.
+#[repr(transparent)]
+pub struct BSShaderMaterial(classes::BSShaderMaterial);
+
+impl BSShaderMaterial {
+    #[must_use]
+    pub fn raw(&self) -> &classes::BSShaderMaterial {
+        &self.0
+    }
+
+    #[must_use]
+    pub fn as_ptr(&self) -> *const classes::BSShaderMaterial {
+        &raw const self.0
+    }
+
+    fn vtable(&self) -> &vtables::BSShaderMaterial_vtable {
+        unsafe { &*self.0.__vftable }
+    }
+
+    /// Slot 7 `GetType`: 0 base, 1 effect, 2 lighting, 3 water.
+    #[must_use]
+    pub fn material_type(&self) -> Option<ShaderMaterialType> {
+        let get = self.vtable().GetType()?;
+        ShaderMaterialType::from_u32(unsafe { get(self.as_ptr().cast_mut()) })
+    }
+
+    /// Slot 6 `GetFeature`: the `LightingMaterialFeature` value as a number.
+    #[must_use]
+    pub fn feature(&self) -> Option<u32> {
+        let get = self.vtable().GetFeature()?;
+        Some(unsafe { get(self.as_ptr().cast_mut()) })
+    }
+
+    /// The lighting material's view when `material_type` is lighting.
+    #[must_use]
+    pub fn as_lighting(&self) -> Option<&BSLightingShaderMaterial> {
+        (self.material_type() == Some(ShaderMaterialType::Lighting)).then(|| unsafe { &*self.as_ptr().cast::<BSLightingShaderMaterial>() })
+    }
+}
+
+/// A lighting material: the texture set and the lighting parameters.
+#[repr(transparent)]
+pub struct BSLightingShaderMaterial(classes::BSLightingShaderMaterialBase);
+
+impl core::ops::Deref for BSLightingShaderMaterial {
+    type Target = BSShaderMaterial;
+
+    fn deref(&self) -> &BSShaderMaterial {
+        unsafe { &*(&raw const self.0).cast::<BSShaderMaterial>() }
+    }
+}
+
+impl BSLightingShaderMaterial {
+    #[must_use]
+    pub fn raw(&self) -> &classes::BSLightingShaderMaterialBase {
+        &self.0
+    }
+
+    #[must_use]
+    pub fn texture_set(&self) -> Option<&BSShaderTextureSet> {
+        unsafe { self.0.textureSet.cast::<BSShaderTextureSet>().as_ref() }
+    }
+
+    #[must_use]
+    pub fn alpha(&self) -> f32 {
+        self.0.alpha
+    }
+
+    #[must_use]
+    pub fn specular_power(&self) -> f32 {
+        self.0.specularPower
+    }
+}
+
+/// The nine texture path slots of a material (slot 0 the diffuse map).
+#[repr(transparent)]
+pub struct BSShaderTextureSet(classes::BSShaderTextureSet);
+
+impl BSShaderTextureSet {
+    #[must_use]
+    pub fn raw(&self) -> &classes::BSShaderTextureSet {
+        &self.0
+    }
+
+    /// The path in `slot` (0..9), `None` when unset.
+    #[must_use]
+    pub fn path(&self, slot: usize) -> Option<&CStr> {
+        if slot >= 9 {
+            return None;
+        }
+        let p = usize::from_le_bytes(self.0.texturePaths[slot * 8..slot * 8 + 8].try_into().unwrap()) as *const c_char;
+        if p.is_null() { None } else { Some(unsafe { CStr::from_ptr(p) }) }
+    }
+}
+
+/// A geometry's alpha property: blend and test flags and the test threshold.
+#[repr(transparent)]
+pub struct NiAlphaProperty(classes::NiAlphaProperty);
+
+impl NiAlphaProperty {
+    #[must_use]
+    pub fn raw(&self) -> &classes::NiAlphaProperty {
+        &self.0
+    }
+
+    #[must_use]
+    pub fn flags(&self) -> AlphaFlags {
+        AlphaFlags(self.0.flags)
+    }
+
+    #[must_use]
+    pub fn alpha_test_ref(&self) -> u8 {
+        self.0.alphaTestRef
+    }
+}
+
+/// One render pass: shader, property, geometry and technique, linked through the property's list.
+#[repr(transparent)]
+pub struct RenderPass(classes::RenderPass);
+
+impl RenderPass {
+    #[must_use]
+    pub fn raw(&self) -> &classes::RenderPass {
+        &self.0
+    }
+
+    #[must_use]
+    pub fn geometry(&self) -> Option<&BSGeometry> {
+        unsafe { BSGeometry::from_ptr(self.0.geometry) }
+    }
+
+    #[must_use]
+    pub fn property(&self) -> Option<&BSShaderProperty> {
+        unsafe { self.0.property.cast::<BSShaderProperty>().as_ref() }
+    }
+
+    #[must_use]
+    pub fn technique_id(&self) -> u32 {
+        self.0.techniqueId
+    }
+
+    #[must_use]
+    pub fn light_count(&self) -> u8 {
+        self.0.numLights
+    }
+
+    /// The next pass of the same property.
+    #[must_use]
+    pub fn next(&self) -> Option<&RenderPass> {
+        unsafe { self.0.next.cast::<RenderPass>().as_ref() }
+    }
+}
+
+/// A shader accumulator: the camera it collects for and its render mode.
+#[repr(transparent)]
+pub struct BSShaderAccumulator(classes::BSShaderAccumulator);
+
+impl BSShaderAccumulator {
+    #[must_use]
+    pub fn raw(&self) -> &classes::BSShaderAccumulator {
+        &self.0
+    }
+
+    /// `g_WorldDepthAccumulator` (mode 0xc), `g_WorldAccumulator` (mode 0) and `g_FirstPersonAccumulator` (mode 0x16).
+    #[must_use]
+    pub fn world() -> [Option<&'static Self>; 3] {
+        let a = fns().accumulators;
+        core::array::from_fn(|i| unsafe { (*a[i]).cast::<Self>().as_ref() })
+    }
+
+    #[must_use]
+    pub fn render_mode(&self) -> Option<AccumulatorRenderMode> {
+        AccumulatorRenderMode::from_u32(self.0.renderMode)
+    }
+
+    #[must_use]
+    pub fn render_mode_raw(&self) -> u32 {
+        self.0.renderMode
+    }
+
+    #[must_use]
+    pub fn camera(&self) -> Option<&NiCamera> {
+        unsafe { NiCamera::from_ptr(self.0.camera) }
+    }
+}
+
+/// The window being drawn and presented: handle, size, swap chain and back buffer views.
+#[repr(transparent)]
+pub struct RenderWindow(classes::RenderWindow);
+
+impl RenderWindow {
+    #[must_use]
+    pub fn raw(&self) -> &classes::RenderWindow {
+        &self.0
+    }
+
+    /// `g_CurrentRenderWindow` (id 411349).
+    #[must_use]
+    pub fn current() -> Option<&'static Self> {
+        unsafe { (*fns().window).cast::<Self>().as_ref() }
+    }
+
+    #[must_use]
+    pub fn hwnd(&self) -> u64 {
+        self.0.hwnd
+    }
+
+    #[must_use]
+    pub fn size(&self) -> [u32; 2] {
+        [self.0.width, self.0.height]
+    }
+
+    /// The `IDXGISwapChain` the frame presents.
+    #[must_use]
+    pub fn swap_chain(&self) -> *mut c_void {
+        self.0.swapChain
+    }
+
+    /// The back buffer's `ID3D11RenderTargetView`; recreated on resize, never keep it across one.
+    #[must_use]
+    pub fn back_buffer_rtv(&self) -> *mut c_void {
+        self.0.backBufferRTV
+    }
+}
+
+/// The sky: the game hour it follows and the sun whose light the shadow scene node wraps.
+#[repr(transparent)]
+pub struct Sky(classes::Sky);
+
+impl Sky {
+    #[must_use]
+    pub fn raw(&self) -> &classes::Sky {
+        &self.0
+    }
+
+    /// `g_Sky_ptr` (id 401652), `None` before the sky exists.
     #[must_use]
     pub fn get() -> Option<&'static Self> {
-        unsafe { (*fns().player_camera).cast::<Self>().as_ref() }
+        unsafe { (*fns().sky).cast::<Self>().as_ref() }
     }
 
     #[must_use]
-    pub fn camera_root(&self) -> Option<&NiNode> {
-        unsafe { self.0.cameraRoot.cast::<NiNode>().as_ref() }
+    pub fn current_game_hour(&self) -> f32 {
+        self.0.currentGameHour
     }
 
+    /// The sun's directional light, as a scene object.
     #[must_use]
-    pub fn current_state_ptr(&self) -> *const c_void {
-        self.0.currentState
-    }
-
-    /// The state object for `state` (the 13 pointers at +0xb8, in `CameraState` order).
-    #[must_use]
-    pub fn state_ptr(&self, state: CameraState) -> *const c_void {
-        const _: () = assert!(core::mem::offset_of!(classes::partial::PlayerCamera, field_B8) == 0xb8);
-        let base = (&raw const self.0.field_B8).cast::<*const c_void>();
-        unsafe { base.add(state as usize).read() }
-    }
-
-    /// Which of the 13 states is current, `None` when the pointer matches none.
-    #[must_use]
-    pub fn state(&self) -> Option<CameraState> {
-        let current = self.current_state_ptr();
-        (0..13u32).filter_map(CameraState::from_u32).find(|&s| core::ptr::eq(self.state_ptr(s), current))
+    pub fn sun_light(&self) -> Option<&NiAVObject> {
+        let sun = unsafe { self.0.sun.as_ref() }?;
+        unsafe { NiAVObject::from_ptr(sun.light.cast()) }
     }
 }
