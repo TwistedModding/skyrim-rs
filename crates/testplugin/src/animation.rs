@@ -32,7 +32,7 @@ static UPDATES: AtomicU32 = AtomicU32::new(0);
 static LOCAL_MATCHES: AtomicU32 = AtomicU32::new(0);
 static LOCAL_DIFFERS: AtomicU32 = AtomicU32::new(0);
 static WORLD_CHANGED: AtomicU32 = AtomicU32::new(0);
-static MAX_SPEED_MILLI: AtomicU32 = AtomicU32::new(0);
+static MAX_SPEED_BITS: AtomicU32 = AtomicU32::new(0);
 static LAST_POSE: Mutex<Option<(Transform, HkQsTransform)>> = Mutex::new(None);
 static TAGS: Mutex<BTreeMap<String, u32>> = Mutex::new(BTreeMap::new());
 static REGISTRATION: Mutex<Option<Registration<BSAnimationGraphEvent>>> = Mutex::new(None);
@@ -73,8 +73,7 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
     let index = usize::from(!core::ptr::eq(graph.root_node().map_or(core::ptr::null(), |r| r.raw()), player.third_person_root().map_or(core::ptr::null(), |r| r.raw())));
     POSE_WRITES[index].fetch_add(1, Ordering::Relaxed);
     if index == 0 {
-        let speed = (current_speed(player) * 1000.0) as u32;
-        MAX_SPEED_MILLI.fetch_max(speed, Ordering::Relaxed);
+        MAX_SPEED_BITS.fetch_max(current_speed(player).max(0.0).to_bits(), Ordering::Relaxed);
         if let Some(i) = head_index(graph)
             && let (Some(node), Some(entry)) = (graph.bone_node(i), graph.pose_local().get(i))
         {
@@ -126,7 +125,7 @@ pub fn register() -> Result<String, String> {
     let root = player.third_person_root().ok_or("loadedData->node3D is null")?;
     let head = root.object_by_name(&BSFixedString::new("NPC Head [Head]")).ok_or("GetObjectByName(NPC Head [Head]) returned null")?;
     HEAD.store(head.as_ptr().cast_mut(), Ordering::Relaxed);
-    for c in POSE_WRITES.iter().chain([&POSE_WRITES_OTHER, &UPDATES, &LOCAL_MATCHES, &LOCAL_DIFFERS, &WORLD_CHANGED, &MAX_SPEED_MILLI]) {
+    for c in POSE_WRITES.iter().chain([&POSE_WRITES_OTHER, &UPDATES, &LOCAL_MATCHES, &LOCAL_DIFFERS, &WORLD_CHANGED, &MAX_SPEED_BITS]) {
         c.store(0, Ordering::Relaxed);
     }
     *LAST_POSE.lock().unwrap() = None;
@@ -150,7 +149,7 @@ fn graphs() -> Result<String, String> {
     let graphs = manager.graphs();
     check(graphs.len() == 2, &format!("{} graphs", graphs.len()))?;
     let active = manager.active_graph_index();
-    check((active == 1) == !p.is_third_person(), &format!("active graph {active} with IsThirdPerson {}", p.is_third_person()))?;
+    check((active == 1) != p.is_third_person(), &format!("active graph {active} with IsThirdPerson {}", p.is_third_person()))?;
     let mut described = Vec::new();
     for (i, g) in graphs.iter().enumerate() {
         let g = g.ok_or_else(|| format!("graph {i} is null"))?;
@@ -184,7 +183,7 @@ fn variables() -> Result<String, String> {
     let speed = holder.float(&BSFixedString::new("Speed")).ok_or("GetGraphVariableFloat(Speed) failed")?;
     let attacking = holder.bool(&BSFixedString::new("IsAttacking")).ok_or("GetGraphVariableBool(IsAttacking) failed")?;
     let direct = current_speed(p);
-    let max_seen = MAX_SPEED_MILLI.load(Ordering::Relaxed) as f32 / 1000.0;
+    let max_seen = f32::from_bits(MAX_SPEED_BITS.load(Ordering::Relaxed));
     check(!attacking, "IsAttacking is true")?;
     check((speed - direct).abs() < 1.0, &format!("Speed variable {speed} vs GetCurrentSpeed {direct}"))?;
     check(max_seen > 100.0, &format!("the highest speed seen during the walk was {max_seen}"))?;
@@ -211,7 +210,7 @@ fn pose_write() -> Result<String, String> {
     let [third, first] = [POSE_WRITES[0].load(Ordering::Relaxed), POSE_WRITES[1].load(Ordering::Relaxed)];
     let other = POSE_WRITES_OTHER.load(Ordering::Relaxed);
     check(third > 100 && first > 100, &format!("pose writes: third-person graph {third}, first-person graph {first}"))?;
-    let last = LAST_POSE.lock().unwrap().clone();
+    let last = *LAST_POSE.lock().unwrap();
     let (local, pose) = last.ok_or("no head pose sample")?;
     check((0..3).all(|k| (local.translation[k] - pose.translation[k]).abs() < 0.01), &format!("the head's local translation {:?} differs from the pose's {:?}", local.translation, &pose.translation[..3]))?;
     Ok(format!("pose writes: third-person graph {third}, first-person graph {first}, other actors {other}; last head local translation {:?} = pose", local.translation))
