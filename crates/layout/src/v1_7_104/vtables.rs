@@ -729,7 +729,7 @@ pub struct Actor_vtable {
     pub slot_123: *const c_void,
     /// `Actor::vfunc_124` at 0x6b65c0 (rtti, medium); signature (high): `undefined8 vfunc_124(Actor * this)`
     pub slot_124: *const c_void,
-    /// `Actor::vfunc_125` at 0x67d590 (rtti, medium); signature (low): `undefined vfunc_125(Actor * this, TESObjectREFR * param_1, ulonglong param_2, TypeDescriptor * param_3)`
+    /// `Actor::UpdateAnimation` at 0x67d590 (semantic, medium); signature (untiered): `undefined UpdateAnimation(Actor * this, TESObjectREFR * param_1, ulonglong param_2, TypeDescriptor * param_3)`
     pub slot_125: *const c_void,
     /// `TESObjectREFR::vfunc_126` at 0x2f9f50 (rtti, medium); signature (high): `undefined vfunc_126(TESObjectREFR * this)`
     pub slot_126: *const c_void,
@@ -1131,13 +1131,13 @@ pub struct Actor_vtable_38 {
     pub slot_0: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_1` at 0x6b61a0 (rtti, medium); signature (untiered): `undefined1 IAnimationGraphManagerHolder_vfunc_1(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_2` at 0x6b60b0 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(Actor * this, longlong * param_1)`
+    /// `IAnimationGraphManagerHolder::GetAnimationGraphManager` at 0x6b60b0 (semantic, high); signature (untiered): `bool GetAnimationGraphManager(IAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_3` at 0x6b60d0 (rtti, medium); signature (low): `ulonglong IAnimationGraphManagerHolder_vfunc_3(Actor * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_3: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_4` at 0x2fd4f0 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_4(TESObjectREFR * this, longlong param_1)`
     pub slot_4: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_5` at 0x6b00b0 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(Actor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationGraph` at 0x6b00b0 (semantic, medium); signature (untiered): `bool CreateAnimationGraph(IAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_6` at 0x6b0330 (rtti, medium); signature (low): `undefined1 IAnimationGraphManagerHolder_vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -1147,7 +1147,7 @@ pub struct Actor_vtable_38 {
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_10` at 0x6b0650 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_10(Actor * this, longlong param_1)`
+    /// `Actor::CreateAnimationChannels` at 0x6b0650 (semantic, high); signature (untiered): `undefined8 CreateAnimationChannels(Actor * this, longlong param_1)`
     pub slot_10: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_11` at 0x6b0180 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_11(Actor * this, longlong * param_1)`
     pub slot_11: *const c_void,
@@ -1271,9 +1271,9 @@ pub struct Actor_vtable_C0 {
     pub slot_18: *const c_void,
     /// `Actor::ActorState_vfunc_19` at 0x6b5cb0 (rtti, medium); signature (high): `byte ActorState_vfunc_19(Actor * this)`
     pub slot_19: *const c_void,
-    /// `ActorState::vfunc_20` at 0x6c2cc0 (rtti, medium); signature (low): `undefined1 vfunc_20(ActorState * this, uint param_1)`
+    /// `ActorState::SetSitSleepState` at 0x6c2cc0 (semantic, high); signature (untiered): `undefined1 SetSitSleepState(ActorState * this, uint param_1)`
     pub slot_20: *const c_void,
-    /// `Actor::ActorState_vfunc_21` at 0x6d9a20 (rtti, medium); signature (low): `undefined ActorState_vfunc_21(Actor * this, byte param_1, undefined8 param_2, ulonglong param_3)`
+    /// `Actor::SetWeaponDrawn` at 0x6d9a20 (semantic, high); signature (untiered): `undefined SetWeaponDrawn(Actor * this, byte param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_21: *const c_void,
 }
 impl Actor_vtable_C0 {
@@ -1413,41 +1413,41 @@ impl ActorMagicCaster_vtable {
 pub struct ActorMagicCaster_vtable_48 {
     /// `ActorMagicCaster::SimpleAnimationGraphManagerHolder_vdtor` at 0x5c2878 (slot_propagation, medium); signature (high): `undefined SimpleAnimationGraphManagerHolder_vdtor(ActorMagicCaster * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
     /// `ActorMagicCaster::SimpleAnimationGraphManagerHolder_vfunc_7` at 0x5c1d00 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_7(ActorMagicCaster * this, longlong * param_1)`
     pub slot_7: *const c_void,
     /// `ActorMagicCaster::SimpleAnimationGraphManagerHolder_vfunc_8` at 0x5c1fa0 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_8(ActorMagicCaster * this, longlong * param_1)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
     /// `ActorMagicCaster::SimpleAnimationGraphManagerHolder_vfunc_10` at 0x5c1e50 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_10(ActorMagicCaster * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
     /// `ActorMagicCaster::SimpleAnimationGraphManagerHolder_vfunc_12` at 0x5c1b20 (rtti, high); signature (low): `undefined SimpleAnimationGraphManagerHolder_vfunc_12(ActorMagicCaster * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_12: *const c_void,
     /// `ActorMagicCaster::SimpleAnimationGraphManagerHolder_vfunc_13` at 0x5c1c60 (rtti, high); signature (low): `undefined SimpleAnimationGraphManagerHolder_vfunc_13(ActorMagicCaster * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -1473,7 +1473,7 @@ impl ActorMagicCaster_vtable_60 {
 pub struct ActorMediator_vtable {
     /// `ActorMediator::vdtor` at 0x6e0160 (layout_inference, medium); signature (low): `ActorMediator * vdtor(ActorMediator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ActorMediator::vfunc_1` at 0x6dfe80 (rtti, high); signature (low): `undefined vfunc_1(ActorMediator * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActorMediator::ProcessEvent` at 0x6dfe80 (semantic, high); signature (untiered): `undefined ProcessEvent(ActorMediator * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
 }
 impl ActorMediator_vtable {
@@ -1745,14 +1745,30 @@ pub struct ActorState_vtable {
     pub slot_18: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_19: *const c_void,
-    /// `ActorState::vfunc_20` at 0x6c2cc0 (rtti, medium); signature (low): `undefined1 vfunc_20(ActorState * this, uint param_1)`
+    /// `ActorState::SetSitSleepState` at 0x6c2cc0 (semantic, high); signature (untiered): `undefined1 SetSitSleepState(ActorState * this, uint param_1)`; `SetSitSleepState`: writes bits 14-17 of flags1 (high); semantic signature: `bool (ActorState* this, u32 state)`
     pub slot_20: *const c_void,
-    /// `ActorState::vfunc_21` at 0x6e13c0 (rtti, high); signature (low): `undefined8 vfunc_21(ActorState * this, char param_1)`
+    /// `ActorState::SetWeaponDrawn` at 0x6e13c0 (runtime, high); signature (untiered): `undefined8 SetWeaponDrawn(ActorState * this, char param_1)`; `SetWeaponDrawn`: sets the weapon state (flags2 bits 5-7) to 3 (drawn) or 0 (sheathed) unless it already is 4 resp. 1 (high); semantic signature: `bool (ActorState* this, bool drawn)`
     pub slot_21: *const c_void,
 }
 impl ActorState_vtable {
     pub const ID: u64 = 207712;
+    pub const SLOT_SetSitSleepState: usize = 20;
+    /// Slot 20 as `ActorState_vtable_SetSitSleepState`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetSitSleepState(&self) -> Option<ActorState_vtable_SetSitSleepState> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorState_vtable_SetSitSleepState>>(self.slot_20) }
+    }
+    pub const SLOT_SetWeaponDrawn: usize = 21;
+    /// Slot 21 as `ActorState_vtable_SetWeaponDrawn`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetWeaponDrawn(&self) -> Option<ActorState_vtable_SetWeaponDrawn> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorState_vtable_SetWeaponDrawn>>(self.slot_21) }
+    }
 }
+/// `ActorState::SetSitSleepState`, slot 20: writes bits 14-17 of flags1 (high).
+pub type ActorState_vtable_SetSitSleepState = unsafe extern "C" fn(this: *mut classes::ActorState, state: u32) -> bool;
+/// `ActorState::SetWeaponDrawn`, slot 21: sets the weapon state (flags2 bits 5-7) to 3 (drawn) or 0 (sheathed) unless it already is 4 resp. 1 (high).
+pub type ActorState_vtable_SetWeaponDrawn = unsafe extern "C" fn(this: *mut classes::ActorState, drawn: bool) -> bool;
 
 /// `ActorTargetCheck::vftable` at 0x18f8888, id 205911 (rtti, high); 2 slots.
 #[repr(C)]
@@ -3756,7 +3772,7 @@ impl ArrowProjectile_vtable_30 {
 pub struct ArrowProjectile_vtable_38 {
     /// `ArrowProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7de73c (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(ArrowProjectile * this, longlong * param_1, void * param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -3766,31 +3782,31 @@ pub struct ArrowProjectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl ArrowProjectile_vtable_38 {
@@ -42774,14 +42790,23 @@ impl BSAnimationGraphLoadScrapper_vtable {
 /// `BSAnimationGraphManager::vftable` at 0x1a05798, id 232742 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct BSAnimationGraphManager_vtable {
-    /// `BSAnimationGraphManager::vdtor` at 0xbc3c30 (slot_propagation, medium); signature (low): `BSAnimationGraphManager * vdtor(BSAnimationGraphManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSAnimationGraphManager::dtor` at 0xbc3c30 (semantic, high); signature (untiered): `BSAnimationGraphManager * dtor(BSAnimationGraphManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `dtor`: virtual destructor (high); semantic signature: `BSAnimationGraphManager* (BSAnimationGraphManager* this, uint flags)`
     pub slot_0: *const c_void,
-    /// `BSAnimationGraphManager::vfunc_1` at 0xbc15e0 (rtti, high); signature (low): `undefined8 vfunc_1(BSAnimationGraphManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSAnimationGraphManager::ProcessEvent` at 0xbc15e0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(BSAnimationGraphManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `ProcessEvent`: forwards the active graph's events (by tag) to the dependent managers' graphs; returns 0 (continue) (high); semantic signature: `BSEventNotifyControl (BSAnimationGraphManager* this, const BSAnimationGraphEvent* event, BSTEventSource<BSAnimationGraphEvent>* source)`
     pub slot_1: *const c_void,
 }
 impl BSAnimationGraphManager_vtable {
     pub const ID: u64 = 232742;
+    pub const SLOT_dtor: usize = 0;
+    /// Slot 0 as `BSAnimationGraphManager_vtable_dtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn dtor(&self) -> Option<BSAnimationGraphManager_vtable_dtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSAnimationGraphManager_vtable_dtor>>(self.slot_0) }
+    }
+    pub const SLOT_ProcessEvent: usize = 1;
 }
+/// `BSAnimationGraphManager::dtor`, slot 0: virtual destructor (high).
+pub type BSAnimationGraphManager_vtable_dtor = unsafe extern "C" fn(this: *mut classes::BSAnimationGraphManager, flags: u32) -> *mut classes::BSAnimationGraphManager;
 
 /// `BSArrowConstructor::vftable` at 0x1b4c378, id 255385 (rtti, high); 3 slots.
 #[repr(C)]
@@ -43388,7 +43413,7 @@ impl BSBloodSplatterShader_vtable {
 pub struct BSBloodSplatterShader_vtable_10 {
     /// `BSBloodSplatterShader::NiBoneMatrixSetterI_vdtor` at 0x152e538 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSBloodSplatterShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSBloodSplatterShader_vtable_10 {
@@ -45125,17 +45150,17 @@ pub struct BSDismemberSkinInstance_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSDismemberSkinInstance::vfunc_23` at 0xef5e20 (rtti, high); signature (low): `undefined8 vfunc_23(BSDismemberSkinInstance * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSDismemberSkinInstance::CreateClone` at 0xef5e20 (semantic, medium); signature (untiered): `undefined8 CreateClone(BSDismemberSkinInstance * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `CreateClone`: allocates 0xa0 and copy-constructs (medium); semantic signature: `NiObject* (BSDismemberSkinInstance* this, NiCloningProcess* cp)`
     pub slot_23: *const c_void,
-    /// `BSDismemberSkinInstance::vfunc_24` at 0xef6000 (rtti, high); signature (low): `undefined vfunc_24(BSDismemberSkinInstance * this, longlong param_1)`
+    /// `BSDismemberSkinInstance::LoadBinary` at 0xef6000 (semantic, high); signature (untiered): `undefined LoadBinary(BSDismemberSkinInstance * this, longlong param_1)`; `LoadBinary`: base load, then partitionCount and the entries; recomputes anyPartitionVisible (high); semantic signature: `void (BSDismemberSkinInstance* this, NiStream* s)`
     pub slot_24: *const c_void,
     /// `BSDismemberSkinInstance::vfunc_25` at 0xef6170 (rtti, high); signature (untiered): `undefined vfunc_25(BSDismemberSkinInstance * this, longlong param_1)`
     pub slot_25: *const c_void,
     /// `BSDismemberSkinInstance::vfunc_26` at 0xef6180 (rtti, high); signature (low): `bool vfunc_26(void)`
     pub slot_26: *const c_void,
-    /// `BSDismemberSkinInstance::vfunc_27` at 0xef61a0 (rtti, high); signature (low): `undefined vfunc_27(BSDismemberSkinInstance * this, longlong param_1)`
+    /// `BSDismemberSkinInstance::SaveBinary` at 0xef61a0 (semantic, high); signature (untiered): `undefined SaveBinary(BSDismemberSkinInstance * this, longlong param_1)`; `SaveBinary`: base save, then count and entries (endian-swapped when the stream needs it) (high); semantic signature: `void (BSDismemberSkinInstance* this, NiStream* s)`
     pub slot_27: *const c_void,
-    /// `BSDismemberSkinInstance::vfunc_28` at 0xef6310 (rtti, high); signature (low): `ulonglong vfunc_28(BSDismemberSkinInstance * this, longlong * param_1)`
+    /// `BSDismemberSkinInstance::IsEqual` at 0xef6310 (semantic, high); signature (untiered): `ulonglong IsEqual(BSDismemberSkinInstance * this, longlong * param_1)`; `IsEqual`: base compare plus every entry (high); semantic signature: `bool (BSDismemberSkinInstance* this, NiObject* other)`
     pub slot_28: *const c_void,
     /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
     pub slot_29: *const c_void,
@@ -45153,12 +45178,38 @@ pub struct BSDismemberSkinInstance_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSDismemberSkinInstance::vfunc_37` at 0xef6970 (rtti, high); signature (low): `undefined vfunc_37(BSDismemberSkinInstance * this, undefined8 param_1)`
+    /// `BSDismemberSkinInstance::RenderPartitions` at 0xef6970 (semantic, high); signature (untiered): `undefined RenderPartitions(BSDismemberSkinInstance * this, undefined8 param_1)`; `RenderPartitions`: draws only partitions whose entry byte 0 is set; without a table falls back to NiSkinInstance slot 37 (high); semantic signature: `void (BSDismemberSkinInstance* this, SkinDrawContext* ctx)`
     pub slot_37: *const c_void,
 }
 impl BSDismemberSkinInstance_vtable {
     pub const ID: u64 = 237231;
+    pub const SLOT_CreateClone: usize = 23;
+    pub const SLOT_LoadBinary: usize = 24;
+    /// Slot 24 as `BSDismemberSkinInstance_vtable_LoadBinary`, `None` when the slot is null.
+    #[must_use]
+    pub fn LoadBinary(&self) -> Option<BSDismemberSkinInstance_vtable_LoadBinary> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSDismemberSkinInstance_vtable_LoadBinary>>(self.slot_24) }
+    }
+    pub const SLOT_SaveBinary: usize = 27;
+    /// Slot 27 as `BSDismemberSkinInstance_vtable_SaveBinary`, `None` when the slot is null.
+    #[must_use]
+    pub fn SaveBinary(&self) -> Option<BSDismemberSkinInstance_vtable_SaveBinary> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSDismemberSkinInstance_vtable_SaveBinary>>(self.slot_27) }
+    }
+    pub const SLOT_IsEqual: usize = 28;
+    /// Slot 28 as `BSDismemberSkinInstance_vtable_IsEqual`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsEqual(&self) -> Option<BSDismemberSkinInstance_vtable_IsEqual> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSDismemberSkinInstance_vtable_IsEqual>>(self.slot_28) }
+    }
+    pub const SLOT_RenderPartitions: usize = 37;
 }
+/// `BSDismemberSkinInstance::LoadBinary`, slot 24: base load, then partitionCount and the entries; recomputes anyPartitionVisible (high).
+pub type BSDismemberSkinInstance_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::BSDismemberSkinInstance, s: *mut classes::partial::NiStream);
+/// `BSDismemberSkinInstance::SaveBinary`, slot 27: base save, then count and entries (endian-swapped when the stream needs it) (high).
+pub type BSDismemberSkinInstance_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::BSDismemberSkinInstance, s: *mut classes::partial::NiStream);
+/// `BSDismemberSkinInstance::IsEqual`, slot 28: base compare plus every entry (high).
+pub type BSDismemberSkinInstance_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::BSDismemberSkinInstance, other: *mut classes::NiObject) -> bool;
 
 /// `BSDistTriggerModifier::vftable` at 0x1a03fa0, id 232675 (rtti, high); 25 slots.
 #[repr(C)]
@@ -45337,7 +45388,7 @@ impl BSDistantTreeShader_vtable {
 pub struct BSDistantTreeShader_vtable_10 {
     /// `BSDistantTreeShader::NiBoneMatrixSetterI_vdtor` at 0x1559698 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSDistantTreeShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSDistantTreeShader_vtable_10 {
@@ -45687,7 +45738,7 @@ pub struct BSDynamicLines_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -45701,7 +45752,7 @@ pub struct BSDynamicLines_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -45807,7 +45858,7 @@ pub struct BSDynamicTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -45821,7 +45872,7 @@ pub struct BSDynamicTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -45863,7 +45914,7 @@ impl BSEffectShader_vtable {
 pub struct BSEffectShader_vtable_10 {
     /// `BSEffectShader::NiBoneMatrixSetterI_vdtor` at 0x1558844 (slot_propagation, medium); signature (low): `undefined NiBoneMatrixSetterI_vdtor(BSEffectShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSEffectShader_vtable_10 {
@@ -47184,7 +47235,7 @@ pub struct BSFaceGenNiNode_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `BSFaceGenNiNode::vfunc_23` at 0x439270 (rtti, high); signature (low): `NiNode * vfunc_23(BSFaceGenNiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSFaceGenNiNode::CreateClone` at 0x439270 (semantic, high); signature (untiered): `NiNode * CreateClone(BSFaceGenNiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `CreateClone`: clones the node and shares animationData (high); semantic signature: `NiObject* (BSFaceGenNiNode* this, NiCloningProcess* cp)`
     pub slot_23: *const c_void,
     /// `NiNode::vfunc_24` at 0xee1560 (rtti, medium); signature (low): `undefined vfunc_24(NiNode * this, longlong param_1)`
     pub slot_24: *const c_void,
@@ -47226,7 +47277,7 @@ pub struct BSFaceGenNiNode_vtable {
     pub slot_42: *const c_void,
     /// `NiNode::vfunc_43` at 0xee2e30 (rtti, medium); signature (low): `undefined vfunc_43(NiNode * this, char * param_1, char param_2, undefined1 * param_3)`
     pub slot_43: *const c_void,
-    /// `BSFaceGenNiNode::vfunc_44` at 0x439650 (rtti, high); signature (low): `undefined vfunc_44(BSFaceGenNiNode * this, undefined8 param_1, undefined4 param_2)`
+    /// `BSFaceGenNiNode::UpdateDownwardPass` at 0x439650 (semantic, high); signature (untiered): `undefined UpdateDownwardPass(BSFaceGenNiNode * this, undefined8 param_1, undefined4 param_2)`; `UpdateDownwardPass`: when not hidden (+0xf4 bit 0 clear): advance the face animation and queue the node for morphing (0x43a4e0); then NiNode's downward pass (high); semantic signature: `void (BSFaceGenNiNode* this, NiUpdateData* data, u32 flags)`
     pub slot_44: *const c_void,
     /// `NiNode::vfunc_45` at 0xee2680 (rtti, medium); signature (low): `undefined vfunc_45(NiNode * this, longlong param_1, uint param_2)`
     pub slot_45: *const c_void,
@@ -47262,11 +47313,14 @@ pub struct BSFaceGenNiNode_vtable {
     pub slot_60: *const c_void,
     /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
-    /// `BSFaceGenNiNode::vfunc_62` at 0x4396a0 (rtti, high); signature (low): `undefined vfunc_62(BSFaceGenNiNode * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSFaceGenNiNode::BindSkinsToSkeleton` at 0x4396a0 (semantic, high); signature (untiered): `undefined BindSkinsToSkeleton(BSFaceGenNiNode * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `BindSkinsToSkeleton`: for each child geometry with a skin: finds each bone by name under skeleton (its slot 42 GetObjectByName) and rewrites skin->boneNodes[i] and skin->boneWorldTransforms[i] (node + 0x7c); sets skin->rootParent = this (high); semantic signature: `void (BSFaceGenNiNode* this, NiNode* skeleton, bool)`
     pub slot_62: *const c_void,
 }
 impl BSFaceGenNiNode_vtable {
     pub const ID: u64 = 200333;
+    pub const SLOT_CreateClone: usize = 23;
+    pub const SLOT_UpdateDownwardPass: usize = 44;
+    pub const SLOT_BindSkinsToSkeleton: usize = 62;
 }
 
 /// `BSFadeNode::vftable` at 0x1b2efb0, id 252901 (rtti, high); 64 slots.
@@ -48215,7 +48269,7 @@ pub struct BSGeometry_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`; `UpdateWorldBound`: skinned: bound = merge of the bones' bound spheres moved by their world transforms (0xf09cb0), then moved by world; otherwise the model bound moved by world (high); semantic signature: `void (BSGeometry* this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -48229,14 +48283,23 @@ pub struct BSGeometry_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`; `Slot54ReturnsNull`: null on BSGeometry/BSTriShape; when non-null RenderPassImmediately draws with a one-bone fake partition instead of the skin's partitions and UpdateWorldBound copies a bound from it (low); semantic signature: `void* (BSGeometry* this)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
 }
 impl BSGeometry_vtable {
     pub const ID: u64 = 237252;
+    pub const SLOT_UpdateWorldBound: usize = 47;
+    /// Slot 47 as `BSGeometry_vtable_UpdateWorldBound`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateWorldBound(&self) -> Option<BSGeometry_vtable_UpdateWorldBound> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSGeometry_vtable_UpdateWorldBound>>(self.slot_47) }
+    }
+    pub const SLOT_Slot54ReturnsNull: usize = 54;
 }
+/// `BSGeometry::UpdateWorldBound`, slot 47: skinned: bound = merge of the bones' bound spheres moved by their world transforms (0xf09cb0), then moved by world; otherwise the model bound moved by world (high).
+pub type BSGeometry_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut classes::BSGeometry);
 
 /// `BSGeometryListCullingProcess::vftable` at 0x1868af8, id 196460 (rtti, high); 29 slots.
 #[repr(C)]
@@ -48479,7 +48542,7 @@ impl BSGrassShader_vtable {
 pub struct BSGrassShader_vtable_10 {
     /// `BSGrassShader::NiBoneMatrixSetterI_vdtor` at 0x1523584 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSGrassShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSGrassShader_vtable_10 {
@@ -49117,7 +49180,7 @@ impl BSImagespaceShader_vtable {
 pub struct BSImagespaceShader_vtable_10 {
     /// `BSImagespaceShader::NiBoneMatrixSetterI_vdtor` at 0x15652f4 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShader_vtable_10 {
@@ -49205,7 +49268,7 @@ impl BSImagespaceShaderAlphaBlend_vtable {
 pub struct BSImagespaceShaderAlphaBlend_vtable_10 {
     /// `BSImagespaceShaderAlphaBlend::NiBoneMatrixSetterI_vdtor` at 0x15070a8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderAlphaBlend * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderAlphaBlend_vtable_10 {
@@ -49293,7 +49356,7 @@ impl BSImagespaceShaderApplyReflections_vtable {
 pub struct BSImagespaceShaderApplyReflections_vtable_10 {
     /// `BSImagespaceShaderApplyReflections::NiBoneMatrixSetterI_vdtor` at 0x15070c0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderApplyReflections * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderApplyReflections_vtable_10 {
@@ -49381,7 +49444,7 @@ impl BSImagespaceShaderBlur11_vtable {
 pub struct BSImagespaceShaderBlur11_vtable_10 {
     /// `BSImagespaceShaderBlur11::NiBoneMatrixSetterI_vdtor` at 0x15070d8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur11 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBlur11_vtable_10 {
@@ -49469,7 +49532,7 @@ impl BSImagespaceShaderBlur13_vtable {
 pub struct BSImagespaceShaderBlur13_vtable_10 {
     /// `BSImagespaceShaderBlur13::NiBoneMatrixSetterI_vdtor` at 0x15070f0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur13 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBlur13_vtable_10 {
@@ -49557,7 +49620,7 @@ impl BSImagespaceShaderBlur15_vtable {
 pub struct BSImagespaceShaderBlur15_vtable_10 {
     /// `BSImagespaceShaderBlur15::NiBoneMatrixSetterI_vdtor` at 0x1507108 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur15 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBlur15_vtable_10 {
@@ -49645,7 +49708,7 @@ impl BSImagespaceShaderBlur3_vtable {
 pub struct BSImagespaceShaderBlur3_vtable_10 {
     /// `BSImagespaceShaderBlur3::NiBoneMatrixSetterI_vdtor` at 0x1507120 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur3 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBlur3_vtable_10 {
@@ -49733,7 +49796,7 @@ impl BSImagespaceShaderBlur5_vtable {
 pub struct BSImagespaceShaderBlur5_vtable_10 {
     /// `BSImagespaceShaderBlur5::NiBoneMatrixSetterI_vdtor` at 0x1507138 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur5 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBlur5_vtable_10 {
@@ -49821,7 +49884,7 @@ impl BSImagespaceShaderBlur7_vtable {
 pub struct BSImagespaceShaderBlur7_vtable_10 {
     /// `BSImagespaceShaderBlur7::NiBoneMatrixSetterI_vdtor` at 0x1507150 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur7 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBlur7_vtable_10 {
@@ -49909,7 +49972,7 @@ impl BSImagespaceShaderBlur9_vtable {
 pub struct BSImagespaceShaderBlur9_vtable_10 {
     /// `BSImagespaceShaderBlur9::NiBoneMatrixSetterI_vdtor` at 0x1507168 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur9 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBlur9_vtable_10 {
@@ -49997,7 +50060,7 @@ impl BSImagespaceShaderBrightPassBlur11_vtable {
 pub struct BSImagespaceShaderBrightPassBlur11_vtable_10 {
     /// `BSImagespaceShaderBrightPassBlur11::NiBoneMatrixSetterI_vdtor` at 0x1507180 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur11 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBrightPassBlur11_vtable_10 {
@@ -50085,7 +50148,7 @@ impl BSImagespaceShaderBrightPassBlur13_vtable {
 pub struct BSImagespaceShaderBrightPassBlur13_vtable_10 {
     /// `BSImagespaceShaderBrightPassBlur13::NiBoneMatrixSetterI_vdtor` at 0x1507198 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur13 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBrightPassBlur13_vtable_10 {
@@ -50173,7 +50236,7 @@ impl BSImagespaceShaderBrightPassBlur15_vtable {
 pub struct BSImagespaceShaderBrightPassBlur15_vtable_10 {
     /// `BSImagespaceShaderBrightPassBlur15::NiBoneMatrixSetterI_vdtor` at 0x15071b0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur15 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBrightPassBlur15_vtable_10 {
@@ -50261,7 +50324,7 @@ impl BSImagespaceShaderBrightPassBlur3_vtable {
 pub struct BSImagespaceShaderBrightPassBlur3_vtable_10 {
     /// `BSImagespaceShaderBrightPassBlur3::NiBoneMatrixSetterI_vdtor` at 0x15071c8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur3 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBrightPassBlur3_vtable_10 {
@@ -50349,7 +50412,7 @@ impl BSImagespaceShaderBrightPassBlur5_vtable {
 pub struct BSImagespaceShaderBrightPassBlur5_vtable_10 {
     /// `BSImagespaceShaderBrightPassBlur5::NiBoneMatrixSetterI_vdtor` at 0x15071e0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur5 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBrightPassBlur5_vtable_10 {
@@ -50437,7 +50500,7 @@ impl BSImagespaceShaderBrightPassBlur7_vtable {
 pub struct BSImagespaceShaderBrightPassBlur7_vtable_10 {
     /// `BSImagespaceShaderBrightPassBlur7::NiBoneMatrixSetterI_vdtor` at 0x15071f8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur7 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBrightPassBlur7_vtable_10 {
@@ -50525,7 +50588,7 @@ impl BSImagespaceShaderBrightPassBlur9_vtable {
 pub struct BSImagespaceShaderBrightPassBlur9_vtable_10 {
     /// `BSImagespaceShaderBrightPassBlur9::NiBoneMatrixSetterI_vdtor` at 0x1507210 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur9 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderBrightPassBlur9_vtable_10 {
@@ -50613,7 +50676,7 @@ impl BSImagespaceShaderCopy_vtable {
 pub struct BSImagespaceShaderCopy_vtable_10 {
     /// `BSImagespaceShaderCopy::NiBoneMatrixSetterI_vdtor` at 0x1507228 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderCopy * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderCopy_vtable_10 {
@@ -50701,7 +50764,7 @@ impl BSImagespaceShaderCopyCustomViewport_vtable {
 pub struct BSImagespaceShaderCopyCustomViewport_vtable_10 {
     /// `BSImagespaceShaderCopyCustomViewport::NiBoneMatrixSetterI_vdtor` at 0x1507240 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderCopyCustomViewport * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderCopyCustomViewport_vtable_10 {
@@ -50789,7 +50852,7 @@ impl BSImagespaceShaderCopyDynamicFetchDisabled_vtable {
 pub struct BSImagespaceShaderCopyDynamicFetchDisabled_vtable_10 {
     /// `BSImagespaceShaderCopyDynamicFetchDisabled::NiBoneMatrixSetterI_vdtor` at 0x1507258 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderCopyDynamicFetchDisabled * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderCopyDynamicFetchDisabled_vtable_10 {
@@ -50877,7 +50940,7 @@ impl BSImagespaceShaderCopyScaleBias_vtable {
 pub struct BSImagespaceShaderCopyScaleBias_vtable_10 {
     /// `BSImagespaceShaderCopyScaleBias::NiBoneMatrixSetterI_vdtor` at 0x1507270 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderCopyScaleBias * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderCopyScaleBias_vtable_10 {
@@ -50965,7 +51028,7 @@ impl BSImagespaceShaderDepthOfField_vtable {
 pub struct BSImagespaceShaderDepthOfField_vtable_10 {
     /// `BSImagespaceShaderDepthOfField::NiBoneMatrixSetterI_vdtor` at 0x1507288 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDepthOfField * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderDepthOfField_vtable_10 {
@@ -51053,7 +51116,7 @@ impl BSImagespaceShaderDepthOfFieldFogged_vtable {
 pub struct BSImagespaceShaderDepthOfFieldFogged_vtable_10 {
     /// `BSImagespaceShaderDepthOfFieldFogged::NiBoneMatrixSetterI_vdtor` at 0x15072a0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDepthOfFieldFogged * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderDepthOfFieldFogged_vtable_10 {
@@ -51141,7 +51204,7 @@ impl BSImagespaceShaderDepthOfFieldMaskedFogged_vtable {
 pub struct BSImagespaceShaderDepthOfFieldMaskedFogged_vtable_10 {
     /// `BSImagespaceShaderDepthOfFieldMaskedFogged::NiBoneMatrixSetterI_vdtor` at 0x15072b8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDepthOfFieldMaskedFogged * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderDepthOfFieldMaskedFogged_vtable_10 {
@@ -51229,7 +51292,7 @@ impl BSImagespaceShaderDistantBlur_vtable {
 pub struct BSImagespaceShaderDistantBlur_vtable_10 {
     /// `BSImagespaceShaderDistantBlur::NiBoneMatrixSetterI_vdtor` at 0x15072d0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDistantBlur * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderDistantBlur_vtable_10 {
@@ -51317,7 +51380,7 @@ impl BSImagespaceShaderDistantBlurFogged_vtable {
 pub struct BSImagespaceShaderDistantBlurFogged_vtable_10 {
     /// `BSImagespaceShaderDistantBlurFogged::NiBoneMatrixSetterI_vdtor` at 0x15072e8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDistantBlurFogged * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderDistantBlurFogged_vtable_10 {
@@ -51405,7 +51468,7 @@ impl BSImagespaceShaderDistantBlurMaskedFogged_vtable {
 pub struct BSImagespaceShaderDistantBlurMaskedFogged_vtable_10 {
     /// `BSImagespaceShaderDistantBlurMaskedFogged::NiBoneMatrixSetterI_vdtor` at 0x1507300 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDistantBlurMaskedFogged * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderDistantBlurMaskedFogged_vtable_10 {
@@ -51493,7 +51556,7 @@ impl BSImagespaceShaderDoubleVision_vtable {
 pub struct BSImagespaceShaderDoubleVision_vtable_10 {
     /// `BSImagespaceShaderDoubleVision::NiBoneMatrixSetterI_vdtor` at 0x1507318 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDoubleVision * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderDoubleVision_vtable_10 {
@@ -51581,7 +51644,7 @@ impl BSImagespaceShaderFXAA_vtable {
 pub struct BSImagespaceShaderFXAA_vtable_10 {
     /// `BSImagespaceShaderFXAA::NiBoneMatrixSetterI_vdtor` at 0x1507330 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderFXAA * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderFXAA_vtable_10 {
@@ -51669,7 +51732,7 @@ impl BSImagespaceShaderGreyScale_vtable {
 pub struct BSImagespaceShaderGreyScale_vtable_10 {
     /// `BSImagespaceShaderGreyScale::NiBoneMatrixSetterI_vdtor` at 0x1507348 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderGreyScale * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderGreyScale_vtable_10 {
@@ -51757,7 +51820,7 @@ impl BSImagespaceShaderHDRDownSample16_vtable {
 pub struct BSImagespaceShaderHDRDownSample16_vtable_10 {
     /// `BSImagespaceShaderHDRDownSample16::NiBoneMatrixSetterI_vdtor` at 0x1507360 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample16 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRDownSample16_vtable_10 {
@@ -51845,7 +51908,7 @@ impl BSImagespaceShaderHDRDownSample16LightAdapt_vtable {
 pub struct BSImagespaceShaderHDRDownSample16LightAdapt_vtable_10 {
     /// `BSImagespaceShaderHDRDownSample16LightAdapt::NiBoneMatrixSetterI_vdtor` at 0x1507378 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample16LightAdapt * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRDownSample16LightAdapt_vtable_10 {
@@ -51933,7 +51996,7 @@ impl BSImagespaceShaderHDRDownSample16Lum_vtable {
 pub struct BSImagespaceShaderHDRDownSample16Lum_vtable_10 {
     /// `BSImagespaceShaderHDRDownSample16Lum::NiBoneMatrixSetterI_vdtor` at 0x1507390 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample16Lum * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRDownSample16Lum_vtable_10 {
@@ -52021,7 +52084,7 @@ impl BSImagespaceShaderHDRDownSample16LumClamp_vtable {
 pub struct BSImagespaceShaderHDRDownSample16LumClamp_vtable_10 {
     /// `BSImagespaceShaderHDRDownSample16LumClamp::NiBoneMatrixSetterI_vdtor` at 0x15073a8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample16LumClamp * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRDownSample16LumClamp_vtable_10 {
@@ -52109,7 +52172,7 @@ impl BSImagespaceShaderHDRDownSample4_vtable {
 pub struct BSImagespaceShaderHDRDownSample4_vtable_10 {
     /// `BSImagespaceShaderHDRDownSample4::NiBoneMatrixSetterI_vdtor` at 0x15073c0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample4 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRDownSample4_vtable_10 {
@@ -52197,7 +52260,7 @@ impl BSImagespaceShaderHDRDownSample4LightAdapt_vtable {
 pub struct BSImagespaceShaderHDRDownSample4LightAdapt_vtable_10 {
     /// `BSImagespaceShaderHDRDownSample4LightAdapt::NiBoneMatrixSetterI_vdtor` at 0x15073d8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample4LightAdapt * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRDownSample4LightAdapt_vtable_10 {
@@ -52285,7 +52348,7 @@ impl BSImagespaceShaderHDRDownSample4LumClamp_vtable {
 pub struct BSImagespaceShaderHDRDownSample4LumClamp_vtable_10 {
     /// `BSImagespaceShaderHDRDownSample4LumClamp::NiBoneMatrixSetterI_vdtor` at 0x15073f0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample4LumClamp * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRDownSample4LumClamp_vtable_10 {
@@ -52373,7 +52436,7 @@ impl BSImagespaceShaderHDRDownSample4RGB2Lum_vtable {
 pub struct BSImagespaceShaderHDRDownSample4RGB2Lum_vtable_10 {
     /// `BSImagespaceShaderHDRDownSample4RGB2Lum::NiBoneMatrixSetterI_vdtor` at 0x1507408 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample4RGB2Lum * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRDownSample4RGB2Lum_vtable_10 {
@@ -52461,7 +52524,7 @@ impl BSImagespaceShaderHDRTonemapBlendCinematic_vtable {
 pub struct BSImagespaceShaderHDRTonemapBlendCinematic_vtable_10 {
     /// `BSImagespaceShaderHDRTonemapBlendCinematic::NiBoneMatrixSetterI_vdtor` at 0x1507420 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRTonemapBlendCinematic * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRTonemapBlendCinematic_vtable_10 {
@@ -52549,7 +52612,7 @@ impl BSImagespaceShaderHDRTonemapBlendCinematicFade_vtable {
 pub struct BSImagespaceShaderHDRTonemapBlendCinematicFade_vtable_10 {
     /// `BSImagespaceShaderHDRTonemapBlendCinematicFade::NiBoneMatrixSetterI_vdtor` at 0x1507438 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRTonemapBlendCinematicFade * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderHDRTonemapBlendCinematicFade_vtable_10 {
@@ -52637,7 +52700,7 @@ impl BSImagespaceShaderISApplyVolumetricLighting_vtable {
 pub struct BSImagespaceShaderISApplyVolumetricLighting_vtable_10 {
     /// `BSImagespaceShaderISApplyVolumetricLighting::NiBoneMatrixSetterI_vdtor` at 0x1507450 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISApplyVolumetricLighting * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISApplyVolumetricLighting_vtable_10 {
@@ -52725,7 +52788,7 @@ impl BSImagespaceShaderISBasicCopy_vtable {
 pub struct BSImagespaceShaderISBasicCopy_vtable_10 {
     /// `BSImagespaceShaderISBasicCopy::NiBoneMatrixSetterI_vdtor` at 0x1507468 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISBasicCopy * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISBasicCopy_vtable_10 {
@@ -52813,7 +52876,7 @@ impl BSImagespaceShaderISBlur_vtable {
 pub struct BSImagespaceShaderISBlur_vtable_10 {
     /// `BSImagespaceShaderISBlur::NiBoneMatrixSetterI_vdtor` at 0x1507480 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISBlur * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISBlur_vtable_10 {
@@ -52901,7 +52964,7 @@ impl BSImagespaceShaderISCompositeLensFlare_vtable {
 pub struct BSImagespaceShaderISCompositeLensFlare_vtable_10 {
     /// `BSImagespaceShaderISCompositeLensFlare::NiBoneMatrixSetterI_vdtor` at 0x1507498 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISCompositeLensFlare * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISCompositeLensFlare_vtable_10 {
@@ -52989,7 +53052,7 @@ impl BSImagespaceShaderISCompositeLensFlareVolumetricLighting_vtable {
 pub struct BSImagespaceShaderISCompositeLensFlareVolumetricLighting_vtable_10 {
     /// `BSImagespaceShaderISCompositeLensFlareVolumetricLighting::NiBoneMatrixSetterI_vdtor` at 0x15074b0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISCompositeLensFlareVolumetricLighting * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISCompositeLensFlareVolumetricLighting_vtable_10 {
@@ -53077,7 +53140,7 @@ impl BSImagespaceShaderISCompositeVolumetricLighting_vtable {
 pub struct BSImagespaceShaderISCompositeVolumetricLighting_vtable_10 {
     /// `BSImagespaceShaderISCompositeVolumetricLighting::NiBoneMatrixSetterI_vdtor` at 0x15074c8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISCompositeVolumetricLighting * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISCompositeVolumetricLighting_vtable_10 {
@@ -53165,7 +53228,7 @@ impl BSImagespaceShaderISCopySubRegionCS_vtable {
 pub struct BSImagespaceShaderISCopySubRegionCS_vtable_10 {
     /// `BSImagespaceShaderISCopySubRegionCS::NiBoneMatrixSetterI_vdtor` at 0x15074e0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISCopySubRegionCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISCopySubRegionCS_vtable_10 {
@@ -53253,7 +53316,7 @@ impl BSImagespaceShaderISDebugSnow_vtable {
 pub struct BSImagespaceShaderISDebugSnow_vtable_10 {
     /// `BSImagespaceShaderISDebugSnow::NiBoneMatrixSetterI_vdtor` at 0x15074f8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDebugSnow * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISDebugSnow_vtable_10 {
@@ -53341,7 +53404,7 @@ impl BSImagespaceShaderISDepthOfFieldBlurHCS_vtable {
 pub struct BSImagespaceShaderISDepthOfFieldBlurHCS_vtable_10 {
     /// `BSImagespaceShaderISDepthOfFieldBlurHCS::NiBoneMatrixSetterI_vdtor` at 0x1507510 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDepthOfFieldBlurHCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISDepthOfFieldBlurHCS_vtable_10 {
@@ -53429,7 +53492,7 @@ impl BSImagespaceShaderISDepthOfFieldBlurVCS_vtable {
 pub struct BSImagespaceShaderISDepthOfFieldBlurVCS_vtable_10 {
     /// `BSImagespaceShaderISDepthOfFieldBlurVCS::NiBoneMatrixSetterI_vdtor` at 0x1507528 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDepthOfFieldBlurVCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISDepthOfFieldBlurVCS_vtable_10 {
@@ -53517,7 +53580,7 @@ impl BSImagespaceShaderISDisplayDepth_vtable {
 pub struct BSImagespaceShaderISDisplayDepth_vtable_10 {
     /// `BSImagespaceShaderISDisplayDepth::NiBoneMatrixSetterI_vdtor` at 0x1507540 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDisplayDepth * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISDisplayDepth_vtable_10 {
@@ -53605,7 +53668,7 @@ impl BSImagespaceShaderISDownsample_vtable {
 pub struct BSImagespaceShaderISDownsample_vtable_10 {
     /// `BSImagespaceShaderISDownsample::NiBoneMatrixSetterI_vdtor` at 0x1507558 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDownsample * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISDownsample_vtable_10 {
@@ -53693,7 +53756,7 @@ impl BSImagespaceShaderISDownsampleCS_vtable {
 pub struct BSImagespaceShaderISDownsampleCS_vtable_10 {
     /// `BSImagespaceShaderISDownsampleCS::NiBoneMatrixSetterI_vdtor` at 0x1507570 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDownsampleCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISDownsampleCS_vtable_10 {
@@ -53781,7 +53844,7 @@ impl BSImagespaceShaderISDownsampleIgnoreBrightest_vtable {
 pub struct BSImagespaceShaderISDownsampleIgnoreBrightest_vtable_10 {
     /// `BSImagespaceShaderISDownsampleIgnoreBrightest::NiBoneMatrixSetterI_vdtor` at 0x1507588 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDownsampleIgnoreBrightest * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISDownsampleIgnoreBrightest_vtable_10 {
@@ -53869,7 +53932,7 @@ impl BSImagespaceShaderISDownsampleIgnoreBrightestCS_vtable {
 pub struct BSImagespaceShaderISDownsampleIgnoreBrightestCS_vtable_10 {
     /// `BSImagespaceShaderISDownsampleIgnoreBrightestCS::NiBoneMatrixSetterI_vdtor` at 0x15075a0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDownsampleIgnoreBrightestCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISDownsampleIgnoreBrightestCS_vtable_10 {
@@ -53957,7 +54020,7 @@ impl BSImagespaceShaderISExp_vtable {
 pub struct BSImagespaceShaderISExp_vtable_10 {
     /// `BSImagespaceShaderISExp::NiBoneMatrixSetterI_vdtor` at 0x15075b8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISExp * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISExp_vtable_10 {
@@ -54045,7 +54108,7 @@ impl BSImagespaceShaderISIBLensFlares_vtable {
 pub struct BSImagespaceShaderISIBLensFlares_vtable_10 {
     /// `BSImagespaceShaderISIBLensFlares::NiBoneMatrixSetterI_vdtor` at 0x15075d0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISIBLensFlares * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISIBLensFlares_vtable_10 {
@@ -54133,7 +54196,7 @@ impl BSImagespaceShaderISLightingComposite_vtable {
 pub struct BSImagespaceShaderISLightingComposite_vtable_10 {
     /// `BSImagespaceShaderISLightingComposite::NiBoneMatrixSetterI_vdtor` at 0x15075e8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISLightingComposite * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISLightingComposite_vtable_10 {
@@ -54221,7 +54284,7 @@ impl BSImagespaceShaderISLightingCompositeMenu_vtable {
 pub struct BSImagespaceShaderISLightingCompositeMenu_vtable_10 {
     /// `BSImagespaceShaderISLightingCompositeMenu::NiBoneMatrixSetterI_vdtor` at 0x1507600 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISLightingCompositeMenu * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISLightingCompositeMenu_vtable_10 {
@@ -54309,7 +54372,7 @@ impl BSImagespaceShaderISLightingCompositeNoDirectionalLight_vtable {
 pub struct BSImagespaceShaderISLightingCompositeNoDirectionalLight_vtable_10 {
     /// `BSImagespaceShaderISLightingCompositeNoDirectionalLight::NiBoneMatrixSetterI_vdtor` at 0x1507618 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISLightingCompositeNoDirectionalLight * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISLightingCompositeNoDirectionalLight_vtable_10 {
@@ -54397,7 +54460,7 @@ impl BSImagespaceShaderISMinify_vtable {
 pub struct BSImagespaceShaderISMinify_vtable_10 {
     /// `BSImagespaceShaderISMinify::NiBoneMatrixSetterI_vdtor` at 0x1507630 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISMinify * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISMinify_vtable_10 {
@@ -54485,7 +54548,7 @@ impl BSImagespaceShaderISMinifyContrast_vtable {
 pub struct BSImagespaceShaderISMinifyContrast_vtable_10 {
     /// `BSImagespaceShaderISMinifyContrast::NiBoneMatrixSetterI_vdtor` at 0x1507648 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISMinifyContrast * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISMinifyContrast_vtable_10 {
@@ -54573,7 +54636,7 @@ impl BSImagespaceShaderISParallaxMaskBlurHCS_vtable {
 pub struct BSImagespaceShaderISParallaxMaskBlurHCS_vtable_10 {
     /// `BSImagespaceShaderISParallaxMaskBlurHCS::NiBoneMatrixSetterI_vdtor` at 0x1507660 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISParallaxMaskBlurHCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISParallaxMaskBlurHCS_vtable_10 {
@@ -54661,7 +54724,7 @@ impl BSImagespaceShaderISParallaxMaskBlurVCS_vtable {
 pub struct BSImagespaceShaderISParallaxMaskBlurVCS_vtable_10 {
     /// `BSImagespaceShaderISParallaxMaskBlurVCS::NiBoneMatrixSetterI_vdtor` at 0x1507678 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISParallaxMaskBlurVCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISParallaxMaskBlurVCS_vtable_10 {
@@ -54749,7 +54812,7 @@ impl BSImagespaceShaderISPerlinNoise2DCS_vtable {
 pub struct BSImagespaceShaderISPerlinNoise2DCS_vtable_10 {
     /// `BSImagespaceShaderISPerlinNoise2DCS::NiBoneMatrixSetterI_vdtor` at 0x1507690 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISPerlinNoise2DCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISPerlinNoise2DCS_vtable_10 {
@@ -54837,7 +54900,7 @@ impl BSImagespaceShaderISPerlinNoiseCS_vtable {
 pub struct BSImagespaceShaderISPerlinNoiseCS_vtable_10 {
     /// `BSImagespaceShaderISPerlinNoiseCS::NiBoneMatrixSetterI_vdtor` at 0x15076a8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISPerlinNoiseCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISPerlinNoiseCS_vtable_10 {
@@ -54925,7 +54988,7 @@ impl BSImagespaceShaderISSAOBlurH_vtable {
 pub struct BSImagespaceShaderISSAOBlurH_vtable_10 {
     /// `BSImagespaceShaderISSAOBlurH::NiBoneMatrixSetterI_vdtor` at 0x15076c0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOBlurH * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOBlurH_vtable_10 {
@@ -55013,7 +55076,7 @@ impl BSImagespaceShaderISSAOBlurHCS_vtable {
 pub struct BSImagespaceShaderISSAOBlurHCS_vtable_10 {
     /// `BSImagespaceShaderISSAOBlurHCS::NiBoneMatrixSetterI_vdtor` at 0x15076d8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOBlurHCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOBlurHCS_vtable_10 {
@@ -55101,7 +55164,7 @@ impl BSImagespaceShaderISSAOBlurV_vtable {
 pub struct BSImagespaceShaderISSAOBlurV_vtable_10 {
     /// `BSImagespaceShaderISSAOBlurV::NiBoneMatrixSetterI_vdtor` at 0x15076f0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOBlurV * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOBlurV_vtable_10 {
@@ -55189,7 +55252,7 @@ impl BSImagespaceShaderISSAOBlurVCS_vtable {
 pub struct BSImagespaceShaderISSAOBlurVCS_vtable_10 {
     /// `BSImagespaceShaderISSAOBlurVCS::NiBoneMatrixSetterI_vdtor` at 0x1507708 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOBlurVCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOBlurVCS_vtable_10 {
@@ -55277,7 +55340,7 @@ impl BSImagespaceShaderISSAOCameraZ_vtable {
 pub struct BSImagespaceShaderISSAOCameraZ_vtable_10 {
     /// `BSImagespaceShaderISSAOCameraZ::NiBoneMatrixSetterI_vdtor` at 0x1507720 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCameraZ * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOCameraZ_vtable_10 {
@@ -55365,7 +55428,7 @@ impl BSImagespaceShaderISSAOCameraZAndMipsCS_vtable {
 pub struct BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_10 {
     /// `BSImagespaceShaderISSAOCameraZAndMipsCS::NiBoneMatrixSetterI_vdtor` at 0x1507738 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCameraZAndMipsCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_10 {
@@ -55453,7 +55516,7 @@ impl BSImagespaceShaderISSAOCompositeFog_vtable {
 pub struct BSImagespaceShaderISSAOCompositeFog_vtable_10 {
     /// `BSImagespaceShaderISSAOCompositeFog::NiBoneMatrixSetterI_vdtor` at 0x1507750 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeFog * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOCompositeFog_vtable_10 {
@@ -55541,7 +55604,7 @@ impl BSImagespaceShaderISSAOCompositeSAO_vtable {
 pub struct BSImagespaceShaderISSAOCompositeSAO_vtable_10 {
     /// `BSImagespaceShaderISSAOCompositeSAO::NiBoneMatrixSetterI_vdtor` at 0x1507768 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeSAO * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOCompositeSAO_vtable_10 {
@@ -55629,7 +55692,7 @@ impl BSImagespaceShaderISSAOCompositeSAOFog_vtable {
 pub struct BSImagespaceShaderISSAOCompositeSAOFog_vtable_10 {
     /// `BSImagespaceShaderISSAOCompositeSAOFog::NiBoneMatrixSetterI_vdtor` at 0x1507780 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeSAOFog * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAOCompositeSAOFog_vtable_10 {
@@ -55717,7 +55780,7 @@ impl BSImagespaceShaderISSAORawAO_vtable {
 pub struct BSImagespaceShaderISSAORawAO_vtable_10 {
     /// `BSImagespaceShaderISSAORawAO::NiBoneMatrixSetterI_vdtor` at 0x1507798 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAORawAO * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAORawAO_vtable_10 {
@@ -55805,7 +55868,7 @@ impl BSImagespaceShaderISSAORawAOCS_vtable {
 pub struct BSImagespaceShaderISSAORawAOCS_vtable_10 {
     /// `BSImagespaceShaderISSAORawAOCS::NiBoneMatrixSetterI_vdtor` at 0x15077b0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAORawAOCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAORawAOCS_vtable_10 {
@@ -55893,7 +55956,7 @@ impl BSImagespaceShaderISSAORawAONoTemporal_vtable {
 pub struct BSImagespaceShaderISSAORawAONoTemporal_vtable_10 {
     /// `BSImagespaceShaderISSAORawAONoTemporal::NiBoneMatrixSetterI_vdtor` at 0x15077c8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAORawAONoTemporal * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSAORawAONoTemporal_vtable_10 {
@@ -55981,7 +56044,7 @@ impl BSImagespaceShaderISSILComposite_vtable {
 pub struct BSImagespaceShaderISSILComposite_vtable_10 {
     /// `BSImagespaceShaderISSILComposite::NiBoneMatrixSetterI_vdtor` at 0x15077e0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSILComposite * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSILComposite_vtable_10 {
@@ -56069,7 +56132,7 @@ impl BSImagespaceShaderISSILRawInd_vtable {
 pub struct BSImagespaceShaderISSILRawInd_vtable_10 {
     /// `BSImagespaceShaderISSILRawInd::NiBoneMatrixSetterI_vdtor` at 0x15077f8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSILRawInd * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSILRawInd_vtable_10 {
@@ -56157,7 +56220,7 @@ impl BSImagespaceShaderISSimpleColor_vtable {
 pub struct BSImagespaceShaderISSimpleColor_vtable_10 {
     /// `BSImagespaceShaderISSimpleColor::NiBoneMatrixSetterI_vdtor` at 0x1507810 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSimpleColor * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSimpleColor_vtable_10 {
@@ -56245,7 +56308,7 @@ impl BSImagespaceShaderISSnowSSS_vtable {
 pub struct BSImagespaceShaderISSnowSSS_vtable_10 {
     /// `BSImagespaceShaderISSnowSSS::NiBoneMatrixSetterI_vdtor` at 0x1507828 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSnowSSS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISSnowSSS_vtable_10 {
@@ -56333,7 +56396,7 @@ impl BSImagespaceShaderISTemporalAA_vtable {
 pub struct BSImagespaceShaderISTemporalAA_vtable_10 {
     /// `BSImagespaceShaderISTemporalAA::NiBoneMatrixSetterI_vdtor` at 0x1507840 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISTemporalAA * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISTemporalAA_vtable_10 {
@@ -56421,7 +56484,7 @@ impl BSImagespaceShaderISTemporalAA_UI_vtable {
 pub struct BSImagespaceShaderISTemporalAA_UI_vtable_10 {
     /// `BSImagespaceShaderISTemporalAA_UI::NiBoneMatrixSetterI_vdtor` at 0x1507858 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISTemporalAA_UI * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISTemporalAA_UI_vtable_10 {
@@ -56509,7 +56572,7 @@ impl BSImagespaceShaderISTemporalAA_Water_vtable {
 pub struct BSImagespaceShaderISTemporalAA_Water_vtable_10 {
     /// `BSImagespaceShaderISTemporalAA_Water::NiBoneMatrixSetterI_vdtor` at 0x1507870 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISTemporalAA_Water * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISTemporalAA_Water_vtable_10 {
@@ -56597,7 +56660,7 @@ impl BSImagespaceShaderISUnderwaterMask_vtable {
 pub struct BSImagespaceShaderISUnderwaterMask_vtable_10 {
     /// `BSImagespaceShaderISUnderwaterMask::NiBoneMatrixSetterI_vdtor` at 0x1507888 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISUnderwaterMask * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISUnderwaterMask_vtable_10 {
@@ -56685,7 +56748,7 @@ impl BSImagespaceShaderISUpsampleDynamicResolution_vtable {
 pub struct BSImagespaceShaderISUpsampleDynamicResolution_vtable_10 {
     /// `BSImagespaceShaderISUpsampleDynamicResolution::NiBoneMatrixSetterI_vdtor` at 0x15078a0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISUpsampleDynamicResolution * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISUpsampleDynamicResolution_vtable_10 {
@@ -56773,7 +56836,7 @@ impl BSImagespaceShaderISVolumetricLightingBlurHCS_vtable {
 pub struct BSImagespaceShaderISVolumetricLightingBlurHCS_vtable_10 {
     /// `BSImagespaceShaderISVolumetricLightingBlurHCS::NiBoneMatrixSetterI_vdtor` at 0x15078b8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISVolumetricLightingBlurHCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISVolumetricLightingBlurHCS_vtable_10 {
@@ -56861,7 +56924,7 @@ impl BSImagespaceShaderISVolumetricLightingBlurVCS_vtable {
 pub struct BSImagespaceShaderISVolumetricLightingBlurVCS_vtable_10 {
     /// `BSImagespaceShaderISVolumetricLightingBlurVCS::NiBoneMatrixSetterI_vdtor` at 0x15078d0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISVolumetricLightingBlurVCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISVolumetricLightingBlurVCS_vtable_10 {
@@ -56949,7 +57012,7 @@ impl BSImagespaceShaderISWaterBlend_vtable {
 pub struct BSImagespaceShaderISWaterBlend_vtable_10 {
     /// `BSImagespaceShaderISWaterBlend::NiBoneMatrixSetterI_vdtor` at 0x15078e8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISWaterBlend * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderISWaterBlend_vtable_10 {
@@ -57037,7 +57100,7 @@ impl BSImagespaceShaderLensFlare_vtable {
 pub struct BSImagespaceShaderLensFlare_vtable_10 {
     /// `BSImagespaceShaderLensFlare::NiBoneMatrixSetterI_vdtor` at 0x1530774 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderLensFlare * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderLensFlare_vtable_10 {
@@ -57125,7 +57188,7 @@ impl BSImagespaceShaderLensFlareVisibility_vtable {
 pub struct BSImagespaceShaderLensFlareVisibility_vtable_10 {
     /// `BSImagespaceShaderLensFlareVisibility::NiBoneMatrixSetterI_vdtor` at 0x153078c (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderLensFlareVisibility * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderLensFlareVisibility_vtable_10 {
@@ -57213,7 +57276,7 @@ impl BSImagespaceShaderLocalMap_vtable {
 pub struct BSImagespaceShaderLocalMap_vtable_10 {
     /// `BSImagespaceShaderLocalMap::NiBoneMatrixSetterI_vdtor` at 0x1507900 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderLocalMap * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderLocalMap_vtable_10 {
@@ -57301,7 +57364,7 @@ impl BSImagespaceShaderMap_vtable {
 pub struct BSImagespaceShaderMap_vtable_10 {
     /// `BSImagespaceShaderMap::NiBoneMatrixSetterI_vdtor` at 0x1507918 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderMap * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderMap_vtable_10 {
@@ -57389,7 +57452,7 @@ impl BSImagespaceShaderNoiseNormalmap_vtable {
 pub struct BSImagespaceShaderNoiseNormalmap_vtable_10 {
     /// `BSImagespaceShaderNoiseNormalmap::NiBoneMatrixSetterI_vdtor` at 0x1507930 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNoiseNormalmap * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNoiseNormalmap_vtable_10 {
@@ -57477,7 +57540,7 @@ impl BSImagespaceShaderNoiseScrollAndBlend_vtable {
 pub struct BSImagespaceShaderNoiseScrollAndBlend_vtable_10 {
     /// `BSImagespaceShaderNoiseScrollAndBlend::NiBoneMatrixSetterI_vdtor` at 0x1507948 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNoiseScrollAndBlend * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNoiseScrollAndBlend_vtable_10 {
@@ -57565,7 +57628,7 @@ impl BSImagespaceShaderNonHDRBlur11_vtable {
 pub struct BSImagespaceShaderNonHDRBlur11_vtable_10 {
     /// `BSImagespaceShaderNonHDRBlur11::NiBoneMatrixSetterI_vdtor` at 0x1507960 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur11 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNonHDRBlur11_vtable_10 {
@@ -57653,7 +57716,7 @@ impl BSImagespaceShaderNonHDRBlur13_vtable {
 pub struct BSImagespaceShaderNonHDRBlur13_vtable_10 {
     /// `BSImagespaceShaderNonHDRBlur13::NiBoneMatrixSetterI_vdtor` at 0x1507978 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur13 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNonHDRBlur13_vtable_10 {
@@ -57741,7 +57804,7 @@ impl BSImagespaceShaderNonHDRBlur15_vtable {
 pub struct BSImagespaceShaderNonHDRBlur15_vtable_10 {
     /// `BSImagespaceShaderNonHDRBlur15::NiBoneMatrixSetterI_vdtor` at 0x1507990 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur15 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNonHDRBlur15_vtable_10 {
@@ -57829,7 +57892,7 @@ impl BSImagespaceShaderNonHDRBlur3_vtable {
 pub struct BSImagespaceShaderNonHDRBlur3_vtable_10 {
     /// `BSImagespaceShaderNonHDRBlur3::NiBoneMatrixSetterI_vdtor` at 0x15079a8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur3 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNonHDRBlur3_vtable_10 {
@@ -57917,7 +57980,7 @@ impl BSImagespaceShaderNonHDRBlur5_vtable {
 pub struct BSImagespaceShaderNonHDRBlur5_vtable_10 {
     /// `BSImagespaceShaderNonHDRBlur5::NiBoneMatrixSetterI_vdtor` at 0x15079c0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur5 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNonHDRBlur5_vtable_10 {
@@ -58005,7 +58068,7 @@ impl BSImagespaceShaderNonHDRBlur7_vtable {
 pub struct BSImagespaceShaderNonHDRBlur7_vtable_10 {
     /// `BSImagespaceShaderNonHDRBlur7::NiBoneMatrixSetterI_vdtor` at 0x15079d8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur7 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNonHDRBlur7_vtable_10 {
@@ -58093,7 +58156,7 @@ impl BSImagespaceShaderNonHDRBlur9_vtable {
 pub struct BSImagespaceShaderNonHDRBlur9_vtable_10 {
     /// `BSImagespaceShaderNonHDRBlur9::NiBoneMatrixSetterI_vdtor` at 0x15079f0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur9 * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderNonHDRBlur9_vtable_10 {
@@ -58181,7 +58244,7 @@ impl BSImagespaceShaderRadialBlur_vtable {
 pub struct BSImagespaceShaderRadialBlur_vtable_10 {
     /// `BSImagespaceShaderRadialBlur::NiBoneMatrixSetterI_vdtor` at 0x1507a08 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderRadialBlur * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderRadialBlur_vtable_10 {
@@ -58269,7 +58332,7 @@ impl BSImagespaceShaderRadialBlurHigh_vtable {
 pub struct BSImagespaceShaderRadialBlurHigh_vtable_10 {
     /// `BSImagespaceShaderRadialBlurHigh::NiBoneMatrixSetterI_vdtor` at 0x1507a20 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderRadialBlurHigh * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderRadialBlurHigh_vtable_10 {
@@ -58357,7 +58420,7 @@ impl BSImagespaceShaderRadialBlurMedium_vtable {
 pub struct BSImagespaceShaderRadialBlurMedium_vtable_10 {
     /// `BSImagespaceShaderRadialBlurMedium::NiBoneMatrixSetterI_vdtor` at 0x1507a38 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderRadialBlurMedium * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderRadialBlurMedium_vtable_10 {
@@ -58445,7 +58508,7 @@ impl BSImagespaceShaderReflectionBlurHCS_vtable {
 pub struct BSImagespaceShaderReflectionBlurHCS_vtable_10 {
     /// `BSImagespaceShaderReflectionBlurHCS::NiBoneMatrixSetterI_vdtor` at 0x1507a50 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderReflectionBlurHCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderReflectionBlurHCS_vtable_10 {
@@ -58533,7 +58596,7 @@ impl BSImagespaceShaderReflectionBlurVCS_vtable {
 pub struct BSImagespaceShaderReflectionBlurVCS_vtable_10 {
     /// `BSImagespaceShaderReflectionBlurVCS::NiBoneMatrixSetterI_vdtor` at 0x1507a68 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderReflectionBlurVCS * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderReflectionBlurVCS_vtable_10 {
@@ -58621,7 +58684,7 @@ impl BSImagespaceShaderReflectionsDebugSpecMask_vtable {
 pub struct BSImagespaceShaderReflectionsDebugSpecMask_vtable_10 {
     /// `BSImagespaceShaderReflectionsDebugSpecMask::NiBoneMatrixSetterI_vdtor` at 0x1507a80 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderReflectionsDebugSpecMask * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderReflectionsDebugSpecMask_vtable_10 {
@@ -58709,7 +58772,7 @@ impl BSImagespaceShaderReflectionsRayTracing_vtable {
 pub struct BSImagespaceShaderReflectionsRayTracing_vtable_10 {
     /// `BSImagespaceShaderReflectionsRayTracing::NiBoneMatrixSetterI_vdtor` at 0x1507a98 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderReflectionsRayTracing * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderReflectionsRayTracing_vtable_10 {
@@ -58797,7 +58860,7 @@ impl BSImagespaceShaderRefraction_vtable {
 pub struct BSImagespaceShaderRefraction_vtable_10 {
     /// `BSImagespaceShaderRefraction::NiBoneMatrixSetterI_vdtor` at 0x1507ab0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderRefraction * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderRefraction_vtable_10 {
@@ -58885,7 +58948,7 @@ impl BSImagespaceShaderTextureMask_vtable {
 pub struct BSImagespaceShaderTextureMask_vtable_10 {
     /// `BSImagespaceShaderTextureMask::NiBoneMatrixSetterI_vdtor` at 0x1507ac8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderTextureMask * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderTextureMask_vtable_10 {
@@ -58973,7 +59036,7 @@ impl BSImagespaceShaderVolumetricLighting_vtable {
 pub struct BSImagespaceShaderVolumetricLighting_vtable_10 {
     /// `BSImagespaceShaderVolumetricLighting::NiBoneMatrixSetterI_vdtor` at 0x1507ae0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderVolumetricLighting * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderVolumetricLighting_vtable_10 {
@@ -59061,7 +59124,7 @@ impl BSImagespaceShaderWaterBlendHeightmaps_vtable {
 pub struct BSImagespaceShaderWaterBlendHeightmaps_vtable_10 {
     /// `BSImagespaceShaderWaterBlendHeightmaps::NiBoneMatrixSetterI_vdtor` at 0x1507af8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterBlendHeightmaps * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterBlendHeightmaps_vtable_10 {
@@ -59149,7 +59212,7 @@ impl BSImagespaceShaderWaterDisplacementClearSimulation_vtable {
 pub struct BSImagespaceShaderWaterDisplacementClearSimulation_vtable_10 {
     /// `BSImagespaceShaderWaterDisplacementClearSimulation::NiBoneMatrixSetterI_vdtor` at 0x1507b10 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementClearSimulation * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterDisplacementClearSimulation_vtable_10 {
@@ -59237,7 +59300,7 @@ impl BSImagespaceShaderWaterDisplacementNormals_vtable {
 pub struct BSImagespaceShaderWaterDisplacementNormals_vtable_10 {
     /// `BSImagespaceShaderWaterDisplacementNormals::NiBoneMatrixSetterI_vdtor` at 0x1507b28 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementNormals * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterDisplacementNormals_vtable_10 {
@@ -59325,7 +59388,7 @@ impl BSImagespaceShaderWaterDisplacementRainRipple_vtable {
 pub struct BSImagespaceShaderWaterDisplacementRainRipple_vtable_10 {
     /// `BSImagespaceShaderWaterDisplacementRainRipple::NiBoneMatrixSetterI_vdtor` at 0x1507b40 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementRainRipple * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterDisplacementRainRipple_vtable_10 {
@@ -59413,7 +59476,7 @@ impl BSImagespaceShaderWaterDisplacementTexOffset_vtable {
 pub struct BSImagespaceShaderWaterDisplacementTexOffset_vtable_10 {
     /// `BSImagespaceShaderWaterDisplacementTexOffset::NiBoneMatrixSetterI_vdtor` at 0x1507b58 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementTexOffset * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterDisplacementTexOffset_vtable_10 {
@@ -59501,7 +59564,7 @@ impl BSImagespaceShaderWaterDisplacementWadingRipple_vtable {
 pub struct BSImagespaceShaderWaterDisplacementWadingRipple_vtable_10 {
     /// `BSImagespaceShaderWaterDisplacementWadingRipple::NiBoneMatrixSetterI_vdtor` at 0x1507b70 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementWadingRipple * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterDisplacementWadingRipple_vtable_10 {
@@ -59589,7 +59652,7 @@ impl BSImagespaceShaderWaterFlow_vtable {
 pub struct BSImagespaceShaderWaterFlow_vtable_10 {
     /// `BSImagespaceShaderWaterFlow::NiBoneMatrixSetterI_vdtor` at 0x1507b88 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterFlow * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterFlow_vtable_10 {
@@ -59677,7 +59740,7 @@ impl BSImagespaceShaderWaterRainHeightmap_vtable {
 pub struct BSImagespaceShaderWaterRainHeightmap_vtable_10 {
     /// `BSImagespaceShaderWaterRainHeightmap::NiBoneMatrixSetterI_vdtor` at 0x1507ba0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterRainHeightmap * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterRainHeightmap_vtable_10 {
@@ -59765,7 +59828,7 @@ impl BSImagespaceShaderWaterSmoothHeightmap_vtable {
 pub struct BSImagespaceShaderWaterSmoothHeightmap_vtable_10 {
     /// `BSImagespaceShaderWaterSmoothHeightmap::NiBoneMatrixSetterI_vdtor` at 0x1507bb8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterSmoothHeightmap * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterSmoothHeightmap_vtable_10 {
@@ -59853,7 +59916,7 @@ impl BSImagespaceShaderWaterWadingHeightmap_vtable {
 pub struct BSImagespaceShaderWaterWadingHeightmap_vtable_10 {
     /// `BSImagespaceShaderWaterWadingHeightmap::NiBoneMatrixSetterI_vdtor` at 0x1507bd0 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterWadingHeightmap * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWaterWadingHeightmap_vtable_10 {
@@ -59941,7 +60004,7 @@ impl BSImagespaceShaderWorldMap_vtable {
 pub struct BSImagespaceShaderWorldMap_vtable_10 {
     /// `BSImagespaceShaderWorldMap::NiBoneMatrixSetterI_vdtor` at 0x1507be8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWorldMap * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWorldMap_vtable_10 {
@@ -60029,7 +60092,7 @@ impl BSImagespaceShaderWorldMapNoSkyBlur_vtable {
 pub struct BSImagespaceShaderWorldMapNoSkyBlur_vtable_10 {
     /// `BSImagespaceShaderWorldMapNoSkyBlur::NiBoneMatrixSetterI_vdtor` at 0x1507c00 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWorldMapNoSkyBlur * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSImagespaceShaderWorldMapNoSkyBlur_vtable_10 {
@@ -60197,7 +60260,7 @@ pub struct BSInstanceTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -60211,7 +60274,7 @@ pub struct BSInstanceTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -60575,7 +60638,7 @@ pub struct BSLODMultiIndexTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -60589,7 +60652,7 @@ pub struct BSLODMultiIndexTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSMultiIndexTriShape::vfunc_53` at 0x1575450 (rtti, medium); signature (high): `BSMultiIndexTriShape * vfunc_53(BSMultiIndexTriShape * this)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSLODMultiIndexTriShape::vfunc_55` at 0x158a700 (rtti, high); signature (low): `undefined vfunc_55(BSLODMultiIndexTriShape * this, uint param_1)`
     pub slot_55: *const c_void,
@@ -61036,7 +61099,7 @@ impl BSLightingShader_vtable {
 pub struct BSLightingShader_vtable_10 {
     /// `BSLightingShader::NiBoneMatrixSetterI_vdtor` at 0x154cf08 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSLightingShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSLightingShader_vtable_10 {
@@ -62332,7 +62395,7 @@ pub struct BSLines_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -62346,7 +62409,7 @@ pub struct BSLines_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -63076,7 +63139,7 @@ pub struct BSMeshLODTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -63090,7 +63153,7 @@ pub struct BSMeshLODTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSMeshLODTriShape::vfunc_55` at 0x156fd60 (rtti, high); signature (untiered): `int vfunc_55(longlong param_1, uint param_2)`
     pub slot_55: *const c_void,
@@ -64250,7 +64313,7 @@ pub struct BSMultiIndexTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -64264,7 +64327,7 @@ pub struct BSMultiIndexTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSMultiIndexTriShape::vfunc_53` at 0x1575450 (rtti, medium); signature (high): `BSMultiIndexTriShape * vfunc_53(BSMultiIndexTriShape * this)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -64370,7 +64433,7 @@ pub struct BSMultiStreamInstanceTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -64384,7 +64447,7 @@ pub struct BSMultiStreamInstanceTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSMultiStreamInstanceTriShape::vfunc_55` at 0xfe2710 (rtti, high); signature (high): `int vfunc_55(BSMultiStreamInstanceTriShape * this)`
     pub slot_55: *const c_void,
@@ -67026,7 +67089,7 @@ impl BSParticleShader_vtable {
 pub struct BSParticleShader_vtable_10 {
     /// `BSParticleShader::NiBoneMatrixSetterI_vdtor` at 0x157a858 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSParticleShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSParticleShader_vtable_10 {
@@ -67194,7 +67257,7 @@ pub struct BSParticleShaderGeometry_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -67208,7 +67271,7 @@ pub struct BSParticleShaderGeometry_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -92126,7 +92189,7 @@ pub type BSShader_vtable_vfunc_8 = unsafe extern "C" fn(this: *mut classes::BSSh
 pub struct BSShader_vtable_10 {
     /// `BSShader::NiBoneMatrixSetterI_vdtor` at 0x15796dc (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSShader_vtable_10 {
@@ -93201,7 +93264,7 @@ pub struct BSSkinnedDecalTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -93257,7 +93320,7 @@ impl BSSkyShader_vtable {
 pub struct BSSkyShader_vtable_10 {
     /// `BSSkyShader::NiBoneMatrixSetterI_vdtor` at 0x1552ed8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSSkyShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSSkyShader_vtable_10 {
@@ -93981,7 +94044,7 @@ pub struct BSStripParticleSystem_vtable {
     pub slot_45: *const c_void,
     /// `NiParticleSystem::vfunc_46` at 0xf99b20 (rtti, medium); signature (low): `undefined vfunc_46(NiParticleSystem * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiParticleSystem::vfunc_48` at 0xf99e20 (rtti, medium); signature (low): `undefined vfunc_48(void)`
     pub slot_48: *const c_void,
@@ -93995,7 +94058,7 @@ pub struct BSStripParticleSystem_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -94105,7 +94168,7 @@ pub struct BSSubIndexLandTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -94119,7 +94182,7 @@ pub struct BSSubIndexLandTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -94225,7 +94288,7 @@ pub struct BSSubIndexTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -94239,7 +94302,7 @@ pub struct BSSubIndexTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -105607,7 +105670,7 @@ pub struct BSTriShape_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -105621,7 +105684,7 @@ pub struct BSTriShape_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -105741,7 +105804,7 @@ impl BSUtilityShader_vtable {
 pub struct BSUtilityShader_vtable_10 {
     /// `BSUtilityShader::NiBoneMatrixSetterI_vdtor` at 0x1568e18 (slot_propagation, medium); signature (low): `undefined NiBoneMatrixSetterI_vdtor(BSUtilityShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSUtilityShader_vtable_10 {
@@ -106073,7 +106136,7 @@ impl BSWaterShader_vtable {
 pub struct BSWaterShader_vtable_10 {
     /// `BSWaterShader::NiBoneMatrixSetterI_vdtor` at 0x154f9b8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSWaterShader * this)`
     pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI_vfunc_1` at 0x1578c80 (rtti, medium); signature (low): `undefined NiBoneMatrixSetterI_vfunc_1(BSShader * this, longlong param_1, longlong param_2, float * param_3)`
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
     pub slot_1: *const c_void,
 }
 impl BSWaterShader_vtable_10 {
@@ -106983,17 +107046,17 @@ impl BShkVisibilityController_vtable {
 /// `BShkbAnimationGraph::vftable` at 0x1a07d78, id 232870 (rtti, high); 14 slots.
 #[repr(C)]
 pub struct BShkbAnimationGraph_vtable {
-    /// `BShkbAnimationGraph::vdtor` at 0xbd9970 (slot_propagation, medium); signature (low): `BShkbAnimationGraph * vdtor(BShkbAnimationGraph * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
+    /// `BShkbAnimationGraph::dtor` at 0xbd9970 (semantic, high); signature (untiered): `BShkbAnimationGraph * dtor(BShkbAnimationGraph * this, longlong * param_1, longlong * param_2, undefined8 param_3)`; `dtor`: virtual destructor (high); semantic signature: `BShkbAnimationGraph* (BShkbAnimationGraph* this, uint flags)`
     pub slot_0: *const c_void,
-    /// `BShkbAnimationGraph::vfunc_1` at 0xbd3660 (rtti, high); signature (high): `bool vfunc_1(BShkbAnimationGraph * this)`
+    /// `BShkbAnimationGraph::HasRagdoll` at 0xbd3660 (semantic, medium); signature (untiered): `bool HasRagdoll(BShkbAnimationGraph * this)`; `HasRagdoll`: true when the character has a ragdoll instance (medium); semantic signature: `bool (BShkbAnimationGraph* this)`
     pub slot_1: *const c_void,
-    /// `BShkbAnimationGraph::vfunc_2` at 0xbd36a0 (rtti, high); signature (high): `ulonglong vfunc_2(BShkbAnimationGraph * this)`
+    /// `BShkbAnimationGraph::AddRagdollToWorld` at 0xbd36a0 (semantic, medium); signature (untiered): `ulonglong AddRagdollToWorld(BShkbAnimationGraph * this)`; `AddRagdollToWorld`: adds the ragdoll rigid bodies to the world (+0x238) under the world lock (medium); semantic signature: `bool (BShkbAnimationGraph* this)`
     pub slot_2: *const c_void,
-    /// `BShkbAnimationGraph::vfunc_3` at 0xbd3a00 (rtti, high); signature (high): `ulonglong vfunc_3(BShkbAnimationGraph * this)`
+    /// `BShkbAnimationGraph::RemoveRagdollFromWorld` at 0xbd3a00 (semantic, low); signature (untiered): `ulonglong RemoveRagdollFromWorld(BShkbAnimationGraph * this)`; `RemoveRagdollFromWorld`: removes the ragdoll from the world (low); semantic signature: `bool (BShkbAnimationGraph* this)`
     pub slot_3: *const c_void,
-    /// `BShkbAnimationGraph::vfunc_4` at 0xbd3b40 (rtti, high); signature (low): `undefined vfunc_4(BShkbAnimationGraph * this, undefined8 param_1)`
+    /// `BShkbAnimationGraph::SetWorld` at 0xbd3b40 (semantic, high); signature (untiered): `undefined SetWorld(BShkbAnimationGraph * this, undefined8 param_1)`; `SetWorld`: stores the physics world (high); semantic signature: `void (BShkbAnimationGraph* this, bhkWorld* world)`
     pub slot_4: *const c_void,
-    /// `BShkbAnimationGraph::vfunc_5` at 0xbd3b50 (rtti, high); signature (high): `undefined vfunc_5(BShkbAnimationGraph * this)`
+    /// `BShkbAnimationGraph::ResetRagdoll` at 0xbd3b50 (semantic, low); signature (untiered): `undefined ResetRagdoll(BShkbAnimationGraph * this)`; `ResetRagdoll`: resets the ragdoll instance state (low); semantic signature: `void (BShkbAnimationGraph* this)`
     pub slot_5: *const c_void,
     /// `BShkbAnimationGraph::vfunc_6` at 0xbd3b70 (rtti, high); signature (high): `undefined vfunc_6(BShkbAnimationGraph * this)`
     pub slot_6: *const c_void,
@@ -107014,7 +107077,27 @@ pub struct BShkbAnimationGraph_vtable {
 }
 impl BShkbAnimationGraph_vtable {
     pub const ID: u64 = 232870;
+    pub const SLOT_dtor: usize = 0;
+    /// Slot 0 as `BShkbAnimationGraph_vtable_dtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn dtor(&self) -> Option<BShkbAnimationGraph_vtable_dtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BShkbAnimationGraph_vtable_dtor>>(self.slot_0) }
+    }
+    pub const SLOT_HasRagdoll: usize = 1;
+    pub const SLOT_AddRagdollToWorld: usize = 2;
+    pub const SLOT_RemoveRagdollFromWorld: usize = 3;
+    pub const SLOT_SetWorld: usize = 4;
+    /// Slot 4 as `BShkbAnimationGraph_vtable_SetWorld`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetWorld(&self) -> Option<BShkbAnimationGraph_vtable_SetWorld> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BShkbAnimationGraph_vtable_SetWorld>>(self.slot_4) }
+    }
+    pub const SLOT_ResetRagdoll: usize = 5;
 }
+/// `BShkbAnimationGraph::dtor`, slot 0: virtual destructor (high).
+pub type BShkbAnimationGraph_vtable_dtor = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, flags: u32) -> *mut classes::BShkbAnimationGraph;
+/// `BShkbAnimationGraph::SetWorld`, slot 4: stores the physics world (high).
+pub type BShkbAnimationGraph_vtable_SetWorld = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, world: *mut classes::bhkWorld);
 
 /// `BShkbHkxDB::DBData::vftable` at 0x1a05f70, id 232778 (rtti, high); 15 slots.
 #[repr(C)]
@@ -107887,7 +107970,7 @@ impl BarrierProjectile_vtable_30 {
 pub struct BarrierProjectile_vtable_38 {
     /// `BarrierProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7dfb6c (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(BarrierProjectile * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -107897,31 +107980,31 @@ pub struct BarrierProjectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl BarrierProjectile_vtable_38 {
@@ -108733,7 +108816,7 @@ impl BeamProjectile_vtable_30 {
 pub struct BeamProjectile_vtable_38 {
     /// `BeamProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7e1070 (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(BeamProjectile * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -108743,31 +108826,31 @@ pub struct BeamProjectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl BeamProjectile_vtable_38 {
@@ -108905,41 +108988,41 @@ impl BookMenu_vtable {
 pub struct BookMenu_vtable_30 {
     /// `BookMenu::SimpleAnimationGraphManagerHolder_vdtor` at 0x9089f8 (slot_propagation, medium); signature (high): `undefined SimpleAnimationGraphManagerHolder_vdtor(BookMenu * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `BookMenu::SimpleAnimationGraphManagerHolder_vfunc_8` at 0x908840 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_8(BookMenu * this, longlong * param_1)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
     /// `BookMenu::SimpleAnimationGraphManagerHolder_vfunc_12` at 0x908880 (rtti, high); signature (high): `undefined SimpleAnimationGraphManagerHolder_vfunc_12(BookMenu * this)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `BookMenu::SimpleAnimationGraphManagerHolder_vfunc_19` at 0x9088a0 (rtti, high); signature (high): `ulonglong SimpleAnimationGraphManagerHolder_vfunc_19(BookMenu * this)`
     pub slot_19: *const c_void,
@@ -109829,7 +109912,7 @@ impl ChainExplosion_vtable_30 {
 pub struct ChainExplosion_vtable_38 {
     /// `ChainExplosion::IAnimationGraphManagerHolder_vdtor` at 0x64c6d0 (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(ChainExplosion * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -109839,31 +109922,31 @@ pub struct ChainExplosion_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl ChainExplosion_vtable_38 {
@@ -110173,7 +110256,7 @@ pub struct Character_vtable {
     pub slot_123: *const c_void,
     /// `Actor::vfunc_124` at 0x6b65c0 (rtti, medium); signature (high): `undefined8 vfunc_124(Actor * this)`
     pub slot_124: *const c_void,
-    /// `Actor::vfunc_125` at 0x67d590 (rtti, medium); signature (low): `undefined vfunc_125(Actor * this, TESObjectREFR * param_1, ulonglong param_2, TypeDescriptor * param_3)`
+    /// `Actor::UpdateAnimation` at 0x67d590 (semantic, medium); signature (untiered): `undefined UpdateAnimation(Actor * this, TESObjectREFR * param_1, ulonglong param_2, TypeDescriptor * param_3)`
     pub slot_125: *const c_void,
     /// `TESObjectREFR::vfunc_126` at 0x2f9f50 (rtti, medium); signature (high): `undefined vfunc_126(TESObjectREFR * this)`
     pub slot_126: *const c_void,
@@ -110555,13 +110638,13 @@ pub struct Character_vtable_38 {
     pub slot_0: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_1` at 0x6b61a0 (rtti, medium); signature (untiered): `undefined1 IAnimationGraphManagerHolder_vfunc_1(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_2` at 0x6b60b0 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(Actor * this, longlong * param_1)`
+    /// `IAnimationGraphManagerHolder::GetAnimationGraphManager` at 0x6b60b0 (semantic, high); signature (untiered): `bool GetAnimationGraphManager(IAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_3` at 0x6b60d0 (rtti, medium); signature (low): `ulonglong IAnimationGraphManagerHolder_vfunc_3(Actor * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_3: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_4` at 0x2fd4f0 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_4(TESObjectREFR * this, longlong param_1)`
     pub slot_4: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_5` at 0x6b00b0 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(Actor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationGraph` at 0x6b00b0 (semantic, medium); signature (untiered): `bool CreateAnimationGraph(IAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_6` at 0x6b0330 (rtti, medium); signature (low): `undefined1 IAnimationGraphManagerHolder_vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -110571,7 +110654,7 @@ pub struct Character_vtable_38 {
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_10` at 0x6b0650 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_10(Actor * this, longlong param_1)`
+    /// `Actor::CreateAnimationChannels` at 0x6b0650 (semantic, high); signature (untiered): `undefined8 CreateAnimationChannels(Actor * this, longlong param_1)`
     pub slot_10: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_11` at 0x6b0180 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_11(Actor * this, longlong * param_1)`
     pub slot_11: *const c_void,
@@ -110695,9 +110778,9 @@ pub struct Character_vtable_C0 {
     pub slot_18: *const c_void,
     /// `Actor::ActorState_vfunc_19` at 0x6b5cb0 (rtti, medium); signature (high): `byte ActorState_vfunc_19(Actor * this)`
     pub slot_19: *const c_void,
-    /// `ActorState::vfunc_20` at 0x6c2cc0 (rtti, medium); signature (low): `undefined1 vfunc_20(ActorState * this, uint param_1)`
+    /// `ActorState::SetSitSleepState` at 0x6c2cc0 (semantic, high); signature (untiered): `undefined1 SetSitSleepState(ActorState * this, uint param_1)`
     pub slot_20: *const c_void,
-    /// `Actor::ActorState_vfunc_21` at 0x6d9a20 (rtti, medium); signature (low): `undefined ActorState_vfunc_21(Actor * this, byte param_1, undefined8 param_2, ulonglong param_3)`
+    /// `Actor::SetWeaponDrawn` at 0x6d9a20 (semantic, high); signature (untiered): `undefined SetWeaponDrawn(Actor * this, byte param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_21: *const c_void,
 }
 impl Character_vtable_C0 {
@@ -132541,7 +132624,7 @@ impl ConeProjectile_vtable_30 {
 pub struct ConeProjectile_vtable_38 {
     /// `ConeProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7e3368 (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(ConeProjectile * this, TESObjectREFR * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -132551,31 +132634,31 @@ pub struct ConeProjectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl ConeProjectile_vtable_38 {
@@ -135536,7 +135619,7 @@ impl Explosion_vtable_30 {
 pub struct Explosion_vtable_38 {
     /// `Explosion::IAnimationGraphManagerHolder_vdtor` at 0x7e9c94 (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(Explosion * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -135546,31 +135629,31 @@ pub struct Explosion_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl Explosion_vtable_38 {
@@ -138804,7 +138887,7 @@ impl FlameProjectile_vtable_30 {
 pub struct FlameProjectile_vtable_38 {
     /// `FlameProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7eb504 (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(FlameProjectile * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -138814,31 +138897,31 @@ pub struct FlameProjectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl FlameProjectile_vtable_38 {
@@ -140554,7 +140637,7 @@ impl GrenadeProjectile_vtable_30 {
 pub struct GrenadeProjectile_vtable_38 {
     /// `GrenadeProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7ecd14 (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(GrenadeProjectile * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -140564,31 +140647,31 @@ pub struct GrenadeProjectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl GrenadeProjectile_vtable_38 {
@@ -141484,7 +141567,7 @@ impl Hazard_vtable_30 {
 pub struct Hazard_vtable_38 {
     /// `Hazard::IAnimationGraphManagerHolder_vdtor` at 0x7ef6cc (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(Hazard * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -141494,31 +141577,31 @@ pub struct Hazard_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl Hazard_vtable_38 {
@@ -141869,48 +141952,80 @@ impl IAnimationClipLoaderSingleton_vtable {
 /// `IAnimationGraphManagerHolder::vftable` at 0x18eb210, id 205174 (rtti, high); 19 slots.
 #[repr(C)]
 pub struct IAnimationGraphManagerHolder_vtable {
-    /// `IAnimationGraphManagerHolder::vdtor` at 0x555d90 (layout_inference, medium); signature (low): `IAnimationGraphManagerHolder * vdtor(IAnimationGraphManagerHolder * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::dtor` at 0x555d90 (semantic, high); signature (untiered): `IAnimationGraphManagerHolder * dtor(IAnimationGraphManagerHolder * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `dtor`: virtual destructor (high); semantic signature: `IAnimationGraphManagerHolder* (IAnimationGraphManagerHolder* this, uint flags)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `NotifyAnimationGraph`: sends a behaviour event by name to every graph of the holder's manager (and its dependent managers); true if at least one graph accepted it (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
     pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetAnimationGraphManager`: for actors: the manager at middleHigh+0x1a8 (AIProcess+0x8 -> +0x1a8), add-ref'd into *out (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSTSmartPointer<BSAnimationGraphManager>* out)`
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`; `GetGraphRootNodes`: appends the 3D roots the holder's graphs drive; base returns false (medium); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSScrapArray<NiAVObject*>& out)`
     pub slot_4: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `CreateAnimationGraph`: allocates a 0x250 BShkbAnimationGraph for the reference (medium); semantic signature: `BShkbAnimationGraph* (IAnimationGraphManagerHolder* this, ...)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`; `SkipAnimationPreload`: flag passed as the third argument of the project load 0xbcd240; when false (Actor) and the project data has entries (+0x150), the loader resolves the animation file entries at build time (low); semantic signature: `bool (IAnimationGraphManagerHolder* this)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`; `InitializeGraphVariables`: writes the reference's initial graph variables into a freshly loaded graph (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSTSmartPointer<BShkbAnimationGraph>& graph)`
     pub slot_7: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_8` at 0x554350 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`; `RegisterGraphEventSinks`: connects the reference's sinks to one graph's event sources (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSTSmartPointer<BShkbAnimationGraph>& graph)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`; `OnGraphLoadFailed`: notification when constructing or loading a project's graph fails (medium); semantic signature: `void (IAnimationGraphManagerHolder* this)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`; `CreateAnimationChannels`: creates the per-frame variable channels the manager pushes into the graphs (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSScrapArray<BSTSmartPointer<BSAnimationGraphChannel>>& out)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`; `PostBuildAnimationGraphManager`: hook after the manager is built, before it is installed (medium); semantic signature: `void (IAnimationGraphManagerHolder* this, BSTSmartPointer<BSAnimationGraphManager>& mgr)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`; `OnAnimationGraphManagerReady`: notification after the manager is installed (low); semantic signature: `void (IAnimationGraphManagerHolder* this)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`; `OnAnimationGraphManagerChanged`: called by SetAnimationGraphManagerAndNotify 0x554060 after slot 3 when the manager changed (medium); semantic signature: `void (IAnimationGraphManagerHolder* this, BSTSmartPointer<BSAnimationGraphManager>& newMgr, BSTSmartPointer<BSAnimationGraphManager>& oldMgr)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`; `ShouldUpdateAnimation`: gate checked before the per-frame manager update (medium); semantic signature: `bool (IAnimationGraphManagerHolder* this)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`; `GetGraphVariableCacheSize`: capacity of the manager's name -> value-pointer variable cache (high); semantic signature: `uint (IAnimationGraphManagerHolder* this)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`; `GetGraphVariableFloat`: reads a float graph variable of the active graph (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float& out)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`; `GetGraphVariableInt`: reads an int graph variable of the active graph (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int& out)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`; `GetGraphVariableBool`: reads a bool graph variable of the active graph (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool& out)`
     pub slot_18: *const c_void,
 }
 impl IAnimationGraphManagerHolder_vtable {
     pub const ID: u64 = 205174;
+    pub const SLOT_dtor: usize = 0;
+    /// Slot 0 as `IAnimationGraphManagerHolder_vtable_dtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn dtor(&self) -> Option<IAnimationGraphManagerHolder_vtable_dtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<IAnimationGraphManagerHolder_vtable_dtor>>(self.slot_0) }
+    }
+    pub const SLOT_NotifyAnimationGraph: usize = 1;
+    pub const SLOT_GetAnimationGraphManager: usize = 2;
+    pub const SLOT_GetGraphRootNodes: usize = 4;
+    pub const SLOT_CreateAnimationGraph: usize = 5;
+    pub const SLOT_SkipAnimationPreload: usize = 6;
+    pub const SLOT_InitializeGraphVariables: usize = 7;
+    pub const SLOT_RegisterGraphEventSinks: usize = 8;
+    pub const SLOT_OnGraphLoadFailed: usize = 9;
+    pub const SLOT_CreateAnimationChannels: usize = 10;
+    pub const SLOT_PostBuildAnimationGraphManager: usize = 11;
+    pub const SLOT_OnAnimationGraphManagerReady: usize = 12;
+    pub const SLOT_OnAnimationGraphManagerChanged: usize = 13;
+    pub const SLOT_ShouldUpdateAnimation: usize = 14;
+    pub const SLOT_GetGraphVariableCacheSize: usize = 15;
+    /// Slot 15 as `IAnimationGraphManagerHolder_vtable_GetGraphVariableCacheSize`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetGraphVariableCacheSize(&self) -> Option<IAnimationGraphManagerHolder_vtable_GetGraphVariableCacheSize> {
+        unsafe { core::mem::transmute::<*const c_void, Option<IAnimationGraphManagerHolder_vtable_GetGraphVariableCacheSize>>(self.slot_15) }
+    }
+    pub const SLOT_GetGraphVariableFloat: usize = 16;
+    pub const SLOT_GetGraphVariableInt: usize = 17;
+    pub const SLOT_GetGraphVariableBool: usize = 18;
 }
+/// `IAnimationGraphManagerHolder::dtor`, slot 0: virtual destructor (high).
+pub type IAnimationGraphManagerHolder_vtable_dtor = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, flags: u32) -> *mut classes::IAnimationGraphManagerHolder;
+/// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize`, slot 15: capacity of the manager's name -> value-pointer variable cache (high).
+pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableCacheSize = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder) -> u32;
 
 /// `IAnimationGraphManagerLoadingTask::vftable` at 0x18eb2b0, id 205176 (rtti, high); 21 slots.
 #[repr(C)]
@@ -146127,7 +146242,7 @@ impl IsSpellTypeTargetFunctor_vtable {
 pub struct JobListManager__ServingThread_vtable {
     /// `JobListManager::ServingThread::vdtor` at 0x60f130 (layout_inference, medium); signature (low): `ServingThread * vdtor(ServingThread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `JobListManager::ServingThread::vfunc_1` at 0x60f1e0 (rtti, high); signature (low): `undefined8 vfunc_1(ServingThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `JobListManager::ServingThread::Run` at 0x60f1e0 (semantic, high); signature (untiered): `undefined8 Run(ServingThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `BSThread::vfunc_2` at 0x60f1d0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
     pub slot_2: *const c_void,
@@ -146791,41 +146906,41 @@ impl Likes_vtable {
 pub struct LineNode_vtable {
     /// `LineNode::vdtor` at 0x983760 (slot_propagation, medium); signature (low): `LineNode * vdtor(LineNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_8` at 0x554350 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
     /// `LineNode::vfunc_12` at 0x980460 (rtti, high); signature (high): `undefined vfunc_12(LineNode * this)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -149345,7 +149460,7 @@ impl MissileProjectile_vtable_30 {
 pub struct MissileProjectile_vtable_38 {
     /// `MissileProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7f51fc (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(MissileProjectile * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -149355,31 +149470,31 @@ pub struct MissileProjectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl MissileProjectile_vtable_38 {
@@ -149467,41 +149582,41 @@ impl MistMenu_vtable {
 pub struct MistMenu_vtable_30 {
     /// `MistMenu::SimpleAnimationGraphManagerHolder_vdtor` at 0x966bc0 (slot_propagation, medium); signature (high): `undefined SimpleAnimationGraphManagerHolder_vdtor(MistMenu * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_8` at 0x554350 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `MistMenu::SimpleAnimationGraphManagerHolder_vfunc_19` at 0x966b70 (rtti, high); signature (high): `undefined SimpleAnimationGraphManagerHolder_vfunc_19(MistMenu * this)`
     pub slot_19: *const c_void,
@@ -149841,41 +149956,41 @@ impl ModelReferenceEffect_vtable {
 pub struct ModelReferenceEffect_vtable_48 {
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vdtor` at 0x5d87b0 (slot_propagation, medium); signature (high): `undefined SimpleAnimationGraphManagerHolder_vdtor(ModelReferenceEffect * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_8` at 0x5d82e0 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_8(ModelReferenceEffect * this, longlong * param_1)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_10` at 0x5d8150 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_10(ModelReferenceEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_13` at 0x5d80a0 (rtti, high); signature (low): `undefined SimpleAnimationGraphManagerHolder_vfunc_13(ModelReferenceEffect * this, longlong * param_1, longlong * param_2)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -163105,7 +163220,7 @@ pub struct NiMeshParticleSystem_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -170047,7 +170162,7 @@ pub struct NiParticleMeshes_vtable {
     pub slot_45: *const c_void,
     /// `NiParticleMeshes::vfunc_46` at 0xf15d60 (rtti, high); signature (low): `undefined vfunc_46(NiParticleMeshes * this, undefined4 * param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiParticleMeshes::vfunc_48` at 0xf15d80 (rtti, high); signature (low): `undefined vfunc_48(NiParticleMeshes * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -170061,7 +170176,7 @@ pub struct NiParticleMeshes_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -170257,7 +170372,7 @@ pub struct NiParticleSystem_vtable {
     pub slot_45: *const c_void,
     /// `NiParticleSystem::vfunc_46` at 0xf99b20 (rtti, medium); signature (low): `undefined vfunc_46(NiParticleSystem * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiParticleSystem::vfunc_48` at 0xf99e20 (rtti, medium); signature (low): `undefined vfunc_48(void)`
     pub slot_48: *const c_void,
@@ -170271,7 +170386,7 @@ pub struct NiParticleSystem_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -170381,7 +170496,7 @@ pub struct NiParticles_vtable {
     pub slot_45: *const c_void,
     /// `BSGeometry::vfunc_46` at 0xefc760 (rtti, medium); signature (low): `undefined vfunc_46(BSGeometry * this, longlong param_1)`
     pub slot_46: *const c_void,
-    /// `BSGeometry::vfunc_47` at 0xefc810 (rtti, medium); signature (high): `undefined vfunc_47(BSGeometry * this)`
+    /// `BSGeometry::UpdateWorldBound` at 0xefc810 (semantic, high); signature (untiered): `undefined UpdateWorldBound(BSGeometry * this)`
     pub slot_47: *const c_void,
     /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
     pub slot_48: *const c_void,
@@ -170395,7 +170510,7 @@ pub struct NiParticles_vtable {
     pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
-    /// `BSGeometry::vfunc_54` at 0x26d4c0 (rtti, medium); signature (low): `undefined8 vfunc_54(void)`
+    /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
     pub slot_54: *const c_void,
     /// `BSGeometry::vfunc_55` at 0x26d480 (rtti, medium); signature (low): `undefined8 vfunc_55(void)`
     pub slot_55: *const c_void,
@@ -172075,15 +172190,15 @@ pub struct NiSkinData_vtable {
     pub slot_22: *const c_void,
     /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
     pub slot_23: *const c_void,
-    /// `NiSkinData::vfunc_24` at 0xf0d710 (rtti, high); signature (low): `undefined vfunc_24(NiSkinData * this, longlong param_1)`
+    /// `NiSkinData::LoadBinary` at 0xf0d710 (semantic, high); signature (untiered): `undefined LoadBinary(NiSkinData * this, longlong param_1)`; `LoadBinary`: reads the overall transform, bone count, a has-weights byte and per bone: transform, bound sphere, weight count and (when the byte is set) the weights (high); semantic signature: `void (NiSkinData* this, NiStream* s)`
     pub slot_24: *const c_void,
     /// `NiSkinData::vfunc_25` at 0xf0db50 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
     pub slot_25: *const c_void,
     /// `NiSkinData::vfunc_26` at 0xf0db60 (rtti, high); signature (low): `bool vfunc_26(NiSkinData * this, longlong * param_1)`
     pub slot_26: *const c_void,
-    /// `NiSkinData::vfunc_27` at 0xf0db80 (rtti, high); signature (low): `undefined vfunc_27(NiSkinData * this, longlong param_1)`
+    /// `NiSkinData::SaveBinary` at 0xf0db80 (semantic, high); signature (untiered): `undefined SaveBinary(NiSkinData * this, longlong param_1)`; `SaveBinary`: writes the same; has-weights = boneData[0].weights != null (high); semantic signature: `void (NiSkinData* this, NiStream* s)`
     pub slot_27: *const c_void,
-    /// `NiSkinData::vfunc_28` at 0xf0dd70 (rtti, high); signature (low): `ulonglong vfunc_28(NiSkinData * this, longlong * param_1)`
+    /// `NiSkinData::IsEqual` at 0xf0dd70 (semantic, high); signature (untiered): `ulonglong IsEqual(NiSkinData * this, longlong * param_1)`; `IsEqual`: compares transforms, bounds and weights (high); semantic signature: `bool (NiSkinData* this, NiObject* other)`
     pub slot_28: *const c_void,
     /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
     pub slot_29: *const c_void,
@@ -172104,7 +172219,31 @@ pub struct NiSkinData_vtable {
 }
 impl NiSkinData_vtable {
     pub const ID: u64 = 237403;
+    pub const SLOT_LoadBinary: usize = 24;
+    /// Slot 24 as `NiSkinData_vtable_LoadBinary`, `None` when the slot is null.
+    #[must_use]
+    pub fn LoadBinary(&self) -> Option<NiSkinData_vtable_LoadBinary> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinData_vtable_LoadBinary>>(self.slot_24) }
+    }
+    pub const SLOT_SaveBinary: usize = 27;
+    /// Slot 27 as `NiSkinData_vtable_SaveBinary`, `None` when the slot is null.
+    #[must_use]
+    pub fn SaveBinary(&self) -> Option<NiSkinData_vtable_SaveBinary> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinData_vtable_SaveBinary>>(self.slot_27) }
+    }
+    pub const SLOT_IsEqual: usize = 28;
+    /// Slot 28 as `NiSkinData_vtable_IsEqual`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsEqual(&self) -> Option<NiSkinData_vtable_IsEqual> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinData_vtable_IsEqual>>(self.slot_28) }
+    }
 }
+/// `NiSkinData::LoadBinary`, slot 24: reads the overall transform, bone count, a has-weights byte and per bone: transform, bound sphere, weight count and (when the byte is set) the weights (high).
+pub type NiSkinData_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::NiSkinData, s: *mut classes::partial::NiStream);
+/// `NiSkinData::SaveBinary`, slot 27: writes the same; has-weights = boneData[0].weights != null (high).
+pub type NiSkinData_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::NiSkinData, s: *mut classes::partial::NiStream);
+/// `NiSkinData::IsEqual`, slot 28: compares transforms, bounds and weights (high).
+pub type NiSkinData_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::NiSkinData, other: *mut classes::NiObject) -> bool;
 
 /// `NiSkinInstance::vftable` at 0x1a495e0, id 237229 (rtti, high); 38 slots.
 #[repr(C)]
@@ -172155,17 +172294,17 @@ pub struct NiSkinInstance_vtable {
     pub slot_21: *const c_void,
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `NiSkinInstance::vfunc_23` at 0xf09490 (rtti, high); signature (low): `NiSkinInstance * vfunc_23(NiSkinInstance * this, longlong param_2, undefined8 param_3, undefined8 param_4)`
+    /// `NiSkinInstance::CreateClone` at 0xf09490 (semantic, medium); signature (untiered): `NiSkinInstance * CreateClone(NiSkinInstance * this, longlong param_2, undefined8 param_3, undefined8 param_4)`; `CreateClone`: clones the instance through the clone map (medium); semantic signature: `NiObject* (NiSkinInstance* this, NiCloningProcess* cp)`
     pub slot_23: *const c_void,
-    /// `NiSkinInstance::vfunc_24` at 0xf096a0 (rtti, high); signature (low): `undefined vfunc_24(NiSkinInstance * this, longlong param_1)`
+    /// `NiSkinInstance::LoadBinary` at 0xf096a0 (semantic, high); signature (untiered): `undefined LoadBinary(NiSkinInstance * this, longlong param_1)`; `LoadBinary`: reads three link ids and the bone link list (high); semantic signature: `void (NiSkinInstance* this, NiStream* s)`
     pub slot_24: *const c_void,
-    /// `NiSkinInstance::vfunc_25` at 0xf096e0 (rtti, high); signature (low): `undefined vfunc_25(NiSkinInstance * this, longlong param_1)`
+    /// `NiSkinInstance::LinkObject` at 0xf096e0 (semantic, high); signature (untiered): `undefined LinkObject(NiSkinInstance * this, longlong param_1)`; `LinkObject`: resolves skinData, skinPartition, rootParent, boneNodes and builds boneWorldTransforms (high); semantic signature: `void (NiSkinInstance* this, NiStream* s)`
     pub slot_25: *const c_void,
-    /// `NiSkinInstance::vfunc_26` at 0xf09820 (rtti, high); signature (low): `undefined1 vfunc_26(NiSkinInstance * this, longlong * param_1)`
+    /// `NiSkinInstance::RegisterStreamables` at 0xf09820 (semantic, high); signature (untiered): `undefined1 RegisterStreamables(NiSkinInstance * this, longlong * param_1)`; `RegisterStreamables`: registers skin data, partition, root and every bone (high); semantic signature: `bool (NiSkinInstance* this, NiStream* s)`
     pub slot_26: *const c_void,
-    /// `NiSkinInstance::vfunc_27` at 0xf098d0 (rtti, high); signature (low): `undefined vfunc_27(NiSkinInstance * this, longlong * param_1)`
+    /// `NiSkinInstance::SaveBinary` at 0xf098d0 (semantic, high); signature (untiered): `undefined SaveBinary(NiSkinInstance * this, longlong * param_1)`; `SaveBinary`: writes the three links, the bone count and the bone links (high); semantic signature: `void (NiSkinInstance* this, NiStream* s)`
     pub slot_27: *const c_void,
-    /// `NiSkinInstance::vfunc_28` at 0xf09990 (rtti, high); signature (low): `undefined8 vfunc_28(NiSkinInstance * this, longlong * param_1)`
+    /// `NiSkinInstance::IsEqual` at 0xf09990 (semantic, high); signature (untiered): `undefined8 IsEqual(NiSkinInstance * this, longlong * param_1)`; `IsEqual`: compares skin data and partition with their slot 28 (high); semantic signature: `bool (NiSkinInstance* this, NiObject* other)`
     pub slot_28: *const c_void,
     /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
     pub slot_29: *const c_void,
@@ -172183,12 +172322,54 @@ pub struct NiSkinInstance_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiSkinInstance::vfunc_37` at 0xf09ca0 (rtti, high); signature (high): `undefined vfunc_37(NiSkinInstance * this)`
+    /// `NiSkinInstance::RenderPartitions` at 0xf09ca0 (semantic, medium); signature (untiered): `undefined RenderPartitions(NiSkinInstance * this)`; `RenderPartitions`: draws every partition of skinPartition through NiSkinPartition slot 37 (medium); semantic signature: `void (NiSkinInstance* this, SkinDrawContext* ctx)`
     pub slot_37: *const c_void,
 }
 impl NiSkinInstance_vtable {
     pub const ID: u64 = 237229;
+    pub const SLOT_CreateClone: usize = 23;
+    pub const SLOT_LoadBinary: usize = 24;
+    /// Slot 24 as `NiSkinInstance_vtable_LoadBinary`, `None` when the slot is null.
+    #[must_use]
+    pub fn LoadBinary(&self) -> Option<NiSkinInstance_vtable_LoadBinary> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinInstance_vtable_LoadBinary>>(self.slot_24) }
+    }
+    pub const SLOT_LinkObject: usize = 25;
+    /// Slot 25 as `NiSkinInstance_vtable_LinkObject`, `None` when the slot is null.
+    #[must_use]
+    pub fn LinkObject(&self) -> Option<NiSkinInstance_vtable_LinkObject> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinInstance_vtable_LinkObject>>(self.slot_25) }
+    }
+    pub const SLOT_RegisterStreamables: usize = 26;
+    /// Slot 26 as `NiSkinInstance_vtable_RegisterStreamables`, `None` when the slot is null.
+    #[must_use]
+    pub fn RegisterStreamables(&self) -> Option<NiSkinInstance_vtable_RegisterStreamables> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinInstance_vtable_RegisterStreamables>>(self.slot_26) }
+    }
+    pub const SLOT_SaveBinary: usize = 27;
+    /// Slot 27 as `NiSkinInstance_vtable_SaveBinary`, `None` when the slot is null.
+    #[must_use]
+    pub fn SaveBinary(&self) -> Option<NiSkinInstance_vtable_SaveBinary> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinInstance_vtable_SaveBinary>>(self.slot_27) }
+    }
+    pub const SLOT_IsEqual: usize = 28;
+    /// Slot 28 as `NiSkinInstance_vtable_IsEqual`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsEqual(&self) -> Option<NiSkinInstance_vtable_IsEqual> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinInstance_vtable_IsEqual>>(self.slot_28) }
+    }
+    pub const SLOT_RenderPartitions: usize = 37;
 }
+/// `NiSkinInstance::LoadBinary`, slot 24: reads three link ids and the bone link list (high).
+pub type NiSkinInstance_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, s: *mut classes::partial::NiStream);
+/// `NiSkinInstance::LinkObject`, slot 25: resolves skinData, skinPartition, rootParent, boneNodes and builds boneWorldTransforms (high).
+pub type NiSkinInstance_vtable_LinkObject = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, s: *mut classes::partial::NiStream);
+/// `NiSkinInstance::RegisterStreamables`, slot 26: registers skin data, partition, root and every bone (high).
+pub type NiSkinInstance_vtable_RegisterStreamables = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, s: *mut classes::partial::NiStream) -> bool;
+/// `NiSkinInstance::SaveBinary`, slot 27: writes the three links, the bone count and the bone links (high).
+pub type NiSkinInstance_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, s: *mut classes::partial::NiStream);
+/// `NiSkinInstance::IsEqual`, slot 28: compares skin data and partition with their slot 28 (high).
+pub type NiSkinInstance_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, other: *mut classes::NiObject) -> bool;
 
 /// `NiSkinPartition::vftable` at 0x1a4bb08, id 237386 (rtti, high); 38 slots.
 #[repr(C)]
@@ -172241,15 +172422,15 @@ pub struct NiSkinPartition_vtable {
     pub slot_22: *const c_void,
     /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
     pub slot_23: *const c_void,
-    /// `NiSkinPartition::vfunc_24` at 0xf06bd0 (rtti, high); signature (low): `undefined vfunc_24(NiSkinPartition * this, longlong param_1)`
+    /// `NiSkinPartition::LoadBinary` at 0xf06bd0 (semantic, high); signature (untiered): `undefined LoadBinary(NiSkinPartition * this, longlong param_1)`; `LoadBinary`: reads the partitions and the shared vertex block (vertex descriptor bits choose the stream element sizes) (high); semantic signature: `void (NiSkinPartition* this, NiStream* s)`
     pub slot_24: *const c_void,
     /// `NiSkinPartition::vfunc_25` at 0xf07020 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
     pub slot_25: *const c_void,
     /// `NiSkinPartition::vfunc_26` at 0xf07030 (rtti, high); signature (untiered): `undefined vfunc_26(NiSkinPartition * this, longlong * param_1)`
     pub slot_26: *const c_void,
-    /// `NiSkinPartition::vfunc_27` at 0xf07040 (rtti, high); signature (low): `undefined vfunc_27(NiSkinPartition * this, longlong param_1)`
+    /// `NiSkinPartition::SaveBinary` at 0xf07040 (semantic, high); signature (untiered): `undefined SaveBinary(NiSkinPartition * this, longlong param_1)`; `SaveBinary`: writes the same (high); semantic signature: `void (NiSkinPartition* this, NiStream* s)`
     pub slot_27: *const c_void,
-    /// `NiSkinPartition::vfunc_28` at 0xf07200 (rtti, high); signature (low): `undefined8 vfunc_28(NiSkinPartition * this, longlong * param_1)`
+    /// `NiSkinPartition::IsEqual` at 0xf07200 (semantic, high); signature (untiered): `undefined8 IsEqual(NiSkinPartition * this, longlong * param_1)`; `IsEqual`: compares counts and arrays of every partition (high); semantic signature: `bool (NiSkinPartition* this, NiObject* other)`
     pub slot_28: *const c_void,
     /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
     pub slot_29: *const c_void,
@@ -172267,12 +172448,37 @@ pub struct NiSkinPartition_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `NiSkinPartition::vfunc_37` at 0xf084c0 (rtti, high); signature (low): `undefined * vfunc_37(NiSkinPartition * this, undefined8 * param_1, ulonglong param_2)`
+    /// `NiSkinPartition::RenderPartition` at 0xf084c0 (semantic, medium); signature (untiered): `undefined * RenderPartition(NiSkinPartition * this, undefined8 * param_1, ulonglong param_2)`; `RenderPartition`: sets the bone matrices through the context's setter and issues the partition's draw (medium); semantic signature: `bool (NiSkinPartition* this, SkinDrawContext* ctx, u32 index)`
     pub slot_37: *const c_void,
 }
 impl NiSkinPartition_vtable {
     pub const ID: u64 = 237386;
+    pub const SLOT_LoadBinary: usize = 24;
+    /// Slot 24 as `NiSkinPartition_vtable_LoadBinary`, `None` when the slot is null.
+    #[must_use]
+    pub fn LoadBinary(&self) -> Option<NiSkinPartition_vtable_LoadBinary> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinPartition_vtable_LoadBinary>>(self.slot_24) }
+    }
+    pub const SLOT_SaveBinary: usize = 27;
+    /// Slot 27 as `NiSkinPartition_vtable_SaveBinary`, `None` when the slot is null.
+    #[must_use]
+    pub fn SaveBinary(&self) -> Option<NiSkinPartition_vtable_SaveBinary> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinPartition_vtable_SaveBinary>>(self.slot_27) }
+    }
+    pub const SLOT_IsEqual: usize = 28;
+    /// Slot 28 as `NiSkinPartition_vtable_IsEqual`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsEqual(&self) -> Option<NiSkinPartition_vtable_IsEqual> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiSkinPartition_vtable_IsEqual>>(self.slot_28) }
+    }
+    pub const SLOT_RenderPartition: usize = 37;
 }
+/// `NiSkinPartition::LoadBinary`, slot 24: reads the partitions and the shared vertex block (vertex descriptor bits choose the stream element sizes) (high).
+pub type NiSkinPartition_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::NiSkinPartition, s: *mut classes::partial::NiStream);
+/// `NiSkinPartition::SaveBinary`, slot 27: writes the same (high).
+pub type NiSkinPartition_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::NiSkinPartition, s: *mut classes::partial::NiStream);
+/// `NiSkinPartition::IsEqual`, slot 28: compares counts and arrays of every partition (high).
+pub type NiSkinPartition_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::NiSkinPartition, other: *mut classes::NiObject) -> bool;
 
 /// `NiSourceTexture::vftable` at 0x1a48fa8, id 237218 (rtti, high); 43 slots.
 #[repr(C)]
@@ -179184,7 +179390,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_123: *const c_void,
     /// `Actor::vfunc_124` at 0x6b65c0 (rtti, medium); signature (high): `undefined8 vfunc_124(Actor * this)`
     pub slot_124: *const c_void,
-    /// `PlayerCharacter::vfunc_125` at 0x74bf70 (rtti, high); signature (low): `undefined vfunc_125(PlayerCharacter * this, undefined4 param_2)`
+    /// `PlayerCharacter::UpdateAnimation` at 0x74bf70 (runtime, high); signature (untiered): `undefined UpdateAnimation(PlayerCharacter * this, undefined4 param_2)`
     pub slot_125: *const c_void,
     /// `PlayerCharacter::vfunc_126` at 0x748cd0 (rtti, high); signature (low): `undefined8 * vfunc_126(PlayerCharacter * this, char param_1)`
     pub slot_126: *const c_void,
@@ -179592,7 +179798,7 @@ pub struct PlayerCharacter_vtable_38 {
     pub slot_0: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_1` at 0x6b61a0 (rtti, medium); signature (untiered): `undefined1 IAnimationGraphManagerHolder_vfunc_1(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_2` at 0x6b60b0 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(Actor * this, longlong * param_1)`
+    /// `IAnimationGraphManagerHolder::GetAnimationGraphManager` at 0x6b60b0 (semantic, high); signature (untiered): `bool GetAnimationGraphManager(IAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_3` at 0x6b60d0 (rtti, medium); signature (low): `ulonglong IAnimationGraphManagerHolder_vfunc_3(Actor * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_3: *const c_void,
@@ -179608,7 +179814,7 @@ pub struct PlayerCharacter_vtable_38 {
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_10` at 0x6b0650 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_10(Actor * this, longlong param_1)`
+    /// `Actor::CreateAnimationChannels` at 0x6b0650 (semantic, high); signature (untiered): `undefined8 CreateAnimationChannels(Actor * this, longlong param_1)`
     pub slot_10: *const c_void,
     /// `PlayerCharacter::IAnimationGraphManagerHolder_vfunc_11` at 0x760f50 (rtti, high); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_11(PlayerCharacter * this, longlong * param_1)`
     pub slot_11: *const c_void,
@@ -180595,7 +180801,7 @@ impl Projectile_vtable_30 {
 pub struct Projectile_vtable_38 {
     /// `Projectile::IAnimationGraphManagerHolder_vdtor` at 0x804c8c (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(Projectile * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -180605,31 +180811,31 @@ pub struct Projectile_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl Projectile_vtable_38 {
@@ -184013,41 +184219,41 @@ impl SideBar_vtable {
 pub struct SimpleAnimationGraphManagerHolder_vtable {
     /// `SimpleAnimationGraphManagerHolder::vdtor` at 0x5567d0 (slot_propagation, medium); signature (low): `SimpleAnimationGraphManagerHolder * vdtor(SimpleAnimationGraphManagerHolder * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_8` at 0x554350 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -187825,41 +188031,41 @@ impl StatsMenu_vtable_30 {
 pub struct StatsNode_vtable {
     /// `StatsNode::vdtor` at 0x983870 (slot_propagation, medium); signature (low): `StatsNode * vdtor(StatsNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `StatsNode::vfunc_8` at 0x9809f0 (rtti, high); signature (low): `undefined8 vfunc_8(StatsNode * this, longlong * param_1)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
     /// `StatsNode::vfunc_12` at 0x980950 (rtti, high); signature (low): `undefined vfunc_12(StatsNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -188319,41 +188525,41 @@ impl SummonPlacementEffect_vtable {
 pub struct SummonPlacementEffect_vtable_48 {
     /// `SummonPlacementEffect::SimpleAnimationGraphManagerHolder_vdtor` at 0x5e51fc (slot_propagation, medium); signature (high): `undefined SimpleAnimationGraphManagerHolder_vdtor(SummonPlacementEffect * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_2` at 0x556610 (rtti, medium); signature (low): `bool vfunc_2(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_3` at 0x556670 (rtti, medium); signature (low): `undefined8 vfunc_3(SimpleAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_5` at 0x5566c0 (rtti, medium); signature (low): `bool vfunc_5(SimpleAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `SummonPlacementEffect::SimpleAnimationGraphManagerHolder_vfunc_8` at 0x5e5080 (rtti, high); signature (low): `undefined8 SimpleAnimationGraphManagerHolder_vfunc_8(SummonPlacementEffect * this, longlong * param_1)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `SimpleAnimationGraphManagerHolder::vfunc_19` at 0x556770 (rtti, medium); signature (low): `undefined vfunc_19(void)`
     pub slot_19: *const c_void,
@@ -197785,7 +197991,7 @@ impl TESObjectREFR_vtable_30 {
 pub struct TESObjectREFR_vtable_38 {
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vdtor` at 0x2f8c00 (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(TESObjectREFR * this)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -197795,31 +198001,31 @@ pub struct TESObjectREFR_vtable_38 {
     pub slot_4: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
     /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
 }
 impl TESObjectREFR_vtable_38 {
@@ -201817,41 +202023,41 @@ impl TagField_vtable {
 pub struct TailAnimationGraphManagerHolder_vtable {
     /// `TailAnimationGraphManagerHolder::vdtor` at 0x557240 (layout_inference, medium); signature (low): `TailAnimationGraphManagerHolder * vdtor(TailAnimationGraphManagerHolder * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `WeaponAnimationGraphManagerHolder::vfunc_2` at 0x556bc0 (rtti, medium); signature (low): `bool vfunc_2(WeaponAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `WeaponAnimationGraphManagerHolder::vfunc_3` at 0x556c20 (rtti, medium); signature (low): `undefined8 vfunc_3(WeaponAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `WeaponAnimationGraphManagerHolder::vfunc_5` at 0x556c70 (rtti, medium); signature (low): `bool vfunc_5(WeaponAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_8` at 0x554350 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `TailAnimationGraphManagerHolder::vfunc_19` at 0x557000 (rtti, high); signature (low): `undefined vfunc_19(TailAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
@@ -204514,41 +204720,41 @@ impl WaterPathRayValidator_vtable {
 pub struct WeaponAnimationGraphManagerHolder_vtable {
     /// `WeaponAnimationGraphManagerHolder::vdtor` at 0x5572c0 (layout_inference, medium); signature (low): `WeaponAnimationGraphManagerHolder * vdtor(WeaponAnimationGraphManagerHolder * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_1` at 0x554220 (rtti, medium); signature (low): `undefined1 vfunc_1(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `WeaponAnimationGraphManagerHolder::vfunc_2` at 0x556bc0 (rtti, medium); signature (low): `bool vfunc_2(WeaponAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
     /// `WeaponAnimationGraphManagerHolder::vfunc_3` at 0x556c20 (rtti, medium); signature (low): `undefined8 vfunc_3(WeaponAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_3: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_4` at 0x554330 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphRootNodes` at 0x554330 (semantic, medium); signature (untiered): `undefined1 GetGraphRootNodes(void)`
     pub slot_4: *const c_void,
     /// `WeaponAnimationGraphManagerHolder::vfunc_5` at 0x556c70 (rtti, medium); signature (low): `bool vfunc_5(WeaponAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_6` at 0x2fa380 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
     pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_7` at 0x554340 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
     pub slot_7: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_8` at 0x554350 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
     pub slot_8: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_9` at 0x554360 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `IAnimationGraphManagerHolder::OnGraphLoadFailed` at 0x554360 (semantic, medium); signature (untiered): `undefined OnGraphLoadFailed(void)`
     pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_10` at 0x554370 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
+    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
     pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_11` at 0x5543a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
     pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_12` at 0x5543b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
     pub slot_12: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_13` at 0x5543c0 (rtti, medium); signature (low): `undefined vfunc_13(void)`
+    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged` at 0x5543c0 (semantic, medium); signature (untiered): `undefined OnAnimationGraphManagerChanged(void)`
     pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_14` at 0x5543d0 (rtti, medium); signature (low): `undefined1 vfunc_14(void)`
+    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
     pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_15` at 0x5543e0 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
     pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_16` at 0x554650 (rtti, medium); signature (low): `undefined1 vfunc_16(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_17` at 0x554520 (rtti, medium); signature (low): `undefined1 vfunc_17(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
     pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::vfunc_18` at 0x5543f0 (rtti, medium); signature (low): `undefined1 vfunc_18(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
+    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
     pub slot_18: *const c_void,
     /// `WeaponAnimationGraphManagerHolder::vfunc_19` at 0x556d20 (rtti, high); signature (low): `undefined vfunc_19(WeaponAnimationGraphManagerHolder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_19: *const c_void,
@@ -231368,7 +231574,7 @@ pub struct hkbBehaviorGraph_vtable {
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `hkbBehaviorGraph::vfunc_4` at 0xacbb50 (rtti, high); signature (low): `undefined vfunc_4(hkbBehaviorGraph * this, longlong * param_1)`
+    /// `hkbBehaviorGraph::Activate` at 0xacbb50 (semantic, low); signature (untiered): `undefined Activate(hkbBehaviorGraph * this, longlong * param_1)`; `Activate`: activates the graph (low); semantic signature: `void (hkbBehaviorGraph* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
     /// `hkbBehaviorGraph::vfunc_5` at 0xacbc60 (rtti, high); signature (low): `undefined vfunc_5(hkbBehaviorGraph * this, longlong * param_1, float param_2)`
     pub slot_5: *const c_void,
@@ -231419,6 +231625,7 @@ pub struct hkbBehaviorGraph_vtable {
 }
 impl hkbBehaviorGraph_vtable {
     pub const ID: u64 = 220287;
+    pub const SLOT_Activate: usize = 4;
 }
 
 /// `hkbBehaviorGraph::GlobalTransitionData::vftable` at 0x19c09d0, id 220285 (rtti, high); 3 slots.
@@ -231874,13 +232081,15 @@ pub struct hkbCharacter_vtable {
     pub slot_1: *const c_void,
     /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
     pub slot_2: *const c_void,
-    /// `hkbCharacter::vfunc_3` at 0xad7660 (rtti, high); signature (low): `undefined vfunc_3(hkbCharacter * this, undefined8 param_1, float param_2, longlong param_3, longlong * param_4, undefined4 param_5, char param_6, char param_7)`
+    /// `hkbCharacter::GetNearbyRigidBodies` at 0xad7660 (semantic, medium); signature (untiered): `undefined GetNearbyRigidBodies(hkbCharacter * this, undefined8 param_1, float param_2, longlong param_3, longlong * param_4, undefined4 param_5, char param_6, char param_7)`; `GetNearbyRigidBodies`: collects rigid bodies near a point with a Havok world query (medium); semantic signature: `void (hkbCharacter* this, const hkVector4* pos, float radius, hkpWorld* world, hkArray<hkpRigidBody*>* out, u32 filter, bool excludeSelf, bool excludeNonCharacters)`
     pub slot_3: *const c_void,
-    /// `hkbCharacter::vfunc_4` at 0xad7910 (rtti, high); signature (low): `undefined vfunc_4(hkbCharacter * this, float param_1, longlong * param_2)`
+    /// `hkbCharacter::GetNearbyCharacters` at 0xad7910 (semantic, high); signature (untiered): `undefined GetNearbyCharacters(hkbCharacter * this, float param_1, longlong * param_2)`; `GetNearbyCharacters`: appends the nearbyCharacters whose worldFromModel position is within radius (high); semantic signature: `void (hkbCharacter* this, float radius, hkArray<hkbCharacter*>* out)`
     pub slot_4: *const c_void,
 }
 impl hkbCharacter_vtable {
     pub const ID: u64 = 220345;
+    pub const SLOT_GetNearbyRigidBodies: usize = 3;
+    pub const SLOT_GetNearbyCharacters: usize = 4;
 }
 
 /// `hkbCharacterAddedInfo::vftable` at 0x1a95970, id 241287 (rtti, high); 3 slots.

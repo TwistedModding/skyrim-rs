@@ -2019,6 +2019,10 @@ impl CameraState {
 pub struct Actor_boolFlags(pub u32);
 
 impl Actor_boolFlags {
+    /// AnimationUpdateEnabled (low)
+    pub const ANIMATION_UPDATE_ENABLED: Self = Self(0x100);
+    /// PendingAnimationGraphInit (low)
+    pub const PENDING_ANIMATION_GRAPH_INIT: Self = Self(0x2000000);
     /// current follower of the player (high)
     pub const PLAYER_TEAMMATE: Self = Self(0x4000000);
 
@@ -2078,6 +2082,38 @@ impl BSCullingProcess_activePlaneMask {
 
     #[must_use]
     pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BSFaceGenNiNode.faceFlags` (animation pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BSFaceGenNiNode_faceFlags(pub u16);
+
+impl BSFaceGenNiNode_faceFlags {
+    /// morphChanged (medium)
+    pub const MORPH_CHANGED: Self = Self(0x1);
+    /// animate (medium)
+    pub const ANIMATE: Self = Self(0x4);
+    /// headTrackingAllowed (low)
+    pub const HEAD_TRACKING_ALLOWED: Self = Self(0x10);
+    /// isPlayer (medium)
+    pub const IS_PLAYER: Self = Self(0x20);
+    /// ignoreLodDistance (low)
+    pub const IGNORE_LOD_DISTANCE: Self = Self(0x40);
+    /// morphsDisabled (medium)
+    pub const MORPHS_DISABLED: Self = Self(0x80);
+    /// forceMorph (low)
+    pub const FORCE_MORPH: Self = Self(0x100);
+
+    #[must_use]
+    pub const fn bits(self) -> u16 {
         self.0
     }
 

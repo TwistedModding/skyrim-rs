@@ -354,8 +354,8 @@ event_structs! {
     /// A lock's state changed.
     TESLockChangedEvent;
     /// A behaviour graph raised an animation event. Its sources are the per-graph ones
-    /// (`BShkbAnimationGraph` + 0x68, pass 7); no registration function is named for them yet, so
-    /// the struct has accessors but no [`Event`] impl.
+    /// (`BShkbAnimationGraph` + 0x68): `source()` is `None`, register on
+    /// [`crate::animation::graph_event_source`] or [`crate::animation::AnimationGraph::event_source`].
     BSAnimationGraphEvent;
     /// A footstep: an actor's graph event whose tag is in the footstep source's filter list,
     /// re-sent by `Actor::ProcessAnimationGraphEvent` through the global source behind
@@ -594,6 +594,7 @@ sources! { OTHER_IDS;
     MenuModeChangeEvent => ui_source(|ui| &raw const ui.source_MenuModeChangeEvent), BSTEventSource_MenuModeChangeEvent__AddEventSink, BSTEventSource_MenuModeChangeEvent__RemoveEventSink;
     InputEventList => EventSourceHolderInput::get().map_or(core::ptr::null(), |i| &raw const i.0.source_InputEvent), BSTEventSource_InputEvent____ptr64__AddEventSink, BSTEventSource_InputEvent____ptr64__RemoveEventSink;
     BGSFootstepEvent => *fns().footstep, BSTEventSource_BGSFootstepEvent__AddEventSink, BSTEventSource_BGSFootstepEvent__RemoveEventSink;
+    BSAnimationGraphEvent => core::ptr::null(), BSTEventSource_BSAnimationGraphEvent__AddEventSink, BSTEventSource_BSAnimationGraphEvent__RemoveEventSink;
     BGSActorCellEvent => player_source(|p| &raw const (*p).source_BGSActorCellEvent), BSTEventSource_BGSActorCellEvent__AddEventSink, BSTEventSource_BGSActorCellEvent__RemoveEventSink;
     PositionPlayerEvent => player_source(|p| &raw const (*p).source_PositionPlayerEvent), BSTEventSource_PositionPlayerEvent__AddEventSink, BSTEventSource_PositionPlayerEvent__RemoveEventSink;
 }
@@ -1091,11 +1092,10 @@ impl BSAnimationGraphEvent {
         unsafe { BSFixedString::from_ptr(&raw const self.0.tag) }
     }
 
-    /// The `IAnimationGraphManagerHolder` whose graph raised the event; the reference itself for
-    /// an actor, reached as a form by the caller who knows the holder's displacement (pass 7).
+    /// The reference that owns the graph (pass 7: the `PlayerCharacter` itself in every player event).
     #[must_use]
-    pub fn holder(&self) -> *const c_void {
-        self.0.holder
+    pub fn owner(&self) -> Option<&TESObjectREFR> {
+        unsafe { self.0.holder.cast::<TESObjectREFR>().as_ref() }
     }
 
     #[must_use]
@@ -1106,7 +1106,7 @@ impl BSAnimationGraphEvent {
 
 impl fmt::Debug for BSAnimationGraphEvent {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "BSAnimationGraphEvent {{ tag: {:?}, holder: {:p}, payload: {:?} }}", self.tag(), self.holder(), self.payload())
+        write!(f, "BSAnimationGraphEvent {{ tag: {:?}, owner: {}, payload: {:?} }}", self.tag(), fmt_refr(self.owner()), self.payload())
     }
 }
 

@@ -13350,33 +13350,45 @@ const _: () = assert!(core::mem::offset_of!(BSAnimationGraphEvent, holder) == 0x
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphEvent, payload) == 0x10);
 
 /// `BSAnimationGraphManager`: size 0xB8 (exact, medium); primary base `BSTEventSink<BSAnimationGraphEvent>`.
+/// Meaning: per-reference owner of one or more BShkbAnimationGraph (one per behaviour project; PlayerCharacter has two), the active graph index, the variable channels, the variable cache and dependent managers; itself a BSTEventSink<BSAnimationGraphEvent> on the active graph (high, animation pass).
 /// Evidence: runtime: 0xB8 at 1 allocation sites.
 /// Bases: `BSTEventSink<BSAnimationGraphEvent>`@0x0, `BSIntrusiveRefCounted`@0x8.
 #[repr(C)]
 pub struct BSAnimationGraphManager {
-    /// +0x0 `vtbl:BSAnimationGraphManager:0`, rtti
-    pub __vftable: *const vtables::BSAnimationGraphManager_vtable,
-    /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
-    pub unknown_C: [u8; 52],
-    /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
-    pub unknown_44: [u8; 92],
-    /// +0xA0 `undefined8`, ctor store
-    pub field_A0: u64,
-    /// +0xA8 `undefined8`, ctor store
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, ctor store
-    pub field_B0: u32,
+    /// +0x0 `ptr`, semantic; BSTEventSink<BSAnimationGraphEvent> vtable (high)
+    pub vftable: [u8; 8],
+    /// +0x8 `undefined4`, semantic; BSIntrusiveRefCounted count (high)
+    pub refCount: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `class:BSTArray`, semantic; BSTArray<BSTSmartPointer<BSAnimationGraphChannel>> (data +0x10, capacity +0x18, size +0x20) pushed into every graph each update (high)
+    pub channels: BSTArray,
+    /// +0x28 `class:BSTArray`, semantic; array searched by channel name before each channel update (low)
+    pub channelOverrides: BSTArray,
+    /// +0x40 `undefined1`, ctor store, semantic, runtime; BSTSmallArray<BSTSmartPointer<BShkbAnimationGraph>>: +0x40 capacity with bit 31 = inline storage, +0x48 data pointer or inline element, +0x50 count (high)
+    pub graphs: [u8; 24],
+    /// +0x58 `class:BSTArray`, semantic; BSTArray of tagged (low bit) pointers to managers that receive this manager's events (dependent animated objects) (medium)
+    pub dependentManagers: BSTArray,
+    /// +0x70 `undefined1`, semantic; name -> value-pointer cache: +0x70 BSTArray data of {BSFixedString name, int* value} (0x10), +0x78 capacity, +0x80 count, +0x88 pointer to graphsLock (+0xa0), +0x90 BSSpinLock, +0x98 BSTSmartPointer to the active graph (high)
+    pub variableCache: [u8; 48],
+    /// +0xA0 `class:BSSpinLock`, semantic; guards graphs/activeGraph (high)
+    pub graphsLock: BSSpinLock,
+    /// +0xA8 `class:BSSpinLock`, semantic; guards dependentManagers (high)
+    pub dependentsLock: BSSpinLock,
+    /// +0xB0 `undefined4`, ctor store, semantic, runtime; index of the active graph in graphs (high)
+    pub activeGraph: u32,
     pub unknown_B4: [u8; 4],
 }
 const _: () = assert!(size_of::<BSAnimationGraphManager>() == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, channels) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, channelOverrides) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, graphs) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, dependentManagers) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, variableCache) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, graphsLock) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, dependentsLock) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, activeGraph) == 0xB0);
 
 /// `BSAudio`: size 0x18 (exact, low).
 /// Evidence: lower bound field field_10 meets upper bound first own field of BSXAudio2Audio at 0x18 (soft).
@@ -14451,10 +14463,10 @@ const _: () = assert!(core::mem::offset_of!(BSDecalPlacementVectorExtraData, fie
 const _: () = assert!(core::mem::offset_of!(BSDecalPlacementVectorExtraData, field_78) == 0x78);
 
 /// `BSDismemberSkinInstance`: size 0xA0 (exact, high); primary base `NiSkinInstance`.
+/// Meaning: NiSkinInstance with a per-partition visibility table: hidden partitions are not drawn, a skin with no visible partition is not registered for drawing (high, animation pass).
 /// Evidence: runtime: 0xA0 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiSkinInstance`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
+#[repr(C)]
 pub struct BSDismemberSkinInstance {
     /// +0x0 `vtbl:BSDismemberSkinInstance:0`, rtti
     pub __vftable: *const vtables::BSDismemberSkinInstance_vtable,
@@ -14463,53 +14475,58 @@ pub struct BSDismemberSkinInstance {
     pub unknown_C: [u8; 4],
     /// +0x10 `ptr:NiSkinData`, base NiSkinInstance, semantic; bind data: bone count at +0x58, per-bone transforms at +0x50 (0x58 each) (high)
     pub skinData: *mut NiSkinData,
-    /// +0x18 `undefined8`, base NiSkinInstance
-    pub field_18: u64,
+    /// +0x18 `ptr:NiSkinPartition`, base NiSkinInstance, semantic; the partitions slot 37 draws (high)
+    pub skinPartition: *mut NiSkinPartition,
     /// +0x20 `ptr:NiAVObject`, base NiSkinInstance, semantic; the node the skin is bound to (the actor's root BSFadeNode for body parts) (high)
     pub rootParent: *mut NiAVObject,
-    /// +0x28 `undefined8`, base NiSkinInstance
-    pub field_28: u64,
-    /// +0x30 `pointer`, base NiSkinInstance, semantic; NiAVObject* array of the bones (high)
-    pub bones: *mut c_void,
+    /// +0x28 `pointer`, base NiSkinInstance, semantic; bone node array, count = skinData+0x58 (high)
+    pub boneNodes: *mut c_void,
+    /// +0x30 `pointer`, base NiSkinInstance, semantic; array of pointers to each bone's world transform (bone node + 0x7c); the bone nodes themselves are at +0x28 (high)
+    pub boneWorldTransforms: *mut c_void,
     /// +0x38 `undefined4`, base NiSkinInstance, semantic; render frame the palette was last built in; the palette is rebuilt only when it differs from g_RenderFrameCounter (high)
     pub paletteFrame: u32,
-    /// +0x3C `undefined8`, base NiSkinInstance
-    pub field_3C: u64,
-    /// +0x44 `undefined4`, base NiSkinInstance
-    pub field_44: u32,
+    /// +0x3C `undefined4`, base NiSkinInstance, semantic; bone count of the last build (high)
+    pub paletteBoneCount: u32,
+    /// +0x40 `undefined4`, base NiSkinInstance, semantic; float4 rows per bone (always 3) (medium)
+    pub paletteRowsPerBone: u32,
+    /// +0x44 `undefined4`, base NiSkinInstance, semantic; byte capacity of the two palette buffers (high)
+    pub paletteCapacity: u32,
     /// +0x48 `pointer`, base NiSkinInstance, semantic; bone matrix palette of the current frame (3 rows of 4 floats per bone) (high)
     pub palette: *mut c_void,
     /// +0x50 `pointer`, base NiSkinInstance, semantic; palette of the previous frame (uploaded to constant buffer 9) (high)
     pub previousPalette: *mut c_void,
-    /// +0x58 `undefined8`, base NiSkinInstance
-    pub field_58: u64,
-    pub unknown_60: [u8; 40],
-    /// +0x88 `undefined4`, ctor store
-    pub field_88: u32,
+    /// +0x58 `undefined8`, base NiSkinInstance, semantic; unknown, zeroed by both ctors (low)
+    pub field58: u64,
+    /// +0x60 `undefined1`, base NiSkinInstance, semantic; serialises palette builds (the skin can be drawn from several threads) (high)
+    pub paletteLock: [u8; 40],
+    /// +0x88 `undefined4`, semantic; entries in partitions (one per NiSkinPartition partition) (high)
+    pub partitionCount: u32,
     pub unknown_8C: [u8; 4],
-    /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
-    /// +0x98 `undefined1`, ctor store
-    pub field_98: u8,
+    /// +0x90 `pointer`, semantic; 4-byte entries {u8 visible, u8 flag2, u16 slot} (high)
+    pub partitions: *mut c_void,
+    /// +0x98 `undefined1`, semantic; OR of the entries' byte 0 (high)
+    pub anyPartitionVisible: u8,
     pub unknown_99: [u8; 7],
 }
 const _: () = assert!(size_of::<BSDismemberSkinInstance>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, skinData) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, skinPartition) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, rootParent) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, bones) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, boneNodes) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, boneWorldTransforms) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteFrame) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteBoneCount) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteRowsPerBone) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteCapacity) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, palette) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, previousPalette) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, paletteLock) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, partitionCount) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, partitions) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, anyPartitionVisible) == 0x98);
 
 /// `BSDistantObjectLargeRefExtraData`: size 0x20 (exact, medium); primary base `NiBooleanExtraData`.
 /// Evidence: runtime: 0x20 at 1 allocation sites.
@@ -15233,6 +15250,7 @@ const _: () = assert!(core::mem::offset_of!(BSExtraData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSExtraData, next) == 0x8);
 
 /// `BSFaceGenAnimationData`: size 0x230 (exact, high); primary base `NiExtraData`.
+/// Meaning: NiExtraData named 'FAD' holding the face keyframe channels advanced by the face node's update (medium, animation pass).
 /// Evidence: runtime: 0x230 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiExtraData`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
 /// Packed: a field lies below its natural alignment.
@@ -15247,42 +15265,8 @@ pub struct BSFaceGenAnimationData {
     pub name: BSFixedString,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
-    /// +0x20 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_20: u64,
-    pub unknown_28: [u8; 24],
-    /// +0x40 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_40: u64,
-    pub unknown_48: [u8; 24],
-    /// +0x60 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_60: u64,
-    pub unknown_68: [u8; 24],
-    /// +0x80 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_80: u64,
-    pub unknown_88: [u8; 24],
-    /// +0xA0 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_A0: u64,
-    pub unknown_A8: [u8; 24],
-    /// +0xC0 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_C0: u64,
-    pub unknown_C8: [u8; 24],
-    /// +0xE0 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_E0: u64,
-    pub unknown_E8: [u8; 24],
-    /// +0x100 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_100: u64,
-    pub unknown_108: [u8; 24],
-    /// +0x120 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_120: u64,
-    pub unknown_128: [u8; 24],
-    /// +0x140 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_140: u64,
-    pub unknown_148: [u8; 24],
-    /// +0x160 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_160: u64,
-    pub unknown_168: [u8; 24],
-    /// +0x180 `undefined8`, member ctor BSFaceGenKeyframeMultiple
-    pub m_BSFaceGenKeyframeMultiple_180: u64,
-    pub unknown_188: [u8; 24],
+    /// +0x20 `undefined1`, semantic; 12 BSFaceGenKeyframeMultiple channels, 0x20 each (medium)
+    pub keyframes: [u8; 384],
     /// +0x1A0 `float`, ctor store (widths [4, 8])
     pub field_1A0: f32,
     /// +0x1A4 `float`, ctor store
@@ -15319,12 +15303,14 @@ pub struct BSFaceGenAnimationData {
     pub field_204: f32,
     /// +0x208 `undefined4`, ctor store
     pub field_208: u32,
-    pub unknown_20C: [u8; 8],
-    /// +0x214 `undefined2`, ctor store
-    pub field_214: u16,
+    pub unknown_20C: [u8; 9],
+    /// +0x215 `undefined1`, semantic; set by every face node update; gates the head-tracking update (low)
+    pub updated: u8,
     pub unknown_216: [u8; 1],
-    /// +0x217 `undefined2`, ctor store
-    pub field_217: u16,
+    /// +0x217 `undefined1`, semantic; result of the last keyframe advance (low)
+    pub changed: u8,
+    /// +0x218 `undefined1`, semantic; update requested without the update-data flag (low)
+    pub forceUpdate: u8,
     /// +0x219 `undefined2`, ctor store
     pub field_219: u16,
     /// +0x21B `undefined2`, ctor store
@@ -15332,28 +15318,17 @@ pub struct BSFaceGenAnimationData {
     /// +0x21D `undefined2`, ctor store
     pub field_21D: u16,
     pub unknown_21F: [u8; 1],
-    /// +0x220 `undefined8`, ctor store
-    pub field_220: u64,
-    /// +0x228 `undefined8`, ctor store
-    pub field_228: u64,
+    /// +0x220 `class:BSSpinLock`, semantic; guards the keyframes (medium)
+    pub lock: BSSpinLock,
+    /// +0x228 `pointer`, semantic; sampled lip-sync channel data (17 floats per sample) (low)
+    pub phonemeAnim: *mut c_void,
 }
 const _: () = assert!(size_of::<BSFaceGenAnimationData>() == 0x230);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_120) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_160) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, m_BSFaceGenKeyframeMultiple_180) == 0x180);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, keyframes) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1A0) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1A4) == 0x1A4);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1A8) == 0x1A8);
@@ -15371,13 +15346,14 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1F8) =
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_204) == 0x204);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_208) == 0x208);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_214) == 0x214);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_217) == 0x217);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, updated) == 0x215);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, changed) == 0x217);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, forceUpdate) == 0x218);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_219) == 0x219);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_21B) == 0x21B);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_21D) == 0x21D);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_220) == 0x220);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, lock) == 0x220);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeAnim) == 0x228);
 
 /// `BSFaceGenBaseMorphExtraData`: size 0x28 (exact, high); primary base `NiExtraData`.
 /// Evidence: runtime: 0x28 at 2 allocation sites.
@@ -15626,6 +15602,7 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenMorphDataHead, field_50) ==
 const _: () = assert!(core::mem::offset_of!(BSFaceGenMorphDataHead, field_60) == 0x60);
 
 /// `BSFaceGenNiNode`: size 0x168 (exact, high); primary base `NiNode`.
+/// Meaning: the head's NiNode: owns the face animation data, advances it in its downward update and queues itself for the 'Face morphing' step; binds the head skins to the actor's skeleton (high, animation pass).
 /// Evidence: runtime: 0x168 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
 #[repr(C)]
@@ -15676,21 +15653,17 @@ pub struct BSFaceGenNiNode {
     pub unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
-    /// +0x128 `undefined1[16]`, ctor store
-    pub field_128: [u8; 16],
-    /// +0x138 `undefined1[16]`, ctor store
-    pub field_138: [u8; 16],
-    /// +0x148 `undefined4`, ctor store
-    pub field_148: u32,
+    /// +0x128 `undefined1`, semantic; 9 floats initialised from constants ID_388567..ID_388575 (3x3 matrix by shape) (low)
+    pub field128: [u8; 36],
     pub unknown_14C: [u8; 4],
-    /// +0x150 `undefined8`, ctor store
-    pub field_150: u64,
-    /// +0x158 `undefined4`, ctor store
-    pub field_158: u32,
-    /// +0x15C `undefined4`, ctor store
-    pub field_15C: u32,
-    /// +0x160 `undefined2`, ctor store
-    pub field_160: u16,
+    /// +0x150 `ptr:BSFaceGenAnimationData`, semantic; face keyframe channels (high)
+    pub animationData: *mut BSFaceGenAnimationData,
+    /// +0x158 `float`, semantic; time value of the last update (-1 initially) (medium)
+    pub lastUpdateTime: f32,
+    /// +0x15C `undefined4`, semantic; reference handle of the owning actor (high)
+    pub actorHandle: u32,
+    /// +0x160 `undefined2`, semantic; face update flags (see flags); see the flag rows (high)
+    pub faceFlags: u16,
     pub unknown_162: [u8; 6],
 }
 const _: () = assert!(size_of::<BSFaceGenNiNode>() == 0x168);
@@ -15715,13 +15688,11 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, previousWorldFrame)
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, unknown108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, children) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field_138) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field_148) == 0x148);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field_150) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field_15C) == 0x15C);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field_160) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, animationData) == 0x150);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, lastUpdateTime) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, actorHandle) == 0x15C);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, faceFlags) == 0x160);
 
 /// `BSFadeNode`: size 0x158 (exact, high); primary base `NiNode`.
 /// Meaning: NiNode root of a loaded model that fades by distance (high, frame pass).
@@ -68881,88 +68852,100 @@ const _: () = assert!(size_of::<BShkVisibilityController>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BShkVisibilityController, __vftable) == 0x0);
 
 /// `BShkbAnimationGraph`: size 0x250 (exact, high); primary base `BSIRagdollDriver`.
+/// Meaning: one behaviour project instance for one reference: hkbCharacter + cloned hkbBehaviorGraph + project data, the bone-node mapping it poses, and the two event sources (high, animation pass).
 /// Evidence: runtime: 0x250 at 5 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSIRagdollDriver`@0x0, `BSIntrusiveRefCounted`@0x8, `BSTEventSource<BSTransformDeltaEvent>`@0x10, `BSTEventSource<BSAnimationGraphEvent>`@0x68.
 #[repr(C)]
 pub struct BShkbAnimationGraph {
-    /// +0x0 `vtbl:BShkbAnimationGraph:0`, rtti
-    pub __vftable: *const vtables::BShkbAnimationGraph_vtable,
-    /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
+    /// +0x0 `ptr`, semantic; BSIRagdollDriver-derived vtable (14 slots) (high)
+    pub vftable: [u8; 8],
+    /// +0x8 `undefined4`, semantic; BSIntrusiveRefCounted count (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
-    /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<BSTransformDeltaEvent>
-    pub source_BSTransformDeltaEvent: BSTEventSource,
-    /// +0x68 `class:BSTEventSource`, RTTI base BSTEventSource<BSAnimationGraphEvent>
-    pub source_BSAnimationGraphEvent: BSTEventSource,
-    /// +0xC0 `undefined8`, member ctor hkbCharacter
-    pub m_hkbCharacter_C0: u64,
-    pub unknown_C8: [u8; 224],
-    /// +0x1A8 `undefined4`, ctor store
-    pub field_1A8: u32,
-    pub unknown_1AC: [u8; 20],
-    /// +0x1C0 `undefined4`, ctor store
-    pub field_1C0: u32,
-    pub unknown_1C4: [u8; 36],
-    /// +0x1E8 `undefined4`, ctor store
-    pub field_1E8: u32,
-    /// +0x1EC `undefined4`, ctor store
-    pub field_1EC: u32,
-    /// +0x1F0 `undefined8`, ctor store
-    pub field_1F0: u64,
-    /// +0x1F8 `undefined8`, ctor store
-    pub field_1F8: u64,
-    /// +0x200 `undefined8`, ctor store
-    pub field_200: u64,
-    /// +0x208 `undefined8`, ctor store
-    pub field_208: u64,
-    /// +0x210 `undefined8`, ctor store
-    pub field_210: u64,
-    /// +0x218 `undefined8`, ctor store
-    pub field_218: u64,
-    /// +0x220 `undefined8`, ctor store
-    pub field_220: u64,
-    /// +0x228 `undefined8`, ctor store
-    pub field_228: u64,
+    /// +0x10 `undefined1`, semantic; root-motion delta event source (high)
+    pub transformDeltaSource: [u8; 88],
+    /// +0x68 `undefined1`, semantic; per-graph animation event source (sinks +0x68, capacity +0x70, sinkCount +0x78, pending adds +0x80, pending removes +0x98, lock +0xb0, notifying +0xb8) (high)
+    pub animationGraphEventSource: [u8; 88],
+    /// +0xC0 `class:hkbCharacter`, semantic; embedded Havok behaviour character (high)
+    pub character: hkbCharacter,
+    /// +0x160 `class:BSTArray`, semantic, runtime; BSTArray<NiAVObject*> indexed by animation-skeleton bone: the nodes the pose is written to (high)
+    pub boneNodes: BSTArray,
+    /// +0x178 `class:BSTArray`, semantic; array of owned objects deleted on root change (count +0x188) (low)
+    pub ownedNodeData: BSTArray,
+    /// +0x190 `class:BSTArray`, semantic; sorted name-match list built when flag +0x247 is set (Actor graphs) (low)
+    pub nameMatchList: BSTArray,
+    /// +0x1A8 `undefined1`, semantic; small array of refcounted Havok objects released after events are sent (capacity|inline flag +0x1a8, data +0x1b0, count +0x1b8) (low)
+    pub pendingObjects: [u8; 24],
+    /// +0x1C0 `undefined1`, semantic; small array (capacity|flag +0x1c0, data +0x1c8, count +0x1e0) (low)
+    pub smallArray1C0: [u8; 40],
+    /// +0x1E8 `float`, semantic; initialised to -FLT_MAX, decremented by the frame delta in Update (+0x1ec likewise) (low)
+    pub timer1E8: f32,
+    /// +0x1EC `float`, semantic; second interpolation timer (low)
+    pub interpTimerB: f32,
+    /// +0x1F0 `class:BSFixedString`, semantic; behaviour project name of this graph (high)
+    pub projectName: BSFixedString,
+    /// +0x1F8 `ptr`, semantic; BShkbHkxDB resource entry of the project (medium)
+    pub projectEntry: [u8; 8],
+    /// +0x200 `ptr:BShkbHkxDB::ProjectDBData`, semantic; per-project data: +0x70 BSTHashMap<BSFixedString,int> variable name -> index (capacity +0x7c, sentinel +0x88, entries +0x98, entry {key, int, next} stride 0x18), +0xa0 event name -> id map (capacity +0xac, sentinel +0xb8, entries +0xc8), +0xd0 BSFixedString event names by id (count +0xe0) (high)
+    pub projectData: *mut partial::BShkbHkxDB__ProjectDBData,
+    /// +0x208 `ptr:hkbBehaviorGraph`, semantic; this graph's cloned hkbBehaviorGraph: +0xd8 hkbVariableValueSet (values +0x10, count +0x18), +0x12c active byte, vtable+0x30 handleEvent (high)
+    pub behaviorGraph: *mut hkbBehaviorGraph,
+    /// +0x210 `ptr:TESObjectREFR`, ctor store, semantic, runtime; the reference that owns the graph (holder - 0x38); copied into every BSAnimationGraphEvent as its +8 (high)
+    pub owner: *mut TESObjectREFR,
+    /// +0x218 `ptr:NiNode`, semantic; the 3D root the graph drives (NiRefObject reference) (high)
+    pub rootNode: *mut NiNode,
+    /// +0x220 `ptr`, semantic; Havok-heap pose buffer (RecreatePoseBuffers 0xbcc4b0) (low)
+    pub poseBufferA: [u8; 8],
+    /// +0x228 `ptr`, semantic; second Havok-heap pose buffer (low)
+    pub poseBufferB: [u8; 8],
     /// +0x230 `undefined8`, ctor store
     pub field_230: u64,
-    /// +0x238 `undefined8`, ctor store
-    pub field_238: u64,
-    /// +0x240 `undefined4`, ctor store
-    pub field_240: u32,
-    /// +0x244 `undefined2`, ctor store
-    pub field_244: u16,
-    /// +0x246 `undefined1`, ctor store
-    pub field_246: u8,
-    /// +0x247 `undefined1`, ctor store
-    pub field_247: u8,
+    /// +0x238 `ptr:bhkWorld`, semantic; physics world; its vfunc at +0x140 supplies the third argument of the hkbContext set up by 0xbcf690 and 0xbcecb0 (medium)
+    pub world: *mut bhkWorld,
+    /// +0x240 `undefined2`, ctor store, semantic, runtime; number of bones written to boneNodes (high)
+    pub boneCount: u16,
+    pub unknown_242: [u8; 1],
+    /// +0x243 `undefined1`, semantic; when set, the Havok event queue is cleared instead of collected (medium)
+    pub eventsSuppressed: u8,
+    /// +0x244 `undefined1`, semantic; set around the behaviour graph activate call (low)
+    pub activating: u8,
+    pub unknown_245: [u8; 1],
+    /// +0x246 `undefined1`, semantic; selects GenerateBehaviorGraphPose instead of the foot-IK + node write path (low)
+    pub generatePoseOnWrite: u8,
+    /// +0x247 `undefined1`, semantic; ctor flag (Actor: from the race), enables the +0x190 list (low)
+    pub buildNameMatch: u8,
     /// +0x248 `undefined2`, ctor store
     pub field_248: u16,
     pub unknown_24A: [u8; 6],
 }
 const _: () = assert!(size_of::<BShkbAnimationGraph>() == 0x250);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, source_BSTransformDeltaEvent) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, source_BSAnimationGraphEvent) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, m_hkbCharacter_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_1A8) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_1E8) == 0x1E8);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_1EC) == 0x1EC);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_200) == 0x200);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_208) == 0x208);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_210) == 0x210);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_218) == 0x218);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_220) == 0x220);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, transformDeltaSource) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, animationGraphEventSource) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, character) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, boneNodes) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, ownedNodeData) == 0x178);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, nameMatchList) == 0x190);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, pendingObjects) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, smallArray1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, timer1E8) == 0x1E8);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, interpTimerB) == 0x1EC);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, projectName) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, projectEntry) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, projectData) == 0x200);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, behaviorGraph) == 0x208);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, owner) == 0x210);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, rootNode) == 0x218);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, poseBufferA) == 0x220);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, poseBufferB) == 0x228);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_230) == 0x230);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_238) == 0x238);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_240) == 0x240);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_244) == 0x244);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_246) == 0x246);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_247) == 0x247);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, world) == 0x238);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, boneCount) == 0x240);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, eventsSuppressed) == 0x243);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, activating) == 0x244);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, generatePoseOnWrite) == 0x246);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, buildNameMatch) == 0x247);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_248) == 0x248);
 
 /// `BShkbHkxDB::DBData`: size 0x28 (exact, medium); primary base `hkLoader`.
@@ -91358,6 +91341,7 @@ const _: () = assert!(size_of::<IAnimationClipLoaderSingleton>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(IAnimationClipLoaderSingleton, __vftable) == 0x0);
 
 /// `IAnimationGraphManagerHolder`: size 0x8 (exact, medium).
+/// Meaning: interface a reference (or a menu/effect object) implements to own a BSAnimationGraphManager: create/load its graphs, push variables, send events (high, animation pass).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of TailAnimationGraphManagerHolder at 0x8.
 #[repr(C)]
 pub struct IAnimationGraphManagerHolder {
@@ -97416,21 +97400,72 @@ const _: () = assert!(core::mem::offset_of!(MessageHandler, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MessageHandler, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MessageHandler, field_20) == 0x20);
 
-/// `MiddleHighProcessData`: size 0x268 (exact).
+/// `MiddleHighProcessData`: size 0x328 (exact).
 /// Meaning: middle-high process data: equipped entries and much more (medium, actors pass).
-/// Evidence: middle-high process data: equipped entries and much more; object behind AIProcess+8; 0x720660 reads the left-hand entry at +0x220 and the right-hand entry at +0x260; size unknown, 0x268 is the extent of the named fields; live middlehigh.bin: +0x260 -> the Iron War Axe entry, +0x220 null (run-actors).
+/// Evidence: middle-high process data: equipped entries and much more; object behind AIProcess+8; 0x720660 reads the left-hand entry at +0x220 and the right-hand entry at +0x260; size unknown, 0x328 is the extent of the named fields (pass 7 named fields up to +0x326); live middlehigh.bin: +0x260 -> the Iron War Axe entry, +0x220 null (run-actors).
 #[repr(C)]
 pub struct MiddleHighProcessData {
-    pub unknown_0: [u8; 544],
+    pub unknown_0: [u8; 176],
+    /// +0xB0 `float`, semantic; actor pitch, fed to graph variable Pitch (scaled by the constant ID_190186) (high)
+    pub pitch: f32,
+    /// +0xB4 `float`, semantic; fed to graph variable Roll (same scale) (high)
+    pub roll: f32,
+    /// +0xB8 `float`, semantic; movement direction (radians; wrapped and scaled for graph variable Direction) (high)
+    pub movementDirection: f32,
+    /// +0xBC `float`, semantic; fed to graph variable PitchDelta (scaled) (high)
+    pub pitchDelta: f32,
+    pub unknown_C0: [u8; 232],
+    /// +0x1A8 `ptr:BSAnimationGraphManager`, semantic; the actor's graph manager (BSTSmartPointer, ref count at manager+8) (high)
+    pub animationGraphManager: *mut BSAnimationGraphManager,
+    /// +0x1B0 `pointer`, semantic; manager+0x70 of the current manager, null when none (medium)
+    pub animationGraphManagerData: *mut c_void,
+    pub unknown_1B8: [u8; 48],
+    /// +0x1E8 `undefined8`, semantic; spin lock (owner thread, count at +0x1ec) (medium)
+    pub lock: u64,
+    pub unknown_1F0: [u8; 48],
     /// +0x220 `ptr:InventoryEntryData`, semantic; inventory entry equipped in the left hand (high)
     pub leftHandEntry: *mut InventoryEntryData,
-    pub unknown_228: [u8; 56],
+    pub unknown_228: [u8; 40],
+    /// +0x250 `ptr:bhkCharacterController`, semantic; the actor's character controller (high)
+    pub charController: *mut partial::bhkCharacterController,
+    pub unknown_258: [u8; 8],
     /// +0x260 `ptr:InventoryEntryData`, semantic; inventory entry equipped in the right hand (high)
     pub rightHandEntry: *mut InventoryEntryData,
+    pub unknown_268: [u8; 64],
+    /// +0x2A8 `float`, semantic; current movement speed, fed to graph variable Speed (divided by the channel's scale) (high)
+    pub speed: f32,
+    /// +0x2AC `float`, semantic; fed to graph variable TargetSpeed (high)
+    pub targetSpeed: f32,
+    pub unknown_2B0: [u8; 12],
+    /// +0x2BC `float`, semantic; divisor of the ward channel (actor value 0x3f / this) (low)
+    pub wardMagnitude: f32,
+    pub unknown_2C0: [u8; 68],
+    /// +0x304 `undefined2`, semantic; equipped item type of the left hand (high)
+    pub leftHandEquipType: u16,
+    /// +0x306 `undefined2`, semantic; equipped item type of the right hand (high)
+    pub rightHandEquipType: u16,
+    pub unknown_308: [u8; 30],
+    /// +0x326 `undefined1`, semantic; head tracking on; graph bool bHeadTracking (high)
+    pub headTrackingEnabled: u8,
+    pub unknown_327: [u8; 1],
 }
-const _: () = assert!(size_of::<MiddleHighProcessData>() == 0x268);
+const _: () = assert!(size_of::<MiddleHighProcessData>() == 0x328);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitch) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, roll) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, movementDirection) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitchDelta) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGraphManager) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGraphManagerData) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, lock) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEntry) == 0x220);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, charController) == 0x250);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEntry) == 0x260);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, speed) == 0x2A8);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, targetSpeed) == 0x2AC);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, wardMagnitude) == 0x2BC);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEquipType) == 0x304);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEquipType) == 0x306);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, headTrackingEnabled) == 0x326);
 
 /// `MissileProjectile`: size 0x1E8 (exact, high); primary base `Projectile`.
 /// Evidence: allocation sites (high): {'488': 3}.
@@ -106668,6 +106703,7 @@ const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_40) 
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_48) == 0x48);
 
 /// `NiSkinData`: size 0x60 (exact, medium); primary base `NiObject`.
+/// Meaning: shared bind data: overall transform, per-bone skin-to-bone transforms, bone bounds and optional vertex weights (high, animation pass).
 /// Evidence: runtime: 0x60 at 1 allocation sites.
 /// Bases: `NiObject`@0x0, `NiRefObject`@0x0.
 #[repr(C)]
@@ -106676,18 +106712,53 @@ pub struct NiSkinData {
     pub __vftable: *const vtables::NiSkinData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 84],
+    pub unknown_C: [u8; 4],
+    /// +0x10 `ptr:NiObject`, semantic; refcounted object released by the dtor; not set by LoadBinary (slot 25 is a 5-byte thunk) (low)
+    pub field10: *mut NiObject,
+    /// +0x18 `undefined1`, semantic; overall transform of the skin (rotation, translation, scale) (medium)
+    pub skinTransform: [u8; 52],
+    pub unknown_4C: [u8; 4],
+    /// +0x50 `pointer`, semantic; per-bone records, 0x58 bytes each (high)
+    pub boneData: *mut c_void,
+    /// +0x58 `undefined4`, semantic; number of bones (high)
+    pub boneCount: u32,
+    pub unknown_5C: [u8; 4],
 }
 const _: () = assert!(size_of::<NiSkinData>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSkinData, field10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiSkinData, skinTransform) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiSkinData, boneData) == 0x50);
+const _: () = assert!(core::mem::offset_of!(NiSkinData, boneCount) == 0x58);
+
+/// `NiSkinData::BoneData`: size 0x58 (exact).
+/// Meaning: bind data of one bone (high, animation pass).
+/// Evidence: bind data of one bone; LoadBinary init loop and reads; IsEqual compares floats 0..0xc as a transform, floats 0xd..0x10 and the weights; size: stride 0x58 in the LoadBinary 0xf0d710 allocation and in UpdatePalette (ADD R12,0x58).
+#[repr(C)]
+pub struct NiSkinData__BoneData {
+    /// +0x0 `undefined1`, semantic; bind-pose inverse: skin space to the bone's space (rotation, translation, scale) (high)
+    pub skinToBone: [u8; 52],
+    /// +0x34 `undefined1`, semantic; bound sphere of the bone's vertices (center, radius) in bone space (high)
+    pub boundSphere: [u8; 16],
+    pub unknown_44: [u8; 4],
+    /// +0x48 `pointer`, semantic; optional vertex weights, 8 bytes each {u16 vertex, pad, float weight} (high)
+    pub weights: *mut c_void,
+    /// +0x50 `undefined2`, semantic; number of weights (high)
+    pub weightCount: u16,
+    pub unknown_52: [u8; 6],
+}
+const _: () = assert!(size_of::<NiSkinData__BoneData>() == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, skinToBone) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, boundSphere) == 0x34);
+const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, weights) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, weightCount) == 0x50);
 
 /// `NiSkinInstance`: size 0x88 (exact, high); primary base `NiObject`.
 /// Meaning: per-geometry skinning state: bone pointers and the once-per-frame bone matrix palette (high, render pass).
 /// Evidence: runtime: 0x88 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiObject`@0x0, `NiRefObject`@0x0.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
+#[repr(C)]
 pub struct NiSkinInstance {
     /// +0x0 `vtbl:NiSkinInstance:0`, rtti
     pub __vftable: *const vtables::NiSkinInstance_vtable,
@@ -106696,44 +106767,50 @@ pub struct NiSkinInstance {
     pub unknown_C: [u8; 4],
     /// +0x10 `ptr:NiSkinData`, semantic; bind data: bone count at +0x58, per-bone transforms at +0x50 (0x58 each) (high)
     pub skinData: *mut NiSkinData,
-    /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    /// +0x18 `ptr:NiSkinPartition`, semantic; the partitions slot 37 draws (high)
+    pub skinPartition: *mut NiSkinPartition,
     /// +0x20 `ptr:NiAVObject`, ctor store, semantic, runtime; the node the skin is bound to (the actor's root BSFadeNode for body parts) (high)
     pub rootParent: *mut NiAVObject,
-    /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
-    /// +0x30 `pointer`, semantic; NiAVObject* array of the bones (high)
-    pub bones: *mut c_void,
+    /// +0x28 `pointer`, semantic; bone node array, count = skinData+0x58 (high)
+    pub boneNodes: *mut c_void,
+    /// +0x30 `pointer`, semantic; array of pointers to each bone's world transform (bone node + 0x7c); the bone nodes themselves are at +0x28 (high)
+    pub boneWorldTransforms: *mut c_void,
     /// +0x38 `undefined4`, ctor store, semantic, runtime; render frame the palette was last built in; the palette is rebuilt only when it differs from g_RenderFrameCounter (high)
     pub paletteFrame: u32,
-    /// +0x3C `undefined8`, ctor store
-    pub field_3C: u64,
-    /// +0x44 `undefined4`, ctor store
-    pub field_44: u32,
+    /// +0x3C `undefined4`, semantic; bone count of the last build (high)
+    pub paletteBoneCount: u32,
+    /// +0x40 `undefined4`, semantic; float4 rows per bone (always 3) (medium)
+    pub paletteRowsPerBone: u32,
+    /// +0x44 `undefined4`, semantic; byte capacity of the two palette buffers (high)
+    pub paletteCapacity: u32,
     /// +0x48 `pointer`, semantic; bone matrix palette of the current frame (3 rows of 4 floats per bone) (high)
     pub palette: *mut c_void,
     /// +0x50 `pointer`, semantic; palette of the previous frame (uploaded to constant buffer 9) (high)
     pub previousPalette: *mut c_void,
-    /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
-    pub unknown_60: [u8; 40],
+    /// +0x58 `undefined8`, semantic; unknown, zeroed by both ctors (low)
+    pub field58: u64,
+    /// +0x60 `undefined1`, semantic; serialises palette builds (the skin can be drawn from several threads) (high)
+    pub paletteLock: [u8; 40],
 }
 const _: () = assert!(size_of::<NiSkinInstance>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, skinData) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, skinPartition) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, rootParent) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, bones) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, boneNodes) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, boneWorldTransforms) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteFrame) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteBoneCount) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteRowsPerBone) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteCapacity) == 0x44);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, palette) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, previousPalette) == 0x50);
-const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteLock) == 0x60);
 
 /// `NiSkinPartition`: size 0x28 (exact, medium); primary base `NiObject`.
+/// Meaning: the skin split into draw partitions, each with its own bone palette (indices into the skin instance's bones) (high, animation pass).
 /// Evidence: runtime: 0x28 at 1 allocation sites.
 /// Bases: `NiObject`@0x0, `NiRefObject`@0x0.
 #[repr(C)]
@@ -106743,18 +106820,75 @@ pub struct NiSkinPartition {
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
-    /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    /// +0x10 `undefined4`, semantic; number of partitions (high)
+    pub partitionCount: u32,
     pub unknown_14: [u8; 4],
-    /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
-    pub unknown_20: [u8; 8],
+    /// +0x18 `pointer`, semantic; partition records, 0x50 each, element count stored at -8 (high)
+    pub partitions: *mut c_void,
+    /// +0x20 `undefined4`, semantic; shared vertex block size / vertex stride (medium)
+    pub vertexCount: u32,
+    pub unknown_24: [u8; 4],
 }
 const _: () = assert!(size_of::<NiSkinPartition>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition, partitionCount) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition, partitions) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition, vertexCount) == 0x20);
+
+/// `NiSkinPartition::Partition`: size 0x50 (exact).
+/// Meaning: one draw partition (medium, animation pass).
+/// Evidence: one draw partition; field order from the stream reads in 0xf075f0 (+0x38, +0x3a, +0x3c, +0x3e, +0x40, bones, ..., +0x42, +0x43) and the memcmp sizes in IsEqual 0xf07200; size: stride 0x50 in NiSkinPartition LoadBinary, IsEqual and vdtor.
+#[repr(C)]
+pub struct NiSkinPartition__Partition {
+    /// +0x0 `undefined8`, semantic; vertex descriptor (low nibble * 4 = stride) (medium)
+    pub vertexDesc: u64,
+    /// +0x8 `pointer`, semantic; bone palette: indices into the skin instance's bones, count +0x3c (medium)
+    pub bones: *mut c_void,
+    /// +0x10 `pointer`, semantic; vertexCount*weightsPerVertex weights (medium)
+    pub vertexWeights: *mut c_void,
+    /// +0x18 `pointer`, semantic; partition vertex -> skin vertex, count +0x38 (medium)
+    pub vertexMap: *mut c_void,
+    /// +0x20 `pointer`, semantic; per vertex weightsPerVertex palette indices (optional) (medium)
+    pub boneIndices: *mut c_void,
+    /// +0x28 `pointer`, semantic; triangle indices (triangleCount*3) or strip indices (medium)
+    pub triangles: *mut c_void,
+    /// +0x30 `pointer`, semantic; strip lengths, count +0x3e (medium)
+    pub stripLengths: *mut c_void,
+    /// +0x38 `undefined2`, semantic; vertices in the partition (medium)
+    pub vertexCount: u16,
+    /// +0x3A `undefined2`, semantic; triangles (medium)
+    pub triangleCount: u16,
+    /// +0x3C `undefined2`, semantic; bones in the palette (high)
+    pub boneCount: u16,
+    /// +0x3E `undefined2`, semantic; strips (0 = triangle list) (medium)
+    pub stripCount: u16,
+    /// +0x40 `undefined2`, semantic; bone influences per vertex (medium)
+    pub weightsPerVertex: u16,
+    /// +0x42 `undefined1`, semantic; byte that, with the draw context, selects whether the partition draws (low)
+    pub lodLevel: u8,
+    /// +0x43 `undefined1`, semantic; byte read after +0x42 (low)
+    pub field43: u8,
+    pub unknown_44: [u8; 4],
+    /// +0x48 `pointer`, semantic; renderer index buffer built from the triangles (low)
+    pub triangleBuffer: *mut c_void,
+}
+const _: () = assert!(size_of::<NiSkinPartition__Partition>() == 0x50);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexDesc) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, bones) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexWeights) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexMap) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, boneIndices) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangles) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, stripLengths) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangleCount) == 0x3A);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, boneCount) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, stripCount) == 0x3E);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, weightsPerVertex) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, lodLevel) == 0x42);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, field43) == 0x43);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangleBuffer) == 0x48);
 
 /// `NiSourceTexture`: size 0x58 (exact, high); primary base `NiTexture`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -135328,7 +135462,8 @@ const _: () = assert!(size_of::<hkaRaycastInterface>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkaRaycastInterface, __vftable) == 0x0);
 
 /// `hkaSkeleton`: size 0x78 (exact, high); primary base `hkReferencedObject`.
-/// Evidence: conflict, allocation size kept: allocation size 0x78 below lower bound 0x118 (base hkReferencedObject at 0x0).
+/// Meaning: Havok skeleton: parent indices, bones (name + lock-translation flag), reference pose (high, animation pass).
+/// Evidence: animation pass (semantic): ID_78430 builds a 2-bone skeleton: +0x30 = 2, +0x20 = 2, +0x40 = 2, parents[0] = -1, parents[1] = 0, then fills the reference pose at +0x38; size: vdtor 0xbd9a40 frees 0x78 by default; ID_78430 0x106f270, ID_78487 0x1076f80 and Err_RigidBodyNameCouldNotBe 0x1060680 allocate 0x78 and store hkaSkeleton::vftable.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
 #[repr(C)]
 pub struct hkaSkeleton {
@@ -135337,22 +135472,118 @@ pub struct hkaSkeleton {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `pointer`, base hkBaseObject, semantic; int16 per bone, -1 for a root (high)
+    pub parentIndices: *mut c_void,
+    /// +0x20 `undefined4`, base hkBaseObject, semantic; entries in parentIndices (high)
+    pub parentIndexCount: u32,
+    pub unknown_24: [u8; 4],
+    /// +0x28 `pointer`, base hkBaseObject, semantic; 0x10-byte hkaBone records: +0 name (tagged char*), +8 lockTranslation byte (high)
+    pub bones: *mut c_void,
+    /// +0x30 `undefined4`, base hkBaseObject, semantic, runtime; number of bones (high)
+    pub boneCount: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `pointer`, base hkBaseObject, semantic; hkQsTransform[referencePoseCount], local space (high)
+    pub referencePose: *mut c_void,
+    /// +0x40 `undefined4`, base hkBaseObject, semantic; entries in referencePose (high)
+    pub referencePoseCount: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject, semantic; count that sizes an extra float track of the generator output (low)
+    pub floatSlotCount: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+}
+const _: () = assert!(size_of::<hkaSkeleton>() == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, parentIndices) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, parentIndexCount) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, bones) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, boneCount) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, referencePose) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, referencePoseCount) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, floatSlotCount) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_74) == 0x74);
+
+/// `hkbAnimationBindingSet`: size 0x20 (exact, high); primary base `hkReferencedObject`.
+/// Evidence: conflict, allocation size kept: allocation size 0x20 below lower bound 0x118 (base hkReferencedObject at 0x0).
+/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbAnimationBindingSet {
+    /// +0x0 `vtbl:hkbAnimationBindingSet:0`, rtti
+    pub __vftable: *const vtables::hkbAnimationBindingSet_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+}
+const _: () = assert!(size_of::<hkbAnimationBindingSet>() == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbAnimationBindingSet, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbAnimationBindingSet, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbAnimationBindingSet, m_hkpShapeCollectionFilter_18) == 0x18);
+
+/// `hkbBehaviorGraph`: size 0x130 (exact, high); primary base `hkbGenerator`.
+/// Meaning: Havok behaviour graph instance (per-character clone of the project's template): root generator, graph data, active node list, variable value set (high, animation pass).
+/// Evidence: animation pass (semantic): RTTI hkbBehaviorGraph (hkbGenerator < hkbNode < hkbBindable); generate 0xacd1d0 carries profiler strings preGenerate/generateInternal/postGenerate; size: CloneBehaviorGraph 0xaccb40 allocates 0x130 then calls hkbBehaviorGraph::ctor 0xacf070; the ctors initialise up to +0x12c.
+/// Bases: `hkbGenerator`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbBehaviorGraph {
+    /// +0x0 `vtbl:hkbBehaviorGraph:0`, rtti
+    pub __vftable: *const vtables::hkbBehaviorGraph_vtable,
+    /// +0x8 `undefined4`, base hkbBindable
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
     pub m_hkpShapeCollectionFilter_18: u64,
     /// +0x20 `undefined8`, base hkBaseObject
     pub m_hkpRayShapeCollectionFilter_20: u64,
     /// +0x28 `undefined8`, base hkBaseObject
     pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
+    /// +0x30 `pointer`, base hkBaseObject, semantic; back pointer to the BShkbAnimationGraph that runs this graph (high)
+    pub userData: *mut c_void,
+    /// +0x38 `pointer`, base hkBaseObject, semantic; tagged string (node name) (medium)
+    pub name: *mut c_void,
+    /// +0x40 `undefined2`, base hkBaseObject, semantic; node id, 0xffff when unset (low)
+    pub id: u16,
+    /// +0x42 `undefined1`, semantic; template/clone state of a node; 2 = clone that maps to itself (medium)
+    pub cloneState: u8,
+    pub unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `undefined4`, base hkBaseObject
@@ -135379,49 +135610,129 @@ pub struct hkaSkeleton {
     pub field_70: u32,
     /// +0x74 `undefined4`, base hkBaseObject
     pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `ptr:hkbGenerator`, base hkBaseObject, semantic; root generator of the graph (medium)
+    pub rootGenerator: *mut hkbGenerator,
+    /// +0x88 `ptr:hkbBehaviorGraphData`, base hkBaseObject, semantic; graph data: variable count (+0x28), initial variable values (+0x70), attribute defaults (+0x10, count +0x18) (high)
+    pub data: *mut partial::hkbBehaviorGraphData,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `pointer`, base hkBaseObject, semantic; pointer to an array {data, count +8} of 0x90-byte active-node records (+0x50 template node, +0x58 clone, +0x85 isGenerator) (high)
+    pub activeNodes: *mut c_void,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    /// +0xC8 `undefined8`, ctor store
+    pub field_C8: u64,
+    /// +0xD0 `undefined8`, ctor store
+    pub field_D0: u64,
+    /// +0xD8 `ptr:hkbVariableValueSet`, semantic; current values of the graph variables (high)
+    pub variableValueSet: *mut hkbVariableValueSet,
+    /// +0xE0 `pointer`, semantic; template node -> clone hash map (medium)
+    pub nodeCloneMap: *mut c_void,
+    /// +0xE8 `undefined8`, ctor store
+    pub field_E8: u64,
+    /// +0xF0 `undefined8`, ctor store
+    pub field_F0: u64,
+    /// +0xF8 `undefined8`, ctor store
+    pub field_F8: u64,
+    /// +0x100 `undefined4`, ctor store
+    pub field_100: u32,
+    pub unknown_104: [u8; 4],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    /// +0x118 `undefined8`, ctor store
+    pub field_118: u64,
+    /// +0x120 `undefined4`, ctor store
+    pub field_120: u32,
+    /// +0x124 `undefined4`, ctor store
+    pub field_124: u32,
+    /// +0x128 `undefined2`, ctor store
+    pub field_128: u16,
+    /// +0x12A `undefined2`, ctor store
+    pub field_12A: u16,
+    /// +0x12C `undefined1`, semantic; graph has been activated (medium)
+    pub isActive: u8,
+    pub unknown_12D: [u8; 3],
 }
-const _: () = assert!(size_of::<hkaSkeleton>() == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_74) == 0x74);
-
-/// `hkbAnimationBindingSet`: size 0x20 (exact, high); primary base `hkReferencedObject`.
-/// Evidence: conflict, allocation size kept: allocation size 0x20 below lower bound 0x118 (base hkReferencedObject at 0x0).
-/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkbAnimationBindingSet {
-    /// +0x0 `vtbl:hkbAnimationBindingSet:0`, rtti
-    pub __vftable: *const vtables::hkbAnimationBindingSet_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-}
-const _: () = assert!(size_of::<hkbAnimationBindingSet>() == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbAnimationBindingSet, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbAnimationBindingSet, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbAnimationBindingSet, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(size_of::<hkbBehaviorGraph>() == 0x130);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, userData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, name) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, id) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, cloneState) == 0x42);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, rootGenerator) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, data) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, activeNodes) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, variableValueSet) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, nodeCloneMap) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_124) == 0x124);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_12A) == 0x12A);
+const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, isActive) == 0x12C);
 
 /// `hkbBehaviorGraphStringData`: size 0x50 (exact, medium); primary base `hkReferencedObject`.
 /// Evidence: conflict, allocation size kept: allocation size 0x50 below lower bound 0x118 (base hkReferencedObject at 0x0).
@@ -135659,6 +135970,83 @@ const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, field_30) == 0x3
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, field_3C) == 0x3C);
+
+/// `hkbCharacter`: size 0xA0 (exact, high); primary base `hkReferencedObject`.
+/// Meaning: Havok behaviour character: owns the setup (skeleton), the behaviour graph, the ragdoll/foot IK/hand IK drivers, the per-frame local pose buffer and the world-from-model transform (high, animation pass).
+/// Evidence: animation pass (semantic): RTTI hkbCharacter; 5-slot vtable; ctor 0xad72f0 allocates the drivers and a 0x30-byte identity world-from-model transform; size: embedded at BShkbAnimationGraph+0xc0: BShkbAnimationGraph::ctor 0xbc9aa0 calls hkbCharacter::ctor 0xad72f0 on this+0xc0 and constructs its next member at +0x160; ctor and dtor 0xad7500 touch nothing past +0x9d. No heap allocation site seen (ID_63585 0xbcd240 and ID_63870 0xbe0f20 build temporaries on the stack).
+/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbCharacter {
+    /// +0x0 `vtbl:hkbCharacter:0`, rtti
+    pub __vftable: *const vtables::hkbCharacter_vtable,
+    /// +0x8 `undefined4`, semantic; hkReferencedObject size/ref word (medium)
+    pub memSizeAndRefCount: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined1`, base hkBaseObject, semantic; hkArray<hkbCharacter*>: data +0x10, size +0x18, capacity|flags +0x1c (medium)
+    pub nearbyCharacters: [u8; 16],
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `pointer`, base hkBaseObject, semantic; tagged string pointer (low bit = owned) (low)
+    pub name: *mut c_void,
+    /// +0x30 `ptr:hkbRagdollDriver`, base hkBaseObject, semantic; ragdoll driver; its +0x88 is the hkaRagdollInstance (high)
+    pub ragdollDriver: *mut hkbRagdollDriver,
+    /// +0x38 `pointer`, base hkBaseObject, semantic; ref-counted pointer, purpose not read (low)
+    pub unknown38: *mut c_void,
+    /// +0x40 `ptr:hkbFootIkDriver`, base hkBaseObject, semantic; foot IK driver (high)
+    pub footIkDriver: *mut partial::hkbFootIkDriver,
+    /// +0x48 `ptr:hkbHandIkDriver`, base hkBaseObject, semantic; hand IK driver (high)
+    pub handIkDriver: *mut partial::hkbHandIkDriver,
+    /// +0x50 `ptr:hkbCharacterSetup`, base hkBaseObject, semantic; character setup; its +0x20 is the animation skeleton (high)
+    pub setup: *mut partial::hkbCharacterSetup,
+    /// +0x58 `ptr:hkbBehaviorGraph`, base hkBaseObject, semantic; the behaviour graph the character runs (medium)
+    pub behaviorGraph: *mut hkbBehaviorGraph,
+    /// +0x60 `pointer`, base hkBaseObject, semantic; ref-counted pointer (low)
+    pub unknown60: *mut c_void,
+    /// +0x68 `ptr:hkbAnimationBindingSet`, base hkBaseObject, semantic; binding set override; falls back to setup+0x38 (medium)
+    pub animationBindingSet: *mut hkbAnimationBindingSet,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `pointer`, base hkBaseObject, semantic; object whose +0x130/+0x138 go into the generate context (low)
+    pub worldContext: *mut c_void,
+    /// +0x80 `pointer`, base hkBaseObject, semantic; 0x28-byte helper object (low)
+    pub unknown80: *mut c_void,
+    /// +0x88 `pointer`, base hkBaseObject, semantic; hkQsTransform* (0x30: translation vec4, rotation quaternion xyzw, scale vec4) of the character root (high)
+    pub worldFromModel: *mut c_void,
+    /// +0x90 `pointer`, base hkBaseObject, semantic, runtime; hkQsTransform[numPoseLocal]: the per-frame pose in parent-local space, one 0x30 entry per skeleton bone (high)
+    pub poseLocal: *mut c_void,
+    /// +0x98 `undefined4`, base hkBaseObject, semantic, runtime; entries in poseLocal (= skeleton bone count) (high)
+    pub numPoseLocal: u32,
+    /// +0x9C `undefined1`, base hkBaseObject, semantic; worldFromModel was allocated by the character (medium)
+    pub ownsWorldFromModel: u8,
+    /// +0x9D `undefined1`, semantic; poseLocal was allocated by the character (high)
+    pub ownsPoseLocal: u8,
+    pub unknown_9E: [u8; 2],
+}
+const _: () = assert!(size_of::<hkbCharacter>() == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, memSizeAndRefCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, nearbyCharacters) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, name) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, ragdollDriver) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, unknown38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, footIkDriver) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, handIkDriver) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, setup) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, behaviorGraph) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, unknown60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, animationBindingSet) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, worldContext) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, unknown80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, worldFromModel) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, poseLocal) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, numPoseLocal) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, ownsWorldFromModel) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbCharacter, ownsPoseLocal) == 0x9D);
 
 /// `hkbCharacterControllerModifierInternalState`: size 0x30 (exact, medium); primary base `hkReferencedObject`.
 /// Evidence: conflict, allocation size kept: allocation size 0x30 below lower bound 0x118 (base hkReferencedObject at 0x0).
@@ -136387,6 +136775,137 @@ const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalStat
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, m_hkpShapeCollectionFilter_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkbPoseMatchingGeneratorInternalState, m_hkpRayShapeCollectionFilter_20) == 0x20);
 
+/// `hkbRagdollDriver`: size 0xD0 (exact, medium); primary base `hkReferencedObject`.
+/// Meaning: drives the ragdoll from (and to) the graph pose (medium, animation pass).
+/// Evidence: animation pass (semantic): only the ragdoll pointers are laid out; size: hkbCharacter::ctor 0xad72f0 allocates 0xd0 before hkbRagdollDriver::ctor 0xac6930.
+/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbRagdollDriver {
+    /// +0x0 `vtbl:hkbRagdollDriver:0`, rtti
+    pub __vftable: *const vtables::hkbRagdollDriver_vtable,
+    /// +0x8 `undefined4`, ctor store
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `ptr:hkaRagdollInstance`, base hkBaseObject, semantic; the character's ragdoll (rigid bodies, constraints) (high)
+    pub ragdollInstance: *mut partial::hkaRagdollInstance,
+    /// +0x90 `pointer`, base hkBaseObject, semantic; hkQsTransform[ragdoll bone count] scratch pose (medium)
+    pub ragdollPose: *mut c_void,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 8],
+}
+const _: () = assert!(size_of::<hkbRagdollDriver>() == 0xD0);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, ragdollInstance) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, ragdollPose) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_C4) == 0xC4);
+
 /// `hkbRotateCharacterModifierInternalState`: size 0x18 (exact, medium); primary base `hkReferencedObject`.
 /// Evidence: conflict, allocation size kept: allocation size 0x18 below lower bound 0x118 (base hkReferencedObject at 0x0).
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
@@ -136697,40 +137216,30 @@ const _: () = assert!(core::mem::offset_of!(hkbTransformVectorModifierInternalSt
 const _: () = assert!(core::mem::offset_of!(hkbTransformVectorModifierInternalState, m_hkpShapeCollectionFilter_18) == 0x18);
 
 /// `hkbVariableValueSet`: size 0x40 (exact, high); primary base `hkReferencedObject`.
-/// Evidence: conflict, allocation size kept: allocation size 0x40 below lower bound 0x118 (base hkReferencedObject at 0x0).
+/// Meaning: the variable values of one behaviour graph (high, animation pass).
+/// Evidence: animation pass (semantic): three hkArrays initialised at +0x10, +0x20, +0x30 (capacity word 0x80000000); size: EnsureVariableValueSetD8 0xacd680 allocates 0x40 and stores the vtable.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
 #[repr(C)]
 pub struct hkbVariableValueSet {
     /// +0x0 `vtbl:hkbVariableValueSet:0`, rtti
     pub __vftable: *const vtables::hkbVariableValueSet_vtable,
     pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
+    /// +0x10 `pointer`, base hkBaseObject, semantic; 4-byte value per variable (int, bool as int, float bits), indexed by variable id (high)
+    pub wordValues: *mut c_void,
+    /// +0x18 `undefined4`, base hkBaseObject, semantic; entries in wordValues (high)
+    pub wordValueCount: u32,
+    pub unknown_1C: [u8; 4],
+    /// +0x20 `undefined1`, base hkBaseObject, semantic; second hkArray (low)
+    pub quadValues: [u8; 16],
+    /// +0x30 `undefined1`, base hkBaseObject, semantic; third hkArray (ref-counted entries) (low)
+    pub variantValues: [u8; 16],
 }
 const _: () = assert!(size_of::<hkbVariableValueSet>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, wordValues) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, wordValueCount) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, quadValues) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, variantValues) == 0x30);
 
 /// `hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>`: size 0x10 (exact, medium); primary base `hkgpJobQueue::IJob`.
 /// Evidence: allocation sites (medium): {'16': 1}.
@@ -225367,192 +225876,6 @@ pub mod partial {
     const _: () = assert!(core::mem::offset_of!(hkbBehaviorEventsInfo, field_110) == 0x110);
     const _: () = assert!(core::mem::offset_of!(hkbBehaviorEventsInfo, field_114) == 0x114);
 
-    /// `hkbBehaviorGraph`: size >= 0x130 (lower bound); partial, the struct stops at the lower bound; primary base `hkbGenerator`.
-    /// Evidence: field field_12C.
-    /// Bases: `hkbGenerator`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-    #[repr(C)]
-    pub struct hkbBehaviorGraph {
-        /// +0x0 `vtbl:hkbBehaviorGraph:0`, rtti
-        pub __vftable: *const vtables::hkbBehaviorGraph_vtable,
-        /// +0x8 `undefined4`, base hkbBindable
-        pub field_8: u32,
-        pub unknown_C: [u8; 4],
-        /// +0x10 `undefined8`, base hkBaseObject
-        pub m_hkpCollidableCollidableFilter_10: u64,
-        /// +0x18 `undefined8`, base hkBaseObject
-        pub m_hkpShapeCollectionFilter_18: u64,
-        /// +0x20 `undefined8`, base hkBaseObject
-        pub m_hkpRayShapeCollectionFilter_20: u64,
-        /// +0x28 `undefined8`, base hkBaseObject
-        pub m_hkpRayCollidableFilter_28: u64,
-        /// +0x30 `undefined4`, base hkBaseObject
-        pub field_30: u32,
-        /// +0x34 `undefined4`, base hkBaseObject
-        pub field_34: u32,
-        /// +0x38 `undefined4`, base hkBaseObject
-        pub field_38: u32,
-        /// +0x3C `undefined4`, base hkBaseObject
-        pub field_3C: u32,
-        /// +0x40 `undefined4`, base hkBaseObject
-        pub field_40: u32,
-        /// +0x44 `undefined4`, base hkBaseObject
-        pub field_44: u32,
-        /// +0x48 `undefined4`, base hkBaseObject
-        pub field_48: u32,
-        /// +0x4C `undefined4`, base hkBaseObject
-        pub field_4C: u32,
-        /// +0x50 `undefined4`, base hkBaseObject
-        pub field_50: u32,
-        /// +0x54 `undefined4`, base hkBaseObject
-        pub field_54: u32,
-        /// +0x58 `undefined4`, base hkBaseObject
-        pub field_58: u32,
-        /// +0x5C `undefined4`, base hkBaseObject
-        pub field_5C: u32,
-        /// +0x60 `undefined4`, base hkBaseObject
-        pub field_60: u32,
-        /// +0x64 `undefined4`, base hkBaseObject
-        pub field_64: u32,
-        /// +0x68 `undefined4`, base hkBaseObject
-        pub field_68: u32,
-        /// +0x6C `undefined4`, base hkBaseObject
-        pub field_6C: u32,
-        /// +0x70 `undefined4`, base hkBaseObject
-        pub field_70: u32,
-        /// +0x74 `undefined4`, base hkBaseObject
-        pub field_74: u32,
-        /// +0x78 `undefined4`, base hkBaseObject
-        pub field_78: u32,
-        /// +0x7C `undefined4`, base hkBaseObject
-        pub field_7C: u32,
-        /// +0x80 `undefined4`, base hkBaseObject
-        pub field_80: u32,
-        /// +0x84 `undefined4`, base hkBaseObject
-        pub field_84: u32,
-        /// +0x88 `undefined4`, base hkBaseObject
-        pub field_88: u32,
-        /// +0x8C `undefined4`, base hkBaseObject
-        pub field_8C: u32,
-        /// +0x90 `undefined4`, base hkBaseObject
-        pub field_90: u32,
-        /// +0x94 `undefined4`, base hkBaseObject
-        pub field_94: u32,
-        /// +0x98 `undefined4`, base hkBaseObject
-        pub field_98: u32,
-        /// +0x9C `undefined4`, base hkBaseObject
-        pub field_9C: u32,
-        /// +0xA0 `undefined4`, base hkBaseObject
-        pub field_A0: u32,
-        /// +0xA4 `undefined4`, base hkBaseObject
-        pub field_A4: u32,
-        /// +0xA8 `undefined8`, base hkBaseObject
-        pub field_A8: u64,
-        /// +0xB0 `undefined4`, base hkBaseObject
-        pub field_B0: u32,
-        /// +0xB4 `undefined4`, base hkBaseObject
-        pub field_B4: u32,
-        /// +0xB8 `undefined8`, base hkBaseObject
-        pub field_B8: u64,
-        /// +0xC0 `undefined4`, base hkBaseObject
-        pub field_C0: u32,
-        /// +0xC4 `undefined4`, base hkBaseObject
-        pub field_C4: u32,
-        /// +0xC8 `undefined8`, ctor store
-        pub field_C8: u64,
-        /// +0xD0 `undefined8`, ctor store
-        pub field_D0: u64,
-        /// +0xD8 `undefined8`, ctor store
-        pub field_D8: u64,
-        /// +0xE0 `undefined8`, ctor store
-        pub field_E0: u64,
-        /// +0xE8 `undefined8`, ctor store
-        pub field_E8: u64,
-        /// +0xF0 `undefined8`, ctor store
-        pub field_F0: u64,
-        /// +0xF8 `undefined8`, ctor store
-        pub field_F8: u64,
-        /// +0x100 `undefined4`, ctor store
-        pub field_100: u32,
-        pub unknown_104: [u8; 4],
-        /// +0x108 `undefined8`, base hkBaseObject
-        pub field_108: u64,
-        /// +0x110 `undefined4`, base hkBaseObject
-        pub field_110: u32,
-        /// +0x114 `undefined4`, base hkBaseObject
-        pub field_114: u32,
-        /// +0x118 `undefined8`, ctor store
-        pub field_118: u64,
-        /// +0x120 `undefined4`, ctor store
-        pub field_120: u32,
-        /// +0x124 `undefined4`, ctor store
-        pub field_124: u32,
-        /// +0x128 `undefined2`, ctor store
-        pub field_128: u16,
-        /// +0x12A `undefined2`, ctor store
-        pub field_12A: u16,
-        /// +0x12C `undefined4`, ctor store
-        pub field_12C: u32,
-    }
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, m_hkpCollidableCollidableFilter_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, m_hkpShapeCollectionFilter_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, m_hkpRayShapeCollectionFilter_20) == 0x20);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, m_hkpRayCollidableFilter_28) == 0x28);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_30) == 0x30);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_34) == 0x34);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_38) == 0x38);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_3C) == 0x3C);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_40) == 0x40);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_44) == 0x44);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_48) == 0x48);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_4C) == 0x4C);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_50) == 0x50);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_54) == 0x54);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_58) == 0x58);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_5C) == 0x5C);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_60) == 0x60);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_64) == 0x64);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_68) == 0x68);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_6C) == 0x6C);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_70) == 0x70);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_74) == 0x74);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_78) == 0x78);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_7C) == 0x7C);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_80) == 0x80);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_84) == 0x84);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_88) == 0x88);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_8C) == 0x8C);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_90) == 0x90);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_94) == 0x94);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_98) == 0x98);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_9C) == 0x9C);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_A0) == 0xA0);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_A4) == 0xA4);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_A8) == 0xA8);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_B0) == 0xB0);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_B4) == 0xB4);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_B8) == 0xB8);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_C0) == 0xC0);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_C4) == 0xC4);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_C8) == 0xC8);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_D0) == 0xD0);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_D8) == 0xD8);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_E0) == 0xE0);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_E8) == 0xE8);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_F0) == 0xF0);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_F8) == 0xF8);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_100) == 0x100);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_108) == 0x108);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_110) == 0x110);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_114) == 0x114);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_118) == 0x118);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_120) == 0x120);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_124) == 0x124);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_128) == 0x128);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_12A) == 0x12A);
-    const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, field_12C) == 0x12C);
-
     /// `hkbBehaviorGraph::GlobalTransitionData`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
     /// Evidence: field field_114.
     /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
@@ -227140,150 +227463,6 @@ pub mod partial {
     const _: () = assert!(core::mem::offset_of!(hkbCameraShakeEventPayload, field_108) == 0x108);
     const _: () = assert!(core::mem::offset_of!(hkbCameraShakeEventPayload, field_110) == 0x110);
     const _: () = assert!(core::mem::offset_of!(hkbCameraShakeEventPayload, field_114) == 0x114);
-
-    /// `hkbCharacter`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
-    /// Evidence: field field_114.
-    /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-    #[repr(C)]
-    pub struct hkbCharacter {
-        /// +0x0 `vtbl:hkbCharacter:0`, rtti
-        pub __vftable: *const vtables::hkbCharacter_vtable,
-        /// +0x8 `undefined4`, ctor store
-        pub field_8: u32,
-        pub unknown_C: [u8; 4],
-        /// +0x10 `undefined8`, base hkBaseObject
-        pub m_hkpCollidableCollidableFilter_10: u64,
-        /// +0x18 `undefined8`, base hkBaseObject
-        pub m_hkpShapeCollectionFilter_18: u64,
-        /// +0x20 `undefined8`, base hkBaseObject
-        pub m_hkpRayShapeCollectionFilter_20: u64,
-        /// +0x28 `undefined8`, base hkBaseObject
-        pub m_hkpRayCollidableFilter_28: u64,
-        /// +0x30 `undefined4`, base hkBaseObject
-        pub field_30: u32,
-        /// +0x34 `undefined4`, base hkBaseObject
-        pub field_34: u32,
-        /// +0x38 `undefined4`, base hkBaseObject
-        pub field_38: u32,
-        /// +0x3C `undefined4`, base hkBaseObject
-        pub field_3C: u32,
-        /// +0x40 `undefined4`, base hkBaseObject
-        pub field_40: u32,
-        /// +0x44 `undefined4`, base hkBaseObject
-        pub field_44: u32,
-        /// +0x48 `undefined4`, base hkBaseObject
-        pub field_48: u32,
-        /// +0x4C `undefined4`, base hkBaseObject
-        pub field_4C: u32,
-        /// +0x50 `undefined4`, base hkBaseObject
-        pub field_50: u32,
-        /// +0x54 `undefined4`, base hkBaseObject
-        pub field_54: u32,
-        /// +0x58 `undefined4`, base hkBaseObject
-        pub field_58: u32,
-        /// +0x5C `undefined4`, base hkBaseObject
-        pub field_5C: u32,
-        /// +0x60 `undefined4`, base hkBaseObject
-        pub field_60: u32,
-        /// +0x64 `undefined4`, base hkBaseObject
-        pub field_64: u32,
-        /// +0x68 `undefined4`, base hkBaseObject
-        pub field_68: u32,
-        /// +0x6C `undefined4`, base hkBaseObject
-        pub field_6C: u32,
-        /// +0x70 `undefined4`, base hkBaseObject
-        pub field_70: u32,
-        /// +0x74 `undefined4`, base hkBaseObject
-        pub field_74: u32,
-        /// +0x78 `undefined4`, base hkBaseObject
-        pub field_78: u32,
-        /// +0x7C `undefined4`, base hkBaseObject
-        pub field_7C: u32,
-        /// +0x80 `undefined4`, base hkBaseObject
-        pub field_80: u32,
-        /// +0x84 `undefined4`, base hkBaseObject
-        pub field_84: u32,
-        /// +0x88 `undefined4`, base hkBaseObject
-        pub field_88: u32,
-        /// +0x8C `undefined4`, base hkBaseObject
-        pub field_8C: u32,
-        /// +0x90 `undefined4`, base hkBaseObject
-        pub field_90: u32,
-        /// +0x94 `undefined4`, base hkBaseObject
-        pub field_94: u32,
-        /// +0x98 `undefined4`, base hkBaseObject
-        pub field_98: u32,
-        /// +0x9C `undefined4`, base hkBaseObject
-        pub field_9C: u32,
-        /// +0xA0 `undefined4`, base hkBaseObject
-        pub field_A0: u32,
-        /// +0xA4 `undefined4`, base hkBaseObject
-        pub field_A4: u32,
-        /// +0xA8 `undefined8`, base hkBaseObject
-        pub field_A8: u64,
-        /// +0xB0 `undefined4`, base hkBaseObject
-        pub field_B0: u32,
-        /// +0xB4 `undefined4`, base hkBaseObject
-        pub field_B4: u32,
-        /// +0xB8 `undefined8`, base hkBaseObject
-        pub field_B8: u64,
-        /// +0xC0 `undefined4`, base hkBaseObject
-        pub field_C0: u32,
-        /// +0xC4 `undefined4`, base hkBaseObject
-        pub field_C4: u32,
-        pub unknown_C8: [u8; 64],
-        /// +0x108 `undefined8`, base hkBaseObject
-        pub field_108: u64,
-        /// +0x110 `undefined4`, base hkBaseObject
-        pub field_110: u32,
-        /// +0x114 `undefined4`, base hkBaseObject
-        pub field_114: u32,
-    }
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, m_hkpCollidableCollidableFilter_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, m_hkpShapeCollectionFilter_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, m_hkpRayShapeCollectionFilter_20) == 0x20);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, m_hkpRayCollidableFilter_28) == 0x28);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_30) == 0x30);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_34) == 0x34);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_38) == 0x38);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_3C) == 0x3C);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_40) == 0x40);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_44) == 0x44);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_48) == 0x48);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_4C) == 0x4C);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_50) == 0x50);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_54) == 0x54);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_58) == 0x58);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_5C) == 0x5C);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_60) == 0x60);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_64) == 0x64);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_68) == 0x68);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_6C) == 0x6C);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_70) == 0x70);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_74) == 0x74);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_78) == 0x78);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_7C) == 0x7C);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_80) == 0x80);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_84) == 0x84);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_88) == 0x88);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_8C) == 0x8C);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_90) == 0x90);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_94) == 0x94);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_98) == 0x98);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_9C) == 0x9C);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_A0) == 0xA0);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_A4) == 0xA4);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_A8) == 0xA8);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_B0) == 0xB0);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_B4) == 0xB4);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_B8) == 0xB8);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_C0) == 0xC0);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_C4) == 0xC4);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_108) == 0x108);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_110) == 0x110);
-    const _: () = assert!(core::mem::offset_of!(hkbCharacter, field_114) == 0x114);
 
     /// `hkbCharacterAddedInfo`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
     /// Evidence: field field_114.
@@ -237717,150 +237896,6 @@ pub mod partial {
     const _: () = assert!(core::mem::offset_of!(hkbProxyModifier, field_110) == 0x110);
     const _: () = assert!(core::mem::offset_of!(hkbProxyModifier, field_114) == 0x114);
     const _: () = assert!(core::mem::offset_of!(hkbProxyModifier, field_118) == 0x118);
-
-    /// `hkbRagdollDriver`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
-    /// Evidence: field field_114.
-    /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-    #[repr(C)]
-    pub struct hkbRagdollDriver {
-        /// +0x0 `vtbl:hkbRagdollDriver:0`, rtti
-        pub __vftable: *const vtables::hkbRagdollDriver_vtable,
-        /// +0x8 `undefined4`, ctor store
-        pub field_8: u32,
-        pub unknown_C: [u8; 4],
-        /// +0x10 `undefined8`, base hkBaseObject
-        pub m_hkpCollidableCollidableFilter_10: u64,
-        /// +0x18 `undefined8`, base hkBaseObject
-        pub m_hkpShapeCollectionFilter_18: u64,
-        /// +0x20 `undefined8`, base hkBaseObject
-        pub m_hkpRayShapeCollectionFilter_20: u64,
-        /// +0x28 `undefined8`, base hkBaseObject
-        pub m_hkpRayCollidableFilter_28: u64,
-        /// +0x30 `undefined4`, base hkBaseObject
-        pub field_30: u32,
-        /// +0x34 `undefined4`, base hkBaseObject
-        pub field_34: u32,
-        /// +0x38 `undefined4`, base hkBaseObject
-        pub field_38: u32,
-        /// +0x3C `undefined4`, base hkBaseObject
-        pub field_3C: u32,
-        /// +0x40 `undefined4`, base hkBaseObject
-        pub field_40: u32,
-        /// +0x44 `undefined4`, base hkBaseObject
-        pub field_44: u32,
-        /// +0x48 `undefined4`, base hkBaseObject
-        pub field_48: u32,
-        /// +0x4C `undefined4`, base hkBaseObject
-        pub field_4C: u32,
-        /// +0x50 `undefined4`, base hkBaseObject
-        pub field_50: u32,
-        /// +0x54 `undefined4`, base hkBaseObject
-        pub field_54: u32,
-        /// +0x58 `undefined4`, base hkBaseObject
-        pub field_58: u32,
-        /// +0x5C `undefined4`, base hkBaseObject
-        pub field_5C: u32,
-        /// +0x60 `undefined4`, base hkBaseObject
-        pub field_60: u32,
-        /// +0x64 `undefined4`, base hkBaseObject
-        pub field_64: u32,
-        /// +0x68 `undefined4`, base hkBaseObject
-        pub field_68: u32,
-        /// +0x6C `undefined4`, base hkBaseObject
-        pub field_6C: u32,
-        /// +0x70 `undefined4`, base hkBaseObject
-        pub field_70: u32,
-        /// +0x74 `undefined4`, base hkBaseObject
-        pub field_74: u32,
-        /// +0x78 `undefined4`, base hkBaseObject
-        pub field_78: u32,
-        /// +0x7C `undefined4`, base hkBaseObject
-        pub field_7C: u32,
-        /// +0x80 `undefined4`, base hkBaseObject
-        pub field_80: u32,
-        /// +0x84 `undefined4`, base hkBaseObject
-        pub field_84: u32,
-        /// +0x88 `undefined4`, base hkBaseObject
-        pub field_88: u32,
-        /// +0x8C `undefined4`, base hkBaseObject
-        pub field_8C: u32,
-        /// +0x90 `undefined4`, base hkBaseObject
-        pub field_90: u32,
-        /// +0x94 `undefined4`, base hkBaseObject
-        pub field_94: u32,
-        /// +0x98 `undefined4`, base hkBaseObject
-        pub field_98: u32,
-        /// +0x9C `undefined4`, base hkBaseObject
-        pub field_9C: u32,
-        /// +0xA0 `undefined4`, base hkBaseObject
-        pub field_A0: u32,
-        /// +0xA4 `undefined4`, base hkBaseObject
-        pub field_A4: u32,
-        /// +0xA8 `undefined8`, base hkBaseObject
-        pub field_A8: u64,
-        /// +0xB0 `undefined4`, base hkBaseObject
-        pub field_B0: u32,
-        /// +0xB4 `undefined4`, base hkBaseObject
-        pub field_B4: u32,
-        /// +0xB8 `undefined8`, base hkBaseObject
-        pub field_B8: u64,
-        /// +0xC0 `undefined4`, base hkBaseObject
-        pub field_C0: u32,
-        /// +0xC4 `undefined4`, base hkBaseObject
-        pub field_C4: u32,
-        pub unknown_C8: [u8; 64],
-        /// +0x108 `undefined8`, base hkBaseObject
-        pub field_108: u64,
-        /// +0x110 `undefined4`, base hkBaseObject
-        pub field_110: u32,
-        /// +0x114 `undefined4`, base hkBaseObject
-        pub field_114: u32,
-    }
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, __vftable) == 0x0);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_8) == 0x8);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, m_hkpCollidableCollidableFilter_10) == 0x10);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, m_hkpShapeCollectionFilter_18) == 0x18);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, m_hkpRayShapeCollectionFilter_20) == 0x20);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, m_hkpRayCollidableFilter_28) == 0x28);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_30) == 0x30);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_34) == 0x34);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_38) == 0x38);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_3C) == 0x3C);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_40) == 0x40);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_44) == 0x44);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_48) == 0x48);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_4C) == 0x4C);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_50) == 0x50);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_54) == 0x54);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_58) == 0x58);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_5C) == 0x5C);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_60) == 0x60);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_64) == 0x64);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_68) == 0x68);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_6C) == 0x6C);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_70) == 0x70);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_74) == 0x74);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_78) == 0x78);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_7C) == 0x7C);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_80) == 0x80);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_84) == 0x84);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_88) == 0x88);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_8C) == 0x8C);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_90) == 0x90);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_94) == 0x94);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_98) == 0x98);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_9C) == 0x9C);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_A0) == 0xA0);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_A4) == 0xA4);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_A8) == 0xA8);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_B0) == 0xB0);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_B4) == 0xB4);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_B8) == 0xB8);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_C0) == 0xC0);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_C4) == 0xC4);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_108) == 0x108);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_110) == 0x110);
-    const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_114) == 0x114);
 
     /// `hkbRagdollSceneModifier`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbSceneModifier`.
     /// Evidence: field field_114.

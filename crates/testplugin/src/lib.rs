@@ -8,7 +8,9 @@
 //! detours `NiAVObject::Cull` at `DataLoaded`, reads the scene after a load and reports the caster
 //! counts at the save; `frame` detours `TESCamera::Update` and `PresentFrame`, samples the camera
 //! per state and reads the scene graph, shaders, accumulators, window and sky at the saves.
-//! `scripts/verify.ps1` compares the log against `DevBench`'s answers.
+//! `animation` post-hooks the pose write and the world update, counts the graph events of the
+//! player's graph 0 and samples the head bone. `scripts/verify.ps1` compares the log against
+//! `DevBench`'s answers.
 //!
 //! A run mode in `Data\SKSE\Plugins\skyrim-rs-test.mode` next to the DLL bisects a crash:
 //! `nohook` skips the render detours, `passive` installs them but never counts.
@@ -44,6 +46,7 @@ macro_rules! log {
 }
 
 mod actors;
+mod animation;
 mod crash;
 mod events;
 mod forms;
@@ -93,6 +96,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             } else {
                 run("render", "dataLoaded", &[("install", render::install)]);
                 run("frame", "dataLoaded", &[("install", frame::install)]);
+                run("animation", "dataLoaded", &[("install", animation::install)]);
             }
         }
         skse::MessagingInterface::POST_LOAD_GAME => {
@@ -105,9 +109,15 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             run("render", "postLoadGame", render::TESTS);
             frame::reset();
             run("frame", "postLoadGame", frame::TESTS);
+            if mode() != "passive" {
+                run("animation", "postLoadGame", &[&[("register", animation::register as Test)][..], animation::TESTS].concat());
+            }
             render::SAVES.store(0, Ordering::Relaxed);
         }
-        skse::MessagingInterface::PRE_LOAD_GAME | skse::MessagingInterface::NEW_GAME => render::suspend(),
+        skse::MessagingInterface::PRE_LOAD_GAME | skse::MessagingInterface::NEW_GAME => {
+            render::suspend();
+            animation::suspend();
+        }
         skse::MessagingInterface::SAVE_GAME => {
             actors::STATE_CHANGED.store(true, Ordering::Relaxed);
             run("actors", "saveGame", actors::TESTS);
@@ -116,6 +126,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             let save = render::SAVES.fetch_add(1, Ordering::Relaxed) + 1;
             run("render", &format!("save{save}"), &[render::TESTS, render::CASTER_TESTS].concat());
             run("frame", &format!("save{save}"), &[frame::TESTS, frame::SAMPLE_TESTS].concat());
+            run("animation", &format!("save{save}"), &[animation::TESTS, animation::RUN_TESTS].concat());
         }
         _ => {}
     }

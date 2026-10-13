@@ -152,6 +152,16 @@ pub struct Transform {
 }
 
 impl Transform {
+    fn to_bytes(self) -> [u8; 0x34] {
+        let mut b = [0u8; 0x34];
+        let mut i = 0;
+        for value in self.rotation.iter().flatten().chain(self.translation.iter()).chain(core::iter::once(&self.scale)) {
+            b[i..i + 4].copy_from_slice(&value.to_le_bytes());
+            i += 4;
+        }
+        b
+    }
+
     fn from_bytes(b: &[u8; 0x34]) -> Self {
         Self {
             rotation: [vec3(&b[0..]), vec3(&b[12..]), vec3(&b[24..])],
@@ -301,6 +311,13 @@ impl NiAVObject {
     #[must_use]
     pub fn local(&self) -> Transform {
         Transform::from_bytes(&self.0.local)
+    }
+
+    /// Writes the local transform. On the main thread between frames follow it with [`Self::update`];
+    /// from a pose-write hook on a bone of the graph's own skeleton, call nothing (`crate::animation`).
+    pub fn set_local(&self, local: Transform) {
+        let bytes = local.to_bytes();
+        unsafe { core::ptr::write_volatile((&raw const self.0.local).cast_mut(), bytes) }
     }
 
     #[must_use]

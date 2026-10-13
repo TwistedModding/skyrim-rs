@@ -10689,7 +10689,7 @@ pub const INISetting_uiTESCellAnimationUpdateThread_JobList: u64 = 358801;
 pub const INISetting_uiWaitCellReadyTime_General: u64 = 358951;
 /// `RegSetting_sBasePath` at 0x20b6158 (setting, high)
 pub const RegSetting_sBasePath: u64 = 381024;
-/// `g_ActorMediator_ptr` at 0x3230a38 (xref_inference, medium)
+/// `g_ActorMediator_ptr` at 0x3230a38 (semantic, high); pointer to `ActorMediator`: the single BSTEventSink<BSAnimationGraphEvent> registered on every actor graph; the single BSTEventSink<BSAnimationGraphEvent> registered on every actor graph (high); type `ptr:ActorMediator`
 pub const g_ActorMediator_ptr: u64 = 403567;
 /// `g_ActorValueList_ptr` at 0x219dec8 (runtime, high); pointer to `ActorValueList`: pointer to the actor value list singleton; pointer to the actor value list singleton (high); type `ptr:ActorValueList`
 pub const g_ActorValueList_ptr: u64 = 400267;
@@ -12051,7 +12051,7 @@ pub const g_InstalledContent_ptr: u64 = 503225;
 pub const g_InvalidRefHandle: u64 = 400312;
 /// `g_Inventory3DManager_ptr` at 0x32309f8 (xref_inference, medium)
 pub const g_Inventory3DManager_ptr: u64 = 403559;
-/// `g_JobListManager_ServingThread` at 0x3220aa0 (layout_inference, medium)
+/// `g_JobListManager_ServingThread` at 0x3220aa0 (layout_inference, medium); the game update thread object; 0x3220a90 points at it (high); type `class:JobListManager::ServingThread`
 pub const g_JobListManager_ServingThread: u64 = 403109;
 /// `g_JournalInputMapping_RemapHandler` at 0x20bc728 (layout_inference, medium)
 pub const g_JournalInputMapping_RemapHandler: u64 = 383628;
