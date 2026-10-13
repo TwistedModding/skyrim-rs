@@ -93,8 +93,9 @@ pub fn suspend() {
     ACTIVE.store(false, Ordering::Release);
 }
 
-/// Caches the roots and the view from the player, clears the counters and starts counting; called after a load.
-pub fn reset() {
+/// Caches the roots and the view from the player, clears the counters and starts counting when
+/// `count` is set; called after a load.
+pub fn reset(count: bool) {
     if let Some(p) = PlayerCharacter::get() {
         FIRST_PERSON.store(!p.is_third_person(), Ordering::Relaxed);
         THIRD_ROOT.store(p.third_person_root().map_or(core::ptr::null_mut(), |r| r.as_ptr().cast_mut().cast()), Ordering::Relaxed);
@@ -107,7 +108,7 @@ pub fn reset() {
         c.store(0, Ordering::Relaxed);
     }
     FRAME_AT_LOAD.store(frame_counter(), Ordering::Relaxed);
-    ACTIVE.store(true, Ordering::Release);
+    ACTIVE.store(count, Ordering::Release);
 }
 
 fn player() -> Result<&'static PlayerCharacter, String> {

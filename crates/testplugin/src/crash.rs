@@ -4,6 +4,8 @@
 //! before `panic = "abort"` ends the process. Nothing here changes what the game does.
 
 use std::fmt::Write as _;
+use std::path::PathBuf;
+use std::sync::OnceLock;
 
 use windows_sys::Win32::Foundation::{EXCEPTION_ACCESS_VIOLATION, HMODULE};
 use windows_sys::Win32::System::Diagnostics::Debug::{AddVectoredExceptionHandler, EXCEPTION_POINTERS};
@@ -54,26 +56,25 @@ unsafe extern "system" fn handler(info: *mut EXCEPTION_POINTERS) -> i32 {
             }
         }
     }
-    if let Ok(mut guard) = crate::LOG.try_lock()
-        && let Some(f) = guard.as_mut()
-    {
-        use std::io::Write;
-        let _ = writeln!(f, "{line}");
-        let _ = f.flush();
-    }
+    report(&line);
     EXCEPTION_CONTINUE_SEARCH
 }
 
-/// Registers the exception handler first in line and the panic hook.
-pub fn install() {
+static CRASH_LOG: OnceLock<PathBuf> = OnceLock::new();
+
+/// Appends to the crash file next to the plugin log, which no other thread holds a lock on.
+fn report(line: &str) {
+    if let Some(path) = CRASH_LOG.get()
+        && let Ok(mut f) = std::fs::OpenOptions::new().append(true).create(true).open(path)
+    {
+        use std::io::Write;
+        let _ = writeln!(f, "{line}");
+    }
+}
+
+/// Registers the exception handler first in line and the panic hook; both write to `crash_log`.
+pub fn install(crash_log: PathBuf) {
+    let _ = CRASH_LOG.set(crash_log);
     unsafe { AddVectoredExceptionHandler(1, Some(handler)) };
-    std::panic::set_hook(Box::new(|info| {
-        if let Ok(mut guard) = crate::LOG.try_lock()
-            && let Some(f) = guard.as_mut()
-        {
-            use std::io::Write;
-            let _ = writeln!(f, "PANIC {info}");
-            let _ = f.flush();
-        }
-    }));
+    std::panic::set_hook(Box::new(|info| report(&format!("PANIC {info}"))));
 }

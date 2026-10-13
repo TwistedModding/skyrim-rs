@@ -6,6 +6,7 @@
 param(
     [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
+    [string]$Mode = "",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
 )
 $ErrorActionPreference = "Stop"
@@ -21,7 +22,8 @@ $Mods = @{
 }
 $Mod = $Mods[$Suite]
 $PluginLog = "skyrim-rs-test.log"
-$ModLogs = @($Mods.Values | ForEach-Object { $_.log })
+$CrashLog = "skyrim-rs-test-crash.log"
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog)
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $TestSave = "skyrim-rs-$Suite"
 
@@ -39,6 +41,7 @@ foreach ($f in $Logs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f"
 foreach ($f in @($PluginLog) + $ModLogs) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
 
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
+if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
 if ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
 foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" }; Copy-Item $p $Scripts -Force }
 $retraceOff = Test-Path "$Plugins\retrace.dll"
@@ -47,7 +50,7 @@ try {
     & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -OutDir $OutDir
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
-    foreach ($f in @("skyrim_rs_test.dll") + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
+    foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode") + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
     Remove-Item "$MyGames\Saves\$TestSave*" -ErrorAction SilentlyContinue

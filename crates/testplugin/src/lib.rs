@@ -7,9 +7,12 @@
 //! checks handles and script types after a load and the calls it received at the save; `render`
 //! detours `NiAVObject::Cull` at `DataLoaded`, reads the scene after a load and reports the caster
 //! counts at the save. `scripts/verify.ps1` compares the log against `DevBench`'s answers.
+//!
+//! A run mode in `Data\SKSE\Plugins\skyrim-rs-test.mode` next to the DLL bisects a crash:
+//! `nohook` skips the render detours, `passive` installs them but never counts.
 
 use std::fs::File;
-use std::sync::Mutex;
+use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::Ordering;
 
 use skyrim::forms::{FormId, TESForm};
@@ -22,6 +25,12 @@ skse::plugin! {
 }
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
+static MODE: OnceLock<String> = OnceLock::new();
+
+/// The run mode from the mode file, empty when there is none.
+fn mode() -> &'static str {
+    MODE.get().map_or("", String::as_str)
+}
 
 macro_rules! log {
     ($($arg:tt) => {
@@ -76,7 +85,11 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
         skse::MessagingInterface::DATA_LOADED => {
             run("forms", "dataLoaded", forms::TESTS);
             run("events", "dataLoaded", events::SETUP);
-            run("render", "dataLoaded", &[("install", render::install)]);
+            if mode() == "nohook" {
+                log!("render hooks skipped (mode nohook)");
+            } else {
+                run("render", "dataLoaded", &[("install", render::install)]);
+            }
         }
         skse::MessagingInterface::POST_LOAD_GAME => {
             events::LOADS.fetch_add(1, Ordering::Relaxed);
@@ -84,7 +97,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             actors::STATE_CHANGED.store(false, Ordering::Relaxed);
             run("actors", "postLoadGame", actors::TESTS);
             run("papyrus", "postLoadGame", papyrus::TESTS);
-            render::reset();
+            render::reset(mode() != "passive");
             run("render", "postLoadGame", render::TESTS);
             render::SAVES.store(0, Ordering::Relaxed);
         }
@@ -113,7 +126,14 @@ fn load(skse: &skse::Interface) -> bool {
         return false;
     };
     *LOG.lock().unwrap() = Some(file);
-    crash::install();
+    if let Ok(dir) = skse::log::dir(skse.runtime_version) {
+        crash::install(dir.join("skyrim-rs-test-crash.log"));
+    }
+    let mode_file = std::env::current_exe().map(|exe| exe.with_file_name("Data").join("SKSE").join("Plugins").join("skyrim-rs-test.mode"));
+    let _ = MODE.set(mode_file.and_then(std::fs::read_to_string).map(|m| m.trim().to_owned()).unwrap_or_default());
+    if !mode().is_empty() {
+        log!("run mode: {}", mode());
+    }
     let [major, minor, build, store] = skse::runtime::unpack(skse.runtime_version);
     log!("runtime {major}.{minor}.{build} store {store}, skse {:08x}", skse.skse_version);
     if let Err(e) = skyrim::init(skse) {

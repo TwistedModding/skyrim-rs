@@ -18,8 +18,8 @@ $rows = @(
        ok = ($sun -match 'maps 2 \(slices 0/1, viewport \[0, 4096, 4096, 0\]' -and $sun -match 'biasScale 60') }
     @{ name = "outdoor lights";   plugin = $scene; devbench = "inspect lights scope=scene: $(SceneLights 9) lights ($(ShadowLights 9) in the shadow list) in third person, $(SceneLights 14) ($(ShadowLights 14)) in first person";
        ok = ($scene -match '^world at' -and (SceneLights 9) -ne $null) }
-    @{ name = "indoor lights";    plugin = $indoors; devbench = "inspect lights scope=scene in the inn: $(SceneLights 22) lights ($(ShadowLights 22) in the shadow list), pov $((Step 23).pov)";
-       ok = ($indoors -match ', [1-9]\d* shadow lights' -and (ShadowLights 22) -ge 1) }
+    @{ name = "indoor lights";    plugin = $indoors; devbench = "inspect lights scope=scene in the inn: $(SceneLights 26) lights ($(ShadowLights 26) in the shadow list), pov $((Step 27).pov)";
+       ok = ($indoors -match ', [1-9]\d* shadow lights' -and (ShadowLights 26) -ge 1) }
     @{ name = "captures";         plugin = "third then first person"; devbench = "render-third.png $((Step 10).bytes) bytes frame $((Step 10).frame), render-first.png $((Step 15).bytes) bytes frame $((Step 15).frame)";
        ok = ((Step 10).ok -eq $true -and (Step 15).ok -eq $true) }
     @{ name = "casters";          plugin = $casters; devbench = "two switches through DevBench setPov (third, first) and the coc";
