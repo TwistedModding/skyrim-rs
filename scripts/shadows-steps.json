@@ -21,7 +21,7 @@
   {"wait": 2000},
   {"tool": "camera", "args": {"action": "setPov", "pov": "third"}},
   {"wait": 3000},
-  {"tool": "console", "args": {"command": "coc RiverwoodSleepingGiantInn"}},
+  {"tool": "console", "args": {"command": "coc WhiterunDragonsreach"}},
   {"wait": 15000},
   {"tool": "camera", "args": {"action": "setPov", "pov": "first"}},
   {"wait": 5000},

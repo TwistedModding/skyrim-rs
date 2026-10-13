@@ -1,7 +1,7 @@
 //! One test per `skyrim::render` API, against the RE repo's `docs/subsystems/render-verify.md`.
 //! `install` detours `NiAVObject::Cull` and `PlayerCharacter::SetFirstPerson` at `DataLoaded`;
 //! `TESTS` reads the scene, the sun, the player's roots and the camera after a load and at every
-//! save (the scenario saves outdoors in first person, then in the inn); `CASTER_TESTS` reports at
+//! save (the scenario saves outdoors in first person, then in Dragonsreach); `CASTER_TESTS` reports at
 //! the saves how often each player root was visited per view and per pass.
 
 use std::sync::OnceLock;

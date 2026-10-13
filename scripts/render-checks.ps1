@@ -1,6 +1,6 @@
 # DevBench comparisons for the render suite (step indices of render-steps.json); dot-sourced by verify.ps1.
 # The plugin reads the scene after the load and at each save: save 1 outdoors in first person after the third- and
-# first-person windows, save 2 in the Sleeping Giant Inn; the caster counts accumulate over both windows.
+# first-person windows, save 2 in Dragonsreach; the caster counts accumulate over both windows.
 $Phases = "dataLoaded", "postLoadGame", "save1", "save2"
 
 $view = RunDetail "render save1" "view"
@@ -18,7 +18,7 @@ $rows = @(
        ok = ($sun -match 'maps 2 \(slices 0/1, viewport \[0, 4096, 4096, 0\]' -and $sun -match 'biasScale 60') }
     @{ name = "outdoor lights";   plugin = $scene; devbench = "inspect lights scope=scene: $(SceneLights 9) lights ($(ShadowLights 9) in the shadow list) in third person, $(SceneLights 14) ($(ShadowLights 14)) in first person";
        ok = ($scene -match '^world at' -and (SceneLights 9) -ne $null) }
-    @{ name = "indoor lights";    plugin = $indoors; devbench = "inspect lights scope=scene in the inn: $(SceneLights 26) lights ($(ShadowLights 26) in the shadow list), pov $((Step 27).pov)";
+    @{ name = "indoor lights";    plugin = $indoors; devbench = "inspect lights scope=scene in Dragonsreach: $(SceneLights 26) lights ($(ShadowLights 26) in the shadow list), pov $((Step 27).pov)";
        ok = ($indoors -match ', [1-9]\d* shadow lights' -and (ShadowLights 26) -ge 1) }
     @{ name = "captures";         plugin = "third then first person"; devbench = "render-third.png $((Step 10).bytes) bytes frame $((Step 10).frame), render-first.png $((Step 15).bytes) bytes frame $((Step 15).frame)";
        ok = ((Step 10).ok -eq $true -and (Step 15).ok -eq $true) }
