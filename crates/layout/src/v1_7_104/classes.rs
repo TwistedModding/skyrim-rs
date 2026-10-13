@@ -91333,7 +91333,7 @@ pub struct HUDMenu {
     pub magickaMeter: *mut ActorValueMeter,
     /// +0x70 `ptr:ShoutMeter`, base GRefCountImplCore, semantic; shout cooldown meter (high)
     pub shoutMeter: *mut ShoutMeter,
-    /// +0x78 `class:GFxValue`, base GRefCountImplCore, semantic; the HUD's root ActionScript object (HUDMovieBaseInstance) every HUD call is invoked on (high)
+    /// +0x78 `class:GFxValue`, base GRefCountImplCore, semantic; the HUD's root ActionScript object (HUDMovieBaseInstance) every HUD call is invoked on; a managed display object (value type 0x48 = 8 | managed), so member calls on it need the display-object flag, which the HUD computes as (type & 0x8f) == 8 (high)
     pub root: GFxValue,
     /// +0x90 `undefined1`, base GRefCountImplCore, semantic; last swimming state pushed to the HUD (high)
     pub wasSwimming: u8,
@@ -117138,8 +117138,8 @@ const _: () = assert!(core::mem::offset_of!(StaggeredStopHandler, __vftable) == 
 pub struct StandardItemData {
     /// +0x0 `vtbl:StandardItemData:0`, rtti
     pub __vftable: *const vtables::StandardItemData_vtable,
-    /// +0x8 `ptr:InventoryEntry`, semantic; owned inventory entry (object, count, extra lists) (high)
-    pub entry: *mut InventoryEntry,
+    /// +0x8 `pointer`, semantic; owned inventory entry (object, count, extra lists) (high)
+    pub entry: *mut c_void,
     /// +0x10 `undefined4`, semantic; RefHandle of the inventory owner (high)
     pub owner: u32,
     pub unknown_14: [u8; 4],
