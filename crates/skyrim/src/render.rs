@@ -17,8 +17,13 @@ use std::fmt;
 use layout::v1_7_104::{classes, enums, fns, globals, vtables};
 
 pub use enums::CameraState;
-pub use fns::NiAVObject__Cull_fn as CullFn;
 pub use fns::PlayerCharacter__SetFirstPerson_fn as SetFirstPersonFn;
+
+/// `NiAVObject::Cull(node, culler, planeMask)`. The pass's signature has two parameters; the
+/// function leaves `r8` untouched and tail-jumps to the culler's slot 22 `CullNode(culler, node,
+/// planeMask)`, so the mask is a third argument a detour must pass through (a two-argument detour
+/// clobbers it and the culls read nonsense).
+pub type CullFn = unsafe extern "C" fn(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess, plane_mask: u32);
 
 /// `NiAVObject::flags` bit 0: no culling process visits the object.
 pub const HIDDEN: u32 = 1;

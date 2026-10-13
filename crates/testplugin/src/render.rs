@@ -46,7 +46,7 @@ fn count(view: usize, root: usize, pass: usize, hidden: usize, is_self: usize) -
     COUNTS[index(view, root, pass, hidden, is_self)].load(Ordering::Relaxed)
 }
 
-unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess) {
+unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess, plane_mask: u32) {
     let original = CULL.get().expect("stored before enabling").original();
     if ACTIVE.load(Ordering::Acquire)
         && let (Some(n), Some(c)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) })
@@ -67,7 +67,7 @@ unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut cl
             }
         }
     }
-    unsafe { original(node, culler) }
+    unsafe { original(node, culler, plane_mask) }
 }
 
 unsafe extern "C" fn switch_detour(player: *mut classes::PlayerCharacter, first_person: bool) {

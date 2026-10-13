@@ -59,7 +59,7 @@ unsafe extern "C" fn switch_detour(player: *mut classes::PlayerCharacter, first_
     apply(first_person);
 }
 
-unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess) {
+unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess, plane_mask: u32) {
     let original = CULL.get().expect("stored before enabling").original();
     if FIRST_PERSON.load(Ordering::Relaxed)
         && let (Some(n), Some(c), Some(root)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) }, unsafe { NiAVObject::from_ptr(THIRD_ROOT.load(Ordering::Acquire)) })
@@ -75,7 +75,7 @@ unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut cl
             }
         }
     }
-    unsafe { original(node, culler) }
+    unsafe { original(node, culler, plane_mask) }
 }
 
 fn install() -> Result<(), String> {
