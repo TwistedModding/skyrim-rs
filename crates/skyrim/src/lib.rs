@@ -16,6 +16,7 @@ pub mod forms;
 pub mod papyrus;
 pub mod render;
 pub mod string;
+pub mod ui;
 
 #[derive(Debug)]
 pub enum Error {
@@ -54,6 +55,7 @@ struct Runtime {
     camera: camera::Fns,
     animation: animation::Fns,
     strings: string::Fns,
+    ui: ui::Fns,
 }
 
 static RUNTIME: OnceLock<Runtime> = OnceLock::new();
@@ -91,7 +93,8 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     let camera = camera::Fns::resolve(&reloc)?;
     let animation = animation::Fns::resolve(&reloc)?;
     let strings = string::Fns::resolve(&reloc)?;
-    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, camera, animation, strings });
+    let ui = ui::Fns::resolve(&reloc)?;
+    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, camera, animation, strings, ui });
     Ok(())
 }
 

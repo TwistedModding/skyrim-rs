@@ -1,0 +1,23 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 5000},
+  {"tool": "menu", "args": {"action": "list"}},
+  {"tool": "menu", "args": {"action": "open", "name": "TweenMenu"}},
+  {"wait": 3000},
+  {"tool": "menu", "args": {"action": "list"}},
+  {"tool": "menu", "args": {"action": "close", "name": "TweenMenu"}},
+  {"wait": 3000},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Debug", "function": "Notification", "args": ["probe-hud"]}},
+  {"wait": 2000},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Debug", "function": "MessageBox", "args": ["probe-box"]}},
+  {"wait": 3000},
+  {"tool": "menu", "args": {"action": "list"}},
+  {"tool": "menu", "args": {"action": "accept", "index": 0}},
+  {"wait": 3000},
+  {"tool": "menu", "args": {"action": "list"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-ui"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000}
+]

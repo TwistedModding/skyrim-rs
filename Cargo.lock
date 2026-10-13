@@ -297,6 +297,7 @@ dependencies = [
  "hook",
  "layout",
  "skse",
+ "windows-sys",
 ]
 
 [[package]]
