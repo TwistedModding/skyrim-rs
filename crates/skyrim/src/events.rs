@@ -214,7 +214,7 @@ unsafe fn source_at<E: Event>(p: *const classes::BSTEventSource) -> Option<&'sta
     unsafe { BSTEventSource::from_ptr(p) }
 }
 
-/// The holder of the 56 script event sources (SKSE: `EventDispatcherList`), the static object
+/// The holder of the 56 script event sources, the static object
 /// `g_EventSourceHolder_TES` (id 400420).
 #[repr(transparent)]
 pub struct EventSourceHolderTes(classes::EventSourceHolder_TES);
@@ -238,7 +238,7 @@ impl EventSourceHolderTes {
     }
 }
 
-/// The UI singleton (SKSE: `MenuManager`) behind `g_EventSourceHolder_MenuOpenClose_ptr` (id 400327).
+/// The UI singleton behind `g_EventSourceHolder_MenuOpenClose_ptr` (id 400327); `skyrim::ui` adds the menu table, stack and queue.
 #[repr(transparent)]
 pub struct EventSourceHolderMenuOpenClose(classes::EventSourceHolder_MenuOpenClose);
 
@@ -261,7 +261,7 @@ impl EventSourceHolderMenuOpenClose {
     }
 }
 
-/// The input device manager (SKSE: `InputEventDispatcher`) behind `g_EventSourceHolder_Input_ptr` (id 402776).
+/// The input device manager behind `g_EventSourceHolder_Input_ptr` (id 402776).
 #[repr(transparent)]
 pub struct EventSourceHolderInput(classes::EventSourceHolder_Input);
 

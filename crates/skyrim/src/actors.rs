@@ -771,7 +771,7 @@ impl ActorState {
     }
 }
 
-/// The AI process of an actor (SKSE's `ActorProcessManager`).
+/// The AI process of an actor.
 #[repr(transparent)]
 pub struct AIProcess(classes::AIProcess);
 

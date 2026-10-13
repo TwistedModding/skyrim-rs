@@ -511,6 +511,10 @@ fn fn_type(signature: &str, classes: &BTreeMap<&str, Class>) -> Option<String> {
     let mut args = Vec::new();
     if !matches!(params.trim(), "" | "void") {
         for p in params.split(',') {
+            if let Some((_, rest)) = p.split_once("(*") {
+                args.push(format!("{}: *const c_void", ident(rest.split(')').next()?)));
+                continue;
+            }
             let (ty, name) = p.trim().rsplit_once(char::is_whitespace)?;
             args.push(format!("{}: {}", ident(name), c_type(ty)?));
         }

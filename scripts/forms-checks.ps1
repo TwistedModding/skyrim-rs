@@ -25,9 +25,9 @@ $rows = @(
     @{ name = "get_file Skyrim";   plugin = (Detail "get_file"); devbench = "GetFormFromFile(77495, Skyrim.esm) = $((Returned 6).formId)";
        ok = ((Detail "get_file") -match 'Skyrim\.esm 0x12eb7 -> 00012EB7' -and (Returned 6).formId -eq "0x00012EB7") }
     @{ name = "get_file Curios";   plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, Curios) = $((Returned 7).formId)";
-       ok = ((Detail "get_file") -match 'Curios 0x800 -> FE001800' -and (Returned 7).formId -eq "0xFE001800") }
+       ok = ((Captured (Detail "get_file") 'Curios 0x800 -> ([0-9A-F]{8})') -eq (((Returned 7).formId) -replace '^0x', '')) }
     @{ name = "get_file Fish";     plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, Fish) = $((Returned 8).formId)";
-       ok = ((Detail "get_file") -match 'Fish 0x800 -> 05000800' -and (Returned 8).formId -eq "0x05000800") }
+       ok = ((Captured (Detail "get_file") 'Fish 0x800 -> ([0-9A-F]{8})') -eq (((Returned 8).formId) -replace '^0x', '')) }
     @{ name = "get_file missing";  plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, NoSuchFile.esp) = $((Step 9).returnedType)";
        ok = ((Detail "get_file") -match 'NoSuchFile\.esp -> none' -and (Step 9).returnedType -eq "none") }
     @{ name = "editor_id_keyword"; plugin = (Detail "editor_id_keyword"); devbench = "Form.GetFormID(VendorItemWeapon) = $(Returned 10); help: $(Lines 12)";
@@ -38,6 +38,6 @@ $rows = @(
        ok = ($plugin["editor_id_missing"].ok -and (Lines 13) -notmatch 'WEAP:' -and (Lines 13) -match 'ANIO: AnimObjectIronSword') }
     @{ name = "editor_id_global";  plugin = (Detail "editor_id_global"); devbench = "help GameHour 3: $(Lines 14)";
        ok = (Near $hour $pluginHour 0.1) }
-    @{ name = "form_arrays";       plugin = (Detail "form_arrays"); devbench = "forms-verify.md recorded KYWD=1290 GLOB=1261 WEAP=3328 NPC_=6462 FLST=1219";
-       ok = ((Detail "form_arrays") -match 'KYWD=1290 GLOB=1261 WEAP=3328 NPC_=6462 FLST=1219') }
+    @{ name = "form_arrays";       plugin = (Detail "form_arrays"); devbench = "forms-verify.md recorded KYWD=1290 GLOB=1261 WEAP=3328 NPC_=6462 FLST=1219 on the base game with two Creations; a larger load order adds forms";
+       ok = ($plugin["form_arrays"].ok -and @(@("KYWD", 1290), @("GLOB", 1261), @("WEAP", 3328), @("NPC_", 6462), @("FLST", 1219) | ForEach-Object { [int](Captured (Detail "form_arrays") "$($_[0])=(\d+)") -ge $_[1] }) -notcontains $false) }
 )

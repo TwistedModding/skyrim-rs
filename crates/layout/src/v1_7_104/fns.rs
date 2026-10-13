@@ -44690,7 +44690,7 @@ pub const EventSourceHolder_MenuOpenClose__ProcessMessages: u64 = 82082;
 /// `EventSourceHolder_MenuOpenClose::Register` at 0x116b200 (semantic, high); signature (untiered): `undefined Register(longlong param_1, char * param_2, undefined8 param_3)`; registers (or replaces) a menu's creator: table[name] = {menu = null, create} (high); semantic signature: `void (EventSourceHolder_MenuOpenClose* this, const char* menuName, IMenu* (*create)())`
 pub const EventSourceHolder_MenuOpenClose__Register: u64 = 82086;
 /// `EventSourceHolder_MenuOpenClose::Register` as a function pointer type (high).
-pub type EventSourceHolder_MenuOpenClose__Register_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_MenuOpenClose, menuName: *const c_char, _create: *mut classes::IMenu);
+pub type EventSourceHolder_MenuOpenClose__Register_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_MenuOpenClose, menuName: *const c_char, create: *const c_void);
 /// `EventSourceHolder_MenuOpenClose::UnloadMenu` at 0x116b9c0 (semantic, high); signature (untiered): `undefined UnloadMenu(longlong param_1, ulonglong * param_2)`; drops the live menu from the table (creator kept), after releasing its callback processor at IMenu+0x28 (high); semantic signature: `void (EventSourceHolder_MenuOpenClose* this, const BSFixedString* menuName)`
 pub const EventSourceHolder_MenuOpenClose__UnloadMenu: u64 = 82095;
 /// `EventSourceHolder_MenuOpenClose::UnloadMenu` as a function pointer type (high).

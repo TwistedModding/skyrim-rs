@@ -191,12 +191,14 @@ fn describe(index: usize, file: Option<&skyrim::forms::TESFile>, light: bool) ->
 fn get_file() -> Result<String, String> {
     let handler = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
     let curios = handler.file("ccBGSSSE037-Curios.esl").ok_or("Curios not found")?;
-    check(curios.is_light() && curios.compile_index() == 0xFE && curios.light_file_index() == 1, "Curios is not light index 1")?;
+    check(curios.is_light() && curios.compile_index() == 0xFE, &format!("Curios has compile index {:#x}", curios.compile_index()))?;
     let curios_id = curios.resolve_form_id(0x800).ok_or("Curios is not loaded")?;
-    check(curios_id == FormId(0xFE00_1800), &format!("Curios 0x800 resolved to {curios_id}"))?;
+    let curios_expected = FormId(0xFE00_0800 | u32::from(curios.light_file_index()) << 12);
+    check(curios_id == curios_expected, &format!("Curios 0x800 resolved to {curios_id}, light index {}", curios.light_file_index()))?;
     let fish = handler.file("ccBGSSSE001-Fish.esm").ok_or("Fish not found")?;
     let fish_id = fish.resolve_form_id(0x800).ok_or("Fish is not loaded")?;
-    check(fish_id == FormId(0x0500_0800) && fish.compile_index() == 5, &format!("Fish 0x800 resolved to {fish_id}"))?;
+    let fish_expected = FormId(u32::from(fish.compile_index()) << 24 | 0x800);
+    check(!fish.is_light() && fish_id == fish_expected, &format!("Fish 0x800 resolved to {fish_id}, compile index {}", fish.compile_index()))?;
     check(handler.file("NoSuchFile.esp").is_none(), "NoSuchFile.esp was found")?;
     check(handler.file("skyrim.esm").is_some_and(|f| f.name() == "Skyrim.esm"), "GetFile is not case-insensitive")?;
     check(curios_id.lookup().is_some_and(|f| f.form_id() == curios_id), "0xFE001800 does not resolve to a form")?;
