@@ -16,11 +16,14 @@
   {"tool": "inspect", "args": {"kind": "lights", "scope": "scene", "limit": 200}},
   {"tool": "capture", "args": {"checkpointId": "render-first", "kind": "native", "allowNative": true, "cleanup": true}},
   {"tool": "inspect", "args": {"kind": "scene"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-shadows-1"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000},
   {"tool": "console", "args": {"command": "coc RiverwoodSleepingGiantInn"}},
   {"wait": 15000},
   {"tool": "inspect", "args": {"kind": "lights", "scope": "scene", "limit": 200}},
   {"tool": "camera", "args": {"action": "get"}},
-  {"tool": "console", "args": {"command": "save skyrim-rs-render"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-shadows-2"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

@@ -50,7 +50,7 @@ try {
     foreach ($f in @("skyrim_rs_test.dll") + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
-    Remove-Item "$MyGames\Saves\$TestSave.*" -ErrorAction SilentlyContinue
+    Remove-Item "$MyGames\Saves\$TestSave*" -ErrorAction SilentlyContinue
     foreach ($f in @($PluginLog) + $ModLogs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$OutDir\$f" -Force } }
     foreach ($f in $Logs) {
         if (Test-Path "$Backup\$f") { Copy-Item "$Backup\$f" "$SkseLogs\$f" -Force }

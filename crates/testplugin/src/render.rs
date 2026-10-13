@@ -1,8 +1,8 @@
 //! One test per `skyrim::render` API, against the RE repo's `docs/subsystems/render-verify.md`.
 //! `install` detours `NiAVObject::Cull` and `PlayerCharacter::SetFirstPerson` at `DataLoaded`;
-//! `TESTS` reads the scene, the sun, the player's roots and the camera after a load; `CASTER_TESTS`
-//! reports at the save, after the scenario went third person, first person and indoors, how
-//! often each player root was visited per view and per pass.
+//! `TESTS` reads the scene, the sun, the player's roots and the camera after a load and at every
+//! save (the scenario saves outdoors in first person, then in the inn); `CASTER_TESTS` reports at
+//! the saves how often each player root was visited per view and per pass.
 
 use std::sync::OnceLock;
 use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
@@ -13,8 +13,11 @@ use skyrim::render::{CameraState, CullFn, CullingProcess, NiAVObject, PlayerCame
 
 use crate::{Test, check};
 
-pub const TESTS: &[(&str, Test)] = &[("scene", scene), ("sun", sun), ("roots", roots), ("view", view), ("frame_counter", frame_counter_test), ("hooks", hooks)];
-pub const CASTER_TESTS: &[(&str, Test)] = &[("casters", casters), ("indoors", indoors), ("frame_counter", frame_counter_test), ("switches", switches)];
+pub const TESTS: &[(&str, Test)] = &[("scene", scene), ("sun", sun), ("lights", lights), ("roots", roots), ("view", view), ("frame_counter", frame_counter_test), ("hooks", hooks)];
+pub const CASTER_TESTS: &[(&str, Test)] = &[("casters", casters), ("switches", switches)];
+
+/// Saves since the load, numbering the `save<N>` phases.
+pub static SAVES: AtomicU32 = AtomicU32::new(0);
 
 static CULL: OnceLock<hook::Hook<CullFn>> = OnceLock::new();
 static SWITCH: OnceLock<hook::Hook<SetFirstPersonFn>> = OnceLock::new();
@@ -148,7 +151,8 @@ fn sun() -> Result<String, String> {
     let maps = sun.shadow_maps();
     check(maps.len() == 2, &format!("{} shadow map records", maps.len()))?;
     check(maps[0].slice() == 0 && maps[1].slice() == 1, &format!("slices {} and {}", maps[0].slice(), maps[1].slice()))?;
-    check(maps.iter().all(|m| m.viewport() == [0, 4096, 4096, 0]), &format!("viewports {:?} {:?}", maps[0].viewport(), maps[1].viewport()))?;
+    let rendered = frame_counter() > FRAME_AT_LOAD.load(Ordering::Relaxed);
+    check(!rendered || maps.iter().all(|m| m.viewport() == [0, 4096, 4096, 0]), &format!("viewports {:?} {:?}", maps[0].viewport(), maps[1].viewport()))?;
     let cams = [maps[0].raw().camera, maps[1].raw().camera];
     check(!cams[0].is_null() && !cams[1].is_null() && cams[0] != cams[1], &format!("cascade cameras {:p} {:p}", cams[0], cams[1]))?;
     check(maps[0].raw().accumulator != maps[1].raw().accumulator, "the two cascades share an accumulator")?;
@@ -281,10 +285,9 @@ fn casters() -> Result<String, String> {
     Ok(t)
 }
 
-fn indoors() -> Result<String, String> {
+fn lights() -> Result<String, String> {
     let w = world()?;
     let sun = w.sun_shadow_light().ok_or("sunShadowLight is null")?;
-    check(!w.shadow_lights().is_empty(), "no shadow light in the Sleeping Giant Inn")?;
     let portal_graph = unsafe { core::ptr::read_unaligned(&raw const w.raw().portalGraph) };
     let described: Vec<String> = w.shadow_lights().iter().flatten().map(|l| format!("{} maps {} pos ({:.0}, {:.0}, {:.0})", l.class().map_or("?", |c| c.class), l.shadow_maps().len(), l.position()[0], l.position()[1], l.position()[2])).collect();
     Ok(format!("{} lights, {} shadow lights [{}], sun focus active {}, portal graph {:p}", w.lights().len(), w.shadow_lights().len(), described.join("; "), sun.focus_shadows_active(), portal_graph))

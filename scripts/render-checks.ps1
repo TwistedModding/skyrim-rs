@@ -1,24 +1,27 @@
 # DevBench comparisons for the render suite (step indices of render-steps.json); dot-sourced by verify.ps1.
-# The plugin reads the scene after the load; the scenario then goes third person, first person and into the inn,
-# and the caster counts are reported at the save.
-$Phases = "dataLoaded", "postLoadGame", "saveGame"
+# The plugin reads the scene after the load and at each save: save 1 outdoors in first person after the third- and
+# first-person windows, save 2 in the Sleeping Giant Inn; the caster counts accumulate over both windows.
+$Phases = "dataLoaded", "postLoadGame", "save1", "save2"
 
-$view = Detail "view"
-$scene = Detail "scene"
-$indoors = Detail "indoors"
-$casters = Detail "casters"
+$view = RunDetail "render save1" "view"
+$scene = RunDetail "render save1" "scene"
+$sun = RunDetail "render save1" "sun"
+$indoors = RunDetail "render save2" "lights"
+$casters = RunDetail "render save2" "casters"
 function SceneLights($i) { $r = Step $i; if ($r -and $r.lights) { @($r.lights).Count } else { $null } }
 function ShadowLights($i) { $r = Step $i; if ($r -and $r.lights) { @($r.lights | Where-Object { $_.inScene -eq "shadow" }).Count } else { $null } }
 
 $rows = @(
-    @{ name = "view at load";     plugin = $view; devbench = "camera get after setPov third: pov $((Step 8).pov) stateId $((Step 8).stateId); after setPov first: pov $((Step 13).pov) stateId $((Step 13).stateId)";
-       ok = ((Step 8).pov -eq "third" -and (Step 8).stateId -eq 9 -and (Step 13).pov -eq "first" -and (Step 13).stateId -eq 0 -and $plugin["view"].ok) }
+    @{ name = "view";             plugin = $view; devbench = "camera get after setPov third: pov $((Step 8).pov) stateId $((Step 8).stateId); after setPov first: pov $((Step 13).pov) stateId $((Step 13).stateId)";
+       ok = ((Step 8).pov -eq "third" -and (Step 8).stateId -eq 9 -and (Step 13).pov -eq "first" -and (Step 13).stateId -eq 0 -and $view -match 'third_person=false state=Some\(FirstPerson\)') }
+    @{ name = "sun";              plugin = $sun; devbench = "scene at save 1: gameHour $((Step 16).gameHour), weather $((Step 16).weather.formId)";
+       ok = ($sun -match 'maps 2 \(slices 0/1, viewport \[0, 4096, 4096, 0\]' -and $sun -match 'biasScale 60') }
     @{ name = "outdoor lights";   plugin = $scene; devbench = "inspect lights scope=scene: $(SceneLights 9) lights ($(ShadowLights 9) in the shadow list) in third person, $(SceneLights 14) ($(ShadowLights 14)) in first person";
-       ok = ($plugin["scene"].ok -and (SceneLights 9) -ne $null) }
-    @{ name = "indoor lights";    plugin = $indoors; devbench = "inspect lights scope=scene in the inn: $(SceneLights 19) lights ($(ShadowLights 19) in the shadow list), pov $((Step 20).pov)";
-       ok = ($plugin["indoors"].ok -and (ShadowLights 19) -ge 1) }
+       ok = ($scene -match '^world at' -and (SceneLights 9) -ne $null) }
+    @{ name = "indoor lights";    plugin = $indoors; devbench = "inspect lights scope=scene in the inn: $(SceneLights 22) lights ($(ShadowLights 22) in the shadow list), pov $((Step 23).pov)";
+       ok = ($indoors -match ', [1-9]\d* shadow lights' -and (ShadowLights 22) -ge 1) }
     @{ name = "captures";         plugin = "third then first person"; devbench = "render-third.png $((Step 10).bytes) bytes frame $((Step 10).frame), render-first.png $((Step 15).bytes) bytes frame $((Step 15).frame)";
        ok = ((Step 10).ok -eq $true -and (Step 15).ok -eq $true) }
     @{ name = "casters";          plugin = $casters; devbench = "two switches through DevBench setPov (third, first) and the coc";
-       ok = ($plugin["casters"].ok -and $plugin["switches"].ok) }
+       ok = ($casters -match '^third-person' -and ($runs["render save2"]["casters"].ok) -and ($runs["render save2"]["switches"].ok)) }
 )
