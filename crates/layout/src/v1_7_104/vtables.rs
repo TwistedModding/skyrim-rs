@@ -162981,7 +162981,7 @@ pub struct NiNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::vfunc_51` at 0xee0ed0 (rtti, medium); signature (high): `undefined vfunc_51(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`; `OnVisible`: visits every child through NiAVObject::Cull when the bound radius is non-zero or flag bit 11 is set (high); semantic signature: `void (NiNode* this, NiCullingProcess* culler)`
+    /// `NiNode::OnVisible` at 0xee2cc0 (semantic, high); signature (untiered): `undefined OnVisible(NiNode * this, longlong * param_1)`; `OnVisible`: visits every child through NiAVObject::Cull, passing planeMask on, when the bound radius is non-zero or flag bit 11 is set (high); semantic signature: `void (NiNode* this, NiCullingProcess* culler, u32 planeMask)`
     pub slot_52: *const c_void,
     /// `NiNode::vfunc_53` at 0xee1b00 (rtti, medium); signature (low): `undefined vfunc_53(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -163011,8 +163011,8 @@ impl NiNode_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<NiNode_vtable_OnVisible>>(self.slot_52) }
     }
 }
-/// `NiNode::OnVisible`, slot 52: visits every child through NiAVObject::Cull when the bound radius is non-zero or flag bit 11 is set (high).
-pub type NiNode_vtable_OnVisible = unsafe extern "C" fn(this: *mut classes::NiNode, culler: *mut classes::partial::NiCullingProcess);
+/// `NiNode::OnVisible`, slot 52: visits every child through NiAVObject::Cull, passing planeMask on, when the bound radius is non-zero or flag bit 11 is set (high).
+pub type NiNode_vtable_OnVisible = unsafe extern "C" fn(this: *mut classes::NiNode, culler: *mut classes::partial::NiCullingProcess, planeMask: u32);
 
 /// `NiOBBLeaf::vftable` at 0x1a51460, id 237519 (rtti, high); 5 slots.
 #[repr(C)]
