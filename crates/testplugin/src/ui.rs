@@ -293,7 +293,8 @@ fn probe(ui: &Ui) -> Result<String, String> {
 }
 
 fn sample(key: &str) -> Result<Sample, String> {
-    SAMPLES.lock().unwrap().get(key).cloned().ok_or_else(|| format!("no sample {key}; have [{}]", SAMPLES.lock().unwrap().keys().cloned().collect::<Vec<_>>().join("; ")))
+    let samples = SAMPLES.lock().unwrap();
+    samples.get(key).cloned().ok_or_else(|| format!("no sample {key}; have [{}]", samples.keys().cloned().collect::<Vec<_>>().join("; ")))
 }
 
 fn menu_in(s: &Sample, name: &str) -> Result<(u8, u32), String> {
