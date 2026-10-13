@@ -40,7 +40,7 @@ fn se_1_5_97() {
     check(&db, 1, [1, 5, 97, 0]);
     assert_eq!(db.offset(2), Some(0x10D0));
     let ids = ids_for(&db, 0x0019_4230);
-    eprintln!("SE LookupFormByID 0x194230 -> ids {ids:?}");
+    eprintln!("SE FindFormByID 0x194230 -> ids {ids:?}");
     assert_eq!(ids.len(), 1);
 }
 
@@ -76,7 +76,7 @@ fn ae_ids_are_stable_across_1_6_and_1_7() {
         return;
     };
     let ids = ids_for(&new, 0x001E_5860);
-    eprintln!("AE LookupFormByID 0x1E5860 (1.7.104) -> ids {ids:?}");
+    eprintln!("AE FindFormByID 0x1E5860 (1.7.104) -> ids {ids:?}");
     assert_eq!(ids.len(), 1);
     let in_old = old.offset(ids[0]);
     eprintln!("same id in 1.6.1170 -> {in_old:x?}");

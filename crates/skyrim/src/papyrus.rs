@@ -5,7 +5,7 @@
 //!
 //! A native is a 0x58-byte `NativeFunctionBase` whose `IFunction` vtable the engine calls; this
 //! module builds one per registered function, with the engine's own implementations of slots 0-20
-//! copied from `NativeFunctionBase::vftable` and `HasCallback`/`Run` of its own. `Run` reads the
+//! copied from `NativeFunctionBase::vftable` and `HasBinding`/`CallBinding` of its own. `CallBinding` reads the
 //! arguments out of the stack frame through `Stack::GetPageForFrame` and `GetStackFrameVariable`,
 //! converts them with [`FromVariable`], calls the Rust function and writes the result back with
 //! `Variable::assign`. Registration goes through `BindNativeMethod` (slot 24) and works before the
@@ -64,8 +64,8 @@ type GetInvalidHandle = unsafe extern "C" fn(this: *mut PolicyRaw) -> u64;
 type GetHandleForObject = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, object: *const c_void) -> u64;
 type GetObjectForHandle = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, handle: u64) -> *mut c_void;
 
-type RunSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut classes::BSScript__StackFrame) -> bool;
-type HasCallbackSlot = unsafe extern "C" fn(this: *mut NativeHeader) -> bool;
+type CallBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut classes::BSScript__StackFrame) -> bool;
+type HasBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader) -> bool;
 
 const IFUNCTION_SLOTS: usize = 23;
 /// Natives take at most this many parameters, the arity the [`NativeFn`] impls cover.
@@ -91,11 +91,11 @@ impl Fns {
     pub(crate) fn resolve(reloc: &hook::Reloc) -> Result<Self, hook::Error> {
         let base_vtable = reloc.address(vtables::BSScript__NF_util__NativeFunctionBase_vtable::ID)? as *const *const c_void;
         let mut vtable = [core::ptr::null(); IFUNCTION_SLOTS];
-        for (i, entry) in vtable.iter_mut().enumerate().take(vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_HasCallback) {
+        for (i, entry) in vtable.iter_mut().enumerate().take(vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_HasBinding) {
             *entry = unsafe { *base_vtable.add(i) };
         }
-        vtable[vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_HasCallback] = has_callback as HasCallbackSlot as *const c_void;
-        vtable[vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_Run] = run as RunSlot as *const c_void;
+        vtable[vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_HasBinding] = has_binding as HasBindingSlot as *const c_void;
+        vtable[vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_CallBinding] = call_binding as CallBindingSlot as *const c_void;
         unsafe {
             Ok(Self {
                 page_for_frame: crate::resolve(reloc, fns::BSScript__Stack__GetPageForFrame)?,
@@ -910,7 +910,7 @@ unsafe fn invoke_method<F: NativeMethod<M>, M>(this: *const NativeHeader, vm: &V
     Some(native.f.invoke(vm, receiver, args))
 }
 
-unsafe extern "C" fn has_callback(_: *mut NativeHeader) -> bool {
+unsafe extern "C" fn has_binding(_: *mut NativeHeader) -> bool {
     true
 }
 
@@ -918,7 +918,7 @@ thread_local! {
     static STACK_ID: Cell<Option<u32>> = const { Cell::new(None) };
 }
 
-unsafe extern "C" fn run(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut classes::BSScript__StackFrame) -> bool {
+unsafe extern "C" fn call_binding(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut classes::BSScript__StackFrame) -> bool {
     let (Some(this), Some(self_), Some(vm), Some(frame)) = (unsafe { this.as_ref() }, unsafe { Variable::from_ptr(self_) }, unsafe { vm.cast::<VirtualMachine>().as_ref() }, unsafe { frame.as_ref() }) else {
         return false;
     };
@@ -1153,7 +1153,7 @@ impl VirtualMachine {
                     unknown_43: [0; 1],
                     userFlags: 0,
                     docString: BSFixedString::empty().into_raw(),
-                    callback: invoke as *mut c_void,
+                    binding: invoke as *mut c_void,
                 },
                 invoke,
             },

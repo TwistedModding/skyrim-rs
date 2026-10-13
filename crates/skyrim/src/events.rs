@@ -1095,7 +1095,7 @@ impl BSAnimationGraphEvent {
     /// The reference that owns the graph (pass 7: the `PlayerCharacter` itself in every player event).
     #[must_use]
     pub fn owner(&self) -> Option<&TESObjectREFR> {
-        unsafe { self.0.holder.cast::<TESObjectREFR>().as_ref() }
+        unsafe { self.0.owner.cast::<TESObjectREFR>().as_ref() }
     }
 
     #[must_use]

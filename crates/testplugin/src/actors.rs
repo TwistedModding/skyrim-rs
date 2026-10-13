@@ -6,7 +6,7 @@ use std::sync::atomic::{AtomicBool, Ordering};
 
 use layout::v1_7_104::{classes, vtables};
 use skyrim::actors::{ActorValue, ActorValueList, Modifier, PlayerCharacter, RefHandle, Sex, StateFlags, actor_value_info, lookup_actor_value};
-use skyrim::forms::{FormId, FormType, TESForm, lookup_form_by_editor_id};
+use skyrim::forms::{FormId, FormType, TESForm, find_form_by_editor_id};
 
 use crate::{IRON_SWORD, PLAYER, Test, check, form};
 
@@ -62,7 +62,7 @@ fn player() -> Result<String, String> {
     let form = form(PLAYER)?;
     let refr = form.as_reference().ok_or("as_reference failed")?;
     let actor = refr.as_actor().ok_or("as_actor failed")?;
-    check(std::ptr::eq(actor.as_ptr().cast(), player.as_ptr()), "LookupFormByID(0x14) and g_PlayerCharacter_ptr differ")?;
+    check(std::ptr::eq(actor.as_ptr().cast(), player.as_ptr()), "FindFormByID(0x14) and g_PlayerCharacter_ptr differ")?;
     check(actor.as_player().is_some() && actor.as_character().is_some(), "the player does not downcast to PlayerCharacter and Character")?;
     let class = player.class().ok_or("the player's vtable is not in the ledger")?;
     check(class.id == vtables::PlayerCharacter_vtable::ID, &format!("the player's class is {}", class.class))?;
@@ -124,8 +124,8 @@ fn scale() -> Result<String, String> {
 
 fn ref_has_keyword() -> Result<String, String> {
     let player = player_ref()?;
-    let npc_type = lookup_form_by_editor_id("ActorTypeNPC").and_then(TESForm::as_keyword).ok_or("ActorTypeNPC did not resolve")?;
-    let vendor = lookup_form_by_editor_id("VendorItemWeapon").and_then(TESForm::as_keyword).ok_or("VendorItemWeapon did not resolve")?;
+    let npc_type = find_form_by_editor_id("ActorTypeNPC").and_then(TESForm::as_keyword).ok_or("ActorTypeNPC did not resolve")?;
+    let vendor = find_form_by_editor_id("VendorItemWeapon").and_then(TESForm::as_keyword).ok_or("VendorItemWeapon did not resolve")?;
     check(!player.has_keyword(vendor), "the player has VendorItemWeapon")?;
     Ok(format!("has_keyword(ActorTypeNPC)={} has_keyword(VendorItemWeapon)=false", player.has_keyword(npc_type)))
 }
@@ -142,7 +142,7 @@ fn handle() -> Result<String, String> {
     check(!handle.is_invalid(), "GetHandle returned the null handle")?;
     check(handle.index() == player.raw().refCount >> 11, &format!("handle index {} is not refCount >> 11", handle.index()))?;
     let before = player.ref_count();
-    let found = handle.lookup().ok_or("LookupREFRByHandle failed on the player's handle")?;
+    let found = handle.lookup().ok_or("ResolveRefHandle failed on the player's handle")?;
     check(std::ptr::eq(found.raw(), player.as_ptr().cast()), "the lookup returned another object")?;
     check(player.ref_count() == before + 1, "the lookup did not add one reference")?;
     drop(found);
@@ -227,14 +227,14 @@ fn actor_value_write() -> Result<String, String> {
     owner.mod_(Modifier::Temporary, ActorValue::SpeedMult, -5.0);
     let restored = owner.get(ActorValue::SpeedMult);
     check((boosted - 105.0).abs() < 0.01 && (restored - 100.0).abs() < 0.01, &format!("ModActorValue: {boosted} then {restored}"))?;
-    owner.set_base(ActorValue::Health, 110.0);
+    owner.store_base(ActorValue::Health, 110.0);
     let set = owner.get_base(ActorValue::Health);
-    owner.mod_base(ActorValue::Health, -10.0);
+    owner.add_base(ActorValue::Health, -10.0);
     let modded = owner.get_base(ActorValue::Health);
-    check((set - 110.0).abs() < 0.01 && (modded - 100.0).abs() < 0.01, &format!("SetBaseActorValue: {set}, ModBaseActorValue: {modded}"))?;
+    check((set - 110.0).abs() < 0.01 && (modded - 100.0).abs() < 0.01, &format!("StoreBaseActorValue: {set}, AddBaseActorValue: {modded}"))?;
     owner.set(ActorValue::Magicka, 120.0);
     let via_set = owner.get_base(ActorValue::Magicka);
-    owner.set_base(ActorValue::Magicka, 100.0);
+    owner.store_base(ActorValue::Magicka, 100.0);
     check((via_set - 120.0).abs() < 0.01 && (owner.get_base(ActorValue::Magicka) - 100.0).abs() < 0.01, &format!("SetActorValue: {via_set}"))?;
     Ok(format!("SpeedMult +5 temporary -> {boosted} -> {restored}; Health base 110 -> {set}, -10 -> {modded}; Magicka set 120 -> {via_set} -> 100"))
 }

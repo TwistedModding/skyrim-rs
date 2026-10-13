@@ -25,8 +25,8 @@ pub const LIGHT_INDEX: u8 = 0xFE;
 pub const RUNTIME_INDEX: u8 = 0xFF;
 
 pub(crate) struct Fns {
-    lookup_by_id: fns::LookupFormByID_fn,
-    lookup_by_editor_id: fns::LookupFormByEditorID_fn,
+    find_by_id: fns::FindFormByID_fn,
+    find_by_editor_id: fns::FindFormByEditorID_fn,
     get_file: fns::TESDataHandler__GetFile_fn,
     resolve_form_id: fns::TESFile__ResolveFormID_fn,
     keyword_form: fns::TESForm__GetKeywordForm_fn,
@@ -43,8 +43,8 @@ impl Fns {
     pub(crate) fn resolve(reloc: &hook::Reloc) -> Result<Self, hook::Error> {
         unsafe {
             Ok(Self {
-                lookup_by_id: crate::resolve(reloc, fns::LookupFormByID)?,
-                lookup_by_editor_id: crate::resolve(reloc, fns::LookupFormByEditorID)?,
+                find_by_id: crate::resolve(reloc, fns::FindFormByID)?,
+                find_by_editor_id: crate::resolve(reloc, fns::FindFormByEditorID)?,
                 get_file: crate::resolve(reloc, fns::TESDataHandler__GetFile)?,
                 resolve_form_id: crate::resolve(reloc, fns::TESFile__ResolveFormID)?,
                 keyword_form: crate::resolve(reloc, fns::TESForm__GetKeywordForm)?,
@@ -102,7 +102,7 @@ impl FormId {
 
     /// The index among the light files, for ids in the `0xFE` range.
     #[must_use]
-    pub const fn light_index(self) -> Option<u16> {
+    pub const fn light_file_index(self) -> Option<u16> {
         if self.is_light() { Some(((self.0 >> 12) & 0xFFF) as u16) } else { None }
     }
 
@@ -112,10 +112,10 @@ impl FormId {
         if self.is_light() { self.0 & 0xFFF } else { self.0 & 0x00FF_FFFF }
     }
 
-    /// The registered form with this id, through `LookupFormByID`.
+    /// The registered form with this id, through `FindFormByID`.
     #[must_use]
     pub fn lookup(self) -> Option<&'static TESForm> {
-        lookup_form_by_id(self)
+        find_form_by_id(self)
     }
 }
 
@@ -131,21 +131,21 @@ impl fmt::Display for FormId {
     }
 }
 
-/// The registered form with this id, through `LookupFormByID` (id 14617, read-locks the form id map).
+/// The registered form with this id, through `FindFormByID` (id 14617, read-locks the form id map).
 #[must_use]
-pub fn lookup_form_by_id(id: FormId) -> Option<&'static TESForm> {
-    unsafe { TESForm::from_ptr((fns().lookup_by_id)(id.0)) }
+pub fn find_form_by_id(id: FormId) -> Option<&'static TESForm> {
+    unsafe { TESForm::from_ptr((fns().find_by_id)(id.0)) }
 }
 
-/// The form registered under an editor id, through `LookupFormByEditorID` (id 14620).
+/// The form registered under an editor id, through `FindFormByEditorID` (id 14620).
 ///
 /// On this runtime only the classes that keep their editor id register one (keywords, globals,
 /// cells, quests, races, worldspaces, topics, idles and a few more); weapons, armor, NPCs and
 /// references do not, so they resolve to `None` here. Case-insensitive.
 #[must_use]
-pub fn lookup_form_by_editor_id(editor_id: &str) -> Option<&'static TESForm> {
+pub fn find_form_by_editor_id(editor_id: &str) -> Option<&'static TESForm> {
     let name = CString::new(editor_id).ok()?;
-    unsafe { TESForm::from_ptr((fns().lookup_by_editor_id)(name.as_ptr())) }
+    unsafe { TESForm::from_ptr((fns().find_by_editor_id)(name.as_ptr())) }
 }
 
 /// Base of every record form: `classes::TESForm` with typed accessors.
@@ -422,7 +422,7 @@ impl TESFile {
     /// The file name; empty when it is not UTF-8.
     #[must_use]
     pub fn name(&self) -> &str {
-        CStr::from_bytes_until_nul(&self.0.name).ok().and_then(|s| s.to_str().ok()).unwrap_or("")
+        CStr::from_bytes_until_nul(&self.0.fileName).ok().and_then(|s| s.to_str().ok()).unwrap_or("")
     }
 
     #[must_use]
@@ -453,8 +453,8 @@ impl TESFile {
 
     /// The index among the light files, meaningful when [`compile_index`](Self::compile_index) is `0xFE`.
     #[must_use]
-    pub fn light_index(&self) -> u16 {
-        self.0.lightIndex
+    pub fn light_file_index(&self) -> u16 {
+        self.0.lightFileIndex
     }
 
     #[must_use]

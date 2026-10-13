@@ -64,7 +64,7 @@ fn check(ok: bool, what: &str) -> Result<(), String> {
 }
 
 fn form(id: FormId) -> Result<&'static TESForm, String> {
-    id.lookup().ok_or_else(|| format!("LookupFormByID({id}) returned null"))
+    id.lookup().ok_or_else(|| format!("FindFormByID({id}) returned null"))
 }
 
 fn run(suite: &str, phase: &str, tests: &[(&str, Test)]) {

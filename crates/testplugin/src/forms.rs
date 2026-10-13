@@ -2,7 +2,7 @@
 //! `docs/subsystems/forms-verify.md`.
 
 use layout::v1_7_104::globals;
-use skyrim::forms::{FormId, FormType, TESDataHandler, TESForm, lookup_form_by_editor_id};
+use skyrim::forms::{FormId, FormType, TESDataHandler, TESForm, find_form_by_editor_id};
 
 use crate::{IRON_SWORD, PLAYER, Test, check, form};
 
@@ -36,8 +36,8 @@ fn form_id() -> Result<String, String> {
     let light = FormId(0xFE00_1800);
     let regular = FormId(0x0500_0800);
     let runtime = FormId(0xFF00_0CFA);
-    check(light.is_light() && light.light_index() == Some(1) && light.local() == 0x800 && light.mod_index() == 0xFE, "light id helpers")?;
-    check(!regular.is_light() && regular.light_index().is_none() && regular.local() == 0x800 && regular.mod_index() == 5, "regular id helpers")?;
+    check(light.is_light() && light.light_file_index() == Some(1) && light.local() == 0x800 && light.mod_index() == 0xFE, "light id helpers")?;
+    check(!regular.is_light() && regular.light_file_index().is_none() && regular.local() == 0x800 && regular.mod_index() == 5, "regular id helpers")?;
     check(runtime.is_runtime() && !light.is_runtime() && !regular.is_runtime(), "runtime id helpers")?;
     check(format!("{light}") == "FE001800" && format!("{regular:?}") == "FormId(05000800)", "formatting")?;
     Ok(format!("{light} light index 1 local 0x800, {regular} mod index 5, {runtime} runtime"))
@@ -47,7 +47,7 @@ fn lookup_player() -> Result<String, String> {
     let player = form(PLAYER)?;
     let global = skyrim::reloc().address(globals::g_PlayerCharacter_ptr).map_err(|e| e.to_string())?;
     let held = unsafe { *(global as *const *const layout::v1_7_104::classes::TESForm) };
-    check(std::ptr::eq(held, player.as_ptr()), "LookupFormByID(0x14) is not the object g_PlayerCharacter_ptr holds")?;
+    check(std::ptr::eq(held, player.as_ptr()), "FindFormByID(0x14) is not the object g_PlayerCharacter_ptr holds")?;
     check(player.form_id() == PLAYER, "formID is not 0x14")?;
     check(player.form_type() == Some(FormType::ACHR), "formType is not ACHR")?;
     check(player.source_files().is_empty(), "the player has source files")?;
@@ -64,30 +64,30 @@ fn lookup_weapon() -> Result<String, String> {
 
 fn lookup_missing() -> Result<String, String> {
     check(FormId(0x7FFF_FFFF).lookup().is_none(), "0x7fffffff resolved to a form")?;
-    Ok("LookupFormByID(0x7fffffff) = null".into())
+    Ok("FindFormByID(0x7fffffff) = null".into())
 }
 
 fn editor_id_keyword() -> Result<String, String> {
-    let keyword = lookup_form_by_editor_id("VendorItemWeapon").ok_or("VendorItemWeapon did not resolve")?;
+    let keyword = find_form_by_editor_id("VendorItemWeapon").ok_or("VendorItemWeapon did not resolve")?;
     check(keyword.form_id() == VENDOR_ITEM_WEAPON, "formID is not 0x8f958")?;
     check(keyword.form_type() == Some(FormType::KYWD), "formType is not KYWD")?;
     let via_slot = keyword.editor_id().map(|s| s.to_string_lossy().into_owned());
     check(via_slot.as_deref() == Some("VendorItemWeapon"), "GetFormEditorID did not return VendorItemWeapon")?;
     let via_field = keyword.as_keyword().and_then(|k| k.name().to_str());
     check(via_field == Some("VendorItemWeapon"), "BGSKeyword.keyword is not VendorItemWeapon (empty before a game is loaded)")?;
-    check(lookup_form_by_editor_id("vendoritemweapon").map(TESForm::form_id) == Some(VENDOR_ITEM_WEAPON), "lookup is not case-insensitive")?;
+    check(find_form_by_editor_id("vendoritemweapon").map(TESForm::form_id) == Some(VENDOR_ITEM_WEAPON), "lookup is not case-insensitive")?;
     Ok(format!("formID={} type=4 (KYWD) editor_id=VendorItemWeapon keyword=VendorItemWeapon", keyword.form_id()))
 }
 
 fn editor_id_missing() -> Result<String, String> {
     for name in ["IronSword", "HousecarlWhiterun", "NoSuchEditorId"] {
-        check(lookup_form_by_editor_id(name).is_none(), &format!("{name} resolved to a form"))?;
+        check(find_form_by_editor_id(name).is_none(), &format!("{name} resolved to a form"))?;
     }
     Ok("IronSword, HousecarlWhiterun, NoSuchEditorId = null".into())
 }
 
 fn editor_id_global() -> Result<String, String> {
-    let hour = lookup_form_by_editor_id("GameHour").ok_or("GameHour did not resolve")?;
+    let hour = find_form_by_editor_id("GameHour").ok_or("GameHour did not resolve")?;
     check(hour.form_type() == Some(FormType::GLOB), "formType is not GLOB")?;
     let value = hour.as_global().ok_or("as_global returned None")?.value();
     Ok(format!("GameHour={value:.2} formID={}", hour.form_id()))
@@ -130,7 +130,7 @@ fn keywords() -> Result<String, String> {
     let found = names(sword.keywords());
     check(found == ["WeapMaterialIron", "WeapTypeSword", "VendorItemWeapon"], &format!("keywords are {found:?}"))?;
     check(sword.has_keyword(vendor), "HasKeyword(VendorItemWeapon) is false")?;
-    let armor = lookup_form_by_editor_id("VendorItemArmor").and_then(TESForm::as_keyword).ok_or("VendorItemArmor did not resolve")?;
+    let armor = find_form_by_editor_id("VendorItemArmor").and_then(TESForm::as_keyword).ok_or("VendorItemArmor did not resolve")?;
     check(!sword.has_keyword(armor), "HasKeyword(VendorItemArmor) is true")?;
     check(form(PLAYER)?.keyword_form().is_none() && form(PLAYER)?.keywords().is_empty(), "the player has a keyword form")?;
     Ok(format!("IronSword keyword form at +0x140: {} has_keyword(VendorItemWeapon)=true has_keyword(VendorItemArmor)=false", found.join(",")))
@@ -182,7 +182,7 @@ fn files() -> Result<String, String> {
 
 fn describe(index: usize, file: Option<&skyrim::forms::TESFile>, light: bool) -> String {
     let Some(f) = file else { return format!("{index}:null") };
-    let own = if light { usize::from(f.light_index()) } else { usize::from(f.compile_index()) };
+    let own = if light { usize::from(f.light_file_index()) } else { usize::from(f.compile_index()) };
     let flags = format!("{}{}{}", if f.is_master() { "M" } else { "" }, if f.is_active() { "A" } else { "" }, if f.is_light() { "L" } else { "" });
     let index_ok = own == index && (light == f.is_light()) && (!light || f.compile_index() == 0xFE);
     format!("{index}:{}:{flags}{}", f.name(), if index_ok { "" } else { ":BADINDEX" })
@@ -191,7 +191,7 @@ fn describe(index: usize, file: Option<&skyrim::forms::TESFile>, light: bool) ->
 fn get_file() -> Result<String, String> {
     let handler = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
     let curios = handler.file("ccBGSSSE037-Curios.esl").ok_or("Curios not found")?;
-    check(curios.is_light() && curios.compile_index() == 0xFE && curios.light_index() == 1, "Curios is not light index 1")?;
+    check(curios.is_light() && curios.compile_index() == 0xFE && curios.light_file_index() == 1, "Curios is not light index 1")?;
     let curios_id = curios.resolve_form_id(0x800).ok_or("Curios is not loaded")?;
     check(curios_id == FormId(0xFE00_1800), &format!("Curios 0x800 resolved to {curios_id}"))?;
     let fish = handler.file("ccBGSSSE001-Fish.esm").ok_or("Fish not found")?;

@@ -19,13 +19,13 @@ use crate::forms::{BGSKeyword, BGSLocation, FormFlags, FormType, TESClass, TESFo
 
 pub use enums::{ActorValue, Actor_boolFlags as ActorFlags, ActorState_flags1 as StateFlags, TESActorBaseData_flags as ActorBaseFlags};
 
-/// `LookupREFRByHandle` (id 12331): `bool (uint* handle, NiPointer<TESObjectREFR>* out)`; the
+/// `ResolveRefHandle` (id 12331): `bool (uint* handle, NiPointer<TESObjectREFR>* out)`; the
 /// `NiPointer` is one pointer slot that receives a referenced object or null.
-type LookupRefrByHandle = unsafe extern "C" fn(handle: *mut u32, out: *mut *mut classes::TESObjectREFR) -> bool;
+type ResolveRefHandleFn = unsafe extern "C" fn(handle: *mut u32, out: *mut *mut classes::TESObjectREFR) -> bool;
 
 pub(crate) struct Fns {
     get_handle: fns::TESObjectREFR__GetHandle_fn,
-    lookup_by_handle: LookupRefrByHandle,
+    resolve_handle: ResolveRefHandleFn,
     get_scale: fns::TESObjectREFR__GetScale_fn,
     get_inventory_changes: fns::TESObjectREFR__GetInventoryChanges_fn,
     get_container: fns::TESObjectREFR__GetContainer_fn,
@@ -58,7 +58,7 @@ impl Fns {
         unsafe {
             Ok(Self {
                 get_handle: crate::resolve(reloc, fns::TESObjectREFR__GetHandle)?,
-                lookup_by_handle: crate::resolve(reloc, fns::LookupREFRByHandle)?,
+                resolve_handle: crate::resolve(reloc, fns::ResolveRefHandle)?,
                 get_scale: crate::resolve(reloc, fns::TESObjectREFR__GetScale)?,
                 get_inventory_changes: crate::resolve(reloc, fns::TESObjectREFR__GetInventoryChanges)?,
                 get_container: crate::resolve(reloc, fns::TESObjectREFR__GetContainer)?,
@@ -308,14 +308,14 @@ impl RefHandle {
         self.0 == 0
     }
 
-    /// The live reference through `LookupREFRByHandle` (id 12331): `None` when the handle is null,
+    /// The live reference through `ResolveRefHandle` (id 12331): `None` when the handle is null,
     /// stale or its table entry inactive. The lookup adds one reference, which the [`RefPtr`]
     /// releases on drop.
     #[must_use]
     pub fn lookup(self) -> Option<RefPtr> {
         let mut handle = self.0;
         let mut out: *mut classes::TESObjectREFR = core::ptr::null_mut();
-        let found = unsafe { (fns().lookup_by_handle)(&raw mut handle, &raw mut out) };
+        let found = unsafe { (fns().resolve_handle)(&raw mut handle, &raw mut out) };
         if !found {
             return None;
         }
@@ -414,12 +414,12 @@ impl InventoryChanges {
     }
 
     /// The entry list; null list items are skipped.
-    pub fn entries(&self) -> impl Iterator<Item = &InventoryEntryData> {
+    pub fn entries(&self) -> impl Iterator<Item = &InventoryEntry> {
         let mut node = unsafe { self.0.entries.as_ref() };
         core::iter::from_fn(move || {
             let n = node?;
             node = unsafe { n.next.cast::<classes::BSSimpleListNode>().as_ref() };
-            Some(unsafe { n.item.cast::<InventoryEntryData>().as_ref() })
+            Some(unsafe { n.item.cast::<InventoryEntry>().as_ref() })
         })
         .flatten()
     }
@@ -434,11 +434,11 @@ impl InventoryChanges {
 /// One inventory entry: the object, its count relative to the base container and the per-stack
 /// extra lists (`raw().extraLists`, a list pass 2 did not walk).
 #[repr(transparent)]
-pub struct InventoryEntryData(classes::InventoryEntryData);
+pub struct InventoryEntry(classes::InventoryEntry);
 
-impl InventoryEntryData {
+impl InventoryEntry {
     #[must_use]
-    pub fn raw(&self) -> &classes::InventoryEntryData {
+    pub fn raw(&self) -> &classes::InventoryEntry {
         &self.0
     }
 
@@ -465,7 +465,7 @@ impl TESContainer {
     }
 
     #[must_use]
-    pub fn entries(&self) -> &[Option<&ContainerObject>] {
+    pub fn entries(&self) -> &[Option<&ContainerEntry>] {
         unsafe { ptr_slice(self.0.entries, self.0.numEntries) }
     }
 
@@ -478,11 +478,11 @@ impl TESContainer {
 
 /// One base container entry.
 #[repr(transparent)]
-pub struct ContainerObject(classes::ContainerObject);
+pub struct ContainerEntry(classes::ContainerEntry);
 
-impl ContainerObject {
+impl ContainerEntry {
     #[must_use]
-    pub fn raw(&self) -> &classes::ContainerObject {
+    pub fn raw(&self) -> &classes::ContainerEntry {
         &self.0
     }
 
@@ -688,15 +688,15 @@ impl ActorValueOwner {
         unsafe { f(self.as_ptr(), value as i32) }
     }
 
-    /// Slot 4, `SetBaseActorValue`.
-    pub fn set_base(&self, value: ActorValue, amount: f32) {
-        let f = self.vtable().SetBaseActorValue().expect("ActorValueOwner slot 4");
+    /// Slot 4, `StoreBaseActorValue`.
+    pub fn store_base(&self, value: ActorValue, amount: f32) {
+        let f = self.vtable().StoreBaseActorValue().expect("ActorValueOwner slot 4");
         unsafe { f(self.as_ptr(), value as i32, amount) }
     }
 
-    /// Slot 5, `ModBaseActorValue`.
-    pub fn mod_base(&self, value: ActorValue, delta: f32) {
-        let f = self.vtable().ModBaseActorValue().expect("ActorValueOwner slot 5");
+    /// Slot 5, `AddBaseActorValue`.
+    pub fn add_base(&self, value: ActorValue, delta: f32) {
+        let f = self.vtable().AddBaseActorValue().expect("ActorValueOwner slot 5");
         unsafe { f(self.as_ptr(), value as i32, delta) }
     }
 
@@ -706,7 +706,7 @@ impl ActorValueOwner {
         unsafe { f(self.as_ptr(), modifier as i32, value as i32, delta) }
     }
 
-    /// Slot 7, `SetActorValue`; the implementation on an actor forwards to [`set_base`](Self::set_base).
+    /// Slot 7, `SetActorValue`; the implementation on an actor forwards to [`store_base`](Self::store_base).
     pub fn set(&self, value: ActorValue, amount: f32) {
         let f = self.vtable().SetActorValue().expect("ActorValueOwner slot 7");
         unsafe { f(self.as_ptr(), value as i32, amount) }
@@ -801,8 +801,8 @@ impl AIProcess {
     /// The equipped weapon entry of a hand through `AIProcess::GetEquippedEntry` (id 39806); the
     /// process owns a copy of the inventory entry.
     #[must_use]
-    pub fn equipped_entry(&self, left_hand: bool) -> Option<&InventoryEntryData> {
-        unsafe { (fns().equipped_entry)((&raw const self.0).cast_mut(), left_hand).cast::<InventoryEntryData>().as_ref() }
+    pub fn equipped_entry(&self, left_hand: bool) -> Option<&InventoryEntry> {
+        unsafe { (fns().equipped_entry)((&raw const self.0).cast_mut(), left_hand).cast::<InventoryEntry>().as_ref() }
     }
 }
 
@@ -817,13 +817,13 @@ impl MiddleHighProcessData {
     }
 
     #[must_use]
-    pub fn left_hand_entry(&self) -> Option<&InventoryEntryData> {
-        unsafe { self.0.leftHandEntry.cast::<InventoryEntryData>().as_ref() }
+    pub fn left_hand_entry(&self) -> Option<&InventoryEntry> {
+        unsafe { self.0.leftHandEntry.cast::<InventoryEntry>().as_ref() }
     }
 
     #[must_use]
-    pub fn right_hand_entry(&self) -> Option<&InventoryEntryData> {
-        unsafe { self.0.rightHandEntry.cast::<InventoryEntryData>().as_ref() }
+    pub fn right_hand_entry(&self) -> Option<&InventoryEntry> {
+        unsafe { self.0.rightHandEntry.cast::<InventoryEntry>().as_ref() }
     }
 }
 
@@ -889,7 +889,7 @@ impl TESNPC {
     }
 
     /// The effective level through `TESActorBaseData::GetLevel` (id 14384); the `level` field holds
-    /// the multiplier times 1000 when `PC_LEVEL_MULT` is set.
+    /// the multiplier times 1000 when `SCALES_WITH_PLAYER_LEVEL` is set.
     #[must_use]
     pub fn level(&self) -> u32 {
         unsafe { (fns().base_level)(self.actor_base_data()) }

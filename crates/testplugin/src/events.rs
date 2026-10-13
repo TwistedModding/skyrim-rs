@@ -15,7 +15,7 @@ use skyrim::events::{
     InputEventList, MenuModeChangeEvent, MenuOpenCloseEvent, Registration, Sink, TESActivateEvent, TESActorLocationChangeEvent, TESCellAttachDetachEvent, TESCombatEvent,
     TESContainerChangedEvent, TESEquipEvent, TESFurnitureEvent, TESHitEvent, TESInitScriptEvent, TESLoadGameEvent, TESLockChangedEvent, TESObjectLoadedEvent, TESPackageEvent,
 };
-use skyrim::forms::{FormId, lookup_form_by_editor_id};
+use skyrim::forms::{FormId, find_form_by_editor_id};
 
 use crate::{PLAYER, Test, check};
 
@@ -210,7 +210,7 @@ fn add_remove() -> Result<String, String> {
 }
 
 fn fixed_string() -> Result<String, String> {
-    let keyword = lookup_form_by_editor_id("VendorItemWeapon").and_then(|f| f.as_keyword()).ok_or("VendorItemWeapon did not resolve")?;
+    let keyword = find_form_by_editor_id("VendorItemWeapon").and_then(|f| f.as_keyword()).ok_or("VendorItemWeapon did not resolve")?;
     let name = keyword.name();
     let before = name.ref_count();
     let s = BSFixedString::new("VendorItemWeapon");

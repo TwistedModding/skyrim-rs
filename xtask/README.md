@@ -32,4 +32,4 @@ Identifiers: `::` becomes `__`, any other run of non-identifier characters `_`, 
 
 ## Not generated
 
-Functions the ledger has not named (41,045 `ID_<n>` placeholders, among them `LookupFormByID`, id 14617) and low-confidence names (`_caller`, string names, `NoRTTI_`) are left out; a mod reaches them by raw id through `hook::Reloc`.
+Functions the ledger has not named (41,045 `ID_<n>` placeholders, among them `FindFormByID`, id 14617) and low-confidence names (`_caller`, string names, `NoRTTI_`) are left out; a mod reaches them by raw id through `hook::Reloc`.

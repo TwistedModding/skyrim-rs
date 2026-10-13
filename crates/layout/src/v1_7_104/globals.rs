@@ -10689,6 +10689,18 @@ pub const INISetting_uiTESCellAnimationUpdateThread_JobList: u64 = 358801;
 pub const INISetting_uiWaitCellReadyTime_General: u64 = 358951;
 /// `RegSetting_sBasePath` at 0x20b6158 (setting, high)
 pub const RegSetting_sBasePath: u64 = 381024;
+/// `g_AccumulatorRegisterFns` at 0x33d4a20 (semantic, high); 30 register functions by renderMode (see enum AccumulatorRenderMode) (high); type `undefined8`
+pub const g_AccumulatorRegisterFns: u64 = 414684;
+/// `g_AccumulatorRenderFns` at 0x33d4b20 (semantic, high); 30 render functions by renderMode; null entries fall back to entry 0 (high); type `undefined8`
+pub const g_AccumulatorRenderFns: u64 = 414716;
+/// `g_Accumulators` at 0x33d3dc0 (semantic, medium); array of 0x33d3db4 (count) BSShaderAccumulator(99) created in ID_105624 (medium); type `undefined8`
+pub const g_Accumulators: u64 = 414604;
+/// `g_ActiveAccumulatorMode` at 0x33d3db0 (semantic, high); mode last activated (high); type `undefined4`
+pub const g_ActiveAccumulatorMode: u64 = 414601;
+/// `g_ActiveRegisterFn` at 0x33d4b10 (semantic, high); register function of the active mode (high); type `undefined8`
+pub const g_ActiveRegisterFn: u64 = 414714;
+/// `g_ActiveRenderFn` at 0x33d4b18 (semantic, high); render function of the active mode (high); type `undefined8`
+pub const g_ActiveRenderFn: u64 = 414715;
 /// `g_ActorMediator_ptr` at 0x3230a38 (semantic, high); pointer to `ActorMediator`: the single BSTEventSink<BSAnimationGraphEvent> registered on every actor graph; the single BSTEventSink<BSAnimationGraphEvent> registered on every actor graph (high); type `ptr:ActorMediator`
 pub const g_ActorMediator_ptr: u64 = 403567;
 /// `g_ActorValueList_ptr` at 0x219dec8 (runtime, high); pointer to `ActorValueList`: pointer to the actor value list singleton; pointer to the actor value list singleton (high); type `ptr:ActorValueList`
@@ -10697,8 +10709,12 @@ pub const g_ActorValueList_ptr: u64 = 400267;
 pub const g_ActorValueStorageLock: u64 = 404014;
 /// `g_AnimationClipDataSingleton_ptr` at 0x31e09f0 (xref_inference, medium)
 pub const g_AnimationClipDataSingleton_ptr: u64 = 401553;
+/// `g_AnimationDeferredUpdateQueue` at 0x3267470 (semantic, medium); optional message queue of managers to generate elsewhere; enable byte +0x430 (0x32678b0) is only written 0 by its init (medium); type `pointer`
+pub const g_AnimationDeferredUpdateQueue: u64 = 409516;
 /// `g_AnimationFileManagerSingleton_ptr` at 0x31e0b30 (xref_inference, medium)
 pub const g_AnimationFileManagerSingleton_ptr: u64 = 401579;
+/// `g_AnimationVariableNames` at 0x219df30 (semantic, high); lazily built table of interned names (bones and graph variables) returned by 0x1544f0 (high); type `undefined1`
+pub const g_AnimationVariableNames: u64 = 400281;
 /// `g_AppResourceCaching__anon_AE50F340_Manager` at 0x3230110 (layout_inference, medium)
 pub const g_AppResourceCaching__anon_AE50F340_Manager: u64 = 403360;
 /// `g_AutoRegisterCombatObject_CombatAimController` at 0x32542d8 (layout_inference, medium)
@@ -11541,6 +11557,10 @@ pub const g_BSResource__anon_AC99F91C_GlobalPaths: u64 = 410436;
 pub const g_BSResource__anon_AC99F91C_LocationTree: u64 = 388535;
 /// `g_BSResource__anon_AEA03715_DefaultLocationData_ptr` at 0x331c370 (xref_inference, medium)
 pub const g_BSResource__anon_AEA03715_DefaultLocationData_ptr: u64 = 410449;
+/// `g_BSScaleformManager` at 0x3241bc0 (semantic, high); static storage of the manager (high); type `class:BSScaleformManager`
+pub const g_BSScaleformManager: u64 = 504086;
+/// `g_BSScaleformManager_ptr` at 0x369b060 (semantic, high); pointer to `BSScaleformManager`: the Scaleform manager singleton; the Scaleform manager singleton (high); type `ptr:BSScaleformManager`
+pub const g_BSScaleformManager_ptr: u64 = 402775;
 /// `g_BSShaderResourceManager` at 0x20d9530 (layout_inference, medium)
 pub const g_BSShaderResourceManager: u64 = 391872;
 /// `g_BSSpeedSamplerDBManager_ptr` at 0x3204670 (xref_inference, medium)
@@ -11581,6 +11601,12 @@ pub const g_BSThreadEvent__anon_939FB6BB_Source: u64 = 410210;
 pub const g_BSWin32GamerProfile: u64 = 410253;
 /// `g_BSWin32SaveDataSystemUtility` at 0x3699c20 (layout_inference, medium)
 pub const g_BSWin32SaveDataSystemUtility: u64 = 415512;
+/// `g_BSXName` at 0x3327878 (semantic, high); the fixed string "BSX" (high); type `class:BSFixedString`
+pub const g_BSXName: u64 = 411157;
+/// `g_BackBufferHeight` at 0x33363d0 (semantic, high); swap chain buffer height (high); type `undefined4`
+pub const g_BackBufferHeight: u64 = 411486;
+/// `g_BackBufferWidth` at 0x33363cc (semantic, high); swap chain buffer width (high); type `undefined4`
+pub const g_BackBufferWidth: u64 = 411485;
 /// `g_BloodSplatterShader` at 0x33d3e30 (semantic, high); pointer to `BSBloodSplatterShader`: holder; holder (high); type `ptr:BSBloodSplatterShader`
 pub const g_BloodSplatterShader: u64 = 414614;
 /// `g_BloodSplatterShaderInstance` at 0x3435c08 (semantic, high); pointer to `BSBloodSplatterShader`: instance pointer; instance pointer (high); type `ptr:BSBloodSplatterShader`
@@ -11591,6 +11617,8 @@ pub const g_CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t: u64 =
 pub const g_CCallbackImpl_1: u64 = 505562;
 /// `g_CCallbackImpl_8` at 0x3699448 (layout_inference, medium)
 pub const g_CCallbackImpl_8: u64 = 415501;
+/// `g_CameraFOVOffset` at 0x3436028 (semantic, low); FOV offset added by ApplyWorldFOV, written from the state's cameraAnim +0x74 (low); type `float`
+pub const g_CameraFOVOffset: u64 = 414942;
 /// `g_CharacterCollisionHandler_ptr` at 0x3230a18 (xref_inference, medium)
 pub const g_CharacterCollisionHandler_ptr: u64 = 403563;
 /// `g_CharacterCollisionMessagePlayerAdapter` at 0x20b6338 (layout_inference, medium)
@@ -11915,12 +11943,30 @@ pub const g_ConcreteTempEffectFactory_ShaderReferenceEffect_10: u64 = 380361;
 pub const g_ConcreteTempEffectFactory_SummonPlacementEffect_11: u64 = 380362;
 /// `g_ConsoleCommandTable` at 0x208d130 (console_cmd, high)
 pub const g_ConsoleCommandTable: u64 = 365650;
+/// `g_ConsoleLog` at 0x31dfb70 (semantic, high); console output buffer; points at the static 0x323a700 (high); type `ConsoleLog*`
+pub const g_ConsoleLog: u64 = 401203;
+/// `g_ConsoleLogStorage` at 0x323a700 (runtime, high); the ConsoleLog object (high); type `ConsoleLog`
+pub const g_ConsoleLogStorage: u64 = 403635;
+/// `g_ConsoleOutputFile` at 0x3255e50 (semantic, high); file console output is mirrored to (high); type `FILE*`
+pub const g_ConsoleOutputFile: u64 = 405877;
+/// `g_ConsoleSelectedRef` at 0x325606c (semantic, high); console's selected reference (high); type `RefHandle`
+pub const g_ConsoleSelectedRef: u64 = 504099;
+/// `g_CreateRenderTargetsCallback` at 0x3336380 (semantic, high); = 0x153b680, called after device creation and after every resize (high); type `undefined8`
+pub const g_CreateRenderTargetsCallback: u64 = 411476;
 /// `g_CurrentMaterial` at 0x36939e0 (semantic, high); pointer to `BSShaderMaterial`: material last handed to SetupMaterial; material last handed to SetupMaterial (high); type `ptr:BSShaderMaterial`
 pub const g_CurrentMaterial: u64 = 415274;
 /// `g_CurrentRenderWindow` at 0x3330198 (runtime, high); pointer to `RenderWindow`: window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38); window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38) (high); type `ptr:RenderWindow`
 pub const g_CurrentRenderWindow: u64 = 411349;
 /// `g_CurrentShader` at 0x36939d8 (semantic, high); pointer to `BSShader`: shader of the technique currently set up; shader of the technique currently set up (high); type `ptr:BSShader`
 pub const g_CurrentShader: u64 = 415273;
+/// `g_CurrentTechnique` at 0x36939d4 (semantic, high); technique id currently set up (high); type `undefined4`
+pub const g_CurrentTechnique: u64 = 415272;
+/// `g_D3D11Context` at 0x3331f30 (semantic, high); the immediate context (high); type `pointer`
+pub const g_D3D11Context: u64 = 411391;
+/// `g_D3D11Device` at 0x3330190 (runtime, high); the device (high); type `pointer`
+pub const g_D3D11Device: u64 = 411348;
+/// `g_DXGIOutput` at 0x3331f18 (semantic, high); IDXGIOutput* of output 0 of the adapter (display mode list) (high); type `undefined8`
+pub const g_DXGIOutput: u64 = 411386;
 /// `g_DebugText_ptr` at 0x333c570 (xref_inference, medium)
 pub const g_DebugText_ptr: u64 = 412090;
 /// `g_DefaultEffectMaterial` at 0x34866e0 (xref_inference, medium); pointer to `BSEffectShaderMaterial`: default effect material; default effect material (medium); type `ptr:BSEffectShaderMaterial`
@@ -11939,6 +11985,8 @@ pub const g_DistantTreeShader: u64 = 414610;
 pub const g_DistantTreeShaderInstance: u64 = 415171;
 /// `g_DoorObstacleAdapter` at 0x20b6368 (layout_inference, medium)
 pub const g_DoorObstacleAdapter: u64 = 381087;
+/// `g_DynamicJobLists` at 0x3220a10 (semantic, medium); 13 job lists by index: 0 DynamicPreRender, 1 DynamicPostRender, 2 ActorCombat, 3 DynamicActorUpdate, 4 DynamicActorMovement, 5 DynamicActorAnim, 6 DynamicCellNode, 7 TESAnimations, 8 RagdollsPostphysics, 9 UpdateNonRenderSafeAI, ... (medium); type `pointer`
+pub const g_DynamicJobLists: u64 = 403091;
 /// `g_EffectSettingCollection` at 0x2076648 (layout_inference, medium)
 pub const g_EffectSettingCollection: u64 = 433120;
 /// `g_EffectShader` at 0x33d3dd8 (semantic, high); pointer to `BSEffectShader`: holder; holder (high); type `ptr:BSEffectShader`
@@ -11949,16 +11997,22 @@ pub const g_EffectShaderInstance: u64 = 415166;
 pub const g_EventSourceHolder_BGSActorCell_ptr: u64 = 402987;
 /// `g_EventSourceHolder_Input_ptr` at 0x3204b30 (runtime, high); pointer to `EventSourceHolder_Input`: pointer to the input device manager; pointer to the input device manager (high); type `ptr:EventSourceHolder_Input`
 pub const g_EventSourceHolder_Input_ptr: u64 = 402776;
+/// `g_EventSourceHolder_MenuOpenClose` at 0x3204b40 (semantic, high); the UI singleton's static storage (0x1c8 bytes) (high); type `class:EventSourceHolder_MenuOpenClose`
+pub const g_EventSourceHolder_MenuOpenClose: u64 = 402767;
 /// `g_EventSourceHolder_MenuOpenClose_ptr` at 0x219e5c0 (runtime, high); pointer to `EventSourceHolder_MenuOpenClose`: pointer to the UI singleton; pointer to the UI singleton (high); type `ptr:EventSourceHolder_MenuOpenClose`
 pub const g_EventSourceHolder_MenuOpenClose_ptr: u64 = 400327;
 /// `g_EventSourceHolder_TES` at 0x219f250 (runtime, high); the holder object (static storage) (high); type `class:EventSourceHolder_TES`; accessor id 14298
 pub const g_EventSourceHolder_TES: u64 = 400420;
 /// `g_EventSourceHolder_User_ptr` at 0x31a5690 (runtime, high); pointer to `EventSourceHolder_User`: pointer to the user-event holder (UserEventEnabledEvent at +8); pointer to the user-event holder (UserEventEnabledEvent at +8) (high); type `ptr:EventSourceHolder_User`
 pub const g_EventSourceHolder_User_ptr: u64 = 400863;
+/// `g_ExtraDataLock` at 0x331c618 (semantic, high); one global lock for every NiObjectNET extra data array (high); type `class:BSReadWriteLock`
+pub const g_ExtraDataLock: u64 = 410492;
 /// `g_FOCollisionListener_ptr` at 0x21a05b8 (xref_inference, medium)
 pub const g_FOCollisionListener_ptr: u64 = 400444;
 /// `g_FOIslandActivationListener_ptr` at 0x31def30 (xref_inference, medium)
 pub const g_FOIslandActivationListener_ptr: u64 = 400944;
+/// `g_FaceMorphQueue` at 0x31e76b8 (semantic, high); face nodes whose morphs are applied by the next 'Face morphing' step (count at 0x31e76c8, spin lock ID_401746) (high); type `pointer`
+pub const g_FaceMorphQueue: u64 = 401743;
 /// `g_FirstPersonAccumulator` at 0x3436240 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10); renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10) (high); type `ptr:BSShaderAccumulator`
 pub const g_FirstPersonAccumulator: u64 = 415011;
 /// `g_FirstPersonCamera` at 0x3436220 (xref_inference, medium); pointer to `NiCamera`: camera of the first-person draws; camera of the first-person draws (medium); type `ptr:NiCamera`
@@ -11969,6 +12023,18 @@ pub const g_FootstepEventSource_ptr: u64 = 403553;
 pub const g_FormTypeSignatures: u64 = 187799;
 /// `g_FrameDelta` at 0x3275608 (runtime, high); seconds of the last frame times the time multiplier; the delta the camera states integrate (chase, zoom, dolly, collision, damping, auto vanity timer) (high); type `float`
 pub const g_FrameDelta: u64 = 410199;
+/// `g_FrameDeltaReal` at 0x327560c (runtime, high); seconds of the last frame before the time multiplier; used for free rotation, free camera rotation, tween menu, first-person pitch lag and input (high); type `float`
+pub const g_FrameDeltaReal: u64 = 410200;
+/// `g_FrameJobScript` at 0x20b4d00 (semantic, high); {fn, name} table of the serving thread's per-frame jobs; segments start at 0x20b4d00, 0x20b4d60, 0x20b4d90, 0x20b4ed0, 0x20b5000, 0x20b50e0, 0x20b5150 (high); type `undefined1`
+pub const g_FrameJobScript: u64 = 380450;
+/// `g_FramePhaseEvents` at 0x3220a98 (semantic, high); per-thread-role manual-reset event sets (set 0 job side 0x1a events, set 1 main thread 10 events) (high); type `pointer`
+pub const g_FramePhaseEvents: u64 = 403108;
+/// `g_FrameSegments` at 0x3220a78 (semantic, high); the 7 segment job lists (count at 0x3220a88): Main update cells, Main update player, Main prepare render, Main render scene, Main render 1st person, Main render end, Main post render (high); type `pointer`
+pub const g_FrameSegments: u64 = 403104;
+/// `g_FrameState` at 0x33363a0 (runtime, high); sizes, jitter, frame counter, dynamic resolution (high); type `class:FrameState`
+pub const g_FrameState: u64 = 411479;
+/// `g_FrameTimeMs` at 0x3275610 (semantic, high); elapsed milliseconds (sum of deltas) (high); type `undefined4`
+pub const g_FrameTimeMs: u64 = 410201;
 /// `g_FrameTimer` at 0x32755f0 (semantic, high); the frame timer: +0x18 delta, +0x1c real delta, +0x20 elapsed ms (high); type `undefined1`
 pub const g_FrameTimer: u64 = 410196;
 /// `g_FreeShadowMapSlices` at 0x20d8ff8 (semantic, high); bit mask of free slices of depth target 4 (focus and local shadow maps) (high); type `undefined4`
@@ -11989,6 +12055,8 @@ pub const g_HandleFreeTail: u64 = 400620;
 pub const g_HandleTable: u64 = 400622;
 /// `g_HandleTableLock` at 0x21a4278 (semantic, high); lock of the handle table (high); type `class:BSReadWriteLock`
 pub const g_HandleTableLock: u64 = 400621;
+/// `g_HavokJobContext` at 0x326fb78 (semantic, low); Havok job queue/thread-pool context; when its +0x28 and +0x30 are set, GenerateBehaviorGraphPose(..., true) runs generate through processGenerateBehaviorGraphJob (low); type `pointer`
+pub const g_HavokJobContext: u64 = 409554;
 /// `g_HelpMessageManager` at 0x3257c90 (layout_inference, medium)
 pub const g_HelpMessageManager: u64 = 406161;
 /// `g_IBSTCreator_CombatObject` at 0x3254768 (layout_inference, medium)
@@ -12033,7 +12101,7 @@ pub const g_IBSTCreator_CombatObject_9: u64 = 405196;
 pub const g_IConvexOverlapImpl: u64 = 389561;
 /// `g_IOManager_ptr` at 0x331f570 (xref_inference, medium)
 pub const g_IOManager_ptr: u64 = 411121;
-/// `g_IObjectHandlePolicy_ptr` at 0x33d3750 (runtime, high); pointer to `SkyrimScript::HandlePolicy`: the VM's handle policy; written only by BSScript::Object::ctor (0x148f060), so it stays null until the first script object exists (after the natives are registered, hence null in the SKSE registration callback); the native executors and Object::IncRef/DecRef use it instead of asking the VM; the VM's handle policy; written only by BSScript::Object::ctor (0x148f060), so it stays null until the first script object exists (after the natives are registered, hence null in the SKSE registration callback); the native executors and Object::IncRef/DecRef use it instead of asking the VM (high); type `ptr:SkyrimScript::HandlePolicy`; accessor id 104810
+/// `g_IObjectHandlePolicy_ptr` at 0x33d3750 (runtime, high); pointer to `SkyrimScript::HandlePolicy`: the VM's handle policy; written only by BSScript::Object::ctor (0x148f060), so it stays null until the first script object exists (after the natives are registered, hence null in the plugin loader's Papyrus registration callback); the native executors and Object::IncRef/DecRef use it instead of asking the VM; the VM's handle policy; written only by BSScript::Object::ctor (0x148f060), so it stays null until the first script object exists (after the natives are registered, hence null in the plugin loader's Papyrus registration callback); the native executors and Object::IncRef/DecRef use it instead of asking the VM (high); type `ptr:SkyrimScript::HandlePolicy`; accessor id 104810
 pub const g_IObjectHandlePolicy_ptr: u64 = 414391;
 /// `g_IPathBuilderFactoryBase` at 0x3254b70 (layout_inference, medium)
 pub const g_IPathBuilderFactoryBase: u64 = 405272;
@@ -12051,10 +12119,12 @@ pub const g_InstalledContent_ptr: u64 = 503225;
 pub const g_InvalidRefHandle: u64 = 400312;
 /// `g_Inventory3DManager_ptr` at 0x32309f8 (xref_inference, medium)
 pub const g_Inventory3DManager_ptr: u64 = 403559;
-/// `g_JobListManager_ServingThread` at 0x3220aa0 (layout_inference, medium); the game update thread object; 0x3220a90 points at it (high); type `class:JobListManager::ServingThread`
-pub const g_JobListManager_ServingThread: u64 = 403109;
+/// `g_JobListServingThread` at 0x3220aa0 (semantic, high); the game update thread object; 0x3220a90 points at it (high); type `class:JobListManager::ServingThread`
+pub const g_JobListServingThread: u64 = 403109;
 /// `g_JournalInputMapping_RemapHandler` at 0x20bc728 (layout_inference, medium)
 pub const g_JournalInputMapping_RemapHandler: u64 = 383628;
+/// `g_LastMessageBoxType` at 0x20bb3f8 (semantic, medium); type of the last answered box (medium); type `u32`
+pub const g_LastMessageBoxType: u64 = 383037;
 /// `g_LightingShader` at 0x33d3e28 (semantic, high); pointer to `BSLightingShader`: refcounted holder of the lighting shader; refcounted holder of the lighting shader (high); type `ptr:BSLightingShader`
 pub const g_LightingShader: u64 = 414613;
 /// `g_LightingShaderInstance` at 0x3436400 (semantic, high); pointer to `BSLightingShader`: instance pointer set by the ctor; instance pointer set by the ctor (high); type `ptr:BSLightingShader`
@@ -12063,10 +12133,24 @@ pub const g_LightingShaderInstance: u64 = 415094;
 pub const g_LipSynchAnimDB_LipAudioInterface: u64 = 359693;
 /// `g_MagicFavorites` at 0x323a1d0 (layout_inference, medium)
 pub const g_MagicFavorites: u64 = 403620;
-/// `g_MenuControls_ptr` at 0x31dfd78 (xref_inference, medium)
+/// `g_MainLoopSteps` at 0x20b4f00 (semantic, medium); named main loop job steps ('Process lists' 0x20b4f00 .. 'Post reset' 0x20b51a0), 16-byte entries (medium); type `struct {fn, const char* name}[]`
+pub const g_MainLoopSteps: u64 = 380514;
+/// `g_MenuControlsCurrentEvent` at 0x32583b8 (semantic, high); pointer to `InputEvent`: the event being dispatched; the event being dispatched (high); type `ptr:InputEvent`
+pub const g_MenuControlsCurrentEvent: u64 = 406354;
+/// `g_MenuControlsEventHandled` at 0x32583c0 (semantic, high); result of the last handler that accepted the current event; when 0 the event is turned into UI messages (high); type `undefined1`
+pub const g_MenuControlsEventHandled: u64 = 406355;
+/// `g_MenuControls_ptr` at 0x31dfd78 (semantic, high); pointer to `MenuControls`: the MenuControls singleton; the MenuControls singleton (high); type `ptr:MenuControls`
 pub const g_MenuControls_ptr: u64 = 401263;
 /// `g_MenuTopicManager_ptr` at 0x31df408 (xref_inference, medium)
 pub const g_MenuTopicManager_ptr: u64 = 401099;
+/// `g_MessageBoxMenu` at 0x32583f8 (semantic, high); the live MessageBoxMenu (high); type `MessageBoxMenu*`
+pub const g_MessageBoxMenu: u64 = 406361;
+/// `g_MessageBoxQueue` at 0x3258408 (semantic, high); pending boxes sorted by depth; data 0x3258408, capacity 0x3258410, size 0x3258418; top = last (high); type `BSTArray<MessageBoxData*>`
+pub const g_MessageBoxQueue: u64 = 406362;
+/// `g_MessageBoxQueueLock` at 0x3258420 (semantic, medium); owner thread id at +0, count at +4 (medium); type `BSSpinLock`
+pub const g_MessageBoxQueueLock: u64 = 406365;
+/// `g_MessageBoxTypeDisabled` at 0x32583d8 (semantic, medium); per-type suppression (medium); type `bool[0x1f]`
+pub const g_MessageBoxTypeDisabled: u64 = 406360;
 /// `g_Mode10Accumulator` at 0x3436238 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x10, decals off; used only by Msg_LODTrees in the references found; renderMode 0x10, decals off; used only by Msg_LODTrees in the references found (high); type `ptr:BSShaderAccumulator`
 pub const g_Mode10Accumulator: u64 = 415010;
 /// `g_MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta` at 0x3350fe0 (layout_inference, medium)
@@ -12127,6 +12211,8 @@ pub const g_ParticleShaderInstance: u64 = 415316;
 pub const g_PathManagerPositionPlayerAdapter: u64 = 381076;
 /// `g_Pathing_ptr` at 0x31df208 (xref_inference, medium)
 pub const g_Pathing_ptr: u64 = 401037;
+/// `g_PerFrameConstantBuffer` at 0x3331f08 (semantic, high); ID3D11Buffer* bound to VS and PS constant slot 12 at every frame start (high); type `undefined8`
+pub const g_PerFrameConstantBuffer: u64 = 411384;
 /// `g_PlaceholderTexture` at 0x3336448 (xref_inference, medium); pointer to `NiSourceTexture`: texture used when a material texture is missing; texture used when a material texture is missing (low); type `ptr:NiSourceTexture`
 pub const g_PlaceholderTexture: u64 = 411503;
 /// `g_PlayerCamera_ptr` at 0x31a5478 (runtime, high); pointer to `PlayerCamera`: the player camera singleton; the player camera singleton (high); type `ptr:PlayerCamera`
@@ -12139,6 +12225,8 @@ pub const g_PlayerControls_ptr: u64 = 400864;
 pub const g_PlayerSleepWaitMovementControllerAdapter: u64 = 381082;
 /// `g_ProcessListMovementInterface` at 0x20b8040 (layout_inference, medium)
 pub const g_ProcessListMovementInterface: u64 = 381866;
+/// `g_ProcessLists_ptr` at 0x219e570 (semantic, medium); process lists; +0x30/+0x40 high actor handles, +0x1e6 run-animations flag (medium); type `pointer`
+pub const g_ProcessLists_ptr: u64 = 400315;
 /// `g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_01A9FA1F_SceneResultsCallBack` at 0x31e02b0 (layout_inference, medium)
 pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_01A9FA1F_SceneResultsCallBack: u64 = 401377;
 /// `g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_7174C251_TopicResultCallBack` at 0x31e0a50 (layout_inference, medium)
@@ -12151,14 +12239,30 @@ pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_A5EEF477_Stage
 pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_A86607C4_ScenePhaseResultsCallBack: u64 = 401386;
 /// `g_RagdollFurnitureListener` at 0x209e320 (layout_inference, medium)
 pub const g_RagdollFurnitureListener: u64 = 370090;
+/// `g_RecentHUDMessages` at 0x3258b80 (semantic, high); repeat-suppression table of ShowHUDMessage (high); type `struct{u32 crc; u32 time;}[8]`
+pub const g_RecentHUDMessages: u64 = 406616;
 /// `g_RenderFrameCounter` at 0x33363f4 (runtime, high); render frame number, incremented by PresentFrame; skin palettes and shader pass lists are cached per value (high); type `undefined4`
 pub const g_RenderFrameCounter: u64 = 411489;
+/// `g_RenderPassPools` at 0x3436660 (semantic, high); two 0x28-byte pools {passes, lightSlots, freeHead +0x10, freeTail +0x18, owner thread +0x20, lock count +0x24} (high); type `undefined1`
+pub const g_RenderPassPools: u64 = 415150;
+/// `g_RenderStateCache` at 0x20cfc00 (semantic, high); pending pipeline state (targets, depth, viewport, state indices) (high); type `class:RenderStateCache`
+pub const g_RenderStateCache: u64 = 388819;
 /// `g_RenderTargets` at 0x3335600 (semantic, medium); the render and depth-stencil target tables; the shadow maps use depth-stencil ids 2, 3 and 4 (medium); type `undefined1`
 pub const g_RenderTargets: u64 = 411451;
+/// `g_Renderer` at 0x3331f40 (semantic, high); renderer singleton (static storage) (high); type `class:Renderer`
+pub const g_Renderer: u64 = 411393;
+/// `g_RendererData_ptr` at 0x3330188 (runtime, high); points at g_Renderer+0x10; code through it uses offsets 0x10 lower (its +0x30 is Renderer+0x40) (high); type `undefined8`
+pub const g_RendererData_ptr: u64 = 411347;
+/// `g_ScaleformHeap_ptr` at 0x3275ae0 (semantic, medium); heap the menu creators allocate from (slot 0x50 Alloc(size, 0)) and IMenu::vdtor frees to (slot 0x60) (medium); type `pointer`
+pub const g_ScaleformHeap_ptr: u64 = 412058;
 /// `g_SceneGraph` at 0x3230740 (runtime, high); pointer to `SceneGraph`: world scene graph (0x150); +0x128 is the frame NiCamera; world scene graph (0x150); +0x128 is the frame NiCamera (high); type `ptr:SceneGraph`
 pub const g_SceneGraph: u64 = 403513;
+/// `g_ScreenHeight` at 0x33363c8 (semantic, high); render height (high); type `undefined4`
+pub const g_ScreenHeight: u64 = 411484;
 /// `g_ScreenSplatterAccumulator` at 0x3436250 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x17, batch kind 100: the screen blood splatter (0x31a5000) drawn in sub17 and after image space in sub20 (techniques 0x5c006073..74); renderMode 0x17, batch kind 100: the screen blood splatter (0x31a5000) drawn in sub17 and after image space in sub20 (techniques 0x5c006073..74) (high); type `ptr:BSShaderAccumulator`
 pub const g_ScreenSplatterAccumulator: u64 = 415013;
+/// `g_ScreenWidth` at 0x33363c4 (semantic, high); render width (FrameState+0x24) (high); type `undefined4`
+pub const g_ScreenWidth: u64 = 411483;
 /// `g_ScriptCommandTable` at 0x207ea90 (console_cmd, high)
 pub const g_ScriptCommandTable: u64 = 361120;
 /// `g_SettingT_INIPrefSettingCollection` at 0x20b3068 (layout_inference, medium)
@@ -12209,6 +12313,8 @@ pub const g_SettingT_INISettingCollection_6: u64 = 383332;
 pub const g_SettingT_INISettingCollection_7: u64 = 388975;
 /// `g_SettingT_INISettingCollection_8` at 0x20d02f8 (layout_inference, medium)
 pub const g_SettingT_INISettingCollection_8: u64 = 388978;
+/// `g_ShaderMaterialCache` at 0x32309d8 (semantic, low); cache of shared materials keyed by hash (low); type `pointer`
+pub const g_ShaderMaterialCache: u64 = 403555;
 /// `g_ShadowSceneNode` at 0x20d68b0 (runtime, high); pointer to `ShadowSceneNode`: the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty; the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty (high); type `ptr:ShadowSceneNode`
 pub const g_ShadowSceneNode: u64 = 390951;
 /// `g_SkyShader` at 0x33d3e20 (semantic, high); pointer to `BSSkyShader`: holder; holder (high); type `ptr:BSSkyShader`
@@ -12283,6 +12389,8 @@ pub const g_SkyrimVM: u64 = 403618;
 pub const g_SkyrimVM_ptr_2: u64 = 400475;
 /// `g_StaticAvoidNodeManager_ptr` at 0x3230a10 (xref_inference, medium)
 pub const g_StaticAvoidNodeManager_ptr: u64 = 403562;
+/// `g_StencilMaskNodes` at 0x33d3e80 (semantic, low); array of 16-byte entries (node at +8) re-drawn in the depth pre-pass with stencil ref i+1; count at 0x33d3e90 (low); type `undefined8`
+pub const g_StencilMaskNodes: u64 = 414623;
 /// `g_SystemEventAdapter` at 0x20b6370 (layout_inference, medium)
 pub const g_SystemEventAdapter: u64 = 381088;
 /// `g_TESAudio_ScriptedMusicState` at 0x3211aa0 (layout_inference, medium)
@@ -12305,6 +12413,16 @@ pub const g_TESFormIDMap_ptr: u64 = 400507;
 pub const g_TESFormInstanceCount: u64 = 400506;
 /// `g_TES_ptr` at 0x32303b8 (xref_inference, medium)
 pub const g_TES_ptr: u64 = 403450;
+/// `g_TaskQueueEnabled` at 0x20b64a0 (semantic, medium); when 0 QueueTask runs the task immediately (medium); type `undefined1`
+pub const g_TaskQueueEnabled: u64 = 381120;
+/// `g_TaskQueueLock` at 0x3242688 (semantic, high); recursive spin lock (owner tid, count) around the queue swap and push (high); type `undefined8`
+pub const g_TaskQueueLock: u64 = 403767;
+/// `g_TaskQueue_ptr` at 0x3242650 (semantic, high); pointer to `TaskQueueHolder`: the game's deferred-task queue (the queue SetFirstPerson task 0x4b goes to); the game's deferred-task queue (the queue SetFirstPerson task 0x4b goes to) (high); type `ptr:TaskQueueHolder`
+pub const g_TaskQueue_ptr: u64 = 403759;
+/// `g_TimeMultiplier` at 0x20ccac8 (runtime, high); current global time multiplier applied to g_FrameDelta, eased toward 0x20ccacc at rate 0x20ccad0 (high); type `float`
+pub const g_TimeMultiplier: u64 = 388442;
+/// `g_TopMenuName` at 0x333b058 (semantic, high); function-local static 'Top Menu' compared with every message name in ProcessMessages (high); type `class:BSFixedString`
+pub const g_TopMenuName: u64 = 412035;
 /// `g_TypeNode_BGSAddonNodeSoundHandleExtra` at 0x31a5428 (string, high)
 pub const g_TypeNode_BGSAddonNodeSoundHandleExtra: u64 = 400793;
 /// `g_TypeNode_BGSDecalNode` at 0x21a3e10 (string, high)
@@ -13125,10 +13243,24 @@ pub const g_TypeNode_bhkWorldM: u64 = 411582;
 pub const g_TypeNode_bhkWorldObject: u64 = 411515;
 /// `g_TypeNode_hkPackedNiTriStripsData` at 0x3337908 (string, high)
 pub const g_TypeNode_hkPackedNiTriStripsData: u64 = 411603;
+/// `g_UI3DScene_ptr` at 0x3230a00 (semantic, medium); pointer to the static menu 3D scene manager at 0x323a280 (no vtable): +0x8 culler, +0x10 and +0x18 accumulators, +0x20 NiCamera, +0x28 lock, +0x30 scene [1], +0x38 eight mode roots, +0x78 per-mode light definition chains, +0x90 current mode, +0x98 mode stack (medium); type `pointer`
+pub const g_UI3DScene_ptr: u64 = 403560;
+/// `g_UI3DShadowsEnabled` at 0x20bbdd0 (semantic, low); gate for the Mist mode's shadow lights (1 in the image) (low); type `undefined4`
+pub const g_UI3DShadowsEnabled: u64 = 383327;
 /// `g_UIBlurManager_ptr` at 0x3230018 (xref_inference, medium)
 pub const g_UIBlurManager_ptr: u64 = 403350;
+/// `g_UIMenuStackLock` at 0x333b050 (semantic, high); recursive spin lock (owner thread id u32 at +0, recursion count u32 at +4; Sleep(0) spins, Sleep(1) after 10,000) guarding the menu stack and the counters (high); type `undefined8`
+pub const g_UIMenuStackLock: u64 = 412033;
+/// `g_UIMessageQueue` at 0x333b0b0 (semantic, high); the queue's static storage (0xb80 bytes) (high); type `class:UIMessageQueue`
+pub const g_UIMessageQueue: u64 = 412047;
+/// `g_UIMessageQueue_ptr` at 0x21a05c0 (semantic, high); pointer to `UIMessageQueue`: pointer to the UI message queue (0x14333b0b0); null before the UI ctor and after shutdown; pointer to the UI message queue (0x14333b0b0); null before the UI ctor and after shutdown (high); type `ptr:UIMessageQueue`
+pub const g_UIMessageQueue_ptr: u64 = 400445;
 /// `g_UISaveLoadManager_ptr` at 0x31e0140 (xref_inference, medium)
 pub const g_UISaveLoadManager_ptr: u64 = 401336;
+/// `g_UIStrings_ptr` at 0x21a05c8 (semantic, high); interface string table: one BSFixedString per data type and menu name, filled by 0x1177a90 (high); type `pointer`
+pub const g_UIStrings_ptr: u64 = 400446;
+/// `g_UserEventNames` at 0x32048d0 (semantic, low); table of user event BSFixedStrings the camera handlers compare (+0x70 togglePOV-like, +0x1e8/+0x1f0 zoom in/out-like) (low); type `pointer`
+pub const g_UserEventNames: u64 = 402638;
 /// `g_UtilityShader` at 0x33d3de8 (semantic, high); pointer to `BSUtilityShader`: holder; holder (high); type `ptr:BSUtilityShader`
 pub const g_UtilityShader: u64 = 414609;
 /// `g_UtilityShaderInstance` at 0x3698b60 (semantic, high); pointer to `BSUtilityShader`: instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes; instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes (high); type `ptr:BSUtilityShader`
@@ -13331,3 +13463,5 @@ pub const g_hkpCharacterStateManager_ptr: u64 = 411552;
 pub const g_hkpEntityListener: u64 = 370091;
 /// `g_hkpNullAgent` at 0x3261330 (layout_inference, medium)
 pub const g_hkpNullAgent: u64 = 409740;
+/// `g_strIsAttacking` at 0x3252908 (semantic, high); interned 'IsAttacking' built at static init (0xac720) (high); type `class:BSFixedString`
+pub const g_strIsAttacking: u64 = 404830;

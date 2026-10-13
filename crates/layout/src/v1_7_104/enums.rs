@@ -2047,7 +2047,7 @@ impl ActorState_flags1 {
     pub const SPRINTING: Self = Self(0x100);
     /// sneaking (high)
     pub const SNEAKING: Self = Self(0x200);
-    /// swimming (medium)
+    /// swimming (high)
     pub const SWIMMING: Self = Self(0x400);
 
     #[must_use]
@@ -2271,6 +2271,104 @@ impl BSXFlags_flags {
     }
 }
 
+/// Named bits of `GFxMovieView.flags` (ui pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct GFxMovieView_flags(pub u32);
+
+impl GFxMovieView_flags {
+    /// viewportDirty (medium)
+    pub const VIEWPORT_DIRTY: Self = Self(0x1);
+    /// paused (high)
+    pub const PAUSED: Self = Self(0x100000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `GFxValue.type` (ui pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct GFxValue_type_(pub u32);
+
+impl GFxValue_type_ {
+    /// managed (high)
+    pub const MANAGED: Self = Self(0x40);
+    /// convertRequest (medium)
+    pub const CONVERT_REQUEST: Self = Self(0x80);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `IMenu.flags` (ui pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct IMenu_flags(pub u32);
+
+impl IMenu_flags {
+    /// pausesGame (high)
+    pub const PAUSES_GAME: Self = Self(0x1);
+    /// keepLoaded (medium)
+    pub const KEEP_LOADED: Self = Self(0x2);
+    /// usesCursor (medium)
+    pub const USES_CURSOR: Self = Self(0x4);
+    /// pushesMenuInputContext (medium)
+    pub const PUSHES_MENU_INPUT_CONTEXT: Self = Self(0x8);
+    /// modal (high)
+    pub const MODAL: Self = Self(0x10);
+    /// flag20 (low)
+    pub const FLAG20: Self = Self(0x20);
+    /// isOpen (high)
+    pub const IS_OPEN: Self = Self(0x40);
+    /// usesMenu3D (low)
+    pub const USES_MENU3_D: Self = Self(0x80);
+    /// receivesQueueEndUpdate (medium)
+    pub const RECEIVES_QUEUE_END_UPDATE: Self = Self(0x100);
+    /// hidesMenusBelow (medium)
+    pub const HIDES_MENUS_BELOW: Self = Self(0x200);
+    /// cursorFollowsPlatform (low)
+    pub const CURSOR_FOLLOWS_PLATFORM: Self = Self(0x400);
+    /// allowsSaving (medium)
+    pub const ALLOWS_SAVING: Self = Self(0x800);
+    /// hasPreRender (medium)
+    pub const HAS_PRE_RENDER: Self = Self(0x1000);
+    /// inventoryItemMenu (low)
+    pub const INVENTORY_ITEM_MENU: Self = Self(0x2000);
+    /// flag4000 (low)
+    pub const FLAG4000: Self = Self(0x4000);
+    /// flag8000 (low)
+    pub const FLAG8000: Self = Self(0x8000);
+    /// ignoredForCursor (low)
+    pub const IGNORED_FOR_CURSOR: Self = Self(0x10000);
+    /// flag20000 (low)
+    pub const FLAG20000: Self = Self(0x20000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `NiAVObject.flags` (render pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -2340,7 +2438,7 @@ impl TESActorBaseData_flags {
     /// unique (high)
     pub const UNIQUE: Self = Self(0x20);
     /// level is a multiplier of the player's (high)
-    pub const PC_LEVEL_MULT: Self = Self(0x80);
+    pub const SCALES_WITH_PLAYER_LEVEL: Self = Self(0x80);
 
     #[must_use]
     pub const fn bits(self) -> u32 {
@@ -2383,9 +2481,9 @@ impl TESFile_fileFlags {
 pub struct TESForm_formFlags(pub u32);
 
 impl TESForm_formFlags {
-    /// record deleted (medium)
+    /// record deleted (high)
     pub const DELETED: Self = Self(0x20);
-    /// known to the player (medium)
+    /// known to the player (high)
     pub const PLAYER_KNOWS: Self = Self(0x40);
     /// reference disabled (high)
     pub const DISABLED: Self = Self(0x800);

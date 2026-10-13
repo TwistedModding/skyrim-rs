@@ -19,9 +19,10 @@ skse::plugin! {
 type LookupFormById = extern "C" fn(form_id: u32) -> *mut c_void;
 type AddEventSink = extern "C" fn(source: *mut c_void, sink: *mut c_void) -> *mut c_void;
 
-/// `LookupFormByID` is still the unnamed `ID_14617` in the ledger, so `fns` has no constant for it.
-const LOOKUP_FORM_BY_ID_SE: u64 = 14461;
-const LOOKUP_FORM_BY_ID_AE: u64 = 14617;
+/// `FindFormByID` on both runtimes; the AE id is `fns::FindFormByID`, the SE id has only the 1.5.97
+/// run behind it.
+const FIND_FORM_BY_ID_SE: u64 = 14461;
+const FIND_FORM_BY_ID_AE: u64 = 14617;
 /// Size of `PlayerCharacter::ctor` in the ledger (`data/funcs.json`, rva 0x73f670); the function holds one
 /// direct call to `BSTEventSource<MenuOpenCloseEvent>::AddEventSink`.
 const PLAYER_CHARACTER_CTOR_LEN: usize = 0x1012;
@@ -113,7 +114,7 @@ fn read_layouts() {
     }
     let lookup = LOOKUP.get().unwrap().original();
     for form_id in [0x14u32, 0x7] {
-        log!("LookupFormByID({form_id:#x}) -> {}", describe(lookup(form_id).cast()));
+        log!("FindFormByID({form_id:#x}) -> {}", describe(lookup(form_id).cast()));
     }
     log!("generated PlayerCharacter is {:#x} bytes", size_of::<classes::PlayerCharacter>());
 }
@@ -122,7 +123,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
     let msg = unsafe { &*msg };
     if msg.kind == skse::MessagingInterface::DATA_LOADED {
         log!(
-            "data loaded, LookupFormByID ran {} times, BSTEventSource<MenuOpenCloseEvent>::AddEventSink ran {} times, its call site in PlayerCharacter::ctor ran {} times",
+            "data loaded, FindFormByID ran {} times, BSTEventSource<MenuOpenCloseEvent>::AddEventSink ran {} times, its call site in PlayerCharacter::ctor ran {} times",
             LOOKUP_CALLS.load(Ordering::Relaxed),
             ADD_SINK_CALLS.load(Ordering::Relaxed),
             ADD_SINK_SITE_CALLS.load(Ordering::Relaxed)
@@ -157,10 +158,10 @@ fn load(skse: &skse::Interface) -> bool {
     );
     let reloc = RELOC.get_or_init(|| reloc);
 
-    let id = if skse::runtime::is_se(skse.runtime_version) { LOOKUP_FORM_BY_ID_SE } else { LOOKUP_FORM_BY_ID_AE };
+    let id = if skse::runtime::is_se(skse.runtime_version) { FIND_FORM_BY_ID_SE } else { FIND_FORM_BY_ID_AE };
     match unsafe { reloc.hook(id, lookup_detour as LookupFormById) } {
         Ok(h) => {
-            log!("hooked LookupFormByID id {id} at {:#x}", h.target());
+            log!("hooked FindFormByID id {id} at {:#x}", h.target());
             let _ = LOOKUP.set(h);
         }
         Err(e) => {

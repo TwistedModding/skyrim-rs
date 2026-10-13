@@ -179,7 +179,7 @@ pub struct SemGlobal {
     pub confidence: String,
 }
 
-/// One `export/semantic/<subsystem>.json`.
+/// One `export/semantic/<subsystem>.json`; `removed.json` there is the rename map, not a pass.
 #[derive(Deserialize)]
 pub struct Semantic {
     pub subsystem: String,
@@ -223,7 +223,7 @@ pub fn read(re_dir: &Path) -> Result<Inputs, Box<dyn Error>> {
     let formtypes = serde_json::from_slice(&load("data/formtypes.json")?)?;
     let mut names: Vec<String> = fs::read_dir(re_dir.join("export/semantic"))?
         .filter_map(|e| e.ok().map(|e| e.file_name().to_string_lossy().into_owned()))
-        .filter(|n| std::path::Path::new(n).extension().is_some_and(|e| e == "json"))
+        .filter(|n| std::path::Path::new(n).extension().is_some_and(|e| e == "json") && n != "removed.json")
         .collect();
     names.sort();
     let mut semantic = Vec::new();
