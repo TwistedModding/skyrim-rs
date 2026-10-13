@@ -5,7 +5,7 @@
 
 use std::fmt::Write as _;
 
-use windows_sys::Win32::Foundation::{EXCEPTION_ACCESS_VIOLATION, EXCEPTION_ILLEGAL_INSTRUCTION, EXCEPTION_INT_DIVIDE_BY_ZERO, EXCEPTION_STACK_OVERFLOW, HMODULE};
+use windows_sys::Win32::Foundation::{EXCEPTION_ACCESS_VIOLATION, HMODULE};
 use windows_sys::Win32::System::Diagnostics::Debug::{AddVectoredExceptionHandler, EXCEPTION_POINTERS};
 use windows_sys::Win32::System::LibraryLoader::{GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS, GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, GetModuleFileNameW, GetModuleHandleExW};
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
@@ -29,7 +29,9 @@ fn locate(address: usize) -> String {
 unsafe extern "system" fn handler(info: *mut EXCEPTION_POINTERS) -> i32 {
     let Some(info) = (unsafe { info.as_ref() }) else { return EXCEPTION_CONTINUE_SEARCH };
     let Some(record) = (unsafe { info.ExceptionRecord.as_ref() }) else { return EXCEPTION_CONTINUE_SEARCH };
-    if !matches!(record.ExceptionCode, EXCEPTION_ACCESS_VIOLATION | EXCEPTION_ILLEGAL_INSTRUCTION | EXCEPTION_INT_DIVIDE_BY_ZERO | EXCEPTION_STACK_OVERFLOW) {
+    // Error-class codes only; the C++ exception code and the thread-name and breakpoint codes are normal traffic.
+    let code = record.ExceptionCode as u32;
+    if code < 0xC000_0000 || code == 0xE06D_7363 {
         return EXCEPTION_CONTINUE_SEARCH;
     }
     let mut line = format!("CRASH code {:#x} at {} on thread {}", record.ExceptionCode, locate(record.ExceptionAddress as usize), unsafe { GetCurrentThreadId() });

@@ -12,17 +12,24 @@ $SkseLogs = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition\SKSE"
 $RuntimeJson = "$GameDir\Data\SKSE\Plugins\devbench\runtime.json"
 $Base = $null
 
+# Every request opens its own connection: DevBench drops idle keep-alive connections, and a reused one fails with
+# "connection that was expected to be kept alive was closed". A refused connection is retried while the game process
+# is alive, so a stalled server does not end the run before the game does.
 function Invoke-Tool($Tool, $Body) {
-    try { return (Invoke-WebRequest "$Base/api/tool/$Tool" -Method Post -ContentType "application/json" -Body $Body -UseBasicParsing).Content }
-    catch {
-        $r = $_.Exception.Response
-        if (-not $r) { throw }
-        throw "devbench $Tool failed: " + (New-Object IO.StreamReader($r.GetResponseStream())).ReadToEnd()
+    for ($attempt = 1; ; $attempt++) {
+        try { return (Invoke-WebRequest "$Base/api/tool/$Tool" -Method Post -ContentType "application/json" -Body $Body -UseBasicParsing -DisableKeepAlive -TimeoutSec 120).Content }
+        catch {
+            $r = $_.Exception.Response
+            if ($r) { throw "devbench $Tool failed: " + (New-Object IO.StreamReader($r.GetResponseStream())).ReadToEnd() }
+            if ($attempt -ge 5 -or -not (Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue)) { throw }
+            Write-Warning "devbench $Tool: $($_.Exception.Message); retrying"
+            Start-Sleep -Seconds 3
+        }
     }
 }
 
 function Get-Health {
-    try { return (Invoke-WebRequest "$Base/api/health" -UseBasicParsing -TimeoutSec 5).Content | ConvertFrom-Json } catch { return $null }
+    try { return (Invoke-WebRequest "$Base/api/health" -UseBasicParsing -DisableKeepAlive -TimeoutSec 5).Content | ConvertFrom-Json } catch { return $null }
 }
 
 function Wait-Until([scriptblock]$Cond, [int]$Seconds, [string]$What) {
@@ -77,7 +84,7 @@ try {
     $runId = ($queued | ConvertFrom-Json).runId
     $status = Wait-Run $tool $runId
     $status | Out-File -Encoding utf8 "$OutDir\result.json"
-    (Invoke-WebRequest "$Base/api/events" -UseBasicParsing).Content | Out-File -Encoding utf8 "$OutDir\events.json"
+    (Invoke-WebRequest "$Base/api/events" -UseBasicParsing -DisableKeepAlive).Content | Out-File -Encoding utf8 "$OutDir\events.json"
     $r = ($status | ConvertFrom-Json).result
     "runId=$runId ok=$($r.ok) aborted=$($r.aborted) stepsRun=$($r.stepsRun) elapsedMs=$($r.elapsedMs)"
     $failed = @($r.results | Where-Object { $_.ok -eq $false -or $_.timedOut })
