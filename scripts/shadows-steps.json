@@ -1,33 +1,183 @@
 [
-  {"tool": "console", "args": {"command": "load retrace-base"}},
-  {"waitFor": "postLoadGame"},
-  {"waitUntil": "playerLoaded"},
-  {"wait": 3000},
-  {"tool": "console", "args": {"command": "set gamehour to 12"}},
-  {"tool": "console", "args": {"command": "fw 81a"}},
-  {"tool": "camera", "args": {"action": "setPov", "pov": "third"}},
-  {"wait": 10000},
-  {"tool": "camera", "args": {"action": "get"}},
-  {"tool": "inspect", "args": {"kind": "lights", "scope": "scene", "limit": 200}},
-  {"tool": "capture", "args": {"checkpointId": "render-third", "kind": "native", "allowNative": true, "cleanup": true}},
-  {"tool": "camera", "args": {"action": "setPov", "pov": "first"}},
-  {"wait": 10000},
-  {"tool": "camera", "args": {"action": "get"}},
-  {"tool": "inspect", "args": {"kind": "lights", "scope": "scene", "limit": 200}},
-  {"tool": "capture", "args": {"checkpointId": "render-first", "kind": "native", "allowNative": true, "cleanup": true}},
-  {"tool": "inspect", "args": {"kind": "scene"}},
-  {"tool": "console", "args": {"command": "save skyrim-rs-shadows-1"}},
-  {"waitFor": "saveGame"},
-  {"wait": 2000},
-  {"tool": "camera", "args": {"action": "setPov", "pov": "third"}},
-  {"wait": 3000},
-  {"tool": "console", "args": {"command": "coc WhiterunDragonsreach"}},
-  {"wait": 15000},
-  {"tool": "camera", "args": {"action": "setPov", "pov": "first"}},
-  {"wait": 5000},
-  {"tool": "inspect", "args": {"kind": "lights", "scope": "scene", "limit": 200}},
-  {"tool": "camera", "args": {"action": "get"}},
-  {"tool": "console", "args": {"command": "save skyrim-rs-shadows-2"}},
-  {"waitFor": "saveGame"},
-  {"wait": 2000}
+  {
+    "tool": "console",
+    "args": {
+      "command": "load retrace-base"
+    }
+  },
+  {
+    "waitFor": "postLoadGame"
+  },
+  {
+    "waitUntil": "playerLoaded"
+  },
+  {
+    "wait": 3000
+  },
+  {
+    "tool": "console",
+    "args": {
+      "command": "set gamehour to 17"
+    }
+  },
+  {
+    "tool": "console",
+    "args": {
+      "command": "fw 81a"
+    }
+  },
+  {
+    "tool": "camera",
+    "args": {
+      "action": "setPov",
+      "pov": "third"
+    }
+  },
+  {
+    "wait": 10000
+  },
+  {
+    "tool": "camera",
+    "args": {
+      "action": "get"
+    }
+  },
+  {
+    "tool": "inspect",
+    "args": {
+      "kind": "lights",
+      "scope": "scene",
+      "limit": 200
+    }
+  },
+  {
+    "tool": "capture",
+    "args": {
+      "checkpointId": "shadows-third",
+      "kind": "native",
+      "allowNative": true,
+      "cleanup": true
+    }
+  },
+  {
+    "tool": "camera",
+    "args": {
+      "action": "setPov",
+      "pov": "first"
+    }
+  },
+  {
+    "wait": 10000
+  },
+  {
+    "tool": "camera",
+    "args": {
+      "action": "get"
+    }
+  },
+  {
+    "tool": "inspect",
+    "args": {
+      "kind": "lights",
+      "scope": "scene",
+      "limit": 200
+    }
+  },
+  {
+    "tool": "console",
+    "args": {
+      "command": "player.setangle x 55"
+    }
+  },
+  {
+    "wait": 1500
+  },
+  {
+    "tool": "capture",
+    "args": {
+      "checkpointId": "shadows-first",
+      "kind": "native",
+      "allowNative": true,
+      "cleanup": true
+    }
+  },
+  {
+    "tool": "console",
+    "args": {
+      "command": "player.setangle x 0"
+    }
+  },
+  {
+    "tool": "inspect",
+    "args": {
+      "kind": "scene"
+    }
+  },
+  {
+    "tool": "console",
+    "args": {
+      "command": "save skyrim-rs-shadows-1"
+    }
+  },
+  {
+    "waitFor": "saveGame"
+  },
+  {
+    "wait": 2000
+  },
+  {
+    "tool": "camera",
+    "args": {
+      "action": "setPov",
+      "pov": "third"
+    }
+  },
+  {
+    "wait": 3000
+  },
+  {
+    "tool": "console",
+    "args": {
+      "command": "coc WhiterunDragonsreach"
+    }
+  },
+  {
+    "wait": 15000
+  },
+  {
+    "tool": "camera",
+    "args": {
+      "action": "setPov",
+      "pov": "first"
+    }
+  },
+  {
+    "wait": 5000
+  },
+  {
+    "tool": "inspect",
+    "args": {
+      "kind": "lights",
+      "scope": "scene",
+      "limit": 200
+    }
+  },
+  {
+    "tool": "camera",
+    "args": {
+      "action": "get"
+    }
+  },
+  {
+    "tool": "console",
+    "args": {
+      "command": "save skyrim-rs-shadows-2"
+    }
+  },
+  {
+    "waitFor": "saveGame"
+  },
+  {
+    "wait": 2000
+  }
 ]
