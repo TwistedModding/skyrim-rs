@@ -30,7 +30,7 @@ unsafe extern "system" fn handler(info: *mut EXCEPTION_POINTERS) -> i32 {
     let Some(info) = (unsafe { info.as_ref() }) else { return EXCEPTION_CONTINUE_SEARCH };
     let Some(record) = (unsafe { info.ExceptionRecord.as_ref() }) else { return EXCEPTION_CONTINUE_SEARCH };
     // Error-class codes only; the C++ exception code and the thread-name and breakpoint codes are normal traffic.
-    let code = record.ExceptionCode as u32;
+    let code = record.ExceptionCode.cast_unsigned();
     if code < 0xC000_0000 || code == 0xE06D_7363 {
         return EXCEPTION_CONTINUE_SEARCH;
     }
