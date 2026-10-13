@@ -142,6 +142,8 @@ fn scene() -> Result<String, String> {
     ))
 }
 
+/// The sun's cascade records are filled by the first frame of the loaded cell; before it (at
+/// `PostLoadGame`) only the counts and the bias are checked.
 fn sun() -> Result<String, String> {
     let w = world()?;
     let sun = w.sun_shadow_light().ok_or("sunShadowLight is null")?;
@@ -152,9 +154,11 @@ fn sun() -> Result<String, String> {
     let maps = sun.shadow_maps();
     check(maps.len() == 2, &format!("{} shadow map records", maps.len()))?;
     check(maps[0].slice() == 0 && maps[1].slice() == 1, &format!("slices {} and {}", maps[0].slice(), maps[1].slice()))?;
-    let rendered = frame_counter() > FRAME_AT_LOAD.load(Ordering::Relaxed);
-    check(!rendered || maps.iter().all(|m| m.viewport() == [0, 4096, 4096, 0]), &format!("viewports {:?} {:?}", maps[0].viewport(), maps[1].viewport()))?;
     let cams = [maps[0].raw().camera, maps[1].raw().camera];
+    if frame_counter() == FRAME_AT_LOAD.load(Ordering::Relaxed) {
+        return Ok(format!("sun {} at {:p} before the first frame: maps {}, biasScale {}, cascade cameras {:p} {:p}", class.class, sun.raw(), maps.len(), sun.bias_scale(), cams[0], cams[1]));
+    }
+    check(maps.iter().all(|m| m.viewport() == [0, 4096, 4096, 0]), &format!("viewports {:?} {:?}", maps[0].viewport(), maps[1].viewport()))?;
     check(!cams[0].is_null() && !cams[1].is_null() && cams[0] != cams[1], &format!("cascade cameras {:p} {:p}", cams[0], cams[1]))?;
     check(maps[0].raw().accumulator != maps[1].raw().accumulator, "the two cascades share an accumulator")?;
     let light_camera = sun.light_camera().ok_or("lightCamera is null")?;

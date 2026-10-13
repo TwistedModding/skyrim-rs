@@ -108,8 +108,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             run("events", "saveGame", events::TESTS);
             run("papyrus", "saveGame", papyrus::CALLS_TESTS);
             let save = render::SAVES.fetch_add(1, Ordering::Relaxed) + 1;
-            run("render", &format!("save{save}"), render::TESTS);
-            run("render", &format!("save{save}"), render::CASTER_TESTS);
+            run("render", &format!("save{save}"), &[render::TESTS, render::CASTER_TESTS].concat());
         }
         _ => {}
     }
