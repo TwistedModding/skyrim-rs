@@ -7,7 +7,7 @@
 
 use std::fs::File;
 use std::sync::{Mutex, OnceLock};
-use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 
 use layout::v1_7_104::{classes, vtables};
 use skyrim::actors::PlayerCharacter;
@@ -23,6 +23,9 @@ skse::plugin! {
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 static CULL: OnceLock<hook::Hook<CullFn>> = OnceLock::new();
 static SWITCH: OnceLock<hook::Hook<SetFirstPersonFn>> = OnceLock::new();
+/// The third-person root cached on the main thread; null outside a loaded game, when the
+/// detour must not touch the player.
+static THIRD_ROOT: AtomicPtr<classes::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
 static FIRST_PERSON: AtomicBool = AtomicBool::new(false);
 /// In first person: visits of the third-person root by shadow cameras, by other cameras, the
 /// face node skipped for other cameras, the face node passed to shadow cameras.
@@ -40,26 +43,28 @@ macro_rules! log {
     };
 }
 
-/// Shows the third-person root in first person; third person is the engine's own state.
+/// Caches the third-person root and shows it in first person; third person is the engine's own state.
 fn apply(first_person: bool) {
     FIRST_PERSON.store(first_person, Ordering::Relaxed);
-    if first_person && let Some(root) = PlayerCharacter::get().and_then(PlayerCharacter::third_person_root) {
+    let root = PlayerCharacter::get().and_then(PlayerCharacter::third_person_root);
+    THIRD_ROOT.store(root.map_or(core::ptr::null_mut(), |r| r.as_ptr().cast_mut().cast()), Ordering::Release);
+    if first_person && let Some(root) = root {
         root.set_hidden(false);
         log!("first person: third-person root {:p} shown (flags {:#x})", root.raw(), root.flags());
     }
 }
 
 unsafe extern "C" fn switch_detour(player: *mut classes::PlayerCharacter, first_person: bool) {
-    unsafe { SWITCH.get().expect("installed before enabling").original()(player, first_person) }
+    unsafe { SWITCH.get().expect("stored before enabling").original()(player, first_person) }
     apply(first_person);
 }
 
 unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess) {
-    let original = CULL.get().expect("installed before enabling").original();
+    let original = CULL.get().expect("stored before enabling").original();
     if FIRST_PERSON.load(Ordering::Relaxed)
-        && let (Some(n), Some(c), Some(root)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) }, PlayerCharacter::get().and_then(PlayerCharacter::third_person_root))
+        && let (Some(n), Some(c), Some(root)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) }, unsafe { NiAVObject::from_ptr(THIRD_ROOT.load(Ordering::Acquire)) })
     {
-        if core::ptr::eq(n.as_ptr(), root.as_ptr().cast()) {
+        if core::ptr::eq(n.as_ptr(), root.as_ptr()) {
             if c.is_shadow_pass() { &BODY_SHADOW } else { &BODY_CAMERA }.fetch_add(1, Ordering::Relaxed);
         } else if n.class().is_some_and(|v| v.id == vtables::BSFaceGenNiNode_vtable::ID) && n.is_under(root, 24) {
             if c.is_shadow_pass() {
@@ -79,6 +84,8 @@ fn install() -> Result<(), String> {
     log!("hooked NiAVObject::Cull at {:#x} and PlayerCharacter::SetFirstPerson at {:#x}", cull.target(), switch.target());
     let _ = CULL.set(cull);
     let _ = SWITCH.set(switch);
+    CULL.get().expect("just set").enable().map_err(|e| format!("enable NiAVObject::Cull: {e}"))?;
+    SWITCH.get().expect("just set").enable().map_err(|e| format!("enable SetFirstPerson: {e}"))?;
     Ok(())
 }
 
@@ -88,6 +95,10 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             if let Err(e) = install() {
                 log!("FAIL install: {e}");
             }
+        }
+        skse::MessagingInterface::PRE_LOAD_GAME | skse::MessagingInterface::NEW_GAME => {
+            FIRST_PERSON.store(false, Ordering::Relaxed);
+            THIRD_ROOT.store(core::ptr::null_mut(), Ordering::Release);
         }
         skse::MessagingInterface::POST_LOAD_GAME => {
             for c in [&BODY_SHADOW, &BODY_CAMERA, &HEAD_SKIPPED, &HEAD_SHADOW] {

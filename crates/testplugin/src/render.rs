@@ -5,7 +5,7 @@
 //! often each player root was visited per view and per pass.
 
 use std::sync::OnceLock;
-use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 
 use layout::v1_7_104::{classes, vtables};
 use skyrim::actors::PlayerCharacter;
@@ -18,6 +18,11 @@ pub const CASTER_TESTS: &[(&str, Test)] = &[("casters", casters), ("indoors", in
 
 static CULL: OnceLock<hook::Hook<CullFn>> = OnceLock::new();
 static SWITCH: OnceLock<hook::Hook<SetFirstPersonFn>> = OnceLock::new();
+/// Counting is on between `PostLoadGame` and the next `PreLoadGame`/`NewGame`: outside that
+/// window the player's roots are being replaced and must not be read from the job threads.
+static ACTIVE: AtomicBool = AtomicBool::new(false);
+static THIRD_ROOT: AtomicPtr<classes::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
+static FIRST_ROOT: AtomicPtr<classes::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
 static FIRST_PERSON: AtomicBool = AtomicBool::new(false);
 static SWITCHES: AtomicU32 = AtomicU32::new(0);
 static FRAME_AT_LOAD: AtomicU32 = AtomicU32::new(0);
@@ -39,16 +44,18 @@ fn count(view: usize, root: usize, pass: usize, hidden: usize, is_self: usize) -
 }
 
 unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess) {
-    let original = CULL.get().expect("installed before enabling").original();
-    if let (Some(n), Some(c), Some(player)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) }, PlayerCharacter::get()) {
-        let roots = [player.third_person_root(), player.first_person_root()];
+    let original = CULL.get().expect("stored before enabling").original();
+    if ACTIVE.load(Ordering::Acquire)
+        && let (Some(n), Some(c)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) })
+    {
+        let roots = [THIRD_ROOT.load(Ordering::Relaxed), FIRST_ROOT.load(Ordering::Relaxed)];
         for (root_index, root) in roots.iter().enumerate() {
-            let Some(root) = root else { continue };
+            let Some(root) = (unsafe { NiAVObject::from_ptr(*root) }) else { continue };
             if n.is_under(root, 24) {
                 let view = usize::from(FIRST_PERSON.load(Ordering::Relaxed));
                 let pass = usize::from(!c.is_shadow_pass());
                 let hidden = usize::from(n.is_hidden());
-                let is_self = usize::from(core::ptr::eq(n.as_ptr(), root.as_ptr().cast()));
+                let is_self = usize::from(core::ptr::eq(n.as_ptr(), root.as_ptr()));
                 COUNTS[index(view, root_index, pass, hidden, is_self)].fetch_add(1, Ordering::Relaxed);
                 if root_index == 0 && n.class().is_some_and(|c| c.id == vtables::BSFaceGenNiNode_vtable::ID) {
                     HEAD[view * 2 + pass].fetch_add(1, Ordering::Relaxed);
@@ -61,25 +68,34 @@ unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut cl
 }
 
 unsafe extern "C" fn switch_detour(player: *mut classes::PlayerCharacter, first_person: bool) {
-    unsafe { SWITCH.get().expect("installed before enabling").original()(player, first_person) }
+    unsafe { SWITCH.get().expect("stored before enabling").original()(player, first_person) }
     FIRST_PERSON.store(first_person, Ordering::Relaxed);
     SWITCHES.fetch_add(1, Ordering::Relaxed);
 }
 
-/// Installs both detours; called once at `DataLoaded`.
+/// Creates both detours, stores them and enables them; called once at `DataLoaded`.
 pub fn install() -> Result<String, String> {
     let cull = unsafe { skyrim::render::hook_cull(cull_detour) }.map_err(|e| format!("NiAVObject::Cull: {e}"))?;
     let switch = unsafe { skyrim::render::hook_set_first_person(switch_detour) }.map_err(|e| format!("SetFirstPerson: {e}"))?;
     let (cull_target, switch_target) = (cull.target(), switch.target());
     let _ = CULL.set(cull);
     let _ = SWITCH.set(switch);
+    CULL.get().expect("just set").enable().map_err(|e| format!("enable NiAVObject::Cull: {e}"))?;
+    SWITCH.get().expect("just set").enable().map_err(|e| format!("enable SetFirstPerson: {e}"))?;
     Ok(format!("NiAVObject::Cull at {cull_target:#x}, PlayerCharacter::SetFirstPerson at {switch_target:#x}"))
 }
 
-/// Resets the view from the player and clears the counters; called after a load.
+/// Stops counting; called at `PreLoadGame` and `NewGame`, before the roots are replaced.
+pub fn suspend() {
+    ACTIVE.store(false, Ordering::Release);
+}
+
+/// Caches the roots and the view from the player, clears the counters and starts counting; called after a load.
 pub fn reset() {
     if let Some(p) = PlayerCharacter::get() {
         FIRST_PERSON.store(!p.is_third_person(), Ordering::Relaxed);
+        THIRD_ROOT.store(p.third_person_root().map_or(core::ptr::null_mut(), |r| r.as_ptr().cast_mut().cast()), Ordering::Relaxed);
+        FIRST_ROOT.store(p.first_person_root().map_or(core::ptr::null_mut(), |r| r.as_ptr().cast_mut().cast()), Ordering::Relaxed);
     }
     for c in &COUNTS {
         c.store(0, Ordering::Relaxed);
@@ -88,6 +104,7 @@ pub fn reset() {
         c.store(0, Ordering::Relaxed);
     }
     FRAME_AT_LOAD.store(frame_counter(), Ordering::Relaxed);
+    ACTIVE.store(true, Ordering::Release);
 }
 
 fn player() -> Result<&'static PlayerCharacter, String> {

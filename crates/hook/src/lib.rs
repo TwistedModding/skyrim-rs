@@ -62,21 +62,39 @@ unsafe impl<F: Copy> Send for Hook<F> {}
 unsafe impl<F: Copy> Sync for Hook<F> {}
 
 impl<F: Copy> Hook<F> {
-    /// Creates and enables a detour on the function at `target`.
+    /// Creates and enables a detour on the function at `target`. The detour is live before this
+    /// returns, so a detour that needs the trampoline from a shared place must use [`Hook::create`]
+    /// and [`Hook::enable`] around storing it.
     ///
     /// # Safety
     /// `target` must be the entry of a function whose signature is `F`, and `detour`
     /// must be callable in its place. `F` must be a function pointer type.
     pub unsafe fn install(target: usize, detour: F) -> Result<Self, Error> {
+        let hook = unsafe { Self::create(target, detour) }?;
+        hook.enable()?;
+        Ok(hook)
+    }
+
+    /// Creates the detour without enabling it; the target keeps running the original until
+    /// [`Hook::enable`].
+    ///
+    /// # Safety
+    /// Same as [`Hook::install`].
+    pub unsafe fn create(target: usize, detour: F) -> Result<Self, Error> {
         const { assert!(size_of::<F>() == size_of::<usize>(), "F must be a function pointer type") };
         let detour: *mut c_void = unsafe { core::mem::transmute_copy(&detour) };
-        let target_ptr = target as *mut c_void;
-        let trampoline = unsafe { MinHook::create_hook(target_ptr, detour) }?;
-        if let Err(e) = unsafe { MinHook::enable_hook(target_ptr) } {
-            let _ = unsafe { MinHook::remove_hook(target_ptr) };
+        let trampoline = unsafe { MinHook::create_hook(target as *mut c_void, detour) }?;
+        Ok(Self { target, trampoline: unsafe { core::mem::transmute_copy(&trampoline) } })
+    }
+
+    /// Enables a created detour; on failure the hook is removed and cannot be enabled again.
+    pub fn enable(&self) -> Result<(), Error> {
+        let target = self.target as *mut c_void;
+        if let Err(e) = unsafe { MinHook::enable_hook(target) } {
+            let _ = unsafe { MinHook::remove_hook(target) };
             return Err(e.into());
         }
-        Ok(Self { target, trampoline: unsafe { core::mem::transmute_copy(&trampoline) } })
+        Ok(())
     }
 
     /// The original function, callable from the detour.

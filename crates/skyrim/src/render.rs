@@ -56,23 +56,28 @@ pub fn frame_counter() -> u32 {
     unsafe { (*fns().frame_counter).load(Ordering::Relaxed) }
 }
 
-/// Detours `NiAVObject::Cull` (id 70267), the gate every culling process passes a node through.
+/// Creates, disabled, a detour on `NiAVObject::Cull` (id 70267), the gate every culling process
+/// passes a node through. Store the hook where the detour finds its trampoline, then
+/// [`hook::Hook::enable`] it: the game culls on every frame from the main menu on, so a detour
+/// enabled before it can reach the trampoline is called at once.
 ///
-/// The detour runs on the job threads during the shadow and main camera culls, concurrently; it
-/// must forward to [`hook::Hook::original`] for every node it does not skip.
+/// The detour runs on the job threads during the shadow and main camera culls, concurrently, and
+/// during loads while the scene is rebuilt; it must forward to [`hook::Hook::original`] for every
+/// node it does not skip and must not dereference objects the main thread may be replacing.
 ///
 /// # Safety
-/// Same as [`hook::Hook::install`].
+/// Same as [`hook::Hook::create`].
 pub unsafe fn hook_cull(detour: CullFn) -> Result<hook::Hook<CullFn>, hook::Error> {
-    unsafe { hook::Hook::install(fns().cull, detour) }
+    unsafe { hook::Hook::create(fns().cull, detour) }
 }
 
-/// Detours `PlayerCharacter::SetFirstPerson` (id 40476), called on the main thread at every switch.
+/// Creates, disabled, a detour on `PlayerCharacter::SetFirstPerson` (id 40476), called on the
+/// main thread at every switch; store it, then [`hook::Hook::enable`].
 ///
 /// # Safety
-/// Same as [`hook::Hook::install`].
+/// Same as [`hook::Hook::create`].
 pub unsafe fn hook_set_first_person(detour: SetFirstPersonFn) -> Result<hook::Hook<SetFirstPersonFn>, hook::Error> {
-    unsafe { hook::Hook::install(fns().set_first_person, detour) }
+    unsafe { hook::Hook::create(fns().set_first_person, detour) }
 }
 
 /// Three floats at `bytes[0..12]`.

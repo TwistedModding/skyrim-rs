@@ -86,6 +86,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             render::reset();
             run("render", "postLoadGame", render::TESTS);
         }
+        skse::MessagingInterface::PRE_LOAD_GAME | skse::MessagingInterface::NEW_GAME => render::suspend(),
         skse::MessagingInterface::SAVE_GAME => {
             actors::STATE_CHANGED.store(true, Ordering::Relaxed);
             run("actors", "saveGame", actors::TESTS);

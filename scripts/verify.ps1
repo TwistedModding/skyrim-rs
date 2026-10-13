@@ -15,10 +15,14 @@ $Plugins = "$GameDir\Data\SKSE\Plugins"
 $Scripts = "$GameDir\Data\Scripts"
 $Root = Split-Path $PSScriptRoot -Parent
 $Dll = "$Root\target\release\skyrim_rs_test.dll"
-$ModDll = "$Root\target\release\skyrim_rs_equip_counter.dll"
+$Mods = @{
+    papyrus = @{ crate = "equip-counter"; dll = "skyrim_rs_equip_counter.dll"; log = "skyrim-rs-equip-counter.log" }
+    shadows = @{ crate = "first-person-shadows"; dll = "skyrim_rs_first_person_shadows.dll"; log = "skyrim-rs-first-person-shadows.log" }
+}
+$Mod = $Mods[$Suite]
 $PluginLog = "skyrim-rs-test.log"
-$ModLog = "skyrim-rs-equip-counter.log"
-$Logs = "skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog, $ModLog
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log })
+$Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $TestSave = "skyrim-rs-$Suite"
 
 if (Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue) { throw "SkyrimSE is already running" }
