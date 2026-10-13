@@ -7,7 +7,6 @@ use std::path::PathBuf;
 use windows_sys::Win32::System::Com::CoTaskMemFree;
 use windows_sys::Win32::UI::Shell::{FOLDERID_Documents, SHGetKnownFolderPath};
 
-use crate::runtime::{STORE_EPIC, STORE_GOG, is_vr, unpack};
 
 fn documents() -> io::Result<PathBuf> {
     let mut path = core::ptr::null_mut::<u16>();
@@ -25,18 +24,10 @@ fn documents() -> io::Result<PathBuf> {
     Ok(out)
 }
 
-/// `<Documents>\My Games\<game>\SKSE` for the running game.
-pub fn dir(packed_runtime: u32) -> io::Result<PathBuf> {
-    let game = if is_vr(packed_runtime) {
-        "Skyrim VR"
-    } else {
-        match unpack(packed_runtime)[3] {
-            STORE_GOG => "Skyrim Special Edition GOG",
-            STORE_EPIC => "Skyrim Special Edition EPIC",
-            _ => "Skyrim Special Edition",
-        }
-    };
-    Ok(documents()?.join("My Games").join(game).join("SKSE"))
+/// `<Documents>\My Games\Skyrim Special Edition\SKSE`, where the Steam SE and AE loaders write
+/// their logs (the only folder seen; other stores and VR are unverified and take the same path).
+pub fn dir(_packed_runtime: u32) -> io::Result<PathBuf> {
+    Ok(documents()?.join("My Games").join("Skyrim Special Edition").join("SKSE"))
 }
 
 /// Creates (truncates) `<name>.log` in the SKSE log folder.

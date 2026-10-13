@@ -1,8 +1,10 @@
-//! Known game runtimes with the SKSE build and Address Library file that go with each.
-
-pub const STORE_STEAM: u32 = 0;
-pub const STORE_GOG: u32 = 1;
-pub const STORE_EPIC: u32 = 2;
+//! Known game runtimes and the Address Library file that goes with each.
+//!
+//! The packed version is the number the SKSE loader prints after the version in its log
+//! (`version = 2.3.1 01070680` for 1.7.104.0, `01050610` for 1.5.97.0): major in the top byte,
+//! minor in the next, build in the next twelve bits, the store in the low nibble (0 on Steam, the
+//! only store seen). The table lists the runtimes an Address Library file or a game install on
+//! this machine proved; a runtime missing here is unknown, not unsupported.
 
 #[must_use]
 pub const fn pack(major: u32, minor: u32, build: u32, store: u32) -> u32 {
@@ -14,17 +16,15 @@ pub const fn unpack(packed: u32) -> [u32; 4] {
     [packed >> 24, (packed >> 16) & 0xFF, (packed >> 4) & 0xFFF, packed & 0xF]
 }
 
+/// 1.5.x is Special Edition; 1.6 and later are Anniversary Edition.
 #[must_use]
 pub const fn is_se(packed: u32) -> bool {
     packed >> 16 <= 0x0105
 }
 
-#[must_use]
-pub const fn is_vr(packed: u32) -> bool {
-    packed >> 16 == 0x0104
-}
-
-/// Address Library file name for a runtime; SE and VR use the old prefix, AE the new one.
+/// Address Library file name for a runtime: the SE files are `version-M-m-b-0.bin`, the AE files
+/// `versionlib-M-m-b-0.bin` (the 1.7.104 SKSE DLL carries the format string
+/// `Data\SKSE\Plugins\versionlib-%d-%d-%d-%d.bin`).
 #[must_use]
 pub fn versionlib_name(packed: u32) -> String {
     let [major, minor, build, _] = unpack(packed);
@@ -36,85 +36,16 @@ pub struct Runtime {
     pub file_version: [u16; 4],
     pub packed: u32,
     pub name: &'static str,
-    /// Last SKSE release built for this runtime. The 1.6.659 GOG entry is inferred, not verified.
-    pub skse: &'static str,
     pub versionlib: &'static str,
+    /// The Address Library file is format 5 (1.7.99 and later), read from the files themselves.
     pub v5: bool,
 }
 
 pub const RUNTIMES: &[Runtime] = &[
-    Runtime {
-        file_version: [1, 4, 15, 0],
-        packed: pack(1, 4, 15, STORE_STEAM),
-        name: "VR 1.4.15",
-        skse: "SKSEVR 2.0.12",
-        versionlib: "version-1-4-15-0.bin",
-        v5: false,
-    },
-    Runtime {
-        file_version: [1, 5, 97, 0],
-        packed: pack(1, 5, 97, STORE_STEAM),
-        name: "SE 1.5.97",
-        skse: "2.0.20",
-        versionlib: "version-1-5-97-0.bin",
-        v5: false,
-    },
-    Runtime {
-        file_version: [1, 6, 640, 0],
-        packed: pack(1, 6, 640, STORE_STEAM),
-        name: "AE 1.6.640",
-        skse: "2.2.3",
-        versionlib: "versionlib-1-6-640-0.bin",
-        v5: false,
-    },
-    Runtime {
-        file_version: [1, 6, 659, 0],
-        packed: pack(1, 6, 659, STORE_GOG),
-        name: "AE 1.6.659 GOG",
-        skse: "2.2.3",
-        versionlib: "versionlib-1-6-659-0.bin",
-        v5: false,
-    },
-    Runtime {
-        file_version: [1, 6, 1130, 0],
-        packed: pack(1, 6, 1130, STORE_STEAM),
-        name: "AE 1.6.1130",
-        skse: "2.2.5",
-        versionlib: "versionlib-1-6-1130-0.bin",
-        v5: false,
-    },
-    Runtime {
-        file_version: [1, 6, 1170, 0],
-        packed: pack(1, 6, 1170, STORE_STEAM),
-        name: "AE 1.6.1170",
-        skse: "2.2.8",
-        versionlib: "versionlib-1-6-1170-0.bin",
-        v5: false,
-    },
-    Runtime {
-        file_version: [1, 6, 1179, 0],
-        packed: pack(1, 6, 1179, STORE_GOG),
-        name: "AE 1.6.1179 GOG",
-        skse: "2.2.6 GOG",
-        versionlib: "versionlib-1-6-1179-0.bin",
-        v5: false,
-    },
-    Runtime {
-        file_version: [1, 7, 99, 0],
-        packed: pack(1, 7, 99, STORE_STEAM),
-        name: "AE 1.7.99",
-        skse: "2.3.0",
-        versionlib: "versionlib-1-7-99-0.bin",
-        v5: true,
-    },
-    Runtime {
-        file_version: [1, 7, 104, 0],
-        packed: pack(1, 7, 104, STORE_STEAM),
-        name: "AE 1.7.104",
-        skse: "2.3.1",
-        versionlib: "versionlib-1-7-104-0.bin",
-        v5: true,
-    },
+    Runtime { file_version: [1, 5, 97, 0], packed: pack(1, 5, 97, 0), name: "SE 1.5.97", versionlib: "version-1-5-97-0.bin", v5: false },
+    Runtime { file_version: [1, 6, 1170, 0], packed: pack(1, 6, 1170, 0), name: "AE 1.6.1170", versionlib: "versionlib-1-6-1170-0.bin", v5: false },
+    Runtime { file_version: [1, 7, 99, 0], packed: pack(1, 7, 99, 0), name: "AE 1.7.99", versionlib: "versionlib-1-7-99-0.bin", v5: true },
+    Runtime { file_version: [1, 7, 104, 0], packed: pack(1, 7, 104, 0), name: "AE 1.7.104", versionlib: "versionlib-1-7-104-0.bin", v5: true },
 ];
 
 #[must_use]
@@ -127,12 +58,10 @@ mod tests {
     use super::*;
 
     #[test]
-    fn packing_matches_skse() {
+    fn packing_matches_the_loader_log() {
         assert_eq!(pack(1, 5, 97, 0), 0x0105_0610);
-        assert_eq!(pack(1, 6, 1170, 0), 0x0106_4920);
-        assert_eq!(pack(1, 6, 1179, STORE_GOG), 0x0106_49B1);
         assert_eq!(pack(1, 7, 104, 0), 0x0107_0680);
-        assert_eq!(unpack(0x0106_49B1), [1, 6, 1179, 1]);
+        assert_eq!(unpack(0x0106_4920), [1, 6, 1170, 0]);
     }
 
     #[test]
@@ -143,6 +72,6 @@ mod tests {
             assert_eq!(versionlib_name(r.packed), r.versionlib);
             assert_eq!(r.v5, r.packed >= pack(1, 7, 99, 0));
         }
-        assert!(is_se(pack(1, 5, 97, 0)) && is_vr(pack(1, 4, 15, 0)) && !is_se(pack(1, 6, 640, 0)));
+        assert!(is_se(pack(1, 5, 97, 0)) && !is_se(pack(1, 6, 1170, 0)));
     }
 }

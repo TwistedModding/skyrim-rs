@@ -99,6 +99,9 @@ pub struct MessagingInterface {
 
 impl MessagingInterface {
     pub const VERSION: u32 = 2;
+    /// Message kinds as the loader logs them (`dispatch message (N) to plugin listeners`): 0, 1, 6
+    /// and 8 arrive at startup in that order, 2 before and 3 after a save load, 4 at a save
+    /// (all seen in the in-game runs); 5 and 7 are retained from the first build and unverified.
     pub const POST_LOAD: u32 = 0;
     pub const POST_POST_LOAD: u32 = 1;
     pub const PRE_LOAD_GAME: u32 = 2;
@@ -160,14 +163,28 @@ impl PapyrusInterface {
     }
 }
 
+/// The two flag words of the version data, named by what SKSE 2.3.1 does with each bit.
+/// `independence` is the word at +0x304,
+/// `independence_ex` the word at +0x308.
 pub mod independence {
-    pub const ADDRESS_LIBRARY_POST_AE: u32 = 1 << 0;
+    /// +0x304 bit 0: set by most plugins that resolve addresses through the Address Library; with
+    /// it set the loader does not require [`EX_STRUCTS_1_6_629`] on a runtime the plugin does not list.
+    pub const ADDRESS_LIBRARY: u32 = 1 << 0;
+    /// +0x304 bit 1: skips the link-timestamp gate ("must be recompiled for new address library").
     pub const SIGNATURES: u32 = 1 << 1;
-    pub const STRUCTS_POST_629: u32 = 1 << 2;
-    pub const EX_NO_STRUCT_USE: u32 = 1 << 0;
-    pub const EX_ADDRESS_LIBRARY_V5: u32 = 1 << 1;
+    /// +0x308 bit 0: the plugin reads Address Library ids; the runtime's file must exist
+    /// ("address library needs to be updated" otherwise) and the build must postdate the id change
+    /// unless [`SIGNATURES`] is set.
+    pub const EX_ADDRESS_LIBRARY_IDS: u32 = 1 << 0;
+    /// +0x308 bit 1: version independent without Address Library ids.
+    pub const EX_NO_ADDRESS_LIBRARY: u32 = 1 << 1;
+    /// +0x308 bit 2: built for the structure layouts of 1.6.629 and later ("only compatible with
+    /// versions earlier than 1.6.629" without it or [`ADDRESS_LIBRARY`] on an unlisted runtime).
+    pub const EX_STRUCTS_1_6_629: u32 = 1 << 2;
 }
 
+/// The data behind the exported `SKSEPlugin_Version` symbol, 0x350 bytes: the layout every field
+/// of which was read from at least two real plugin DLLs.
 #[repr(C)]
 pub struct PluginVersionData {
     pub data_version: u32,
@@ -175,11 +192,20 @@ pub struct PluginVersionData {
     pub name: [u8; 256],
     pub author: [u8; 256],
     pub support_email: [u8; 252],
-    pub version_independence_ex: u32,
-    pub version_independence: u32,
+    /// +0x304, the `independence` bits.
+    pub independence: u32,
+    /// +0x308, the `independence_ex` bits.
+    pub independence_ex: u32,
+    /// Packed runtime versions the plugin was built for, zero-terminated.
     pub compatible_versions: [u32; 16],
-    pub se_version_required: u32,
+    /// Packed minimum SKSE version ("requires newer script extender" below it), 0 for none.
+    pub minimum_skse: u32,
 }
+
+const _: () = assert!(core::mem::offset_of!(PluginVersionData, independence) == 0x304);
+const _: () = assert!(core::mem::offset_of!(PluginVersionData, independence_ex) == 0x308);
+const _: () = assert!(core::mem::offset_of!(PluginVersionData, compatible_versions) == 0x30C);
+const _: () = assert!(core::mem::offset_of!(PluginVersionData, minimum_skse) == 0x34C);
 
 const _: () = assert!(size_of::<PluginVersionData>() == 848);
 
@@ -187,23 +213,17 @@ impl PluginVersionData {
     pub const VERSION: u32 = 1;
 
     #[must_use]
-    pub const fn new(
-        name: &str,
-        author: &str,
-        plugin_version: u32,
-        version_independence: u32,
-        version_independence_ex: u32,
-    ) -> Self {
+    pub const fn new(name: &str, author: &str, plugin_version: u32, independence: u32, independence_ex: u32) -> Self {
         Self {
             data_version: Self::VERSION,
             plugin_version,
             name: fill(name),
             author: fill(author),
             support_email: [0; 252],
-            version_independence_ex,
-            version_independence,
+            independence,
+            independence_ex,
             compatible_versions: [0; 16],
-            se_version_required: 0,
+            minimum_skse: 0,
         }
     }
 }
@@ -220,8 +240,9 @@ const fn fill<const N: usize>(s: &str) -> [u8; N] {
     out
 }
 
-/// Declares a plugin: exports `SKSEPlugin_Version` for AE loaders and
-/// `SKSEPlugin_Query` / `SKSEPlugin_Load` for SE and VR loaders.
+/// Declares a plugin: exports `SKSEPlugin_Version`, which SKSE 2.3.1 reads before any code runs,
+/// and `SKSEPlugin_Query` / `SKSEPlugin_Load`, which SKSE 2.0.19 calls in that order (both seen in
+/// the loader logs of the two installs).
 ///
 /// ```ignore
 /// skse::plugin! {
@@ -233,8 +254,10 @@ const fn fill<const N: usize>(s: &str) -> [u8; N] {
 /// fn load(skse: &skse::Interface) -> bool { true }
 /// ```
 ///
-/// Defaults claim Address Library (post-AE, V5) independence and post-1.6.629 structs.
-/// Pass `independence:` and `independence_ex:` to override both.
+/// The defaults (`independence` = `SIGNATURES`, `independence_ex` = `EX_ADDRESS_LIBRARY_IDS |
+/// EX_STRUCTS_1_6_629`) are what a mod on `layout` needs on every runtime SKSE 2.3.1 accepts:
+/// the Address Library file must exist, the 1.6.629 structure check passes, and the link-timestamp
+/// gate is skipped. Pass `independence:` and `independence_ex:` to override both.
 #[macro_export]
 macro_rules! plugin {
     (
@@ -271,13 +294,13 @@ macro_rules! plugin {
         }
     };
     (@ind) => {
-        $crate::independence::ADDRESS_LIBRARY_POST_AE | $crate::independence::STRUCTS_POST_629
+        $crate::independence::SIGNATURES
     };
     (@ind $e:expr) => {
         $e
     };
     (@ex) => {
-        $crate::independence::EX_ADDRESS_LIBRARY_V5
+        $crate::independence::EX_ADDRESS_LIBRARY_IDS | $crate::independence::EX_STRUCTS_1_6_629
     };
     (@ex $e:expr) => {
         $e

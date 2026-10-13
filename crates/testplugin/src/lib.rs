@@ -132,6 +132,17 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
     }
 }
 
+/// Logs what `QueryInterface` answers for ids 0 to 9 and the first dword of each object.
+fn probe_interfaces(skse: &skse::Interface) {
+    let answers: Vec<String> = (0..10u32)
+        .map(|id| {
+            let p = unsafe { (skse.query_interface)(id) };
+            if p.is_null() { format!("{id}:null") } else { format!("{id}:{:#x}:v{}", p as usize, unsafe { p.cast::<u32>().read() }) }
+        })
+        .collect();
+    log!("interfaces: {}; plugin handle {}, release index {}", answers.join(" "), skse.plugin_handle(), unsafe { (skse.get_release_index)() });
+}
+
 unsafe extern "C" fn on_register(registry: *mut core::ffi::c_void) -> bool {
     papyrus::REGISTRY.store(registry, Ordering::Relaxed);
     run("papyrus", "register", papyrus::REGISTER);
@@ -153,6 +164,7 @@ fn load(skse: &skse::Interface) -> bool {
     }
     let [major, minor, build, store] = skse::runtime::unpack(skse.runtime_version);
     log!("runtime {major}.{minor}.{build} store {store}, skse {:08x}", skse.skse_version);
+    probe_interfaces(skse);
     if let Err(e) = skyrim::init(skse) {
         log!("FAIL init: {e}");
         return false;
