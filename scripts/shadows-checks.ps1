@@ -14,7 +14,7 @@ $headShadow = Captured $save 'passed (\d+) times to shadow cameras'
 $rows = @(
     @{ name = "hooks";           plugin = ($modLines | Where-Object { $_ -match '^hooked ' }) -join ' '; devbench = "SKSE loaded the mod next to the test plugin";
        ok = (($modLines -match '^hooked NiAVObject::Cull').Count -eq 1) }
-    @{ name = "view";            plugin = $shown; devbench = "camera get after setPov first: pov $((Step 13).pov) stateId $((Step 13).stateId); in the inn after setPov first: pov $((Step 27).pov)";
+    @{ name = "view";            plugin = $shown; devbench = "camera get after setPov first: pov $((Step 13).pov) stateId $((Step 13).stateId); in Dragonsreach after setPov first: pov $((Step 27).pov)";
        ok = ((Step 13).pov -eq "first" -and (Step 27).pov -eq "first" -and $shown -ne $null) }
     @{ name = "body shadow";     plugin = $save; devbench = "first-person frames between setPov first and the save";
        ok = ([int]$bodyShadow -gt 0 -and [int]$bodyCamera -gt 0 -and [int]$headSkipped -gt 0 -and [int]$headShadow -gt 0) }
