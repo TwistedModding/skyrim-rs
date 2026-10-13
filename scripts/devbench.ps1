@@ -22,7 +22,7 @@ function Invoke-Tool($Tool, $Body) {
             $r = $_.Exception.Response
             if ($r) { throw "devbench $Tool failed: " + (New-Object IO.StreamReader($r.GetResponseStream())).ReadToEnd() }
             if ($attempt -ge 5 -or -not (Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue)) { throw }
-            Write-Warning "devbench $Tool: $($_.Exception.Message); retrying"
+            Write-Warning "devbench ${Tool}: $($_.Exception.Message); retrying"
             Start-Sleep -Seconds 3
         }
     }
