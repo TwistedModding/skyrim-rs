@@ -1,0 +1,23 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 3000},
+  {"tool": "console", "args": {"command": "player.additem f 5", "capture": true}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-save"}},
+  {"waitFor": "saveGame"},
+  {"wait": 5000},
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 3000},
+  {"tool": "console", "args": {"command": "player.getitemcount f", "capture": true}},
+  {"tool": "console", "args": {"command": "load skyrim-rs-save"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 3000},
+  {"tool": "console", "args": {"command": "player.getitemcount f", "capture": true}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-save-2"}},
+  {"waitFor": "saveGame"},
+  {"wait": 3000}
+]

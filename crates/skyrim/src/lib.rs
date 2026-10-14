@@ -16,6 +16,7 @@ pub mod forms;
 pub mod input;
 pub mod papyrus;
 pub mod render;
+pub mod save;
 pub mod string;
 pub mod ui;
 
@@ -58,6 +59,7 @@ struct Runtime {
     strings: string::Fns,
     ui: ui::Fns,
     input: input::Fns,
+    save: save::Fns,
 }
 
 static RUNTIME: OnceLock<Runtime> = OnceLock::new();
@@ -97,7 +99,8 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     let strings = string::Fns::resolve(&reloc)?;
     let ui = ui::Fns::resolve(&reloc)?;
     let input = input::Fns::resolve(&reloc)?;
-    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, camera, animation, strings, ui, input });
+    let save = save::Fns::resolve(&reloc)?;
+    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, camera, animation, strings, ui, input, save });
     Ok(())
 }
 
