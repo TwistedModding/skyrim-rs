@@ -1,9 +1,11 @@
 //! One test per `skyrim::papyrus` API. `REGISTER` runs inside the SKSE `PapyrusInterface`
 //! callback: the VM's identity, the type lookups and the binding of the natives
 //! `papyrus/SkyrimRsTest.psc` and `SkyrimRsTestRef.psc` declare. `TESTS` runs after a game is
-//! loaded (handles, script types, bound objects) and `CALLS` at the save that ends the scenario of
-//! the RE repo's `docs/subsystems/papyrus-verify.md`, checking what the natives received from
-//! `DevBench`'s calls and what the dispatch from inside `Ping` did.
+//! loaded (handles, script types, bound objects, then a `SkyrimRsTestRef` object bound to the
+//! player) and `CALLS` at the save that ends the scenario of the RE repo's
+//! `docs/subsystems/papyrus-verify.md`, checking what the natives received from `DevBench`'s calls
+//! and what the dispatches from inside `Ping` (`Tick()`, `Scale(1.5, true)`, the bound object's
+//! `SelfFormId()`) did.
 
 use core::ffi::c_void;
 use std::sync::Mutex;
@@ -12,7 +14,7 @@ use std::sync::atomic::{AtomicPtr, AtomicU32, Ordering};
 use layout::v1_7_104::{classes, globals};
 use skyrim::actors::{Actor, ActorValue, TESObjectREFR};
 use skyrim::forms::TESForm;
-use skyrim::papyrus::{BSFixedString, GameThread, Handle, HandlePolicy, NativeFunction, VMTypeID, VirtualMachine, current_stack_id};
+use skyrim::papyrus::{BSFixedString, GameThread, Handle, HandlePolicy, NativeFunction, VMTypeID, Variable, VirtualMachine, current_stack_id};
 
 use crate::{IRON_SWORD, PLAYER, Test, check, form};
 
@@ -39,6 +41,7 @@ pub const TESTS: &[(&str, Test)] = &[
     ("handles", handles),
     ("script_types", script_types),
     ("find_bound_object", find_bound_object),
+    ("bind_object", bind_object),
     ("game_thread", game_thread),
     ("type_ids_after", type_ids_after),
 ];
@@ -59,13 +62,18 @@ fn record(name: &'static str, detail: String) {
 
 fn ping(x: i32) -> i32 {
     let dispatched = match (GameThread::current(), VirtualMachine::get()) {
-        (Some(thread), Some(vm)) => vm.dispatch_static_call(&thread, CLASS, "Tick"),
-        _ => false,
+        (Some(thread), Some(vm)) => {
+            let tick = vm.dispatch_static_call(&thread, CLASS, "Tick", &[]);
+            let scale = vm.dispatch_static_call(&thread, CLASS, "Scale", &[Variable::float(1.5), Variable::bool(true)]);
+            let method = vm.find_bound_object(Handle::form(PLAYER), REF_CLASS).is_some_and(|object| vm.dispatch_method_call(&thread, &object, "SelfFormId", &[]));
+            [tick, scale, method]
+        }
+        _ => [false; 3],
     };
-    if dispatched {
+    if dispatched == [true; 3] {
         DISPATCHES_OK.fetch_add(1, Ordering::Relaxed);
     }
-    record("Ping", format!("x={x} -> {}, dispatched Tick: {dispatched}", x + 1));
+    record("Ping", format!("x={x} -> {}, dispatched Tick, Scale(1.5, true), SelfFormId: {dispatched:?}", x + 1));
     x + 1
 }
 
@@ -261,6 +269,18 @@ fn find_bound_object() -> Result<String, String> {
     Ok(format!("player -> {object:?}; SkyrimRsTestRef none; invalid none"))
 }
 
+fn bind_object() -> Result<String, String> {
+    let vm = vm()?;
+    let thread = unsafe { GameThread::assume() };
+    let h = Handle::form(PLAYER);
+    let created = vm.create_object(REF_CLASS).ok_or("CreateObject(SkyrimRsTestRef) failed")?;
+    check(created.handle() != h && created.type_info().is_some_and(|t| *t.name() == *REF_CLASS), &format!("the new object is {created:?}"))?;
+    vm.bind_object(&thread, &created, h);
+    let bound = vm.find_bound_object(h, REF_CLASS).ok_or("FindBoundObject(player, SkyrimRsTestRef) found nothing after BindObject")?;
+    check(core::ptr::from_ref(&*bound) == core::ptr::from_ref(&*created) && bound.handle() == h, &format!("found {bound:?}, created {created:?}"))?;
+    Ok(format!("created {REF_CLASS} unbound, BindObject(player) -> FindBoundObject returns it: {bound:?}"))
+}
+
 fn game_thread() -> Result<String, String> {
     check(GameThread::current().is_none() && current_stack_id().is_none(), "a native call is reported outside any native")?;
     Ok("no native running: GameThread::current() = None, current_stack_id() = None".into())
@@ -284,16 +304,20 @@ fn calls() -> Result<String, String> {
     find("Player", "ACHR 00000014")?;
     find("Describe", "-> \"00000014 x3 swords flag=false\"")?;
     check(player_id.contains("ACHR 00000014"), "FormId did not see the player as a form")?;
-    check(!calls.iter().any(|c| c.name == "SelfFormId"), "SelfFormId ran without a bound object")?;
     Ok(format!("{} calls: {ping}; {player_id}; {health}; every expected call seen", calls.len()))
 }
 
 fn dispatch() -> Result<String, String> {
     let ticks = TICKS.load(Ordering::Relaxed);
     let ok = DISPATCHES_OK.load(Ordering::Relaxed);
-    let pings = CALLS.lock().unwrap().iter().filter(|c| c.name == "Ping").count();
-    check(pings == 2 && ok == 2 && ticks == 2, &format!("{pings} Ping calls, {ok} dispatches returned true, {ticks} Tick calls"))?;
-    Ok(format!("DispatchStaticCall(SkyrimRsTest, Tick) from inside Ping returned true {ok} times, Tick ran {ticks} times"))
+    let calls = CALLS.lock().unwrap();
+    let count = |name: &str, needle: &str| calls.iter().filter(|c| c.name == name && c.detail.contains(needle)).count();
+    let pings = count("Ping", "");
+    let scaled = count("Scale", "x=1.5 double=true -> 3");
+    let methods = count("SelfFormId", "-> 20");
+    check(pings == 2 && ok == 2 && ticks == 2, &format!("{pings} Ping calls, {ok} with all three dispatches true, {ticks} Tick calls"))?;
+    check(scaled == 2, &format!("Scale(1.5, true) ran {scaled} times"))?;
+    Ok(format!("from inside Ping, twice: DispatchStaticCall(Tick) and (Scale, [1.5, true]) and DispatchMethodCall(bound SkyrimRsTestRef, SelfFormId) all returned true; Tick ran {ticks}, Scale(1.5, true) {scaled}; the native method SelfFormId ran {methods} times (2 dispatched and DevBench's call; request 4d)"))
 }
 
 fn stack_ids() -> Result<String, String> {

@@ -21,6 +21,7 @@
   {"wait": 2500},
   {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsEquipCounter", "function": "GetEquipCount"}},
   {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsEquipCounter", "function": "GetLastEquipped"}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTestRef", "function": "SelfFormId", "self": {"form": "0x14"}}},
   {"wait": 1500},
   {"tool": "console", "args": {"command": "save skyrim-rs-papyrus"}},
   {"waitFor": "saveGame"},

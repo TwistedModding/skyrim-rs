@@ -17,10 +17,12 @@
 //! per-thread memory manager, and pass 4 crashed the engine twice from a foreign thread.
 //! [`VirtualMachine::dispatch_static_call`] therefore takes a [`GameThread`] token, which exists
 //! inside a native callback ([`GameThread::current`]) and is asserted with
-//! [`GameThread::assume`] from an SKSE message handler, task or event sink. Arguments and results
-//! of a dispatch need the `BSScrapArray<Variable>` and `IStackCallbackFunctor` layouts, which pass
-//! 4 only read statically, so dispatch is zero-argument and fire-and-forget here; arrays are left
-//! out for the same reason.
+//! [`GameThread::assume`] from an SKSE message handler, task or event sink. Dispatch takes typed
+//! arguments (`IFunctionArguments` filling the engine's `BSScrapArray<Variable>`) and is
+//! fire-and-forget: receiving the result needs an `IStackCallbackFunctor` of the plugin's own, whose
+//! instance layout is RE request 4c. A script object of a mod's own class is created with
+//! [`VirtualMachine::create_object`] and bound to a form with [`VirtualMachine::bind_object`], after
+//! which the engine and `DevBench` call its methods like any attached script's.
 
 use core::cell::Cell;
 use core::ffi::{c_char, c_void};
@@ -56,6 +58,11 @@ type BindNativeMethod = unsafe extern "C" fn(vm: *mut VmRaw, function: *mut c_vo
 type SetCallableFromTasklets = unsafe extern "C" fn(vm: *mut VmRaw, class: *const c_char, name: *const c_char, callable: bool);
 type FindBoundObject = unsafe extern "C" fn(vm: *mut VmRaw, handle: u64, class: *const c_char, out: *mut *mut classes::BSScript__Object) -> u8;
 type DispatchStaticCall = unsafe extern "C" fn(vm: *mut VmRaw, class: *const classes::BSFixedString, name: *const classes::BSFixedString, args: *mut c_void, callback: *mut *mut c_void) -> u8;
+type DispatchMethodCall = unsafe extern "C" fn(vm: *mut VmRaw, object: *mut *mut classes::BSScript__Object, name: *const classes::BSFixedString, args: *mut c_void, callback: *mut *mut c_void) -> u8;
+type CreateObject = unsafe extern "C" fn(vm: *mut VmRaw, class: *const classes::BSFixedString, out: *mut *mut classes::BSScript__Object) -> u8;
+type GetObjectBindPolicy = unsafe extern "C" fn(vm: *mut VmRaw) -> *mut c_void;
+type BindObject = unsafe extern "C" fn(policy: *mut c_void, object: *mut *mut classes::BSScript__Object, handle: u64);
+type ResizeVariableArray = unsafe extern "C" fn(array: *mut c_void, count: u64) -> u8;
 type GetObjectHandlePolicy = unsafe extern "C" fn(vm: *mut VmRaw) -> *mut PolicyRaw;
 
 type HandleIsType = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, handle: u64) -> u8;
@@ -80,6 +87,8 @@ pub(crate) struct Fns {
     object_dec_ref: ObjectDecRef,
     pack_form: PackFormToVariable,
     type_function: TypeGetFunction,
+    bind_object: BindObject,
+    resize_args: ResizeVariableArray,
     skyrim_vm: *const classes::partial::SkyrimVM,
     vtable: [*const c_void; IFUNCTION_SLOTS],
 }
@@ -106,6 +115,8 @@ impl Fns {
                 object_dec_ref: crate::resolve(reloc, fns::BSScript__Object__DecRef)?,
                 pack_form: crate::resolve(reloc, fns::Papyrus__PackFormToVariable)?,
                 type_function: crate::resolve(reloc, fns::BSScript__ObjectTypeInfo__GetFunction)?,
+                bind_object: crate::resolve(reloc, fns::BSScript__ObjectBindPolicy__BindObject)?,
+                resize_args: crate::resolve(reloc, fns::ResizeVariableArray)?,
                 skyrim_vm: reloc.address(globals::g_SkyrimVM)? as *const classes::partial::SkyrimVM,
                 vtable,
             })
@@ -973,25 +984,40 @@ pub fn current_stack_id() -> Option<u32> {
 }
 
 #[repr(C)]
-struct ZeroArgsVtable {
-    dtor: unsafe extern "C" fn(this: *mut ZeroArgs, flags: u32) -> *mut ZeroArgs,
-    supply: unsafe extern "C" fn(this: *mut ZeroArgs, out: *mut c_void) -> bool,
+struct ArgsVtable {
+    dtor: unsafe extern "C" fn(this: *mut Args, flags: u32) -> *mut Args,
+    supply: unsafe extern "C" fn(this: *mut Args, out: *mut c_void) -> bool,
 }
 
-/// An `IFunctionArguments` that leaves the argument array empty.
+/// An `IFunctionArguments` over a slice of Variables: its slot 1 sizes the engine's
+/// `BSScrapArray<Variable>` (data +8) with `ResizeVariableArray` (id 53915) and assigns each value.
 #[repr(C)]
-struct ZeroArgs {
-    vtable: &'static ZeroArgsVtable,
+struct Args {
+    vtable: &'static ArgsVtable,
+    values: *const Variable,
+    len: usize,
 }
 
-impl ZeroArgs {
-    const VTABLE: &'static ZeroArgsVtable = &ZeroArgsVtable { dtor: Self::dtor, supply: Self::supply };
+impl Args {
+    const VTABLE: &'static ArgsVtable = &ArgsVtable { dtor: Self::dtor, supply: Self::supply };
+
+    fn new(values: &[Variable]) -> Self {
+        Self { vtable: Self::VTABLE, values: values.as_ptr(), len: values.len() }
+    }
 
     unsafe extern "C" fn dtor(this: *mut Self, _: u32) -> *mut Self {
         this
     }
 
-    unsafe extern "C" fn supply(_: *mut Self, _: *mut c_void) -> bool {
+    unsafe extern "C" fn supply(this: *mut Self, out: *mut c_void) -> bool {
+        let this = unsafe { &*this };
+        if unsafe { (fns().resize_args)(out, this.len as u64) } == 0 {
+            return false;
+        }
+        let data = unsafe { (*out.cast::<classes::BSScrapArray>()).data.cast::<VariableRaw>() };
+        for i in 0..this.len {
+            unsafe { (fns().assign)(data.add(i), &raw const (*this.values.add(i)).0) };
+        }
         true
     }
 }
@@ -1167,17 +1193,51 @@ impl VirtualMachine {
         Ok(unsafe { &*header.cast::<NativeFunction>() })
     }
 
-    /// Slot 38 `DispatchStaticCall` of `class.function()` with no arguments and no callback: the
-    /// call is queued on a new stack and its result discarded. Returns what the slot returned.
-    /// The class's script must be loadable (`script_type` semantics apply).
+    /// Slot 38 `DispatchStaticCall` of `class.function(args)` with no callback: the call is queued
+    /// on a new stack and its result discarded. Returns what the slot returned. The class's script
+    /// must be loadable (`script_type` semantics apply).
     #[must_use]
-    pub fn dispatch_static_call(&self, _: &GameThread, class: &str, function: &str) -> bool {
+    pub fn dispatch_static_call(&self, _: &GameThread, class: &str, function: &str, args: &[Variable]) -> bool {
         let class = BSFixedString::new(class);
         let function = BSFixedString::new(function);
-        let mut args = ZeroArgs { vtable: ZeroArgs::VTABLE };
+        let mut args = Args::new(args);
         let mut callback: *mut c_void = core::ptr::null_mut();
         unsafe {
             self.slot::<DispatchStaticCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchStaticCall)(self.as_ptr(), class.raw(), function.raw(), (&raw mut args).cast(), &raw mut callback) != 0
         }
+    }
+
+    /// Slot 39 `DispatchMethodCall` of `function(args)` on `object` with no callback, as
+    /// [`dispatch_static_call`](Self::dispatch_static_call).
+    #[must_use]
+    pub fn dispatch_method_call(&self, _: &GameThread, object: &ObjectPtr, function: &str, args: &[Variable]) -> bool {
+        let function = BSFixedString::new(function);
+        let mut args = Args::new(args);
+        let mut target = object.0.as_ptr().cast::<classes::BSScript__Object>();
+        let mut callback: *mut c_void = core::ptr::null_mut();
+        unsafe {
+            self.slot::<DispatchMethodCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchMethodCall)(self.as_ptr(), &raw mut target, function.raw(), (&raw mut args).cast(), &raw mut callback) != 0
+        }
+    }
+
+    /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
+    #[must_use]
+    pub fn create_object(&self, class: &str) -> Option<ObjectPtr> {
+        let class = BSFixedString::new(class);
+        let mut out = core::ptr::null_mut();
+        let created = unsafe { self.slot::<CreateObject>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_CreateObject)(self.as_ptr(), class.raw(), &raw mut out) };
+        if created == 0 {
+            return None;
+        }
+        NonNull::new(out.cast::<Object>()).map(ObjectPtr)
+    }
+
+    /// Binds `object` to the form `handle` names through the VM's bind policy (slot 47,
+    /// `ObjectBindPolicy::BindObject` id 104184): from then on [`find_bound_object`](Self::find_bound_object)
+    /// returns it and calls with that form as `self` run its methods. Call it on a game thread.
+    pub fn bind_object(&self, _: &GameThread, object: &ObjectPtr, handle: Handle) {
+        let policy = unsafe { self.slot::<GetObjectBindPolicy>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_GetObjectBindPolicy)(self.as_ptr()) };
+        let mut target = object.0.as_ptr().cast::<classes::BSScript__Object>();
+        unsafe { (fns().bind_object)(policy, &raw mut target, handle.0) };
     }
 }

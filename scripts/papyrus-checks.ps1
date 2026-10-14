@@ -1,6 +1,7 @@
 # DevBench comparisons for the papyrus suite (step indices of papyrus-steps.json); dot-sourced by verify.ps1.
 # The plugin registers its natives in the SKSE PapyrusInterface callback, checks handles and script types after
-# the load and the calls DevBench made at the save. The equip-counter mod runs alongside and answers its own natives.
+# the load, binds a SkyrimRsTestRef object to the player, and checks the calls DevBench made and the typed dispatches
+# from inside Ping at the save. The equip-counter mod runs alongside and answers its own natives.
 $Phases = "register", "postLoadGame", "saveGame"
 
 $pluginLines = Get-Content "$OutDir\$PluginLog"
@@ -28,6 +29,8 @@ $rows = @(
        ok = ($plugin["dispatch"].ok -and (Step 4).called -eq $true -and (Step 12).called -eq $true) }
     @{ name = "equip counter"; plugin = ($modLines -match '^(registered|listening|equip )') -join ' | '; devbench = "GetEquipCount before = $(Returned 15), EquipItem(torch) called=$((Step 16).called), UnequipItem called=$((Step 18).called), GetEquipCount after = $(Returned 20), GetLastEquipped = $((Returned 21).formId)";
        ok = ((Returned 15) -eq 0 -and (Returned 20) -eq 1 -and (Returned 21).formId -eq "0x0001D4EC" -and ($modLines -match '^equip 1: 0001D4EC$').Count -eq 1) }
-    @{ name = "save trigger";  plugin = ($summaries -match 'papyrus saveGame') -join ' '; devbench = "console save: $((Step 23) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 24 }).satisfied)";
-       ok = ((($steps | Where-Object { $_.index -eq 24 }).satisfied -eq $true)) }
+    @{ name = "bound object";  plugin = (Detail "bind_object"); devbench = "SkyrimRsTestRef.SelfFormId() on the player called = $((Step 22).called), returned $(Returned 22) ($((Step 22).returnedType)); the native method runs once request 4d is answered";
+       ok = ($plugin["bind_object"].ok -and (Step 22).called -eq $true) }
+    @{ name = "save trigger";  plugin = ($summaries -match 'papyrus saveGame') -join ' '; devbench = "console save: $((Step 24) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 25 }).satisfied)";
+       ok = ((($steps | Where-Object { $_.index -eq 25 }).satisfied -eq $true)) }
 )
