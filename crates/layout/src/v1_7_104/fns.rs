@@ -179,10 +179,10 @@ pub const ActionInput__vfunc_1: u64 = 14996;
 pub const ActionInput__vfunc_2: u64 = 14995;
 /// `ActionInput::vfunc_3` at 0x1f3ac0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
 pub const ActionInput__vfunc_3: u64 = 14997;
+/// `ActivateHandler::CanProcess` at 0x7b4e50 (semantic, high); signature (untiered): `bool CanProcess(ActivateHandler * this, longlong * param_1)`
+pub const ActivateHandler__CanProcess: u64 = 42453;
 /// `ActivateHandler::vdtor` at 0x7b1990 (layout_inference, medium); signature (low): `ActivateHandler * vdtor(ActivateHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ActivateHandler__vdtor: u64 = 42394;
-/// `ActivateHandler::vfunc_1` at 0x7b4e50 (rtti, high); signature (low): `bool vfunc_1(ActivateHandler * this, longlong * param_1)`
-pub const ActivateHandler__vfunc_1: u64 = 42453;
 /// `ActivateHandler::vfunc_6` at 0x7b2660 (rtti, high); signature (low): `undefined vfunc_6(ActivateHandler * this, longlong param_1, undefined8 param_2, PlayerCamera * param_3)`
 pub const ActivateHandler__vfunc_6: u64 = 42420;
 /// `ActivateHandler::vfunc_6_sub0` at 0x751580 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(longlong * * * * * * * * * param_1, undefined8 param_2, longlong * param_3, PlayerCamera * param_4)`
@@ -1487,8 +1487,6 @@ pub const AddFormToTypeArrays: u64 = 13693;
 pub const AddGameTimeUpdateRegistration: u64 = 53939;
 /// `AddHandleToListIfMissing` at 0x7b9580 (decompiler, medium); signature (medium): `undefined AddHandleToListIfMissing(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
 pub const AddHandleToListIfMissing: u64 = 42551;
-/// `AddHandlerOrQueuePending` at 0x7af240 (decompiler, medium); signature (untiered): `undefined AddHandlerOrQueuePending(longlong param_1, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * param_2, char param_3)`
-pub const AddHandlerOrQueuePending: u64 = 42356;
 /// `AddHavokLinkExtraIfMissing` at 0x2f6800 (decompiler, medium); signature (untiered): `undefined AddHavokLinkExtraIfMissing(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
 pub const AddHavokLinkExtraIfMissing: u64 = 19860;
 /// `AddImageSpaceModifierInstanceIfAbsent` at 0x2a3bc0 (decompiler, medium); signature (untiered): `ImageSpaceModifierInstanceForm * AddImageSpaceModifierInstanceIfAbsent(longlong param_1, float param_2, longlong param_3, undefined8 param_4)`
@@ -3065,8 +3063,6 @@ pub const AppendZeroedEntryBB0IfEquippedType7: u64 = 40545;
 pub const ApplyAIMeleeHandOrWeaponMult: u64 = 26405;
 /// `ApplyActorValueRegenForElapsedTime` at 0x6c48b0 (decompiler, medium); signature (medium): `undefined ApplyActorValueRegenForElapsedTime(longlong param_1, int param_2, float param_3)`
 pub const ApplyActorValueRegenForElapsedTime: u64 = 38459;
-/// `ApplyAndClearPendingField124` at 0xcefb50 (decompiler, medium); signature (medium): `undefined ApplyAndClearPendingField124(longlong param_1)`
-pub const ApplyAndClearPendingField124: u64 = 68547;
 /// `ApplyArmorAndResistanceToHitDamage` at 0x7f09d0 (decompiler, medium); signature (untiered): `undefined ApplyArmorAndResistanceToHitDamage(longlong param_1, char param_2, undefined8 param_3, float * param_4)`
 pub const ApplyArmorAndResistanceToHitDamage: u64 = 44014;
 /// `ApplyAttackHitFromHandle128Actor` at 0x802f40 (decompiler, medium); signature (medium): `undefined ApplyAttackHitFromHandle128Actor(longlong param_1, TESObjectREFR * param_2)`
@@ -3691,10 +3687,10 @@ pub const AttachSourceStream: u64 = 85174;
 pub const AttachTechniquesToField10Model: u64 = 15029;
 /// `AttackAnimationArrayMap::vdtor` at 0x3eb770 (layout_inference, medium); signature (low): `AttackAnimationArrayMap * vdtor(AttackAnimationArrayMap * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AttackAnimationArrayMap__vdtor: u64 = 25451;
+/// `AttackBlockHandler::CanProcess` at 0x7b4e80 (semantic, high); signature (untiered): `undefined8 CanProcess(AttackBlockHandler * this, longlong * param_1)`
+pub const AttackBlockHandler__CanProcess: u64 = 42454;
 /// `AttackBlockHandler::vdtor` at 0x7b19c0 (layout_inference, medium); signature (low): `AttackBlockHandler * vdtor(AttackBlockHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const AttackBlockHandler__vdtor: u64 = 523963;
-/// `AttackBlockHandler::vfunc_1` at 0x7b4e80 (rtti, high); signature (low): `undefined8 vfunc_1(AttackBlockHandler * this, longlong * param_1)`
-pub const AttackBlockHandler__vfunc_1: u64 = 42454;
 /// `AttackBlockHandler::vfunc_2` at 0x7b2b90 (rtti, high); signature (low): `undefined vfunc_2(AttackBlockHandler * this, longlong * param_1, ulonglong param_2, undefined8 param_3)`
 pub const AttackBlockHandler__vfunc_2: u64 = 523965;
 /// `AttackBlockHandler::vfunc_2_sub0` at 0x7b2320 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub0(longlong param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
@@ -3745,10 +3741,10 @@ pub const AudioLoadToCacheTask__vfunc_1: u64 = 67744;
 pub const AudioLoadToCacheTask__vfunc_3: u64 = 67745;
 /// `AutoCalcSkillsAndStats` at 0x3c66f0 (decompiler, medium); signature (untiered): `undefined AutoCalcSkillsAndStats(longlong param_1)`
 pub const AutoCalcSkillsAndStats: u64 = 24765;
+/// `AutoMoveHandler::CanProcess` at 0x7b4ee0 (semantic, high); signature (untiered): `bool CanProcess(AutoMoveHandler * this, longlong * param_1)`
+pub const AutoMoveHandler__CanProcess: u64 = 42455;
 /// `AutoMoveHandler::vdtor` at 0x7b1a60 (layout_inference, medium); signature (low): `AutoMoveHandler * vdtor(AutoMoveHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoMoveHandler__vdtor: u64 = 42396;
-/// `AutoMoveHandler::vfunc_1` at 0x7b4ee0 (rtti, high); signature (low): `bool vfunc_1(AutoMoveHandler * this, longlong * param_1)`
-pub const AutoMoveHandler__vfunc_1: u64 = 42455;
 /// `AutoMoveHandler::vfunc_6` at 0x7b3130 (rtti, high); signature (low): `undefined vfunc_6(AutoMoveHandler * this, longlong param_1, longlong param_2)`
 pub const AutoMoveHandler__vfunc_6: u64 = 523966;
 /// `AutoRegisterCombatObject<CombatAimController>::vdtor` at 0x8098b0 (layout_inference, medium); signature (low): `AutoRegisterCombatObject<CombatAimController> * vdtor(AutoRegisterCombatObject<CombatAimController> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -7449,8 +7445,8 @@ pub const BGSMovementType__vfunc_4: u64 = 23723;
 pub const BGSMovementType__vfunc_6: u64 = 23724;
 /// `BGSMoviePlayer::BSTEventSink_InputEvent____ptr64_vdtor` at 0x644ad8 (slot_propagation, medium); signature (high): `undefined BSTEventSink_InputEvent____ptr64_vdtor(BGSMoviePlayer * this)`
 pub const BGSMoviePlayer__BSTEventSink_InputEvent____ptr64_vdtor: u64 = 36264;
-/// `BGSMoviePlayer::BSTEventSink_InputEvent____ptr64_vfunc_1` at 0x6449d0 (rtti, high); signature (low): `undefined8 BSTEventSink_InputEvent____ptr64_vfunc_1(BGSMoviePlayer * this, undefined8 * param_1)`
-pub const BGSMoviePlayer__BSTEventSink_InputEvent____ptr64_vfunc_1: u64 = 36261;
+/// `BGSMoviePlayer::ProcessEvent` at 0x6449d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(BGSMoviePlayer * this, undefined8 * param_1)`; sets a skip flag when an Activate press is in the list; returns 0 (high); semantic signature: `BSEventNotifyControl (BGSMoviePlayer* this+0x58, InputEvent* const* head, ...)`
+pub const BGSMoviePlayer__ProcessEvent: u64 = 36261;
 /// `BGSMoviePlayer::ctor` at 0x644690 (layout_inference, high); signature (high): `BGSMoviePlayer * ctor(BGSMoviePlayer * this)`
 pub const BGSMoviePlayer__ctor: u64 = 36248;
 /// `BGSMoviePlayer::ctor` at 0x644780 (layout_inference, medium); signature (low): `undefined ctor(BGSMoviePlayer * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -12655,6 +12651,10 @@ pub const BSGameSound__vfunc_2: u64 = 67878;
 pub const BSGameSound__vfunc_3: u64 = 67897;
 /// `BSGameSound::vfunc_5` at 0xcd6090 (rtti, medium); signature (low): `undefined4 vfunc_5(BSGameSound * this, longlong param_1)`
 pub const BSGameSound__vfunc_5: u64 = 67896;
+/// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (untiered): `undefined1 IsEnabled(BSGamepadDevice * this)`
+pub const BSGamepadDevice__IsEnabled: u64 = 68710;
+/// `BSGamepadDevice::NormalizeStick` at 0xcfbb90 (semantic, high); signature (untiered): `undefined NormalizeStick(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
+pub const BSGamepadDevice__NormalizeStick: u64 = 68696;
 /// `BSGamepadDevice::ctor` at 0xcfba80 (layout_inference, high); signature (high): `BSGamepadDevice * ctor(BSGamepadDevice * this)`
 pub const BSGamepadDevice__ctor: u64 = 68695;
 /// `BSGamepadDevice::ctor_sub0` at 0xcfbdf0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -12667,12 +12667,8 @@ pub const BSGamepadDevice__vfunc_10: u64 = 68715;
 pub const BSGamepadDevice__vfunc_11: u64 = 68714;
 /// `BSGamepadDevice::vfunc_12` at 0xcfc180 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
 pub const BSGamepadDevice__vfunc_12: u64 = 68712;
-/// `BSGamepadDevice::vfunc_13` at 0xcfbb90 (rtti, medium); signature (low): `undefined vfunc_13(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
-pub const BSGamepadDevice__vfunc_13: u64 = 68696;
 /// `BSGamepadDevice::vfunc_14` at 0xcfbde0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
 pub const BSGamepadDevice__vfunc_14: u64 = 68701;
-/// `BSGamepadDevice::vfunc_7` at 0xcfc150 (rtti, medium); signature (high): `undefined1 vfunc_7(BSGamepadDevice * this)`
-pub const BSGamepadDevice__vfunc_7: u64 = 68710;
 /// `BSGamerProfile::GetSingleton` at 0xcfac80 (xref_inference, medium); signature (untiered): `BSWin32GamerProfile * GetSingleton(void)`
 pub const BSGamerProfile__GetSingleton: u64 = 68666;
 /// `BSGamerProfile::ctor` at 0xd02dc0 (layout_inference, high); signature (high): `BSGamerProfile * ctor(BSGamerProfile * this)`
@@ -14203,22 +14199,30 @@ pub const BSImagespaceShaderWorldMapNoSkyBlur__ctor: u64 = 105801;
 pub const BSImagespaceShaderWorldMapNoSkyBlur__vdtor: u64 = 106171;
 /// `BSImagespaceShaderWorldMapNoSkyBlur::vfunc_13` at 0x150b440 (rtti, high); signature (low): `undefined8 * vfunc_13(BSImagespaceShaderWorldMapNoSkyBlur * this, undefined8 * param_1)`
 pub const BSImagespaceShaderWorldMapNoSkyBlur__vfunc_13: u64 = 106295;
+/// `BSInputDevice::Destroy` at 0xcfc0e0 (semantic, high); signature (untiered): `BSInputDevice * Destroy(BSInputDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSInputDevice__Destroy: u64 = 68709;
+/// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+pub const BSInputDevice__GetKeyCode: u64 = 68744;
+/// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
+pub const BSInputDevice__GetKeyIDByName: u64 = 68743;
+/// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+pub const BSInputDevice__GetKeyName: u64 = 68742;
+/// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
+pub const BSInputDevice__IsEnabled: u64 = 68711;
+/// `BSInputDevice::LoadDefinitionFile` at 0xd6efd0 (semantic, high); signature (untiered): `undefined8 LoadDefinitionFile(undefined8 param_1, byte * param_2)`; clear the maps, parse each non-comment line (high); semantic signature: `bool (BSInputDevice* this, const char* path)`
+pub const BSInputDevice__LoadDefinitionFile: u64 = 68745;
+/// `BSInputDevice::LoadDefinitionFile` as a function pointer type (high).
+pub type BSInputDevice__LoadDefinitionFile_fn = unsafe extern "C" fn(this: *mut classes::BSInputDevice, path: *const c_char) -> bool;
+/// `BSInputDevice::ParseDefinitionLine` at 0xd6f0e0 (semantic, high); signature (untiered): `undefined ParseDefinitionLine(longlong param_1, char * param_2, undefined8 param_3, undefined8 param_4)`; parses 'name	%x id	%u code' into a KeyDefinition{name, held 0, code} stored in the id map (+0x18, id -> KeyDefinition*) and records name -> id (u32) in the name map (+0x48) (high); semantic signature: `void (BSInputDevice* this, char* line)`
+pub const BSInputDevice__ParseDefinitionLine: u64 = 68746;
+/// `BSInputDevice::ParseDefinitionLine` as a function pointer type (high).
+pub type BSInputDevice__ParseDefinitionLine_fn = unsafe extern "C" fn(this: *mut classes::BSInputDevice, line: *mut c_char);
 /// `BSInputDevice::dtor` at 0xcfbfe0 (layout_inference, high); signature (low): `undefined dtor(BSInputDevice * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSInputDevice__dtor: u64 = 68706;
 /// `BSInputDevice::dtor` at 0xe12230 (layout_inference, high); signature (low): `undefined dtor(BSInputDevice * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSInputDevice__dtor_2: u64 = 68767;
 /// `BSInputDevice::dtor` at 0xe12630 (layout_inference, high); signature (low): `undefined dtor(BSInputDevice * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSInputDevice__dtor_3: u64 = 68779;
-/// `BSInputDevice::vdtor` at 0xcfc0e0 (layout_inference, medium); signature (low): `BSInputDevice * vdtor(BSInputDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSInputDevice__vdtor: u64 = 68709;
-/// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
-pub const BSInputDevice__vfunc_4: u64 = 68742;
-/// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
-pub const BSInputDevice__vfunc_5: u64 = 68743;
-/// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
-pub const BSInputDevice__vfunc_6: u64 = 68744;
-/// `BSInputDevice::vfunc_7` at 0xcfc170 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-pub const BSInputDevice__vfunc_7: u64 = 68711;
 /// `BSInstanceTriShape::vdtor` at 0xfe4240 (slot_propagation, medium); signature (low): `BSInstanceTriShape * vdtor(BSInstanceTriShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSInstanceTriShape__vdtor: u64 = 76343;
 /// `BSInstanceTriShape::vfunc_2` at 0xfe4420 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -15249,12 +15253,12 @@ pub const BSModifyOnceModifier__vfunc_7: u64 = 63286;
 pub const BSModifyOnceModifier__vfunc_8: u64 = 63290;
 /// `BSModifyOnceModifier::vfunc_9` at 0xbbb080 (rtti, high); signature (low): `undefined vfunc_9(BSModifyOnceModifier * this, ulonglong param_1, longlong * param_2)`
 pub const BSModifyOnceModifier__vfunc_9: u64 = 63291;
+/// `BSMouseDevice::Reinitialize` at 0xe13070 (semantic, medium); signature (untiered): `undefined Reinitialize(void)`
+pub const BSMouseDevice__Reinitialize: u64 = 68800;
 /// `BSMouseDevice::ctor` at 0xe12f90 (layout_inference, medium); signature (high): `BSMouseDevice * ctor(BSMouseDevice * this)`
 pub const BSMouseDevice__ctor: u64 = 68798;
 /// `BSMouseDevice::vdtor` at 0xe13000 (layout_inference, medium); signature (low): `BSMouseDevice * vdtor(BSMouseDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSMouseDevice__vdtor: u64 = 68799;
-/// `BSMouseDevice::vfunc_9` at 0xe13070 (rtti, high); signature (low): `undefined vfunc_9(void)`
-pub const BSMouseDevice__vfunc_9: u64 = 68800;
 /// `BSMsgDialogSystemUtility::ctor` at 0x159f420 (layout_inference, medium); signature (high): `BSMsgDialogSystemUtility * ctor(BSMsgDialogSystemUtility * this)`
 pub const BSMsgDialogSystemUtility__ctor: u64 = 109458;
 /// `BSMsgDialogSystemUtility::vdtor` at 0x159f440 (layout_inference, medium); signature (low): `BSMsgDialogSystemUtility * vdtor(BSMsgDialogSystemUtility * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -16011,18 +16015,24 @@ pub const BSPCGamepadDeviceDelegate__vfunc_3: u64 = 68777;
 pub const BSPCGamepadDeviceDelegate__vfunc_8: u64 = 68772;
 /// `BSPCGamepadDeviceDelegate::vfunc_9` at 0xe124b0 (rtti, high); signature (low): `undefined vfunc_9(void)`
 pub const BSPCGamepadDeviceDelegate__vfunc_9: u64 = 68776;
+/// `BSPCGamepadDeviceHandler::Initialize` at 0xe11eb0 (semantic, high); signature (untiered): `undefined Initialize(BSPCGamepadDeviceHandler * this)`
+pub const BSPCGamepadDeviceHandler__Initialize: u64 = 68754;
+/// `BSPCGamepadDeviceHandler::IsEnabled` at 0xe12490 (semantic, high); signature (untiered): `bool IsEnabled(BSPCGamepadDeviceHandler * this)`
+pub const BSPCGamepadDeviceHandler__IsEnabled: u64 = 68774;
+/// `BSPCGamepadDeviceHandler::Poll` at 0xe11ee0 (semantic, high); signature (untiered): `undefined Poll(BSPCGamepadDeviceHandler * this, undefined4 param_2)`
+pub const BSPCGamepadDeviceHandler__Poll: u64 = 68755;
+/// `BSPCGamepadDeviceHandler::ReleaseDevice` at 0xe11fd0 (semantic, high); signature (untiered): `undefined ReleaseDevice(longlong param_1)`; DeviceConnectEvent(2, false), delete +8 (high); semantic signature: `void (BSPCGamepadDeviceHandler* this)`
+pub const BSPCGamepadDeviceHandler__ReleaseDevice: u64 = 68761;
+/// `BSPCGamepadDeviceHandler::ReleaseDevice` as a function pointer type (high).
+pub type BSPCGamepadDeviceHandler__ReleaseDevice_fn = unsafe extern "C" fn(this: *mut classes::BSPCGamepadDeviceHandler);
 /// `BSPCGamepadDeviceHandler::ctor` at 0xe11e50 (layout_inference, medium); signature (high): `BSPCGamepadDeviceHandler * ctor(BSPCGamepadDeviceHandler * this)`
 pub const BSPCGamepadDeviceHandler__ctor: u64 = 68752;
 /// `BSPCGamepadDeviceHandler::dtor` at 0xe11e70 (layout_inference, high); signature (high): `undefined dtor(BSPCGamepadDeviceHandler * this)`
 pub const BSPCGamepadDeviceHandler__dtor: u64 = 68753;
 /// `BSPCGamepadDeviceHandler::vdtor` at 0xe12390 (layout_inference, medium); signature (low): `BSPCGamepadDeviceHandler * vdtor(BSPCGamepadDeviceHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSPCGamepadDeviceHandler__vdtor: u64 = 68769;
-/// `BSPCGamepadDeviceHandler::vfunc_1` at 0xe11eb0 (rtti, high); signature (high): `undefined vfunc_1(BSPCGamepadDeviceHandler * this)`
-pub const BSPCGamepadDeviceHandler__vfunc_1: u64 = 68754;
 /// `BSPCGamepadDeviceHandler::vfunc_1_sub0` at 0xe7b320 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub0(void)`
 pub const BSPCGamepadDeviceHandler__vfunc_1_sub0: u64 = 68817;
-/// `BSPCGamepadDeviceHandler::vfunc_2` at 0xe11ee0 (rtti, high); signature (low): `undefined vfunc_2(BSPCGamepadDeviceHandler * this, undefined4 param_2)`
-pub const BSPCGamepadDeviceHandler__vfunc_2: u64 = 68755;
 /// `BSPCGamepadDeviceHandler::vfunc_3` at 0xe11f30 (rtti, high); signature (high): `undefined vfunc_3(BSPCGamepadDeviceHandler * this)`
 pub const BSPCGamepadDeviceHandler__vfunc_3: u64 = 68756;
 /// `BSPCGamepadDeviceHandler::vfunc_4` at 0xe11f50 (rtti, high); signature (high): `ulonglong vfunc_4(BSPCGamepadDeviceHandler * this)`
@@ -16031,10 +16041,10 @@ pub const BSPCGamepadDeviceHandler__vfunc_4: u64 = 68757;
 pub const BSPCGamepadDeviceHandler__vfunc_5: u64 = 68758;
 /// `BSPCGamepadDeviceHandler::vfunc_6` at 0xe11f90 (rtti, high); signature (high): `ulonglong vfunc_6(BSPCGamepadDeviceHandler * this)`
 pub const BSPCGamepadDeviceHandler__vfunc_6: u64 = 68759;
-/// `BSPCGamepadDeviceHandler::vfunc_7` at 0xe12490 (rtti, high); signature (high): `bool vfunc_7(BSPCGamepadDeviceHandler * this)`
-pub const BSPCGamepadDeviceHandler__vfunc_7: u64 = 68774;
 /// `BSPCGamepadDeviceHandler::vfunc_8` at 0xe11fb0 (rtti, high); signature (high): `undefined vfunc_8(BSPCGamepadDeviceHandler * this)`
 pub const BSPCGamepadDeviceHandler__vfunc_8: u64 = 68760;
+/// `BSPCOrbisGamepadDevice::Poll` at 0xe7bf80 (semantic, medium); signature (untiered): `undefined Poll(BSPCOrbisGamepadDevice * this, float param_1)`
+pub const BSPCOrbisGamepadDevice__Poll: u64 = 68831;
 /// `BSPCOrbisGamepadDevice::vdtor` at 0xe123f0 (slot_propagation, medium); signature (low): `BSPCOrbisGamepadDevice * vdtor(BSPCOrbisGamepadDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSPCOrbisGamepadDevice__vdtor: u64 = 68770;
 /// `BSPCOrbisGamepadDevice::vfunc_1` at 0xe7bf50 (rtti, high); signature (high): `undefined vfunc_1(BSPCOrbisGamepadDevice * this)`
@@ -16051,8 +16061,6 @@ pub const BSPCOrbisGamepadDevice__vfunc_11_sub0: u64 = 68822;
 pub const BSPCOrbisGamepadDevice__vfunc_13: u64 = 68837;
 /// `BSPCOrbisGamepadDevice::vfunc_13_sub0` at 0xcfbd80 (callgraph, medium); signature (untiered): `float vfunc_13_sub0(float param_1, float param_2, float param_3, float param_4, float param_5)`
 pub const BSPCOrbisGamepadDevice__vfunc_13_sub0: u64 = 68700;
-/// `BSPCOrbisGamepadDevice::vfunc_2` at 0xe7bf80 (rtti, high); signature (medium): `undefined vfunc_2(BSPCOrbisGamepadDevice * this, float param_1)`
-pub const BSPCOrbisGamepadDevice__vfunc_2: u64 = 68831;
 /// `BSPCOrbisGamepadDevice::vfunc_3` at 0xe7c2b0 (rtti, high); signature (high): `ulonglong vfunc_3(BSPCOrbisGamepadDevice * this)`
 pub const BSPCOrbisGamepadDevice__vfunc_3: u64 = 68832;
 /// `BSPCOrbisGamepadDevice::vfunc_8` at 0xe7c2d0 (rtti, high); signature (high): `undefined vfunc_8(BSPCOrbisGamepadDevice * this)`
@@ -26755,6 +26763,8 @@ pub const BSTEventSource_Trespass__Event__Notify: u64 = 42690;
 pub const BSTEventSource_Trespass__Event__RemoveEventSink: u64 = 42694;
 /// `BSTEventSource<UserEventEnabledEvent>::AddEventSink` at 0x771060 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<UserEventEnabledEvent>* this, BSTEventSink<UserEventEnabledEvent>* sink)`
 pub const BSTEventSource_UserEventEnabledEvent__AddEventSink: u64 = 41095;
+/// `BSTEventSource<UserEventEnabledEvent>::Notify` at 0xcf2b60 (semantic, high); signature (untiered): `DWORD Notify(longlong * param_1, undefined8 param_2)`; template Notify instance (stops at the first non-zero result) (high); semantic signature: `void (BSTEventSource<UserEventEnabledEvent>* this, const UserEventEnabledEvent* e)`
+pub const BSTEventSource_UserEventEnabledEvent__Notify: u64 = 68600;
 /// `BSTEventSource<UserEventEnabledEvent>::RemoveEventSink` at 0x774b50 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<UserEventEnabledEvent>* this, BSTEventSink<UserEventEnabledEvent>* sink)`
 pub const BSTEventSource_UserEventEnabledEvent__RemoveEventSink: u64 = 41164;
 /// `BSTEventSource<WeaponAttack::Event>::AddEventSink` at 0x770a60 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<WeaponAttack::Event>* this, BSTEventSink<WeaponAttack::Event>* sink)`
@@ -27615,58 +27625,54 @@ pub const BSWin32GameDataSystemUtility__ctor: u64 = 109434;
 pub const BSWin32GameDataSystemUtility__vdtor: u64 = 109437;
 /// `BSWin32GameDataSystemUtility::vfunc_2` at 0x159f090 (rtti, high); signature (low): `undefined vfunc_2(void)`
 pub const BSWin32GameDataSystemUtility__vfunc_2: u64 = 109436;
+/// `BSWin32GamepadDevice::Initialize` at 0xe7ad60 (semantic, medium); signature (untiered): `undefined Initialize(BSWin32GamepadDevice * this)`
+pub const BSWin32GamepadDevice__Initialize: u64 = 68807;
+/// `BSWin32GamepadDevice::Poll` at 0xe7ada0 (semantic, high); signature (untiered): `undefined Poll(BSWin32GamepadDevice * this, float param_1)`
+pub const BSWin32GamepadDevice__Poll: u64 = 68808;
+/// `BSWin32GamepadDevice::Reset` at 0xe7b060 (semantic, high); signature (untiered): `undefined Reset(BSWin32GamepadDevice * this)`
+pub const BSWin32GamepadDevice__Reset: u64 = 68810;
 /// `BSWin32GamepadDevice::vdtor` at 0xe12430 (slot_propagation, medium); signature (low): `BSWin32GamepadDevice * vdtor(BSWin32GamepadDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSWin32GamepadDevice__vdtor: u64 = 68771;
-/// `BSWin32GamepadDevice::vfunc_1` at 0xe7ad60 (rtti, high); signature (high): `undefined vfunc_1(BSWin32GamepadDevice * this)`
-pub const BSWin32GamepadDevice__vfunc_1: u64 = 68807;
-/// `BSWin32GamepadDevice::vfunc_2` at 0xe7ada0 (rtti, high); signature (medium): `undefined vfunc_2(BSWin32GamepadDevice * this, float param_1)`
-pub const BSWin32GamepadDevice__vfunc_2: u64 = 68808;
 /// `BSWin32GamepadDevice::vfunc_3` at 0xe7b050 (rtti, high); signature (low): `undefined vfunc_3(void)`
 pub const BSWin32GamepadDevice__vfunc_3: u64 = 68809;
-/// `BSWin32GamepadDevice::vfunc_8` at 0xe7b060 (rtti, high); signature (high): `undefined vfunc_8(BSWin32GamepadDevice * this)`
-pub const BSWin32GamepadDevice__vfunc_8: u64 = 68810;
 /// `BSWin32GamepadDevice::vfunc_9` at 0xe7b080 (rtti, high); signature (low): `undefined vfunc_9(void)`
 pub const BSWin32GamepadDevice__vfunc_9: u64 = 68811;
 /// `BSWin32GamerProfile::vdtor` at 0xcfad30 (layout_inference, medium); signature (low): `BSWin32GamerProfile * vdtor(BSWin32GamerProfile * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSWin32GamerProfile__vdtor: u64 = 68668;
 /// `BSWin32GamerProfile::vfunc_2` at 0xcfadc0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
 pub const BSWin32GamerProfile__vfunc_2: u64 = 68672;
+/// `BSWin32KeyboardDevice::Initialize` at 0xe126f0 (semantic, high); signature (untiered): `undefined Initialize(BSWin32KeyboardDevice * this)`
+pub const BSWin32KeyboardDevice__Initialize: u64 = 68781;
+/// `BSWin32KeyboardDevice::Poll` at 0xe127c0 (semantic, high); signature (untiered): `undefined Poll(BSWin32KeyboardDevice * this, float param_1)`
+pub const BSWin32KeyboardDevice__Poll: u64 = 68782;
+/// `BSWin32KeyboardDevice::Release` at 0xe12bd0 (semantic, high); signature (untiered): `undefined Release(BSWin32KeyboardDevice * this)`
+pub const BSWin32KeyboardDevice__Release: u64 = 68783;
+/// `BSWin32KeyboardDevice::Reset` at 0xe12c00 (semantic, high); signature (untiered): `undefined Reset(BSWin32KeyboardDevice * this)`
+pub const BSWin32KeyboardDevice__Reset: u64 = 68784;
+/// `BSWin32KeyboardDevice::Unk10` at 0xe12c30 (semantic, high); signature (untiered): `undefined Unk10(void)`
+pub const BSWin32KeyboardDevice__Unk10: u64 = 68786;
+/// `BSWin32KeyboardDevice::Unk9` at 0xe12c20 (semantic, high); signature (untiered): `undefined Unk9(void)`
+pub const BSWin32KeyboardDevice__Unk9: u64 = 68785;
 /// `BSWin32KeyboardDevice::vdtor` at 0xd6ed70 (slot_propagation, medium); signature (low): `BSWin32KeyboardDevice * vdtor(BSWin32KeyboardDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSWin32KeyboardDevice__vdtor: u64 = 68739;
-/// `BSWin32KeyboardDevice::vfunc_1` at 0xe126f0 (rtti, high); signature (high): `undefined vfunc_1(BSWin32KeyboardDevice * this)`
-pub const BSWin32KeyboardDevice__vfunc_1: u64 = 68781;
-/// `BSWin32KeyboardDevice::vfunc_10` at 0xe12c30 (rtti, high); signature (low): `undefined vfunc_10(void)`
-pub const BSWin32KeyboardDevice__vfunc_10: u64 = 68786;
-/// `BSWin32KeyboardDevice::vfunc_2` at 0xe127c0 (rtti, high); signature (medium): `undefined vfunc_2(BSWin32KeyboardDevice * this, float param_1)`
-pub const BSWin32KeyboardDevice__vfunc_2: u64 = 68782;
 /// `BSWin32KeyboardDevice::vfunc_2_sub0` at 0xcfaf60 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub0(undefined8 param_1, longlong * param_2, undefined4 * param_3, undefined8 param_4)`
 pub const BSWin32KeyboardDevice__vfunc_2_sub0: u64 = 68678;
-/// `BSWin32KeyboardDevice::vfunc_2_sub1` at 0xcfb3f0 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub1(longlong param_1, undefined4 param_2)`
-pub const BSWin32KeyboardDevice__vfunc_2_sub1: u64 = 68686;
-/// `BSWin32KeyboardDevice::vfunc_3` at 0xe12bd0 (rtti, high); signature (high): `undefined vfunc_3(BSWin32KeyboardDevice * this)`
-pub const BSWin32KeyboardDevice__vfunc_3: u64 = 68783;
-/// `BSWin32KeyboardDevice::vfunc_8` at 0xe12c00 (rtti, high); signature (high): `undefined vfunc_8(BSWin32KeyboardDevice * this)`
-pub const BSWin32KeyboardDevice__vfunc_8: u64 = 68784;
-/// `BSWin32KeyboardDevice::vfunc_9` at 0xe12c20 (rtti, high); signature (low): `undefined vfunc_9(void)`
-pub const BSWin32KeyboardDevice__vfunc_9: u64 = 68785;
+/// `BSWin32MouseDevice::Initialize` at 0xe13080 (semantic, high); signature (untiered): `undefined Initialize(BSWin32MouseDevice * this)`
+pub const BSWin32MouseDevice__Initialize: u64 = 68801;
+/// `BSWin32MouseDevice::Poll` at 0xe13130 (semantic, high); signature (untiered): `undefined Poll(BSWin32MouseDevice * this, float param_1)`
+pub const BSWin32MouseDevice__Poll: u64 = 68802;
+/// `BSWin32MouseDevice::Reinitialize` at 0xe132e0 (semantic, high); signature (untiered): `DWORD Reinitialize(BSWin32MouseDevice * this, undefined1 param_1)`
+pub const BSWin32MouseDevice__Reinitialize: u64 = 68805;
+/// `BSWin32MouseDevice::Release` at 0xe13280 (semantic, high); signature (untiered): `undefined Release(BSWin32MouseDevice * this)`
+pub const BSWin32MouseDevice__Release: u64 = 68803;
+/// `BSWin32MouseDevice::Reset` at 0xe132b0 (semantic, high); signature (untiered): `undefined Reset(BSWin32MouseDevice * this)`
+pub const BSWin32MouseDevice__Reset: u64 = 68804;
 /// `BSWin32MouseDevice::vdtor` at 0xd6edb0 (layout_inference, medium); signature (low): `BSWin32MouseDevice * vdtor(BSWin32MouseDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSWin32MouseDevice__vdtor: u64 = 71187;
-/// `BSWin32MouseDevice::vfunc_1` at 0xe13080 (rtti, high); signature (high): `undefined vfunc_1(BSWin32MouseDevice * this)`
-pub const BSWin32MouseDevice__vfunc_1: u64 = 68801;
-/// `BSWin32MouseDevice::vfunc_2` at 0xe13130 (rtti, high); signature (medium): `undefined vfunc_2(BSWin32MouseDevice * this, float param_1)`
-pub const BSWin32MouseDevice__vfunc_2: u64 = 68802;
 /// `BSWin32MouseDevice::vfunc_2_sub0` at 0xcfaee0 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub0(undefined8 param_1, longlong * param_2, ulonglong param_3, void * param_4)`
 pub const BSWin32MouseDevice__vfunc_2_sub0: u64 = 68677;
-/// `BSWin32MouseDevice::vfunc_2_sub1` at 0xcfb460 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub1(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BSWin32MouseDevice__vfunc_2_sub1: u64 = 68687;
 /// `BSWin32MouseDevice::vfunc_2_sub2` at 0x1599450 (callgraph, medium); signature (untiered): `undefined1 vfunc_2_sub2(longlong param_1)`
 pub const BSWin32MouseDevice__vfunc_2_sub2: u64 = 453522;
-/// `BSWin32MouseDevice::vfunc_3` at 0xe13280 (rtti, high); signature (high): `undefined vfunc_3(BSWin32MouseDevice * this)`
-pub const BSWin32MouseDevice__vfunc_3: u64 = 68803;
-/// `BSWin32MouseDevice::vfunc_8` at 0xe132b0 (rtti, high); signature (high): `undefined vfunc_8(BSWin32MouseDevice * this)`
-pub const BSWin32MouseDevice__vfunc_8: u64 = 68804;
-/// `BSWin32MouseDevice::vfunc_9` at 0xe132e0 (rtti, high); signature (low): `DWORD vfunc_9(BSWin32MouseDevice * this, undefined1 param_1)`
-pub const BSWin32MouseDevice__vfunc_9: u64 = 68805;
 /// `BSWin32SaveDataSystemUtility::vdtor` at 0x159a970 (slot_propagation, medium); signature (low): `BSWin32SaveDataSystemUtility * vdtor(BSWin32SaveDataSystemUtility * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSWin32SaveDataSystemUtility__vdtor: u64 = 109279;
 /// `BSWin32SaveDataSystemUtility::vfunc_1` at 0x159ca60 (rtti, high); signature (low): `undefined vfunc_1(BSWin32SaveDataSystemUtility * this, LPCSTR param_1, char param_2)`
@@ -27751,14 +27757,14 @@ pub const BSWin32TaskletManager__vfunc_6: u64 = 69613;
 pub const BSWin32TaskletManager__vfunc_7: u64 = 69614;
 /// `BSWin32TaskletManager::vfunc_8` at 0xec56e0 (rtti, high); signature (low): `undefined vfunc_8(BSWin32TaskletManager * this, undefined8 * param_1)`
 pub const BSWin32TaskletManager__vfunc_8: u64 = 69615;
+/// `BSWin32VirtualKeyboardDevice::Start` at 0xe12ea0 (semantic, high); signature (untiered): `undefined Start(BSWin32VirtualKeyboardDevice * this, longlong param_1)`
+pub const BSWin32VirtualKeyboardDevice__Start: u64 = 443398;
 /// `BSWin32VirtualKeyboardDevice::ctor` at 0xe12e10 (layout_inference, high); signature (high): `BSWin32VirtualKeyboardDevice * ctor(BSWin32VirtualKeyboardDevice * this)`
 pub const BSWin32VirtualKeyboardDevice__ctor: u64 = 68788;
 /// `BSWin32VirtualKeyboardDevice::vdtor` at 0xe12f50 (layout_inference, medium); signature (low): `BSWin32VirtualKeyboardDevice * vdtor(BSWin32VirtualKeyboardDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSWin32VirtualKeyboardDevice__vdtor: u64 = 68797;
 /// `BSWin32VirtualKeyboardDevice::vfunc_1` at 0xe12e60 (rtti, high); signature (low): `undefined vfunc_1(void)`
 pub const BSWin32VirtualKeyboardDevice__vfunc_1: u64 = 68790;
-/// `BSWin32VirtualKeyboardDevice::vfunc_11` at 0xe12ea0 (rtti, high); signature (low): `undefined vfunc_11(BSWin32VirtualKeyboardDevice * this, longlong param_1)`
-pub const BSWin32VirtualKeyboardDevice__vfunc_11: u64 = 443398;
 /// `BSWin32VirtualKeyboardDevice::vfunc_12` at 0xe12f30 (rtti, high); signature (low): `undefined vfunc_12(void)`
 pub const BSWin32VirtualKeyboardDevice__vfunc_12: u64 = 443399;
 /// `BSWin32VirtualKeyboardDevice::vfunc_13` at 0xe12f40 (rtti, high); signature (low): `undefined vfunc_13(void)`
@@ -28707,8 +28713,18 @@ pub const BuildTreeInstanceBuffer: u64 = 31665;
 pub const BuildViewProjectionMatrices: u64 = 77510;
 /// `BuildYesNoDialogControls` at 0x15e8080 (decompiler, medium); signature (untiered): `undefined BuildYesNoDialogControls(longlong * param_1, float * param_2, void * param_3, longlong * param_4, longlong * param_5)`
 pub const BuildYesNoDialogControls: u64 = 454781;
-/// `ButtonEvent::ctor` at 0xcfafe0 (layout_inference, medium); signature (low): `ButtonEvent * ctor(ButtonEvent * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const ButtonEvent__ctor: u64 = 68679;
+/// `ButtonEvent::CopyCtor` at 0xcfafe0 (semantic, high); signature (untiered): `ButtonEvent * CopyCtor(ButtonEvent * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; copy constructor (pass 3 called it ctor) (high); semantic signature: `ButtonEvent* (ButtonEvent* this, const ButtonEvent* other)`
+pub const ButtonEvent__CopyCtor: u64 = 68679;
+/// `ButtonEvent::CopyCtor` as a function pointer type (high).
+pub type ButtonEvent__CopyCtor_fn = unsafe extern "C" fn(this: *mut classes::ButtonEvent, other: *const classes::ButtonEvent) -> *mut classes::ButtonEvent;
+/// `ButtonEvent::Init` at 0xcfb060 (semantic, high); signature (untiered): `undefined Init(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; fill a stand-alone ButtonEvent (menus map one through ProcessInputEventMappings) (high); semantic signature: `void (ButtonEvent* this, u32 device, u32 idCode, float value, float heldDownSecs)`
+pub const ButtonEvent__Init: u64 = 68680;
+/// `ButtonEvent::Init` as a function pointer type (high).
+pub type ButtonEvent__Init_fn = unsafe extern "C" fn(this: *mut classes::ButtonEvent, device: u32, idCode: u32, value: f32, heldDownSecs: f32);
+/// `ButtonEvent::IsPressed` at 0xcf2e80 (semantic, high); signature (untiered): `undefined1 IsPressed(longlong param_1)`; value != 0 && heldDownSecs == 0 (high); semantic signature: `bool (const ButtonEvent* this)`
+pub const ButtonEvent__IsPressed: u64 = 68601;
+/// `ButtonEvent::IsPressed` as a function pointer type (high).
+pub type ButtonEvent__IsPressed_fn = unsafe extern "C" fn(this: *const classes::ButtonEvent) -> bool;
 /// `ButtonEvent::vdtor` at 0x7b1a90 (layout_inference, medium); signature (low): `ButtonEvent * vdtor(ButtonEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const ButtonEvent__vdtor: u64 = 42397;
 /// `ByteArrayImplementation::vdtor` at 0xc5dfa0 (layout_inference, medium); signature (low): `ByteArrayImplementation * vdtor(ByteArrayImplementation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -28811,8 +28827,6 @@ pub const CallField28Vfunc8: u64 = 16327;
 pub const CallField30VfuncA8OrNull: u64 = 83492;
 /// `CallFirstChildVfunc30` at 0x14e9650 (decompiler, medium); signature (untiered): `undefined8 CallFirstChildVfunc30(longlong param_1)`
 pub const CallFirstChildVfunc30: u64 = 105606;
-/// `CallIndexedSlotVfunc28` at 0xcf9740 (decompiler, medium); signature (untiered): `undefined8 CallIndexedSlotVfunc28(longlong param_1, int param_2, undefined8 param_3)`
-pub const CallIndexedSlotVfunc28: u64 = 443395;
 /// `CallOnExtraType78Locked` at 0x1719a0 (decompiler, medium); signature (untiered): `undefined CallOnExtraType78Locked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CallOnExtraType78Locked: u64 = 12023;
 /// `CallVfunc0WithZeroIfNotNull` at 0x1486bf0 (decompiler, medium); signature (medium): `undefined CallVfunc0WithZeroIfNotNull(undefined8 * param_1)`
@@ -30409,12 +30423,12 @@ pub const ClearTypedValueArrayHashTable: u64 = 83409;
 pub const ClearVector0xB0: u64 = 527525;
 /// `ClearVectorA0AndDestroyArrays` at 0x42b240 (decompiler, medium); signature (untiered): `undefined ClearVectorA0AndDestroyArrays(longlong param_1, undefined8 param_2, longlong param_3, undefined8 param_4)`
 pub const ClearVectorA0AndDestroyArrays: u64 = 26713;
+/// `ClickHandler::CanProcess` at 0x962000 (semantic, high); signature (untiered): `bool CanProcess(ClickHandler * this, longlong * param_1)`
+pub const ClickHandler__CanProcess: u64 = 52255;
+/// `ClickHandler::ProcessButtonEvent` at 0x960d30 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(ClickHandler * this, longlong param_1)`
+pub const ClickHandler__ProcessButtonEvent: u64 = 52243;
 /// `ClickHandler::vdtor` at 0x960b20 (layout_inference, medium); signature (low): `ClickHandler * vdtor(ClickHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ClickHandler__vdtor: u64 = 52233;
-/// `ClickHandler::vfunc_1` at 0x962000 (rtti, high); signature (low): `bool vfunc_1(ClickHandler * this, longlong * param_1)`
-pub const ClickHandler__vfunc_1: u64 = 52255;
-/// `ClickHandler::vfunc_7` at 0x960d30 (rtti, high); signature (low): `undefined8 vfunc_7(ClickHandler * this, longlong param_1)`
-pub const ClickHandler__vfunc_7: u64 = 52243;
 /// `CloakEffect::ctor` at 0x5c4030 (layout_inference, high); signature (low): `CloakEffect * ctor(CloakEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const CloakEffect__ctor: u64 = 34239;
 /// `CloakEffect::vdtor` at 0x5c4620 (slot_propagation, medium); signature (low): `CloakEffect * vdtor(CloakEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -31689,7 +31703,7 @@ pub const Cmd__GetPlayerTeammate_Eval: u64 = 21623;
 pub const Cmd__GetPlayerTeammate_Execute: u64 = 22524;
 /// `Cmd::GetPos_Eval` at 0x3303d0 (console_cmd, high); signature (low): `undefined8 GetPos_Eval(longlong param_1, uint param_2, undefined8 param_3, double * param_4)`
 pub const Cmd__GetPos_Eval: u64 = 21407;
-/// `Cmd::GetPos_Execute` at 0x3501a0 (console_cmd, high); signature (low): `undefined GetPos_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`
+/// `Cmd::GetPos_Execute` at 0x3501a0 (console_cmd, high); signature (low): `undefined GetPos_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`; UnpackCommandArguments(.., &axis) then GetPos_Eval(thisRef, axis, 0, result); the eval 0x3303d0 reads ref +0x54/+0x58/+0x5c and prints 'GetPos: %c >> %0.2f' only when TLS+0x600 (console run) is set (high); semantic signature: `bool (execute args)`
 pub const Cmd__GetPos_Execute: u64 = 22045;
 /// `Cmd::GetQuestCompleted_Eval` at 0x332260 (console_cmd, high); signature (low): `undefined8 GetQuestCompleted_Eval(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
 pub const Cmd__GetQuestCompleted_Eval: u64 = 21448;
@@ -32005,7 +32019,7 @@ pub const Cmd__HasTwoHandedWeaponEquipped_Eval: u64 = 21728;
 pub const Cmd__HasTwoHandedWeaponEquipped_Execute: u64 = 22652;
 /// `Cmd::HavokVDBCapture_Execute` at 0x371fd0 (console_cmd, high); signature (low): `undefined1 HavokVDBCapture_Execute(void)`
 pub const Cmd__HavokVDBCapture_Execute: u64 = 22890;
-/// `Cmd::Help_Execute` at 0x36efb0 (console_cmd, high); signature (low): `undefined8 Help_Execute(longlong param_1, longlong param_2, _Func_impl_no_alloc<<lambda_2bb8a2fdec3e2af3a230c268838d13f1>,void,char_const*___ptr64,char_const*___ptr64>_vtbl * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+/// `Cmd::Help_Execute` at 0x36efb0 (console_cmd, high); signature (low): `undefined8 Help_Execute(longlong param_1, longlong param_2, _Func_impl_no_alloc<<lambda_2bb8a2fdec3e2af3a230c268838d13f1>,void,char_const*___ptr64,char_const*___ptr64>_vtbl * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; Unpack(String search, Integer filter, String formType); an empty search prints 'usage: help <search word> <filter> <form type>' and two more lines; walks exactly 0x1c1 console and 0x2e1 script entries (high); semantic signature: `bool (execute args)`
 pub const Cmd__Help_Execute: u64 = 22839;
 /// `Cmd::Help_Execute_sub0` at 0x1bb570 (callgraph, medium); signature (untiered): `undefined Help_Execute_sub0(longlong param_1, longlong param_2, char param_3, undefined8 param_4)`
 pub const Cmd__Help_Execute_sub0: u64 = 441527;
@@ -33325,8 +33339,6 @@ pub const Cmd__SharedExecute_ID_22473: u64 = 22473;
 pub const Cmd__SharedExecute_ID_22880: u64 = 22880;
 /// `Cmd::SharedExecute_ID_22922` at 0x3732a0 (console_cmd, medium); signature (low): `char SharedExecute_ID_22922(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__SharedExecute_ID_22922: u64 = 22922;
-/// `Cmd::SharedParse_ID_21956` at 0x347ac0 (console_cmd, medium); signature (low): `ulonglong SharedParse_ID_21956(ushort param_1, longlong param_2, longlong param_3, TypeDescriptor * param_4)`
-pub const Cmd__SharedParse_ID_21956: u64 = 21956;
 /// `Cmd::ShouldAttackKill_Eval` at 0x33e920 (console_cmd, high); signature (low): `undefined8 ShouldAttackKill_Eval(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 * param_4)`
 pub const Cmd__ShouldAttackKill_Eval: u64 = 21744;
 /// `Cmd::ShouldAttackKill_Execute` at 0x3699c0 (console_cmd, high); signature (low): `ulonglong ShouldAttackKill_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 * param_7, uint * param_8)`
@@ -40105,8 +40117,6 @@ pub const CompareByField8Field9ThenVfunc20: u64 = 23820;
 pub const CompareDistanceToRadius: u64 = 19353;
 /// `CompareExchangeRefCountedPointer` at 0x151e20 (decompiler, medium); signature (medium): `undefined8 CompareExchangeRefCountedPointer(longlong * param_1, longlong * param_2, longlong * param_3)`
 pub const CompareExchangeRefCountedPointer: u64 = 11344;
-/// `CompareField8LowThenHighWord` at 0xcf1770 (decompiler, high); signature (high): `ulonglong CompareField8LowThenHighWord(longlong param_1, longlong param_2)`
-pub const CompareField8LowThenHighWord: u64 = 68573;
 /// `CompareFloatsByOperator` at 0x4a6eb0 (decompiler, high); signature (high): `undefined8 CompareFloatsByOperator(undefined4 param_1, float param_2, float param_3)`
 pub const CompareFloatsByOperator: u64 = 29891;
 /// `CompareFloatsDescending` at 0x82a1a0 (decompiler, high); signature (high): `undefined8 CompareFloatsDescending(float * param_1, float * param_2)`
@@ -40117,6 +40127,10 @@ pub const CompareFunctionSignatures: u64 = 105391;
 pub const CompareIndirectString: u64 = 57470;
 /// `CompareItemsByScoreThenFormID` at 0x82a100 (decompiler, medium); signature (medium): `undefined8 CompareItemsByScoreThenFormID(longlong * param_1, longlong * param_2)`
 pub const CompareItemsByScoreThenFormID: u64 = 44909;
+/// `CompareMappingKey` at 0xcf1770 (semantic, high); signature (untiered): `ulonglong CompareMappingKey(longlong param_1, longlong param_2)`; orders by key low word, then high word (high); semantic signature: `int (const UserEventMapping* a, const UserEventMapping* b)`
+pub const CompareMappingKey: u64 = 68573;
+/// `CompareMappingKey` as a function pointer type (high).
+pub type CompareMappingKey_fn = unsafe extern "C" fn(a: *const classes::UserEventMapping, b: *const classes::UserEventMapping) -> i32;
 /// `CompareMenuDepth` at 0x116bed0 (semantic, high); signature (untiered): `undefined4 CompareMenuDepth(longlong * param_1, longlong * param_2)`; 1 / 0 / -1 by the depth byte +0x18 (high); semantic signature: `i32 (IMenu** a, IMenu** b)`
 pub const CompareMenuDepth: u64 = 82098;
 /// `CompareMenuDepth` as a function pointer type (high).
@@ -40139,6 +40153,14 @@ pub const Compass__vfunc_0: u64 = 51711;
 pub const Compass__vfunc_1: u64 = 51668;
 /// `Compass::vfunc_3` at 0x9388c0 (rtti, high); signature (low): `undefined vfunc_3(Compass * this, longlong param_1)`
 pub const Compass__vfunc_3: u64 = 51669;
+/// `CompileAndRunScript` at 0x343d00 (runtime, high); signature (untiered): `undefined CompileAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`; compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run (high); semantic signature: `void (Script* script, ScriptCompiler* compiler, uint compileType, TESObjectREFR* thisRef)`
+pub const CompileAndRunScript: u64 = 441582;
+/// `CompileExpressionTokens` at 0x34b9f0 (semantic, medium); signature (untiered): `int CompileExpressionTokens(undefined8 param_1, longlong param_2, undefined4 * param_3, longlong param_4, longlong param_5)`; compiles function calls inside set/if expressions as 'X' u16 opcode u16 len params, variables as 'r'/'G'/'Z' tokens (medium); semantic signature: `int (ScriptCompiler*, ScriptCompileBuffer*, uint* lineNo, const char* expr, char* out)`
+pub const CompileExpressionTokens: u64 = 21971;
+/// `CompileNextLine` at 0x34b150 (semantic, high); signature (untiered): `int CompileNextLine(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; reads the next line into a ScriptLineBuffer (0x41c), reads its first token and looks the command up; returns the line's opcode or 0xffff (high); semantic signature: `uint (ScriptCompileBuffer* buf)`
+pub const CompileNextLine: u64 = 21966;
+/// `CompileScriptLine` at 0x34a4e0 (semantic, high); signature (untiered): `undefined8 CompileScriptLine(undefined8 param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`; per-opcode compile of a line; for a command: reference checks, then entry->parse(numParams, params, line, buf) when params != 0, then emits [u16 0x1c, u16 refIndex] u16 opcode, u16 dataLen, data (MAX_SCRIPT_SIZE 0x4000) (high); semantic signature: `bool (ScriptCompiler*, Script*, ScriptCompileBuffer* buf, ScriptLineBuffer* line)`
+pub const CompileScriptLine: u64 = 21965;
 /// `CompleteAsyncRequest` at 0x12c6490 (decompiler, medium); signature (untiered): `undefined CompleteAsyncRequest(void * param_1, undefined8 param_2, undefined4 param_3)`
 pub const CompleteAsyncRequest: u64 = 446110;
 /// `CompleteAsyncRequestMappedStatus` at 0x12bd630 (decompiler, medium); signature (untiered): `undefined CompleteAsyncRequestMappedStatus(void * param_1, longlong param_2)`
@@ -40527,7 +40549,7 @@ pub const ComputeProjectileRotation: u64 = 44212;
 pub const ComputeQuadHeightRange: u64 = 18766;
 /// `ComputeQuadraticFalloff` at 0x420170 (decompiler, medium); signature (medium): `float ComputeQuadraticFalloff(float param_1, float param_2)`
 pub const ComputeQuadraticFalloff: u64 = 26443;
-/// `ComputeRadialDeadzoneStick` at 0xcfbbf0 (decompiler, medium); signature (medium): `undefined ComputeRadialDeadzoneStick(longlong * param_1, undefined4 param_2, undefined4 param_3, float param_4, float param_5, float * param_6, float * param_7)`
+/// `ComputeRadialDeadzoneStick` at 0xcfbbf0 (semantic, high); signature (medium): `undefined ComputeRadialDeadzoneStick(longlong * param_1, undefined4 param_2, undefined4 param_3, float param_4, float param_5, float * param_6, float * param_7)`; NormalizeStick, scale by clamp((|v| - dz)/(dzMax - dz), 0, 1)/|v| (high); semantic signature: `void (BSGamepadDevice* this, ..., float dz, float dzMax, float* x, float* y)`
 pub const ComputeRadialDeadzoneStick: u64 = 68697;
 /// `ComputeRandomSandboxDuration` at 0x41dae0 (decompiler, medium); signature (medium): `undefined ComputeRandomSandboxDuration(float param_1, int param_2)`
 pub const ComputeRandomSandboxDuration: u64 = 26384;
@@ -42751,36 +42773,44 @@ pub const Console__FlushLog: u64 = 51094;
 pub type Console__FlushLog_fn = unsafe extern "C" fn(this: *mut classes::Console);
 /// `Console::HideComplete` at 0x90a610 (semantic, high); signature (untiered): `undefined HideComplete(void)`; FxDelegate callback: QueueMessage(UI queue, 'Console', 3 (hide), null) (high); semantic signature: `void (FxDelegateArgs* args)`
 pub const Console__HideComplete: u64 = 51085;
+/// `Console::InitGlobals` at 0x909ba0 (semantic, medium); signature (untiered): `undefined InitGlobals(void)`; loads the console INI (macros, hotkeys), registers the ConsoleHotkeyManager input sink, resolves the L/R Shift/Ctrl/Alt ids and allocates g_ScriptCompiler (1 byte) (medium); semantic signature: `void ()`
+pub const Console__InitGlobals: u64 = 442670;
 /// `Console::ProcessMessage` at 0x9092d0 (semantic, high); signature (untiered): `byte ProcessMessage(Console * this, longlong param_1)`
 pub const Console__ProcessMessage: u64 = 442669;
 /// `Console::SetSelectedRef` at 0x90b9d0 (semantic, high); signature (untiered): `undefined SetSelectedRef(longlong param_1, uint * param_2)`; stores g_ConsoleSelectedRef and Invokes 'Console.SetCurrentSelection' with "'%s' RefID: (%08x)..." (high); semantic signature: `void (Console* this, const RefHandle* handle)`
 pub const Console__SetSelectedRef: u64 = 51093;
 /// `Console::ctor` at 0x9091d0 (layout_inference, high); signature (high): `Console * ctor(Console * this)`
 pub const Console__ctor: u64 = 524000;
-/// `Console::vfunc_4_sub0` at 0x343ee0 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(undefined8 param_1, undefined8 param_2, uint * param_3, longlong * param_4)`
-pub const Console__vfunc_4_sub0: u64 = 21891;
 /// `Console::vfunc_4_sub1` at 0x90a930 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub1(longlong param_1)`
 pub const Console__vfunc_4_sub1: u64 = 51089;
+/// `ConsoleCommandQueue::Push` at 0x9927c0 (runtime, high); signature (untiered): `undefined8 * Push(DWORD * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; appends a task to the spinlock-protected list at q+8 (high); semantic signature: `void (ConsoleCommandQueue* q, ConsoleCommandTask* task)`
+pub const ConsoleCommandQueue__Push: u64 = 52951;
+/// `ConsoleCommandTask::ctor` at 0x992640 (semantic, high); signature (untiered): `longlong * ctor(longlong * param_1, longlong * param_2, longlong * param_3, longlong param_4)`; fills the 0x18 task (high); semantic signature: `ConsoleCommandTask* (ConsoleCommandTask* this, Script** script, TESObjectREFR** ref, ScriptCompiler* compiler)`
+pub const ConsoleCommandTask__ctor: u64 = 52948;
 /// `ConsoleData::dtor` at 0x98dc90 (layout_inference, high); signature (low): `undefined dtor(ConsoleData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const ConsoleData__dtor: u64 = 52846;
 /// `ConsoleData::vdtor` at 0x98d520 (layout_inference, medium); signature (low): `ConsoleData * vdtor(ConsoleData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ConsoleData__vdtor: u64 = 52823;
+/// `ConsoleHotkeyManager::ProcessEvent` at 0x90df60 (semantic, high); signature (untiered): `undefined1 ProcessEvent(void * this, ulonglong * param_1)`; first sink on the input source: when bUseConsoleHotkeys:Menu is set, hotkeys exist, no pausing menu and no text entry, a pressed key whose modifiers (L/R Shift/Ctrl/Alt) match a configured hotkey runs its console line and returns 1 (Stop), which hides the whole frame list from MenuControls and PlayerControls (high); semantic signature: `BSEventNotifyControl (ConsoleHotkeyManager* this, InputEvent* const* head, BSTEventSource<InputEvent*>* source)`
+pub const ConsoleHotkeyManager__ProcessEvent: u64 = 442700;
 /// `ConsoleLog::Print` at 0x90f1b0 (semantic, high); signature (untiered): `undefined Print(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; printf-style console print; the single wrapper over VPrint (959 call sites) (high); semantic signature: `void (ConsoleLog* log, const char* fmt, ...)`
 pub const ConsoleLog__Print: u64 = 51109;
 /// `ConsoleLog::VPrint` at 0x90f1e0 (runtime, high); signature (untiered): `undefined VPrint(longlong param_1, undefined8 param_2, undefined8 param_3)`; formats into log+1 and appends the line plus '\n' to log+0x408; if the buffer was empty, first posts a ConsoleData (type 0) update to 'Console' so the menu flushes it. The function to hook to capture console output (high); semantic signature: `void (ConsoleLog* log, const char* fmt, va_list args)`
 pub const ConsoleLog__VPrint: u64 = 51110;
+/// `ConsoleLogPrinter::Print` at 0x90d590 (semantic, high); signature (untiered): `undefined Print(void * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; ConsoleLog::Print(g_ConsoleLog, fmt, line) (high); semantic signature: `void (ConsoleLogPrinter* this, const char* line)`
+pub const ConsoleLogPrinter__Print: u64 = 51105;
 /// `ConsoleNativeUIMenu::ctor` at 0x90f5d0 (layout_inference, high); signature (high): `ConsoleNativeUIMenu * ctor(ConsoleNativeUIMenu * this)`
 pub const ConsoleNativeUIMenu__ctor: u64 = 51111;
 /// `ConsoleNativeUIMenu::vdtor` at 0x90f650 (layout_inference, medium); signature (low): `ConsoleNativeUIMenu * vdtor(ConsoleNativeUIMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const ConsoleNativeUIMenu__vdtor: u64 = 51113;
 /// `ConsoleNativeUIMenu::vfunc_4` at 0x90f610 (rtti, high); signature (low): `undefined8 vfunc_4(ConsoleNativeUIMenu * this, longlong param_1)`
 pub const ConsoleNativeUIMenu__vfunc_4: u64 = 51112;
+/// `ConsoleOpenHandler::CanProcess` at 0x962030 (semantic, high); signature (untiered): `bool CanProcess(ConsoleOpenHandler * this, longlong * param_1)`
+pub const ConsoleOpenHandler__CanProcess: u64 = 52256;
+/// `ConsoleOpenHandler::ProcessButtonEvent` at 0x960e20 (semantic, high); signature (untiered): `undefined1 ProcessButtonEvent(ConsoleOpenHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const ConsoleOpenHandler__ProcessButtonEvent: u64 = 52244;
 /// `ConsoleOpenHandler::vdtor` at 0x960b50 (layout_inference, medium); signature (low): `ConsoleOpenHandler * vdtor(ConsoleOpenHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ConsoleOpenHandler__vdtor: u64 = 52234;
-/// `ConsoleOpenHandler::vfunc_1` at 0x962030 (rtti, high); signature (low): `bool vfunc_1(ConsoleOpenHandler * this, longlong * param_1)`
-pub const ConsoleOpenHandler__vfunc_1: u64 = 52256;
-/// `ConsoleOpenHandler::vfunc_7` at 0x960e20 (rtti, high); signature (low): `undefined1 vfunc_7(ConsoleOpenHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const ConsoleOpenHandler__vfunc_7: u64 = 52244;
 /// `ConsoleOpenHandler::vfunc_7_sub0` at 0x90a820 (callgraph, medium); signature (untiered): `undefined vfunc_7_sub0(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ConsoleOpenHandler__vfunc_7_sub0: u64 = 51088;
 /// `ConstructAsyncOperationProxyAndEnqueue` at 0x12daef0 (decompiler, medium); signature (medium): `AsyncOperationProxy * ConstructAsyncOperationProxyAndEnqueue(AsyncOperationProxy * param_1, undefined8 param_2, longlong * param_3)`
@@ -43115,6 +43145,56 @@ pub const ContractedDisease__GetEventSource: u64 = 38670;
 pub const ContractedDisease__RegisterSink: u64 = 38529;
 /// `ContractedDisease::UnregisterSink` at 0x6c7bc0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ContractedDisease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ContractedDisease::Event>* sink)`
 pub const ContractedDisease__UnregisterSink: u64 = 38530;
+/// `ControlMap::AllowTextEntry` at 0xcefd60 (semantic, high); signature (untiered): `undefined AllowTextEntry(longlong param_1, char param_2)`; increments or decrements textEntryCount (high); semantic signature: `void (ControlMap* this, bool begin)`
+pub const ControlMap__AllowTextEntry: u64 = 68552;
+/// `ControlMap::GetButtonNameForUserEvent` at 0xcefd90 (semantic, high); signature (untiered): `undefined8 GetButtonNameForUserEvent(longlong param_1, longlong * param_2, int param_3, undefined8 param_4)`; user event -> key: first record with that name in contexts 0..0x11 (array order, not the stack) whose key low byte != 0xff; asks the device (EventSourceHolder_Input device[device] vtable+0x20) for the key's name (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, BSFixedString* outName)`
+pub const ControlMap__GetButtonNameForUserEvent: u64 = 68553;
+/// `ControlMap::GetControlState` at 0xcefb80 (semantic, high); signature (untiered): `undefined GetControlState(longlong param_1, undefined4 * param_2, undefined4 * param_3)`; getter (save game, free camera) (high); semantic signature: `void (ControlMap* this, u32* enabled, u32* saved)`
+pub const ControlMap__GetControlState: u64 = 68548;
+/// `ControlMap::GetMapping` at 0xcf1150 (semantic, medium); signature (untiered): `ulonglong GetMapping(longlong param_1, longlong * param_2, int param_3, int param_4, longlong * param_5)`; copies the record of a user event in one context/device; no static caller in 1.7.104 (only its .pdata entry) (medium); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 context, u32 device, UserEventMapping* out)`
+pub const ControlMap__GetMapping: u64 = 68567;
+/// `ControlMap::HasMappingInContextStack` at 0xcefbe0 (semantic, high); signature (untiered): `char HasMappingInContextStack(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; true if any context on the stack maps the user event on any device (used by CursorMenu) (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent)`
+pub const ControlMap__HasMappingInContextStack: u64 = 68551;
+/// `ControlMap::LoadRemapFile` at 0xcef0f0 (semantic, high); signature (untiered): `undefined LoadRemapFile(longlong param_1)`; reads sControlsRemapFile: per device a block {2, len hi, len lo, then 5-byte {lineIndex, key big-endian}}; sets the key of remappable context-0 records; re-sorts and resolves links (high); semantic signature: `void (ControlMap* this)`
+pub const ControlMap__LoadRemapFile: u64 = 68540;
+/// `ControlMap::MapInputEvents` at 0xcef3b0 (runtime, high); signature (untiered): `undefined MapInputEvents(longlong param_1, longlong * param_2, ulonglong param_3, undefined8 param_4)`; for every event with an id (vtable+8) and a user event not yet 'Skip': walk the context stack from the top, binary-search the device table by key; first context with a record wins; combos: a record key|modifier<<16 is used when the modifier's ButtonEvent is in the same list and the modifier event is renamed (or set to 'Skip'); a record whose group flags are not enabled (or filtered by +0x128/+0x129/+0x12a) yields 'Skip'; at the end every 'Skip' becomes the empty string. eventType 4 sets +0x129 (high); semantic signature: `void (ControlMap* this, InputEvent* head)`
+pub const ControlMap__MapInputEvents: u64 = 68542;
+/// `ControlMap::ParseDefinitionFile` at 0xcf17d0 (semantic, high); signature (untiered): `undefined ParseDefinitionFile(longlong param_1, undefined * param_2, uint param_3)`; parses the tab-separated control map: blank line = next context (max 0x12), '//' comments, columns name, key per device (3), remappable per device (3), group flags (hex/sscanf); device 7 = all and rebuilds everything, otherwise only that device (high); semantic signature: `void (ControlMap* this, const char* path, u32 device)`
+pub const ControlMap__ParseDefinitionFile: u64 = 524121;
+/// `ControlMap::ParseKeyList` at 0xcf0560 (semantic, high); signature (untiered): `undefined ParseKeyList(undefined8 param_1, void * param_2, longlong * param_3, undefined8 param_4)`; splits a key column on ',' and 'A+B' (modifier<<16|key); default 0xff (high); semantic signature: `void (ControlMap* this, const char* text, BSTArray<u32>* out, u32 device)`
+pub const ControlMap__ParseKeyList: u64 = 68556;
+/// `ControlMap::ParseLinkedMapping` at 0xcf0a60 (semantic, high); signature (untiered): `undefined ParseLinkedMapping(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4, undefined4 param_5, void * param_6)`; '!ctx,name' column: appends a LinkedMapping and key 0x7fffffff (high); semantic signature: `void (ControlMap* this, BSTArray<u32>* keys, BSFixedString* name, u32 context, u32 device, const char* text)`
+pub const ControlMap__ParseLinkedMapping: u64 = 68557;
+/// `ControlMap::PopInputContext` at 0xcef980 (runtime, high); signature (untiered): `char PopInputContext(longlong param_1, int param_2)`; remove every occurrence of the context; true if one was removed (high); semantic signature: `bool (ControlMap* this, u32 context)`
+pub const ControlMap__PopInputContext: u64 = 68544;
+/// `ControlMap::PushInputContext` at 0xcef8a0 (runtime, high); signature (untiered): `undefined PushInputContext(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; push a context (0 goes to the bottom; a top 2 stays on top) (high); semantic signature: `void (ControlMap* this, u32 context)`
+pub const ControlMap__PushInputContext: u64 = 68543;
+/// `ControlMap::ReloadDefinitionFile` at 0xceece0 (semantic, high); signature (untiered): `undefined ReloadDefinitionFile(longlong param_1)`; re-parses sControlsDefinitionFile for all devices (reset to defaults) (high); semantic signature: `void (ControlMap* this)`
+pub const ControlMap__ReloadDefinitionFile: u64 = 68536;
+/// `ControlMap::RemapUserEvent` at 0xceee40 (semantic, high); signature (untiered): `char RemapUserEvent(longlong param_1, longlong * param_2, uint param_3, int param_4)`; rebinds a remappable user event; for keyboard/mouse also unbinds it on the other of the two devices (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, u32 newKey)`
+pub const ControlMap__RemapUserEvent: u64 = 68538;
+/// `ControlMap::RemapUserEventOnDevice` at 0xcf1470 (semantic, high); signature (untiered): `undefined1 RemapUserEventOnDevice(longlong param_1, longlong * param_2, int param_3, int param_4, longlong * param_5, undefined4 * param_6)`; finds the first context with the user event, swaps keys with a remappable (or 'Look') record already on newKey, sets the key, re-sorts (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, u32 newKey, BSFixedString* swappedEvent, u32* oldKey)`
+pub const ControlMap__RemapUserEventOnDevice: u64 = 68570;
+/// `ControlMap::ResetControlState` at 0xcefbc0 (semantic, high); signature (untiered): `undefined ResetControlState(longlong param_1)`; -1 / 0x80000000 (PlayerCharacter::Revert) (high); semantic signature: `void (ControlMap* this)`
+pub const ControlMap__ResetControlState: u64 = 68550;
+/// `ControlMap::ResolveLinkedMappings` at 0xcefed0 (semantic, high); signature (untiered): `undefined ResolveLinkedMappings(longlong param_1)`; resets linked records to 0x7fffffff and copies the key of the linked user event (high); semantic signature: `void (ControlMap* this)`
+pub const ControlMap__ResolveLinkedMappings: u64 = 68554;
+/// `ControlMap::RestoreControlState` at 0xcefb50 (semantic, high); signature (untiered): `undefined RestoreControlState(longlong param_1)`; +0x120 = +0x124 and clears the snapshot (no event sent) (high); semantic signature: `void (ControlMap* this)`
+pub const ControlMap__RestoreControlState: u64 = 68547;
+/// `ControlMap::SaveControlState` at 0xcefb30 (semantic, high); signature (untiered): `undefined SaveControlState(longlong param_1)`; +0x124 = +0x120 when no snapshot (high); semantic signature: `void (ControlMap* this)`
+pub const ControlMap__SaveControlState: u64 = 68546;
+/// `ControlMap::SaveRemapFile` at 0xceef40 (semantic, high); signature (untiered): `undefined SaveRemapFile(longlong param_1)`; serialises the remappable context-0 records in the same format and hands the buffer to BSGamerProfile (high); semantic signature: `void (ControlMap* this)`
+pub const ControlMap__SaveRemapFile: u64 = 68539;
+/// `ControlMap::SetControlState` at 0xcefba0 (semantic, high); signature (untiered): `undefined SetControlState(longlong param_1, undefined4 param_2, undefined4 param_3)`; setter (load game, free camera) (high); semantic signature: `void (ControlMap* this, u32 enabled, u32 saved)`
+pub const ControlMap__SetControlState: u64 = 68549;
+/// `ControlMap::SetControlsEnabled` at 0xcefaa0 (semantic, high); signature (untiered): `undefined SetControlsEnabled(longlong param_1, uint param_2, char param_3, char param_4)`; sets or clears group bits in +0x120 (and +0x124 when alsoSaved and a snapshot exists) and notifies UserEventEnabledEvent {new, old} (high); semantic signature: `void (ControlMap* this, u32 groups, bool enable, bool alsoSaved)`
+pub const ControlMap__SetControlsEnabled: u64 = 68545;
+/// `ControlMap::SetGamepadLayout` at 0xceed20 (semantic, high); signature (untiered): `undefined SetGamepadLayout(longlong param_1, int param_2)`; translates every gamepad key through table ID_236686 and stores +0x12c (high); semantic signature: `void (ControlMap* this, u32 layout)`
+pub const ControlMap__SetGamepadLayout: u64 = 68537;
+/// `ControlMap::ctor` at 0xceeaa0 (semantic, high); signature (untiered): `longlong ctor(longlong param_1)`; initialises the map, creates UserEventNames, parses the definition file, loads the remap file, resolves links (high); semantic signature: `ControlMap* (ControlMap* this)`
+pub const ControlMap__ctor: u64 = 68534;
+/// `ControlMap::dtor` at 0xceec30 (semantic, high); signature (untiered): `undefined dtor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined * param_4)`; frees contexts, UserEventNames, the stack and links; clears the global (high); semantic signature: `void (ControlMap* this)`
+pub const ControlMap__dtor: u64 = 68535;
 /// `ConvertBundle` at 0x13fd240 (decompiler, medium); signature (untiered): `undefined ConvertBundle(undefined8 param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
 pub const ConvertBundle: u64 = 527388;
 /// `ConvertCustomDataValue` at 0x140b010 (decompiler, medium); signature (untiered): `undefined ConvertCustomDataValue(int * param_1, char * param_2, longlong * param_3, longlong * param_4, longlong param_5)`
@@ -44105,8 +44185,10 @@ pub const CreateImageSpaceModifierInstanceDOF: u64 = 18584;
 pub const CreateImageSpaceModifierInstanceFormByName: u64 = 18569;
 /// `CreateIndexBuffer` at 0x100d7e0 (decompiler, medium); signature (untiered): `void * CreateIndexBuffer(longlong param_1, int param_2, undefined8 param_3, undefined8 param_4)`
 pub const CreateIndexBuffer: u64 = 77294;
-/// `CreateInputDevice` at 0xd6eba0 (decompiler, high); signature (high): `BSWin32VirtualKeyboardDevice * CreateInputDevice(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `CreateInputDevice` at 0xd6eba0 (semantic, high); signature (high): `BSWin32VirtualKeyboardDevice * CreateInputDevice(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; 0 keyboard, 1 mouse, 2 gamepad handler, 5 virtual keyboard, else null (high); semantic signature: `BSIInputDevice* (int slot)`
 pub const CreateInputDevice: u64 = 68738;
+/// `CreateInputDevice` as a function pointer type (high).
+pub type CreateInputDevice_fn = unsafe extern "C" fn(slot: i32) -> *mut classes::BSIInputDevice;
 /// `CreateInventoryChangesIfNeeded` at 0x22b060 (decompiler, medium); signature (untiered): `char CreateInventoryChangesIfNeeded(longlong * param_1, longlong * param_2)`
 pub const CreateInventoryChangesIfNeeded: u64 = 16038;
 /// `CreateJsonObjectMemberNode` at 0xa78d50 (decompiler, medium); signature (untiered): `longlong CreateJsonObjectMemberNode(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
@@ -45441,8 +45523,10 @@ pub const DetachReferenceFromCell: u64 = 19188;
 pub const DetachTechniquesAndReleaseLight: u64 = 15030;
 /// `DetachTechniquesFromTarget` at 0x5d7a90 (decompiler, medium); signature (untiered): `undefined DetachTechniquesFromTarget(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const DetachTechniquesFromTarget: u64 = 34667;
-/// `DetectAndCreateGamepadDevice` at 0xe12020 (decompiler, medium); signature (untiered): `undefined DetectAndCreateGamepadDevice(BSGamepadDevice_vtbl * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `DetectAndCreateGamepadDevice` at 0xe12020 (semantic, high); signature (untiered): `undefined DetectAndCreateGamepadDevice(BSGamepadDevice_vtbl * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; XInputGetCapabilities 0..3, else a PlayStation pad; create, slot 1, DeviceConnectEvent(2, true) (high); semantic signature: `void (BSPCGamepadDeviceHandler* handler)`
 pub const DetectAndCreateGamepadDevice: u64 = 68762;
+/// `DetectAndCreateGamepadDevice` as a function pointer type (high).
+pub type DetectAndCreateGamepadDevice_fn = unsafe extern "C" fn(handler: *mut classes::BSPCGamepadDeviceHandler);
 /// `DetectCpuFeatureLevel` at 0xf0ced0 (decompiler, medium); signature (medium): `undefined DetectCpuFeatureLevel(void)`
 pub const DetectCpuFeatureLevel: u64 = 71274;
 /// `DetectLifeEffect::vdtor` at 0x5c58c0 (slot_propagation, medium); signature (low): `DetectLifeEffect * vdtor(DetectLifeEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -45533,10 +45617,10 @@ pub const DialoguePackage__vfunc_16: u64 = 42542;
 pub const DialoguePackage__vfunc_47: u64 = 42539;
 /// `DialoguePackage::vfunc_63` at 0x7b9160 (rtti, high); signature (low): `bool vfunc_63(DialoguePackage * this, longlong param_1)`
 pub const DialoguePackage__vfunc_63: u64 = 42543;
+/// `DirectionHandler::CanProcess` at 0x962060 (semantic, high); signature (untiered): `undefined8 CanProcess(DirectionHandler * this, longlong * param_1)`
+pub const DirectionHandler__CanProcess: u64 = 52257;
 /// `DirectionHandler::vdtor` at 0x960b80 (layout_inference, medium); signature (low): `DirectionHandler * vdtor(DirectionHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const DirectionHandler__vdtor: u64 = 52235;
-/// `DirectionHandler::vfunc_1` at 0x962060 (rtti, high); signature (low): `undefined8 vfunc_1(DirectionHandler * this, longlong * param_1)`
-pub const DirectionHandler__vfunc_1: u64 = 52257;
 /// `DirectionHandler::vfunc_5` at 0x960fc0 (rtti, high); signature (low): `undefined8 vfunc_5(DirectionHandler * this, longlong param_1)`
 pub const DirectionHandler__vfunc_5: u64 = 52246;
 /// `DirectionHandler::vfunc_7` at 0x960e50 (rtti, high); signature (low): `undefined8 vfunc_7(DirectionHandler * this, longlong * param_1)`
@@ -45623,8 +45707,6 @@ pub const DispatchEventToSinks_12: u64 = 16374;
 pub const DispatchEventToSinks_2: u64 = 82142;
 /// `DispatchEventToSinks_3` at 0x2fa750 (decompiler, medium); signature (untiered): `ulonglong DispatchEventToSinks_3(longlong * param_1, undefined8 param_2)`
 pub const DispatchEventToSinks_3: u64 = 20037;
-/// `DispatchEventToSinks_4` at 0xcf2b60 (decompiler, medium); signature (untiered): `DWORD DispatchEventToSinks_4(longlong * param_1, undefined8 param_2)`
-pub const DispatchEventToSinks_4: u64 = 68600;
 /// `DispatchEventToSinks_5` at 0x149b770 (decompiler, medium); signature (untiered): `ulonglong DispatchEventToSinks_5(longlong * param_1, undefined8 param_2)`
 pub const DispatchEventToSinks_5: u64 = 104457;
 /// `DispatchEventToSinks_6` at 0x1da520 (decompiler, medium); signature (untiered): `ulonglong DispatchEventToSinks_6(longlong * param_1, undefined8 param_2)`
@@ -45645,8 +45727,6 @@ pub const DispatchFromTwoIndexTable: u64 = 33318;
 pub const DispatchMovementMessage: u64 = 37892;
 /// `DispatchPairsByTypeTable` at 0xc042b0 (decompiler, medium); signature (untiered): `undefined DispatchPairsByTypeTable(longlong param_1, longlong * param_2, int param_3)`
 pub const DispatchPairsByTypeTable: u64 = 64615;
-/// `DispatchToHandlerAtIndex` at 0xcf96c0 (decompiler, medium); signature (untiered): `undefined8 DispatchToHandlerAtIndex(longlong param_1, int param_2, undefined4 param_3, undefined8 param_4)`
-pub const DispatchToHandlerAtIndex: u64 = 68618;
 /// `DispatchToListeners` at 0xbda400 (decompiler, medium); signature (untiered): `ulonglong DispatchToListeners(longlong * param_1, undefined8 param_2)`
 pub const DispatchToListeners: u64 = 63783;
 /// `DispatchToListenersDeferred` at 0x6c0470 (decompiler, medium); signature (untiered): `ulonglong DispatchToListenersDeferred(longlong * param_1, undefined8 param_2)`
@@ -46545,16 +46625,66 @@ pub const EvaluatePackageProcedures: u64 = 39222;
 pub const EvaluatePiecewiseLinearCurve: u64 = 42349;
 /// `EvaluatePiecewiseLinearFromFields10And14` at 0x120f610 (decompiler, medium); signature (medium): `float EvaluatePiecewiseLinearFromFields10And14(float param_1, longlong param_2)`
 pub const EvaluatePiecewiseLinearFromFields10And14: u64 = 91810;
-/// `EvaluateScriptOperandAsDouble` at 0x3455a0 (decompiler, medium); signature (untiered): `undefined8 EvaluateScriptOperandAsDouble(double * param_1, longlong param_2, uint * param_3, longlong param_4, undefined8 param_5, longlong param_6, longlong param_7, char param_8)`
+/// `EvaluateScriptOperandAsDouble` at 0x3455a0 (semantic, medium); signature (untiered): `undefined8 EvaluateScriptOperandAsDouble(double * param_1, longlong param_2, uint * param_3, longlong param_4, undefined8 param_5, longlong param_6, longlong param_7, char param_8)`; evaluates one numeric operand ('n' int literal, 'z' double literal, variables) (medium); semantic signature: `bool (double* out, const void* data, uint32* offset, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script*, ScriptLocals*, bool)`
 pub const EvaluateScriptOperandAsDouble: u64 = 21911;
 /// `EvaluateSignedPiecewiseLinearFromFields20And24` at 0x120f6f0 (decompiler, medium); signature (medium): `float EvaluateSignedPiecewiseLinearFromFields20And24(float param_1, longlong param_2)`
 pub const EvaluateSignedPiecewiseLinearFromFields20And24: u64 = 91812;
 /// `EvaluateTorchLightLevel` at 0x691050 (decompiler, medium); signature (untiered): `undefined8 EvaluateTorchLightLevel(longlong param_1)`
 pub const EvaluateTorchLightLevel: u64 = 37567;
+/// `EventSourceHolder_Input::CreateDevices` at 0xcf9950 (semantic, medium); signature (untiered): `undefined CreateDevices(longlong param_1, BSWin32VirtualKeyboardDevice_vtbl * param_2, undefined8 param_3, undefined8 param_4)`; the ctor's device loop (no static caller) (medium); semantic signature: `void (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__CreateDevices: u64 = 68630;
+/// `EventSourceHolder_Input::DestroyDevices` at 0xcf99a0 (semantic, medium); signature (untiered): `undefined DestroyDevices(longlong param_1)`; slot 3 + delete per device (no static caller) (medium); semantic signature: `void (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__DestroyDevices: u64 = 524133;
+/// `EventSourceHolder_Input::GetKeyCode` at 0xcf9700 (semantic, high); signature (untiered): `undefined8 GetKeyCode(longlong param_1, int param_2, undefined4 param_3, undefined8 param_4)`; device[slot] slot 6 (high); semantic signature: `bool (EventSourceHolder_Input* this, int slot, u32 id, u32* out)`
+pub const EventSourceHolder_Input__GetKeyCode: u64 = 68619;
+/// `EventSourceHolder_Input::GetKeyCode` as a function pointer type (high).
+pub type EventSourceHolder_Input__GetKeyCode_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input, slot: i32, id: u32, out: *mut u32) -> bool;
+/// `EventSourceHolder_Input::GetKeyIDByName` at 0xcf9740 (semantic, high); signature (untiered): `undefined8 GetKeyIDByName(longlong param_1, int param_2, undefined8 param_3)`; device[slot] slot 5, -1 when empty (high); semantic signature: `u32 (EventSourceHolder_Input* this, int slot, const BSFixedString* name)`
+pub const EventSourceHolder_Input__GetKeyIDByName: u64 = 443395;
+/// `EventSourceHolder_Input::GetKeyIDByName` as a function pointer type (high).
+pub type EventSourceHolder_Input__GetKeyIDByName_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input, slot: i32, name: *const classes::BSFixedString) -> u32;
+/// `EventSourceHolder_Input::GetKeyName` at 0xcf96c0 (semantic, high); signature (untiered): `undefined8 GetKeyName(longlong param_1, int param_2, undefined4 param_3, undefined8 param_4)`; device[slot] slot 4 (high); semantic signature: `bool (EventSourceHolder_Input* this, int slot, u32 id, BSFixedString* out)`
+pub const EventSourceHolder_Input__GetKeyName: u64 = 68618;
+/// `EventSourceHolder_Input::GetKeyName` as a function pointer type (high).
+pub type EventSourceHolder_Input__GetKeyName_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input, slot: i32, id: u32, out: *mut classes::BSFixedString) -> bool;
+/// `EventSourceHolder_Input::GetVirtualKeyboard` at 0xcf98b0 (semantic, high); signature (untiered): `undefined8 GetVirtualKeyboard(longlong param_1)`; +0x88 (high); semantic signature: `BSWin32VirtualKeyboardDevice* (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__GetVirtualKeyboard: u64 = 443397;
+/// `EventSourceHolder_Input::GetVirtualKeyboard` as a function pointer type (high).
+pub type EventSourceHolder_Input__GetVirtualKeyboard_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input) -> *mut classes::BSWin32VirtualKeyboardDevice;
+/// `EventSourceHolder_Input::IsBackgroundMouse` at 0xcf9770 (semantic, high); signature (untiered): `longlong IsBackgroundMouse(longlong param_1)`; mouse && mouse+0x70 (high); semantic signature: `bool (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__IsBackgroundMouse: u64 = 68620;
+/// `EventSourceHolder_Input::IsBackgroundMouse` as a function pointer type (high).
+pub type EventSourceHolder_Input__IsBackgroundMouse_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input) -> bool;
+/// `EventSourceHolder_Input::IsGamepadConnected` at 0xcf9840 (semantic, high); signature (untiered): `undefined8 IsGamepadConnected(longlong param_1)`; gamepad handler slot 7 (high); semantic signature: `bool (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__IsGamepadConnected: u64 = 524132;
+/// `EventSourceHolder_Input::IsGamepadConnected` as a function pointer type (high).
+pub type EventSourceHolder_Input__IsGamepadConnected_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input) -> bool;
+/// `EventSourceHolder_Input::IsUsingGamepad` at 0xcf97b0 (semantic, high); signature (untiered): `undefined8 IsUsingGamepad(longlong param_1)`; BSSystemUtility+0x208 or IsGamepadConnected (0xcf97f0 is an identical copy for Papyrus Game.UsingGamepad) (high); semantic signature: `bool (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__IsUsingGamepad: u64 = 443396;
+/// `EventSourceHolder_Input::IsUsingGamepad` as a function pointer type (high).
+pub type EventSourceHolder_Input__IsUsingGamepad_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input) -> bool;
+/// `EventSourceHolder_Input::NotifySinks` at 0xcfa650 (runtime, high); signature (untiered): `ulonglong NotifySinks(longlong * param_1, undefined8 param_2)`; each sink's slot 1 (sink, head, source) in registration order; stops at the first non-zero return; all sinks get the same pointer to Update's local head (high); semantic signature: `void (BSTEventSource<InputEvent*>* this, InputEvent* const* head)`
+pub const EventSourceHolder_Input__NotifySinks: u64 = 68655;
+/// `EventSourceHolder_Input::ReinitializeMouse` at 0xcf9790 (semantic, high); signature (untiered): `undefined ReinitializeMouse(longlong param_1)`; mouse slot 9 (high); semantic signature: `void (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__ReinitializeMouse: u64 = 68621;
+/// `EventSourceHolder_Input::ReinitializeMouse` as a function pointer type (high).
+pub type EventSourceHolder_Input__ReinitializeMouse_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input);
+/// `EventSourceHolder_Input::ResetDevices` at 0xcf98d0 (semantic, high); signature (untiered): `undefined ResetDevices(longlong param_1)`; reset the queue, slot 8 on each device (high); semantic signature: `void (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__ResetDevices: u64 = 68628;
+/// `EventSourceHolder_Input::ResetDevices` as a function pointer type (high).
+pub type EventSourceHolder_Input__ResetDevices_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input);
+/// `EventSourceHolder_Input::Shutdown` at 0xcf9430 (semantic, high); signature (untiered): `undefined Shutdown(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined * param_4)`; destroy the pools, each device (slot 3, delete), the DirectInput wrapper, the sources (high); semantic signature: `void (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__Shutdown: u64 = 524130;
+/// `EventSourceHolder_Input::Shutdown` as a function pointer type (high).
+pub type EventSourceHolder_Input__Shutdown_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input);
 /// `EventSourceHolder_Input::Update` at 0xcf95f0 (runtime, high); signature (untiered): `undefined Update(longlong param_1, undefined4 param_2)`; polls the six devices, dispatches the frame's InputEvent list through the source at +0 and the remote gamepad event through +0x98 (high); semantic signature: `void (EventSourceHolder_Input* this, float delta)`
 pub const EventSourceHolder_Input__Update: u64 = 68617;
 /// `EventSourceHolder_Input::Update` as a function pointer type (high).
 pub type EventSourceHolder_Input__Update_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input, delta: f32);
+/// `EventSourceHolder_Input::ctor` at 0xcf90c0 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; sources, the queue pools (once), the Scaleform input queue 0x3210e30, six devices (CreateInputDevice + slot 1), User+0x129 = using gamepad (high); semantic signature: `EventSourceHolder_Input* (EventSourceHolder_Input* this)`
+pub const EventSourceHolder_Input__ctor: u64 = 524129;
+/// `EventSourceHolder_Input::ctor` as a function pointer type (high).
+pub type EventSourceHolder_Input__ctor_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input) -> *mut classes::EventSourceHolder_Input;
 /// `EventSourceHolder_MenuOpenClose::AdvanceMenus` at 0x116aa10 (runtime, high); signature (untiered): `DWORD AdvanceMenus(longlong param_1)`; updates the UI timer and calls slot 5 (advance) of every open menu with (delta, time) (high); semantic signature: `void (EventSourceHolder_MenuOpenClose* this)`
 pub const EventSourceHolder_MenuOpenClose__AdvanceMenus: u64 = 82083;
 /// `EventSourceHolder_MenuOpenClose::AdvanceMenus` as a function pointer type (high).
@@ -47769,10 +47899,10 @@ pub const FaderMenu__vfunc_4_sub0: u64 = 51527;
 pub const FaderMenu__vfunc_5: u64 = 51524;
 /// `FailJsonAssertWithMessage` at 0xa8f520 (decompiler, medium); signature (untiered): `undefined FailJsonAssertWithMessage(undefined8 * param_1)`
 pub const FailJsonAssertWithMessage: u64 = 443321;
+/// `FavoritesHandler::CanProcess` at 0x962120 (semantic, high); signature (untiered): `ulonglong CanProcess(FavoritesHandler * this, longlong * param_1)`
+pub const FavoritesHandler__CanProcess: u64 = 52258;
 /// `FavoritesHandler::vdtor` at 0x960bb0 (layout_inference, medium); signature (low): `FavoritesHandler * vdtor(FavoritesHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const FavoritesHandler__vdtor: u64 = 52236;
-/// `FavoritesHandler::vfunc_1` at 0x962120 (rtti, high); signature (low): `ulonglong vfunc_1(FavoritesHandler * this, longlong * param_1)`
-pub const FavoritesHandler__vfunc_1: u64 = 52258;
 /// `FavoritesHandler::vfunc_4` at 0x961410 (rtti, high); signature (low): `undefined1 vfunc_4(FavoritesHandler * this, longlong * param_1, BSTArrayAllocatorFunctor<BSScrapArrayAllocator>_vtbl * param_2, longlong param_3)`
 pub const FavoritesHandler__vfunc_4: u64 = 52248;
 /// `FavoritesHandler::vfunc_7` at 0x961190 (rtti, high); signature (low): `undefined8 vfunc_7(FavoritesHandler * this, longlong * param_1, BSTArrayAllocatorFunctor<BSScrapArrayAllocator>_vtbl * param_2, longlong param_3)`
@@ -48319,7 +48449,7 @@ pub const FindOrAddArrayEntry48: u64 = 35789;
 pub const FindOrAddEntry290: u64 = 77506;
 /// `FindOrAddKeyedEntry` at 0x829f30 (decompiler, medium); signature (untiered): `longlong FindOrAddKeyedEntry(longlong param_1, longlong param_2, ulonglong param_3)`
 pub const FindOrAddKeyedEntry: u64 = 44908;
-/// `FindOrAddScriptRefVariable` at 0x347400 (decompiler, medium); signature (untiered): `undefined8 FindOrAddScriptRefVariable(longlong param_1, char * param_2, undefined8 param_3, undefined8 param_4)`
+/// `FindOrAddScriptRefVariable` at 0x347400 (semantic, medium); signature (untiered): `undefined8 FindOrAddScriptRefVariable(longlong param_1, char * param_2, undefined8 param_3, undefined8 param_4)`; resolves an editor id or form id text to a form and adds a reference variable to the script being compiled; the second argument is the token buffer (name at +0), and the results are written back at +0x200, +0x20c and +0x210 (medium); semantic signature: `bool (ScriptCompileBuffer* buf, ScriptToken* token)`
 pub const FindOrAddScriptRefVariable: u64 = 21946;
 /// `FindOrAddSearchNodeAndQueue` at 0x4e9a60 (decompiler, medium); signature (untiered): `float * FindOrAddSearchNodeAndQueue(longlong param_1, ulonglong param_2, undefined8 * param_3, float param_4)`
 pub const FindOrAddSearchNodeAndQueue: u64 = 31031;
@@ -50001,6 +50131,8 @@ pub const GFxZlibSupport__vfunc_2: u64 = 84628;
 pub const GFxZlibSupport__vfunc_2_sub0: u64 = 88106;
 /// `GFxZlibSupportBase::vdtor` at 0x11725d0 (layout_inference, medium); signature (low): `GFxZlibSupportBase * vdtor(GFxZlibSupportBase * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const GFxZlibSupportBase__vdtor: u64 = 82372;
+/// `GFx_GetButtonFromUserEvent` at 0x991e30 (semantic, high); signature (untiered): `undefined GFx_GetButtonFromUserEvent(undefined8 * param_1)`; Scaleform callback 'GetButtonFromUserEvent' registered by HUDMenu, TutorialMenu and Journal: answers the key name of a user event (gamepad device 2 when the gamepad is active, else keyboard then mouse) (high); semantic signature: `void (FxDelegateArgs* args)`
+pub const GFx_GetButtonFromUserEvent: u64 = 52937;
 /// `GMemoryFile::ctor` at 0x120fb0 (layout_inference, high); signature (low): `GMemoryFile * ctor(GMemoryFile * this, longlong param_1, longlong param_2, int param_3)`
 pub const GMemoryFile__ctor: u64 = 440346;
 /// `GMemoryFile::vdtor` at 0x121040 (slot_propagation, medium); signature (low): `GMemoryFile * vdtor(GMemoryFile * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -64675,12 +64807,16 @@ pub const GetCombatPathingRequestGenericSearchStandardHash: u64 = 49713;
 pub const GetCombatPathingRequestGenericSearchWanderStandardHash: u64 = 49714;
 /// `GetCombatPathingRequestMultiGoalHash` at 0x8e7c60 (decompiler, high); signature (high): `undefined4 GetCombatPathingRequestMultiGoalHash(void)`
 pub const GetCombatPathingRequestMultiGoalHash: u64 = 50228;
-/// `GetCommandTableEntryByOpcode` at 0x34a230 (decompiler, high); signature (high): `CommandTableEntry * GetCommandTableEntryByOpcode(int param_1)`
+/// `GetCommandTableEntryByOpcode` at 0x34a230 (semantic, high); signature (high): `CommandTableEntry * GetCommandTableEntryByOpcode(int param_1)`; op-0x100 < 0x1c1 -> console table, op-0x1000 < 0x2e1 -> script table, else null (high); semantic signature: `CommandTableEntry* (int opcode)`
 pub const GetCommandTableEntryByOpcode: u64 = 21963;
+/// `GetCommandTableEntryByOpcode` as a function pointer type (high).
+pub type GetCommandTableEntryByOpcode_fn = unsafe extern "C" fn(opcode: i32) -> *mut classes::CommandTableEntry;
 /// `GetComponentByFormType` at 0x1d7310 (decompiler, medium); signature (untiered): `longlong GetComponentByFormType(longlong param_1)`
 pub const GetComponentByFormType: u64 = 14218;
 /// `GetComponentForFormType1AOr66` at 0x1d21c0 (decompiler, medium); signature (untiered): `longlong GetComponentForFormType1AOr66(longlong param_1)`
 pub const GetComponentForFormType1AOr66: u64 = 14121;
+/// `GetConsoleCommandQueue` at 0x992740 (semantic, medium); signature (untiered): `undefined * GetConsoleCommandQueue(void)`; returns the static queue 0x3258bc8 (thread-safe static init) (medium); semantic signature: `ConsoleCommandQueue* ()`
+pub const GetConsoleCommandQueue: u64 = 52950;
 /// `GetConstant0x4000000` at 0x63bce0 (decompiler, high); signature (high): `undefined8 GetConstant0x4000000(void)`
 pub const GetConstant0x4000000: u64 = 36095;
 /// `GetConvexHullFirstVertex` at 0x10f36c0 (decompiler, medium); signature (untiered): `undefined8 GetConvexHullFirstVertex(longlong param_1)`
@@ -65755,8 +65891,6 @@ pub const GetField80_4: u64 = 71636;
 pub const GetField88: u64 = 20528;
 /// `GetField88Field18` at 0xacd730 (decompiler, high); signature (high): `undefined4 GetField88Field18(longlong param_1)`
 pub const GetField88Field18: u64 = 58347;
-/// `GetField88_3` at 0xcf98b0 (decompiler, high); signature (high): `undefined8 GetField88_3(longlong param_1)`
-pub const GetField88_3: u64 = 443397;
 /// `GetField8A0Bounded` at 0x756c90 (decompiler, high); signature (high): `int GetField8A0Bounded(longlong param_1)`
 pub const GetField8A0Bounded: u64 = 40601;
 /// `GetField8Address` at 0x159b4e0 (decompiler, high); signature (untiered): `longlong GetField8Address(longlong param_1)`
@@ -65915,8 +66049,6 @@ pub const GetFieldF8Field8Field190: u64 = 38587;
 pub const GetFieldF8Field8Float2C8: u64 = 38724;
 /// `GetFieldF8OrField108Field50` at 0x14b780 (decompiler, medium); signature (medium): `longlong GetFieldF8OrField108Field50(longlong param_1, char param_2)`
 pub const GetFieldF8OrField108Field50: u64 = 11079;
-/// `GetFields120And124` at 0xcefb80 (decompiler, high); signature (high): `undefined GetFields120And124(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
-pub const GetFields120And124: u64 = 68548;
 /// `GetFieldsACAndB8` at 0x11e22c0 (decompiler, medium); signature (medium): `longlong GetFieldsACAndB8(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
 pub const GetFieldsACAndB8: u64 = 91113;
 /// `GetFileNameFromPath` at 0xe15b70 (decompiler, high); signature (high): `char * GetFileNameFromPath(char * param_1)`
@@ -66285,8 +66417,6 @@ pub const GetNiTextureBoolMapSingleton: u64 = 15628;
 pub const GetNodeOrRefPosition: u64 = 18099;
 /// `GetNthItemOfList60` at 0x347680 (decompiler, medium); signature (untiered): `longlong GetNthItemOfList60(longlong param_1, uint param_2)`
 pub const GetNthItemOfList60: u64 = 21947;
-/// `GetNthLinkedEntryCached` at 0x344b80 (decompiler, medium); signature (untiered): `longlong GetNthLinkedEntryCached(longlong param_1, uint param_2, longlong param_3)`
-pub const GetNthLinkedEntryCached: u64 = 21909;
 /// `GetNullPathBuilderTracker` at 0x11cc020 (decompiler, high); signature (high): `NullPathBuilderTracker * GetNullPathBuilderTracker(void)`
 pub const GetNullPathBuilderTracker: u64 = 90653;
 /// `GetObjectListItemsBegin` at 0x451650 (decompiler, medium); signature (untiered): `undefined8 * GetObjectListItemsBegin(longlong * param_1, undefined8 * param_2)`
@@ -67389,6 +67519,8 @@ pub const HUDObject__dtor: u64 = 51703;
 pub const HalfToFloatBits: u64 = 76218;
 /// `HalfToFloatBits_2` at 0x909100 (decompiler, high); signature (high): `uint HalfToFloatBits_2(ushort param_1)`
 pub const HalfToFloatBits_2: u64 = 51077;
+/// `HandleConsoleMacroCommand` at 0x90d680 (semantic, medium); signature (untiered): `bool HandleConsoleMacroCommand(char * param_1, char * param_2, uint param_3, undefined8 param_4)`; console macro/hotkey/reload preprocessor; returns whether the (expanded) line still has to run (medium); semantic signature: `bool (const char* line, char* expanded, uint size)`
+pub const HandleConsoleMacroCommand: u64 = 442699;
 /// `HandleEntryPoint` at 0x38cff0 (decompiler, medium); signature (untiered): `undefined HandleEntryPoint(uint param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const HandleEntryPoint: u64 = 23526;
 /// `HandleFriendlyHitFromActor` at 0x6ccc50 (decompiler, medium); signature (untiered): `undefined HandleFriendlyHitFromActor(Actor * param_1, Actor * param_2, undefined8 param_3, ulonglong param_4)`
@@ -67801,12 +67933,12 @@ pub const HeapAllocateAligned: u64 = 68144;
 pub const HeapFree: u64 = 68146;
 /// `HeapFreeBlock` at 0x11c4d70 (decompiler, high); signature (high): `undefined HeapFreeBlock(ulonglong param_1, longlong param_2)`
 pub const HeapFreeBlock: u64 = 90490;
+/// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
+pub const HeldStateHandler__SetHeldState: u64 = 42452;
+/// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
+pub const HeldStateHandler__UpdateHeldState: u64 = 42335;
 /// `HeldStateHandler::vdtor` at 0x7b1ae0 (layout_inference, medium); signature (low): `HeldStateHandler * vdtor(HeldStateHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HeldStateHandler__vdtor: u64 = 42398;
-/// `HeldStateHandler::vfunc_7` at 0x7ad430 (rtti, medium); signature (low): `undefined vfunc_7(HeldStateHandler * this, longlong param_1)`
-pub const HeldStateHandler__vfunc_7: u64 = 42335;
-/// `HeldStateHandler::vfunc_8` at 0x7b4e40 (rtti, medium); signature (low): `undefined vfunc_8(HeldStateHandler * this, undefined1 param_1)`
-pub const HeldStateHandler__vfunc_8: u64 = 42452;
 /// `HelpMessageManager::vdtor` at 0x93c160 (layout_inference, medium); signature (low): `HelpMessageManager * vdtor(HelpMessageManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HelpMessageManager__vdtor: u64 = 51719;
 /// `HelpMessageManager::vfunc_1` at 0x931e80 (rtti, high); signature (low): `undefined8 vfunc_1(HelpMessageManager * this, longlong * param_1)`
@@ -77381,8 +77513,6 @@ pub const IncrementFieldC6E4: u64 = 77908;
 pub const IncrementFormCountLocked: u64 = 36170;
 /// `IncrementMiscStat` at 0x24a2a0 (decompiler, medium); signature (medium): `int IncrementMiscStat(longlong * param_1, char param_2)`
 pub const IncrementMiscStat: u64 = 16360;
-/// `IncrementOrDecrementByte128` at 0xcefd60 (decompiler, high); signature (high): `undefined IncrementOrDecrementByte128(longlong param_1, char param_2)`
-pub const IncrementOrDecrementByte128: u64 = 68552;
 /// `IncrementOrDecrementField22` at 0x1048380 (decompiler, high); signature (high): `undefined IncrementOrDecrementField22(longlong param_1, char param_2)`
 pub const IncrementOrDecrementField22: u64 = 77809;
 /// `IncrementSkill` at 0x749a20 (decompiler, medium); signature (untiered): `undefined IncrementSkill(longlong param_1, undefined8 param_2, int param_3)`
@@ -78027,6 +78157,10 @@ pub const InitZeroedWithField10One: u64 = 11515;
 pub const InitZeroedWithField12: u64 = 88137;
 /// `InitZeroedWithSharedEmptyDataAt18` at 0xe07fb0 (decompiler, medium); signature (untiered): `undefined8 * InitZeroedWithSharedEmptyDataAt18(undefined8 * param_1)`
 pub const InitZeroedWithSharedEmptyDataAt18: u64 = 87571;
+/// `InputEvent::HasIDCode` at 0x7b4480 (semantic, high); signature (untiered): `undefined1 HasIDCode(void)`
+pub const InputEvent__HasIDCode: u64 = 42440;
+/// `InputEvent::QUserEvent` at 0x7b4840 (semantic, high); signature (untiered): `undefined8 * QUserEvent(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InputEvent__QUserEvent: u64 = 42444;
 /// `InputEvent::ctor` at 0xcfa350 (layout_inference, medium); signature (high): `undefined ctor(InputEvent * this)`
 pub const InputEvent__ctor: u64 = 68648;
 /// `InputEvent::ctor` at 0xcfa3e0 (layout_inference, medium); signature (high): `undefined ctor(InputEvent * this)`
@@ -78045,10 +78179,34 @@ pub const InputEvent__dtor_4: u64 = 523960;
 pub const InputEvent__dtor_5: u64 = 523961;
 /// `InputEvent::vdtor` at 0x7b1b60 (layout_inference, medium); signature (low): `InputEvent * vdtor(InputEvent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const InputEvent__vdtor: u64 = 42400;
-/// `InputEvent::vfunc_1` at 0x7b4480 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
-pub const InputEvent__vfunc_1: u64 = 42440;
-/// `InputEvent::vfunc_2` at 0x7b4840 (rtti, medium); signature (untiered): `undefined8 * vfunc_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InputEvent__vfunc_2: u64 = 42444;
+/// `InputEventQueue::AddButtonEvent` at 0xcfb340 (semantic, high); signature (untiered): `undefined AddButtonEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; next of 10 ButtonEvents: device, idCode, value, held, user event ''; append (high); semantic signature: `void (InputEventQueue* q, u32 device, u32 idCode, float value, float heldDownSecs)`
+pub const InputEventQueue__AddButtonEvent: u64 = 68685;
+/// `InputEventQueue::AddButtonEvent` as a function pointer type (high).
+pub type InputEventQueue__AddButtonEvent_fn = unsafe extern "C" fn(q: *mut classes::InputEventQueue, device: u32, idCode: u32, value: f32, heldDownSecs: f32);
+/// `InputEventQueue::AddCharEvent` at 0xcfb3f0 (semantic, high); signature (untiered): `undefined AddCharEvent(longlong param_1, undefined4 param_2)`; next of 5 CharEvents, device 0 (high); semantic signature: `void (InputEventQueue* q, u32 charCode)`
+pub const InputEventQueue__AddCharEvent: u64 = 68686;
+/// `InputEventQueue::AddCharEvent` as a function pointer type (high).
+pub type InputEventQueue__AddCharEvent_fn = unsafe extern "C" fn(q: *mut classes::InputEventQueue, charCode: u32);
+/// `InputEventQueue::AddDeviceConnectEvent` at 0xcfb5d0 (semantic, high); signature (untiered): `undefined AddDeviceConnectEvent(longlong param_1, undefined4 param_2, undefined1 param_3)`; the single DeviceConnectEvent (high); semantic signature: `void (InputEventQueue* q, u32 device, bool connected)`
+pub const InputEventQueue__AddDeviceConnectEvent: u64 = 68689;
+/// `InputEventQueue::AddDeviceConnectEvent` as a function pointer type (high).
+pub type InputEventQueue__AddDeviceConnectEvent_fn = unsafe extern "C" fn(q: *mut classes::InputEventQueue, device: u32, connected: bool);
+/// `InputEventQueue::AddKinectEvent` at 0xcfb640 (semantic, medium); signature (untiered): `undefined AddKinectEvent(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`; the single KinectEvent (medium); semantic signature: `void (InputEventQueue* q, const BSFixedString* userEvent, const BSFixedString* heard)`
+pub const InputEventQueue__AddKinectEvent: u64 = 68690;
+/// `InputEventQueue::AddMotionGestureEvent` at 0xcfb830 (semantic, medium); signature (untiered): `undefined AddMotionGestureEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined1 param_5, undefined4 param_6)`; next of 2 (no static caller) (medium); semantic signature: `void (InputEventQueue* q, u32 id, u32 a, u32 b, u8 flag, u32 c)`
+pub const InputEventQueue__AddMotionGestureEvent: u64 = 524148;
+/// `InputEventQueue::AddMouseMoveEvent` at 0xcfb460 (semantic, high); signature (untiered): `undefined AddMouseMoveEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; the single MouseMoveEvent, device 1 (high); semantic signature: `void (InputEventQueue* q, int dx, int dy)`
+pub const InputEventQueue__AddMouseMoveEvent: u64 = 68687;
+/// `InputEventQueue::AddMouseMoveEvent` as a function pointer type (high).
+pub type InputEventQueue__AddMouseMoveEvent_fn = unsafe extern "C" fn(q: *mut classes::InputEventQueue, dx: i32, dy: i32);
+/// `InputEventQueue::AddThumbstickEvent` at 0xcfb510 (semantic, high); signature (untiered): `undefined AddThumbstickEvent(longlong param_1, undefined8 param_2, undefined4 param_3, undefined4 param_4)`; next of 2, device 2 (high); semantic signature: `void (InputEventQueue* q, u32 idCode, float x, float y)`
+pub const InputEventQueue__AddThumbstickEvent: u64 = 68688;
+/// `InputEventQueue::AddThumbstickEvent` as a function pointer type (high).
+pub type InputEventQueue__AddThumbstickEvent_fn = unsafe extern "C" fn(q: *mut classes::InputEventQueue, idCode: u32, x: f32, y: f32);
+/// `InputEventQueue::Reset` at 0xcfba10 (semantic, high); signature (untiered): `undefined Reset(longlong param_1)`; zero the nine counts and head/tail (high); semantic signature: `void (InputEventQueue* q)`
+pub const InputEventQueue__Reset: u64 = 68691;
+/// `InputEventQueue::Reset` as a function pointer type (high).
+pub type InputEventQueue__Reset_fn = unsafe extern "C" fn(q: *mut classes::InputEventQueue);
 /// `InsertActorSortedByDistanceToPlayer` at 0x7895f0 (decompiler, medium); signature (untiered): `undefined InsertActorSortedByDistanceToPlayer(longlong * param_1)`
 pub const InsertActorSortedByDistanceToPlayer: u64 = 523948;
 /// `InsertBlockIntoSizeBinList` at 0xce6150 (decompiler, medium); signature (medium): `undefined InsertBlockIntoSizeBinList(longlong param_1, longlong param_2, longlong param_3)`
@@ -78829,8 +78987,6 @@ pub const InvokeDeleterAndClear_9: u64 = 448066;
 pub const InvokeDeletersAndClearFields08And80: u64 = 524942;
 /// `InvokeField190Slot1` at 0x1064670 (decompiler, medium); signature (untiered): `undefined InvokeField190Slot1(longlong param_1, undefined4 param_2)`
 pub const InvokeField190Slot1: u64 = 78264;
-/// `InvokeField68Vfunc9` at 0xcf9790 (decompiler, medium); signature (untiered): `undefined InvokeField68Vfunc9(longlong param_1)`
-pub const InvokeField68Vfunc9: u64 = 68621;
 /// `InvokeFunctionField38AndReleaseSharedArg` at 0x12827c0 (decompiler, medium); signature (untiered): `undefined InvokeFunctionField38AndReleaseSharedArg(longlong param_1, undefined4 param_2, longlong param_3, undefined8 param_4)`
 pub const InvokeFunctionField38AndReleaseSharedArg: u64 = 444234;
 /// `InvokeGlobalCallbackIfSet` at 0x10542b0 (decompiler, medium); signature (medium): `undefined InvokeGlobalCallbackIfSet(void)`
@@ -79201,8 +79357,6 @@ pub const IsField248Nonzero: u64 = 35764;
 pub const IsField24InTypeSet: u64 = 29581;
 /// `IsField28Field38EqualField0` at 0xfc7a30 (decompiler, medium); signature (medium): `undefined4 IsField28Field38EqualField0(longlong param_1)`
 pub const IsField28Field38EqualField0: u64 = 75736;
-/// `IsField28NonZeroAndField2CZero` at 0xcf2e80 (decompiler, high); signature (high): `undefined1 IsField28NonZeroAndField2CZero(longlong param_1)`
-pub const IsField28NonZeroAndField2CZero: u64 = 68601;
 /// `IsField2CLessThanField30` at 0x4479d0 (decompiler, high); signature (high): `undefined4 IsField2CLessThanField30(longlong param_1)`
 pub const IsField2CLessThanField30: u64 = 27304;
 /// `IsField30ActivateDoorMessage` at 0x1203bc0 (decompiler, medium); signature (medium): `ulonglong IsField30ActivateDoorMessage(longlong param_1)`
@@ -79739,6 +79893,8 @@ pub const JournalMenu__vfunc_4_sub1: u64 = 53263;
 pub const JournalMenu__vfunc_5: u64 = 53316;
 /// `JournalMenu::vfunc_6` at 0x9ac480 (rtti, high); signature (high): `undefined vfunc_6(JournalMenu * this)`
 pub const JournalMenu__vfunc_6: u64 = 53317;
+/// `JournalRemapHandler::ProcessEvent` at 0x9a8af0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(longlong param_1, longlong * param_2)`; while the System tab waits for a key: first event, a ButtonEvent press on keyboard/mouse (or gamepad when active) -> RemapUserEvent(name, device, idCode); returns 0. Suppression of the key comes from MenuControls+0x82 and PlayerControls+0x50, set when this sink is added (0x9a8620) and cleared when removed (0x9a8330) (high); semantic signature: `BSEventNotifyControl (void* this, InputEvent* const* head, ...)`
+pub const JournalRemapHandler__ProcessEvent: u64 = 524031;
 /// `JournalTab::dtor` at 0x9a30c0 (layout_inference, high); signature (high): `undefined dtor(JournalTab * this)`
 pub const JournalTab__dtor: u64 = 53182;
 /// `JournalTab::dtor` at 0x9ad2c0 (layout_inference, high); signature (high): `undefined dtor(JournalTab * this)`
@@ -79911,10 +80067,10 @@ pub const Json__Writer__vdtor: u64 = 443031;
 pub const JumpAnimEventHandler__vdtor: u64 = 43341;
 /// `JumpAnimEventHandler::vfunc_1` at 0x7cf1e0 (rtti, high); signature (low): `undefined8 vfunc_1(JumpAnimEventHandler * this, longlong param_1)`
 pub const JumpAnimEventHandler__vfunc_1: u64 = 42892;
+/// `JumpHandler::CanProcess` at 0x7b4f10 (semantic, high); signature (untiered): `bool CanProcess(JumpHandler * this, longlong * param_1)`
+pub const JumpHandler__CanProcess: u64 = 42456;
 /// `JumpHandler::vdtor` at 0x7b1b90 (layout_inference, medium); signature (low): `JumpHandler * vdtor(JumpHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const JumpHandler__vdtor: u64 = 42401;
-/// `JumpHandler::vfunc_1` at 0x7b4f10 (rtti, high); signature (low): `bool vfunc_1(JumpHandler * this, longlong * param_1)`
-pub const JumpHandler__vfunc_1: u64 = 42456;
 /// `JumpHandler::vfunc_6` at 0x7b3150 (rtti, high); signature (low): `undefined vfunc_6(JumpHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const JumpHandler__vfunc_6: u64 = 42423;
 /// `JumpHandler::vfunc_6_sub0` at 0x675110 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -80097,8 +80253,6 @@ pub const LoadCloudLayerTextures: u64 = 26152;
 pub const LoadCombatMagicContext: u64 = 49099;
 /// `LoadComputeShaderFromStream` at 0x10102d0 (decompiler, medium); signature (untiered): `void * LoadComputeShaderFromStream(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const LoadComputeShaderFromStream: u64 = 77357;
-/// `LoadControlsDefinitionFile` at 0xceece0 (decompiler, high); signature (untiered): `undefined LoadControlsDefinitionFile(longlong param_1)`
-pub const LoadControlsDefinitionFile: u64 = 68536;
 /// `LoadDescriptionText` at 0x1e1380 (decompiler, medium); signature (untiered): `undefined LoadDescriptionText(longlong param_1, longlong * param_2, longlong * param_3, TypeDescriptor * param_4)`
 pub const LoadDescriptionText: u64 = 14552;
 /// `LoadDestructionDataChunks` at 0x1d2790 (decompiler, medium); signature (untiered): `undefined LoadDestructionDataChunks(longlong param_1, int * param_2, undefined8 param_3, ulonglong param_4)`
@@ -80175,8 +80329,6 @@ pub const LoadINAMTNAMOrPDTOChunks: u64 = 29772;
 pub const LoadIniForDataFileName: u64 = 36725;
 /// `LoadInventoryItem3DModel` at 0x93de00 (decompiler, medium); signature (untiered): `undefined LoadInventoryItem3DModel(longlong param_1, longlong * param_2, longlong * param_3)`
 pub const LoadInventoryItem3DModel: u64 = 51758;
-/// `LoadLinesFromFileSkippingComments` at 0xd6efd0 (decompiler, medium); signature (medium): `undefined8 LoadLinesFromFileSkippingComments(undefined8 param_1, byte * param_2)`
-pub const LoadLinesFromFileSkippingComments: u64 = 68745;
 /// `LoadLocalizableStringChunk` at 0x20d450 (decompiler, medium); signature (untiered): `undefined LoadLocalizableStringChunk(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
 pub const LoadLocalizableStringChunk: u64 = 15458;
 /// `LoadMagicItemEffectListFromSave` at 0x5bc3e0 (decompiler, medium); signature (untiered): `undefined LoadMagicItemEffectListFromSave(longlong param_1, longlong * param_2, ulonglong param_3, ulonglong * param_4)`
@@ -80639,10 +80791,10 @@ pub const LogoutAndNotifyListeners: u64 = 442535;
 pub const LongestDurationFunctor__vdtor: u64 = 11379;
 /// `LongestDurationFunctor::vfunc_1` at 0x152310 (rtti, high); signature (low): `undefined8 vfunc_1(LongestDurationFunctor * this, longlong param_1)`
 pub const LongestDurationFunctor__vfunc_1: u64 = 11364;
+/// `LookHandler::CanProcess` at 0x7b4f40 (semantic, high); signature (untiered): `undefined8 CanProcess(LookHandler * this, longlong * param_1)`
+pub const LookHandler__CanProcess: u64 = 42457;
 /// `LookHandler::vdtor` at 0x7b1bc0 (layout_inference, medium); signature (low): `LookHandler * vdtor(LookHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const LookHandler__vdtor: u64 = 42402;
-/// `LookHandler::vfunc_1` at 0x7b4f40 (rtti, high); signature (low): `undefined8 vfunc_1(LookHandler * this, longlong * param_1)`
-pub const LookHandler__vfunc_1: u64 = 42457;
 /// `LookHandler::vfunc_1_sub0` at 0x7b5200 (callgraph, medium); signature (untiered): `ulonglong vfunc_1_sub0(longlong param_1, longlong param_2)`
 pub const LookHandler__vfunc_1_sub0: u64 = 523973;
 /// `LookHandler::vfunc_3` at 0x7b32a0 (rtti, high); signature (low): `undefined vfunc_3(LookHandler * this, longlong param_1, longlong param_2, undefined8 param_3)`
@@ -80659,6 +80811,8 @@ pub const LookupArchiveEntryAndCreateStream: u64 = 69694;
 pub const LookupByFixedString: u64 = 14295;
 /// `LookupCachedMeshByPath` at 0xfc93d0 (decompiler, medium); signature (untiered): `undefined1 * LookupCachedMeshByPath(char * param_1, undefined8 * param_2)`
 pub const LookupCachedMeshByPath: u64 = 75783;
+/// `LookupCommandByName` at 0x34be50 (runtime, high); signature (untiered): `ulonglong LookupCommandByName(char * param_1)`; linear _stricmp of the token against name and short name of the 16 keywords (0x207e590), then the 737 script functions (0x207ea90..), then the 449 console commands (0x208d130..); on a hit sets token+0x204 = 'X' and token+0x208 = opcode (high); semantic signature: `bool (ScriptToken* token)`
+pub const LookupCommandByName: u64 = 21973;
 /// `LookupEntryByObjectModelPath` at 0x3b8e80 (decompiler, medium); signature (untiered): `ulonglong LookupEntryByObjectModelPath(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const LookupEntryByObjectModelPath: u64 = 24599;
 /// `LookupEntryRefsUnderReadLock` at 0x8dcdd0 (decompiler, medium); signature (untiered): `bool LookupEntryRefsUnderReadLock(longlong param_1, undefined8 param_2, longlong * param_3, longlong * param_4)`
@@ -83117,10 +83271,10 @@ pub const MovementControllerNPC__vfunc_9: u64 = 41760;
 pub const MovementControllerNullDataTracker__vdtor: u64 = 91931;
 /// `MovementControllerNullDataTracker::vfunc_1` at 0x1216020 (rtti, high); signature (low): `undefined vfunc_1(void)`
 pub const MovementControllerNullDataTracker__vfunc_1: u64 = 91894;
+/// `MovementHandler::CanProcess` at 0x7b4fb0 (semantic, high); signature (untiered): `undefined8 CanProcess(MovementHandler * this, longlong * param_1)`
+pub const MovementHandler__CanProcess: u64 = 42458;
 /// `MovementHandler::vdtor` at 0x7b1c10 (layout_inference, medium); signature (low): `MovementHandler * vdtor(MovementHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MovementHandler__vdtor: u64 = 42403;
-/// `MovementHandler::vfunc_1` at 0x7b4fb0 (rtti, high); signature (low): `undefined8 vfunc_1(MovementHandler * this, longlong * param_1)`
-pub const MovementHandler__vfunc_1: u64 = 42458;
 /// `MovementHandler::vfunc_4` at 0x7b38c0 (rtti, high); signature (low): `undefined vfunc_4(MovementHandler * this, longlong param_1, undefined4 * param_2)`
 pub const MovementHandler__vfunc_4: u64 = 42427;
 /// `MovementHandler::vfunc_6` at 0x7b37c0 (rtti, high); signature (low): `undefined vfunc_6(MovementHandler * this, longlong * param_1, undefined4 * param_2)`
@@ -91973,8 +92127,10 @@ pub const NormalizePath: u64 = 69490;
 pub const NormalizePathSeparators: u64 = 69010;
 /// `NormalizePath_2` at 0xead600 (decompiler, medium); signature (medium): `undefined NormalizePath_2(char * param_1)`
 pub const NormalizePath_2: u64 = 69124;
-/// `NormalizeTriggerWithDeadzone` at 0xcfbd40 (decompiler, medium); signature (medium): `float NormalizeTriggerWithDeadzone(undefined8 param_1, int param_2, float param_3)`
+/// `NormalizeTriggerWithDeadzone` at 0xcfbd40 (semantic, high); signature (medium): `float NormalizeTriggerWithDeadzone(undefined8 param_1, int param_2, float param_3)`; (raw - dz*255) / (255 - dz*255), 0 below (high); semantic signature: `float (BSGamepadDevice* this, int raw, float deadzone)`
 pub const NormalizeTriggerWithDeadzone: u64 = 68699;
+/// `NormalizeTriggerWithDeadzone` as a function pointer type (high).
+pub type NormalizeTriggerWithDeadzone_fn = unsafe extern "C" fn(this: *mut classes::BSGamepadDevice, raw: i32, deadzone: f32) -> f32;
 /// `NormalizeTwoVectorsByXyzLength` at 0xbef780 (decompiler, medium); signature (medium): `undefined NormalizeTwoVectorsByXyzLength(float * param_1, float * param_2)`
 pub const NormalizeTwoVectorsByXyzLength: u64 = 64087;
 /// `NormalizeVec3ArrayStrided` at 0xf059e0 (decompiler, medium); signature (untiered): `undefined NormalizeVec3ArrayStrided(float * param_1, uint param_2, ulonglong param_3)`
@@ -91995,8 +92151,6 @@ pub const NotifyAndClearTaggedRefPtrArraysAt10And30: u64 = 91889;
 pub const NotifyAndReleaseArrayField28: u64 = 78105;
 /// `NotifyEULAPopulated` at 0x57cf30 (decompiler, medium); signature (untiered): `undefined NotifyEULAPopulated(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const NotifyEULAPopulated: u64 = 441681;
-/// `NotifyEventSinks` at 0xcfa650 (decompiler, medium); signature (untiered): `ulonglong NotifyEventSinks(longlong * param_1, undefined8 param_2)`
-pub const NotifyEventSinks: u64 = 68655;
 /// `NotifyEventSinks_2` at 0xcfa8f0 (decompiler, medium); signature (untiered): `ulonglong NotifyEventSinks_2(longlong * param_1, undefined8 param_2)`
 pub const NotifyEventSinks_2: u64 = 68656;
 /// `NotifyEventSinks_4` at 0x6bf6f0 (decompiler, medium); signature (untiered): `ulonglong NotifyEventSinks_4(longlong * param_1, undefined8 param_2)`
@@ -93931,6 +94085,8 @@ pub const ParalysisEffect__vfunc_4: u64 = 34728;
 pub const ParseBraceFormatString: u64 = 84883;
 /// `ParseColonSeparatedNameParts` at 0xbdcbe0 (decompiler, medium); signature (untiered): `undefined ParseColonSeparatedNameParts(undefined8 * param_1)`
 pub const ParseColonSeparatedNameParts: u64 = 63814;
+/// `ParseCommandParams` at 0x347ac0 (semantic, high); signature (untiered): `ulonglong ParseCommandParams(ushort param_1, longlong param_2, longlong param_3, TypeDescriptor * param_4)`; the shared parse callback: writes u16 numParams, then per parameter reads a token and encodes it by type (enums ScriptParamType, ScriptOperandTag); a missing optional parameter stores the parsed count and stops; trailing text -> 'Expected end of line.' (high); semantic signature: `bool (uint16 numParams, const ParamInfo* params, ScriptLineBuffer* line, ScriptCompileBuffer* buf)`
+pub const ParseCommandParams: u64 = 21956;
 /// `ParseContentLengthFromHttpHeaders` at 0x1467870 (decompiler, medium); signature (untiered): `undefined ParseContentLengthFromHttpHeaders(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ParseContentLengthFromHttpHeaders: u64 = 103109;
 /// `ParseFuzeFrameData` at 0x2441a0 (decompiler, medium); signature (untiered): `longlong ParseFuzeFrameData(uint * param_1, uint param_2, char param_3, char param_4)`
@@ -93951,8 +94107,6 @@ pub const ParseNextAttribute: u64 = 88517;
 pub const ParsePathIntoDirStemAndExtension: u64 = 69979;
 /// `ParsePropertyAccessorName` at 0x14d8fc0 (decompiler, medium); signature (untiered): `undefined ParsePropertyAccessorName(longlong * param_1, char * * param_2, char * param_3, ulonglong param_4)`
 pub const ParsePropertyAccessorName: u64 = 105292;
-/// `ParseTabSeparatedMappingFile` at 0xcf17d0 (decompiler, medium); signature (untiered): `undefined ParseTabSeparatedMappingFile(longlong param_1, undefined * param_2, uint param_3)`
-pub const ParseTabSeparatedMappingFile: u64 = 524121;
 /// `ParseWaveFileHeader` at 0xcdca30 (decompiler, medium); signature (medium): `undefined ParseWaveFileHeader(uint * param_1, uint param_2, longlong * param_3)`
 pub const ParseWaveFileHeader: u64 = 68066;
 /// `Partition128BitKeyArray` at 0x18d3c0 (decompiler, medium); signature (untiered): `uint Partition128BitKeyArray(int * param_1, undefined8 param_2, uint param_3, uint param_4)`
@@ -95105,8 +95259,6 @@ pub const PlayerCharacter__vfunc_189: u64 = 41129;
 pub const PlayerCharacter__vfunc_18_sub0: u64 = 41571;
 /// `PlayerCharacter::vfunc_18_sub1` at 0x8fbf00 (callgraph, medium); signature (untiered): `undefined vfunc_18_sub1(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const PlayerCharacter__vfunc_18_sub1: u64 = 50848;
-/// `PlayerCharacter::vfunc_18_sub2` at 0xcefbc0 (callgraph, medium); signature (untiered): `undefined vfunc_18_sub2(longlong param_1)`
-pub const PlayerCharacter__vfunc_18_sub2: u64 = 68550;
 /// `PlayerCharacter::vfunc_190` at 0x7423e0 (rtti, high); signature (high): `ulonglong vfunc_190(PlayerCharacter * this)`
 pub const PlayerCharacter__vfunc_190: u64 = 40430;
 /// `PlayerCharacter::vfunc_191` at 0x7730f0 (rtti, high); signature (low): `undefined vfunc_191(void)`
@@ -95263,6 +95415,10 @@ pub const PlayerCharacter__vfunc_71: u64 = 40710;
 pub const PlayerCharacter__vfunc_85: u64 = 40570;
 /// `PlayerCharacter::vfunc_91` at 0x75ad40 (rtti, high); signature (low): `float * vfunc_91(PlayerCharacter * this, float * param_1)`
 pub const PlayerCharacter__vfunc_91: u64 = 40664;
+/// `PlayerControls::AddHandler` at 0x7af240 (semantic, high); signature (untiered): `undefined AddHandler(longlong param_1, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * param_2, char param_3)`; appends and enables (deferred while dispatching); camera states add their embedded handler in Begin (high); semantic signature: `void (PlayerControls* this, PlayerInputHandler* handler, bool heldState)`
+pub const PlayerControls__AddHandler: u64 = 42356;
+/// `PlayerControls::AddHandler` as a function pointer type (high).
+pub type PlayerControls__AddHandler_fn = unsafe extern "C" fn(this: *mut classes::PlayerControls, handler: *mut classes::PlayerInputHandler, heldState: bool);
 /// `PlayerControls::BSTEventSink_MenuModeChangeEvent_vdtor` at 0x7b1944 (slot_propagation, medium); signature (high): `undefined BSTEventSink_MenuModeChangeEvent_vdtor(PlayerControls * this)`
 pub const PlayerControls__BSTEventSink_MenuModeChangeEvent_vdtor: u64 = 42391;
 /// `PlayerControls::BSTEventSink_MenuModeChangeEvent_vfunc_1` at 0x7adfc0 (rtti, high); signature (low): `undefined8 BSTEventSink_MenuModeChangeEvent_vfunc_1(PlayerControls * this, longlong param_1)`
@@ -95275,12 +95431,26 @@ pub const PlayerControls__BSTEventSink_MenuOpenCloseEvent_vfunc_1: u64 = 42339;
 pub const PlayerControls__BSTEventSink_TESFurnitureEvent_vdtor: u64 = 42392;
 /// `PlayerControls::BSTEventSink_TESFurnitureEvent_vfunc_1` at 0x7ae010 (rtti, high); signature (low): `undefined8 BSTEventSink_TESFurnitureEvent_vfunc_1(PlayerControls * this, longlong * param_1)`
 pub const PlayerControls__BSTEventSink_TESFurnitureEvent_vfunc_1: u64 = 42341;
-/// `PlayerControls::ctor` at 0x7ad450 (layout_inference, high); signature (high): `PlayerControls * ctor(PlayerControls * this)`
+/// `PlayerControls::CreateHandlers` at 0x7b0920 (semantic, high); signature (untiered): `undefined CreateHandlers(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; allocates the 13 handlers and registers them in order Movement, Look, ReadyWeapon, AutoMove, ToggleRun, Activate*, Jump, Shout, Sprint*, AttackBlock*, Run*, Sneak, TogglePOV* (* = held-state list too) (high); semantic signature: `void (PlayerControls* this)`
+pub const PlayerControls__CreateHandlers: u64 = 42376;
+/// `PlayerControls::CreateHandlers` as a function pointer type (high).
+pub type PlayerControls__CreateHandlers_fn = unsafe extern "C" fn(this: *mut classes::PlayerControls);
+/// `PlayerControls::DispatchEvent` at 0x7b0130 (runtime, high); signature (untiered): `undefined DispatchEvent(longlong param_1, longlong param_2)`; offers one event to every enabled handler in list order; CanProcess, then the per-type slot with this+0x24; ButtonEvents also update held-state handlers (high); semantic signature: `void (PlayerControls* this, InputEvent* event)`
+pub const PlayerControls__DispatchEvent: u64 = 523956;
+/// `PlayerControls::DispatchEvent` as a function pointer type (high).
+pub type PlayerControls__DispatchEvent_fn = unsafe extern "C" fn(this: *mut classes::PlayerControls, event: *mut classes::InputEvent);
+/// `PlayerControls::LoadResponseGraph` at 0x7afd10 (semantic, medium); signature (untiered): `undefined LoadResponseGraph(longlong param_1, int param_2)`; reads f%sGraphX%d/f%sGraphY%d:Controls into one of two curves (medium); semantic signature: `void (PlayerControls* this, u32 which)`
+pub const PlayerControls__LoadResponseGraph: u64 = 42366;
+/// `PlayerControls::ProcessEvent` at 0x7ad900 (semantic, high); signature (untiered): `undefined8 ProcessEvent(PlayerControls * this, longlong * param_1, ulonglong param_2, ulonglong param_3)`
+pub const PlayerControls__ProcessEvent: u64 = 42338;
+/// `PlayerControls::RemoveHandler` at 0x7af3e0 (semantic, high); signature (untiered): `undefined RemoveHandler(longlong param_1, longlong param_2)`; removes from both lists (deferred and disabled while dispatching) (high); semantic signature: `void (PlayerControls* this, PlayerInputHandler* handler)`
+pub const PlayerControls__RemoveHandler: u64 = 42357;
+/// `PlayerControls::RemoveHandler` as a function pointer type (high).
+pub type PlayerControls__RemoveHandler_fn = unsafe extern "C" fn(this: *mut classes::PlayerControls, handler: *mut classes::PlayerInputHandler);
+/// `PlayerControls::ctor` at 0x7ad450 (layout_inference, high); signature (high): `PlayerControls * ctor(PlayerControls * this)`; sets the vtables and globals, registers 4 sinks, creates handlers (high); semantic signature: `PlayerControls* (PlayerControls* this)`
 pub const PlayerControls__ctor: u64 = 42336;
-/// `PlayerControls::ctor_sub0` at 0x7afd10 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1, int param_2)`
-pub const PlayerControls__ctor_sub0: u64 = 42366;
-/// `PlayerControls::ctor_sub1` at 0x7b0920 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const PlayerControls__ctor_sub1: u64 = 42376;
+/// `PlayerControls::ctor` as a function pointer type (high).
+pub type PlayerControls__ctor_fn = unsafe extern "C" fn(this: *mut classes::PlayerControls) -> *mut classes::PlayerControls;
 /// `PlayerControls::ctor_sub2` at 0x7b14d0 (callgraph, medium); signature (untiered): `undefined ctor_sub2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const PlayerControls__ctor_sub2: u64 = 42382;
 /// `PlayerControls::ctor_sub3` at 0x7b1530 (callgraph, medium); signature (untiered): `undefined ctor_sub3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -95295,12 +95465,6 @@ pub const PlayerControls__dtor: u64 = 42337;
 pub const PlayerControls__dtor_sub0: u64 = 42377;
 /// `PlayerControls::vdtor` at 0x7b1c40 (slot_propagation, medium); signature (low): `PlayerControls * vdtor(PlayerControls * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const PlayerControls__vdtor: u64 = 42404;
-/// `PlayerControls::vfunc_1` at 0x7ad900 (rtti, high); signature (low): `undefined8 vfunc_1(PlayerControls * this, longlong * param_1, ulonglong param_2, ulonglong param_3)`
-pub const PlayerControls__vfunc_1: u64 = 42338;
-/// `PlayerControls::vfunc_1_sub0` at 0x7b0130 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, longlong param_2)`
-pub const PlayerControls__vfunc_1_sub0: u64 = 523956;
-/// `PlayerControls::vfunc_1_sub1` at 0x7b03c0 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub1(longlong param_1)`
-pub const PlayerControls__vfunc_1_sub1: u64 = 42371;
 /// `PlayerFurnitureExitHandler::vdtor` at 0x7d4540 (layout_inference, medium); signature (low): `PlayerFurnitureExitHandler * vdtor(PlayerFurnitureExitHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const PlayerFurnitureExitHandler__vdtor: u64 = 43358;
 /// `PlayerFurnitureExitHandler::vfunc_1` at 0x7cd390 (rtti, high); signature (low): `undefined8 vfunc_1(PlayerFurnitureExitHandler * this, TESObjectREFR * param_1)`
@@ -95385,6 +95549,10 @@ pub const PoisonedWeapon__GetEventSource: u64 = 41069;
 pub const PoisonedWeapon__RegisterSink: u64 = 40393;
 /// `PoisonedWeapon::UnregisterSink` at 0x73e510 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a PoisonedWeapon::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<PoisonedWeapon::Event>* sink)`
 pub const PoisonedWeapon__UnregisterSink: u64 = 40394;
+/// `PollControlsJob` at 0x659df0 (runtime, high); signature (untiered): `undefined PollControlsJob(void)`; the 'Poll controls' job body: Update(g_EventSourceHolder_Input_ptr, g_FrameDeltaReal) (high); semantic signature: `void ()`
+pub const PollControlsJob: u64 = 36578;
+/// `PollControlsJob` as a function pointer type (high).
+pub type PollControlsJob_fn = unsafe extern "C" fn();
 /// `PopField28AndRestoreDefaultFOV` at 0x8f9290 (decompiler, medium); signature (medium): `undefined PopField28AndRestoreDefaultFOV(longlong param_1)`
 pub const PopField28AndRestoreDefaultFOV: u64 = 50806;
 /// `PopFreeIdOrAllocateNext` at 0xacead0 (decompiler, medium); signature (medium): `short PopFreeIdOrAllocateNext(longlong param_1)`
@@ -95499,6 +95667,10 @@ pub const ProbeStackPages: u64 = 109626;
 pub const ProceedOrShowWaitingForData: u64 = 418968;
 /// `ProcessActorDeath` at 0x6a1170 (decompiler, medium); signature (untiered): `undefined ProcessActorDeath(TESObjectREFR * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ProcessActorDeath: u64 = 37735;
+/// `ProcessAnalogButtonState` at 0xd6f530 (semantic, high); signature (low): `undefined ProcessAnalogButtonState(longlong param_1, ulonglong param_2, float param_3, float param_4, float param_5)`; as the digital one with value = cur, emitted while prev or cur is non-zero (triggers 9/10) (high); semantic signature: `void (BSInputDevice* device, u32 id, float realDelta, float prev, float cur)`
+pub const ProcessAnalogButtonState: u64 = 68749;
+/// `ProcessAnalogButtonState` as a function pointer type (high).
+pub type ProcessAnalogButtonState_fn = unsafe extern "C" fn(device: *mut classes::BSInputDevice, id: u32, realDelta: f32, prev: f32, cur: f32);
 /// `ProcessAndClearRefHandle130` at 0x8fb750 (decompiler, medium); signature (untiered): `undefined ProcessAndClearRefHandle130(longlong param_1)`
 pub const ProcessAndClearRefHandle130: u64 = 50845;
 /// `ProcessAnimationRequestQueue` at 0xbe8460 (decompiler, medium); signature (untiered): `undefined ProcessAnimationRequestQueue(longlong param_1, undefined8 param_2, longlong param_3, longlong param_4)`
@@ -95513,6 +95685,10 @@ pub const ProcessCallbackAdapter__vfunc_1: u64 = 38279;
 pub const ProcessCallbackAdapter__vfunc_1_sub0: u64 = 39843;
 /// `ProcessCullObjectListTask` at 0x152bad0 (decompiler, high); signature (high): `undefined ProcessCullObjectListTask(longlong param_1)`
 pub const ProcessCullObjectListTask: u64 = 106924;
+/// `ProcessDigitalButtonState` at 0xd6f410 (semantic, high); signature (low): `undefined ProcessDigitalButtonState(longlong param_1, ulonglong param_2, float param_3, char param_4, char param_5)`; none: return; press: value 1, held 0; hold: record.held += delta, held = it; release: held = record.held, record.held = 0, value 0; then AddButtonEvent(queue, device->deviceType, id, value, held). Ids without a definition record report held 0 on every frame (high); semantic signature: `void (BSInputDevice* device, u32 id, float realDelta, bool wasDown, bool isDown)`
+pub const ProcessDigitalButtonState: u64 = 68748;
+/// `ProcessDigitalButtonState` as a function pointer type (high).
+pub type ProcessDigitalButtonState_fn = unsafe extern "C" fn(device: *mut classes::BSInputDevice, id: u32, realDelta: f32, wasDown: bool, isDown: bool);
 /// `ProcessListMovementInterface::vdtor` at 0x77a030 (layout_inference, medium); signature (low): `ProcessListMovementInterface * vdtor(ProcessListMovementInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ProcessListMovementInterface__vdtor: u64 = 41284;
 /// `ProcessListMovementInterface::vfunc_1` at 0x779dd0 (rtti, high); signature (low): `longlong vfunc_1(ProcessListMovementInterface * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -95561,8 +95737,6 @@ pub const ProcessQueuedItemsWithTimeBudget: u64 = 54069;
 pub const ProcessQueuedReferenceHandles_2: u64 = 15332;
 /// `ProcessReferencesFromHandleArray` at 0x2048d0 (decompiler, medium); signature (untiered): `undefined ProcessReferencesFromHandleArray(undefined8 param_1, longlong * param_2, undefined8 param_3)`
 pub const ProcessReferencesFromHandleArray: u64 = 15329;
-/// `ProcessRemapInputEvent` at 0x9a8af0 (decompiler, medium); signature (untiered): `undefined8 ProcessRemapInputEvent(longlong param_1, longlong * param_2)`
-pub const ProcessRemapInputEvent: u64 = 524031;
 /// `ProcessSaveLoadRequests` at 0x625b90 (decompiler, medium); signature (untiered): `undefined ProcessSaveLoadRequests(longlong param_1, undefined8 param_2, undefined8 param_3, BSWin32SaveDataSystemUtility_vtbl * param_4)`
 pub const ProcessSaveLoadRequests: u64 = 35772;
 /// `ProcessSaveLoadThreadRequest` at 0x62a300 (decompiler, medium); signature (untiered): `undefined ProcessSaveLoadThreadRequest(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
@@ -95825,8 +95999,6 @@ pub const PushToLockFreeRingBuffer: u64 = 107504;
 pub const PushToLockFreeRingBuffer_2: u64 = 41497;
 /// `PushUI3DSceneIndex` at 0x98ad10 (decompiler, medium); signature (untiered): `undefined PushUI3DSceneIndex(longlong param_1, int param_2, undefined8 param_3, undefined8 param_4)`
 pub const PushUI3DSceneIndex: u64 = 52735;
-/// `PushValueToField108Stack` at 0xcef8a0 (decompiler, medium); signature (untiered): `undefined PushValueToField108Stack(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const PushValueToField108Stack: u64 = 68543;
 /// `QuantizeAabb` at 0xb6fdb0 (decompiler, medium); signature (untiered): `undefined QuantizeAabb(longlong param_1, float * param_2)`
 pub const QuantizeAabb: u64 = 61828;
 /// `QuantizeValueToByteIndex` at 0xaa4190 (decompiler, medium); signature (medium): `undefined1 * QuantizeValueToByteIndex(undefined1 * param_1, int * param_2)`
@@ -95877,6 +96049,10 @@ pub const QueueCommand14WithFourArgs: u64 = 67689;
 pub const QueueCommand4AForRef: u64 = 36937;
 /// `QueueCommandType12ForId` at 0xcc9e20 (decompiler, medium); signature (medium): `ulonglong QueueCommandType12ForId(int * param_1, undefined2 param_2, undefined2 param_3)`
 pub const QueueCommandType12ForId: u64 = 67644;
+/// `QueueConsoleLine` at 0x909f90 (semantic, high); signature (untiered): `undefined QueueConsoleLine(undefined8 param_1, undefined8 param_2, undefined8 param_3, TESObjectCELL * param_4)`; echoes the line, handles 'macro', 'hotkey', 'reload console' (0x90d680), splits it into pieces and for each appends a Script pair to g_PendingConsoleLines (the piece, and for 'ForEachRef[cond]' a filter script 'float fresult / ref refr / set refr to GetSelectedRef / set fresult to <cond>') (high); semantic signature: `void (const char* line)`
+pub const QueueConsoleLine: u64 = 442672;
+/// `QueueConsoleLine` as a function pointer type (high).
+pub type QueueConsoleLine_fn = unsafe extern "C" fn(line: *const c_char);
 /// `QueueFaceMorphJobs` at 0x43a3b0 (semantic, high); signature (untiered): `undefined QueueFaceMorphJobs(longlong * param_1)`; adds the job 0x43a900 for every queued BSFaceGenNiNode and empties the queue (high); semantic signature: `void (JobList* list)`
 pub const QueueFaceMorphJobs: u64 = 26996;
 /// `QueueFixedStringMessage` at 0x98e5a0 (decompiler, medium); signature (untiered): `undefined QueueFixedStringMessage(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -96307,14 +96483,14 @@ pub const QueuedTree__vfunc_24: u64 = 13099;
 pub const QuickCreateAccount: u64 = 443827;
 /// `QuickHull2DRecurse` at 0xfdf4e0 (decompiler, medium); signature (untiered): `undefined QuickHull2DRecurse(longlong param_1, undefined4 param_2, longlong param_3, uint * param_4, longlong param_5, uint param_6, uint param_7, float * param_8, uint * param_9, uint * param_10)`
 pub const QuickHull2DRecurse: u64 = 76226;
+/// `QuickSaveLoadHandler::CanProcess` at 0x9622f0 (semantic, high); signature (untiered): `undefined8 CanProcess(QuickSaveLoadHandler * this, longlong * param_1)`
+pub const QuickSaveLoadHandler__CanProcess: u64 = 52260;
+/// `QuickSaveLoadHandler::ProcessButtonEvent` at 0x961dd0 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(QuickSaveLoadHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const QuickSaveLoadHandler__ProcessButtonEvent: u64 = 52251;
 /// `QuickSaveLoadHandler::vdtor` at 0x960c50 (layout_inference, medium); signature (low): `QuickSaveLoadHandler * vdtor(QuickSaveLoadHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const QuickSaveLoadHandler__vdtor: u64 = 52239;
-/// `QuickSaveLoadHandler::vfunc_1` at 0x9622f0 (rtti, high); signature (low): `undefined8 vfunc_1(QuickSaveLoadHandler * this, longlong * param_1)`
-pub const QuickSaveLoadHandler__vfunc_1: u64 = 52260;
 /// `QuickSaveLoadHandler::vfunc_4` at 0x961e90 (rtti, high); signature (low): `undefined1 vfunc_4(void)`
 pub const QuickSaveLoadHandler__vfunc_4: u64 = 52252;
-/// `QuickSaveLoadHandler::vfunc_7` at 0x961dd0 (rtti, high); signature (low): `undefined8 vfunc_7(QuickSaveLoadHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const QuickSaveLoadHandler__vfunc_7: u64 = 52251;
 /// `QuickSort24ByteElements` at 0xb80790 (decompiler, high); signature (high): `undefined QuickSort24ByteElements(longlong param_1, uint param_2, uint param_3, undefined * param_4)`
 pub const QuickSort24ByteElements: u64 = 62213;
 /// `QuickSort32ByteElementsByKey` at 0xc338d0 (decompiler, medium); signature (untiered): `undefined QuickSort32ByteElementsByKey(longlong param_1, int param_2, int param_3, undefined1 param_4)`
@@ -96841,6 +97017,8 @@ pub const ReadSaveHeaderFields: u64 = 35674;
 pub const ReadSaveHeaderFromStream: u64 = 35673;
 /// `ReadSavedFormRecordHeader` at 0x6373a0 (decompiler, medium); signature (untiered): `undefined ReadSavedFormRecordHeader(undefined4 * param_1, longlong param_2)`
 pub const ReadSavedFormRecordHeader: u64 = 35985;
+/// `ReadScriptToken` at 0x34bfd0 (semantic, high); signature (untiered): `ulonglong ReadScriptToken(longlong param_1, char * param_2, TypeDescriptor * param_3, uint * param_4, char param_5, byte param_6)`; reads one token (skips tab, space and comma; quoted strings; a 'name.' prefix becomes a reference variable via FindOrAddScriptRefVariable stored at token+0x200) and classifies it (variable, else LookupCommandByName) (high); semantic signature: `uint (ScriptCompileBuffer* buf, ScriptToken* out, const char* text, uint* offset, bool allowRef, bool flag)`
+pub const ReadScriptToken: u64 = 21974;
 /// `ReadShapeKeysFromBlockStream` at 0xca0b40 (decompiler, medium); signature (untiered): `longlong ReadShapeKeysFromBlockStream(longlong param_1, int param_2)`
 pub const ReadShapeKeysFromBlockStream: u64 = 67127;
 /// `ReadSignedBits` at 0xd79400 (decompiler, medium); signature (medium): `uint ReadSignedBits(longlong param_1, int param_2)`
@@ -96911,10 +97089,10 @@ pub const ReadVec3QuatVec3FromStream: u64 = 79313;
 pub const ReadXRGDAndXRGBChunks: u64 = 523530;
 /// `ReadXTELChunk` at 0x191ce0 (decompiler, medium); signature (untiered): `undefined ReadXTELChunk(uint * param_1, longlong param_2)`
 pub const ReadXTELChunk: u64 = 12982;
+/// `ReadyWeaponHandler::CanProcess` at 0x7b5060 (semantic, high); signature (untiered): `bool CanProcess(ReadyWeaponHandler * this, longlong * param_1)`
+pub const ReadyWeaponHandler__CanProcess: u64 = 42459;
 /// `ReadyWeaponHandler::vdtor` at 0x7b1c80 (layout_inference, medium); signature (low): `ReadyWeaponHandler * vdtor(ReadyWeaponHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ReadyWeaponHandler__vdtor: u64 = 42405;
-/// `ReadyWeaponHandler::vfunc_1` at 0x7b5060 (rtti, high); signature (low): `bool vfunc_1(ReadyWeaponHandler * this, longlong * param_1)`
-pub const ReadyWeaponHandler__vfunc_1: u64 = 42459;
 /// `ReadyWeaponHandler::vfunc_6` at 0x7b38d0 (rtti, high); signature (low): `undefined vfunc_6(ReadyWeaponHandler * this, longlong param_1)`
 pub const ReadyWeaponHandler__vfunc_6: u64 = 42428;
 /// `RealArrayImplementation::vdtor` at 0xc5e1e0 (layout_inference, medium); signature (low): `RealArrayImplementation * vdtor(RealArrayImplementation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -99155,8 +99333,6 @@ pub const RemoveHandleFromExtraType39List: u64 = 11761;
 pub const RemoveHandleFromField130Array: u64 = 19433;
 /// `RemoveHandleFromField130Array_2` at 0x2d9010 (decompiler, medium); signature (untiered): `undefined RemoveHandleFromField130Array_2(longlong param_1, int * param_2)`
 pub const RemoveHandleFromField130Array_2: u64 = 19418;
-/// `RemoveHandlerOrQueuePending` at 0x7af3e0 (decompiler, medium); signature (untiered): `undefined RemoveHandlerOrQueuePending(longlong param_1, longlong param_2)`
-pub const RemoveHandlerOrQueuePending: u64 = 42357;
 /// `RemoveHashEntriesForPendingNodes` at 0x1563070 (decompiler, medium); signature (untiered): `undefined RemoveHashEntriesForPendingNodes(undefined8 param_1, undefined8 * param_2, longlong * param_3, undefined8 param_4)`
 pub const RemoveHashEntriesForPendingNodes: u64 = 107703;
 /// `RemoveHashEntryByKey` at 0xd064a0 (decompiler, medium); signature (untiered): `undefined RemoveHashEntryByKey(longlong * param_1, longlong * param_2)`
@@ -99455,8 +99631,6 @@ pub const RemoveTypedEntryFromVfunc378Lists: u64 = 20313;
 pub const RemoveUpdateRegistration: u64 = 53938;
 /// `RemoveValueFromExtra1DArray` at 0x162d80 (decompiler, medium); signature (untiered): `undefined RemoveValueFromExtra1DArray(longlong param_1, int * param_2)`
 pub const RemoveValueFromExtra1DArray: u64 = 11653;
-/// `RemoveValueFromField108Array` at 0xcef980 (decompiler, medium); signature (medium): `char RemoveValueFromField108Array(longlong param_1, int param_2)`
-pub const RemoveValueFromField108Array: u64 = 68544;
 /// `RemoveValueFromHashMapArrayEntry` at 0x6315e0 (decompiler, medium); signature (untiered): `undefined RemoveValueFromHashMapArrayEntry(longlong param_1, ulonglong param_2, int param_3)`
 pub const RemoveValueFromHashMapArrayEntry: u64 = 35903;
 /// `RemoveValueFromInlineList` at 0x17f180 (decompiler, medium); signature (untiered): `undefined RemoveValueFromInlineList(int * param_1, int * param_2, undefined * UNRECOVERED_JUMPTABLE_00, undefined8 param_4)`
@@ -99829,8 +100003,6 @@ pub const ResetGlobal415271: u64 = 107646;
 pub const ResetGlobalStringAndMessageRecord: u64 = 441973;
 /// `ResetHandle68StateAndClearLists` at 0x5ee910 (decompiler, medium); signature (untiered): `undefined ResetHandle68StateAndClearLists(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ResetHandle68StateAndClearLists: u64 = 35274;
-/// `ResetInputDevices` at 0xcf98d0 (decompiler, medium); signature (untiered): `undefined ResetInputDevices(longlong param_1)`
-pub const ResetInputDevices: u64 = 68628;
 /// `ResetItemArrayAndRanges` at 0x8235b0 (decompiler, medium); signature (untiered): `undefined ResetItemArrayAndRanges(longlong * param_1)`
 pub const ResetItemArrayAndRanges: u64 = 44846;
 /// `ResetItemArraysAndField198` at 0x825180 (decompiler, medium); signature (untiered): `undefined ResetItemArraysAndField198(longlong param_1)`
@@ -100279,8 +100451,6 @@ pub const RestartLoopSoundAtRefPosition: u64 = 43976;
 pub const RestoreActorValue: u64 = 38455;
 /// `RestoreEquippedMagicAndObjects` at 0x75d1d0 (decompiler, medium); signature (untiered): `undefined RestoreEquippedMagicAndObjects(longlong param_1)`
 pub const RestoreEquippedMagicAndObjects: u64 = 40702;
-/// `RestoreField124FromField120IfUnset` at 0xcefb30 (decompiler, high); signature (high): `undefined RestoreField124FromField120IfUnset(longlong param_1)`
-pub const RestoreField124FromField120IfUnset: u64 = 68546;
 /// `RestoreFields27D8` at 0x100a460 (decompiler, high); signature (untiered): `undefined RestoreFields27D8(longlong param_1)`
 pub const RestoreFields27D8: u64 = 77250;
 /// `RestorePlaneMasks` at 0xff9230 (decompiler, medium); signature (medium): `undefined RestorePlaneMasks(longlong * param_1, undefined4 * param_2)`
@@ -100457,28 +100627,36 @@ pub const RunBucketedSearchToCompletion_2: u64 = 31007;
 pub const RunCheckSphereVisitor: u64 = 90425;
 /// `RunCleanupCallbacksAndFreeBlock` at 0xb2e070 (decompiler, medium); signature (untiered): `undefined8 RunCleanupCallbacksAndFreeBlock(longlong param_1)`
 pub const RunCleanupCallbacksAndFreeBlock: u64 = 60122;
+/// `RunConsoleLinesFromStream` at 0x343ee0 (semantic, high); signature (untiered): `undefined RunConsoleLinesFromStream(undefined8 param_1, undefined8 param_2, uint * param_3, longlong * param_4)`; bat path: for each line (0x104 bytes) echoes it through the printer, compiles it into a stack Script with compileType 1 and runs it immediately with TLS+0x600 set (high); semantic signature: `void (Stream* stream, ScriptCompiler* compiler, RefHandle* selectedRef, ConsoleLogPrinter* printer)`
+pub const RunConsoleLinesFromStream: u64 = 21891;
 /// `RunCrtCommonMain` at 0x15a8338 (decompiler, medium); signature (medium): `ulonglong RunCrtCommonMain(void)`
 pub const RunCrtCommonMain: u64 = 109636;
 /// `RunCullingWithStaticProcess` at 0x152b740 (decompiler, medium); signature (medium): `undefined RunCullingWithStaticProcess(longlong * param_1, int param_2, int param_3)`
 pub const RunCullingWithStaticProcess: u64 = 106921;
+/// `RunHandler::CanProcess` at 0x7b5090 (semantic, high); signature (untiered): `bool CanProcess(RunHandler * this, longlong * param_1)`
+pub const RunHandler__CanProcess: u64 = 42460;
 /// `RunHandler::vdtor` at 0x7b1cb0 (layout_inference, medium); signature (low): `RunHandler * vdtor(RunHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const RunHandler__vdtor: u64 = 42406;
-/// `RunHandler::vfunc_1` at 0x7b5090 (rtti, high); signature (low): `bool vfunc_1(RunHandler * this, longlong * param_1)`
-pub const RunHandler__vfunc_1: u64 = 42460;
 /// `RunHandler::vfunc_6` at 0x7b3930 (rtti, high); signature (low): `undefined vfunc_6(RunHandler * this, longlong param_1, longlong param_2)`
 pub const RunHandler__vfunc_6: u64 = 42429;
 /// `RunJobCallbacksWithinTimeBudget` at 0x64e8a0 (decompiler, medium); signature (untiered): `DWORD RunJobCallbacksWithinTimeBudget(longlong param_1)`
 pub const RunJobCallbacksWithinTimeBudget: u64 = 36468;
 /// `RunNextQueuedTasklet` at 0xec5340 (decompiler, medium); signature (medium): `undefined RunNextQueuedTasklet(longlong param_1, longlong param_2, char param_3)`
 pub const RunNextQueuedTasklet: u64 = 69609;
+/// `RunPendingConsoleLines` at 0x90a2d0 (semantic, high); signature (untiered): `undefined RunPendingConsoleLines(undefined8 param_1, char * param_2, longlong * * param_3, TESObjectCELL * param_4)`; main-loop drain of g_PendingConsoleLines: a pair without filter runs CompileAndRunScript(cmd, compiler, 1, selectedRef); with a filter, each loaded reference passing it is printed '%s (%08X): %s' and the command runs on it; then the array is emptied (high); semantic signature: `void ()`
+pub const RunPendingConsoleLines: u64 = 442673;
+/// `RunPendingConsoleLines` as a function pointer type (high).
+pub type RunPendingConsoleLines_fn = unsafe extern "C" fn();
 /// `RunPostProcessTasksWithinBudget` at 0xfc68c0 (decompiler, medium); signature (untiered): `ulonglong RunPostProcessTasksWithinBudget(longlong param_1)`
 pub const RunPostProcessTasksWithinBudget: u64 = 75705;
-/// `RunQueuedScriptCalls` at 0x9928f0 (decompiler, medium); signature (untiered): `undefined RunQueuedScriptCalls(undefined8 param_1)`
-pub const RunQueuedScriptCalls: u64 = 52952;
+/// `RunQueuedConsoleCommands` at 0x9928f0 (runtime, high); signature (untiered): `undefined RunQueuedConsoleCommands(undefined8 param_1)`; pops each task and calls CompileAndRunScript(task.script, task.compiler, 1, task.ref), then deletes the Script and the task (high); semantic signature: `void (ConsoleCommandQueue* q)`
+pub const RunQueuedConsoleCommands: u64 = 52952;
 /// `RunRaycastSearch` at 0x8deb50 (decompiler, medium); signature (untiered): `undefined RunRaycastSearch(longlong param_1, undefined8 * * * * * * * * param_2, undefined8 param_3, ulonglong param_4)`
 pub const RunRaycastSearch: u64 = 50060;
-/// `RunScriptIfDelayElapsed` at 0x343960 (decompiler, medium); signature (untiered): `ulonglong RunScriptIfDelayElapsed(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4, char param_5)`
+/// `RunScriptIfDelayElapsed` at 0x343960 (semantic, high); signature (untiered): `ulonglong RunScriptIfDelayElapsed(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4, char param_5)`; quest-delay gate, publishes ownerQuest/actor in TLS (+0x620 +0x648 +0x650), then RunWithReentrantScriptContext (high); semantic signature: `bool (Script* script, TESObjectREFR* thisRef, ScriptLocals* locals, TESObjectREFR* containingObj, bool force)`
 pub const RunScriptIfDelayElapsed: u64 = 21886;
+/// `RunWithReentrantScriptContext` at 0x386f20 (semantic, high); signature (untiered): `ulonglong RunWithReentrantScriptContext(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined1 param_6, undefined1 param_7, undefined1 param_8, undefined4 param_9)`; allocates or reuses a ScriptRunContext (0x60) and runs; depth counter 0x31e016c (high); semantic signature: `bool (ScriptRunState* state, Script*, TESObjectREFR* thisRef, ScriptLocals*, TESObjectREFR* containingObj, bool, u8, u8, u32)`
+pub const RunWithReentrantScriptContext: u64 = 23336;
 /// `SafeZoneMenu::ctor` at 0x974a80 (layout_inference, high); signature (high): `SafeZoneMenu * ctor(SafeZoneMenu * this)`
 pub const SafeZoneMenu__ctor: u64 = 52478;
 /// `SafeZoneMenu::vdtor` at 0x974af0 (layout_inference, medium); signature (low): `SafeZoneMenu * vdtor(SafeZoneMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -100635,14 +100813,20 @@ pub const ScrapHeap__vfunc_4: u64 = 68139;
 pub const ScrapHeap__vfunc_5: u64 = 68140;
 /// `ScreenPointToWorldRay` at 0xef0050 (decompiler, medium); signature (untiered): `undefined8 ScreenPointToWorldRay(longlong param_1, int param_2, int param_3, float * param_4, float * param_5, float param_6, float param_7)`
 pub const ScreenPointToWorldRay: u64 = 70630;
+/// `ScreenshotHandler::CanProcess` at 0x962370 (semantic, high); signature (untiered): `undefined8 CanProcess(ScreenshotHandler * this, longlong * param_1)`
+pub const ScreenshotHandler__CanProcess: u64 = 52261;
 /// `ScreenshotHandler::vdtor` at 0x960c80 (layout_inference, medium); signature (low): `ScreenshotHandler * vdtor(ScreenshotHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ScreenshotHandler__vdtor: u64 = 52240;
-/// `ScreenshotHandler::vfunc_1` at 0x962370 (rtti, high); signature (low): `undefined8 vfunc_1(ScreenshotHandler * this, longlong * param_1)`
-pub const ScreenshotHandler__vfunc_1: u64 = 52261;
 /// `ScreenshotHandler::vfunc_7` at 0x961ea0 (rtti, high); signature (low): `undefined8 vfunc_7(ScreenshotHandler * this, longlong * param_1)`
 pub const ScreenshotHandler__vfunc_7: u64 = 52253;
-/// `Script::ctor` at 0x342a40 (layout_inference, high); signature (low): `Script * ctor(Script * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+/// `Script::GetRefVariable` at 0x344b80 (semantic, medium); signature (untiered): `longlong GetRefVariable(longlong param_1, uint param_2, longlong param_3)`; n-th reference variable; +0x10 is its form (medium); semantic signature: `ScriptRefVariable* (Script* this, int index, ScriptLocals* locals)`
+pub const Script__GetRefVariable: u64 = 21909;
+/// `Script::SetText` at 0x3435e0 (semantic, medium); signature (untiered): `undefined SetText(longlong param_1, void * param_2, undefined8 param_3, undefined8 param_4)`; replaces the owned text at +0x38 (medium); semantic signature: `void (Script* this, const char* text)`
+pub const Script__SetText: u64 = 21883;
+/// `Script::ctor` at 0x342a40 (layout_inference, high); signature (low): `Script * ctor(Script * this, undefined8 param_1, uint * param_2, longlong * param_3)`; TESForm ctor, zeroes the Script fields, formType 0x13 (high); semantic signature: `Script* (Script* this)`
 pub const Script__ctor: u64 = 441580;
+/// `Script::ctor` as a function pointer type (high).
+pub type Script__ctor_fn = unsafe extern "C" fn(this: *mut classes::Script) -> *mut classes::Script;
 /// `Script::dtor` at 0x342ac0 (layout_inference, high); signature (low): `undefined dtor(Script * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const Script__dtor: u64 = 441581;
 /// `Script::vdtor` at 0x346a60 (slot_propagation, medium); signature (low): `Script * vdtor(Script * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -100663,6 +100847,10 @@ pub const Script__vfunc_6_sub0: u64 = 21936;
 pub const Script__vfunc_6_sub1: u64 = 23340;
 /// `Script::vfunc_6_sub2` at 0x387590 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub2(uint * param_1, longlong param_2)`
 pub const Script__vfunc_6_sub2: u64 = 23344;
+/// `ScriptCompiler::Compile` at 0x34a280 (semantic, medium); signature (untiered): `undefined8 Compile(undefined8 param_1, longlong * param_2, longlong * param_3, undefined4 * param_4)`; splits the text into lines (0x34b150), checks the begin/end and scriptname rules unless partial, compiles each line (0x34a4e0) and stores the bytecode into the Script (medium); semantic signature: `bool (ScriptCompiler* this, Script* script, ScriptCompileBuffer* buf)`
+pub const ScriptCompiler__Compile: u64 = 21964;
+/// `ScriptCompiler::CompileScript` at 0x347930 (semantic, medium); signature (untiered): `undefined1 CompileScript(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; builds a compile buffer (text, compileType at +0xc, partial-script flag +0x24 = 1, name = the script's editor id or g_ScriptCompileTypeNames[type]) and compiles (medium); semantic signature: `bool (ScriptCompiler* this, Script* script, TESObjectREFR* ref, uint compileType)`
+pub const ScriptCompiler__CompileScript: u64 = 21954;
 /// `ScriptEffect::ctor` at 0x5dd2c0 (layout_inference, high); signature (low): `ScriptEffect * ctor(ScriptEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const ScriptEffect__ctor: u64 = 34883;
 /// `ScriptEffect::dtor` at 0x5dd320 (layout_inference, medium); signature (low): `undefined dtor(ScriptEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -100681,6 +100869,10 @@ pub const ScriptEffect__vfunc_4: u64 = 34889;
 pub const ScriptEffect__vfunc_8: u64 = 34890;
 /// `ScriptEffect::vfunc_9` at 0x5dd660 (rtti, medium); signature (low): `undefined vfunc_9(ScriptEffect * this, longlong param_1)`
 pub const ScriptEffect__vfunc_9: u64 = 34891;
+/// `ScriptRunner::ExecuteStatement` at 0x386320 (semantic, high); signature (untiered): `undefined1 ExecuteStatement(undefined8 * param_1, longlong * param_2, uint param_3, longlong * param_4, int * param_5, uint param_6, int * param_7, uint param_8, char param_9, char param_10)`; handles keywords (begin 0x10, set 0x15, if 0x16-0x19, return 0x1e); for a command: entry = GetCommandTableEntryByOpcode, skipped silently when referenceFunction && !thisRef, else entry->execute(params, script->data, thisRef, ctx->containingObj, script, ctx->locals, &result, &offset) (high); semantic signature: `bool (ScriptRunContext* ctx, Script* script, uint opcode, TESObjectREFR* thisRef, int* blockSkip, uint offset, int* skip, uint line, bool evalOnly, bool)`
+pub const ScriptRunner__ExecuteStatement: u64 = 23329;
+/// `ScriptRunner::Run` at 0x385b40 (semantic, high); signature (untiered): `ulonglong Run(undefined8 * param_1, longlong * param_2, TypeDescriptor * param_3, TypeDescriptor * param_4, undefined8 param_5, char param_6, undefined1 param_7, undefined1 param_8, undefined4 param_9)`; bytecode loop: per statement u16 opcode (0x1c = explicit reference: u16 refIndex then u16 opcode), u16 length, then ExecuteStatement (high); semantic signature: `bool (ScriptRunContext* ctx, Script* script, TESObjectREFR* thisRef, ScriptLocals* locals, TESObjectREFR* containingObj, bool, u8, u8, u32)`
+pub const ScriptRunner__Run: u64 = 23326;
 /// `ScriptedRefEffect::vdtor` at 0x5dd710 (layout_inference, medium); signature (low): `ScriptedRefEffect * vdtor(ScriptedRefEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ScriptedRefEffect__vdtor: u64 = 34892;
 /// `ScrollItem::BGSDestructibleObjectForm_vdtor` at 0x154be4 (slot_propagation, medium); signature (high): `undefined BGSDestructibleObjectForm_vdtor(ScrollItem * this)`
@@ -101143,8 +101335,6 @@ pub const SetCombatBlackboardRefTimestamp: u64 = 46947;
 pub const SetConstantFields40To54: u64 = 107221;
 /// `SetConstraintEnabled` at 0xb64290 (decompiler, medium); signature (medium): `undefined SetConstraintEnabled(longlong param_1, char param_2)`
 pub const SetConstraintEnabled: u64 = 61581;
-/// `SetControlFlags` at 0xcefaa0 (decompiler, medium); signature (medium): `undefined SetControlFlags(longlong param_1, uint param_2, char param_3, char param_4)`
-pub const SetControlFlags: u64 = 68545;
 /// `SetCountAndAllocateBuffers` at 0xb3b5d0 (decompiler, medium); signature (medium): `undefined SetCountAndAllocateBuffers(longlong param_1, uint param_2)`
 pub const SetCountAndAllocateBuffers: u64 = 60372;
 /// `SetCurrentCell` at 0x1a2620 (decompiler, medium); signature (untiered): `undefined SetCurrentCell(longlong param_1, TESObjectCELL * param_2, ulonglong param_3, TypeDescriptor * param_4)`
@@ -101971,8 +102161,6 @@ pub const SetFields0And8: u64 = 57580;
 pub const SetFields100To110: u64 = 89541;
 /// `SetFields10To20` at 0xcf8160 (decompiler, high); signature (untiered): `undefined SetFields10To20(longlong param_1, undefined8 param_2, undefined8 param_3, undefined1 param_4)`
 pub const SetFields10To20: u64 = 82290;
-/// `SetFields120And124` at 0xcefba0 (decompiler, high); signature (high): `undefined SetFields120And124(longlong param_1, undefined4 param_2, undefined4 param_3)`
-pub const SetFields120And124: u64 = 68549;
 /// `SetFields20To28` at 0x900280 (decompiler, high); signature (untiered): `undefined SetFields20To28(longlong param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4)`
 pub const SetFields20To28: u64 = 50938;
 /// `SetFields30And40` at 0xb65be0 (decompiler, high); signature (untiered): `undefined SetFields30And40(longlong param_1, undefined8 * param_2, undefined8 * param_3)`
@@ -101991,8 +102179,6 @@ pub const SetFields88And90: u64 = 63471;
 pub const SetFields8To18: u64 = 93204;
 /// `SetFields8To1C` at 0x1246900 (decompiler, high); signature (untiered): `undefined SetFields8To1C(longlong param_1, undefined4 * param_2)`
 pub const SetFields8To1C: u64 = 93217;
-/// `SetFieldsAndResetString18` at 0xcfb060 (decompiler, medium); signature (untiered): `undefined SetFieldsAndResetString18(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`
-pub const SetFieldsAndResetString18: u64 = 68680;
 /// `SetFieldsF0To108AndUpdate` at 0xb4ef10 (decompiler, medium); signature (untiered): `undefined SetFieldsF0To108AndUpdate(longlong param_1, undefined8 * param_2)`
 pub const SetFieldsF0To108AndUpdate: u64 = 60949;
 /// `SetFileTimes` at 0xec0370 (decompiler, medium); signature (untiered): `uint SetFileTimes(undefined8 param_1, FILETIME * param_2, FILETIME * param_3, FILETIME * param_4)`
@@ -102291,8 +102477,6 @@ pub const SetOrRemoveRefCountedEntryById: u64 = 83979;
 pub const SetOwnedPointerField10Locked: u64 = 38973;
 /// `SetOwnedPointerField10Locked_2` at 0x6e0600 (decompiler, high); signature (untiered): `undefined8 * SetOwnedPointerField10Locked_2(DWORD * param_1, undefined8 * param_2)`
 pub const SetOwnedPointerField10Locked_2: u64 = 38960;
-/// `SetOwnedStringField38` at 0x3435e0 (decompiler, medium); signature (medium): `undefined SetOwnedStringField38(longlong param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetOwnedStringField38: u64 = 21883;
 /// `SetOwnedStringField8` at 0x25ea10 (decompiler, high); signature (high): `undefined SetOwnedStringField8(longlong param_1, char * param_2, undefined8 param_3, undefined8 param_4)`
 pub const SetOwnedStringField8: u64 = 16934;
 /// `SetPackageDataLocation` at 0x497e90 (decompiler, medium); signature (untiered): `undefined SetPackageDataLocation(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
@@ -102903,10 +103087,10 @@ pub const ShoutAttack__GetEventSource: u64 = 41071;
 pub const ShoutAttack__RegisterSink: u64 = 40391;
 /// `ShoutAttack::UnregisterSink` at 0x73e4b0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ShoutAttack::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ShoutAttack::Event>* sink)`
 pub const ShoutAttack__UnregisterSink: u64 = 40392;
+/// `ShoutHandler::CanProcess` at 0x7b50c0 (semantic, high); signature (untiered): `undefined8 CanProcess(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const ShoutHandler__CanProcess: u64 = 42461;
 /// `ShoutHandler::vdtor` at 0x7b1ce0 (layout_inference, medium); signature (low): `ShoutHandler * vdtor(ShoutHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const ShoutHandler__vdtor: u64 = 42407;
-/// `ShoutHandler::vfunc_1` at 0x7b50c0 (rtti, high); signature (low): `undefined8 vfunc_1(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const ShoutHandler__vfunc_1: u64 = 42461;
 /// `ShoutHandler::vfunc_6` at 0x7b3960 (rtti, high); signature (low): `undefined vfunc_6(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const ShoutHandler__vfunc_6: u64 = 42430;
 /// `ShoutHandler::vfunc_6_sub0` at 0x758200 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
@@ -104037,8 +104221,6 @@ pub const SkyrimSpeechRecognition__BSTEventSink_SpeechRecognitionEvents_Recognit
 pub const SkyrimSpeechRecognition__BSTEventSink_SpeechRecognitionEvents_Recognition_vfunc_1: u64 = 56846;
 /// `SkyrimSpeechRecognition::BSTEventSink_SpeechRecognitionEvents_Recognition_vfunc_1_sub0` at 0xa67280 (callgraph, medium); signature (untiered): `undefined BSTEventSink_SpeechRecognitionEvents_Recognition_vfunc_1_sub0(undefined8 param_1, longlong * param_2, BSTArrayAllocatorFunctor<BSScrapArrayAllocator>_vtbl * param_3, longlong param_4)`
 pub const SkyrimSpeechRecognition__BSTEventSink_SpeechRecognitionEvents_Recognition_vfunc_1_sub0: u64 = 56858;
-/// `SkyrimSpeechRecognition::BSTEventSink_SpeechRecognitionEvents_Recognition_vfunc_1_sub1` at 0xcfb640 (callgraph, medium); signature (untiered): `undefined BSTEventSink_SpeechRecognitionEvents_Recognition_vfunc_1_sub1(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
-pub const SkyrimSpeechRecognition__BSTEventSink_SpeechRecognitionEvents_Recognition_vfunc_1_sub1: u64 = 68690;
 /// `SkyrimSpeechRecognition::ctor` at 0xa66920 (layout_inference, medium); signature (high): `SkyrimSpeechRecognition * ctor(SkyrimSpeechRecognition * this)`
 pub const SkyrimSpeechRecognition__ctor: u64 = 56837;
 /// `SkyrimSpeechRecognition::vdtor` at 0xa67e80 (layout_inference, medium); signature (low): `SkyrimSpeechRecognition * vdtor(SkyrimSpeechRecognition * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -104417,10 +104599,10 @@ pub const SmoothPathWithPreferredTrisRayCast: u64 = 90436;
 pub const SnapPointToHandleRefSurface: u64 = 44080;
 /// `SnapPositionToGrid` at 0x666610 (decompiler, medium); signature (medium): `undefined SnapPositionToGrid(float * param_1)`
 pub const SnapPositionToGrid: u64 = 36868;
+/// `SneakHandler::CanProcess` at 0x7b5140 (semantic, high); signature (untiered): `bool CanProcess(SneakHandler * this, longlong * param_1)`
+pub const SneakHandler__CanProcess: u64 = 42462;
 /// `SneakHandler::vdtor` at 0x7b1d80 (layout_inference, medium); signature (low): `SneakHandler * vdtor(SneakHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SneakHandler__vdtor: u64 = 42408;
-/// `SneakHandler::vfunc_1` at 0x7b5140 (rtti, high); signature (low): `bool vfunc_1(SneakHandler * this, longlong * param_1)`
-pub const SneakHandler__vfunc_1: u64 = 42462;
 /// `SneakHandler::vfunc_6` at 0x7b3a80 (rtti, high); signature (low): `undefined vfunc_6(SneakHandler * this, longlong param_1)`
 pub const SneakHandler__vfunc_6: u64 = 42431;
 /// `SneakHandler::vfunc_6_sub0` at 0x75dc50 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(undefined8 param_1, undefined8 param_2)`
@@ -104619,10 +104801,10 @@ pub const SplitPathIntoDirectoryAndFileName: u64 = 69488;
 pub const SplitStringCaseInsensitive: u64 = 505833;
 /// `SplitTrianglePathAtWaterAndLedges` at 0x11bef90 (decompiler, medium); signature (untiered): `undefined1 SplitTrianglePathAtWaterAndLedges(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const SplitTrianglePathAtWaterAndLedges: u64 = 90438;
+/// `SprintHandler::CanProcess` at 0x7b5170 (semantic, high); signature (untiered): `bool CanProcess(SprintHandler * this, longlong * param_1)`
+pub const SprintHandler__CanProcess: u64 = 42463;
 /// `SprintHandler::vdtor` at 0x7b1db0 (layout_inference, medium); signature (low): `SprintHandler * vdtor(SprintHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SprintHandler__vdtor: u64 = 42409;
-/// `SprintHandler::vfunc_1` at 0x7b5170 (rtti, high); signature (low): `bool vfunc_1(SprintHandler * this, longlong * param_1)`
-pub const SprintHandler__vfunc_1: u64 = 42463;
 /// `SprintHandler::vfunc_6` at 0x7b3b40 (rtti, high); signature (low): `undefined vfunc_6(SprintHandler * this, longlong param_1)`
 pub const SprintHandler__vfunc_6: u64 = 42432;
 /// `Sprintf` at 0xaa5880 (decompiler, high); signature (high): `int Sprintf(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -109903,16 +110085,16 @@ pub const ToggleItemSelection: u64 = 51412;
 pub const ToggleNamedNodePairFlagF4: u64 = 19674;
 /// `ToggleOpenCloseState` at 0x1d9590 (decompiler, medium); signature (untiered): `undefined ToggleOpenCloseState(longlong * param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
 pub const ToggleOpenCloseState: u64 = 14284;
+/// `TogglePOVHandler::CanProcess` at 0x7b51a0 (semantic, high); signature (untiered): `bool CanProcess(TogglePOVHandler * this, longlong * param_1)`
+pub const TogglePOVHandler__CanProcess: u64 = 42464;
 /// `TogglePOVHandler::vdtor` at 0x7b1de0 (layout_inference, medium); signature (low): `TogglePOVHandler * vdtor(TogglePOVHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TogglePOVHandler__vdtor: u64 = 42410;
-/// `TogglePOVHandler::vfunc_1` at 0x7b51a0 (rtti, high); signature (low): `bool vfunc_1(TogglePOVHandler * this, longlong * param_1)`
-pub const TogglePOVHandler__vfunc_1: u64 = 42464;
 /// `TogglePOVHandler::vfunc_6` at 0x7b3bc0 (rtti, high); signature (low): `undefined vfunc_6(TogglePOVHandler * this, longlong param_1, longlong param_2)`
 pub const TogglePOVHandler__vfunc_6: u64 = 42433;
+/// `ToggleRunHandler::CanProcess` at 0x7b51d0 (semantic, high); signature (untiered): `bool CanProcess(ToggleRunHandler * this, longlong * param_1)`
+pub const ToggleRunHandler__CanProcess: u64 = 42465;
 /// `ToggleRunHandler::vdtor` at 0x7b1e10 (layout_inference, medium); signature (low): `ToggleRunHandler * vdtor(ToggleRunHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ToggleRunHandler__vdtor: u64 = 42411;
-/// `ToggleRunHandler::vfunc_1` at 0x7b51d0 (rtti, high); signature (low): `bool vfunc_1(ToggleRunHandler * this, longlong * param_1)`
-pub const ToggleRunHandler__vfunc_1: u64 = 42465;
 /// `ToggleRunHandler::vfunc_6` at 0x7b3c60 (rtti, high); signature (low): `undefined vfunc_6(ToggleRunHandler * this, longlong param_1, longlong param_2)`
 pub const ToggleRunHandler__vfunc_6: u64 = 42434;
 /// `ToggleSelectedEntryAndBuildPreview` at 0x925f70 (decompiler, medium); signature (untiered): `undefined ToggleSelectedEntryAndBuildPreview(longlong param_1, ulonglong param_2, longlong param_3, longlong param_4)`
@@ -110895,7 +111077,7 @@ pub const UnlockReadLockIfHeld: u64 = 70059;
 pub const UnlockWorldForReadIfEnabled: u64 = 77927;
 /// `UnmuteSoundCategory` at 0xcd4a20 (decompiler, medium); signature (untiered): `undefined UnmuteSoundCategory(longlong * param_1, ushort param_2)`
 pub const UnmuteSoundCategory: u64 = 67843;
-/// `UnpackCommandArguments` at 0x344ca0 (decompiler, medium); signature (untiered): `ulonglong UnpackCommandArguments(longlong param_1, longlong param_2, uint * param_3, longlong param_4, ulonglong param_5, longlong param_6, longlong param_7)`
+/// `UnpackCommandArguments` at 0x344ca0 (runtime, high); signature (untiered): `ulonglong UnpackCommandArguments(longlong param_1, longlong param_2, uint * param_3, longlong param_4, ulonglong param_5, longlong param_6, longlong param_7)`; decodes the parameter block at data+*offset (u16 count, then one value per parameter) into the variadic out pointers, one per parameter in order, advancing *offset; false on a type/form mismatch or params == null (high); semantic signature: `bool (const ParamInfo* params, const void* data, uint32* offset, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, ...)`
 pub const UnpackCommandArguments: u64 = 21910;
 /// `UnpackSoAVerticesToVector4Array` at 0xc3abd0 (decompiler, medium); signature (untiered): `undefined UnpackSoAVerticesToVector4Array(longlong param_1, longlong * param_2)`
 pub const UnpackSoAVerticesToVector4Array: u64 = 65093;
@@ -111127,6 +111309,8 @@ pub const UpdateFollowTargetPathWithFlags: u64 = 40074;
 pub const UpdateFormFileArrayWithFile: u64 = 14623;
 /// `UpdateFrustumVisibilityAndFade` at 0x1575d20 (decompiler, medium); signature (untiered): `undefined UpdateFrustumVisibilityAndFade(longlong param_1, longlong param_2)`
 pub const UpdateFrustumVisibilityAndFade: u64 = 108278;
+/// `UpdateGamepadRumble` at 0xcee700 (semantic, medium); signature (untiered): `DWORD UpdateGamepadRumble(float param_1)`; ages the two motor queues, XInputSetState(0, ...) (medium); semantic signature: `void (float realDelta)`
+pub const UpdateGamepadRumble: u64 = 68532;
 /// `UpdateGrassFadeDistance` at 0x208c60 (decompiler, medium); signature (untiered): `undefined UpdateGrassFadeDistance(longlong param_1)`
 pub const UpdateGrassFadeDistance: u64 = 15379;
 /// `UpdateGreetingAndIdleChatter` at 0x7042a0 (decompiler, medium); signature (untiered): `undefined UpdateGreetingAndIdleChatter(longlong param_1, longlong * param_2)`
@@ -111285,6 +111469,10 @@ pub const UseWeaponActorPackageData__vfunc_6: u64 = 29756;
 pub const UseWeaponActorPackageData__vfunc_7: u64 = 29757;
 /// `UseWeaponActorPackageData::vfunc_9` at 0x4a2140 (rtti, high); signature (low): `undefined vfunc_9(void)`
 pub const UseWeaponActorPackageData__vfunc_9: u64 = 29754;
+/// `UserEventNames::ctor` at 0xd04050 (semantic, high); signature (untiered): `longlong ctor(longlong param_1)`; builds the 102 user event strings (high); semantic signature: `UserEventNames* (UserEventNames* this)`
+pub const UserEventNames__ctor: u64 = 68736;
+/// `UserEventNames::ctor` as a function pointer type (high).
+pub type UserEventNames__ctor_fn = unsafe extern "C" fn(this: *mut classes::UserEventNames) -> *mut classes::UserEventNames;
 /// `VATS::ICommandListVisitor::vdtor` at 0x809540 (layout_inference, medium); signature (low): `ICommandListVisitor * vdtor(ICommandListVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const VATS__ICommandListVisitor__vdtor: u64 = 44320;
 /// `VATSCameraState::Begin` at 0x8ffaa0 (semantic, medium); signature (untiered): `undefined Begin(VATSCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -111303,8 +111491,6 @@ pub const VATSCameraState__vfunc_4_sub0: u64 = 44296;
 pub const VATSCameraState__vfunc_5: u64 = 50937;
 /// `VFormatIntoString` at 0x1271c0 (decompiler, medium); signature (medium): `int VFormatIntoString(longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const VFormatIntoString: u64 = 440474;
-/// `ValidateAndRunScript` at 0x343d00 (decompiler, medium); signature (untiered): `undefined ValidateAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`
-pub const ValidateAndRunScript: u64 = 441582;
 /// `ValidateSlotHandle` at 0xea3c80 (decompiler, medium); signature (medium): `undefined8 ValidateSlotHandle(int param_1)`
 pub const ValidateSlotHandle: u64 = 68856;
 /// `ValidateWaveFormat` at 0x2a78 (decompiler, medium); signature (medium): `undefined ValidateWaveFormat(ushort * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -113613,12 +113799,8 @@ pub const _anon_14F04957__Win32FileType__vfunc_6: u64 = 109375;
 pub const _anon_14F04957__Win32FileType__vfunc_8: u64 = 109370;
 /// `_anon_1613A816::ConsoleHotkeyManager::vdtor` at 0x90cfb0 (layout_inference, medium); signature (low): `ConsoleHotkeyManager * vdtor(ConsoleHotkeyManager * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_1613A816__ConsoleHotkeyManager__vdtor: u64 = 442691;
-/// `_anon_1613A816::ConsoleHotkeyManager::vfunc_1` at 0x90df60 (rtti, high); signature (low): `undefined1 vfunc_1(ConsoleHotkeyManager * this, ulonglong * param_1)`
-pub const _anon_1613A816__ConsoleHotkeyManager__vfunc_1: u64 = 442700;
 /// `_anon_1613A816::ConsoleLogPrinter::vdtor` at 0x90d020 (layout_inference, medium); signature (low): `ConsoleLogPrinter * vdtor(ConsoleLogPrinter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_1613A816__ConsoleLogPrinter__vdtor: u64 = 51101;
-/// `_anon_1613A816::ConsoleLogPrinter::vfunc_1` at 0x90d590 (rtti, high); signature (low): `undefined vfunc_1(ConsoleLogPrinter * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_1613A816__ConsoleLogPrinter__vfunc_1: u64 = 51105;
 /// `_anon_207FFA87::AudioLoadTask::vdtor` at 0xcd2a70 (layout_inference, medium); signature (low): `AudioLoadTask * vdtor(AudioLoadTask * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_207FFA87__AudioLoadTask__vdtor: u64 = 67780;
 /// `_anon_228DD50F::AutoDoorFadeCallback::vdtor` at 0x285790 (layout_inference, medium); signature (low): `AutoDoorFadeCallback * vdtor(AutoDoorFadeCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`

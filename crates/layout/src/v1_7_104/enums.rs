@@ -1650,6 +1650,822 @@ impl FrustumPlane {
     }
 }
 
+/// values in data/inputeventtypes.json (input pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum InputEventType {
+    /// `Button`
+    Button = 0,
+    /// `MouseMove`
+    MouseMove = 1,
+    /// `Char`
+    Char = 2,
+    /// `Thumbstick`
+    Thumbstick = 3,
+    /// `DeviceConnect`
+    DeviceConnect = 4,
+    /// `Kinect`
+    Kinect = 5,
+    /// `Sixaxis`
+    Sixaxis = 6,
+    /// `MotionGesture`
+    MotionGesture = 7,
+    /// `Amiibo`
+    Amiibo = 8,
+}
+
+impl InputEventType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Button),
+            1 => Some(Self::MouseMove),
+            2 => Some(Self::Char),
+            3 => Some(Self::Thumbstick),
+            4 => Some(Self::DeviceConnect),
+            5 => Some(Self::Kinect),
+            6 => Some(Self::Sixaxis),
+            7 => Some(Self::MotionGesture),
+            8 => Some(Self::Amiibo),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/inputdevices.json (input pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum InputDevice {
+    /// `Keyboard`
+    Keyboard = 0,
+    /// `Mouse`
+    Mouse = 1,
+    /// `Gamepad`
+    Gamepad = 2,
+    /// `MotionGestureEvent`
+    MotionGestureEvent = 3,
+    /// `None`
+    None = 7,
+    /// `KinectEvent`
+    KinectEvent = 8,
+}
+
+impl InputDevice {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Keyboard),
+            1 => Some(Self::Mouse),
+            2 => Some(Self::Gamepad),
+            3 => Some(Self::MotionGestureEvent),
+            7 => Some(Self::None),
+            8 => Some(Self::KinectEvent),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/inputcontexts.json (input pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum InputContext {
+    /// `Gameplay`
+    Gameplay = 0,
+    /// `MenuMode`
+    MenuMode = 1,
+    /// `Console`
+    Console = 2,
+    /// `ItemMenu`
+    ItemMenu = 3,
+    /// `Inventory`
+    Inventory = 4,
+    /// `unknown`
+    unknown = 5,
+    /// `Favorites`
+    Favorites = 6,
+    /// `Map`
+    Map = 7,
+    /// `Stats`
+    Stats = 8,
+    /// `Cursor`
+    Cursor = 9,
+    /// `Book`
+    Book = 10,
+    /// `unknown`
+    unknown_2 = 11,
+    /// `Journal`
+    Journal = 12,
+    /// `FreeCamera`
+    FreeCamera = 13,
+    /// `unknown`
+    unknown_3 = 14,
+    /// `Lockpicking`
+    Lockpicking = 15,
+    /// `Marketplace`
+    Marketplace = 16,
+    /// `Favor`
+    Favor = 17,
+    /// `count`
+    count = 18,
+    /// `none`
+    none = 19,
+}
+
+impl InputContext {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Gameplay),
+            1 => Some(Self::MenuMode),
+            2 => Some(Self::Console),
+            3 => Some(Self::ItemMenu),
+            4 => Some(Self::Inventory),
+            5 => Some(Self::unknown),
+            6 => Some(Self::Favorites),
+            7 => Some(Self::Map),
+            8 => Some(Self::Stats),
+            9 => Some(Self::Cursor),
+            10 => Some(Self::Book),
+            11 => Some(Self::unknown_2),
+            12 => Some(Self::Journal),
+            13 => Some(Self::FreeCamera),
+            14 => Some(Self::unknown_3),
+            15 => Some(Self::Lockpicking),
+            16 => Some(Self::Marketplace),
+            17 => Some(Self::Favor),
+            18 => Some(Self::count),
+            19 => Some(Self::none),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/controlgroupflags.json (input pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ControlGroupFlag {
+    /// `Movement`
+    Movement = 1,
+    /// `Looking`
+    Looking = 2,
+    /// `Activate`
+    Activate = 4,
+    /// `unknown`
+    unknown = 8,
+    /// `always`
+    always = 16,
+    /// `POVSwitch`
+    POVSwitch = 32,
+    /// `Fighting`
+    Fighting = 64,
+    /// `Sneaking`
+    Sneaking = 128,
+    /// `Menu`
+    Menu = 256,
+    /// `cleared`
+    cleared = 512,
+    /// `Movement`
+    Movement_2 = 1024,
+    /// `cleared`
+    cleared_2 = 2048,
+}
+
+impl ControlGroupFlag {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            1 => Some(Self::Movement),
+            2 => Some(Self::Looking),
+            4 => Some(Self::Activate),
+            8 => Some(Self::unknown),
+            16 => Some(Self::always),
+            32 => Some(Self::POVSwitch),
+            64 => Some(Self::Fighting),
+            128 => Some(Self::Sneaking),
+            256 => Some(Self::Menu),
+            512 => Some(Self::cleared),
+            1024 => Some(Self::Movement_2),
+            2048 => Some(Self::cleared_2),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/usereventnames.json (input pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum UserEventName {
+    /// `Forward`
+    Forward = 8,
+    /// `Back`
+    Back = 16,
+    /// `Strafe`
+    Strafe = 24,
+    /// `Strafe`
+    Strafe_2 = 32,
+    /// `Move`
+    Move = 40,
+    /// `Look`
+    Look = 48,
+    /// `Activate`
+    Activate = 56,
+    /// `Left`
+    Left = 64,
+    /// `Right`
+    Right = 72,
+    /// `Dual`
+    Dual = 80,
+    /// `ForceRelease`
+    ForceRelease = 88,
+    /// `Pause`
+    Pause = 96,
+    /// `Ready`
+    Ready = 104,
+    /// `Toggle`
+    Toggle = 112,
+    /// `Jump`
+    Jump = 120,
+    /// `Journal`
+    Journal = 128,
+    /// `Sprint`
+    Sprint = 136,
+    /// `Sneak`
+    Sneak = 144,
+    /// `Shout`
+    Shout = 152,
+    /// `KinectShout`
+    KinectShout = 160,
+    /// `Grab`
+    Grab = 168,
+    /// `Run`
+    Run = 176,
+    /// `Toggle`
+    Toggle_2 = 184,
+    /// `Valuec0`
+    Valuec0 = 192,
+    /// `Quicksave`
+    Quicksave = 200,
+    /// `Quickload`
+    Quickload = 208,
+    /// `NewSave`
+    NewSave = 216,
+    /// `Inventory`
+    Inventory = 224,
+    /// `Stats`
+    Stats = 232,
+    /// `Map`
+    Map = 240,
+    /// `Screenshot`
+    Screenshot = 248,
+    /// `Value100`
+    Value100 = 256,
+    /// `Console`
+    Console = 264,
+    /// `CameraPath`
+    CameraPath = 272,
+    /// `Tween`
+    Tween = 280,
+    /// `Take`
+    Take = 288,
+    /// `Accept`
+    Accept = 296,
+    /// `Cancel`
+    Cancel = 304,
+    /// `Up`
+    Up = 312,
+    /// `Down`
+    Down = 320,
+    /// `Left`
+    Left_2 = 328,
+    /// `Right`
+    Right_2 = 336,
+    /// `PageUp`
+    PageUp = 344,
+    /// `PageDown`
+    PageDown = 352,
+    /// `Pick`
+    Pick = 360,
+    /// `PickNext`
+    PickNext = 368,
+    /// `PickPrevious`
+    PickPrevious = 376,
+    /// `Cursor`
+    Cursor = 384,
+    /// `Kinect`
+    Kinect = 392,
+    /// `SprintStart`
+    SprintStart = 400,
+    /// `SprintStop`
+    SprintStop = 408,
+    /// `sneakStart`
+    sneakStart = 416,
+    /// `sneakStop`
+    sneakStop = 424,
+    /// `blockStart`
+    blockStart = 432,
+    /// `blockStop`
+    blockStop = 440,
+    /// `blockBash`
+    blockBash = 448,
+    /// `attackStart`
+    attackStart = 456,
+    /// `attackPowerStart`
+    attackPowerStart = 464,
+    /// `reverseDirection`
+    reverseDirection = 472,
+    /// `Unequip`
+    Unequip = 480,
+    /// `Zoom`
+    Zoom = 488,
+    /// `Zoom`
+    Zoom_2 = 496,
+    /// `RotateItem`
+    RotateItem = 504,
+    /// `Left`
+    Left_3 = 512,
+    /// `PrevPage`
+    PrevPage = 520,
+    /// `NextPage`
+    NextPage = 528,
+    /// `PrevSubPage`
+    PrevSubPage = 536,
+    /// `NextSubPage`
+    NextSubPage = 544,
+    /// `LeftEquip`
+    LeftEquip = 552,
+    /// `RightEquip`
+    RightEquip = 560,
+    /// `ToggleFavorite`
+    ToggleFavorite = 568,
+    /// `Favorites`
+    Favorites = 576,
+    /// `Hotkey1`
+    Hotkey1 = 584,
+    /// `Hotkey2`
+    Hotkey2 = 592,
+    /// `Hotkey3`
+    Hotkey3 = 600,
+    /// `Hotkey4`
+    Hotkey4 = 608,
+    /// `Hotkey5`
+    Hotkey5 = 616,
+    /// `Hotkey6`
+    Hotkey6 = 624,
+    /// `Hotkey7`
+    Hotkey7 = 632,
+    /// `Hotkey8`
+    Hotkey8 = 640,
+    /// `Quick`
+    Quick = 648,
+    /// `Quick`
+    Quick_2 = 656,
+    /// `Quick`
+    Quick_3 = 664,
+    /// `Quick`
+    Quick_4 = 672,
+    /// `ToggleCursor`
+    ToggleCursor = 680,
+    /// `Wait`
+    Wait = 688,
+    /// `Click`
+    Click = 696,
+    /// `MapLookMode`
+    MapLookMode = 704,
+    /// `Equip`
+    Equip = 712,
+    /// `DropItem`
+    DropItem = 720,
+    /// `Rotate`
+    Rotate = 728,
+    /// `NextFocus`
+    NextFocus = 736,
+    /// `PreviousFocus`
+    PreviousFocus = 744,
+    /// `SetActiveQuest`
+    SetActiveQuest = 752,
+    /// `PlacePlayerMarker`
+    PlacePlayerMarker = 760,
+    /// `XButton`
+    XButton = 768,
+    /// `YButton`
+    YButton = 776,
+    /// `ChargeItem`
+    ChargeItem = 784,
+    /// `Value318`
+    Value318 = 792,
+    /// `PlayerPosition`
+    PlayerPosition = 800,
+    /// `LocalMap`
+    LocalMap = 808,
+    /// `LocalMapMoveMode`
+    LocalMapMoveMode = 816,
+    /// `Item`
+    Item = 824,
+}
+
+impl UserEventName {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            8 => Some(Self::Forward),
+            16 => Some(Self::Back),
+            24 => Some(Self::Strafe),
+            32 => Some(Self::Strafe_2),
+            40 => Some(Self::Move),
+            48 => Some(Self::Look),
+            56 => Some(Self::Activate),
+            64 => Some(Self::Left),
+            72 => Some(Self::Right),
+            80 => Some(Self::Dual),
+            88 => Some(Self::ForceRelease),
+            96 => Some(Self::Pause),
+            104 => Some(Self::Ready),
+            112 => Some(Self::Toggle),
+            120 => Some(Self::Jump),
+            128 => Some(Self::Journal),
+            136 => Some(Self::Sprint),
+            144 => Some(Self::Sneak),
+            152 => Some(Self::Shout),
+            160 => Some(Self::KinectShout),
+            168 => Some(Self::Grab),
+            176 => Some(Self::Run),
+            184 => Some(Self::Toggle_2),
+            192 => Some(Self::Valuec0),
+            200 => Some(Self::Quicksave),
+            208 => Some(Self::Quickload),
+            216 => Some(Self::NewSave),
+            224 => Some(Self::Inventory),
+            232 => Some(Self::Stats),
+            240 => Some(Self::Map),
+            248 => Some(Self::Screenshot),
+            256 => Some(Self::Value100),
+            264 => Some(Self::Console),
+            272 => Some(Self::CameraPath),
+            280 => Some(Self::Tween),
+            288 => Some(Self::Take),
+            296 => Some(Self::Accept),
+            304 => Some(Self::Cancel),
+            312 => Some(Self::Up),
+            320 => Some(Self::Down),
+            328 => Some(Self::Left_2),
+            336 => Some(Self::Right_2),
+            344 => Some(Self::PageUp),
+            352 => Some(Self::PageDown),
+            360 => Some(Self::Pick),
+            368 => Some(Self::PickNext),
+            376 => Some(Self::PickPrevious),
+            384 => Some(Self::Cursor),
+            392 => Some(Self::Kinect),
+            400 => Some(Self::SprintStart),
+            408 => Some(Self::SprintStop),
+            416 => Some(Self::sneakStart),
+            424 => Some(Self::sneakStop),
+            432 => Some(Self::blockStart),
+            440 => Some(Self::blockStop),
+            448 => Some(Self::blockBash),
+            456 => Some(Self::attackStart),
+            464 => Some(Self::attackPowerStart),
+            472 => Some(Self::reverseDirection),
+            480 => Some(Self::Unequip),
+            488 => Some(Self::Zoom),
+            496 => Some(Self::Zoom_2),
+            504 => Some(Self::RotateItem),
+            512 => Some(Self::Left_3),
+            520 => Some(Self::PrevPage),
+            528 => Some(Self::NextPage),
+            536 => Some(Self::PrevSubPage),
+            544 => Some(Self::NextSubPage),
+            552 => Some(Self::LeftEquip),
+            560 => Some(Self::RightEquip),
+            568 => Some(Self::ToggleFavorite),
+            576 => Some(Self::Favorites),
+            584 => Some(Self::Hotkey1),
+            592 => Some(Self::Hotkey2),
+            600 => Some(Self::Hotkey3),
+            608 => Some(Self::Hotkey4),
+            616 => Some(Self::Hotkey5),
+            624 => Some(Self::Hotkey6),
+            632 => Some(Self::Hotkey7),
+            640 => Some(Self::Hotkey8),
+            648 => Some(Self::Quick),
+            656 => Some(Self::Quick_2),
+            664 => Some(Self::Quick_3),
+            672 => Some(Self::Quick_4),
+            680 => Some(Self::ToggleCursor),
+            688 => Some(Self::Wait),
+            696 => Some(Self::Click),
+            704 => Some(Self::MapLookMode),
+            712 => Some(Self::Equip),
+            720 => Some(Self::DropItem),
+            728 => Some(Self::Rotate),
+            736 => Some(Self::NextFocus),
+            744 => Some(Self::PreviousFocus),
+            752 => Some(Self::SetActiveQuest),
+            760 => Some(Self::PlacePlayerMarker),
+            768 => Some(Self::XButton),
+            776 => Some(Self::YButton),
+            784 => Some(Self::ChargeItem),
+            792 => Some(Self::Value318),
+            800 => Some(Self::PlayerPosition),
+            808 => Some(Self::LocalMap),
+            816 => Some(Self::LocalMapMoveMode),
+            824 => Some(Self::Item),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/scriptparamtypes.json (input pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ScriptParamType {
+    /// `String`
+    String = 0,
+    /// `Integer`
+    Integer = 1,
+    /// `Float`
+    Float = 2,
+    /// `InventoryObject`
+    InventoryObject = 3,
+    /// `ObjectReference`
+    ObjectReference = 4,
+    /// `ActorValue`
+    ActorValue = 5,
+    /// `Actor`
+    Actor = 6,
+    /// `SpellItem`
+    SpellItem = 7,
+    /// `Axis`
+    Axis = 8,
+    /// `Cell`
+    Cell = 9,
+    /// `AnimationGroup`
+    AnimationGroup = 10,
+    /// `MagicItem`
+    MagicItem = 11,
+    /// `Sound`
+    Sound = 12,
+    /// `Topic`
+    Topic = 13,
+    /// `Quest`
+    Quest = 14,
+    /// `Race`
+    Race = 15,
+    /// `Class`
+    Class = 16,
+    /// `Faction`
+    Faction = 17,
+    /// `Sex`
+    Sex = 18,
+    /// `Global`
+    Global = 19,
+    /// `Furniture`
+    Furniture = 20,
+    /// `Object`
+    Object = 21,
+    /// `VariableName`
+    VariableName = 22,
+    /// `Stage`
+    Stage = 23,
+    /// `MapMarker`
+    MapMarker = 24,
+    /// `ActorBase`
+    ActorBase = 25,
+    /// `Container`
+    Container = 26,
+    /// `WorldSpace`
+    WorldSpace = 27,
+    /// `CrimeType`
+    CrimeType = 28,
+    /// `Package`
+    Package = 29,
+    /// `CombatStyle`
+    CombatStyle = 30,
+    /// `MagicEffect`
+    MagicEffect = 31,
+    /// `FormType`
+    FormType = 32,
+    /// `Weather`
+    Weather = 33,
+    /// `NPC`
+    NPC = 34,
+    /// `Owner`
+    Owner = 35,
+    /// `EffectShader`
+    EffectShader = 36,
+    /// `FormList`
+    FormList = 37,
+    /// `MenuIcon`
+    MenuIcon = 38,
+    /// `Perk`
+    Perk = 39,
+    /// `Note`
+    Note = 40,
+    /// `MiscStat`
+    MiscStat = 41,
+    /// `ImageSpaceModifier`
+    ImageSpaceModifier = 42,
+    /// `ImageSpace`
+    ImageSpace = 43,
+    /// `Value2c`
+    Value2c = 44,
+    /// `no`
+    no = 45,
+    /// `EventFunction`
+    EventFunction = 46,
+    /// `EventMember`
+    EventMember = 47,
+    /// `EventData`
+    EventData = 48,
+    /// `VoiceType`
+    VoiceType = 49,
+    /// `EncounterZone`
+    EncounterZone = 50,
+    /// `IdleForm`
+    IdleForm = 51,
+    /// `Message`
+    Message = 52,
+    /// `InventoryObject`
+    InventoryObject_2 = 53,
+    /// `Alignment`
+    Alignment = 54,
+    /// `EquipType`
+    EquipType = 55,
+    /// `Object`
+    Object_2 = 56,
+    /// `Music`
+    Music = 57,
+    /// `CriticalStage`
+    CriticalStage = 58,
+    /// `Keyword`
+    Keyword = 59,
+    /// `LocationRefType`
+    LocationRefType = 60,
+    /// `Location`
+    Location = 61,
+    /// `Form`
+    Form = 62,
+    /// `QuestAlias`
+    QuestAlias = 63,
+    /// `Shout`
+    Shout = 64,
+    /// `WordOfPower`
+    WordOfPower = 65,
+    /// `RelationshipRank`
+    RelationshipRank = 66,
+    /// `Scene`
+    Scene = 67,
+    /// `CastingSource`
+    CastingSource = 68,
+    /// `AssociationType`
+    AssociationType = 69,
+    /// `WardState`
+    WardState = 70,
+    /// `PackageData`
+    PackageData = 71,
+    /// `PackageData`
+    PackageData_2 = 72,
+    /// `FurnitureAnimType`
+    FurnitureAnimType = 73,
+    /// `FurnitureEntryType`
+    FurnitureEntryType = 74,
+    /// `no`
+    no_2 = 75,
+    /// `VMVariableName`
+    VMVariableName = 76,
+    /// `ReferenceEffect`
+    ReferenceEffect = 77,
+    /// `PackageData`
+    PackageData_3 = 78,
+    /// `SoundCategory`
+    SoundCategory = 79,
+    /// `SkillAction`
+    SkillAction = 80,
+    /// `KnowableForm`
+    KnowableForm = 81,
+    /// `Region`
+    Region = 82,
+    /// `Action`
+    Action = 83,
+}
+
+impl ScriptParamType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::String),
+            1 => Some(Self::Integer),
+            2 => Some(Self::Float),
+            3 => Some(Self::InventoryObject),
+            4 => Some(Self::ObjectReference),
+            5 => Some(Self::ActorValue),
+            6 => Some(Self::Actor),
+            7 => Some(Self::SpellItem),
+            8 => Some(Self::Axis),
+            9 => Some(Self::Cell),
+            10 => Some(Self::AnimationGroup),
+            11 => Some(Self::MagicItem),
+            12 => Some(Self::Sound),
+            13 => Some(Self::Topic),
+            14 => Some(Self::Quest),
+            15 => Some(Self::Race),
+            16 => Some(Self::Class),
+            17 => Some(Self::Faction),
+            18 => Some(Self::Sex),
+            19 => Some(Self::Global),
+            20 => Some(Self::Furniture),
+            21 => Some(Self::Object),
+            22 => Some(Self::VariableName),
+            23 => Some(Self::Stage),
+            24 => Some(Self::MapMarker),
+            25 => Some(Self::ActorBase),
+            26 => Some(Self::Container),
+            27 => Some(Self::WorldSpace),
+            28 => Some(Self::CrimeType),
+            29 => Some(Self::Package),
+            30 => Some(Self::CombatStyle),
+            31 => Some(Self::MagicEffect),
+            32 => Some(Self::FormType),
+            33 => Some(Self::Weather),
+            34 => Some(Self::NPC),
+            35 => Some(Self::Owner),
+            36 => Some(Self::EffectShader),
+            37 => Some(Self::FormList),
+            38 => Some(Self::MenuIcon),
+            39 => Some(Self::Perk),
+            40 => Some(Self::Note),
+            41 => Some(Self::MiscStat),
+            42 => Some(Self::ImageSpaceModifier),
+            43 => Some(Self::ImageSpace),
+            44 => Some(Self::Value2c),
+            45 => Some(Self::no),
+            46 => Some(Self::EventFunction),
+            47 => Some(Self::EventMember),
+            48 => Some(Self::EventData),
+            49 => Some(Self::VoiceType),
+            50 => Some(Self::EncounterZone),
+            51 => Some(Self::IdleForm),
+            52 => Some(Self::Message),
+            53 => Some(Self::InventoryObject_2),
+            54 => Some(Self::Alignment),
+            55 => Some(Self::EquipType),
+            56 => Some(Self::Object_2),
+            57 => Some(Self::Music),
+            58 => Some(Self::CriticalStage),
+            59 => Some(Self::Keyword),
+            60 => Some(Self::LocationRefType),
+            61 => Some(Self::Location),
+            62 => Some(Self::Form),
+            63 => Some(Self::QuestAlias),
+            64 => Some(Self::Shout),
+            65 => Some(Self::WordOfPower),
+            66 => Some(Self::RelationshipRank),
+            67 => Some(Self::Scene),
+            68 => Some(Self::CastingSource),
+            69 => Some(Self::AssociationType),
+            70 => Some(Self::WardState),
+            71 => Some(Self::PackageData),
+            72 => Some(Self::PackageData_2),
+            73 => Some(Self::FurnitureAnimType),
+            74 => Some(Self::FurnitureEntryType),
+            75 => Some(Self::no_2),
+            76 => Some(Self::VMVariableName),
+            77 => Some(Self::ReferenceEffect),
+            78 => Some(Self::PackageData_3),
+            79 => Some(Self::SoundCategory),
+            80 => Some(Self::SkillAction),
+            81 => Some(Self::KnowableForm),
+            82 => Some(Self::Region),
+            83 => Some(Self::Action),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/scriptcompiletypes.json (input pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ScriptCompileType {
+    /// `DefaultCompiler`
+    DefaultCompiler = 0,
+    /// `SysWindowCompileAndRun`
+    SysWindowCompileAndRun = 1,
+    /// `DialogueCompileAndRun`
+    DialogueCompileAndRun = 2,
+}
+
+impl ScriptCompileType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::DefaultCompiler),
+            1 => Some(Self::SysWindowCompileAndRun),
+            2 => Some(Self::DialogueCompileAndRun),
+            _ => None,
+        }
+    }
+}
+
 /// the raw BSScript::TypeInfo codes: 0 None, 1 Object, 2 String, 3 Int, 4 Float, 5 Bool, 11-15 the arrays of 1-5; values from data/papyrustypes.json (papyrus pass).
 #[repr(u8)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
@@ -2271,6 +3087,26 @@ impl BSXFlags_flags {
     }
 }
 
+/// Named bits of `CommandTableEntry.flags` (input pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct CommandTableEntry_flags(pub u32);
+
+impl CommandTableEntry_flags {
+    /// reportsResult (medium)
+    pub const REPORTS_RESULT: Self = Self(0x100);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `GFxMovieView.flags` (ui pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -2481,6 +3317,8 @@ impl TESFile_fileFlags {
 pub struct TESForm_formFlags(pub u32);
 
 impl TESForm_formFlags {
+    /// scriptRunnable (medium)
+    pub const SCRIPT_RUNNABLE: Self = Self(0x8);
     /// record deleted (high)
     pub const DELETED: Self = Self(0x20);
     /// known to the player (high)

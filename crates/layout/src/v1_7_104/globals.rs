@@ -11941,16 +11941,28 @@ pub const g_ConcreteTempEffectFactory_ReferenceEffect_8: u64 = 380358;
 pub const g_ConcreteTempEffectFactory_ShaderReferenceEffect_10: u64 = 380361;
 /// `g_ConcreteTempEffectFactory_SummonPlacementEffect_11` at 0x20b49e0 (layout_inference, medium)
 pub const g_ConcreteTempEffectFactory_SummonPlacementEffect_11: u64 = 380362;
-/// `g_ConsoleCommandTable` at 0x208d130 (console_cmd, high)
+/// `g_ConsoleCommandQueue` at 0x3258bc8 (runtime, high); spinlock (+0) and list head (+8) of ConsoleCommandTasks (high); type `ConsoleCommandQueue`
+pub const g_ConsoleCommandQueue: u64 = 406625;
+/// `g_ConsoleCommandTable` at 0x208d130 (console_cmd, high); console commands, opcodes 0x100-0x2c0, plus the sentinel 0x2c1 ' ' (high); type `CommandTableEntry[450]`
 pub const g_ConsoleCommandTable: u64 = 365650;
+/// `g_ConsoleHotkeyManager` at 0x32560a0 (runtime, high); console hotkey sink, first registered sink of the input source (high); type `undefined1`
+pub const g_ConsoleHotkeyManager: u64 = 504104;
+/// `g_ConsoleHotkeys` at 0x3256050 (semantic, medium); console hotkeys (key, modifiers, command text at +0x10) (medium); type `BSTArray of 0x30 records (data +0, size 0x3256060)`
+pub const g_ConsoleHotkeys: u64 = 504097;
 /// `g_ConsoleLog` at 0x31dfb70 (semantic, high); console output buffer; points at the static 0x323a700 (high); type `ConsoleLog*`
 pub const g_ConsoleLog: u64 = 401203;
 /// `g_ConsoleLogStorage` at 0x323a700 (runtime, high); the ConsoleLog object (high); type `ConsoleLog`
 pub const g_ConsoleLogStorage: u64 = 403635;
+/// `g_ConsoleMacros` at 0x3256038 (semantic, medium); console macros (medium); type `BSTArray of 0x30 records (data +0, size 0x3256048)`
+pub const g_ConsoleMacros: u64 = 504095;
 /// `g_ConsoleOutputFile` at 0x3255e50 (semantic, high); file console output is mirrored to (high); type `FILE*`
 pub const g_ConsoleOutputFile: u64 = 405877;
+/// `g_ConsoleScopeQuest` at 0x3255e40 (semantic, high); quest scope of console lines (SetConsoleScopeQuest / SSQ) (high); type `TESQuest*`
+pub const g_ConsoleScopeQuest: u64 = 504093;
 /// `g_ConsoleSelectedRef` at 0x325606c (semantic, high); console's selected reference (high); type `RefHandle`
 pub const g_ConsoleSelectedRef: u64 = 504099;
+/// `g_ControlMap` at 0x3230b50 (semantic, high); static storage of the control map (high); type `class:EventSourceHolder_User`
+pub const g_ControlMap: u64 = 403592;
 /// `g_CreateRenderTargetsCallback` at 0x3336380 (semantic, high); = 0x153b680, called after device creation and after every resize (high); type `undefined8`
 pub const g_CreateRenderTargetsCallback: u64 = 411476;
 /// `g_CurrentMaterial` at 0x36939e0 (semantic, high); pointer to `BSShaderMaterial`: material last handed to SetupMaterial; material last handed to SetupMaterial (high); type `ptr:BSShaderMaterial`
@@ -11979,6 +11991,8 @@ pub const g_DefaultLightingMaterial: u64 = 414779;
 pub const g_DefaultShaderMaterial: u64 = 415311;
 /// `g_DepthAccumulator2` at 0x3436248 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, decals off; only Main and Msg_LODTrees reference it; renderMode 0xc, decals off; only Main and Msg_LODTrees reference it (high); type `ptr:BSShaderAccumulator`
 pub const g_DepthAccumulator2: u64 = 415012;
+/// `g_DirectInput_ptr` at 0x32309d0 (semantic, high); wrapper whose +8 is the IDirectInput8* (high); type `undefined8`
+pub const g_DirectInput_ptr: u64 = 403554;
 /// `g_DistantTreeShader` at 0x33d3df0 (semantic, high); pointer to `BSDistantTreeShader`: holder; holder (high); type `ptr:BSDistantTreeShader`
 pub const g_DistantTreeShader: u64 = 414610;
 /// `g_DistantTreeShaderInstance` at 0x3486710 (semantic, high); pointer to `BSDistantTreeShader`: instance pointer; instance pointer (high); type `ptr:BSDistantTreeShader`
@@ -11995,6 +12009,8 @@ pub const g_EffectShader: u64 = 414607;
 pub const g_EffectShaderInstance: u64 = 415166;
 /// `g_EventSourceHolder_BGSActorCell_ptr` at 0x32119e8 (xref_inference, medium); pointer to `EventSourceHolder_BGSActorCell`: object holding BSTEventSource<BGSActorCellEvent> at 0x0
 pub const g_EventSourceHolder_BGSActorCell_ptr: u64 = 402987;
+/// `g_EventSourceHolder_Input` at 0x3230c80 (semantic, high); static storage of the input manager (high); type `class:EventSourceHolder_Input`
+pub const g_EventSourceHolder_Input: u64 = 403593;
 /// `g_EventSourceHolder_Input_ptr` at 0x3204b30 (runtime, high); pointer to `EventSourceHolder_Input`: pointer to the input device manager; pointer to the input device manager (high); type `ptr:EventSourceHolder_Input`
 pub const g_EventSourceHolder_Input_ptr: u64 = 402776;
 /// `g_EventSourceHolder_MenuOpenClose` at 0x3204b40 (semantic, high); the UI singleton's static storage (0x1c8 bytes) (high); type `class:EventSourceHolder_MenuOpenClose`
@@ -12113,15 +12129,21 @@ pub const g_IPathBuilderFactoryBase_3: u64 = 405686;
 pub const g_IPathBuilderFactoryBase_4: u64 = 405787;
 /// `g_ImageSpaceState` at 0x33d40a0 (xref_inference, medium); pointer to `ImageSpaceState`: the 0x220-byte image space state created in InitShaders (0x14ed370): the image space effects by id at +0x20 and the current parameters at +0xc8, which the lighting shader's SetupGeometry also reads (+0xe0); the 0x220-byte image space state created in InitShaders (0x14ed370): the image space effects by id at +0x20 and the current parameters at +0xc8, which the lighting shader's SetupGeometry also reads (+0xe0) (low); type `ptr:ImageSpaceState`
 pub const g_ImageSpaceState: u64 = 414660;
+/// `g_InputEventQueue` at 0x3275f70 (semantic, high); static queue object (high); type `class:InputEventQueue`
+pub const g_InputEventQueue: u64 = 564417;
+/// `g_InputEventQueue_ptr` at 0x325a7d8 (semantic, high); pointer to `InputEventQueue`: the queue (= module+0x3275f70); the queue (= module+0x3275f70) (high); type `ptr:InputEventQueue`
+pub const g_InputEventQueue_ptr: u64 = 407374;
 /// `g_InstalledContent_ptr` at 0x3210eb0 (xref_inference, medium)
 pub const g_InstalledContent_ptr: u64 = 503225;
 /// `g_InvalidRefHandle` at 0x219e55c (runtime, high); the null handle value (0) (high); type `undefined4`
 pub const g_InvalidRefHandle: u64 = 400312;
 /// `g_Inventory3DManager_ptr` at 0x32309f8 (xref_inference, medium)
 pub const g_Inventory3DManager_ptr: u64 = 403559;
+/// `g_JobEntry_PollControls` at 0x20b5130 (runtime, high); {thunk 0x6e6030, 'Poll controls'} in the 'Main render end' table 0x20b50e0 (high); type `undefined16`
+pub const g_JobEntry_PollControls: u64 = 380582;
 /// `g_JobListServingThread` at 0x3220aa0 (semantic, high); the game update thread object; 0x3220a90 points at it (high); type `class:JobListManager::ServingThread`
 pub const g_JobListServingThread: u64 = 403109;
-/// `g_JournalInputMapping_RemapHandler` at 0x20bc728 (layout_inference, medium)
+/// `g_JournalInputMapping_RemapHandler` at 0x20bc728 (semantic, high); the remap sink object (vtable 0x1988ce8) (high); type `pointer`
 pub const g_JournalInputMapping_RemapHandler: u64 = 383628;
 /// `g_LastMessageBoxType` at 0x20bb3f8 (semantic, medium); type of the last answered box (medium); type `u32`
 pub const g_LastMessageBoxType: u64 = 383037;
@@ -12135,12 +12157,16 @@ pub const g_LipSynchAnimDB_LipAudioInterface: u64 = 359693;
 pub const g_MagicFavorites: u64 = 403620;
 /// `g_MainLoopSteps` at 0x20b4f00 (semantic, medium); named main loop job steps ('Process lists' 0x20b4f00 .. 'Post reset' 0x20b51a0), 16-byte entries (medium); type `struct {fn, const char* name}[]`
 pub const g_MainLoopSteps: u64 = 380514;
+/// `g_MenuControls` at 0x323a670 (runtime, high); static storage of MenuControls (0x88, ends at ConsoleLog 0x323a700) (high); type `class:MenuControls`
+pub const g_MenuControls: u64 = 403634;
 /// `g_MenuControlsCurrentEvent` at 0x32583b8 (semantic, high); pointer to `InputEvent`: the event being dispatched; the event being dispatched (high); type `ptr:InputEvent`
 pub const g_MenuControlsCurrentEvent: u64 = 406354;
 /// `g_MenuControlsEventHandled` at 0x32583c0 (semantic, high); result of the last handler that accepted the current event; when 0 the event is turned into UI messages (high); type `undefined1`
 pub const g_MenuControlsEventHandled: u64 = 406355;
 /// `g_MenuControls_ptr` at 0x31dfd78 (semantic, high); pointer to `MenuControls`: the MenuControls singleton; the MenuControls singleton (high); type `ptr:MenuControls`
 pub const g_MenuControls_ptr: u64 = 401263;
+/// `g_MenuOpenHandlerHandled` at 0x32583c8 (semantic, high); MenuOpenHandler handled an event this dispatch; MenuOpenHandler and FavoritesHandler refuse further events; cleared at the start of MenuControls::ProcessEvent (high); type `undefined1`
+pub const g_MenuOpenHandlerHandled: u64 = 406356;
 /// `g_MenuTopicManager_ptr` at 0x31df408 (xref_inference, medium)
 pub const g_MenuTopicManager_ptr: u64 = 401099;
 /// `g_MessageBoxMenu` at 0x32583f8 (semantic, high); the live MessageBoxMenu (high); type `MessageBoxMenu*`
@@ -12201,6 +12227,8 @@ pub const g_NiTObjectArray_NiPointer_NiRefObject: u64 = 388583;
 pub const g_NullMovementState: u64 = 412263;
 /// `g_NullPathBuilderTracker` at 0x3350938 (layout_inference, medium)
 pub const g_NullPathBuilderTracker: u64 = 412226;
+/// `g_OrbisPadButtonMasks` at 0x1a40100 (semantic, medium); ids of the PlayStation pad's digital buttons (medium); type `undefined4[14]`
+pub const g_OrbisPadButtonMasks: u64 = 236847;
 /// `g_PackageCreator` at 0x20b2bc8 (layout_inference, medium)
 pub const g_PackageCreator: u64 = 379696;
 /// `g_ParticleShader` at 0x33d3df8 (semantic, high); pointer to `BSParticleShader`: holder; holder (high); type `ptr:BSParticleShader`
@@ -12211,6 +12239,8 @@ pub const g_ParticleShaderInstance: u64 = 415316;
 pub const g_PathManagerPositionPlayerAdapter: u64 = 381076;
 /// `g_Pathing_ptr` at 0x31df208 (xref_inference, medium)
 pub const g_Pathing_ptr: u64 = 401037;
+/// `g_PendingConsoleLines` at 0x3256070 (semantic, high); lines queued by QueueConsoleLine for the main loop (high); type `BSTArray of Script[2] (data +0, capacity 0x3256078, size 0x3256080)`
+pub const g_PendingConsoleLines: u64 = 504100;
 /// `g_PerFrameConstantBuffer` at 0x3331f08 (semantic, high); ID3D11Buffer* bound to VS and PS constant slot 12 at every frame start (high); type `undefined8`
 pub const g_PerFrameConstantBuffer: u64 = 411384;
 /// `g_PlaceholderTexture` at 0x3336448 (xref_inference, medium); pointer to `NiSourceTexture`: texture used when a material texture is missing; texture used when a material texture is missing (low); type `ptr:NiSourceTexture`
@@ -12219,7 +12249,9 @@ pub const g_PlaceholderTexture: u64 = 411503;
 pub const g_PlayerCamera_ptr: u64 = 400802;
 /// `g_PlayerCharacter_ptr` at 0x3230778 (runtime, high); pointer to `PlayerCharacter`: pointer to the player; pointer to the player (high); type `ptr:PlayerCharacter`
 pub const g_PlayerCharacter_ptr: u64 = 403521;
-/// `g_PlayerControls_ptr` at 0x31a5698 (xref_inference, medium)
+/// `g_PlayerControls` at 0x3241520 (runtime, high); static storage (high); type `class:PlayerControls`
+pub const g_PlayerControls: u64 = 403657;
+/// `g_PlayerControls_ptr` at 0x31a5698 (semantic, high); pointer to `PlayerControls`: PlayerControls singleton; PlayerControls singleton (high); type `ptr:PlayerControls`
 pub const g_PlayerControls_ptr: u64 = 400864;
 /// `g_PlayerSleepWaitMovementControllerAdapter` at 0x20b6340 (layout_inference, medium)
 pub const g_PlayerSleepWaitMovementControllerAdapter: u64 = 381082;
@@ -12263,8 +12295,20 @@ pub const g_ScreenHeight: u64 = 411484;
 pub const g_ScreenSplatterAccumulator: u64 = 415013;
 /// `g_ScreenWidth` at 0x33363c4 (semantic, high); render width (FrameState+0x24) (high); type `undefined4`
 pub const g_ScreenWidth: u64 = 411483;
-/// `g_ScriptCommandTable` at 0x207ea90 (console_cmd, high)
+/// `g_ScriptBlockTypeTable` at 0x20985e0 (semantic, high); Begin block types GameMode (0) .. OnDestructionStageChange (0x23), same record layout (Unused 0xd, Unused2 0xe have no execute) (high); type `CommandTableEntry[0x24]`
+pub const g_ScriptBlockTypeTable: u64 = 368670;
+/// `g_ScriptCommandTable` at 0x207ea90 (console_cmd, high); script and condition functions, opcodes 0x1000-0x12e0, plus the sentinel 0x12e1 'ADD NEW FUNCTIONS BEFORE THIS ONE!!!' (high); type `CommandTableEntry[738]`
 pub const g_ScriptCommandTable: u64 = 361120;
+/// `g_ScriptCompileTypeNames` at 0x2096100 (semantic, high); DefaultCompiler (0), SysWindowCompileAndRun (1, the console), DialogueCompileAndRun (2) (high); type `const char*[3]`
+pub const g_ScriptCompileTypeNames: u64 = 368092;
+/// `g_ScriptCompiler` at 0x3255e38 (semantic, high); 1-byte compiler object passed as 'this' to every compile (high); type `ScriptCompiler*`
+pub const g_ScriptCompiler: u64 = 504092;
+/// `g_ScriptKeywordTable` at 0x207e590 (semantic, high); script keywords Begin (0x10), End, Short, Long, Float, Set, If, Else, ElseIf, EndIf, While_DEPRECATED, EndWhile_DEPRECATED, '.' (0x1c), ScriptName, Return (0x1e), Reference (0x1f); no callbacks (high); type `CommandTableEntry[16]`
+pub const g_ScriptKeywordTable: u64 = 361087;
+/// `g_ScriptParamTypeInfo` at 0x2095dd0 (semantic, high); numeric / form flags per parameter type (high); type `ScriptParamTypeInfo[0x54]`
+pub const g_ScriptParamTypeInfo: u64 = 368071;
+/// `g_ScriptRunDepth` at 0x31e016c (semantic, high); reentrancy depth of the bytecode runner (high); type `int`
+pub const g_ScriptRunDepth: u64 = 401342;
 /// `g_SettingT_INIPrefSettingCollection` at 0x20b3068 (layout_inference, medium)
 pub const g_SettingT_INIPrefSettingCollection: u64 = 379825;
 /// `g_SettingT_INIPrefSettingCollection_10` at 0x20b3140 (layout_inference, medium)
@@ -13261,6 +13305,8 @@ pub const g_UISaveLoadManager_ptr: u64 = 401336;
 pub const g_UIStrings_ptr: u64 = 400446;
 /// `g_UserEventNames` at 0x32048d0 (semantic, low); table of user event BSFixedStrings the camera handlers compare (+0x70 togglePOV-like, +0x1e8/+0x1f0 zoom in/out-like) (low); type `pointer`
 pub const g_UserEventNames: u64 = 402638;
+/// `g_UserEventNamesStorage` at 0x32757a0 (semantic, high); static storage the g_UserEventNames pointer (0x32048d0) points at (high); type `class:UserEventNames`
+pub const g_UserEventNamesStorage: u64 = 410238;
 /// `g_UtilityShader` at 0x33d3de8 (semantic, high); pointer to `BSUtilityShader`: holder; holder (high); type `ptr:BSUtilityShader`
 pub const g_UtilityShader: u64 = 414609;
 /// `g_UtilityShaderInstance` at 0x3698b60 (semantic, high); pointer to `BSUtilityShader`: instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes; instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes (high); type `ptr:BSUtilityShader`
@@ -13273,12 +13319,12 @@ pub const g_WaterShaderInstance: u64 = 415108;
 pub const g_WorldAccumulator: u64 = 415009;
 /// `g_WorldDepthAccumulator` at 0x3436228 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, drawSkinnedDecals 1: the world depth pre-pass (step 12) and RenderShadowMaps' camera-depth draws; renderMode 0xc, drawSkinnedDecals 1: the world depth pre-pass (step 12) and RenderShadowMaps' camera-depth draws (high); type `ptr:BSShaderAccumulator`
 pub const g_WorldDepthAccumulator: u64 = 415008;
+/// `g_XInputButtonMasks` at 0x20ce878 (semantic, high); ids of the XInput pad's digital buttons (high); type `undefined2[14]`
+pub const g_XInputButtonMasks: u64 = 388495;
 /// `g_anon_025735F6_ScriptFoundCallback` at 0x20bcb10 (layout_inference, medium)
 pub const g_anon_025735F6_ScriptFoundCallback: u64 = 383748;
 /// `g_anon_11B7475C_PlayerParentCellListener` at 0x20b3a58 (layout_inference, medium)
 pub const g_anon_11B7475C_PlayerParentCellListener: u64 = 380066;
-/// `g_anon_1613A816_ConsoleHotkeyManager` at 0x32560a0 (layout_inference, medium)
-pub const g_anon_1613A816_ConsoleHotkeyManager: u64 = 504104;
 /// `g_anon_27F66FDE_ReverbModCallback` at 0x20cc7d0 (layout_inference, medium)
 pub const g_anon_27F66FDE_ReverbModCallback: u64 = 388389;
 /// `g_anon_2E811767_PlayerControlsEGMClear` at 0x20b7720 (layout_inference, medium)

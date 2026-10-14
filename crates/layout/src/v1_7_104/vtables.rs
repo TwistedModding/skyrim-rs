@@ -307,7 +307,7 @@ impl ActionInput_vtable {
 pub struct ActivateHandler_vtable {
     /// `ActivateHandler::vdtor` at 0x7b1990 (layout_inference, medium); signature (low): `ActivateHandler * vdtor(ActivateHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ActivateHandler::vfunc_1` at 0x7b4e50 (rtti, high); signature (low): `bool vfunc_1(ActivateHandler * this, longlong * param_1)`
+    /// `ActivateHandler::CanProcess` at 0x7b4e50 (semantic, high); signature (untiered): `bool CanProcess(ActivateHandler * this, longlong * param_1)`; `CanProcess`: Activate (high); semantic signature: `bool (ActivateHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -319,14 +319,22 @@ pub struct ActivateHandler_vtable {
     pub slot_5: *const c_void,
     /// `ActivateHandler::vfunc_6` at 0x7b2660 (rtti, high); signature (low): `undefined vfunc_6(ActivateHandler * this, longlong param_1, undefined8 param_2, PlayerCamera * param_3)`
     pub slot_6: *const c_void,
-    /// `HeldStateHandler::vfunc_7` at 0x7ad430 (rtti, medium); signature (low): `undefined vfunc_7(HeldStateHandler * this, longlong param_1)`
+    /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
     pub slot_7: *const c_void,
-    /// `HeldStateHandler::vfunc_8` at 0x7b4e40 (rtti, medium); signature (low): `undefined vfunc_8(HeldStateHandler * this, undefined1 param_1)`
+    /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
     pub slot_8: *const c_void,
 }
 impl ActivateHandler_vtable {
     pub const ID: u64 = 208723;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `ActivateHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<ActivateHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActivateHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `ActivateHandler::CanProcess`, slot 1: Activate (high).
+pub type ActivateHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ActivateHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `ActiveEffect::vftable` at 0x18f5b98, id 205813 (rtti, high); 25 slots.
 #[repr(C)]
@@ -3929,7 +3937,7 @@ impl AttackAnimationArrayMap_vtable {
 pub struct AttackBlockHandler_vtable {
     /// `AttackBlockHandler::vdtor` at 0x7b19c0 (layout_inference, medium); signature (low): `AttackBlockHandler * vdtor(AttackBlockHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `AttackBlockHandler::vfunc_1` at 0x7b4e80 (rtti, high); signature (low): `undefined8 vfunc_1(AttackBlockHandler * this, longlong * param_1)`
+    /// `AttackBlockHandler::CanProcess` at 0x7b4e80 (semantic, high); signature (untiered): `undefined8 CanProcess(AttackBlockHandler * this, longlong * param_1)`; `CanProcess`: Left/Right Attack/Block (high); semantic signature: `bool (AttackBlockHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `AttackBlockHandler::vfunc_2` at 0x7b2b90 (rtti, high); signature (low): `undefined vfunc_2(AttackBlockHandler * this, longlong * param_1, ulonglong param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
@@ -3948,7 +3956,15 @@ pub struct AttackBlockHandler_vtable {
 }
 impl AttackBlockHandler_vtable {
     pub const ID: u64 = 208719;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `AttackBlockHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<AttackBlockHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<AttackBlockHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `AttackBlockHandler::CanProcess`, slot 1: Left/Right Attack/Block (high).
+pub type AttackBlockHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::AttackBlockHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `AttackStopHandler::vftable` at 0x1937ea8, id 208817 (rtti, high); 2 slots.
 #[repr(C)]
@@ -4055,7 +4071,7 @@ impl AudioLoadToCacheTask_vtable {
 pub struct AutoMoveHandler_vtable {
     /// `AutoMoveHandler::vdtor` at 0x7b1a60 (layout_inference, medium); signature (low): `AutoMoveHandler * vdtor(AutoMoveHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `AutoMoveHandler::vfunc_1` at 0x7b4ee0 (rtti, high); signature (low): `bool vfunc_1(AutoMoveHandler * this, longlong * param_1)`
+    /// `AutoMoveHandler::CanProcess` at 0x7b4ee0 (semantic, high); signature (untiered): `bool CanProcess(AutoMoveHandler * this, longlong * param_1)`; `CanProcess`: Auto-Move (high); semantic signature: `bool (AutoMoveHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -4070,7 +4086,15 @@ pub struct AutoMoveHandler_vtable {
 }
 impl AutoMoveHandler_vtable {
     pub const ID: u64 = 208725;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `AutoMoveHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<AutoMoveHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<AutoMoveHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `AutoMoveHandler::CanProcess`, slot 1: Auto-Move (high).
+pub type AutoMoveHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::AutoMoveHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `AutoRegisterCombatObject<CombatAimController>::vftable` at 0x1943c08, id 210097 (rtti, high); 3 slots.
 #[repr(C)]
@@ -27745,7 +27769,7 @@ impl BGSMoviePlayer_vtable {
 pub struct BGSMoviePlayer_vtable_58 {
     /// `BGSMoviePlayer::BSTEventSink_InputEvent____ptr64_vdtor` at 0x644ad8 (slot_propagation, medium); signature (high): `undefined BSTEventSink_InputEvent____ptr64_vdtor(BGSMoviePlayer * this)`
     pub slot_0: *const c_void,
-    /// `BGSMoviePlayer::BSTEventSink_InputEvent____ptr64_vfunc_1` at 0x6449d0 (rtti, high); signature (low): `undefined8 BSTEventSink_InputEvent____ptr64_vfunc_1(BGSMoviePlayer * this, undefined8 * param_1)`
+    /// `BGSMoviePlayer::ProcessEvent` at 0x6449d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(BGSMoviePlayer * this, undefined8 * param_1)`
     pub slot_1: *const c_void,
 }
 impl BGSMoviePlayer_vtable_58 {
@@ -48128,13 +48152,13 @@ pub struct BSGamepadDevice_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSGamepadDevice::vfunc_7` at 0xcfc150 (rtti, medium); signature (high): `undefined1 vfunc_7(BSGamepadDevice * this)`
+    /// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (untiered): `undefined1 IsEnabled(BSGamepadDevice * this)`; `IsEnabled`: connected && userIndex != -1 (high); semantic signature: `bool (BSGamepadDevice* this)`
     pub slot_7: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_8: *const c_void,
@@ -48146,14 +48170,30 @@ pub struct BSGamepadDevice_vtable {
     pub slot_11: *const c_void,
     /// `BSGamepadDevice::vfunc_12` at 0xcfc180 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
     pub slot_12: *const c_void,
-    /// `BSGamepadDevice::vfunc_13` at 0xcfbb90 (rtti, medium); signature (low): `undefined vfunc_13(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
+    /// `BSGamepadDevice::NormalizeStick` at 0xcfbb90 (semantic, high); signature (untiered): `undefined NormalizeStick(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`; `NormalizeStick`: raw * (1/32767) clamped to [-1, 1] (high); semantic signature: `void (BSGamepadDevice* this, int x, int y, float* outX, float* outY)`
     pub slot_13: *const c_void,
     /// `BSGamepadDevice::vfunc_14` at 0xcfbde0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
     pub slot_14: *const c_void,
 }
 impl BSGamepadDevice_vtable {
     pub const ID: u64 = 236728;
+    pub const SLOT_IsEnabled: usize = 7;
+    /// Slot 7 as `BSGamepadDevice_vtable_IsEnabled`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsEnabled(&self) -> Option<BSGamepadDevice_vtable_IsEnabled> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSGamepadDevice_vtable_IsEnabled>>(self.slot_7) }
+    }
+    pub const SLOT_NormalizeStick: usize = 13;
+    /// Slot 13 as `BSGamepadDevice_vtable_NormalizeStick`, `None` when the slot is null.
+    #[must_use]
+    pub fn NormalizeStick(&self) -> Option<BSGamepadDevice_vtable_NormalizeStick> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSGamepadDevice_vtable_NormalizeStick>>(self.slot_13) }
+    }
 }
+/// `BSGamepadDevice::IsEnabled`, slot 7: connected && userIndex != -1 (high).
+pub type BSGamepadDevice_vtable_IsEnabled = unsafe extern "C" fn(this: *mut classes::BSGamepadDevice) -> bool;
+/// `BSGamepadDevice::NormalizeStick`, slot 13: raw * (1/32767) clamped to [-1, 1] (high).
+pub type BSGamepadDevice_vtable_NormalizeStick = unsafe extern "C" fn(this: *mut classes::BSGamepadDevice, x: i32, y: i32, outX: *mut f32, outY: *mut f32);
 
 /// `BSGamerProfile::vftable` at 0x1a27538, id 236733 (rtti, high); 8 slots.
 #[repr(C)]
@@ -60147,7 +60187,7 @@ impl BSImagespaceShaderWorldMapNoSkyBlur_vtable_90 {
 /// `BSInputDevice::vftable` at 0x1a24190, id 236726 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct BSInputDevice_vtable {
-    /// `BSInputDevice::vdtor` at 0xcfc0e0 (layout_inference, medium); signature (low): `BSInputDevice * vdtor(BSInputDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSInputDevice::Destroy` at 0xcfc0e0 (semantic, high); signature (untiered): `BSInputDevice * Destroy(BSInputDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: destructor (high); semantic signature: `BSInputDevice* (BSInputDevice* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
@@ -60155,20 +60195,60 @@ pub struct BSInputDevice_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`; `GetKeyName`: name of an id (high); semantic signature: `bool (BSInputDevice* this, u32 id, BSFixedString* out)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`; `GetKeyIDByName`: id for a name, 0xffffffff if unknown (high); semantic signature: `u32 (BSInputDevice* this, const BSFixedString* name)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`; `GetKeyCode`: third column of the definition line (record +0xc) (high); semantic signature: `bool (BSInputDevice* this, u32 id, u32* out)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::vfunc_7` at 0xcfc170 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`; `IsEnabled`: true in the base; pads: connected (high); semantic signature: `bool (BSInputDevice* this)`
     pub slot_7: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_8: *const c_void,
 }
 impl BSInputDevice_vtable {
     pub const ID: u64 = 236726;
+    pub const SLOT_Destroy: usize = 0;
+    /// Slot 0 as `BSInputDevice_vtable_Destroy`, `None` when the slot is null.
+    #[must_use]
+    pub fn Destroy(&self) -> Option<BSInputDevice_vtable_Destroy> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSInputDevice_vtable_Destroy>>(self.slot_0) }
+    }
+    pub const SLOT_GetKeyName: usize = 4;
+    /// Slot 4 as `BSInputDevice_vtable_GetKeyName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetKeyName(&self) -> Option<BSInputDevice_vtable_GetKeyName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSInputDevice_vtable_GetKeyName>>(self.slot_4) }
+    }
+    pub const SLOT_GetKeyIDByName: usize = 5;
+    /// Slot 5 as `BSInputDevice_vtable_GetKeyIDByName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetKeyIDByName(&self) -> Option<BSInputDevice_vtable_GetKeyIDByName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSInputDevice_vtable_GetKeyIDByName>>(self.slot_5) }
+    }
+    pub const SLOT_GetKeyCode: usize = 6;
+    /// Slot 6 as `BSInputDevice_vtable_GetKeyCode`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetKeyCode(&self) -> Option<BSInputDevice_vtable_GetKeyCode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSInputDevice_vtable_GetKeyCode>>(self.slot_6) }
+    }
+    pub const SLOT_IsEnabled: usize = 7;
+    /// Slot 7 as `BSInputDevice_vtable_IsEnabled`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsEnabled(&self) -> Option<BSInputDevice_vtable_IsEnabled> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSInputDevice_vtable_IsEnabled>>(self.slot_7) }
+    }
 }
+/// `BSInputDevice::Destroy`, slot 0: destructor (high).
+pub type BSInputDevice_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::BSInputDevice, flags: u32) -> *mut classes::BSInputDevice;
+/// `BSInputDevice::GetKeyName`, slot 4: name of an id (high).
+pub type BSInputDevice_vtable_GetKeyName = unsafe extern "C" fn(this: *mut classes::BSInputDevice, id: u32, out: *mut classes::BSFixedString) -> bool;
+/// `BSInputDevice::GetKeyIDByName`, slot 5: id for a name, 0xffffffff if unknown (high).
+pub type BSInputDevice_vtable_GetKeyIDByName = unsafe extern "C" fn(this: *mut classes::BSInputDevice, name: *const classes::BSFixedString) -> u32;
+/// `BSInputDevice::GetKeyCode`, slot 6: third column of the definition line (record +0xc) (high).
+pub type BSInputDevice_vtable_GetKeyCode = unsafe extern "C" fn(this: *mut classes::BSInputDevice, id: u32, out: *mut u32) -> bool;
+/// `BSInputDevice::IsEnabled`, slot 7: true in the base; pads: connected (high).
+pub type BSInputDevice_vtable_IsEnabled = unsafe extern "C" fn(this: *mut classes::BSInputDevice) -> bool;
 
 /// `BSInstanceTriShape::vftable` at 0x1a6d210, id 238300 (rtti, high); 62 slots.
 #[repr(C)]
@@ -60529,13 +60609,13 @@ pub struct BSKeyboardDevice_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::vfunc_7` at 0xcfc170 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
     pub slot_7: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_8: *const c_void,
@@ -63310,21 +63390,22 @@ pub struct BSMouseDevice_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::vfunc_7` at 0xcfc170 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
     pub slot_7: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_8: *const c_void,
-    /// `BSMouseDevice::vfunc_9` at 0xe13070 (rtti, high); signature (low): `undefined vfunc_9(void)`
+    /// `BSMouseDevice::Reinitialize` at 0xe13070 (semantic, medium); signature (untiered): `undefined Reinitialize(void)`; `Reinitialize`: empty in the base (medium); semantic signature: `void (BSMouseDevice* this, bool background)`
     pub slot_9: *const c_void,
 }
 impl BSMouseDevice_vtable {
     pub const ID: u64 = 236844;
+    pub const SLOT_Reinitialize: usize = 9;
 }
 
 /// `BSMsgDialogSystemUtility::vftable` at 0x1b52f50, id 256080 (rtti, high); 6 slots.
@@ -65830,13 +65911,13 @@ pub struct BSPCGamepadDeviceDelegate_vtable {
     pub slot_2: *const c_void,
     /// `BSPCGamepadDeviceDelegate::vfunc_3` at 0xe124c0 (rtti, high); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSGamepadDevice::vfunc_7` at 0xcfc150 (rtti, medium); signature (high): `undefined1 vfunc_7(BSGamepadDevice * this)`
+    /// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (untiered): `undefined1 IsEnabled(BSGamepadDevice * this)`
     pub slot_7: *const c_void,
     /// `BSPCGamepadDeviceDelegate::vfunc_8` at 0xe12470 (rtti, high); signature (low): `undefined vfunc_8(void)`
     pub slot_8: *const c_void,
@@ -65848,7 +65929,7 @@ pub struct BSPCGamepadDeviceDelegate_vtable {
     pub slot_11: *const c_void,
     /// `BSGamepadDevice::vfunc_12` at 0xcfc180 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
     pub slot_12: *const c_void,
-    /// `BSGamepadDevice::vfunc_13` at 0xcfbb90 (rtti, medium); signature (low): `undefined vfunc_13(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
+    /// `BSGamepadDevice::NormalizeStick` at 0xcfbb90 (semantic, high); signature (untiered): `undefined NormalizeStick(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
     pub slot_13: *const c_void,
     /// `BSGamepadDevice::vfunc_14` at 0xcfbde0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
     pub slot_14: *const c_void,
@@ -65862,9 +65943,9 @@ impl BSPCGamepadDeviceDelegate_vtable {
 pub struct BSPCGamepadDeviceHandler_vtable {
     /// `BSPCGamepadDeviceHandler::vdtor` at 0xe12390 (layout_inference, medium); signature (low): `BSPCGamepadDeviceHandler * vdtor(BSPCGamepadDeviceHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSPCGamepadDeviceHandler::vfunc_1` at 0xe11eb0 (rtti, high); signature (high): `undefined vfunc_1(BSPCGamepadDeviceHandler * this)`
+    /// `BSPCGamepadDeviceHandler::Initialize` at 0xe11eb0 (semantic, high); signature (untiered): `undefined Initialize(BSPCGamepadDeviceHandler * this)`; `Initialize`: init the pad library, detect a pad when bGamepadEnable (high); semantic signature: `void (BSPCGamepadDeviceHandler* this)`
     pub slot_1: *const c_void,
-    /// `BSPCGamepadDeviceHandler::vfunc_2` at 0xe11ee0 (rtti, high); signature (low): `undefined vfunc_2(BSPCGamepadDeviceHandler * this, undefined4 param_2)`
+    /// `BSPCGamepadDeviceHandler::Poll` at 0xe11ee0 (semantic, high); signature (untiered): `undefined Poll(BSPCGamepadDeviceHandler * this, undefined4 param_2)`; `Poll`: detect when none (bGamepadEnable), then forward Poll (high); semantic signature: `void (BSPCGamepadDeviceHandler* this, float realDelta)`
     pub slot_2: *const c_void,
     /// `BSPCGamepadDeviceHandler::vfunc_3` at 0xe11f30 (rtti, high); signature (high): `undefined vfunc_3(BSPCGamepadDeviceHandler * this)`
     pub slot_3: *const c_void,
@@ -65874,14 +65955,38 @@ pub struct BSPCGamepadDeviceHandler_vtable {
     pub slot_5: *const c_void,
     /// `BSPCGamepadDeviceHandler::vfunc_6` at 0xe11f90 (rtti, high); signature (high): `ulonglong vfunc_6(BSPCGamepadDeviceHandler * this)`
     pub slot_6: *const c_void,
-    /// `BSPCGamepadDeviceHandler::vfunc_7` at 0xe12490 (rtti, high); signature (high): `bool vfunc_7(BSPCGamepadDeviceHandler * this)`
+    /// `BSPCGamepadDeviceHandler::IsEnabled` at 0xe12490 (semantic, high); signature (untiered): `bool IsEnabled(BSPCGamepadDeviceHandler * this)`; `IsEnabled`: a pad is present (high); semantic signature: `bool (BSPCGamepadDeviceHandler* this)`
     pub slot_7: *const c_void,
     /// `BSPCGamepadDeviceHandler::vfunc_8` at 0xe11fb0 (rtti, high); signature (high): `undefined vfunc_8(BSPCGamepadDeviceHandler * this)`
     pub slot_8: *const c_void,
 }
 impl BSPCGamepadDeviceHandler_vtable {
     pub const ID: u64 = 236813;
+    pub const SLOT_Initialize: usize = 1;
+    /// Slot 1 as `BSPCGamepadDeviceHandler_vtable_Initialize`, `None` when the slot is null.
+    #[must_use]
+    pub fn Initialize(&self) -> Option<BSPCGamepadDeviceHandler_vtable_Initialize> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSPCGamepadDeviceHandler_vtable_Initialize>>(self.slot_1) }
+    }
+    pub const SLOT_Poll: usize = 2;
+    /// Slot 2 as `BSPCGamepadDeviceHandler_vtable_Poll`, `None` when the slot is null.
+    #[must_use]
+    pub fn Poll(&self) -> Option<BSPCGamepadDeviceHandler_vtable_Poll> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSPCGamepadDeviceHandler_vtable_Poll>>(self.slot_2) }
+    }
+    pub const SLOT_IsEnabled: usize = 7;
+    /// Slot 7 as `BSPCGamepadDeviceHandler_vtable_IsEnabled`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsEnabled(&self) -> Option<BSPCGamepadDeviceHandler_vtable_IsEnabled> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSPCGamepadDeviceHandler_vtable_IsEnabled>>(self.slot_7) }
+    }
 }
+/// `BSPCGamepadDeviceHandler::Initialize`, slot 1: init the pad library, detect a pad when bGamepadEnable (high).
+pub type BSPCGamepadDeviceHandler_vtable_Initialize = unsafe extern "C" fn(this: *mut classes::BSPCGamepadDeviceHandler);
+/// `BSPCGamepadDeviceHandler::Poll`, slot 2: detect when none (bGamepadEnable), then forward Poll (high).
+pub type BSPCGamepadDeviceHandler_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSPCGamepadDeviceHandler, realDelta: f32);
+/// `BSPCGamepadDeviceHandler::IsEnabled`, slot 7: a pad is present (high).
+pub type BSPCGamepadDeviceHandler_vtable_IsEnabled = unsafe extern "C" fn(this: *mut classes::BSPCGamepadDeviceHandler) -> bool;
 
 /// `BSPCOrbisGamepadDevice::vftable` at 0x1a3d7f8, id 236833 (rtti, high); 15 slots.
 #[repr(C)]
@@ -65890,17 +65995,17 @@ pub struct BSPCOrbisGamepadDevice_vtable {
     pub slot_0: *const c_void,
     /// `BSPCOrbisGamepadDevice::vfunc_1` at 0xe7bf50 (rtti, high); signature (high): `undefined vfunc_1(BSPCOrbisGamepadDevice * this)`
     pub slot_1: *const c_void,
-    /// `BSPCOrbisGamepadDevice::vfunc_2` at 0xe7bf80 (rtti, high); signature (medium): `undefined vfunc_2(BSPCOrbisGamepadDevice * this, float param_1)`
+    /// `BSPCOrbisGamepadDevice::Poll` at 0xe7bf80 (semantic, medium); signature (untiered): `undefined Poll(BSPCOrbisGamepadDevice * this, float param_1)`; `Poll`: as BSWin32GamepadDevice::Poll with the pad library's state (medium); semantic signature: `void (BSPCOrbisGamepadDevice* this, float realDelta)`
     pub slot_2: *const c_void,
     /// `BSPCOrbisGamepadDevice::vfunc_3` at 0xe7c2b0 (rtti, high); signature (high): `ulonglong vfunc_3(BSPCOrbisGamepadDevice * this)`
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSGamepadDevice::vfunc_7` at 0xcfc150 (rtti, medium); signature (high): `undefined1 vfunc_7(BSGamepadDevice * this)`
+    /// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (untiered): `undefined1 IsEnabled(BSGamepadDevice * this)`
     pub slot_7: *const c_void,
     /// `BSPCOrbisGamepadDevice::vfunc_8` at 0xe7c2d0 (rtti, high); signature (high): `undefined vfunc_8(BSPCOrbisGamepadDevice * this)`
     pub slot_8: *const c_void,
@@ -65919,6 +66024,7 @@ pub struct BSPCOrbisGamepadDevice_vtable {
 }
 impl BSPCOrbisGamepadDevice_vtable {
     pub const ID: u64 = 236833;
+    pub const SLOT_Poll: usize = 2;
 }
 
 /// `BSPSysArrayEmitter::vftable` at 0x1a6ccb8, id 238296 (rtti, high); 46 slots.
@@ -106005,13 +106111,13 @@ pub struct BSVirtualKeyboardDevice_vtable {
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::vfunc_7` at 0xcfc170 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
     pub slot_7: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_8: *const c_void,
@@ -106371,21 +106477,21 @@ impl BSWin32GameDataSystemUtility_vtable {
 pub struct BSWin32GamepadDevice_vtable {
     /// `BSWin32GamepadDevice::vdtor` at 0xe12430 (slot_propagation, medium); signature (low): `BSWin32GamepadDevice * vdtor(BSWin32GamepadDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSWin32GamepadDevice::vfunc_1` at 0xe7ad60 (rtti, high); signature (high): `undefined vfunc_1(BSWin32GamepadDevice * this)`
+    /// `BSWin32GamepadDevice::Initialize` at 0xe7ad60 (semantic, medium); signature (untiered): `undefined Initialize(BSWin32GamepadDevice * this)`; `Initialize`: remap the control map for the pad layout and clear the state (medium); semantic signature: `void (BSWin32GamepadDevice* this)`
     pub slot_1: *const c_void,
-    /// `BSWin32GamepadDevice::vfunc_2` at 0xe7ada0 (rtti, high); signature (medium): `undefined vfunc_2(BSWin32GamepadDevice * this, float param_1)`
+    /// `BSWin32GamepadDevice::Poll` at 0xe7ada0 (semantic, high); signature (untiered): `undefined Poll(BSWin32GamepadDevice * this, float param_1)`; `Poll`: XInputGetState; buttons per mask; analog 9/10; ThumbstickEvent 0xb/0xc while this or the previous frame was off-centre; ERROR_DEVICE_NOT_CONNECTED (0x48f) or bGamepadEnable off: clear and release (DeviceConnectEvent(2, false)) (high); semantic signature: `void (BSWin32GamepadDevice* this, float realDelta)`
     pub slot_2: *const c_void,
     /// `BSWin32GamepadDevice::vfunc_3` at 0xe7b050 (rtti, high); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSGamepadDevice::vfunc_7` at 0xcfc150 (rtti, medium); signature (high): `undefined1 vfunc_7(BSGamepadDevice * this)`
+    /// `BSGamepadDevice::IsEnabled` at 0xcfc150 (semantic, high); signature (untiered): `undefined1 IsEnabled(BSGamepadDevice * this)`
     pub slot_7: *const c_void,
-    /// `BSWin32GamepadDevice::vfunc_8` at 0xe7b060 (rtti, high); signature (high): `undefined vfunc_8(BSWin32GamepadDevice * this)`
+    /// `BSWin32GamepadDevice::Reset` at 0xe7b060 (semantic, high); signature (untiered): `undefined Reset(BSWin32GamepadDevice * this)`; `Reset`: clear the state block (high); semantic signature: `void (BSWin32GamepadDevice* this)`
     pub slot_8: *const c_void,
     /// `BSWin32GamepadDevice::vfunc_9` at 0xe7b080 (rtti, high); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
@@ -106395,14 +106501,31 @@ pub struct BSWin32GamepadDevice_vtable {
     pub slot_11: *const c_void,
     /// `BSGamepadDevice::vfunc_12` at 0xcfc180 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
     pub slot_12: *const c_void,
-    /// `BSGamepadDevice::vfunc_13` at 0xcfbb90 (rtti, medium); signature (low): `undefined vfunc_13(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
+    /// `BSGamepadDevice::NormalizeStick` at 0xcfbb90 (semantic, high); signature (untiered): `undefined NormalizeStick(BSGamepadDevice * this, int param_1, int param_2, float * param_3, float * param_4)`
     pub slot_13: *const c_void,
     /// `BSGamepadDevice::vfunc_14` at 0xcfbde0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
     pub slot_14: *const c_void,
 }
 impl BSWin32GamepadDevice_vtable {
     pub const ID: u64 = 236831;
+    pub const SLOT_Initialize: usize = 1;
+    pub const SLOT_Poll: usize = 2;
+    /// Slot 2 as `BSWin32GamepadDevice_vtable_Poll`, `None` when the slot is null.
+    #[must_use]
+    pub fn Poll(&self) -> Option<BSWin32GamepadDevice_vtable_Poll> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32GamepadDevice_vtable_Poll>>(self.slot_2) }
+    }
+    pub const SLOT_Reset: usize = 8;
+    /// Slot 8 as `BSWin32GamepadDevice_vtable_Reset`, `None` when the slot is null.
+    #[must_use]
+    pub fn Reset(&self) -> Option<BSWin32GamepadDevice_vtable_Reset> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32GamepadDevice_vtable_Reset>>(self.slot_8) }
+    }
 }
+/// `BSWin32GamepadDevice::Poll`, slot 2: XInputGetState; buttons per mask; analog 9/10; ThumbstickEvent 0xb/0xc while this or the previous frame was off-centre; ERROR_DEVICE_NOT_CONNECTED (0x48f) or bGamepadEnable off: clear and release (DeviceConnectEvent(2, false)) (high).
+pub type BSWin32GamepadDevice_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSWin32GamepadDevice, realDelta: f32);
+/// `BSWin32GamepadDevice::Reset`, slot 8: clear the state block (high).
+pub type BSWin32GamepadDevice_vtable_Reset = unsafe extern "C" fn(this: *mut classes::BSWin32GamepadDevice);
 
 /// `BSWin32GamerProfile::vftable` at 0x1a23ca8, id 236711 (rtti, high); 8 slots.
 #[repr(C)]
@@ -106433,58 +106556,146 @@ impl BSWin32GamerProfile_vtable {
 pub struct BSWin32KeyboardDevice_vtable {
     /// `BSWin32KeyboardDevice::vdtor` at 0xd6ed70 (slot_propagation, medium); signature (low): `BSWin32KeyboardDevice * vdtor(BSWin32KeyboardDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSWin32KeyboardDevice::vfunc_1` at 0xe126f0 (rtti, high); signature (high): `undefined vfunc_1(BSWin32KeyboardDevice * this)`
+    /// `BSWin32KeyboardDevice::Initialize` at 0xe126f0 (semantic, high); signature (untiered): `undefined Initialize(BSWin32KeyboardDevice * this)`; `Initialize`: create and configure the DirectInput keyboard (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_1: *const c_void,
-    /// `BSWin32KeyboardDevice::vfunc_2` at 0xe127c0 (rtti, high); signature (medium): `undefined vfunc_2(BSWin32KeyboardDevice * this, float param_1)`
+    /// `BSWin32KeyboardDevice::Poll` at 0xe127c0 (semantic, high); signature (untiered): `undefined Poll(BSWin32KeyboardDevice * this, float param_1)`; `Poll`: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down, a CharEvent (numpad digits with Num Lock); then a hold for every scan code down in both arrays (high); semantic signature: `void (BSWin32KeyboardDevice* this, float realDelta)`
     pub slot_2: *const c_void,
-    /// `BSWin32KeyboardDevice::vfunc_3` at 0xe12bd0 (rtti, high); signature (high): `undefined vfunc_3(BSWin32KeyboardDevice * this)`
+    /// `BSWin32KeyboardDevice::Release` at 0xe12bd0 (semantic, high); signature (untiered): `undefined Release(BSWin32KeyboardDevice * this)`; `Release`: release the DirectInput device (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::vfunc_7` at 0xcfc170 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
     pub slot_7: *const c_void,
-    /// `BSWin32KeyboardDevice::vfunc_8` at 0xe12c00 (rtti, high); signature (high): `undefined vfunc_8(BSWin32KeyboardDevice * this)`
+    /// `BSWin32KeyboardDevice::Reset` at 0xe12c00 (semantic, high); signature (untiered): `undefined Reset(BSWin32KeyboardDevice * this)`; `Reset`: zero both state arrays (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_8: *const c_void,
-    /// `BSWin32KeyboardDevice::vfunc_9` at 0xe12c20 (rtti, high); signature (low): `undefined vfunc_9(void)`
+    /// `BSWin32KeyboardDevice::Unk9` at 0xe12c20 (semantic, high); signature (untiered): `undefined Unk9(void)`; `Unk9`: empty (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_9: *const c_void,
-    /// `BSWin32KeyboardDevice::vfunc_10` at 0xe12c30 (rtti, high); signature (low): `undefined vfunc_10(void)`
+    /// `BSWin32KeyboardDevice::Unk10` at 0xe12c30 (semantic, high); signature (untiered): `undefined Unk10(void)`; `Unk10`: empty (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_10: *const c_void,
 }
 impl BSWin32KeyboardDevice_vtable {
     pub const ID: u64 = 236808;
+    pub const SLOT_Initialize: usize = 1;
+    /// Slot 1 as `BSWin32KeyboardDevice_vtable_Initialize`, `None` when the slot is null.
+    #[must_use]
+    pub fn Initialize(&self) -> Option<BSWin32KeyboardDevice_vtable_Initialize> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32KeyboardDevice_vtable_Initialize>>(self.slot_1) }
+    }
+    pub const SLOT_Poll: usize = 2;
+    /// Slot 2 as `BSWin32KeyboardDevice_vtable_Poll`, `None` when the slot is null.
+    #[must_use]
+    pub fn Poll(&self) -> Option<BSWin32KeyboardDevice_vtable_Poll> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32KeyboardDevice_vtable_Poll>>(self.slot_2) }
+    }
+    pub const SLOT_Release: usize = 3;
+    /// Slot 3 as `BSWin32KeyboardDevice_vtable_Release`, `None` when the slot is null.
+    #[must_use]
+    pub fn Release(&self) -> Option<BSWin32KeyboardDevice_vtable_Release> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32KeyboardDevice_vtable_Release>>(self.slot_3) }
+    }
+    pub const SLOT_Reset: usize = 8;
+    /// Slot 8 as `BSWin32KeyboardDevice_vtable_Reset`, `None` when the slot is null.
+    #[must_use]
+    pub fn Reset(&self) -> Option<BSWin32KeyboardDevice_vtable_Reset> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32KeyboardDevice_vtable_Reset>>(self.slot_8) }
+    }
+    pub const SLOT_Unk9: usize = 9;
+    /// Slot 9 as `BSWin32KeyboardDevice_vtable_Unk9`, `None` when the slot is null.
+    #[must_use]
+    pub fn Unk9(&self) -> Option<BSWin32KeyboardDevice_vtable_Unk9> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32KeyboardDevice_vtable_Unk9>>(self.slot_9) }
+    }
+    pub const SLOT_Unk10: usize = 10;
+    /// Slot 10 as `BSWin32KeyboardDevice_vtable_Unk10`, `None` when the slot is null.
+    #[must_use]
+    pub fn Unk10(&self) -> Option<BSWin32KeyboardDevice_vtable_Unk10> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32KeyboardDevice_vtable_Unk10>>(self.slot_10) }
+    }
 }
+/// `BSWin32KeyboardDevice::Initialize`, slot 1: create and configure the DirectInput keyboard (high).
+pub type BSWin32KeyboardDevice_vtable_Initialize = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+/// `BSWin32KeyboardDevice::Poll`, slot 2: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down, a CharEvent (numpad digits with Num Lock); then a hold for every scan code down in both arrays (high).
+pub type BSWin32KeyboardDevice_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice, realDelta: f32);
+/// `BSWin32KeyboardDevice::Release`, slot 3: release the DirectInput device (high).
+pub type BSWin32KeyboardDevice_vtable_Release = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+/// `BSWin32KeyboardDevice::Reset`, slot 8: zero both state arrays (high).
+pub type BSWin32KeyboardDevice_vtable_Reset = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+/// `BSWin32KeyboardDevice::Unk9`, slot 9: empty (high).
+pub type BSWin32KeyboardDevice_vtable_Unk9 = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+/// `BSWin32KeyboardDevice::Unk10`, slot 10: empty (high).
+pub type BSWin32KeyboardDevice_vtable_Unk10 = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
 
 /// `BSWin32MouseDevice::vftable` at 0x1a2ceb0, id 236810 (rtti, high); 10 slots.
 #[repr(C)]
 pub struct BSWin32MouseDevice_vtable {
     /// `BSWin32MouseDevice::vdtor` at 0xd6edb0 (layout_inference, medium); signature (low): `BSWin32MouseDevice * vdtor(BSWin32MouseDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSWin32MouseDevice::vfunc_1` at 0xe13080 (rtti, high); signature (high): `undefined vfunc_1(BSWin32MouseDevice * this)`
+    /// `BSWin32MouseDevice::Initialize` at 0xe13080 (semantic, high); signature (untiered): `undefined Initialize(BSWin32MouseDevice * this)`; `Initialize`: create and configure the DirectInput mouse (high); semantic signature: `void (BSWin32MouseDevice* this)`
     pub slot_1: *const c_void,
-    /// `BSWin32MouseDevice::vfunc_2` at 0xe13130 (rtti, high); signature (medium): `undefined vfunc_2(BSWin32MouseDevice * this, float param_1)`
+    /// `BSWin32MouseDevice::Poll` at 0xe13130 (semantic, high); signature (untiered): `undefined Poll(BSWin32MouseDevice * this, float param_1)`; `Poll`: unless reinitializing or BSSystemUtility+0x120: MouseMoveEvent(dx, dy) when this or the previous frame moved; buttons 0-7 from prev/cur; wheel: press and release of id 8 (wheel > 0) or 9 (wheel < 0) in the same frame (high); semantic signature: `void (BSWin32MouseDevice* this, float realDelta)`
     pub slot_2: *const c_void,
-    /// `BSWin32MouseDevice::vfunc_3` at 0xe13280 (rtti, high); signature (high): `undefined vfunc_3(BSWin32MouseDevice * this)`
+    /// `BSWin32MouseDevice::Release` at 0xe13280 (semantic, high); signature (untiered): `undefined Release(BSWin32MouseDevice * this)`; `Release`: release the DirectInput device (high); semantic signature: `void (BSWin32MouseDevice* this)`
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::vfunc_7` at 0xcfc170 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
     pub slot_7: *const c_void,
-    /// `BSWin32MouseDevice::vfunc_8` at 0xe132b0 (rtti, high); signature (high): `undefined vfunc_8(BSWin32MouseDevice * this)`
+    /// `BSWin32MouseDevice::Reset` at 0xe132b0 (semantic, high); signature (untiered): `undefined Reset(BSWin32MouseDevice * this)`; `Reset`: zero both states (high); semantic signature: `void (BSWin32MouseDevice* this)`
     pub slot_8: *const c_void,
-    /// `BSWin32MouseDevice::vfunc_9` at 0xe132e0 (rtti, high); signature (low): `DWORD vfunc_9(BSWin32MouseDevice * this, undefined1 param_1)`
+    /// `BSWin32MouseDevice::Reinitialize` at 0xe132e0 (semantic, high); signature (untiered): `DWORD Reinitialize(BSWin32MouseDevice * this, undefined1 param_1)`; `Reinitialize`: under the lock: store background, Release, Initialize (high); semantic signature: `void (BSWin32MouseDevice* this, bool background)`
     pub slot_9: *const c_void,
 }
 impl BSWin32MouseDevice_vtable {
     pub const ID: u64 = 236810;
+    pub const SLOT_Initialize: usize = 1;
+    /// Slot 1 as `BSWin32MouseDevice_vtable_Initialize`, `None` when the slot is null.
+    #[must_use]
+    pub fn Initialize(&self) -> Option<BSWin32MouseDevice_vtable_Initialize> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32MouseDevice_vtable_Initialize>>(self.slot_1) }
+    }
+    pub const SLOT_Poll: usize = 2;
+    /// Slot 2 as `BSWin32MouseDevice_vtable_Poll`, `None` when the slot is null.
+    #[must_use]
+    pub fn Poll(&self) -> Option<BSWin32MouseDevice_vtable_Poll> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32MouseDevice_vtable_Poll>>(self.slot_2) }
+    }
+    pub const SLOT_Release: usize = 3;
+    /// Slot 3 as `BSWin32MouseDevice_vtable_Release`, `None` when the slot is null.
+    #[must_use]
+    pub fn Release(&self) -> Option<BSWin32MouseDevice_vtable_Release> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32MouseDevice_vtable_Release>>(self.slot_3) }
+    }
+    pub const SLOT_Reset: usize = 8;
+    /// Slot 8 as `BSWin32MouseDevice_vtable_Reset`, `None` when the slot is null.
+    #[must_use]
+    pub fn Reset(&self) -> Option<BSWin32MouseDevice_vtable_Reset> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32MouseDevice_vtable_Reset>>(self.slot_8) }
+    }
+    pub const SLOT_Reinitialize: usize = 9;
+    /// Slot 9 as `BSWin32MouseDevice_vtable_Reinitialize`, `None` when the slot is null.
+    #[must_use]
+    pub fn Reinitialize(&self) -> Option<BSWin32MouseDevice_vtable_Reinitialize> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32MouseDevice_vtable_Reinitialize>>(self.slot_9) }
+    }
 }
+/// `BSWin32MouseDevice::Initialize`, slot 1: create and configure the DirectInput mouse (high).
+pub type BSWin32MouseDevice_vtable_Initialize = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice);
+/// `BSWin32MouseDevice::Poll`, slot 2: unless reinitializing or BSSystemUtility+0x120: MouseMoveEvent(dx, dy) when this or the previous frame moved; buttons 0-7 from prev/cur; wheel: press and release of id 8 (wheel > 0) or 9 (wheel < 0) in the same frame (high).
+pub type BSWin32MouseDevice_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice, realDelta: f32);
+/// `BSWin32MouseDevice::Release`, slot 3: release the DirectInput device (high).
+pub type BSWin32MouseDevice_vtable_Release = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice);
+/// `BSWin32MouseDevice::Reset`, slot 8: zero both states (high).
+pub type BSWin32MouseDevice_vtable_Reset = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice);
+/// `BSWin32MouseDevice::Reinitialize`, slot 9: under the lock: store background, Release, Initialize (high).
+pub type BSWin32MouseDevice_vtable_Reinitialize = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice, background: bool);
 
 /// `BSWin32SaveDataSystemUtility::vftable` at 0x1b51c10, id 255912 (rtti, high); 24 slots.
 #[repr(C)]
@@ -106663,13 +106874,13 @@ pub struct BSWin32VirtualKeyboardDevice_vtable {
     pub slot_2: *const c_void,
     /// `BSWin32VirtualKeyboardDevice::vfunc_3` at 0xe12e70 (rtti, high); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
-    /// `BSInputDevice::vfunc_4` at 0xd6ee20 (rtti, medium); signature (low): `undefined8 vfunc_4(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
+    /// `BSInputDevice::GetKeyName` at 0xd6ee20 (semantic, high); signature (untiered): `undefined8 GetKeyName(BSInputDevice * this, ulonglong param_1, longlong * param_2)`
     pub slot_4: *const c_void,
-    /// `BSInputDevice::vfunc_5` at 0xd6eeb0 (rtti, medium); signature (low): `undefined4 vfunc_5(BSInputDevice * this, ulonglong * param_1)`
+    /// `BSInputDevice::GetKeyIDByName` at 0xd6eeb0 (semantic, high); signature (untiered): `undefined4 GetKeyIDByName(BSInputDevice * this, ulonglong * param_1)`
     pub slot_5: *const c_void,
-    /// `BSInputDevice::vfunc_6` at 0xd6ef40 (rtti, medium); signature (low): `ulonglong vfunc_6(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
+    /// `BSInputDevice::GetKeyCode` at 0xd6ef40 (semantic, high); signature (untiered): `ulonglong GetKeyCode(BSInputDevice * this, ulonglong param_1, undefined4 * param_2)`
     pub slot_6: *const c_void,
-    /// `BSInputDevice::vfunc_7` at 0xcfc170 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSInputDevice::IsEnabled` at 0xcfc170 (semantic, high); signature (untiered): `undefined1 IsEnabled(void)`
     pub slot_7: *const c_void,
     /// `BSWin32VirtualKeyboardDevice::vfunc_8` at 0xe12e80 (rtti, high); signature (low): `undefined vfunc_8(void)`
     pub slot_8: *const c_void,
@@ -106677,7 +106888,7 @@ pub struct BSWin32VirtualKeyboardDevice_vtable {
     pub slot_9: *const c_void,
     /// `BSVirtualKeyboardDevice::vfunc_10` at 0xe7c4c0 (rtti, medium); signature (low): `undefined vfunc_10(void)`
     pub slot_10: *const c_void,
-    /// `BSWin32VirtualKeyboardDevice::vfunc_11` at 0xe12ea0 (rtti, high); signature (low): `undefined vfunc_11(BSWin32VirtualKeyboardDevice * this, longlong param_1)`
+    /// `BSWin32VirtualKeyboardDevice::Start` at 0xe12ea0 (semantic, high); signature (untiered): `undefined Start(BSWin32VirtualKeyboardDevice * this, longlong param_1)`; `Start`: when BSSystemUtility+0x208: copy 3 qwords of params and call ShowGamepadTextInput through BSSystemUtility+0x200 (high); semantic signature: `void (BSWin32VirtualKeyboardDevice* this, void* params)`
     pub slot_11: *const c_void,
     /// `BSWin32VirtualKeyboardDevice::vfunc_12` at 0xe12f30 (rtti, high); signature (low): `undefined vfunc_12(void)`
     pub slot_12: *const c_void,
@@ -106686,7 +106897,15 @@ pub struct BSWin32VirtualKeyboardDevice_vtable {
 }
 impl BSWin32VirtualKeyboardDevice_vtable {
     pub const ID: u64 = 236840;
+    pub const SLOT_Start: usize = 11;
+    /// Slot 11 as `BSWin32VirtualKeyboardDevice_vtable_Start`, `None` when the slot is null.
+    #[must_use]
+    pub fn Start(&self) -> Option<BSWin32VirtualKeyboardDevice_vtable_Start> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSWin32VirtualKeyboardDevice_vtable_Start>>(self.slot_11) }
+    }
 }
+/// `BSWin32VirtualKeyboardDevice::Start`, slot 11: when BSSystemUtility+0x208: copy 3 qwords of params and call ShowGamepadTextInput through BSSystemUtility+0x200 (high).
+pub type BSWin32VirtualKeyboardDevice_vtable_Start = unsafe extern "C" fn(this: *mut classes::BSWin32VirtualKeyboardDevice, params: *mut c_void);
 
 /// `BSWindModifier::vftable` at 0x1a6b2d8, id 238256 (rtti, high); 42 slots.
 #[repr(C)]
@@ -110007,9 +110226,9 @@ impl ChairFurnitureExitHandler_vtable {
 pub struct CharEvent_vtable {
     /// `CharEvent::vdtor` at 0xcfa500 (layout_inference, medium); signature (low): `CharEvent * vdtor(CharEvent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `InputEvent::vfunc_1` at 0x7b4480 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
+    /// `InputEvent::HasIDCode` at 0x7b4480 (semantic, high); signature (untiered): `undefined1 HasIDCode(void)`
     pub slot_1: *const c_void,
-    /// `InputEvent::vfunc_2` at 0x7b4840 (rtti, medium); signature (untiered): `undefined8 * vfunc_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    /// `InputEvent::QUserEvent` at 0x7b4840 (semantic, high); signature (untiered): `undefined8 * QUserEvent(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     pub slot_2: *const c_void,
 }
 impl CharEvent_vtable {
@@ -110951,7 +111170,7 @@ impl CheckWithinMultiBoundTask_vtable {
 pub struct ClickHandler_vtable {
     /// `ClickHandler::vdtor` at 0x960b20 (layout_inference, medium); signature (low): `ClickHandler * vdtor(ClickHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ClickHandler::vfunc_1` at 0x962000 (rtti, high); signature (low): `bool vfunc_1(ClickHandler * this, longlong * param_1)`
+    /// `ClickHandler::CanProcess` at 0x962000 (semantic, high); signature (untiered): `bool CanProcess(ClickHandler * this, longlong * param_1)`; `CanProcess`: Click (high); semantic signature: `bool (ClickHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
@@ -110963,12 +111182,28 @@ pub struct ClickHandler_vtable {
     pub slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
     pub slot_6: *const c_void,
-    /// `ClickHandler::vfunc_7` at 0x960d30 (rtti, high); signature (low): `undefined8 vfunc_7(ClickHandler * this, longlong param_1)`
+    /// `ClickHandler::ProcessButtonEvent` at 0x960d30 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(ClickHandler * this, longlong param_1)`; `ProcessButtonEvent`: mouse button to Scaleform (high); semantic signature: `bool (ClickHandler* this, ButtonEvent* event)`
     pub slot_7: *const c_void,
 }
 impl ClickHandler_vtable {
     pub const ID: u64 = 215777;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `ClickHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<ClickHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ClickHandler_vtable_CanProcess>>(self.slot_1) }
+    }
+    pub const SLOT_ProcessButtonEvent: usize = 7;
+    /// Slot 7 as `ClickHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessButtonEvent(&self) -> Option<ClickHandler_vtable_ProcessButtonEvent> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ClickHandler_vtable_ProcessButtonEvent>>(self.slot_7) }
+    }
 }
+/// `ClickHandler::CanProcess`, slot 1: Click (high).
+pub type ClickHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ClickHandler, event: *mut classes::InputEvent) -> bool;
+/// `ClickHandler::ProcessButtonEvent`, slot 7: mouse button to Scaleform (high).
+pub type ClickHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut classes::ClickHandler, event: *mut classes::ButtonEvent) -> bool;
 
 /// `CloakEffect::vftable` at 0x18f6678, id 205849 (rtti, high); 25 slots.
 #[repr(C)]
@@ -132781,7 +133016,7 @@ impl ConsoleNativeUIMenu_vtable {
 pub struct ConsoleOpenHandler_vtable {
     /// `ConsoleOpenHandler::vdtor` at 0x960b50 (layout_inference, medium); signature (low): `ConsoleOpenHandler * vdtor(ConsoleOpenHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ConsoleOpenHandler::vfunc_1` at 0x962030 (rtti, high); signature (low): `bool vfunc_1(ConsoleOpenHandler * this, longlong * param_1)`
+    /// `ConsoleOpenHandler::CanProcess` at 0x962030 (semantic, high); signature (untiered): `bool CanProcess(ConsoleOpenHandler * this, longlong * param_1)`; `CanProcess`: Console (high); semantic signature: `bool (ConsoleOpenHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
@@ -132793,12 +133028,28 @@ pub struct ConsoleOpenHandler_vtable {
     pub slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
     pub slot_6: *const c_void,
-    /// `ConsoleOpenHandler::vfunc_7` at 0x960e20 (rtti, high); signature (low): `undefined1 vfunc_7(ConsoleOpenHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ConsoleOpenHandler::ProcessButtonEvent` at 0x960e20 (semantic, high); signature (untiered): `undefined1 ProcessButtonEvent(ConsoleOpenHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent`: press edge -> open/close console (high); semantic signature: `bool (ConsoleOpenHandler* this, ButtonEvent* event)`
     pub slot_7: *const c_void,
 }
 impl ConsoleOpenHandler_vtable {
     pub const ID: u64 = 215781;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `ConsoleOpenHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<ConsoleOpenHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_CanProcess>>(self.slot_1) }
+    }
+    pub const SLOT_ProcessButtonEvent: usize = 7;
+    /// Slot 7 as `ConsoleOpenHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessButtonEvent(&self) -> Option<ConsoleOpenHandler_vtable_ProcessButtonEvent> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_ProcessButtonEvent>>(self.slot_7) }
+    }
 }
+/// `ConsoleOpenHandler::CanProcess`, slot 1: Console (high).
+pub type ConsoleOpenHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ConsoleOpenHandler, event: *mut classes::InputEvent) -> bool;
+/// `ConsoleOpenHandler::ProcessButtonEvent`, slot 7: press edge -> open/close console (high).
+pub type ConsoleOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut classes::ConsoleOpenHandler, event: *mut classes::ButtonEvent) -> bool;
 
 /// `ContainerMenu::vftable` at 0x1971a90, id 215061 (rtti, high); 9 slots.
 #[repr(C)]
@@ -133902,9 +134153,9 @@ impl DetectionState_vtable {
 pub struct DeviceConnectEvent_vtable {
     /// `DeviceConnectEvent::vdtor` at 0xcfa530 (layout_inference, medium); signature (low): `DeviceConnectEvent * vdtor(DeviceConnectEvent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `InputEvent::vfunc_1` at 0x7b4480 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
+    /// `InputEvent::HasIDCode` at 0x7b4480 (semantic, high); signature (untiered): `undefined1 HasIDCode(void)`
     pub slot_1: *const c_void,
-    /// `InputEvent::vfunc_2` at 0x7b4840 (rtti, medium); signature (untiered): `undefined8 * vfunc_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    /// `InputEvent::QUserEvent` at 0x7b4840 (semantic, high); signature (untiered): `undefined8 * QUserEvent(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     pub slot_2: *const c_void,
 }
 impl DeviceConnectEvent_vtable {
@@ -134090,7 +134341,7 @@ impl DialoguePackage_vtable {
 pub struct DirectionHandler_vtable {
     /// `DirectionHandler::vdtor` at 0x960b80 (layout_inference, medium); signature (low): `DirectionHandler * vdtor(DirectionHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `DirectionHandler::vfunc_1` at 0x962060 (rtti, high); signature (low): `undefined8 vfunc_1(DirectionHandler * this, longlong * param_1)`
+    /// `DirectionHandler::CanProcess` at 0x962060 (semantic, high); signature (untiered): `undefined8 CanProcess(DirectionHandler * this, longlong * param_1)`; `CanProcess`: Up/Down/Left/Right/Left Stick (high); semantic signature: `bool (DirectionHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
@@ -134107,7 +134358,15 @@ pub struct DirectionHandler_vtable {
 }
 impl DirectionHandler_vtable {
     pub const ID: u64 = 215779;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `DirectionHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<DirectionHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DirectionHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `DirectionHandler::CanProcess`, slot 1: Up/Down/Left/Right/Left Stick (high).
+pub type DirectionHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::DirectionHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `DisableCharacterBumperHandler::vftable` at 0x1938580, id 208963 (rtti, high); 2 slots.
 #[repr(C)]
@@ -138157,7 +138416,7 @@ impl FaderMenu_vtable {
 pub struct FavoritesHandler_vtable {
     /// `FavoritesHandler::vdtor` at 0x960bb0 (layout_inference, medium); signature (low): `FavoritesHandler * vdtor(FavoritesHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `FavoritesHandler::vfunc_1` at 0x962120 (rtti, high); signature (low): `ulonglong vfunc_1(FavoritesHandler * this, longlong * param_1)`
+    /// `FavoritesHandler::CanProcess` at 0x962120 (semantic, high); signature (untiered): `ulonglong CanProcess(FavoritesHandler * this, longlong * param_1)`; `CanProcess`: Favorites, Hotkey1-8 and 29 more global names set by the Str_HK* initializers (speech hotkeys such as HKHealthPotion), looked up through 0x92cef0; false while 0x32583c8 is set (high); semantic signature: `bool (FavoritesHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
@@ -138174,7 +138433,15 @@ pub struct FavoritesHandler_vtable {
 }
 impl FavoritesHandler_vtable {
     pub const ID: u64 = 215785;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `FavoritesHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<FavoritesHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<FavoritesHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `FavoritesHandler::CanProcess`, slot 1: Favorites, Hotkey1-8 and 29 more global names set by the Str_HK* initializers (speech hotkeys such as HKHealthPotion), looked up through 0x92cef0; false while 0x32583c8 is set (high).
+pub type FavoritesHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::FavoritesHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `FavoritesMenu::vftable` at 0x1975188, id 215307 (rtti, high); 9 slots.
 #[repr(C)]
@@ -141776,14 +142043,30 @@ pub struct HeldStateHandler_vtable {
     pub slot_5: *const c_void,
     /// `PlayerInputHandler::ProcessButton` at 0x55d5c0 (semantic, high); signature (untiered): `undefined ProcessButton(void)`
     pub slot_6: *const c_void,
-    /// `HeldStateHandler::vfunc_7` at 0x7ad430 (rtti, medium); signature (low): `undefined vfunc_7(HeldStateHandler * this, longlong param_1)`
+    /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`; `UpdateHeldState`: after ProcessButton, held = !(value == 0 && heldDownSecs >= 0) (high); semantic signature: `void (HeldStateHandler* this, ButtonEvent* event)`
     pub slot_7: *const c_void,
-    /// `HeldStateHandler::vfunc_8` at 0x7b4e40 (rtti, medium); signature (low): `undefined vfunc_8(HeldStateHandler * this, undefined1 param_1)`
+    /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`; `SetHeldState`: stores held (high); semantic signature: `void (HeldStateHandler* this, bool held)`
     pub slot_8: *const c_void,
 }
 impl HeldStateHandler_vtable {
     pub const ID: u64 = 208684;
+    pub const SLOT_UpdateHeldState: usize = 7;
+    /// Slot 7 as `HeldStateHandler_vtable_UpdateHeldState`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateHeldState(&self) -> Option<HeldStateHandler_vtable_UpdateHeldState> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_UpdateHeldState>>(self.slot_7) }
+    }
+    pub const SLOT_SetHeldState: usize = 8;
+    /// Slot 8 as `HeldStateHandler_vtable_SetHeldState`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetHeldState(&self) -> Option<HeldStateHandler_vtable_SetHeldState> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_SetHeldState>>(self.slot_8) }
+    }
 }
+/// `HeldStateHandler::UpdateHeldState`, slot 7: after ProcessButton, held = !(value == 0 && heldDownSecs >= 0) (high).
+pub type HeldStateHandler_vtable_UpdateHeldState = unsafe extern "C" fn(this: *mut classes::HeldStateHandler, event: *mut classes::ButtonEvent);
+/// `HeldStateHandler::SetHeldState`, slot 8: stores held (high).
+pub type HeldStateHandler_vtable_SetHeldState = unsafe extern "C" fn(this: *mut classes::HeldStateHandler, held: bool);
 
 /// `HelpMessageManager::vftable` at 0x1976980, id 215388 (rtti, high); 2 slots.
 #[repr(C)]
@@ -146018,14 +146301,23 @@ impl InitTESThread_vtable {
 pub struct InputEvent_vtable {
     /// `InputEvent::vdtor` at 0x7b1b60 (layout_inference, medium); signature (low): `InputEvent * vdtor(InputEvent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `InputEvent::vfunc_1` at 0x7b4480 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
+    /// `InputEvent::HasIDCode` at 0x7b4480 (semantic, high); signature (untiered): `undefined1 HasIDCode(void)`; `HasIDCode`: false here (CharEvent, DeviceConnectEvent); IDEvent 0x7b4470 returns true (high); semantic signature: `bool (InputEvent* this)`
     pub slot_1: *const c_void,
-    /// `InputEvent::vfunc_2` at 0x7b4840 (rtti, medium); signature (untiered): `undefined8 * vfunc_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    /// `InputEvent::QUserEvent` at 0x7b4840 (semantic, high); signature (untiered): `undefined8 * QUserEvent(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; `QUserEvent`: the empty string here; IDEvent 0x7b4830 returns this+0x18 (high); semantic signature: `const BSFixedString* (InputEvent* this)`
     pub slot_2: *const c_void,
 }
 impl InputEvent_vtable {
     pub const ID: u64 = 208702;
+    pub const SLOT_HasIDCode: usize = 1;
+    /// Slot 1 as `InputEvent_vtable_HasIDCode`, `None` when the slot is null.
+    #[must_use]
+    pub fn HasIDCode(&self) -> Option<InputEvent_vtable_HasIDCode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<InputEvent_vtable_HasIDCode>>(self.slot_1) }
+    }
+    pub const SLOT_QUserEvent: usize = 2;
 }
+/// `InputEvent::HasIDCode`, slot 1: false here (CharEvent, DeviceConnectEvent); IDEvent 0x7b4470 returns true (high).
+pub type InputEvent_vtable_HasIDCode = unsafe extern "C" fn(this: *mut classes::InputEvent) -> bool;
 
 /// `InstalledContent::vftable` at 0x1905718, id 465278 (rtti, high); 2 slots.
 #[repr(C)]
@@ -146803,7 +147095,7 @@ impl JumpAnimEventHandler_vtable {
 pub struct JumpHandler_vtable {
     /// `JumpHandler::vdtor` at 0x7b1b90 (layout_inference, medium); signature (low): `JumpHandler * vdtor(JumpHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `JumpHandler::vfunc_1` at 0x7b4f10 (rtti, high); signature (low): `bool vfunc_1(JumpHandler * this, longlong * param_1)`
+    /// `JumpHandler::CanProcess` at 0x7b4f10 (semantic, high); signature (untiered): `bool CanProcess(JumpHandler * this, longlong * param_1)`; `CanProcess`: Jump (high); semantic signature: `bool (JumpHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -146818,7 +147110,15 @@ pub struct JumpHandler_vtable {
 }
 impl JumpHandler_vtable {
     pub const ID: u64 = 208731;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `JumpHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<JumpHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<JumpHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `JumpHandler::CanProcess`, slot 1: Jump (high).
+pub type JumpHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::JumpHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `KeywordDispelFunctor::vftable` at 0x18f8d48, id 205916 (rtti, high); 2 slots.
 #[repr(C)]
@@ -147853,7 +148153,7 @@ impl LongestDurationFunctor_vtable {
 pub struct LookHandler_vtable {
     /// `LookHandler::vdtor` at 0x7b1bc0 (layout_inference, medium); signature (low): `LookHandler * vdtor(LookHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `LookHandler::vfunc_1` at 0x7b4f40 (rtti, high); signature (low): `undefined8 vfunc_1(LookHandler * this, longlong * param_1)`
+    /// `LookHandler::CanProcess` at 0x7b4f40 (semantic, high); signature (untiered): `undefined8 CanProcess(LookHandler * this, longlong * param_1)`; `CanProcess`: Look, or a type-6 (motion) event that 0x7b5200 accepts (bEnableSixaxisBowAiming/bEnableSixaxisMagicAiming with a matching equipped weapon or spell) (high); semantic signature: `bool (LookHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -147868,7 +148168,15 @@ pub struct LookHandler_vtable {
 }
 impl LookHandler_vtable {
     pub const ID: u64 = 208710;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `LookHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<LookHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<LookHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `LookHandler::CanProcess`, slot 1: Look, or a type-6 (motion) event that 0x7b5200 accepts (bEnableSixaxisBowAiming/bEnableSixaxisMagicAiming with a matching equipped weapon or spell) (high).
+pub type LookHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::LookHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `MTStateHandler::vftable` at 0x19386b8, id 208989 (rtti, high); 2 slots.
 #[repr(C)]
@@ -151469,7 +151777,7 @@ impl MovementControllerNullDataTracker_vtable {
 pub struct MovementHandler_vtable {
     /// `MovementHandler::vdtor` at 0x7b1c10 (layout_inference, medium); signature (low): `MovementHandler * vdtor(MovementHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `MovementHandler::vfunc_1` at 0x7b4fb0 (rtti, high); signature (low): `undefined8 vfunc_1(MovementHandler * this, longlong * param_1)`
+    /// `MovementHandler::CanProcess` at 0x7b4fb0 (semantic, high); signature (untiered): `undefined8 CanProcess(MovementHandler * this, longlong * param_1)`; `CanProcess`: Forward/Back/Strafe Left/Strafe Right/Move (high); semantic signature: `bool (MovementHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -151484,7 +151792,15 @@ pub struct MovementHandler_vtable {
 }
 impl MovementHandler_vtable {
     pub const ID: u64 = 208715;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `MovementHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<MovementHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<MovementHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `MovementHandler::CanProcess`, slot 1: Forward/Back/Strafe Left/Strafe Right/Move (high).
+pub type MovementHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::MovementHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `MovementHandlerAgent::vftable` at 0x1ac6b70, id 246409 (rtti, high); 13 slots.
 #[repr(C)]
@@ -180293,11 +180609,12 @@ impl PlayerCharacter_vtable_2D8 {
 pub struct PlayerControls_vtable {
     /// `PlayerControls::vdtor` at 0x7b1c40 (slot_propagation, medium); signature (low): `PlayerControls * vdtor(PlayerControls * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `PlayerControls::vfunc_1` at 0x7ad900 (rtti, high); signature (low): `undefined8 vfunc_1(PlayerControls * this, longlong * param_1, ulonglong param_2, ulonglong param_3)`
+    /// `PlayerControls::ProcessEvent` at 0x7ad900 (semantic, high); signature (untiered): `undefined8 ProcessEvent(PlayerControls * this, longlong * param_1, ulonglong param_2, ulonglong param_3)`; `ProcessEvent`: skips everything while a game-pausing menu is open, while 'Fader Menu' is open with no valid player handle, during certain player states (mount/flying checks) or while +0x50 is set; otherwise dispatches every event of the list in order through 0x7b0130, then computes look/move; always returns 0 (high); semantic signature: `BSEventNotifyControl (PlayerControls* this, InputEvent* const* head, BSTEventSource<InputEvent*>* source)`
     pub slot_1: *const c_void,
 }
 impl PlayerControls_vtable {
     pub const ID: u64 = 208694;
+    pub const SLOT_ProcessEvent: usize = 1;
 }
 
 /// `PlayerControls::vftable_8` at 0x1935088, id 208696 (rtti, high); 2 slots.
@@ -181902,7 +182219,7 @@ impl QueuedTree_vtable_38 {
 pub struct QuickSaveLoadHandler_vtable {
     /// `QuickSaveLoadHandler::vdtor` at 0x960c50 (layout_inference, medium); signature (low): `QuickSaveLoadHandler * vdtor(QuickSaveLoadHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `QuickSaveLoadHandler::vfunc_1` at 0x9622f0 (rtti, high); signature (low): `undefined8 vfunc_1(QuickSaveLoadHandler * this, longlong * param_1)`
+    /// `QuickSaveLoadHandler::CanProcess` at 0x9622f0 (semantic, high); signature (untiered): `undefined8 CanProcess(QuickSaveLoadHandler * this, longlong * param_1)`; `CanProcess`: Quicksave/Quickload/NewSave (high); semantic signature: `bool (QuickSaveLoadHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
@@ -181914,12 +182231,28 @@ pub struct QuickSaveLoadHandler_vtable {
     pub slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
     pub slot_6: *const c_void,
-    /// `QuickSaveLoadHandler::vfunc_7` at 0x961dd0 (rtti, high); signature (low): `undefined8 vfunc_7(QuickSaveLoadHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `QuickSaveLoadHandler::ProcessButtonEvent` at 0x961dd0 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(QuickSaveLoadHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent`: queues the request (high); semantic signature: `bool (QuickSaveLoadHandler* this, ButtonEvent* event)`
     pub slot_7: *const c_void,
 }
 impl QuickSaveLoadHandler_vtable {
     pub const ID: u64 = 215789;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `QuickSaveLoadHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<QuickSaveLoadHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<QuickSaveLoadHandler_vtable_CanProcess>>(self.slot_1) }
+    }
+    pub const SLOT_ProcessButtonEvent: usize = 7;
+    /// Slot 7 as `QuickSaveLoadHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessButtonEvent(&self) -> Option<QuickSaveLoadHandler_vtable_ProcessButtonEvent> {
+        unsafe { core::mem::transmute::<*const c_void, Option<QuickSaveLoadHandler_vtable_ProcessButtonEvent>>(self.slot_7) }
+    }
 }
+/// `QuickSaveLoadHandler::CanProcess`, slot 1: Quicksave/Quickload/NewSave (high).
+pub type QuickSaveLoadHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::QuickSaveLoadHandler, event: *mut classes::InputEvent) -> bool;
+/// `QuickSaveLoadHandler::ProcessButtonEvent`, slot 7: queues the request (high).
+pub type QuickSaveLoadHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut classes::QuickSaveLoadHandler, event: *mut classes::ButtonEvent) -> bool;
 
 /// `REFREventCallbacks::ConcreteEventCallbackFactory<_anon_01A9FA1F::SceneResultsCallBack>::vftable` at 0x1858bc0, id 195369 (rtti, high); 5 slots.
 #[repr(C)]
@@ -182246,7 +182579,7 @@ impl RallyEffect_vtable {
 pub struct ReadyWeaponHandler_vtable {
     /// `ReadyWeaponHandler::vdtor` at 0x7b1c80 (layout_inference, medium); signature (low): `ReadyWeaponHandler * vdtor(ReadyWeaponHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ReadyWeaponHandler::vfunc_1` at 0x7b5060 (rtti, high); signature (low): `bool vfunc_1(ReadyWeaponHandler * this, longlong * param_1)`
+    /// `ReadyWeaponHandler::CanProcess` at 0x7b5060 (semantic, high); signature (untiered): `bool CanProcess(ReadyWeaponHandler * this, longlong * param_1)`; `CanProcess`: Ready Weapon (high); semantic signature: `bool (ReadyWeaponHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -182261,7 +182594,15 @@ pub struct ReadyWeaponHandler_vtable {
 }
 impl ReadyWeaponHandler_vtable {
     pub const ID: u64 = 208721;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `ReadyWeaponHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<ReadyWeaponHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ReadyWeaponHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `ReadyWeaponHandler::CanProcess`, slot 1: Ready Weapon (high).
+pub type ReadyWeaponHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ReadyWeaponHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `RealArrayImplementation::vftable` at 0x1a17ef8, id 235299 (rtti, high); 37 slots.
 #[repr(C)]
@@ -182840,7 +183181,7 @@ impl RunActionAnimationLoadedCallback_vtable {
 pub struct RunHandler_vtable {
     /// `RunHandler::vdtor` at 0x7b1cb0 (layout_inference, medium); signature (low): `RunHandler * vdtor(RunHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `RunHandler::vfunc_1` at 0x7b5090 (rtti, high); signature (low): `bool vfunc_1(RunHandler * this, longlong * param_1)`
+    /// `RunHandler::CanProcess` at 0x7b5090 (semantic, high); signature (untiered): `bool CanProcess(RunHandler * this, longlong * param_1)`; `CanProcess`: Run (high); semantic signature: `bool (RunHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -182852,14 +183193,22 @@ pub struct RunHandler_vtable {
     pub slot_5: *const c_void,
     /// `RunHandler::vfunc_6` at 0x7b3930 (rtti, high); signature (low): `undefined vfunc_6(RunHandler * this, longlong param_1, longlong param_2)`
     pub slot_6: *const c_void,
-    /// `HeldStateHandler::vfunc_7` at 0x7ad430 (rtti, medium); signature (low): `undefined vfunc_7(HeldStateHandler * this, longlong param_1)`
+    /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
     pub slot_7: *const c_void,
-    /// `HeldStateHandler::vfunc_8` at 0x7b4e40 (rtti, medium); signature (low): `undefined vfunc_8(HeldStateHandler * this, undefined1 param_1)`
+    /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
     pub slot_8: *const c_void,
 }
 impl RunHandler_vtable {
     pub const ID: u64 = 208729;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `RunHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<RunHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<RunHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `RunHandler::CanProcess`, slot 1: Run (high).
+pub type RunHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::RunHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `SafeZoneMenu::vftable` at 0x197f198, id 215931 (rtti, high); 9 slots.
 #[repr(C)]
@@ -183168,7 +183517,7 @@ impl ScrapHeap_vtable {
 pub struct ScreenshotHandler_vtable {
     /// `ScreenshotHandler::vdtor` at 0x960c80 (layout_inference, medium); signature (low): `ScreenshotHandler * vdtor(ScreenshotHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ScreenshotHandler::vfunc_1` at 0x962370 (rtti, high); signature (low): `undefined8 vfunc_1(ScreenshotHandler * this, longlong * param_1)`
+    /// `ScreenshotHandler::CanProcess` at 0x962370 (semantic, high); signature (untiered): `undefined8 CanProcess(ScreenshotHandler * this, longlong * param_1)`; `CanProcess`: Screenshot/Multi-Screenshot (high); semantic signature: `bool (ScreenshotHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
@@ -183185,7 +183534,15 @@ pub struct ScreenshotHandler_vtable {
 }
 impl ScreenshotHandler_vtable {
     pub const ID: u64 = 215787;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `ScreenshotHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<ScreenshotHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ScreenshotHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `ScreenshotHandler::CanProcess`, slot 1: Screenshot/Multi-Screenshot (high).
+pub type ScreenshotHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ScreenshotHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `Script::vftable` at 0x183ad68, id 191694 (rtti, high); 59 slots.
 #[repr(C)]
@@ -184372,7 +184729,7 @@ impl ShadowSceneNode_vtable {
 pub struct ShoutHandler_vtable {
     /// `ShoutHandler::vdtor` at 0x7b1ce0 (layout_inference, medium); signature (low): `ShoutHandler * vdtor(ShoutHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ShoutHandler::vfunc_1` at 0x7b50c0 (rtti, high); signature (low): `undefined8 vfunc_1(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ShoutHandler::CanProcess` at 0x7b50c0 (semantic, high); signature (untiered): `undefined8 CanProcess(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `CanProcess`: Shout/KinectShout (high); semantic signature: `bool (ShoutHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -184387,7 +184744,15 @@ pub struct ShoutHandler_vtable {
 }
 impl ShoutHandler_vtable {
     pub const ID: u64 = 208735;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `ShoutHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<ShoutHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ShoutHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `ShoutHandler::CanProcess`, slot 1: Shout/KinectShout (high).
+pub type ShoutHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ShoutHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `ShoutMeter::vftable` at 0x1976858, id 215376 (rtti, high); 6 slots.
 #[repr(C)]
@@ -187417,7 +187782,7 @@ impl SlowTimeEffect_vtable {
 pub struct SneakHandler_vtable {
     /// `SneakHandler::vdtor` at 0x7b1d80 (layout_inference, medium); signature (low): `SneakHandler * vdtor(SneakHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SneakHandler::vfunc_1` at 0x7b5140 (rtti, high); signature (low): `bool vfunc_1(SneakHandler * this, longlong * param_1)`
+    /// `SneakHandler::CanProcess` at 0x7b5140 (semantic, high); signature (untiered): `bool CanProcess(SneakHandler * this, longlong * param_1)`; `CanProcess`: Sneak (high); semantic signature: `bool (SneakHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -187432,7 +187797,15 @@ pub struct SneakHandler_vtable {
 }
 impl SneakHandler_vtable {
     pub const ID: u64 = 208733;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `SneakHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<SneakHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SneakHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `SneakHandler::CanProcess`, slot 1: Sneak (high).
+pub type SneakHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::SneakHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `SoulTrapEffect::vftable` at 0x18fba50, id 206070 (rtti, high); 25 slots.
 #[repr(C)]
@@ -188031,7 +188404,7 @@ impl SpellItem_vtable_B0 {
 pub struct SprintHandler_vtable {
     /// `SprintHandler::vdtor` at 0x7b1db0 (layout_inference, medium); signature (low): `SprintHandler * vdtor(SprintHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SprintHandler::vfunc_1` at 0x7b5170 (rtti, high); signature (low): `bool vfunc_1(SprintHandler * this, longlong * param_1)`
+    /// `SprintHandler::CanProcess` at 0x7b5170 (semantic, high); signature (untiered): `bool CanProcess(SprintHandler * this, longlong * param_1)`; `CanProcess`: Sprint (high); semantic signature: `bool (SprintHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -188043,14 +188416,22 @@ pub struct SprintHandler_vtable {
     pub slot_5: *const c_void,
     /// `SprintHandler::vfunc_6` at 0x7b3b40 (rtti, high); signature (low): `undefined vfunc_6(SprintHandler * this, longlong param_1)`
     pub slot_6: *const c_void,
-    /// `HeldStateHandler::vfunc_7` at 0x7ad430 (rtti, medium); signature (low): `undefined vfunc_7(HeldStateHandler * this, longlong param_1)`
+    /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
     pub slot_7: *const c_void,
-    /// `HeldStateHandler::vfunc_8` at 0x7b4e40 (rtti, medium); signature (low): `undefined vfunc_8(HeldStateHandler * this, undefined1 param_1)`
+    /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
     pub slot_8: *const c_void,
 }
 impl SprintHandler_vtable {
     pub const ID: u64 = 208717;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `SprintHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<SprintHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<SprintHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `SprintHandler::CanProcess`, slot 1: Sprint (high).
+pub type SprintHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::SprintHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `StaggerEffect::vftable` at 0x18fbb70, id 206072 (rtti, high); 25 slots.
 #[repr(C)]
@@ -202705,7 +203086,7 @@ impl TitleSequenceMenu_vtable {
 pub struct TogglePOVHandler_vtable {
     /// `TogglePOVHandler::vdtor` at 0x7b1de0 (layout_inference, medium); signature (low): `TogglePOVHandler * vdtor(TogglePOVHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `TogglePOVHandler::vfunc_1` at 0x7b51a0 (rtti, high); signature (low): `bool vfunc_1(TogglePOVHandler * this, longlong * param_1)`
+    /// `TogglePOVHandler::CanProcess` at 0x7b51a0 (semantic, high); signature (untiered): `bool CanProcess(TogglePOVHandler * this, longlong * param_1)`; `CanProcess`: Toggle POV (high); semantic signature: `bool (TogglePOVHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -202717,21 +203098,29 @@ pub struct TogglePOVHandler_vtable {
     pub slot_5: *const c_void,
     /// `TogglePOVHandler::vfunc_6` at 0x7b3bc0 (rtti, high); signature (low): `undefined vfunc_6(TogglePOVHandler * this, longlong param_1, longlong param_2)`
     pub slot_6: *const c_void,
-    /// `HeldStateHandler::vfunc_7` at 0x7ad430 (rtti, medium); signature (low): `undefined vfunc_7(HeldStateHandler * this, longlong param_1)`
+    /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
     pub slot_7: *const c_void,
-    /// `HeldStateHandler::vfunc_8` at 0x7b4e40 (rtti, medium); signature (low): `undefined vfunc_8(HeldStateHandler * this, undefined1 param_1)`
+    /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
     pub slot_8: *const c_void,
 }
 impl TogglePOVHandler_vtable {
     pub const ID: u64 = 208737;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `TogglePOVHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<TogglePOVHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TogglePOVHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `TogglePOVHandler::CanProcess`, slot 1: Toggle POV (high).
+pub type TogglePOVHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::TogglePOVHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `ToggleRunHandler::vftable` at 0x1935418, id 208727 (rtti, high); 7 slots.
 #[repr(C)]
 pub struct ToggleRunHandler_vtable {
     /// `ToggleRunHandler::vdtor` at 0x7b1e10 (layout_inference, medium); signature (low): `ToggleRunHandler * vdtor(ToggleRunHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ToggleRunHandler::vfunc_1` at 0x7b51d0 (rtti, high); signature (low): `bool vfunc_1(ToggleRunHandler * this, longlong * param_1)`
+    /// `ToggleRunHandler::CanProcess` at 0x7b51d0 (semantic, high); signature (untiered): `bool CanProcess(ToggleRunHandler * this, longlong * param_1)`; `CanProcess`: Toggle Always Run (high); semantic signature: `bool (ToggleRunHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
     pub slot_2: *const c_void,
@@ -202746,7 +203135,15 @@ pub struct ToggleRunHandler_vtable {
 }
 impl ToggleRunHandler_vtable {
     pub const ID: u64 = 208727;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `ToggleRunHandler_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<ToggleRunHandler_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ToggleRunHandler_vtable_CanProcess>>(self.slot_1) }
+    }
 }
+/// `ToggleRunHandler::CanProcess`, slot 1: Toggle Always Run (high).
+pub type ToggleRunHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ToggleRunHandler, event: *mut classes::InputEvent) -> bool;
 
 /// `TrainingMenu::vftable` at 0x1981158, id 216116 (rtti, high); 9 slots.
 #[repr(C)]
@@ -205952,7 +206349,7 @@ impl _anon_14F04957__Win32FileType_vtable {
 pub struct _anon_1613A816__ConsoleHotkeyManager_vtable {
     /// `_anon_1613A816::ConsoleHotkeyManager::vdtor` at 0x90cfb0 (layout_inference, medium); signature (low): `ConsoleHotkeyManager * vdtor(ConsoleHotkeyManager * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_anon_1613A816::ConsoleHotkeyManager::vfunc_1` at 0x90df60 (rtti, high); signature (low): `undefined1 vfunc_1(ConsoleHotkeyManager * this, ulonglong * param_1)`
+    /// `ConsoleHotkeyManager::ProcessEvent` at 0x90df60 (semantic, high); signature (untiered): `undefined1 ProcessEvent(void * this, ulonglong * param_1)`
     pub slot_1: *const c_void,
 }
 impl _anon_1613A816__ConsoleHotkeyManager_vtable {
@@ -205964,7 +206361,7 @@ impl _anon_1613A816__ConsoleHotkeyManager_vtable {
 pub struct _anon_1613A816__ConsoleLogPrinter_vtable {
     /// `_anon_1613A816::ConsoleLogPrinter::vdtor` at 0x90d020 (layout_inference, medium); signature (low): `ConsoleLogPrinter * vdtor(ConsoleLogPrinter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_anon_1613A816::ConsoleLogPrinter::vfunc_1` at 0x90d590 (rtti, high); signature (low): `undefined vfunc_1(ConsoleLogPrinter * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ConsoleLogPrinter::Print` at 0x90d590 (semantic, high); signature (untiered): `undefined Print(void * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
 }
 impl _anon_1613A816__ConsoleLogPrinter_vtable {
