@@ -10,6 +10,7 @@ use std::sync::OnceLock;
 
 pub mod actors;
 pub mod animation;
+pub mod audio;
 pub mod camera;
 pub mod events;
 pub mod forms;
@@ -60,6 +61,7 @@ struct Runtime {
     ui: ui::Fns,
     input: input::Fns,
     save: save::Fns,
+    audio: audio::Fns,
 }
 
 static RUNTIME: OnceLock<Runtime> = OnceLock::new();
@@ -100,7 +102,8 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     let ui = ui::Fns::resolve(&reloc)?;
     let input = input::Fns::resolve(&reloc)?;
     let save = save::Fns::resolve(&reloc)?;
-    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, camera, animation, strings, ui, input, save });
+    let audio = audio::Fns::resolve(&reloc)?;
+    let _ = RUNTIME.set(Runtime { reloc, forms, actors, events, papyrus, render, camera, animation, strings, ui, input, save, audio });
     Ok(())
 }
 

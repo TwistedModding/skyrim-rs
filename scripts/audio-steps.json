@@ -1,0 +1,15 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 15000},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Sound", "function": "Play", "self": {"form": "0x18538"}, "args": [{"form": "0x14"}]}},
+  {"wait": 1000},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SoundCategory", "function": "SetVolume", "self": {"form": "0x64451"}, "args": [0.5]}},
+  {"wait": 2000},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SoundCategory", "function": "SetVolume", "self": {"form": "0x64451"}, "args": [1.0]}},
+  {"wait": 1000},
+  {"tool": "console", "args": {"command": "save skyrim-rs-audio"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000}
+]
