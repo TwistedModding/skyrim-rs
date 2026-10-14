@@ -27854,9 +27854,9 @@ pub struct BGSMusicPaletteTrack_vtable {
     pub slot_5: *const c_void,
     /// `BGSMusicPaletteTrack::vfunc_6` at 0x325570 (rtti, high); signature (low): `int vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BGSMusicTrack::vfunc_7` at 0x326d00 (rtti, medium); signature (high): `undefined1 vfunc_7(BGSMusicTrack * this)`
+    /// `BSIMusicTrack::TestConditions` at 0x326d00 (semantic, high); signature (untiered): `undefined1 TestConditions(BSIMusicTrack * this)`
     pub slot_7: *const c_void,
-    /// `BSIMusicTrack::vfunc_8` at 0x325560 (rtti, medium); signature (high): `undefined4 vfunc_8(BSIMusicTrack * this)`
+    /// `BSIMusicTrack::GetState` at 0x325560 (semantic, medium); signature (untiered): `undefined4 GetState(BSIMusicTrack * this)`
     pub slot_8: *const c_void,
     /// `BSIMusicTrack::vfunc_9` at 0x325540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
@@ -27888,9 +27888,9 @@ pub struct BGSMusicSilenceTrack_vtable {
     pub slot_5: *const c_void,
     /// `BGSMusicSilenceTrack::vfunc_6` at 0x325b90 (rtti, high); signature (low): `int vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BGSMusicTrack::vfunc_7` at 0x326d00 (rtti, medium); signature (high): `undefined1 vfunc_7(BGSMusicTrack * this)`
+    /// `BSIMusicTrack::TestConditions` at 0x326d00 (semantic, high); signature (untiered): `undefined1 TestConditions(BSIMusicTrack * this)`
     pub slot_7: *const c_void,
-    /// `BSIMusicTrack::vfunc_8` at 0x325560 (rtti, medium); signature (high): `undefined4 vfunc_8(BSIMusicTrack * this)`
+    /// `BSIMusicTrack::GetState` at 0x325560 (semantic, medium); signature (untiered): `undefined4 GetState(BSIMusicTrack * this)`
     pub slot_8: *const c_void,
     /// `BSIMusicTrack::vfunc_9` at 0x325540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
@@ -27910,29 +27910,29 @@ impl BGSMusicSilenceTrack_vtable {
 pub struct BGSMusicSingleTrack_vtable {
     /// `BGSMusicSingleTrack::vdtor` at 0x326bb0 (layout_inference, medium); signature (low): `BGSMusicSingleTrack * vdtor(BGSMusicSingleTrack * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_1` at 0x3264b0 (rtti, high); signature (high): `undefined vfunc_1(BGSMusicSingleTrack * this)`
+    /// `BSIMusicTrack::DoUpdate` at 0x3264b0 (semantic, medium); signature (untiered): `undefined DoUpdate(BSIMusicTrack * this)`
     pub slot_1: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_2` at 0x326690 (rtti, high); signature (high): `undefined vfunc_2(BGSMusicSingleTrack * this)`
+    /// `BSIMusicTrack::DoPlay` at 0x326690 (semantic, medium); signature (untiered): `undefined DoPlay(BSIMusicTrack * this)`
     pub slot_2: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_3` at 0x326750 (rtti, high); signature (high): `undefined vfunc_3(BGSMusicSingleTrack * this)`
+    /// `BSIMusicTrack::DoPause` at 0x326750 (semantic, medium); signature (untiered): `undefined DoPause(BSIMusicTrack * this)`
     pub slot_3: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_4` at 0x3267c0 (rtti, high); signature (low): `undefined vfunc_4(BGSMusicSingleTrack * this, char param_1, float param_2)`
+    /// `BSIMusicTrack::DoFinish` at 0x3267c0 (semantic, medium); signature (untiered): `undefined DoFinish(BSIMusicTrack * this, char param_1, float param_2)`
     pub slot_4: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_5` at 0x3269d0 (rtti, high); signature (high): `float vfunc_5(BGSMusicSingleTrack * this)`
+    /// `BSIMusicTrack::GetPositionSeconds` at 0x3269d0 (semantic, low); signature (untiered): `float GetPositionSeconds(BSIMusicTrack * this)`
     pub slot_5: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_6` at 0x326c50 (rtti, high); signature (low): `int vfunc_6(void)`
+    /// `BSIMusicTrack::GetTypeCRC` at 0x326c50 (semantic, high); signature (untiered): `int GetTypeCRC(void)`
     pub slot_6: *const c_void,
-    /// `BGSMusicTrack::vfunc_7` at 0x326d00 (rtti, medium); signature (high): `undefined1 vfunc_7(BGSMusicTrack * this)`
+    /// `BSIMusicTrack::TestConditions` at 0x326d00 (semantic, high); signature (untiered): `undefined1 TestConditions(BSIMusicTrack * this)`
     pub slot_7: *const c_void,
-    /// `BSIMusicTrack::vfunc_8` at 0x325560 (rtti, medium); signature (high): `undefined4 vfunc_8(BSIMusicTrack * this)`
+    /// `BSIMusicTrack::GetState` at 0x325560 (semantic, medium); signature (untiered): `undefined4 GetState(BSIMusicTrack * this)`
     pub slot_8: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_9` at 0x326960 (rtti, high); signature (low): `undefined vfunc_9(BGSMusicSingleTrack * this, undefined2 param_1)`
+    /// `BSIMusicTrack::DoDuck` at 0x326960 (semantic, medium); signature (untiered): `undefined DoDuck(BSIMusicTrack * this, undefined2 param_1)`
     pub slot_9: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_10` at 0x3269a0 (rtti, high); signature (high): `undefined vfunc_10(BGSMusicSingleTrack * this)`
+    /// `BSIMusicTrack::DoUnduck` at 0x3269a0 (semantic, medium); signature (untiered): `undefined DoUnduck(BSIMusicTrack * this)`
     pub slot_10: *const c_void,
     /// `BGSMusicTrack::vfunc_11` at 0x326dc0 (rtti, medium); signature (low): `undefined vfunc_11(BGSMusicTrack * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_11: *const c_void,
-    /// `BGSMusicSingleTrack::vfunc_12` at 0x326090 (rtti, high); signature (low): `undefined vfunc_12(BGSMusicSingleTrack * this, longlong param_1, char * param_2, char * param_3)`
+    /// `BSIMusicTrack::Load` at 0x326090 (semantic, medium); signature (untiered): `undefined Load(BSIMusicTrack * this, longlong param_1, char * param_2, char * param_3)`
     pub slot_12: *const c_void,
 }
 impl BGSMusicSingleTrack_vtable {
@@ -27956,9 +27956,9 @@ pub struct BGSMusicTrack_vtable {
     pub slot_5: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_6: *const c_void,
-    /// `BGSMusicTrack::vfunc_7` at 0x326d00 (rtti, medium); signature (high): `undefined1 vfunc_7(BGSMusicTrack * this)`
+    /// `BSIMusicTrack::TestConditions` at 0x326d00 (semantic, high); signature (untiered): `undefined1 TestConditions(BSIMusicTrack * this)`
     pub slot_7: *const c_void,
-    /// `BSIMusicTrack::vfunc_8` at 0x325560 (rtti, medium); signature (high): `undefined4 vfunc_8(BSIMusicTrack * this)`
+    /// `BSIMusicTrack::GetState` at 0x325560 (semantic, medium); signature (untiered): `undefined4 GetState(BSIMusicTrack * this)`
     pub slot_8: *const c_void,
     /// `BSIMusicTrack::vfunc_9` at 0x325540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,
@@ -28142,9 +28142,9 @@ pub struct BGSMusicType_vtable {
     pub slot_3: *const c_void,
     /// `TESForm::vfunc_4` at 0x1e35b0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `BGSMusicType::vfunc_5` at 0x328080 (rtti, high); signature (low): `undefined vfunc_5(BGSMusicType * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSMusicType::ClearData` at 0x328080 (semantic, high); signature (untiered): `undefined ClearData(BGSMusicType * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `ClearData`: frees both arrays, resets flags, fade, ducking and priority 50 (high); semantic signature: `void (BGSMusicType* this)`
     pub slot_5: *const c_void,
-    /// `BGSMusicType::vfunc_6` at 0x3280e0 (rtti, high); signature (low): `undefined8 vfunc_6(BGSMusicType * this, longlong param_1, ulonglong param_2, ulonglong param_3)`
+    /// `BGSMusicType::Load` at 0x3280e0 (semantic, high); signature (untiered): `undefined8 Load(BGSMusicType * this, longlong param_1, ulonglong param_2, ulonglong param_3)`; `Load`: FNAM, VMAD, EDID, OBND, PNAM, TNAM, WNAM (high); semantic signature: `bool (BGSMusicType* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -28170,7 +28170,7 @@ pub struct BGSMusicType_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `BGSMusicType::vfunc_19` at 0x328410 (rtti, high); signature (low): `undefined vfunc_19(BGSMusicType * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    /// `BGSMusicType::InitItemImpl` at 0x328410 (semantic, high); signature (untiered): `undefined InitItemImpl(BGSMusicType * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`; `InitItemImpl`: resolves track ids to wrapper interfaces (high); semantic signature: `void (BGSMusicType* this)`
     pub slot_19: *const c_void,
     /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
@@ -28232,9 +28232,9 @@ pub struct BGSMusicType_vtable {
     pub slot_48: *const c_void,
     /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
     pub slot_49: *const c_void,
-    /// `BGSMusicType::GetFormEditorID` at 0x328550 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(BGSMusicType * this)`
+    /// `BGSMusicType::GetFormEditorID` at 0x328550 (semantic, high); signature (untiered): `undefined1 * GetFormEditorID(BGSMusicType * this)`; `GetFormEditorID`: +0x70 or empty (high); semantic signature: `const char* (BGSMusicType* this)`
     pub slot_50: *const c_void,
-    /// `BGSMusicType::SetFormEditorID` at 0x328570 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(BGSMusicType * this, char * param_1, ulonglong param_2, ulonglong param_3)`
+    /// `BGSMusicType::SetFormEditorID` at 0x328570 (semantic, high); signature (untiered): `undefined8 SetFormEditorID(BGSMusicType * this, char * param_1, ulonglong param_2, ulonglong param_3)`; `SetFormEditorID`: assigns +0x70 (high); semantic signature: `bool (BGSMusicType* this, const char* id)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -28253,24 +28253,57 @@ pub struct BGSMusicType_vtable {
 }
 impl BGSMusicType_vtable {
     pub const ID: u64 = 191049;
+    pub const SLOT_ClearData: usize = 5;
+    /// Slot 5 as `BGSMusicType_vtable_ClearData`, `None` when the slot is null.
+    #[must_use]
+    pub fn ClearData(&self) -> Option<BGSMusicType_vtable_ClearData> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSMusicType_vtable_ClearData>>(self.slot_5) }
+    }
+    pub const SLOT_Load: usize = 6;
+    /// Slot 6 as `BGSMusicType_vtable_Load`, `None` when the slot is null.
+    #[must_use]
+    pub fn Load(&self) -> Option<BGSMusicType_vtable_Load> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSMusicType_vtable_Load>>(self.slot_6) }
+    }
+    pub const SLOT_InitItemImpl: usize = 19;
+    /// Slot 19 as `BGSMusicType_vtable_InitItemImpl`, `None` when the slot is null.
+    #[must_use]
+    pub fn InitItemImpl(&self) -> Option<BGSMusicType_vtable_InitItemImpl> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSMusicType_vtable_InitItemImpl>>(self.slot_19) }
+    }
+    pub const SLOT_GetFormEditorID: usize = 50;
+    pub const SLOT_SetFormEditorID: usize = 51;
+    /// Slot 51 as `BGSMusicType_vtable_SetFormEditorID`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetFormEditorID(&self) -> Option<BGSMusicType_vtable_SetFormEditorID> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSMusicType_vtable_SetFormEditorID>>(self.slot_51) }
+    }
 }
+/// `BGSMusicType::ClearData`, slot 5: frees both arrays, resets flags, fade, ducking and priority 50 (high).
+pub type BGSMusicType_vtable_ClearData = unsafe extern "C" fn(this: *mut classes::BGSMusicType);
+/// `BGSMusicType::Load`, slot 6: FNAM, VMAD, EDID, OBND, PNAM, TNAM, WNAM (high).
+pub type BGSMusicType_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSMusicType, file: *mut classes::TESFile) -> bool;
+/// `BGSMusicType::InitItemImpl`, slot 19: resolves track ids to wrapper interfaces (high).
+pub type BGSMusicType_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut classes::BGSMusicType);
+/// `BGSMusicType::SetFormEditorID`, slot 51: assigns +0x70 (high).
+pub type BGSMusicType_vtable_SetFormEditorID = unsafe extern "C" fn(this: *mut classes::BGSMusicType, id: *const c_char) -> bool;
 
 /// `BGSMusicType::vftable_20` at 0x18346b8, id 191051 (rtti, high); 8 slots.
 #[repr(C)]
 pub struct BGSMusicType_vtable_20 {
-    /// `BGSMusicType::BSIMusicType_vfunc_0` at 0x3279b0 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_0(BGSMusicType * this)`
+    /// `BSIMusicType::DoUpdate` at 0x3279b0 (semantic, medium); signature (untiered): `undefined DoUpdate(BSIMusicType * this)`
     pub slot_0: *const c_void,
-    /// `BGSMusicType::BSIMusicType_vfunc_1` at 0x327c10 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_1(BGSMusicType * this)`
+    /// `BSIMusicType::DoPlay` at 0x327c10 (semantic, high); signature (untiered): `undefined DoPlay(BSIMusicType * this)`
     pub slot_1: *const c_void,
-    /// `BGSMusicType::BSIMusicType_vfunc_2` at 0x327e40 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_2(BGSMusicType * this)`
+    /// `BSIMusicType::DoPause` at 0x327e40 (semantic, high); signature (untiered): `undefined DoPause(BSIMusicType * this)`
     pub slot_2: *const c_void,
-    /// `BGSMusicType::BSIMusicType_vfunc_3` at 0x327e70 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_3(BGSMusicType * this)`
+    /// `BSIMusicType::DoFinish` at 0x327e70 (semantic, high); signature (untiered): `undefined DoFinish(BSIMusicType * this)`
     pub slot_3: *const c_void,
-    /// `BGSMusicType::BSIMusicType_vfunc_4` at 0x327ec0 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_4(BGSMusicType * this)`
+    /// `BSIMusicType::DoDuck` at 0x327ec0 (semantic, medium); signature (untiered): `undefined DoDuck(BSIMusicType * this)`
     pub slot_4: *const c_void,
-    /// `BGSMusicType::BSIMusicType_vfunc_5` at 0x327ef0 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_5(BGSMusicType * this)`
+    /// `BSIMusicType::DoUnduck` at 0x327ef0 (semantic, medium); signature (untiered): `undefined DoUnduck(BSIMusicType * this)`
     pub slot_5: *const c_void,
-    /// `BGSMusicType::BSIMusicType_vfunc_6` at 0x327a40 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_6(BGSMusicType * this)`
+    /// `BSIMusicType::DoPrepare` at 0x327a40 (semantic, medium); signature (untiered): `undefined DoPrepare(BSIMusicType * this)`
     pub slot_6: *const c_void,
     /// `BGSMusicType::BSIMusicType_vfunc_7` at 0x328688 (rtti, high); signature (high): `undefined BSIMusicType_vfunc_7(BGSMusicType * this)`
     pub slot_7: *const c_void,
@@ -30248,7 +30281,7 @@ impl BGSPickupPutdownSounds_vtable {
 pub struct BGSPlayerMusicChanger_vtable {
     /// `BGSPlayerMusicChanger::vdtor` at 0x5eaf20 (layout_inference, medium); signature (low): `BGSPlayerMusicChanger * vdtor(BGSPlayerMusicChanger * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSPlayerMusicChanger::vfunc_1` at 0x737360 (rtti, high); signature (low): `undefined8 vfunc_1(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`
+    /// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (untiered): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`
     pub slot_1: *const c_void,
 }
 impl BGSPlayerMusicChanger_vtable {
@@ -30260,7 +30293,7 @@ impl BGSPlayerMusicChanger_vtable {
 pub struct BGSPlayerMusicChanger_vtable_8 {
     /// `BGSPlayerMusicChanger::BSTEventSink_BGSActorDeathEvent_vdtor` at 0x5eaedc (slot_propagation, medium); signature (high): `undefined BSTEventSink_BGSActorDeathEvent_vdtor(BGSPlayerMusicChanger * this)`
     pub slot_0: *const c_void,
-    /// `BGSPlayerMusicChanger::BSTEventSink_BGSActorDeathEvent_vfunc_1` at 0x737470 (rtti, high); signature (low): `undefined8 BSTEventSink_BGSActorDeathEvent_vfunc_1(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (untiered): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
 }
 impl BGSPlayerMusicChanger_vtable_8 {
@@ -38484,11 +38517,11 @@ pub struct BGSSoundCategory_vtable {
     pub slot_2: *const c_void,
     /// `TESForm::vfunc_3` at 0x1e6930 (rtti, medium); signature (low): `undefined vfunc_3(TESForm * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `BGSSoundCategory::vfunc_4` at 0x329790 (rtti, high); signature (high): `undefined vfunc_4(BGSSoundCategory * this)`
+    /// `BGSSoundCategory::InitializeData` at 0x329790 (semantic, medium); signature (untiered): `undefined InitializeData(BGSSoundCategory * this)`; `InitializeData`: resets +0x4c = 0xffff/0xffff, flags and parent (medium); semantic signature: `void (BGSSoundCategory* this)`
     pub slot_4: *const c_void,
     /// `TESForm::vfunc_5` at 0x1e36b0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
     pub slot_5: *const c_void,
-    /// `BGSSoundCategory::vfunc_6` at 0x329350 (rtti, high); signature (low): `undefined8 vfunc_6(BGSSoundCategory * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSSoundCategory::Load` at 0x329350 (semantic, high); signature (untiered): `undefined8 Load(BGSSoundCategory * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `Load`: checks the record type is 0x82, then FNAM, VMAD, EDID, OBND, FULL, PNAM, SNAM, UNAM, VNAM (high); semantic signature: `bool (BGSSoundCategory* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -38514,7 +38547,7 @@ pub struct BGSSoundCategory_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `BGSSoundCategory::vfunc_19` at 0x329640 (rtti, high); signature (low): `undefined vfunc_19(BGSSoundCategory * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSSoundCategory::InitItemImpl` at 0x329640 (semantic, high); signature (untiered): `undefined InitItemImpl(BGSSoundCategory * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `InitItemImpl`: once: clears menu slots whose form is missing/not SNCT/not flag bit 1; resolves the parent; for menu categories restores the saved volume from the slot table or applies the default menu volume (high); semantic signature: `void (BGSSoundCategory* this)`
     pub slot_19: *const c_void,
     /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
@@ -38597,7 +38630,24 @@ pub struct BGSSoundCategory_vtable {
 }
 impl BGSSoundCategory_vtable {
     pub const ID: u64 = 191089;
+    pub const SLOT_InitializeData: usize = 4;
+    pub const SLOT_Load: usize = 6;
+    /// Slot 6 as `BGSSoundCategory_vtable_Load`, `None` when the slot is null.
+    #[must_use]
+    pub fn Load(&self) -> Option<BGSSoundCategory_vtable_Load> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundCategory_vtable_Load>>(self.slot_6) }
+    }
+    pub const SLOT_InitItemImpl: usize = 19;
+    /// Slot 19 as `BGSSoundCategory_vtable_InitItemImpl`, `None` when the slot is null.
+    #[must_use]
+    pub fn InitItemImpl(&self) -> Option<BGSSoundCategory_vtable_InitItemImpl> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundCategory_vtable_InitItemImpl>>(self.slot_19) }
+    }
 }
+/// `BGSSoundCategory::Load`, slot 6: checks the record type is 0x82, then FNAM, VMAD, EDID, OBND, FULL, PNAM, SNAM, UNAM, VNAM (high).
+pub type BGSSoundCategory_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSSoundCategory, file: *mut classes::TESFile) -> bool;
+/// `BGSSoundCategory::InitItemImpl`, slot 19: once: clears menu slots whose form is missing/not SNCT/not flag bit 1; resolves the parent; for menu categories restores the saved volume from the slot table or applies the default menu volume (high).
+pub type BGSSoundCategory_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut classes::BGSSoundCategory);
 
 /// `BGSSoundCategory::vftable_20` at 0x1835010, id 191091 (rtti, high); 6 slots.
 #[repr(C)]
@@ -38624,27 +38674,27 @@ impl BGSSoundCategory_vtable_20 {
 pub struct BGSSoundCategory_vtable_30 {
     /// `BGSSoundCategory::BSISoundCategory_vdtor` at 0x329d38 (slot_propagation, medium); signature (high): `undefined BSISoundCategory_vdtor(BGSSoundCategory * this)`
     pub slot_0: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_1` at 0x329820 (rtti, high); signature (low): `undefined8 BSISoundCategory_vfunc_1(BGSSoundCategory * this, BGSSoundCategory * param_1)`
+    /// `BSISoundCategory::IsSameOrChildOf` at 0x329820 (semantic, high); signature (untiered): `undefined8 IsSameOrChildOf(BSISoundCategory * this, BGSSoundCategory * param_1)`
     pub slot_1: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_2` at 0x329870 (rtti, high); signature (high): `float BSISoundCategory_vfunc_2(BGSSoundCategory * this)`
+    /// `BSISoundCategory::GetEffectiveVolume` at 0x329870 (semantic, high); signature (untiered): `float GetEffectiveVolume(BSISoundCategory * this)`
     pub slot_2: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_3` at 0x3298d0 (rtti, high); signature (low): `undefined BSISoundCategory_vfunc_3(BGSSoundCategory * this, undefined4 param_2)`
+    /// `BSISoundCategory::SetVolume` at 0x3298d0 (semantic, high); signature (untiered): `undefined SetVolume(BGSSoundCategory * this, undefined4 param_2)`
     pub slot_3: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_4` at 0x329920 (rtti, high); signature (high): `float BSISoundCategory_vfunc_4(BGSSoundCategory * this)`
+    /// `BSISoundCategory::GetEffectiveFrequency` at 0x329920 (semantic, high); signature (untiered): `float GetEffectiveFrequency(BSISoundCategory * this)`
     pub slot_4: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_5` at 0x329970 (rtti, high); signature (low): `undefined BSISoundCategory_vfunc_5(BGSSoundCategory * this, undefined4 param_2)`
+    /// `BSISoundCategory::SetFrequency` at 0x329970 (semantic, high); signature (untiered): `undefined SetFrequency(BGSSoundCategory * this, undefined4 param_2)`
     pub slot_5: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_6` at 0x329980 (rtti, high); signature (high): `ushort BSISoundCategory_vfunc_6(BGSSoundCategory * this)`
+    /// `BSISoundCategory::GetEffectiveAttenuation` at 0x329980 (semantic, medium); signature (untiered): `ushort GetEffectiveAttenuation(BSISoundCategory * this)`
     pub slot_6: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_7` at 0x3299e0 (rtti, high); signature (low): `undefined BSISoundCategory_vfunc_7(BGSSoundCategory * this, undefined2 param_1)`
+    /// `BSISoundCategory::SetAttenuation` at 0x3299e0 (semantic, medium); signature (untiered): `undefined SetAttenuation(BSISoundCategory * this, undefined2 param_1)`
     pub slot_7: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_8` at 0x3299f0 (rtti, high); signature (high): `undefined8 BSISoundCategory_vfunc_8(BGSSoundCategory * this)`
+    /// `BSISoundCategory::IsPaused` at 0x3299f0 (semantic, high); signature (untiered): `undefined8 IsPaused(BSISoundCategory * this)`
     pub slot_8: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_9` at 0x329a70 (rtti, high); signature (low): `undefined BSISoundCategory_vfunc_9(BGSSoundCategory * this, char param_1)`
+    /// `BSISoundCategory::SetPaused` at 0x329a70 (semantic, high); signature (untiered): `undefined SetPaused(BSISoundCategory * this, char param_1)`
     pub slot_9: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_10` at 0x329a30 (rtti, high); signature (high): `undefined8 BSISoundCategory_vfunc_10(BGSSoundCategory * this)`
+    /// `BSISoundCategory::IsMuted` at 0x329a30 (semantic, high); signature (untiered): `undefined8 IsMuted(BSISoundCategory * this)`
     pub slot_10: *const c_void,
-    /// `BGSSoundCategory::BSISoundCategory_vfunc_11` at 0x329aa0 (rtti, high); signature (low): `undefined BSISoundCategory_vfunc_11(BGSSoundCategory * this, char param_1)`
+    /// `BSISoundCategory::SetMuted` at 0x329aa0 (semantic, high); signature (untiered): `undefined SetMuted(BSISoundCategory * this, char param_1)`
     pub slot_11: *const c_void,
 }
 impl BGSSoundCategory_vtable_30 {
@@ -38660,9 +38710,9 @@ pub struct BGSSoundDescriptor_vtable {
     pub slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_2: *const c_void,
-    /// `BGSSoundDescriptor::vfunc_3` at 0x329eb0 (rtti, high); signature (low): `undefined vfunc_3(BGSSoundDescriptor * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSSoundDescriptor::InitItem` at 0x329eb0 (semantic, high); signature (untiered): `undefined InitItem(BGSSoundDescriptor * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `InitItem`: resolves the category form id and initialises the category (high); semantic signature: `void (BGSSoundDescriptor* this, TESForm* owner)`
     pub slot_3: *const c_void,
-    /// `BGSSoundDescriptor::vfunc_4` at 0x329f40 (rtti, high); signature (low): `undefined vfunc_4(BGSSoundDescriptor * this, longlong param_1)`
+    /// `BGSSoundDescriptor::LoadChunk` at 0x329f40 (semantic, high); signature (untiered): `undefined LoadChunk(BGSSoundDescriptor * this, longlong param_1)`; `LoadChunk`: reads GNAM (category id) and SNAM (linked id) (high); semantic signature: `void (BGSSoundDescriptor* this, TESFile* file)`
     pub slot_4: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_5: *const c_void,
@@ -38671,7 +38721,23 @@ pub struct BGSSoundDescriptor_vtable {
 }
 impl BGSSoundDescriptor_vtable {
     pub const ID: u64 = 191143;
+    pub const SLOT_InitItem: usize = 3;
+    /// Slot 3 as `BGSSoundDescriptor_vtable_InitItem`, `None` when the slot is null.
+    #[must_use]
+    pub fn InitItem(&self) -> Option<BGSSoundDescriptor_vtable_InitItem> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundDescriptor_vtable_InitItem>>(self.slot_3) }
+    }
+    pub const SLOT_LoadChunk: usize = 4;
+    /// Slot 4 as `BGSSoundDescriptor_vtable_LoadChunk`, `None` when the slot is null.
+    #[must_use]
+    pub fn LoadChunk(&self) -> Option<BGSSoundDescriptor_vtable_LoadChunk> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundDescriptor_vtable_LoadChunk>>(self.slot_4) }
+    }
 }
+/// `BGSSoundDescriptor::InitItem`, slot 3: resolves the category form id and initialises the category (high).
+pub type BGSSoundDescriptor_vtable_InitItem = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptor, owner: *mut classes::TESForm);
+/// `BGSSoundDescriptor::LoadChunk`, slot 4: reads GNAM (category id) and SNAM (linked id) (high).
+pub type BGSSoundDescriptor_vtable_LoadChunk = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptor, file: *mut classes::TESFile);
 
 /// `BGSSoundDescriptorForm::vftable` at 0x1835378, id 191106 (rtti, high); 60 slots.
 #[repr(C)]
@@ -38686,9 +38752,9 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_3: *const c_void,
     /// `TESForm::vfunc_4` at 0x1e35b0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `BGSSoundDescriptorForm::vfunc_5` at 0x32a3e0 (rtti, high); signature (high): `undefined vfunc_5(BGSSoundDescriptorForm * this)`
+    /// `BGSSoundDescriptorForm::ClearData` at 0x32a3e0 (semantic, medium); signature (untiered): `undefined ClearData(BGSSoundDescriptorForm * this)`; `ClearData`: destroys the descriptor through its creator and nulls +0x28 (medium); semantic signature: `void (BGSSoundDescriptorForm* this)`
     pub slot_5: *const c_void,
-    /// `BGSSoundDescriptorForm::vfunc_6` at 0x32a4a0 (rtti, high); signature (low): `undefined8 vfunc_6(BGSSoundDescriptorForm * this, longlong param_1)`
+    /// `BGSSoundDescriptorForm::Load` at 0x32a4a0 (semantic, high); signature (untiered): `undefined8 Load(BGSSoundDescriptorForm * this, longlong param_1)`; `Load`: reads VMAD, EDID, OBND, CNAM; CNAM picks the descriptor class; returns false when the CNAM type is unknown (high); semantic signature: `bool (BGSSoundDescriptorForm* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -38714,7 +38780,7 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `BGSSoundDescriptorForm::vfunc_19` at 0x32a2a0 (rtti, high); signature (high): `undefined vfunc_19(BGSSoundDescriptorForm * this)`
+    /// `BGSSoundDescriptorForm::InitItemImpl` at 0x32a2a0 (semantic, medium); signature (untiered): `undefined InitItemImpl(BGSSoundDescriptorForm * this)`; `InitItemImpl`: resolves the descriptor's form references (descriptor slot 3) once; if this form's id is in the SNAM-id list 0x31df9d8 it is removed and the descriptor is precached via ID_67720(audio manager, this+0x20, 0x200) (medium); semantic signature: `void (BGSSoundDescriptorForm* this)`
     pub slot_19: *const c_void,
     /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
@@ -38778,7 +38844,7 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_49: *const c_void,
     /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
     pub slot_50: *const c_void,
-    /// `BGSSoundDescriptorForm::SetFormEditorID` at 0x32a7c0 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(BGSSoundDescriptorForm * this, undefined8 param_1)`
+    /// `BGSSoundDescriptorForm::SetFormEditorID` at 0x32a7c0 (semantic, high); signature (untiered): `undefined8 SetFormEditorID(BGSSoundDescriptorForm * this, undefined8 param_1)`; `SetFormEditorID`: registers the editor id in the global editor-id map (AddFormToEditorIDMap), so SNDR forms are findable by editor id (high); semantic signature: `bool (BGSSoundDescriptorForm* this, const char* id)`
     pub slot_51: *const c_void,
     /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
     pub slot_52: *const c_void,
@@ -38794,21 +38860,47 @@ pub struct BGSSoundDescriptorForm_vtable {
     pub slot_57: *const c_void,
     /// `TESForm::vfunc_58` at 0x146a00 (rtti, medium); signature (low): `undefined1 vfunc_58(void)`
     pub slot_58: *const c_void,
-    /// `BGSSoundDescriptorForm::vfunc_59` at 0x32a7e0 (rtti, high); signature (high): `undefined vfunc_59(BGSSoundDescriptorForm * this)`
+    /// `BGSSoundDescriptorForm::GetDescriptorTypeCRC` at 0x32a7e0 (semantic, high); signature (untiered): `undefined GetDescriptorTypeCRC(BGSSoundDescriptorForm * this)`; `GetDescriptorTypeCRC`: forwards to descriptor slot 5 (crc32 of the descriptor class name) (high); semantic signature: `u32 (BGSSoundDescriptorForm* this)`
     pub slot_59: *const c_void,
 }
 impl BGSSoundDescriptorForm_vtable {
     pub const ID: u64 = 191106;
+    pub const SLOT_ClearData: usize = 5;
+    pub const SLOT_Load: usize = 6;
+    /// Slot 6 as `BGSSoundDescriptorForm_vtable_Load`, `None` when the slot is null.
+    #[must_use]
+    pub fn Load(&self) -> Option<BGSSoundDescriptorForm_vtable_Load> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundDescriptorForm_vtable_Load>>(self.slot_6) }
+    }
+    pub const SLOT_InitItemImpl: usize = 19;
+    pub const SLOT_SetFormEditorID: usize = 51;
+    /// Slot 51 as `BGSSoundDescriptorForm_vtable_SetFormEditorID`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetFormEditorID(&self) -> Option<BGSSoundDescriptorForm_vtable_SetFormEditorID> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundDescriptorForm_vtable_SetFormEditorID>>(self.slot_51) }
+    }
+    pub const SLOT_GetDescriptorTypeCRC: usize = 59;
+    /// Slot 59 as `BGSSoundDescriptorForm_vtable_GetDescriptorTypeCRC`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetDescriptorTypeCRC(&self) -> Option<BGSSoundDescriptorForm_vtable_GetDescriptorTypeCRC> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundDescriptorForm_vtable_GetDescriptorTypeCRC>>(self.slot_59) }
+    }
 }
+/// `BGSSoundDescriptorForm::Load`, slot 6: reads VMAD, EDID, OBND, CNAM; CNAM picks the descriptor class; returns false when the CNAM type is unknown (high).
+pub type BGSSoundDescriptorForm_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptorForm, file: *mut classes::TESFile) -> bool;
+/// `BGSSoundDescriptorForm::SetFormEditorID`, slot 51: registers the editor id in the global editor-id map (AddFormToEditorIDMap), so SNDR forms are findable by editor id (high).
+pub type BGSSoundDescriptorForm_vtable_SetFormEditorID = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptorForm, id: *const c_char) -> bool;
+/// `BGSSoundDescriptorForm::GetDescriptorTypeCRC`, slot 59: forwards to descriptor slot 5 (crc32 of the descriptor class name) (high).
+pub type BGSSoundDescriptorForm_vtable_GetDescriptorTypeCRC = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptorForm) -> u32;
 
 /// `BGSSoundDescriptorForm::vftable_20` at 0x1835560, id 191108 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct BGSSoundDescriptorForm_vtable_20 {
     /// `BGSSoundDescriptorForm::BSISoundDescriptor_vdtor` at 0x32ab4c (slot_propagation, medium); signature (high): `undefined BSISoundDescriptor_vdtor(BGSSoundDescriptorForm * this)`
     pub slot_0: *const c_void,
-    /// `BGSSoundDescriptorForm::BSISoundDescriptor_vfunc_1` at 0x32a830 (rtti, high); signature (low): `ulonglong BSISoundDescriptor_vfunc_1(BGSSoundDescriptorForm * this, longlong param_1)`
+    /// `BSISoundDescriptor::FillPlayData` at 0x32a830 (semantic, high); signature (untiered): `ulonglong FillPlayData(BSISoundDescriptor * this, longlong param_1)`
     pub slot_1: *const c_void,
-    /// `BGSSoundDescriptorForm::BSISoundDescriptor_vfunc_2` at 0x32a800 (rtti, high); signature (high): `undefined8 BSISoundDescriptor_vfunc_2(BGSSoundDescriptorForm * this)`
+    /// `BSISoundDescriptor::ShouldPlayAtDistance` at 0x32a800 (semantic, medium); signature (untiered): `undefined8 ShouldPlayAtDistance(BSISoundDescriptor * this)`
     pub slot_2: *const c_void,
 }
 impl BGSSoundDescriptorForm_vtable_20 {
@@ -38828,9 +38920,9 @@ pub struct BGSSoundOutput_vtable {
     pub slot_3: *const c_void,
     /// `TESForm::vfunc_4` at 0x1e35b0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `BGSSoundOutput::vfunc_5` at 0x32b530 (rtti, high); signature (low): `undefined vfunc_5(BGSSoundOutput * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSSoundOutput::ClearData` at 0x32b530 (semantic, high); signature (untiered): `undefined ClearData(BGSSoundOutput * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `ClearData`: frees the attenuation object and the speaker table (high); semantic signature: `void (BGSSoundOutput* this)`
     pub slot_5: *const c_void,
-    /// `BGSSoundOutput::vfunc_6` at 0x32afa0 (rtti, high); signature (low): `undefined8 vfunc_6(BGSSoundOutput * this, longlong param_1, uint * param_2, uint * param_3)`
+    /// `BGSSoundOutput::Load` at 0x32afa0 (semantic, high); signature (untiered): `undefined8 Load(BGSSoundOutput * this, longlong param_1, uint * param_2, uint * param_3)`; `Load`: type gate 0x83, then ANAM, NAM1, VMAD, EDID, OBND, FNAM, MNAM, ONAM, SNAM (high); semantic signature: `bool (BGSSoundOutput* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -38856,7 +38948,7 @@ pub struct BGSSoundOutput_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `BGSSoundOutput::vfunc_19` at 0x32b510 (rtti, high); signature (high): `undefined vfunc_19(BGSSoundOutput * this)`
+    /// `BGSSoundOutput::InitItemImpl` at 0x32b510 (semantic, high); signature (untiered): `undefined InitItemImpl(BGSSoundOutput * this)`; `InitItemImpl`: only sets the initialised bit (high); semantic signature: `void (BGSSoundOutput* this)`
     pub slot_19: *const c_void,
     /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
@@ -38939,30 +39031,54 @@ pub struct BGSSoundOutput_vtable {
 }
 impl BGSSoundOutput_vtable {
     pub const ID: u64 = 191124;
+    pub const SLOT_ClearData: usize = 5;
+    /// Slot 5 as `BGSSoundOutput_vtable_ClearData`, `None` when the slot is null.
+    #[must_use]
+    pub fn ClearData(&self) -> Option<BGSSoundOutput_vtable_ClearData> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundOutput_vtable_ClearData>>(self.slot_5) }
+    }
+    pub const SLOT_Load: usize = 6;
+    /// Slot 6 as `BGSSoundOutput_vtable_Load`, `None` when the slot is null.
+    #[must_use]
+    pub fn Load(&self) -> Option<BGSSoundOutput_vtable_Load> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundOutput_vtable_Load>>(self.slot_6) }
+    }
+    pub const SLOT_InitItemImpl: usize = 19;
+    /// Slot 19 as `BGSSoundOutput_vtable_InitItemImpl`, `None` when the slot is null.
+    #[must_use]
+    pub fn InitItemImpl(&self) -> Option<BGSSoundOutput_vtable_InitItemImpl> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundOutput_vtable_InitItemImpl>>(self.slot_19) }
+    }
 }
+/// `BGSSoundOutput::ClearData`, slot 5: frees the attenuation object and the speaker table (high).
+pub type BGSSoundOutput_vtable_ClearData = unsafe extern "C" fn(this: *mut classes::BGSSoundOutput);
+/// `BGSSoundOutput::Load`, slot 6: type gate 0x83, then ANAM, NAM1, VMAD, EDID, OBND, FNAM, MNAM, ONAM, SNAM (high).
+pub type BGSSoundOutput_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSSoundOutput, file: *mut classes::TESFile) -> bool;
+/// `BGSSoundOutput::InitItemImpl`, slot 19: only sets the initialised bit (high).
+pub type BGSSoundOutput_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut classes::BGSSoundOutput);
 
 /// `BGSSoundOutput::vftable_20` at 0x18359d8, id 191126 (rtti, high); 10 slots.
 #[repr(C)]
 pub struct BGSSoundOutput_vtable_20 {
     /// `BGSSoundOutput::BSISoundOutputModel_vdtor` at 0x32b9cc (slot_propagation, medium); signature (high): `undefined BSISoundOutputModel_vdtor(BGSSoundOutput * this)`
     pub slot_0: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_1` at 0x32b5f0 (rtti, high); signature (high): `bool BSISoundOutputModel_vfunc_1(BGSSoundOutput * this)`
+    /// `BSISoundOutputModel::IsType0` at 0x32b5f0 (semantic, high); signature (untiered): `bool IsType0(BSISoundOutputModel * this)`
     pub slot_1: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_2` at 0x32b600 (rtti, high); signature (high): `bool BSISoundOutputModel_vfunc_2(BGSSoundOutput * this)`
+    /// `BSISoundOutputModel::IsType1` at 0x32b600 (semantic, high); signature (untiered): `bool IsType1(BSISoundOutputModel * this)`
     pub slot_2: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_3` at 0x32b640 (rtti, high); signature (low): `ulonglong BSISoundOutputModel_vfunc_3(BGSSoundOutput * this, uint param_1, int param_2, uint param_3, void * param_4)`
+    /// `BSISoundOutputModel::GetSpeakerLevels` at 0x32b640 (semantic, medium); signature (untiered): `ulonglong GetSpeakerLevels(BSISoundOutputModel * this, uint param_1, int param_2, uint param_3, void * param_4)`
     pub slot_3: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_4` at 0x32b620 (rtti, high); signature (high): `byte BSISoundOutputModel_vfunc_4(BGSSoundOutput * this)`
+    /// `BSISoundOutputModel::AttenuatesWithDistance` at 0x32b620 (semantic, high); signature (untiered): `byte AttenuatesWithDistance(BSISoundOutputModel * this)`
     pub slot_4: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_5` at 0x32b860 (rtti, high); signature (medium): `bool BSISoundOutputModel_vfunc_5(BGSSoundOutput * this, float param_1)`
+    /// `BSISoundOutputModel::IsWithinMaxDistance` at 0x32b860 (semantic, high); signature (untiered): `bool IsWithinMaxDistance(BSISoundOutputModel * this, float param_1)`
     pub slot_5: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_6` at 0x32b610 (rtti, high); signature (low): `undefined8 BSISoundOutputModel_vfunc_6(void)`
+    /// `BSISoundOutputModel::Unk06` at 0x32b610 (semantic, high); signature (untiered): `undefined8 Unk06(void)`
     pub slot_6: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_7` at 0x32b630 (rtti, high); signature (high): `undefined8 BSISoundOutputModel_vfunc_7(BGSSoundOutput * this)`
+    /// `BSISoundOutputModel::GetAttenuationCharacteristics` at 0x32b630 (semantic, high); signature (untiered): `undefined8 GetAttenuationCharacteristics(BSISoundOutputModel * this)`
     pub slot_7: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_8` at 0x32b8b0 (rtti, high); signature (high): `float BSISoundOutputModel_vfunc_8(BGSSoundOutput * this)`
+    /// `BSISoundOutputModel::GetSendLevel` at 0x32b8b0 (semantic, medium); signature (untiered): `float GetSendLevel(BSISoundOutputModel * this)`
     pub slot_8: *const c_void,
-    /// `BGSSoundOutput::BSISoundOutputModel_vfunc_9` at 0x32b8d0 (rtti, high); signature (low): `ulonglong BSISoundOutputModel_vfunc_9(BGSSoundOutput * this, int param_1)`
+    /// `BSISoundOutputModel::AllowsSend` at 0x32b8d0 (semantic, medium); signature (untiered): `ulonglong AllowsSend(BSISoundOutputModel * this, int param_1)`
     pub slot_9: *const c_void,
 }
 impl BGSSoundOutput_vtable_20 {
@@ -38974,15 +39090,18 @@ impl BGSSoundOutput_vtable_20 {
 pub struct BGSSoundOutput__DynamicAttenuationCharacteristics_vtable {
     /// `BGSSoundOutput::DynamicAttenuationCharacteristics::vdtor` at 0x32bad0 (layout_inference, medium); signature (low): `DynamicAttenuationCharacteristics * vdtor(DynamicAttenuationCharacteristics * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::vfunc_1` at 0x32b5b0 (rtti, high); signature (low): `undefined4 vfunc_1(DynamicAttenuationCharacteristics * this)`
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMaxDistance` at 0x32b5b0 (semantic, high); signature (untiered): `undefined4 GetMaxDistance(DynamicAttenuationCharacteristics * this)`; `GetMaxDistance`: +0xc (high); semantic signature: `float (this)`
     pub slot_1: *const c_void,
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::vfunc_2` at 0x32b5c0 (rtti, high); signature (low): `undefined4 vfunc_2(DynamicAttenuationCharacteristics * this)`
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMinDistance` at 0x32b5c0 (semantic, medium); signature (untiered): `undefined4 GetMinDistance(DynamicAttenuationCharacteristics * this)`; `GetMinDistance`: +8 (medium); semantic signature: `float (this)`
     pub slot_2: *const c_void,
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::vfunc_3` at 0x32b5d0 (rtti, high); signature (low): `ulonglong vfunc_3(DynamicAttenuationCharacteristics * this, uint param_1)`
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetCurveValue` at 0x32b5d0 (semantic, high); signature (untiered): `ulonglong GetCurveValue(DynamicAttenuationCharacteristics * this, uint param_1)`; `GetCurveValue`: +0x10[i] for i < 5 (high); semantic signature: `u8 (this, u32 i)`
     pub slot_3: *const c_void,
 }
 impl BGSSoundOutput__DynamicAttenuationCharacteristics_vtable {
     pub const ID: u64 = 191122;
+    pub const SLOT_GetMaxDistance: usize = 1;
+    pub const SLOT_GetMinDistance: usize = 2;
+    pub const SLOT_GetCurveValue: usize = 3;
 }
 
 /// `BGSStandardSoundDef::vftable` at 0x1835ce0, id 191153 (rtti, high); 7 slots.
@@ -38990,41 +39109,87 @@ impl BGSSoundOutput__DynamicAttenuationCharacteristics_vtable {
 pub struct BGSStandardSoundDef_vtable {
     /// `BGSStandardSoundDef::vdtor` at 0x32c8d0 (layout_inference, medium); signature (low): `BGSStandardSoundDef * vdtor(BGSStandardSoundDef * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSStandardSoundDef::vfunc_1` at 0x32c330 (rtti, high); signature (low): `ulonglong vfunc_1(BGSStandardSoundDef * this, undefined4 * param_1)`
+    /// `BGSStandardSoundDef::FillPlayData` at 0x32c330 (semantic, high); signature (untiered): `ulonglong FillPlayData(BGSStandardSoundDef * this, undefined4 * param_1)`; `FillPlayData`: picks a file (random, no immediate repeat), checks conditions, fills file id, linked id, flags, playback characteristics, output model, category and the send list (high); semantic signature: `bool (BGSStandardSoundDef* this, SoundPlayData* out)`
     pub slot_1: *const c_void,
-    /// `BGSStandardSoundDef::vfunc_2` at 0x32c2d0 (rtti, high); signature (medium): `undefined8 vfunc_2(BGSStandardSoundDef * this, float param_1)`
+    /// `BGSStandardSoundDef::ShouldPlayAtDistance` at 0x32c2d0 (semantic, high); signature (untiered): `undefined8 ShouldPlayAtDistance(BGSStandardSoundDef * this, float param_1)`; `ShouldPlayAtDistance`: output model present and (not attenuating or distance < attenuation max distance) and conditions pass (high); semantic signature: `bool (BGSStandardSoundDef* this, float distance)`
     pub slot_2: *const c_void,
-    /// `BGSStandardSoundDef::vfunc_3` at 0x32bdf0 (rtti, high); signature (low): `undefined vfunc_3(BGSStandardSoundDef * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSStandardSoundDef::InitItem` at 0x32bdf0 (semantic, high); signature (untiered): `undefined InitItem(BGSStandardSoundDef * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `InitItem`: base InitItem plus output model resolution and the conditions' InitItem (high); semantic signature: `void (BGSStandardSoundDef* this, TESForm* owner)`
     pub slot_3: *const c_void,
-    /// `BGSStandardSoundDef::vfunc_4` at 0x32be90 (rtti, high); signature (low): `undefined vfunc_4(BGSStandardSoundDef * this, longlong param_1, ulonglong param_2, undefined8 param_3)`
+    /// `BGSStandardSoundDef::LoadChunk` at 0x32be90 (semantic, high); signature (untiered): `undefined LoadChunk(BGSStandardSoundDef * this, longlong param_1, ulonglong param_2, undefined8 param_3)`; `LoadChunk`: chunk loop: ANAM files, CTDA conditions, BNAM playback, FNAM/LNAM flags, GNAM/SNAM (base), ONAM output (high); semantic signature: `void (BGSStandardSoundDef* this, TESFile* file)`
     pub slot_4: *const c_void,
-    /// `BGSStandardSoundDef::vfunc_5` at 0x32c290 (rtti, high); signature (low): `int vfunc_5(void)`
+    /// `BGSStandardSoundDef::GetTypeCRC` at 0x32c290 (semantic, high); signature (untiered): `int GetTypeCRC(void)`; `GetTypeCRC`: crc32 of 'BGSStandardSoundDef', the CNAM key of this class (high); semantic signature: `u32 ()`
     pub slot_5: *const c_void,
-    /// `BGSStandardSoundDef::vfunc_6` at 0x32c260 (rtti, high); signature (high): `undefined vfunc_6(BGSStandardSoundDef * this)`
+    /// `BGSStandardSoundDef::GetMaxDistance` at 0x32c260 (semantic, high); signature (untiered): `undefined GetMaxDistance(BGSStandardSoundDef * this)`; `GetMaxDistance`: attenuation max distance when the output model attenuates, else FLT_MAX (high); semantic signature: `float (BGSStandardSoundDef* this)`
     pub slot_6: *const c_void,
 }
 impl BGSStandardSoundDef_vtable {
     pub const ID: u64 = 191153;
+    pub const SLOT_FillPlayData: usize = 1;
+    pub const SLOT_ShouldPlayAtDistance: usize = 2;
+    /// Slot 2 as `BGSStandardSoundDef_vtable_ShouldPlayAtDistance`, `None` when the slot is null.
+    #[must_use]
+    pub fn ShouldPlayAtDistance(&self) -> Option<BGSStandardSoundDef_vtable_ShouldPlayAtDistance> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSStandardSoundDef_vtable_ShouldPlayAtDistance>>(self.slot_2) }
+    }
+    pub const SLOT_InitItem: usize = 3;
+    /// Slot 3 as `BGSStandardSoundDef_vtable_InitItem`, `None` when the slot is null.
+    #[must_use]
+    pub fn InitItem(&self) -> Option<BGSStandardSoundDef_vtable_InitItem> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSStandardSoundDef_vtable_InitItem>>(self.slot_3) }
+    }
+    pub const SLOT_LoadChunk: usize = 4;
+    /// Slot 4 as `BGSStandardSoundDef_vtable_LoadChunk`, `None` when the slot is null.
+    #[must_use]
+    pub fn LoadChunk(&self) -> Option<BGSStandardSoundDef_vtable_LoadChunk> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSStandardSoundDef_vtable_LoadChunk>>(self.slot_4) }
+    }
+    pub const SLOT_GetTypeCRC: usize = 5;
+    /// Slot 5 as `BGSStandardSoundDef_vtable_GetTypeCRC`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetTypeCRC(&self) -> Option<BGSStandardSoundDef_vtable_GetTypeCRC> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSStandardSoundDef_vtable_GetTypeCRC>>(self.slot_5) }
+    }
+    pub const SLOT_GetMaxDistance: usize = 6;
+    /// Slot 6 as `BGSStandardSoundDef_vtable_GetMaxDistance`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetMaxDistance(&self) -> Option<BGSStandardSoundDef_vtable_GetMaxDistance> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSStandardSoundDef_vtable_GetMaxDistance>>(self.slot_6) }
+    }
 }
+/// `BGSStandardSoundDef::ShouldPlayAtDistance`, slot 2: output model present and (not attenuating or distance < attenuation max distance) and conditions pass (high).
+pub type BGSStandardSoundDef_vtable_ShouldPlayAtDistance = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef, distance: f32) -> bool;
+/// `BGSStandardSoundDef::InitItem`, slot 3: base InitItem plus output model resolution and the conditions' InitItem (high).
+pub type BGSStandardSoundDef_vtable_InitItem = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef, owner: *mut classes::TESForm);
+/// `BGSStandardSoundDef::LoadChunk`, slot 4: chunk loop: ANAM files, CTDA conditions, BNAM playback, FNAM/LNAM flags, GNAM/SNAM (base), ONAM output (high).
+pub type BGSStandardSoundDef_vtable_LoadChunk = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef, file: *mut classes::TESFile);
+/// `BGSStandardSoundDef::GetTypeCRC`, slot 5: crc32 of 'BGSStandardSoundDef', the CNAM key of this class (high).
+pub type BGSStandardSoundDef_vtable_GetTypeCRC = unsafe extern "C" fn() -> u32;
+/// `BGSStandardSoundDef::GetMaxDistance`, slot 6: attenuation max distance when the output model attenuates, else FLT_MAX (high).
+pub type BGSStandardSoundDef_vtable_GetMaxDistance = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef) -> f32;
 
 /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vftable` at 0x1835ca8, id 191151 (rtti, high); 6 slots.
 #[repr(C)]
 pub struct BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable {
     /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vdtor` at 0x32c9c0 (layout_inference, medium); signature (low): `SoundPlaybackCharacteristics * vdtor(SoundPlaybackCharacteristics * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vfunc_1` at 0x32c210 (rtti, high); signature (high): `undefined1 vfunc_1(SoundPlaybackCharacteristics * this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyShift` at 0x32c210 (semantic, high); signature (untiered): `undefined1 GetFrequencyShift(SoundPlaybackCharacteristics * this)`; `GetFrequencyShift`: returns +8 (descriptor +0x38) (high); semantic signature: `i8 (this)`
     pub slot_1: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vfunc_2` at 0x32c220 (rtti, high); signature (high): `undefined1 vfunc_2(SoundPlaybackCharacteristics * this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyVariance` at 0x32c220 (semantic, low); signature (untiered): `undefined1 GetFrequencyVariance(SoundPlaybackCharacteristics * this)`; `GetFrequencyVariance`: returns +9 (descriptor +0x39) (low); semantic signature: `u8 (this)`
     pub slot_2: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vfunc_3` at 0x32c230 (rtti, high); signature (high): `undefined1 vfunc_3(SoundPlaybackCharacteristics * this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetPriority` at 0x32c230 (semantic, low); signature (untiered): `undefined1 GetPriority(SoundPlaybackCharacteristics * this)`; `GetPriority`: returns +0xa (descriptor +0x3a) (low); semantic signature: `u8 (this)`
     pub slot_3: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vfunc_4` at 0x32c250 (rtti, high); signature (high): `undefined2 vfunc_4(SoundPlaybackCharacteristics * this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuation` at 0x32c250 (semantic, medium); signature (untiered): `undefined2 GetStaticAttenuation(SoundPlaybackCharacteristics * this)`; `GetStaticAttenuation`: returns +0xc (descriptor +0x3c) (medium); semantic signature: `u16 (this)`
     pub slot_4: *const c_void,
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vfunc_5` at 0x32c240 (rtti, high); signature (high): `undefined1 vfunc_5(SoundPlaybackCharacteristics * this)`
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuationVariance` at 0x32c240 (semantic, high); signature (untiered): `undefined1 GetStaticAttenuationVariance(SoundPlaybackCharacteristics * this)`; `GetStaticAttenuationVariance`: returns +0xb (descriptor +0x3b) (high); semantic signature: `u8 (this)`
     pub slot_5: *const c_void,
 }
 impl BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable {
     pub const ID: u64 = 191151;
+    pub const SLOT_GetFrequencyShift: usize = 1;
+    pub const SLOT_GetFrequencyVariance: usize = 2;
+    pub const SLOT_GetPriority: usize = 3;
+    pub const SLOT_GetStaticAttenuation: usize = 4;
+    pub const SLOT_GetStaticAttenuationVariance: usize = 5;
 }
 
 /// `BGSStaticCollection::vftable` at 0x180efc0, id 189164 (rtti, high); 83 slots.
@@ -42977,13 +43142,14 @@ impl BSAudioListener_vtable {
 pub struct BSAudioManagerThread_vtable {
     /// `BSAudioManagerThread::vdtor` at 0xcd2b10 (layout_inference, medium); signature (low): `BSAudioManagerThread * vdtor(BSAudioManagerThread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSAudioManagerThread::vfunc_1` at 0xcd1030 (rtti, high); signature (low): `undefined8 vfunc_1(BSAudioManagerThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSAudioManagerThread::Run` at 0xcd1030 (semantic, high); signature (untiered): `undefined8 Run(BSAudioManagerThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Run`: waits for the start, then loops { DrainCommands 0xccdab0; Sleep(0); UpdateSounds 0xccf5a0; Sleep(sleepMs) } (high); semantic signature: `uint32 (BSAudioManagerThread* this)`
     pub slot_1: *const c_void,
     /// `BSThread::vfunc_2` at 0x60f1d0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
     pub slot_2: *const c_void,
 }
 impl BSAudioManagerThread_vtable {
     pub const ID: u64 = 236492;
+    pub const SLOT_Run: usize = 1;
 }
 
 /// `BSAutoQueuedResourceCollection<AnimationSystemUtils::TESModelAndAnimationHandles>::vftable` at 0x17e34c8, id 186473 (rtti, high); 1 slots.
@@ -48860,54 +49026,114 @@ impl BSILimbIKModifierSingleton_vtable {
 pub struct BSIMusicTrack_vtable {
     /// `BSIMusicTrack::vdtor` at 0x326f10 (layout_inference, medium); signature (low): `BSIMusicTrack * vdtor(BSIMusicTrack * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `DoUpdate`: per frame: handles loop points and the finale crossfade, marks finished (state 4) when the sound handles stop (medium); semantic signature: `void (BSIMusicTrack* this)`
     pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `DoPlay`: creates (if needed) and plays the track's sound handle (+0x68) from its file id, in the default-object 0x8e category, fade-in 1000; state 1 (medium); semantic signature: `void (BSIMusicTrack* this)`
     pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `DoPause`: pauses the handle (state 2), or stops both handles if finishing (medium); semantic signature: `void (BSIMusicTrack* this)`
     pub slot_3: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `DoFinish`: not immediate and cue points exist: state 3 (finishing, may start the finale handle +0x74); else state 4 and fade both handles out (medium); semantic signature: `void (BSIMusicTrack* this, bool immediate, float fadeSeconds)`
     pub slot_4: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetPositionSeconds`: handle position * 0.001 (low); semantic signature: `float (BSIMusicTrack* this)`
     pub slot_5: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetTypeCRC`: crc32 of the class name (CNAM key) (high); semantic signature: `u32 ()`
     pub slot_6: *const c_void,
-    /// `BSIMusicTrack::vfunc_7` at 0x326f40 (rtti, high); signature (low): `undefined1 vfunc_7(void)`
+    /// `BSIMusicTrack::vfunc_7` at 0x326f40 (rtti, high); signature (low): `undefined1 vfunc_7(void)`; `TestConditions`: true without conditions, else evaluates them on the player (high); semantic signature: `bool (BSIMusicTrack* this)`
     pub slot_7: *const c_void,
-    /// `BSIMusicTrack::vfunc_8` at 0x325560 (rtti, medium); signature (high): `undefined4 vfunc_8(BSIMusicTrack * this)`
+    /// `BSIMusicTrack::GetState` at 0x325560 (semantic, medium); signature (untiered): `undefined4 GetState(BSIMusicTrack * this)`; `GetState`: +8: 1 playing, 2 paused, 3 finishing, 4 finished (medium); semantic signature: `u32 (BSIMusicTrack* this)`
     pub slot_8: *const c_void,
-    /// `BSIMusicTrack::vfunc_9` at 0x325540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    /// `BSIMusicTrack::vfunc_9` at 0x325540 (rtti, medium); signature (low): `undefined vfunc_9(void)`; `DoDuck`: queues an attenuation fade on the handle over fMusicDuckingSeconds (medium); semantic signature: `void (BSIMusicTrack* this, u16 attenuation)`
     pub slot_9: *const c_void,
-    /// `BSIMusicTrack::vfunc_10` at 0x325530 (rtti, medium); signature (low): `undefined vfunc_10(void)`
+    /// `BSIMusicTrack::vfunc_10` at 0x325530 (rtti, medium); signature (low): `undefined vfunc_10(void)`; `DoUnduck`: fades the handle's attenuation back to 0 over fMusicUnDuckingSeconds (medium); semantic signature: `void (BSIMusicTrack* this)`
     pub slot_10: *const c_void,
 }
 impl BSIMusicTrack_vtable {
     pub const ID: u64 = 191025;
+    pub const SLOT_DoUpdate: usize = 1;
+    pub const SLOT_DoPlay: usize = 2;
+    pub const SLOT_DoPause: usize = 3;
+    pub const SLOT_DoFinish: usize = 4;
+    pub const SLOT_GetPositionSeconds: usize = 5;
+    pub const SLOT_GetTypeCRC: usize = 6;
+    /// Slot 6 as `BSIMusicTrack_vtable_GetTypeCRC`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetTypeCRC(&self) -> Option<BSIMusicTrack_vtable_GetTypeCRC> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIMusicTrack_vtable_GetTypeCRC>>(self.slot_6) }
+    }
+    pub const SLOT_TestConditions: usize = 7;
+    /// Slot 7 as `BSIMusicTrack_vtable_TestConditions`, `None` when the slot is null.
+    #[must_use]
+    pub fn TestConditions(&self) -> Option<BSIMusicTrack_vtable_TestConditions> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIMusicTrack_vtable_TestConditions>>(self.slot_7) }
+    }
+    pub const SLOT_GetState: usize = 8;
+    pub const SLOT_DoDuck: usize = 9;
+    pub const SLOT_DoUnduck: usize = 10;
 }
+/// `BSIMusicTrack::GetTypeCRC`, slot 6: crc32 of the class name (CNAM key) (high).
+pub type BSIMusicTrack_vtable_GetTypeCRC = unsafe extern "C" fn() -> u32;
+/// `BSIMusicTrack::TestConditions`, slot 7: true without conditions, else evaluates them on the player (high).
+pub type BSIMusicTrack_vtable_TestConditions = unsafe extern "C" fn(this: *mut classes::BSIMusicTrack) -> bool;
 
 /// `BSIMusicType::vftable` at 0x1834490, id 191047 (rtti, high); 8 slots.
 #[repr(C)]
 pub struct BSIMusicType_vtable {
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `DoUpdate`: per-frame: no tracks -> finished; otherwise follows the track's state (finished track: flag bit 0 -> set bit 4 and finished, else ready), then updates the track (medium); semantic signature: `void (BSIMusicType* this)`
     pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `DoPlay`: unless paused, picks the next track (random with no repeat, or from the sequence when flag bit 2), then plays it; state 1, or 4 if no track qualifies (high); semantic signature: `void (BSIMusicType* this)`
     pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `DoPause`: pauses the current track, state 2 (high); semantic signature: `void (BSIMusicType* this)`
     pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `DoFinish`: asks the current track to finish over max(fadeDuration, 4 s); state = track state. The immediate argument is ignored (the track gets false) (high); semantic signature: `void (BSIMusicType* this, bool immediate)`
     pub slot_3: *const c_void,
-    /// `BSIMusicType::vfunc_4` at 0x328820 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    /// `BSIMusicType::vfunc_4` at 0x328820 (rtti, medium); signature (low): `undefined vfunc_4(void)`; `DoDuck`: forwards to the current track's slot 9 (duck) (medium); semantic signature: `void (BSIMusicType* this, u16 attenuation)`
     pub slot_4: *const c_void,
-    /// `BSIMusicType::vfunc_5` at 0x328830 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+    /// `BSIMusicType::vfunc_5` at 0x328830 (rtti, medium); signature (low): `undefined vfunc_5(void)`; `DoUnduck`: forwards to the current track's slot 10 (medium); semantic signature: `void (BSIMusicType* this)`
     pub slot_5: *const c_void,
-    /// `BSIMusicType::vfunc_6` at 0x328840 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+    /// `BSIMusicType::vfunc_6` at 0x328840 (rtti, medium); signature (low): `undefined vfunc_6(void)`; `DoPrepare`: state 0; with flag bit 2 and an empty sequence, fills and (unless bit 3) shuffles the track sequence (medium); semantic signature: `void (BSIMusicType* this)`
     pub slot_6: *const c_void,
-    /// `BSIMusicType::vfunc_7` at 0x328770 (rtti, high); signature (low): `BSIMusicType * vfunc_7(BSIMusicType * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSIMusicType::vdtor` at 0x328770 (semantic, high); signature (untiered): `BSIMusicType * vdtor(BSIMusicType * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: deleting destructor (high); semantic signature: `void* (BSIMusicType* this, u32 flags)`
     pub slot_7: *const c_void,
 }
 impl BSIMusicType_vtable {
     pub const ID: u64 = 191047;
+    pub const SLOT_DoUpdate: usize = 0;
+    pub const SLOT_DoPlay: usize = 1;
+    /// Slot 1 as `BSIMusicType_vtable_DoPlay`, `None` when the slot is null.
+    #[must_use]
+    pub fn DoPlay(&self) -> Option<BSIMusicType_vtable_DoPlay> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIMusicType_vtable_DoPlay>>(self.slot_1) }
+    }
+    pub const SLOT_DoPause: usize = 2;
+    /// Slot 2 as `BSIMusicType_vtable_DoPause`, `None` when the slot is null.
+    #[must_use]
+    pub fn DoPause(&self) -> Option<BSIMusicType_vtable_DoPause> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIMusicType_vtable_DoPause>>(self.slot_2) }
+    }
+    pub const SLOT_DoFinish: usize = 3;
+    /// Slot 3 as `BSIMusicType_vtable_DoFinish`, `None` when the slot is null.
+    #[must_use]
+    pub fn DoFinish(&self) -> Option<BSIMusicType_vtable_DoFinish> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIMusicType_vtable_DoFinish>>(self.slot_3) }
+    }
+    pub const SLOT_DoDuck: usize = 4;
+    pub const SLOT_DoUnduck: usize = 5;
+    pub const SLOT_DoPrepare: usize = 6;
+    pub const SLOT_vdtor: usize = 7;
+    /// Slot 7 as `BSIMusicType_vtable_vdtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn vdtor(&self) -> Option<BSIMusicType_vtable_vdtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIMusicType_vtable_vdtor>>(self.slot_7) }
+    }
 }
+/// `BSIMusicType::DoPlay`, slot 1: unless paused, picks the next track (random with no repeat, or from the sequence when flag bit 2), then plays it; state 1, or 4 if no track qualifies (high).
+pub type BSIMusicType_vtable_DoPlay = unsafe extern "C" fn(this: *mut classes::BSIMusicType);
+/// `BSIMusicType::DoPause`, slot 2: pauses the current track, state 2 (high).
+pub type BSIMusicType_vtable_DoPause = unsafe extern "C" fn(this: *mut classes::BSIMusicType);
+/// `BSIMusicType::DoFinish`, slot 3: asks the current track to finish over max(fadeDuration, 4 s); state = track state. The immediate argument is ignored (the track gets false) (high).
+pub type BSIMusicType_vtable_DoFinish = unsafe extern "C" fn(this: *mut classes::BSIMusicType, immediate: bool);
+/// `BSIMusicType::vdtor`, slot 7: deleting destructor (high).
+pub type BSIMusicType_vtable_vdtor = unsafe extern "C" fn(this: *mut classes::BSIMusicType, flags: u32) -> *mut c_void;
 
 /// `BSIPassByTargetTriggerModifierSingleton::vftable` at 0x1a02ff8, id 232618 (rtti, high); 4 slots.
 #[repr(C)]
@@ -49008,45 +49234,121 @@ impl BSIReverbType_vtable {
 pub struct BSISoundCategory_vtable {
     /// `BSISoundCategory::vdtor` at 0x329dc0 (layout_inference, medium); signature (low): `BSISoundCategory * vdtor(BSISoundCategory * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `IsSameOrChildOf`: true if other is this category or one of its ancestors (high); semantic signature: `bool (BSISoundCategory* this, BSISoundCategory* other)`
     pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetEffectiveVolume`: staticVolume/65535 * volume * parent's effective volume (1.0 at the root) (high); semantic signature: `float (BSISoundCategory* this)`
     pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `SetVolume`: stores the runtime volume; for menu categories (flags bit 1) also writes the menu slot table entry (high); semantic signature: `void (BSISoundCategory* this, float volume)`
     pub slot_3: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetEffectiveFrequency`: frequency * parent's effective frequency (high); semantic signature: `float (BSISoundCategory* this)`
     pub slot_4: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `SetFrequency`: stores the runtime frequency multiplier (high); semantic signature: `void (BSISoundCategory* this, float frequency)`
     pub slot_5: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetEffectiveAttenuation`: 4000 when muted or paused, else attenuation + parent's, capped at 10000 (hundredths of dB) (medium); semantic signature: `u16 (BSISoundCategory* this)`
     pub slot_6: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `SetAttenuation`: stores the runtime attenuation (medium); semantic signature: `void (BSISoundCategory* this, u16 attenuation)`
     pub slot_7: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `IsPaused`: paused bit here or in any ancestor (high); semantic signature: `bool (BSISoundCategory* this)`
     pub slot_8: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `SetPaused`: sets/clears the paused bit (high); semantic signature: `void (BSISoundCategory* this, bool paused)`
     pub slot_9: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `IsMuted`: muted bit here or in any ancestor (high); semantic signature: `bool (BSISoundCategory* this)`
     pub slot_10: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `SetMuted`: sets/clears the muted bit (high); semantic signature: `void (BSISoundCategory* this, bool muted)`
     pub slot_11: *const c_void,
 }
 impl BSISoundCategory_vtable {
     pub const ID: u64 = 191087;
+    pub const SLOT_IsSameOrChildOf: usize = 1;
+    /// Slot 1 as `BSISoundCategory_vtable_IsSameOrChildOf`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsSameOrChildOf(&self) -> Option<BSISoundCategory_vtable_IsSameOrChildOf> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_IsSameOrChildOf>>(self.slot_1) }
+    }
+    pub const SLOT_GetEffectiveVolume: usize = 2;
+    /// Slot 2 as `BSISoundCategory_vtable_GetEffectiveVolume`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetEffectiveVolume(&self) -> Option<BSISoundCategory_vtable_GetEffectiveVolume> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_GetEffectiveVolume>>(self.slot_2) }
+    }
+    pub const SLOT_SetVolume: usize = 3;
+    /// Slot 3 as `BSISoundCategory_vtable_SetVolume`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetVolume(&self) -> Option<BSISoundCategory_vtable_SetVolume> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_SetVolume>>(self.slot_3) }
+    }
+    pub const SLOT_GetEffectiveFrequency: usize = 4;
+    /// Slot 4 as `BSISoundCategory_vtable_GetEffectiveFrequency`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetEffectiveFrequency(&self) -> Option<BSISoundCategory_vtable_GetEffectiveFrequency> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_GetEffectiveFrequency>>(self.slot_4) }
+    }
+    pub const SLOT_SetFrequency: usize = 5;
+    /// Slot 5 as `BSISoundCategory_vtable_SetFrequency`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetFrequency(&self) -> Option<BSISoundCategory_vtable_SetFrequency> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_SetFrequency>>(self.slot_5) }
+    }
+    pub const SLOT_GetEffectiveAttenuation: usize = 6;
+    pub const SLOT_SetAttenuation: usize = 7;
+    pub const SLOT_IsPaused: usize = 8;
+    /// Slot 8 as `BSISoundCategory_vtable_IsPaused`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsPaused(&self) -> Option<BSISoundCategory_vtable_IsPaused> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_IsPaused>>(self.slot_8) }
+    }
+    pub const SLOT_SetPaused: usize = 9;
+    /// Slot 9 as `BSISoundCategory_vtable_SetPaused`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetPaused(&self) -> Option<BSISoundCategory_vtable_SetPaused> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_SetPaused>>(self.slot_9) }
+    }
+    pub const SLOT_IsMuted: usize = 10;
+    /// Slot 10 as `BSISoundCategory_vtable_IsMuted`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsMuted(&self) -> Option<BSISoundCategory_vtable_IsMuted> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_IsMuted>>(self.slot_10) }
+    }
+    pub const SLOT_SetMuted: usize = 11;
+    /// Slot 11 as `BSISoundCategory_vtable_SetMuted`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetMuted(&self) -> Option<BSISoundCategory_vtable_SetMuted> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundCategory_vtable_SetMuted>>(self.slot_11) }
+    }
 }
+/// `BSISoundCategory::IsSameOrChildOf`, slot 1: true if other is this category or one of its ancestors (high).
+pub type BSISoundCategory_vtable_IsSameOrChildOf = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, other: *mut classes::BSISoundCategory) -> bool;
+/// `BSISoundCategory::GetEffectiveVolume`, slot 2: staticVolume/65535 * volume * parent's effective volume (1.0 at the root) (high).
+pub type BSISoundCategory_vtable_GetEffectiveVolume = unsafe extern "C" fn(this: *mut classes::BSISoundCategory) -> f32;
+/// `BSISoundCategory::SetVolume`, slot 3: stores the runtime volume; for menu categories (flags bit 1) also writes the menu slot table entry (high).
+pub type BSISoundCategory_vtable_SetVolume = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, volume: f32);
+/// `BSISoundCategory::GetEffectiveFrequency`, slot 4: frequency * parent's effective frequency (high).
+pub type BSISoundCategory_vtable_GetEffectiveFrequency = unsafe extern "C" fn(this: *mut classes::BSISoundCategory) -> f32;
+/// `BSISoundCategory::SetFrequency`, slot 5: stores the runtime frequency multiplier (high).
+pub type BSISoundCategory_vtable_SetFrequency = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, frequency: f32);
+/// `BSISoundCategory::IsPaused`, slot 8: paused bit here or in any ancestor (high).
+pub type BSISoundCategory_vtable_IsPaused = unsafe extern "C" fn(this: *mut classes::BSISoundCategory) -> bool;
+/// `BSISoundCategory::SetPaused`, slot 9: sets/clears the paused bit (high).
+pub type BSISoundCategory_vtable_SetPaused = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, paused: bool);
+/// `BSISoundCategory::IsMuted`, slot 10: muted bit here or in any ancestor (high).
+pub type BSISoundCategory_vtable_IsMuted = unsafe extern "C" fn(this: *mut classes::BSISoundCategory) -> bool;
+/// `BSISoundCategory::SetMuted`, slot 11: sets/clears the muted bit (high).
+pub type BSISoundCategory_vtable_SetMuted = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, muted: bool);
 
 /// `BSISoundDescriptor::vftable` at 0x1835358, id 191104 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct BSISoundDescriptor_vtable {
     /// `BSISoundDescriptor::vdtor` at 0x32ac50 (layout_inference, medium); signature (low): `BSISoundDescriptor * vdtor(BSISoundDescriptor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `FillPlayData`: fills the play request the audio manager builds a sound from; false = nothing to play (no files or conditions fail) (high); semantic signature: `bool (BSISoundDescriptor* this, SoundPlayData* out)`
     pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `ShouldPlayAtDistance`: true when an output model exists and either it does not attenuate or distance < the attenuation max distance, and the conditions pass (medium); semantic signature: `bool (BSISoundDescriptor* this, float distance)`
     pub slot_2: *const c_void,
 }
 impl BSISoundDescriptor_vtable {
     pub const ID: u64 = 191104;
+    pub const SLOT_FillPlayData: usize = 1;
+    pub const SLOT_ShouldPlayAtDistance: usize = 2;
 }
 
 /// `BSISoundDescriptor::BSIPlaybackCharacteristics::vftable` at 0x1835c30, id 191141 (rtti, high); 6 slots.
@@ -49074,27 +49376,36 @@ impl BSISoundDescriptor__BSIPlaybackCharacteristics_vtable {
 pub struct BSISoundOutputModel_vtable {
     /// `BSISoundOutputModel::vdtor` at 0x32baa0 (layout_inference, medium); signature (low): `BSISoundOutputModel * vdtor(BSISoundOutputModel * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `IsType0`: outputType == 0 (high); semantic signature: `bool (this)`
     pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `IsType1`: outputType == 1 (high); semantic signature: `bool (this)`
     pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetSpeakerLevels`: converts a row of speaker percent bytes to floats (mode < 3, count <= 8; mode 2 uses row index+1, otherwise row 0); zero-fills and returns false without a table (medium); semantic signature: `bool (this, u32 mode, i32 index, u32 count, float* out)`
     pub slot_3: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `AttenuatesWithDistance`: flags bit 0 (high); semantic signature: `bool (this)`
     pub slot_4: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `IsWithinMaxDistance`: distance < attenuation max distance (FLT_MAX without attenuation) (high); semantic signature: `bool (this, float distance)`
     pub slot_5: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `Unk06`: returns the constant 2 (high); semantic signature: `u32 (this)`
     pub slot_6: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetAttenuationCharacteristics`: returns form+0x30 (high); semantic signature: `BSIAttenuationCharacteristics* (this)`
     pub slot_7: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetSendLevel`: byte form+0x2b * 0.01 (medium); semantic signature: `float (this)`
     pub slot_8: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `AllowsSend`: true if flags bit 1, else false for the two send ids returned by 0x55a420/0x55a430 (medium); semantic signature: `bool (this, u32 sendID)`
     pub slot_9: *const c_void,
 }
 impl BSISoundOutputModel_vtable {
     pub const ID: u64 = 191120;
+    pub const SLOT_IsType0: usize = 1;
+    pub const SLOT_IsType1: usize = 2;
+    pub const SLOT_GetSpeakerLevels: usize = 3;
+    pub const SLOT_AttenuatesWithDistance: usize = 4;
+    pub const SLOT_IsWithinMaxDistance: usize = 5;
+    pub const SLOT_Unk06: usize = 6;
+    pub const SLOT_GetAttenuationCharacteristics: usize = 7;
+    pub const SLOT_GetSendLevel: usize = 8;
+    pub const SLOT_AllowsSend: usize = 9;
 }
 
 /// `BSISoundOutputModel::BSIAttenuationCharacteristics::vftable` at 0x1835750, id 191118 (rtti, high); 4 slots.
@@ -64720,11 +65031,12 @@ impl BSMultiTargetTreadTransfController_vtable {
 pub struct BSMusicManager_vtable {
     /// `BSMusicManager::vdtor` at 0x11b5050 (layout_inference, medium); signature (low): `BSMusicManager * vdtor(BSMusicManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSMusicManager::vfunc_1` at 0x11b4a80 (rtti, high); signature (low): `undefined4 vfunc_1(BSMusicManager * this, longlong * param_1)`
+    /// `BSMusicManager::ProcessEvent` at 0x11b4a80 (semantic, high); signature (untiered): `undefined4 ProcessEvent(BSMusicManager * this, longlong * param_1)`; `ProcessEvent`: applies a music event under the music lock: 0 push (or re-arm a finished type), 1/2 finish (current) or finish+remove, 3 pause, 4 unpause (high); semantic signature: `u32 (BSMusicManager* this, const BSMusicEvent* event, BSTEventSource<BSMusicEvent>* source)`
     pub slot_1: *const c_void,
 }
 impl BSMusicManager_vtable {
     pub const ID: u64 = 245633;
+    pub const SLOT_ProcessEvent: usize = 1;
 }
 
 /// `BSNavmesh::vftable` at 0x1abfd50, id 245898 (rtti, high); 2 slots.
@@ -107103,7 +107415,7 @@ pub struct BSXAudio2GameSound_vtable {
     pub slot_2: *const c_void,
     /// `BSGameSound::vfunc_3` at 0xcd60a0 (rtti, medium); signature (low): `undefined vfunc_3(BSGameSound * this, char param_1)`
     pub slot_3: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_4` at 0xcda6e0 (rtti, high); signature (high): `longlong vfunc_4(BSXAudio2GameSound * this)`
+    /// `BSXAudio2GameSound::GetPositionMs` at 0xcda6e0 (semantic, high); signature (untiered): `longlong GetPositionMs(BSXAudio2GameSound * this)`; `GetPositionMs`: playback position in ms (high); semantic signature: `uint32 (BSXAudio2GameSound* this)`
     pub slot_4: *const c_void,
     /// `BSGameSound::vfunc_5` at 0xcd6090 (rtti, medium); signature (low): `undefined4 vfunc_5(BSGameSound * this, longlong param_1)`
     pub slot_5: *const c_void,
@@ -107125,30 +107437,82 @@ pub struct BSXAudio2GameSound_vtable {
     pub slot_13: *const c_void,
     /// `BSXAudio2GameSound::vfunc_14` at 0xcda120 (rtti, high); signature (low): `ulonglong vfunc_14(BSXAudio2GameSound * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_15` at 0xcda2e0 (rtti, high); signature (low): `undefined vfunc_15(BSXAudio2GameSound * this, float * param_1)`
+    /// `BSXAudio2GameSound::SetPosition` at 0xcda2e0 (semantic, high); signature (untiered): `undefined SetPosition(BSXAudio2GameSound * this, float * param_1)`; `SetPosition`: stores the position, the listener distance (+0x80) and state 0x100000 (high); semantic signature: `void (BSXAudio2GameSound* this, const float* xyz)`
     pub slot_15: *const c_void,
     /// `BSXAudio2GameSound::vfunc_16` at 0xcda3b0 (rtti, high); signature (low): `undefined vfunc_16(BSXAudio2GameSound * this, undefined4 * param_1)`
     pub slot_16: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_17` at 0xcda3e0 (rtti, high); signature (medium): `undefined vfunc_17(BSXAudio2GameSound * this, float param_1, float param_2)`
+    /// `BSXAudio2GameSound::SetMinMaxDistance` at 0xcda3e0 (semantic, medium); signature (untiered): `undefined SetMinMaxDistance(BSXAudio2GameSound * this, float param_1, float param_2)`; `SetMinMaxDistance`: attenuation distances (medium); semantic signature: `void (BSXAudio2GameSound* this, float min, float max)`
     pub slot_17: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_18` at 0xcda4c0 (rtti, high); signature (low): `undefined vfunc_18(BSXAudio2GameSound * this, ushort param_1, ushort param_2, ushort param_3, ushort param_4, ushort param_5)`
+    /// `BSXAudio2GameSound::SetAttenuationCurve` at 0xcda4c0 (semantic, medium); signature (untiered): `undefined SetAttenuationCurve(BSXAudio2GameSound * this, ushort param_1, ushort param_2, ushort param_3, ushort param_4, ushort param_5)`; `SetAttenuationCurve`: five curve values in percent (medium); semantic signature: `void (BSXAudio2GameSound* this, uint16, uint16, uint16, uint16, uint16)`
     pub slot_18: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_19` at 0xcda550 (rtti, high); signature (high): `undefined vfunc_19(BSXAudio2GameSound * this)`
+    /// `BSXAudio2GameSound::ApplyFrequency` at 0xcda550 (semantic, high); signature (untiered): `undefined ApplyFrequency(BSXAudio2GameSound * this)`; `ApplyFrequency`: sets the voice frequency ratio (high); semantic signature: `void (BSXAudio2GameSound* this)`
     pub slot_19: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_20` at 0xcda5a0 (rtti, high); signature (low): `undefined vfunc_20(BSXAudio2GameSound * this, uint param_1)`
+    /// `BSXAudio2GameSound::SeekMs` at 0xcda5a0 (semantic, medium); signature (untiered): `undefined SeekMs(BSXAudio2GameSound * this, uint param_1)`; `SeekMs`: restart at a time offset (medium); semantic signature: `void (BSXAudio2GameSound* this, uint32 ms)`
     pub slot_20: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_21` at 0xcdab70 (rtti, high); signature (high): `undefined vfunc_21(BSXAudio2GameSound * this)`
+    /// `BSXAudio2GameSound::Play` at 0xcdab70 (semantic, high); signature (untiered): `undefined Play(BSXAudio2GameSound * this)`; `Play`: start the voice (high); semantic signature: `void (BSXAudio2GameSound* this)`
     pub slot_21: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_22` at 0xcdac40 (rtti, high); signature (high): `undefined vfunc_22(BSXAudio2GameSound * this)`
+    /// `BSXAudio2GameSound::Pause` at 0xcdac40 (semantic, high); signature (untiered): `undefined Pause(BSXAudio2GameSound * this)`; `Pause`: stop the voice without flushing (high); semantic signature: `void (BSXAudio2GameSound* this)`
     pub slot_22: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_23` at 0xcdac90 (rtti, high); signature (high): `undefined vfunc_23(BSXAudio2GameSound * this)`
+    /// `BSXAudio2GameSound::Stop` at 0xcdac90 (semantic, high); signature (untiered): `undefined Stop(BSXAudio2GameSound * this)`; `Stop`: stop and flush; a looping sound with a loop region seeks to the loop end and plays out (high); semantic signature: `void (BSXAudio2GameSound* this)`
     pub slot_23: *const c_void,
-    /// `BSXAudio2GameSound::vfunc_24` at 0xcdad60 (rtti, high); signature (high): `undefined vfunc_24(BSXAudio2GameSound * this)`
+    /// `BSXAudio2GameSound::ApplyVolume` at 0xcdad60 (semantic, high); signature (untiered): `undefined ApplyVolume(BSXAudio2GameSound * this)`; `ApplyVolume`: ComputeAmplitude 0xcd5410 to the voice (high); semantic signature: `void (BSXAudio2GameSound* this)`
     pub slot_24: *const c_void,
 }
 impl BSXAudio2GameSound_vtable {
     pub const ID: u64 = 236556;
+    pub const SLOT_GetPositionMs: usize = 4;
+    pub const SLOT_SetPosition: usize = 15;
+    /// Slot 15 as `BSXAudio2GameSound_vtable_SetPosition`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetPosition(&self) -> Option<BSXAudio2GameSound_vtable_SetPosition> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSXAudio2GameSound_vtable_SetPosition>>(self.slot_15) }
+    }
+    pub const SLOT_SetMinMaxDistance: usize = 17;
+    pub const SLOT_SetAttenuationCurve: usize = 18;
+    pub const SLOT_ApplyFrequency: usize = 19;
+    /// Slot 19 as `BSXAudio2GameSound_vtable_ApplyFrequency`, `None` when the slot is null.
+    #[must_use]
+    pub fn ApplyFrequency(&self) -> Option<BSXAudio2GameSound_vtable_ApplyFrequency> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSXAudio2GameSound_vtable_ApplyFrequency>>(self.slot_19) }
+    }
+    pub const SLOT_SeekMs: usize = 20;
+    pub const SLOT_Play: usize = 21;
+    /// Slot 21 as `BSXAudio2GameSound_vtable_Play`, `None` when the slot is null.
+    #[must_use]
+    pub fn Play(&self) -> Option<BSXAudio2GameSound_vtable_Play> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSXAudio2GameSound_vtable_Play>>(self.slot_21) }
+    }
+    pub const SLOT_Pause: usize = 22;
+    /// Slot 22 as `BSXAudio2GameSound_vtable_Pause`, `None` when the slot is null.
+    #[must_use]
+    pub fn Pause(&self) -> Option<BSXAudio2GameSound_vtable_Pause> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSXAudio2GameSound_vtable_Pause>>(self.slot_22) }
+    }
+    pub const SLOT_Stop: usize = 23;
+    /// Slot 23 as `BSXAudio2GameSound_vtable_Stop`, `None` when the slot is null.
+    #[must_use]
+    pub fn Stop(&self) -> Option<BSXAudio2GameSound_vtable_Stop> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSXAudio2GameSound_vtable_Stop>>(self.slot_23) }
+    }
+    pub const SLOT_ApplyVolume: usize = 24;
+    /// Slot 24 as `BSXAudio2GameSound_vtable_ApplyVolume`, `None` when the slot is null.
+    #[must_use]
+    pub fn ApplyVolume(&self) -> Option<BSXAudio2GameSound_vtable_ApplyVolume> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSXAudio2GameSound_vtable_ApplyVolume>>(self.slot_24) }
+    }
 }
+/// `BSXAudio2GameSound::SetPosition`, slot 15: stores the position, the listener distance (+0x80) and state 0x100000 (high).
+pub type BSXAudio2GameSound_vtable_SetPosition = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound, xyz: *const f32);
+/// `BSXAudio2GameSound::ApplyFrequency`, slot 19: sets the voice frequency ratio (high).
+pub type BSXAudio2GameSound_vtable_ApplyFrequency = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+/// `BSXAudio2GameSound::Play`, slot 21: start the voice (high).
+pub type BSXAudio2GameSound_vtable_Play = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+/// `BSXAudio2GameSound::Pause`, slot 22: stop the voice without flushing (high).
+pub type BSXAudio2GameSound_vtable_Pause = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+/// `BSXAudio2GameSound::Stop`, slot 23: stop and flush; a looping sound with a loop region seeks to the loop end and plays out (high).
+pub type BSXAudio2GameSound_vtable_Stop = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+/// `BSXAudio2GameSound::ApplyVolume`, slot 24: ComputeAmplitude 0xcd5410 to the voice (high).
+pub type BSXAudio2GameSound_vtable_ApplyVolume = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
 
 /// `BSXAudio2GameSound::vftable_C8` at 0x1a211e0, id 236558 (rtti, high); 7 slots.
 #[repr(C)]
@@ -207709,7 +208073,7 @@ impl _anon_64C0A5C9__LoadMenuOpenCloseListener_vtable {
 pub struct _anon_64C0A5C9__MenuModeChangeListener_vtable {
     /// `_anon_64C0A5C9::MenuModeChangeListener::vdtor` at 0x5e82b0 (layout_inference, medium); signature (low): `MenuModeChangeListener * vdtor(MenuModeChangeListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_anon_64C0A5C9::MenuModeChangeListener::vfunc_1` at 0x5e80d0 (rtti, high); signature (low): `undefined8 vfunc_1(MenuModeChangeListener * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+    /// `MenuModeChangeListener::ProcessEvent` at 0x5e80d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(void * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
 }
 impl _anon_64C0A5C9__MenuModeChangeListener_vtable {

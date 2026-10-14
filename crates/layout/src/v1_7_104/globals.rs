@@ -10717,6 +10717,20 @@ pub const g_AnimationFileManagerSingleton_ptr: u64 = 401579;
 pub const g_AnimationVariableNames: u64 = 400281;
 /// `g_AppResourceCaching__anon_AE50F340_Manager` at 0x3230110 (layout_inference, medium)
 pub const g_AppResourceCaching__anon_AE50F340_Manager: u64 = 403360;
+/// `g_AudioBackend` at 0x3273938 (semantic, high); pointer to `BSAudio`: the backend; the backend (high); type `ptr:BSAudio`
+pub const g_AudioBackend: u64 = 410109;
+/// `g_AudioCacheLock` at 0x3273960 (semantic, medium); guards the cache list (medium); type `class:BSSpinLock`
+pub const g_AudioCacheLock: u64 = 410115;
+/// `g_AudioCommandLock` at 0x3273958 (semantic, high); guards the command lists and the node pool (high); type `class:BSSpinLock`
+pub const g_AudioCommandLock: u64 = 410113;
+/// `g_AudioFollowNodeHook` at 0x3273910 (semantic, medium); optional void(*)(NiAVObject*) called by FollowNode (medium); type `ptr`
+pub const g_AudioFollowNodeHook: u64 = 410104;
+/// `g_AudioManager` at 0x3273930 (runtime, high); pointer to `BSAudioManager`: the audio manager; the audio manager (high); type `ptr:BSAudioManager`
+pub const g_AudioManager: u64 = 410108;
+/// `g_AudioStatusLock` at 0x3273950 (semantic, high); guards the status map (high); type `class:BSReadWriteLock`
+pub const g_AudioStatusLock: u64 = 410112;
+/// `g_AudioUrgentCommands` at 0x3273940 (semantic, medium); urgent command list drained before the read list (medium); type `undefined1`
+pub const g_AudioUrgentCommands: u64 = 410110;
 /// `g_AutoRegisterCombatObject_CombatAimController` at 0x32542d8 (layout_inference, medium)
 pub const g_AutoRegisterCombatObject_CombatAimController: u64 = 404895;
 /// `g_AutoRegisterCombatObject_CombatApproachTargetSpeedController` at 0x3255a98 (layout_inference, medium)
@@ -11507,7 +11521,9 @@ pub const g_BSDirectAtModifierInterface_ptr: u64 = 404802;
 pub const g_BSLimbIKModifierUtility_ptr: u64 = 402597;
 /// `g_BSList_BSTempEffectDebris____ptr64` at 0x20b2ed8 (layout_inference, medium)
 pub const g_BSList_BSTempEffectDebris____ptr64: u64 = 379776;
-/// `g_BSMusicManager_ptr` at 0x31a57a0 (xref_inference, medium)
+/// `g_BSMusicManager` at 0x3230dc0 (runtime, medium); static storage of the music manager (medium); type `BSMusicManager`
+pub const g_BSMusicManager: u64 = 403596;
+/// `g_BSMusicManager_ptr` at 0x31a57a0 (runtime, medium); the music manager (static instance 0x3230dc0) (medium); type `BSMusicManager*`
 pub const g_BSMusicManager_ptr: u64 = 400896;
 /// `g_BSParabolicCullingProcess_ptr` at 0x33d4dd0 (xref_inference, medium)
 pub const g_BSParabolicCullingProcess_ptr: u64 = 414782;
@@ -11621,6 +11637,8 @@ pub const g_CCallbackImpl_1: u64 = 505562;
 pub const g_CCallbackImpl_8: u64 = 415501;
 /// `g_CameraFOVOffset` at 0x3436028 (semantic, low); FOV offset added by ApplyWorldFOV, written from the state's cameraAnim +0x74 (low); type `float`
 pub const g_CameraFOVOffset: u64 = 414942;
+/// `g_CategoryVolumeSlots` at 0x31df750 (semantic, high); saved volumes of the menu categories: form id at +8, volume float at +0x20 (high); type `CategoryVolumeSlot[8] (0x50 each)`
+pub const g_CategoryVolumeSlots: u64 = 401172;
 /// `g_ChangeFormTypeToFormType` at 0x20b55c0 (semantic, high); save type (0..48) -> formType: REFR ACHR PMIS PGRE PBEA PFLA CELL INFO QUST NPC_ ACTI TACT ARMO BOOK CONT DOOR INGR LIGH MISC APPA STAT MSTT FURN WEAP AMMO KEYM ALCH IDLM NOTE ECZN CLAS FACT PACK NAVM WOOP MGEF SMQN SCEN LCTN RELA PHZD PBAR PCON FLST LVLN LVLI LVSP PARW ENCH (high); type `undefined4[49]`
 pub const g_ChangeFormTypeToFormType: u64 = 380703;
 /// `g_CharacterCollisionHandler_ptr` at 0x3230a18 (xref_inference, medium)
@@ -12155,10 +12173,14 @@ pub const g_JobListServingThread: u64 = 403109;
 pub const g_JournalInputMapping_RemapHandler: u64 = 383628;
 /// `g_LastMessageBoxType` at 0x20bb3f8 (semantic, medium); type of the last answered box (medium); type `u32`
 pub const g_LastMessageBoxType: u64 = 383037;
+/// `g_LastSoundId` at 0x3273924 (runtime, medium); sound id counter (new id = value+1) (medium); type `undefined4`
+pub const g_LastSoundId: u64 = 410106;
 /// `g_LightingShader` at 0x33d3e28 (semantic, high); pointer to `BSLightingShader`: refcounted holder of the lighting shader; refcounted holder of the lighting shader (high); type `ptr:BSLightingShader`
 pub const g_LightingShader: u64 = 414613;
 /// `g_LightingShaderInstance` at 0x3436400 (semantic, high); pointer to `BSLightingShader`: instance pointer set by the ctor; instance pointer set by the ctor (high); type `ptr:BSLightingShader`
 pub const g_LightingShaderInstance: u64 = 415094;
+/// `g_LinkedSoundDescriptorIDs` at 0x31df9d8 (semantic, medium); SNAM ids collected at load; a descriptor whose id is listed is precached in its InitItem and removed (medium); type `BSTArray<u32>`
+pub const g_LinkedSoundDescriptorIDs: u64 = 401175;
 /// `g_LipSynchAnimDB_LipAudioInterface` at 0x2079f38 (layout_inference, medium)
 pub const g_LipSynchAnimDB_LipAudioInterface: u64 = 359693;
 /// `g_MagicFavorites` at 0x323a1d0 (layout_inference, medium)
@@ -12209,6 +12231,8 @@ pub const g_MovementParameters_2: u64 = 390291;
 pub const g_MovementPathManagerNullTracker: u64 = 412241;
 /// `g_MovementSelectIdleUtils_SelectFirstIdleFilter` at 0x3350970 (layout_inference, medium)
 pub const g_MovementSelectIdleUtils_SelectFirstIdleFilter: u64 = 412233;
+/// `g_MusicLock` at 0x33508e0 (semantic, high); music lock: owner thread id at +0, recursion count at +4 (high); type `BSSpinLock`
+pub const g_MusicLock: u64 = 412215;
 /// `g_NavMeshObstacleManager_ptr` at 0x21a05a8 (xref_inference, medium)
 pub const g_NavMeshObstacleManager_ptr: u64 = 400442;
 /// `g_NiNode_ptr` at 0x3230510 (xref_inference, medium)
@@ -12231,6 +12255,10 @@ pub const g_NiTMap_TESForm____ptr64_bool: u64 = 359098;
 pub const g_NiTObjectArray_NiPointer_NiMetricsOutputModule: u64 = 388642;
 /// `g_NiTObjectArray_NiPointer_NiRefObject` at 0x20cee08 (layout_inference, medium)
 pub const g_NiTObjectArray_NiPointer_NiRefObject: u64 = 388583;
+/// `g_NoActivationSoundDescriptor` at 0x32119d8 (semantic, medium); descriptor set by the SetNoActivationSound console path; saved in audio global data (medium); type `BGSSoundDescriptorForm*`
+pub const g_NoActivationSoundDescriptor: u64 = 402984;
+/// `g_NoMusic` at 0x20d3cb0 (semantic, high); the placeholder music type (priority 100) (high); type `_anon_67C8711B::NoMusic`
+pub const g_NoMusic: u64 = 390241;
 /// `g_NullMovementState` at 0x3350a58 (layout_inference, medium)
 pub const g_NullMovementState: u64 = 412263;
 /// `g_NullPathBuilderTracker` at 0x3350938 (layout_inference, medium)
@@ -12247,6 +12275,8 @@ pub const g_ParticleShaderInstance: u64 = 415316;
 pub const g_PathManagerPositionPlayerAdapter: u64 = 381076;
 /// `g_Pathing_ptr` at 0x31df208 (xref_inference, medium)
 pub const g_Pathing_ptr: u64 = 401037;
+/// `g_PendingAudioLoads` at 0x3273920 (semantic, medium); AudioLoadForPlaybackTask in flight (medium); type `undefined4`
+pub const g_PendingAudioLoads: u64 = 410105;
 /// `g_PendingConsoleLines` at 0x3256070 (semantic, high); lines queued by QueueConsoleLine for the main loop (high); type `BSTArray of Script[2] (data +0, capacity 0x3256078, size 0x3256080)`
 pub const g_PendingConsoleLines: u64 = 504100;
 /// `g_PerFrameConstantBuffer` at 0x3331f08 (semantic, high); ID3D11Buffer* bound to VS and PS constant slot 12 at every frame start (high); type `undefined8`
@@ -12321,6 +12351,8 @@ pub const g_ScriptKeywordTable: u64 = 361087;
 pub const g_ScriptParamTypeInfo: u64 = 368071;
 /// `g_ScriptRunDepth` at 0x31e016c (semantic, high); reentrancy depth of the bytecode runner (high); type `int`
 pub const g_ScriptRunDepth: u64 = 401342;
+/// `g_ScriptedMusicState_ptr` at 0x31dfd80 (semantic, high); pointer to the scripted music list (0x3211aa0) (high); type `TESAudio::ScriptedMusicState*`
+pub const g_ScriptedMusicState_ptr: u64 = 401264;
 /// `g_SettingT_INIPrefSettingCollection` at 0x20b3068 (layout_inference, medium)
 pub const g_SettingT_INIPrefSettingCollection: u64 = 379825;
 /// `g_SettingT_INIPrefSettingCollection_10` at 0x20b3140 (layout_inference, medium)
@@ -12443,6 +12475,8 @@ pub const g_SkyrimSpeechRecognition_ptr: u64 = 402858;
 pub const g_SkyrimVM: u64 = 403618;
 /// `g_SkyrimVM_ptr_2` at 0x21a36e0 (xref_inference, medium)
 pub const g_SkyrimVM_ptr_2: u64 = 400475;
+/// `g_SoundStatusFreeList` at 0x3273928 (semantic, high); free list of 0x28-byte status entries (high); type `ptr`
+pub const g_SoundStatusFreeList: u64 = 410107;
 /// `g_StaticAvoidNodeManager_ptr` at 0x3230a10 (xref_inference, medium)
 pub const g_StaticAvoidNodeManager_ptr: u64 = 403562;
 /// `g_StencilMaskNodes` at 0x33d3e80 (semantic, low); array of 16-byte entries (node at +8) re-drawn in the depth pre-pass with stencil ref i+1; count at 0x33d3e90 (low); type `undefined8`
@@ -13371,8 +13405,6 @@ pub const g_anon_64C0A5C9_MenuModeChangeListener: u64 = 380427;
 pub const g_anon_64C0A5C9_NonDialogSubCategory: u64 = 380429;
 /// `g_anon_64C0A5C9_NonDialogSubCategory_2` at 0x20b4c10 (layout_inference, medium)
 pub const g_anon_64C0A5C9_NonDialogSubCategory_2: u64 = 380431;
-/// `g_anon_67C8711B_NoMusic` at 0x20d3cb0 (layout_inference, medium)
-pub const g_anon_67C8711B_NoMusic: u64 = 390241;
 /// `g_anon_75DEF1F1_LogWriteThread` at 0x332fd90 (layout_inference, medium)
 pub const g_anon_75DEF1F1_LogWriteThread: u64 = 411309;
 /// `g_anon_76CA921F_ActorItemEquippedToMiscStatHandler` at 0x20b6570 (layout_inference, medium)

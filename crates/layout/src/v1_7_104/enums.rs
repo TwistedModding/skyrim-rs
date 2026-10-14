@@ -1083,6 +1083,255 @@ impl ActorValue {
     }
 }
 
+/// values in data/audiocommandtypes.json (audio pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum AudioCommandType {
+    /// `InitBackend`
+    InitBackend = 1,
+    /// `ShutdownBackend`
+    ShutdownBackend = 2,
+    /// `Play`
+    Play = 4,
+    /// `Pause`
+    Pause = 5,
+    /// `Unpause`
+    Unpause = 6,
+    /// `Stop`
+    Stop = 7,
+    /// `PlayAt`
+    PlayAt = 8,
+    /// `SetFadeAttenuation4000`
+    SetFadeAttenuation4000 = 10,
+    /// `SetFadeAttenuation0`
+    SetFadeAttenuation0 = 11,
+    /// `FadeToCategoryAttenuation`
+    FadeToCategoryAttenuation = 12,
+    /// `SetVolume`
+    SetVolume = 13,
+    /// `SetFrequency`
+    SetFrequency = 14,
+    /// `SetFrequencyVariance`
+    SetFrequencyVariance = 15,
+    /// `ReapplyAllVolumes`
+    ReapplyAllVolumes = 16,
+    /// `Fade`
+    Fade = 18,
+    /// `SetPosition`
+    SetPosition = 19,
+    /// `SetVector20`
+    SetVector20 = 20,
+    /// `SetStaticAttenuation`
+    SetStaticAttenuation = 21,
+    /// `SetAttenuation66`
+    SetAttenuation66 = 22,
+    /// `SetMinMaxDistance`
+    SetMinMaxDistance = 23,
+    /// `SetAttenuationCurve`
+    SetAttenuationCurve = 24,
+    /// `RegisterSound`
+    RegisterSound = 25,
+    /// `Release`
+    Release = 26,
+    /// `StopAll`
+    StopAll = 27,
+    /// `ReleaseObjectAndSetFinishCallback`
+    ReleaseObjectAndSetFinishCallback = 28,
+    /// `FollowNode`
+    FollowNode = 29,
+    /// `StopFollowing`
+    StopFollowing = 30,
+    /// `AddToCache`
+    AddToCache = 38,
+    /// `ParkThread`
+    ParkThread = 39,
+    /// `SetListenerPosition`
+    SetListenerPosition = 40,
+    /// `SetListenerForward`
+    SetListenerForward = 41,
+    /// `SetListenerUp`
+    SetListenerUp = 42,
+    /// `SetFinishCallback`
+    SetFinishCallback = 43,
+    /// `SetCallback2`
+    SetCallback2 = 44,
+    /// `Seek`
+    Seek = 45,
+    /// `SetMuted`
+    SetMuted = 46,
+    /// `SetPriority`
+    SetPriority = 47,
+    /// `ReloadDescriptor`
+    ReloadDescriptor = 48,
+    /// `SetCategory`
+    SetCategory = 49,
+    /// `SetOutputModel`
+    SetOutputModel = 50,
+    /// `ForEachSoundInCategory`
+    ForEachSoundInCategory = 51,
+}
+
+impl AudioCommandType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            1 => Some(Self::InitBackend),
+            2 => Some(Self::ShutdownBackend),
+            4 => Some(Self::Play),
+            5 => Some(Self::Pause),
+            6 => Some(Self::Unpause),
+            7 => Some(Self::Stop),
+            8 => Some(Self::PlayAt),
+            10 => Some(Self::SetFadeAttenuation4000),
+            11 => Some(Self::SetFadeAttenuation0),
+            12 => Some(Self::FadeToCategoryAttenuation),
+            13 => Some(Self::SetVolume),
+            14 => Some(Self::SetFrequency),
+            15 => Some(Self::SetFrequencyVariance),
+            16 => Some(Self::ReapplyAllVolumes),
+            18 => Some(Self::Fade),
+            19 => Some(Self::SetPosition),
+            20 => Some(Self::SetVector20),
+            21 => Some(Self::SetStaticAttenuation),
+            22 => Some(Self::SetAttenuation66),
+            23 => Some(Self::SetMinMaxDistance),
+            24 => Some(Self::SetAttenuationCurve),
+            25 => Some(Self::RegisterSound),
+            26 => Some(Self::Release),
+            27 => Some(Self::StopAll),
+            28 => Some(Self::ReleaseObjectAndSetFinishCallback),
+            29 => Some(Self::FollowNode),
+            30 => Some(Self::StopFollowing),
+            38 => Some(Self::AddToCache),
+            39 => Some(Self::ParkThread),
+            40 => Some(Self::SetListenerPosition),
+            41 => Some(Self::SetListenerForward),
+            42 => Some(Self::SetListenerUp),
+            43 => Some(Self::SetFinishCallback),
+            44 => Some(Self::SetCallback2),
+            45 => Some(Self::Seek),
+            46 => Some(Self::SetMuted),
+            47 => Some(Self::SetPriority),
+            48 => Some(Self::ReloadDescriptor),
+            49 => Some(Self::SetCategory),
+            50 => Some(Self::SetOutputModel),
+            51 => Some(Self::ForEachSoundInCategory),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/soundhandlerequestedstates.json (audio pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum SoundHandleRequestedState {
+    /// `none`
+    none = 0,
+    /// `play`
+    play = 1,
+    /// `stop`
+    stop = 2,
+    /// `pause`
+    pause = 3,
+}
+
+impl SoundHandleRequestedState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::none),
+            1 => Some(Self::play),
+            2 => Some(Self::stop),
+            3 => Some(Self::pause),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/bsmusiceventkinds.json (audio pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum BSMusicEventKind {
+    /// `add`
+    add = 0,
+    /// `removeWithFade`
+    removeWithFade = 1,
+    /// `removeImmediately`
+    removeImmediately = 2,
+    /// `pause`
+    pause = 3,
+    /// `unpause`
+    unpause = 4,
+}
+
+impl BSMusicEventKind {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::add),
+            1 => Some(Self::removeWithFade),
+            2 => Some(Self::removeImmediately),
+            3 => Some(Self::pause),
+            4 => Some(Self::unpause),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/musicplaybackstates.json (audio pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum MusicPlaybackState {
+    /// `ready`
+    ready = 0,
+    /// `playing`
+    playing = 1,
+    /// `paused`
+    paused = 2,
+    /// `finishing`
+    finishing = 3,
+    /// `finished`
+    finished = 4,
+}
+
+impl MusicPlaybackState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::ready),
+            1 => Some(Self::playing),
+            2 => Some(Self::paused),
+            3 => Some(Self::finishing),
+            4 => Some(Self::finished),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/soundplaykinds.json (audio pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum SoundPlayKind {
+    /// `attenuatedType0`
+    attenuatedType0 = 1,
+    /// `unattenuated`
+    unattenuated = 2,
+    /// `attenuatedOtherType`
+    attenuatedOtherType = 4,
+}
+
+impl SoundPlayKind {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            1 => Some(Self::attenuatedType0),
+            2 => Some(Self::unattenuated),
+            4 => Some(Self::attenuatedOtherType),
+            _ => None,
+        }
+    }
+}
+
 /// ProcessEvent result: 0 continue the walk, 1 stop it (events pass).
 #[repr(u32)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
@@ -2917,6 +3166,8 @@ impl SaveKind {
 #[repr(u32)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum SaveLoadEventKind {
+    /// `observed`
+    observed = 0,
     /// `save`
     save = 1,
     /// `load`
@@ -2931,6 +3182,7 @@ impl SaveLoadEventKind {
     #[must_use]
     pub const fn from_u32(value: u32) -> Option<Self> {
         match value {
+            0 => Some(Self::observed),
             1 => Some(Self::save),
             2 => Some(Self::load),
             3 => Some(Self::quicksave),
@@ -3369,6 +3621,38 @@ impl ActorState_flags1 {
     }
 }
 
+/// Named bits of `BGSMusicType.flags` (audio pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BGSMusicType_flags(pub u32);
+
+impl BGSMusicType_flags {
+    /// finishAfterTrack (medium)
+    pub const FINISH_AFTER_TRACK: Self = Self(0x1);
+    /// displaceImmediately (low)
+    pub const DISPLACE_IMMEDIATELY: Self = Self(0x2);
+    /// playTrackSequence (medium)
+    pub const PLAY_TRACK_SEQUENCE: Self = Self(0x4);
+    /// keepSequenceOrder (medium)
+    pub const KEEP_SEQUENCE_ORDER: Self = Self(0x8);
+    /// pendingRemoval (high)
+    pub const PENDING_REMOVAL: Self = Self(0x10);
+    /// duckPrevious (medium)
+    pub const DUCK_PREVIOUS: Self = Self(0x20);
+    /// addOnlyIfTop (medium)
+    pub const ADD_ONLY_IF_TOP: Self = Self(0x40);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `BGSSaveLoadGame.stateFlags` (save pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -3385,6 +3669,102 @@ impl BGSSaveLoadGame_stateFlags {
     pub const PLACING_PLAYER: Self = Self(0x20);
     /// placedAtFallback (medium)
     pub const PLACED_AT_FALLBACK: Self = Self(0x40);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BGSSoundCategory.flags` (audio pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BGSSoundCategory_flags(pub u32);
+
+impl BGSSoundCategory_flags {
+    /// mutedByPlayerStateToggle (medium)
+    pub const MUTED_BY_PLAYER_STATE_TOGGLE: Self = Self(0x1);
+    /// menuCategory (high)
+    pub const MENU_CATEGORY: Self = Self(0x2);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BGSSoundOutput.flags` (audio pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BGSSoundOutput_flags(pub u32);
+
+impl BGSSoundOutput_flags {
+    /// attenuatesWithDistance (high)
+    pub const ATTENUATES_WITH_DISTANCE: Self = Self(0x1);
+    /// allowAllSends (medium)
+    pub const ALLOW_ALL_SENDS: Self = Self(0x2);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BGSStandardSoundDef.flags` (audio pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BGSStandardSoundDef_flags(pub u32);
+
+impl BGSStandardSoundDef_flags {
+    /// legacyFlag4 (low)
+    pub const LEGACY_FLAG4: Self = Self(0x800);
+    /// legacyFlag25 (low)
+    pub const LEGACY_FLAG25: Self = Self(0x1000);
+    /// legacyFlag26 (low)
+    pub const LEGACY_FLAG26: Self = Self(0x2000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BSAudioManager.flags` (audio pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BSAudioManager_flags(pub u32);
+
+impl BSAudioManager_flags {
+    /// running (high)
+    pub const RUNNING: Self = Self(0x1);
+    /// backendReady (high)
+    pub const BACKEND_READY: Self = Self(0x2);
+    /// backendFailed (high)
+    pub const BACKEND_FAILED: Self = Self(0x4);
+    /// cacheEnabled (medium)
+    pub const CACHE_ENABLED: Self = Self(0x8);
+    /// audioDisabled (high)
+    pub const AUDIO_DISABLED: Self = Self(0x20);
 
     #[must_use]
     pub const fn bits(self) -> u32 {
