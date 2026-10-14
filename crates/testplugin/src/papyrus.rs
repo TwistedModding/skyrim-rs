@@ -30,8 +30,12 @@ static DISPATCHES_OK: AtomicU32 = AtomicU32::new(0);
 /// What the dispatch callbacks received: `(function, result, thread)`.
 static RESULTS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 
+fn os_thread() -> u32 {
+    unsafe { windows_sys::Win32::System::Threading::GetCurrentThreadId() }
+}
+
 fn on_result(function: &'static str) -> skyrim::papyrus::ResultFn {
-    Box::new(move |result| RESULTS.lock().unwrap().push(format!("{function} -> {result:?} on {:?}", std::thread::current().id())))
+    Box::new(move |result| RESULTS.lock().unwrap().push(format!("{function} -> {result:?} on thread {}", os_thread())))
 }
 
 pub const REGISTER: &[(&str, Test)] = &[
@@ -62,7 +66,7 @@ struct Call {
 
 fn record(name: &'static str, detail: String) {
     let stack_id = current_stack_id().unwrap_or(0);
-    log!("native {name} (stack {stack_id}): {detail}");
+    log!("native {name} (stack {stack_id}, thread {}): {detail}", os_thread());
     CALLS.lock().unwrap().push(Call { name, stack_id, detail });
 }
 
@@ -284,7 +288,7 @@ fn bind_object() -> Result<String, String> {
     vm.bind_object(&thread, &created, h);
     let bound = vm.find_bound_object(h, REF_CLASS).ok_or("FindBoundObject(player, SkyrimRsTestRef) found nothing after BindObject")?;
     check(core::ptr::from_ref(&*bound) == core::ptr::from_ref(&*created) && bound.handle() == h, &format!("found {bound:?}, created {created:?}"))?;
-    Ok(format!("created {REF_CLASS} unbound, BindObject(player) -> FindBoundObject returns it: {bound:?}"))
+    Ok(format!("created {REF_CLASS} unbound, BindObject(player) -> FindBoundObject returns it: {bound:?}; main thread {}", os_thread()))
 }
 
 fn game_thread() -> Result<String, String> {

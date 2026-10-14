@@ -20,7 +20,8 @@
 //! [`GameThread::assume`] from an SKSE message handler, task or event sink. Dispatch takes typed
 //! arguments (`IFunctionArguments` filling the engine's `BSScrapArray<Variable>`) and a closure the
 //! engine calls with the result (an `IStackCallbackFunctor` of this module's own) once the call
-//! completes, on the main thread in the VM's next update. A script object of a mod's own class is
+//! completes, on the VM thread that completed it (not the main thread), so the closure synchronizes
+//! what it touches. A script object of a mod's own class is
 //! created with [`VirtualMachine::create_object`] and bound to a form with
 //! [`VirtualMachine::bind_object`], after which the engine and `DevBench` call its methods,
 //! natives included, like any attached script's.
@@ -990,8 +991,8 @@ struct ArgsVtable {
     supply: unsafe extern "C" fn(this: *mut Args, out: *mut c_void) -> bool,
 }
 
-/// What a dispatch's callback does with the result: called once, on the main thread, with a value
-/// valid only during the call.
+/// What a dispatch's callback does with the result: called once, on the VM thread that completed
+/// the call, with a value valid only during the call.
 pub type ResultFn = Box<dyn FnOnce(&Variable) + Send>;
 
 #[repr(C)]
@@ -1260,8 +1261,8 @@ impl VirtualMachine {
     }
 
     /// Slot 38 `DispatchStaticCall` of `class.function(args)`: the call is queued on a new stack and
-    /// `on_result` runs with its result when it completes (the VM's next update, main thread; at once
-    /// with None for an empty function). Returns what the slot returned. The class's script must be
+    /// `on_result` runs with its result when it completes, on the VM thread that ran it (at once with
+    /// None for an empty function). Returns what the slot returned. The class's script must be
     /// loadable (`script_type` semantics apply).
     #[must_use]
     pub fn dispatch_static_call(&self, _: &GameThread, class: &str, function: &str, args: &[Variable], on_result: ResultFn) -> bool {

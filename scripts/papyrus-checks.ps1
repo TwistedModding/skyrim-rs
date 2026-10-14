@@ -7,7 +7,7 @@ $Phases = "register", "postLoadGame", "saveGame"
 $pluginLines = Get-Content "$OutDir\$PluginLog"
 $modLog = "$OutDir\skyrim-rs-equip-counter.log"
 $modLines = if (Test-Path $modLog) { Get-Content $modLog } else { @() }
-function NativeLine($name, $needle) { ($pluginLines | Where-Object { $_ -match "^native $name \(stack \d+\): .*$([regex]::Escape($needle))" } | Select-Object -First 1) }
+function NativeLine($name, $needle) { ($pluginLines | Where-Object { $_ -match "^native $name \(stack \d+, thread \d+\): .*$([regex]::Escape($needle))" } | Select-Object -First 1) }
 $health = Captured (NativeLine "PlayerHealth" "ACHR 00000014") '-> ([0-9.]+)$'
 
 $rows = @(
