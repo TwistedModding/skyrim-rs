@@ -59,7 +59,7 @@ function Wait-Run($Tool, $RunId) {
 }
 
 if (-not $Replay -and -not $Steps) { throw "give -Replay <recording> or -Steps <steps.json>" }
-if (Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue) { throw "SkyrimSE is already running" }
+& "$PSScriptRoot\game-free.ps1"
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $Shell = New-Object -ComObject WScript.Shell
 $Game = $null
