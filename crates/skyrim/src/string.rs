@@ -82,6 +82,11 @@ impl BSFixedString {
         unsafe { &*p.cast::<Self>() }
     }
 
+    /// For an engine out parameter that stores one reference into the string.
+    pub(crate) fn as_mut_ptr(&mut self) -> *mut classes::BSFixedString {
+        &raw mut self.0
+    }
+
     #[must_use]
     pub fn raw(&self) -> &classes::BSFixedString {
         &self.0

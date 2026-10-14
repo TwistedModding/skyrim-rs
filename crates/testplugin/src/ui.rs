@@ -46,6 +46,8 @@ static NOTIFICATIONS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 static PROBE: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static PROBE_PENDING: AtomicBool = AtomicBool::new(false);
 static HIDE_PENDING: AtomicBool = AtomicBool::new(false);
+/// A show (1) or hide (2) of the suite's menu asked for by the input suite's console command.
+static REQUEST: AtomicU32 = AtomicU32::new(0);
 
 static CREATED: AtomicU32 = AtomicU32::new(0);
 static POST_CREATED: AtomicU32 = AtomicU32::new(0);
@@ -160,6 +162,22 @@ unsafe extern "C" fn render_detour(ui: *mut classes::EventSourceHolder_MenuOpenC
     {
         queue.hide(MENU);
     }
+    match (REQUEST.swap(0, Ordering::Relaxed), UiMessageQueue::get()) {
+        (1, Some(queue)) => queue.show(MENU),
+        (2, Some(queue)) => queue.hide(MENU),
+        _ => {}
+    }
+}
+
+/// Queues a show or hide of the suite's menu from the next menu draw (the thread the RE run saw
+/// drawing every menu), for callers on other threads.
+pub fn request(show: bool) {
+    REQUEST.store(if show { 1 } else { 2 }, Ordering::Relaxed);
+}
+
+/// `MenuOpenCloseEvent`s of the suite's menu since the last load: (opening, closing).
+pub fn own_menu_events() -> (u32, u32) {
+    (OPEN_EVENTS.load(Ordering::Relaxed), CLOSE_EVENTS.load(Ordering::Relaxed))
 }
 
 unsafe extern "C" fn add_detour(queue: *mut classes::UIMessageQueue, name: *const classes::BSFixedString, kind: u32, data: *mut classes::IUIMessageData) {

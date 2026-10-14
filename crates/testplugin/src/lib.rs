@@ -11,7 +11,9 @@
 //! `animation` post-hooks the pose write and the world update, counts the graph events of the
 //! player's graph 0 and samples the head bone. `ui` registers its menu and detours the menu draw,
 //! the message queue and the HUD notification at `DataLoaded`, reads the UI after a load and
-//! checks what it saw at the save. `scripts/verify.ps1` compares the log against `DevBench`'s answers.
+//! checks what it saw at the save. `input` records the keystrokes `DevBench` injects and adds the
+//! `SkyrimRsTest` console command, which opens and closes the ui suite's menu.
+//! `scripts/verify.ps1` compares the log against `DevBench`'s answers.
 //!
 //! A run mode in `Data\SKSE\Plugins\skyrim-rs-test.mode` next to the DLL bisects a crash:
 //! `nohook` skips the render detours, `passive` installs them but never counts.
@@ -52,6 +54,7 @@ mod crash;
 mod events;
 mod forms;
 mod frame;
+mod input;
 mod papyrus;
 mod render;
 mod ui;
@@ -100,6 +103,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
                 run("frame", "dataLoaded", &[("install", frame::install)]);
                 run("animation", "dataLoaded", &[("install", animation::install)]);
                 run("ui", "dataLoaded", &[("install", ui::install)]);
+                run("input", "dataLoaded", &[("install", input::install)]);
             }
         }
         skse::MessagingInterface::POST_LOAD_GAME => {
@@ -118,6 +122,8 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             if mode() != "nohook" {
                 ui::reset();
                 run("ui", "postLoadGame", ui::TESTS);
+                input::reset();
+                run("input", "postLoadGame", input::TESTS);
             }
             render::SAVES.store(0, Ordering::Relaxed);
         }
@@ -135,6 +141,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             run("frame", &format!("save{save}"), &[frame::TESTS, frame::SAMPLE_TESTS].concat());
             run("animation", &format!("save{save}"), &[animation::TESTS, animation::RUN_TESTS].concat());
             run("ui", "saveGame", ui::SAVE_TESTS);
+            run("input", "saveGame", input::SAVE_TESTS);
         }
         _ => {}
     }
@@ -176,7 +183,7 @@ fn load(skse: &skse::Interface) -> bool {
         log!("FAIL init: {e}");
         return false;
     }
-    log!("PASS init: skyrim::forms, skyrim::actors, skyrim::events, skyrim::papyrus, skyrim::render and skyrim::ui ids resolved, module base {:#x}", skyrim::reloc().base());
+    log!("PASS init: skyrim::forms, skyrim::actors, skyrim::events, skyrim::papyrus, skyrim::render, skyrim::ui and skyrim::input ids resolved, module base {:#x}", skyrim::reloc().base());
     match (skse.messaging(), skse.papyrus()) {
         (Some(m), Some(p)) if m.listen_skse(skse.plugin_handle(), on_message) && p.register(on_register) => true,
         _ => {

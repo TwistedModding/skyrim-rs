@@ -4,7 +4,7 @@
 # the .pex files for the run; the shadows suite installs the first-person-shadows mod next to the test plugin.
 # See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
