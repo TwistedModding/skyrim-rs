@@ -26413,23 +26413,32 @@ impl BGSListForm_vtable {
 pub struct BGSLoadFormBuffer_vtable {
     /// `BGSLoadFormBuffer::vdtor` at 0x1c7160 (slot_propagation, medium); signature (low): `BGSLoadFormBuffer * vdtor(BGSLoadFormBuffer * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSLoadFormBuffer::vfunc_1` at 0x637580 (rtti, high); signature (high): `undefined1 vfunc_1(BGSLoadFormBuffer * this)`
+    /// `BGSLoadFormBuffer::GetVersion` at 0x637580 (semantic, high); signature (untiered): `undefined1 GetVersion(BGSLoadFormBuffer * this)`; `GetVersion`: the record's version byte (high); semantic signature: `u8 (BGSLoadFormBuffer* this)`
     pub slot_1: *const c_void,
 }
 impl BGSLoadFormBuffer_vtable {
     pub const ID: u64 = 187480;
+    pub const SLOT_GetVersion: usize = 1;
+    /// Slot 1 as `BGSLoadFormBuffer_vtable_GetVersion`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetVersion(&self) -> Option<BGSLoadFormBuffer_vtable_GetVersion> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSLoadFormBuffer_vtable_GetVersion>>(self.slot_1) }
+    }
 }
+/// `BGSLoadFormBuffer::GetVersion`, slot 1: the record's version byte (high).
+pub type BGSLoadFormBuffer_vtable_GetVersion = unsafe extern "C" fn(this: *mut classes::BGSLoadFormBuffer) -> u8;
 
 /// `BGSLoadGameBuffer::vftable` at 0x190bf98, id 206715 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct BGSLoadGameBuffer_vtable {
     /// `BGSLoadGameBuffer::vdtor` at 0x638010 (layout_inference, medium); signature (low): `BGSLoadGameBuffer * vdtor(BGSLoadGameBuffer * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSLoadGameBuffer::vfunc_1` at 0x637a90 (rtti, high); signature (low): `undefined vfunc_1(void)`
+    /// `BGSLoadGameBuffer::GetVersion` at 0x637a90 (semantic, medium); signature (untiered): `undefined GetVersion(void)`; `GetVersion`: version of the save being read (medium); semantic signature: `u8 (BGSLoadGameBuffer*)`
     pub slot_1: *const c_void,
 }
 impl BGSLoadGameBuffer_vtable {
     pub const ID: u64 = 206715;
+    pub const SLOT_GetVersion: usize = 1;
 }
 
 /// `BGSLocAlias::vftable` at 0x1856120, id 195254 (rtti, high); 4 slots.
@@ -37851,16 +37860,33 @@ impl BGSReverbParameters_vtable_20 {
 pub struct BGSSaveFormBuffer_vtable {
     /// `BGSSaveFormBuffer::vdtor` at 0x6398b0 (slot_propagation, medium); signature (low): `BGSSaveFormBuffer * vdtor(BGSSaveFormBuffer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSSaveFormBuffer::vfunc_1` at 0x6398f0 (rtti, high); signature (high): `undefined8 vfunc_1(BGSSaveFormBuffer * this)`
+    /// `BGSSaveFormBuffer::GetForm` at 0x6398f0 (semantic, high); signature (untiered): `undefined8 GetForm(BGSSaveFormBuffer * this)`; `GetForm`: the form being saved (high); semantic signature: `TESForm* (BGSSaveFormBuffer* this)`
     pub slot_1: *const c_void,
-    /// `BGSSaveFormBuffer::vfunc_2` at 0x639830 (rtti, high); signature (high): `undefined vfunc_2(BGSSaveFormBuffer * this)`
+    /// `BGSSaveFormBuffer::GetReference` at 0x639830 (semantic, medium); signature (untiered): `undefined GetReference(BGSSaveFormBuffer * this)`; `GetReference`: slot 1 then TESForm slot 44 (0x160) (medium); semantic signature: `TESObjectREFR* (BGSSaveFormBuffer* this)`
     pub slot_2: *const c_void,
-    /// `BGSSaveFormBuffer::vfunc_3` at 0x639860 (rtti, high); signature (high): `longlong vfunc_3(BGSSaveFormBuffer * this)`
+    /// `BGSSaveFormBuffer::GetActor` at 0x639860 (semantic, high); signature (untiered): `longlong GetActor(BGSSaveFormBuffer * this)`; `GetActor`: slot 2 when formType == 0x3e (high); semantic signature: `Actor* (BGSSaveFormBuffer* this)`
     pub slot_3: *const c_void,
 }
 impl BGSSaveFormBuffer_vtable {
     pub const ID: u64 = 206723;
+    pub const SLOT_GetForm: usize = 1;
+    /// Slot 1 as `BGSSaveFormBuffer_vtable_GetForm`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetForm(&self) -> Option<BGSSaveFormBuffer_vtable_GetForm> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSaveFormBuffer_vtable_GetForm>>(self.slot_1) }
+    }
+    pub const SLOT_GetReference: usize = 2;
+    pub const SLOT_GetActor: usize = 3;
+    /// Slot 3 as `BGSSaveFormBuffer_vtable_GetActor`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetActor(&self) -> Option<BGSSaveFormBuffer_vtable_GetActor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSaveFormBuffer_vtable_GetActor>>(self.slot_3) }
+    }
 }
+/// `BGSSaveFormBuffer::GetForm`, slot 1: the form being saved (high).
+pub type BGSSaveFormBuffer_vtable_GetForm = unsafe extern "C" fn(this: *mut classes::BGSSaveFormBuffer) -> *mut classes::TESForm;
+/// `BGSSaveFormBuffer::GetActor`, slot 3: slot 2 when formType == 0x3e (high).
+pub type BGSSaveFormBuffer_vtable_GetActor = unsafe extern "C" fn(this: *mut classes::BGSSaveFormBuffer) -> *mut classes::Actor;
 
 /// `BGSSaveGameBuffer::vftable` at 0x190c3f8, id 206725 (rtti, high); 4 slots.
 #[repr(C)]
@@ -37881,13 +37907,15 @@ impl BGSSaveGameBuffer_vtable {
 /// `BGSSaveLoadManager::vftable` at 0x190ad28, id 206622 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct BGSSaveLoadManager_vtable {
-    /// `BGSSaveLoadManager::vdtor` at 0x62dd90 (slot_propagation, medium); signature (low): `BGSSaveLoadManager * vdtor(BGSSaveLoadManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSSaveLoadManager::vdtor` at 0x62dd90 (semantic, high); signature (low): `BGSSaveLoadManager * vdtor(BGSSaveLoadManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: destructor (high); semantic signature: `void* (BGSSaveLoadManager*, u32)`
     pub slot_0: *const c_void,
-    /// `BGSSaveLoadManager::vfunc_1` at 0x626380 (rtti, high); signature (low): `undefined8 vfunc_1(BGSSaveLoadManager * this, LoadRequest * param_1, ulonglong param_2, ulonglong param_3)`
+    /// `BGSSaveLoadManager::ProcessSaveDataEvent` at 0x626380 (semantic, high); signature (untiered): `undefined8 ProcessSaveDataEvent(BGSSaveLoadManager * this, LoadRequest * param_1, ulonglong param_2, ulonglong param_3)`; `ProcessSaveDataEvent`: completion of a BSSaveDataSystemUtility operation: op 0 (file read) -> build LoadRequest 0xd0000010 and queue it, notify {2,1}; op 1 (file written) -> rotate .bak copies (iSaveGameBackupCount), rename '<name>.ess.tmp' to '<name>.ess', add the list entry, SetCurrentSaveName, queue deletion of the replaced autosave/quicksave (0x40000004), notify {1,1}; op 2 (delete) -> nothing (high); semantic signature: `BSEventNotifyControl (BGSSaveLoadManager*, const BSSaveDataEvent*, BSTEventSource<BSSaveDataEvent>*)`
     pub slot_1: *const c_void,
 }
 impl BGSSaveLoadManager_vtable {
     pub const ID: u64 = 206622;
+    pub const SLOT_vdtor: usize = 0;
+    pub const SLOT_ProcessSaveDataEvent: usize = 1;
 }
 
 /// `BGSSaveLoadManager::vftable_8` at 0x190ad40, id 206624 (rtti, high); 2 slots.
@@ -37917,15 +37945,18 @@ impl BGSSaveLoadManager_vtable_10 {
 /// `BGSSaveLoadManager::Thread::vftable` at 0x190ad08, id 206620 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct BGSSaveLoadManager__Thread_vtable {
-    /// `BGSSaveLoadManager::Thread::vdtor` at 0x62e290 (slot_propagation, medium); signature (low): `Thread * vdtor(Thread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSSaveLoadManager::Thread::vdtor` at 0x62e290 (semantic, high); signature (low): `Thread * vdtor(Thread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: destructor (high); semantic signature: ``
     pub slot_0: *const c_void,
-    /// `BGSSaveLoadManager::Thread::vfunc_1` at 0x62a030 (rtti, high); signature (low): `undefined8 vfunc_1(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSSaveLoadManager::Thread::Run` at 0x62a030 (semantic, high); signature (untiered): `undefined8 Run(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Run`: thread body (high); semantic signature: `u32 (Thread*)`
     pub slot_1: *const c_void,
-    /// `BGSSaveLoadManager::Thread::vfunc_2` at 0x630420 (rtti, high); signature (high): `undefined vfunc_2(Thread * this)`
+    /// `BGSSaveLoadManager::Thread::vfunc_2` at 0x630420 (rtti, high); signature (high): `undefined vfunc_2(Thread * this)`; `vfunc_2`:  (low); semantic signature: ``
     pub slot_2: *const c_void,
 }
 impl BGSSaveLoadManager__Thread_vtable {
     pub const ID: u64 = 206620;
+    pub const SLOT_vdtor: usize = 0;
+    pub const SLOT_Run: usize = 1;
+    pub const SLOT_vfunc_2: usize = 2;
 }
 
 /// `BGSSaveLoadStatsMap::vftable` at 0x190ba18, id 206679 (rtti, high); 7 slots.
@@ -138741,9 +138772,9 @@ pub type FirstPersonState_vtable_Begin = unsafe extern "C" fn(this: *mut classes
 /// `FirstPersonState::End`, slot 2: sittingYaw = 0, unregisters the handler (high).
 pub type FirstPersonState_vtable_End = unsafe extern "C" fn(this: *mut classes::FirstPersonState);
 /// `FirstPersonState::SaveGame`, slot 6: +0x68, +0x6c, +0x70, +0x89, +0x8a (high).
-pub type FirstPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::FirstPersonState, buffer: *mut classes::partial::BGSSaveFormBuffer);
+pub type FirstPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::FirstPersonState, buffer: *mut classes::BGSSaveFormBuffer);
 /// `FirstPersonState::LoadGame`, slot 7: same, the last four only for buffer version > 0x14 (high).
-pub type FirstPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::FirstPersonState, buffer: *mut classes::partial::BGSLoadFormBuffer);
+pub type FirstPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::FirstPersonState, buffer: *mut classes::BGSLoadFormBuffer);
 
 /// `FirstPersonState::vftable_20` at 0x196d940, id 214857 (rtti, high); 7 slots.
 #[repr(C)]
@@ -185203,9 +185234,9 @@ pub struct SkyrimScript__BaseHandleReaderWriter_vtable {
     pub slot_0: *const c_void,
     /// `SkyrimScript::BaseHandleReaderWriter::vfunc_1` at 0x9ba870 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
-    /// `SkyrimScript::BaseHandleReaderWriter::vfunc_2` at 0x9ba880 (rtti, medium); signature (low): `undefined8 vfunc_2(BaseHandleReaderWriter * this, longlong * param_1, ulonglong param_2)`
+    /// `BaseHandleReaderWriter::WriteHandle` at 0x9ba880 (semantic, high); signature (untiered): `undefined8 WriteHandle(void * this, longlong * param_1, ulonglong param_2)`
     pub slot_2: *const c_void,
-    /// `SkyrimScript::BaseHandleReaderWriter::vfunc_3` at 0x9ba920 (rtti, medium); signature (low): `undefined8 vfunc_3(BaseHandleReaderWriter * this, longlong * param_1, ulonglong * param_2)`
+    /// `BaseHandleReaderWriter::ReadHandle` at 0x9ba920 (semantic, high); signature (untiered): `undefined8 ReadHandle(void * this, longlong * param_1, ulonglong * param_2)`
     pub slot_3: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_4: *const c_void,
@@ -185573,9 +185604,9 @@ pub struct SkyrimScript__DataFileHandleReaderWriter_vtable {
     pub slot_0: *const c_void,
     /// `SkyrimScript::BaseHandleReaderWriter::vfunc_1` at 0x9ba870 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
-    /// `SkyrimScript::BaseHandleReaderWriter::vfunc_2` at 0x9ba880 (rtti, medium); signature (low): `undefined8 vfunc_2(BaseHandleReaderWriter * this, longlong * param_1, ulonglong param_2)`
+    /// `BaseHandleReaderWriter::WriteHandle` at 0x9ba880 (semantic, high); signature (untiered): `undefined8 WriteHandle(void * this, longlong * param_1, ulonglong param_2)`
     pub slot_2: *const c_void,
-    /// `SkyrimScript::BaseHandleReaderWriter::vfunc_3` at 0x9ba920 (rtti, medium); signature (low): `undefined8 vfunc_3(BaseHandleReaderWriter * this, longlong * param_1, ulonglong * param_2)`
+    /// `BaseHandleReaderWriter::ReadHandle` at 0x9ba920 (semantic, high); signature (untiered): `undefined8 ReadHandle(void * this, longlong * param_1, ulonglong * param_2)`
     pub slot_3: *const c_void,
     /// `SkyrimScript::DataFileHandleReaderWriter::vfunc_4` at 0x9baa60 (rtti, high); signature (low): `bool vfunc_4(DataFileHandleReaderWriter * this, longlong * param_1, uint param_2)`
     pub slot_4: *const c_void,
@@ -185873,9 +185904,9 @@ pub struct SkyrimScript__SaveFileHandleReaderWriter_vtable {
     pub slot_0: *const c_void,
     /// `SkyrimScript::BaseHandleReaderWriter::vfunc_1` at 0x9ba870 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
-    /// `SkyrimScript::BaseHandleReaderWriter::vfunc_2` at 0x9ba880 (rtti, medium); signature (low): `undefined8 vfunc_2(BaseHandleReaderWriter * this, longlong * param_1, ulonglong param_2)`
+    /// `BaseHandleReaderWriter::WriteHandle` at 0x9ba880 (semantic, high); signature (untiered): `undefined8 WriteHandle(void * this, longlong * param_1, ulonglong param_2)`
     pub slot_2: *const c_void,
-    /// `SkyrimScript::BaseHandleReaderWriter::vfunc_3` at 0x9ba920 (rtti, medium); signature (low): `undefined8 vfunc_3(BaseHandleReaderWriter * this, longlong * param_1, ulonglong * param_2)`
+    /// `BaseHandleReaderWriter::ReadHandle` at 0x9ba920 (semantic, high); signature (untiered): `undefined8 ReadHandle(void * this, longlong * param_1, ulonglong * param_2)`
     pub slot_3: *const c_void,
     /// `SkyrimScript::SaveFileHandleReaderWriter::vfunc_4` at 0x9bab70 (rtti, high); signature (low): `undefined vfunc_4(SaveFileHandleReaderWriter * this, longlong * param_1, uint param_2)`
     pub slot_4: *const c_void,
@@ -203011,9 +203042,9 @@ pub type ThirdPersonState_vtable_Begin = unsafe extern "C" fn(this: *mut classes
 /// `ThirdPersonState::End`, slot 2: resets freeRotation (unless +0xdf), unregisters the handler, releases animatedNode, zeroes animatedBlend (high).
 pub type ThirdPersonState_vtable_End = unsafe extern "C" fn(this: *mut classes::ThirdPersonState);
 /// `ThirdPersonState::SaveGame`, slot 6: targetOffset, targetZoom, freeRotation, freeRotationEnabled, savedZoom, animatedNodeName (high).
-pub type ThirdPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::partial::BGSSaveFormBuffer);
+pub type ThirdPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::BGSSaveFormBuffer);
 /// `ThirdPersonState::LoadGame`, slot 7: reads the same and copies target values into the current ones (high).
-pub type ThirdPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::partial::BGSLoadFormBuffer);
+pub type ThirdPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::BGSLoadFormBuffer);
 /// `ThirdPersonState::SetCombatOffsets`, slot 11: targetOffset from fOverShoulderCombatPosX/AddY/PosZ or fOverShoulderPosX/0/PosZ (high).
 pub type ThirdPersonState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, combat: bool);
 /// `ThirdPersonState::UpdateRotation`, slot 14: targetYaw from the target heading; with +0xe1 and free look adds freeRotation; rotation = Euler(pitch, 0, currentYaw) (high).
@@ -206307,15 +206338,15 @@ pub struct _anon_14F04957__Win32FileType_vtable {
     pub slot_4: *const c_void,
     /// `BSFile::vfunc_5` at 0xebf7a0 (rtti, medium); signature (low): `undefined vfunc_5(BSFile * this, char param_1)`
     pub slot_5: *const c_void,
-    /// `_anon_14F04957::Win32FileType::vfunc_6` at 0x159d8c0 (rtti, high); signature (low): `int vfunc_6(Win32FileType * this, int param_1, int param_2)`
+    /// `_anon_14F04957::Win32FileType::Seek` at 0x159d8c0 (semantic, medium); signature (untiered): `int Seek(Win32FileType * this, int param_1, int param_2)`; `Seek`: set position (medium); semantic signature: `void (Win32FileType*, i32 offset, i32 origin /*0 set, 1 current*/)`
     pub slot_6: *const c_void,
     /// `BSFile::vfunc_7` at 0xebf750 (rtti, medium); signature (high): `int vfunc_7(BSFile * this)`
     pub slot_7: *const c_void,
-    /// `_anon_14F04957::Win32FileType::vfunc_8` at 0x159d770 (rtti, high); signature (high): `bool vfunc_8(Win32FileType * this)`
+    /// `_anon_14F04957::Win32FileType::Open` at 0x159d770 (semantic, medium); signature (untiered): `bool Open(Win32FileType * this)`; `Open`: open; failure releases the stream (medium); semantic signature: `bool (Win32FileType*, u32, u32)`
     pub slot_8: *const c_void,
     /// `BSFile::vfunc_9` at 0xebee00 (rtti, medium); signature (low): `undefined1 vfunc_9(BSFile * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_9: *const c_void,
-    /// `_anon_14F04957::Win32FileType::vfunc_10` at 0x159d440 (rtti, high); signature (high): `undefined4 vfunc_10(Win32FileType * this)`
+    /// `_anon_14F04957::Win32FileType::GetSize` at 0x159d440 (semantic, medium); signature (untiered): `undefined4 GetSize(Win32FileType * this)`; `GetSize`: bytes in the memory buffer (medium); semantic signature: `u32 (Win32FileType*)`
     pub slot_10: *const c_void,
     /// `BSFile::vfunc_11` at 0xebf160 (rtti, medium); signature (low): `uint vfunc_11(BSFile * this, longlong * param_1, uint param_2)`
     pub slot_11: *const c_void,
@@ -206342,6 +206373,9 @@ pub struct _anon_14F04957__Win32FileType_vtable {
 }
 impl _anon_14F04957__Win32FileType_vtable {
     pub const ID: u64 = 255941;
+    pub const SLOT_Seek: usize = 6;
+    pub const SLOT_Open: usize = 8;
+    pub const SLOT_GetSize: usize = 10;
 }
 
 /// `_anon_1613A816::ConsoleHotkeyManager::vftable` at 0x1970b20, id 465437 (rtti, high); 2 slots.
@@ -211330,41 +211364,45 @@ impl bgs__saveload__BuildSaveListRequest_vtable {
 /// `bgs::saveload::LoadEntryRequest::vftable` at 0x190ac18, id 206602 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct bgs__saveload__LoadEntryRequest_vtable {
-    /// `bgs::saveload::LoadEntryRequest::vdtor` at 0x62df80 (slot_propagation, medium); signature (low): `LoadEntryRequest * vdtor(LoadEntryRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `bgs::saveload::LoadEntryRequest::vdtor` at 0x62df80 (semantic, high); signature (low): `LoadEntryRequest * vdtor(LoadEntryRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`:  (high); semantic signature: ``
     pub slot_0: *const c_void,
 }
 impl bgs__saveload__LoadEntryRequest_vtable {
     pub const ID: u64 = 206602;
+    pub const SLOT_vdtor: usize = 0;
 }
 
 /// `bgs::saveload::LoadRequest::vftable` at 0x190ac08, id 206600 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct bgs__saveload__LoadRequest_vtable {
-    /// `bgs::saveload::LoadRequest::vdtor` at 0x62e200 (slot_propagation, medium); signature (low): `LoadRequest * vdtor(LoadRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `bgs::saveload::LoadRequest::vdtor` at 0x62e200 (semantic, high); signature (low): `LoadRequest * vdtor(LoadRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`:  (high); semantic signature: ``
     pub slot_0: *const c_void,
 }
 impl bgs__saveload__LoadRequest_vtable {
     pub const ID: u64 = 206600;
+    pub const SLOT_vdtor: usize = 0;
 }
 
 /// `bgs::saveload::Request::vftable` at 0x190b620, id 206668 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct bgs__saveload__Request_vtable {
-    /// `bgs::saveload::Request::vdtor` at 0x632bc0 (layout_inference, medium); signature (low): `Request * vdtor(Request * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `bgs::saveload::Request::vdtor` at 0x632bc0 (semantic, high); signature (low): `Request * vdtor(Request * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: destructor (high); semantic signature: ``
     pub slot_0: *const c_void,
 }
 impl bgs__saveload__Request_vtable {
     pub const ID: u64 = 206668;
+    pub const SLOT_vdtor: usize = 0;
 }
 
 /// `bgs::saveload::SaveOperationRequest::vftable` at 0x190abf8, id 206598 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct bgs__saveload__SaveOperationRequest_vtable {
-    /// `bgs::saveload::SaveOperationRequest::vdtor` at 0x62e240 (slot_propagation, medium); signature (low): `SaveOperationRequest * vdtor(SaveOperationRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `bgs::saveload::SaveOperationRequest::vdtor` at 0x62e240 (semantic, high); signature (low): `SaveOperationRequest * vdtor(SaveOperationRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`:  (high); semantic signature: ``
     pub slot_0: *const c_void,
 }
 impl bgs__saveload__SaveOperationRequest_vtable {
     pub const ID: u64 = 206598;
+    pub const SLOT_vdtor: usize = 0;
 }
 
 /// `bhkAabbPhantom::vftable` at 0x1827460, id 190245 (rtti, high); 51 slots.

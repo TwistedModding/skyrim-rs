@@ -11487,7 +11487,9 @@ pub const g_BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackage
 pub const g_BGSParticleArrayAttach: u64 = 359347;
 /// `g_BGSPlayerMusicChanger` at 0x3211a20 (layout_inference, medium)
 pub const g_BGSPlayerMusicChanger: u64 = 402995;
-/// `g_BGSSaveLoadManager_ptr` at 0x3223e60 (xref_inference, medium); pointer to `BGSSaveLoadManager`: object has BSTEventSource<BGSSaveLoadManagerEvent> at 0x18, as RTTI class BGSSaveLoadManager
+/// `g_BGSSaveLoadGame_ptr` at 0x3223e18 (semantic, high); pointer to `BGSSaveLoadGame`: format writer/reader and change-flag tracker; format writer/reader and change-flag tracker (high); type `ptr:BGSSaveLoadGame`
+pub const g_BGSSaveLoadGame_ptr: u64 = 403330;
+/// `g_BGSSaveLoadManager_ptr` at 0x3223e60 (semantic, high); pointer to `BGSSaveLoadManager`: the manager; the manager (high); type `ptr:BGSSaveLoadManager`
 pub const g_BGSSaveLoadManager_ptr: u64 = 403340;
 /// `g_BGSStoryManager_ptr` at 0x21a3700 (xref_inference, medium)
 pub const g_BGSStoryManager_ptr: u64 = 400478;
@@ -11619,6 +11621,8 @@ pub const g_CCallbackImpl_1: u64 = 505562;
 pub const g_CCallbackImpl_8: u64 = 415501;
 /// `g_CameraFOVOffset` at 0x3436028 (semantic, low); FOV offset added by ApplyWorldFOV, written from the state's cameraAnim +0x74 (low); type `float`
 pub const g_CameraFOVOffset: u64 = 414942;
+/// `g_ChangeFormTypeToFormType` at 0x20b55c0 (semantic, high); save type (0..48) -> formType: REFR ACHR PMIS PGRE PBEA PFLA CELL INFO QUST NPC_ ACTI TACT ARMO BOOK CONT DOOR INGR LIGH MISC APPA STAT MSTT FURN WEAP AMMO KEYM ALCH IDLM NOTE ECZN CLAS FACT PACK NAVM WOOP MGEF SMQN SCEN LCTN RELA PHZD PBAR PCON FLST LVLN LVLI LVSP PARW ENCH (high); type `undefined4[49]`
+pub const g_ChangeFormTypeToFormType: u64 = 380703;
 /// `g_CharacterCollisionHandler_ptr` at 0x3230a18 (xref_inference, medium)
 pub const g_CharacterCollisionHandler_ptr: u64 = 403563;
 /// `g_CharacterCollisionMessagePlayerAdapter` at 0x20b6338 (layout_inference, medium)
@@ -12021,6 +12025,8 @@ pub const g_EventSourceHolder_MenuOpenClose_ptr: u64 = 400327;
 pub const g_EventSourceHolder_TES: u64 = 400420;
 /// `g_EventSourceHolder_User_ptr` at 0x31a5690 (runtime, high); pointer to `EventSourceHolder_User`: pointer to the user-event holder (UserEventEnabledEvent at +8); pointer to the user-event holder (UserEventEnabledEvent at +8) (high); type `ptr:EventSourceHolder_User`
 pub const g_EventSourceHolder_User_ptr: u64 = 400863;
+/// `g_ExtraDataChangeFlags` at 0x2076db0 (semantic, high); extra data type -> change-flag mask that makes ExtraDataList::SaveGame write it (high); type `undefined4[0xb4]`
+pub const g_ExtraDataChangeFlags: u64 = 358622;
 /// `g_ExtraDataLock` at 0x331c618 (semantic, high); one global lock for every NiObjectNET extra data array (high); type `class:BSReadWriteLock`
 pub const g_ExtraDataLock: u64 = 410492;
 /// `g_FOCollisionListener_ptr` at 0x21a05b8 (xref_inference, medium)
@@ -12037,6 +12043,8 @@ pub const g_FirstPersonCamera: u64 = 415007;
 pub const g_FootstepEventSource_ptr: u64 = 403553;
 /// `g_FormTypeSignatures` at 0x17f95a0 (string, high)
 pub const g_FormTypeSignatures: u64 = 187799;
+/// `g_FormTypeToChangeFormType` at 0x3230030 (semantic, medium); formType -> save type (filled at run time), with the type count at 0x3230020 (medium); type `undefined1[0x8a]`
+pub const g_FormTypeToChangeFormType: u64 = 403352;
 /// `g_FrameDelta` at 0x3275608 (runtime, high); seconds of the last frame times the time multiplier; the delta the camera states integrate (chase, zoom, dolly, collision, damping, auto vanity timer) (high); type `float`
 pub const g_FrameDelta: u64 = 410199;
 /// `g_FrameDeltaReal` at 0x327560c (runtime, high); seconds of the last frame before the time multiplier; used for free rotation, free camera rotation, tween menu, first-person pitch lag and input (high); type `float`
@@ -12285,6 +12293,10 @@ pub const g_RenderTargets: u64 = 411451;
 pub const g_Renderer: u64 = 411393;
 /// `g_RendererData_ptr` at 0x3330188 (runtime, high); points at g_Renderer+0x10; code through it uses offsets 0x10 lower (its +0x30 is Renderer+0x40) (high); type `undefined8`
 pub const g_RendererData_ptr: u64 = 411347;
+/// `g_SaveFormatVersion` at 0x1908e3c (semantic, high); save format version written as the byte after the header and in every change form: 0x4e (high); type `undefined4`
+pub const g_SaveFormatVersion: u64 = 206557;
+/// `g_SaveHeaderVersion` at 0x1908e34 (semantic, high); header version field: 12 (high); type `undefined4`
+pub const g_SaveHeaderVersion: u64 = 206555;
 /// `g_ScaleformHeap_ptr` at 0x3275ae0 (semantic, medium); heap the menu creators allocate from (slot 0x50 Alloc(size, 0)) and IMenu::vdtor frees to (slot 0x60) (medium); type `pointer`
 pub const g_ScaleformHeap_ptr: u64 = 412058;
 /// `g_SceneGraph` at 0x3230740 (runtime, high); pointer to `SceneGraph`: world scene graph (0x150); +0x128 is the frame NiCamera; world scene graph (0x150); +0x128 is the frame NiCamera (high); type `ptr:SceneGraph`
@@ -13511,3 +13523,5 @@ pub const g_hkpEntityListener: u64 = 370091;
 pub const g_hkpNullAgent: u64 = 409740;
 /// `g_strIsAttacking` at 0x3252908 (semantic, high); interned 'IsAttacking' built at static init (0xac720) (high); type `class:BSFixedString`
 pub const g_strIsAttacking: u64 = 404830;
+/// `s_TESV_SAVEGAME` at 0x1908f30 (semantic, high); save magic (high); type `char[14]`
+pub const s_TESV_SAVEGAME: u64 = 206558;

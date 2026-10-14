@@ -7253,10 +7253,12 @@ pub const BGSListForm__vfunc_19: u64 = 20905;
 pub const BGSListForm__vfunc_5: u64 = 20903;
 /// `BGSListForm::vfunc_6` at 0x31fe00 (rtti, high); signature (low): `undefined8 vfunc_6(BGSListForm * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSListForm__vfunc_6: u64 = 20904;
+/// `BGSLoadFormBuffer::GetVersion` at 0x637580 (semantic, high); signature (untiered): `undefined1 GetVersion(BGSLoadFormBuffer * this)`
+pub const BGSLoadFormBuffer__GetVersion: u64 = 35990;
 /// `BGSLoadFormBuffer::vdtor` at 0x1c7160 (slot_propagation, medium); signature (low): `BGSLoadFormBuffer * vdtor(BGSLoadFormBuffer * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSLoadFormBuffer__vdtor: u64 = 13854;
-/// `BGSLoadFormBuffer::vfunc_1` at 0x637580 (rtti, high); signature (high): `undefined1 vfunc_1(BGSLoadFormBuffer * this)`
-pub const BGSLoadFormBuffer__vfunc_1: u64 = 35990;
+/// `BGSLoadGameBuffer::GetVersion` at 0x637a90 (semantic, medium); signature (untiered): `undefined GetVersion(void)`
+pub const BGSLoadGameBuffer__GetVersion: u64 = 35999;
 /// `BGSLoadGameBuffer::ctor` at 0x637820 (layout_inference, medium); signature (high): `BGSLoadGameBuffer * ctor(BGSLoadGameBuffer * this)`
 pub const BGSLoadGameBuffer__ctor: u64 = 35993;
 /// `BGSLoadGameBuffer::dtor` at 0x1c6990 (callgraph, high); signature (untiered): `undefined dtor(BGSLoadGameBuffer * this)`
@@ -7267,8 +7269,6 @@ pub const BGSLoadGameBuffer__dtor_2: u64 = 26306;
 pub const BGSLoadGameBuffer__dtor_3: u64 = 35994;
 /// `BGSLoadGameBuffer::vdtor` at 0x638010 (layout_inference, medium); signature (low): `BGSLoadGameBuffer * vdtor(BGSLoadGameBuffer * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSLoadGameBuffer__vdtor: u64 = 36010;
-/// `BGSLoadGameBuffer::vfunc_1` at 0x637a90 (rtti, high); signature (low): `undefined vfunc_1(void)`
-pub const BGSLoadGameBuffer__vfunc_1: u64 = 35999;
 /// `BGSLocAlias::ctor` at 0x3921b0 (layout_inference, high); signature (low): `BGSLocAlias * ctor(BGSLocAlias * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSLocAlias__ctor: u64 = 23701;
 /// `BGSLocAlias::ctor` at 0x392280 (layout_inference, high); signature (low): `BGSLocAlias * ctor(BGSLocAlias * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -10113,16 +10113,16 @@ pub const BGSReverbParameters__vdtor: u64 = 21202;
 pub const BGSReverbParameters__vfunc_4: u64 = 21186;
 /// `BGSReverbParameters::vfunc_6` at 0x328c10 (rtti, high); signature (low): `undefined1 vfunc_6(BGSReverbParameters * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSReverbParameters__vfunc_6: u64 = 21187;
+/// `BGSSaveFormBuffer::GetActor` at 0x639860 (semantic, high); signature (untiered): `longlong GetActor(BGSSaveFormBuffer * this)`
+pub const BGSSaveFormBuffer__GetActor: u64 = 36039;
+/// `BGSSaveFormBuffer::GetForm` at 0x6398f0 (semantic, high); signature (untiered): `undefined8 GetForm(BGSSaveFormBuffer * this)`
+pub const BGSSaveFormBuffer__GetForm: u64 = 36042;
+/// `BGSSaveFormBuffer::GetReference` at 0x639830 (semantic, medium); signature (untiered): `undefined GetReference(BGSSaveFormBuffer * this)`
+pub const BGSSaveFormBuffer__GetReference: u64 = 36038;
 /// `BGSSaveFormBuffer::ctor` at 0x639590 (layout_inference, high); signature (high): `BGSSaveFormBuffer * ctor(BGSSaveFormBuffer * this)`
 pub const BGSSaveFormBuffer__ctor: u64 = 36035;
 /// `BGSSaveFormBuffer::vdtor` at 0x6398b0 (slot_propagation, medium); signature (low): `BGSSaveFormBuffer * vdtor(BGSSaveFormBuffer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSSaveFormBuffer__vdtor: u64 = 36041;
-/// `BGSSaveFormBuffer::vfunc_1` at 0x6398f0 (rtti, high); signature (high): `undefined8 vfunc_1(BGSSaveFormBuffer * this)`
-pub const BGSSaveFormBuffer__vfunc_1: u64 = 36042;
-/// `BGSSaveFormBuffer::vfunc_2` at 0x639830 (rtti, high); signature (high): `undefined vfunc_2(BGSSaveFormBuffer * this)`
-pub const BGSSaveFormBuffer__vfunc_2: u64 = 36038;
-/// `BGSSaveFormBuffer::vfunc_3` at 0x639860 (rtti, high); signature (high): `longlong vfunc_3(BGSSaveFormBuffer * this)`
-pub const BGSSaveFormBuffer__vfunc_3: u64 = 36039;
 /// `BGSSaveGameBuffer::ctor` at 0x639900 (layout_inference, medium); signature (high): `BGSSaveGameBuffer * ctor(BGSSaveGameBuffer * this)`
 pub const BGSSaveGameBuffer__ctor: u64 = 36043;
 /// `BGSSaveGameBuffer::dtor` at 0x61b190 (callgraph, high); signature (untiered): `undefined dtor(BGSSaveGameBuffer * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -10137,6 +10137,34 @@ pub const BGSSaveGameBuffer__vfunc_1: u64 = 36060;
 pub const BGSSaveGameBuffer__vfunc_2: u64 = 36061;
 /// `BGSSaveGameBuffer::vfunc_3` at 0x63a2e0 (rtti, high); signature (low): `undefined8 vfunc_3(void)`
 pub const BGSSaveGameBuffer__vfunc_3: u64 = 36059;
+/// `BGSSaveLoadGame::AddChange` at 0x616ce0 (semantic, high); signature (untiered): `undefined8 AddChange(longlong param_1, longlong * param_2, undefined4 param_3, char param_4)`; ORs flags into the change map unless tracking is off (TLS+0x670 bit0 or state bit0) and not forced, the form is deleted (formFlags bit 14) or has id 0; created forms with formFlags bit 5 only when slot 44's object has formFlags bit 10 (high); semantic signature: `bool (BGSSaveLoadGame* this, TESForm* form, u32 flags, bool force)`
+pub const BGSSaveLoadGame__AddChange: u64 = 35576;
+/// `BGSSaveLoadGame::AddChange` as a function pointer type (high).
+pub type BGSSaveLoadGame__AddChange_fn = unsafe extern "C" fn(this: *mut classes::BGSSaveLoadGame, form: *mut classes::TESForm, flags: u32, force: bool) -> bool;
+/// `BGSSaveLoadGame::FinishLoadForms` at 0x615af0 (semantic, high); signature (untiered): `undefined FinishLoadForms(longlong param_1, BGSLoadGameBuffer * param_2, longlong * param_3, ulonglong param_4)`; runs TESForm slot 16 for every loaded record, waits for IO, then slot 17 and clears formFlags bit 21 (0x200000); frees the records (high); semantic signature: `void (BGSSaveLoadGame* this, bool full, ...)`
+pub const BGSSaveLoadGame__FinishLoadForms: u64 = 35567;
+/// `BGSSaveLoadGame::LoadGame` at 0x618970 (runtime, high); signature (untiered): `undefined8 LoadGame(longlong * param_1, longlong * param_2, char param_3, uint param_4, longlong * param_5, byte param_6)`; reads the body and applies it (high); semantic signature: `bool (BGSSaveLoadGame* this, Win32FileType* stream, bool ignoreMissing, u32 requestKind, BSTArray* missingNames, bool skipPluginMatch)`
+pub const BGSSaveLoadGame__LoadGame: u64 = 35600;
+/// `BGSSaveLoadGame::LoadGlobalDataTable` at 0x61c1a0 (runtime, high); signature (untiered): `undefined LoadGlobalDataTable(longlong param_1, uint param_2, undefined8 param_3, TypeDescriptor * param_4)`; count x {u32 type, length-prefixed buffer} -> LoadGlobalData; the VM type is read through LoadStorageWrapper and SkyrimVM load 0x9e1c00 (high); semantic signature: `void (Win32FileType* stream, u32 count)`
+pub const BGSSaveLoadGame__LoadGlobalDataTable: u64 = 35641;
+/// `BGSSaveLoadGame::ReadFormIDArray` at 0x614f40 (runtime, medium); signature (untiered): `undefined ReadFormIDArray(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; u32 count, then count u32 saved ids, each remapped (except 0xFF) and inserted at the next index (medium); semantic signature: `void (FormIDIndexMap* map, Win32FileType* stream)`
+pub const BGSSaveLoadGame__ReadFormIDArray: u64 = 35559;
+/// `BGSSaveLoadGame::ReadPluginList` at 0x6197d0 (runtime, high); signature (untiered): `undefined1 ReadPluginList(longlong * param_1, longlong param_2, longlong * param_3, undefined8 param_4, longlong * param_5)`; reads u8 count + names (and u16 count + light names when version > 0x4d) and stores TESDataHandler::GetFile(name) (null if absent or not loaded) per saved index in this+0/+0x18 (high); semantic signature: `bool (BGSSaveLoadGame* this, Win32FileType* stream, BSTArray* missingNames, bool skipChecks, BSTArray* unknownNames)`
+pub const BGSSaveLoadGame__ReadPluginList: u64 = 442571;
+/// `BGSSaveLoadGame::RemapSavedFormID` at 0x6181c0 (runtime, medium); signature (untiered): `uint RemapSavedFormID(longlong * param_1, uint param_2)`; saved form id -> current: top byte 0xFE uses savedLightFiles[(id>>12)&0xfff], otherwise savedFiles[id>>24]; then TESFile::ResolveFormID; 0 when the plugin is missing (medium); semantic signature: `u32 (BGSSaveLoadGame* this, u32 savedId)`
+pub const BGSSaveLoadGame__RemapSavedFormID: u64 = 35596;
+/// `BGSSaveLoadGame::RemoveChange` at 0x616e80 (semantic, high); signature (untiered): `undefined RemoveChange(longlong param_1, longlong param_2, uint param_3)`; clears flags and erases the entry when none remain (non-created forms) (high); semantic signature: `void (BGSSaveLoadGame* this, TESForm* form, u32 flags)`
+pub const BGSSaveLoadGame__RemoveChange: u64 = 35581;
+/// `BGSSaveLoadGame::RemoveChange` as a function pointer type (high).
+pub type BGSSaveLoadGame__RemoveChange_fn = unsafe extern "C" fn(this: *mut classes::BGSSaveLoadGame, form: *mut classes::TESForm, flags: u32);
+/// `BGSSaveLoadGame::RevertGame` at 0x617070 (semantic, high); signature (untiered): `undefined RevertGame(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; full revert used by ResetGame: flag 2, clear +0xc8, RevertAllGlobalData(true), RevertWorld(this, null, null), ProcessAndClearRefHandleMap (high); semantic signature: `void (BGSSaveLoadGame*)`
+pub const BGSSaveLoadGame__RevertGame: u64 = 35585;
+/// `BGSSaveLoadGame::RevertWorld` at 0x615690 (runtime, high); signature (untiered): `undefined RevertWorld(longlong param_1, longlong * * * * param_2, uint * param_3)`; installs the new change map and reverts every form changed in the previous session that the save does not change (slot 18 Revert) (high); semantic signature: `void (BGSSaveLoadGame* this, ChangeFormMap* newMap, FormIDIndexMap* index)`
+pub const BGSSaveLoadGame__RevertWorld: u64 = 35566;
+/// `BGSSaveLoadGame::SaveGame` at 0x618260 (runtime, high); signature (low): `undefined SaveGame(longlong param_1, BGSSaveGameBuffer * param_2)`; writes the body after the header (high); semantic signature: `void (BGSSaveLoadGame* this, Win32FileType* stream)`
+pub const BGSSaveLoadGame__SaveGame: u64 = 35599;
+/// `BGSSaveLoadGame::SaveGlobalDataRange` at 0x61b7e0 (runtime, high); signature (untiered): `int SaveGlobalDataRange(BGSSaveGameBuffer * param_1, BGSSaveGameBuffer * param_2, ulonglong param_3, BGSSaveGameBuffer_vtbl * param_4)`; per type: SaveGlobalData into a buffer, then u32 type + buffer; type 1001 writes the VM directly via SaveStorageWrapper and SkyrimVM save 0x9e1b20 with a back-patched length (high); semantic signature: `u32 (Win32FileType* stream, u32 first, u32 end)`
+pub const BGSSaveLoadGame__SaveGlobalDataRange: u64 = 35638;
 /// `BGSSaveLoadManager::BSTEventSink_BSSystemEvent_vdtor` at 0x62dc90 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSSystemEvent_vdtor(BGSSaveLoadManager * this)`
 pub const BGSSaveLoadManager__BSTEventSink_BSSystemEvent_vdtor: u64 = 35836;
 /// `BGSSaveLoadManager::BSTEventSink_BSSystemEvent_vfunc_1` at 0x626ab0 (rtti, high); signature (low): `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(BGSSaveLoadManager * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -10145,13 +10173,39 @@ pub const BGSSaveLoadManager__BSTEventSink_BSSystemEvent_vfunc_1: u64 = 35775;
 pub const BGSSaveLoadManager__BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vdtor: u64 = 35835;
 /// `BGSSaveLoadManager::BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vfunc_1` at 0x6269b0 (rtti, high); signature (low): `undefined8 BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vfunc_1(BGSSaveLoadManager * this, undefined8 * param_1)`
 pub const BGSSaveLoadManager__BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vfunc_1: u64 = 35774;
-/// `BGSSaveLoadManager::Thread::vdtor` at 0x62e290 (slot_propagation, medium); signature (low): `Thread * vdtor(Thread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSSaveLoadManager::DeleteSaveFile` at 0x622780 (semantic, high); signature (untiered): `undefined DeleteSaveFile(undefined8 param_1, undefined8 param_2)`; path '<sLocalSavePath><name>.ess' (slot 2, no tmp) then slot 15 DeleteFileA and BSSaveDataEvent op 2 (high); semantic signature: `void (BGSSaveLoadManager*, const char* name)`
+pub const BGSSaveLoadManager__DeleteSaveFile: u64 = 35726;
+/// `BGSSaveLoadManager::FinishLoad` at 0x6278b0 (runtime, high); signature (untiered): `undefined FinishLoad(undefined8 param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`; after a successful load: cell/terrain refresh, resume (ToggleGameSuspendState(0)), clear BGSSaveLoadGame flag 0x40, drain garbage/IO, UnfreezeVM, TESLoadGameEvent, story manager, gamer profile (high); semantic signature: `void ()`
+pub const BGSSaveLoadManager__FinishLoad: u64 = 35780;
+/// `BGSSaveLoadManager::FinishLoad` as a function pointer type (high).
+pub type BGSSaveLoadManager__FinishLoad_fn = unsafe extern "C" fn();
+/// `BGSSaveLoadManager::LoadGame` at 0x627de0 (runtime, high); signature (untiered): `undefined1 * LoadGame(longlong param_1, longlong * param_2, uint param_3, char param_4, byte param_5, uint param_6)`; main-thread load: header, missing-content dialogs, BGSSaveLoadGame::LoadGame, then FinishLoad (high); semantic signature: `bool (BGSSaveLoadManager*, Win32FileType** stream, u32 entryValue, bool ignoreMissing, bool skipPluginMatch, u32 requestKind)`
+pub const BGSSaveLoadManager__LoadGame: u64 = 442580;
+/// `BGSSaveLoadManager::MakeSaveName` at 0x623da0 (semantic, high); signature (untiered): `undefined MakeSaveName(longlong param_1, longlong param_2, int param_3)`; builds the file name with format '%s%u_%s_%u_%s_%s_%s_%s_%u_%u': prefix 'Save'/'Autosave'/'Quicksave' and a number first; the other arguments come from the player id formatted with ID_206654, the character name re-encoded byte by byte with format ID_206653, the location name, play time '%02u%02u%02u', the date '%u%02u%02u%02u%02u%02u' and the level (their order in the varargs was not decoded); file-name-invalid characters become spaces (a double quote becomes an apostrophe), as do bytes >= 0x80 (high); semantic signature: `void (BGSSaveLoadManager*, char* out /*0x104*/, i32 kind)`
+pub const BGSSaveLoadManager__MakeSaveName: u64 = 35749;
+/// `BGSSaveLoadManager::OpenSaveFile` at 0x622390 (semantic, high); signature (untiered): `longlong * OpenSaveFile(longlong param_1, longlong * param_2, char * param_3, undefined1 param_4, int param_5)`; path via BSSaveDataSystemUtility slot 2 (temp adds '.tmp'), stream via slot 11, stores the name at stream+0xab0, opens it (high); semantic signature: `Win32FileType** (BGSSaveLoadManager*, Win32FileType** out, const char* name, bool temp, i32 kind)`
+pub const BGSSaveLoadManager__OpenSaveFile: u64 = 35724;
+/// `BGSSaveLoadManager::PrepareForLoad` at 0x627680 (runtime, high); signature (untiered): `undefined PrepareForLoad(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined1 * param_4)`; freeze the VM, reset TES/ref handle maps, wait for Havok, suspend the game (load kinds) or close all menus, stop VATS, drain navmesh/IO (high); semantic signature: `void (BGSSaveLoadManager*, u32 requestKind)`
+pub const BGSSaveLoadManager__PrepareForLoad: u64 = 35779;
+/// `BGSSaveLoadManager::ProcessSaveDataEvent` at 0x626380 (semantic, high); signature (untiered): `undefined8 ProcessSaveDataEvent(BGSSaveLoadManager * this, LoadRequest * param_1, ulonglong param_2, ulonglong param_3)`
+pub const BGSSaveLoadManager__ProcessSaveDataEvent: u64 = 35773;
+/// `BGSSaveLoadManager::QueueLoadEntry` at 0x625a10 (semantic, high); signature (untiered): `undefined QueueLoadEntry(longlong param_1, Request_vtbl * param_2, ulonglong param_3, undefined8 param_4)`; caches the header record and queues LoadEntryRequest 0x50001000 (high); semantic signature: `void (BGSSaveLoadManager*, Entry*)`
+pub const BGSSaveLoadManager__QueueLoadEntry: u64 = 442575;
+/// `BGSSaveLoadManager::RemoveSaveEntry` at 0x623a00 (semantic, high); signature (untiered): `undefined RemoveSaveEntry(longlong param_1, undefined8 * param_2, undefined8 param_3, ulonglong param_4)`; removes the entry from +0x100; if no other save of that character remains, drops its name (+0x70) and its record (+0xe8) (high); semantic signature: `void (BGSSaveLoadManager*, Entry*)`
+pub const BGSSaveLoadManager__RemoveSaveEntry: u64 = 35748;
+/// `BGSSaveLoadManager::RequestLoad` at 0x622f30 (runtime, high); signature (untiered): `undefined8 RequestLoad(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, char param_5)`; Notify {2,0}, path via slot 2, BSSaveDataSystemUtility slot 23 reads the file and dispatches BSSaveDataEvent (synchronous) (high); semantic signature: `bool (BGSSaveLoadManager*, const char* name, u32 entryValue, u32 value, bool ignoreMissing)`
+pub const BGSSaveLoadManager__RequestLoad: u64 = 35728;
+/// `BGSSaveLoadManager::Save` at 0x6227f0 (runtime, high); signature (untiered): `ulonglong Save(longlong param_1, int param_2, undefined8 param_3, char * param_4)`; all saves: checks, name, stream, header, body, then write now (kind 2) or queue the write to the worker thread (3,4,5) (high); semantic signature: `bool (BGSSaveLoadManager* this, i32 kind /*2 manual,3 auto,4 quick,5 forced*/, u32 value, const char* name /*null = generated*/)`
+pub const BGSSaveLoadManager__Save: u64 = 35727;
+/// `BGSSaveLoadManager::SetCurrentSaveName` at 0x624d70 (semantic, high); signature (untiered): `undefined SetCurrentSaveName(longlong param_1, undefined1 * param_2, undefined4 param_3)`; +0x138 = name, +0x250 = index (high); semantic signature: `void (BGSSaveLoadManager*, const char* name, u32 index)`
+pub const BGSSaveLoadManager__SetCurrentSaveName: u64 = 35765;
+/// `BGSSaveLoadManager::Thread::Run` at 0x62a030 (semantic, high); signature (untiered): `undefined8 Run(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSSaveLoadManager__Thread__Run: u64 = 35790;
+/// `BGSSaveLoadManager::Thread::vdtor` at 0x62e290 (semantic, high); signature (low): `Thread * vdtor(Thread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSSaveLoadManager__Thread__vdtor: u64 = 35847;
-/// `BGSSaveLoadManager::Thread::vfunc_1` at 0x62a030 (rtti, high); signature (low): `undefined8 vfunc_1(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BGSSaveLoadManager__Thread__vfunc_1: u64 = 35790;
 /// `BGSSaveLoadManager::Thread::vfunc_2` at 0x630420 (rtti, high); signature (high): `undefined vfunc_2(Thread * this)`
 pub const BGSSaveLoadManager__Thread__vfunc_2: u64 = 35885;
-/// `BGSSaveLoadManager::ctor` at 0x621be0 (layout_inference, high); signature (high): `BGSSaveLoadManager * ctor(BGSSaveLoadManager * this)`
+/// `BGSSaveLoadManager::ctor` at 0x621be0 (layout_inference, high); signature (high): `BGSSaveLoadManager * ctor(BGSSaveLoadManager * this)`;  (high); semantic signature: `BGSSaveLoadManager* (BGSSaveLoadManager*)`
 pub const BGSSaveLoadManager__ctor: u64 = 35720;
 /// `BGSSaveLoadManager::ctor_sub0` at 0x629c20 (callgraph, medium); signature (untiered): `char ctor_sub0(undefined8 param_1, char * param_2, longlong * param_3)`
 pub const BGSSaveLoadManager__ctor_sub0: u64 = 442582;
@@ -10169,10 +10223,8 @@ pub const BGSSaveLoadManager__ctor_sub5: u64 = 35832;
 pub const BGSSaveLoadManager__ctor_sub6: u64 = 52336;
 /// `BGSSaveLoadManager::dtor` at 0x6220c0 (layout_inference, high); signature (low): `undefined dtor(BGSSaveLoadManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSSaveLoadManager__dtor: u64 = 35721;
-/// `BGSSaveLoadManager::vdtor` at 0x62dd90 (slot_propagation, medium); signature (low): `BGSSaveLoadManager * vdtor(BGSSaveLoadManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `BGSSaveLoadManager::vdtor` at 0x62dd90 (semantic, high); signature (low): `BGSSaveLoadManager * vdtor(BGSSaveLoadManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSSaveLoadManager__vdtor: u64 = 35842;
-/// `BGSSaveLoadManager::vfunc_1` at 0x626380 (rtti, high); signature (low): `undefined8 vfunc_1(BGSSaveLoadManager * this, LoadRequest * param_1, ulonglong param_2, ulonglong param_3)`
-pub const BGSSaveLoadManager__vfunc_1: u64 = 35773;
 /// `BGSSaveLoadManager::vfunc_1_sub0` at 0x633440 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(char * param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BGSSaveLoadManager__vfunc_1_sub0: u64 = 35937;
 /// `BGSSaveLoadManager::vfunc_1_sub1` at 0x159b410 (callgraph, medium); signature (untiered): `undefined4 vfunc_1_sub1(longlong param_1)`
@@ -28367,6 +28419,10 @@ pub const BaseFormComponent__dtor_17: u64 = 24849;
 pub const BaseFormComponent__vdtor: u64 = 10865;
 /// `BaseFormComponent::vfunc_3` at 0x145470 (rtti, high); signature (low): `undefined vfunc_3(void)`
 pub const BaseFormComponent__vfunc_3: u64 = 10813;
+/// `BaseHandleReaderWriter::ReadHandle` at 0x9ba920 (semantic, high); signature (untiered): `undefined8 ReadHandle(void * this, longlong * param_1, ulonglong * param_2)`; reads the two u16 and the id through slot 5 (SaveFile: DecodeThreeByteFormID, i.e. remapped); rebuilds 1<<48 / 2<<48 handles; invalid = 0xffff00000000 (high); semantic signature: `bool (IHandleReaderWriter* this, Storage* s, u64* out)`
+pub const BaseHandleReaderWriter__ReadHandle: u64 = 53523;
+/// `BaseHandleReaderWriter::WriteHandle` at 0x9ba880 (semantic, high); signature (untiered): `undefined8 WriteHandle(void * this, longlong * param_1, ulonglong param_2)`; u16 handle>>48, u16 bits 32..47, then the low 32 bits through slot 4 (SaveFile: 3-byte ref id) (high); semantic signature: `bool (IHandleReaderWriter* this, Storage* s, u64 handle)`
+pub const BaseHandleReaderWriter__WriteHandle: u64 = 53522;
 /// `BasicArrayImplementation<char*___ptr64,10>::vdtor` at 0xc5dd40 (layout_inference, medium); signature (low): `BasicArrayImplementation<char*___ptr64,10> * vdtor(BasicArrayImplementation<char*___ptr64,10> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BasicArrayImplementation_char____ptr64_10__vdtor: u64 = 65912;
 /// `BasicArrayImplementation<char*___ptr64,10>::vfunc_1` at 0xc610c0 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
@@ -29011,6 +29067,10 @@ pub const ChairEnterHandler__vfunc_1: u64 = 42831;
 pub const ChairFurnitureExitHandler__vdtor: u64 = 43309;
 /// `ChairFurnitureExitHandler::vfunc_1` at 0x7cd1f0 (rtti, high); signature (low): `longlong vfunc_1(ChairFurnitureExitHandler * this, TESObjectREFR * param_1)`
 pub const ChairFurnitureExitHandler__vfunc_1: u64 = 42835;
+/// `ChangeFormMap::AddFlags` at 0x613570 (semantic, high); signature (untiered): `undefined AddFlags(longlong param_1, uint param_2, uint param_3)`; write-locked OR of flags into the entry (skipped when the entry holds pending data) (high); semantic signature: `void (ChangeFormMap* map, u32 formID, u32 flags)`
+pub const ChangeFormMap__AddFlags: u64 = 35507;
+/// `ChangeFormMap::AddFlags` as a function pointer type (high).
+pub type ChangeFormMap__AddFlags_fn = unsafe extern "C" fn(map: *mut classes::ChangeFormMap, formID: u32, flags: u32);
 /// `ChangeVectorStorageEntry20` at 0x1289890 (decompiler, medium); signature (untiered): `undefined ChangeVectorStorageEntry20(longlong * param_1, longlong param_2, void * param_3, longlong param_4)`
 pub const ChangeVectorStorageEntry20: u64 = 524687;
 /// `ChangeVectorStorageEntry40` at 0x1289a00 (decompiler, medium); signature (untiered): `undefined ChangeVectorStorageEntry40(longlong * param_1, longlong param_2, longlong param_3, longlong param_4)`
@@ -40177,7 +40237,7 @@ pub const CompleteUserContentListRequest_2: u64 = 526357;
 pub const ComposeQuatTransforms: u64 = 72647;
 /// `ComposeScaledTransformFromField50` at 0xbedfc0 (decompiler, high); signature (untiered): `undefined ComposeScaledTransformFromField50(longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ComposeScaledTransformFromField50: u64 = 64076;
-/// `CompressAndWritePayload` at 0x159b530 (decompiler, medium); signature (untiered): `undefined CompressAndWritePayload(ulonglong * param_1)`
+/// `CompressAndWritePayload` at 0x159b530 (runtime, high); signature (untiered): `undefined CompressAndWritePayload(ulonglong * param_1)`; compresses data[headerEnd..size] (zlib or LZ4 by +0xbc8) and rewrites it in place after u32 uncompressed size, u32 compressed size (high); semantic signature: `void (Win32FileType*)`
 pub const CompressAndWritePayload: u64 = 109333;
 /// `CompressSaveGameBuffer` at 0x635910 (decompiler, medium); signature (untiered): `int CompressSaveGameBuffer(undefined8 param_1, longlong param_2, char * param_3, undefined8 param_4)`
 pub const CompressSaveGameBuffer: u64 = 35944;
@@ -44615,8 +44675,10 @@ pub const DecodeNextUtf8Char: u64 = 82740;
 pub const DecodePackedFormRecord: u64 = 35714;
 /// `DecodePackedLength` at 0x614440 (decompiler, medium); signature (medium): `undefined8 DecodePackedLength(uint * param_1, uint * param_2)`
 pub const DecodePackedLength: u64 = 35530;
-/// `DecodeThreeByteFormID` at 0x632cc0 (decompiler, medium); signature (untiered): `ulonglong DecodeThreeByteFormID(byte * param_1)`
+/// `DecodeThreeByteFormID` at 0x632cc0 (semantic, high); signature (untiered): `ulonglong DecodeThreeByteFormID(byte * param_1)`; ref id -> form id: bits 22-23 = 1 -> plain (0 prefix), 2 -> created (0xFF prefix), 0 -> index into BGSSaveLoadGame+0x298 (already remapped) (high); semantic signature: `u32 (const u8* bytes)`
 pub const DecodeThreeByteFormID: u64 = 35927;
+/// `DecodeThreeByteFormID` as a function pointer type (high).
+pub type DecodeThreeByteFormID_fn = unsafe extern "C" fn(bytes: *const u8) -> u32;
 /// `DecodeUnicodeEscapesToUtf8` at 0x1349ca0 (decompiler, medium); signature (untiered): `char * DecodeUnicodeEscapesToUtf8(char * param_1, char * param_2, byte * param_3, char * param_4)`
 pub const DecodeUnicodeEscapesToUtf8: u64 = 447442;
 /// `DecommitFreeTrailingBlocks` at 0xceabd0 (decompiler, medium); signature (untiered): `undefined DecommitFreeTrailingBlocks(longlong param_1)`
@@ -44755,6 +44817,8 @@ pub const DeleteOwnedObject_3: u64 = 70427;
 pub const DeleteOwnedObject_4: u64 = 109328;
 /// `DeleteRefPtrArrayPairObject` at 0x222a20 (decompiler, medium); signature (medium): `longlong * DeleteRefPtrArrayPairObject(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const DeleteRefPtrArrayPairObject: u64 = 15823;
+/// `DeleteSaveEntry` at 0x614690 (semantic, high); signature (untiered): `undefined DeleteSaveEntry(undefined8 * param_1)`; DeleteSaveFile(mgr, entry->name) (call 0x6146a7, S1 delete hook 2) then RemoveSaveEntry (high); semantic signature: `void (Entry*)`
+pub const DeleteSaveEntry: u64 = 35535;
 /// `DeleteTwoBufferObject` at 0x13a25b0 (decompiler, medium); signature (untiered): `undefined DeleteTwoBufferObject(longlong * param_1)`
 pub const DeleteTwoBufferObject: u64 = 100351;
 /// `DeleteVector0x530` at 0x13cbcf0 (decompiler, medium); signature (untiered): `undefined DeleteVector0x530(longlong * param_1)`
@@ -46269,8 +46333,10 @@ pub const EnchantmentItem__vfunc_85: u64 = 11204;
 pub const EnchantmentItem__vfunc_86: u64 = 11184;
 /// `EnchantmentItem::vfunc_87` at 0x14e7a0 (rtti, high); signature (high): `undefined4 vfunc_87(EnchantmentItem * this)`
 pub const EnchantmentItem__vfunc_87: u64 = 11209;
-/// `EncodeFormIDTo3Bytes` at 0x632d10 (decompiler, medium); signature (medium): `undefined EncodeFormIDTo3Bytes(undefined1 * param_1, uint param_2)`
+/// `EncodeFormIDTo3Bytes` at 0x632d10 (semantic, high); signature (medium): `undefined EncodeFormIDTo3Bytes(undefined1 * param_1, uint param_2)`; ids of plugin 0 store id|0x400000, 0xFF ids store id|0x800000 (22 bits kept), everything else and 0 stores the form-id index; big-endian 3 bytes (high); semantic signature: `void (u8 out[3], u32 formID)`
 pub const EncodeFormIDTo3Bytes: u64 = 35928;
+/// `EncodeFormIDTo3Bytes` as a function pointer type (high).
+pub type EncodeFormIDTo3Bytes_fn = unsafe extern "C" fn(out_3: u8, formID: u32);
 /// `EncodeVarLengthUInt` at 0x6143f0 (decompiler, high); signature (high): `undefined EncodeVarLengthUInt(uint * param_1, uint param_2)`
 pub const EncodeVarLengthUInt: u64 = 35529;
 /// `EndDeflateStream` at 0xa99250 (decompiler, medium); signature (untiered): `undefined8 EndDeflateStream(longlong param_1)`
@@ -48229,6 +48295,8 @@ pub type FindFormByEditorID_BSFixedString_fn = unsafe extern "C" fn(editorID: *c
 pub const FindFormByID: u64 = 14617;
 /// `FindFormByID` as a function pointer type (high).
 pub type FindFormByID_fn = unsafe extern "C" fn(formID: u32) -> *mut classes::TESForm;
+/// `FindFormByIDWrapper` at 0x4db7d0 (decompiler, high); signature (untiered): `undefined FindFormByIDWrapper(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FindFormByIDWrapper: u64 = 30690;
 /// `FindFormPairTableValue` at 0x3a5290 (decompiler, medium); signature (untiered): `ulonglong FindFormPairTableValue(longlong param_1, longlong param_2)`
 pub const FindFormPairTableValue: u64 = 24084;
 /// `FindGlobalBTreeValueByKey` at 0x2103b0 (decompiler, medium); signature (untiered): `undefined8 FindGlobalBTreeValueByKey(undefined4 param_1, undefined4 param_2, undefined4 * param_3)`
@@ -48927,6 +48995,8 @@ pub const ForEachResolvedRefHandle: u64 = 19031;
 pub const ForEachRigidBodyInTreeRecursive: u64 = 78507;
 /// `ForceRefIntoAlias` at 0x3d4fa0 (decompiler, medium); signature (untiered): `undefined ForceRefIntoAlias(uint * param_1, uint param_2, longlong * * param_3)`
 pub const ForceRefIntoAlias: u64 = 25052;
+/// `FormIDIndexMap::GetFormID` at 0x614dc0 (semantic, high); signature (untiered): `ulonglong GetFormID(longlong param_1, uint param_2)`; index -> form id through the reverse map, 0 when absent (high); semantic signature: `u32 (FormIDIndexMap* map, u32 index)`
+pub const FormIDIndexMap__GetFormID: u64 = 35555;
 /// `FormatAndLogMessage` at 0x9d55a0 (decompiler, medium); signature (untiered): `undefined FormatAndLogMessage(undefined8 param_1, char * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`
 pub const FormatAndLogMessage: u64 = 53914;
 /// `FormatDoubleToString` at 0xa91120 (decompiler, high); signature (high): `undefined FormatDoubleToString(longlong * param_1, undefined8 param_2)`
@@ -49789,8 +49859,6 @@ pub const FreeWithGlobalAllocator_5: u64 = 449864;
 pub const FreeWithOptionalCallback: u64 = 90109;
 /// `FreeWithStoredMemSize` at 0x3f91f0 (decompiler, medium); signature (untiered): `undefined FreeWithStoredMemSize(longlong param_1, uint param_2)`
 pub const FreeWithStoredMemSize: u64 = 25747;
-/// `FreezeVMForSave` at 0x9e19e0 (decompiler, medium); signature (untiered): `undefined FreezeVMForSave(longlong param_1)`
-pub const FreezeVMForSave: u64 = 54015;
 /// `FrenzyEffect::vdtor` at 0x5e5af0 (slot_propagation, medium); signature (low): `FrenzyEffect * vdtor(FrenzyEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const FrenzyEffect__vdtor: u64 = 35038;
 /// `FrenzyEffect::vfunc_20` at 0x5e5870 (rtti, high); signature (high): `undefined vfunc_20(FrenzyEffect * this)`
@@ -64515,7 +64583,7 @@ pub const GenerateRandomFloat: u64 = 91559;
 pub const GenerateRandomUInt32: u64 = 17588;
 /// `GenerateStaticRandomBelow` at 0x1b53a0 (decompiler, high); signature (untiered): `undefined GenerateStaticRandomBelow(uint param_1)`
 pub const GenerateStaticRandomBelow: u64 = 13669;
-/// `GenerateUniquePlayerID` at 0x624840 (decompiler, medium); signature (untiered): `undefined GenerateUniquePlayerID(longlong param_1)`
+/// `GenerateUniquePlayerID` at 0x624840 (semantic, high); signature (untiered): `undefined GenerateUniquePlayerID(longlong param_1)`; random u32 not already in +0x70, stored in +0xd0 and +0xd8, record added in +0xe8 (high); semantic signature: `void (BGSSaveLoadManager*)`
 pub const GenerateUniquePlayerID: u64 = 35757;
 /// `GetAbsHeadingAngleToPoint` at 0x6a32c0 (decompiler, medium); signature (untiered): `undefined8 GetAbsHeadingAngleToPoint(longlong * param_1, float * param_2)`
 pub const GetAbsHeadingAngleToPoint: u64 = 37773;
@@ -64741,6 +64809,10 @@ pub const GetCellEncounterZone: u64 = 18988;
 pub const GetCellImageSpaceData: u64 = 19008;
 /// `GetCellIndexInWorldBounds` at 0x30cde0 (decompiler, medium); signature (medium): `int GetCellIndexInWorldBounds(undefined8 param_1, undefined8 param_2, int param_3, int param_4)`
 pub const GetCellIndexInWorldBounds: u64 = 20457;
+/// `GetChangeFormInitialType` at 0x6204c0 (semantic, high); signature (untiered): `byte GetChangeFormInitialType(longlong param_1, uint param_2)`; kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3 (high); semantic signature: `u8 (TESForm* form, u32 changeFlags)`
+pub const GetChangeFormInitialType: u64 = 35708;
+/// `GetChangeFormInitialType` as a function pointer type (high).
+pub type GetChangeFormInitialType_fn = unsafe extern "C" fn(form: *mut classes::TESForm, changeFlags: u32) -> u8;
 /// `GetCharAtIndex` at 0xd0a410 (decompiler, medium); signature (untiered): `uint GetCharAtIndex(longlong * param_1, uint param_2)`
 pub const GetCharAtIndex: u64 = 82835;
 /// `GetCheckForMissingContentOnStartup` at 0x623d80 (decompiler, high); signature (high): `undefined1 GetCheckForMissingContentOnStartup(void)`
@@ -66437,7 +66509,7 @@ pub const GetOpenState: u64 = 14288;
 pub const GetOptionalByteValue: u64 = 524613;
 /// `GetOptionalQwordValue` at 0x133a0c0 (decompiler, medium); signature (untiered): `longlong GetOptionalQwordValue(longlong param_1)`
 pub const GetOptionalQwordValue: u64 = 526298;
-/// `GetOrAssignFormIDIndex` at 0x614cf0 (decompiler, medium); signature (medium): `ulonglong GetOrAssignFormIDIndex(longlong param_1, uint param_2)`
+/// `GetOrAssignFormIDIndex` at 0x614cf0 (semantic, high); signature (medium): `ulonglong GetOrAssignFormIDIndex(longlong param_1, uint param_2)`; index of a form id, assigning the next one; 0xFF ids return themselves (high); semantic signature: `u32 (FormIDIndexMap* map, u32 formID)`
 pub const GetOrAssignFormIDIndex: u64 = 35554;
 /// `GetOrComputeCachedFloatRange` at 0x2b0850 (decompiler, medium); signature (untiered): `undefined8 * GetOrComputeCachedFloatRange(longlong param_1, undefined8 * param_2)`
 pub const GetOrComputeCachedFloatRange: u64 = 18767;
@@ -67099,6 +67171,10 @@ pub const GiftMenu__vfunc_4_sub1: u64 = 51578;
 pub const GiftMenu__vfunc_4_sub2: u64 = 51579;
 /// `GiftMenu::vfunc_6` at 0x92f670 (rtti, high); signature (low): `undefined vfunc_6(GiftMenu * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const GiftMenu__vfunc_6: u64 = 51566;
+/// `GlobalDataAfterChangeForms` at 0x61c830 (semantic, medium); signature (untiered): `undefined GlobalDataAfterChangeForms(uint param_1, uint param_2, undefined8 param_3, undefined8 param_4)`; post-change-form step per type: 100 RebuildActorHandleList, 103 PruneGlobalListUnderLock (medium); semantic signature: `void (u32 first, u32 end)`
+pub const GlobalDataAfterChangeForms: u64 = 35644;
+/// `GlobalDataFinishLoad` at 0x61caa0 (semantic, medium); signature (untiered): `undefined GlobalDataFinishLoad(uint param_1, BGSLoadGameBuffer * param_2, longlong * * param_3, longlong * param_4)`; finish step per type: 2 RefreshLoadedCellsAndNotifyObjectLoaded (TES), 4 DestroyFormsInTableAndFree, 6 sky refresh, 101, 102 input sink, 110 PlayerControls interrupt, 1000 ProcessLists (medium); semantic signature: `void (u32 first, u32 end)`
+pub const GlobalDataFinishLoad: u64 = 35646;
 /// `GotoLabeledFrame` at 0xd62c30 (decompiler, medium); signature (untiered): `undefined8 GotoLabeledFrame(longlong * param_1, undefined8 param_2, int param_3)`
 pub const GotoLabeledFrame: u64 = 84233;
 /// `GrabActorEffect::vdtor` at 0x5c74a0 (slot_propagation, medium); signature (low): `GrabActorEffect * vdtor(GrabActorEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -79779,14 +79855,16 @@ pub const ItemCrafted__GetEventSource: u64 = 51403;
 pub const ItemCrafted__RegisterSink: u64 = 51196;
 /// `ItemCrafted::UnregisterSink` at 0x916010 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ItemCrafted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemCrafted::Event>* sink)`
 pub const ItemCrafted__UnregisterSink: u64 = 51197;
-/// `ItemList::AddItem` at 0x904df0 (semantic, high); signature (untiered): `undefined8 AddItem(longlong param_1, undefined8 param_2, undefined8 param_3)`; allocates a StandardItemData (0x40) and appends it to list+0x38 (high); semantic signature: `StandardItemData* (ItemList* list, InventoryEntryData* entry, const RefHandle* owner)`
+/// `ItemList::AddItem` at 0x904df0 (semantic, high); signature (untiered): `undefined8 AddItem(longlong param_1, undefined8 param_2, undefined8 param_3)`; allocates a StandardItemData (0x40) and appends it to list+0x38 (high); semantic signature: `StandardItemData* (ItemList* list, InventoryEntry* entry, const RefHandle* owner)`
 pub const ItemList__AddItem: u64 = 51011;
 /// `ItemList::Clear` at 0x904f70 (semantic, high); signature (untiered): `undefined Clear(longlong param_1)`; empties entryList and deletes every entry (high); semantic signature: `void (ItemList* list)`
 pub const ItemList__Clear: u64 = 51014;
 /// `ItemList::Clear` as a function pointer type (high).
 pub type ItemList__Clear_fn = unsafe extern "C" fn(list: *mut classes::ItemList);
-/// `ItemList::GetSelectedEntry` at 0x905370 (semantic, high); signature (untiered): `undefined8 GetSelectedEntry(longlong param_1)`; GetSelectedItem()->entry (high); semantic signature: `InventoryEntryData* (ItemList* list)`
+/// `ItemList::GetSelectedEntry` at 0x905370 (semantic, high); signature (untiered): `undefined8 GetSelectedEntry(longlong param_1)`; GetSelectedItem()->entry (high); semantic signature: `InventoryEntry* (ItemList* list)`
 pub const ItemList__GetSelectedEntry: u64 = 51018;
+/// `ItemList::GetSelectedEntry` as a function pointer type (high).
+pub type ItemList__GetSelectedEntry_fn = unsafe extern "C" fn(list: *mut classes::ItemList) -> *mut classes::InventoryEntry;
 /// `ItemList::GetSelectedItem` at 0x905290 (semantic, high); signature (untiered): `undefined8 GetSelectedItem(longlong param_1)`; reads root.selectedIndex (number) and returns items[index], null when stale or out of range (high); semantic signature: `StandardItemData* (ItemList* list)`
 pub const ItemList__GetSelectedItem: u64 = 51017;
 /// `ItemList::GetSelectedItem` as a function pointer type (high).
@@ -80323,6 +80401,10 @@ pub const LoadGameUnrecognizedContentCallBack__dtor: u64 = 442590;
 pub const LoadGameUnrecognizedContentCallBack__vdtor: u64 = 442601;
 /// `LoadGameUnrecognizedContentCallBack::vfunc_1` at 0x62d810 (rtti, high); signature (low): `undefined vfunc_1(LoadGameUnrecognizedContentCallBack * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
 pub const LoadGameUnrecognizedContentCallBack__vfunc_1: u64 = 442596;
+/// `LoadGlobalData` at 0x61c2f0 (semantic, high); signature (untiered): `undefined8 LoadGlobalData(uint param_1, ulonglong * param_2, undefined8 param_3, TypeDescriptor * param_4)`; global data reader switch (high); semantic signature: `bool (u32 type, BGSLoadGameBuffer* buf)`
+pub const LoadGlobalData: u64 = 35642;
+/// `LoadGlobalData` as a function pointer type (high).
+pub type LoadGlobalData_fn = unsafe extern "C" fn(type_: u32, buf: *mut classes::BGSLoadGameBuffer) -> bool;
 /// `LoadINAMTNAMOrPDTOChunks` at 0x4a23f0 (decompiler, medium); signature (untiered): `undefined LoadINAMTNAMOrPDTOChunks(ulonglong * param_1, longlong param_2)`
 pub const LoadINAMTNAMOrPDTOChunks: u64 = 29772;
 /// `LoadIniForDataFileName` at 0x661720 (decompiler, medium); signature (untiered): `undefined8 LoadIniForDataFileName(undefined8 param_1, undefined8 * param_2)`
@@ -80499,6 +80581,8 @@ pub const LoadRefHandleVec3FormAndFields: u64 = 50014;
 pub const LoadResourceFromFile: u64 = 84469;
 /// `LoadResponseTableFromFile` at 0x7c7370 (decompiler, medium); signature (untiered): `uint LoadResponseTableFromFile(undefined8 * param_1, undefined8 param_2, undefined8 * param_3)`
 pub const LoadResponseTableFromFile: u64 = 42790;
+/// `LoadSaveEntry` at 0x614660 (semantic, high); signature (untiered): `undefined LoadSaveEntry(undefined8 * param_1)`; RequestLoad(mgr, entry->name, entry+0x60, 0, false) (high); semantic signature: `void (Entry*)`
+pub const LoadSaveEntry: u64 = 35534;
 /// `LoadSharedPointerField18` at 0xec6830 (decompiler, medium); signature (untiered): `undefined LoadSharedPointerField18(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 * param_4)`
 pub const LoadSharedPointerField18: u64 = 69646;
 /// `LoadSizedChildNodeBlock` at 0x8734d0 (decompiler, medium); signature (untiered): `undefined LoadSizedChildNodeBlock(longlong param_1, undefined8 param_2)`
@@ -80819,8 +80903,6 @@ pub const LookupEntryByObjectModelPath: u64 = 24599;
 pub const LookupEntryRefsUnderReadLock: u64 = 50025;
 /// `LookupForm3COr47FromField10Or14` at 0x4e0230 (decompiler, medium); signature (untiered): `longlong LookupForm3COr47FromField10Or14(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const LookupForm3COr47FromField10Or14: u64 = 30780;
-/// `LookupFormByIDWrapper` at 0x4db7d0 (decompiler, high); signature (untiered): `undefined LookupFormByIDWrapper(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const LookupFormByIDWrapper: u64 = 30690;
 /// `LookupFormType3CFromField14` at 0x4e02b0 (decompiler, medium); signature (untiered): `longlong LookupFormType3CFromField14(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const LookupFormType3CFromField14: u64 = 30782;
 /// `LookupGlobalMapByField14` at 0x279fa0 (decompiler, medium); signature (untiered): `undefined8 LookupGlobalMapByField14(longlong param_1)`
@@ -80875,8 +80957,6 @@ pub const LookupQwordKeyInHashMap: u64 = 76725;
 pub const LookupRefAtField8A4: u64 = 40665;
 /// `LookupRefByHandle38IfFormType3E` at 0x5db670 (decompiler, medium); signature (untiered): `longlong LookupRefByHandle38IfFormType3E(longlong param_1)`
 pub const LookupRefByHandle38IfFormType3E: u64 = 34768;
-/// `LookupRemappedFormID` at 0x614dc0 (decompiler, medium); signature (untiered): `ulonglong LookupRemappedFormID(longlong param_1, uint param_2)`
-pub const LookupRemappedFormID: u64 = 35555;
 /// `LookupSignedByteTable381692` at 0x779d70 (decompiler, medium); signature (medium): `int LookupSignedByteTable381692(uint param_1)`
 pub const LookupSignedByteTable381692: u64 = 41278;
 /// `LookupTableByLow6Bits` at 0x632d80 (decompiler, medium); signature (medium): `undefined4 LookupTableByLow6Bits(byte * param_1)`
@@ -81305,6 +81385,10 @@ pub const MainMenu__GFxFunctionHandler_vfunc_1_sub1: u64 = 35429;
 pub const MainMenu__GFxFunctionHandler_vfunc_1_sub2: u64 = 524018;
 /// `MainMenu::OpenCreationClubMenu` at 0x959b90 (decompiler, high); signature (high): `undefined OpenCreationClubMenu(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const MainMenu__OpenCreationClubMenu: u64 = 442713;
+/// `MainMenu::StartNewGame` at 0x959160 (semantic, high); signature (untiered): `undefined StartNewGame(undefined8 param_1, undefined8 param_2, undefined8 param_3, TESObjectCELL * param_4)`; New: RunPostLoadGameInitOnce, FindFormByID(sscanf(sCharGenQuest)), TryStartQuest(quest, &started, true) at 0x9591b9 (S1 kind 7: rcx = TESQuest*), modded flag on the player, GenerateUniquePlayerID(mgr) (high); semantic signature: `void ()`
+pub const MainMenu__StartNewGame: u64 = 52118;
+/// `MainMenu::StartNewGame` as a function pointer type (high).
+pub type MainMenu__StartNewGame_fn = unsafe extern "C" fn();
 /// `MainMenu::ctor` at 0x957e10 (layout_inference, high); signature (low): `MainMenu * ctor(MainMenu * this, undefined8 param_1, _Func_impl_no_alloc<<lambda_4b7cf2aed8fefcef307916bb669dedaf>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>_vtbl * * param_2, undefined8 param_3)`
 pub const MainMenu__ctor: u64 = 52108;
 /// `MainMenu::dtor` at 0x957fd0 (layout_inference, high); signature (low): `undefined dtor(MainMenu * this, char * param_1, longlong * param_2, ulonglong param_3)`
@@ -81323,8 +81407,6 @@ pub const MainMenu__vfunc_1_cb10: u64 = 524011;
 pub const MainMenu__vfunc_1_cb11: u64 = 52133;
 /// `MainMenu::vfunc_1_cb2` at 0x9590f0 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb2(undefined8 param_1, undefined8 param_2, undefined8 param_3, TESObjectCELL * param_4)`
 pub const MainMenu__vfunc_1_cb2: u64 = 52117;
-/// `MainMenu::vfunc_1_cb3` at 0x959160 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb3(undefined8 param_1, undefined8 param_2, undefined8 param_3, TESObjectCELL * param_4)`
-pub const MainMenu__vfunc_1_cb3: u64 = 52118;
 /// `MainMenu::vfunc_1_cb4` at 0x959290 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb4(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const MainMenu__vfunc_1_cb4: u64 = 52120;
 /// `MainMenu::vfunc_1_cb5` at 0x959310 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb5(undefined8 * param_1)`
@@ -92371,8 +92453,6 @@ pub const OpenLocalizedStringTableFile: u64 = 15478;
 pub const OpenLooseFileHandle: u64 = 70045;
 /// `OpenMarketplaceOrShowUpdateRequired` at 0x57e940 (decompiler, medium); signature (untiered): `undefined OpenMarketplaceOrShowUpdateRequired(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const OpenMarketplaceOrShowUpdateRequired: u64 = 441705;
-/// `OpenSaveGameFile` at 0x622390 (decompiler, medium); signature (untiered): `longlong * OpenSaveGameFile(longlong param_1, longlong * param_2, char * param_3, undefined1 param_4, int param_5)`
-pub const OpenSaveGameFile: u64 = 35724;
 /// `OpenStreamAndCheckFileHeader` at 0x4271e0 (decompiler, medium); signature (untiered): `undefined1 OpenStreamAndCheckFileHeader(longlong * param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
 pub const OpenStreamAndCheckFileHeader: u64 = 26624;
 /// `OpenWinHttpRequest` at 0x13de1f0 (decompiler, medium); signature (untiered): `undefined OpenWinHttpRequest(longlong * param_1, longlong param_2, undefined8 param_3, uint param_4, longlong * param_5)`
@@ -92403,8 +92483,6 @@ pub const Options__vfunc_4: u64 = 454642;
 pub const OrByteField311OfField8: u64 = 39907;
 /// `OrFlagsIntoField14` at 0xefb0e0 (decompiler, medium); signature (untiered): `undefined OrFlagsIntoField14(longlong param_1, ushort param_2)`
 pub const OrFlagsIntoField14: u64 = 70886;
-/// `OrFlagsIntoKeyedEntryLocked` at 0x613570 (decompiler, medium); signature (untiered): `undefined OrFlagsIntoKeyedEntryLocked(longlong param_1, uint param_2, uint param_3)`
-pub const OrFlagsIntoKeyedEntryLocked: u64 = 35507;
 /// `OrVfunc10ResultIntoFlag` at 0x555fd0 (decompiler, medium); signature (untiered): `undefined8 OrVfunc10ResultIntoFlag(char * param_1, longlong * param_2)`
 pub const OrVfunc10ResultIntoFlag: u64 = 32953;
 /// `OutputDebugStringMultiByte` at 0xab31d0 (decompiler, high); signature (high): `undefined OutputDebugStringMultiByte(char * param_1)`
@@ -95737,9 +95815,9 @@ pub const ProcessQueuedItemsWithTimeBudget: u64 = 54069;
 pub const ProcessQueuedReferenceHandles_2: u64 = 15332;
 /// `ProcessReferencesFromHandleArray` at 0x2048d0 (decompiler, medium); signature (untiered): `undefined ProcessReferencesFromHandleArray(undefined8 param_1, longlong * param_2, undefined8 param_3)`
 pub const ProcessReferencesFromHandleArray: u64 = 15329;
-/// `ProcessSaveLoadRequests` at 0x625b90 (decompiler, medium); signature (untiered): `undefined ProcessSaveLoadRequests(longlong param_1, undefined8 param_2, undefined8 param_3, BSWin32SaveDataSystemUtility_vtbl * param_4)`
+/// `ProcessSaveLoadRequests` at 0x625b90 (semantic, high); signature (untiered): `undefined ProcessSaveLoadRequests(longlong param_1, undefined8 param_2, undefined8 param_3, BSWin32SaveDataSystemUtility_vtbl * param_4)`; main-thread drain of +0x3b8: save kinds (0xf00000xx), load kinds (0xd00000xx), quicksave/quickload with a 2-frame message delay (high); semantic signature: `void (BGSSaveLoadManager*)`
 pub const ProcessSaveLoadRequests: u64 = 35772;
-/// `ProcessSaveLoadThreadRequest` at 0x62a300 (decompiler, medium); signature (untiered): `undefined ProcessSaveLoadThreadRequest(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+/// `ProcessSaveLoadThreadRequest` at 0x62a300 (semantic, high); signature (untiered): `undefined ProcessSaveLoadThreadRequest(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; worker handler: 0x40000001 write save, 0x40000004 delete file, 0x50000008 build list, 0x50000020 enumerate, 0x50001000 load entry, 0x10008000 release list (high); semantic signature: `void (Thread*, BSTSmartPointer<Request>*)`
 pub const ProcessSaveLoadThreadRequest: u64 = 35794;
 /// `ProcessShadowSceneNodeQueues` at 0x150e040 (runtime, high); signature (untiered): `undefined ProcessShadowSceneNodeQueues(longlong param_1, undefined8 param_2, ulonglong param_3)`; ShadowSceneNode::ProcessQueues on each of the four g_ShadowSceneNode entries (high); semantic signature: `void (BSCullingProcess* culler)`
 pub const ProcessShadowSceneNodeQueues: u64 = 106337;
@@ -96145,7 +96223,7 @@ pub const QueueRequestResponseFromRecord: u64 = 419103;
 pub const QueueRequestResponseWithCode: u64 = 442285;
 /// `QueueRumbleEntry` at 0xcee260 (decompiler, medium); signature (untiered): `DWORD QueueRumbleEntry(int param_1, undefined4 param_2, undefined4 param_3)`
 pub const QueueRumbleEntry: u64 = 68528;
-/// `QueueSaveLoadRequest` at 0x625850 (decompiler, medium); signature (untiered): `undefined QueueSaveLoadRequest(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+/// `QueueSaveLoadRequest` at 0x625850 (semantic, high); signature (untiered): `undefined QueueSaveLoadRequest(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`; allocates a Request and pushes it to the main queue (bit31) or the worker (high); semantic signature: `void (BGSSaveLoadManager*, u32 kind)`
 pub const QueueSaveLoadRequest: u64 = 35769;
 /// `QueueScaleformEvent` at 0x116eca0 (semantic, high); signature (untiered): `undefined QueueScaleformEvent(longlong * param_1, undefined8 param_2)`; AddMessage(name, 6, BSUIScaleformData{event}) (high); semantic signature: `void (const BSFixedString* menuName, void* scaleformEvent)`
 pub const QueueScaleformEvent: u64 = 82182;
@@ -96717,7 +96795,7 @@ pub const ReadAllImageRows: u64 = 89448;
 pub const ReadAndDiscardEntryArray: u64 = 63979;
 /// `ReadAndUnescapeJsonStringField` at 0x13eeae0 (decompiler, medium); signature (untiered): `undefined8 ReadAndUnescapeJsonStringField(undefined8 * param_1, undefined8 param_2, undefined8 param_3, char param_4, char param_5)`
 pub const ReadAndUnescapeJsonStringField: u64 = 527280;
-/// `ReadAndVerifyMagicHeader` at 0x61f310 (decompiler, medium); signature (untiered): `bool ReadAndVerifyMagicHeader(longlong * param_1, undefined8 param_2)`
+/// `ReadAndVerifyMagicHeader` at 0x61f310 (semantic, high); signature (untiered): `bool ReadAndVerifyMagicHeader(longlong * param_1, undefined8 param_2)`; seek 0, check 'TESV_SAVEGAME' (0x1908f30) and read the header buffer (high); semantic signature: `bool (Win32FileType*, BGSLoadGameBuffer* out)`
 pub const ReadAndVerifyMagicHeader: u64 = 35675;
 /// `ReadArchiveFileBuffered` at 0xec4d20 (decompiler, medium); signature (untiered): `int ReadArchiveFileBuffered(longlong param_1, void * param_2, uint param_3)`
 pub const ReadArchiveFileBuffered: u64 = 69602;
@@ -96753,6 +96831,10 @@ pub const ReadByteLengthPrefixedName: u64 = 69650;
 pub const ReadBytes: u64 = 85198;
 /// `ReadCOEDChunk` at 0x155d30 (decompiler, medium); signature (untiered): `ulonglong ReadCOEDChunk(ulonglong * param_1, longlong param_2)`
 pub const ReadCOEDChunk: u64 = 11516;
+/// `ReadChangeFormData` at 0x637590 (semantic, high); signature (untiered): `undefined ReadChangeFormData(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; reads the data and inflates it when uncompressedLength != 0 (high); semantic signature: `void (BGSLoadFormBuffer* buf, BGSLoadStream* stream)`
+pub const ReadChangeFormData: u64 = 35991;
+/// `ReadChangeFormHeader` at 0x6373a0 (semantic, high); signature (untiered): `undefined ReadChangeFormHeader(undefined4 * param_1, longlong param_2)`; reads the 9-byte header and the lengths (high); semantic signature: `void (SavedChangeFormRecord* rec, BGSLoadStream* stream)`
+pub const ReadChangeFormHeader: u64 = 35985;
 /// `ReadChunkData` at 0x1cdd10 (decompiler, medium); signature (medium): `undefined8 ReadChunkData(longlong param_1, void * param_2, uint param_3)`
 pub const ReadChunkData: u64 = 13991;
 /// `ReadChunkDwordArrayWithByteSwap` at 0x1d8e30 (decompiler, high); signature (high): `undefined ReadChunkDwordArrayWithByteSwap(longlong param_1, uint * param_2, uint param_3)`
@@ -97015,8 +97097,6 @@ pub const ReadRemainingTagBytesIntoBuffer: u64 = 83355;
 pub const ReadSaveHeaderFields: u64 = 35674;
 /// `ReadSaveHeaderFromStream` at 0x61ee40 (decompiler, medium); signature (untiered): `undefined ReadSaveHeaderFromStream(longlong * param_1, longlong param_2)`
 pub const ReadSaveHeaderFromStream: u64 = 35673;
-/// `ReadSavedFormRecordHeader` at 0x6373a0 (decompiler, medium); signature (untiered): `undefined ReadSavedFormRecordHeader(undefined4 * param_1, longlong param_2)`
-pub const ReadSavedFormRecordHeader: u64 = 35985;
 /// `ReadScriptToken` at 0x34bfd0 (semantic, high); signature (untiered): `ulonglong ReadScriptToken(longlong param_1, char * param_2, TypeDescriptor * param_3, uint * param_4, char param_5, byte param_6)`; reads one token (skips tab, space and comma; quoted strings; a 'name.' prefix becomes a reference variable via FindOrAddScriptRefVariable stored at token+0x200) and classifies it (variable, else LookupCommandByName) (high); semantic signature: `uint (ScriptCompileBuffer* buf, ScriptToken* out, const char* text, uint* offset, bool allowRef, bool flag)`
 pub const ReadScriptToken: u64 = 21974;
 /// `ReadShapeKeysFromBlockStream` at 0xca0b40 (decompiler, medium); signature (untiered): `longlong ReadShapeKeysFromBlockStream(longlong param_1, int param_2)`
@@ -99839,8 +99919,6 @@ pub const RequestFirstPartyEntitlementsUpdate: u64 = 93665;
 pub const RequestListAuthoredContent: u64 = 526353;
 /// `RequestListAuthoredContent_2` at 0x133c730 (decompiler, medium); signature (untiered): `undefined8 RequestListAuthoredContent_2(longlong * param_1)`
 pub const RequestListAuthoredContent_2: u64 = 526352;
-/// `RequestLoadGame` at 0x622f30 (decompiler, medium); signature (untiered): `undefined8 RequestLoadGame(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, char param_5)`
-pub const RequestLoadGame: u64 = 35728;
 /// `RequestMeshAndTrackEntry` at 0xfc98c0 (decompiler, medium); signature (untiered): `undefined RequestMeshAndTrackEntry(longlong param_1, char * param_2, undefined4 * param_3)`
 pub const RequestMeshAndTrackEntry: u64 = 75788;
 /// `RequestRotateToPosition` at 0x790ef0 (decompiler, medium); signature (untiered): `ulonglong RequestRotateToPosition(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`
@@ -99997,6 +100075,8 @@ pub const ResetFromByte8AndClearBytes1To8: u64 = 83958;
 pub const ResetFunctionObject: u64 = 439926;
 /// `ResetFunctionObject_2` at 0x6110c0 (decompiler, medium); signature (untiered): `undefined ResetFunctionObject_2(longlong * param_1)`
 pub const ResetFunctionObject_2: u64 = 35462;
+/// `ResetGame` at 0x65b6c0 (semantic, medium); signature (untiered): `undefined ResetGame(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; back to a fresh world (quit to main menu / content change): autosave check, freeze VM, unload cells, RevertGame, recreate form maps, SkyrimVM, player, TESDataHandler::LoadFiles (medium); semantic signature: `void (Main*)`
+pub const ResetGame: u64 = 36601;
 /// `ResetGlobal415271` at 0x15606d0 (decompiler, medium); signature (medium): `undefined ResetGlobal415271(void)`
 pub const ResetGlobal415271: u64 = 107646;
 /// `ResetGlobalStringAndMessageRecord` at 0x597d50 (decompiler, medium); signature (untiered): `undefined ResetGlobalStringAndMessageRecord(undefined8 param_1, undefined8 param_2, undefined1 * param_3, ulonglong param_4)`
@@ -100555,8 +100635,14 @@ pub const ReturnZero_9: u64 = 444473;
 pub const ReuseOrCreateEntry: u64 = 105529;
 /// `RevertAddedForms` at 0x3203a0 (decompiler, medium); signature (untiered): `undefined RevertAddedForms(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const RevertAddedForms: u64 = 20912;
-/// `RevertAllGlobalData` at 0x61ce50 (decompiler, medium); signature (untiered): `undefined RevertAllGlobalData(undefined1 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `RevertAllGlobalData` at 0x61ce50 (runtime, high); signature (untiered): `undefined RevertAllGlobalData(undefined1 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; RevertGlobalData for 0..8, 100..114, 1000..1005 (high); semantic signature: `void (bool revertGlobals)`
 pub const RevertAllGlobalData: u64 = 35648;
+/// `RevertAllGlobalData` as a function pointer type (high).
+pub type RevertAllGlobalData_fn = unsafe extern "C" fn(revertGlobals: bool);
+/// `RevertGlobalData` at 0x61cfb0 (runtime, high); signature (untiered): `undefined8 RevertGlobalData(uint param_1, longlong * param_2, longlong param_3, undefined8 param_4)`; global data revert switch (high); semantic signature: `bool (u32 type, BGSLoadGameBuffer* buf, bool revertGlobals)`
+pub const RevertGlobalData: u64 = 35650;
+/// `RevertGlobalData` as a function pointer type (high).
+pub type RevertGlobalData_fn = unsafe extern "C" fn(type_: u32, buf: *mut classes::BGSLoadGameBuffer, revertGlobals: bool) -> bool;
 /// `RevertSelectedSpellFunctor::vdtor` at 0x6bc860 (layout_inference, medium); signature (low): `RevertSelectedSpellFunctor * vdtor(RevertSelectedSpellFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const RevertSelectedSpellFunctor__vdtor: u64 = 38237;
 /// `RevertSelectedSpellFunctor::vfunc_1` at 0x6bbc50 (rtti, high); signature (low): `undefined1 vfunc_1(RevertSelectedSpellFunctor * this, uint param_1)`
@@ -100695,8 +100781,10 @@ pub const SaveField8IfFlagSet: u64 = 14980;
 pub const SaveGameMagicCasterVisitor__vdtor: u64 = 38238;
 /// `SaveGameMagicCasterVisitor::vfunc_1` at 0x6bbc70 (rtti, high); signature (low): `undefined8 vfunc_1(SaveGameMagicCasterVisitor * this, uint param_1)`
 pub const SaveGameMagicCasterVisitor__vfunc_1: u64 = 38188;
-/// `SaveGlobalDataByType` at 0x61b9a0 (decompiler, medium); signature (untiered): `undefined8 SaveGlobalDataByType(uint param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SaveGlobalDataByType: u64 = 35639;
+/// `SaveGlobalData` at 0x61b9a0 (semantic, high); signature (untiered): `undefined8 SaveGlobalData(uint param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; global data writer switch (see enum GlobalDataType) (high); semantic signature: `bool (u32 type, BGSSaveGameBuffer* buf)`
+pub const SaveGlobalData: u64 = 35639;
+/// `SaveGlobalData` as a function pointer type (high).
+pub type SaveGlobalData_fn = unsafe extern "C" fn(type_: u32, buf: *mut classes::BGSSaveGameBuffer) -> bool;
 /// `SaveHavokPhysicsSnapshot` at 0xb97e50 (decompiler, medium); signature (untiered): `undefined1 * SaveHavokPhysicsSnapshot(undefined1 * param_1, longlong param_2, longlong param_3, undefined4 param_4, undefined8 param_5, undefined1 param_6)`
 pub const SaveHavokPhysicsSnapshot: u64 = 62434;
 /// `SaveLoadMagicCasterVisitor::dtor` at 0x6badb0 (layout_inference, high); signature (high): `undefined dtor(SaveLoadMagicCasterVisitor * this)`
@@ -100707,6 +100795,8 @@ pub const SaveLoadMagicCasterVisitor__dtor_2: u64 = 38155;
 pub const SaveLoadMagicCasterVisitor__dtor_3: u64 = 38156;
 /// `SaveLoadMagicCasterVisitor::vdtor` at 0x6bc8c0 (layout_inference, medium); signature (low): `SaveLoadMagicCasterVisitor * vdtor(SaveLoadMagicCasterVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const SaveLoadMagicCasterVisitor__vdtor: u64 = 38239;
+/// `SaveOverEntry` at 0x6145c0 (semantic, high); signature (untiered): `undefined8 SaveOverEntry(undefined8 * param_1)`; custom-named entry: Save(2, entry name) and drop the old entry; 'Save'/'Autosave'/'Quicksave' entry: Save(2, generated name), then DeleteSaveFile(old name) (call 0x614637, S1 delete hook 1) and RemoveSaveEntry (high); semantic signature: `bool (Entry*)`
+pub const SaveOverEntry: u64 = 35533;
 /// `SavePackageLocation` at 0x4a5300 (decompiler, medium); signature (untiered): `undefined SavePackageLocation(longlong param_1, longlong param_2)`
 pub const SavePackageLocation: u64 = 29826;
 /// `SavePackageTarget` at 0x4a6380 (decompiler, medium); signature (untiered): `undefined SavePackageTarget(undefined1 * param_1, longlong param_2)`
@@ -101835,8 +101925,6 @@ pub const SetField204Bit800: u64 = 37463;
 pub const SetField20Vec3AndField30: u64 = 51767;
 /// `SetField214OfField10` at 0x700e90 (decompiler, high); signature (untiered): `undefined SetField214OfField10(longlong param_1, undefined4 param_2)`
 pub const SetField214OfField10: u64 = 39550;
-/// `SetField218AndFlagChange1000` at 0x3bf500 (decompiler, medium); signature (untiered): `undefined SetField218AndFlagChange1000(longlong * param_1, longlong param_2)`
-pub const SetField218AndFlagChange1000: u64 = 24694;
 /// `SetField218RefHandleLocked` at 0x726ce0 (decompiler, medium); signature (untiered): `undefined SetField218RefHandleLocked(longlong param_1, uint * param_2, longlong param_3, undefined8 param_4)`
 pub const SetField218RefHandleLocked: u64 = 39950;
 /// `SetField21CTo11SavingPrevious` at 0x1065f00 (decompiler, medium); signature (untiered): `undefined SetField21CTo11SavingPrevious(longlong param_1)`
@@ -101849,8 +101937,6 @@ pub const SetField21FA8: u64 = 527152;
 pub const SetField21FB0: u64 = 527151;
 /// `SetField21FB8` at 0x13dbbb0 (decompiler, high); signature (high): `undefined SetField21FB8(longlong param_1, undefined8 param_2)`
 pub const SetField21FB8: u64 = 449403;
-/// `SetField220AndFlagChange2000` at 0x3bf520 (decompiler, medium); signature (untiered): `undefined SetField220AndFlagChange2000(longlong * param_1, longlong param_2)`
-pub const SetField220AndFlagChange2000: u64 = 24695;
 /// `SetField22CAndCollisionFilterHighWord` at 0x3ffb10 (decompiler, medium); signature (untiered): `undefined SetField22CAndCollisionFilterHighWord(longlong param_1, int param_2)`
 pub const SetField22CAndCollisionFilterHighWord: u64 = 25932;
 /// `SetField230EntriesInRange` at 0x150fe80 (decompiler, medium); signature (medium): `undefined SetField230EntriesInRange(longlong param_1, longlong param_2, uint param_3, uint param_4)`
@@ -102773,8 +102859,6 @@ pub const SetStaggerTimeToMaxDuration: u64 = 40040;
 pub const SetStartMenuFont: u64 = 454271;
 /// `SetStoredActorValue` at 0x6e2e80 (decompiler, medium); signature (medium): `undefined SetStoredActorValue(longlong * param_1, char param_2, undefined8 param_3, undefined8 param_4)`
 pub const SetStoredActorValue: u64 = 39017;
-/// `SetString138AndField250` at 0x624d70 (decompiler, medium); signature (untiered): `undefined SetString138AndField250(longlong param_1, undefined1 * param_2, undefined4 param_3)`
-pub const SetString138AndField250: u64 = 35765;
 /// `SetStringAt28IfDifferent` at 0x14b150 (decompiler, medium); signature (untiered): `undefined SetStringAt28IfDifferent(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const SetStringAt28IfDifferent: u64 = 11061;
 /// `SetStringAt8` at 0x159ad60 (decompiler, high); signature (untiered): `undefined SetStringAt8(longlong param_1, undefined1 * param_2)`
@@ -103345,10 +103429,6 @@ pub const SkyStaticFindFunctor__vfunc_0: u64 = 26309;
 pub const SkyrimScript__BaseHandleReaderWriter__vfunc_0: u64 = 14697;
 /// `SkyrimScript::BaseHandleReaderWriter::vfunc_1` at 0x9ba870 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
 pub const SkyrimScript__BaseHandleReaderWriter__vfunc_1: u64 = 53521;
-/// `SkyrimScript::BaseHandleReaderWriter::vfunc_2` at 0x9ba880 (rtti, medium); signature (low): `undefined8 vfunc_2(BaseHandleReaderWriter * this, longlong * param_1, ulonglong param_2)`
-pub const SkyrimScript__BaseHandleReaderWriter__vfunc_2: u64 = 53522;
-/// `SkyrimScript::BaseHandleReaderWriter::vfunc_3` at 0x9ba920 (rtti, medium); signature (low): `undefined8 vfunc_3(BaseHandleReaderWriter * this, longlong * param_1, ulonglong * param_2)`
-pub const SkyrimScript__BaseHandleReaderWriter__vfunc_3: u64 = 53523;
 /// `SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor,14>::ctor` at 0xa0c240 (layout_inference, medium); signature (high): `undefined ctor(ConcreteDelayFunctorFactory<SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor,14> * this)`
 pub const SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_14__ctor: u64 = 54841;
 /// `SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor,14>::vdtor` at 0xa09180 (layout_inference, medium); signature (low): `ConcreteDelayFunctorFactory<SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor,14> * vdtor(ConcreteDelayFunctorFactory<SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor,14> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -104489,10 +104569,16 @@ pub const SkyrimVM__EffectEventRelayFunctor__vfunc_1: u64 = 54031;
 pub const SkyrimVM__EventRelayFunctor__vdtor: u64 = 54368;
 /// `SkyrimVM::EventRelayFunctor::vfunc_1` at 0x9e33e0 (rtti, high); signature (low): `undefined8 vfunc_1(EventRelayFunctor * this, undefined8 param_1)`
 pub const SkyrimVM__EventRelayFunctor__vfunc_1: u64 = 54030;
+/// `SkyrimVM::FreezeForSave` at 0x9e19e0 (semantic, high); signature (untiered): `undefined FreezeForSave(longlong param_1)`; sets the freeze flag, runs VM updates until frozen ('VM timed out while waiting to freeze! Save will be bad.'), unregisters the VM's event sinks (high); semantic signature: `void (SkyrimVM*)`
+pub const SkyrimVM__FreezeForSave: u64 = 54015;
 /// `SkyrimVM::InventoryEventFilter::vfunc_0` at 0x9e8690 (rtti, high); signature (low): `undefined1 vfunc_0(InventoryEventFilter * this, void * param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__InventoryEventFilter__vfunc_0: u64 = 54076;
 /// `SkyrimVM::InventoryEventFilter::vfunc_0_sub0` at 0x9e8110 (callgraph, medium); signature (untiered): `ulonglong vfunc_0_sub0(longlong param_1, longlong param_2, ulonglong param_3)`
 pub const SkyrimVM__InventoryEventFilter__vfunc_0_sub0: u64 = 54072;
+/// `SkyrimVM::LoadGame` at 0x9e1c00 (runtime, high); signature (untiered): `undefined LoadGame(longlong param_1)`; reads the VM; corrupt-save message box on failure (high); semantic signature: `void (SkyrimVM*, LoadStorageWrapper*)`
+pub const SkyrimVM__LoadGame: u64 = 54018;
+/// `SkyrimVM::LoadVMData` at 0x9e5840 (semantic, high); signature (untiered): `undefined8 LoadVMData(longlong param_1, undefined8 * * param_2, undefined1 * param_3, undefined8 param_4)`; slot 2 with a SaveFileHandleReaderWriter, then u16 SkyrimVM version (0xffff = saved unfrozen) and the lists (high); semantic signature: `bool (SkyrimVM* this, LoadStorageWrapper* storage, bool* corrupt, ...)`
+pub const SkyrimVM__LoadVMData: u64 = 54049;
 /// `SkyrimVM::ProcessActivateEvent` at 0x9db090 (runtime, high); signature (untiered): `undefined8 ProcessActivateEvent(SkyrimVM * this, longlong * param_1)`; sends Papyrus OnActivate(actionRef) to objectActivated (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_10* this, const TESActivateEvent* event, BSTEventSource<TESActivateEvent>* source)`
 pub const SkyrimVM__ProcessActivateEvent: u64 = 53959;
 /// `SkyrimVM::ProcessContainerChangedEvent` at 0x9dbac0 (runtime, high); signature (untiered): `undefined8 ProcessContainerChangedEvent(SkyrimVM * this, uint * param_1, undefined8 param_2, longlong param_3)`; sends OnContainerChanged to the item, OnItemRemoved to the old container and OnItemAdded to the new one (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_48* this, const TESContainerChangedEvent* event, BSTEventSource<TESContainerChangedEvent>* source)`
@@ -104505,6 +104591,18 @@ pub const SkyrimVM__ProcessHitEvent: u64 = 53974;
 pub const SkyrimVM__RegisterEventSinks: u64 = 54028;
 /// `SkyrimVM::RegisterEventSinks` as a function pointer type (high).
 pub type SkyrimVM__RegisterEventSinks_fn = unsafe extern "C" fn(vm: *mut classes::partial::SkyrimVM);
+/// `SkyrimVM::Revert` at 0x9e1ca0 (semantic, high); signature (untiered): `undefined Revert(longlong param_1)`; 'Reverting game...' log, ClearPendingArraysLocked 0x9e3fb0, ObjectBindPolicy (+0x3a8) reset (high); semantic signature: `void (SkyrimVM*)`
+pub const SkyrimVM__Revert: u64 = 54019;
+/// `SkyrimVM::Revert` at 0x9e3fb0 (runtime, high); signature (untiered): `undefined Revert(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; clears the VM's pending lists, calls IVMSaveLoadInterface slot 7 (+0x38) and the handle policy's 0x9ba710 (high); semantic signature: `void (SkyrimVM* this)`
+pub const SkyrimVM__Revert_2: u64 = 54040;
+/// `SkyrimVM::Revert` as a function pointer type (high).
+pub type SkyrimVM__Revert_2_fn = unsafe extern "C" fn(this: *mut classes::partial::SkyrimVM);
+/// `SkyrimVM::SaveGame` at 0x9e1b20 (runtime, high); signature (untiered): `undefined SaveGame(longlong param_1, longlong * param_2)`; writes the VM through +0x218; error string when not frozen (high); semantic signature: `void (SkyrimVM*, SaveStorageWrapper*)`
+pub const SkyrimVM__SaveGame: u64 = 54017;
+/// `SkyrimVM::SaveVMData` at 0x9e4760 (semantic, high); signature (untiered): `undefined8 SaveVMData(longlong param_1, longlong * param_2, byte param_3)`; IVMSaveLoadInterface slot 1 with a SaveFileHandleReaderWriter, then u16 5 and the SkyrimVM registration lists (high); semantic signature: `bool (SkyrimVM* this, SaveStorageWrapper* storage, bool sizeOnly)`
+pub const SkyrimVM__SaveVMData: u64 = 54041;
+/// `SkyrimVM::SaveVMData` as a function pointer type (high).
+pub type SkyrimVM__SaveVMData_fn = unsafe extern "C" fn(this: *mut classes::partial::SkyrimVM, storage: *mut classes::partial::SaveStorageWrapper, sizeOnly: bool) -> bool;
 /// `SkyrimVM::SleepStartEventFunctor::vfunc_0` at 0x9f0dd0 (rtti, high); signature (low): `SleepStartEventFunctor * vfunc_0(SleepStartEventFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__SleepStartEventFunctor__vfunc_0: u64 = 54393;
 /// `SkyrimVM::SleepStartEventFunctor::vfunc_1` at 0x9e7970 (rtti, high); signature (low): `undefined8 vfunc_1(SleepStartEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
@@ -104513,6 +104611,8 @@ pub const SkyrimVM__SleepStartEventFunctor__vfunc_1: u64 = 54064;
 pub const SkyrimVM__SleepStopEventFunctor__vfunc_0: u64 = 54394;
 /// `SkyrimVM::SleepStopEventFunctor::vfunc_1` at 0x9e7b30 (rtti, high); signature (low): `undefined8 vfunc_1(SleepStopEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const SkyrimVM__SleepStopEventFunctor__vfunc_1: u64 = 54066;
+/// `SkyrimVM::Unfreeze` at 0x9e1ac0 (semantic, high); signature (untiered): `undefined Unfreeze(longlong param_1)`; IVMSaveLoadInterface (+0x218) slots 6 and 5, re-register sinks, clear the freeze flag (high); semantic signature: `void (SkyrimVM*)`
+pub const SkyrimVM__Unfreeze: u64 = 54016;
 /// `SkyrimVM::UnregisterEventSinks` at 0x9e2e30 (runtime, high); signature (untiered): `undefined UnregisterEventSinks(longlong param_1)`; the matching RemoveEventSink calls (high); semantic signature: `void (SkyrimVM* vm)`
 pub const SkyrimVM__UnregisterEventSinks: u64 = 54029;
 /// `SkyrimVM::UnregisterEventSinks` as a function pointer type (high).
@@ -104837,7 +104937,7 @@ pub const StandardItemData__GetFavorite: u64 = 51807;
 pub const StandardItemData__GetFilterFlag: u64 = 51806;
 /// `StandardItemData::GetName` at 0x93fd20 (semantic, high); signature (untiered): `undefined GetName(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const StandardItemData__GetName: u64 = 51803;
-/// `StandardItemData::ctor` at 0x903e60 (semantic, high); signature (low): `StandardItemData * ctor(StandardItemData * this, longlong * param_1, undefined8 param_2, undefined4 * param_3)`;  (high); semantic signature: `StandardItemData* (StandardItemData* this, GFxMovieView** view, InventoryEntryData* entry, const RefHandle* owner)`
+/// `StandardItemData::ctor` at 0x903e60 (semantic, high); signature (low): `StandardItemData * ctor(StandardItemData * this, longlong * param_1, undefined8 param_2, undefined4 * param_3)`;  (high); semantic signature: `StandardItemData* (StandardItemData* this, GFxMovieView** view, InventoryEntry* entry, const RefHandle* owner)`
 pub const StandardItemData__ctor: u64 = 50981;
 /// `StandardItemData::dtor` at 0x904500 (semantic, high); signature (untiered): `undefined dtor(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; destructor (currently named StandardItemData::ctor) (high); semantic signature: `void (StandardItemData* this)`
 pub const StandardItemData__dtor: u64 = 50992;
@@ -106529,6 +106629,14 @@ pub const TES__BSTEventSink_PositionPlayerEvent_vdtor: u64 = 13618;
 pub const TES__BSTEventSink_PositionPlayerEvent_vfunc_1: u64 = 13419;
 /// `TES::CellAnimations` at 0x1a93f0 (string, medium); signature (low): `undefined CellAnimations(TES * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const TES__CellAnimations: u64 = 13405;
+/// `TES::CreateSaveLoadGame` at 0x615500 (semantic, high); signature (untiered): `undefined CreateSaveLoadGame(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; allocates the 0x348 BGSSaveLoadGame into 0x3223e18 (high); semantic signature: `void ()`
+pub const TES__CreateSaveLoadGame: u64 = 35564;
+/// `TES::CreateSaveLoadGame` as a function pointer type (high).
+pub type TES__CreateSaveLoadGame_fn = unsafe extern "C" fn();
+/// `TES::CreateSaveLoadManager` at 0x622290 (semantic, high); signature (untiered): `undefined CreateSaveLoadManager(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; allocates 0x418, ctor, sets g_BGSSaveLoadManager_ptr, probes 'Saves/' (high); semantic signature: `void ()`
+pub const TES__CreateSaveLoadManager: u64 = 35722;
+/// `TES::CreateSaveLoadManager` as a function pointer type (high).
+pub type TES__CreateSaveLoadManager_fn = unsafe extern "C" fn();
 /// `TES::SystemEventAdapter::ctor` at 0x1abb50 (layout_inference, medium); signature (high): `SystemEventAdapter * ctor(SystemEventAdapter * this)`
 pub const TES__SystemEventAdapter__ctor: u64 = 13442;
 /// `TES::SystemEventAdapter::dtor` at 0x1abba0 (layout_inference, high); signature (high): `undefined dtor(SystemEventAdapter * this)`
@@ -107871,6 +107979,14 @@ pub type TESNPC__GetSex_fn = unsafe extern "C" fn(this: *const classes::TESNPC) 
 pub const TESNPC__LoadGame: u64 = 24778;
 /// `TESNPC::SaveGame` at 0x3c7640 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESNPC * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESNPC__SaveGame: u64 = 24777;
+/// `TESNPC::SetDefaultOutfit` at 0x3bf500 (semantic, high); signature (untiered): `undefined SetDefaultOutfit(longlong * param_1, longlong param_2)`; stores +0x218 and tail-calls slot 10 (AddChange) with 0x1000 (high); semantic signature: `void (TESNPC* this, BGSOutfit* outfit)`
+pub const TESNPC__SetDefaultOutfit: u64 = 24694;
+/// `TESNPC::SetDefaultOutfit` as a function pointer type (high).
+pub type TESNPC__SetDefaultOutfit_fn = unsafe extern "C" fn(this: *mut classes::TESNPC, outfit: *mut classes::BGSOutfit);
+/// `TESNPC::SetSleepOutfit` at 0x3bf520 (semantic, high); signature (untiered): `undefined SetSleepOutfit(longlong * param_1, longlong param_2)`; stores +0x220 and tail-calls slot 10 with 0x2000 (high); semantic signature: `void (TESNPC* this, BGSOutfit* outfit)`
+pub const TESNPC__SetSleepOutfit: u64 = 24695;
+/// `TESNPC::SetSleepOutfit` as a function pointer type (high).
+pub type TESNPC__SetSleepOutfit_fn = unsafe extern "C" fn(this: *mut classes::TESNPC, outfit: *mut classes::BGSOutfit);
 /// `TESNPC::TESAIForm_vdtor` at 0x3cbad8 (slot_propagation, medium); signature (high): `undefined TESAIForm_vdtor(TESNPC * this)`
 pub const TESNPC__TESAIForm_vdtor: u64 = 24878;
 /// `TESNPC::TESActorBaseData_vdtor` at 0x3cbab4 (slot_propagation, medium); signature (high): `undefined TESActorBaseData_vdtor(TESNPC * this)`
@@ -110983,8 +111099,6 @@ pub const UnescapeJsonString_7: u64 = 527056;
 pub const UnescapeJsonString_8: u64 = 451510;
 /// `UnescapeJsonString_9` at 0x13efa30 (decompiler, medium); signature (untiered): `undefined UnescapeJsonString_9(undefined8 * param_1, byte * param_2, undefined8 param_3, undefined8 param_4)`
 pub const UnescapeJsonString_9: u64 = 98738;
-/// `UnfreezeVM` at 0x9e1ac0 (decompiler, medium); signature (untiered): `undefined UnfreezeVM(longlong param_1)`
-pub const UnfreezeVM: u64 = 54016;
 /// `UninitializedCopyEntries50` at 0x14581e0 (decompiler, medium); signature (untiered): `ulonglong * UninitializedCopyEntries50(undefined8 param_1, longlong * param_2, longlong * param_3, ulonglong * param_4)`
 pub const UninitializedCopyEntries50: u64 = 96345;
 /// `UninitializedCopyEntry40Range` at 0x128a660 (decompiler, medium); signature (untiered): `undefined UninitializedCopyEntry40Range(undefined8 param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
@@ -113319,6 +113433,12 @@ pub const WriteCString: u64 = 69037;
 pub const WriteCStringToOstream: u64 = 441595;
 /// `WriteCStringToStream` at 0xee48e0 (decompiler, medium); signature (medium): `undefined WriteCStringToStream(longlong param_1, longlong param_2)`
 pub const WriteCStringToStream: u64 = 70351;
+/// `WriteChangeFormInitialData` at 0x620bf0 (semantic, high); signature (untiered): `ulonglong WriteChangeFormInitialData(longlong param_1, longlong * param_2, ulonglong param_3, undefined8 param_4)`; writes the initial data (cell/worldspace ids, position, rotation, base for created refs, editor location for moved refs) and the havok data when bit 2 is set (high); semantic signature: `u8 (BGSSaveFormBuffer* buf, TESForm* form, u32 changeFlags)`
+pub const WriteChangeFormInitialData: u64 = 35715;
+/// `WriteChangeFormInitialData` as a function pointer type (high).
+pub type WriteChangeFormInitialData_fn = unsafe extern "C" fn(buf: *mut classes::BGSSaveFormBuffer, form: *mut classes::TESForm, changeFlags: u32) -> u8;
+/// `WriteChangeFormRecord` at 0x6395d0 (semantic, high); signature (untiered): `undefined WriteChangeFormRecord(longlong param_1, longlong param_2)`; writes 9 header bytes (refID[3], u32 changeFlags, u8 type|sizeCode, u8 version), length (compressed or raw) and uncompressed length (0 when raw) sized by the code, then the data (high); semantic signature: `void (BGSSaveFormBuffer* buf, BGSSaveStream* stream)`
+pub const WriteChangeFormRecord: u64 = 36036;
 /// `WriteChangedEntriesToStream` at 0xbd5300 (decompiler, medium); signature (untiered): `undefined8 WriteChangedEntriesToStream(longlong param_1, longlong * param_2)`
 pub const WriteChangedEntriesToStream: u64 = 63635;
 /// `WriteConstraintMotorToStream` at 0x1091460 (decompiler, medium); signature (untiered): `undefined WriteConstraintMotorToStream(undefined8 param_1, longlong param_2, longlong param_3)`
@@ -113355,6 +113475,8 @@ pub const WriteFlaggedPairArrayToSave: u64 = 53724;
 pub const WriteFormAsEncodedID: u64 = 36048;
 /// `WriteFormIDAs3Bytes` at 0x9cf9b0 (decompiler, high); signature (high): `bool WriteFormIDAs3Bytes(longlong * param_1, uint param_2)`
 pub const WriteFormIDAs3Bytes: u64 = 53826;
+/// `WriteFormIDIndexArray` at 0x614e70 (semantic, high); signature (untiered): `undefined WriteFormIDIndexArray(longlong param_1, longlong param_2)`; writes u32 (count-1) then the form id of each index 1..count-1 (0 when the index has none) (high); semantic signature: `void (FormIDIndexMap* map, BGSSaveStream* stream)`
+pub const WriteFormIDIndexArray: u64 = 35558;
 /// `WriteFourDwordsToStream` at 0xef32b0 (decompiler, medium); signature (untiered): `undefined WriteFourDwordsToStream(longlong param_1, longlong param_2)`
 pub const WriteFourDwordsToStream: u64 = 70704;
 /// `WriteFourFloatsSnappingTinyToZero` at 0xef9580 (decompiler, medium); signature (medium): `undefined WriteFourFloatsSnappingTinyToZero(float * param_1, longlong param_2)`
@@ -113407,6 +113529,8 @@ pub const WritePaddedCharToOstream: u64 = 442908;
 pub const WritePaddedCharsToOstream: u64 = 442927;
 /// `WritePathingRequestAndDwordArrayToSave` at 0x8da840 (decompiler, medium); signature (untiered): `undefined WritePathingRequestAndDwordArrayToSave(longlong * param_1, longlong param_2)`
 pub const WritePathingRequestAndDwordArrayToSave: u64 = 49967;
+/// `WritePendingChangeFormRecord` at 0x63a790 (semantic, high); signature (untiered): `undefined WritePendingChangeFormRecord(longlong * param_1, longlong param_2, uint param_3, undefined4 param_4)`; re-emits a change form kept from a load for a form that does not exist now (raw copy of its saved data) (high); semantic signature: `void (void** pendingData, BGSSaveStream* stream, u32 formID, u32 changeFlags)`
+pub const WritePendingChangeFormRecord: u64 = 36077;
 /// `WritePngChunkData` at 0x11ad2e0 (decompiler, medium); signature (untiered): `undefined WritePngChunkData(longlong param_1, longlong param_2, longlong param_3)`
 pub const WritePngChunkData: u64 = 90190;
 /// `WritePriceIdField` at 0x13738d0 (decompiler, medium); signature (untiered): `undefined WritePriceIdField(ulonglong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -113431,6 +113555,8 @@ pub const WriteRefHandleAsFormID: u64 = 27179;
 pub const WriteRefHandleAsFormID_2: u64 = 53831;
 /// `WriteSaveBufferBytes` at 0x639f00 (decompiler, medium); signature (medium): `undefined WriteSaveBufferBytes(longlong param_1, void * param_2, uint param_3)`
 pub const WriteSaveBufferBytes: u64 = 36053;
+/// `WriteSaveHeader` at 0x61e9e0 (runtime, high); signature (untiered): `int WriteSaveHeader(ulonglong param_1)`; writes 'TESV_SAVEGAME' then a length-prefixed header {u32 version, u32 save number, wstring player name, u32 level, wstring location, wstring play time, wstring race, u16 sex, f32 xp, f32 xp needed, FILETIME, u32 width, u32 height, u16 compression} and the screenshot; returns bytes written (high); semantic signature: `u32 (Win32FileType* stream)`
+pub const WriteSaveHeader: u64 = 35672;
 /// `WriteSharedObjectRef` at 0x854fa0 (decompiler, medium); signature (untiered): `undefined WriteSharedObjectRef(longlong param_1, longlong * param_2)`
 pub const WriteSharedObjectRef: u64 = 46920;
 /// `WriteStateToSaveBuffer` at 0x4b3e60 (decompiler, medium); signature (untiered): `undefined8 WriteStateToSaveBuffer(longlong param_1, longlong param_2)`
@@ -113773,12 +113899,16 @@ pub const _anon_11669552__InitItemPerkRankDataVisitor__vfunc_0: u64 = 14326;
 pub const _anon_11B7475C__PlayerParentCellListener__vdtor: u64 = 32155;
 /// `_anon_11B7475C::PlayerParentCellListener::vfunc_1` at 0x527da0 (rtti, high); signature (low): `undefined8 vfunc_1(PlayerParentCellListener * this, longlong param_1, longlong param_2)`
 pub const _anon_11B7475C__PlayerParentCellListener__vfunc_1: u64 = 32154;
+/// `_anon_14F04957::Win32FileType::GetSize` at 0x159d440 (semantic, medium); signature (untiered): `undefined4 GetSize(Win32FileType * this)`
+pub const _anon_14F04957__Win32FileType__GetSize: u64 = 109368;
+/// `_anon_14F04957::Win32FileType::Open` at 0x159d770 (semantic, medium); signature (untiered): `bool Open(Win32FileType * this)`
+pub const _anon_14F04957__Win32FileType__Open: u64 = 109370;
+/// `_anon_14F04957::Win32FileType::Seek` at 0x159d8c0 (semantic, medium); signature (untiered): `int Seek(Win32FileType * this, int param_1, int param_2)`
+pub const _anon_14F04957__Win32FileType__Seek: u64 = 109375;
 /// `_anon_14F04957::Win32FileType::ctor` at 0x159d320 (layout_inference, medium); signature (high): `undefined ctor(Win32FileType * this)`
 pub const _anon_14F04957__Win32FileType__ctor: u64 = 109362;
 /// `_anon_14F04957::Win32FileType::vdtor` at 0x159d3e0 (layout_inference, medium); signature (low): `Win32FileType * vdtor(Win32FileType * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_14F04957__Win32FileType__vdtor: u64 = 109365;
-/// `_anon_14F04957::Win32FileType::vfunc_10` at 0x159d440 (rtti, high); signature (high): `undefined4 vfunc_10(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__vfunc_10: u64 = 109368;
 /// `_anon_14F04957::Win32FileType::vfunc_17` at 0x159d800 (rtti, high); signature (low): `uint vfunc_17(Win32FileType * this, void * param_1, uint param_2)`
 pub const _anon_14F04957__Win32FileType__vfunc_17: u64 = 109373;
 /// `_anon_14F04957::Win32FileType::vfunc_18` at 0x159d9d0 (rtti, high); signature (low): `ulonglong vfunc_18(Win32FileType * this, void * param_1, ulonglong param_2)`
@@ -113793,10 +113923,6 @@ pub const _anon_14F04957__Win32FileType__vfunc_2: u64 = 109374;
 pub const _anon_14F04957__Win32FileType__vfunc_20: u64 = 109371;
 /// `_anon_14F04957::Win32FileType::vfunc_21` at 0x159d7f0 (rtti, high); signature (high): `undefined8 vfunc_21(Win32FileType * this)`
 pub const _anon_14F04957__Win32FileType__vfunc_21: u64 = 109372;
-/// `_anon_14F04957::Win32FileType::vfunc_6` at 0x159d8c0 (rtti, high); signature (low): `int vfunc_6(Win32FileType * this, int param_1, int param_2)`
-pub const _anon_14F04957__Win32FileType__vfunc_6: u64 = 109375;
-/// `_anon_14F04957::Win32FileType::vfunc_8` at 0x159d770 (rtti, high); signature (high): `bool vfunc_8(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__vfunc_8: u64 = 109370;
 /// `_anon_1613A816::ConsoleHotkeyManager::vdtor` at 0x90cfb0 (layout_inference, medium); signature (low): `ConsoleHotkeyManager * vdtor(ConsoleHotkeyManager * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_1613A816__ConsoleHotkeyManager__vdtor: u64 = 442691;
 /// `_anon_1613A816::ConsoleLogPrinter::vdtor` at 0x90d020 (layout_inference, medium); signature (low): `ConsoleLogPrinter * vdtor(ConsoleLogPrinter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -115401,19 +115527,19 @@ pub const allCreationsDownloadedCallback__vdtor: u64 = 442434;
 pub const allCreationsDownloadedCallback__vfunc_1: u64 = 442431;
 /// `bgs::saveload::BuildSaveListRequest::vdtor` at 0x991560 (slot_propagation, medium); signature (low): `BuildSaveListRequest * vdtor(BuildSaveListRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const bgs__saveload__BuildSaveListRequest__vdtor: u64 = 52926;
-/// `bgs::saveload::LoadEntryRequest::vdtor` at 0x62df80 (slot_propagation, medium); signature (low): `LoadEntryRequest * vdtor(LoadEntryRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `bgs::saveload::LoadEntryRequest::vdtor` at 0x62df80 (semantic, high); signature (low): `LoadEntryRequest * vdtor(LoadEntryRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const bgs__saveload__LoadEntryRequest__vdtor: u64 = 35843;
 /// `bgs::saveload::LoadRequest::ctor` at 0x62b950 (layout_inference, high); signature (low): `LoadRequest * ctor(LoadRequest * this, undefined8 * param_1, undefined4 param_2, undefined1 param_3, undefined1 param_4)`
 pub const bgs__saveload__LoadRequest__ctor: u64 = 442584;
-/// `bgs::saveload::LoadRequest::vdtor` at 0x62e200 (slot_propagation, medium); signature (low): `LoadRequest * vdtor(LoadRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `bgs::saveload::LoadRequest::vdtor` at 0x62e200 (semantic, high); signature (low): `LoadRequest * vdtor(LoadRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const bgs__saveload__LoadRequest__vdtor: u64 = 35845;
 /// `bgs::saveload::Request::ctor` at 0x632b30 (layout_inference, medium); signature (low): `Request * ctor(Request * this, uint param_1, undefined4 param_2)`
 pub const bgs__saveload__Request__ctor: u64 = 35919;
 /// `bgs::saveload::Request::ctor` at 0x632b80 (layout_inference, medium); signature (high): `undefined ctor(Request * this)`
 pub const bgs__saveload__Request__ctor_2: u64 = 35920;
-/// `bgs::saveload::Request::vdtor` at 0x632bc0 (layout_inference, medium); signature (low): `Request * vdtor(Request * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+/// `bgs::saveload::Request::vdtor` at 0x632bc0 (semantic, high); signature (low): `Request * vdtor(Request * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const bgs__saveload__Request__vdtor: u64 = 35921;
-/// `bgs::saveload::SaveOperationRequest::vdtor` at 0x62e240 (slot_propagation, medium); signature (low): `SaveOperationRequest * vdtor(SaveOperationRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+/// `bgs::saveload::SaveOperationRequest::vdtor` at 0x62e240 (semantic, high); signature (low): `SaveOperationRequest * vdtor(SaveOperationRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bgs__saveload__SaveOperationRequest__vdtor: u64 = 35846;
 /// `bhkAabbPhantom::Create` at 0x1083a30 (string, high); signature (low): `bhkWorldObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const bhkAabbPhantom__Create: u64 = 78696;

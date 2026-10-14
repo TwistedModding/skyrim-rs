@@ -2829,6 +2829,498 @@ impl CameraState {
     }
 }
 
+/// values in data/saveloadrequestkinds.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum SaveLoadRequestKind {
+    /// `release`
+    release = 268468224,
+    /// `write`
+    write = 1073741825,
+    /// `delete`
+    delete = 1073741828,
+    /// `build`
+    build = 1342177288,
+    /// `enumerate`
+    enumerate = 1342177312,
+    /// `load`
+    load = 1342181376,
+    /// `apply`
+    apply = 3489660944,
+    /// `load`
+    load_2 = 3489661184,
+    /// `quickload`
+    quickload = 3489661952,
+    /// `load`
+    load_3 = 3489669120,
+    /// `autosave`
+    autosave = 4026531904,
+    /// `forced`
+    forced = 4026531968,
+    /// `quicksave`
+    quicksave = 4026532352,
+    /// `Save`
+    Save = 4026533888,
+}
+
+impl SaveLoadRequestKind {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            268468224 => Some(Self::release),
+            1073741825 => Some(Self::write),
+            1073741828 => Some(Self::delete),
+            1342177288 => Some(Self::build),
+            1342177312 => Some(Self::enumerate),
+            1342181376 => Some(Self::load),
+            3489660944 => Some(Self::apply),
+            3489661184 => Some(Self::load_2),
+            3489661952 => Some(Self::quickload),
+            3489669120 => Some(Self::load_3),
+            4026531904 => Some(Self::autosave),
+            4026531968 => Some(Self::forced),
+            4026532352 => Some(Self::quicksave),
+            4026533888 => Some(Self::Save),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/savekinds.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum SaveKind {
+    /// `manual`
+    manual = 2,
+    /// `autosave`
+    autosave = 3,
+    /// `quicksave`
+    quicksave = 4,
+    /// `Value5`
+    Value5 = 5,
+}
+
+impl SaveKind {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            2 => Some(Self::manual),
+            3 => Some(Self::autosave),
+            4 => Some(Self::quicksave),
+            5 => Some(Self::Value5),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/saveloadeventkinds.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum SaveLoadEventKind {
+    /// `save`
+    save = 1,
+    /// `load`
+    load = 2,
+    /// `quicksave`
+    quicksave = 3,
+    /// `save`
+    save_2 = 4,
+}
+
+impl SaveLoadEventKind {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            1 => Some(Self::save),
+            2 => Some(Self::load),
+            3 => Some(Self::quicksave),
+            4 => Some(Self::save_2),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/globaldatatypes.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum GlobalDataType {
+    /// `misc`
+    misc = 0,
+    /// `player`
+    player = 1,
+    /// `TES`
+    TES = 2,
+    /// `global`
+    global = 3,
+    /// `Value4`
+    Value4 = 4,
+    /// `image`
+    image = 5,
+    /// `Sky`
+    Sky = 6,
+    /// `Value7`
+    Value7 = 7,
+    /// `Value8`
+    Value8 = 8,
+    /// `ProcessLists`
+    ProcessLists = 100,
+    /// `ID_405246`
+    ID_405246 = 101,
+    /// `Value66`
+    Value66 = 102,
+    /// `Value67`
+    Value67 = 103,
+    /// `not`
+    not = 104,
+    /// `Value69`
+    Value69 = 105,
+    /// `Value6a`
+    Value6a = 106,
+    /// `BGSStoryTeller`
+    BGSStoryTeller = 107,
+    /// `Value6c`
+    Value6c = 108,
+    /// `ID_403337`
+    ID_403337 = 109,
+    /// `PlayerControls`
+    PlayerControls = 110,
+    /// `lazy`
+    lazy = 111,
+    /// `Value70`
+    Value70 = 112,
+    /// `MenuControls`
+    MenuControls = 113,
+    /// `MenuTopicManager`
+    MenuTopicManager = 114,
+    /// `ProcessLists`
+    ProcessLists_2 = 1000,
+    /// `Papyrus`
+    Papyrus = 1001,
+    /// `ID_400328`
+    ID_400328 = 1002,
+    /// `ID_400883`
+    ID_400883 = 1003,
+    /// `ID_401100`
+    ID_401100 = 1004,
+    /// `Value3ed`
+    Value3ed = 1005,
+}
+
+impl GlobalDataType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::misc),
+            1 => Some(Self::player),
+            2 => Some(Self::TES),
+            3 => Some(Self::global),
+            4 => Some(Self::Value4),
+            5 => Some(Self::image),
+            6 => Some(Self::Sky),
+            7 => Some(Self::Value7),
+            8 => Some(Self::Value8),
+            100 => Some(Self::ProcessLists),
+            101 => Some(Self::ID_405246),
+            102 => Some(Self::Value66),
+            103 => Some(Self::Value67),
+            104 => Some(Self::not),
+            105 => Some(Self::Value69),
+            106 => Some(Self::Value6a),
+            107 => Some(Self::BGSStoryTeller),
+            108 => Some(Self::Value6c),
+            109 => Some(Self::ID_403337),
+            110 => Some(Self::PlayerControls),
+            111 => Some(Self::lazy),
+            112 => Some(Self::Value70),
+            113 => Some(Self::MenuControls),
+            114 => Some(Self::MenuTopicManager),
+            1000 => Some(Self::ProcessLists_2),
+            1001 => Some(Self::Papyrus),
+            1002 => Some(Self::ID_400328),
+            1003 => Some(Self::ID_400883),
+            1004 => Some(Self::ID_401100),
+            1005 => Some(Self::Value3ed),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/changeforminitialtypes.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ChangeFormInitialType {
+    /// `none`
+    none = 0,
+    /// `cell`
+    cell = 1,
+    /// `cell`
+    cell_2 = 2,
+    /// `cell`
+    cell_3 = 3,
+    /// `moved`
+    moved = 4,
+    /// `created`
+    created = 5,
+    /// `ref`
+    ref_ = 6,
+}
+
+impl ChangeFormInitialType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::none),
+            1 => Some(Self::cell),
+            2 => Some(Self::cell_2),
+            3 => Some(Self::cell_3),
+            4 => Some(Self::moved),
+            5 => Some(Self::created),
+            6 => Some(Self::ref_),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/refidkinds.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum RefIDKind {
+    /// `index`
+    index = 0,
+    /// `form`
+    form = 4194304,
+    /// `created`
+    created = 8388608,
+}
+
+impl RefIDKind {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::index),
+            4194304 => Some(Self::form),
+            8388608 => Some(Self::created),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/changeformsizecodes.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ChangeFormSizeCode {
+    /// `u8`
+    u8 = 0,
+    /// `u16`
+    u16 = 1,
+    /// `u32`
+    u32 = 2,
+}
+
+impl ChangeFormSizeCode {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::u8),
+            1 => Some(Self::u16),
+            2 => Some(Self::u32),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/tesformchangeflags.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum TESFormChangeFlag {
+    /// `FormFlags`
+    FormFlags = 1,
+}
+
+impl TESFormChangeFlag {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            1 => Some(Self::FormFlags),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/tesobjectrefrchangeflags.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum TESObjectREFRChangeFlag {
+    /// `Move`
+    Move = 2,
+    /// `HavokMove`
+    HavokMove = 4,
+    /// `CellChanged`
+    CellChanged = 8,
+    /// `Scale`
+    Scale = 16,
+    /// `Inventory`
+    Inventory = 32,
+    /// `Ownership`
+    Ownership = 64,
+    /// `BaseObject`
+    BaseObject = 128,
+    /// `ItemExtraData`
+    ItemExtraData = 1024,
+    /// `PackageStartAndFollower`
+    PackageStartAndFollower = 2048,
+    /// `Lock`
+    Lock = 4096,
+    /// `TeleportAndDismember`
+    TeleportAndDismember = 131072,
+    /// `LeveledCreature`
+    LeveledCreature = 262144,
+    /// `Promoted`
+    Promoted = 33554432,
+    /// `ActivateChildren`
+    ActivateChildren = 67108864,
+    /// `InventoryAlt`
+    InventoryAlt = 134217728,
+    /// `Animation`
+    Animation = 268435456,
+    /// `EncounterZone`
+    EncounterZone = 536870912,
+    /// `GameOnlyExtra`
+    GameOnlyExtra = 2147483648,
+}
+
+impl TESObjectREFRChangeFlag {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            2 => Some(Self::Move),
+            4 => Some(Self::HavokMove),
+            8 => Some(Self::CellChanged),
+            16 => Some(Self::Scale),
+            32 => Some(Self::Inventory),
+            64 => Some(Self::Ownership),
+            128 => Some(Self::BaseObject),
+            1024 => Some(Self::ItemExtraData),
+            2048 => Some(Self::PackageStartAndFollower),
+            4096 => Some(Self::Lock),
+            131072 => Some(Self::TeleportAndDismember),
+            262144 => Some(Self::LeveledCreature),
+            33554432 => Some(Self::Promoted),
+            67108864 => Some(Self::ActivateChildren),
+            134217728 => Some(Self::InventoryAlt),
+            268435456 => Some(Self::Animation),
+            536870912 => Some(Self::EncounterZone),
+            2147483648 => Some(Self::GameOnlyExtra),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/tesnpcchangeflags.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum TESNPCChangeFlag {
+    /// `BaseData`
+    BaseData = 2,
+    /// `AIData`
+    AIData = 8,
+    /// `SpellList`
+    SpellList = 16,
+    /// `FullName`
+    FullName = 32,
+    /// `Factions`
+    Factions = 64,
+    /// `Skills`
+    Skills = 512,
+    /// `Class`
+    Class = 1024,
+    /// `Face`
+    Face = 2048,
+    /// `DefaultOutfit`
+    DefaultOutfit = 4096,
+    /// `SleepOutfit`
+    SleepOutfit = 8192,
+    /// `Gender`
+    Gender = 16777216,
+    /// `Race`
+    Race = 33554432,
+}
+
+impl TESNPCChangeFlag {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            2 => Some(Self::BaseData),
+            8 => Some(Self::AIData),
+            16 => Some(Self::SpellList),
+            32 => Some(Self::FullName),
+            64 => Some(Self::Factions),
+            512 => Some(Self::Skills),
+            1024 => Some(Self::Class),
+            2048 => Some(Self::Face),
+            4096 => Some(Self::DefaultOutfit),
+            8192 => Some(Self::SleepOutfit),
+            16777216 => Some(Self::Gender),
+            33554432 => Some(Self::Race),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/tesobjectcontchangeflags.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum TESObjectCONTChangeFlag {
+    /// `FormFlags`
+    FormFlags = 1,
+}
+
+impl TESObjectCONTChangeFlag {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            1 => Some(Self::FormFlags),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/tesquestchangeflags.json (save pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum TESQuestChangeFlag {
+    /// `Flags`
+    Flags = 2,
+    /// `QuestData`
+    QuestData = 4,
+    /// `Byte22A`
+    Byte22A = 67108864,
+    /// `Instances`
+    Instances = 134217728,
+    /// `RuntimeData`
+    RuntimeData = 268435456,
+    /// `Objectives`
+    Objectives = 536870912,
+    /// `Stages`
+    Stages = 2147483648,
+}
+
+impl TESQuestChangeFlag {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            2 => Some(Self::Flags),
+            4 => Some(Self::QuestData),
+            67108864 => Some(Self::Byte22A),
+            134217728 => Some(Self::Instances),
+            268435456 => Some(Self::RuntimeData),
+            536870912 => Some(Self::Objectives),
+            2147483648 => Some(Self::Stages),
+            _ => None,
+        }
+    }
+}
+
 /// Named bits of `Actor.boolFlags` (actors pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -2865,6 +3357,34 @@ impl ActorState_flags1 {
     pub const SNEAKING: Self = Self(0x200);
     /// swimming (high)
     pub const SWIMMING: Self = Self(0x400);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BGSSaveLoadGame.stateFlags` (save pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BGSSaveLoadGame_stateFlags(pub u32);
+
+impl BGSSaveLoadGame_stateFlags {
+    /// applyingChangeForms (high)
+    pub const APPLYING_CHANGE_FORMS: Self = Self(0x1);
+    /// loading (high)
+    pub const LOADING: Self = Self(0x2);
+    /// saving (high)
+    pub const SAVING: Self = Self(0x4);
+    /// placingPlayer (high)
+    pub const PLACING_PLAYER: Self = Self(0x20);
+    /// placedAtFallback (medium)
+    pub const PLACED_AT_FALLBACK: Self = Self(0x40);
 
     #[must_use]
     pub const fn bits(self) -> u32 {
@@ -3353,6 +3873,32 @@ impl TESHitEvent_flags {
     pub const BASH: Self = Self(0x4);
     /// the hit was blocked (high)
     pub const BLOCKED: Self = Self(0x8);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `bgs::saveload::Request.kind` (save pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct bgs__saveload__Request_kind(pub u32);
+
+impl bgs__saveload__Request_kind {
+    /// dropDuplicates (medium)
+    pub const DROP_DUPLICATES: Self = Self(0x10000000);
+    /// deferWhileMenuOpen (medium)
+    pub const DEFER_WHILE_MENU_OPEN: Self = Self(0x20000000);
+    /// countsAsBusy (medium)
+    pub const COUNTS_AS_BUSY: Self = Self(0x40000000);
+    /// mainThread (high)
+    pub const MAIN_THREAD: Self = Self(0x80000000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {
