@@ -1,7 +1,8 @@
 //! One test per `skyrim::audio` API, against the RE repo's `docs/subsystems/audio-verify.md`.
 //! After a load `start` runs the suite's sequence on a thread of its own, since audio answers on
 //! the audio thread with no frame guarantee: the `UISkillIncrease` marker played on the player
-//! and stopped, `UIMenuOKSD` built by editor id and left to end, a handle's volume; then it
+//! and stopped, `UIMenuOKSD` built by editor id and left to end, a handle's and a category's
+//! volume; then it
 //! samples `AudioCategoryUI`'s volume while the scenario's Papyrus calls change it, logging each
 //! step as it ends. `TESTS` read the manager and the music after the load; `SAVE_TESTS` report
 //! the sequence.
@@ -21,13 +22,14 @@ const UI_MENU_OK: &str = "UIMenuOKSD";
 const POLL: Duration = Duration::from_millis(20);
 
 pub const TESTS: &[(&str, Test)] = &[("manager", manager)];
-pub const SAVE_TESTS: &[(&str, Test)] = &[("marker", marker), ("one_shot", one_shot), ("handle_volume", handle_volume), ("category_samples", category_samples)];
+pub const SAVE_TESTS: &[(&str, Test)] = &[("marker", marker), ("one_shot", one_shot), ("handle_volume", handle_volume), ("category", category), ("category_samples", category_samples)];
 
 #[derive(Clone, Debug, Default)]
 struct Run {
     marker: Option<Result<String, String>>,
     one_shot: Option<Result<String, String>>,
     handle_volume: Option<Result<String, String>>,
+    category: Option<Result<String, String>>,
     ids: Vec<u32>,
     samples: Vec<f32>,
 }
@@ -89,6 +91,16 @@ fn set_handle_volume() -> Result<String, String> {
     Ok(format!("id {} volume 0.5 read back after {} ms", handle.id(), took.as_millis()))
 }
 
+fn set_category() -> Result<String, String> {
+    let category = SoundCategory::from_form(form(AUDIO_CATEGORY_UI)?).ok_or("0x64451 is not a sound category")?;
+    let before = category.volume();
+    category.set_volume(0.25);
+    let set = category.volume();
+    category.set_volume(before);
+    check((set - 0.25).abs() < 1e-6 && (category.volume() - before).abs() < 1e-6, &format!("volume {before} -> {set} -> {}", category.volume()))?;
+    Ok(format!("AudioCategoryUI volume {before} -> 0.25 -> {before}, static volume {}", category.static_volume()))
+}
+
 /// Starts the suite's sequence on its own thread; after every load.
 pub fn start() {
     *RUN.lock().unwrap() = Some(Run::default());
@@ -103,6 +115,9 @@ pub fn start() {
         let handle_volume = set_handle_volume();
         log!("audio step handle_volume: {handle_volume:?}");
         update(|r| r.handle_volume = Some(handle_volume));
+        let category = set_category();
+        log!("audio step category: {category:?}");
+        update(|r| r.category = Some(category));
         let Ok(category) = form(AUDIO_CATEGORY_UI) else { return };
         let Some(category) = SoundCategory::from_form(category) else { return };
         let start = Instant::now();
@@ -142,6 +157,10 @@ fn one_shot() -> Result<String, String> {
 
 fn handle_volume() -> Result<String, String> {
     result(|r| r.handle_volume.clone(), "the handle volume")
+}
+
+fn category() -> Result<String, String> {
+    result(|r| r.category.clone(), "the category volume")
 }
 
 fn category_samples() -> Result<String, String> {

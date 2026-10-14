@@ -15,6 +15,6 @@ $rows = @(
        ok = $plugin["one_shot"].ok }
     @{ name = "handle volume"; plugin = (Detail "handle_volume"); devbench = "(plugin only)";
        ok = $plugin["handle_volume"].ok }
-    @{ name = "category";      plugin = (Detail "category_samples"); devbench = "SoundCategory.SetVolume(0.5) called = $((Step 6).called), SetVolume(1.0) called = $((Step 8).called)";
-       ok = ($plugin["category_samples"].ok -and (Step 6).called -eq $true -and (Step 8).called -eq $true) }
+    @{ name = "category";      plugin = "$(Detail "category") | $(Detail "category_samples")"; devbench = "SoundCategory.SetVolume(0.5) called = $((Step 6).called), SetVolume(1.0) called = $((Step 8).called)";
+       ok = ($plugin["category"].ok -and $plugin["category_samples"].ok -and (Step 6).called -eq $true -and (Step 8).called -eq $true) }
 )

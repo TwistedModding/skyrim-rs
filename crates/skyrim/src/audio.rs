@@ -1,6 +1,6 @@
 //! Audio (subsystem pass 11): sound handles built from descriptors and played, placed, followed,
-//! stopped and read back; the UI sound path; sound category volumes as read; the master volume
-//! and the music type playing now.
+//! stopped and read back; the UI sound path; sound category volumes; the master volume and the
+//! music type playing now.
 //!
 //! Audio runs on its own thread (`LibAudioUpdate`), outside the frame: every operation on a handle
 //! posts a command the thread drains about once every two frames, so a sound starts, and a stopped
@@ -28,6 +28,7 @@ pub(crate) struct Fns {
     by_form_id: BuildByFormIdFn,
     by_editor_id: BuildByEditorIdFn,
     play_ui: fns::PlayUISoundOrMusicByEditorId_fn,
+    set_category_volume: fns::SetCategoryVolume_fn,
     play: fns::SoundHandle__Play_fn,
     stop: fns::SoundHandle__Stop_fn,
     release: fns::SoundHandle__Release_fn,
@@ -52,6 +53,7 @@ impl Fns {
                 by_form_id: crate::resolve(reloc, fns::BSAudioManager__BuildSoundHandleByFormId)?,
                 by_editor_id: crate::resolve(reloc, fns::BSAudioManager__BuildSoundHandleByEditorId)?,
                 play_ui: crate::resolve(reloc, fns::PlayUISoundOrMusicByEditorId)?,
+                set_category_volume: crate::resolve(reloc, fns::SetCategoryVolume)?,
                 play: crate::resolve(reloc, fns::SoundHandle__Play)?,
                 stop: crate::resolve(reloc, fns::SoundHandle__Stop)?,
                 release: crate::resolve(reloc, fns::SoundHandle__Release)?,
@@ -238,7 +240,7 @@ impl SoundCategory {
         &self.0
     }
 
-    /// The category's own volume (+0x50), what Papyrus `SoundCategory.SetVolume` sets.
+    /// The category's own volume (+0x50), what [`SoundCategory::set_volume`] sets.
     #[must_use]
     pub fn volume(&self) -> f32 {
         self.0.volume
@@ -248,6 +250,14 @@ impl SoundCategory {
     #[must_use]
     pub fn static_volume(&self) -> u16 {
         self.0.staticVolume
+    }
+
+    /// Sets the volume and recomputes every sound (`SetCategoryVolume`, what Papyrus
+    /// `SoundCategory.SetVolume` calls). The engine takes the address of a variable holding the
+    /// category's interface, not the interface itself.
+    pub fn set_volume(&self, volume: f32) {
+        let mut interface = (&raw const self.0.categoryInterface).cast_mut();
+        unsafe { (fns().set_category_volume)(&raw mut interface, volume) }
     }
 }
 
