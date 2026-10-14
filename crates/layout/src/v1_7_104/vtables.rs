@@ -72604,26 +72604,35 @@ impl BSScript__ISavePatcherInterface_vtable {
 /// `BSScript::IStackCallbackFunctor::vftable` at 0x1990df0, id 216921 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct BSScript__IStackCallbackFunctor_vtable {
-    /// `BSScript::IStackCallbackFunctor::vfunc_0` at 0x9f0920 (rtti, high); signature (low): `IStackCallbackFunctor * vfunc_0(IStackCallbackFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSScript::IStackCallbackFunctor::dtor` at 0x9f0920 (semantic, high); signature (untiered): `IStackCallbackFunctor * dtor(IStackCallbackFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `dtor`: destructor; bit 0 of flags deletes (0x10 bytes for the base) (high); semantic signature: `BSScript::IStackCallbackFunctor* (BSScript::IStackCallbackFunctor* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `operator()`: called with the returned Variable when the stack completes; the callee may move out of it (the adapter resets it) (high); semantic signature: `void (BSScript::IStackCallbackFunctor* this, BSScript::Variable* result)`
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `operator()`: called once with a copy of the returned Variable (the stack's +0x70) when the stack's last frame returns, before the stack is removed; the copy lives only for the call; on the thread running the VM update (the main thread: SkyrimVM::Update from the main loop at 0x658db5) for a queued call, or inside DispatchStaticCall on the caller's thread with None when the function is empty (slot 10) (high); semantic signature: `void (BSScript::IStackCallbackFunctor* this, BSScript::Variable* result)`
     pub slot_1: *const c_void,
-    /// `BSScript::IStackCallbackFunctor::vfunc_2` at 0x149c7a0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
+    /// `BSScript::IStackCallbackFunctor::vfunc_2` at 0x149c7a0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`; `vfunc_2`: base returns false, the engine's EventCallbackAdapter returns true (0x9f1180); no caller was found (searched the script code for calls through a stack's +0x90 callback), so its meaning is open (low); semantic signature: `bool (BSScript::IStackCallbackFunctor* this)`
     pub slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `SetObject`: hands the functor the object the call ran on (medium); semantic signature: `void (BSScript::IStackCallbackFunctor* this, BSTSmartPointer<BSScript::Object>* object)`
     pub slot_3: *const c_void,
 }
 impl BSScript__IStackCallbackFunctor_vtable {
     pub const ID: u64 = 216921;
+    pub const SLOT_dtor: usize = 0;
+    /// Slot 0 as `BSScript__IStackCallbackFunctor_vtable_dtor`, `None` when the slot is null.
+    #[must_use]
+    pub fn dtor(&self) -> Option<BSScript__IStackCallbackFunctor_vtable_dtor> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__IStackCallbackFunctor_vtable_dtor>>(self.slot_0) }
+    }
     pub const SLOT_operator: usize = 1;
     /// Slot 1 as `BSScript__IStackCallbackFunctor_vtable_operator`, `None` when the slot is null.
     #[must_use]
     pub fn operator(&self) -> Option<BSScript__IStackCallbackFunctor_vtable_operator> {
         unsafe { core::mem::transmute::<*const c_void, Option<BSScript__IStackCallbackFunctor_vtable_operator>>(self.slot_1) }
     }
+    pub const SLOT_vfunc_2: usize = 2;
     pub const SLOT_SetObject: usize = 3;
 }
-/// `BSScript::IStackCallbackFunctor::operator()`, slot 1: called with the returned Variable when the stack completes; the callee may move out of it (the adapter resets it) (high).
+/// `BSScript::IStackCallbackFunctor::dtor`, slot 0: destructor; bit 0 of flags deletes (0x10 bytes for the base) (high).
+pub type BSScript__IStackCallbackFunctor_vtable_dtor = unsafe extern "C" fn(this: *mut classes::BSScript__IStackCallbackFunctor, flags: u32) -> *mut classes::BSScript__IStackCallbackFunctor;
+/// `BSScript::IStackCallbackFunctor::operator()`, slot 1: called once with a copy of the returned Variable (the stack's +0x70) when the stack's last frame returns, before the stack is removed; the copy lives only for the call; on the thread running the VM update (the main thread: SkyrimVM::Update from the main loop at 0x658db5) for a queued call, or inside DispatchStaticCall on the caller's thread with None when the function is empty (slot 10) (high).
 pub type BSScript__IStackCallbackFunctor_vtable_operator = unsafe extern "C" fn(this: *mut classes::BSScript__IStackCallbackFunctor, result: *mut classes::BSScript__Variable);
 
 /// `BSScript::IStackCallbackSaveInterface::vftable` at 0x1990ef8, id 216931 (rtti, high); 3 slots.
@@ -73131,7 +73140,7 @@ pub struct BSScript__Internal__VirtualMachine_vtable {
     pub slot_2: *const c_void,
     /// `BSScript::Internal::VirtualMachine::LogError` at 0x14b0ab0 (semantic, medium); signature (untiered): `undefined LogError(VirtualMachine * this, char * param_1, int param_2)`; `LogError`: formats text and passes it to the error logger at +0x80 (0 info, 1 warning, 2 error, 3 fatal) (medium); semantic signature: `void (BSScript::Internal::VirtualMachine* this, const char* text, u32 severity)`
     pub slot_3: *const c_void,
-    /// `BSScript::Internal::VirtualMachine::vfunc_4` at 0x14b0220 (rtti, high); signature (low): `longlong * vfunc_4(VirtualMachine * this, float param_1, longlong * param_2, longlong * param_3)`
+    /// `BSScript::Internal::VirtualMachine::Update` at 0x14b0220 (runtime, high); signature (untiered): `longlong * Update(VirtualMachine * this, float param_1, longlong * param_2, longlong * param_3)`; `Update`: runs the queued and suspended stacks for this frame (budget scaled by 0.05) under the +0x9384 lock; a non-latent dispatch completes inside the next call (high); semantic signature: `void (BSScript::Internal::VirtualMachine* this, float budget)`
     pub slot_4: *const c_void,
     /// `BSScript::Internal::VirtualMachine::vfunc_5` at 0x14b0890 (rtti, high); signature (high): `undefined vfunc_5(VirtualMachine * this)`
     pub slot_5: *const c_void,
@@ -73236,6 +73245,12 @@ impl BSScript__Internal__VirtualMachine_vtable {
     pub const ID: u64 = 252631;
     pub const SLOT_TraceStack: usize = 2;
     pub const SLOT_LogError: usize = 3;
+    pub const SLOT_Update: usize = 4;
+    /// Slot 4 as `BSScript__Internal__VirtualMachine_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<BSScript__Internal__VirtualMachine_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSScript__Internal__VirtualMachine_vtable_Update>>(self.slot_4) }
+    }
     pub const SLOT_RegisterObjectType: usize = 8;
     /// Slot 8 as `BSScript__Internal__VirtualMachine_vtable_RegisterObjectType`, `None` when the slot is null.
     #[must_use]
@@ -73303,6 +73318,8 @@ impl BSScript__Internal__VirtualMachine_vtable {
     }
     pub const SLOT_GetObjectBindPolicyConst: usize = 48;
 }
+/// `BSScript::Internal::VirtualMachine::Update`, slot 4: runs the queued and suspended stacks for this frame (budget scaled by 0.05) under the +0x9384 lock; a non-latent dispatch completes inside the next call (high).
+pub type BSScript__Internal__VirtualMachine_vtable_Update = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, budget: f32);
 /// `BSScript::Internal::VirtualMachine::RegisterObjectType`, slot 8: records className for typeID in the two maps at +0x190 (typeID -> name) and +0x1c0 (name -> typeID); returns false when either was already registered (high).
 pub type BSScript__Internal__VirtualMachine_vtable_RegisterObjectType = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, typeID: u32, className: *const c_char) -> bool;
 /// `BSScript::Internal::VirtualMachine::GetTypeIDForScriptObject`, slot 13: name -> typeID through the map at +0x1c0 (the form type for form classes; 0x8b-0x8e for aliases and active effects) (high).

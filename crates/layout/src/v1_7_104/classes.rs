@@ -43470,18 +43470,21 @@ pub struct BSScript__IObjectProcessor {
 const _: () = assert!(size_of::<BSScript__IObjectProcessor>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IObjectProcessor, __vftable) == 0x0);
 
-/// `BSScript::IStackCallbackFunctor`: size 0x28 (exact, medium).
-/// Meaning: completion callback of DispatchStaticCall/DispatchMethodCall: receives the call's result (high, papyrus pass).
-/// Evidence: lower bound _anon_025735F6::EventCallbackAdapter (size 0x28 at 0x0) adds no fields or bases meets upper bound derived _anon_025735F6::EventCallbackAdapter size 0x28 at 0x0.
+/// `BSScript::IStackCallbackFunctor`: size 0x10 (exact, high).
+/// Meaning: completion callback of DispatchStaticCall/DispatchMethodCall: receives the call's result; held through BSTSmartPointer (count at +8) (high, papyrus pass).
+/// Evidence: papyrus pass (semantic): request 4c: the base's deleting destructor (slot 0, 0x9f0920) frees 0x10 bytes: the vtable and a u32 reference count at +8; slots 1 and 3 pure, slot 2 returns false; the engine's only implementation _anon_025735F6::EventCallbackAdapter (vtable 0x1991d38, 0x28 bytes) reads the result Variable in slot 1 and resets it, stores the object of slot 3 with Object::IncRef and returns true from slot 2.
 /// Bases: `BSIntrusiveRefCounted`@0x8.
 #[repr(C)]
 pub struct BSScript__IStackCallbackFunctor {
     /// +0x0 `vtbl:BSScript::IStackCallbackFunctor:0`, rtti
     pub __vftable: *const vtables::BSScript__IStackCallbackFunctor_vtable,
-    pub unknown_8: [u8; 32],
+    /// +0x8 `undefined4`, semantic, runtime; BSTSmartPointer count: a holder adds 1 with a locked add; the release subtracts 1 with a locked add and, when the count was 1, calls slot 0 with 1 (delete) (high)
+    pub refCount: u32,
+    pub unknown_C: [u8; 4],
 }
-const _: () = assert!(size_of::<BSScript__IStackCallbackFunctor>() == 0x28);
+const _: () = assert!(size_of::<BSScript__IStackCallbackFunctor>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__IStackCallbackFunctor, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__IStackCallbackFunctor, refCount) == 0x8);
 
 /// `BSScript::IStackCallbackSaveInterface`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of SkyrimVM at 0x10.
@@ -63290,16 +63293,21 @@ pub struct BSScript__Stack {
     pub unknown_28: [u8; 40],
     /// +0x50 `undefined4`, semantic; number of pages (medium)
     pub pageCount: u32,
-    pub unknown_54: [u8; 12],
+    pub unknown_54: [u8; 4],
+    /// +0x58 `undefined4`, semantic; number of frames; the completion runs when it reaches 0 (high)
+    pub frameCount: u32,
+    pub unknown_5C: [u8; 4],
     /// +0x60 `ptr:BSScript::StackFrame`, semantic; the innermost frame (high)
     pub top: *mut BSScript__StackFrame,
-    pub unknown_68: [u8; 8],
+    /// +0x68 `undefined4`, semantic; 1 once the last frame returned (medium)
+    pub state: u32,
+    pub unknown_6C: [u8; 4],
     /// +0x70 `class:BSScript::Variable`, semantic; the value CallBinding produced, copied here by Call (high)
     pub returnValue: BSScript__Variable,
     /// +0x80 `undefined4`, semantic; the id natives receive as their second argument and ReturnFromLatent takes back (high)
     pub stackID: u32,
     pub unknown_84: [u8; 12],
-    /// +0x90 `pointer`, semantic; BSTSmartPointer<IStackCallbackFunctor>: the completion callback of DispatchStaticCall/DispatchMethodCall (null allowed) (high)
+    /// +0x90 `pointer`, semantic; BSTSmartPointer<IStackCallbackFunctor>: the completion callback of DispatchStaticCall/DispatchMethodCall (null allowed); the ctor 0x149e2a0 takes a reference, DestroyStack 0x149e350 drops it (high)
     pub callback: *mut c_void,
     pub unknown_98: [u8; 8],
 }
@@ -63310,7 +63318,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Stack, profilePolicy) == 0
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pagesInline) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pages) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pageCount) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, frameCount) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, top) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, state) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, returnValue) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, stackID) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, callback) == 0x90);

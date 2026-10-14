@@ -12029,6 +12029,8 @@ pub const g_EffectSettingCollection: u64 = 433120;
 pub const g_EffectShader: u64 = 414607;
 /// `g_EffectShaderInstance` at 0x34866e8 (semantic, high); pointer to `BSEffectShader`: instance pointer; instance pointer (high); type `ptr:BSEffectShader`
 pub const g_EffectShaderInstance: u64 = 415166;
+/// `g_EmptyStateName` at 0x33d37b8 (semantic, high); the empty state name: a BSFixedString built from an empty string at startup (pooled, so it holds the same pointer as any BSFixedString built from an empty string, e.g. GetEmptyFixedString 0x17eed0); BindNativeFunction compares a member native's state name with it by pointer (high); type `class:BSFixedString`
+pub const g_EmptyStateName: u64 = 414404;
 /// `g_EventSourceHolder_BGSActorCell_ptr` at 0x32119e8 (xref_inference, medium); pointer to `EventSourceHolder_BGSActorCell`: object holding BSTEventSource<BGSActorCellEvent> at 0x0
 pub const g_EventSourceHolder_BGSActorCell_ptr: u64 = 402987;
 /// `g_EventSourceHolder_Input` at 0x3230c80 (semantic, high); static storage of the input manager (high); type `class:EventSourceHolder_Input`
