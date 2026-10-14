@@ -5,7 +5,7 @@
 //! player) and `CALLS` at the save that ends the scenario of the RE repo's
 //! `docs/subsystems/papyrus-verify.md`, checking what the natives received from `DevBench`'s calls
 //! and what the dispatches from inside `Ping` (`Tick()`, `Scale(1.5, true)`, the bound object's
-//! `SelfFormId()`) did.
+//! `SelfFormId()`) did and returned to their callbacks.
 
 use core::ffi::c_void;
 use std::sync::Mutex;
@@ -27,6 +27,12 @@ static NATIVES: Mutex<Vec<(&'static str, &'static NativeFunction)>> = Mutex::new
 static CALLS: Mutex<Vec<Call>> = Mutex::new(Vec::new());
 static TICKS: AtomicU32 = AtomicU32::new(0);
 static DISPATCHES_OK: AtomicU32 = AtomicU32::new(0);
+/// What the dispatch callbacks received: `(function, result, thread)`.
+static RESULTS: Mutex<Vec<String>> = Mutex::new(Vec::new());
+
+fn on_result(function: &'static str) -> skyrim::papyrus::ResultFn {
+    Box::new(move |result| RESULTS.lock().unwrap().push(format!("{function} -> {result:?} on {:?}", std::thread::current().id())))
+}
 
 pub const REGISTER: &[(&str, Test)] = &[
     ("vm_identity", vm_identity),
@@ -63,9 +69,9 @@ fn record(name: &'static str, detail: String) {
 fn ping(x: i32) -> i32 {
     let dispatched = match (GameThread::current(), VirtualMachine::get()) {
         (Some(thread), Some(vm)) => {
-            let tick = vm.dispatch_static_call(&thread, CLASS, "Tick", &[]);
-            let scale = vm.dispatch_static_call(&thread, CLASS, "Scale", &[Variable::float(1.5), Variable::bool(true)]);
-            let method = vm.find_bound_object(Handle::form(PLAYER), REF_CLASS).is_some_and(|object| vm.dispatch_method_call(&thread, &object, "SelfFormId", &[]));
+            let tick = vm.dispatch_static_call(&thread, CLASS, "Tick", &[], on_result("Tick"));
+            let scale = vm.dispatch_static_call(&thread, CLASS, "Scale", &[Variable::float(1.5), Variable::bool(true)], on_result("Scale"));
+            let method = vm.find_bound_object(Handle::form(PLAYER), REF_CLASS).is_some_and(|object| vm.dispatch_method_call(&thread, &object, "SelfFormId", &[], on_result("SelfFormId")));
             [tick, scale, method]
         }
         _ => [false; 3],
@@ -304,7 +310,8 @@ fn calls() -> Result<String, String> {
     find("Player", "ACHR 00000014")?;
     find("Describe", "-> \"00000014 x3 swords flag=false\"")?;
     check(player_id.contains("ACHR 00000014"), "FormId did not see the player as a form")?;
-    Ok(format!("{} calls: {ping}; {player_id}; {health}; every expected call seen", calls.len()))
+    let method = find("SelfFormId", "-> 20")?;
+    Ok(format!("{} calls: {ping}; {player_id}; {health}; {method}; every expected call seen", calls.len()))
 }
 
 fn dispatch() -> Result<String, String> {
@@ -317,7 +324,11 @@ fn dispatch() -> Result<String, String> {
     let methods = count("SelfFormId", "-> 20");
     check(pings == 2 && ok == 2 && ticks == 2, &format!("{pings} Ping calls, {ok} with all three dispatches true, {ticks} Tick calls"))?;
     check(scaled == 2, &format!("Scale(1.5, true) ran {scaled} times"))?;
-    Ok(format!("from inside Ping, twice: DispatchStaticCall(Tick) and (Scale, [1.5, true]) and DispatchMethodCall(bound SkyrimRsTestRef, SelfFormId) all returned true; Tick ran {ticks}, Scale(1.5, true) {scaled}; the native method SelfFormId ran {methods} times (2 dispatched and DevBench's call; request 4d)"))
+    check(methods == 3, &format!("SelfFormId on the player ran {methods} times (2 dispatched, 1 from DevBench)"))?;
+    let results = RESULTS.lock().unwrap().clone();
+    let got = |prefix: &str| results.iter().filter(|r| r.starts_with(prefix)).count();
+    check(got("Tick -> None") == 2 && got("Scale -> Float 3") == 2 && got("SelfFormId -> Int 20") == 2, &format!("callbacks received {results:?}"))?;
+    Ok(format!("from inside Ping, twice: DispatchStaticCall(Tick) and (Scale, [1.5, true]) and DispatchMethodCall(bound SkyrimRsTestRef, SelfFormId) all returned true; Tick ran {ticks}, Scale(1.5, true) {scaled}, SelfFormId -> 20 {methods} times with DevBench's own call; callbacks {results:?}"))
 }
 
 fn stack_ids() -> Result<String, String> {

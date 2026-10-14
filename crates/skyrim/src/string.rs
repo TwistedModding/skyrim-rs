@@ -59,7 +59,8 @@ impl BSFixedString {
         Self(s)
     }
 
-    /// The empty string: a null pointer, which the engine treats as "".
+    /// A null string: reads as "", but is not the engine's pooled empty string (`new("")`), which
+    /// pointer comparisons such as a native's state name need.
     #[must_use]
     pub const fn empty() -> Self {
         Self(classes::BSFixedString { data: core::ptr::null_mut() })

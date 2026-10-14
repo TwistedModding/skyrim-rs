@@ -18,11 +18,12 @@
 //! [`VirtualMachine::dispatch_static_call`] therefore takes a [`GameThread`] token, which exists
 //! inside a native callback ([`GameThread::current`]) and is asserted with
 //! [`GameThread::assume`] from an SKSE message handler, task or event sink. Dispatch takes typed
-//! arguments (`IFunctionArguments` filling the engine's `BSScrapArray<Variable>`) and is
-//! fire-and-forget: receiving the result needs an `IStackCallbackFunctor` of the plugin's own, whose
-//! instance layout is RE request 4c. A script object of a mod's own class is created with
-//! [`VirtualMachine::create_object`] and bound to a form with [`VirtualMachine::bind_object`], after
-//! which the engine and `DevBench` call its methods like any attached script's.
+//! arguments (`IFunctionArguments` filling the engine's `BSScrapArray<Variable>`) and a closure the
+//! engine calls with the result (an `IStackCallbackFunctor` of this module's own) once the call
+//! completes, on the main thread in the VM's next update. A script object of a mod's own class is
+//! created with [`VirtualMachine::create_object`] and bound to a form with
+//! [`VirtualMachine::bind_object`], after which the engine and `DevBench` call its methods,
+//! natives included, like any attached script's.
 
 use core::cell::Cell;
 use core::ffi::{c_char, c_void};
@@ -989,6 +990,71 @@ struct ArgsVtable {
     supply: unsafe extern "C" fn(this: *mut Args, out: *mut c_void) -> bool,
 }
 
+/// What a dispatch's callback does with the result: called once, on the main thread, with a value
+/// valid only during the call.
+pub type ResultFn = Box<dyn FnOnce(&Variable) + Send>;
+
+#[repr(C)]
+struct CallbackVtable {
+    dtor: unsafe extern "C" fn(this: *mut Callback, flags: u32) -> *mut Callback,
+    call: unsafe extern "C" fn(this: *mut Callback, result: *mut VariableRaw),
+    keep: unsafe extern "C" fn(this: *mut Callback) -> bool,
+    set_object: unsafe extern "C" fn(this: *mut Callback, object: *mut c_void),
+}
+
+/// An `IStackCallbackFunctor`: the engine's 0x10-byte header (vtable, reference count at +8), then
+/// the closure. The engine holds it through a `BSTSmartPointer` (locked add and subtract on the
+/// count) and calls slot 0 with 1 when its count reaches zero (RE request 4c).
+#[repr(C)]
+struct Callback {
+    header: classes::BSScript__IStackCallbackFunctor,
+    f: Option<ResultFn>,
+}
+
+impl Callback {
+    const VTABLE: &'static CallbackVtable = &CallbackVtable { dtor: Self::dtor, call: Self::call, keep: Self::keep, set_object: Self::set_object };
+
+    /// A callback holding the one reference the dispatch call borrows.
+    fn new(f: ResultFn) -> *mut Self {
+        Box::into_raw(Box::new(Self {
+            header: classes::BSScript__IStackCallbackFunctor { __vftable: core::ptr::from_ref(Self::VTABLE).cast(), refCount: 1, unknown_C: [0; 4] },
+            f: Some(f),
+        }))
+    }
+
+    fn count(this: *mut Self) -> &'static core::sync::atomic::AtomicU32 {
+        unsafe { core::sync::atomic::AtomicU32::from_ptr(&raw mut (*this).header.refCount) }
+    }
+
+    /// Drops the reference [`Callback::new`] gave the caller.
+    fn release(this: *mut Self) {
+        if Self::count(this).fetch_sub(1, core::sync::atomic::Ordering::AcqRel) == 1 {
+            unsafe { Self::dtor(this, 1) };
+        }
+    }
+
+    unsafe extern "C" fn dtor(this: *mut Self, flags: u32) -> *mut Self {
+        if flags & 1 != 0 {
+            drop(unsafe { Box::from_raw(this) });
+        }
+        this
+    }
+
+    unsafe extern "C" fn call(this: *mut Self, result: *mut VariableRaw) {
+        let none = Variable::none();
+        let value = unsafe { Variable::from_ptr(result) }.unwrap_or(&none);
+        if let Some(f) = unsafe { (*this).f.take() } {
+            f(value);
+        }
+    }
+
+    unsafe extern "C" fn keep(_: *mut Self) -> bool {
+        false
+    }
+
+    unsafe extern "C" fn set_object(_: *mut Self, _: *mut c_void) {}
+}
+
 /// An `IFunctionArguments` over a slice of Variables: its slot 1 sizes the engine's
 /// `BSScrapArray<Variable>` (data +8) with `ResizeVariableArray` (id 53915) and assigns each value.
 #[repr(C)]
@@ -1167,7 +1233,7 @@ impl VirtualMachine {
                     unknown_C: [0; 4],
                     name: BSFixedString::new(name).into_raw(),
                     objectTypeName: BSFixedString::new(class).into_raw(),
-                    stateName: BSFixedString::empty().into_raw(),
+                    stateName: BSFixedString::new("").into_raw(),
                     returnType: classes::BSScript__TypeInfo { rawTypeOrObjectType: return_type.bits() },
                     params: param_infos[1..].as_mut_ptr().cast(),
                     paramCount: count,
@@ -1193,31 +1259,36 @@ impl VirtualMachine {
         Ok(unsafe { &*header.cast::<NativeFunction>() })
     }
 
-    /// Slot 38 `DispatchStaticCall` of `class.function(args)` with no callback: the call is queued
-    /// on a new stack and its result discarded. Returns what the slot returned. The class's script
-    /// must be loadable (`script_type` semantics apply).
+    /// Slot 38 `DispatchStaticCall` of `class.function(args)`: the call is queued on a new stack and
+    /// `on_result` runs with its result when it completes (the VM's next update, main thread; at once
+    /// with None for an empty function). Returns what the slot returned. The class's script must be
+    /// loadable (`script_type` semantics apply).
     #[must_use]
-    pub fn dispatch_static_call(&self, _: &GameThread, class: &str, function: &str, args: &[Variable]) -> bool {
+    pub fn dispatch_static_call(&self, _: &GameThread, class: &str, function: &str, args: &[Variable], on_result: ResultFn) -> bool {
         let class = BSFixedString::new(class);
         let function = BSFixedString::new(function);
         let mut args = Args::new(args);
-        let mut callback: *mut c_void = core::ptr::null_mut();
-        unsafe {
-            self.slot::<DispatchStaticCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchStaticCall)(self.as_ptr(), class.raw(), function.raw(), (&raw mut args).cast(), &raw mut callback) != 0
-        }
+        let mut callback = Callback::new(on_result);
+        let queued = unsafe {
+            self.slot::<DispatchStaticCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchStaticCall)(self.as_ptr(), class.raw(), function.raw(), (&raw mut args).cast(), (&raw mut callback).cast()) != 0
+        };
+        Callback::release(callback);
+        queued
     }
 
-    /// Slot 39 `DispatchMethodCall` of `function(args)` on `object` with no callback, as
+    /// Slot 39 `DispatchMethodCall` of `function(args)` on `object`, as
     /// [`dispatch_static_call`](Self::dispatch_static_call).
     #[must_use]
-    pub fn dispatch_method_call(&self, _: &GameThread, object: &ObjectPtr, function: &str, args: &[Variable]) -> bool {
+    pub fn dispatch_method_call(&self, _: &GameThread, object: &ObjectPtr, function: &str, args: &[Variable], on_result: ResultFn) -> bool {
         let function = BSFixedString::new(function);
         let mut args = Args::new(args);
         let mut target = object.0.as_ptr().cast::<classes::BSScript__Object>();
-        let mut callback: *mut c_void = core::ptr::null_mut();
-        unsafe {
-            self.slot::<DispatchMethodCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchMethodCall)(self.as_ptr(), &raw mut target, function.raw(), (&raw mut args).cast(), &raw mut callback) != 0
-        }
+        let mut callback = Callback::new(on_result);
+        let queued = unsafe {
+            self.slot::<DispatchMethodCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchMethodCall)(self.as_ptr(), &raw mut target, function.raw(), (&raw mut args).cast(), (&raw mut callback).cast()) != 0
+        };
+        Callback::release(callback);
+        queued
     }
 
     /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
