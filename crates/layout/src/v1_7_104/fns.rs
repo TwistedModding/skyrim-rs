@@ -3251,7 +3251,7 @@ pub const ApplyRandomGraphSeed: u64 = 63847;
 pub const ApplySaveDataRestoreFunctor: u64 = 65149;
 /// `ApplySessionTokenOrFail` at 0x13d49e0 (decompiler, medium); signature (untiered): `undefined ApplySessionTokenOrFail(longlong * param_1, longlong * param_2, char param_3, undefined8 param_4)`
 pub const ApplySessionTokenOrFail: u64 = 449369;
-/// `ApplySettingsDefaults` at 0x65ca50 (semantic, medium); signature (untiered): `undefined ApplySettingsDefaults(void)`; re-applies the settings values; for every SNCT with flags bit 1 calls SetCategoryVolume(form+0x30) (medium); semantic signature: `void ()`
+/// `ApplySettingsDefaults` at 0x65ca50 (semantic, medium); signature (untiered): `undefined ApplySettingsDefaults(void)`; re-applies the settings values; for every SNCT with flags bit 1 calls SetCategoryVolume(&p with p = form+0x30) (medium); semantic signature: `void ()`
 pub const ApplySettingsDefaults: u64 = 36622;
 /// `ApplySingleExpressionWeight` at 0x4248d0 (decompiler, medium); signature (untiered): `undefined ApplySingleExpressionWeight(longlong param_1, int param_2, float param_3)`
 pub const ApplySingleExpressionWeight: u64 = 26594;
@@ -81431,7 +81431,7 @@ pub const Journal_SystemTab__BSTEventSink_BSSaveDataEvent_vdtor: u64 = 53283;
 pub const Journal_SystemTab__BSTEventSink_BSSaveDataEvent_vfunc_1: u64 = 53278;
 /// `Journal_SystemTab::BSTEventSink_BSSaveDataEvent_vfunc_1_sub0` at 0x6233b0 (callgraph, medium); signature (untiered): `undefined BSTEventSink_BSSaveDataEvent_vfunc_1_sub0(longlong param_1, undefined1 param_2)`
 pub const Journal_SystemTab__BSTEventSink_BSSaveDataEvent_vfunc_1_sub0: u64 = 442572;
-/// `Journal_SystemTab::OnOptionChanged` at 0x9ab260 (semantic, high); signature (untiered): `undefined OnOptionChanged(longlong param_1, char * param_2, undefined8 param_3, IMAGE_DOS_HEADER * param_4)`; the settings menu's change callback: ids 0..0x1b are fixed options (0x1b master volume: audio manager +0x170 and command 0x10 via 0xcd0db0, plus the AudioMasterVolume setting); any other id is a form id, and an SNCT form gets SetCategoryVolume(form+0x30, (float)value) (high); semantic signature: `void (FxDelegateArgs* args)`
+/// `Journal_SystemTab::OnOptionChanged` at 0x9ab260 (semantic, high); signature (untiered): `undefined OnOptionChanged(longlong param_1, char * param_2, undefined8 param_3, IMAGE_DOS_HEADER * param_4)`; the settings menu's change callback: ids 0..0x1b are fixed options (0x1b master volume: audio manager +0x170 and command 0x10 via 0xcd0db0, plus the AudioMasterVolume setting); any other id is a form id, and an SNCT form gets SetCategoryVolume(&p with p = form+0x30, (float)value) (high); semantic signature: `void (FxDelegateArgs* args)`
 pub const Journal_SystemTab__OnOptionChanged: u64 = 53310;
 /// `Journal_SystemTab::ctor` at 0x9a5d20 (layout_inference, high); signature (high): `Journal_SystemTab * ctor(Journal_SystemTab * this)`
 pub const Journal_SystemTab__ctor: u64 = 53259;
@@ -95555,19 +95555,19 @@ pub const Papyrus__Sound__RegisterFuncs: u64 = 56745;
 pub const Papyrus__Sound__SetInstanceVolume: u64 = 56743;
 /// `Papyrus::Sound::StopInstance` at 0xa62930 (papyrus_native, high); signature (medium): `void StopInstance(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
 pub const Papyrus__Sound__StopInstance: u64 = 56742;
-/// `Papyrus::SoundCategory::Mute` at 0xa1e520 (papyrus_native, high); signature (medium): `void Mute(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; MuteCategory(self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
+/// `Papyrus::SoundCategory::Mute` at 0xa1e520 (papyrus_native, high); signature (medium): `void Mute(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; MuteCategory(&p with p = self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
 pub const Papyrus__SoundCategory__Mute: u64 = 55351;
-/// `Papyrus::SoundCategory::Pause` at 0xa1e4a0 (papyrus_native, high); signature (medium): `void Pause(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; PauseCategory(self+0x30, fade 0) (high); semantic signature: `void (VM*, u32 stackId, BGSSoundCategory* self)`
+/// `Papyrus::SoundCategory::Pause` at 0xa1e4a0 (papyrus_native, high); signature (medium): `void Pause(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; PauseCategory(&p with p = self+0x30, fade 0) (high); semantic signature: `void (VM*, u32 stackId, BGSSoundCategory* self)`
 pub const Papyrus__SoundCategory__Pause: u64 = 55349;
 /// `Papyrus::SoundCategory::RegisterFuncs` at 0xa1e640 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Papyrus__SoundCategory__RegisterFuncs: u64 = 55356;
-/// `Papyrus::SoundCategory::SetFrequency` at 0xa1e5e0 (papyrus_native, high); signature (medium): `void SetFrequency(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self, float a0)`; SetCategoryFrequency(self+0x30, frequency) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*, float frequency)`
+/// `Papyrus::SoundCategory::SetFrequency` at 0xa1e5e0 (papyrus_native, high); signature (medium): `void SetFrequency(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self, float a0)`; SetCategoryFrequency(&p with p = self+0x30, frequency) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*, float frequency)`
 pub const Papyrus__SoundCategory__SetFrequency: u64 = 55354;
-/// `Papyrus::SoundCategory::SetVolume` at 0xa1e5a0 (papyrus_native, high); signature (medium): `void SetVolume(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self, float a0)`; SetCategoryVolume(self+0x30, volume) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*, float volume)`
+/// `Papyrus::SoundCategory::SetVolume` at 0xa1e5a0 (papyrus_native, high); signature (medium): `void SetVolume(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self, float a0)`; SetCategoryVolume(&p with p = self+0x30, volume) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*, float volume)`
 pub const Papyrus__SoundCategory__SetVolume: u64 = 55353;
-/// `Papyrus::SoundCategory::UnMute` at 0xa1e560 (papyrus_native, high); signature (medium): `void UnMute(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; UnmuteCategory(self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
+/// `Papyrus::SoundCategory::UnMute` at 0xa1e560 (papyrus_native, high); signature (medium): `void UnMute(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; UnmuteCategory(&p with p = self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
 pub const Papyrus__SoundCategory__UnMute: u64 = 55352;
-/// `Papyrus::SoundCategory::UnPause` at 0xa1e4e0 (papyrus_native, high); signature (medium): `void UnPause(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; UnpauseCategory(self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
+/// `Papyrus::SoundCategory::UnPause` at 0xa1e4e0 (papyrus_native, high); signature (medium): `void UnPause(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; UnpauseCategory(&p with p = self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
 pub const Papyrus__SoundCategory__UnPause: u64 = 55350;
 /// `Papyrus::Spell::Cast` at 0xa32e90 (papyrus_native, high); signature (medium): `bool Cast(IVirtualMachine * vm, uint stackId, SpellItem * self, TESObjectREFR * a0, TESObjectREFR * a1)`
 pub const Papyrus__Spell__Cast: u64 = 55747;
