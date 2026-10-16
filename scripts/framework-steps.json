@@ -1,0 +1,14 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 5000},
+  {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsFrameworkTest", "function": "Twice", "args": [21]}},
+  {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
+  {"wait": 1500},
+  {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
+  {"wait": 1000},
+  {"tool": "console", "args": {"command": "save skyrim-rs-framework"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000}
+]

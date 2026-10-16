@@ -274,6 +274,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "framework"
+version = "0.1.0"
+dependencies = [
+ "overlay",
+ "skse",
+ "skyrim",
+ "windows-sys",
+]
+
+[[package]]
+name = "framework-test"
+version = "0.1.0"
+dependencies = [
+ "framework",
+ "skse",
+ "skyrim",
+]
+
+[[package]]
 name = "generic-array"
 version = "0.14.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -337,6 +356,14 @@ dependencies = [
  "skse",
  "versionlib",
  "windows-sys",
+]
+
+[[package]]
+name = "host"
+version = "0.1.0"
+dependencies = [
+ "framework",
+ "skse",
 ]
 
 [[package]]

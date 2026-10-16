@@ -2,9 +2,11 @@
 # plugin's PASS lines with DevBench's own answers from the same session as scripts/<suite>-checks.ps1 lists them.
 # The papyrus suite also builds the equip-counter mod, compiles both crates' papyrus folders and installs the mod DLL and
 # the .pex files for the run; the shadows suite installs the first-person-shadows mod next to the test plugin.
-# The overlay suite runs the plugin in mode overlay. See docs/subsystems/<suite>.md.
+# The overlay suite runs the plugin in mode overlay. The framework suite installs the host (skyrim_rs.dll) and puts its
+# test plugin and a decoy DLL without a descriptor into Data\SKSE\Plugins\skyrim-rs; that plugin writes the suite's
+# report. See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
@@ -20,21 +22,24 @@ $Mods = @{
     papyrus = @{ crate = "equip-counter"; dll = "skyrim_rs_equip_counter.dll"; log = "skyrim-rs-equip-counter.log" }
     shadows = @{ crate = "first-person-shadows"; dll = "skyrim_rs_first_person_shadows.dll"; log = "skyrim-rs-first-person-shadows.log" }
     bone = @{ crate = "bone-driver"; dll = "skyrim_rs_bone_driver.dll"; log = "skyrim-rs-bone-driver.log" }
+    framework = @{ crate = "framework-test"; dll = "skyrim_rs_framework_test.dll"; log = "skyrim-rs-framework-test.log"; dir = "skyrim-rs"; report = $true }
 }
 $Mod = $Mods[$Suite]
 $PluginLog = "skyrim-rs-test.log"
 $CrashLog = "skyrim-rs-test-crash.log"
-$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog)
+$HostDll = "skyrim_rs.dll"
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog, "skyrim-rs.log")
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $TestSave = "skyrim-rs-$Suite"
 
 if ($Suite -eq "overlay") { $Mode = "overlay" }
 & "$PSScriptRoot\game-free.ps1"
 Push-Location $Root
-$crates = @("testplugin") + @(if ($Mod) { $Mod.crate })
+$crates = @("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.dir) { "host" })
 try { cargo build --release @($crates | ForEach-Object { "-p"; $_ }); if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
 $Pex = @()
 if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
+if ($Suite -eq "framework") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\framework-test\papyrus")) }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $OutDir = (Resolve-Path $OutDir).Path
 $Backup = Join-Path $OutDir "backup"
@@ -44,7 +49,14 @@ foreach ($f in @($PluginLog) + $ModLogs) { Remove-Item "$SkseLogs\$f" -ErrorActi
 
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
 if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
-if ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
+if ($Mod.dir) {
+    $ModDir = "$Plugins\$($Mod.dir)"
+    if (Test-Path $ModDir) { throw "$ModDir already exists" }
+    New-Item -ItemType Directory $ModDir | Out-Null
+    Copy-Item "$Root\target\release\$($Mod.dll)" $ModDir
+    Copy-Item $Dll "$ModDir\decoy.dll"
+    Copy-Item "$Root\target\release\$HostDll" "$Plugins\$HostDll" -Force
+} elseif ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
 foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" }; Copy-Item $p $Scripts -Force }
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
@@ -52,7 +64,8 @@ try {
     & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -OutDir $OutDir
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
-    foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode") + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
+    foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
+    if ($Mod.dir) { Remove-Item "$Plugins\$($Mod.dir)" -Recurse -Force -ErrorAction SilentlyContinue }
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
     Remove-Item "$MyGames\Saves\$TestSave*" -ErrorAction SilentlyContinue
@@ -68,7 +81,8 @@ $plugin = @{}
 $runs = @{}
 $pending = @{}
 $summaries = @()
-foreach ($line in Get-Content "$OutDir\$PluginLog") {
+$ReportLog = if ($Mod.report) { $Mod.log } else { $PluginLog }
+foreach ($line in Get-Content "$OutDir\$ReportLog") {
     if ($line -match '^(PASS|FAIL) (\w+): (.*)$') { $pending[$Matches[2]] = @{ ok = ($Matches[1] -eq "PASS"); detail = $Matches[3] } }
     elseif ($line -match '^summary (\w+ \w+): ') {
         $runs[$Matches[1]] = $pending
