@@ -43375,6 +43375,25 @@ const _: () = assert!(core::mem::offset_of!(BSScrapArray, data) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScrapArray, capacity) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScrapArray, size) == 0x18);
 
+/// `BSScript::Array`: size 0x20 (exact).
+/// Meaning: a Papyrus array: reference count, element type, size, the element Variables inline after the 0x20 header (high, papyrus pass).
+/// Evidence: a Papyrus array: reference count, element type, size, the element Variables inline after the 0x20 header; request 4e: CreateArrayAndTrack 0x14bd670 allocates 0x20 + size * 0x10 bytes from the global heap and InitTypedArrayObject 0x149c290 fills it; the elements are Variables stored inline after the header, element i at +0x20 + i * 0x10, each initialised to {element type, 0} (a None element of a form array holds {the class ObjectTypeInfo* with bit 0 clear, 0}); references are held through BSTSmartPointer (locked add on +0; at zero ResetArrayElementVariables 0x149bce0 resets the elements and FreeMemory frees the block); every element Variable carries its own type (assign replaces it), so the header's element type is what the creator passed: the script extender's natives pass None; run-papyrus-4e: the tracer-created Int[3] read {2, 3, 3, 0, 0, then three {3, 0}}, the arrays DevBench received back from StringUtil.Split, utility.CreateFormArray(2, None) and utility.ResizeIntArray held {2, 0, size} with elements {2, string}, {Form ObjectTypeInfo, 0} and {3, 1}.
+#[repr(C)]
+pub struct BSScript__Array {
+    /// +0x0 `undefined4`, semantic; BSTSmartPointer count; a new array has 2 (the creator's pointer and the VM's tracking list at +0x9408, pruned in VirtualMachine::Update once only the list holds it) (high)
+    pub refCount: u32,
+    pub unknown_4: [u8; 4],
+    /// +0x8 `class:BSScript::TypeInfo`, semantic; the element type the creator passed (raw code, or ObjectTypeInfo* with bit 0 clear); None for the script extender's arrays (high)
+    pub elementType: BSScript__TypeInfo,
+    /// +0x10 `undefined4`, semantic; element count (high)
+    pub size: u32,
+    pub unknown_14: [u8; 12],
+}
+const _: () = assert!(size_of::<BSScript__Array>() == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__Array, refCount) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__Array, elementType) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__Array, size) == 0x10);
+
 /// `BSScript::ErrorLogger`: size 0xB0 (exact, medium).
 /// Evidence: lower bound SkyrimScript::Logger (size 0xB0 at 0x0) adds no fields or bases meets upper bound derived SkyrimScript::Logger size 0xB0 at 0x0.
 /// Bases: `BSTEventSource<BSScript::LogEvent>`@0x8.
@@ -63299,7 +63318,7 @@ pub struct BSScript__Stack {
     pub unknown_5C: [u8; 4],
     /// +0x60 `ptr:BSScript::StackFrame`, semantic; the innermost frame (high)
     pub top: *mut BSScript__StackFrame,
-    /// +0x68 `undefined4`, semantic; 1 once the last frame returned (medium)
+    /// +0x68 `undefined4`, semantic; 0 running, 1 once the last frame returned, 3 waiting on a latent native, 5-8 queued or suspended states set by CompleteStack and the executor (medium)
     pub state: u32,
     pub unknown_6C: [u8; 4],
     /// +0x70 `class:BSScript::Variable`, semantic; the value CallBinding produced, copied here by Call (high)
