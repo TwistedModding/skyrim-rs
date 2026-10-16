@@ -31763,8 +31763,10 @@ pub const CallVfunc7IfEnabled: u64 = 69561;
 pub const CallVfunc88: u64 = 453520;
 /// `CallVfunc98IfBit3OfField10Clear` at 0x1fc430 (decompiler, medium); signature (untiered): `undefined8 CallVfunc98IfBit3OfField10Clear(longlong * param_1)`
 pub const CallVfunc98IfBit3OfField10Clear: u64 = 15157;
-/// `CallVfunc98OnArrayEntries` at 0x1c2170 (decompiler, medium); signature (untiered): `undefined CallVfunc98OnArrayEntries(longlong param_1)`
+/// `CallVfunc98OnArrayEntries` at 0x1c2170 (decompiler, medium); signature (untiered): `undefined CallVfunc98OnArrayEntries(longlong param_1)`; calls virtual slot 19 (vtable+0x98) on every element of the array at +0x1d8 (count +0x1e8); the init thread runs it once at the init-step moment (call site 0x655977, with this = g_TESDataHandler) (high); semantic signature: `void (TESDataHandler* this)`
 pub const CallVfunc98OnArrayEntries: u64 = 13766;
+/// `TESDataHandler::CallSlot19OnArray1D8` as a function pointer type (high).
+pub type CallVfunc98OnArrayEntries_fn = unsafe extern "C" fn(this: *mut classes::TESDataHandler);
 /// `CallVfuncB0` at 0xcd5a90 (decompiler, high); signature (untiered): `undefined CallVfuncB0(longlong * param_1)`
 pub const CallVfuncB0: u64 = 67884;
 /// `CallVfuncB8` at 0xcd5aa0 (decompiler, high); signature (untiered): `undefined CallVfuncB8(longlong * param_1)`
@@ -132267,7 +132269,7 @@ pub const SkyrimVM__ctor_sub10: u64 = 54170;
 pub const SkyrimVM__ctor_sub11: u64 = 54177;
 /// `SkyrimVM::ctor_sub12` at 0x9eccc0 (callgraph, medium); signature (untiered): `undefined ctor_sub12(void)`
 pub const SkyrimVM__ctor_sub12: u64 = 54178;
-/// `SkyrimVM::ctor_sub14` at 0xa325a0 (callgraph, medium); signature (untiered): `undefined ctor_sub14(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `SkyrimVM::ctor_sub14` at 0xa325a0 (callgraph, medium); signature (untiered): `undefined ctor_sub14(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; registers the engine's native functions (every Papyrus::<class>::RegisterFuncs, passing the same pointer on); the script extender's Papyrus moment hooks its one call, at 0x9d645b in SkyrimVM::ctor, where rcx is &g_SkyrimVM+0x210, so *vm is the BSScript::Internal::VirtualMachine that g_SkyrimVM+0x210 holds from then on; rdx, r8 and r9 are passed through untouched to the RegisterFuncs, so a call-site detour should forward all four registers (high); semantic signature: `void (BSTSmartPointer<BSScript::IVirtualMachine>* vm)`
 pub const SkyrimVM__ctor_sub14: u64 = 55739;
 /// `SkyrimVM::ctor_sub15` at 0x1496e70 (callgraph, medium); signature (untiered): `undefined8 ctor_sub15(longlong * param_1, longlong * param_2, longlong * param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined8 param_7, undefined8 param_8, undefined8 param_9, undefined8 param_10, undefined8 param_11)`
 pub const SkyrimVM__ctor_sub15: u64 = 104370;
@@ -139095,7 +139097,7 @@ pub const TryStartMountInteraction: u64 = 37904;
 pub const TryStartMountOnTarget: u64 = 39669;
 /// `TryStartPlatformRequest` at 0x606a90 (decompiler, medium); signature (untiered): `bool TryStartPlatformRequest(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const TryStartPlatformRequest: u64 = 442421;
-/// `TryStartQuest` at 0x3d0cb0 (decompiler, medium); signature (untiered): `char TryStartQuest(longlong * param_1, undefined1 * param_2, char param_3)`
+/// `TryStartQuest` at 0x3d0cb0 (decompiler, medium); signature (untiered): `char TryStartQuest(longlong * param_1, undefined1 * param_2, char param_3)`; starts a quest: clears *started; when the quest's flags (u16 +0xdc) have bit 0 it returns true at once (*started set only for one flag combination); otherwise, unless bit 8 is set with byte +0x22a, startNow true runs the quest's pending start work and on success adds it to the story manager's array and sets *started, startNow false queues it and sets *started; returns whether it was started or queued. The new-game moment's site 0x9591b9 calls it with startNow 1 on the quest the main menu starts (medium); semantic signature: `bool (TESQuest* quest, bool* started, bool startNow)`
 pub const TryStartQuest: u64 = 25003;
 /// `TryStartSpectatorPackage` at 0x680db0 (decompiler, medium); signature (untiered): `undefined TryStartSpectatorPackage(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const TryStartSpectatorPackage: u64 = 37410;

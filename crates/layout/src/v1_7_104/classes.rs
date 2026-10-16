@@ -561,7 +561,10 @@ pub struct ActiveEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
-    pub unknown_40: [u8; 16],
+    /// +0x40 `pointer`, semantic; the caster's MagicCaster (medium)
+    pub casterMagic: *mut c_void,
+    /// +0x48 `pointer`, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, ctor store, semantic, runtime; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut MagicTarget,
     /// +0x58 `undefined8`, ctor store
@@ -576,7 +579,8 @@ pub struct ActiveEffect {
     pub field_74: f32,
     /// +0x78 `float`, ctor store
     pub field_78: f32,
-    pub unknown_7C: [u8; 4],
+    /// +0x7C `undefined4`, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    pub flags: u32,
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
     /// +0x84 `undefined2`, ctor store, semantic, runtime; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
@@ -598,6 +602,8 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(ActiveEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ActiveEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_60) == 0x60);
@@ -605,6 +611,7 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ActiveEffect, flags) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_88) == 0x88);
