@@ -202,6 +202,23 @@ impl<E: Event> BSTEventSource<E> {
         Registration { source: self, sink: sink.as_ptr() }
     }
 
+    /// Registers `sink` ahead of every sink already registered. A notification walks the sinks in
+    /// order and ends at the first that returns [`BSEventNotifyControl::Stop`], so this sink sees each
+    /// event first and can hide it from all the others (pass 9 on the input source). Takes the
+    /// source's lock, so it waits for a running notification and must not be called from a sink
+    /// of this source.
+    pub fn add_sink_first<S: EventSink<E>>(&'static self, sink: &'static Sink<E, S>) -> Registration<E> {
+        let _lock = unsafe { crate::SpinGuard::lock(&raw const self.0.lock) };
+        let registration = self.add_sink(sink);
+        if !self.0.sinks.is_null() {
+            let sinks = unsafe { core::slice::from_raw_parts_mut(self.0.sinks.cast::<*const c_void>(), self.0.sinkCount as usize) };
+            if let Some(i) = sinks.iter().position(|s| *s == sink.as_ptr()) {
+                sinks[..=i].rotate_right(1);
+            }
+        }
+        registration
+    }
+
     #[must_use]
     pub fn contains<S: EventSink<E>>(&self, sink: &Sink<E, S>) -> bool {
         self.sinks().contains(&sink.as_ptr())

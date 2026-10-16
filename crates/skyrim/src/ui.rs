@@ -16,9 +16,9 @@ use std::ffi::CString;
 use std::sync::atomic::{AtomicU32, Ordering};
 
 use layout::v1_7_104::{classes, enums, fns, globals, vtables};
-use windows_sys::Win32::System::Threading::{GetCurrentThreadId, Sleep};
 
 pub use crate::events::EventSourceHolderMenuOpenClose as Ui;
+use crate::SpinGuard;
 use crate::string::BSFixedString;
 
 pub use enums::IMenu_flags as MenuFlags;
@@ -68,7 +68,7 @@ struct MenuTableValue {
 
 pub(crate) struct Fns {
     queue: *const *mut classes::UIMessageQueue,
-    stack_lock: *const AtomicU32,
+    stack_lock: *const classes::BSSpinLock,
     scaleform: *const *mut classes::BSScaleformManager,
     movie_vtable: usize,
     menu_vtable: [*const c_void; 9],
@@ -97,7 +97,7 @@ impl Fns {
         unsafe {
             Ok(Self {
                 queue: reloc.address(globals::g_UIMessageQueue_ptr)? as *const *mut classes::UIMessageQueue,
-                stack_lock: reloc.address(globals::g_UIMenuStackLock)? as *const AtomicU32,
+                stack_lock: reloc.address(globals::g_UIMenuStackLock)? as *const classes::BSSpinLock,
                 scaleform: reloc.address(globals::g_BSScaleformManager_ptr)? as *const *mut classes::BSScaleformManager,
                 movie_vtable: reloc.address(MOVIE_VIEW_VTABLE)?,
                 menu_vtable: *base_vtable,
@@ -404,6 +404,7 @@ impl HudMenu {
 /// released on drop. Ascending depth: the HUD at 2, the cursor at 13.
 pub struct MenuStack<'a> {
     menus: &'a [*mut classes::IMenu],
+    _lock: SpinGuard,
 }
 
 impl MenuStack<'_> {
@@ -422,39 +423,6 @@ impl MenuStack<'_> {
     }
 }
 
-impl Drop for MenuStack<'_> {
-    fn drop(&mut self) {
-        unlock_stack();
-    }
-}
-
-fn lock_stack() {
-    let lock = unsafe { &*fns().stack_lock };
-    let count = unsafe { &*fns().stack_lock.add(1) };
-    let me = unsafe { GetCurrentThreadId() };
-    let mut spins = 0u32;
-    loop {
-        if lock.load(Ordering::Acquire) == me {
-            count.fetch_add(1, Ordering::Relaxed);
-            return;
-        }
-        if lock.compare_exchange(0, me, Ordering::Acquire, Ordering::Relaxed).is_ok() {
-            count.store(1, Ordering::Relaxed);
-            return;
-        }
-        spins += 1;
-        unsafe { Sleep(u32::from(spins > 10_000)) };
-    }
-}
-
-fn unlock_stack() {
-    let lock = unsafe { &*fns().stack_lock };
-    let count = unsafe { &*fns().stack_lock.add(1) };
-    if count.fetch_sub(1, Ordering::Relaxed) == 1 {
-        lock.store(0, Ordering::Release);
-    }
-}
-
 impl Ui {
     fn as_ptr(&self) -> *mut classes::EventSourceHolder_MenuOpenClose {
         (&raw const *self.raw()).cast_mut()
@@ -467,11 +435,11 @@ impl Ui {
     /// The open menus in draw order, under the stack lock until the result is dropped.
     #[must_use]
     pub fn stack(&self) -> MenuStack<'_> {
-        lock_stack();
+        let lock = unsafe { SpinGuard::lock(fns().stack_lock) };
         let ui = self.raw();
         let count = u32::from_le_bytes([ui.unknown_118[8], ui.unknown_118[9], ui.unknown_118[10], ui.unknown_118[11]]) as usize;
         let menus = if ui.menuStack.is_null() || count == 0 { &[][..] } else { unsafe { core::slice::from_raw_parts(ui.menuStack.cast::<*mut classes::IMenu>(), count) } };
-        MenuStack { menus }
+        MenuStack { menus, _lock: lock }
     }
 
     /// `IsMenuOpen` (id 82074): the menu is registered and its flag 0x40 is set.

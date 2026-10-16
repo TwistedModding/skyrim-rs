@@ -7,6 +7,10 @@
 use core::ffi::c_void;
 use std::fmt;
 use std::sync::OnceLock;
+use std::sync::atomic::{AtomicU32, Ordering};
+
+use layout::v1_7_104::classes;
+use windows_sys::Win32::System::Threading::{GetCurrentThreadId, Sleep};
 
 pub mod actors;
 pub mod animation;
@@ -124,4 +128,43 @@ pub(crate) unsafe fn class_of(object: *const c_void) -> Option<&'static layout::
     let vtable = unsafe { *object.cast::<usize>() };
     let rva = u32::try_from(vtable.checked_sub(reloc().base())?).ok()?;
     layout::v1_7_104::vtables::find(rva)
+}
+
+/// A held `BSSpinLock`, the engine's recursive lock (owner thread id at +0, recursion count at +4),
+/// spun on the way the engine does (`Sleep(0)`, then `Sleep(1)` after 10,000 tries) and released on drop.
+pub(crate) struct SpinGuard(*const classes::BSSpinLock);
+
+impl SpinGuard {
+    /// # Safety
+    /// `lock` must point to a `BSSpinLock` that outlives the guard.
+    pub(crate) unsafe fn lock(lock: *const classes::BSSpinLock) -> Self {
+        let (owner, count) = unsafe { Self::words(lock) };
+        let me = unsafe { GetCurrentThreadId() };
+        let mut spins = 0u32;
+        loop {
+            if owner.load(Ordering::Acquire) == me {
+                count.fetch_add(1, Ordering::Relaxed);
+                return Self(lock);
+            }
+            if owner.compare_exchange(0, me, Ordering::Acquire, Ordering::Relaxed).is_ok() {
+                count.store(1, Ordering::Relaxed);
+                return Self(lock);
+            }
+            spins += 1;
+            unsafe { Sleep(u32::from(spins > 10_000)) };
+        }
+    }
+
+    unsafe fn words<'a>(lock: *const classes::BSSpinLock) -> (&'a AtomicU32, &'a AtomicU32) {
+        unsafe { (AtomicU32::from_ptr((&raw const (*lock).owningThread).cast_mut()), AtomicU32::from_ptr((&raw const (*lock).lockCount).cast_mut())) }
+    }
+}
+
+impl Drop for SpinGuard {
+    fn drop(&mut self) {
+        let (owner, count) = unsafe { Self::words(self.0) };
+        if count.fetch_sub(1, Ordering::Relaxed) == 1 {
+            owner.store(0, Ordering::Release);
+        }
+    }
 }
