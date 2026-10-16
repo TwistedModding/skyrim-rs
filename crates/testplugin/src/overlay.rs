@@ -2,10 +2,12 @@
 //! to `PresentFrame` and a probe on `PresentFrame`'s entry (the frame suite's detour there is not
 //! installed in this mode), so every frame the overlay draws first and the probe reads the back
 //! buffer before the present, on the thread that ran the overlay's windows. The suite's window has a
-//! button `DevBench` clicks through the keyboard (Tab focuses it, Enter and Space click it) and a
-//! magenta square at a fixed place; a witness sink on the input source counts the W presses the
-//! overlay lets through. `SAVE_TESTS` check the clicks, the witness, the square in the back buffer
-//! while open and its absence once closed; the frame of the third click is written as a bitmap.
+//! button `DevBench` clicks through the keyboard (Tab focuses it, Enter and Space click it), a text
+//! field the suite focuses after the third click and types "skyrim" into with `SendInput` scan codes
+//! (real key presses: `DevBench`'s injected keys never become characters, request 9c), and a magenta
+//! square at a fixed place; a witness sink on the input source counts the W presses the overlay lets
+//! through. `SAVE_TESTS` check the clicks, the typed text, the witness, the square in the back buffer
+//! while open and its absence once closed; the frame showing the typed text is written as a bitmap.
 
 use std::io::Write as _;
 use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
@@ -23,9 +25,11 @@ use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 use crate::{Test, check};
 
 pub const TESTS: &[(&str, Test)] = &[("installed", installed)];
-pub const SAVE_TESTS: &[(&str, Test)] = &[("clicks", clicks), ("capture", capture), ("drawn", drawn), ("closed", closed)];
+pub const SAVE_TESTS: &[(&str, Test)] = &[("clicks", clicks), ("typed", typed), ("capture", capture), ("drawn", drawn), ("closed", closed)];
 
 const KEY_W: u32 = 0x11;
+/// "skyrim" as `DirectInput` scan codes.
+const TYPED: (&str, [u16; 6]) = ("skyrim", [0x1F, 0x25, 0x15, 0x13, 0x17, 0x32]);
 /// The square's corner and side, in points (1 point = 1 pixel at 1080 lines).
 const SQUARE: (f32, f32) = (16.0, 32.0);
 const MAGENTA: [u8; 3] = [255, 0, 255];
@@ -38,6 +42,8 @@ static WAS_OPEN: AtomicBool = AtomicBool::new(false);
 static WANT_SHOT: AtomicBool = AtomicBool::new(false);
 static WITNESS_W: Mutex<(u32, u32)> = Mutex::new((0, 0));
 static SHOT: Mutex<Option<Result<String, String>>> = Mutex::new(None);
+static TEXT: Mutex<String> = Mutex::new(String::new());
+static TYPING: AtomicBool = AtomicBool::new(false);
 static OPEN_PIXEL: Mutex<Option<[u8; 3]>> = Mutex::new(None);
 static CLOSED_PIXEL: Mutex<Option<[u8; 3]>> = Mutex::new(None);
 
@@ -77,13 +83,36 @@ pub fn register() -> Result<String, String> {
 fn window(ctx: &egui::Context) {
     DRAW_THREAD.store(unsafe { GetCurrentThreadId() }, Ordering::Relaxed);
     egui::Window::new("skyrim-rs test").anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0]).collapsible(false).show(ctx, |ui| {
-        if ui.add_sized([320.0, 160.0], egui::Button::new("Count")).clicked() && CLICKS.fetch_add(1, Ordering::Relaxed) == 2 {
-            WANT_SHOT.store(true, Ordering::Relaxed);
+        if ui.add_sized([320.0, 160.0], egui::Button::new("Count")).clicked() {
+            CLICKS.fetch_add(1, Ordering::Relaxed);
         }
         ui.label(format!("clicks {}", CLICKS.load(Ordering::Relaxed)));
+        let mut text = TEXT.lock().unwrap();
+        let field = ui.text_edit_singleline(&mut *text);
+        if CLICKS.load(Ordering::Relaxed) == 3 && !TYPING.swap(true, Ordering::Relaxed) {
+            field.request_focus();
+            std::thread::spawn(type_keys);
+        }
+        if *text == TYPED.0 && SHOT.lock().unwrap().is_none() {
+            WANT_SHOT.store(true, Ordering::Relaxed);
+        }
     });
     let square = egui::Rect::from_min_size(egui::pos2(SQUARE.0, SQUARE.0), egui::vec2(SQUARE.1, SQUARE.1));
     ctx.layer_painter(egui::LayerId::new(egui::Order::Foreground, egui::Id::unique("probe square"))).rect_filled(square, 0.0, egui::Color32::from_rgb(MAGENTA[0], MAGENTA[1], MAGENTA[2]));
+}
+
+/// Presses and releases each key of [`TYPED`] through `SendInput` with scan codes, the way a keyboard
+/// reaches `DirectInput`.
+fn type_keys() {
+    use windows_sys::Win32::UI::Input::KeyboardAndMouse::{INPUT, INPUT_0, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP, KEYEVENTF_SCANCODE, SendInput};
+    std::thread::sleep(std::time::Duration::from_millis(300));
+    for code in TYPED.1 {
+        for flags in [KEYEVENTF_SCANCODE, KEYEVENTF_SCANCODE | KEYEVENTF_KEYUP] {
+            let input = INPUT { r#type: INPUT_KEYBOARD, Anonymous: INPUT_0 { ki: KEYBDINPUT { wVk: 0, wScan: code, dwFlags: flags, time: 0, dwExtraInfo: 0 } } };
+            unsafe { SendInput(1, &raw const input, i32::try_from(size_of::<INPUT>()).unwrap_or(i32::MAX)) };
+            std::thread::sleep(std::time::Duration::from_millis(40));
+        }
+    }
 }
 
 unsafe extern "C" fn probe() {
@@ -179,6 +208,12 @@ fn clicks() -> Result<String, String> {
     Ok(format!("{clicks} clicks through Tab and Enter, Space and the left button, {} frames drawn open", OPEN_FRAMES.load(Ordering::Relaxed)))
 }
 
+fn typed() -> Result<String, String> {
+    let text = TEXT.lock().unwrap().clone();
+    check(text == TYPED.0, &format!("the field holds {text:?} after typing {:?}", TYPED.0))?;
+    Ok(format!("the focused field received {text:?} from scan-code key presses"))
+}
+
 fn capture() -> Result<String, String> {
     let (hidden, seen) = *WITNESS_W.lock().unwrap();
     check(hidden == 0, &format!("the witness saw {hidden} W presses while the overlay was open"))?;
@@ -192,7 +227,7 @@ fn drawn() -> Result<String, String> {
     }
     let pixel = *OPEN_PIXEL.lock().unwrap();
     check(pixel == Some(MAGENTA), &format!("pixel at the square while open: {pixel:?}"))?;
-    let shot = SHOT.lock().unwrap().clone().ok_or("the third click's frame was not captured")??;
+    let shot = SHOT.lock().unwrap().clone().ok_or("the frame with the typed text was not captured")??;
     Ok(format!("square pixel {pixel:?} while open; frame written to {shot}"))
 }
 

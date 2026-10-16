@@ -14,7 +14,7 @@
   {"tool": "console", "args": {"command": "player.getpos x", "capture": true}},
   {"tool": "console", "args": {"command": "player.getpos y", "capture": true}},
   {"tool": "input", "args": {"device": "keyboard", "action": "sequence", "owner": "verify", "events": [{"action": "tap", "key": 15}, {"action": "wait", "durationMs": 300}, {"action": "tap", "key": 28}, {"action": "wait", "durationMs": 300}, {"action": "tap", "key": 57}, {"action": "wait", "durationMs": 300}, {"action": "tap", "key": 256}]}},
-  {"wait": 2000},
+  {"wait": 3000},
   {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
   {"wait": 1000},
   {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": "w", "owner": "verify"}},

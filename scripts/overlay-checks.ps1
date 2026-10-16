@@ -1,7 +1,8 @@
 # DevBench comparisons for the overlay suite (step indices of overlay-steps.json); dot-sourced by verify.ps1, which runs
 # the plugin in mode overlay. F11 opens the overlay, W is held for 2 s while it is open, Tab and Enter, Space and the
-# left mouse button click the suite's button, F11 closes it and W is tapped once; the plugin reports at the save and
-# leaves the frame of the third click as a bitmap, kept here as a half-size JPEG.
+# left mouse button click the suite's button, the plugin types "skyrim" into its field with SendInput, F11 closes it
+# and W is tapped once; the plugin reports at the save and leaves the frame with the typed text as a bitmap, kept here
+# as a half-size JPEG.
 $Phases = "load", "dataLoaded", "postLoadGame", "saveGame"
 
 function Pos($i) { [double](Captured (Lines $i) '>>\s*(-?[\d.]+)') }
@@ -22,6 +23,8 @@ $rows = @(
        ok = ($plugin["capture"].ok -and (Lines 4) -ne "" -and (Lines 12) -ne "" -and $moved -lt 1) }
     @{ name = "clicks";       plugin = (Detail "clicks"); devbench = "input sequence Tab, Enter, Space, mouseLeft ok = $((Step 14) -ne $null)";
        ok = ($plugin["clicks"].ok -and (Step 14) -ne $null) }
+    @{ name = "typed";        plugin = (Detail "typed"); devbench = "(no DevBench counterpart: its keys never become characters)";
+       ok = $plugin["typed"].ok }
     @{ name = "drawn";        plugin = (Detail "drawn"); devbench = "frame kept as overlay-1.7.104.jpg: $(Test-Path "$OutDir\overlay-1.7.104.jpg")";
        ok = ($plugin["drawn"].ok -and (Test-Path "$OutDir\overlay-1.7.104.jpg")) }
     @{ name = "closed";       plugin = (Detail "closed"); devbench = "input tap F11 ok = $((Step 16) -ne $null)";
