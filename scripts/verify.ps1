@@ -2,9 +2,9 @@
 # plugin's PASS lines with DevBench's own answers from the same session as scripts/<suite>-checks.ps1 lists them.
 # The papyrus suite also builds the equip-counter mod, compiles both crates' papyrus folders and installs the mod DLL and
 # the .pex files for the run; the shadows suite installs the first-person-shadows mod next to the test plugin.
-# See docs/subsystems/<suite>.md.
+# The overlay suite runs the plugin in mode overlay. See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
@@ -28,6 +28,7 @@ $ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog)
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $TestSave = "skyrim-rs-$Suite"
 
+if ($Suite -eq "overlay") { $Mode = "overlay" }
 & "$PSScriptRoot\game-free.ps1"
 Push-Location $Root
 $crates = @("testplugin") + @(if ($Mod) { $Mod.crate })

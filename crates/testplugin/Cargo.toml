@@ -13,6 +13,8 @@ skse.workspace = true
 hook.workspace = true
 layout.workspace = true
 skyrim.workspace = true
+overlay.workspace = true
+windows = { workspace = true, features = ["Win32_Graphics_Direct3D11", "Win32_Graphics_Dxgi_Common"] }
 windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_System_Diagnostics_Debug", "Win32_System_Kernel", "Win32_System_LibraryLoader", "Win32_System_SystemInformation", "Win32_System_Threading"] }
 
 [lints]
