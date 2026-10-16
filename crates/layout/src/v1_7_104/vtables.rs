@@ -106934,7 +106934,7 @@ pub struct BSWin32KeyboardDevice_vtable {
     pub slot_0: *const c_void,
     /// `BSWin32KeyboardDevice::Initialize` at 0xe126f0 (semantic, high); signature (untiered): `undefined Initialize(BSWin32KeyboardDevice * this)`; `Initialize`: create and configure the DirectInput keyboard (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_1: *const c_void,
-    /// `BSWin32KeyboardDevice::Poll` at 0xe127c0 (semantic, high); signature (untiered): `undefined Poll(BSWin32KeyboardDevice * this, float param_1)`; `Poll`: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down, a CharEvent (numpad digits with Num Lock); then a hold for every scan code down in both arrays (high); semantic signature: `void (BSWin32KeyboardDevice* this, float realDelta)`
+    /// `BSWin32KeyboardDevice::Poll` at 0xe127c0 (semantic, high); signature (untiered): `undefined Poll(BSWin32KeyboardDevice * this, float param_1)`; `Poll`: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down only, a CharEvent: numpad digits with Num Lock, otherwise MapVirtualKeyA(scan, 1) and ToUnicode with a key state built from the device (Shift, Caps Lock toggled on its press, Alt/Ctrl); no flag or menu gates it and a held key repeats nothing; then a hold for every scan code down in both arrays (high); semantic signature: `void (BSWin32KeyboardDevice* this, float realDelta)`
     pub slot_2: *const c_void,
     /// `BSWin32KeyboardDevice::Release` at 0xe12bd0 (semantic, high); signature (untiered): `undefined Release(BSWin32KeyboardDevice * this)`; `Release`: release the DirectInput device (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_3: *const c_void,
@@ -106994,7 +106994,7 @@ impl BSWin32KeyboardDevice_vtable {
 }
 /// `BSWin32KeyboardDevice::Initialize`, slot 1: create and configure the DirectInput keyboard (high).
 pub type BSWin32KeyboardDevice_vtable_Initialize = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
-/// `BSWin32KeyboardDevice::Poll`, slot 2: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down, a CharEvent (numpad digits with Num Lock); then a hold for every scan code down in both arrays (high).
+/// `BSWin32KeyboardDevice::Poll`, slot 2: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down only, a CharEvent: numpad digits with Num Lock, otherwise MapVirtualKeyA(scan, 1) and ToUnicode with a key state built from the device (Shift, Caps Lock toggled on its press, Alt/Ctrl); no flag or menu gates it and a held key repeats nothing; then a hold for every scan code down in both arrays (high).
 pub type BSWin32KeyboardDevice_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice, realDelta: f32);
 /// `BSWin32KeyboardDevice::Release`, slot 3: release the DirectInput device (high).
 pub type BSWin32KeyboardDevice_vtable_Release = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);

@@ -87806,7 +87806,7 @@ pub struct EventSourceHolder_User {
     pub enabledControls: u32,
     /// +0x124 `undefined4`, semantic; snapshot of enabledControls taken while a menu or furniture temporarily disables controls; 0x80000000 = no snapshot (high)
     pub savedControls: u32,
-    /// +0x128 `undefined1`, semantic; number of open text-entry fields; while non-zero keyboard events map only to group-0x10 records, character events reach Scaleform and console hotkeys are off (high)
+    /// +0x128 `undefined1`, semantic; number of open text-entry fields (a counter, so calls must balance); it does not gate CharEvents, which the keyboard poll makes for every key press. While non-zero: keyboard events map only to group-0x10 records (the rest become 'Skip', so typed keys do not move the player), MenuControls forwards character events to Scaleform, and the console hotkeys are off. A plugin raises it with AllowTextEntry(g_ControlMap 0x3230b50, true) while its own field has focus and lowers it with false (high)
     pub textEntryCount: u8,
     /// +0x129 `undefined1`, semantic; set while the gamepad is the active device; keyboard and mouse events then map only to records with flags -1 (medium)
     pub gamepadActive: u8,

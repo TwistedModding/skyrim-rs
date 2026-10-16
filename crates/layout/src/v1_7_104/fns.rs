@@ -48123,7 +48123,7 @@ pub const ContractedDisease__GetEventSource: u64 = 38670;
 pub const ContractedDisease__RegisterSink: u64 = 38529;
 /// `ContractedDisease::UnregisterSink` at 0x6c7bc0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ContractedDisease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ContractedDisease::Event>* sink)`
 pub const ContractedDisease__UnregisterSink: u64 = 38530;
-/// `ControlMap::AllowTextEntry` at 0xcefd60 (semantic, high); signature (untiered): `undefined AllowTextEntry(longlong param_1, char param_2)`; increments or decrements textEntryCount (high); semantic signature: `void (ControlMap* this, bool begin)`
+/// `ControlMap::AllowTextEntry` at 0xcefd60 (semantic, high); signature (untiered): `undefined AllowTextEntry(longlong param_1, char param_2)`; increments (true) or decrements (false, not below 0) textEntryCount at +0x128; a plain byte update with no lock (high); semantic signature: `void (ControlMap* this, bool begin)`
 pub const ControlMap__AllowTextEntry: u64 = 68552;
 /// `ControlMap::GetButtonNameForUserEvent` at 0xcefd90 (semantic, high); signature (untiered): `undefined8 GetButtonNameForUserEvent(longlong param_1, longlong * param_2, int param_3, undefined8 param_4)`; user event -> key: first record with that name in contexts 0..0x11 (array order, not the stack) whose key low byte != 0xff; asks the device (EventSourceHolder_Input device[device] vtable+0x20) for the key's name (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, BSFixedString* outName)`
 pub const ControlMap__GetButtonNameForUserEvent: u64 = 68553;
@@ -91761,7 +91761,7 @@ pub const InputEvent__vdtor: u64 = 42400;
 pub const InputEventQueue__AddButtonEvent: u64 = 68685;
 /// `InputEventQueue::AddButtonEvent` as a function pointer type (high).
 pub type InputEventQueue__AddButtonEvent_fn = unsafe extern "C" fn(q: *mut classes::InputEventQueue, device: u32, idCode: u32, value: f32, heldDownSecs: f32);
-/// `InputEventQueue::AddCharEvent` at 0xcfb3f0 (semantic, high); signature (untiered): `undefined AddCharEvent(longlong param_1, undefined4 param_2)`; next of 5 CharEvents, device 0 (high); semantic signature: `void (InputEventQueue* q, u32 charCode)`
+/// `InputEventQueue::AddCharEvent` at 0xcfb3f0 (semantic, high); signature (untiered): `undefined AddCharEvent(longlong param_1, undefined4 param_2)`; next of 5 CharEvents, device 0, the UTF-16 code at +0x18; the keyboard poll is its only caller, so character input exists only for keys DirectInput reports (real or SendInput keystrokes, not events injected into the queue) (high); semantic signature: `void (InputEventQueue* q, u32 charCode)`
 pub const InputEventQueue__AddCharEvent: u64 = 68686;
 /// `InputEventQueue::AddCharEvent` as a function pointer type (high).
 pub type InputEventQueue__AddCharEvent_fn = unsafe extern "C" fn(q: *mut classes::InputEventQueue, charCode: u32);
