@@ -25,8 +25,18 @@
 //! created with [`VirtualMachine::create_object`] and bound to a form with
 //! [`VirtualMachine::bind_object`], after which the engine and `DevBench` call its methods,
 //! natives included, like any attached script's.
+//!
+//! Request 4e added the rest. Arrays are `BSScript::Array`s (a 0x20 header with the element type and
+//! size, the Variables inline) that `CreateArray` (slot 22) makes on the global heap; `Vec<T>` is a
+//! native parameter or return of type `T[]`. A latent native ([`VirtualMachine::register_latent`])
+//! receives a [`Latent`] and returns at once; the calling script waits until [`Latent::complete`]
+//! hands `ReturnFromLatent` (slot 43) the value, from inside the native or later from any thread.
+//! [`VirtualMachine::send_event`] is `SendEvent` (slot 36), the call behind every engine event a
+//! script receives. The VM's own work (its update, the stacks, the completions) runs on rotating
+//! worker threads, never on the main thread.
 
 use core::cell::Cell;
+use core::marker::PhantomData;
 use core::ffi::{c_char, c_void};
 use core::ptr::NonNull;
 use std::ffi::CString;
@@ -66,6 +76,9 @@ type GetObjectBindPolicy = unsafe extern "C" fn(vm: *mut VmRaw) -> *mut c_void;
 type BindObject = unsafe extern "C" fn(policy: *mut c_void, object: *mut *mut classes::BSScript__Object, handle: u64);
 type ResizeVariableArray = unsafe extern "C" fn(array: *mut c_void, count: u64) -> u8;
 type GetObjectHandlePolicy = unsafe extern "C" fn(vm: *mut VmRaw) -> *mut PolicyRaw;
+type CreateArray = unsafe extern "C" fn(vm: *mut VmRaw, element: *const classes::BSScript__TypeInfo, size: u32, out: *mut *mut classes::BSScript__Array) -> u8;
+type ReturnFromLatent = unsafe extern "C" fn(vm: *mut VmRaw, stack_id: u32, result: *const VariableRaw);
+type SendEvent = unsafe extern "C" fn(vm: *mut VmRaw, handle: u64, event: *const classes::BSFixedString, args: *mut c_void);
 
 type HandleIsType = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, handle: u64) -> u8;
 type IsHandleObjectAvailable = unsafe extern "C" fn(this: *mut PolicyRaw, handle: u64) -> u8;
@@ -360,6 +373,12 @@ impl TypeInfo {
         if self.0 < 0x10 { PapyrusType::from_u8(self.0 as u8) } else { None }
     }
 
+    /// The array type of this element type: raw 1-5 become 11-15, an object class gets bit 0.
+    #[must_use]
+    pub const fn array_of(self) -> Self {
+        if self.0 < 0x10 { Self(self.0 + 10) } else { Self(self.0 | 1) }
+    }
+
     #[must_use]
     pub const fn is_array(self) -> bool {
         (self.0 >= 0xB && self.0 <= 0xF) || (self.0 >= 0x10 && self.0 & 1 != 0)
@@ -517,6 +536,60 @@ impl fmt::Debug for ObjectPtr {
     }
 }
 
+/// `BSScript::Array` (request 4e): the creator's element type, the size and `size` Variables inline
+/// after the 0x20 header, each carrying its own type. Held through the Variables that point at it;
+/// the last reference resets the elements and frees the block.
+#[repr(transparent)]
+pub struct Array(classes::BSScript__Array);
+
+impl Array {
+    #[must_use]
+    pub fn raw(&self) -> &classes::BSScript__Array {
+        &self.0
+    }
+
+    /// The element type the creator passed; None for the arrays the script extender's natives make.
+    #[must_use]
+    pub fn element_type(&self) -> TypeInfo {
+        TypeInfo(self.0.elementType.rawTypeOrObjectType)
+    }
+
+    #[must_use]
+    pub fn len(&self) -> usize {
+        self.0.size as usize
+    }
+
+    #[must_use]
+    pub fn is_empty(&self) -> bool {
+        self.len() == 0
+    }
+
+    fn data(&self) -> *mut VariableRaw {
+        unsafe { (&raw const self.0).add(1).cast::<VariableRaw>().cast_mut() }
+    }
+
+    #[must_use]
+    pub fn elements(&self) -> &[Variable] {
+        unsafe { core::slice::from_raw_parts(self.data().cast::<Variable>(), self.len()) }
+    }
+
+    /// Copies `value` into element `index` through `Variable::assign`; false past the end.
+    #[must_use]
+    pub fn set(&self, index: usize, value: &Variable) -> bool {
+        if index >= self.len() {
+            return false;
+        }
+        unsafe { value.assign_to(self.data().add(index)) };
+        true
+    }
+}
+
+impl fmt::Debug for Array {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_list().entries(self.elements()).finish()
+    }
+}
+
 /// `BSScript::Variable`: a type tag and an 8-byte payload. Owned values release their payload
 /// (string, object) through `Variable::reset` on drop; views into engine memory come from
 /// [`from_ptr`](Self::from_ptr).
@@ -622,6 +695,15 @@ impl Variable {
         unsafe { (self.0.value as *const Object).as_ref() }
     }
 
+    /// The array of an array-typed Variable, `None` for other types and for a None array.
+    #[must_use]
+    pub fn as_array(&self) -> Option<&Array> {
+        if !self.type_info().is_array() {
+            return None;
+        }
+        unsafe { (self.0.value as *const Array).as_ref() }
+    }
+
     /// The form behind an object Variable, resolved through the handle policy with `T`'s type id.
     #[must_use]
     pub fn as_form<T: FormClass>(&self) -> Option<&'static T> {
@@ -655,7 +737,10 @@ impl fmt::Debug for Variable {
             Some(PapyrusType::String) => write!(f, "String {:?}", self.as_string().map(ToString::to_string).unwrap_or_default()),
             _ => match self.as_object() {
                 Some(object) => write!(f, "{object:?}"),
-                None => write!(f, "{:?} {:#x}", self.type_info(), self.0.value),
+                None => match self.as_array() {
+                    Some(array) => write!(f, "{:?} {array:?}", self.type_info()),
+                    None => write!(f, "{:?} {:#x}", self.type_info(), self.0.value),
+                },
             },
         }
     }
@@ -669,9 +754,27 @@ pub enum ParamType {
     Bool,
     String,
     Form(VMTypeID),
+    IntArray,
+    FloatArray,
+    BoolArray,
+    StringArray,
+    FormArray(VMTypeID),
 }
 
 impl ParamType {
+    /// The array of this element type; Papyrus has no arrays of arrays.
+    #[must_use]
+    pub const fn array(self) -> Self {
+        match self {
+            Self::Int => Self::IntArray,
+            Self::Float => Self::FloatArray,
+            Self::Bool => Self::BoolArray,
+            Self::String => Self::StringArray,
+            Self::Form(id) => Self::FormArray(id),
+            _ => panic!("Papyrus has no arrays of arrays"),
+        }
+    }
+
     fn type_info(self, vm: &VirtualMachine) -> Result<TypeInfo, Error> {
         Ok(match self {
             Self::Int => TypeInfo::raw(PapyrusType::Int),
@@ -679,6 +782,11 @@ impl ParamType {
             Self::Bool => TypeInfo::raw(PapyrusType::Bool),
             Self::String => TypeInfo::raw(PapyrusType::String),
             Self::Form(id) => TypeInfo::object(vm.script_type_by_id(id).ok_or(Error::UnknownType(id))?),
+            Self::IntArray => Self::Int.type_info(vm)?.array_of(),
+            Self::FloatArray => Self::Float.type_info(vm)?.array_of(),
+            Self::BoolArray => Self::Bool.type_info(vm)?.array_of(),
+            Self::StringArray => Self::String.type_info(vm)?.array_of(),
+            Self::FormArray(id) => Self::Form(id).type_info(vm)?.array_of(),
         })
     }
 }
@@ -729,6 +837,13 @@ impl<T: FormClass> FromVariable for Option<&'static T> {
     const TYPE: ParamType = ParamType::Form(T::TYPE_ID);
     fn from_variable(v: &Variable) -> Self {
         v.as_form::<T>()
+    }
+}
+
+impl<T: FromVariable> FromVariable for Vec<T> {
+    const TYPE: ParamType = T::TYPE.array();
+    fn from_variable(v: &Variable) -> Self {
+        v.as_array().map(|a| a.elements().iter().map(T::from_variable).collect()).unwrap_or_default()
     }
 }
 
@@ -795,6 +910,60 @@ impl<T: FormClass> IntoVariable for Option<&T> {
     }
 }
 
+/// A new array through [`VirtualMachine::create_array`]; elements that convert to None keep the
+/// array's initial `{element type, 0}`, which is how the engine holds a None form in a `Form[]`.
+impl<T: IntoVariable> IntoVariable for Vec<T> {
+    const TYPE: Option<ParamType> = match T::TYPE {
+        Some(t) => Some(t.array()),
+        None => panic!("a Papyrus array needs an element type"),
+    };
+    fn into_variable(self, vm: &VirtualMachine) -> Variable {
+        let Some(Ok(element)) = T::TYPE.map(|t| t.type_info(vm)) else { return Variable::none() };
+        let Some(array) = u32::try_from(self.len()).ok().and_then(|len| vm.create_array(element, len)) else { return Variable::none() };
+        if let Some(a) = array.as_array() {
+            for (i, value) in self.into_iter().enumerate() {
+                let value = value.into_variable(vm);
+                if value.type_info() != TypeInfo::NONE {
+                    let _ = a.set(i, &value);
+                }
+            }
+        }
+        array
+    }
+}
+
+/// A started latent call ([`VirtualMachine::register_latent`]): complete it once, from the native
+/// or later from any thread, with the value the waiting script receives.
+#[must_use = "a latent call never completed leaves its script waiting until the VM is reset by a load"]
+pub struct Latent<R> {
+    stack_id: u32,
+    result: PhantomData<fn(R)>,
+}
+
+impl<R: IntoVariable> Latent<R> {
+    #[must_use]
+    pub fn stack_id(&self) -> u32 {
+        self.stack_id
+    }
+
+    /// Slot 43 `ReturnFromLatent`: the VM copies the value into the waiting stack and completes it,
+    /// on this thread when the latent native was the stack's only frame (a dispatch), else in a later
+    /// VM update on a worker.
+    pub fn complete(self, value: R) {
+        let Some(vm) = VirtualMachine::get() else { return };
+        let value = value.into_variable(vm);
+        unsafe { vm.slot::<ReturnFromLatent>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_ReturnFromLatent)(vm.as_ptr(), self.stack_id, &raw const value.0) };
+    }
+}
+
+/// A Rust function registrable as a latent global function: its first parameter is the [`Latent`]
+/// it completes with a value of type `Output`, the declared return type.
+pub trait LatentFn<M>: Copy + Send + Sync + 'static {
+    type Output: IntoVariable;
+    const PARAMS: &'static [ParamType];
+    fn start(&self, latent: Latent<Self::Output>, args: &[&Variable]);
+}
+
 /// A Rust function registrable as a global (`native global`) Papyrus function: any `Fn` of up to
 /// [`MAX_PARAMS`] [`FromVariable`] parameters returning an [`IntoVariable`]. `M` is inferred.
 pub trait NativeFn<M>: Copy + Send + Sync + 'static {
@@ -814,6 +983,20 @@ pub trait NativeMethod<M>: Copy + Send + Sync + 'static {
 
 macro_rules! native_fns {
     ($($a:ident $i:tt),*) => {
+        impl<F, R, $($a),*> LatentFn<(Latent<R>, $($a,)> for F
+        where
+            F: Fn(Latent<R>, $($a),*) + Copy + Send + Sync + 'static,
+            R: IntoVariable,
+            $($a: FromVariable,
+        {
+            type Output = R;
+            const PARAMS: &'static [ParamType] = &[$($a::TYPE),*];
+            #[allow(unused_variables)]
+            fn start(&self, latent: Latent<R>, args: &[&Variable]) {
+                self(latent, $($a::from_variable(args[$i])),*);
+            }
+        }
+
         impl<F, R, $($a),*> NativeFn<(R, $($a,)> for F
         where
             F: Fn($($a),*) -> R + Copy + Send + Sync + 'static,
@@ -921,6 +1104,13 @@ unsafe fn invoke_method<F: NativeMethod<M>, M>(this: *const NativeHeader, vm: &V
     let native = unsafe { &*this.cast::<Native<F>>() };
     let receiver = self_.as_form::<F::Receiver>()?;
     Some(native.f.invoke(vm, receiver, args))
+}
+
+/// Starts the latent call and answers the true Bool `Call` requires before the stack waits.
+unsafe fn invoke_latent<F: LatentFn<M>, M>(this: *const NativeHeader, _: &VirtualMachine, _: &Variable, args: &[&Variable]) -> Option<Variable> {
+    let native = unsafe { &*this.cast::<Native<F>>() };
+    native.f.start(Latent { stack_id: current_stack_id()?, result: PhantomData }, args);
+    Some(Variable::bool(true))
 }
 
 unsafe extern "C" fn has_binding(_: *mut NativeHeader) -> bool {
@@ -1089,6 +1279,13 @@ impl Args {
     }
 }
 
+#[derive(Clone, Copy, PartialEq, Eq)]
+enum Kind {
+    Global,
+    Method,
+    Latent,
+}
+
 /// `BSScript::Internal::VirtualMachine`, the object `g_SkyrimVM + 0x210` points at and the SKSE
 /// `PapyrusInterface` hands to a registration callback.
 #[repr(transparent)]
@@ -1196,14 +1393,21 @@ impl VirtualMachine {
     /// the same parameter and return types ([`ParamType`] per Rust type) or the engine refuses the
     /// binding when the script links.
     pub fn register_native<F: NativeFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.bind(class, name, true, F::PARAMS, F::RETURN, invoke_fn::<F, M>, f)
+        self.bind(class, name, Kind::Global, F::PARAMS, F::RETURN, invoke_fn::<F, M>, f)
+    }
+
+    /// Registers `f` as `class.name`, a latent `native global` function: the calling script waits
+    /// until `f`'s [`Latent`] is completed. The `.pex` declares it like any native, returning the
+    /// type of `F::Output`.
+    pub fn register_latent<F: LatentFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
+        self.bind(class, name, Kind::Latent, F::PARAMS, <F::Output as IntoVariable>::TYPE, invoke_latent::<F, M>, f)
     }
 
     /// Registers `f` as `class.name`, a `native` method of a script that extends the form class
     /// of `f`'s first parameter; a call whose object is not bound to such a form fails with the
     /// engine's "no native object bound" error.
     pub fn register_method<F: NativeMethod<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.bind(class, name, false, F::PARAMS, F::RETURN, invoke_method::<F, M>, f)
+        self.bind(class, name, Kind::Method, F::PARAMS, F::RETURN, invoke_method::<F, M>, f)
     }
 
     #[allow(clippy::too_many_arguments)]
@@ -1211,7 +1415,7 @@ impl VirtualMachine {
         &self,
         class: &str,
         name: &str,
-        is_static: bool,
+        kind: Kind,
         params: &[ParamType],
         ret: Option<ParamType>,
         invoke: unsafe fn(*const NativeHeader, &VirtualMachine, &Variable, &[&Variable]) -> Option<Variable>,
@@ -1240,9 +1444,9 @@ impl VirtualMachine {
                     paramCount: count,
                     variableCount: count,
                     unknown_3C: [0; 4],
-                    isStatic: u8::from(is_static),
+                    isStatic: u8::from(kind != Kind::Method),
                     isCallableFromTasklet: 0,
-                    isLatent: 0,
+                    isLatent: u8::from(kind == Kind::Latent),
                     unknown_43: [0; 1],
                     userFlags: 0,
                     docString: BSFixedString::empty().into_raw(),
@@ -1290,6 +1494,30 @@ impl VirtualMachine {
         };
         Callback::release(callback);
         queued
+    }
+
+    /// Slot 22 `CreateArray`: a new array of `len` elements of type `element`, each `{element, 0}`,
+    /// as an array Variable holding the creator's reference (the VM's tracking list holds another
+    /// until its next update). It allocates from the global heap, not the per-thread scrap heap.
+    #[must_use]
+    pub fn create_array(&self, element: TypeInfo, len: u32) -> Option<Variable> {
+        let mut out = core::ptr::null_mut();
+        let ty = classes::BSScript__TypeInfo { rawTypeOrObjectType: element.bits() };
+        let created = unsafe { self.slot::<CreateArray>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_CreateArray)(self.as_ptr(), &raw const ty, len, &raw mut out) };
+        if created == 0 || out.is_null() {
+            return None;
+        }
+        Some(Variable(VariableRaw { type_: classes::BSScript__TypeInfo { rawTypeOrObjectType: element.array_of().bits() }, value: out as u64 }))
+    }
+
+    /// Slot 36 `SendEvent`: calls `event(args)` on every script object bound to exactly `handle`
+    /// whose script declares that event, each as a new stack. The arguments are read during the call,
+    /// once per receiving object. A reference's aliases and an actor's active effects have handles of
+    /// their own; the engine reaches them through `SkyrimVM::RelayEventToRefAndEffects` after this.
+    pub fn send_event(&self, _: &GameThread, handle: Handle, event: &str, args: &[Variable]) {
+        let event = BSFixedString::new(event);
+        let mut args = Args::new(args);
+        unsafe { self.slot::<SendEvent>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_SendEvent)(self.as_ptr(), handle.0, event.raw(), (&raw mut args).cast()) };
     }
 
     /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
