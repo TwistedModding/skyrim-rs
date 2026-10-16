@@ -262,6 +262,9 @@ unsafe extern "C" fn dispatch(sender: PluginHandle, kind: u32, data: *mut c_void
         .filter(|l| receiver.as_ref().is_none_or(|r| plugins.get(l.handle as usize - 1).is_some_and(|n| n == r)))
         .map(|l| l.callback)
         .collect();
+    if sender == 0 {
+        log!("kind {kind} ({len} bytes) to {} listeners", callbacks.len());
+    }
     for callback in callbacks {
         let mut message = Message { sender: name, kind, data_len: len, data };
         unsafe { callback(&raw mut message) };
