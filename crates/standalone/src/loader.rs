@@ -6,6 +6,11 @@
 //! accepted ones, kinds 0 and 1 are sent, and the hooks below send the others. `QueryInterface`
 //! answers the Papyrus (2), task (4), messaging (5) and trampoline (7) tables; Scaleform (1),
 //! serialization (3) and the object table (6) are not implemented and answer null.
+//!
+//! Plugins also call two Papyrus natives the script extender adds and declares in its `Game.pex`,
+//! `Game.SaveGame(name)` and `Game.LoadGame(name)` (request S3: `DevBench` saves through the first).
+//! As there, a call only records the request; it is served on the main thread right after the
+//! main loop drains the save/load manager's own requests.
 
 use core::ffi::{CStr, c_char, c_void};
 use std::collections::VecDeque;
@@ -16,6 +21,7 @@ use std::os::windows::ffi::OsStrExt as _;
 use std::path::Path;
 use std::sync::atomic::{AtomicU32, Ordering};
 use std::sync::{Mutex, OnceLock};
+use std::time::{Duration, Instant};
 
 use layout::v1_7_104::{fns, globals};
 use skse::{Interface, Message, MessageCallback, MessagingInterface, PapyrusInterface, PluginHandle, PluginInfo, PluginVersionData, RegisterFunctions, TaskInterface, TrampolineInterface, compat};
@@ -55,6 +61,15 @@ static PAPYRUS: Mutex<Vec<RegisterFunctions>> = Mutex::new(Vec::new());
 static TASKS: Mutex<VecDeque<usize>> = Mutex::new(VecDeque::new());
 static UI_TASKS: Mutex<VecDeque<usize>> = Mutex::new(VecDeque::new());
 static RELOC: OnceLock<hook::Reloc> = OnceLock::new();
+static PENDING: Mutex<Option<(Request, Instant)>> = Mutex::new(None);
+/// How long a request the manager refuses (a save right after a load) is tried again, once a frame.
+const RETRY: Duration = Duration::from_secs(10);
+
+/// A save or load a plugin asked for through the `Game` natives, served by [`process_requests`].
+enum Request {
+    Save(String),
+    Load(String),
+}
 
 macro_rules! log {
     ($($arg:tt) => {
@@ -92,6 +107,10 @@ pub fn run() {
             log!("Address Library: {e}; nothing loaded");
             return;
         }
+    }
+    if let Err(e) = skyrim::init(&INTERFACE) {
+        log!("game layer: {e}; nothing loaded");
+        return;
     }
     let accepted = scan();
     for (handle, (path, data)) in (1..).zip(&accepted) {
@@ -338,6 +357,7 @@ static INIT_DONE: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
 static VM_SETUP: OnceLock<hook::CallSite<RegisterNativesFn>> = OnceLock::new();
 static DRAIN: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
 static UI_DRAIN: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
+static REQUESTS: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
 
 /// The `call rel32` at `caller` + `offset`, after checking that it calls `callee` (S1's sites).
 fn site(caller: u64, offset: usize, target_id: u64) -> Result<usize, String> {
@@ -372,7 +392,8 @@ fn install_moments() -> Result<(), String> {
         let _ = DRAIN.set(installed);
     }
     patch(&UI_DRAIN, site(fns::EventSourceHolder_MenuOpenClose__ProcessMessages, 0xab5, fns::UIMessageQueue__ReleaseStaticMessages)?, drain_ui_tasks as OneArgFn)?;
-    log!("moment hooks installed: load, save, delete, controls, new game, init done, Papyrus, task and UI task drains");
+    patch(&REQUESTS, site(fns::SetupWorldRenderContext, 0xc7a, fns::ProcessSaveLoadRequests)?, process_requests as OneArgFn)?;
+    log!("moment hooks installed: load, save, delete, controls, new game, init done, Papyrus, task and UI task drains, save/load requests");
     Ok(())
 }
 
@@ -430,6 +451,11 @@ unsafe extern "C" fn init_done(this: *mut c_void) -> u64 {
 unsafe extern "C" fn register_natives(registry: *mut *mut c_void, a2: u64, a3: u64, a4: u64) -> u64 {
     let out = unsafe { VM_SETUP.get().expect("set before patching").original()(registry, a2, a3, a4) };
     let vm = if registry.is_null() { core::ptr::null_mut() } else { unsafe { *registry } };
+    if let Some(vm) = unsafe { skyrim::papyrus::VirtualMachine::from_ptr(vm) } {
+        let save = vm.register_native("Game", "SaveGame", |name: String| *PENDING.lock().unwrap() = Some((Request::Save(name), Instant::now())));
+        let load = vm.register_native("Game", "LoadGame", |name: String| *PENDING.lock().unwrap() = Some((Request::Load(name), Instant::now())));
+        log!("Game.SaveGame and Game.LoadGame: {}, {}", save.is_ok(), load.is_ok());
+    }
     let callbacks = PAPYRUS.lock().unwrap().clone();
     log!("Papyrus registration: {} callbacks with {vm:p}", callbacks.len());
     for callback in callbacks {
@@ -441,6 +467,25 @@ unsafe extern "C" fn register_natives(registry: *mut *mut c_void, a2: u64, a3: u
 unsafe extern "C" fn drain_tasks(holder: *mut c_void) -> u64 {
     let out = unsafe { DRAIN.get().expect("set before patching").original()(holder) };
     drain(&TASKS);
+    out
+}
+
+/// The main loop's call to `ProcessSaveLoadRequests` (S3): the manager's own requests, then the one a
+/// plugin left through the `Game` natives.
+unsafe extern "C" fn process_requests(manager: *mut c_void) -> u64 {
+    let out = unsafe { REQUESTS.get().expect("set before patching").original()(manager) };
+    let mut pending = PENDING.lock().unwrap();
+    if let (Some((request, since)), Some(manager)) = (pending.as_ref(), skyrim::save::SaveLoadManager::get()) {
+        let (what, name, ok) = match request {
+            Request::Save(name) => ("save", name, manager.save(name)),
+            Request::Load(name) => ("load", name, manager.request_load(name)),
+        };
+        let waited = since.elapsed();
+        if ok || waited >= RETRY {
+            log!("{what} {name:?}: {ok} after {} ms", waited.as_millis());
+            *pending = None;
+        }
+    }
     out
 }
 

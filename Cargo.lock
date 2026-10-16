@@ -703,6 +703,7 @@ dependencies = [
  "hook",
  "layout",
  "skse",
+ "skyrim",
  "windows-sys",
 ]
 

@@ -11,6 +11,7 @@ crate-type = ["cdylib"]
 [dependencies]
 skse.workspace = true
 hook.workspace = true
+skyrim.workspace = true
 layout.workspace = true
 windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_System_LibraryLoader", "Win32_System_Memory", "Win32_System_SystemInformation", "Win32_System_SystemServices"] }
 
