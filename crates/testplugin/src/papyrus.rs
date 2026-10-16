@@ -434,7 +434,9 @@ fn dispatch() -> Result<String, String> {
 
 fn stack_ids() -> Result<String, String> {
     let calls = CALLS.lock().unwrap();
-    let ids: Vec<u32> = calls.iter().map(|c| c.stack_id).collect();
+    // Event handlers run on stacks SendEvent creates together, in either order; the calls ordered by
+    // their callers are the others.
+    let ids: Vec<u32> = calls.iter().filter(|c| c.name != "RecordEvent" && c.name != "RecordRelay").map(|c| c.stack_id).collect();
     check(ids.iter().all(|&id| id != 0), &format!("a call had stack id 0: {ids:?}"))?;
     let sorted = ids.windows(2).all(|w| w[0] < w[1]);
     check(sorted, &format!("stack ids are not increasing: {ids:?}"))?;

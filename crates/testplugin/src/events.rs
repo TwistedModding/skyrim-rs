@@ -177,7 +177,10 @@ fn ui() -> Result<String, String> {
     let base = core::ptr::from_ref(ui.raw()) as usize;
     check(core::ptr::from_ref(open_close.raw()) as usize == base + 8 && core::ptr::from_ref(mode.raw()) as usize == base + 0x60, "the UI sources are not at +8 and +0x60")?;
     let counts = [open_close.sink_count(), mode.sink_count(), ui.raw().source_unknown_B8.sinkCount];
-    check(counts == [6, 4, 0], &format!("UI sink counts {counts:?}, expected [6, 4, 0] at the main menu with DevBench"))?;
+    // The script extender adds a sink of its own to the open/close source; the standalone host does not.
+    let skse = !unsafe { windows_sys::Win32::System::LibraryLoader::GetModuleHandleW(windows_sys::w!("skse64_1_7_104.dll")) }.is_null();
+    let expected = [5 + u32::from(skse), 4, 0];
+    check(counts == expected, &format!("UI sink counts {counts:?}, expected {expected:?} at the main menu with DevBench (script extender loaded: {skse})"))?;
     let input = source::<InputEventList>("InputEventList")?;
     let footstep = source::<BGSFootstepEvent>("BGSFootstepEvent")?;
     let player = PlayerCharacter::get().ok_or("no player")?;
