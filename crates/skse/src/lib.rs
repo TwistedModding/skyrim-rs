@@ -200,6 +200,33 @@ impl PapyrusInterface {
     }
 }
 
+/// Interface id 4. A task is an object whose vtable's slot 0 runs it and slot 1 disposes of it.
+#[repr(C)]
+pub struct TaskInterface {
+    pub interface_version: u32,
+    /// Queues a task for the main loop, run after the game drains its own task queue.
+    pub add_task: unsafe extern "C" fn(task: *mut c_void),
+    /// Queues a task for the UI message processing; dropped without dispose while the game's UI
+    /// message queue does not exist.
+    pub add_ui_task: unsafe extern "C" fn(task: *mut c_void),
+}
+
+impl TaskInterface {
+    pub const VERSION: u32 = 2;
+}
+
+/// Interface id 7: memory within rel32 reach of the game for a plugin's branches and code.
+#[repr(C)]
+pub struct TrampolineInterface {
+    pub interface_version: u32,
+    pub alloc_branch: unsafe extern "C" fn(handle: PluginHandle, size: u64) -> *mut c_void,
+    pub alloc_local: unsafe extern "C" fn(handle: PluginHandle, size: u64) -> *mut c_void,
+}
+
+impl TrampolineInterface {
+    pub const VERSION: u32 = 1;
+}
+
 /// The two bit words of the version data as SKSE 2.3.1 reads them: the flags at +0x304 and the
 /// "version independence method" at +0x308 (the loader's own words). A method bit above 2 is
 /// "disabled, unsupported version independence method".
