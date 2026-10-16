@@ -5,6 +5,8 @@ param(
     [string]$Steps,
     [string]$OutDir = "devbench-out",
     [int]$TimeoutSec = 300,
+    # skse: through skse64_loader.exe; standalone: SkyrimSE.exe itself, for the dinput8.dll host
+    [ValidateSet("skse", "standalone")][string]$Launch = "skse",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
 )
 $ErrorActionPreference = "Stop"
@@ -64,13 +66,16 @@ New-Item -ItemType Directory -Force $OutDir | Out-Null
 $Shell = New-Object -ComObject WScript.Shell
 $Game = $null
 try {
-    Start-Process "$GameDir\skse64_loader.exe" -WorkingDirectory $GameDir
+    $exe = if ($Launch -eq "standalone") { "SkyrimSE.exe" } else { "skse64_loader.exe" }
+    Start-Process "$GameDir\$exe" -WorkingDirectory $GameDir
     Wait-Until { Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue } 60 "the SkyrimSE process"
-    $Game = Get-Process -Name SkyrimSE
+    $Game = Get-Process -Name SkyrimSE | Select-Object -First 1
     Wait-Until {
         if (Test-Path $RuntimeJson) { $script:Base = "http://127.0.0.1:$((Get-Content $RuntimeJson -Raw | ConvertFrom-Json).port)" }
         $h = Get-Health
-        $h -and $h.pid -eq $Game.Id -and $h.lastLifecycle -eq "dataLoaded"
+        # Started directly, SkyrimSE.exe may hand itself to Steam and come back as a new process.
+        if ($h -and $h.pid -ne $Game.Id) { $script:Game = Get-Process -Id $h.pid -ErrorAction SilentlyContinue }
+        $h -and $Game -and $h.pid -eq $Game.Id -and $h.lastLifecycle -eq "dataLoaded"
     } 180 "DevBench at the main menu"
     [void]$Shell.AppActivate($Game.Id)
     if ($Replay) {

@@ -9,6 +9,9 @@ param(
     [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
+    # skse: the script extender alone; skse-proxy: the standalone host's dinput8.dll next to the game as well, which must
+    # leave the script extender in charge; standalone: dinput8.dll and the game started without the script extender.
+    [ValidateSet("skse", "skse-proxy", "standalone")][string]$Launch = "skse",
     [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
 )
 $ErrorActionPreference = "Stop"
@@ -28,14 +31,15 @@ $Mod = $Mods[$Suite]
 $PluginLog = "skyrim-rs-test.log"
 $CrashLog = "skyrim-rs-test-crash.log"
 $HostDll = "skyrim_rs.dll"
-$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog, "skyrim-rs.log")
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog, "skyrim-rs.log", "skyrim-rs-standalone.log")
+$Proxy = "$GameDir\dinput8.dll"
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $TestSave = "skyrim-rs-$Suite"
 
 if ($Suite -eq "overlay") { $Mode = "overlay" }
 & "$PSScriptRoot\game-free.ps1"
 Push-Location $Root
-$crates = @("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.dir) { "host" })
+$crates = @("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.dir) { "host" }) + @(if ($Launch -ne "skse") { "standalone" })
 try { cargo build --release @($crates | ForEach-Object { "-p"; $_ }); if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
 $Pex = @()
 if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
@@ -47,6 +51,16 @@ New-Item -ItemType Directory -Force $Backup | Out-Null
 foreach ($f in $Logs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$Backup\$f" -Force } }
 foreach ($f in @($PluginLog) + $ModLogs) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
 
+if ($Launch -ne "skse") {
+    if (Test-Path $Proxy) { throw "$Proxy already exists" }
+    Copy-Item "$Root\target\release\dinput8.dll" $Proxy
+}
+# Started directly, the game asks Steam to relaunch it through its launcher unless it finds its app id next to it.
+$AppId = "$GameDir\steam_appid.txt"
+if ($Launch -eq "standalone") {
+    if (Test-Path $AppId) { throw "$AppId already exists" }
+    Set-Content $AppId "489830" -Encoding ascii -NoNewline
+}
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
 if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
 if ($Mod.dir) {
@@ -61,11 +75,13 @@ foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw 
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
 try {
-    & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -OutDir $OutDir
+    & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -OutDir $OutDir -Launch $(if ($Launch -eq "standalone") { "standalone" } else { "skse" })
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
     foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
     if ($Mod.dir) { Remove-Item "$Plugins\$($Mod.dir)" -Recurse -Force -ErrorAction SilentlyContinue }
+    if ($Launch -ne "skse") { Remove-Item $Proxy -ErrorAction SilentlyContinue }
+    if ($Launch -eq "standalone") { Remove-Item $AppId -ErrorAction SilentlyContinue }
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
     Remove-Item "$MyGames\Saves\$TestSave*" -ErrorAction SilentlyContinue
