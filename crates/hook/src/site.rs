@@ -46,37 +46,40 @@ fn query(addr: usize) -> Option<MEMORY_BASIC_INFORMATION> {
     (unsafe { VirtualQuery(addr as *const c_void, &raw mut info, size_of::<MEMORY_BASIC_INFORMATION>()) } != 0).then_some(info)
 }
 
-fn alloc_page_at(addr: usize) -> Option<usize> {
-    let p = unsafe { VirtualAlloc(addr as *const c_void, PAGE, MEM_RESERVE | MEM_COMMIT, PAGE_EXECUTE_READWRITE) };
+fn alloc_at(addr: usize, size: usize) -> Option<usize> {
+    let p = unsafe { VirtualAlloc(addr as *const c_void, size, MEM_RESERVE | MEM_COMMIT, PAGE_EXECUTE_READWRITE) };
     (!p.is_null()).then_some(p as usize)
 }
 
-/// Finds a free granule within reach of `near`, searching downward from it and then upward.
-fn alloc_page_near(near: usize) -> Result<usize, Error> {
+/// Commits `size` bytes (rounded up to whole pages) of executable memory at a free granule within
+/// rel32 reach of `near`, searching downward from it and then upward.
+pub fn alloc_near(near: usize, size: usize) -> Result<usize, Error> {
+    let size = size.max(1).next_multiple_of(PAGE);
     let origin = near & !(GRANULARITY - 1);
     let mut addr = origin;
     while addr >= GRANULARITY && within_reach(near, addr) {
         let Some(info) = query(addr) else { break };
         if info.State == MEM_FREE
-            && let Some(page) = alloc_page_at(addr)
+            && addr + size <= info.BaseAddress as usize + info.RegionSize
+            && let Some(page) = alloc_at(addr, size)
         {
             return Ok(page);
         }
         addr = (info.BaseAddress as usize).saturating_sub(1) & !(GRANULARITY - 1);
     }
     addr = origin + GRANULARITY;
-    while within_reach(near, addr + PAGE) {
+    while within_reach(near, addr + size) {
         let Some(info) = query(addr) else { break };
         let end = info.BaseAddress as usize + info.RegionSize;
         if info.State == MEM_FREE
-            && addr + PAGE <= end
-            && let Some(page) = alloc_page_at(addr)
+            && addr + size <= end
+            && let Some(page) = alloc_at(addr, size)
         {
             return Ok(page);
         }
         addr = end.next_multiple_of(GRANULARITY);
     }
-    Err(io::Error::other(format!("no free page within rel32 reach of {near:#x}")).into())
+    Err(io::Error::other(format!("no free {size:#x} bytes within rel32 reach of {near:#x}")).into())
 }
 
 impl Trampoline {
@@ -96,7 +99,7 @@ impl Trampoline {
         assert!(len <= PAGE, "trampoline code must fit in one page");
         let fits = |p: &Page| p.used + len <= PAGE && within_reach(near, p.base);
         if !self.pages.iter().any(fits) {
-            self.pages.push(Page { base: alloc_page_near(near)?, used: 0 });
+            self.pages.push(Page { base: alloc_near(near, PAGE)?, used: 0 });
         }
         let page = self.pages.iter_mut().find(|p| fits(p)).unwrap();
         let slot = page.base + page.used;
@@ -250,7 +253,7 @@ mod tests {
 
     /// `mov eax, 3; ret` in the low 4 GB, out of rel32 reach of this executable.
     fn far_three() -> usize {
-        let page = (0x1000_0000..0x8000_0000).step_by(0x100_0000).find_map(alloc_page_at).unwrap();
+        let page = (0x1000_0000..0x8000_0000).step_by(0x100_0000).find_map(|a| alloc_at(a, PAGE)).unwrap();
         unsafe { core::ptr::copy_nonoverlapping([0xB8, 3, 0, 0, 0, 0xC3].as_ptr(), page as *mut u8, 6) };
         flush(page, 6);
         page

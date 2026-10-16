@@ -9,7 +9,7 @@ use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
 
 mod site;
 
-pub use site::{CallSite, Trampoline, find_call, write_branch, write_call};
+pub use site::{CallSite, Trampoline, alloc_near, find_call, write_branch, write_call};
 
 #[derive(Debug)]
 pub enum Error {
