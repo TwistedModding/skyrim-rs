@@ -32,7 +32,9 @@
 //! receives a [`Latent`] and returns at once; the calling script waits until [`Latent::complete`]
 //! hands `ReturnFromLatent` (slot 43) the value, from inside the native or later from any thread.
 //! [`VirtualMachine::send_event`] is `SendEvent` (slot 36), the call behind every engine event a
-//! script receives. The VM's own work (its update, the stacks, the completions) runs on rotating
+//! script receives, and [`VirtualMachine::relay_event`] the engine's second half of an event, which
+//! reaches the aliases a reference fills and an actor's scripted active effects (request 4f;
+//! [`alias_handles`] and [`active_effect_handles`] name them). The VM's own work (its update, the stacks, the completions) runs on rotating
 //! worker threads, never on the main thread.
 
 use core::cell::Cell;
@@ -86,6 +88,20 @@ type GetInvalidHandle = unsafe extern "C" fn(this: *mut PolicyRaw) -> u64;
 type GetHandleForObject = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, object: *const c_void) -> u64;
 type GetObjectForHandle = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, handle: u64) -> *mut c_void;
 
+type EffectListFn = unsafe extern "C" fn(magic_target: *mut c_void) -> *const EffectNode;
+
+/// A node of the actor's `BSSimpleList<ActiveEffect*>`.
+#[repr(C)]
+struct EffectNode {
+    effect: *const classes::ActiveEffect,
+    next: *const EffectNode,
+}
+
+/// `ExtraAliasInstanceArray`'s extra data type.
+const ALIAS_INSTANCES: u32 = 0x88;
+/// `Actor`'s `MagicTarget` subobject.
+const MAGIC_TARGET: usize = 0xa0;
+
 type CallBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut classes::BSScript__StackFrame) -> bool;
 type HasBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader) -> bool;
 
@@ -104,6 +120,10 @@ pub(crate) struct Fns {
     type_function: TypeGetFunction,
     bind_object: BindObject,
     resize_args: ResizeVariableArray,
+    relay: fns::SkyrimVM__RelayEventToRefAndEffects_fn,
+    effect_list: EffectListFn,
+    lock_read: fns::BSReadWriteLock__LockForRead_fn,
+    unlock_read: fns::BSReadWriteLock__UnlockForRead_fn,
     skyrim_vm: *const classes::partial::SkyrimVM,
     vtable: [*const c_void; IFUNCTION_SLOTS],
 }
@@ -132,6 +152,10 @@ impl Fns {
                 type_function: crate::resolve(reloc, fns::BSScript__ObjectTypeInfo__GetFunction)?,
                 bind_object: crate::resolve(reloc, fns::BSScript__ObjectBindPolicy__BindObject)?,
                 resize_args: crate::resolve(reloc, fns::ResizeVariableArray)?,
+                relay: crate::resolve(reloc, fns::SkyrimVM__RelayEventToRefAndEffects)?,
+                effect_list: crate::resolve(reloc, fns::Actor__MagicTarget_vfunc_7)?,
+                lock_read: crate::resolve(reloc, fns::BSReadWriteLock__LockForRead)?,
+                unlock_read: crate::resolve(reloc, fns::BSReadWriteLock__UnlockForRead)?,
                 skyrim_vm: reloc.address(globals::g_SkyrimVM)? as *const classes::partial::SkyrimVM,
                 vtable,
             })
@@ -186,6 +210,18 @@ impl Handle {
     #[must_use]
     pub const fn form(id: FormId) -> Self {
         Self(id.0 as u64 | 0xFFFF << 32)
+    }
+
+    /// A quest alias's handle: the quest's form id and the alias id (request 4f).
+    #[must_use]
+    pub const fn alias(quest: FormId, alias_id: u16) -> Self {
+        Self(quest.0 as u64 | (alias_id as u64) << 32)
+    }
+
+    /// An active effect's handle: the target actor's form id and the effect's unique id (request 4f).
+    #[must_use]
+    pub const fn active_effect(target: FormId, unique_id: u16) -> Self {
+        Self(target.0 as u64 | (unique_id as u64) << 32 | 2 << 48)
     }
 
     #[must_use]
@@ -275,6 +311,47 @@ impl HandlePolicy {
         let p = unsafe { self.slot::<GetObjectForHandle>(vtables::SkyrimScript__HandlePolicy_vtable::SLOT_GetObjectForHandle)(self.as_ptr(), type_id as u32, handle.0) };
         unsafe { TESForm::from_ptr(p.cast()) }
     }
+}
+
+/// The handles of the quest aliases `reference` fills, from its `ExtraAliasInstanceArray` read under
+/// the array's lock. A reference whose aliases live on another reference (through its
+/// `ExtraReferenceHandle`, which the engine's relay follows) answers its own array only.
+#[must_use]
+#[allow(clippy::cast_possible_truncation)]
+pub fn alias_handles(reference: &TESObjectREFR) -> Vec<Handle> {
+    let Some(extra) = reference.extra_list().get_by_type(ALIAS_INSTANCES) else { return Vec::new() };
+    let array = core::ptr::from_ref(extra).cast::<classes::ExtraAliasInstanceArray>().cast_mut();
+    let lock = unsafe { &raw mut (*array).lock };
+    unsafe { (fns().lock_read)(lock) };
+    let (entries, count) = unsafe { ((*array).entries.cast::<*const classes::ExtraAliasInstanceArray__Entry>(), (*array).count as usize) };
+    let handles = (0..count)
+        .filter_map(|i| {
+            let entry = unsafe { (*entries.add(i)).as_ref() }?;
+            let (quest, alias) = (unsafe { TESForm::from_ptr(entry.quest.cast()) }?, unsafe { entry.alias.as_ref() }?);
+            Some(Handle::alias(quest.form_id(), alias.aliasID as u16))
+        })
+        .collect();
+    unsafe { (fns().unlock_read)(lock) };
+    handles
+}
+
+/// The handles of `actor`'s active effects that have one: an effect gets a unique id, and so a
+/// handle, only when its `EffectSetting` is scripted (form flag bit 22). The list is the one
+/// `MagicTarget` slot 7 returns, empty for an actor without middle-high process data.
+#[must_use]
+pub fn active_effect_handles(actor: &Actor) -> Vec<Handle> {
+    let target = unsafe { actor.as_ptr().cast::<u8>().add(MAGIC_TARGET).cast_mut().cast() };
+    let mut node = unsafe { (fns().effect_list)(target) };
+    let mut handles = Vec::new();
+    while let Some(n) = unsafe { node.as_ref() } {
+        if let Some(effect) = unsafe { n.effect.as_ref() }
+            && effect.uniqueID != 0
+        {
+            handles.push(Handle::active_effect(actor.form_id(), effect.uniqueID));
+        }
+        node = n.next;
+    }
+    handles
 }
 
 /// A form class a native can take or return: the script type id the handle policy checks and the
@@ -1518,6 +1595,17 @@ impl VirtualMachine {
         let event = BSFixedString::new(event);
         let mut args = Args::new(args);
         unsafe { self.slot::<SendEvent>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_SendEvent)(self.as_ptr(), handle.0, event.raw(), (&raw mut args).cast()) };
+    }
+
+    /// `SkyrimVM::RelayEventToRefAndEffects` (id 54033): sends `event(args)` to every alias the
+    /// reference behind `reference` fills and, for an actor, to every active effect with a handle,
+    /// each through `SendEvent`; not to the reference itself. The engine sends to the reference first
+    /// with [`send_event`](Self::send_event), then relays, and a mod reaches what the engine reaches by
+    /// doing the same.
+    pub fn relay_event(&self, _: &GameThread, reference: Handle, event: &str, args: &[Variable]) {
+        let event = BSFixedString::new(event);
+        let mut args = Args::new(args);
+        unsafe { (fns().relay)(fns().skyrim_vm.cast_mut(), reference.0, event.raw(), (&raw mut args).cast(), core::ptr::null_mut()) };
     }
 
     /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
