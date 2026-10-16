@@ -1,7 +1,8 @@
 # DevBench comparisons for the papyrus suite (step indices of papyrus-steps.json); dot-sourced by verify.ps1.
 # The plugin registers its natives in the SKSE PapyrusInterface callback, checks handles and script types after
 # the load, binds a SkyrimRsTestRef object to the player, and checks the calls DevBench made and the typed dispatches
-# from inside Ping at the save. The equip-counter mod runs alongside and answers its own natives.
+# from inside Ping at the save. DevBench also calls the array natives, the two latent natives and EventCount, which
+# reads the events Ping sent to the bound object. The equip-counter mod runs alongside and answers its own natives.
 $Phases = "register", "postLoadGame", "saveGame"
 
 $pluginLines = Get-Content "$OutDir\$PluginLog"
@@ -31,6 +32,12 @@ $rows = @(
        ok = ((Returned 15) -eq 0 -and (Returned 20) -eq 1 -and (Returned 21).formId -eq "0x0001D4EC" -and ($modLines -match '^equip 1: 0001D4EC$').Count -eq 1) }
     @{ name = "bound method";  plugin = "$(Detail "bind_object") | $(NativeLine 'SelfFormId' '-> 20')"; devbench = "SkyrimRsTestRef.SelfFormId() on the player = $(Returned 22) ($((Step 22).returnedType))";
        ok = ($plugin["bind_object"].ok -and (Returned 22) -eq 20) }
-    @{ name = "save trigger";  plugin = ($summaries -match 'papyrus saveGame') -join ' '; devbench = "console save: $((Step 24) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 25 }).satisfied)";
-       ok = ((($steps | Where-Object { $_.index -eq 25 }).satisfied -eq $true)) }
+    @{ name = "arrays";        plugin = (Detail "arrays"); devbench = "Halves([3, 8, -5]) = $((Returned 23) -join ', ') ($((Step 23).returnedType)), Forms() = $((@(Returned 24) | ForEach-Object { if ($_.none) { 'None' } else { $_.formId } }) -join ', ') ($((Step 24).returnedType))";
+       ok = ($plugin["arrays"].ok -and @(Returned 23).Count -eq 3 -and (Near (Returned 23)[0] 1.5 0.001) -and (Near (Returned 23)[1] 4.0 0.001) -and (Near (Returned 23)[2] -2.5 0.001) -and @(Returned 24).Count -eq 3 -and (Returned 24)[0].formId -eq "0x00000014" -and (Returned 24)[1].none -eq $true -and (Returned 24)[2].formId -eq "0x00012EB7") }
+    @{ name = "latent";        plugin = (Detail "latent"); devbench = "DoubleNow(21) = $(Returned 25) ($((Step 25).returnedType)), DoubleLater(5) = $(Returned 26) ($((Step 26).returnedType))";
+       ok = ($plugin["latent"].ok -and (Returned 25) -eq 42 -and (Returned 26) -eq 10) }
+    @{ name = "events";        plugin = (Detail "events"); devbench = "EventCount() after the two Pings = $(Returned 27)";
+       ok = ($plugin["events"].ok -and (Returned 27) -eq 2) }
+    @{ name = "save trigger";  plugin = ($summaries -match 'papyrus saveGame') -join ' '; devbench = "console save: $((Step 29) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 30 }).satisfied)";
+       ok = ((($steps | Where-Object { $_.index -eq 30 }).satisfied -eq $true)) }
 )

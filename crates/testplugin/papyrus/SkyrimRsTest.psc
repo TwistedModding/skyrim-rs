@@ -9,3 +9,9 @@ float Function Scale(float x, bool double) native global
 Form Function Player() native global
 Function Tick() native global
 string Function Describe(ObjectReference akRef, int count, string suffix, bool flag) native global
+float[] Function Halves(int[] values) native global
+Form[] Function Forms() native global
+int Function DoubleNow(int x) native global
+int Function DoubleLater(int x) native global
+Function RecordEvent(int count, string text) native global
+int Function EventCount() native global

@@ -5,7 +5,10 @@
 //! player) and `CALLS` at the save that ends the scenario of the RE repo's
 //! `docs/subsystems/papyrus-verify.md`, checking what the natives received from `DevBench`'s calls
 //! and what the dispatches from inside `Ping` (`Tick()`, `Scale(1.5, true)`, the bound object's
-//! `SelfFormId()`) did and returned to their callbacks.
+//! `SelfFormId()`) did and returned to their callbacks. Request 4e adds array natives (`Halves`,
+//! `Forms`), two latent natives (`DoubleNow` completes inside the native, `DoubleLater` 250 ms later
+//! from a thread of its own) and an `OnSkyrimRsEvent` each `Ping` sends to the bound object, whose
+//! handler reports back through `RecordEvent`.
 
 use core::ffi::c_void;
 use std::sync::Mutex;
@@ -14,7 +17,7 @@ use std::sync::atomic::{AtomicPtr, AtomicU32, Ordering};
 use layout::v1_7_104::{classes, globals};
 use skyrim::actors::{Actor, ActorValue, TESObjectREFR};
 use skyrim::forms::TESForm;
-use skyrim::papyrus::{BSFixedString, GameThread, Handle, HandlePolicy, NativeFunction, VMTypeID, Variable, VirtualMachine, current_stack_id};
+use skyrim::papyrus::{BSFixedString, GameThread, Handle, HandlePolicy, Latent, NativeFunction, PapyrusType, TypeInfo, VMTypeID, Variable, VirtualMachine, current_stack_id};
 
 use crate::{IRON_SWORD, PLAYER, Test, check, form};
 
@@ -29,6 +32,11 @@ static TICKS: AtomicU32 = AtomicU32::new(0);
 static DISPATCHES_OK: AtomicU32 = AtomicU32::new(0);
 /// What the dispatch callbacks received: `(function, result, thread)`.
 static RESULTS: Mutex<Vec<String>> = Mutex::new(Vec::new());
+/// `DoubleLater`'s completions, from its own thread.
+static COMPLETIONS: Mutex<Vec<String>> = Mutex::new(Vec::new());
+/// What `OnSkyrimRsEvent` passed to `RecordEvent`.
+static EVENTS: Mutex<Vec<(i32, String)>> = Mutex::new(Vec::new());
+const LATER_MS: u64 = 250;
 
 fn os_thread() -> u32 {
     unsafe { windows_sys::Win32::System::Threading::GetCurrentThreadId() }
@@ -56,7 +64,7 @@ pub const TESTS: &[(&str, Test)] = &[
     ("type_ids_after", type_ids_after),
 ];
 
-pub const CALLS_TESTS: &[(&str, Test)] = &[("calls", calls), ("dispatch", dispatch), ("stack_ids", stack_ids)];
+pub const CALLS_TESTS: &[(&str, Test)] = &[("calls", calls), ("dispatch", dispatch), ("stack_ids", stack_ids), ("arrays", arrays), ("latent", latent), ("events", events)];
 
 struct Call {
     name: &'static str,
@@ -76,6 +84,7 @@ fn ping(x: i32) -> i32 {
             let tick = vm.dispatch_static_call(&thread, CLASS, "Tick", &[], on_result("Tick"));
             let scale = vm.dispatch_static_call(&thread, CLASS, "Scale", &[Variable::float(1.5), Variable::bool(true)], on_result("Scale"));
             let method = vm.find_bound_object(Handle::form(PLAYER), REF_CLASS).is_some_and(|object| vm.dispatch_method_call(&thread, &object, "SelfFormId", &[], on_result("SelfFormId")));
+            vm.send_event(&thread, Handle::form(PLAYER), "OnSkyrimRsEvent", &[Variable::int(x), Variable::string(&BSFixedString::new("from Ping"))]);
             [tick, scale, method]
         }
         _ => [false; 3],
@@ -132,6 +141,47 @@ fn self_form_id(this: &TESObjectREFR) -> i32 {
     let id = this.form_id().0.cast_signed();
     record("SelfFormId", format!("self={this:?} -> {id}"));
     id
+}
+
+#[allow(clippy::needless_pass_by_value, clippy::cast_precision_loss)]
+fn halves(values: Vec<i32>) -> Vec<f32> {
+    let out: Vec<f32> = values.iter().map(|&v| v as f32 / 2.0).collect();
+    record("Halves", format!("values={values:?} -> {out:?}"));
+    out
+}
+
+fn forms() -> Vec<Option<&'static TESForm>> {
+    let out = vec![PLAYER.lookup(), None, IRON_SWORD.lookup()];
+    record("Forms", format!("-> {out:?}"));
+    out
+}
+
+fn double_now(latent: Latent<i32>, x: i32) {
+    record("DoubleNow", format!("x={x}, completed inside the native with {}", x * 2));
+    latent.complete(x * 2);
+}
+
+fn double_later(latent: Latent<i32>, x: i32) {
+    record("DoubleLater", format!("x={x}, completing from a thread of its own in {LATER_MS} ms"));
+    let started = std::time::Instant::now();
+    std::thread::spawn(move || {
+        std::thread::sleep(std::time::Duration::from_millis(LATER_MS));
+        let stack = latent.stack_id();
+        latent.complete(x * 2);
+        let done = format!("DoubleLater({x}) stack {stack} -> {} completed on thread {} after {} ms", x * 2, os_thread(), started.elapsed().as_millis());
+        log!("{done}");
+        COMPLETIONS.lock().unwrap().push(done);
+    });
+}
+
+#[allow(clippy::needless_pass_by_value)]
+fn record_event(count: i32, text: String) {
+    record("RecordEvent", format!("count={count} text={text:?}"));
+    EVENTS.lock().unwrap().push((count, text));
+}
+
+fn event_count() -> i32 {
+    i32::try_from(EVENTS.lock().unwrap().len()).unwrap_or(i32::MAX)
 }
 
 fn registry() -> Result<&'static VirtualMachine, String> {
@@ -203,6 +253,12 @@ fn register() -> Result<String, String> {
     bind("Tick", vm.register_native(CLASS, "Tick", tick))?;
     bind("Describe", vm.register_native(CLASS, "Describe", describe))?;
     bind("SelfFormId", vm.register_method(REF_CLASS, "SelfFormId", self_form_id))?;
+    bind("Halves", vm.register_native(CLASS, "Halves", halves))?;
+    bind("Forms", vm.register_native(CLASS, "Forms", forms))?;
+    bind("DoubleNow", vm.register_latent(CLASS, "DoubleNow", double_now))?;
+    bind("DoubleLater", vm.register_latent(CLASS, "DoubleLater", double_later))?;
+    bind("RecordEvent", vm.register_native(CLASS, "RecordEvent", record_event))?;
+    bind("EventCount", vm.register_native(CLASS, "EventCount", event_count))?;
     Ok(format!("{} natives bound: {}", summary.len(), summary.join("; ")))
 }
 
@@ -342,4 +398,44 @@ fn stack_ids() -> Result<String, String> {
     let sorted = ids.windows(2).all(|w| w[0] < w[1]);
     check(sorted, &format!("stack ids are not increasing: {ids:?}"))?;
     Ok(format!("{} calls with increasing stack ids {ids:?}", ids.len()))
+}
+
+fn arrays() -> Result<String, String> {
+    let calls = CALLS.lock().unwrap();
+    let find = |name: &str| calls.iter().find(|c| c.name == name).map(|c| c.detail.clone()).ok_or_else(|| format!("{name} was never called"));
+    let halves = find("Halves")?;
+    check(halves == "values=[3, 8, -5] -> [1.5, 4.0, -2.5]", &format!("Halves: {halves}"))?;
+    let forms = find("Forms")?;
+    check(forms.contains("ACHR 00000014") && forms.contains("None") && forms.contains("00012EB7"), &format!("Forms: {forms}"))?;
+    let made = vm()?.create_array(TypeInfo::raw(PapyrusType::Int), 3).ok_or("CreateArray(Int, 3) failed")?;
+    let array = made.as_array().ok_or("CreateArray gave no array")?;
+    let refs = array.raw().refCount;
+    check(array.len() == 3 && refs >= 1 && array.elements().iter().all(|e| e.as_int() == Some(0)), &format!("new Int[3] is {made:?}, refs {refs}"))?;
+    Ok(format!("Halves {halves}; Forms {forms}; CreateArray(Int, 3) at the save = {made:?} with {refs} references"))
+}
+
+fn latent() -> Result<String, String> {
+    let calls = CALLS.lock().unwrap();
+    let now = calls.iter().find(|c| c.name == "DoubleNow" && c.detail.contains("x=21")).ok_or("DoubleNow(21) was never called")?;
+    let later = calls.iter().find(|c| c.name == "DoubleLater" && c.detail.contains("x=5")).ok_or("DoubleLater(5) was never called")?;
+    let completions = COMPLETIONS.lock().unwrap().clone();
+    let prefix = format!("DoubleLater(5) stack {} -> 10", later.stack_id);
+    let done = completions.iter().find(|c| c.starts_with(&prefix)).ok_or_else(|| format!("no completion of stack {} among {completions:?}", later.stack_id))?;
+    let ms: u64 = done.rsplit(" after ").next().and_then(|t| t.trim_end_matches(" ms").parse().ok()).unwrap_or(0);
+    check(ms >= LATER_MS, &format!("completed after {ms} ms"))?;
+    for name in ["DoubleNow", "DoubleLater"] {
+        check(native(name)?.raw().isLatent == 1, &format!("{name} is not latent"))?;
+    }
+    Ok(format!("DoubleNow stack {}: {}; DoubleLater stack {}: {}; {done}", now.stack_id, now.detail, later.stack_id, later.detail))
+}
+
+fn events() -> Result<String, String> {
+    let events = EVENTS.lock().unwrap().clone();
+    let pings: Vec<i32> = CALLS.lock().unwrap().iter().filter(|c| c.name == "Ping").filter_map(|c| c.detail.strip_prefix("x=")?.split(' ').next()?.parse().ok()).collect();
+    let mut got: Vec<i32> = events.iter().map(|(n, _)| *n).collect();
+    let mut want = pings.clone();
+    got.sort_unstable();
+    want.sort_unstable();
+    check(got == want && events.iter().all(|(_, t)| t == "from Ping"), &format!("events {events:?} for Pings {pings:?}"))?;
+    Ok(format!("OnSkyrimRsEvent reached the bound SkyrimRsTestRef once per Ping {pings:?}: {events:?}"))
 }
