@@ -8,7 +8,10 @@
 //! `SelfFormId()`) did and returned to their callbacks. Request 4e adds array natives (`Halves`,
 //! `Forms`), two latent natives (`DoubleNow` completes inside the native, `DoubleLater` 250 ms later
 //! from a thread of its own) and an `OnSkyrimRsEvent` each `Ping` sends to the bound object, whose
-//! handler reports back through `RecordEvent`.
+//! handler reports back through `RecordEvent`. Request 4f adds `SkyrimRsTestAlias` and
+//! `SkyrimRsTestEffect` objects bound to one of the player's quest aliases and one of its scripted
+//! active effects (the scenario casts a scripted spell on the player first); `Ping` relays the same
+//! event to them, and their handlers report through `RecordRelay`.
 
 use core::ffi::c_void;
 use std::sync::Mutex;
@@ -17,12 +20,14 @@ use std::sync::atomic::{AtomicPtr, AtomicU32, Ordering};
 use layout::v1_7_104::{classes, globals};
 use skyrim::actors::{Actor, ActorValue, TESObjectREFR};
 use skyrim::forms::TESForm;
-use skyrim::papyrus::{BSFixedString, GameThread, Handle, HandlePolicy, Latent, NativeFunction, PapyrusType, TypeInfo, VMTypeID, Variable, VirtualMachine, current_stack_id};
+use skyrim::papyrus::{BSFixedString, GameThread, Handle, HandlePolicy, Latent, NativeFunction, PapyrusType, TypeInfo, VMTypeID, Variable, VirtualMachine, active_effect_handles, alias_handles, current_stack_id};
 
 use crate::{IRON_SWORD, PLAYER, Test, check, form};
 
 const CLASS: &str = "SkyrimRsTest";
 const REF_CLASS: &str = "SkyrimRsTestRef";
+const ALIAS_CLASS: &str = "SkyrimRsTestAlias";
+const EFFECT_CLASS: &str = "SkyrimRsTestEffect";
 
 /// The registry pointer the SKSE callback received.
 pub static REGISTRY: AtomicPtr<c_void> = AtomicPtr::new(core::ptr::null_mut());
@@ -36,6 +41,10 @@ static RESULTS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 static COMPLETIONS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 /// What `OnSkyrimRsEvent` passed to `RecordEvent`.
 static EVENTS: Mutex<Vec<(i32, String)>> = Mutex::new(Vec::new());
+/// What the relayed handlers passed to `RecordRelay`: `(alias or effect, count)`.
+static RELAYED: Mutex<Vec<(String, i32)>> = Mutex::new(Vec::new());
+/// The alias and effect handles the suite's objects were bound to.
+static RELAY_TARGETS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 const LATER_MS: u64 = 250;
 
 fn os_thread() -> u32 {
@@ -64,7 +73,7 @@ pub const TESTS: &[(&str, Test)] = &[
     ("type_ids_after", type_ids_after),
 ];
 
-pub const CALLS_TESTS: &[(&str, Test)] = &[("calls", calls), ("dispatch", dispatch), ("stack_ids", stack_ids), ("arrays", arrays), ("latent", latent), ("events", events)];
+pub const CALLS_TESTS: &[(&str, Test)] = &[("calls", calls), ("dispatch", dispatch), ("stack_ids", stack_ids), ("arrays", arrays), ("latent", latent), ("events", events), ("relay", relay)];
 
 struct Call {
     name: &'static str,
@@ -84,7 +93,10 @@ fn ping(x: i32) -> i32 {
             let tick = vm.dispatch_static_call(&thread, CLASS, "Tick", &[], on_result("Tick"));
             let scale = vm.dispatch_static_call(&thread, CLASS, "Scale", &[Variable::float(1.5), Variable::bool(true)], on_result("Scale"));
             let method = vm.find_bound_object(Handle::form(PLAYER), REF_CLASS).is_some_and(|object| vm.dispatch_method_call(&thread, &object, "SelfFormId", &[], on_result("SelfFormId")));
-            vm.send_event(&thread, Handle::form(PLAYER), "OnSkyrimRsEvent", &[Variable::int(x), Variable::string(&BSFixedString::new("from Ping"))]);
+            let args = [Variable::int(x), Variable::string(&BSFixedString::new("from Ping"))];
+            vm.send_event(&thread, Handle::form(PLAYER), "OnSkyrimRsEvent", &args);
+            bind_relay_targets(vm, &thread);
+            vm.relay_event(&thread, Handle::form(PLAYER), "OnSkyrimRsEvent", &args);
             [tick, scale, method]
         }
         _ => [false; 3],
@@ -180,6 +192,34 @@ fn record_event(count: i32, text: String) {
     EVENTS.lock().unwrap().push((count, text));
 }
 
+fn record_relay(kind: String, count: i32) {
+    record("RecordRelay", format!("kind={kind} count={count}"));
+    RELAYED.lock().unwrap().push((kind, count));
+}
+
+/// Binds a `SkyrimRsTestAlias` to the player's first reference-alias handle and a `SkyrimRsTestEffect`
+/// to its first active-effect handle, once each, from the first native that finds them.
+fn bind_relay_targets(vm: &VirtualMachine, thread: &GameThread) {
+    let mut targets = RELAY_TARGETS.lock().unwrap();
+    if !targets.is_empty() {
+        return;
+    }
+    let (Some(player), Some(policy)) = (form(PLAYER).ok().and_then(|f| f.as_reference()).and_then(|r| r.as_actor()), HandlePolicy::get()) else { return };
+    let alias = alias_handles(player).into_iter().find(|&h| policy.is_type(VMTypeID::ReferenceAlias, h));
+    let effect = active_effect_handles(player).into_iter().find(|&h| policy.is_type(VMTypeID::ActiveMagicEffect, h));
+    for (class, handle) in [(ALIAS_CLASS, alias), (EFFECT_CLASS, effect)] {
+        let Some(handle) = handle else {
+            targets.push(format!("{class}: no handle"));
+            continue;
+        };
+        let bound = vm.create_object(class).map(|object| {
+            vm.bind_object(thread, &object, handle);
+            vm.find_bound_object(handle, class).is_some_and(|b| b.handle() == handle)
+        });
+        targets.push(format!("{class} on {handle}: bound {bound:?}"));
+    }
+}
+
 fn event_count() -> i32 {
     i32::try_from(EVENTS.lock().unwrap().len()).unwrap_or(i32::MAX)
 }
@@ -259,6 +299,7 @@ fn register() -> Result<String, String> {
     bind("DoubleLater", vm.register_latent(CLASS, "DoubleLater", double_later))?;
     bind("RecordEvent", vm.register_native(CLASS, "RecordEvent", record_event))?;
     bind("EventCount", vm.register_native(CLASS, "EventCount", event_count))?;
+    bind("RecordRelay", vm.register_native(CLASS, "RecordRelay", record_relay))?;
     Ok(format!("{} natives bound: {}", summary.len(), summary.join("; ")))
 }
 
@@ -438,4 +479,20 @@ fn events() -> Result<String, String> {
     want.sort_unstable();
     check(got == want && events.iter().all(|(_, t)| t == "from Ping"), &format!("events {events:?} for Pings {pings:?}"))?;
     Ok(format!("OnSkyrimRsEvent reached the bound SkyrimRsTestRef once per Ping {pings:?}: {events:?}"))
+}
+
+fn relay() -> Result<String, String> {
+    let targets = RELAY_TARGETS.lock().unwrap().clone();
+    check(targets.len() == 2 && targets.iter().all(|t| t.ends_with("bound Some(true)")), &format!("relay targets {targets:?}"))?;
+    let relayed = RELAYED.lock().unwrap().clone();
+    let pings: Vec<i32> = CALLS.lock().unwrap().iter().filter(|c| c.name == "Ping").filter_map(|c| c.detail.strip_prefix("x=")?.split(' ').next()?.parse().ok()).collect();
+    for kind in ["alias", "effect"] {
+        // The string pool folds case, so "alias" comes back as the pool's existing "Alias".
+        let mut got: Vec<i32> = relayed.iter().filter(|(k, _)| k.eq_ignore_ascii_case(kind)).map(|(_, n)| *n).collect();
+        let mut want = pings.clone();
+        got.sort_unstable();
+        want.sort_unstable();
+        check(got == want, &format!("{kind} handler received {got:?} for Pings {pings:?}"))?;
+    }
+    Ok(format!("{targets:?}; relayed {relayed:?}"))
 }

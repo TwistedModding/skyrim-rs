@@ -15,3 +15,4 @@ int Function DoubleNow(int x) native global
 int Function DoubleLater(int x) native global
 Function RecordEvent(int count, string text) native global
 int Function EventCount() native global
+Function RecordRelay(string kind, int count) native global

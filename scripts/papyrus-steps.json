@@ -2,6 +2,7 @@
   {"tool": "console", "args": {"command": "load retrace-base"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
+  {"tool": "console", "args": {"command": "player.addspell 000FB981"}},
   {"wait": 3000},
   {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "Ping", "args": [41]}},
   {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "FormId", "args": [{"form": "0x14"}]}},
