@@ -9,6 +9,7 @@
 //! message, so read it there, not earlier.
 
 use core::ffi::{CStr, c_char};
+use std::ffi::CString;
 
 use layout::v1_7_104::{classes, fns, globals};
 
@@ -18,6 +19,11 @@ use crate::events::{BSTEventSource, Event};
 use crate::forms::{FormId, TESFile};
 
 type RemapFn = unsafe extern "C" fn(game: *mut classes::BGSSaveLoadGame, saved: u32) -> u32;
+type SaveFn = unsafe extern "C" fn(manager: *mut classes::BGSSaveLoadManager, kind: i32, value: u32, name: *const c_char) -> bool;
+type RequestLoadFn = unsafe extern "C" fn(manager: *mut classes::BGSSaveLoadManager, name: *const c_char, entry: u32, a4: u32, a5: bool) -> bool;
+
+/// `BGSSaveLoadManager::Save`'s kind for a manual save.
+const MANUAL_SAVE: i32 = 2;
 
 /// The `char*` to the current save name sits at manager +0x240, inside the name's inline storage.
 const SAVE_NAME_PTR: usize = 0x240 - 0x138;
@@ -26,6 +32,8 @@ pub(crate) struct Fns {
     manager: *const *mut classes::BGSSaveLoadManager,
     game: *const *mut classes::BGSSaveLoadGame,
     remap: RemapFn,
+    save: SaveFn,
+    request_load: RequestLoadFn,
 }
 
 unsafe impl Sync for Fns {}
@@ -40,6 +48,8 @@ impl Fns {
                 manager: reloc.address(globals::g_BGSSaveLoadManager_ptr)? as *const *mut classes::BGSSaveLoadManager,
                 game: reloc.address(globals::g_BGSSaveLoadGame_ptr)? as *const *mut classes::BGSSaveLoadGame,
                 remap: crate::resolve(reloc, fns::BGSSaveLoadGame__RemapSavedFormID)?,
+                save: crate::resolve(reloc, fns::BGSSaveLoadManager__Save)?,
+                request_load: crate::resolve(reloc, fns::BGSSaveLoadManager__RequestLoad)?,
             })
         }
     }
@@ -63,6 +73,28 @@ impl SaveLoadManager {
     #[must_use]
     pub fn raw(&self) -> &classes::BGSSaveLoadManager {
         &self.0
+    }
+
+    fn as_ptr(&self) -> *mut classes::BGSSaveLoadManager {
+        (&raw const self.0).cast_mut()
+    }
+
+    /// A manual save named `name` through `BGSSaveLoadManager::Save` (id 35727), written whole on
+    /// this thread. Call it on the main thread right after the main loop drains the manager's
+    /// requests (`ProcessSaveLoadRequests`), where the script extender's own save runs: a save made
+    /// while the main loop waits on the VM deadlocks.
+    #[must_use]
+    pub fn save(&self, name: &str) -> bool {
+        let Ok(name) = CString::new(name) else { return false };
+        unsafe { (fns().save)(self.as_ptr(), MANUAL_SAVE, 0, name.as_ptr()) }
+    }
+
+    /// Reads the save `name` through `BGSSaveLoadManager::RequestLoad` (id 35728) and queues its load
+    /// for the next main update; the call the script extender's load makes.
+    #[must_use]
+    pub fn request_load(&self, name: &str) -> bool {
+        let Ok(name) = CString::new(name) else { return false };
+        unsafe { (fns().request_load)(self.as_ptr(), name.as_ptr(), u32::MAX, 0, true) }
     }
 
     /// The save last written or loaded, without the `.ess` a loaded name carries. While a save is
