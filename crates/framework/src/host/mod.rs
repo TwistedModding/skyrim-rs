@@ -146,6 +146,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         let live = (descriptor.load)(host);
         if live {
             log!("loaded {}: {}", plugin.file, plugin.name);
+            log!("{}: generation 1 loaded, image at {:#x}", plugin.name, *module as usize);
         } else {
             log!("skipped {}: {}: load returned false", plugin.file, plugin.name);
             detach(name);

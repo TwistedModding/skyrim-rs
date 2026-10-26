@@ -159,6 +159,7 @@ impl Command for ReloadCommand {
 
 fn on_message(msg: &skse::Message) {
     KINDS.lock().unwrap().push(msg.kind);
+    log(format!("tag {TAG}: message {}", msg.kind));
     match msg.kind {
         skse::MessagingInterface::DATA_LOADED => {
             let registered = HOST.get().expect("set in load").register_command::<ReloadCommand>();
@@ -171,6 +172,9 @@ fn on_message(msg: &skse::Message) {
 
 fn window(ctx: &egui::Context) {
     let frames = FRAMES.fetch_add(1, Ordering::Relaxed) + 1;
+    if frames == 1 {
+        log(format!("tag {TAG}: first window frame"));
+    }
     egui::Window::new("skyrim-rs reload test").default_pos([40.0, 80.0]).show(ctx, |ui| ui.label(format!("tag {TAG}, reloads {}, frame {frames}", RELOADS.load(Ordering::Relaxed))));
 }
 

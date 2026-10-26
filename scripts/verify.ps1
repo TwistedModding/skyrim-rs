@@ -114,8 +114,13 @@ try {
     & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $(if ($Launch -eq "standalone") { "standalone" } else { "skse" })
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
-    foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
-    if ($Mod.dir) { Remove-Item "$Plugins\$($Mod.dir)" -Recurse -Force -ErrorAction SilentlyContinue }
+    # A game that crashed may still hold the installed DLLs for a few seconds after Stop-Process.
+    for ($try = 0; $try -lt 10; $try++) {
+        foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
+        if ($Mod.dir) { Remove-Item "$Plugins\$($Mod.dir)" -Recurse -Force -ErrorAction SilentlyContinue }
+        if (-not (Test-Path "$Plugins\$HostDll") -and -not ($Mod.dir -and (Test-Path "$Plugins\$($Mod.dir)"))) { break }
+        Start-Sleep -Seconds 3
+    }
     if ($Launch -ne "skse") { Remove-Item $Proxy -ErrorAction SilentlyContinue }
     if ($Launch -eq "standalone") { Remove-Item $AppId -ErrorAction SilentlyContinue }
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }

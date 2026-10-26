@@ -173,7 +173,7 @@ fn start(entry: &mut Loaded, module: HMODULE, descriptor: &'static Descriptor, c
         log!("{name}: generation {generation}: load returned false; {} detached", detach(&name));
         return false;
     }
-    log!("{name}: generation {generation} loaded");
+    log!("{name}: generation {generation} loaded, image at {:#x}", module as usize);
     if let (Some(bytes), Some(restore)) = (state, descriptor.restore_state) {
         restore(bytes);
         log!("{name}: generation {generation}: {} bytes of state restored", bytes.len());

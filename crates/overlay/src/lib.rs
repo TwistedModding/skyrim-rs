@@ -107,12 +107,17 @@ pub fn on_frame(f: fn()) {
     let _ = FRAME.set(f);
 }
 
-/// Drops the per-widget state the context keeps between frames (window positions, collapsed
-/// headers, scroll offsets): it holds trait objects from the code that drew the widgets, so a
-/// host clears it before unloading a DLL that drew windows. Every window starts afresh.
+/// Drops the state the context keeps between frames apart from its options (window positions,
+/// collapsed headers, scroll offsets, the frame caches): it holds trait objects from the code
+/// that drew the widgets, so a host clears it before unloading a DLL that drew windows. Every
+/// window starts afresh.
 pub fn clear_widget_state() {
     if let Some(state) = STATE.lock().unwrap().as_ref() {
-        state.ctx.memory_mut(|memory| memory.data.clear());
+        state.ctx.memory_mut(|memory| {
+            let mut fresh = egui::Memory::default();
+            fresh.options = memory.options.clone();
+            *memory = fresh;
+        });
     }
 }
 
