@@ -309,9 +309,9 @@ pub struct ActivateHandler_vtable {
     pub slot_0: *const c_void,
     /// `ActivateHandler::CanProcess` at 0x7b4e50 (semantic, high); signature (untiered): `bool CanProcess(ActivateHandler * this, longlong * param_1)`; `CanProcess`: Activate (high); semantic signature: `bool (ActivateHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -699,7 +699,7 @@ pub struct Actor_vtable {
     pub slot_104: *const c_void,
     /// `Actor::vfunc_105` at 0x672570 (rtti, medium); signature (low): `undefined vfunc_105(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_105: *const c_void,
-    /// `Actor::vfunc_106` at 0x6713e0 (rtti, medium); signature (low): `longlong * vfunc_106(Actor * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    /// `Actor::vfunc_106` at 0x6713e0 (semantic, high); signature (low): `longlong * vfunc_106(Actor * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_106: *const c_void,
     /// `TESObjectREFR::vfunc_107` at 0x2ea8c0 (rtti, medium); signature (low): `undefined vfunc_107(TESObjectREFR * this, TESObjectREFR_vtbl * param_1, TESObjectREFR * param_2, undefined8 param_3)`
     pub slot_107: *const c_void,
@@ -767,7 +767,7 @@ pub struct Actor_vtable {
     pub slot_138: *const c_void,
     /// `Actor::vfunc_139` at 0x6921a0 (rtti, medium); signature (high): `longlong vfunc_139(Actor * this)`
     pub slot_139: *const c_void,
-    /// `Actor::vfunc_140` at 0x692320 (rtti, medium); signature (low): `undefined vfunc_140(Actor * this, undefined8 param_1)`
+    /// `Actor::SetMiddleHighProcessField150` at 0x692320 (semantic, high); signature (untiered): `undefined SetMiddleHighProcessField150(Actor * this, undefined8 param_1)`; `SetMiddleHighProcessField150`: stores value in currentProcess->middleHigh (+8) +0x150 when both exist (high); semantic signature: `void (Actor* this, void* value)`
     pub slot_140: *const c_void,
     /// `TESObjectREFR::vfunc_141` at 0x2f9f60 (rtti, medium); signature (high): `undefined vfunc_141(TESObjectREFR * this)`
     pub slot_141: *const c_void,
@@ -935,11 +935,11 @@ pub struct Actor_vtable {
     pub slot_222: *const c_void,
     /// `Actor::vfunc_223` at 0x691590 (rtti, medium); signature (low): `undefined vfunc_223(Actor * this, longlong * param_1, char param_2, undefined8 param_3)`
     pub slot_223: *const c_void,
-    /// `Actor::vfunc_224` at 0x6d43e0 (rtti, medium); signature (high): `undefined vfunc_224(Actor * this)`
+    /// `Actor::UpdateAlpha` at 0x6d43e0 (semantic, medium); signature (untiered): `undefined UpdateAlpha(Actor * this)`; `UpdateAlpha`: alpha = process fade * (1 - invisibility(av 0x36) * k) * distance factor, or the value of extra type 0x47; applied through slot 225 (medium); semantic signature: `void (Actor* this)`
     pub slot_224: *const c_void,
-    /// `Actor::vfunc_225` at 0x6d4510 (rtti, medium); signature (low): `undefined vfunc_225(Actor * this, undefined4 param_2)`
+    /// `Actor::SetAlpha` at 0x6d4510 (semantic, high); signature (untiered): `undefined SetAlpha(Actor * this, undefined4 param_2)`; `SetAlpha`: stores the alpha in the process and in NiAVObject.fadeAmount (+0x100) of the 3D; for the player (this == ID_401069) on both roots (high); semantic signature: `void (Actor* this, float alpha)`
     pub slot_225: *const c_void,
-    /// `Actor::vfunc_226` at 0x6d45a0 (rtti, medium); signature (low): `undefined4 vfunc_226(Actor * this)`
+    /// `Actor::GetAlphaMultiplier` at 0x6d45a0 (semantic, medium); signature (untiered): `undefined4 GetAlphaMultiplier(Actor * this)`; `GetAlphaMultiplier`: process value (vfunc_226_sub0) when the process level byte is 0, else 1.0 (medium); semantic signature: `float (Actor* this)`
     pub slot_226: *const c_void,
     /// `Actor::IsInCombat` at 0x6c9850 (runtime, high); signature (untiered): `longlong IsInCombat(Actor * this)`; `IsInCombat`: whether the actor has a combat controller (high); semantic signature: `bool IsInCombat(const Actor* this)`
     pub slot_227: *const c_void,
@@ -1067,7 +1067,7 @@ pub struct Actor_vtable {
     pub slot_288: *const c_void,
     /// `Actor::vfunc_289` at 0x6b3bf0 (rtti, medium); signature (low): `undefined vfunc_289(Actor * this, longlong param_1)`
     pub slot_289: *const c_void,
-    /// `Actor::vfunc_290` at 0x6b3f20 (rtti, medium); signature (low): `undefined vfunc_290(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
+    /// `Actor::UpdateHeadTracking` at 0x6b3f20 (semantic, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`; `UpdateHeadTracking`: head tracking target choice and update (high); semantic signature: `void (Actor* this, float delta)`
     pub slot_290: *const c_void,
     /// `Actor::vfunc_291` at 0x6b4780 (rtti, medium); signature (low): `undefined vfunc_291(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_291: *const c_void,
@@ -1088,25 +1088,51 @@ impl Actor_vtable {
     pub fn IsChild(&self) -> Option<Actor_vtable_IsChild> {
         unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_IsChild>>(self.slot_94) }
     }
+    pub const SLOT_SetMiddleHighProcessField150: usize = 140;
+    /// Slot 140 as `Actor_vtable_SetMiddleHighProcessField150`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetMiddleHighProcessField150(&self) -> Option<Actor_vtable_SetMiddleHighProcessField150> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_SetMiddleHighProcessField150>>(self.slot_140) }
+    }
     pub const SLOT_IsDead: usize = 153;
     /// Slot 153 as `Actor_vtable_IsDead`, `None` when the slot is null.
     #[must_use]
     pub fn IsDead(&self) -> Option<Actor_vtable_IsDead> {
         unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_IsDead>>(self.slot_153) }
     }
+    pub const SLOT_UpdateAlpha: usize = 224;
+    pub const SLOT_SetAlpha: usize = 225;
+    /// Slot 225 as `Actor_vtable_SetAlpha`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetAlpha(&self) -> Option<Actor_vtable_SetAlpha> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_SetAlpha>>(self.slot_225) }
+    }
+    pub const SLOT_GetAlphaMultiplier: usize = 226;
     pub const SLOT_IsInCombat: usize = 227;
     /// Slot 227 as `Actor_vtable_IsInCombat`, `None` when the slot is null.
     #[must_use]
     pub fn IsInCombat(&self) -> Option<Actor_vtable_IsInCombat> {
         unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_IsInCombat>>(self.slot_227) }
     }
+    pub const SLOT_UpdateHeadTracking: usize = 290;
+    /// Slot 290 as `Actor_vtable_UpdateHeadTracking`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateHeadTracking(&self) -> Option<Actor_vtable_UpdateHeadTracking> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_UpdateHeadTracking>>(self.slot_290) }
+    }
 }
 /// `Actor::IsChild`, slot 94: whether the actor is a child (high).
 pub type Actor_vtable_IsChild = unsafe extern "C" fn(this: *const classes::Actor) -> bool;
+/// `Actor::SetMiddleHighProcessField150`, slot 140: stores value in currentProcess->middleHigh (+8) +0x150 when both exist (high).
+pub type Actor_vtable_SetMiddleHighProcessField150 = unsafe extern "C" fn(this: *mut classes::Actor, value: *mut c_void);
 /// `Actor::IsDead`, slot 153: whether the actor is dead or dying (high).
 pub type Actor_vtable_IsDead = unsafe extern "C" fn(this: *const classes::Actor, ignoreBleedout: bool) -> bool;
+/// `Actor::SetAlpha`, slot 225: stores the alpha in the process and in NiAVObject.fadeAmount (+0x100) of the 3D; for the player (this == ID_401069) on both roots (high).
+pub type Actor_vtable_SetAlpha = unsafe extern "C" fn(this: *mut classes::Actor, alpha: f32);
 /// `Actor::IsInCombat`, slot 227: whether the actor has a combat controller (high).
 pub type Actor_vtable_IsInCombat = unsafe extern "C" fn(this: *const classes::Actor) -> bool;
+/// `Actor::UpdateHeadTracking`, slot 290: head tracking target choice and update (high).
+pub type Actor_vtable_UpdateHeadTracking = unsafe extern "C" fn(this: *mut classes::Actor, delta: f32);
 
 /// `Actor::vftable_20` at 0x191be90, id 207513 (rtti, high); 2 slots.
 #[repr(C)]
@@ -1137,7 +1163,7 @@ impl Actor_vtable_30 {
 pub struct Actor_vtable_38 {
     /// `Actor::IAnimationGraphManagerHolder_vdtor` at 0x6bbcfc (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(Actor * this)`
     pub slot_0: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_1` at 0x6b61a0 (rtti, medium); signature (untiered): `undefined1 IAnimationGraphManagerHolder_vfunc_1(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `Actor::NotifyAnimationGraph` at 0x6b61a0 (semantic, high); signature (untiered): `undefined1 NotifyAnimationGraph(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `IAnimationGraphManagerHolder::GetAnimationGraphManager` at 0x6b60b0 (semantic, high); signature (untiered): `bool GetAnimationGraphManager(IAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
@@ -1379,9 +1405,9 @@ pub struct ActorMagicCaster_vtable {
     pub slot_12: *const c_void,
     /// `MagicCaster::vfunc_13` at 0x5cd110 (rtti, medium); signature (low): `longlong vfunc_13(MagicCaster * this, undefined8 * param_1)`
     pub slot_13: *const c_void,
-    /// `ActorMagicCaster::vfunc_14` at 0x5bf800 (rtti, high); signature (high): `undefined vfunc_14(ActorMagicCaster * this)`
+    /// `ActorMagicCaster::FindCasterNode` at 0x5bf800 (semantic, high); signature (untiered): `undefined FindCasterNode(ActorMagicCaster * this)`; `FindCasterNode`: returns casterNode (+0xc0), resolving it when null from the root the player's view selects (high); semantic signature: `NiNode* (ActorMagicCaster* this)`
     pub slot_14: *const c_void,
-    /// `ActorMagicCaster::vfunc_15` at 0x5c2b80 (rtti, high); signature (high): `undefined vfunc_15(ActorMagicCaster * this)`
+    /// `ActorMagicCaster::ClearCasterNode` at 0x5c2b80 (semantic, high); signature (untiered): `undefined ClearCasterNode(ActorMagicCaster * this)`; `ClearCasterNode`: casterNode = 0 (high); semantic signature: `void (ActorMagicCaster* this)`
     pub slot_15: *const c_void,
     /// `ActorMagicCaster::vfunc_16` at 0x5c1120 (rtti, high); signature (low): `undefined vfunc_16(ActorMagicCaster * this, longlong * param_1)`
     pub slot_16: *const c_void,
@@ -1414,7 +1440,23 @@ pub struct ActorMagicCaster_vtable {
 }
 impl ActorMagicCaster_vtable {
     pub const ID: u64 = 205828;
+    pub const SLOT_FindCasterNode: usize = 14;
+    /// Slot 14 as `ActorMagicCaster_vtable_FindCasterNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn FindCasterNode(&self) -> Option<ActorMagicCaster_vtable_FindCasterNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorMagicCaster_vtable_FindCasterNode>>(self.slot_14) }
+    }
+    pub const SLOT_ClearCasterNode: usize = 15;
+    /// Slot 15 as `ActorMagicCaster_vtable_ClearCasterNode`, `None` when the slot is null.
+    #[must_use]
+    pub fn ClearCasterNode(&self) -> Option<ActorMagicCaster_vtable_ClearCasterNode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ActorMagicCaster_vtable_ClearCasterNode>>(self.slot_15) }
+    }
 }
+/// `ActorMagicCaster::FindCasterNode`, slot 14: returns casterNode (+0xc0), resolving it when null from the root the player's view selects (high).
+pub type ActorMagicCaster_vtable_FindCasterNode = unsafe extern "C" fn(this: *mut classes::ActorMagicCaster) -> *mut classes::NiNode;
+/// `ActorMagicCaster::ClearCasterNode`, slot 15: casterNode = 0 (high).
+pub type ActorMagicCaster_vtable_ClearCasterNode = unsafe extern "C" fn(this: *mut classes::ActorMagicCaster);
 
 /// `ActorMagicCaster::vftable_48` at 0x18f6248, id 205830 (rtti, high); 20 slots.
 #[repr(C)]
@@ -3941,7 +3983,7 @@ pub struct AttackBlockHandler_vtable {
     pub slot_1: *const c_void,
     /// `AttackBlockHandler::vfunc_2` at 0x7b2b90 (rtti, high); signature (low): `undefined vfunc_2(AttackBlockHandler * this, longlong * param_1, ulonglong param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -4073,9 +4115,9 @@ pub struct AutoMoveHandler_vtable {
     pub slot_0: *const c_void,
     /// `AutoMoveHandler::CanProcess` at 0x7b4ee0 (semantic, high); signature (untiered): `bool CanProcess(AutoMoveHandler * this, longlong * param_1)`; `CanProcess`: Auto-Move (high); semantic signature: `bool (AutoMoveHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -20287,9 +20329,9 @@ pub struct AutoVanityState_vtable {
     pub slot_2: *const c_void,
     /// `AutoVanityState::Update` at 0x8f3810 (semantic, high); signature (untiered): `undefined Update(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: position from ComputeAutoVanityCameraPosition 0x8f3a10, writes the root, advances yaw (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `AutoVanityState::vfunc_4` at 0x8f39a0 (rtti, high); signature (low): `undefined vfunc_4(AutoVanityState * this, float * param_1)`
+    /// `AutoVanityState::GetRotation` at 0x8f39a0 (semantic, high); signature (untiered): `undefined GetRotation(AutoVanityState * this, float * param_1)`; `GetRotation`: euler(0, 0, yaw) (high); semantic signature: `void (AutoVanityState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `AutoVanityState::vfunc_5` at 0x8f39c0 (rtti, high); signature (low): `undefined vfunc_5(AutoVanityState * this, undefined8 param_1)`
+    /// `AutoVanityState::GetTranslation` at 0x8f39c0 (semantic, high); signature (untiered): `undefined GetTranslation(AutoVanityState * this, undefined8 param_1)`; `GetTranslation`: 0x8f3a10 with the slot 4 rotation (high); semantic signature: `void (AutoVanityState* this, NiPoint3* out)`
     pub slot_5: *const c_void,
     /// `TESCameraState::SaveGame` at 0x24a080 (semantic, medium); signature (untiered): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
@@ -20308,6 +20350,8 @@ impl AutoVanityState_vtable {
     }
     pub const SLOT_End: usize = 2;
     pub const SLOT_Update: usize = 3;
+    pub const SLOT_GetRotation: usize = 4;
+    pub const SLOT_GetTranslation: usize = 5;
 }
 /// `AutoVanityState::Begin`, slot 1: SetFirstPerson(false), yaw = heading, queues the 'AutoVanity' message (high).
 pub type AutoVanityState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
@@ -46116,7 +46160,7 @@ pub struct BSEffectShader_vtable {
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSEffectShader::vfunc_2` at 0x1556840 (rtti, high); signature (low): `ulonglong vfunc_2(BSEffectShader * this, int param_1)`
+    /// `BSEffectShader::SetupTechnique` at 0x1556840 (semantic, high); signature (untiered): `ulonglong SetupTechnique(BSEffectShader * this, int param_1)`
     pub slot_2: *const c_void,
     /// `BSEffectShader::vfunc_3` at 0x1556730 (rtti, high); signature (low): `undefined vfunc_3(BSEffectShader * this, int param_1)`
     pub slot_3: *const c_void,
@@ -47548,8 +47592,15 @@ impl BSFaceGenNiNode_vtable {
     pub const ID: u64 = 200333;
     pub const SLOT_CreateClone: usize = 23;
     pub const SLOT_UpdateDownwardPass: usize = 44;
+    /// Slot 44 as `BSFaceGenNiNode_vtable_UpdateDownwardPass`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateDownwardPass(&self) -> Option<BSFaceGenNiNode_vtable_UpdateDownwardPass> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSFaceGenNiNode_vtable_UpdateDownwardPass>>(self.slot_44) }
+    }
     pub const SLOT_BindSkinsToSkeleton: usize = 62;
 }
+/// `BSFaceGenNiNode::UpdateDownwardPass`, slot 44: when not hidden (+0xf4 bit 0 clear): advance the face animation and queue the node for morphing (0x43a4e0); then NiNode's downward pass (high).
+pub type BSFaceGenNiNode_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut classes::BSFaceGenNiNode, data: *mut classes::NiUpdateData, flags: u32);
 
 /// `BSFadeNode::vftable` at 0x1b2efb0, id 252901 (rtti, high); 64 slots.
 #[repr(C)]
@@ -47911,11 +47962,11 @@ pub struct BSFlattenedBoneTree_vtable {
     pub slot_40: *const c_void,
     /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
     pub slot_41: *const c_void,
-    /// `BSFlattenedBoneTree::vfunc_42` at 0xef4da0 (rtti, high); signature (low): `NiNode * vfunc_42(BSFlattenedBoneTree * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSFlattenedBoneTree::GetObjectByName` at 0xef4da0 (semantic, high); signature (untiered): `NiNode * GetObjectByName(BSFlattenedBoneTree * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `GetObjectByName`: looks the name up in nameMap and materialises a NiNode for that entry (GetOrCreateNodeForIndex 0xef4af0), else NiNode's search (high); semantic signature: `NiAVObject* (BSFlattenedBoneTree* this, const BSFixedString& name)`
     pub slot_42: *const c_void,
     /// `NiNode::vfunc_43` at 0xee2e30 (rtti, medium); signature (low): `undefined vfunc_43(NiNode * this, char * param_1, char param_2, undefined1 * param_3)`
     pub slot_43: *const c_void,
-    /// `BSFlattenedBoneTree::vfunc_44` at 0xef4d10 (rtti, high); signature (low): `undefined vfunc_44(BSFlattenedBoneTree * this, longlong param_1, uint param_2)`
+    /// `BSFlattenedBoneTree::UpdateDownwardPass` at 0xef4d10 (semantic, high); signature (untiered): `undefined UpdateDownwardPass(BSFlattenedBoneTree * this, longlong param_1, uint param_2)`; `UpdateDownwardPass`: NiNode slot 44, then UpdateBoneWorldTransforms (high); semantic signature: `void (BSFlattenedBoneTree* this, NiUpdateData* data, u32 parentHidden)`
     pub slot_44: *const c_void,
     /// `BSFlattenedBoneTree::vfunc_45` at 0xef4d40 (rtti, high); signature (low): `undefined vfunc_45(BSFlattenedBoneTree * this, longlong param_1, uint param_2)`
     pub slot_45: *const c_void,
@@ -47954,7 +48005,16 @@ pub struct BSFlattenedBoneTree_vtable {
 }
 impl BSFlattenedBoneTree_vtable {
     pub const ID: u64 = 237226;
+    pub const SLOT_GetObjectByName: usize = 42;
+    pub const SLOT_UpdateDownwardPass: usize = 44;
+    /// Slot 44 as `BSFlattenedBoneTree_vtable_UpdateDownwardPass`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateDownwardPass(&self) -> Option<BSFlattenedBoneTree_vtable_UpdateDownwardPass> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSFlattenedBoneTree_vtable_UpdateDownwardPass>>(self.slot_44) }
+    }
 }
+/// `BSFlattenedBoneTree::UpdateDownwardPass`, slot 44: NiNode slot 44, then UpdateBoneWorldTransforms (high).
+pub type BSFlattenedBoneTree_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut classes::BSFlattenedBoneTree, data: *mut classes::NiUpdateData, parentHidden: u32);
 
 /// `BSFogProperty::vftable` at 0x1b49518, id 255245 (rtti, high); 39 slots.
 #[repr(C)]
@@ -48598,7 +48658,7 @@ pub struct BSGeometryListCullingProcess_vtable {
     pub slot_23: *const c_void,
     /// `BSCullingProcess::AppendVisible` at 0xfedfc0 (runtime, high); signature (untiered): `undefined AppendVisible(BSCullingProcess * this, undefined8 param_1, int param_2)`
     pub slot_24: *const c_void,
-    /// `BSGeometryListCullingProcess::vfunc_25` at 0xff5bf0 (rtti, high); signature (low): `undefined vfunc_25(BSGeometryListCullingProcess * this, longlong param_1)`
+    /// `BSGeometryListCullingProcess::AppendGeometry` at 0xff5bf0 (semantic, high); signature (untiered): `undefined AppendGeometry(BSGeometryListCullingProcess * this, longlong param_1)`
     pub slot_25: *const c_void,
     /// `BSCullingProcess::vfunc_26` at 0xfeea30 (rtti, medium); signature (low): `undefined vfunc_26(BSCullingProcess * this, longlong param_1)`
     pub slot_26: *const c_void,
@@ -72121,9 +72181,9 @@ pub struct BSSceneGraph_vtable {
     pub slot_60: *const c_void,
     /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
-    /// `BSSceneGraph::vfunc_62` at 0xff4b70 (rtti, high); signature (high): `float vfunc_62(BSSceneGraph * this)`
+    /// `BSSceneGraph::GetFarDistance` at 0xff4b70 (semantic, high); signature (untiered): `float GetFarDistance(BSSceneGraph * this)`
     pub slot_62: *const c_void,
-    /// `BSSceneGraph::vfunc_63` at 0xff4bb0 (rtti, high); signature (low): `undefined4 vfunc_63(void)`
+    /// `BSSceneGraph::GetNearDistance` at 0xff4bb0 (semantic, high); signature (untiered): `undefined4 GetNearDistance(void)`
     pub slot_63: *const c_void,
     /// `BSSceneGraph::vfunc_64` at 0xff4bc0 (rtti, medium); signature (medium): `undefined vfunc_64(BSSceneGraph * this, float param_1)`
     pub slot_64: *const c_void,
@@ -93338,7 +93398,7 @@ pub struct BSShadowDirectionalLight_vtable {
     pub slot_10: *const c_void,
     /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
     pub slot_11: *const c_void,
-    /// `BSShadowDirectionalLight::vfunc_12` at 0x157ed20 (rtti, high); signature (high): `undefined vfunc_12(BSShadowDirectionalLight * this)`
+    /// `BSShadowDirectionalLight::ReleaseShadowMaps` at 0x157ed20 (semantic, high); signature (untiered): `undefined ReleaseShadowMaps(BSShadowDirectionalLight * this)`; `ReleaseShadowMaps`: maps 1.. get depthTarget -1 and texelScale 1.0, then BSShadowLight::ReleaseShadowMaps (high); semantic signature: `void (BSShadowDirectionalLight* this)`
     pub slot_12: *const c_void,
     /// `BSShadowDirectionalLight::vfunc_13` at 0x157ed10 (rtti, high); signature (low): `undefined4 vfunc_13(BSShadowDirectionalLight * this, undefined4 param_1)`
     pub slot_13: *const c_void,
@@ -93359,6 +93419,12 @@ impl BSShadowDirectionalLight_vtable {
     pub fn RenderShadowMaps(&self) -> Option<BSShadowDirectionalLight_vtable_RenderShadowMaps> {
         unsafe { core::mem::transmute::<*const c_void, Option<BSShadowDirectionalLight_vtable_RenderShadowMaps>>(self.slot_10) }
     }
+    pub const SLOT_ReleaseShadowMaps: usize = 12;
+    /// Slot 12 as `BSShadowDirectionalLight_vtable_ReleaseShadowMaps`, `None` when the slot is null.
+    #[must_use]
+    pub fn ReleaseShadowMaps(&self) -> Option<BSShadowDirectionalLight_vtable_ReleaseShadowMaps> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSShadowDirectionalLight_vtable_ReleaseShadowMaps>>(self.slot_12) }
+    }
     pub const SLOT_UpdateCascadeFrusta: usize = 15;
     pub const SLOT_UpdateForCamera: usize = 16;
     /// Slot 16 as `BSShadowDirectionalLight_vtable_UpdateForCamera`, `None` when the slot is null.
@@ -93369,6 +93435,8 @@ impl BSShadowDirectionalLight_vtable {
 }
 /// `BSShadowDirectionalLight::RenderShadowMaps`, slot 10: renders each map into depth target 2 slice k (and target 3 with iEnableShadowCastingFlag 2), then the focus maps into target 4 when focusShadowsActive (high).
 pub type BSShadowDirectionalLight_vtable_RenderShadowMaps = unsafe extern "C" fn(this: *mut classes::BSShadowLight, counter: *mut u32);
+/// `BSShadowDirectionalLight::ReleaseShadowMaps`, slot 12: maps 1.. get depthTarget -1 and texelScale 1.0, then BSShadowLight::ReleaseShadowMaps (high).
+pub type BSShadowDirectionalLight_vtable_ReleaseShadowMaps = unsafe extern "C" fn(this: *mut classes::BSShadowDirectionalLight);
 /// `BSShadowDirectionalLight::UpdateForCamera`, slot 16: per-frame setup against the scene camera: sun direction, cascade split and camera placement (bDisableShadowJumps, fSunStaticTimeUpdateScale) (high).
 pub type BSShadowDirectionalLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut classes::BSShadowLight, camera: *mut classes::NiCamera) -> bool;
 
@@ -93510,9 +93578,9 @@ pub struct BSShadowParabolicLight_vtable {
     pub slot_7: *const c_void,
     /// `BSShadowParabolicLight::UsesTwoMaps` at 0x1588e20 (semantic, high); signature (untiered): `bool UsesTwoMaps(BSShadowParabolicLight * this)`; `UsesTwoMaps`: shadowMapCount == 2 (both hemispheres) (high); semantic signature: `bool (BSShadowParabolicLight* this)`
     pub slot_8: *const c_void,
-    /// `BSShadowParabolicLight::vfunc_9` at 0x15888d0 (rtti, high); signature (low): `undefined vfunc_9(BSShadowParabolicLight * this, uint * param_1, int param_2, longlong * param_3)`
+    /// `BSShadowParabolicLight::CullCasters` at 0x15888d0 (semantic, medium); signature (untiered): `undefined CullCasters(BSShadowParabolicLight * this, uint * param_1, int param_2, longlong * param_3)`; `CullCasters`: tags the map accumulators and culls the casters (light+0x528 candidates when present) with the parabolic culler (medium); semantic signature: `void (BSShadowParabolicLight* this, u32* mapCounter, u32 lightOrdinal)`
     pub slot_9: *const c_void,
-    /// `BSShadowParabolicLight::vfunc_10` at 0x1588c80 (rtti, high); signature (low): `undefined vfunc_10(BSShadowParabolicLight * this, int * param_1)`
+    /// `BSShadowParabolicLight::RenderShadowMaps` at 0x1588c80 (semantic, medium); signature (untiered): `undefined RenderShadowMaps(BSShadowParabolicLight * this, int * param_1)`; `RenderShadowMaps`: RenderShadowMap per map (medium); semantic signature: `void (BSShadowParabolicLight* this, i32* drawCounter)`
     pub slot_10: *const c_void,
     /// `BSShadowLight::SetShadowMapCount` at 0x155c850 (semantic, high); signature (untiered): `undefined SetShadowMapCount(BSShadowLight * this, uint param_1)`
     pub slot_11: *const c_void,
@@ -93524,7 +93592,7 @@ pub struct BSShadowParabolicLight_vtable {
     pub slot_14: *const c_void,
     /// `BSShadowLight::vfunc_15` at 0x155dd20 (rtti, medium); signature (low): `undefined vfunc_15(void)`
     pub slot_15: *const c_void,
-    /// `BSShadowParabolicLight::vfunc_16` at 0x1588590 (rtti, high); signature (low): `undefined8 vfunc_16(BSShadowParabolicLight * this, longlong param_1)`
+    /// `BSShadowParabolicLight::UpdateForCamera` at 0x1588590 (semantic, high); signature (untiered): `undefined8 UpdateForCamera(BSShadowParabolicLight * this, longlong param_1)`; `UpdateForCamera`: copies the NiLight's world transform into the map cameras (second map mirrored), visible = light sphere (radius NiLight+0x128) inside the camera frustum, then dropped when +0x63 and (d^2 - r^2) * camera+0x184 >= g_ShadowDistanceSq (high); semantic signature: `bool (BSShadowParabolicLight* this, NiCamera* camera)`
     pub slot_16: *const c_void,
 }
 impl BSShadowParabolicLight_vtable {
@@ -93536,9 +93604,19 @@ impl BSShadowParabolicLight_vtable {
     pub fn UsesTwoMaps(&self) -> Option<BSShadowParabolicLight_vtable_UsesTwoMaps> {
         unsafe { core::mem::transmute::<*const c_void, Option<BSShadowParabolicLight_vtable_UsesTwoMaps>>(self.slot_8) }
     }
+    pub const SLOT_CullCasters: usize = 9;
+    pub const SLOT_RenderShadowMaps: usize = 10;
+    pub const SLOT_UpdateForCamera: usize = 16;
+    /// Slot 16 as `BSShadowParabolicLight_vtable_UpdateForCamera`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateForCamera(&self) -> Option<BSShadowParabolicLight_vtable_UpdateForCamera> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSShadowParabolicLight_vtable_UpdateForCamera>>(self.slot_16) }
+    }
 }
 /// `BSShadowParabolicLight::UsesTwoMaps`, slot 8: shadowMapCount == 2 (both hemispheres) (high).
 pub type BSShadowParabolicLight_vtable_UsesTwoMaps = unsafe extern "C" fn(this: *mut classes::BSShadowParabolicLight) -> bool;
+/// `BSShadowParabolicLight::UpdateForCamera`, slot 16: copies the NiLight's world transform into the map cameras (second map mirrored), visible = light sphere (radius NiLight+0x128) inside the camera frustum, then dropped when +0x63 and (d^2 - r^2) * camera+0x184 >= g_ShadowDistanceSq (high).
+pub type BSShadowParabolicLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut classes::BSShadowParabolicLight, camera: *mut classes::NiCamera) -> bool;
 
 /// `BSShapeConstructor::vftable` at 0x1b4c2b8, id 255373 (rtti, high); 3 slots.
 #[repr(C)]
@@ -106039,7 +106117,7 @@ pub struct BSTreeNode_vtable {
     pub slot_50: *const c_void,
     /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
-    /// `BSTreeNode::vfunc_52` at 0x14e93d0 (rtti, high); signature (low): `undefined vfunc_52(BSTreeNode * this, longlong * param_1)`
+    /// `BSTreeNode::OnVisible` at 0x14e93d0 (semantic, medium); signature (untiered): `undefined OnVisible(BSTreeNode * this, longlong * param_1)`
     pub slot_52: *const c_void,
     /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
     pub slot_53: *const c_void,
@@ -106273,7 +106351,7 @@ pub struct BSUtilityShader_vtable {
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSUtilityShader::vfunc_2` at 0x1566710 (rtti, high); signature (low): `char vfunc_2(BSUtilityShader * this, int param_1)`
+    /// `BSUtilityShader::SetupTechnique` at 0x1566710 (semantic, medium); signature (untiered): `char SetupTechnique(BSUtilityShader * this, int param_1)`
     pub slot_2: *const c_void,
     /// `BSUtilityShader::vfunc_3` at 0x1566500 (rtti, high); signature (low): `undefined vfunc_3(BSUtilityShader * this, uint param_1)`
     pub slot_3: *const c_void,
@@ -106605,7 +106683,7 @@ pub struct BSWaterShader_vtable {
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSWaterShader::vfunc_2` at 0x154d330 (rtti, high); signature (low): `ulonglong vfunc_2(BSWaterShader * this, int param_1)`
+    /// `BSWaterShader::SetupTechnique` at 0x154d330 (semantic, high); signature (untiered): `ulonglong SetupTechnique(BSWaterShader * this, int param_1)`
     pub slot_2: *const c_void,
     /// `BSWaterShader::vfunc_3` at 0x154d120 (rtti, high); signature (low): `undefined vfunc_3(BSWaterShader * this, int param_1)`
     pub slot_3: *const c_void,
@@ -109560,7 +109638,7 @@ pub struct BleedoutCameraState_vtable {
     pub slot_0: *const c_void,
     /// `BleedoutCameraState::Begin` at 0x8f3b90 (semantic, medium); signature (untiered): `undefined Begin(BleedoutCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Begin`: identity orbit matrix, random yaw, queues 'VATSPlayback', time multiplier override, starts the sDeathCameraEffect sound (medium); semantic signature: `void (TESCameraState* this)`
     pub slot_1: *const c_void,
-    /// `BleedoutCameraState::vfunc_2` at 0x8f3cd0 (rtti, high); signature (high): `undefined vfunc_2(BleedoutCameraState * this)`
+    /// `BleedoutCameraState::End` at 0x8f3cd0 (semantic, high); signature (untiered): `undefined End(BleedoutCameraState * this)`; `End`:  (high); semantic signature: `void (BleedoutCameraState* this)`
     pub slot_2: *const c_void,
     /// `BleedoutCameraState::Update` at 0x8f3d40 (semantic, medium); signature (untiered): `undefined Update(BleedoutCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: SetFirstPerson(false) on the first frame (medium); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
@@ -109574,9 +109652,9 @@ pub struct BleedoutCameraState_vtable {
     pub slot_7: *const c_void,
     /// `ThirdPersonState::Revert` at 0x8fe260 (semantic, medium); signature (untiered): `undefined Revert(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_8: *const c_void,
-    /// `ThirdPersonState::Unk9` at 0x55d620 (semantic, low); signature (untiered): `undefined Unk9(void)`
+    /// `ThirdPersonState::SetTargetHandle` at 0x55d620 (semantic, high); signature (untiered): `undefined SetTargetHandle(void)`
     pub slot_9: *const c_void,
-    /// `ThirdPersonState::Unk10` at 0x55d610 (semantic, low); signature (untiered): `undefined Unk10(void)`
+    /// `ThirdPersonState::ResetOffsets` at 0x55d610 (semantic, high); signature (untiered): `undefined ResetOffsets(void)`
     pub slot_10: *const c_void,
     /// `ThirdPersonState::SetCombatOffsets` at 0x8fd970 (semantic, high); signature (untiered): `undefined SetCombatOffsets(ThirdPersonState * this, char param_1)`
     pub slot_11: *const c_void,
@@ -109592,8 +109670,16 @@ pub struct BleedoutCameraState_vtable {
 impl BleedoutCameraState_vtable {
     pub const ID: u64 = 214873;
     pub const SLOT_Begin: usize = 1;
+    pub const SLOT_End: usize = 2;
+    /// Slot 2 as `BleedoutCameraState_vtable_End`, `None` when the slot is null.
+    #[must_use]
+    pub fn End(&self) -> Option<BleedoutCameraState_vtable_End> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BleedoutCameraState_vtable_End>>(self.slot_2) }
+    }
     pub const SLOT_Update: usize = 3;
 }
+/// `BleedoutCameraState::End`, slot 2:  (high).
+pub type BleedoutCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::BleedoutCameraState);
 
 /// `BleedoutCameraState::vftable_20` at 0x196dbf8, id 214875 (rtti, high); 7 slots.
 #[repr(C)]
@@ -109602,9 +109688,9 @@ pub struct BleedoutCameraState_vtable_20 {
     pub slot_0: *const c_void,
     /// `ThirdPersonState::PlayerInputHandler_vfunc_1` at 0x8fdca0 (rtti, medium); signature (low): `undefined8 PlayerInputHandler_vfunc_1(ThirdPersonState * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -109802,7 +109888,7 @@ impl BowReleaseHandler_vtable {
 pub struct BowZoomStartHandler_vtable {
     /// `BowZoomStartHandler::vdtor` at 0x7d3af0 (layout_inference, medium); signature (low): `BowZoomStartHandler * vdtor(BowZoomStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BowZoomStartHandler::vfunc_1` at 0x7cdee0 (rtti, high); signature (low): `undefined8 vfunc_1(BowZoomStartHandler * this, longlong * param_1)`
+    /// `BowZoomStartHandler::Handle` at 0x7cdee0 (semantic, high); signature (untiered): `undefined8 Handle(BowZoomStartHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl BowZoomStartHandler_vtable {
@@ -109814,7 +109900,7 @@ impl BowZoomStartHandler_vtable {
 pub struct BowZoomStopHandler_vtable {
     /// `BowZoomStopHandler::vdtor` at 0x7d3b20 (layout_inference, medium); signature (low): `BowZoomStopHandler * vdtor(BowZoomStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BowZoomStopHandler::vfunc_1` at 0x7cdfc0 (rtti, high); signature (low): `undefined8 vfunc_1(BowZoomStopHandler * this, undefined8 * param_1)`
+    /// `BowZoomStopHandler::Handle` at 0x7cdfc0 (semantic, high); signature (untiered): `undefined8 Handle(BowZoomStopHandler * this, undefined8 * param_1)`
     pub slot_1: *const c_void,
 }
 impl BowZoomStopHandler_vtable {
@@ -110878,7 +110964,7 @@ pub struct Character_vtable {
     pub slot_104: *const c_void,
     /// `Actor::vfunc_105` at 0x672570 (rtti, medium); signature (low): `undefined vfunc_105(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_105: *const c_void,
-    /// `Actor::vfunc_106` at 0x6713e0 (rtti, medium); signature (low): `longlong * vfunc_106(Actor * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    /// `Actor::vfunc_106` at 0x6713e0 (semantic, high); signature (low): `longlong * vfunc_106(Actor * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     pub slot_106: *const c_void,
     /// `TESObjectREFR::vfunc_107` at 0x2ea8c0 (rtti, medium); signature (low): `undefined vfunc_107(TESObjectREFR * this, TESObjectREFR_vtbl * param_1, TESObjectREFR * param_2, undefined8 param_3)`
     pub slot_107: *const c_void,
@@ -110946,7 +111032,7 @@ pub struct Character_vtable {
     pub slot_138: *const c_void,
     /// `Actor::vfunc_139` at 0x6921a0 (rtti, medium); signature (high): `longlong vfunc_139(Actor * this)`
     pub slot_139: *const c_void,
-    /// `Actor::vfunc_140` at 0x692320 (rtti, medium); signature (low): `undefined vfunc_140(Actor * this, undefined8 param_1)`
+    /// `Actor::SetMiddleHighProcessField150` at 0x692320 (semantic, high); signature (untiered): `undefined SetMiddleHighProcessField150(Actor * this, undefined8 param_1)`
     pub slot_140: *const c_void,
     /// `TESObjectREFR::vfunc_141` at 0x2f9f60 (rtti, medium); signature (high): `undefined vfunc_141(TESObjectREFR * this)`
     pub slot_141: *const c_void,
@@ -111114,11 +111200,11 @@ pub struct Character_vtable {
     pub slot_222: *const c_void,
     /// `Actor::vfunc_223` at 0x691590 (rtti, medium); signature (low): `undefined vfunc_223(Actor * this, longlong * param_1, char param_2, undefined8 param_3)`
     pub slot_223: *const c_void,
-    /// `Actor::vfunc_224` at 0x6d43e0 (rtti, medium); signature (high): `undefined vfunc_224(Actor * this)`
+    /// `Actor::UpdateAlpha` at 0x6d43e0 (semantic, medium); signature (untiered): `undefined UpdateAlpha(Actor * this)`
     pub slot_224: *const c_void,
-    /// `Actor::vfunc_225` at 0x6d4510 (rtti, medium); signature (low): `undefined vfunc_225(Actor * this, undefined4 param_2)`
+    /// `Actor::SetAlpha` at 0x6d4510 (semantic, high); signature (untiered): `undefined SetAlpha(Actor * this, undefined4 param_2)`
     pub slot_225: *const c_void,
-    /// `Actor::vfunc_226` at 0x6d45a0 (rtti, medium); signature (low): `undefined4 vfunc_226(Actor * this)`
+    /// `Actor::GetAlphaMultiplier` at 0x6d45a0 (semantic, medium); signature (untiered): `undefined4 GetAlphaMultiplier(Actor * this)`
     pub slot_226: *const c_void,
     /// `Actor::IsInCombat` at 0x6c9850 (runtime, high); signature (untiered): `longlong IsInCombat(Actor * this)`
     pub slot_227: *const c_void,
@@ -111246,7 +111332,7 @@ pub struct Character_vtable {
     pub slot_288: *const c_void,
     /// `Actor::vfunc_289` at 0x6b3bf0 (rtti, medium); signature (low): `undefined vfunc_289(Actor * this, longlong param_1)`
     pub slot_289: *const c_void,
-    /// `Actor::vfunc_290` at 0x6b3f20 (rtti, medium); signature (low): `undefined vfunc_290(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
+    /// `Actor::UpdateHeadTracking` at 0x6b3f20 (semantic, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
     pub slot_290: *const c_void,
     /// `Actor::vfunc_291` at 0x6b4780 (rtti, medium); signature (low): `undefined vfunc_291(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_291: *const c_void,
@@ -111296,7 +111382,7 @@ impl Character_vtable_30 {
 pub struct Character_vtable_38 {
     /// `Character::IAnimationGraphManagerHolder_vdtor` at 0x73aab4 (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(Character * this)`
     pub slot_0: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_1` at 0x6b61a0 (rtti, medium); signature (untiered): `undefined1 IAnimationGraphManagerHolder_vfunc_1(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `Actor::NotifyAnimationGraph` at 0x6b61a0 (semantic, high); signature (untiered): `undefined1 NotifyAnimationGraph(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `IAnimationGraphManagerHolder::GetAnimationGraphManager` at 0x6b60b0 (semantic, high); signature (untiered): `bool GetAnimationGraphManager(IAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
@@ -135111,7 +135197,7 @@ pub struct DragonCameraState_vtable {
     pub slot_0: *const c_void,
     /// `DragonCameraState::Begin` at 0x55c740 (semantic, medium); signature (untiered): `undefined Begin(DragonCameraState * this)`; `Begin`: ThirdPersonState::Begin, +0xec = 0 (medium); semantic signature: `void (TESCameraState* this)`
     pub slot_1: *const c_void,
-    /// `DragonCameraState::vfunc_2` at 0x55c770 (rtti, high); signature (high): `undefined vfunc_2(DragonCameraState * this)`
+    /// `DragonCameraState::End` at 0x55c770 (semantic, high); signature (untiered): `undefined End(DragonCameraState * this)`; `End`:  (high); semantic signature: `void (DragonCameraState* this)`
     pub slot_2: *const c_void,
     /// `ThirdPersonState::Update` at 0x8fd590 (runtime, high); signature (untiered): `undefined Update(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_3: *const c_void,
@@ -135119,31 +135205,105 @@ pub struct DragonCameraState_vtable {
     pub slot_4: *const c_void,
     /// `ThirdPersonState::GetTranslation` at 0x8fd880 (semantic, high); signature (untiered): `undefined GetTranslation(ThirdPersonState * this, float * param_1)`
     pub slot_5: *const c_void,
-    /// `DragonCameraState::vfunc_6` at 0x55c8a0 (rtti, high); signature (low): `undefined vfunc_6(DragonCameraState * this, longlong param_1)`
+    /// `DragonCameraState::SaveGame` at 0x55c8a0 (semantic, high); signature (untiered): `undefined SaveGame(DragonCameraState * this, longlong param_1)`; `SaveGame`:  (high); semantic signature: `void (DragonCameraState* this, BGSSaveFormBuffer* buffer)`
     pub slot_6: *const c_void,
-    /// `DragonCameraState::vfunc_7` at 0x55c980 (rtti, high); signature (low): `undefined vfunc_7(DragonCameraState * this, longlong param_1)`
+    /// `DragonCameraState::LoadGame` at 0x55c980 (semantic, high); signature (untiered): `undefined LoadGame(DragonCameraState * this, longlong param_1)`; `LoadGame`:  (high); semantic signature: `void (DragonCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_7: *const c_void,
-    /// `DragonCameraState::vfunc_8` at 0x55cab0 (rtti, high); signature (high): `undefined vfunc_8(DragonCameraState * this)`
+    /// `DragonCameraState::Revert` at 0x55cab0 (semantic, high); signature (untiered): `undefined Revert(DragonCameraState * this)`; `Revert`:  (high); semantic signature: `void (DragonCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_8: *const c_void,
-    /// `DragonCameraState::vfunc_9` at 0x55cbb0 (rtti, high); signature (low): `undefined vfunc_9(DragonCameraState * this, undefined4 * param_1)`
+    /// `DragonCameraState::SetTargetHandle` at 0x55cbb0 (semantic, high); signature (untiered): `undefined SetTargetHandle(DragonCameraState * this, undefined4 * param_1)`; `SetTargetHandle`:  (high); semantic signature: `void (DragonCameraState* this, ObjectRefHandle* handle)`
     pub slot_9: *const c_void,
-    /// `DragonCameraState::vfunc_10` at 0x55cbc0 (rtti, high); signature (high): `undefined vfunc_10(DragonCameraState * this)`
+    /// `DragonCameraState::ResetOffsets` at 0x55cbc0 (semantic, high); signature (untiered): `undefined ResetOffsets(DragonCameraState * this)`; `ResetOffsets`: fOverShoulderDragon* and dolly reset (high); semantic signature: `void (DragonCameraState* this)`
     pub slot_10: *const c_void,
-    /// `DragonCameraState::vfunc_11` at 0x55cb50 (rtti, high); signature (low): `undefined vfunc_11(DragonCameraState * this, char param_1)`
+    /// `DragonCameraState::SetCombatOffsets` at 0x55cb50 (semantic, high); signature (untiered): `undefined SetCombatOffsets(DragonCameraState * this, char param_1)`; `SetCombatOffsets`:  (high); semantic signature: `void (DragonCameraState* this, bool weaponDrawn)`
     pub slot_11: *const c_void,
-    /// `DragonCameraState::vfunc_12` at 0x55c7a0 (rtti, high); signature (high): `ulonglong vfunc_12(DragonCameraState * this)`
+    /// `DragonCameraState::IsFreeLookActive` at 0x55c7a0 (semantic, high); signature (untiered): `ulonglong IsFreeLookActive(DragonCameraState * this)`; `IsFreeLookActive`:  (high); semantic signature: `bool (DragonCameraState* this)`
     pub slot_12: *const c_void,
-    /// `DragonCameraState::vfunc_13` at 0x55c7e0 (rtti, high); signature (low): `undefined vfunc_13(void)`
+    /// `DragonCameraState::SetFreeRotationMode` at 0x55c7e0 (semantic, high); signature (untiered): `undefined SetFreeRotationMode(void)`; `SetFreeRotationMode`: empty (high); semantic signature: `void (DragonCameraState* this, bool allow)`
     pub slot_13: *const c_void,
-    /// `DragonCameraState::vfunc_14` at 0x55cdf0 (rtti, high); signature (high): `undefined vfunc_14(DragonCameraState * this)`
+    /// `DragonCameraState::UpdateRotation` at 0x55cdf0 (semantic, high); signature (untiered): `undefined UpdateRotation(DragonCameraState * this)`; `UpdateRotation`:  (high); semantic signature: `void (DragonCameraState* this)`
     pub slot_14: *const c_void,
-    /// `DragonCameraState::vfunc_15` at 0x55cc60 (rtti, high); signature (low): `undefined vfunc_15(DragonCameraState * this, undefined8 * param_1)`
+    /// `DragonCameraState::ProcessLookInput` at 0x55cc60 (semantic, high); signature (untiered): `undefined ProcessLookInput(DragonCameraState * this, undefined8 * param_1)`; `ProcessLookInput`:  (high); semantic signature: `void (DragonCameraState* this, NiPoint2* look)`
     pub slot_15: *const c_void,
 }
 impl DragonCameraState_vtable {
     pub const ID: u64 = 205240;
     pub const SLOT_Begin: usize = 1;
+    pub const SLOT_End: usize = 2;
+    /// Slot 2 as `DragonCameraState_vtable_End`, `None` when the slot is null.
+    #[must_use]
+    pub fn End(&self) -> Option<DragonCameraState_vtable_End> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_End>>(self.slot_2) }
+    }
+    pub const SLOT_SaveGame: usize = 6;
+    /// Slot 6 as `DragonCameraState_vtable_SaveGame`, `None` when the slot is null.
+    #[must_use]
+    pub fn SaveGame(&self) -> Option<DragonCameraState_vtable_SaveGame> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_SaveGame>>(self.slot_6) }
+    }
+    pub const SLOT_LoadGame: usize = 7;
+    /// Slot 7 as `DragonCameraState_vtable_LoadGame`, `None` when the slot is null.
+    #[must_use]
+    pub fn LoadGame(&self) -> Option<DragonCameraState_vtable_LoadGame> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_LoadGame>>(self.slot_7) }
+    }
+    pub const SLOT_Revert: usize = 8;
+    /// Slot 8 as `DragonCameraState_vtable_Revert`, `None` when the slot is null.
+    #[must_use]
+    pub fn Revert(&self) -> Option<DragonCameraState_vtable_Revert> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_Revert>>(self.slot_8) }
+    }
+    pub const SLOT_SetTargetHandle: usize = 9;
+    pub const SLOT_ResetOffsets: usize = 10;
+    /// Slot 10 as `DragonCameraState_vtable_ResetOffsets`, `None` when the slot is null.
+    #[must_use]
+    pub fn ResetOffsets(&self) -> Option<DragonCameraState_vtable_ResetOffsets> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_ResetOffsets>>(self.slot_10) }
+    }
+    pub const SLOT_SetCombatOffsets: usize = 11;
+    /// Slot 11 as `DragonCameraState_vtable_SetCombatOffsets`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetCombatOffsets(&self) -> Option<DragonCameraState_vtable_SetCombatOffsets> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_SetCombatOffsets>>(self.slot_11) }
+    }
+    pub const SLOT_IsFreeLookActive: usize = 12;
+    /// Slot 12 as `DragonCameraState_vtable_IsFreeLookActive`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsFreeLookActive(&self) -> Option<DragonCameraState_vtable_IsFreeLookActive> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_IsFreeLookActive>>(self.slot_12) }
+    }
+    pub const SLOT_SetFreeRotationMode: usize = 13;
+    /// Slot 13 as `DragonCameraState_vtable_SetFreeRotationMode`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetFreeRotationMode(&self) -> Option<DragonCameraState_vtable_SetFreeRotationMode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_SetFreeRotationMode>>(self.slot_13) }
+    }
+    pub const SLOT_UpdateRotation: usize = 14;
+    /// Slot 14 as `DragonCameraState_vtable_UpdateRotation`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateRotation(&self) -> Option<DragonCameraState_vtable_UpdateRotation> {
+        unsafe { core::mem::transmute::<*const c_void, Option<DragonCameraState_vtable_UpdateRotation>>(self.slot_14) }
+    }
+    pub const SLOT_ProcessLookInput: usize = 15;
 }
+/// `DragonCameraState::End`, slot 2:  (high).
+pub type DragonCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::DragonCameraState);
+/// `DragonCameraState::SaveGame`, slot 6:  (high).
+pub type DragonCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::DragonCameraState, buffer: *mut classes::BGSSaveFormBuffer);
+/// `DragonCameraState::LoadGame`, slot 7:  (high).
+pub type DragonCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::DragonCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+/// `DragonCameraState::Revert`, slot 8:  (high).
+pub type DragonCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut classes::DragonCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+/// `DragonCameraState::ResetOffsets`, slot 10: fOverShoulderDragon* and dolly reset (high).
+pub type DragonCameraState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut classes::DragonCameraState);
+/// `DragonCameraState::SetCombatOffsets`, slot 11:  (high).
+pub type DragonCameraState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut classes::DragonCameraState, weaponDrawn: bool);
+/// `DragonCameraState::IsFreeLookActive`, slot 12:  (high).
+pub type DragonCameraState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut classes::DragonCameraState) -> bool;
+/// `DragonCameraState::SetFreeRotationMode`, slot 13: empty (high).
+pub type DragonCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut classes::DragonCameraState, allow: bool);
+/// `DragonCameraState::UpdateRotation`, slot 14:  (high).
+pub type DragonCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut classes::DragonCameraState);
 
 /// `DragonCameraState::vftable_20` at 0x18ecd58, id 205242 (rtti, high); 7 slots.
 #[repr(C)]
@@ -135152,9 +135312,9 @@ pub struct DragonCameraState_vtable_20 {
     pub slot_0: *const c_void,
     /// `ThirdPersonState::PlayerInputHandler_vfunc_1` at 0x8fdca0 (rtti, medium); signature (low): `undefined8 PlayerInputHandler_vfunc_1(ThirdPersonState * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -139180,9 +139340,9 @@ pub struct FirstPersonState_vtable_20 {
     pub slot_0: *const c_void,
     /// `FirstPersonState::PlayerInputHandler_vfunc_1` at 0x8f5430 (rtti, high); signature (low): `undefined8 PlayerInputHandler_vfunc_1(FirstPersonState * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -139982,9 +140142,9 @@ pub struct FreeCameraState_vtable {
     pub slot_2: *const c_void,
     /// `FreeCameraState::Update` at 0x8f5f50 (runtime, high); signature (untiered): `undefined Update(FreeCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: 0x8f62c0 integrates angles and position, writes the root from slots 4/5, calls 0xee0930 (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `FreeCameraState::vfunc_4` at 0x8f6060 (rtti, high); signature (low): `undefined vfunc_4(FreeCameraState * this, float * param_1)`
+    /// `FreeCameraState::GetRotation` at 0x8f6060 (semantic, high); signature (untiered): `undefined GetRotation(FreeCameraState * this, float * param_1)`; `GetRotation`: matrix from (yaw +0x40, pitch +0x3c, 0) (high); semantic signature: `void (FreeCameraState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `FreeCameraState::vfunc_5` at 0x8f60a0 (rtti, high); signature (low): `undefined vfunc_5(FreeCameraState * this, undefined4 * param_1)`
+    /// `FreeCameraState::GetTranslation` at 0x8f60a0 (semantic, high); signature (untiered): `undefined GetTranslation(FreeCameraState * this, undefined4 * param_1)`; `GetTranslation`: +0x30 (high); semantic signature: `void (FreeCameraState* this, NiPoint3* out)`
     pub slot_5: *const c_void,
     /// `TESCameraState::SaveGame` at 0x24a080 (semantic, medium); signature (untiered): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
@@ -140008,6 +140168,8 @@ impl FreeCameraState_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<FreeCameraState_vtable_End>>(self.slot_2) }
     }
     pub const SLOT_Update: usize = 3;
+    pub const SLOT_GetRotation: usize = 4;
+    pub const SLOT_GetTranslation: usize = 5;
 }
 /// `FreeCameraState::Begin`, slot 1: registers the handler, swaps fTriggerDeadzone/fMovementAxisDeadzone for the free camera values (high).
 pub type FreeCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
@@ -140021,9 +140183,9 @@ pub struct FreeCameraState_vtable_20 {
     pub slot_0: *const c_void,
     /// `FreeCameraState::PlayerInputHandler_vfunc_1` at 0x8f6100 (rtti, high); signature (low): `undefined8 PlayerInputHandler_vfunc_1(FreeCameraState * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -140123,9 +140285,9 @@ pub struct FurnitureCameraState_vtable {
     pub slot_2: *const c_void,
     /// `FurnitureCameraState::Update` at 0x8f66f0 (semantic, high); signature (untiered): `undefined Update(FurnitureCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: look pitch, rotation, position 0x8f6a70, writes the root (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `FurnitureCameraState::vfunc_4` at 0x8f6890 (rtti, high); signature (low): `undefined vfunc_4(FurnitureCameraState * this, float * param_1)`
+    /// `FurnitureCameraState::GetRotation` at 0x8f6890 (semantic, high); signature (untiered): `undefined GetRotation(FurnitureCameraState * this, float * param_1)`; `GetRotation`: euler(pitch, 0, heading or live heading + yawOffset) (high); semantic signature: `void (FurnitureCameraState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `FurnitureCameraState::vfunc_5` at 0x8f6960 (rtti, high); signature (low): `undefined vfunc_5(FurnitureCameraState * this, undefined8 param_1)`
+    /// `FurnitureCameraState::GetTranslation` at 0x8f6960 (semantic, high); signature (untiered): `undefined GetTranslation(FurnitureCameraState * this, undefined8 param_1)`; `GetTranslation`: 0x8f6a70 (high); semantic signature: `void (FurnitureCameraState* this, NiPoint3* out)`
     pub slot_5: *const c_void,
     /// `TESCameraState::SaveGame` at 0x24a080 (semantic, medium); signature (untiered): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
@@ -140149,6 +140311,8 @@ impl FurnitureCameraState_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<FurnitureCameraState_vtable_End>>(self.slot_2) }
     }
     pub const SLOT_Update: usize = 3;
+    pub const SLOT_GetRotation: usize = 4;
+    pub const SLOT_GetTranslation: usize = 5;
 }
 /// `FurnitureCameraState::Begin`, slot 1: saves +0x160, disables auto vanity, sets a fixed pitch (high).
 pub type FurnitureCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
@@ -142461,9 +142625,9 @@ pub struct HeldStateHandler_vtable {
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -142551,7 +142715,7 @@ pub struct HorseCameraState_vtable {
     pub slot_0: *const c_void,
     /// `HorseCameraState::Begin` at 0x8f6c50 (semantic, medium); signature (untiered): `undefined Begin(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Begin`: ThirdPersonState::Begin then mount heading (medium); semantic signature: `void (TESCameraState* this)`
     pub slot_1: *const c_void,
-    /// `HorseCameraState::vfunc_2` at 0x8f6ce0 (rtti, high); signature (high): `undefined vfunc_2(HorseCameraState * this)`
+    /// `HorseCameraState::End` at 0x8f6ce0 (semantic, high); signature (untiered): `undefined End(HorseCameraState * this)`; `End`: ThirdPersonState::End, +0xf0 = 0 (high); semantic signature: `void (HorseCameraState* this)`
     pub slot_2: *const c_void,
     /// `ThirdPersonState::Update` at 0x8fd590 (runtime, high); signature (untiered): `undefined Update(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_3: *const c_void,
@@ -142559,31 +142723,105 @@ pub struct HorseCameraState_vtable {
     pub slot_4: *const c_void,
     /// `ThirdPersonState::GetTranslation` at 0x8fd880 (semantic, high); signature (untiered): `undefined GetTranslation(ThirdPersonState * this, float * param_1)`
     pub slot_5: *const c_void,
-    /// `HorseCameraState::vfunc_6` at 0x8f6dd0 (rtti, high); signature (low): `undefined vfunc_6(HorseCameraState * this, longlong param_1)`
+    /// `HorseCameraState::SaveGame` at 0x8f6dd0 (semantic, high); signature (untiered): `undefined SaveGame(HorseCameraState * this, longlong param_1)`; `SaveGame`:  (high); semantic signature: `void (HorseCameraState* this, BGSSaveFormBuffer* buffer)`
     pub slot_6: *const c_void,
-    /// `HorseCameraState::vfunc_7` at 0x8f6eb0 (rtti, high); signature (low): `undefined vfunc_7(HorseCameraState * this, longlong param_1)`
+    /// `HorseCameraState::LoadGame` at 0x8f6eb0 (semantic, high); signature (untiered): `undefined LoadGame(HorseCameraState * this, longlong param_1)`; `LoadGame`: also SetTarget(mount) (high); semantic signature: `void (HorseCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_7: *const c_void,
-    /// `HorseCameraState::vfunc_8` at 0x8f6fd0 (rtti, high); signature (low): `undefined vfunc_8(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `HorseCameraState::Revert` at 0x8f6fd0 (semantic, high); signature (untiered): `undefined Revert(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Revert`:  (high); semantic signature: `void (HorseCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_8: *const c_void,
-    /// `HorseCameraState::vfunc_9` at 0x8f7100 (rtti, high); signature (low): `undefined vfunc_9(HorseCameraState * this, undefined4 * param_1)`
+    /// `HorseCameraState::SetTargetHandle` at 0x8f7100 (semantic, high); signature (untiered): `undefined SetTargetHandle(HorseCameraState * this, undefined4 * param_1)`; `SetTargetHandle`: mountHandle = *handle (high); semantic signature: `void (HorseCameraState* this, ObjectRefHandle* handle)`
     pub slot_9: *const c_void,
-    /// `HorseCameraState::vfunc_10` at 0x8f7110 (rtti, high); signature (high): `undefined vfunc_10(HorseCameraState * this)`
+    /// `HorseCameraState::ResetOffsets` at 0x8f7110 (semantic, high); signature (untiered): `undefined ResetOffsets(HorseCameraState * this)`; `ResetOffsets`: offsets = mount actor+0x1f8 -> +0x180 vector or fOverShoulderHorse* (high); semantic signature: `void (HorseCameraState* this)`
     pub slot_10: *const c_void,
-    /// `HorseCameraState::vfunc_11` at 0x8f7010 (rtti, high); signature (low): `undefined vfunc_11(HorseCameraState * this, char param_1)`
+    /// `HorseCameraState::SetCombatOffsets` at 0x8f7010 (semantic, high); signature (untiered): `undefined SetCombatOffsets(HorseCameraState * this, char param_1)`; `SetCombatOffsets`: fOverShoulderRangedMounted* or the mount offsets (high); semantic signature: `void (HorseCameraState* this, bool weaponDrawn)`
     pub slot_11: *const c_void,
-    /// `HorseCameraState::vfunc_12` at 0x8f76a0 (rtti, high); signature (high): `undefined8 vfunc_12(HorseCameraState * this)`
+    /// `HorseCameraState::IsFreeLookActive` at 0x8f76a0 (semantic, high); signature (untiered): `undefined8 IsFreeLookActive(HorseCameraState * this)`; `IsFreeLookActive`:  (high); semantic signature: `bool (HorseCameraState* this)`
     pub slot_12: *const c_void,
-    /// `HorseCameraState::vfunc_13` at 0x8f6d10 (rtti, high); signature (low): `undefined vfunc_13(void)`
+    /// `HorseCameraState::SetFreeRotationMode` at 0x8f6d10 (semantic, high); signature (untiered): `undefined SetFreeRotationMode(void)`; `SetFreeRotationMode`: empty (high); semantic signature: `void (HorseCameraState* this, bool allow)`
     pub slot_13: *const c_void,
-    /// `HorseCameraState::vfunc_14` at 0x8f7360 (rtti, high); signature (high): `undefined vfunc_14(HorseCameraState * this)`
+    /// `HorseCameraState::UpdateRotation` at 0x8f7360 (semantic, high); signature (untiered): `undefined UpdateRotation(HorseCameraState * this)`; `UpdateRotation`:  (high); semantic signature: `void (HorseCameraState* this)`
     pub slot_14: *const c_void,
-    /// `HorseCameraState::vfunc_15` at 0x8f71e0 (rtti, high); signature (low): `undefined vfunc_15(HorseCameraState * this, undefined8 * param_1)`
+    /// `HorseCameraState::ProcessLookInput` at 0x8f71e0 (semantic, high); signature (untiered): `undefined ProcessLookInput(HorseCameraState * this, undefined8 * param_1)`; `ProcessLookInput`:  (high); semantic signature: `void (HorseCameraState* this, NiPoint2* look)`
     pub slot_15: *const c_void,
 }
 impl HorseCameraState_vtable {
     pub const ID: u64 = 214837;
     pub const SLOT_Begin: usize = 1;
+    pub const SLOT_End: usize = 2;
+    /// Slot 2 as `HorseCameraState_vtable_End`, `None` when the slot is null.
+    #[must_use]
+    pub fn End(&self) -> Option<HorseCameraState_vtable_End> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_End>>(self.slot_2) }
+    }
+    pub const SLOT_SaveGame: usize = 6;
+    /// Slot 6 as `HorseCameraState_vtable_SaveGame`, `None` when the slot is null.
+    #[must_use]
+    pub fn SaveGame(&self) -> Option<HorseCameraState_vtable_SaveGame> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_SaveGame>>(self.slot_6) }
+    }
+    pub const SLOT_LoadGame: usize = 7;
+    /// Slot 7 as `HorseCameraState_vtable_LoadGame`, `None` when the slot is null.
+    #[must_use]
+    pub fn LoadGame(&self) -> Option<HorseCameraState_vtable_LoadGame> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_LoadGame>>(self.slot_7) }
+    }
+    pub const SLOT_Revert: usize = 8;
+    /// Slot 8 as `HorseCameraState_vtable_Revert`, `None` when the slot is null.
+    #[must_use]
+    pub fn Revert(&self) -> Option<HorseCameraState_vtable_Revert> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_Revert>>(self.slot_8) }
+    }
+    pub const SLOT_SetTargetHandle: usize = 9;
+    pub const SLOT_ResetOffsets: usize = 10;
+    /// Slot 10 as `HorseCameraState_vtable_ResetOffsets`, `None` when the slot is null.
+    #[must_use]
+    pub fn ResetOffsets(&self) -> Option<HorseCameraState_vtable_ResetOffsets> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_ResetOffsets>>(self.slot_10) }
+    }
+    pub const SLOT_SetCombatOffsets: usize = 11;
+    /// Slot 11 as `HorseCameraState_vtable_SetCombatOffsets`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetCombatOffsets(&self) -> Option<HorseCameraState_vtable_SetCombatOffsets> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_SetCombatOffsets>>(self.slot_11) }
+    }
+    pub const SLOT_IsFreeLookActive: usize = 12;
+    /// Slot 12 as `HorseCameraState_vtable_IsFreeLookActive`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsFreeLookActive(&self) -> Option<HorseCameraState_vtable_IsFreeLookActive> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_IsFreeLookActive>>(self.slot_12) }
+    }
+    pub const SLOT_SetFreeRotationMode: usize = 13;
+    /// Slot 13 as `HorseCameraState_vtable_SetFreeRotationMode`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetFreeRotationMode(&self) -> Option<HorseCameraState_vtable_SetFreeRotationMode> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_SetFreeRotationMode>>(self.slot_13) }
+    }
+    pub const SLOT_UpdateRotation: usize = 14;
+    /// Slot 14 as `HorseCameraState_vtable_UpdateRotation`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateRotation(&self) -> Option<HorseCameraState_vtable_UpdateRotation> {
+        unsafe { core::mem::transmute::<*const c_void, Option<HorseCameraState_vtable_UpdateRotation>>(self.slot_14) }
+    }
+    pub const SLOT_ProcessLookInput: usize = 15;
 }
+/// `HorseCameraState::End`, slot 2: ThirdPersonState::End, +0xf0 = 0 (high).
+pub type HorseCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::HorseCameraState);
+/// `HorseCameraState::SaveGame`, slot 6:  (high).
+pub type HorseCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::HorseCameraState, buffer: *mut classes::BGSSaveFormBuffer);
+/// `HorseCameraState::LoadGame`, slot 7: also SetTarget(mount) (high).
+pub type HorseCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::HorseCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+/// `HorseCameraState::Revert`, slot 8:  (high).
+pub type HorseCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut classes::HorseCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+/// `HorseCameraState::ResetOffsets`, slot 10: offsets = mount actor+0x1f8 -> +0x180 vector or fOverShoulderHorse* (high).
+pub type HorseCameraState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut classes::HorseCameraState);
+/// `HorseCameraState::SetCombatOffsets`, slot 11: fOverShoulderRangedMounted* or the mount offsets (high).
+pub type HorseCameraState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut classes::HorseCameraState, weaponDrawn: bool);
+/// `HorseCameraState::IsFreeLookActive`, slot 12:  (high).
+pub type HorseCameraState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut classes::HorseCameraState) -> bool;
+/// `HorseCameraState::SetFreeRotationMode`, slot 13: empty (high).
+pub type HorseCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut classes::HorseCameraState, allow: bool);
+/// `HorseCameraState::UpdateRotation`, slot 14:  (high).
+pub type HorseCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut classes::HorseCameraState);
 
 /// `HorseCameraState::vftable_20` at 0x196ced0, id 214839 (rtti, high); 7 slots.
 #[repr(C)]
@@ -142592,9 +142830,9 @@ pub struct HorseCameraState_vtable_20 {
     pub slot_0: *const c_void,
     /// `ThirdPersonState::PlayerInputHandler_vfunc_1` at 0x8fdca0 (rtti, medium); signature (low): `undefined8 PlayerInputHandler_vfunc_1(ThirdPersonState * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -145482,7 +145720,7 @@ pub struct ImageSpaceEffectDepthOfField_vtable {
     pub slot_5: *const c_void,
     /// `ImageSpaceEffectDepthOfField::vfunc_6` at 0x1551270 (rtti, high); signature (high): `longlong vfunc_6(ImageSpaceEffectDepthOfField * this)`
     pub slot_6: *const c_void,
-    /// `ImageSpaceEffectDepthOfField::vfunc_7` at 0x15512f0 (rtti, high); signature (high): `undefined8 vfunc_7(ImageSpaceEffectDepthOfField * this)`
+    /// `ImageSpaceEffectDepthOfField::Render` at 0x15512f0 (semantic, medium); signature (untiered): `undefined8 Render(ImageSpaceEffectDepthOfField * this)`
     pub slot_7: *const c_void,
     /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
     pub slot_8: *const c_void,
@@ -145745,7 +145983,7 @@ pub struct ImageSpaceEffectVolumetricLighting_vtable {
     pub slot_5: *const c_void,
     /// `ImageSpaceEffectVolumetricLighting::vfunc_6` at 0x1550000 (rtti, high); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `ImageSpaceEffectVolumetricLighting::vfunc_7` at 0x1550010 (rtti, high); signature (high): `undefined8 vfunc_7(ImageSpaceEffectVolumetricLighting * this)`
+    /// `ImageSpaceEffectVolumetricLighting::Render` at 0x1550010 (semantic, medium); signature (untiered): `undefined8 Render(ImageSpaceEffectVolumetricLighting * this)`
     pub slot_7: *const c_void,
     /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
     pub slot_8: *const c_void,
@@ -146069,9 +146307,9 @@ pub struct ImageSpaceModifierInstanceForm_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `ImageSpaceModifierInstanceForm::vfunc_37` at 0x2a3650 (rtti, high); signature (high): `undefined vfunc_37(ImageSpaceModifierInstanceForm * this)`
+    /// `ImageSpaceModifierInstanceForm::IsFinished` at 0x2a3650 (semantic, high); signature (untiered): `undefined IsFinished(ImageSpaceModifierInstanceForm * this)`; `IsFinished`: true when the form has a duration (imod+0x20) and clock - startTime exceeds imod+0x24 (high); semantic signature: `bool (ImageSpaceModifierInstanceForm* this)`
     pub slot_37: *const c_void,
-    /// `ImageSpaceModifierInstanceForm::vfunc_38` at 0x2a3670 (rtti, high); signature (high): `undefined vfunc_38(ImageSpaceModifierInstanceForm * this)`
+    /// `ImageSpaceModifierInstanceForm::Apply` at 0x2a3670 (semantic, high); signature (untiered): `undefined Apply(ImageSpaceModifierInstanceForm * this)`; `Apply`: blends the form's curves at (clock - startTime) into g_ImageSpaceState's parameters +0xc8 (high); semantic signature: `void (ImageSpaceModifierInstanceForm* this)`
     pub slot_38: *const c_void,
     /// `ImageSpaceModifierInstanceForm::vfunc_39` at 0x2a5720 (rtti, high); signature (high): `ImageSpaceModifierInstanceForm * vfunc_39(ImageSpaceModifierInstanceForm * this)`
     pub slot_39: *const c_void,
@@ -146080,7 +146318,23 @@ pub struct ImageSpaceModifierInstanceForm_vtable {
 }
 impl ImageSpaceModifierInstanceForm_vtable {
     pub const ID: u64 = 189974;
+    pub const SLOT_IsFinished: usize = 37;
+    /// Slot 37 as `ImageSpaceModifierInstanceForm_vtable_IsFinished`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsFinished(&self) -> Option<ImageSpaceModifierInstanceForm_vtable_IsFinished> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ImageSpaceModifierInstanceForm_vtable_IsFinished>>(self.slot_37) }
+    }
+    pub const SLOT_Apply: usize = 38;
+    /// Slot 38 as `ImageSpaceModifierInstanceForm_vtable_Apply`, `None` when the slot is null.
+    #[must_use]
+    pub fn Apply(&self) -> Option<ImageSpaceModifierInstanceForm_vtable_Apply> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ImageSpaceModifierInstanceForm_vtable_Apply>>(self.slot_38) }
+    }
 }
+/// `ImageSpaceModifierInstanceForm::IsFinished`, slot 37: true when the form has a duration (imod+0x20) and clock - startTime exceeds imod+0x24 (high).
+pub type ImageSpaceModifierInstanceForm_vtable_IsFinished = unsafe extern "C" fn(this: *mut classes::ImageSpaceModifierInstanceForm) -> bool;
+/// `ImageSpaceModifierInstanceForm::Apply`, slot 38: blends the form's curves at (clock - startTime) into g_ImageSpaceState's parameters +0xc8 (high).
+pub type ImageSpaceModifierInstanceForm_vtable_Apply = unsafe extern "C" fn(this: *mut classes::ImageSpaceModifierInstanceForm);
 
 /// `ImageSpaceModifierInstanceRB::vftable` at 0x181ec50, id 189980 (rtti, high); 41 slots.
 #[repr(C)]
@@ -147090,9 +147344,9 @@ pub struct IronSightsState_vtable {
     pub slot_2: *const c_void,
     /// `IronSightsState::Update` at 0x8f7700 (semantic, high); signature (untiered): `undefined Update(IronSightsState * this, undefined8 param_2, undefined4 param_3, undefined4 param_4)`; `Update`: writes the root from slots 4/5 (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `IronSightsState::vfunc_4` at 0x8f7970 (rtti, high); signature (low): `undefined vfunc_4(IronSightsState * this, float * param_1)`
+    /// `IronSightsState::GetRotation` at 0x8f7970 (semantic, high); signature (untiered): `undefined GetRotation(IronSightsState * this, float * param_1)`; `GetRotation`:  (high); semantic signature: `void (IronSightsState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `IronSightsState::vfunc_5` at 0x8f79a0 (rtti, high); signature (low): `undefined vfunc_5(IronSightsState * this, undefined4 * param_1)`
+    /// `IronSightsState::GetTranslation` at 0x8f79a0 (semantic, high); signature (untiered): `undefined GetTranslation(IronSightsState * this, undefined4 * param_1)`; `GetTranslation`:  (high); semantic signature: `void (IronSightsState* this, NiPoint3* out)`
     pub slot_5: *const c_void,
     /// `TESCameraState::SaveGame` at 0x24a080 (semantic, medium); signature (untiered): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
@@ -147110,6 +147364,8 @@ impl IronSightsState_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<IronSightsState_vtable_Begin>>(self.slot_1) }
     }
     pub const SLOT_Update: usize = 3;
+    pub const SLOT_GetRotation: usize = 4;
+    pub const SLOT_GetTranslation: usize = 5;
 }
 /// `IronSightsState::Begin`, slot 1: SetFirstPerson(true) (high).
 pub type IronSightsState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
@@ -147179,7 +147435,7 @@ pub struct JournalMenu_vtable {
     pub slot_4: *const c_void,
     /// `JournalMenu::vfunc_5` at 0x9ac440 (rtti, high); signature (low): `undefined vfunc_5(JournalMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
-    /// `JournalMenu::vfunc_6` at 0x9ac480 (rtti, high); signature (high): `undefined vfunc_6(JournalMenu * this)`
+    /// `JournalMenu::PostDisplay` at 0x9ac480 (semantic, high); signature (untiered): `undefined PostDisplay(JournalMenu * this)`
     pub slot_6: *const c_void,
     /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
@@ -147525,9 +147781,9 @@ pub struct JumpHandler_vtable {
     pub slot_0: *const c_void,
     /// `JumpHandler::CanProcess` at 0x7b4f10 (semantic, high); signature (untiered): `bool CanProcess(JumpHandler * this, longlong * param_1)`; `CanProcess`: Jump (high); semantic signature: `bool (JumpHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -148333,7 +148589,7 @@ impl LoadingMenuData_vtable {
 /// `LocalMapCamera::vftable` at 0x18064b0, id 188659 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct LocalMapCamera_vtable {
-    /// `LocalMapCamera::vdtor` at 0x249f90 (slot_propagation, medium); signature (low): `LocalMapCamera * vdtor(LocalMapCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `LocalMapCamera::Destroy` at 0x249f90 (semantic, high); signature (untiered): `LocalMapCamera * Destroy(LocalMapCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`:  (high); semantic signature: `LocalMapCamera* (LocalMapCamera* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (untiered): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`
     pub slot_1: *const c_void,
@@ -148342,7 +148598,15 @@ pub struct LocalMapCamera_vtable {
 }
 impl LocalMapCamera_vtable {
     pub const ID: u64 = 188659;
+    pub const SLOT_Destroy: usize = 0;
+    /// Slot 0 as `LocalMapCamera_vtable_Destroy`, `None` when the slot is null.
+    #[must_use]
+    pub fn Destroy(&self) -> Option<LocalMapCamera_vtable_Destroy> {
+        unsafe { core::mem::transmute::<*const c_void, Option<LocalMapCamera_vtable_Destroy>>(self.slot_0) }
+    }
 }
+/// `LocalMapCamera::Destroy`, slot 0:  (high).
+pub type LocalMapCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::LocalMapCamera, flags: u32) -> *mut classes::LocalMapCamera;
 
 /// `LocalMapCamera::DefaultState::vftable` at 0x18064d0, id 188661 (rtti, high); 9 slots.
 #[repr(C)]
@@ -148583,13 +148847,13 @@ pub struct LookHandler_vtable {
     pub slot_0: *const c_void,
     /// `LookHandler::CanProcess` at 0x7b4f40 (semantic, high); signature (untiered): `undefined8 CanProcess(LookHandler * this, longlong * param_1)`; `CanProcess`: Look, or a type-6 (motion) event that 0x7b5200 accepts (bEnableSixaxisBowAiming/bEnableSixaxisMagicAiming with a matching equipped weapon or spell) (high); semantic signature: `bool (LookHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `LookHandler::vfunc_3` at 0x7b32a0 (rtti, high); signature (low): `undefined vfunc_3(LookHandler * this, longlong param_1, longlong param_2, undefined8 param_3)`
+    /// `LookHandler::ProcessMotion` at 0x7b32a0 (semantic, medium); signature (untiered): `undefined ProcessMotion(LookHandler * this, longlong param_1, longlong param_2, undefined8 param_3)`; `ProcessMotion`: event type 6 (motion/sixaxis orientation); reads fDefaultWorldFOV and PlayerCamera+0x161 (medium); semantic signature: `void (LookHandler* this, InputEvent* event, PlayerControlsData* data)`
     pub slot_3: *const c_void,
-    /// `LookHandler::vfunc_4` at 0x7b37b0 (rtti, high); signature (low): `undefined vfunc_4(LookHandler * this, longlong param_1, longlong param_2)`
+    /// `LookHandler::ProcessThumbstick` at 0x7b37b0 (semantic, high); signature (untiered): `undefined ProcessThumbstick(LookHandler * this, longlong param_1, longlong param_2)`; `ProcessThumbstick`: data.lookInput (data+8, +0xc) = event x, y (+0x28, +0x2c) unchanged (high); semantic signature: `void (LookHandler* this, const ThumbstickEvent* event, PlayerControlsData* data)`
     pub slot_4: *const c_void,
-    /// `LookHandler::vfunc_5` at 0x7b3270 (rtti, high); signature (low): `undefined vfunc_5(LookHandler * this, longlong param_1, longlong param_2)`
+    /// `LookHandler::ProcessMouseMove` at 0x7b3270 (runtime, medium); signature (untiered): `undefined ProcessMouseMove(LookHandler * this, longlong param_1, longlong param_2)`; `ProcessMouseMove`: data.lookInput.x = (float)dx (+0x28), lookInput.y = -(float)dy (+0x2c) (medium); semantic signature: `void (LookHandler* this, const MouseMoveEvent* event, PlayerControlsData* data)`
     pub slot_5: *const c_void,
     /// `PlayerInputHandler::ProcessButton` at 0x55d5c0 (semantic, high); signature (untiered): `undefined ProcessButton(void)`
     pub slot_6: *const c_void,
@@ -148602,6 +148866,9 @@ impl LookHandler_vtable {
     pub fn CanProcess(&self) -> Option<LookHandler_vtable_CanProcess> {
         unsafe { core::mem::transmute::<*const c_void, Option<LookHandler_vtable_CanProcess>>(self.slot_1) }
     }
+    pub const SLOT_ProcessMotion: usize = 3;
+    pub const SLOT_ProcessThumbstick: usize = 4;
+    pub const SLOT_ProcessMouseMove: usize = 5;
 }
 /// `LookHandler::CanProcess`, slot 1: Look, or a type-6 (motion) event that 0x7b5200 accepts (bEnableSixaxisBowAiming/bEnableSixaxisMagicAiming with a matching equipped weapon or spell) (high).
 pub type LookHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::LookHandler, event: *mut classes::InputEvent) -> bool;
@@ -149249,18 +149516,27 @@ impl MainMenu_vtable_40 {
 /// `MapCamera::vftable` at 0x1985f78, id 216441 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct MapCamera_vtable {
-    /// `MapCamera::vdtor` at 0x997240 (layout_inference, medium); signature (low): `MapCamera * vdtor(MapCamera * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MapCamera::Destroy` at 0x997240 (semantic, high); signature (untiered): `MapCamera * Destroy(MapCamera * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`:  (high); semantic signature: `MapCamera* (MapCamera* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (untiered): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `TESCamera::Update` at 0x558e70 (semantic, high); signature (untiered): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_2: *const c_void,
-    /// `MapCamera::vfunc_3` at 0x996740 (rtti, high); signature (low): `undefined vfunc_3(MapCamera * this, longlong * param_1, float * param_2)`
+    /// `MapCamera::Enter` at 0x996740 (semantic, medium); signature (untiered): `undefined Enter(MapCamera * this, longlong * param_1, float * param_2)`; `Enter`: sets the root, hides the player 3D, starts the transition into the world state (medium); semantic signature: `void (MapCamera* this, NiNode* root, NiPoint3* position)`
     pub slot_3: *const c_void,
 }
 impl MapCamera_vtable {
     pub const ID: u64 = 216441;
+    pub const SLOT_Destroy: usize = 0;
+    /// Slot 0 as `MapCamera_vtable_Destroy`, `None` when the slot is null.
+    #[must_use]
+    pub fn Destroy(&self) -> Option<MapCamera_vtable_Destroy> {
+        unsafe { core::mem::transmute::<*const c_void, Option<MapCamera_vtable_Destroy>>(self.slot_0) }
+    }
+    pub const SLOT_Enter: usize = 3;
 }
+/// `MapCamera::Destroy`, slot 0:  (high).
+pub type MapCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::MapCamera, flags: u32) -> *mut classes::MapCamera;
 
 /// `MapCameraStates::Exit::vftable` at 0x1985ff0, id 216445 (rtti, high); 9 slots.
 #[repr(C)]
@@ -152207,9 +152483,9 @@ pub struct MovementHandler_vtable {
     pub slot_0: *const c_void,
     /// `MovementHandler::CanProcess` at 0x7b4fb0 (semantic, high); signature (untiered): `undefined8 CanProcess(MovementHandler * this, longlong * param_1)`; `CanProcess`: Forward/Back/Strafe Left/Strafe Right/Move (high); semantic signature: `bool (MovementHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `MovementHandler::vfunc_4` at 0x7b38c0 (rtti, high); signature (low): `undefined vfunc_4(MovementHandler * this, longlong param_1, undefined4 * param_2)`
     pub slot_4: *const c_void,
@@ -152621,7 +152897,7 @@ pub struct MovementHandlerAgentPlayerControls_vtable_18 {
     pub slot_0: *const c_void,
     /// `MovementHandlerAgent::IMovementHandlerAgent_vfunc_1` at 0x1223f90 (rtti, medium); signature (high): `undefined IMovementHandlerAgent_vfunc_1(MovementHandlerAgent * this)`
     pub slot_1: *const c_void,
-    /// `MovementHandlerAgentPlayerControls::IMovementHandlerAgent_vfunc_2` at 0x7a3fd0 (rtti, high); signature (low): `undefined IMovementHandlerAgent_vfunc_2(MovementHandlerAgentPlayerControls * this, longlong * param_1, undefined1 * param_2, float * param_3)`
+    /// `MovementHandlerAgentPlayerControls::HandleMovement` at 0x7a3fd0 (semantic, high); signature (untiered): `undefined HandleMovement(MovementHandlerAgentPlayerControls * this, longlong * param_1, undefined1 * param_2, float * param_3)`
     pub slot_2: *const c_void,
     /// `MovementHandlerAgentPlayerControls::IMovementHandlerAgent_vfunc_3` at 0x7a48f0 (rtti, high); signature (low): `undefined IMovementHandlerAgent_vfunc_3(void)`
     pub slot_3: *const c_void,
@@ -155482,6 +155758,11 @@ impl NiAVObject_vtable {
     pub const ID: u64 = 237091;
     pub const SLOT_CreateClone: usize = 23;
     pub const SLOT_UpdateControllers: usize = 37;
+    /// Slot 37 as `NiAVObject_vtable_UpdateControllers`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateControllers(&self) -> Option<NiAVObject_vtable_UpdateControllers> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiAVObject_vtable_UpdateControllers>>(self.slot_37) }
+    }
     pub const SLOT_AcceptVisitor: usize = 38;
     pub const SLOT_Slot39Recursive: usize = 39;
     pub const SLOT_GetObjectByName: usize = 42;
@@ -155492,8 +155773,23 @@ impl NiAVObject_vtable {
     }
     pub const SLOT_SetSelectiveUpdateFlags: usize = 43;
     pub const SLOT_UpdateDownwardPass: usize = 44;
+    /// Slot 44 as `NiAVObject_vtable_UpdateDownwardPass`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateDownwardPass(&self) -> Option<NiAVObject_vtable_UpdateDownwardPass> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiAVObject_vtable_UpdateDownwardPass>>(self.slot_44) }
+    }
     pub const SLOT_UpdateSelectedDownwardPass: usize = 45;
+    /// Slot 45 as `NiAVObject_vtable_UpdateSelectedDownwardPass`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateSelectedDownwardPass(&self) -> Option<NiAVObject_vtable_UpdateSelectedDownwardPass> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiAVObject_vtable_UpdateSelectedDownwardPass>>(self.slot_45) }
+    }
     pub const SLOT_UpdateRigidDownwardPass: usize = 46;
+    /// Slot 46 as `NiAVObject_vtable_UpdateRigidDownwardPass`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateRigidDownwardPass(&self) -> Option<NiAVObject_vtable_UpdateRigidDownwardPass> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiAVObject_vtable_UpdateRigidDownwardPass>>(self.slot_46) }
+    }
     pub const SLOT_UpdateWorldBound: usize = 47;
     /// Slot 47 as `NiAVObject_vtable_UpdateWorldBound`, `None` when the slot is null.
     #[must_use]
@@ -155501,6 +155797,11 @@ impl NiAVObject_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<NiAVObject_vtable_UpdateWorldBound>>(self.slot_47) }
     }
     pub const SLOT_UpdateWorldData: usize = 48;
+    /// Slot 48 as `NiAVObject_vtable_UpdateWorldData`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateWorldData(&self) -> Option<NiAVObject_vtable_UpdateWorldData> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiAVObject_vtable_UpdateWorldData>>(self.slot_48) }
+    }
     pub const SLOT_UpdateTransformsAndBound: usize = 49;
     pub const SLOT_UpdateDownwardPassUnderParent: usize = 50;
     pub const SLOT_UpdateUpwardPass: usize = 51;
@@ -155510,10 +155811,20 @@ impl NiAVObject_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<NiAVObject_vtable_UpdateUpwardPass>>(self.slot_51) }
     }
 }
+/// `NiAVObject::UpdateControllers`, slot 37: runs each controller's slot 39 when data->flags bit 0 is set; NiNode 0xee2420 also recurses into the children's slot 37 (high).
+pub type NiAVObject_vtable_UpdateControllers = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData);
 /// `NiAVObject::GetObjectByName`, slot 42: this when this->name == *name (pointer compare), else null; NiNode 0xee23a0 then searches the children depth-first in array order (high).
 pub type NiAVObject_vtable_GetObjectByName = unsafe extern "C" fn(this: *mut classes::NiAVObject, name: *const classes::BSFixedString) -> *mut classes::NiAVObject;
+/// `NiAVObject::UpdateDownwardPass`, slot 44: full update of the subtree: controllers (data bit 0), UpdateWorldData (slot 48), bound; NiNode 0xee24d0 runs slot 44 on every child and merges their bounds (unless flags bit 13) (high).
+pub type NiAVObject_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData, parentFlags: u32);
+/// `NiAVObject::UpdateSelectedDownwardPass`, slot 45: selective update: controllers only with flags bit 3, transforms only with flags bit 2 and data bit 1 clear; NiNode 0xee2680 visits only children with flags bit 1, through slot 46 for children with bit 4 (high).
+pub type NiAVObject_vtable_UpdateSelectedDownwardPass = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData, parentFlags: u32);
+/// `NiAVObject::UpdateRigidDownwardPass`, slot 46: as slot 45 for rigid subtrees: NiNode 0xee2a40 recurses with slot 46 into children with flags bit 1 and does not rebuild the bound (high).
+pub type NiAVObject_vtable_UpdateRigidDownwardPass = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData, parentFlags: u32);
 /// `NiAVObject::UpdateWorldBound`, slot 47: rebuilds worldBound: no-op on NiAVObject, union of the children on NiNode 0xee2920 (skipped with flags bit 13), the camera position on NiCamera 0xef1950 (high).
 pub type NiAVObject_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut classes::NiAVObject);
+/// `NiAVObject::UpdateWorldData`, slot 48: snapshots previousWorld once per render frame, then world = parent.world * local (MultiplyTransforms 0x3059a0), world = parent.world with flags bit 9, world = local without a parent, or the collision object's slot 38 when +0x40 is set (high).
+pub type NiAVObject_vtable_UpdateWorldData = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData);
 /// `NiAVObject::UpdateUpwardPass`, slot 51: asks the parent to rebuild its bound upward (parent slot 61) (high).
 pub type NiAVObject_vtable_UpdateUpwardPass = unsafe extern "C" fn(this: *mut classes::NiAVObject);
 
@@ -159930,9 +160241,16 @@ impl NiCamera_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<NiCamera_vtable_UpdateWorldBound>>(self.slot_47) }
     }
     pub const SLOT_UpdateWorldData: usize = 48;
+    /// Slot 48 as `NiCamera_vtable_UpdateWorldData`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateWorldData(&self) -> Option<NiCamera_vtable_UpdateWorldData> {
+        unsafe { core::mem::transmute::<*const c_void, Option<NiCamera_vtable_UpdateWorldData>>(self.slot_48) }
+    }
 }
 /// `NiCamera::UpdateWorldBound`, slot 47: bound centre = world translation (high).
 pub type NiCamera_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut classes::NiCamera);
+/// `NiCamera::UpdateWorldData`, slot 48: NiAVObject::UpdateWorldData then UpdateWorldToCamera 0xef1310 (high).
+pub type NiCamera_vtable_UpdateWorldData = unsafe extern "C" fn(this: *mut classes::NiCamera, data: *mut classes::NiUpdateData);
 
 /// `NiCapsuleBV::vftable` at 0x1a50f48, id 237504 (rtti, high); 11 slots.
 #[repr(C)]
@@ -161089,7 +161407,7 @@ pub struct NiDirectionalLight_vtable {
     pub slot_46: *const c_void,
     /// `NiAVObject::UpdateWorldBound` at 0xee1320 (semantic, high); signature (untiered): `undefined UpdateWorldBound(void)`
     pub slot_47: *const c_void,
-    /// `NiDirectionalLight::vfunc_48` at 0xf045c0 (rtti, high); signature (low): `undefined vfunc_48(NiDirectionalLight * this, longlong param_1)`
+    /// `NiDirectionalLight::UpdateWorldData` at 0xf045c0 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiDirectionalLight * this, longlong param_1)`
     pub slot_48: *const c_void,
     /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
     pub slot_49: *const c_void,
@@ -180341,7 +180659,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_104: *const c_void,
     /// `Actor::vfunc_105` at 0x672570 (rtti, medium); signature (low): `undefined vfunc_105(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_105: *const c_void,
-    /// `PlayerCharacter::vfunc_106` at 0x747560 (rtti, high); signature (low): `undefined8 * * vfunc_106(PlayerCharacter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `PlayerCharacter::Load3D` at 0x747560 (semantic, high); signature (untiered): `undefined8 * * Load3D(PlayerCharacter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Load3D`: builds the first-person root from sFirstPersonSkeleton and its biped, then the third-person 3D through Actor slot 106 with the view bit forced to third person; hides the root not in view (high); semantic signature: `NiAVObject* (PlayerCharacter* this, bool backgroundLoad)`
     pub slot_106: *const c_void,
     /// `TESObjectREFR::vfunc_107` at 0x2ea8c0 (rtti, medium); signature (low): `undefined vfunc_107(TESObjectREFR * this, TESObjectREFR_vtbl * param_1, TESObjectREFR * param_2, undefined8 param_3)`
     pub slot_107: *const c_void,
@@ -180353,11 +180671,11 @@ pub struct PlayerCharacter_vtable {
     pub slot_110: *const c_void,
     /// `PlayerCharacter::Get3DFor` at 0x747b70 (runtime, high); signature (untiered): `undefined8 Get3DFor(PlayerCharacter * this, char param_1)`; `Get3DFor`: the first-person root (+0x900) for true, the third-person root (loadedData->node3D) for false (high); semantic signature: `NiNode* (PlayerCharacter* this, bool firstPerson)`
     pub slot_111: *const c_void,
-    /// `PlayerCharacter::Get3D` at 0x747af0 (slot_propagation, high); signature (untiered): `undefined Get3D(PlayerCharacter * this)`
+    /// `PlayerCharacter::Get3D` at 0x747af0 (semantic, high); signature (untiered): `undefined Get3D(PlayerCharacter * this)`; `Get3D`: current-view root: firstPersonRoot when IsThirdPerson is false and it exists, else the third-person root (TESObjectREFR::Get3D) (high); semantic signature: `NiAVObject* (PlayerCharacter* this)`
     pub slot_112: *const c_void,
     /// `PlayerCharacter::IsThirdPerson` at 0x76b0b0 (runtime, high); signature (untiered): `byte IsThirdPerson(PlayerCharacter * this)`; `IsThirdPerson`: bit 0 of +0xbeb; Get3D (slot 112) returns the first-person root when this is false (high); semantic signature: `bool (PlayerCharacter* this)`
     pub slot_113: *const c_void,
-    /// `PlayerCharacter::vfunc_114` at 0x74c180 (rtti, high); signature (low): `ulonglong vfunc_114(PlayerCharacter * this, undefined8 param_1, longlong param_2)`
+    /// `PlayerCharacter::GetAnimationGraphFiles` at 0x74c180 (semantic, medium); signature (untiered): `ulonglong GetAnimationGraphFiles(PlayerCharacter * this, undefined8 param_1, longlong param_2)`; `GetAnimationGraphFiles`: Actor's list plus strPlayerCharacterBehavior1stPGraph:Animation, the first-person behaviour graph (string 0x19249c8 'Actors\Character\_1stPerson\FirstPerson.hkx' is referenced by this function) (medium); semantic signature: `bool (PlayerCharacter* this, void* unused, BSScrapArray* files)`
     pub slot_114: *const c_void,
     /// `Actor::vfunc_115` at 0x671930 (rtti, medium); signature (low): `float * vfunc_115(Actor * this, float * param_1)`
     pub slot_115: *const c_void,
@@ -180381,9 +180699,9 @@ pub struct PlayerCharacter_vtable {
     pub slot_124: *const c_void,
     /// `PlayerCharacter::UpdateAnimation` at 0x74bf70 (runtime, high); signature (untiered): `undefined UpdateAnimation(PlayerCharacter * this, undefined4 param_2)`
     pub slot_125: *const c_void,
-    /// `PlayerCharacter::vfunc_126` at 0x748cd0 (rtti, high); signature (low): `undefined8 * vfunc_126(PlayerCharacter * this, char param_1)`
+    /// `PlayerCharacter::GetBiped` at 0x748cd0 (semantic, high); signature (untiered): `undefined8 * GetBiped(PlayerCharacter * this, char param_1)`; `GetBiped`: &firstPersonBiped for true, the third-person biped holder otherwise (high); semantic signature: `BipedAnim** (PlayerCharacter* this, bool firstPerson)`
     pub slot_126: *const c_void,
-    /// `PlayerCharacter::vfunc_127` at 0x748c50 (rtti, high); signature (high): `undefined vfunc_127(PlayerCharacter * this)`
+    /// `PlayerCharacter::GetCurrentBiped` at 0x748c50 (semantic, high); signature (untiered): `undefined GetCurrentBiped(PlayerCharacter * this)`; `GetCurrentBiped`: first-person biped while IsThirdPerson is false and it exists, else the third-person one (high); semantic signature: `BipedAnim** (PlayerCharacter* this)`
     pub slot_127: *const c_void,
     /// `PlayerCharacter::vfunc_128` at 0x748c90 (rtti, high); signature (high): `undefined vfunc_128(PlayerCharacter * this)`
     pub slot_128: *const c_void,
@@ -180409,9 +180727,9 @@ pub struct PlayerCharacter_vtable {
     pub slot_138: *const c_void,
     /// `Actor::vfunc_139` at 0x6921a0 (rtti, medium); signature (high): `longlong vfunc_139(Actor * this)`
     pub slot_139: *const c_void,
-    /// `Actor::vfunc_140` at 0x692320 (rtti, medium); signature (low): `undefined vfunc_140(Actor * this, undefined8 param_1)`
+    /// `Actor::SetMiddleHighProcessField150` at 0x692320 (semantic, high); signature (untiered): `undefined SetMiddleHighProcessField150(Actor * this, undefined8 param_1)`
     pub slot_140: *const c_void,
-    /// `PlayerCharacter::vfunc_141` at 0x747b30 (rtti, high); signature (high): `undefined8 vfunc_141(PlayerCharacter * this)`
+    /// `PlayerCharacter::GetCurrent3DNoFallback` at 0x747b30 (semantic, high); signature (untiered): `undefined8 GetCurrent3DNoFallback(PlayerCharacter * this)`; `GetCurrent3DNoFallback`: like slot 112 but returns firstPersonRoot (even null) whenever IsThirdPerson is false (high); semantic signature: `NiAVObject* (PlayerCharacter* this)`
     pub slot_141: *const c_void,
     /// `TESObjectREFR::vfunc_142` at 0x2fa320 (rtti, medium); signature (low): `undefined8 vfunc_142(void)`
     pub slot_142: *const c_void,
@@ -180457,7 +180775,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_162: *const c_void,
     /// `PlayerCharacter::vfunc_163` at 0x756b10 (rtti, high); signature (low): `undefined vfunc_163(PlayerCharacter * this, longlong param_1, byte param_2, char param_3)`
     pub slot_163: *const c_void,
-    /// `PlayerCharacter::vfunc_164` at 0x74c480 (rtti, high); signature (high): `undefined vfunc_164(PlayerCharacter * this)`
+    /// `PlayerCharacter::GetHeading` at 0x74c480 (semantic, medium); signature (untiered): `undefined GetHeading(PlayerCharacter * this)`; `GetHeading`: Actor::vfunc_164(this, 0) plus the float at +0x930, wrapped into [0, 2pi) (medium); semantic signature: `float (PlayerCharacter* this, bool unused)`
     pub slot_164: *const c_void,
     /// `Actor::vfunc_165` at 0x675350 (rtti, medium); signature (low): `undefined vfunc_165(void)`
     pub slot_165: *const c_void,
@@ -180475,7 +180793,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_171: *const c_void,
     /// `Actor::vfunc_172` at 0x6d3050 (rtti, medium); signature (low): `char vfunc_172(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_172: *const c_void,
-    /// `PlayerCharacter::vfunc_173` at 0x745200 (rtti, high); signature (low): `undefined vfunc_173(PlayerCharacter * this, float param_1, longlong * param_2, TypeDescriptor * param_3)`
+    /// `PlayerCharacter::Update` at 0x745200 (semantic, high); signature (untiered): `undefined Update(PlayerCharacter * this, float param_1, longlong * param_2, TypeDescriptor * param_3)`; `Update`: the player's per-frame actor update (high); semantic signature: `void (PlayerCharacter* this, float delta)`
     pub slot_173: *const c_void,
     /// `Actor::vfunc_174` at 0x67bab0 (rtti, medium); signature (high): `undefined vfunc_174(Actor * this)`
     pub slot_174: *const c_void,
@@ -180577,11 +180895,11 @@ pub struct PlayerCharacter_vtable {
     pub slot_222: *const c_void,
     /// `Actor::vfunc_223` at 0x691590 (rtti, medium); signature (low): `undefined vfunc_223(Actor * this, longlong * param_1, char param_2, undefined8 param_3)`
     pub slot_223: *const c_void,
-    /// `PlayerCharacter::vfunc_224` at 0x746dc0 (rtti, high); signature (high): `undefined vfunc_224(PlayerCharacter * this)`
+    /// `PlayerCharacter::UpdateAlpha` at 0x746dc0 (semantic, high); signature (untiered): `undefined UpdateAlpha(PlayerCharacter * this)`; `UpdateAlpha`: Actor::UpdateAlpha, then re-applies slot 226 clamped below by fMagicPlayerMinimumInvisibility through slot 225 (high); semantic signature: `void (PlayerCharacter* this)`
     pub slot_224: *const c_void,
-    /// `Actor::vfunc_225` at 0x6d4510 (rtti, medium); signature (low): `undefined vfunc_225(Actor * this, undefined4 param_2)`
+    /// `Actor::SetAlpha` at 0x6d4510 (semantic, high); signature (untiered): `undefined SetAlpha(Actor * this, undefined4 param_2)`
     pub slot_225: *const c_void,
-    /// `Actor::vfunc_226` at 0x6d45a0 (rtti, medium); signature (low): `undefined4 vfunc_226(Actor * this)`
+    /// `Actor::GetAlphaMultiplier` at 0x6d45a0 (semantic, medium); signature (untiered): `undefined4 GetAlphaMultiplier(Actor * this)`
     pub slot_226: *const c_void,
     /// `PlayerCharacter::IsInCombat` at 0x76b0c0 (slot_propagation, high); signature (untiered): `byte IsInCombat(PlayerCharacter * this)`
     pub slot_227: *const c_void,
@@ -180703,13 +181021,13 @@ pub struct PlayerCharacter_vtable {
     pub slot_285: *const c_void,
     /// `Actor::vfunc_286` at 0x6b16b0 (rtti, medium); signature (low): `bool vfunc_286(Actor * this, undefined4 * param_1)`
     pub slot_286: *const c_void,
-    /// `PlayerCharacter::vfunc_287` at 0x760b50 (rtti, high); signature (low): `undefined vfunc_287(PlayerCharacter * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `PlayerCharacter::SyncRootTransforms` at 0x760b50 (semantic, high); signature (untiered): `undefined SyncRootTransforms(PlayerCharacter * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `SyncRootTransforms`: writes both roots' local transforms from the reference: translation = position (+0x54..+0x5c), rotation = z rotation by the heading; the third-person root also gets the char controller's pitch (+0x24c) and roll (+0x250) when non-zero (the mount's controller when mounted) (high); semantic signature: `void (PlayerCharacter* this)`
     pub slot_287: *const c_void,
     /// `Character::vfunc_288` at 0x73a9f0 (rtti, medium); signature (high): `undefined vfunc_288(Character * this)`
     pub slot_288: *const c_void,
     /// `PlayerCharacter::vfunc_289` at 0x75d450 (rtti, high); signature (low): `undefined vfunc_289(PlayerCharacter * this, longlong * param_1, ulonglong param_2, float * param_3)`
     pub slot_289: *const c_void,
-    /// `Actor::vfunc_290` at 0x6b3f20 (rtti, medium); signature (low): `undefined vfunc_290(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
+    /// `Actor::UpdateHeadTracking` at 0x6b3f20 (semantic, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
     pub slot_290: *const c_void,
     /// `Actor::vfunc_291` at 0x6b4780 (rtti, medium); signature (low): `undefined vfunc_291(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_291: *const c_void,
@@ -180738,11 +181056,23 @@ pub struct PlayerCharacter_vtable {
 }
 impl PlayerCharacter_vtable {
     pub const ID: u64 = 208040;
+    pub const SLOT_Load3D: usize = 106;
+    /// Slot 106 as `PlayerCharacter_vtable_Load3D`, `None` when the slot is null.
+    #[must_use]
+    pub fn Load3D(&self) -> Option<PlayerCharacter_vtable_Load3D> {
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_Load3D>>(self.slot_106) }
+    }
     pub const SLOT_Get3DFor: usize = 111;
     /// Slot 111 as `PlayerCharacter_vtable_Get3DFor`, `None` when the slot is null.
     #[must_use]
     pub fn Get3DFor(&self) -> Option<PlayerCharacter_vtable_Get3DFor> {
         unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_Get3DFor>>(self.slot_111) }
+    }
+    pub const SLOT_Get3D: usize = 112;
+    /// Slot 112 as `PlayerCharacter_vtable_Get3D`, `None` when the slot is null.
+    #[must_use]
+    pub fn Get3D(&self) -> Option<PlayerCharacter_vtable_Get3D> {
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_Get3D>>(self.slot_112) }
     }
     pub const SLOT_IsThirdPerson: usize = 113;
     /// Slot 113 as `PlayerCharacter_vtable_IsThirdPerson`, `None` when the slot is null.
@@ -180750,11 +181080,51 @@ impl PlayerCharacter_vtable {
     pub fn IsThirdPerson(&self) -> Option<PlayerCharacter_vtable_IsThirdPerson> {
         unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_IsThirdPerson>>(self.slot_113) }
     }
+    pub const SLOT_GetAnimationGraphFiles: usize = 114;
+    pub const SLOT_GetBiped: usize = 126;
+    pub const SLOT_GetCurrentBiped: usize = 127;
+    pub const SLOT_GetCurrent3DNoFallback: usize = 141;
+    /// Slot 141 as `PlayerCharacter_vtable_GetCurrent3DNoFallback`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetCurrent3DNoFallback(&self) -> Option<PlayerCharacter_vtable_GetCurrent3DNoFallback> {
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_GetCurrent3DNoFallback>>(self.slot_141) }
+    }
+    pub const SLOT_GetHeading: usize = 164;
+    pub const SLOT_Update: usize = 173;
+    /// Slot 173 as `PlayerCharacter_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<PlayerCharacter_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_Update>>(self.slot_173) }
+    }
+    pub const SLOT_UpdateAlpha: usize = 224;
+    /// Slot 224 as `PlayerCharacter_vtable_UpdateAlpha`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateAlpha(&self) -> Option<PlayerCharacter_vtable_UpdateAlpha> {
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_UpdateAlpha>>(self.slot_224) }
+    }
+    pub const SLOT_SyncRootTransforms: usize = 287;
+    /// Slot 287 as `PlayerCharacter_vtable_SyncRootTransforms`, `None` when the slot is null.
+    #[must_use]
+    pub fn SyncRootTransforms(&self) -> Option<PlayerCharacter_vtable_SyncRootTransforms> {
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerCharacter_vtable_SyncRootTransforms>>(self.slot_287) }
+    }
 }
+/// `PlayerCharacter::Load3D`, slot 106: builds the first-person root from sFirstPersonSkeleton and its biped, then the third-person 3D through Actor slot 106 with the view bit forced to third person; hides the root not in view (high).
+pub type PlayerCharacter_vtable_Load3D = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, backgroundLoad: bool) -> *mut classes::NiAVObject;
 /// `PlayerCharacter::Get3DFor`, slot 111: the first-person root (+0x900) for true, the third-person root (loadedData->node3D) for false (high).
 pub type PlayerCharacter_vtable_Get3DFor = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, firstPerson: bool) -> *mut classes::NiNode;
+/// `PlayerCharacter::Get3D`, slot 112: current-view root: firstPersonRoot when IsThirdPerson is false and it exists, else the third-person root (TESObjectREFR::Get3D) (high).
+pub type PlayerCharacter_vtable_Get3D = unsafe extern "C" fn(this: *mut classes::PlayerCharacter) -> *mut classes::NiAVObject;
 /// `PlayerCharacter::IsThirdPerson`, slot 113: bit 0 of +0xbeb; Get3D (slot 112) returns the first-person root when this is false (high).
 pub type PlayerCharacter_vtable_IsThirdPerson = unsafe extern "C" fn(this: *mut classes::PlayerCharacter) -> bool;
+/// `PlayerCharacter::GetCurrent3DNoFallback`, slot 141: like slot 112 but returns firstPersonRoot (even null) whenever IsThirdPerson is false (high).
+pub type PlayerCharacter_vtable_GetCurrent3DNoFallback = unsafe extern "C" fn(this: *mut classes::PlayerCharacter) -> *mut classes::NiAVObject;
+/// `PlayerCharacter::Update`, slot 173: the player's per-frame actor update (high).
+pub type PlayerCharacter_vtable_Update = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, delta: f32);
+/// `PlayerCharacter::UpdateAlpha`, slot 224: Actor::UpdateAlpha, then re-applies slot 226 clamped below by fMagicPlayerMinimumInvisibility through slot 225 (high).
+pub type PlayerCharacter_vtable_UpdateAlpha = unsafe extern "C" fn(this: *mut classes::PlayerCharacter);
+/// `PlayerCharacter::SyncRootTransforms`, slot 287: writes both roots' local transforms from the reference: translation = position (+0x54..+0x5c), rotation = z rotation by the heading; the third-person root also gets the char controller's pitch (+0x24c) and roll (+0x250) when non-zero (the mount's controller when mounted) (high).
+pub type PlayerCharacter_vtable_SyncRootTransforms = unsafe extern "C" fn(this: *mut classes::PlayerCharacter);
 
 /// `PlayerCharacter::vftable_20` at 0x192a040, id 208042 (rtti, high); 2 slots.
 #[repr(C)]
@@ -180785,7 +181155,7 @@ impl PlayerCharacter_vtable_30 {
 pub struct PlayerCharacter_vtable_38 {
     /// `PlayerCharacter::IAnimationGraphManagerHolder_vdtor` at 0x769308 (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     pub slot_0: *const c_void,
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_1` at 0x6b61a0 (rtti, medium); signature (untiered): `undefined1 IAnimationGraphManagerHolder_vfunc_1(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `Actor::NotifyAnimationGraph` at 0x6b61a0 (semantic, high); signature (untiered): `undefined1 NotifyAnimationGraph(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `IAnimationGraphManagerHolder::GetAnimationGraphManager` at 0x6b60b0 (semantic, high); signature (untiered): `bool GetAnimationGraphManager(IAnimationGraphManagerHolder * this, longlong * param_1)`
     pub slot_2: *const c_void,
@@ -180929,7 +181299,7 @@ pub struct PlayerCharacter_vtable_C0 {
     pub slot_19: *const c_void,
     /// `PlayerCharacter::ActorState_vfunc_20` at 0x75e4a0 (rtti, high); signature (low): `undefined8 ActorState_vfunc_20(PlayerCharacter * this, uint param_1)`
     pub slot_20: *const c_void,
-    /// `PlayerCharacter::ActorState_vfunc_21` at 0x760e00 (rtti, high); signature (low): `undefined ActorState_vfunc_21(PlayerCharacter * this, byte param_1, undefined8 param_2, ulonglong param_3)`
+    /// `PlayerCharacter::SetWeaponDrawnState` at 0x760e00 (runtime, high); signature (untiered): `undefined SetWeaponDrawnState(PlayerCharacter * this, byte param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_21: *const c_void,
 }
 impl PlayerCharacter_vtable_C0 {
@@ -181100,9 +181470,9 @@ pub struct PlayerInputHandler_vtable {
     pub slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`; `ProcessType7`: eventType 7 (kind not identified) (medium); semantic signature: `void (PlayerInputHandler* this, InputEvent* event, PlayerControlsData* data)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`; `ProcessMotionGesture`: event type 7 (medium); semantic signature: `void (PlayerInputHandler* this, InputEvent* event, PlayerControlsData* data)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`; `ProcessType6`: eventType 6; LookHandler 0x7b32a0 reads an orientation quaternion at event+0x80 under the bEnableSixaxis* settings (motion input) (medium); semantic signature: `void (PlayerInputHandler* this, InputEvent* event, PlayerControlsData* data)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`; `ProcessSixaxis`: event type 6 (medium); semantic signature: `void (PlayerInputHandler* this, InputEvent* event, PlayerControlsData* data)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`; `ProcessThumbstick`: eventType 3: float x/y at +0x28/+0x2c (medium); semantic signature: `void (PlayerInputHandler* this, ThumbstickEvent* event, PlayerControlsData* data)`
     pub slot_4: *const c_void,
@@ -181119,8 +181489,8 @@ impl PlayerInputHandler_vtable {
     pub fn Destroy(&self) -> Option<PlayerInputHandler_vtable_Destroy> {
         unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_Destroy>>(self.slot_0) }
     }
-    pub const SLOT_ProcessType7: usize = 2;
-    pub const SLOT_ProcessType6: usize = 3;
+    pub const SLOT_ProcessMotionGesture: usize = 2;
+    pub const SLOT_ProcessSixaxis: usize = 3;
     pub const SLOT_ProcessThumbstick: usize = 4;
     pub const SLOT_ProcessMouseMove: usize = 5;
     pub const SLOT_ProcessButton: usize = 6;
@@ -182811,16 +183181,40 @@ impl REFREventCallbacks__IEventCallbackFactory_vtable {
 /// `RaceSexCamera::vftable` at 0x197ed90, id 215883 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct RaceSexCamera_vtable {
-    /// `RaceSexCamera::vdtor` at 0x972ee0 (layout_inference, medium); signature (low): `RaceSexCamera * vdtor(RaceSexCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `RaceSexCamera::Destroy` at 0x972ee0 (semantic, high); signature (untiered): `RaceSexCamera * Destroy(RaceSexCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`:  (high); semantic signature: `RaceSexCamera* (RaceSexCamera* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `RaceSexCamera::vfunc_1` at 0x9677d0 (rtti, high); signature (low): `undefined vfunc_1(RaceSexCamera * this, longlong * param_1)`
+    /// `RaceSexCamera::SetCameraRoot` at 0x9677d0 (semantic, high); signature (untiered): `undefined SetCameraRoot(RaceSexCamera * this, longlong * param_1)`; `SetCameraRoot`: stores the root, records its pose, offsets local y by a constant (high); semantic signature: `void (RaceSexCamera* this, NiNode* root)`
     pub slot_1: *const c_void,
-    /// `RaceSexCamera::vfunc_2` at 0x9678c0 (rtti, high); signature (high): `undefined vfunc_2(RaceSexCamera * this)`
+    /// `RaceSexCamera::Update` at 0x9678c0 (semantic, high); signature (untiered): `undefined Update(RaceSexCamera * this)`; `Update`: unless byte 0x20bb8d4: root local translation/rotation = eased interpolation 0x20bb890 (StartPlayerZoomInterpolation 0x971760, face/body targets 0x971640); then NiAVObject::UpdateNode(root, zero) (high); semantic signature: `void (RaceSexCamera* this)`
     pub slot_2: *const c_void,
 }
 impl RaceSexCamera_vtable {
     pub const ID: u64 = 215883;
+    pub const SLOT_Destroy: usize = 0;
+    /// Slot 0 as `RaceSexCamera_vtable_Destroy`, `None` when the slot is null.
+    #[must_use]
+    pub fn Destroy(&self) -> Option<RaceSexCamera_vtable_Destroy> {
+        unsafe { core::mem::transmute::<*const c_void, Option<RaceSexCamera_vtable_Destroy>>(self.slot_0) }
+    }
+    pub const SLOT_SetCameraRoot: usize = 1;
+    /// Slot 1 as `RaceSexCamera_vtable_SetCameraRoot`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetCameraRoot(&self) -> Option<RaceSexCamera_vtable_SetCameraRoot> {
+        unsafe { core::mem::transmute::<*const c_void, Option<RaceSexCamera_vtable_SetCameraRoot>>(self.slot_1) }
+    }
+    pub const SLOT_Update: usize = 2;
+    /// Slot 2 as `RaceSexCamera_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<RaceSexCamera_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<RaceSexCamera_vtable_Update>>(self.slot_2) }
+    }
 }
+/// `RaceSexCamera::Destroy`, slot 0:  (high).
+pub type RaceSexCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::RaceSexCamera, flags: u32) -> *mut classes::RaceSexCamera;
+/// `RaceSexCamera::SetCameraRoot`, slot 1: stores the root, records its pose, offsets local y by a constant (high).
+pub type RaceSexCamera_vtable_SetCameraRoot = unsafe extern "C" fn(this: *mut classes::RaceSexCamera, root: *mut classes::NiNode);
+/// `RaceSexCamera::Update`, slot 2: unless byte 0x20bb8d4: root local translation/rotation = eased interpolation 0x20bb890 (StartPlayerZoomInterpolation 0x971760, face/body targets 0x971640); then NiAVObject::UpdateNode(root, zero) (high).
+pub type RaceSexCamera_vtable_Update = unsafe extern "C" fn(this: *mut classes::RaceSexCamera);
 
 /// `RaceSexMenu::vftable` at 0x197edb0, id 215885 (rtti, high); 9 slots.
 #[repr(C)]
@@ -183009,9 +183403,9 @@ pub struct ReadyWeaponHandler_vtable {
     pub slot_0: *const c_void,
     /// `ReadyWeaponHandler::CanProcess` at 0x7b5060 (semantic, high); signature (untiered): `bool CanProcess(ReadyWeaponHandler * this, longlong * param_1)`; `CanProcess`: Ready Weapon (high); semantic signature: `bool (ReadyWeaponHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -183611,9 +184005,9 @@ pub struct RunHandler_vtable {
     pub slot_0: *const c_void,
     /// `RunHandler::CanProcess` at 0x7b5090 (semantic, high); signature (untiered): `bool CanProcess(RunHandler * this, longlong * param_1)`; `CanProcess`: Run (high); semantic signature: `bool (RunHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -183907,9 +184301,9 @@ pub struct SceneGraph_vtable {
     pub slot_60: *const c_void,
     /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
     pub slot_61: *const c_void,
-    /// `SceneGraph::vfunc_62` at 0x665740 (rtti, high); signature (low): `ulonglong vfunc_62(SceneGraph * this)`
+    /// `SceneGraph::GetFarDistance` at 0x665740 (semantic, high); signature (untiered): `ulonglong GetFarDistance(SceneGraph * this)`
     pub slot_62: *const c_void,
-    /// `SceneGraph::vfunc_63` at 0x665720 (rtti, high); signature (low): `ulonglong vfunc_63(SceneGraph * this)`
+    /// `SceneGraph::GetNearDistance` at 0x665720 (semantic, high); signature (untiered): `ulonglong GetNearDistance(SceneGraph * this)`
     pub slot_63: *const c_void,
     /// `BSSceneGraph::vfunc_64` at 0xff4bc0 (rtti, medium); signature (medium): `undefined vfunc_64(BSSceneGraph * this, float param_1)`
     pub slot_64: *const c_void,
@@ -185007,9 +185401,9 @@ pub struct ShaderReferenceEffect_vtable {
     pub slot_57: *const c_void,
     /// `ReferenceEffect::vfunc_58` at 0x5db710 (rtti, medium); signature (low): `undefined vfunc_58(ReferenceEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `ShaderReferenceEffect::vfunc_59` at 0x5def30 (rtti, high); signature (high): `undefined vfunc_59(ShaderReferenceEffect * this)`
+    /// `ShaderReferenceEffect::UpdateTargetRoot` at 0x5def30 (semantic, high); signature (untiered): `undefined UpdateTargetRoot(ShaderReferenceEffect * this)`; `UpdateTargetRoot`: root = slot 60; when it differs from attachedRoot (or bit 2): RemoveEffectShaderData(effectShader, old, effectData), ApplyEffectShaderData(effectShader, root, effectData, false); then places the effect's own node (+0xf8) relative to the root (high); semantic signature: `void (ShaderReferenceEffect* this)`
     pub slot_59: *const c_void,
-    /// `ShaderReferenceEffect::vfunc_60` at 0x5dfac0 (rtti, high); signature (high): `longlong vfunc_60(ShaderReferenceEffect * this)`
+    /// `ShaderReferenceEffect::GetTargetRoot` at 0x5dfac0 (semantic, high); signature (untiered): `longlong GetTargetRoot(ShaderReferenceEffect * this)`; `GetTargetRoot`: controller's root (+0x30 slot 15) when present, else 0 with flag bit 7, else ReferenceEffect slot 60 = target->Get3D() (slot 112) (high); semantic signature: `NiAVObject* (ShaderReferenceEffect* this)`
     pub slot_60: *const c_void,
     /// `ReferenceEffect::vfunc_61` at 0x5dbc30 (rtti, medium); signature (low): `undefined1 vfunc_61(void)`
     pub slot_61: *const c_void,
@@ -185018,7 +185412,23 @@ pub struct ShaderReferenceEffect_vtable {
 }
 impl ShaderReferenceEffect_vtable {
     pub const ID: u64 = 206059;
+    pub const SLOT_UpdateTargetRoot: usize = 59;
+    /// Slot 59 as `ShaderReferenceEffect_vtable_UpdateTargetRoot`, `None` when the slot is null.
+    #[must_use]
+    pub fn UpdateTargetRoot(&self) -> Option<ShaderReferenceEffect_vtable_UpdateTargetRoot> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ShaderReferenceEffect_vtable_UpdateTargetRoot>>(self.slot_59) }
+    }
+    pub const SLOT_GetTargetRoot: usize = 60;
+    /// Slot 60 as `ShaderReferenceEffect_vtable_GetTargetRoot`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetTargetRoot(&self) -> Option<ShaderReferenceEffect_vtable_GetTargetRoot> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ShaderReferenceEffect_vtable_GetTargetRoot>>(self.slot_60) }
+    }
 }
+/// `ShaderReferenceEffect::UpdateTargetRoot`, slot 59: root = slot 60; when it differs from attachedRoot (or bit 2): RemoveEffectShaderData(effectShader, old, effectData), ApplyEffectShaderData(effectShader, root, effectData, false); then places the effect's own node (+0xf8) relative to the root (high).
+pub type ShaderReferenceEffect_vtable_UpdateTargetRoot = unsafe extern "C" fn(this: *mut classes::ShaderReferenceEffect);
+/// `ShaderReferenceEffect::GetTargetRoot`, slot 60: controller's root (+0x30 slot 15) when present, else 0 with flag bit 7, else ReferenceEffect slot 60 = target->Get3D() (slot 112) (high).
+pub type ShaderReferenceEffect_vtable_GetTargetRoot = unsafe extern "C" fn(this: *mut classes::ShaderReferenceEffect) -> *mut classes::NiAVObject;
 
 /// `ShadowSceneNode::vftable` at 0x1b3dba0, id 254646 (rtti, high); 62 slots.
 #[repr(C)]
@@ -185159,9 +185569,9 @@ pub struct ShoutHandler_vtable {
     pub slot_0: *const c_void,
     /// `ShoutHandler::CanProcess` at 0x7b50c0 (semantic, high); signature (untiered): `undefined8 CanProcess(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `CanProcess`: Shout/KinectShout (high); semantic signature: `bool (ShoutHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -188212,9 +188622,9 @@ pub struct SneakHandler_vtable {
     pub slot_0: *const c_void,
     /// `SneakHandler::CanProcess` at 0x7b5140 (semantic, high); signature (untiered): `bool CanProcess(SneakHandler * this, longlong * param_1)`; `CanProcess`: Sneak (high); semantic signature: `bool (SneakHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -188834,9 +189244,9 @@ pub struct SprintHandler_vtable {
     pub slot_0: *const c_void,
     /// `SprintHandler::CanProcess` at 0x7b5170 (semantic, high); signature (untiered): `bool CanProcess(SprintHandler * this, longlong * param_1)`; `CanProcess`: Sprint (high); semantic signature: `bool (SprintHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -203353,7 +203763,7 @@ impl TempLoadGameBuffer_vtable {
 /// `ThirdPersonState::vftable` at 0x18ecc08, id 205236 (rtti, high); 16 slots.
 #[repr(C)]
 pub struct ThirdPersonState_vtable {
-    /// `ThirdPersonState::vdtor` at 0x55d4e0 (slot_propagation, medium); signature (low): `ThirdPersonState * vdtor(ThirdPersonState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ThirdPersonState::Destroy` at 0x55d4e0 (semantic, high); signature (untiered): `ThirdPersonState * Destroy(ThirdPersonState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`:  (high); semantic signature: `ThirdPersonState* (ThirdPersonState* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `ThirdPersonState::Begin` at 0x8fd390 (semantic, high); signature (untiered): `undefined Begin(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Begin`: target heading into both yaws, registers the handler, schedules SetFirstPerson(false), looks up animatedNode (high); semantic signature: `void (ThirdPersonState* this)`
     pub slot_1: *const c_void,
@@ -203371,9 +203781,9 @@ pub struct ThirdPersonState_vtable {
     pub slot_7: *const c_void,
     /// `ThirdPersonState::Revert` at 0x8fe260 (semantic, medium); signature (untiered): `undefined Revert(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Revert`: resets to ctor values (medium); semantic signature: `void (ThirdPersonState* this)`
     pub slot_8: *const c_void,
-    /// `ThirdPersonState::Unk9` at 0x55d620 (semantic, low); signature (untiered): `undefined Unk9(void)`; `Unk9`: empty here; Horse 0x8f7100 and Dragon 0x55cbb0 override (low); semantic signature: `void (ThirdPersonState* this)`
+    /// `ThirdPersonState::SetTargetHandle` at 0x55d620 (semantic, high); signature (untiered): `undefined SetTargetHandle(void)`; `SetTargetHandle`: empty in the base; Horse/Dragon store their mount (high); semantic signature: `void (ThirdPersonState* this, ObjectRefHandle* handle)`
     pub slot_9: *const c_void,
-    /// `ThirdPersonState::Unk10` at 0x55d610 (semantic, low); signature (untiered): `undefined Unk10(void)`; `Unk10`: empty here; Horse 0x8f7110 and Dragon 0x55cbc0 override (low); semantic signature: `void (ThirdPersonState* this)`
+    /// `ThirdPersonState::ResetOffsets` at 0x55d610 (semantic, high); signature (untiered): `undefined ResetOffsets(void)`; `ResetOffsets`: empty in the base; Horse/Dragon set current and target offsets to their mount values (high); semantic signature: `void (ThirdPersonState* this)`
     pub slot_10: *const c_void,
     /// `ThirdPersonState::SetCombatOffsets` at 0x8fd970 (semantic, high); signature (untiered): `undefined SetCombatOffsets(ThirdPersonState * this, char param_1)`; `SetCombatOffsets`: targetOffset from fOverShoulderCombatPosX/AddY/PosZ or fOverShoulderPosX/0/PosZ (high); semantic signature: `void (ThirdPersonState* this, bool combat)`
     pub slot_11: *const c_void,
@@ -203388,6 +203798,12 @@ pub struct ThirdPersonState_vtable {
 }
 impl ThirdPersonState_vtable {
     pub const ID: u64 = 205236;
+    pub const SLOT_Destroy: usize = 0;
+    /// Slot 0 as `ThirdPersonState_vtable_Destroy`, `None` when the slot is null.
+    #[must_use]
+    pub fn Destroy(&self) -> Option<ThirdPersonState_vtable_Destroy> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ThirdPersonState_vtable_Destroy>>(self.slot_0) }
+    }
     pub const SLOT_Begin: usize = 1;
     /// Slot 1 as `ThirdPersonState_vtable_Begin`, `None` when the slot is null.
     #[must_use]
@@ -203416,8 +203832,13 @@ impl ThirdPersonState_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<ThirdPersonState_vtable_LoadGame>>(self.slot_7) }
     }
     pub const SLOT_Revert: usize = 8;
-    pub const SLOT_Unk9: usize = 9;
-    pub const SLOT_Unk10: usize = 10;
+    pub const SLOT_SetTargetHandle: usize = 9;
+    pub const SLOT_ResetOffsets: usize = 10;
+    /// Slot 10 as `ThirdPersonState_vtable_ResetOffsets`, `None` when the slot is null.
+    #[must_use]
+    pub fn ResetOffsets(&self) -> Option<ThirdPersonState_vtable_ResetOffsets> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ThirdPersonState_vtable_ResetOffsets>>(self.slot_10) }
+    }
     pub const SLOT_SetCombatOffsets: usize = 11;
     /// Slot 11 as `ThirdPersonState_vtable_SetCombatOffsets`, `None` when the slot is null.
     #[must_use]
@@ -203434,6 +203855,8 @@ impl ThirdPersonState_vtable {
     }
     pub const SLOT_ProcessLookInput: usize = 15;
 }
+/// `ThirdPersonState::Destroy`, slot 0:  (high).
+pub type ThirdPersonState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, flags: u32) -> *mut classes::ThirdPersonState;
 /// `ThirdPersonState::Begin`, slot 1: target heading into both yaws, registers the handler, schedules SetFirstPerson(false), looks up animatedNode (high).
 pub type ThirdPersonState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::ThirdPersonState);
 /// `ThirdPersonState::End`, slot 2: resets freeRotation (unless +0xdf), unregisters the handler, releases animatedNode, zeroes animatedBlend (high).
@@ -203442,6 +203865,8 @@ pub type ThirdPersonState_vtable_End = unsafe extern "C" fn(this: *mut classes::
 pub type ThirdPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::BGSSaveFormBuffer);
 /// `ThirdPersonState::LoadGame`, slot 7: reads the same and copies target values into the current ones (high).
 pub type ThirdPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::BGSLoadFormBuffer);
+/// `ThirdPersonState::ResetOffsets`, slot 10: empty in the base; Horse/Dragon set current and target offsets to their mount values (high).
+pub type ThirdPersonState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut classes::ThirdPersonState);
 /// `ThirdPersonState::SetCombatOffsets`, slot 11: targetOffset from fOverShoulderCombatPosX/AddY/PosZ or fOverShoulderPosX/0/PosZ (high).
 pub type ThirdPersonState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, combat: bool);
 /// `ThirdPersonState::UpdateRotation`, slot 14: targetYaw from the target heading; with +0xe1 and free look adds freeRotation; rotation = Euler(pitch, 0, currentYaw) (high).
@@ -203454,9 +203879,9 @@ pub struct ThirdPersonState_vtable_20 {
     pub slot_0: *const c_void,
     /// `ThirdPersonState::PlayerInputHandler_vfunc_1` at 0x8fdca0 (rtti, medium); signature (low): `undefined8 PlayerInputHandler_vfunc_1(ThirdPersonState * this, longlong * param_1)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -203512,19 +203937,19 @@ impl TitleSequenceMenu_vtable {
 /// `TogglePOVHandler::vftable` at 0x1935568, id 208737 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct TogglePOVHandler_vtable {
-    /// `TogglePOVHandler::vdtor` at 0x7b1de0 (layout_inference, medium); signature (low): `TogglePOVHandler * vdtor(TogglePOVHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TogglePOVHandler::Destroy` at 0x7b1de0 (semantic, high); signature (untiered): `TogglePOVHandler * Destroy(TogglePOVHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`:  (high); semantic signature: `TogglePOVHandler* (TogglePOVHandler* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `TogglePOVHandler::CanProcess` at 0x7b51a0 (semantic, high); signature (untiered): `bool CanProcess(TogglePOVHandler * this, longlong * param_1)`; `CanProcess`: Toggle POV (high); semantic signature: `bool (TogglePOVHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, medium); signature (untiered): `undefined ProcessMouseMove(void)`
     pub slot_5: *const c_void,
-    /// `TogglePOVHandler::vfunc_6` at 0x7b3bc0 (rtti, high); signature (low): `undefined vfunc_6(TogglePOVHandler * this, longlong param_1, longlong param_2)`
+    /// `TogglePOVHandler::ProcessButton` at 0x7b3bc0 (semantic, high); signature (untiered): `undefined ProcessButton(TogglePOVHandler * this, longlong param_1, longlong param_2)`; `ProcessButton`: sets PlayerControls+0x4b (vanity held) (high); semantic signature: `void (TogglePOVHandler* this, ButtonEvent* event, PlayerControlsData* data)`
     pub slot_6: *const c_void,
     /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
     pub slot_7: *const c_void,
@@ -203533,13 +203958,22 @@ pub struct TogglePOVHandler_vtable {
 }
 impl TogglePOVHandler_vtable {
     pub const ID: u64 = 208737;
+    pub const SLOT_Destroy: usize = 0;
+    /// Slot 0 as `TogglePOVHandler_vtable_Destroy`, `None` when the slot is null.
+    #[must_use]
+    pub fn Destroy(&self) -> Option<TogglePOVHandler_vtable_Destroy> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TogglePOVHandler_vtable_Destroy>>(self.slot_0) }
+    }
     pub const SLOT_CanProcess: usize = 1;
     /// Slot 1 as `TogglePOVHandler_vtable_CanProcess`, `None` when the slot is null.
     #[must_use]
     pub fn CanProcess(&self) -> Option<TogglePOVHandler_vtable_CanProcess> {
         unsafe { core::mem::transmute::<*const c_void, Option<TogglePOVHandler_vtable_CanProcess>>(self.slot_1) }
     }
+    pub const SLOT_ProcessButton: usize = 6;
 }
+/// `TogglePOVHandler::Destroy`, slot 0:  (high).
+pub type TogglePOVHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::TogglePOVHandler, flags: u32) -> *mut classes::TogglePOVHandler;
 /// `TogglePOVHandler::CanProcess`, slot 1: Toggle POV (high).
 pub type TogglePOVHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::TogglePOVHandler, event: *mut classes::InputEvent) -> bool;
 
@@ -203550,9 +203984,9 @@ pub struct ToggleRunHandler_vtable {
     pub slot_0: *const c_void,
     /// `ToggleRunHandler::CanProcess` at 0x7b51d0 (semantic, high); signature (untiered): `bool CanProcess(ToggleRunHandler * this, longlong * param_1)`; `CanProcess`: Toggle Always Run (high); semantic signature: `bool (ToggleRunHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
-    /// `PlayerInputHandler::ProcessType7` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessType7(void)`
+    /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, medium); signature (untiered): `undefined ProcessMotionGesture(void)`
     pub slot_2: *const c_void,
-    /// `PlayerInputHandler::ProcessType6` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessType6(void)`
+    /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, medium); signature (untiered): `undefined ProcessSixaxis(void)`
     pub slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, medium); signature (untiered): `undefined ProcessThumbstick(void)`
     pub slot_4: *const c_void,
@@ -203967,13 +204401,13 @@ pub type TweenMenu_vtable_PostDisplay = unsafe extern "C" fn(this: *mut classes:
 pub struct TweenMenuCameraState_vtable {
     /// `TweenMenuCameraState::vdtor` at 0x8ff9f0 (layout_inference, medium); signature (low): `TweenMenuCameraState * vdtor(TweenMenuCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `TweenMenuCameraState::Begin` at 0x8ff310 (semantic, medium); signature (untiered): `undefined Begin(TweenMenuCameraState * this)`; `Begin`: zeroes closing, stores the base FOV, target zoom FOV = fTweenCamZoomFOVMod (medium); semantic signature: `void (TESCameraState* this)`
+    /// `TweenMenuCameraState::Begin` at 0x8ff310 (semantic, high); signature (untiered): `undefined Begin(TweenMenuCameraState * this)`; `Begin`: zeroes closing, stores the base FOV, target zoom FOV = fTweenCamZoomFOVMod (high); semantic signature: `void (TweenMenuCameraState* this)`
     pub slot_1: *const c_void,
-    /// `TweenMenuCameraState::vfunc_2` at 0x8ff380 (rtti, high); signature (high): `undefined vfunc_2(TweenMenuCameraState * this)`
+    /// `TweenMenuCameraState::End` at 0x8ff380 (semantic, high); signature (untiered): `undefined End(TweenMenuCameraState * this)`; `End`: worldFOV = baseFOV (high); semantic signature: `void (TweenMenuCameraState* this)`
     pub slot_2: *const c_void,
     /// `TweenMenuCameraState::Update` at 0x8ff3a0 (semantic, medium); signature (untiered): `undefined Update(TweenMenuCameraState * this, undefined8 param_1, float param_2)`; `Update`: moves angles and zoom FOV toward their targets with the real delta, writes PlayerCamera+0x13c and the root rotation, pops itself when closing finishes (medium); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `TweenMenuCameraState::vfunc_4` at 0x8ff5b0 (rtti, high); signature (low): `undefined vfunc_4(TweenMenuCameraState * this, float * param_1)`
+    /// `TweenMenuCameraState::GetRotation` at 0x8ff5b0 (semantic, high); signature (untiered): `undefined GetRotation(TweenMenuCameraState * this, float * param_1)`; `GetRotation`: baseRotation * euler(currentAngles) (high); semantic signature: `void (TweenMenuCameraState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
     /// `TESCameraState::GetTranslation` at 0x24a030 (semantic, high); signature (untiered): `undefined GetTranslation(TESCameraState * this, undefined4 * param_1)`
     pub slot_5: *const c_void,
@@ -203987,8 +204421,24 @@ pub struct TweenMenuCameraState_vtable {
 impl TweenMenuCameraState_vtable {
     pub const ID: u64 = 214907;
     pub const SLOT_Begin: usize = 1;
+    /// Slot 1 as `TweenMenuCameraState_vtable_Begin`, `None` when the slot is null.
+    #[must_use]
+    pub fn Begin(&self) -> Option<TweenMenuCameraState_vtable_Begin> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TweenMenuCameraState_vtable_Begin>>(self.slot_1) }
+    }
+    pub const SLOT_End: usize = 2;
+    /// Slot 2 as `TweenMenuCameraState_vtable_End`, `None` when the slot is null.
+    #[must_use]
+    pub fn End(&self) -> Option<TweenMenuCameraState_vtable_End> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TweenMenuCameraState_vtable_End>>(self.slot_2) }
+    }
     pub const SLOT_Update: usize = 3;
+    pub const SLOT_GetRotation: usize = 4;
 }
+/// `TweenMenuCameraState::Begin`, slot 1: zeroes closing, stores the base FOV, target zoom FOV = fTweenCamZoomFOVMod (high).
+pub type TweenMenuCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TweenMenuCameraState);
+/// `TweenMenuCameraState::End`, slot 2: worldFOV = baseFOV (high).
+pub type TweenMenuCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::TweenMenuCameraState);
 
 /// `UIBlurManager::vftable` at 0x19844a0, id 216246 (rtti, high); 2 slots.
 #[repr(C)]
@@ -205283,9 +205733,9 @@ pub struct VATSCameraState_vtable {
     pub slot_2: *const c_void,
     /// `VATSCameraState::Update` at 0x8ffac0 (semantic, high); signature (untiered): `undefined Update(VATSCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: slots 4/5, caster collision, writes the root (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `VATSCameraState::vfunc_4` at 0x8ffd40 (rtti, high); signature (low): `undefined vfunc_4(VATSCameraState * this, float * param_1)`
+    /// `VATSCameraState::GetRotation` at 0x8ffd40 (semantic, medium); signature (untiered): `undefined GetRotation(VATSCameraState * this, float * param_1)`; `GetRotation`: look-at from +0x2c toward the VATS target (0x31a5720 object) (medium); semantic signature: `void (VATSCameraState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `VATSCameraState::vfunc_5` at 0x900260 (rtti, high); signature (low): `undefined vfunc_5(VATSCameraState * this, undefined4 * param_1)`
+    /// `VATSCameraState::GetTranslation` at 0x900260 (semantic, high); signature (untiered): `undefined GetTranslation(VATSCameraState * this, undefined4 * param_1)`; `GetTranslation`: +0x2c (high); semantic signature: `void (VATSCameraState* this, NiPoint3* out)`
     pub slot_5: *const c_void,
     /// `TESCameraState::SaveGame` at 0x24a080 (semantic, medium); signature (untiered): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
@@ -205298,6 +205748,8 @@ impl VATSCameraState_vtable {
     pub const ID: u64 = 214909;
     pub const SLOT_Begin: usize = 1;
     pub const SLOT_Update: usize = 3;
+    pub const SLOT_GetRotation: usize = 4;
+    pub const SLOT_GetTranslation: usize = 5;
 }
 
 /// `ValueAndConditionsEffect::vftable` at 0x18fce40, id 206141 (rtti, high); 33 slots.

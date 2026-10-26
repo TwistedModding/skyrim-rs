@@ -2157,6 +2157,8 @@ pub const GameSetting_fDoorMarkerDisplayHeight_Interface: u64 = 382838;
 pub const GameSetting_fDragonLandingZoneClearRadius: u64 = 360589;
 /// `GameSetting_fDragonMaxUpwardPitch` at 0x20b3ec8 (setting, high)
 pub const GameSetting_fDragonMaxUpwardPitch: u64 = 380227;
+/// `GameSetting_fDragonMaxUpwardPitch_value` at 0x20b3ed0 (semantic, high); 45; flying-mount up limit (0x67cf1c, 0x692f60, 0x693107) (high); type `float`
+pub const GameSetting_fDragonMaxUpwardPitch_value: u64 = 380228;
 /// `GameSetting_fDragonRiderLandingZoneClearRadius` at 0x20b32c8 (setting, high)
 pub const GameSetting_fDragonRiderLandingZoneClearRadius: u64 = 379886;
 /// `GameSetting_fDrinkRepeatRate` at 0x209f270 (setting, high)
@@ -2347,6 +2349,8 @@ pub const GameSetting_fFloatQuestMarkerMinDistance: u64 = 377163;
 pub const GameSetting_fFlyingActorDefaultTurningSpeed: u64 = 371002;
 /// `GameSetting_fFlyingMountedMaxLookingDown` at 0x20a0470 (setting, high)
 pub const GameSetting_fFlyingMountedMaxLookingDown: u64 = 371028;
+/// `GameSetting_fFlyingMountedMaxLookingDown_value` at 0x20a0478 (semantic, high); 70; flying-mount down limit (0x67cf14, 0x692f58, 0x6930ff) (high); type `float`
+pub const GameSetting_fFlyingMountedMaxLookingDown_value: u64 = 371029;
 /// `GameSetting_fFollowExtraCatchUpSpeedMult` at 0x20a0da0 (setting, high)
 pub const GameSetting_fFollowExtraCatchUpSpeedMult: u64 = 371277;
 /// `GameSetting_fFollowMatchSpeedZoneWidth` at 0x20a0d88 (setting, high)
@@ -2539,6 +2543,8 @@ pub const GameSetting_fHitCasterSizeLarge: u64 = 370085;
 pub const GameSetting_fHitCasterSizeSmall: u64 = 370082;
 /// `GameSetting_fHorseMaxUpwardPitch` at 0x20ba3b8 (setting, high)
 pub const GameSetting_fHorseMaxUpwardPitch: u64 = 382578;
+/// `GameSetting_fHorseMaxUpwardPitch_value` at 0x20ba3c0 (semantic, high); 25; mounted up limit (0x67cef6, 0x692f3a, 0x6930e1) (high); type `float`
+pub const GameSetting_fHorseMaxUpwardPitch_value: u64 = 382579;
 /// `GameSetting_fHorseMountOffsetX` at 0x20a8b08 (setting, high)
 pub const GameSetting_fHorseMountOffsetX: u64 = 374857;
 /// `GameSetting_fHorseMountOffsetY` at 0x20a8b20 (setting, high)
@@ -3051,6 +3057,8 @@ pub const GameSetting_fModelReferenceEffectMaxWaitTime: u64 = 376195;
 pub const GameSetting_fMotionBlur: u64 = 373398;
 /// `GameSetting_fMountedMaxLookingDown` at 0x20a0458 (setting, high)
 pub const GameSetting_fMountedMaxLookingDown: u64 = 371025;
+/// `GameSetting_fMountedMaxLookingDown_value` at 0x20a0460 (semantic, high); 40; read only inside the three clamps after the mount-type 'ja' (0x67cee6, 0x692f2a, 0x6930d1) (high); type `float`
+pub const GameSetting_fMountedMaxLookingDown_value: u64 = 371026;
 /// `GameSetting_fMoveCharRunBase` at 0x20aa4a0 (setting, high)
 pub const GameSetting_fMoveCharRunBase: u64 = 375604;
 /// `GameSetting_fMoveCharWalkBase` at 0x20aa440 (setting, high)
@@ -3697,6 +3705,8 @@ pub const GameSetting_fShoutTime2: u64 = 376177;
 pub const GameSetting_fShoutTimeout: u64 = 376180;
 /// `GameSetting_fSittingMaxLookingDown` at 0x20a0488 (setting, high)
 pub const GameSetting_fSittingMaxLookingDown: u64 = 371031;
+/// `GameSetting_fSittingMaxLookingDown_value` at 0x20a0490 (semantic, high); 40; sitting down limit (0x67cf47 and the same branch in 0x692eb0/0x693050) (high); type `float`
+pub const GameSetting_fSittingMaxLookingDown_value: u64 = 371032;
 /// `GameSetting_fSkillUsageLockPickAverage` at 0x20aa758 (setting, high)
 pub const GameSetting_fSkillUsageLockPickAverage: u64 = 375675;
 /// `GameSetting_fSkillUsageLockPickBroken` at 0x20aa7a0 (setting, high)
@@ -7073,6 +7083,8 @@ pub const INIPrefSetting_bIBLFEnable_Display: u64 = 391361;
 pub const INIPrefSetting_bIndEnable_Display: u64 = 391552;
 /// `INIPrefSetting_bInvertYValues_Controls` at 0x20b83c8 (setting, high)
 pub const INIPrefSetting_bInvertYValues_Controls: u64 = 381965;
+/// `INIPrefSetting_bInvertYValues_Controls_value` at 0x20b83d0 (runtime, medium); negates look.y in ApplyLookInputSensitivity (0x7aebad) and in the map look handler path; written by the options menu (medium); type `u8`
+pub const INIPrefSetting_bInvertYValues_Controls_value: u64 = 381966;
 /// `INIPrefSetting_bLensFlare_ImageSpace` at 0x20d6eb0 (setting, high)
 pub const INIPrefSetting_bLensFlare_ImageSpace: u64 = 391127;
 /// `INIPrefSetting_bMusicOn_CreationsMenu` at 0x20b4290 (setting, high)
@@ -8079,6 +8091,8 @@ pub const INISetting_f1stHorzDampeningVelocityDampening_Camera: u64 = 382490;
 pub const INISetting_f1stPersonFarDepthRangeControlDriven_Display: u64 = 388996;
 /// `INISetting_f1stPersonFarDepthRange_Display` at 0x20d0370 (setting, high)
 pub const INISetting_f1stPersonFarDepthRange_Display: u64 = 388993;
+/// `INISetting_f1stPersonFarDepthRange_Display_value` at 0x20d0378 (semantic, high); viewport MaxDepth of the first-person draws (0.01) (high); type `float`
+pub const INISetting_f1stPersonFarDepthRange_Display_value: u64 = 388994;
 /// `INISetting_f1stPitchOffsetMouseFollowSpeed_Camera` at 0x20ba180 (setting, high)
 pub const INISetting_f1stPitchOffsetMouseFollowSpeed_Camera: u64 = 382511;
 /// `INISetting_f1stPitchOffsetMouseMaxLag_Camera` at 0x20ba198 (setting, high)
@@ -8369,6 +8383,8 @@ pub const INISetting_fDecapInitialSpeed_Combat: u64 = 381339;
 pub const INISetting_fDecreaseDRMilliseconds_Display: u64 = 389031;
 /// `INISetting_fDefault1stPersonFOV_Display` at 0x20cf9f0 (setting, high)
 pub const INISetting_fDefault1stPersonFOV_Display: u64 = 388787;
+/// `INISetting_fDefault1stPersonFOV_Display_value` at 0x20cf9f8 (semantic, high); 80; same readers for the first-person FOV; written by the fov command's second argument (high); type `float`
+pub const INISetting_fDefault1stPersonFOV_Display_value: u64 = 388788;
 /// `INISetting_fDefaultAutoVanityZoom_Camera` at 0x20ba000 (setting, high)
 pub const INISetting_fDefaultAutoVanityZoom_Camera: u64 = 382463;
 /// `INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding` at 0x20d49d8 (setting, high)
@@ -8377,6 +8393,8 @@ pub const INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding: u64 = 390467;
 pub const INISetting_fDefaultAvoidNodeCost_Pathfinding: u64 = 390394;
 /// `INISetting_fDefaultFOV_Display` at 0x20d6b80 (setting, high)
 pub const INISetting_fDefaultFOV_Display: u64 = 391056;
+/// `INISetting_fDefaultFOV_Display_value` at 0x20d6b88 (runtime, high); 80; SceneGraph ctor's FOV and the lodAdjust reference (high); type `float`
+pub const INISetting_fDefaultFOV_Display_value: u64 = 391057;
 /// `INISetting_fDefaultMasterVolume_Audio` at 0x20b5c60 (setting, high)
 pub const INISetting_fDefaultMasterVolume_Audio: u64 = 380875;
 /// `INISetting_fDefaultPreferredFactor_Pathfinding` at 0x20d4c58 (setting, high)
@@ -8389,6 +8407,8 @@ pub const INISetting_fDefaultTangentSmoothingFactor_Pathfinding: u64 = 390513;
 pub const INISetting_fDefaultWaterfallCurrentVelocity_HAVOK: u64 = 360549;
 /// `INISetting_fDefaultWorldFOV_Display` at 0x20cf9d8 (setting, high)
 pub const INISetting_fDefaultWorldFOV_Display: u64 = 388784;
+/// `INISetting_fDefaultWorldFOV_Display_value` at 0x20cf9e0 (semantic, high); 80; PlayerCamera ctor, ResetFOVToDefaults, revert, VATS pop, tween begin, ApplyLookPitch ratio, LookHandler motion; written by the fov command (high); type `float`
+pub const INISetting_fDefaultWorldFOV_Display_value: u64 = 388785;
 /// `INISetting_fDesiredVel_RagdollAnim` at 0x20d1930 (setting, high)
 pub const INISetting_fDesiredVel_RagdollAnim: u64 = 389149;
 /// `INISetting_fDetectionUpdateTimeSec_RagdollAnim` at 0x20d1960 (setting, high)
@@ -9249,8 +9269,12 @@ pub const INISetting_fNavmeshBoundsActorRadiusMultiplier_Pathfinding: u64 = 3904
 pub const INISetting_fNavmeshBoundsMinTimeOfImpact_Pathfinding: u64 = 390458;
 /// `INISetting_fNear1stPersonDistance_Display` at 0x20cf9c0 (setting, high)
 pub const INISetting_fNear1stPersonDistance_Display: u64 = 388781;
+/// `INISetting_fNear1stPersonDistance_Display_value` at 0x20cf9c8 (runtime, high); hands near (5); read by 0x1537460 +0x70 and 0x1538fa0 (high); type `float`
+pub const INISetting_fNear1stPersonDistance_Display_value: u64 = 388782;
 /// `INISetting_fNearDistance_Display` at 0x20cf9a8 (setting, high)
 pub const INISetting_fNearDistance_Display: u64 = 388778;
+/// `INISetting_fNearDistance_Display_value` at 0x20cf9b0 (runtime, high); world near (15); read by BSSceneGraph slot 63 at every frustum rebuild and every depth shift of every frame, so a write takes effect from the next frame (high); type `float`
+pub const INISetting_fNearDistance_Display_value: u64 = 388779;
 /// `INISetting_fNoLODFarDistanceMax_Display` at 0x20cf978 (setting, high)
 pub const INISetting_fNoLODFarDistanceMax_Display: u64 = 388772;
 /// `INISetting_fNoLODFarDistanceMin_Display` at 0x20cf960 (setting, high)
@@ -10701,6 +10725,8 @@ pub const g_ActiveAccumulatorMode: u64 = 414601;
 pub const g_ActiveRegisterFn: u64 = 414714;
 /// `g_ActiveRenderFn` at 0x33d4b18 (semantic, high); render function of the active mode (high); type `undefined8`
 pub const g_ActiveRenderFn: u64 = 414715;
+/// `g_ActiveShadowLightCount` at 0x3436300 (runtime, medium); lights given maps this frame including the sun (medium); type `u32`
+pub const g_ActiveShadowLightCount: u64 = 415035;
 /// `g_ActorMediator_ptr` at 0x3230a38 (semantic, high); pointer to `ActorMediator`: the single BSTEventSink<BSAnimationGraphEvent> registered on every actor graph; the single BSTEventSink<BSAnimationGraphEvent> registered on every actor graph (high); type `ptr:ActorMediator`
 pub const g_ActorMediator_ptr: u64 = 403567;
 /// `g_ActorValueList_ptr` at 0x219dec8 (runtime, high); pointer to `ActorValueList`: pointer to the actor value list singleton; pointer to the actor value list singleton (high); type `ptr:ActorValueList`
@@ -11637,6 +11663,8 @@ pub const g_CCallbackImpl_1: u64 = 505562;
 pub const g_CCallbackImpl_8: u64 = 415501;
 /// `g_CameraFOVOffset` at 0x3436028 (semantic, low); FOV offset added by ApplyWorldFOV, written from the state's cameraAnim +0x74 (low); type `float`
 pub const g_CameraFOVOffset: u64 = 414942;
+/// `g_CameraInsideLightMask` at 0x343630c (semantic, high); frame copy of ShadowSceneNode +0x248 (high); type `u32`
+pub const g_CameraInsideLightMask: u64 = 415038;
 /// `g_CategoryVolumeSlots` at 0x31df750 (semantic, high); saved volumes of the menu categories: form id at +8, volume float at +0x20 (high); type `CategoryVolumeSlot[8] (0x50 each)`
 pub const g_CategoryVolumeSlots: u64 = 401172;
 /// `g_ChangeFormTypeToFormType` at 0x20b55c0 (semantic, high); save type (0..48) -> formType: REFR ACHR PMIS PGRE PBEA PFLA CELL INFO QUST NPC_ ACTI TACT ARMO BOOK CONT DOOR INGR LIGH MISC APPA STAT MSTT FURN WEAP AMMO KEYM ALCH IDLM NOTE ECZN CLAS FACT PACK NAVM WOOP MGEF SMQN SCEN LCTN RELA PHZD PBAR PCON FLST LVLN LVLI LVSP PARW ENCH (high); type `undefined4[49]`
@@ -11987,8 +12015,18 @@ pub const g_ConsoleSelectedRef: u64 = 504099;
 pub const g_ControlMap: u64 = 403592;
 /// `g_CreateRenderTargetsCallback` at 0x3336380 (semantic, high); = 0x153b680, called after device creation and after every resize (high); type `undefined8`
 pub const g_CreateRenderTargetsCallback: u64 = 411476;
+/// `g_CrosshairPickData` at 0x3245340 (semantic, high); the static pick data object (high); type `class:CrosshairPickData`
+pub const g_CrosshairPickData: u64 = 404421;
+/// `g_CrosshairPickData_ptr` at 0x31e0b70 (runtime, high); pointer to `CrosshairPickData`: pointer to the static crosshair pick data (ID_401585); pointer to the static crosshair pick data (ID_401585) (high); type `ptr:CrosshairPickData`
+pub const g_CrosshairPickData_ptr: u64 = 401585;
+/// `g_CullRootLists` at 0x3436270 (semantic, high); BSTArray of 0x18-byte root lists walked by the main and the sun's cullers (high); type `pointer`
+pub const g_CullRootLists: u64 = 415017;
+/// `g_CurrentCameraState` at 0x20cff80 (semantic, medium); the bound camera's matrices (copied from a CameraMatrixEntry), viewport, depth range +0x240/+0x244 (0x20d01c0/0x20d01c4), eye position 0x20cff5c.. (medium); type `undefined1`
+pub const g_CurrentCameraState: u64 = 388915;
 /// `g_CurrentMaterial` at 0x36939e0 (semantic, high); pointer to `BSShaderMaterial`: material last handed to SetupMaterial; material last handed to SetupMaterial (high); type `ptr:BSShaderMaterial`
 pub const g_CurrentMaterial: u64 = 415274;
+/// `g_CurrentRenderCamera` at 0x33d3d28 (semantic, high); pointer to `NiCamera`: camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it; camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it (high); type `ptr:NiCamera`
+pub const g_CurrentRenderCamera: u64 = 414580;
 /// `g_CurrentRenderWindow` at 0x3330198 (runtime, high); pointer to `RenderWindow`: window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38); window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38) (high); type `ptr:RenderWindow`
 pub const g_CurrentRenderWindow: u64 = 411349;
 /// `g_CurrentShader` at 0x36939d8 (semantic, high); pointer to `BSShader`: shader of the technique currently set up; shader of the technique currently set up (high); type `ptr:BSShader`
@@ -11999,6 +12037,8 @@ pub const g_CurrentTechnique: u64 = 415272;
 pub const g_D3D11Context: u64 = 411391;
 /// `g_D3D11Device` at 0x3330190 (runtime, high); the device (high); type `pointer`
 pub const g_D3D11Device: u64 = 411348;
+/// `g_DOFOverrideMode` at 0x20d69d8 (semantic, medium); 2: the depth of field takes its four parameters from g_ImageSpaceState+0xb8 (+0x40..+0x4c) instead of the current params +0x14c..+0x158; 1 disables the dynamic DOF path (medium); type `i32`
+pub const g_DOFOverrideMode: u64 = 391008;
 /// `g_DXGIOutput` at 0x3331f18 (semantic, high); IDXGIOutput* of output 0 of the adapter (display mode list) (high); type `undefined8`
 pub const g_DXGIOutput: u64 = 411386;
 /// `g_DebugText_ptr` at 0x333c570 (xref_inference, medium)
@@ -12009,10 +12049,22 @@ pub const g_DefaultEffectMaterial: u64 = 415165;
 pub const g_DefaultFadeNode: u64 = 414561;
 /// `g_DefaultLightingMaterial` at 0x33d4db0 (xref_inference, medium); pointer to `BSLightingShaderMaterialBase`: default lighting material; default lighting material (medium); type `ptr:BSLightingShaderMaterialBase`
 pub const g_DefaultLightingMaterial: u64 = 414779;
+/// `g_DefaultMaxPitchDown` at 0x1b5be30 (semantic, high); pi/2 (high); type `float`
+pub const g_DefaultMaxPitchDown: u64 = 189817;
+/// `g_DefaultMaxPitchUp` at 0x181ab90 (semantic, high); -pi/2 (high); type `float`
+pub const g_DefaultMaxPitchUp: u64 = 189822;
 /// `g_DefaultShaderMaterial` at 0x3698be8 (xref_inference, medium); pointer to `BSShaderMaterial`: default base material; default base material (medium); type `ptr:BSShaderMaterial`
 pub const g_DefaultShaderMaterial: u64 = 415311;
 /// `g_DepthAccumulator2` at 0x3436248 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, decals off; only Main and Msg_LODTrees reference it; renderMode 0xc, decals off; only Main and Msg_LODTrees reference it (high); type `ptr:BSShaderAccumulator`
 pub const g_DepthAccumulator2: u64 = 415012;
+/// `g_DepthShiftEnabled` at 0x20d72c0 (semantic, high); enables BeginDepthShift/EndDepthShift and the prepass's inline shift; static 1 (high); type `u8`
+pub const g_DepthShiftEnabled: u64 = 391260;
+/// `g_DepthShiftFar` at 0x3436050 (runtime, high); slot 62 cached by BeginDepthShift, restored by EndDepthShift (high); type `float`
+pub const g_DepthShiftFar: u64 = 414948;
+/// `g_DepthShiftNear` at 0x3436054 (semantic, high); slot 63 cached by BeginDepthShift (high); type `float`
+pub const g_DepthShiftNear: u64 = 414949;
+/// `g_DepthShiftSavedDepthRange` at 0x34362b8 (semantic, high); viewport MinDepth/MaxDepth saved by BeginDepthShift (+4 MaxDepth) (high); type `float`
+pub const g_DepthShiftSavedDepthRange: u64 = 415025;
 /// `g_DirectInput_ptr` at 0x32309d0 (semantic, high); wrapper whose +8 is the IDirectInput8* (high); type `undefined8`
 pub const g_DirectInput_ptr: u64 = 403554;
 /// `g_DistantTreeShader` at 0x33d3df0 (semantic, high); pointer to `BSDistantTreeShader`: holder; holder (high); type `ptr:BSDistantTreeShader`
@@ -12021,8 +12073,16 @@ pub const g_DistantTreeShader: u64 = 414610;
 pub const g_DistantTreeShaderInstance: u64 = 415171;
 /// `g_DoorObstacleAdapter` at 0x20b6368 (layout_inference, medium)
 pub const g_DoorObstacleAdapter: u64 = 381087;
+/// `g_DragonMaxTurnAngle` at 0x32048c8 (semantic, low); dragon free-rotation limit (low); type `float`
+pub const g_DragonMaxTurnAngle: u64 = 402637;
+/// `g_DynamicHeightRatio` at 0x33364b8 (runtime, high); FrameState+0x118 (high); type `float`
+pub const g_DynamicHeightRatio: u64 = 411506;
 /// `g_DynamicJobLists` at 0x3220a10 (semantic, medium); 13 job lists by index: 0 DynamicPreRender, 1 DynamicPostRender, 2 ActorCombat, 3 DynamicActorUpdate, 4 DynamicActorMovement, 5 DynamicActorAnim, 6 DynamicCellNode, 7 TESAnimations, 8 RagdollsPostphysics, 9 UpdateNonRenderSafeAI, ... (medium); type `pointer`
 pub const g_DynamicJobLists: u64 = 403091;
+/// `g_DynamicResolutionLock` at 0x33364c8 (semantic, high); FrameState+0x128 (high); type `i32`
+pub const g_DynamicResolutionLock: u64 = 411509;
+/// `g_DynamicWidthRatio` at 0x33364b4 (runtime, high); FrameState+0x114 (high); type `float`
+pub const g_DynamicWidthRatio: u64 = 411505;
 /// `g_EffectSettingCollection` at 0x2076648 (layout_inference, medium)
 pub const g_EffectSettingCollection: u64 = 433120;
 /// `g_EffectShader` at 0x33d3dd8 (semantic, high); pointer to `BSEffectShader`: holder; holder (high); type `ptr:BSEffectShader`
@@ -12053,12 +12113,34 @@ pub const g_ExtraDataLock: u64 = 410492;
 pub const g_FOCollisionListener_ptr: u64 = 400444;
 /// `g_FOIslandActivationListener_ptr` at 0x31def30 (xref_inference, medium)
 pub const g_FOIslandActivationListener_ptr: u64 = 400944;
+/// `g_FOVTanScale` at 0x20d9230 (semantic, high); tan(fov/2) / tan(37.5 deg), set with the world FOV (high); type `float`
+pub const g_FOVTanScale: u64 = 391777;
 /// `g_FaceMorphQueue` at 0x31e76b8 (semantic, high); face nodes whose morphs are applied by the next 'Face morphing' step (count at 0x31e76c8, spin lock ID_401746) (high); type `pointer`
 pub const g_FaceMorphQueue: u64 = 401743;
+/// `g_FadeFrameCounter` at 0x20d6690 (semantic, medium); frame stamp BSFadeNode.fadeFrame (+0x13c) is compared with (ID_390886) (medium); type `u32`
+pub const g_FadeFrameCounter: u64 = 390886;
+/// `g_FadeNodesEnabled` at 0x20d663d (semantic, medium); BSFadeNode::OnVisible does fade work only when set (ID_390866) (medium); type `u8`
+pub const g_FadeNodesEnabled: u64 = 390866;
 /// `g_FirstPersonAccumulator` at 0x3436240 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10); renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10) (high); type `ptr:BSShaderAccumulator`
 pub const g_FirstPersonAccumulator: u64 = 415011;
 /// `g_FirstPersonCamera` at 0x3436220 (xref_inference, medium); pointer to `NiCamera`: camera of the first-person draws; camera of the first-person draws (medium); type `ptr:NiCamera`
 pub const g_FirstPersonCamera: u64 = 415007;
+/// `g_FirstPersonPitchGraphVar` at 0x3255ab8 (semantic, high); graph float variable FirstPersonState sends laggedPitchOffset to (high); type `class:BSFixedString`
+pub const g_FirstPersonPitchGraphVar: u64 = 405789;
+/// `g_FirstPersonRootOffset` at 0x3436318 (semantic, high); NiPoint3 = -(first-person root world translation) of this frame; 0x3436328 holds the previous frame's (copied once per g_RenderFrameCounter, 0x343602c) (high); type `undefined1`
+pub const g_FirstPersonRootOffset: u64 = 415042;
+/// `g_FirstPersonViewParams` at 0x34362c0 (runtime, high); 0x58-byte block returned by 0x1537410: +0..+8 first-person position offset, +0xc (0x34362cc) the hands FOV used by 0x1537460 and 0x1538fa0 (high); type `undefined1`
+pub const g_FirstPersonViewParams: u64 = 415027;
+/// `g_FocusShadowNodeCount` at 0x33d3e90 (runtime, medium); number of focus shadow nodes this frame (0 in vanilla first person without nearby actors) (medium); type `u32`
+pub const g_FocusShadowNodeCount: u64 = 414625;
+/// `g_FocusShadowNodes` at 0x33d3e80 (semantic, high); correction of pass 6's g_StencilMaskNodes: the focus shadow list, 16-byte {float sortKey, NiNode* node}; the depth pre-pass also stencils these nodes (high); type `class:BSTArray`
+pub const g_FocusShadowNodes: u64 = 414623;
+/// `g_FocusShadowOwner` at 0x34869b8 (semantic, high); pointer to `BSShadowLight`: local light that owned the focus maps; local light that owned the focus maps (high); type `ptr:BSShadowLight`
+pub const g_FocusShadowOwner: u64 = 415267;
+/// `g_FocusShadowsAssigned` at 0x3436312 (semantic, high); a light already owns the focus maps this frame (high); type `u8`
+pub const g_FocusShadowsAssigned: u64 = 415041;
+/// `g_FocusShadowsEnabled` at 0x20d6810 (semantic, medium); 1 in the image, no writer found; gates focus maps (medium); type `u8`
+pub const g_FocusShadowsEnabled: u64 = 390932;
 /// `g_FootstepEventSource_ptr` at 0x32309c8 (semantic, high); pointer to `BSTEventSource`: pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink; pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink (high); type `ptr:BSTEventSource`
 pub const g_FootstepEventSource_ptr: u64 = 403553;
 /// `g_FormTypeSignatures` at 0x17f95a0 (string, high)
@@ -12081,6 +12163,8 @@ pub const g_FrameState: u64 = 411479;
 pub const g_FrameTimeMs: u64 = 410201;
 /// `g_FrameTimer` at 0x32755f0 (semantic, high); the frame timer: +0x18 delta, +0x1c real delta, +0x20 elapsed ms (high); type `undefined1`
 pub const g_FrameTimer: u64 = 410196;
+/// `g_FreeCameraEventNames` at 0x3255ac8 (semantic, medium); five event names 0x3255ac8..0x3255ae8 the free camera handler accepts (medium); type `class:BSFixedString`
+pub const g_FreeCameraEventNames: u64 = 405792;
 /// `g_FreeShadowMapSlices` at 0x20d8ff8 (semantic, high); bit mask of free slices of depth target 4 (focus and local shadow maps) (high); type `undefined4`
 pub const g_FreeShadowMapSlices: u64 = 391715;
 /// `g_GRefCountImplCore` at 0x20ce5c8 (layout_inference, medium)
@@ -12091,6 +12175,8 @@ pub const g_GarbageCollector_ptr: u64 = 400329;
 pub const g_GrassShader: u64 = 414608;
 /// `g_GrassShaderInstance` at 0x33d4c30 (semantic, high); pointer to `BSGrassShader`: instance pointer; instance pointer (high); type `ptr:BSGrassShader`
 pub const g_GrassShaderInstance: u64 = 414752;
+/// `g_HUDCameraWorldToClip` at 0x32566d0 (runtime, high); 64-byte snapshot of the frame camera's world-to-clip matrix; viewport snapshot at 0x3257c78; lock 0x32567a8 (owner) / 0x32567ac (count) (high); type `undefined1`
+pub const g_HUDCameraWorldToClip: u64 = 406126;
 /// `g_HandleFreeHead` at 0x21a426c (runtime, high); head of the handle free list (high); type `undefined4`
 pub const g_HandleFreeHead: u64 = 400619;
 /// `g_HandleFreeTail` at 0x21a4270 (runtime, high); tail of the handle free list (high); type `undefined4`
@@ -12101,8 +12187,14 @@ pub const g_HandleTable: u64 = 400622;
 pub const g_HandleTableLock: u64 = 400621;
 /// `g_HavokJobContext` at 0x326fb78 (semantic, low); Havok job queue/thread-pool context; when its +0x28 and +0x30 are set, GenerateBehaviorGraphPose(..., true) runs generate through processGenerateBehaviorGraphJob (low); type `pointer`
 pub const g_HavokJobContext: u64 = 409554;
+/// `g_HavokWorldScale` at 0x17fde5c (semantic, high); 0.0142875: game units to Havok units (high); type `float`
+pub const g_HavokWorldScale: u64 = 188105;
+/// `g_HavokWorldScaleInverse` at 0x17f423c (semantic, high); 69.99125 (high); type `float`
+pub const g_HavokWorldScaleInverse: u64 = 187407;
 /// `g_HelpMessageManager` at 0x3257c90 (layout_inference, medium)
 pub const g_HelpMessageManager: u64 = 406161;
+/// `g_HorseMaxTurnAngle` at 0x3255af0 (semantic, low); horse free-rotation limit (radians, set at runtime) (low); type `float`
+pub const g_HorseMaxTurnAngle: u64 = 405797;
 /// `g_IBSTCreator_CombatObject` at 0x3254768 (layout_inference, medium)
 pub const g_IBSTCreator_CombatObject: u64 = 405148;
 /// `g_IBSTCreator_CombatObject_10` at 0x3254918 (layout_inference, medium)
@@ -12155,6 +12247,8 @@ pub const g_IPathBuilderFactoryBase_2: u64 = 405407;
 pub const g_IPathBuilderFactoryBase_3: u64 = 405686;
 /// `g_IPathBuilderFactoryBase_4` at 0x3255aa8 (layout_inference, medium)
 pub const g_IPathBuilderFactoryBase_4: u64 = 405787;
+/// `g_ImageSpaceModifierClock` at 0x31a5810 (runtime, high); seconds clock of the IMOD instances (start times and durations compare against it) (high); type `float`
+pub const g_ImageSpaceModifierClock: u64 = 400912;
 /// `g_ImageSpaceState` at 0x33d40a0 (xref_inference, medium); pointer to `ImageSpaceState`: the 0x220-byte image space state created in InitShaders (0x14ed370): the image space effects by id at +0x20 and the current parameters at +0xc8, which the lighting shader's SetupGeometry also reads (+0xe0); the 0x220-byte image space state created in InitShaders (0x14ed370): the image space effects by id at +0x20 and the current parameters at +0xc8, which the lighting shader's SetupGeometry also reads (+0xe0) (low); type `ptr:ImageSpaceState`
 pub const g_ImageSpaceState: u64 = 414660;
 /// `g_InputEventQueue` at 0x3275f70 (semantic, high); static queue object (high); type `class:InputEventQueue`
@@ -12187,8 +12281,16 @@ pub const g_LinkedSoundDescriptorIDs: u64 = 401175;
 pub const g_LipSynchAnimDB_LipAudioInterface: u64 = 359693;
 /// `g_MagicFavorites` at 0x323a1d0 (layout_inference, medium)
 pub const g_MagicFavorites: u64 = 403620;
+/// `g_Main` at 0x3230530 (semantic, high); main loop object; +0x16 = world frozen (tfc 1) (high); type `pointer`
+pub const g_Main: u64 = 403449;
+/// `g_MainCullerCount` at 0x3436268 (semantic, high); 6 (number of root lists and of sun list cullers) (high); type `u32`
+pub const g_MainCullerCount: u64 = 415016;
+/// `g_MainCullers` at 0x34362a0 (semantic, high); BSTArray of the 6 main-camera BSGeometryListCullingProcess (high); type `pointer`
+pub const g_MainCullers: u64 = 415022;
 /// `g_MainLoopSteps` at 0x20b4f00 (semantic, medium); named main loop job steps ('Process lists' 0x20b4f00 .. 'Post reset' 0x20b51a0), 16-byte entries (medium); type `struct {fn, const char* name}[]`
 pub const g_MainLoopSteps: u64 = 380514;
+/// `g_MaxFocusShadows` at 0x20d6814 (semantic, high); iNumFocusShadow copied by InitShaders 0x14eaaba (image default 4) (high); type `u32`
+pub const g_MaxFocusShadows: u64 = 414621;
 /// `g_MenuControls` at 0x323a670 (runtime, high); static storage of MenuControls (0x88, ends at ConsoleLog 0x323a700) (high); type `class:MenuControls`
 pub const g_MenuControls: u64 = 403634;
 /// `g_MenuControlsCurrentEvent` at 0x32583b8 (semantic, high); pointer to `InputEvent`: the event being dispatched; the event being dispatched (high); type `ptr:InputEvent`
@@ -12261,6 +12363,8 @@ pub const g_NiTObjectArray_NiPointer_NiRefObject: u64 = 388583;
 pub const g_NoActivationSoundDescriptor: u64 = 402984;
 /// `g_NoMusic` at 0x20d3cb0 (semantic, high); the placeholder music type (priority 100) (high); type `_anon_67C8711B::NoMusic`
 pub const g_NoMusic: u64 = 390241;
+/// `g_NodeUpdateTime` at 0x219e5f0 (semantic, low); time the player's root updates pass in NiUpdateData (ID_400333) (low); type `float`
+pub const g_NodeUpdateTime: u64 = 400333;
 /// `g_NullMovementState` at 0x3350a58 (layout_inference, medium)
 pub const g_NullMovementState: u64 = 412263;
 /// `g_NullPathBuilderTracker` at 0x3350938 (layout_inference, medium)
@@ -12285,6 +12389,8 @@ pub const g_PendingConsoleLines: u64 = 504100;
 pub const g_PerFrameConstantBuffer: u64 = 411384;
 /// `g_PlaceholderTexture` at 0x3336448 (xref_inference, medium); pointer to `NiSourceTexture`: texture used when a material texture is missing; texture used when a material texture is missing (low); type `ptr:NiSourceTexture`
 pub const g_PlaceholderTexture: u64 = 411503;
+/// `g_PlayerCamera` at 0x3245380 (semantic, medium); static PlayerCamera instance (medium); type `class:PlayerCamera`
+pub const g_PlayerCamera: u64 = 404422;
 /// `g_PlayerCamera_ptr` at 0x31a5478 (runtime, high); pointer to `PlayerCamera`: the player camera singleton; the player camera singleton (high); type `ptr:PlayerCamera`
 pub const g_PlayerCamera_ptr: u64 = 400802;
 /// `g_PlayerCharacter_ptr` at 0x3230778 (runtime, high); pointer to `PlayerCharacter`: pointer to the player; pointer to the player (high); type `ptr:PlayerCharacter`
@@ -12293,6 +12399,12 @@ pub const g_PlayerCharacter_ptr: u64 = 403521;
 pub const g_PlayerControls: u64 = 403657;
 /// `g_PlayerControls_ptr` at 0x31a5698 (semantic, high); pointer to `PlayerControls`: PlayerControls singleton; PlayerControls singleton (high); type `ptr:PlayerControls`
 pub const g_PlayerControls_ptr: u64 = 400864;
+/// `g_PlayerDeathReloadTimer` at 0x20b746c (semantic, high); seconds left before the automatic reload after the player's death; reset to the constant at 0x17e2820 when the state bits are outside 0x200000/0x400000 and to ID_186426 after firing; a negative value restarts it from the setting (high); type `float`
+pub const g_PlayerDeathReloadTimer: u64 = 381535;
+/// `g_PlayerHandle` at 0x3230774 (semantic, high); the player's ObjectRefHandle (high); type `u32`
+pub const g_PlayerHandle: u64 = 403520;
+/// `g_PlayerRef_ptr` at 0x31df300 (xref_inference, medium); pointer to `PlayerCharacter`: pointer compared with the camera target and the actor in the pitch clamps; behaves as the player reference; pointer compared with the camera target and the actor in the pitch clamps; behaves as the player reference (medium); type `ptr:PlayerCharacter`
+pub const g_PlayerRef_ptr: u64 = 401069;
 /// `g_PlayerSleepWaitMovementControllerAdapter` at 0x20b6340 (layout_inference, medium)
 pub const g_PlayerSleepWaitMovementControllerAdapter: u64 = 381082;
 /// `g_ProcessListMovementInterface` at 0x20b8040 (layout_inference, medium)
@@ -12309,12 +12421,16 @@ pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_77E528F2_Scene
 pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_A5EEF477_StageItemFinishedCallback: u64 = 401548;
 /// `g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_A86607C4_ScenePhaseResultsCallBack` at 0x31e03a0 (layout_inference, medium)
 pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_A86607C4_ScenePhaseResultsCallBack: u64 = 401386;
+/// `g_RaceMenuCameraInterp` at 0x20bb890 (semantic, medium); eased camera interpolation the race menu camera follows; 0x20bb8d4 disables RaceSexCamera::Update's write (medium); type `undefined1`
+pub const g_RaceMenuCameraInterp: u64 = 383171;
 /// `g_RagdollFurnitureListener` at 0x209e320 (layout_inference, medium)
 pub const g_RagdollFurnitureListener: u64 = 370090;
 /// `g_RecentHUDMessages` at 0x3258b80 (semantic, high); repeat-suppression table of ShowHUDMessage (high); type `struct{u32 crc; u32 time;}[8]`
 pub const g_RecentHUDMessages: u64 = 406616;
 /// `g_RenderFrameCounter` at 0x33363f4 (runtime, high); render frame number, incremented by PresentFrame; skin palettes and shader pass lists are cached per value (high); type `undefined4`
 pub const g_RenderFrameCounter: u64 = 411489;
+/// `g_RenderMapMenuOpen` at 0x3436058 (semantic, high); IsMenuOpen(UIStrings+0x110 = 'MapMenu') stored each frame by RenderWorldScene (high); type `u8`
+pub const g_RenderMapMenuOpen: u64 = 414950;
 /// `g_RenderPassPools` at 0x3436660 (semantic, high); two 0x28-byte pools {passes, lightSlots, freeHead +0x10, freeTail +0x18, owner thread +0x20, lock count +0x24} (high); type `undefined1`
 pub const g_RenderPassPools: u64 = 415150;
 /// `g_RenderStateCache` at 0x20cfc00 (semantic, high); pending pipeline state (targets, depth, viewport, state indices) (high); type `class:RenderStateCache`
@@ -12405,8 +12521,28 @@ pub const g_SettingT_INISettingCollection_7: u64 = 388975;
 pub const g_SettingT_INISettingCollection_8: u64 = 388978;
 /// `g_ShaderMaterialCache` at 0x32309d8 (semantic, low); cache of shared materials keyed by hash (low); type `pointer`
 pub const g_ShaderMaterialCache: u64 = 403555;
+/// `g_ShadowDistance` at 0x34869a8 (runtime, high); current shadow distance (exterior/interior) (high); type `float`
+pub const g_ShadowDistance: u64 = 415263;
+/// `g_ShadowDistanceIsInterior` at 0x20d68f4 (runtime, high); interior flag last given to SetShadowDistanceForInterior (high); type `u8`
+pub const g_ShadowDistanceIsInterior: u64 = 390962;
+/// `g_ShadowDistanceSq` at 0x34869ac (semantic, high); square of g_ShadowDistance; local shadow light distance cull (high); type `float`
+pub const g_ShadowDistanceSq: u64 = 415264;
+/// `g_ShadowFilterType` at 0x20d6840 (semantic, medium); uShadowFilterType copied by InitShaders (also 0x20d6844); 2-4 enable the Poisson radius constants (medium); type `u32`
+pub const g_ShadowFilterType: u64 = 390941;
+/// `g_ShadowLightFrameIndex` at 0x3436308 (semantic, high); next BSShadowLight.frameIndex (high); type `u32`
+pub const g_ShadowLightFrameIndex: u64 = 415037;
+/// `g_ShadowMapCounter` at 0x3436304 (semantic, high); running map counter of the frame (bit index of the shadow light mask) (high); type `u32`
+pub const g_ShadowMapCounter: u64 = 415036;
+/// `g_ShadowMapResolution` at 0x34869c0 (runtime, medium); iShadowMapResolution cached at startup; sizes depth targets 2/3/4 (medium); type `u32`
+pub const g_ShadowMapResolution: u64 = 415268;
+/// `g_ShadowMaskPassEnabled` at 0x20d6811 (semantic, medium); 1 in the image, no writer found; selects the per-light shadow-mask path in slot 43 and RenderShadowMasks (medium); type `u8`
+pub const g_ShadowMaskPassEnabled: u64 = 390933;
 /// `g_ShadowSceneNode` at 0x20d68b0 (runtime, high); pointer to `ShadowSceneNode`: the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty; the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty (high); type `ptr:ShadowSceneNode`
 pub const g_ShadowSceneNode: u64 = 390951;
+/// `g_ShadowsOnGrass` at 0x20d6812 (semantic, high); bShadowsOnGrass copied by InitShaders 0x14eaa96 (high); type `u8`
+pub const g_ShadowsOnGrass: u64 = 390934;
+/// `g_SkipApplyWorldFOV` at 0x3436310 (semantic, high); ApplyWorldFOV does nothing while set (high); type `undefined1`
+pub const g_SkipApplyWorldFOV: u64 = 415039;
 /// `g_SkyShader` at 0x33d3e20 (semantic, high); pointer to `BSSkyShader`: holder; holder (high); type `ptr:BSSkyShader`
 pub const g_SkyShader: u64 = 414612;
 /// `g_SkyShaderInstance` at 0x34364f0 (semantic, high); pointer to `BSSkyShader`: instance pointer; RenderPassImmediately's SetupPassGeometryState skips the alpha update for it; instance pointer; RenderPassImmediately's SetupPassGeometryState skips the alpha update for it (high); type `ptr:BSSkyShader`
@@ -12481,10 +12617,18 @@ pub const g_SkyrimVM_ptr_2: u64 = 400475;
 pub const g_SoundStatusFreeList: u64 = 410107;
 /// `g_StaticAvoidNodeManager_ptr` at 0x3230a10 (xref_inference, medium)
 pub const g_StaticAvoidNodeManager_ptr: u64 = 403562;
-/// `g_StencilMaskNodes` at 0x33d3e80 (semantic, low); array of 16-byte entries (node at +8) re-drawn in the depth pre-pass with stencil ref i+1; count at 0x33d3e90 (low); type `undefined8`
-pub const g_StencilMaskNodes: u64 = 414623;
+/// `g_StaticCuller` at 0x33d57a0 (semantic, high); function-static culler of RunCullingWithStaticProcess (used by every map cull on the frame thread) (high); type `class:BSCullingProcess`
+pub const g_StaticCuller: u64 = 414842;
+/// `g_SunShadowDisabled` at 0x3436311 (semantic, medium); skips the sun in every shadow step when set; no writer found (always 0) (medium); type `u8`
+pub const g_SunShadowDisabled: u64 = 415040;
+/// `g_SunUpdateCosThreshold` at 0x20d9528 (semantic, high); cos(fSunUpdateThreshold degrees clamped to 90), computed once in the sun ctor (high); type `float`
+pub const g_SunUpdateCosThreshold: u64 = 391871;
 /// `g_SystemEventAdapter` at 0x20b6370 (layout_inference, medium)
 pub const g_SystemEventAdapter: u64 = 381088;
+/// `g_SystemTimer0Sinks` at 0x3699210 (semantic, medium); sink list notified with timer 0's total by 0x15948a0 (medium); type `pointer`
+pub const g_SystemTimer0Sinks: u64 = 415489;
+/// `g_SystemTimers` at 0x3699270 (semantic, high); QPC accumulator timers, stride 0x18; timer 1 = PresentFrame's frame timer (high); type `class:SystemTimerRecord`
+pub const g_SystemTimers: u64 = 415497;
 /// `g_TESAudio_ScriptedMusicState` at 0x3211aa0 (layout_inference, medium)
 pub const g_TESAudio_ScriptedMusicState: u64 = 403008;
 /// `g_TESDataHandler` at 0x21a2890 (runtime, high); the data handler object itself (static storage) (high); type `class:TESDataHandler`
@@ -12503,7 +12647,7 @@ pub const g_TESFormIDMapLock: u64 = 400517;
 pub const g_TESFormIDMap_ptr: u64 = 400507;
 /// `g_TESFormInstanceCount` at 0x21a3804 (semantic, medium); number of live TESForm objects (medium); type `undefined4`
 pub const g_TESFormInstanceCount: u64 = 400506;
-/// `g_TES_ptr` at 0x32303b8 (xref_inference, medium)
+/// `g_TES_ptr` at 0x32303b8 (semantic, high); pointer to `TES`: TES: +0x100 the Sky, +0x108/+0x110 the image space modifier instance list (BSSimpleList of ImageSpaceModifierInstance*); TES: +0x100 the Sky, +0x108/+0x110 the image space modifier instance list (BSSimpleList of ImageSpaceModifierInstance*) (high); type `ptr:TES`
 pub const g_TES_ptr: u64 = 403450;
 /// `g_TaskQueueEnabled` at 0x20b64a0 (semantic, medium); when 0 QueueTask runs the task immediately (medium); type `undefined1`
 pub const g_TaskQueueEnabled: u64 = 381120;
@@ -13351,6 +13495,8 @@ pub const g_UIMessageQueue_ptr: u64 = 400445;
 pub const g_UISaveLoadManager_ptr: u64 = 401336;
 /// `g_UIStrings_ptr` at 0x21a05c8 (semantic, high); interface string table: one BSFixedString per data type and menu name, filled by 0x1177a90 (high); type `pointer`
 pub const g_UIStrings_ptr: u64 = 400446;
+/// `g_UseHDRTonemap` at 0x20d75e4 (semantic, medium); non-zero (static 1): the chain's tonemap step runs effect 30 (HDR) instead of the copy 0x22 (medium); type `u8`
+pub const g_UseHDRTonemap: u64 = 391301;
 /// `g_UserEventNames` at 0x32048d0 (semantic, low); table of user event BSFixedStrings the camera handlers compare (+0x70 togglePOV-like, +0x1e8/+0x1f0 zoom in/out-like) (low); type `pointer`
 pub const g_UserEventNames: u64 = 402638;
 /// `g_UserEventNamesStorage` at 0x32757a0 (semantic, high); static storage the g_UserEventNames pointer (0x32048d0) points at (high); type `class:UserEventNames`
@@ -13359,6 +13505,8 @@ pub const g_UserEventNamesStorage: u64 = 410238;
 pub const g_UtilityShader: u64 = 414609;
 /// `g_UtilityShaderInstance` at 0x3698b60 (semantic, high); pointer to `BSUtilityShader`: instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes; instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes (high); type `ptr:BSUtilityShader`
 pub const g_UtilityShaderInstance: u64 = 415300;
+/// `g_VATS_ptr` at 0x31a5720 (semantic, medium); VATS object: +0x20 mode (0 = not in VATS playback), +0x30 target, +0x80 time scale (medium); type `pointer`
+pub const g_VATS_ptr: u64 = 400883;
 /// `g_WaterShader` at 0x33d3e58 (semantic, high); pointer to `BSWaterShader`: holder; holder (high); type `ptr:BSWaterShader`
 pub const g_WaterShader: u64 = 414615;
 /// `g_WaterShaderInstance` at 0x3436458 (semantic, high); pointer to `BSWaterShader`: instance pointer; instance pointer (high); type `ptr:BSWaterShader`
@@ -13557,5 +13705,11 @@ pub const g_hkpEntityListener: u64 = 370091;
 pub const g_hkpNullAgent: u64 = 409740;
 /// `g_strIsAttacking` at 0x3252908 (semantic, high); interned 'IsAttacking' built at static init (0xac720) (high); type `class:BSFixedString`
 pub const g_strIsAttacking: u64 = 404830;
+/// `kDepthShiftFarScale` at 0x1b436b4 (semantic, high); 1.000002 (0x3f800011) (high); type `float`
+pub const kDepthShiftFarScale: u64 = 254903;
+/// `kDepthShiftMaxDepth` at 0x1b436b0 (semantic, high); 0.999998 (0x3f7fffde) (high); type `float`
+pub const kDepthShiftMaxDepth: u64 = 254902;
+/// `kFarDistanceWithLOD` at 0x1a70458 (semantic, high); 353840 (high); type `float`
+pub const kFarDistanceWithLOD: u64 = 238490;
 /// `s_TESV_SAVEGAME` at 0x1908f30 (semantic, high); save magic (high); type `char[14]`
 pub const s_TESV_SAVEGAME: u64 = 206558;

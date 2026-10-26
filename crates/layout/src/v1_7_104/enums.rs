@@ -4111,6 +4111,8 @@ impl IMenu_flags {
 pub struct NiAVObject_flags(pub u32);
 
 impl NiAVObject_flags {
+    /// hidden (medium)
+    pub const HIDDEN: Self = Self(0x1);
     /// SelectiveUpdate (medium)
     pub const SELECTIVE_UPDATE: Self = Self(0x2);
     /// SelectiveUpdateTransforms (medium)
@@ -4125,8 +4127,16 @@ impl NiAVObject_flags {
     pub const FIXED_BOUND: Self = Self(0x2000);
     /// FadeComplete (low)
     pub const FADE_COMPLETE: Self = Self(0x4000);
+    /// FadeStateBit15 (low)
+    pub const FADE_STATE_BIT15: Self = Self(0x8000);
+    /// FirstPersonRootBit21 (low)
+    pub const FIRST_PERSON_ROOT_BIT21: Self = Self(0x200000);
     /// lightsAssigned (medium)
     pub const LIGHTS_ASSIGNED: Self = Self(0x400000);
+    /// noActorSelfShadow (low)
+    pub const NO_ACTOR_SELF_SHADOW: Self = Self(0x800000);
+    /// UseFadeNodeLevels (low)
+    pub const USE_FADE_NODE_LEVELS: Self = Self(0x8000000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {
@@ -4152,6 +4162,48 @@ impl NiAlphaProperty_flags {
 
     #[must_use]
     pub const fn bits(self) -> u16 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `PlayerCharacter.flags` (actors pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct PlayerCharacter_flags(pub u32);
+
+impl PlayerCharacter_flags {
+    /// thirdPerson (medium)
+    pub const THIRD_PERSON: Self = Self(0x1);
+    /// firstPersonGeometryHidden (high)
+    pub const FIRST_PERSON_GEOMETRY_HIDDEN: Self = Self(0x2);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `ShaderReferenceEffect.effectFlags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct ShaderReferenceEffect_effectFlags(pub u32);
+
+impl ShaderReferenceEffect_effectFlags {
+    /// AttachedToFirstPersonRoot (medium)
+    pub const ATTACHED_TO_FIRST_PERSON_ROOT: Self = Self(0x1);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
         self.0
     }
 
