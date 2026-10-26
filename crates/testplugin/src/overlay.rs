@@ -45,6 +45,10 @@ static SHOT: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static TEXT: Mutex<String> = Mutex::new(String::new());
 static TYPING: AtomicBool = AtomicBool::new(false);
 static OPEN_PIXEL: Mutex<Option<[u8; 3]>> = Mutex::new(None);
+/// What reached the game while typing: presses of the typed keys, characters, and whether the game owned the foreground.
+static TYPED_KEYS: AtomicU32 = AtomicU32::new(0);
+static TYPED_CHARS: AtomicU32 = AtomicU32::new(0);
+static TYPING_CONTEXT: Mutex<String> = Mutex::new(String::new());
 static CLOSED_PIXEL: Mutex<Option<[u8; 3]>> = Mutex::new(None);
 
 struct Witness;
@@ -61,6 +65,24 @@ impl EventSink<InputEventList> for Witness {
 }
 
 static WITNESS: Sink<InputEventList, Witness> = Sink::new(Witness);
+
+/// Ahead of the overlay's sink while typing: counts the typed keys' presses and the characters the keyboard poll made of them.
+struct TypingWitness;
+
+impl EventSink<InputEventList> for TypingWitness {
+    fn process(&self, list: &InputEventList, _: &BSTEventSource<InputEventList>) -> BSEventNotifyControl {
+        for e in list.iter() {
+            if e.as_char().is_some() {
+                TYPED_CHARS.fetch_add(1, Ordering::Relaxed);
+            } else if e.as_button().is_some_and(|b| e.device_kind() == Some(InputDevice::Keyboard) && b.is_pressed() && TYPED.1.iter().any(|&c| u32::from(c) == b.id())) {
+                TYPED_KEYS.fetch_add(1, Ordering::Relaxed);
+            }
+        }
+        BSEventNotifyControl::Continue
+    }
+}
+
+static TYPING_WITNESS: Sink<InputEventList, TypingWitness> = Sink::new(TypingWitness);
 
 /// Installs the probe and the overlay with the suite's window; from `SKSEPlugin_Load`, before any frame.
 pub fn install() -> Result<String, String> {
@@ -91,6 +113,9 @@ fn window(ctx: &egui::Context) {
         let field = ui.text_edit_singleline(&mut *text);
         if CLICKS.load(Ordering::Relaxed) == 3 && !TYPING.swap(true, Ordering::Relaxed) {
             field.request_focus();
+            if let Some(source) = InputEventList::source() {
+                source.add_sink_first(&TYPING_WITNESS).leak();
+            }
             std::thread::spawn(type_keys);
         }
         if *text == TYPED.0 && SHOT.lock().unwrap().is_none() {
@@ -104,8 +129,14 @@ fn window(ctx: &egui::Context) {
 /// Presses and releases each key of [`TYPED`] through `SendInput` with scan codes, the way a keyboard
 /// reaches `DirectInput`.
 fn type_keys() {
-    use windows_sys::Win32::UI::Input::KeyboardAndMouse::{INPUT, INPUT_0, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP, KEYEVENTF_SCANCODE, SendInput};
+    use windows_sys::Win32::System::Threading::GetCurrentProcessId;
+    use windows_sys::Win32::UI::Input::KeyboardAndMouse::{GetKeyboardLayout, INPUT, INPUT_0, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP, KEYEVENTF_SCANCODE, SendInput};
+    use windows_sys::Win32::UI::WindowsAndMessaging::{GetForegroundWindow, GetWindowThreadProcessId};
     std::thread::sleep(std::time::Duration::from_millis(300));
+    let mut owner = 0;
+    unsafe { GetWindowThreadProcessId(GetForegroundWindow(), &raw mut owner) };
+    let layout = unsafe { GetKeyboardLayout(DRAW_THREAD.load(Ordering::Relaxed)) } as usize;
+    *TYPING_CONTEXT.lock().unwrap() = format!("game in the foreground when typing: {}, main thread keyboard layout {layout:#x}", owner == unsafe { GetCurrentProcessId() });
     for code in TYPED.1 {
         for flags in [KEYEVENTF_SCANCODE, KEYEVENTF_SCANCODE | KEYEVENTF_KEYUP] {
             let input = INPUT { r#type: INPUT_KEYBOARD, Anonymous: INPUT_0 { ki: KEYBDINPUT { wVk: 0, wScan: code, dwFlags: flags, time: 0, dwExtraInfo: 0 } } };
@@ -210,8 +241,9 @@ fn clicks() -> Result<String, String> {
 
 fn typed() -> Result<String, String> {
     let text = TEXT.lock().unwrap().clone();
-    check(text == TYPED.0, &format!("the field holds {text:?} after typing {:?}", TYPED.0))?;
-    Ok(format!("the focused field received {text:?} from scan-code key presses"))
+    let seen = format!("{}, typed key presses seen: {}, characters seen: {}", TYPING_CONTEXT.lock().unwrap(), TYPED_KEYS.load(Ordering::Relaxed), TYPED_CHARS.load(Ordering::Relaxed));
+    check(text == TYPED.0, &format!("the field holds {text:?} after typing {:?}; {seen}", TYPED.0))?;
+    Ok(format!("the focused field received {text:?} from scan-code key presses; {seen}"))
 }
 
 fn capture() -> Result<String, String> {
