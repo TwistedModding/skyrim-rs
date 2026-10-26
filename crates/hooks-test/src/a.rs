@@ -1,10 +1,12 @@
 //! Plugin a: runs its `Before` before b's and takes one more point of damage, observes the result
-//! in an `After`, replaces the outer `ActorValueOwner_ModActorValue` (delegating to the original)
-//! and reads the dispatcher's diagnostics at each save.
+//! in an `After`, replaces the outer `ActorValueOwner_ModActorValue` (delegating to the original),
+//! counts `TESObjectREFR::GetScale` calls in an `After` (the site the compat suite's legacy plugin
+//! overwrites) and reads the dispatcher's diagnostics at each save.
 
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Mutex, OnceLock};
 
-use framework::hooks::ops::{Actor__ActorValueOwner_ModActorValue, Actor__ModActorValueImpl};
+use framework::hooks::ops::{Actor__ActorValueOwner_ModActorValue, Actor__ModActorValueImpl, TESObjectREFR__GetScale};
 use framework::hooks::{Hooks, Options, Outcome, Phase, Validation, validate};
 use framework::Host;
 use layout::v1_7_104::fns;
@@ -17,20 +19,25 @@ static AFTER: Mutex<Vec<(f32, Outcome)>> = Mutex::new(Vec::new());
 static REPLACED: Mutex<Vec<f32>> = Mutex::new(Vec::new());
 static OUTER_AFTER: Mutex<Vec<(f32, Outcome)>> = Mutex::new(Vec::new());
 static CALLS: Mutex<Vec<(i32, f32)>> = Mutex::new(Vec::new());
+static SCALE_CALLS: AtomicU64 = AtomicU64::new(0);
+static SCALE_AT_DATA_LOADED: AtomicU64 = AtomicU64::new(0);
 
 pub fn load(host: &'static Host) -> bool {
     if !crate::init(host) {
         return false;
     }
     let _ = HOOKS.set(host.hooks());
-    run("aLoad", &[("a_pristine", pristine), ("a_subscribe", subscribe)]);
+    run("aLoad", &[("a_pristine", pristine), ("a_scale", scale), ("a_subscribe", subscribe)]);
     host.on_message(|msg| {
+        if msg.kind == skse::MessagingInterface::DATA_LOADED {
+            SCALE_AT_DATA_LOADED.store(SCALE_CALLS.load(Ordering::Relaxed), Ordering::Relaxed);
+        }
         if msg.kind == skse::MessagingInterface::SAVE_GAME {
             static SAVES: Mutex<u32> = Mutex::new(0);
             let mut saves = SAVES.lock().unwrap();
             *saves += 1;
             match *saves {
-                1 => run("aSave1", &[("a_before", before_seen), ("a_after", after_seen), ("a_outer", outer_seen), ("a_diagnostics", diagnostics)]),
+                1 => run("aSave1", &[("a_before", before_seen), ("a_after", after_seen), ("a_outer", outer_seen), ("a_scale_calls", scale_calls), ("a_diagnostics", diagnostics)]),
                 2 => run("aSave2", &[("a_before_final", before_final), ("a_after_final", after_final), ("a_diagnostics_final", diagnostics_final)]),
                 _ => {}
             }
@@ -50,6 +57,22 @@ fn pristine() -> Result<String, String> {
     let detail = results.iter().map(|(name, v)| format!("{name}: {v}")).collect::<Vec<_>>().join("; ");
     check(results.iter().all(|(_, v)| *v == Validation::Pristine), &detail)?;
     Ok(detail)
+}
+
+fn scale() -> Result<String, String> {
+    let hooks = HOOKS.get().ok_or("no hooks")?;
+    let id = hooks
+        .after(TESObjectREFR__GetScale, Options::new(A), |_, _, _| {
+            SCALE_CALLS.fetch_add(1, Ordering::Relaxed);
+        })
+        .map_err(|e| e.to_string())?;
+    Ok(format!("after {id:?} on TESObjectREFR::GetScale"))
+}
+
+fn scale_calls() -> Result<String, String> {
+    let (all, at_data) = (SCALE_CALLS.load(Ordering::Relaxed), SCALE_AT_DATA_LOADED.load(Ordering::Relaxed));
+    check(all > at_data, format!("GetScale's After ran {all} times, {at_data} by DATA_LOADED and none since"))?;
+    Ok(format!("GetScale's After ran {all} times, {} since DATA_LOADED", all - at_data))
 }
 
 fn subscribe() -> Result<String, String> {

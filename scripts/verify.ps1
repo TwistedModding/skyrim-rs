@@ -156,6 +156,18 @@ function Lines($i) { $r = Step $i; if ($r) { $r.lines -join " | " } else { "" } 
 function Detail($name) { if ($plugin[$name]) { $plugin[$name].detail } else { "" } }
 function RunDetail($run, $name) { if ($runs[$run] -and $runs[$run][$name]) { $runs[$run][$name].detail } else { "" } }
 function Captured($text, $pattern) { if ($text -match $pattern) { $Matches[1] } else { $null } }
+# The SKSE plugin loader of this launch, its log and the handle it gave a DLL; the host names the same loader in its log.
+$HostedBy = if ($Launch -eq "standalone") { "the standalone loader" } else { "the script extender" }
+$LoaderLogName = if ($Launch -eq "standalone") { "skyrim-rs-standalone.log" } else { "skse64.log" }
+$LoaderLog = @(if (Test-Path "$OutDir\$LoaderLogName") { Get-Content "$OutDir\$LoaderLogName" })
+$HostLog = @(if (Test-Path "$OutDir\skyrim-rs.log") { Get-Content "$OutDir\skyrim-rs.log" })
+function Loaded($file) {
+    $f = [regex]::Escape($file)
+    $pattern = if ($Launch -eq "standalone") { "^$f`: loaded as handle (\d+)" } else { "^plugin $f \(.*\) loaded correctly \(handle (\d+)\)" }
+    foreach ($l in $LoaderLog) { if ($l -match $pattern) { return [int]$Matches[1] } }
+    $null
+}
+function Hosted { @($HostLog | Where-Object { $_ -match "^hosted by $HostedBy, " }).Count -eq 1 }
 function Near($a, $b, $tol) { ($a -ne $null) -and ($b -ne $null) -and ([math]::Abs([double]$a - [double]$b) -lt $tol) }
 
 . "$PSScriptRoot\$Suite-checks.ps1"
