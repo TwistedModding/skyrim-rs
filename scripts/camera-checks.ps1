@@ -8,10 +8,16 @@ function Cam($i) { $r = Step $i; if ($r) { "({0:F1}, {1:F1}, {2:F1})" -f $r.camX
 function Root($line) { if ($line -match 'root \(([-0-9.]+), ([-0-9.]+), ([-0-9.]+)\)') { @([double]$Matches[1], [double]$Matches[2], [double]$Matches[3]) } else { $null } }
 function CamNear($i, $root) { $r = Step $i; ($null -ne $root) -and ($null -ne $r) -and (Near $r.camX $root[0] 1.0) -and (Near $r.camY $root[1] 1.0) -and (Near $r.camZ $root[2] 1.0) }
 function Ini($i) { Captured (Lines $i) '>> ([-0-9.]+)' }
+# Whether DevBench's camera position of step $i lies on the orbit the plugin reported: radius from the centre within 1.5 units.
+function OnOrbit($i, $line) {
+    $r = Step $i
+    if (-not $r -or $line -notmatch 'center \(([-0-9.]+), ([-0-9.]+), ([-0-9.]+)\) radius ([-0-9.]+)') { return $false }
+    $d = [math]::Sqrt(([double]$r.camX - [double]$Matches[1]) * ([double]$r.camX - [double]$Matches[1]) + ([double]$r.camY - [double]$Matches[2]) * ([double]$r.camY - [double]$Matches[2]) + ([double]$r.camZ - [double]$Matches[3]) * ([double]$r.camZ - [double]$Matches[3]))
+    [math]::Abs($d - [double]$Matches[4]) -lt 1.5
+}
 
 $orbit = RunDetail "camera orbit" "written"
 $offset = RunDetail "camera offset" "written"
-$orbitRoot = Root (Lines 12)
 $offsetRoot = Root (Lines 16)
 $fov = RunDetail "camera fov" "hands_frustum"
 $near5 = RunDetail "camera near5" "gpu"
@@ -22,7 +28,7 @@ $rows = @(
     @{ name = "hooks";        plugin = ($ReportLines | Where-Object { $_ -match '^state step sites' }) -join ' '; devbench = "SKSE loaded the demo next to the test plugin; CameraDemo took over a console entry";
        ok = (($ReportLines -match '^state step sites').Count -eq 1 -and ($ReportLines -match '^CameraDemo took over').Count -eq 1) }
     @{ name = "orbit";        plugin = "$orbit; console: $(Lines 12)"; devbench = "camera get before $(Cam 8), during the orbit $(Cam 11)";
-       ok = ((Step 11).stateId -eq 9 -and (CamNear 11 $orbitRoot) -and -not (CamNear 8 $orbitRoot)) }
+       ok = ((Step 11).stateId -eq 9 -and (OnOrbit 11 (Lines 12)) -and ([math]::Abs((Step 11).camX - (Step 8).camX) + [math]::Abs((Step 11).camY - (Step 8).camY)) -gt 10) }
     @{ name = "offset";       plugin = "$offset; console: $(Lines 16)"; devbench = "camera get with the offset $(Cam 15)";
        ok = ((Step 15).stateId -eq 9 -and (CamNear 15 $offsetRoot)) }
     @{ name = "fov";          plugin = "$fov; console: $(Lines 25)"; devbench = "camera get: pov $((Step 21).pov) then $((Step 24).pov) stateId $((Step 24).stateId)";

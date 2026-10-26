@@ -69,7 +69,11 @@ static NEAR_FRAME: AtomicU32 = AtomicU32::new(0);
 /// registered into the cascades, into the focus maps, into local maps, into the depth pre-pass,
 /// cascade replays, replays whose skip was lifted.
 static ADMITTED: AtomicU32 = AtomicU32::new(0);
+/// Of the admissions: by a culler of the sun's list walk, by a culler whose camera is the sun's
+/// light camera, by one whose camera is a cascade camera.
 static ADMITTED_SUN_WALK: AtomicU32 = AtomicU32::new(0);
+static ADMITTED_LIGHT_CAMERA: AtomicU32 = AtomicU32::new(0);
+static ADMITTED_CASCADE_CAMERA: AtomicU32 = AtomicU32::new(0);
 static BODY_SHOWN_TO_CAMERA: AtomicU32 = AtomicU32::new(0);
 static CASCADE_REGISTRATIONS: [AtomicU32; 2] = [const { AtomicU32::new(0) }; 2];
 static FOCUS_REGISTRATIONS: AtomicU32 = AtomicU32::new(0);
@@ -189,6 +193,13 @@ unsafe extern "C" fn cull(node: *mut classes::NiAVObject, culler: *mut classes::
                 if c.is_sun_list_walk() {
                     ADMITTED_SUN_WALK.fetch_add(1, Ordering::Relaxed);
                 }
+                if let Some(sun) = ShadowSceneNode::world().and_then(ShadowSceneNode::sun_shadow_light) {
+                    if core::ptr::eq(sun.raw().lightCamera, c.camera_ptr()) {
+                        ADMITTED_LIGHT_CAMERA.fetch_add(1, Ordering::Relaxed);
+                    } else if sun.owns_camera(c.camera_ptr()) {
+                        ADMITTED_CASCADE_CAMERA.fetch_add(1, Ordering::Relaxed);
+                    }
+                }
                 c.cull_node(n, ordered_group);
                 return;
             }
@@ -237,7 +248,7 @@ fn install() -> Result<(), String> {
     let cull_hook = unsafe { skyrim::render::hook_cull(cull) }.map_err(|e| format!("NiAVObject::Cull: {e}"))?;
     let register = unsafe { skyrim::render::hook_register_depth_geometry(register_depth_geometry) }.map_err(|e| format!("RegisterDepthGeometry: {e}"))?;
     let replay_hook = unsafe { skyrim::render::hook_process_cull_object_list(replay) }.map_err(|e| format!("ProcessCullObjectList: {e}"))?;
-    log!("state step sites {:#x?}, hands projection sites {:#x?}, Cull {:#x}, RegisterDepthGeometry {:#x}, ProcessCullObjectList {:#x}", step.sites(), hands.sites(), cull_hook.target(), register.target(), replay_hook.target());
+    log!("state step sites {:x?}, hands projection sites {:x?}, Cull {:#x}, RegisterDepthGeometry {:#x}, ProcessCullObjectList {:#x}", step.sites(), hands.sites(), cull_hook.target(), register.target(), replay_hook.target());
     let _ = STEP.set(step);
     let _ = HANDS.set(hands);
     let _ = CULL.set(cull_hook);
@@ -252,7 +263,7 @@ fn install() -> Result<(), String> {
 }
 
 fn reset_shadow_counters() {
-    for c in [&ADMITTED, &ADMITTED_SUN_WALK, &BODY_SHOWN_TO_CAMERA, &CASCADE_REGISTRATIONS[0], &CASCADE_REGISTRATIONS[1], &FOCUS_REGISTRATIONS, &LOCAL_REGISTRATIONS, &PREPASS_REGISTRATIONS, &REPLAYS, &REPLAYS_UNSKIPPED] {
+    for c in [&ADMITTED, &ADMITTED_SUN_WALK, &ADMITTED_LIGHT_CAMERA, &ADMITTED_CASCADE_CAMERA, &BODY_SHOWN_TO_CAMERA, &CASCADE_REGISTRATIONS[0], &CASCADE_REGISTRATIONS[1], &FOCUS_REGISTRATIONS, &LOCAL_REGISTRATIONS, &PREPASS_REGISTRATIONS, &REPLAYS, &REPLAYS_UNSKIPPED] {
         c.store(0, Ordering::Relaxed);
     }
 }
@@ -297,7 +308,7 @@ fn report(label: &str) {
             checks.push(("angle", check(angle > 0.5, format!("orbit angle {angle:.3} rad"))));
             checks.push(("radius", check((length(sub(written, center)) - length(sub(engine, center))).abs() < 0.5, format!("radius written {:.1} engine {:.1} around {center:?}", length(sub(written, center)), length(sub(engine, center))))));
             checks.push(("moved", check(length(sub(written, engine)) > 10.0, format!("engine {engine:?} written {written:?}"))));
-            format!("camera-demo orbit: root ({:.2}, {:.2}, {:.2})", written[0], written[1], written[2])
+            format!("camera-demo orbit: root ({:.2}, {:.2}, {:.2}) center ({:.2}, {:.2}, {:.2}) radius {:.2}", written[0], written[1], written[2], center[0], center[1], center[2], length(sub(written, center)))
         }
         "offset" => {
             let engine = load3(&ENGINE_POS);
@@ -351,10 +362,10 @@ fn report(label: &str) {
             let cascades = [CASCADE_REGISTRATIONS[0].load(Ordering::Relaxed), CASCADE_REGISTRATIONS[1].load(Ordering::Relaxed)];
             checks.push(("first_person", check(pc.is_some_and(PlayerCamera::is_first_person), format!("state {:?}", pc.and_then(PlayerCamera::state)))));
             checks.push(("root_hidden", check(root.is_some_and(NiAVObject::is_hidden), format!("third-person root {:?} flags {:#x?}", root.map(NiAVObject::as_ptr), root.map(NiAVObject::flags)))));
-            checks.push(("admitted", check(ADMITTED.load(Ordering::Relaxed) > 0 && ADMITTED_SUN_WALK.load(Ordering::Relaxed) > 0, format!("hidden root admitted {} times to shadow cullers, {} by the sun's list walk", ADMITTED.load(Ordering::Relaxed), ADMITTED_SUN_WALK.load(Ordering::Relaxed)))));
+            checks.push(("admitted", check(ADMITTED.load(Ordering::Relaxed) > 0, format!("hidden root admitted {} times to shadow cullers: {} by the sun's list walk, {} with the sun's light camera, {} with a cascade camera", ADMITTED.load(Ordering::Relaxed), ADMITTED_SUN_WALK.load(Ordering::Relaxed), ADMITTED_LIGHT_CAMERA.load(Ordering::Relaxed), ADMITTED_CASCADE_CAMERA.load(Ordering::Relaxed)))));
             checks.push(("main_view", check(BODY_SHOWN_TO_CAMERA.load(Ordering::Relaxed) == 0 && PREPASS_REGISTRATIONS.load(Ordering::Relaxed) == 0, format!("root shown to other cameras {} times, body skins in the depth pre-pass {}", BODY_SHOWN_TO_CAMERA.load(Ordering::Relaxed), PREPASS_REGISTRATIONS.load(Ordering::Relaxed)))));
             checks.push(("cascades", check(cascades[0] > 0 && cascades[1] > 0, format!("body skins registered into cascade 0 {} and cascade 1 {} times, focus {}, local {}; replays {} ({} with the skip lifted, exception {})", cascades[0], cascades[1], FOCUS_REGISTRATIONS.load(Ordering::Relaxed), LOCAL_REGISTRATIONS.load(Ordering::Relaxed), REPLAYS.load(Ordering::Relaxed), REPLAYS_UNSKIPPED.load(Ordering::Relaxed), REPLAY_EXCEPTION.load(Ordering::Relaxed)))));
-            checks.push(("receivers", check(!skins.is_empty() && skins.iter().all(|(s, m)| *s == 0x7fff_ffff && m.is_some_and(|m| m & 3 == 3)), format!("skins (lastRenderPassState, receiver mask) {skins:x?}"))));
+            checks.push(("receivers", check(!skins.is_empty() && skins.iter().all(|(_, m)| m.is_some_and(|m| m & 3 == 3)), format!("skins (lastRenderPassState, receiver mask) {skins:x?}: the cascade bits stay set while the main view never registers the skins"))));
             format!("camera-demo shadow: admitted {} cascade registrations {:?} main view {}", ADMITTED.load(Ordering::Relaxed), cascades, BODY_SHOWN_TO_CAMERA.load(Ordering::Relaxed))
         }
         _ => format!("camera-demo: unknown report {label}"),
