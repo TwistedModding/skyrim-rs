@@ -9,8 +9,10 @@
 //! and wheel steps into `egui` events and ends the walk, so neither the game's handlers nor other
 //! plugins' sinks see them. Every frame the overlay is open, the windows added with [`add`] run
 //! on the main thread and the result is painted into the back buffer with a Direct3D 11 pipeline
-//! of this crate's own. Text uses Segoe UI and Consolas from the Windows font folder: `egui`'s
-//! bundled fonts are not under a license the workspace allows.
+//! of this crate's own, in the framework [`theme`]: the look of the game's menus, with the game's
+//! own Futura Condensed converted from `Interfaceonts_en.swf` at startup when it can be read and
+//! Segoe UI and Consolas from the Windows font folder otherwise and for monospace (`egui`'s bundled
+//! fonts are not under a license the workspace allows).
 
 use std::fmt;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -24,8 +26,10 @@ use skyrim::render::{PresentFn, RenderWindow};
 
 mod input;
 mod paint;
+pub mod theme;
+mod vanilla;
 
-pub use input::DEFAULT_TOGGLE;
+pub use input::{Capture, DEFAULT_TOGGLE, capture, set_capture};
 
 /// How far into `RenderFrame` its one call to `PresentFrame` is looked for (it sits at +0x601).
 const RENDER_FRAME_LEN: usize = 0x800;
@@ -35,7 +39,7 @@ pub enum Error {
     Hook(hook::Error),
     /// `RenderFrame` holds no `call rel32` to `PresentFrame`.
     NoPresentCall,
-    /// Neither `segoeui.ttf` nor `consola.ttf` could be read from the Windows font folder.
+    /// Neither the game's font nor `segoeui.ttf` or `consola.ttf` from the Windows font folder could be read.
     NoFont,
     AlreadyInstalled,
 }
@@ -73,12 +77,14 @@ static WINDOWS: Mutex<Vec<Window>> = Mutex::new(Vec::new());
 static OPEN: AtomicBool = AtomicBool::new(false);
 static FAILURE: OnceLock<String> = OnceLock::new();
 static FRAME: OnceLock<fn()> = OnceLock::new();
+static FONTS: OnceLock<Option<(egui::FontDefinitions, String)>> = OnceLock::new();
+static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
 
 /// Installs the overlay with `toggle` (a keyboard scan code, [`DEFAULT_TOGGLE`] is F11) as the key
 /// that opens and closes it. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
 /// first frame is drawn: the call site is patched in place.
 pub fn install(toggle: u32) -> Result<(), Error> {
-    let fonts = system_fonts().ok_or(Error::NoFont)?;
+    let ctx = new_context().ok_or(Error::NoFont)?;
     let reloc = skyrim::reloc();
     let render_frame = reloc.address(fns::RenderFrame)?;
     let present = reloc.address(fns::PresentFrame)?;
@@ -87,8 +93,6 @@ pub fn install(toggle: u32) -> Result<(), Error> {
     if state.is_some() {
         return Err(Error::AlreadyInstalled);
     }
-    let ctx = Context::default();
-    ctx.set_fonts(fonts);
     *state = Some(State { ctx, painter: None, start: Instant::now() });
     input::set_toggle(toggle);
     let _ = SITE.set(unsafe { hook::CallSite::install(site, present_detour as PresentFn) }?);
@@ -112,12 +116,22 @@ pub fn on_frame(f: fn()) {
 /// first used it, which is the DLL that drew the windows, so a host resets the context before
 /// unloading such a DLL. Every window starts afresh; the font atlas is sent again.
 pub fn reset_context() {
-    let Some(fonts) = system_fonts() else { return };
+    let Some(ctx) = new_context() else { return };
     if let Some(state) = STATE.lock().unwrap().as_mut() {
-        let ctx = Context::default();
-        ctx.set_fonts(fonts);
         state.ctx = ctx;
     }
+}
+
+/// Which font the proportional text uses and where it came from, or why the game's font was not used.
+#[must_use]
+pub fn font_source() -> &'static str {
+    fonts().map_or("no font", |(_, source)| source.as_str())
+}
+
+/// Whether a widget held the keyboard focus at the end of the last frame drawn.
+#[must_use]
+pub fn keyboard_focus() -> bool {
+    KEYBOARD_FOCUS.load(Ordering::Relaxed)
 }
 
 #[must_use]
@@ -194,29 +208,65 @@ fn draw() {
     windows.append(&mut added);
     *added = windows;
     drop(added);
+    KEYBOARD_FOCUS.store(state.ctx.egui_wants_keyboard_input(), Ordering::Relaxed);
     let primitives = state.ctx.tessellate(output.shapes, output.pixels_per_point);
     if let Err(e) = unsafe { painter.paint(rtv, size, output.pixels_per_point, &primitives, &output.textures_delta) } {
         let _ = FAILURE.set(format!("paint: {e}"));
     }
 }
 
-/// Segoe UI for proportional text and Consolas for monospace, each falling back on the other.
-fn system_fonts() -> Option<egui::FontDefinitions> {
-    let dir = std::path::PathBuf::from(std::env::var_os("WINDIR")?).join("Fonts");
+/// A context with the fonts and the theme.
+fn new_context() -> Option<Context> {
+    let (fonts, _) = fonts()?;
+    let ctx = Context::default();
+    ctx.set_fonts(fonts.clone());
+    theme::apply(&ctx);
+    Some(ctx)
+}
+
+fn fonts() -> Option<&'static (egui::FontDefinitions, String)> {
+    FONTS.get_or_init(load_fonts).as_ref()
+}
+
+/// The game's Futura Condensed Light for proportional text and Futura Condensed for headings, each
+/// falling back on Segoe UI; Consolas for monospace, falling back on Segoe UI.
+fn load_fonts() -> Option<(egui::FontDefinitions, String)> {
     let mut fonts = egui::FontDefinitions::empty();
-    for (name, file) in [("segoe", "segoeui.ttf"), ("consolas", "consola.ttf")] {
-        if let Ok(bytes) = std::fs::read(dir.join(file)) {
-            fonts.font_data.insert(name.to_owned(), egui::FontData::from_owned(bytes).into());
+    if let Some(dir) = std::env::var_os("WINDIR").map(|w| std::path::PathBuf::from(w).join("Fonts")) {
+        for (name, file) in [("segoe", "segoeui.ttf"), ("consolas", "consola.ttf")] {
+            if let Ok(bytes) = std::fs::read(dir.join(file)) {
+                fonts.font_data.insert(name.to_owned(), egui::FontData::from_owned(bytes).into());
+            }
         }
     }
-    let loaded: Vec<String> = fonts.font_data.keys().cloned().collect();
-    if loaded.is_empty() {
+    let data = std::env::current_exe().ok().and_then(|exe| Some(exe.parent()?.join("Data")));
+    let source = match data.ok_or_else(|| "no game folder".to_owned()).and_then(|d| vanilla::load(&d)) {
+        Ok(v) => {
+            fonts.font_data.insert(vanilla::BODY.to_owned(), egui::FontData::from_owned(v.body).into());
+            fonts.font_data.insert(vanilla::HEADING.to_owned(), egui::FontData::from_owned(v.heading).into());
+            format!("{} from {}", vanilla::BODY, v.source)
+        }
+        Err(e) => format!("Segoe UI, the game's font was not read: {e}"),
+    };
+    let order = |first: &str| -> Vec<String> {
+        let mut names: Vec<String> = Vec::new();
+        for name in [first, "segoe", "consolas"] {
+            if fonts.font_data.contains_key(name) && !names.iter().any(|n| n == name) {
+                names.push(name.to_owned());
+            }
+        }
+        names
+    };
+    let families = [
+        (egui::FontFamily::Proportional, order(vanilla::BODY)),
+        (egui::FontFamily::Name(theme::HEADING.into()), order(vanilla::HEADING)),
+        (egui::FontFamily::Monospace, order("consolas")),
+    ];
+    if families[0].1.is_empty() {
         return None;
     }
-    for (family, first) in [(egui::FontFamily::Proportional, "segoe"), (egui::FontFamily::Monospace, "consolas")] {
-        let mut order = loaded.clone();
-        order.sort_by_key(|n| n != first);
-        fonts.families.insert(family, order);
+    for (family, names) in families {
+        fonts.families.insert(family, names);
     }
-    Some(fonts)
+    Some((fonts, source))
 }

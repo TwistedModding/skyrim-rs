@@ -1,8 +1,9 @@
 //! The input source's first sink: the toggle key, and while the overlay is open every event of the
-//! frame as `egui` events, hidden from the sinks after it.
+//! frame as `egui` events, hidden from the sinks after it unless [`Capture::Focus`] lets the frame
+//! through to the game.
 
 use std::sync::Mutex;
-use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU8, AtomicU32, Ordering};
 
 use egui::{Context, Event, Key, Modifiers, MouseWheelSource, MouseWheelUnit, PointerButton, Pos2, TouchPhase, Vec2};
 use skyrim::events::{BSEventNotifyControl, BSTEventSource, Event as _, EventSink, Sink};
@@ -13,6 +14,35 @@ pub const DEFAULT_TOGGLE: u32 = 0x57;
 
 const WHEEL_UP: u32 = 8;
 const WHEEL_DOWN: u32 = 9;
+const TAB: u32 = 0x0F;
+
+/// What the overlay takes from the game while it is open. The sink sees one frame's events as a
+/// list and can only pass or stop the whole list, so the rule is per frame.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Capture {
+    /// Every event (the default).
+    All,
+    /// The keyboard goes to the game while no widget has the keyboard focus (nothing Tab or a
+    /// click on a text field reached, or Escape released it): a frame of keyboard events passes,
+    /// and a frame with a mouse event or Tab is the overlay's. A frame that releases a key the game
+    /// saw pressed always passes, so no key stays held in the game; its mouse events then reach
+    /// the game too.
+    Focus,
+}
+
+static CAPTURE: AtomicU8 = AtomicU8::new(Capture::All as u8);
+
+/// Sets what the overlay takes from the game while it is open; the host of the overlay decides.
+pub fn set_capture(capture: Capture) {
+    CAPTURE.store(capture as u8, Ordering::Relaxed);
+}
+
+/// The capture rule in force.
+#[must_use]
+pub fn capture() -> Capture {
+    if CAPTURE.load(Ordering::Relaxed) == Capture::Focus as u8 { Capture::Focus } else { Capture::All }
+}
 
 struct Pending {
     events: Vec<Event>,
@@ -20,12 +50,14 @@ struct Pending {
     pointer: Pos2,
     screen: Vec2,
     pixels_per_point: f32,
+    /// Keys whose press reached the game and whose release has not yet.
+    game_held: [bool; 256],
 }
 
-static PENDING: Mutex<Pending> = Mutex::new(Pending { events: Vec::new(), modifiers: Modifiers::NONE, pointer: Pos2::ZERO, screen: Vec2::ZERO, pixels_per_point: 1.0 });
+static PENDING: Mutex<Pending> = Mutex::new(Pending { events: Vec::new(), modifiers: Modifiers::NONE, pointer: Pos2::ZERO, screen: Vec2::ZERO, pixels_per_point: 1.0, game_held: [false; 256] });
 static TOGGLE: AtomicU32 = AtomicU32::new(DEFAULT_TOGGLE);
 static INSTALLED: AtomicBool = AtomicBool::new(false);
-static SINK: Sink<InputEventList, Capture> = Sink::new(Capture);
+static SINK: Sink<InputEventList, Gate> = Sink::new(Gate);
 
 pub(crate) fn set_toggle(scan_code: u32) {
     TOGGLE.store(scan_code, Ordering::Relaxed);
@@ -65,16 +97,17 @@ pub(crate) fn draw_cursor(ctx: &Context, at: Pos2) {
     painter.add(egui::Shape::convex_polygon(points, egui::Color32::WHITE, egui::Stroke::new(1.0, egui::Color32::BLACK)));
 }
 
-struct Capture;
+struct Gate;
 
-impl EventSink<InputEventList> for Capture {
+impl EventSink<InputEventList> for Gate {
     fn process(&self, list: &InputEventList, _: &BSTEventSource<InputEventList>) -> BSEventNotifyControl {
         let toggle = TOGGLE.load(Ordering::Relaxed);
         let mut stop = crate::is_open();
         let mut p = PENDING.lock().unwrap();
+        let (mut keyboard, mut overlay_only, mut game_release) = (false, false, false);
         for event in list.iter() {
-            if let Some(b) = event.as_button()
-                && event.device_kind() == Some(InputDevice::Keyboard)
+            let key = event.as_button().filter(|_| event.device_kind() == Some(InputDevice::Keyboard));
+            if let Some(b) = key
                 && b.id() == toggle
             {
                 if b.is_pressed() {
@@ -83,8 +116,31 @@ impl EventSink<InputEventList> for Capture {
                 stop = true;
                 continue;
             }
+            match event.device_kind() {
+                Some(InputDevice::Keyboard) => {
+                    keyboard = true;
+                    overlay_only |= key.is_some_and(|b| b.id() == TAB);
+                    game_release |= key.is_some_and(|b| b.is_released() && p.game_held.get(b.id() as usize).copied().unwrap_or(false));
+                }
+                Some(InputDevice::Mouse) => overlay_only = true,
+                _ => {}
+            }
             if crate::is_open() {
                 p.translate(event);
+            }
+        }
+        if stop && crate::is_open() && capture() == Capture::Focus && !crate::keyboard_focus() && keyboard && (game_release || !overlay_only) {
+            stop = false;
+        }
+        if !stop {
+            for b in list.iter().filter(|e| e.device_kind() == Some(InputDevice::Keyboard)).filter_map(|e| e.as_button()) {
+                if let Some(held) = p.game_held.get_mut(b.id() as usize) {
+                    if b.is_pressed() {
+                        *held = true;
+                    } else if b.is_released() {
+                        *held = false;
+                    }
+                }
             }
         }
         if stop { BSEventNotifyControl::Stop } else { BSEventNotifyControl::Continue }
