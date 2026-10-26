@@ -78,7 +78,7 @@ pub fn validate(address: usize, detour: Option<usize>) -> Validation {
         return if detour == Some(target) { Validation::Managed { detour: target } } else { Validation::Unmanaged { found, expected, target: Some(target) } };
     }
     match expected {
-        Some(e) =>Validation::Unmanaged { found, expected: Some(e), target: None },
+        Some(e) => Validation::Unmanaged { found, expected: Some(e), target: None },
         None if matches!(found[0], 0xE8 | 0xCC) || (found[0] == 0xFF && found[1] & 0x38 == 0x20) => Validation::Unmanaged { found, expected: None, target: None },
         None => Validation::Plausible,
     }
