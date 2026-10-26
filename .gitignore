@@ -3,3 +3,4 @@ crates/versionlib/tests/data/
 /devbench-out/
 /verify-*-out/
 /verify-all-*/
+/dist/
