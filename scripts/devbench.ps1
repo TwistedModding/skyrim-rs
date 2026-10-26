@@ -82,7 +82,17 @@ function Wait-Until([scriptblock]$Cond, [int]$Seconds, [string]$What) {
     }
 }
 
-# The game pauses whenever its window loses focus, which stops DevBench's main-thread tasks; re-activate it when frames stop.
+Add-Type -Namespace DevBench -Name Fg -MemberDefinition '[DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow(); [DllImport("user32.dll")] public static extern uint GetWindowThreadProcessId(IntPtr h, out uint pid);'
+
+# Whether the game's window is the foreground window; injected keys and typed characters only reach it there.
+function Game-InFront {
+    $owner = 0
+    [void][DevBench.Fg]::GetWindowThreadProcessId([DevBench.Fg]::GetForegroundWindow(), [ref]$owner)
+    $Game -and $owner -eq $Game.Id
+}
+
+# Without bAlwaysActive the game pauses whenever its window loses focus, which stops DevBench's main-thread tasks; with it
+# the game runs on behind other windows but typed keys never reach it. Either way, keep its window in front.
 function Wait-Run($Tool, $RunId) {
     $t0 = Get-Date
     $lastFrame = -1
@@ -94,6 +104,9 @@ function Wait-Run($Tool, $RunId) {
         if ($h -and $h.frame -eq $lastFrame) {
             Close-Dialogs
             Write-Warning "game paused at frame $lastFrame; re-activating its window"
+            [void]$Shell.AppActivate($Game.Id)
+        } elseif (-not (Game-InFront)) {
+            Write-Warning "game window not in front; re-activating it"
             [void]$Shell.AppActivate($Game.Id)
         }
         if ($h) { $lastFrame = $h.frame }
