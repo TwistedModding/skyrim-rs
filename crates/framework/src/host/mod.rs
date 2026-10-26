@@ -218,23 +218,22 @@ fn window_key(owner: &str, id: &str) -> String {
 
 /// Shows one window while it is open, with the `egui::Window` set up for it.
 fn draw_window(window: &mut PluginWindow, ctx: &overlay::egui::Context) {
-    let key = window_key(window.owner, &window.id);
-    if !settings::get(NAME, &key).and_then(|s| <bool as settings::Value>::from_setting(&s)).unwrap_or(true) {
+    if !window_open(window.owner, &window.id) {
         return;
     }
     let mut open = true;
     let frame = overlay::egui::Window::new(window.title.as_str()).id(overlay::egui::Id::unique((NAME, window.owner, window.id.as_str()))).open(&mut open);
     (window.draw)(frame, ctx);
     if !open {
-        settings::set(NAME, &key, Setting::Bool(false));
+        set_window_open(window.owner, &window.id, false);
     }
 }
 
-fn window_open(owner: &'static str, id: &str) -> bool {
+fn window_open(owner: &str, id: &str) -> bool {
     settings::get(NAME, &window_key(owner, id)).and_then(|s| <bool as settings::Value>::from_setting(&s)).unwrap_or(true)
 }
 
-fn set_window_open(owner: &'static str, id: &str, open: bool) {
+fn set_window_open(owner: &str, id: &str, open: bool) {
     settings::set(NAME, &window_key(owner, id), Setting::Bool(open));
 }
 
