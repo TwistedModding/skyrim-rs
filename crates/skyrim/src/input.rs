@@ -9,6 +9,7 @@
 
 use core::ffi::{CStr, c_char, c_void};
 use core::ops::Deref;
+use std::sync::{Mutex, OnceLock, PoisonError, RwLock};
 
 use layout::v1_7_104::{classes, fns, globals};
 
@@ -480,8 +481,12 @@ impl CommandEntry {
     }
 }
 
+fn text_c<'a>(p: *mut c_void) -> &'a CStr {
+    if p.is_null() { c"" } else { unsafe { CStr::from_ptr(p.cast()) } }
+}
+
 fn text<'a>(p: *mut c_void) -> &'a str {
-    if p.is_null() { "" } else { unsafe { CStr::from_ptr(p.cast()) }.to_str().unwrap_or("") }
+    text_c(p).to_str().unwrap_or("")
 }
 
 fn table(base: *mut classes::CommandTableEntry, len: usize) -> &'static mut [CommandEntry] {
@@ -505,27 +510,80 @@ pub struct CommandSlot {
 /// Takes over the first unused console entry for `C`. Register at `DataLoaded`, before any
 /// console line is compiled; the entry keeps its opcode.
 pub fn register<C: Command>() -> Result<CommandSlot, CommandError> {
-    if C::PARAMS.len() > MAX_ARGS {
+    take_entry(C::NAME, C::HELP, C::PARAMS, C::NEEDS_REFERENCE, execute::<C>)
+}
+
+/// What an [`ErasedCommand`] runs.
+pub type ErasedExecute = Box<dyn Fn(&mut CommandContext<'_>) -> bool + Send + Sync>;
+
+/// A console command whose Rust side is chosen at run time, for a host that registers on behalf
+/// of code it may unload: the table entry points at this crate's copies of the name, the help and
+/// the parameters, and [`set`](Self::set) decides what runs behind it.
+#[derive(Clone, Copy, Debug)]
+pub struct ErasedCommand {
+    index: usize,
+    slot: CommandSlot,
+}
+
+impl ErasedCommand {
+    /// Replaces the execute function; returns once no call is inside the previous one.
+    pub fn set(&self, execute: ErasedExecute) {
+        *ERASED[self.index].execute.write().unwrap_or_else(PoisonError::into_inner) = Some(execute);
+    }
+
+    #[must_use]
+    pub fn slot(&self) -> CommandSlot {
+        self.slot
+    }
+}
+
+/// How many erased commands one copy of this crate can hold.
+pub const ERASED_COMMANDS: usize = 16;
+
+struct ErasedSlot {
+    params: OnceLock<&'static [Param]>,
+    execute: RwLock<Option<ErasedExecute>>,
+}
+
+static ERASED: [ErasedSlot; ERASED_COMMANDS] = [const { ErasedSlot { params: OnceLock::new(), execute: RwLock::new(None) } }; ERASED_COMMANDS];
+static REGISTER: Mutex<()> = Mutex::new(());
+
+/// Takes over the first unused console entry with copies of `name`, `help` and `params` (which
+/// may point anywhere, even into a DLL that is later unloaded) and `execute` behind an
+/// [`ErasedCommand`]; at most [`ERASED_COMMANDS`] per process.
+pub fn register_erased(name: &CStr, help: &CStr, params: &[Param], needs_reference: bool, execute: ErasedExecute) -> Result<ErasedCommand, CommandError> {
+    let _serialized = REGISTER.lock().unwrap_or_else(PoisonError::into_inner);
+    let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
+    let leak = |s: &CStr| -> &'static CStr { Box::leak(s.to_owned().into_boxed_c_str()) };
+    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(classes::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), ..p.0 })).collect());
+    let slot = take_entry(leak(name), leak(help), params, needs_reference, EXECUTES[index])?;
+    *ERASED[index].execute.write().unwrap_or_else(PoisonError::into_inner) = Some(execute);
+    let _ = ERASED[index].params.set(params);
+    Ok(ErasedCommand { index, slot })
+}
+
+fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param], needs_reference: bool, execute: ExecuteFn) -> Result<CommandSlot, CommandError> {
+    if params.len() > MAX_ARGS {
         return Err(CommandError::TooManyParams);
     }
     let f = fns();
-    let taken = [table(f.keywords, KEYWORDS), table(f.script_functions, SCRIPT_FUNCTIONS), table(f.console_commands, CONSOLE_COMMANDS)].iter().any(|t| t.iter().any(|e| e.answers_to(C::NAME)));
+    let taken = [table(f.keywords, KEYWORDS), table(f.script_functions, SCRIPT_FUNCTIONS), table(f.console_commands, CONSOLE_COMMANDS)].iter().any(|t| t.iter().any(|e| e.answers_to(name)));
     if taken {
         return Err(CommandError::NameTaken);
     }
     let entry = table(f.console_commands, CONSOLE_COMMANDS).iter_mut().find(|e| e.is_stub()).ok_or(CommandError::NoFreeEntry)?;
     let replaced = text(entry.0.name);
     let raw = &mut entry.0;
-    raw.name = C::NAME.as_ptr().cast_mut().cast();
+    raw.name = name.as_ptr().cast_mut().cast();
     raw.shortName = c"".as_ptr().cast_mut().cast();
-    raw.helpText = C::HELP.as_ptr().cast_mut().cast();
-    raw.referenceFunction = u8::from(C::NEEDS_REFERENCE);
-    raw.numParams = u16::try_from(C::PARAMS.len()).expect("at most MAX_ARGS");
-    raw.params = if C::PARAMS.is_empty() { core::ptr::null_mut() } else { C::PARAMS.as_ptr().cast_mut().cast() };
+    raw.helpText = help.as_ptr().cast_mut().cast();
+    raw.referenceFunction = u8::from(needs_reference);
+    raw.numParams = u16::try_from(params.len()).expect("at most MAX_ARGS");
+    raw.params = if params.is_empty() { core::ptr::null_mut() } else { params.as_ptr().cast_mut().cast() };
     raw.parse = f.parse;
     raw.eval = core::ptr::null_mut();
     raw.flags = 0;
-    raw.execute = execute::<C> as ExecuteFn as *mut c_void;
+    raw.execute = execute as *mut c_void;
     Ok(CommandSlot { opcode: raw.opcode, replaced })
 }
 
@@ -533,6 +591,30 @@ pub fn register<C: Command>() -> Result<CommandSlot, CommandError> {
 struct ArgSlot([u8; ARG_SIZE]);
 
 unsafe extern "C" fn execute<C: Command>(params: *const classes::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool {
+    unsafe { run(C::PARAMS, params, data, this_ref, containing, script, locals, result, offset, C::execute) }
+}
+
+unsafe extern "C" fn execute_erased<const I: usize>(params: *const classes::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool {
+    let (Some(declared), guard) = (ERASED[I].params.get(), ERASED[I].execute.read().unwrap_or_else(PoisonError::into_inner)) else {
+        return true;
+    };
+    match guard.as_ref() {
+        Some(f) => unsafe { run(declared, params, data, this_ref, containing, script, locals, result, offset, |ctx| f(ctx)) },
+        None => true,
+    }
+}
+
+macro_rules! executes {
+    ($($i:literal) => {
+        const EXECUTES: [ExecuteFn; ERASED_COMMANDS] = [$(execute_erased::<$i>),*];
+    };
+}
+
+executes!(0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15);
+
+/// Unpacks the line's arguments as `declared` describes them and runs `execute` with them.
+#[allow(clippy::too_many_arguments)]
+unsafe fn run(declared: &[Param], params: *const classes::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32, execute: impl FnOnce(&mut CommandContext<'_>) -> bool) -> bool {
     let given = if data.is_null() || offset.is_null() { 0 } else { usize::from(unsafe { data.cast::<u8>().add(*offset as usize).cast::<u16>().read_unaligned() }) };
     let mut slots: [ArgSlot; MAX_ARGS] = core::array::from_fn(|_| ArgSlot([0; ARG_SIZE]));
     let out: [*mut ArgSlot; MAX_ARGS] = core::array::from_fn(|i| &raw mut slots[i]);
@@ -540,8 +622,8 @@ unsafe extern "C" fn execute<C: Command>(params: *const classes::ParamInfo, data
     if !unpacked {
         return false;
     }
-    let args: Vec<Arg<'_>> = C::PARAMS.iter().zip(&slots).enumerate().map(|(i, (param, slot))| if i < given { decode(param.0.typeCode, slot) } else { Arg::Missing }).collect();
-    C::execute(&mut CommandContext { this_ref, args: &args, result })
+    let args: Vec<Arg<'_>> = declared.iter().zip(&slots).enumerate().map(|(i, (param, slot))| if i < given { decode(param.0.typeCode, slot) } else { Arg::Missing }).collect();
+    execute(&mut CommandContext { this_ref, args: &args, result })
 }
 
 fn decode(kind: u32, slot: &ArgSlot) -> Arg<'_> {

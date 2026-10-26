@@ -43,6 +43,7 @@ use core::ffi::{c_char, c_void};
 use core::ptr::NonNull;
 use std::ffi::CString;
 use std::fmt;
+use std::sync::{PoisonError, RwLock};
 
 use layout::v1_7_104::{classes, fns, globals, vtables};
 
@@ -1117,13 +1118,19 @@ native_fns!(A0 0, A1 1, A2 2, A3 3);
 #[repr(C)]
 struct NativeHeader {
     base: classes::BSScript__NF_util__NativeFunctionBase,
-    invoke: unsafe fn(this: *const NativeHeader, vm: &VirtualMachine, self_: &Variable, args: &[&Variable]) -> Option<Variable>,
+    invoke: unsafe fn(this: *const NativeHeader, call: &NativeCall<'_>) -> Option<Variable>,
 }
 
 #[repr(C)]
 struct Native<F> {
     header: NativeHeader,
     f: F,
+}
+
+impl<F> Native<F> {
+    fn function(&'static self) -> &'static NativeFunction {
+        unsafe { &*core::ptr::from_ref(&self.header).cast::<NativeFunction>() }
+    }
 }
 
 /// A registered native, leaked for the life of the game because the VM keeps its pointer.
@@ -1171,23 +1178,61 @@ impl NativeFunction {
     }
 }
 
-#[allow(clippy::unnecessary_wraps)]
-unsafe fn invoke_fn<F: NativeFn<M>, M>(this: *const NativeHeader, vm: &VirtualMachine, _: &Variable, args: &[&Variable]) -> Option<Variable> {
-    let native = unsafe { &*this.cast::<Native<F>>() };
-    Some(native.f.invoke(vm, args))
+/// A native call as the VM makes it: the VM, the `self` variable, the arguments and the stack.
+pub struct NativeCall<'a> {
+    pub vm: &'a VirtualMachine,
+    pub self_: &'a Variable,
+    pub args: &'a [&'a Variable],
+    pub stack_id: u32,
 }
 
-unsafe fn invoke_method<F: NativeMethod<M>, M>(this: *const NativeHeader, vm: &VirtualMachine, self_: &Variable, args: &[&Variable]) -> Option<Variable> {
-    let native = unsafe { &*this.cast::<Native<F>>() };
-    let receiver = self_.as_form::<F::Receiver>()?;
-    Some(native.f.invoke(vm, receiver, args))
+impl NativeCall<'_> {
+    /// Runs `f` as a global function ([`VirtualMachine::register_native`]).
+    #[must_use]
+    pub fn global<F: NativeFn<M>, M>(&self, f: F) -> Option<Variable> {
+        self.on_stack(|| Some(f.invoke(self.vm, self.args)))
+    }
+
+    /// Runs `f` as a method ([`VirtualMachine::register_method`]); `None` when `self` is not bound to its form class.
+    #[must_use]
+    pub fn method<F: NativeMethod<M>, M>(&self, f: F) -> Option<Variable> {
+        self.on_stack(|| Some(f.invoke(self.vm, self.self_.as_form::<F::Receiver>()?, self.args)))
+    }
+
+    /// Starts `f` as a latent function ([`VirtualMachine::register_latent`]) and answers the true Bool `Call` requires before the stack waits.
+    #[must_use]
+    pub fn latent<F: LatentFn<M>, M>(&self, f: F) -> Option<Variable> {
+        self.on_stack(|| {
+            f.start(Latent { stack_id: self.stack_id, result: PhantomData }, self.args);
+            Some(Variable::bool(true))
+        })
+    }
+
+    /// Makes the stack id visible to [`GameThread::current`] and [`current_stack_id`] in this copy of the crate while `f` runs.
+    fn on_stack<R>(&self, f: impl FnOnce() -> R) -> R {
+        let previous = STACK_ID.replace(Some(self.stack_id));
+        let r = f();
+        STACK_ID.set(previous);
+        r
+    }
 }
 
-/// Starts the latent call and answers the true Bool `Call` requires before the stack waits.
-unsafe fn invoke_latent<F: LatentFn<M>, M>(this: *const NativeHeader, _: &VirtualMachine, _: &Variable, args: &[&Variable]) -> Option<Variable> {
-    let native = unsafe { &*this.cast::<Native<F>>() };
-    native.f.start(Latent { stack_id: current_stack_id()?, result: PhantomData }, args);
-    Some(Variable::bool(true))
+unsafe fn invoke_fn<F: NativeFn<M>, M>(this: *const NativeHeader, call: &NativeCall<'_>) -> Option<Variable> {
+    call.global(unsafe { &*this.cast::<Native<F>>() }.f)
+}
+
+unsafe fn invoke_method<F: NativeMethod<M>, M>(this: *const NativeHeader, call: &NativeCall<'_>) -> Option<Variable> {
+    call.method(unsafe { &*this.cast::<Native<F>>() }.f)
+}
+
+unsafe fn invoke_latent<F: LatentFn<M>, M>(this: *const NativeHeader, call: &NativeCall<'_>) -> Option<Variable> {
+    call.latent(unsafe { &*this.cast::<Native<F>>() }.f)
+}
+
+unsafe fn invoke_erased(this: *const NativeHeader, call: &NativeCall<'_>) -> Option<Variable> {
+    let native = unsafe { &*this.cast::<Native<RwLock<ErasedNativeFn>>>() };
+    let f = native.f.read().unwrap_or_else(PoisonError::into_inner);
+    f(call)
 }
 
 unsafe extern "C" fn has_binding(_: *mut NativeHeader) -> bool {
@@ -1215,16 +1260,48 @@ unsafe extern "C" fn call_binding(this: *mut NativeHeader, self_: *mut VariableR
         };
         *arg = v;
     }
-    let previous = STACK_ID.replace(Some(stack_id));
-    let out = unsafe { (this.invoke)(this, vm, self_, &args[..count]) };
-    STACK_ID.set(previous);
-    match out {
+    let call = NativeCall { vm, self_, args: &args[..count], stack_id };
+    match unsafe { (this.invoke)(this, &call) } {
         Some(out) => {
             unsafe { out.assign_to(result) };
             true
         }
         None => false,
     }
+}
+
+/// What an [`ErasedNative`] runs: `None` fails the call as a native without a binding does.
+pub type ErasedNativeFn = Box<dyn Fn(&NativeCall<'_>) -> Option<Variable> + Send + Sync>;
+
+/// A native whose Rust side is chosen at run time, for a host that binds on behalf of code it may
+/// unload: the VM keeps the host's function object while [`set`](Self::set) decides what runs behind it.
+#[derive(Clone, Copy)]
+pub struct ErasedNative(&'static Native<RwLock<ErasedNativeFn>>);
+
+unsafe impl Send for ErasedNative {}
+unsafe impl Sync for ErasedNative {}
+
+impl ErasedNative {
+    /// Replaces the handler; returns once no call is inside the previous one.
+    pub fn set(&self, f: ErasedNativeFn) {
+        *self.0.f.write().unwrap_or_else(PoisonError::into_inner) = f;
+    }
+
+    #[must_use]
+    pub fn function(&self) -> &'static NativeFunction {
+        self.0.function()
+    }
+}
+
+/// How a native is declared to the VM.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum NativeKind {
+    /// `native global`.
+    Global,
+    /// `native` on a script that extends a form class.
+    Method,
+    /// `native global`, completing later through a [`Latent`].
+    Latent,
 }
 
 /// Proof of running on a game thread, which Papyrus dispatch requires.
@@ -1356,13 +1433,6 @@ impl Args {
     }
 }
 
-#[derive(Clone, Copy, PartialEq, Eq)]
-enum Kind {
-    Global,
-    Method,
-    Latent,
-}
-
 /// `BSScript::Internal::VirtualMachine`, the object `g_SkyrimVM + 0x210` points at and the SKSE
 /// `PapyrusInterface` hands to a registration callback.
 #[repr(transparent)]
@@ -1470,34 +1540,41 @@ impl VirtualMachine {
     /// the same parameter and return types ([`ParamType`] per Rust type) or the engine refuses the
     /// binding when the script links.
     pub fn register_native<F: NativeFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.bind(class, name, Kind::Global, F::PARAMS, F::RETURN, invoke_fn::<F, M>, f)
+        self.bind(class, name, NativeKind::Global, F::PARAMS, F::RETURN, invoke_fn::<F, M>, f).map(Native::function)
     }
 
     /// Registers `f` as `class.name`, a latent `native global` function: the calling script waits
     /// until `f`'s [`Latent`] is completed. The `.pex` declares it like any native, returning the
     /// type of `F::Output`.
     pub fn register_latent<F: LatentFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.bind(class, name, Kind::Latent, F::PARAMS, <F::Output as IntoVariable>::TYPE, invoke_latent::<F, M>, f)
+        self.bind(class, name, NativeKind::Latent, F::PARAMS, <F::Output as IntoVariable>::TYPE, invoke_latent::<F, M>, f).map(Native::function)
     }
 
     /// Registers `f` as `class.name`, a `native` method of a script that extends the form class
     /// of `f`'s first parameter; a call whose object is not bound to such a form fails with the
     /// engine's "no native object bound" error.
     pub fn register_method<F: NativeMethod<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.bind(class, name, Kind::Method, F::PARAMS, F::RETURN, invoke_method::<F, M>, f)
+        self.bind(class, name, NativeKind::Method, F::PARAMS, F::RETURN, invoke_method::<F, M>, f).map(Native::function)
+    }
+
+    /// Registers `class.name` with the declared shape and a handler that can be replaced later
+    /// ([`ErasedNative::set`]); `params` and `ret` are what the typed registrations take from
+    /// their `F` ([`NativeFn::PARAMS`] and [`NativeFn::RETURN`], a latent's `Output` type).
+    pub fn register_erased(&self, class: &str, name: &str, kind: NativeKind, params: &[ParamType], ret: Option<ParamType>, f: ErasedNativeFn) -> Result<ErasedNative, Error> {
+        self.bind(class, name, kind, params, ret, invoke_erased, RwLock::new(f)).map(ErasedNative)
     }
 
     #[allow(clippy::too_many_arguments)]
-    fn bind<F: Copy + Send + Sync + 'static>(
+    fn bind<F: Send + Sync + 'static>(
         &self,
         class: &str,
         name: &str,
-        kind: Kind,
+        kind: NativeKind,
         params: &[ParamType],
         ret: Option<ParamType>,
-        invoke: unsafe fn(*const NativeHeader, &VirtualMachine, &Variable, &[&Variable]) -> Option<Variable>,
+        invoke: unsafe fn(*const NativeHeader, &NativeCall<'_>) -> Option<Variable>,
         f: F,
-    ) -> Result<&'static NativeFunction, Error> {
+    ) -> Result<&'static Native<F>, Error> {
         let return_type = ret.map_or(Ok(TypeInfo::NONE), |t| t.type_info(self))?;
         let count = u16::try_from(params.len()).expect("at most MAX_PARAMS parameters");
         let mut param_infos = Vec::with_capacity(1 + 2 * params.len());
@@ -1521,9 +1598,9 @@ impl VirtualMachine {
                     paramCount: count,
                     variableCount: count,
                     unknown_3C: [0; 4],
-                    isStatic: u8::from(kind != Kind::Method),
+                    isStatic: u8::from(kind != NativeKind::Method),
                     isCallableFromTasklet: 0,
-                    isLatent: u8::from(kind == Kind::Latent),
+                    isLatent: u8::from(kind == NativeKind::Latent),
                     unknown_43: [0; 1],
                     userFlags: 0,
                     docString: BSFixedString::empty().into_raw(),
@@ -1538,7 +1615,7 @@ impl VirtualMachine {
         if bound == 0 {
             return Err(Error::Bind { class: class.to_owned(), name: name.to_owned() });
         }
-        Ok(unsafe { &*header.cast::<NativeFunction>() })
+        Ok(native)
     }
 
     /// Slot 38 `DispatchStaticCall` of `class.function(args)`: the call is queued on a new stack and

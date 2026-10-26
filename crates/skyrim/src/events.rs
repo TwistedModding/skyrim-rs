@@ -82,21 +82,22 @@ pub trait EventSink<E: Event>: Sync + 'static {
     fn process(&self, event: &E, source: &BSTEventSource<E>) -> BSEventNotifyControl;
 }
 
+/// The two slots the engine calls on a sink object `T` for events of type `E`.
 #[repr(C)]
-struct SinkVtable<E: Event, S: EventSink<E>> {
-    dtor: unsafe extern "C" fn(this: *mut Sink<E, S>, flags: u32) -> *mut Sink<E, S>,
-    process: unsafe extern "C" fn(this: *const Sink<E, S>, event: *const E, source: *mut classes::BSTEventSource) -> BSEventNotifyControl,
+struct SinkVtable<T, E> {
+    dtor: unsafe extern "C" fn(this: *mut T, flags: u32) -> *mut T,
+    process: unsafe extern "C" fn(this: *const T, event: *const E, source: *mut classes::BSTEventSource) -> BSEventNotifyControl,
 }
 
 /// The sink object the engine sees: the vtable pointer, then the handler.
 #[repr(C)]
 pub struct Sink<E: Event, S: EventSink<E>> {
-    vtable: &'static SinkVtable<E, S>,
+    vtable: &'static SinkVtable<Self, E>,
     handler: S,
 }
 
 impl<E: Event, S: EventSink<E>> Sink<E, S> {
-    const VTABLE: &'static SinkVtable<E, S> = &SinkVtable { dtor: Self::dtor, process: Self::process };
+    const VTABLE: &'static SinkVtable<Self, E> = &SinkVtable { dtor: Self::dtor, process: Self::process };
 
     #[must_use]
     pub const fn new(handler: S) -> Self {
@@ -122,6 +123,66 @@ impl<E: Event, S: EventSink<E>> Sink<E, S> {
             return BSEventNotifyControl::Continue;
         };
         this.handler.process(event, source)
+    }
+}
+
+/// What an [`ErasedSink`] runs: the event and the source as the engine passes them.
+pub type ErasedHandler = Box<dyn Fn(*const c_void, *const classes::BSTEventSource) -> BSEventNotifyControl + Send + Sync>;
+
+/// A sink whose event type is chosen at run time, for a host that registers on behalf of code it
+/// may unload: the engine keeps the host's object while the handler decides what runs behind it.
+#[repr(C)]
+pub struct ErasedSink {
+    vtable: &'static SinkVtable<Self, c_void>,
+    handler: ErasedHandler,
+}
+
+impl ErasedSink {
+    const VTABLE: &'static SinkVtable<Self, c_void> = &SinkVtable { dtor: Self::dtor, process: Self::process };
+
+    /// Leaks the sink: once registered, the engine keeps its address for the life of the game.
+    #[must_use]
+    pub fn new(handler: ErasedHandler) -> &'static Self {
+        Box::leak(Box::new(Self { vtable: Self::VTABLE, handler }))
+    }
+
+    unsafe extern "C" fn dtor(this: *mut Self, _flags: u32) -> *mut Self {
+        this
+    }
+
+    unsafe extern "C" fn process(this: *const Self, event: *const c_void, source: *mut classes::BSTEventSource) -> BSEventNotifyControl {
+        match unsafe { this.as_ref() } {
+            Some(this) => (this.handler)(event, source),
+            None => BSEventNotifyControl::Continue,
+        }
+    }
+}
+
+/// A source known by address with its event type's registration function, for an [`ErasedSink`].
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct ErasedSource {
+    source: *mut classes::BSTEventSource,
+    add: u64,
+}
+
+unsafe impl Send for ErasedSource {}
+unsafe impl Sync for ErasedSource {}
+
+impl ErasedSource {
+    /// The source of `E`, `None` while its holder does not exist yet.
+    #[must_use]
+    pub fn of<E: Event>() -> Option<Self> {
+        E::source().map(|s| Self { source: s.as_mut_ptr(), add: E::ADD_SINK })
+    }
+
+    #[must_use]
+    pub fn address(&self) -> usize {
+        self.source as usize
+    }
+
+    /// Registers `sink` through the event type's `AddEventSink`; a sink already registered is not added again.
+    pub fn add_sink(&self, sink: &'static ErasedSink) {
+        unsafe { resolved::<SinkFn>(self.add)(self.source, core::ptr::from_ref(sink).cast()) };
     }
 }
 

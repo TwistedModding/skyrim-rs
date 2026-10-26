@@ -72,6 +72,7 @@ static STATE: Mutex<Option<State>> = Mutex::new(None);
 static WINDOWS: Mutex<Vec<Window>> = Mutex::new(Vec::new());
 static OPEN: AtomicBool = AtomicBool::new(false);
 static FAILURE: OnceLock<String> = OnceLock::new();
+static FRAME: OnceLock<fn()> = OnceLock::new();
 
 /// Installs the overlay with `toggle` (a keyboard scan code, [`DEFAULT_TOGGLE`] is F11) as the key
 /// that opens and closes it. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
@@ -100,6 +101,12 @@ pub fn add(draw: impl FnMut(&Context) + Send + 'static) {
     WINDOWS.lock().unwrap().push(Box::new(draw));
 }
 
+/// Runs `f` on the main thread at every present the overlay sees, open or not, before its
+/// windows; the first call sets it for the life of the game.
+pub fn on_frame(f: fn()) {
+    let _ = FRAME.set(f);
+}
+
 #[must_use]
 pub fn is_open() -> bool {
     OPEN.load(Ordering::Relaxed)
@@ -124,6 +131,9 @@ pub fn captures_input() -> bool {
 
 unsafe extern "C" fn present_detour() {
     input::ensure_sink();
+    if let Some(frame) = FRAME.get() {
+        frame();
+    }
     if is_open() && FAILURE.get().is_none() {
         draw();
     }
