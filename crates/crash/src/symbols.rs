@@ -110,6 +110,16 @@ pub fn data(rva: u32) -> Option<Data> {
     (offset < 0x1000).then_some(Data::Global { global, offset })
 }
 
+/// The module-relative address of the function with an Address Library id, as the table places it.
+#[must_use]
+pub fn function_rva(id: u64) -> Option<u32> {
+    let id = u32::try_from(id).ok()?;
+    match TABLE.get().and_then(Option::as_ref) {
+        Some(table) => table.by_rva.iter().find(|e| ledger::FUNCTIONS[e.1 as usize].id == id).map(|e| e.0),
+        None => ledger::FUNCTIONS.iter().find(|f| f.id == id).map(|f| f.rva),
+    }
+}
+
 /// How many functions the table names.
 #[must_use]
 pub fn count() -> usize {

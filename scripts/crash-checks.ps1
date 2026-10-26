@@ -6,7 +6,7 @@
 # hook, the hook site and subscriber; the thread id in the log must be the one the plugin logged right before crashing.
 $Phases = @()
 
-function ScenarioFile($s, $pattern) { Get-ChildItem "$OutDir\$s" -Filter $pattern -ErrorAction SilentlyContinue | Select-Object -First 1 }
+function ScenarioFile($s, $pattern) { Get-ChildItem "$OutDir\$s" -Filter $pattern -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1 }
 function CrashLog($s) { $f = ScenarioFile $s "skyrim-rs-crash-????????-??????.log"; if ($f) { @(Get-Content $f.FullName) } else { @() } }
 function PluginLog($s) { if (Test-Path "$OutDir\$s\$($Mod.log)") { @(Get-Content "$OutDir\$s\$($Mod.log)") } else { @() } }
 function HostLogOf($s) { if (Test-Path "$OutDir\$s\skyrim-rs.log") { @(Get-Content "$OutDir\$s\skyrim-rs.log") } else { @() } }
@@ -41,7 +41,7 @@ foreach ($s in $Mod.scenarios) {
 
     $rows += @{ name = "$s`: report written"; plugin = "$armed | $pluginCrashLine"; devbench = "crash log lines $($crash.Count); $dumpLine; dump bytes $(if ($dump) { $dump.Length } else { 0 }); (host log) $installed";
                 ok = ($crash.Count -gt 20 -and $dumpLine -ne "" -and $dump -and $dump.Length -gt 0 -and $installed -ne "" -and $armed -ne "" -and $pluginCrashLine -ne "") }
-    $expectedThread = if ($s -eq "hook") { $threadLine -match '\(a job thread' } else { $threadLine -match '\(the main thread\)$' }
+    $expectedThread = if ($s -eq "hook") { $threadLine -match '\(a job thread' } elseif ($s -eq "script") { $threadLine -notmatch 'the main thread' } else { $threadLine -match '\(the main thread\)$' }
     $rows += @{ name = "$s`: pdb and explanation"; plugin = "frames with PDB names $pdbFrames"; devbench = "$hash | $explanation";
                 ok = ($pdbFrames -ge 1 -and $hash -ne "" -and $explanation -ne "") }
     $rows += @{ name = "$s`: thread"; plugin = $pluginCrashLine; devbench = $threadLine;
@@ -86,6 +86,12 @@ foreach ($s in $Mod.scenarios) {
         "deleted" {
             $rows += @{ name = "deleted: register probe"; plugin = $atLine; devbench = "$accessLine | $rcx";
                         ok = ($accessLine -eq 'reading address 0x0: null' -and $rcx -match '^rcx 0x[0-9a-f]+  PlayerCharacter form 00000014 ACHR DELETED, .*refcount \d+, base TESNPC form 00000007 NPC_, from "[^"]+\.es[lmp]".*, in cell 00009732 .* at \(.*\), name "Prisoner", race 00013746' -and $explanation -match '^rule deleted-record:') }
+        }
+        "script" {
+            # The native's function object and callback are the host's: a framework plugin registers natives through its Host, which owns the erased function.
+            $papyrus = @($crash | Where-Object { $_ -match '^the crashing thread runs Papyrus: |^  #\d+ ' })
+            $rows += @{ name = "script: papyrus stack"; plugin = "$(First $plugin '^PASS native:') | $pluginCrashLine"; devbench = ($papyrus -join ' | ');
+                        ok = ((First $crash '^the crashing thread runs Papyrus: ') -match "^the crashing thread runs Papyrus: (a native's binding, inside Call|a native called by the executor)" -and (Count $crash '^  #\d+ SkyrimRsCrashTest\.Crash: native \(function object of skyrim_rs\.dll\), implemented at skyrim_rs\.dll\+0x') -ge 1 -and (Count $crash '^  #\d+ SkyrimRsCrashTest\.CrashFromScript: script function from "SkyrimRsCrashTest\.psc", \d+ bits of code, no line table') -ge 1 -and $pluginCrashLine -ne "") }
         }
         "write" {
             $rows += @{ name = "write: exception"; plugin = $atLine; devbench = "$codeLine | $accessLine";

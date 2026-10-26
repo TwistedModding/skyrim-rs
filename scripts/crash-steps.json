@@ -5,6 +5,6 @@
   {"wait": 3000},
   {"tool": "console", "args": {"command": "SkyrimRsCrash {scenario}", "capture": true}},
   {"wait": 1000},
-  {"tool": "console", "args": {"command": "{trigger}"}},
+  {trigger},
   {"wait": 30000}
 ]

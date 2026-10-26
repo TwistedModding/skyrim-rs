@@ -14,7 +14,7 @@
 # suite installs the host with the example mod and the two hook plugins, copies the example's build in again between its
 # two parts (a reload) and keeps the settings files the host wrote. The camera suite installs the camera-demo plugin,
 # drives it through its console command and reads its report log. The crash suite installs the host with its crash-test
-# plugin and runs one game session per scenario (null, hook, overflow, write, form, deleted), each ending in the crash the plugin's
+# plugin and runs one game session per scenario (null, hook, overflow, write, form, deleted, script), each ending in the crash the plugin's
 # console command armed; the host's crash log and minidump of each session go to <OutDir>\<scenario>. Any suite's run
 # that leaves a skyrim-rs-crash-* file in the SKSE folder has it moved into <OutDir>. See docs/subsystems/<suite>.md.
 param(
@@ -62,8 +62,11 @@ $Mods = @{
     gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-rs"; report = $true; tags = @(2);
              crates = @("hooks-test-a", "hooks-test-b"); dlls = @("skyrim_rs_hooks_a.dll", "skyrim_rs_hooks_b.dll") }
     crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-rs"; report = $true;
-               scenarios = @("null", "hook", "overflow", "write", "form", "deleted")
-               triggers = @{ null = "save skyrim-rs-crash"; overflow = "save skyrim-rs-crash"; write = "save skyrim-rs-crash"; hook = "player.damageactorvalue health 1"; form = "save skyrim-rs-crash"; deleted = "save skyrim-rs-crash" } }
+               scenarios = @("null", "hook", "overflow", "write", "form", "deleted", "script")
+               # The step that triggers each armed crash, as the scenario's JSON.
+               triggers = @{ null = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'; overflow = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'; write = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'
+                             hook = '{"tool": "console", "args": {"command": "player.damageactorvalue health 1"}}'; form = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'; deleted = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'
+                             script = '{"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsCrashTest", "function": "CrashFromScript"}}' } }
 }
 $TagDir = "$Root\target\release\reload-tags"
 $Mod = $Mods[$Suite]
@@ -99,7 +102,7 @@ try {
 } finally { Pop-Location }
 $Pex = @()
 if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
-if ($Suite -in @("framework", "reload", "gui")) { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\$($Mod.crate)\papyrus")) }
+if ($Suite -in @("framework", "reload", "gui", "crash")) { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\$($Mod.crate)\papyrus")) }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $OutDir = (Resolve-Path $OutDir).Path
 $Backup = Join-Path $OutDir "backup"

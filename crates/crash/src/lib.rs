@@ -12,6 +12,7 @@ use core::fmt;
 
 pub mod dump;
 pub mod mem;
+pub mod papyrus;
 pub mod pdb;
 pub mod probe;
 pub mod record;

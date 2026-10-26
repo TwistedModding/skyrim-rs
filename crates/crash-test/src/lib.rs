@@ -4,9 +4,10 @@
 //! inside the plugin's `Before` subscriber on `Actor::ModActorValueImpl` at the next
 //! `player.damageactorvalue`, on the console's job thread. `form` reads through null with the Iron
 //! Sword's record in rcx, `deleted` the same with the player's reference after setting its DELETED
-//! flag, so the register probe must name the form and its plugin file. The plugin logs the
-//! thread id of every step to `skyrim-rs-crash-test.log` so the suite can compare them with the
-//! crash log.
+//! flag, so the register probe must name the form and its plugin file. `script` is the native
+//! `SkyrimRsCrashTest.Crash`, which faults when a script calls it (`CrashFromScript` in the
+//! suite's `.psc`), so the log's Papyrus section must name both. The plugin logs the thread id of
+//! every step to `skyrim-rs-crash-test.log` so the suite can compare them with the crash log.
 
 use core::ffi::c_void;
 use core::sync::atomic::{AtomicU8, Ordering};
@@ -17,6 +18,7 @@ use std::sync::{Mutex, OnceLock};
 use framework::Host;
 use framework::hooks::Options;
 use framework::hooks::ops::Actor__ModActorValueImpl;
+use skyrim::papyrus::VirtualMachine;
 use layout::v1_7_104::classes;
 use skyrim::input::{Arg, Command, CommandContext, Param, ScriptParamType};
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
@@ -33,6 +35,7 @@ const WRITE: u8 = 3;
 const HOOK: u8 = 4;
 const FORM: u8 = 5;
 const DELETED: u8 = 6;
+const SCRIPT: u8 = 7;
 
 /// The Iron Sword, a `WEAP` record of Skyrim.esm.
 const IRON_SWORD: skyrim::forms::FormId = skyrim::forms::FormId(0x12EB7);
@@ -81,7 +84,20 @@ fn load(host: &'static Host) -> bool {
     }
     log("summary crash load: 2 pass, 0 fail");
     host.on_message(on_message);
+    host.on_papyrus(on_papyrus);
     true
+}
+
+fn on_papyrus(vm: &'static VirtualMachine) {
+    let host = HOST.get().expect("set in load");
+    match host.register_native(vm, "SkyrimRsCrashTest", "Crash", || {
+        log(&format!("crashing on thread {} (script)", thread()));
+        null_read();
+    }) {
+        Ok(_) => log("PASS native: SkyrimRsCrashTest.Crash bound"),
+        Err(e) => log(&format!("FAIL native: {e}")),
+    }
+    log("summary crash papyrus: 1 pass, 0 fail");
 }
 
 fn on_message(msg: &skse::Message) {
@@ -161,7 +177,7 @@ struct CrashCommand;
 
 impl Command for CrashCommand {
     const NAME: &'static core::ffi::CStr = c"SkyrimRsCrash";
-    const HELP: &'static core::ffi::CStr = c"skyrim-rs crash test: arm null, overflow, write, form or deleted (fires at the next save) or hook (fires at the next damageactorvalue)";
+    const HELP: &'static core::ffi::CStr = c"skyrim-rs crash test: arm null, overflow, write, form or deleted (fires at the next save), hook (at the next damageactorvalue) or script (SkyrimRsCrashTest.Crash faults when called)";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -172,7 +188,8 @@ impl Command for CrashCommand {
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("hook") => (HOOK, "armed hook: a null read inside the Before subscriber at the next damageactorvalue"),
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("form") => (FORM, "armed form: a null read with the Iron Sword's record in rcx at the next save"),
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("deleted") => (DELETED, "armed deleted: the player's reference flagged DELETED, then a null read with it in rcx at the next save"),
-            _ => (NONE, "SkyrimRsCrash null | overflow | write | hook | form | deleted"),
+            [Arg::Str(what), ..] if what.eq_ignore_ascii_case("script") => (SCRIPT, "armed script: the native SkyrimRsCrashTest.Crash faults when a script calls it"),
+            _ => (NONE, "SkyrimRsCrash null | overflow | write | hook | form | deleted | script"),
         };
         ARMED.store(armed, Ordering::Relaxed);
         log(&format!("{line} (command thread {})", thread()));

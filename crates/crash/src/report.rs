@@ -36,6 +36,7 @@ pub fn write(w: &mut dyn Write, rec: &Record, src: &dyn Source, paths: Option<(&
     let _ = threads(w, &ctx);
     let _ = modules(w, &ctx);
     let _ = state(w, &ctx);
+    let _ = crate::papyrus::write(w, &ctx);
     let _ = explanation(w, &ctx);
 }
 
