@@ -24,8 +24,10 @@ use layout::v1_7_104::{classes, enums, fns, globals, vtables};
 use crate::string::BSFixedString;
 
 pub use enums::{AccumulatorRenderMode, BSShaderProperty_flags as ShaderFlags, NiAVObject_flags as NodeFlags, NiAlphaProperty_flags as AlphaFlags, ShaderMaterialType};
+pub use fns::BSShaderAccumulator__RegisterDepthGeometry_fn as RegisterDepthGeometryFn;
 pub use fns::PlayerCharacter__SetFirstPerson_fn as SetFirstPersonFn;
 pub use fns::PresentFrame_fn as PresentFn;
+pub use fns::ProcessCullObjectList_fn as ProcessCullObjectListFn;
 pub use fns::RenderWorld_fn as RenderWorldFn;
 
 /// `NiAVObject::UpdateNode` (id 70251, medium): slot 44 with the update data, then the parent's slot 61.
@@ -36,8 +38,21 @@ type NiAVObjectUpdateNode = unsafe extern "C" fn(this: *mut classes::NiAVObject,
 /// not a plane mask; a detour must pass it through unchanged.
 pub type CullFn = fns::NiAVObject__Cull_fn;
 
+/// `BSSceneGraph::SetFieldOfView` (id 106461, medium): stores the FOV and, unless it is unchanged
+/// and `force` is clear, reframes the frame camera from the scene graph's near and far slots.
+type SetFieldOfView = unsafe extern "C" fn(graph: *mut classes::BSSceneGraph, fov: f32, force: bool, camera: *mut classes::NiCamera, update_lod: bool);
+
 /// `NiAVObject::flags` bit 0: no culling process visits the object.
 pub const HIDDEN: u32 = 1;
+
+/// `FrameState` +0xb8 and +0xc8: the array of `CameraMatrixEntry` (0x290 bytes each) and its
+/// count (`graphics.md` section 2.2; the fields are not laid out in the ledger).
+const FRAME_CAMERA_ENTRIES: usize = 0xb8;
+const FRAME_CAMERA_ENTRY_COUNT: usize = 0xc8;
+/// `ShaderPropertyLightData` +0x1c, the receiver mask behind `BSShaderProperty::lightData` (`graphics.md` section 4.3).
+const RECEIVER_MASK: usize = 0x1c;
+/// A `Setting`'s value, 8 bytes after its vtable (the ledger's `_value` rows).
+const SETTING_VALUE: usize = 8;
 
 pub(crate) struct Fns {
     scene_nodes: *const [*mut classes::ShadowSceneNode; 4],
@@ -49,9 +64,23 @@ pub(crate) struct Fns {
     cull: usize,
     render_world: usize,
     present: usize,
+    register_depth_geometry: usize,
+    process_cull_object_list: usize,
     update_node: NiAVObjectUpdateNode,
     set_name: fns::NiObjectNET__SetName_fn,
     set_first_person: usize,
+    set_field_of_view: SetFieldOfView,
+    scene_near: fns::SceneGraph__GetNearDistance_fn,
+    scene_far: fns::SceneGraph__GetFarDistance_fn,
+    near_setting: *mut f32,
+    first_person_near_setting: *const f32,
+    depth_shift_near: *const f32,
+    depth_shift_far: *const f32,
+    frame_state: *const classes::FrameState,
+    shadow_distance: *mut f32,
+    shadow_distance_sq: *mut f32,
+    shadow_map_resolution: *const u32,
+    cascade_settings: [*const classes::Setting; 4],
 }
 
 unsafe impl Send for Fns {}
@@ -73,9 +102,28 @@ impl Fns {
             cull: reloc.address(fns::NiAVObject__Cull)?,
             render_world: reloc.address(fns::RenderWorld)?,
             present: reloc.address(fns::PresentFrame)?,
+            register_depth_geometry: reloc.address(fns::BSShaderAccumulator__RegisterDepthGeometry)?,
+            process_cull_object_list: reloc.address(fns::ProcessCullObjectList)?,
             update_node: unsafe { crate::resolve(reloc, fns::NiAVObject__UpdateNode)? },
             set_name: unsafe { crate::resolve(reloc, fns::NiObjectNET__SetName)? },
             set_first_person: reloc.address(fns::PlayerCharacter__SetFirstPerson)?,
+            set_field_of_view: unsafe { crate::resolve(reloc, fns::BSSceneGraph__SetFieldOfView)? },
+            scene_near: unsafe { crate::resolve(reloc, fns::SceneGraph__GetNearDistance)? },
+            scene_far: unsafe { crate::resolve(reloc, fns::SceneGraph__GetFarDistance)? },
+            near_setting: reloc.address(globals::INISetting_fNearDistance_Display_value)? as *mut f32,
+            first_person_near_setting: reloc.address(globals::INISetting_fNear1stPersonDistance_Display_value)? as *const f32,
+            depth_shift_near: reloc.address(globals::g_DepthShiftNear)? as *const f32,
+            depth_shift_far: reloc.address(globals::g_DepthShiftFar)? as *const f32,
+            frame_state: reloc.address(globals::g_FrameState)? as *const classes::FrameState,
+            shadow_distance: reloc.address(globals::g_ShadowDistance)? as *mut f32,
+            shadow_distance_sq: reloc.address(globals::g_ShadowDistanceSq)? as *mut f32,
+            shadow_map_resolution: reloc.address(globals::g_ShadowMapResolution)? as *const u32,
+            cascade_settings: [
+                reloc.address(globals::INIPrefSetting_fShadowDistance_Display)? as *const classes::Setting,
+                reloc.address(globals::INISetting_fFirstSliceDistance_Display)? as *const classes::Setting,
+                reloc.address(globals::INISetting_fSplitOverlap_Display)? as *const classes::Setting,
+                reloc.address(globals::INIPrefSetting_iNumSplits_Display)? as *const classes::Setting,
+            ],
         })
     }
 }
@@ -90,14 +138,18 @@ pub fn frame_counter() -> u32 {
     unsafe { (*fns().frame_counter).load(Ordering::Relaxed) }
 }
 
-/// Creates, disabled, a detour on `NiAVObject::Cull` (id 70267), the gate every culling process
-/// passes a node through. Store the hook where the detour finds its trampoline, then
-/// [`hook::Hook::enable`] it: the game culls on every frame from the main menu on, so a detour
-/// enabled before it can reach the trampoline is called at once.
+/// Creates, disabled, a detour on `NiAVObject::Cull` (id 70267), the per-node gate of every
+/// scene walk: the main-camera culls, the sun's list walk, the local lights' map culls. It is not
+/// the only caster gate (pass 12): the sun's cascades replay the walk's lists through
+/// [`hook_process_cull_object_list`] without it, and the focus maps register subtrees without any
+/// cull. Store the hook where the detour finds its trampoline, then [`hook::Hook::enable`] it:
+/// the game culls on every frame from the main menu on, so a detour enabled before it can reach
+/// the trampoline is called at once.
 ///
-/// The detour runs on the job threads during the shadow and main camera culls, concurrently, and
-/// during loads while the scene is rebuilt; it must forward to [`hook::Hook::original`] for every
-/// node it does not skip and must not dereference objects the main thread may be replacing.
+/// The detour runs on the job threads during the sun's list walk and the main camera culls and
+/// on the frame thread during the cascade and local map culls, all concurrently, and during
+/// loads while the scene is rebuilt; it must forward to [`hook::Hook::original`] for every node
+/// it does not skip and must not dereference objects the main thread may be replacing.
 ///
 /// # Safety
 /// Same as [`hook::Hook::create`].
@@ -131,6 +183,250 @@ pub unsafe fn hook_present(detour: PresentFn) -> Result<hook::Hook<PresentFn>, h
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_set_first_person(detour: SetFirstPersonFn) -> Result<hook::Hook<SetFirstPersonFn>, hook::Error> {
     unsafe { hook::Hook::create(fns().set_first_person, detour) }
+}
+
+/// Creates, disabled, a detour on `BSShaderAccumulator::RegisterDepthGeometry` (id 106576): every
+/// geometry a depth or shadow accumulator accepted from a cull, before the property's slot 43
+/// builds its passes; returning without calling the original drops the geometry from that map.
+/// The shadow modes (0xd spot, 0xe cascade or focus, 0xf parabolic; [`BSShaderAccumulator::render_mode_raw`])
+/// arrive on the frame thread, the depth pre-pass mode on workers, concurrently.
+///
+/// # Safety
+/// Same as [`hook::Hook::create`].
+pub unsafe fn hook_register_depth_geometry(detour: RegisterDepthGeometryFn) -> Result<hook::Hook<RegisterDepthGeometryFn>, hook::Error> {
+    unsafe { hook::Hook::create(fns().register_depth_geometry, detour) }
+}
+
+/// Creates, disabled, a detour on `ProcessCullObjectList` (id 76561): the replay of a geometry
+/// list into a culler, which the sun's cascades run on the frame thread over the lists its walk
+/// built; with `skipHidden` an entry whose own hidden bit is set is dropped without `NiAVObject::Cull`.
+///
+/// # Safety
+/// Same as [`hook::Hook::create`].
+pub unsafe fn hook_process_cull_object_list(detour: ProcessCullObjectListFn) -> Result<hook::Hook<ProcessCullObjectListFn>, hook::Error> {
+    unsafe { hook::Hook::create(fns().process_cull_object_list, detour) }
+}
+
+/// `fNearDistance:Display` (id 388779): the world near plane every frustum rebuild and every depth shift read.
+#[must_use]
+pub fn near_distance() -> f32 {
+    unsafe { fns().near_setting.read_volatile() }
+}
+
+/// Writes the setting alone: effective from the next frame's first depth shift, the GPU one frame later.
+pub fn set_near_distance(near: f32) {
+    unsafe { fns().near_setting.write_volatile(near) }
+}
+
+/// `fNear1stPersonDistance:Display` (id 388782): the hands camera's near.
+#[must_use]
+pub fn first_person_near_distance() -> f32 {
+    unsafe { fns().first_person_near_setting.read_volatile() }
+}
+
+/// The near `BeginDepthShift` last cached from the scene graph (`g_DepthShiftNear`, id 414949).
+#[must_use]
+pub fn depth_shift_near() -> f32 {
+    unsafe { fns().depth_shift_near.read_volatile() }
+}
+
+/// The far `BeginDepthShift` last cached and `EndDepthShift` restores (`g_DepthShiftFar`, id 414948).
+#[must_use]
+pub fn depth_shift_far() -> f32 {
+    unsafe { fns().depth_shift_far.read_volatile() }
+}
+
+/// The consistent near-plane write: the setting, then a forced `SetFieldOfView` with the live
+/// world FOV plus offset, so the frame camera, the GPU snapshot, the depth shifts, the cascades,
+/// the water stage and the fog all see `near` from this frame on. Main thread, before `RenderWorld`:
+/// the state-step detour is the place. A write into the frame camera alone is undone by the
+/// frame's first depth shift.
+pub fn set_near_plane(near: f32) {
+    set_near_distance(near);
+    let fov = crate::camera::PlayerCamera::get().map_or(0.0, crate::camera::PlayerCamera::world_fov) + crate::camera::fov_offset();
+    if let Some(graph) = SceneGraph::get() {
+        graph.set_field_of_view(fov, true);
+    }
+}
+
+/// `g_ShadowDistance` (id 415263): the live shadow distance, `fShadowDistance` outdoors and
+/// 3000 indoors (`SetShadowDistanceForInterior` rewrites it at every cell change).
+#[must_use]
+pub fn shadow_distance() -> f32 {
+    unsafe { fns().shadow_distance.read_volatile() }
+}
+
+/// Writes the live shadow distance and its square (the local lights' distance cull); the next
+/// interior or exterior transition rewrites both from the settings.
+pub fn set_shadow_distance(distance: f32) {
+    unsafe {
+        fns().shadow_distance.write_volatile(distance);
+        fns().shadow_distance_sq.write_volatile(distance * distance);
+    }
+}
+
+/// `g_ShadowMapResolution` (id 415268): the cascade and local map resolution cached at startup.
+#[must_use]
+pub fn shadow_map_resolution() -> u32 {
+    unsafe { fns().shadow_map_resolution.read_volatile() }
+}
+
+/// The settings the sun's `UpdateForCamera` splits the shadow distance with (`graphics.md` section 5).
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct CascadeSettings {
+    /// `fShadowDistance:Display`, the exterior distance and the split fraction's base.
+    pub shadow_distance: f32,
+    /// `fFirstSliceDistance:Display`: the end of cascade 0, at least 500 and at most the distance over the split count.
+    pub first_slice_distance: f32,
+    /// `fSplitOverlap:Display`: added to every split's far, twice to the next split's near.
+    pub split_overlap: f32,
+    /// `iNumSplits:Display`: the cascade count (2); the sun stores at most 3.
+    pub splits: u32,
+}
+
+/// Reads the four cascade settings.
+#[must_use]
+pub fn cascade_settings() -> CascadeSettings {
+    let s = fns().cascade_settings;
+    CascadeSettings { shadow_distance: Setting::read(s[0]), first_slice_distance: Setting::read(s[1]), split_overlap: Setting::read(s[2]), splits: Setting::read(s[3]) }
+}
+
+/// Writes the four cascade settings; the sun reads them at its next `UpdateForCamera`, and the
+/// shadow distance also at the next cell transition (see [`set_shadow_distance`] for the live value).
+pub fn set_cascade_settings(settings: CascadeSettings) {
+    let s = fns().cascade_settings;
+    Setting::write(s[0], settings.shadow_distance);
+    Setting::write(s[1], settings.first_slice_distance);
+    Setting::write(s[2], settings.split_overlap);
+    Setting::write(s[3], settings.splits);
+}
+
+struct Setting;
+
+impl Setting {
+    fn read<T: Copy>(setting: *const classes::Setting) -> T {
+        unsafe { setting.cast::<u8>().add(SETTING_VALUE).cast::<T>().read_volatile() }
+    }
+
+    fn write<T: Copy>(setting: *const classes::Setting, value: T) {
+        unsafe { setting.cast::<u8>().add(SETTING_VALUE).cast::<T>().cast_mut().write_volatile(value) }
+    }
+}
+
+/// The world scene graph (`g_SceneGraph`, id 403513): the frame camera and the near and far slots.
+#[repr(transparent)]
+pub struct SceneGraph(classes::SceneGraph);
+
+impl SceneGraph {
+    #[must_use]
+    pub fn raw(&self) -> &classes::SceneGraph {
+        &self.0
+    }
+
+    #[must_use]
+    pub fn get() -> Option<&'static Self> {
+        unsafe { (*fns().scene_graph).cast::<Self>().as_ref() }
+    }
+
+    /// The frame camera (+0x128), what [`crate::camera::main_camera`] returns.
+    #[must_use]
+    pub fn frame_camera(&self) -> Option<&NiCamera> {
+        unsafe { NiCamera::from_ptr(self.0.field_128 as *const classes::NiCamera) }
+    }
+
+    /// Slot 63 (id 36844): the map menu's near override while it is set, else `fNearDistance:Display`.
+    #[must_use]
+    pub fn near(&self) -> f32 {
+        unsafe { (fns().scene_near)(self.as_mut_ptr()) }
+    }
+
+    /// Slot 62 (id 36845): the far distance of the current scene (353840 with LOD outdoors).
+    #[must_use]
+    pub fn far(&self) -> f32 {
+        unsafe { (fns().scene_far)(self.as_mut_ptr()) }
+    }
+
+    /// `BSSceneGraph::SetFieldOfView` (id 106461): stores `fov` and, when it changed or `force`
+    /// is set, reframes the frame camera with the near and far slots and the render target size.
+    /// Main thread; `ApplyWorldFOV` calls it with the world FOV plus offset twice a frame.
+    pub fn set_field_of_view(&self, fov: f32, force: bool) {
+        unsafe { (fns().set_field_of_view)(self.as_mut_ptr().cast(), fov, force, core::ptr::null_mut(), true) }
+    }
+
+    fn as_mut_ptr(&self) -> *mut classes::SceneGraph {
+        (&raw const self.0).cast_mut()
+    }
+}
+
+/// `g_FrameState` (id 411479): the frame's sizes, jitter and the GPU copies of the cameras.
+#[repr(transparent)]
+pub struct FrameState(classes::FrameState);
+
+impl FrameState {
+    #[must_use]
+    pub fn raw(&self) -> &classes::FrameState {
+        &self.0
+    }
+
+    #[must_use]
+    pub fn get() -> Option<&'static Self> {
+        unsafe { fns().frame_state.cast::<Self>().as_ref() }
+    }
+
+    /// The full render target size and the swap chain size.
+    #[must_use]
+    pub fn sizes(&self) -> [u32; 4] {
+        [self.0.screenWidth, self.0.screenHeight, self.0.backBufferWidth, self.0.backBufferHeight]
+    }
+
+    /// The dynamic resolution ratios the viewport is scaled by (1, 1 unless the console or `bEnableAutoDynamicResolution` moved them).
+    #[must_use]
+    pub fn dynamic_ratios(&self) -> [f32; 2] {
+        [self.0.dynamicWidthRatio, self.0.dynamicHeightRatio]
+    }
+
+    /// The cameras snapshotted for the GPU this frame: the frame camera twice (jitter 0 and 1), the hands camera in first person.
+    #[must_use]
+    pub fn camera_entries(&self) -> &[CameraMatrixEntry] {
+        let base = (&raw const self.0).cast::<u8>();
+        let (data, count) = unsafe { (base.add(FRAME_CAMERA_ENTRIES).cast::<*const CameraMatrixEntry>().read_unaligned(), base.add(FRAME_CAMERA_ENTRY_COUNT).cast::<u32>().read_unaligned()) };
+        if data.is_null() { &[] } else { unsafe { core::slice::from_raw_parts(data, count as usize) } }
+    }
+}
+
+/// One GPU camera snapshot (`FindOrAddEntry290`): the matrices every draw of that camera binds.
+#[repr(transparent)]
+pub struct CameraMatrixEntry(classes::CameraMatrixEntry);
+
+impl CameraMatrixEntry {
+    #[must_use]
+    pub fn raw(&self) -> &classes::CameraMatrixEntry {
+        &self.0
+    }
+
+    #[must_use]
+    pub fn camera_ptr(&self) -> *const classes::NiCamera {
+        self.0.camera
+    }
+
+    #[must_use]
+    pub fn is_jittered(&self) -> bool {
+        self.0.jittered[0] != 0
+    }
+
+    /// The projection without the TAA jitter, row-major; standard Z (`[10] = f/(f-n)`, `[14] = -nf/(f-n)`, `[11] = 1`).
+    #[must_use]
+    pub fn projection_unjittered(&self) -> [f32; 16] {
+        let b = &self.0.projectionUnjittered;
+        core::array::from_fn(|i| f32::from_le_bytes([b[i * 4], b[i * 4 + 1], b[i * 4 + 2], b[i * 4 + 3]]))
+    }
+
+    /// The near plane the snapshot was built with, recovered from the projection.
+    #[must_use]
+    pub fn near(&self) -> f32 {
+        let p = self.projection_unjittered();
+        -p[14] / p[10]
+    }
 }
 
 /// Three floats at `bytes[0..12]`.
@@ -466,6 +762,18 @@ impl NiCamera {
         self.0.frustumOrtho != 0
     }
 
+    /// `far / near` as the last projection setter left it (+0x170); `SetFrustum` clamps near to keep it.
+    #[must_use]
+    pub fn far_near_ratio(&self) -> f32 {
+        self.0.maxFarNearRatio
+    }
+
+    /// The LOD factor (+0x184): the FOV over `fDefaultFOV` for the frame camera, 1 at 80 degrees.
+    #[must_use]
+    pub fn lod_adjust(&self) -> f32 {
+        self.0.lodAdjust
+    }
+
     /// Viewport `[left, right, top, bottom]` in 0..1 (the full window is `[0, 1, 1, 0]`).
     #[must_use]
     pub fn viewport(&self) -> [f32; 4] {
@@ -674,6 +982,28 @@ impl BSShadowDirectionalLight {
     pub fn is_shadow_camera(&self, camera: *const classes::NiCamera) -> bool {
         core::ptr::eq(self.0.lightCamera, camera) || self.owns_camera(camera)
     }
+
+    /// The near of each cascade (+0x598), `UpdateForCamera`'s split of the frame camera's near and the shadow distance.
+    #[must_use]
+    pub fn cascade_near(&self) -> [f32; 3] {
+        vec3(&self.0.cascadeNear)
+    }
+
+    /// The far of each cascade (+0x5a4).
+    #[must_use]
+    pub fn cascade_far(&self) -> [f32; 3] {
+        vec3(&self.0.cascadeFar)
+    }
+
+    /// The six geometry-list cullers of the sun's walk (+0x580), one per root list.
+    #[must_use]
+    pub fn geometry_list_cullers(&self) -> &[Option<&CullingProcess>] {
+        let a = &self.0.geometryListCullers;
+        if a.data.is_null() {
+            return &[];
+        }
+        unsafe { core::slice::from_raw_parts(a.data.cast::<Option<&CullingProcess>>(), a.size as usize) }
+    }
 }
 
 /// One shadow map of a light: camera, accumulator, depth target slice, viewport and culler.
@@ -777,6 +1107,24 @@ impl CullingProcess {
         scene.sun_shadow_light().is_some_and(|sun| sun.is_shadow_camera(camera))
             || scene.shadow_lights().iter().flatten().any(|l| l.owns_camera(camera))
     }
+
+    /// Whether this is one of the sun's geometry-list cullers (step 8b, a worker thread): the walk
+    /// that decides the sun's caster set, whose lists the cascades replay without `NiAVObject::Cull`.
+    #[must_use]
+    pub fn is_sun_list_walk(&self) -> bool {
+        self.class().is_some_and(|c| c.id == vtables::BSGeometryListCullingProcess_vtable::ID)
+            && ShadowSceneNode::world().and_then(ShadowSceneNode::sun_shadow_light).is_some_and(|sun| core::ptr::eq(sun.raw().lightCamera, self.camera_ptr()))
+    }
+
+    /// Slot 22 `CullNode`: what `NiAVObject::Cull` does after its hidden test (the bound against
+    /// the planes, then the node's `OnVisible`). A [`CullFn`] detour calls it to admit a node whose
+    /// hidden bit would have stopped the walk, passing `ordered_group` through.
+    pub fn cull_node(&self, node: &NiAVObject, ordered_group: u32) {
+        let vtable = unsafe { &*self.0.__vftable };
+        if let Some(cull) = vtable.CullNode() {
+            unsafe { cull((&raw const self.0).cast_mut(), node.as_ptr().cast_mut(), ordered_group) }
+        }
+    }
 }
 
 /// A scene's lights, shadow lights and sun; `g_ShadowSceneNode[0]` is the world.
@@ -877,9 +1225,19 @@ impl BSShaderProperty {
     }
 
     /// `renderMode << 8 | shadow light mask` of the last pass that drew the geometry, 0x7fffffff when invalid.
+    /// `mode << 8 | receiver mask` of the last main-view registration; `0x7fffffff` for a geometry never drawn there.
     #[must_use]
     pub fn last_render_pass_state(&self) -> u32 {
         self.0.lastRenderPassState
+    }
+
+    /// The shadow-map receiver mask (`lightData` +0x1c): bit `n` set while the geometry is
+    /// registered into map `n`'s accumulator, cleared by the main view's registration after the
+    /// lighting passes were built from it.
+    #[must_use]
+    pub fn receiver_mask(&self) -> Option<u32> {
+        let data = self.0.lightData;
+        (!data.is_null()).then(|| unsafe { data.cast::<u8>().add(RECEIVER_MASK).cast::<u32>().read_unaligned() })
     }
 
     #[must_use]
@@ -1062,6 +1420,13 @@ impl BSShaderAccumulator {
         &self.0
     }
 
+    /// # Safety
+    /// `p` must be null or point to a live accumulator that outlives `'a`.
+    #[must_use]
+    pub unsafe fn from_ptr<'a>(p: *const classes::BSShaderAccumulator) -> Option<&'a Self> {
+        unsafe { p.cast::<Self>().as_ref() }
+    }
+
     /// `g_WorldDepthAccumulator` (mode 0xc), `g_WorldAccumulator` (mode 0) and `g_FirstPersonAccumulator` (mode 0x16).
     #[must_use]
     pub fn world() -> [Option<&'static Self>; 3] {
@@ -1077,6 +1442,23 @@ impl BSShaderAccumulator {
     #[must_use]
     pub fn render_mode_raw(&self) -> u32 {
         self.0.renderMode
+    }
+
+    /// Set on the sun's cascade accumulators (mode 0xe), clear on the focus-map ones of the same mode.
+    #[must_use]
+    pub fn is_cascade_accumulator(&self) -> bool {
+        self.0.isCascadeAccumulator != 0
+    }
+
+    #[must_use]
+    pub fn cascade_index(&self) -> u32 {
+        u32_at(&self.0.cascadeIndex, 0)
+    }
+
+    /// The shadow map this accumulator fills (`0xffff` for the main view).
+    #[must_use]
+    pub fn shadow_map_index(&self) -> u32 {
+        self.0.shadowMapIndex
     }
 
     #[must_use]
