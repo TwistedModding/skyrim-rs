@@ -300,6 +300,11 @@ impl Hooks {
         registry::set_compat(compat);
     }
 
+    /// The host's compatibility mode.
+    pub(crate) fn compat() -> Compat {
+        registry::compat()
+    }
+
     /// Checks every typed operation's site and every installed one, logging what changed since the last check.
     pub(crate) fn revalidate(moment: &str) {
         let resolved: Vec<(&str, usize)> = ops::OPS.iter().filter_map(|&(name, id)| Some((name, skyrim::reloc().address(id).ok()?))).collect();

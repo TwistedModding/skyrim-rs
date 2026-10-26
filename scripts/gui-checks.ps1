@@ -61,7 +61,7 @@ $rows = @(
     @{ name = "focus capture"; plugin = "overlay open with nothing focused, capture $(Captured $window1 'capture (\w+)')"; devbench = "player moved $([math]::Round($moved, 1)) units during the 2 s W hold (x $(Pos 7) -> $(Pos 13), y $(Pos 8) -> $(Pos 14))";
        ok = ($window1 -match 'capture Focus' -and $moved -gt 50) }
     @{ name = "hook sites"; plugin = "SkyrimRs hooks: $(Lines 17)"; devbench = "(listed through the console)";
-       ok = ((Lines 17) -match 'site Actor::ModActorValueImpl at 0x[0-9a-f]+' -and (Lines 17) -match '#1 skyrim-rs-example Before rank 0' -and (Lines 17) -match 'skyrim-rs-hooks-b Around' -and (Lines 17) -match 'message: refused: Actor::ModActorValueImpl: ordering cycle') }
+       ok = ((Lines 17) -match '^hook compatibility mode refuse' -and (Lines 17) -match 'site Actor::ModActorValueImpl at 0x[0-9a-f]+' -and (Lines 17) -match '#1 skyrim-rs-example Before rank 0' -and (Lines 17) -match 'skyrim-rs-hooks-b Around' -and (Lines 17) -match 'message: refused: Actor::ModActorValueImpl: ordering cycle') }
     @{ name = "native"; plugin = "SetDamageScale(1.5) = $(Returned 18)"; devbench = "health $($health[0]) -> $($health[1]) after a damage of 10";
        ok = ((Near (Returned 18) 1.5 0.001) -and (Near $health[0] 100 0.01) -and (Near $health[1] 84 0.01)) }
     @{ name = "toggle off"; plugin = "$(Lines 23); #1 ran $(EntryCalls 24 1) then $(EntryCalls 28 1) times while the site ran $(SiteCalls 24) then $(SiteCalls 28); plugin a's Before $aBefore"; devbench = "health $($health[1]) -> $($health[2]) after a damage of 10";

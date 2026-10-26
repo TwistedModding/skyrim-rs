@@ -1,6 +1,7 @@
-//! The host's own window, "skyrim-rs": the plugins in load order with their generation, the
-//! windows with their open state, the overlay's capture rule, every hook site with its subscribers
-//! (each one switchable) and the dispatcher's last messages. The console command `SkyrimRs` prints
+//! The host's own window, "skyrim-rs": the hook compatibility mode, the plugins in load order with
+//! their generation, the windows with their open state, the overlay's capture rule, every hook site
+//! with its entry state, the module behind another module's patch and whether the site broke, its
+//! subscribers (each one switchable) and the dispatcher's last messages. The console command `SkyrimRs` prints
 //! the same and drives it: `window` opens the overlay on it, `hooks` lists the sites, `toggle <id>`
 //! switches a subscriber, `capture` writes the next overlay frame to `skyrim-rs-overlay.bmp` in the
 //! SKSE log folder.
@@ -13,7 +14,7 @@ use overlay::theme;
 use skyrim::input::{Arg, CommandContext, Param, ScriptParamType};
 
 use super::{HOOKS, NAME, WINDOW_LIST, flush_settings, plugins, reload, set_window_open, window_open};
-use crate::hooks::{SiteReport, SubscriptionId};
+use crate::hooks::{Hooks, SiteReport, SubscriptionId};
 use crate::order::Constraints;
 use crate::settings::{self, Setting, Value};
 
@@ -58,9 +59,22 @@ fn constraints(c: &Constraints) -> String {
     if *c == Constraints::default() { String::new() } else { c.to_string() }
 }
 
-/// How a site's entry looked at install and looks now.
+/// How a site's entry looked at install and looks now, the module behind another module's patch,
+/// and whether the site broke (its detour overwritten in refuse mode: the subscribers no longer run).
 fn site_state(site: &SiteReport) -> String {
-    if site.validation == site.current { format!("entry {}", site.current) } else { format!("entry {} at install, {} now", site.validation, site.current) }
+    let mut state = if site.validation == site.current { format!("entry {}", site.current) } else { format!("entry {} at install, {} now", site.validation, site.current) };
+    if let Some(by) = &site.patched_by {
+        state.push_str(", patched by ");
+        state.push_str(by);
+    }
+    if site.broken {
+        state.push_str(", broken: its subscribers no longer run");
+    }
+    state
+}
+
+fn compat_line() -> String {
+    format!("hook compatibility mode {}", Hooks::compat())
 }
 
 fn plugin_lines() -> Vec<String> {
@@ -83,7 +97,7 @@ fn window_lines() -> Vec<String> {
 fn hook_lines() -> Vec<String> {
     invalidate();
     snapshot(|s| {
-        let mut lines = Vec::new();
+        let mut lines = vec![compat_line()];
         for site in &s.sites {
             lines.push(format!("site {} at {:#x}: {} calls, last {} ns, mean {} ns, last outcome {:?}, {}", site.name, site.address, site.timing.calls, site.timing.last_ns, site.timing.mean_ns, site.last_outcome, site_state(site)));
             lines.extend(site.entries.iter().map(|e| format!("  {e}")));
@@ -116,6 +130,7 @@ fn dim(text: impl Into<String>) -> RichText {
 /// Draws the inspector; registered as the host's window.
 pub(super) fn draw(window: egui::Window<'_>, ctx: &egui::Context) {
     window.default_pos([1150.0, 60.0]).default_size([720.0, 860.0]).show(ctx, |ui| {
+        ui.label(dim(compat_line()));
         egui::ScrollArea::vertical().auto_shrink(false).show(ui, |ui| {
             heading(ui, "Plugins");
             let generations = reload::generations();
@@ -153,7 +168,8 @@ pub(super) fn draw(window: egui::Window<'_>, ctx: &egui::Context) {
             }
             for site in &sites {
                 egui::CollapsingHeader::new(RichText::new(&site.name).strong()).id_salt(site.address).default_open(true).show(ui, |ui| {
-                    ui.label(dim(format!("{:#x}, {}", site.address, site_state(site))));
+                    let state = format!("{:#x}, {}", site.address, site_state(site));
+                    ui.label(if site.broken || site.patched_by.is_some() { RichText::new(state).color(ui.visuals().warn_fg_color) } else { dim(state) });
                     ui.label(dim(format!("{} calls, last {} ns, mean {} ns, last outcome {:?}", site.timing.calls, site.timing.last_ns, site.timing.mean_ns, site.last_outcome)));
                     egui::Grid::new(("entries", site.address)).striped(true).spacing([14.0, 2.0]).show(ui, |ui| {
                         for e in &site.entries {

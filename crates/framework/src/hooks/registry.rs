@@ -88,6 +88,10 @@ pub(crate) fn set_compat(compat: Compat) {
     lock().compat = compat;
 }
 
+pub(crate) fn compat() -> Compat {
+    lock().compat
+}
+
 /// Validates every installed site and the entries in `ops`, and logs each patch the previous check
 /// did not see: an unmanaged patch on a site nobody subscribed to yet, or an
 /// installed detour another module overwrote, which breaks the site in refuse mode.
