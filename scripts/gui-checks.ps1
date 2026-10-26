@@ -30,7 +30,9 @@ $window2 = Lines 40
 # The calls counted for subscription #1 and for its site in a "SkyrimRs hooks" output.
 function EntryCalls($i, $id) { Captured (Lines $i) "#$id skyrim-rs-example Before rank \d+: (\d+) calls" }
 function SiteCalls($i) { Captured (Lines $i) 'site Actor::ModActorValueImpl at 0x[0-9a-f]+: (\d+) calls' }
-$aBefore = RunDetail "hooks aSave1" "a_before"
+# Plugin a's report at the first save (its own log: the suite's report is the example's): the deltas its Before saw.
+$hooksLog = if (Test-Path "$OutDir\skyrim-rs-hooks.log") { Get-Content "$OutDir\skyrim-rs-hooks.log" } else { @() }
+$aBefore = Captured (($hooksLog | Where-Object { $_ -match '^(PASS|FAIL) a_before: ' }) -join ' ') '(saw \[[^\]]*\])'
 $newId = Captured (Lines 36) '#(\d+) skyrim-rs-example Before'
 $settingsFile = "$OutDir\skyrim-rs-example.settings.json"
 $scaleOnDisk = if (Test-Path $settingsFile) { Captured (Get-Content $settingsFile -Raw) '"damage_scale":\s*([-\d.]+)' } else { $null }
@@ -67,7 +69,7 @@ $rows = @(
     @{ name = "toggle on"; plugin = (Lines 29); devbench = "health $($health[2]) -> $($health[3]) after '$(Lines 30)'";
        ok = ((Lines 29) -match 'SkyrimRs: #1 enabled' -and (Near $health[3] 57 0.01)) }
     @{ name = "reload"; plugin = "(host log) $($reloading -join ' | '); $($detached -join ' | '); $($reloaded -join ' | ')"; devbench = "SkyrimRs hooks after the reload: example as #$newId; SkyrimRs window: $(Captured $window2 '(plugin 0: [^|]*)')";
-       ok = ($reloading.Count -eq 1 -and $detached.Count -eq 1 -and $reloaded.Count -eq 1 -and $newId -and [int]$newId -gt 1 -and (Lines 36) -notmatch '#1 skyrim-rs-example' -and (Lines 36) -notmatch 'skyrim-rs-hooks-b' -and $window2 -match 'plugin 0: skyrim-rs-example generation 2') }
+       ok = ($reloading.Count -eq 1 -and $detached.Count -eq 1 -and $reloaded.Count -eq 1 -and $newId -and [int]$newId -gt 1 -and (Lines 36) -notmatch '\|\s+#1 skyrim-rs-example Before rank' -and (Lines 36) -notmatch '\|\s+#\d+ skyrim-rs-hooks-b' -and $window2 -match 'plugin 0: skyrim-rs-example generation 2') }
     @{ name = "settings"; plugin = "(host log) $($settingsWritten.Count) writes; damage_scale on disk $scaleOnDisk"; devbench = "health $($health[3]) -> $($health[4]) after the reload (scale 1.5 kept); SetDamageScale(0.5) = $(Returned 51)";
        ok = ($settingsWritten.Count -ge 2 -and (Near $scaleOnDisk 0.5 0.0001) -and (Near (Returned 51) 0.5 0.001) -and (Near $health[4] 41 0.01)) }
     @{ name = "capture"; plugin = "(host log) $($frameWritten -join ' | '); kept as gui-1.7.104.jpg: $shot"; devbench = "journal captured by DevBench, kept as gui-vanilla-1.7.104.jpg: $vanilla";

@@ -15,8 +15,8 @@ pub const DIM: Color32 = Color32::from_rgb(0xAA, 0xAA, 0xAA);
 pub const DISABLED: Color32 = Color32::from_rgba_premultiplied(76, 76, 76, 76);
 /// The panels' fill: black at 60 % (`#000000` alpha 153), a little darker to stay readable over the world.
 pub const PANEL: Color32 = Color32::from_rgba_premultiplied(0, 0, 0, 180);
-/// The rules framing panels and lists (`#a6a8ab` alpha 153).
-pub const RULE: Color32 = Color32::from_rgba_premultiplied(100, 101, 103, 153);
+/// The rules framing panels and lists (`#bbbdbf`, a little more opaque than the files' 60 % to read as the journal's frame does).
+pub const RULE: Color32 = Color32::from_rgba_premultiplied(147, 148, 150, 200);
 /// The selection and hover highlight: white at 20 % (`#ffffff` alpha 51).
 pub const HIGHLIGHT: Color32 = Color32::from_rgba_premultiplied(51, 51, 51, 51);
 /// The family window titles and headings use.
@@ -27,7 +27,7 @@ pub(crate) fn apply(ctx: &Context) {
     ctx.set_theme(Theme::Dark);
     ctx.all_styles_mut(|style| {
         style.text_styles = [
-            (TextStyle::Heading, FontId::new(30.0, FontFamily::Name(HEADING.into()))),
+            (TextStyle::Heading, FontId::new(26.0, FontFamily::Name(HEADING.into()))),
             (TextStyle::Body, FontId::new(22.0, FontFamily::Proportional)),
             (TextStyle::Button, FontId::new(22.0, FontFamily::Proportional)),
             (TextStyle::Small, FontId::new(17.0, FontFamily::Proportional)),
@@ -60,13 +60,14 @@ pub(crate) fn apply(ctx: &Context) {
         v.selection.bg_fill = HIGHLIGHT;
         v.selection.stroke = Stroke::new(1.0, TEXT);
         v.collapsing_header_frame = false;
+        v.slider_trailing_fill = true;
         v.indent_has_left_vline = true;
         let w = &mut v.widgets;
         w.noninteractive.bg_fill = Color32::TRANSPARENT;
         w.noninteractive.weak_bg_fill = Color32::TRANSPARENT;
         w.noninteractive.bg_stroke = Stroke::new(1.0, RULE);
         w.noninteractive.fg_stroke = Stroke::new(1.0, Color32::from_rgb(0xDD, 0xDD, 0xDD));
-        w.inactive.bg_fill = Color32::from_white_alpha(18);
+        w.inactive.bg_fill = Color32::from_white_alpha(40);
         w.inactive.weak_bg_fill = Color32::TRANSPARENT;
         w.inactive.bg_stroke = Stroke::new(1.0, RULE);
         w.inactive.fg_stroke = Stroke::new(1.0, DIM);
