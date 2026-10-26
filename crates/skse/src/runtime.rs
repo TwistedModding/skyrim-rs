@@ -32,6 +32,14 @@ pub fn versionlib_name(packed: u32) -> String {
     format!("{prefix}-{major}-{minor}-{build}-0.bin")
 }
 
+/// Whether the script extender's DLL for a runtime (`skse64_M_m_b.dll`, as in the game folder) is loaded in this process.
+#[must_use]
+pub fn script_extender_loaded(packed: u32) -> bool {
+    let [major, minor, build, _] = unpack(packed);
+    let name: Vec<u16> = format!("skse64_{major}_{minor}_{build}.dll").encode_utf16().chain([0]).collect();
+    !unsafe { windows_sys::Win32::System::LibraryLoader::GetModuleHandleW(name.as_ptr()) }.is_null()
+}
+
 pub struct Runtime {
     pub file_version: [u16; 4],
     pub packed: u32,

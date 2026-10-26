@@ -31,7 +31,7 @@ use windows_sys::Win32::System::LibraryLoader::{GetModuleHandleW, GetProcAddress
 /// The interface level implemented: SKSE 2.3.1's, as S1 read it.
 const LOADER_VERSION: u32 = 0x0203_0010;
 const RELEASE_INDEX: u32 = 75;
-const RUNTIME: u32 = skse::runtime::pack(1, 7, 104, 0);
+pub(crate) const RUNTIME: u32 = skse::runtime::pack(1, 7, 104, 0);
 const PLUGIN_DIR: &str = "Data\\SKSE\\Plugins";
 /// SKSE 2.3.1's link-timestamp gate: a plugin linked in this range needs `FLAG_NO_TIMESTAMP_GATE` or the runtime in its list.
 const TIMESTAMP_GATE: core::ops::RangeInclusive<u32> = 520_128_000..=1_748_217_599;
@@ -224,16 +224,17 @@ fn start(handle: PluginHandle, file: &str, data: &PluginVersionData) {
 }
 
 unsafe extern "C" fn query_interface(id: u32) -> *mut c_void {
-    let table: *const c_void = match id {
-        2 => (&raw const PAPYRUS_TABLE).cast(),
-        4 => (&raw const TASK_TABLE).cast(),
-        5 => (&raw const MESSAGING).cast(),
-        7 => (&raw const TRAMPOLINE_TABLE).cast(),
-        _ => {
-            log!("QueryInterface({id}) from handle {}: not implemented", CURRENT.load(Ordering::Relaxed));
-            core::ptr::null()
-        }
+    let (name, table): (&str, *const c_void) = match id {
+        1 => ("Scaleform, not implemented", core::ptr::null()),
+        2 => ("Papyrus", (&raw const PAPYRUS_TABLE).cast()),
+        3 => ("serialization, not implemented", core::ptr::null()),
+        4 => ("task", (&raw const TASK_TABLE).cast()),
+        5 => ("messaging", (&raw const MESSAGING).cast()),
+        6 => ("object, not implemented", core::ptr::null()),
+        7 => ("trampoline", (&raw const TRAMPOLINE_TABLE).cast()),
+        _ => ("unknown", core::ptr::null()),
     };
+    log!("QueryInterface({id}) from handle {}: {name}", CURRENT.load(Ordering::Relaxed));
     table.cast_mut()
 }
 

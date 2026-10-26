@@ -21,8 +21,6 @@ use windows_sys::core::BOOL;
 
 mod loader;
 
-/// The script extender's DLL for this runtime; when it is loaded it hosts the plugins.
-const SKSE_DLL: &str = "skse64_1_7_104.dll";
 const CRT_RUNTIME: &str = "api-ms-win-crt-runtime-l1-1-0.dll";
 const BEFORE_WINMAIN: &CStr = c"_get_narrow_winmain_command_line";
 
@@ -81,10 +79,10 @@ unsafe fn patch_import() {
 unsafe extern "C" fn before_winmain() -> *mut c_char {
     static ONCE: Once = Once::new();
     ONCE.call_once(|| {
-        if unsafe { GetModuleHandleW(wide(SKSE_DLL).as_ptr()) }.is_null() {
-            loader::run();
-        } else {
+        if skse::runtime::script_extender_loaded(loader::RUNTIME) {
             loader::defer();
+        } else {
+            loader::run();
         }
     });
     unsafe { COMMAND_LINE.get().expect("set with the patch")() }
