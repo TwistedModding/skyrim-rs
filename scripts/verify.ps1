@@ -3,8 +3,8 @@
 # The papyrus suite also builds the equip-counter mod, compiles both crates' papyrus folders and installs the mod DLL and
 # the .pex files for the run; the shadows suite installs the first-person-shadows mod next to the test plugin.
 # The overlay suite runs the plugin in mode overlay. The framework suite installs the host (skyrim_rs.dll) and puts its
-# test plugin and a decoy DLL without a descriptor into Data\SKSE\Plugins\skyrim-rs; that plugin writes the suite's
-# report. See docs/subsystems/<suite>.md.
+# test plugin, the four order-* plugins and a decoy DLL without a descriptor into Data\SKSE\Plugins\skyrim-rs; the test
+# plugin writes the suite's report. See docs/subsystems/<suite>.md.
 param(
     [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
@@ -25,13 +25,15 @@ $Mods = @{
     papyrus = @{ crate = "equip-counter"; dll = "skyrim_rs_equip_counter.dll"; log = "skyrim-rs-equip-counter.log" }
     shadows = @{ crate = "first-person-shadows"; dll = "skyrim_rs_first_person_shadows.dll"; log = "skyrim-rs-first-person-shadows.log" }
     bone = @{ crate = "bone-driver"; dll = "skyrim_rs_bone_driver.dll"; log = "skyrim-rs-bone-driver.log" }
-    framework = @{ crate = "framework-test"; dll = "skyrim_rs_framework_test.dll"; log = "skyrim-rs-framework-test.log"; dir = "skyrim-rs"; report = $true }
+    framework = @{ crate = "framework-test"; dll = "skyrim_rs_framework_test.dll"; log = "skyrim-rs-framework-test.log"; dir = "skyrim-rs"; report = $true;
+                   crates = @("order-head", "order-tail", "order-cycle-a", "order-cycle-b")
+                   dlls = @("skyrim_rs_order_head.dll", "skyrim_rs_order_tail.dll", "skyrim_rs_order_cycle_a.dll", "skyrim_rs_order_cycle_b.dll") }
 }
 $Mod = $Mods[$Suite]
 $PluginLog = "skyrim-rs-test.log"
 $CrashLog = "skyrim-rs-test-crash.log"
 $HostDll = "skyrim_rs.dll"
-$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog, "skyrim-rs.log", "skyrim-rs-standalone.log")
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog, "skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
 $Proxy = "$GameDir\dinput8.dll"
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $TestSave = "skyrim-rs-$Suite"
@@ -39,7 +41,7 @@ $TestSave = "skyrim-rs-$Suite"
 if ($Suite -eq "overlay") { $Mode = "overlay" }
 & "$PSScriptRoot\game-free.ps1"
 Push-Location $Root
-$crates = @("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.dir) { "host" }) + @(if ($Launch -ne "skse") { "standalone" })
+$crates = @("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.crates) { $Mod.crates }) + @(if ($Mod.dir) { "host" }) + @(if ($Launch -ne "skse") { "standalone" })
 try { cargo build --release @($crates | ForEach-Object { "-p"; $_ }); if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
 $Pex = @()
 if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
@@ -67,7 +69,7 @@ if ($Mod.dir) {
     $ModDir = "$Plugins\$($Mod.dir)"
     if (Test-Path $ModDir) { throw "$ModDir already exists" }
     New-Item -ItemType Directory $ModDir | Out-Null
-    Copy-Item "$Root\target\release\$($Mod.dll)" $ModDir
+    foreach ($d in @($Mod.dll) + @(if ($Mod.dlls) { $Mod.dlls })) { Copy-Item "$Root\target\release\$d" $ModDir }
     Copy-Item $Dll "$ModDir\decoy.dll"
     Copy-Item "$Root\target\release\$HostDll" "$Plugins\$HostDll" -Force
 } elseif ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }

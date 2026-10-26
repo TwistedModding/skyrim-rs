@@ -36,3 +36,10 @@ pub fn open(packed_runtime: u32, name: &str) -> io::Result<File> {
     std::fs::create_dir_all(&dir)?;
     File::create(dir.join(format!("{name}.log")))
 }
+
+/// Opens `<name>.log` in the SKSE log folder for appending, creating it when absent.
+pub fn append(packed_runtime: u32, name: &str) -> io::Result<File> {
+    let dir = dir(packed_runtime)?;
+    std::fs::create_dir_all(&dir)?;
+    std::fs::OpenOptions::new().append(true).create(true).open(dir.join(format!("{name}.log")))
+}

@@ -1,10 +1,12 @@
 //! The framework suite's plugin, loaded by the host from `Data\SKSE\Plugins\skyrim-rs\`: it checks
-//! the forwarded SKSE interface in `load`, records the loader messages the host fans out,
+//! the forwarded SKSE interface and the resolved load order in `load` and appends its name to
+//! `skyrim-rs-order.log` like the `order-*` plugins, records the loader messages the host fans out,
 //! registers `SkyrimRsFrameworkTest.Twice` through the host's Papyrus callback and adds an overlay
 //! window, then reports at `DataLoaded`, after a load and at the save in `skyrim-rs-framework-test.log`
 //! in the test plugin's `PASS`/`FAIL`/`summary` format.
 
 use std::fs::File;
+use std::io::Write as _;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicU32, Ordering};
 
@@ -28,7 +30,6 @@ static HOST: OnceLock<&'static Host> = OnceLock::new();
 macro_rules! log {
     ($($arg:tt) => {
         if let Some(f) = LOG.lock().unwrap().as_mut() {
-            use ::std::io::Write;
             let _ = writeln!(f, $($arg);
         }
     };
@@ -64,7 +65,8 @@ fn load(host: &'static Host) -> bool {
     };
     *LOG.lock().unwrap() = Some(file);
     let _ = HOST.set(host);
-    run("load", &[("interface", interface)]);
+    let _ = skse::log::append(skse.runtime_version, "skyrim-rs-order").and_then(|mut f| writeln!(f, "skyrim-rs-framework-test"));
+    run("load", &[("interface", interface), ("order", order)]);
     host.on_message(on_message);
     host.on_papyrus(on_papyrus);
     host.add_window(window);
@@ -81,6 +83,16 @@ fn interface() -> Result<String, String> {
     check(messaging.interface_version == skse::MessagingInterface::VERSION, "messaging interface version")?;
     let [major, minor, build, _] = skse::runtime::unpack(skse.runtime_version);
     Ok(format!("{}; runtime {major}.{minor}.{build}, skse {:08x}, handle {handle} (the host's), game layer initialized", framework::BUILD.to_string_lossy(), skse.skse_version))
+}
+
+/// The resolved order, inside `load`: the suite's three plugins as their constraints place them, the cycle pair absent.
+fn order() -> Result<String, String> {
+    let plugins = HOST.get().ok_or("no host")?.plugins();
+    let listed: Vec<String> = plugins.iter().map(|p| format!("{} ({}; {})", p.name, p.file, p.constraints)).collect();
+    let names: Vec<&str> = plugins.iter().map(|p| p.name.as_str()).collect();
+    check(names == ["skyrim-rs-order-head", "skyrim-rs-framework-test", "skyrim-rs-order-tail"], &format!("plugins {listed:?}"))?;
+    check(plugins[0].constraints.priority == 1 && plugins[2].constraints.after == ["*"], &format!("constraints {listed:?}"))?;
+    Ok(listed.join(", "))
 }
 
 fn on_message(msg: &skse::Message) {
