@@ -1,5 +1,6 @@
 //! Generates `crates/layout` from the SkyrimRE-1.7.104 ledgers.
 
+mod api;
 mod emit;
 mod inputs;
 

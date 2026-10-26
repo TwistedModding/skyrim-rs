@@ -49,6 +49,26 @@ fn generate() -> ExitCode {
         stats.flags,
         stats.symbols
     );
+    let api = &stats.api;
+    println!(
+        "derefs {} ({} refused), base accessors {}, singletons {}, statics {}, functions reached only as slots {}, left out: vfunc_<n> names {}, CRT initializers {}",
+        api.derefs, api.derefs_refused, api.base_accessors, api.singletons, api.statics, api.virtual_only, api.vfunc_names, api.initializers
+    );
+    for (tier, t) in &api.tiers {
+        println!(
+            "{:>9}: methods {} safe + {} unsafe, associated {} + {}, free {} + {}, slots {} + {}, unexpressible {}",
+            tier.label(),
+            t.safe_methods,
+            t.unsafe_methods,
+            t.safe_associated,
+            t.unsafe_associated,
+            t.safe_free,
+            t.unsafe_free,
+            t.safe_slots,
+            t.unsafe_slots,
+            t.unexpressible
+        );
+    }
     ExitCode::SUCCESS
 }
 

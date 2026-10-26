@@ -7,6 +7,8 @@ use super::classes;
 
 /// `AIProcess::GetAnimationGraphManager` at 0x7217e0 (semantic, high); signature (untiered): `bool GetAnimationGraphManager(longlong param_1, longlong * param_2)`; copies middleHigh->animationGraphManager into out (ref-counted); false when none (high); semantic signature: `bool (AIProcess* this, BSTSmartPointer<BSAnimationGraphManager>* out)`
 pub const AIProcess__GetAnimationGraphManager: u64 = 39840;
+/// `AIProcess::GetAnimationGraphManager` as a function pointer type (high).
+pub type AIProcess__GetAnimationGraphManager_fn = unsafe extern "C" fn(this: *mut classes::AIProcess, out: *mut c_void) -> bool;
 /// `AIProcess::GetEquippedEntry` at 0x720660 (runtime, high); signature (untiered): `longlong * GetEquippedEntry(longlong param_1, char param_2)`; equipped weapon entry of a hand (high); semantic signature: `InventoryEntry* AIProcess::GetEquippedEntry(AIProcess* this, bool leftHand)`
 pub const AIProcess__GetEquippedEntry: u64 = 39806;
 /// `AIProcess::GetEquippedEntry` as a function pointer type (high).
@@ -21,6 +23,8 @@ pub const AIProcess__GetEquippedRightObject: u64 = 39196;
 pub type AIProcess__GetEquippedRightObject_fn = unsafe extern "C" fn(this: *mut classes::AIProcess) -> *mut classes::TESForm;
 /// `AIProcess::SetAnimationGraphManager` at 0x721850 (semantic, high); signature (untiered): `undefined8 SetAnimationGraphManager(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`; stores the manager at middleHigh+0x1a8, caches manager+0x70 at +0x1b0, refreshes the equipped item types at +0x304/+0x306 (high); semantic signature: `bool (AIProcess* this, BSTSmartPointer<BSAnimationGraphManager>* mgr)`
 pub const AIProcess__SetAnimationGraphManager: u64 = 39841;
+/// `AIProcess::SetAnimationGraphManager` as a function pointer type (high).
+pub type AIProcess__SetAnimationGraphManager_fn = unsafe extern "C" fn(this: *mut classes::AIProcess, mgr: *mut c_void) -> bool;
 /// `AIProcess::ctor` at 0x6e66a0 (runtime, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; constructs an AI process (high); semantic signature: `AIProcess* AIProcess::ctor(AIProcess* this)`
 pub const AIProcess__ctor: u64 = 39107;
 /// `AIProcess::ctor` as a function pointer type (high).
@@ -447,6 +451,8 @@ pub const Actor__BSTEventSink_bhkCharacterMoveFinishEvent_vfunc_1: u64 = 37998;
 pub const Actor__CanFlyHere_Impl_sub0: u64 = 20550;
 /// `Actor::CreateAnimationChannels` at 0x6b0650 (semantic, high); signature (untiered): `undefined8 CreateAnimationChannels(Actor * this, longlong param_1)`; Actor holder slot 10: creates the per-actor graph data channels: Speed, TargetSpeed, Pitch, Roll, Direction, TurnDelta, PitchDelta, weaponSpeedMult, leftWeaponSpeedMult, iWantBlock, bHeadTracking, TimeDelta (high); semantic signature: `void (IAnimationGraphManagerHolder* this, BSTArray<BSTSmartPointer<BSAnimationGraphChannel>>* out)`
 pub const Actor__CreateAnimationChannels: u64 = 37984;
+/// `Actor::CreateAnimationChannels` as a function pointer type (high).
+pub type Actor__CreateAnimationChannels_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, out: *mut c_void);
 /// `Actor::ForEachSpellVisitor::dtor` at 0x6da4e0 (layout_inference, high); signature (high): `undefined dtor(ForEachSpellVisitor * this)`
 pub const Actor__ForEachSpellVisitor__dtor: u64 = 38839;
 /// `Actor::ForEachSpellVisitor::dtor` at 0x6da4f0 (layout_inference, high); signature (high): `undefined dtor(ForEachSpellVisitor * this)`
@@ -459,6 +465,8 @@ pub const Actor__ForEachSpellVisitor__dtor_4: u64 = 52069;
 pub const Actor__ForEachSpellVisitor__vdtor: u64 = 38859;
 /// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`; MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next} (high); semantic signature: `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
 pub const Actor__GetActiveEffectList: u64 = 38795;
+/// `Actor::GetActiveEffectList` as a function pointer type (high).
+pub type Actor__GetActiveEffectList_fn = unsafe extern "C" fn(this: *mut classes::MagicTarget) -> *mut c_void;
 /// `Actor::GetActorValueModifier` at 0x6c5440 (semantic, high); signature (untiered): `undefined4 GetActorValueModifier(longlong param_1, int param_2, int param_3)`; one modifier of a value (high); semantic signature: `float Actor::GetActorValueModifier(Actor* this, int modifier, int value)`
 pub const Actor__GetActorValueModifier: u64 = 38469;
 /// `Actor::GetActorValueModifier` as a function pointer type (high).
@@ -581,8 +589,12 @@ pub const Actor__ModActorValueImpl: u64 = 38468;
 pub type Actor__ModActorValueImpl_fn = unsafe extern "C" fn(this: *mut classes::Actor, modifier: i32, value: i32, delta: f32, source: *mut c_void);
 /// `Actor::NotifyAnimationGraph` at 0x6b61a0 (semantic, high); signature (untiered): `undefined1 NotifyAnimationGraph(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; 5-byte thunk 'jmp 0x554220' to IAnimationGraphManagerHolder::NotifyAnimationGraph (gets the manager through slot 2, BSAnimationGraphManager::NotifyAnimationGraph 0xbc0c90, true when a graph accepted the event) (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
 pub const Actor__NotifyAnimationGraph: u64 = 38048;
+/// `Actor::NotifyAnimationGraph` as a function pointer type (high).
+pub type Actor__NotifyAnimationGraph_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, eventName: *const classes::BSFixedString) -> bool;
 /// `Actor::ProcessAnimationGraphEvent` at 0x6b2000 (runtime, high); signature (untiered): `ulonglong ProcessAnimationGraphEvent(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; handles the actor's own animation events after TESObjectREFR's handler; a tag found in the footstep source's filter list (BSTArray<BSFixedString> at source+0x60, tested by 0x737040) is re-sent as a BGSFootstepEvent {actor handle, tag} through g_FootstepEventSource_ptr (high); semantic signature: `BSEventNotifyControl (Actor::sink_30* this, const BSAnimationGraphEvent* event, BSTEventSource<BSAnimationGraphEvent>* source)`
 pub const Actor__ProcessAnimationGraphEvent: u64 = 37997;
+/// `Actor::ProcessAnimationGraphEvent` as a function pointer type (high).
+pub type Actor__ProcessAnimationGraphEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::BSAnimationGraphEvent, source: *mut c_void) -> u32;
 /// `Actor::SaveGame` at 0x699230 (slot_propagation, medium); signature (untiered): `undefined SaveGame(Actor * this, longlong * param_1)`
 pub const Actor__SaveGame: u64 = 37649;
 /// `Actor::SendAssaultAlarm` at 0x682e70 (decompiler, medium); signature (medium): `undefined SendAssaultAlarm(Actor * param_1, longlong * * * * * * * param_2, char param_3)`
@@ -1217,6 +1229,8 @@ pub const ActorMagicCaster__vfunc_9_sub1: u64 = 34189;
 pub const ActorMagicCaster__vfunc_9_sub3: u64 = 38736;
 /// `ActorMediator::ProcessEvent` at 0x6dfe80 (semantic, high); signature (untiered): `undefined ProcessEvent(ActorMediator * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`; shared actor sink on every actor graph: handles '<name>_End' tags (0x1f3c40 strips '_End' and resolves through the actor) then calls the +0x10 callback (high); semantic signature: `BSEventNotifyControl (ActorMediator* this, const BSAnimationGraphEvent* event, BSTEventSource<BSAnimationGraphEvent>* source)`
 pub const ActorMediator__ProcessEvent: u64 = 38951;
+/// `ActorMediator::ProcessEvent` as a function pointer type (high).
+pub type ActorMediator__ProcessEvent_fn = unsafe extern "C" fn(this: *mut classes::partial::ActorMediator, event: *const classes::BSAnimationGraphEvent, source: *mut c_void) -> u32;
 /// `ActorMediator::ctor` at 0x6dfb70 (layout_inference, medium); signature (high): `ActorMediator * ctor(ActorMediator * this)`
 pub const ActorMediator__ctor: u64 = 38948;
 /// `ActorMediator::vdtor` at 0x6e0160 (layout_inference, medium); signature (low): `ActorMediator * vdtor(ActorMediator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -4133,6 +4147,8 @@ pub const AppendRefToScrapArray: u64 = 19212;
 pub const AppendRemappedTriangle: u64 = 80753;
 /// `AppendRenderPass` at 0x14e78e0 (semantic, high); signature (untiered): `longlong AppendRenderPass(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5, byte param_6, undefined8 param_7, undefined8 param_8, undefined8 param_9, undefined8 param_10)`; allocates a pass and appends it to a property's pass list (+0x28 chain) (high); semantic signature: `BSRenderPass* (BSRenderPass** list, BSShader* shader, BSShaderProperty* property, BSGeometry* geometry, u32 techniqueId, u8 numLights, BSLight* l0, BSLight* l1, BSLight* l2, BSLight* l3)`
 pub const AppendRenderPass: u64 = 105528;
+/// `AppendRenderPass` as a function pointer type (high).
+pub type AppendRenderPass_fn = unsafe extern "C" fn(list: *mut *mut c_void, shader: *mut classes::BSShader, property: *mut classes::BSShaderProperty, geometry: *mut classes::BSGeometry, techniqueId: u32, numLights: u8, l0: *mut classes::BSLight, l1: *mut classes::BSLight, l2: *mut classes::BSLight, l3: *mut classes::BSLight) -> *mut c_void;
 /// `AppendRepeatedChar` at 0x13a310 (decompiler, medium); signature (medium): `undefined8 * AppendRepeatedChar(undefined8 * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 pub const AppendRepeatedChar: u64 = 441417;
 /// `AppendRootAncestorNode` at 0x873e50 (decompiler, medium); signature (untiered): `longlong * AppendRootAncestorNode(longlong * param_1, undefined8 * param_2)`
@@ -4927,6 +4943,8 @@ pub const ApplyDismemberedLimbNodes: u64 = 37643;
 pub const ApplyDismemberedLimbVelocities: u64 = 37642;
 /// `ApplyEffectShaderData` at 0x26c600 (semantic, high); signature (untiered): `int ApplyEffectShaderData(longlong param_1, longlong * param_2, int * param_3, ulonglong param_4)`; walks node's subtree (children +0x118, count +0x122; data's name filter at +8 skips subtrees) and stores data into effectOverlay (+0x68, SetField68RefPtr 0x26d4e0) of each geometry's shader property (+0x128) that passes slot 57 (+0x1c8), the shader's +0x1b0 bit 5 test (property flags bit 10 or 21), requireFlag49 (property flags bit 49) and flags bit 26 clear; returns the count (high); semantic signature: `i32 (TESEffectShader* shader, NiAVObject* node, BSEffectShaderData* data, bool requireFlag49)`
 pub const ApplyEffectShaderData: u64 = 17330;
+/// `ApplyEffectShaderData` as a function pointer type (high).
+pub type ApplyEffectShaderData_fn = unsafe extern "C" fn(shader: *mut classes::TESEffectShader, node: *mut classes::NiAVObject, data: *mut c_void, requireFlag49: bool) -> i32;
 /// `ApplyEnchantmentArtToLastItem3D` at 0x93ec80 (decompiler, medium); signature (untiered): `undefined ApplyEnchantmentArtToLastItem3D(longlong param_1, longlong param_2, longlong * param_3)`
 pub const ApplyEnchantmentArtToLastItem3D: u64 = 51775;
 /// `ApplyEnchantmentToEquippedWeapons` at 0x64d720 (decompiler, medium); signature (untiered): `undefined8 ApplyEnchantmentToEquippedWeapons(longlong * param_1, undefined8 param_2, longlong * param_3)`
@@ -5027,6 +5045,8 @@ pub const ApplyPlacementToSprite: u64 = 83807;
 pub const ApplyPlayerLevelUp: u64 = 41567;
 /// `ApplyPoseToBoneNodes` at 0xbdfa20 (runtime, high); signature (untiered): `undefined ApplyPoseToBoneNodes(longlong param_1, longlong * param_2, uint param_3)`; THE pose write: for each bone, normalises the quaternion and writes local rotation (row-major 3x3 at +0x48) and translation (+0x6c) of the bone node (or of the flattened entry); scale (+0x78) is not written; no world update (high); semantic signature: `void (const hkQsTransform* pose, BoneNodeArray* nodes, int count)`
 pub const ApplyPoseToBoneNodes: u64 = 63856;
+/// `ApplyPoseToBoneNodes` as a function pointer type (high).
+pub type ApplyPoseToBoneNodes_fn = unsafe extern "C" fn(pose: *const c_void, nodes: *mut c_void, count: i32);
 /// `ApplyPositionAndRotationTo3D` at 0x7f9e80 (decompiler, medium); signature (untiered): `undefined ApplyPositionAndRotationTo3D(longlong * param_1)`
 pub const ApplyPositionAndRotationTo3D: u64 = 44113;
 /// `ApplyPreferenceSettings` at 0x65b520 (decompiler, medium); signature (untiered): `undefined ApplyPreferenceSettings(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8959,6 +8979,8 @@ pub const BGSBodyPartData__BGSPreloadable_vfunc_4: u64 = 23484;
 pub const BGSBodyPartData__BGSPreloadable_vfunc_4_sub0: u64 = 23453;
 /// `BGSBodyPartData::GetPart` at 0x38b720 (semantic, high); signature (untiered): `undefined8 GetPart(longlong param_1, uint param_2)`; returns parts[partIndex] (+0x50 + 8 * index) for index 0..5, else null (high); semantic signature: `BGSBodyPart* (const BGSBodyPartData* this, i32 partIndex)`
 pub const BGSBodyPartData__GetPart: u64 = 23473;
+/// `BGSBodyPartData::GetPart` as a function pointer type (high).
+pub type BGSBodyPartData__GetPart_fn = unsafe extern "C" fn(this: *const classes::BGSBodyPartData, partIndex: i32) -> *mut c_void;
 /// `BGSBodyPartData::TESModel_vdtor` at 0x38c3d4 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSBodyPartData * this)`
 pub const BGSBodyPartData__TESModel_vdtor: u64 = 23490;
 /// `BGSBodyPartData::ctor` at 0x38b110 (layout_inference, high); signature (low): `BGSBodyPartData * ctor(BGSBodyPartData * this, undefined8 param_1, uint * param_2, longlong * param_3)`
@@ -12495,12 +12517,18 @@ pub type BGSSaveLoadGame__AddChange_fn = unsafe extern "C" fn(this: *mut classes
 pub const BGSSaveLoadGame__FinishLoadForms: u64 = 35567;
 /// `BGSSaveLoadGame::LoadGame` at 0x618970 (runtime, high); signature (untiered): `undefined8 LoadGame(longlong * param_1, longlong * param_2, char param_3, uint param_4, longlong * param_5, byte param_6)`; reads the body and applies it (high); semantic signature: `bool (BGSSaveLoadGame* this, Win32FileType* stream, bool ignoreMissing, u32 requestKind, BSTArray* missingNames, bool skipPluginMatch)`
 pub const BGSSaveLoadGame__LoadGame: u64 = 35600;
+/// `BGSSaveLoadGame::LoadGame` as a function pointer type (high).
+pub type BGSSaveLoadGame__LoadGame_fn = unsafe extern "C" fn(this: *mut classes::BGSSaveLoadGame, stream: *mut c_void, ignoreMissing: bool, requestKind: u32, missingNames: *mut classes::BSTArray, skipPluginMatch: bool) -> bool;
 /// `BGSSaveLoadGame::LoadGlobalDataTable` at 0x61c1a0 (runtime, high); signature (untiered): `undefined LoadGlobalDataTable(longlong param_1, uint param_2, undefined8 param_3, TypeDescriptor * param_4)`; count x {u32 type, length-prefixed buffer} -> LoadGlobalData; the VM type is read through LoadStorageWrapper and SkyrimVM load 0x9e1c00 (high); semantic signature: `void (Win32FileType* stream, u32 count)`
 pub const BGSSaveLoadGame__LoadGlobalDataTable: u64 = 35641;
+/// `BGSSaveLoadGame::LoadGlobalDataTable` as a function pointer type (high).
+pub type BGSSaveLoadGame__LoadGlobalDataTable_fn = unsafe extern "C" fn(stream: *mut c_void, count: u32);
 /// `BGSSaveLoadGame::ReadFormIDArray` at 0x614f40 (runtime, medium); signature (untiered): `undefined ReadFormIDArray(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; u32 count, then count u32 saved ids, each remapped (except 0xFF) and inserted at the next index (medium); semantic signature: `void (FormIDIndexMap* map, Win32FileType* stream)`
 pub const BGSSaveLoadGame__ReadFormIDArray: u64 = 35559;
 /// `BGSSaveLoadGame::ReadPluginList` at 0x6197d0 (runtime, high); signature (untiered): `undefined1 ReadPluginList(longlong * param_1, longlong param_2, longlong * param_3, undefined8 param_4, longlong * param_5)`; reads u8 count + names (and u16 count + light names when version > 0x4d) and stores TESDataHandler::GetFile(name) (null if absent or not loaded) per saved index in this+0/+0x18 (high); semantic signature: `bool (BGSSaveLoadGame* this, Win32FileType* stream, BSTArray* missingNames, bool skipChecks, BSTArray* unknownNames)`
 pub const BGSSaveLoadGame__ReadPluginList: u64 = 442571;
+/// `BGSSaveLoadGame::ReadPluginList` as a function pointer type (high).
+pub type BGSSaveLoadGame__ReadPluginList_fn = unsafe extern "C" fn(this: *mut classes::BGSSaveLoadGame, stream: *mut c_void, missingNames: *mut classes::BSTArray, skipChecks: bool, unknownNames: *mut classes::BSTArray) -> bool;
 /// `BGSSaveLoadGame::RemapSavedFormID` at 0x6181c0 (runtime, medium); signature (untiered): `uint RemapSavedFormID(longlong * param_1, uint param_2)`; saved form id -> current: top byte 0xFE uses savedLightFiles[(id>>12)&0xfff], otherwise savedFiles[id>>24]; then TESFile::ResolveFormID; 0 when the plugin is missing (medium); semantic signature: `u32 (BGSSaveLoadGame* this, u32 savedId)`
 pub const BGSSaveLoadGame__RemapSavedFormID: u64 = 35596;
 /// `BGSSaveLoadGame::RemoveChange` at 0x616e80 (semantic, high); signature (untiered): `undefined RemoveChange(longlong param_1, longlong param_2, uint param_3)`; clears flags and erases the entry when none remain (non-created forms) (high); semantic signature: `void (BGSSaveLoadGame* this, TESForm* form, u32 flags)`
@@ -12509,12 +12537,20 @@ pub const BGSSaveLoadGame__RemoveChange: u64 = 35581;
 pub type BGSSaveLoadGame__RemoveChange_fn = unsafe extern "C" fn(this: *mut classes::BGSSaveLoadGame, form: *mut classes::TESForm, flags: u32);
 /// `BGSSaveLoadGame::RevertGame` at 0x617070 (semantic, high); signature (untiered): `undefined RevertGame(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; full revert used by ResetGame: flag 2, clear +0xc8, RevertAllGlobalData(true), RevertWorld(this, null, null), ProcessAndClearRefHandleMap (high); semantic signature: `void (BGSSaveLoadGame*)`
 pub const BGSSaveLoadGame__RevertGame: u64 = 35585;
+/// `BGSSaveLoadGame::RevertGame` as a function pointer type (high).
+pub type BGSSaveLoadGame__RevertGame_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadGame);
 /// `BGSSaveLoadGame::RevertWorld` at 0x615690 (runtime, high); signature (untiered): `undefined RevertWorld(longlong param_1, longlong * * * * param_2, uint * param_3)`; installs the new change map and reverts every form changed in the previous session that the save does not change (slot 18 Revert) (high); semantic signature: `void (BGSSaveLoadGame* this, ChangeFormMap* newMap, FormIDIndexMap* index)`
 pub const BGSSaveLoadGame__RevertWorld: u64 = 35566;
+/// `BGSSaveLoadGame::RevertWorld` as a function pointer type (high).
+pub type BGSSaveLoadGame__RevertWorld_fn = unsafe extern "C" fn(this: *mut classes::BGSSaveLoadGame, newMap: *mut classes::ChangeFormMap, index: *mut c_void);
 /// `BGSSaveLoadGame::SaveGame` at 0x618260 (runtime, high); signature (low): `undefined SaveGame(longlong param_1, BGSSaveGameBuffer * param_2)`; writes the body after the header (high); semantic signature: `void (BGSSaveLoadGame* this, Win32FileType* stream)`
 pub const BGSSaveLoadGame__SaveGame: u64 = 35599;
+/// `BGSSaveLoadGame::SaveGame` as a function pointer type (high).
+pub type BGSSaveLoadGame__SaveGame_fn = unsafe extern "C" fn(this: *mut classes::BGSSaveLoadGame, stream: *mut c_void);
 /// `BGSSaveLoadGame::SaveGlobalDataRange` at 0x61b7e0 (runtime, high); signature (untiered): `int SaveGlobalDataRange(BGSSaveGameBuffer * param_1, BGSSaveGameBuffer * param_2, ulonglong param_3, BGSSaveGameBuffer_vtbl * param_4)`; per type: SaveGlobalData into a buffer, then u32 type + buffer; type 1001 writes the VM directly via SaveStorageWrapper and SkyrimVM save 0x9e1b20 with a back-patched length (high); semantic signature: `u32 (Win32FileType* stream, u32 first, u32 end)`
 pub const BGSSaveLoadGame__SaveGlobalDataRange: u64 = 35638;
+/// `BGSSaveLoadGame::SaveGlobalDataRange` as a function pointer type (high).
+pub type BGSSaveLoadGame__SaveGlobalDataRange_fn = unsafe extern "C" fn(stream: *mut c_void, first: u32, end: u32) -> u32;
 /// `BGSSaveLoadManager::BSTEventSink_BSSystemEvent_vdtor` at 0x62dc90 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSSystemEvent_vdtor(BGSSaveLoadManager * this)`
 pub const BGSSaveLoadManager__BSTEventSink_BSSystemEvent_vdtor: u64 = 35836;
 /// `BGSSaveLoadManager::BSTEventSink_BSSystemEvent_vfunc_1` at 0x626ab0 (rtti, high); signature (low): `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(BGSSaveLoadManager * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -12525,30 +12561,46 @@ pub const BGSSaveLoadManager__BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vdt
 pub const BGSSaveLoadManager__BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vfunc_1: u64 = 35774;
 /// `BGSSaveLoadManager::DeleteSaveFile` at 0x622780 (semantic, high); signature (untiered): `undefined DeleteSaveFile(undefined8 param_1, undefined8 param_2)`; path '<sLocalSavePath><name>.ess' (slot 2, no tmp) then slot 15 DeleteFileA and BSSaveDataEvent op 2 (high); semantic signature: `void (BGSSaveLoadManager*, const char* name)`
 pub const BGSSaveLoadManager__DeleteSaveFile: u64 = 35726;
+/// `BGSSaveLoadManager::DeleteSaveFile` as a function pointer type (high).
+pub type BGSSaveLoadManager__DeleteSaveFile_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, name: *const c_char);
 /// `BGSSaveLoadManager::FinishLoad` at 0x6278b0 (runtime, high); signature (untiered): `undefined FinishLoad(undefined8 param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`; after a successful load: cell/terrain refresh, resume (ToggleGameSuspendState(0)), clear BGSSaveLoadGame flag 0x40, drain garbage/IO, UnfreezeVM, TESLoadGameEvent, story manager, gamer profile (high); semantic signature: `void ()`
 pub const BGSSaveLoadManager__FinishLoad: u64 = 35780;
 /// `BGSSaveLoadManager::FinishLoad` as a function pointer type (high).
 pub type BGSSaveLoadManager__FinishLoad_fn = unsafe extern "C" fn();
 /// `BGSSaveLoadManager::LoadGame` at 0x627de0 (runtime, high); signature (untiered): `undefined1 * LoadGame(longlong param_1, longlong * param_2, uint param_3, char param_4, byte param_5, uint param_6)`; main-thread load: header, missing-content dialogs, BGSSaveLoadGame::LoadGame, then FinishLoad (high); semantic signature: `bool (BGSSaveLoadManager*, Win32FileType** stream, u32 entryValue, bool ignoreMissing, bool skipPluginMatch, u32 requestKind)`
 pub const BGSSaveLoadManager__LoadGame: u64 = 442580;
+/// `BGSSaveLoadManager::LoadGame` as a function pointer type (high).
+pub type BGSSaveLoadManager__LoadGame_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, stream: *mut *mut c_void, entryValue: u32, ignoreMissing: bool, skipPluginMatch: bool, requestKind: u32) -> bool;
 /// `BGSSaveLoadManager::MakeSaveName` at 0x623da0 (semantic, high); signature (untiered): `undefined MakeSaveName(longlong param_1, longlong param_2, int param_3)`; builds the file name with format '%s%u_%s_%u_%s_%s_%s_%s_%u_%u': prefix 'Save'/'Autosave'/'Quicksave' and a number first; the other arguments come from the player id formatted with ID_206654, the character name re-encoded byte by byte with format ID_206653, the location name, play time '%02u%02u%02u', the date '%u%02u%02u%02u%02u%02u' and the level (their order in the varargs was not decoded); file-name-invalid characters become spaces (a double quote becomes an apostrophe), as do bytes >= 0x80 (high); semantic signature: `void (BGSSaveLoadManager*, char* out /*0x104*/, i32 kind)`
 pub const BGSSaveLoadManager__MakeSaveName: u64 = 35749;
 /// `BGSSaveLoadManager::OpenSaveFile` at 0x622390 (semantic, high); signature (untiered): `longlong * OpenSaveFile(longlong param_1, longlong * param_2, char * param_3, undefined1 param_4, int param_5)`; path via BSSaveDataSystemUtility slot 2 (temp adds '.tmp'), stream via slot 11, stores the name at stream+0xab0, opens it (high); semantic signature: `Win32FileType** (BGSSaveLoadManager*, Win32FileType** out, const char* name, bool temp, i32 kind)`
 pub const BGSSaveLoadManager__OpenSaveFile: u64 = 35724;
+/// `BGSSaveLoadManager::OpenSaveFile` as a function pointer type (high).
+pub type BGSSaveLoadManager__OpenSaveFile_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, out: *mut *mut c_void, name: *const c_char, temp: bool, kind: i32) -> *mut *mut c_void;
 /// `BGSSaveLoadManager::PrepareForLoad` at 0x627680 (runtime, high); signature (untiered): `undefined PrepareForLoad(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined1 * param_4)`; freeze the VM, reset TES/ref handle maps, wait for Havok, suspend the game (load kinds) or close all menus, stop VATS, drain navmesh/IO (high); semantic signature: `void (BGSSaveLoadManager*, u32 requestKind)`
 pub const BGSSaveLoadManager__PrepareForLoad: u64 = 35779;
+/// `BGSSaveLoadManager::PrepareForLoad` as a function pointer type (high).
+pub type BGSSaveLoadManager__PrepareForLoad_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, requestKind: u32);
 /// `BGSSaveLoadManager::ProcessSaveDataEvent` at 0x626380 (semantic, high); signature (untiered): `undefined8 ProcessSaveDataEvent(BGSSaveLoadManager * this, LoadRequest * param_1, ulonglong param_2, ulonglong param_3)`
 pub const BGSSaveLoadManager__ProcessSaveDataEvent: u64 = 35773;
 /// `BGSSaveLoadManager::QueueLoadEntry` at 0x625a10 (semantic, high); signature (untiered): `undefined QueueLoadEntry(longlong param_1, Request_vtbl * param_2, ulonglong param_3, undefined8 param_4)`; caches the header record and queues LoadEntryRequest 0x50001000 (high); semantic signature: `void (BGSSaveLoadManager*, Entry*)`
 pub const BGSSaveLoadManager__QueueLoadEntry: u64 = 442575;
+/// `BGSSaveLoadManager::QueueLoadEntry` as a function pointer type (high).
+pub type BGSSaveLoadManager__QueueLoadEntry_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, a1: *mut c_void);
 /// `BGSSaveLoadManager::RemoveSaveEntry` at 0x623a00 (semantic, high); signature (untiered): `undefined RemoveSaveEntry(longlong param_1, undefined8 * param_2, undefined8 param_3, ulonglong param_4)`; removes the entry from +0x100; if no other save of that character remains, drops its name (+0x70) and its record (+0xe8) (high); semantic signature: `void (BGSSaveLoadManager*, Entry*)`
 pub const BGSSaveLoadManager__RemoveSaveEntry: u64 = 35748;
+/// `BGSSaveLoadManager::RemoveSaveEntry` as a function pointer type (high).
+pub type BGSSaveLoadManager__RemoveSaveEntry_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, a1: *mut c_void);
 /// `BGSSaveLoadManager::RequestLoad` at 0x622f30 (runtime, high); signature (untiered): `undefined8 RequestLoad(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, char param_5)`; Notify {2,0}, path via slot 2, BSSaveDataSystemUtility slot 23 reads the file and dispatches BSSaveDataEvent (synchronous) (high); semantic signature: `bool (BGSSaveLoadManager*, const char* name, u32 entryValue, u32 value, bool ignoreMissing)`
 pub const BGSSaveLoadManager__RequestLoad: u64 = 35728;
+/// `BGSSaveLoadManager::RequestLoad` as a function pointer type (high).
+pub type BGSSaveLoadManager__RequestLoad_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, name: *const c_char, entryValue: u32, value: u32, ignoreMissing: bool) -> bool;
 /// `BGSSaveLoadManager::Save` at 0x6227f0 (runtime, high); signature (untiered): `ulonglong Save(longlong param_1, int param_2, undefined8 param_3, char * param_4)`; all saves: checks, name, stream, header, body, then write now (kind 2) or queue the write to the worker thread (3,4,5) (high); semantic signature: `bool (BGSSaveLoadManager* this, i32 kind /*2 manual,3 auto,4 quick,5 forced*/, u32 value, const char* name /*null = generated*/)`
 pub const BGSSaveLoadManager__Save: u64 = 35727;
 /// `BGSSaveLoadManager::SetCurrentSaveName` at 0x624d70 (semantic, high); signature (untiered): `undefined SetCurrentSaveName(longlong param_1, undefined1 * param_2, undefined4 param_3)`; +0x138 = name, +0x250 = index (high); semantic signature: `void (BGSSaveLoadManager*, const char* name, u32 index)`
 pub const BGSSaveLoadManager__SetCurrentSaveName: u64 = 35765;
+/// `BGSSaveLoadManager::SetCurrentSaveName` as a function pointer type (high).
+pub type BGSSaveLoadManager__SetCurrentSaveName_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, name: *const c_char, index: u32);
 /// `BGSSaveLoadManager::Thread::Run` at 0x62a030 (semantic, high); signature (untiered): `undefined8 Run(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSSaveLoadManager__Thread__Run: u64 = 35790;
 /// `BGSSaveLoadManager::Thread::vdtor` at 0x62e290 (semantic, high); signature (low): `Thread * vdtor(Thread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -12557,6 +12609,8 @@ pub const BGSSaveLoadManager__Thread__vdtor: u64 = 35847;
 pub const BGSSaveLoadManager__Thread__vfunc_2: u64 = 35885;
 /// `BGSSaveLoadManager::ctor` at 0x621be0 (layout_inference, high); signature (high): `BGSSaveLoadManager * ctor(BGSSaveLoadManager * this)`;  (high); semantic signature: `BGSSaveLoadManager* (BGSSaveLoadManager*)`
 pub const BGSSaveLoadManager__ctor: u64 = 35720;
+/// `BGSSaveLoadManager::ctor` as a function pointer type (high).
+pub type BGSSaveLoadManager__ctor_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager) -> *mut classes::BGSSaveLoadManager;
 /// `BGSSaveLoadManager::ctor_sub0` at 0x629c20 (callgraph, medium); signature (untiered): `char ctor_sub0(undefined8 param_1, char * param_2, longlong * param_3)`
 pub const BGSSaveLoadManager__ctor_sub0: u64 = 442582;
 /// `BGSSaveLoadManager::ctor_sub1` at 0x62ba60 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -13527,10 +13581,16 @@ pub const BSAnimationGraphLoadScrapper__dtor: u64 = 63732;
 pub const BSAnimationGraphLoadScrapper__vdtor: u64 = 63549;
 /// `BSAnimationGraphManager::GetGraphEventSource` at 0x765930 (semantic, high); signature (untiered): `bool GetGraphEventSource(longlong * param_1, uint param_2, undefined8 * param_3)`; returns graphs[graphIndex]+0x68 (high); semantic signature: `bool (BSTSmartPointer<BSAnimationGraphManager>& mgr, uint graphIndex, BSTEventSource<BSAnimationGraphEvent>** out)`
 pub const BSAnimationGraphManager__GetGraphEventSource: u64 = 40849;
+/// `BSAnimationGraphManager::GetGraphEventSource` as a function pointer type (high).
+pub type BSAnimationGraphManager__GetGraphEventSource_fn = unsafe extern "C" fn(mgr: *mut c_void, graphIndex: u32, out: *mut *mut c_void) -> bool;
 /// `BSAnimationGraphManager::NotifyAnimationGraph` at 0xbc0c90 (semantic, high); signature (untiered): `int NotifyAnimationGraph(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; sends the event to every graph (SendEventToGraph) under +0xa0, then to the dependent managers; returns how many graphs accepted it (high); semantic signature: `int (BSAnimationGraphManager* this, const BSFixedString& eventName)`
 pub const BSAnimationGraphManager__NotifyAnimationGraph: u64 = 63362;
+/// `BSAnimationGraphManager::NotifyAnimationGraph` as a function pointer type (high).
+pub type BSAnimationGraphManager__NotifyAnimationGraph_fn = unsafe extern "C" fn(this: *mut classes::BSAnimationGraphManager, eventName: *const classes::BSFixedString) -> i32;
 /// `BSAnimationGraphManager::NotifyDependentManagers` at 0xbc1600 (semantic, high); signature (untiered): `byte NotifyDependentManagers(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; sends the event to the graphs of every dependent manager (+0x58), recursively (high); semantic signature: `bool (BSAnimationGraphManager* this, const BSFixedString& eventName)`
 pub const BSAnimationGraphManager__NotifyDependentManagers: u64 = 63372;
+/// `BSAnimationGraphManager::NotifyDependentManagers` as a function pointer type (high).
+pub type BSAnimationGraphManager__NotifyDependentManagers_fn = unsafe extern "C" fn(this: *mut classes::BSAnimationGraphManager, eventName: *const classes::BSFixedString) -> bool;
 /// `BSAnimationGraphManager::ProcessEvent` at 0xbc15e0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(BSAnimationGraphManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSAnimationGraphManager__ProcessEvent: u64 = 63371;
 /// `BSAnimationGraphManager::SetActiveGraph` at 0xbc0d60 (semantic, high); signature (untiered): `undefined8 SetActiveGraph(longlong param_1, uint param_2)`; moves the manager's own sink to graphs[index]+0x68, rebinds the variable cache, stores +0xb0 (high); semantic signature: `bool (BSAnimationGraphManager* this, uint index)`
@@ -13539,6 +13599,8 @@ pub const BSAnimationGraphManager__SetActiveGraph: u64 = 63363;
 pub type BSAnimationGraphManager__SetActiveGraph_fn = unsafe extern "C" fn(this: *mut classes::BSAnimationGraphManager, index: u32) -> bool;
 /// `BSAnimationGraphManager::Update` at 0xbc0680 (semantic, high); signature (untiered): `undefined Update(undefined8 * param_1, float * param_2)`; per frame: update channels, push channel values into each graph (0xbcf570), Update every graph (events collected from the active one), unlock, send the collected events through every graph that has sinks (0xbcf360), then write poses inline (0xbcf480 per graph) or hand the manager to the queue ID_409516 and release its semaphore (high); semantic signature: `void (BSAnimationGraphManager* this, BSAnimationUpdateData* data)`
 pub const BSAnimationGraphManager__Update: u64 = 63358;
+/// `BSAnimationGraphManager::Update` as a function pointer type (high).
+pub type BSAnimationGraphManager__Update_fn = unsafe extern "C" fn(this: *mut classes::BSAnimationGraphManager, data: *mut c_void);
 /// `BSAnimationGraphManager::ctor` at 0xbbffd0 (layout_inference, medium); signature (high): `BSAnimationGraphManager * ctor(BSAnimationGraphManager * this)`
 pub const BSAnimationGraphManager__ctor: u64 = 63353;
 /// `BSAnimationGraphManager::ctor` at 0xbc00b0 (layout_inference, medium); signature (low): `BSAnimationGraphManager * ctor(BSAnimationGraphManager * this, longlong param_1, int param_2)`
@@ -13599,12 +13661,18 @@ pub const BSAudioListener__vfunc_3: u64 = 67924;
 pub const BSAudioListener__vfunc_5: u64 = 67923;
 /// `BSAudioManager::AllocateCommandNode` at 0xccfe00 (semantic, high); signature (untiered): `undefined4 * AllocateCommandNode(undefined8 param_1, undefined4 * param_2)`; node from the pool under the spin lock (high); semantic signature: `AudioCommand* (BSAudioManager* this, const AudioCommand* copyFrom)`
 pub const BSAudioManager__AllocateCommandNode: u64 = 67731;
+/// `BSAudioManager::AllocateCommandNode` as a function pointer type (high).
+pub type BSAudioManager__AllocateCommandNode_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager, copyFrom: *const c_void) -> *mut c_void;
 /// `BSAudioManager::BuildSoundHandle` at 0xccb320 (runtime, high); signature (untiered): `undefined8 BuildSoundHandle(int * param_1, undefined4 * param_2, longlong * param_3, ulonglong param_4)`; descriptor slot 1 fills the playback params, the backend creates the sound, next id from 0x3273924, flags merged, status inserted (write lock), command 0x19 posted; out = {id,0,0} or {-1,0,0} (high); semantic signature: `bool (BSAudioManager* this, SoundHandle* out, BSISoundDescriptor* descriptor, uint32 flags)`
 pub const BSAudioManager__BuildSoundHandle: u64 = 67666;
+/// `BSAudioManager::BuildSoundHandle` as a function pointer type (high).
+pub type BSAudioManager__BuildSoundHandle_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager, out: *mut classes::SoundHandle, descriptor: *mut classes::BSISoundDescriptor, flags: u32) -> bool;
 /// `BSAudioManager::BuildSoundHandleByEditorId` at 0xccb290 (semantic, medium); signature (untiered): `undefined BuildSoundHandleByEditorId(int * param_1, undefined4 * param_2, undefined8 param_3, ulonglong param_4)`; resolver +0x180 then BuildSoundHandle (medium); semantic signature: `void (BSAudioManager* this, SoundHandle* out, const char* editorId, uint32 flags)`
 pub const BSAudioManager__BuildSoundHandleByEditorId: u64 = 67665;
 /// `BSAudioManager::BuildSoundHandleByFormId` at 0xccb0e0 (runtime, high); signature (untiered): `undefined BuildSoundHandleByFormId(longlong param_1, undefined4 * param_2, undefined4 param_3, undefined4 param_4)`; resolver +0x178 then BuildSoundHandle (high); semantic signature: `void (BSAudioManager* this, SoundHandle* out, uint32 formId, uint32 flags)`
 pub const BSAudioManager__BuildSoundHandleByFormId: u64 = 67663;
+/// `BSAudioManager::BuildSoundHandleByFormId` as a function pointer type (high).
+pub type BSAudioManager__BuildSoundHandleByFormId_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager, out: *mut classes::SoundHandle, formId: u32, flags: u32);
 /// `BSAudioManager::BuildSoundHandleRaw` at 0xccb170 (semantic, medium); signature (untiered): `undefined BuildSoundHandleRaw(int * param_1, int * param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; sound from raw params without a descriptor (dialogue, music tracks) (medium); semantic signature: `void (BSAudioManager* this, SoundHandle* out, const void* params, uint32 flags, uint32 priority)`
 pub const BSAudioManager__BuildSoundHandleRaw: u64 = 67664;
 /// `BSAudioManager::DrainCommands` at 0xccdab0 (runtime, high); signature (untiered): `undefined DrainCommands(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; audio thread: urgent list, then every node of the read list through ProcessCommand, then the list swap under the spin lock (high); semantic signature: `void (BSAudioManager* this)`
@@ -13623,16 +13691,24 @@ pub type BSAudioManager__ParkThread_fn = unsafe extern "C" fn(this: *mut classes
 pub const BSAudioManager__PostCategoryCommand: u64 = 67681;
 /// `BSAudioManager::PostCommand` at 0xccd1a0 (semantic, high); signature (untiered): `uint PostCommand(int * param_1, int param_2, int param_3, int param_4, undefined8 param_5, longlong * param_6, int * param_7)`; 0x40 node under the spin lock 0x3273958 appended to the write list; dropped unless flags bit0 or type 1/2 (high); semantic signature: `uint32 (BSAudioManager* this, uint32 type, uint32 id, uint32 arg, uint64 ptrArg, NiPointer* ref, const float* vec3)`
 pub const BSAudioManager__PostCommand: u64 = 67717;
+/// `BSAudioManager::PostCommand` as a function pointer type (high).
+pub type BSAudioManager__PostCommand_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager, type_: u32, id: u32, arg: u32, ptrArg: u64, ref_: *mut c_void, vec3: *const f32) -> u32;
 /// `BSAudioManager::ProcessCommand` at 0xccdc90 (semantic, high); signature (untiered): `IMAGE_DOS_HEADER * ProcessCommand(int * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`; switch over the command type (enum AudioCommandType); returns 1 when the node was kept, 2 to stop draining (0x27), else 0 (high); semantic signature: `uint32 (BSAudioManager* this, AudioCommand* cmd)`
 pub const BSAudioManager__ProcessCommand: u64 = 67726;
+/// `BSAudioManager::ProcessCommand` as a function pointer type (high).
+pub type BSAudioManager__ProcessCommand_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager, cmd: *mut c_void) -> u32;
 /// `BSAudioManager::ReapplyAllVolumes` at 0xcd0db0 (semantic, high); signature (untiered): `undefined ReapplyAllVolumes(int * param_1)`; posts 0x10 (high); semantic signature: `void (BSAudioManager* this)`
 pub const BSAudioManager__ReapplyAllVolumes: u64 = 67741;
 /// `BSAudioManager::ReapplyAllVolumes` as a function pointer type (high).
 pub type BSAudioManager__ReapplyAllVolumes_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager);
 /// `BSAudioManager::RefreshStatuses` at 0xcd1850 (semantic, high); signature (untiered): `undefined8 RefreshStatuses(longlong param_1)`; copies id, frequency, volume, flags, +0x60, playing bit and position of every non-loading sound into its status (high); semantic signature: `void (BSTHashMap* sounds)`
 pub const BSAudioManager__RefreshStatuses: u64 = 67751;
+/// `BSAudioManager::RefreshStatuses` as a function pointer type (high).
+pub type BSAudioManager__RefreshStatuses_fn = unsafe extern "C" fn(sounds: *mut c_void);
 /// `BSAudioManager::RemoveSound` at 0xcca2f0 (runtime, high); signature (untiered): `undefined8 RemoveSound(undefined8 param_1, uint param_2)`; removes the id from the sound map, calls the finish callback, drops the followed node, flushes pending commands, releases the object (high); semantic signature: `bool (void* unused, uint32 id)`
 pub const BSAudioManager__RemoveSound: u64 = 67650;
+/// `BSAudioManager::RemoveSound` as a function pointer type (high).
+pub type BSAudioManager__RemoveSound_fn = unsafe extern "C" fn(unused: *mut c_void, id: u32) -> bool;
 /// `BSAudioManager::SetListenerOrientation` at 0xcccea0 (semantic, high); signature (untiered): `undefined SetListenerOrientation(int * param_1, int * param_2, int * param_3)`; posts 0x29 and 0x2a (high); semantic signature: `void (BSAudioManager* this, const float* forward, const float* up)`
 pub const BSAudioManager__SetListenerOrientation: u64 = 67709;
 /// `BSAudioManager::SetListenerOrientation` as a function pointer type (high).
@@ -13643,8 +13719,12 @@ pub const BSAudioManager__SetListenerPosition: u64 = 67708;
 pub type BSAudioManager__SetListenerPosition_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager, xyz: *const f32);
 /// `BSAudioManager::SetThreadSleepMs` at 0xccb0a0 (semantic, high); signature (untiered): `undefined SetThreadSleepMs(longlong param_1, undefined4 param_2)`; thread+0x64 (high); semantic signature: `void (BSAudioManager* this, uint32 ms)`
 pub const BSAudioManager__SetThreadSleepMs: u64 = 67661;
+/// `BSAudioManager::SetThreadSleepMs` as a function pointer type (high).
+pub type BSAudioManager__SetThreadSleepMs_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager, ms: u32);
 /// `BSAudioManager::StopAllAndWait` at 0xccb540 (semantic, high); signature (untiered): `undefined StopAllAndWait(int * param_1, char param_2, uint param_3)`; posts 0x1b and optionally polls until the sound map is empty (high); semantic signature: `void (BSAudioManager* this, bool wait, uint32 timeoutMs)`
 pub const BSAudioManager__StopAllAndWait: u64 = 67668;
+/// `BSAudioManager::StopAllAndWait` as a function pointer type (high).
+pub type BSAudioManager__StopAllAndWait_fn = unsafe extern "C" fn(this: *mut classes::BSAudioManager, wait: bool, timeoutMs: u32);
 /// `BSAudioManager::UpdateFollowedSounds` at 0xcccb80 (semantic, high); signature (untiered): `undefined UpdateFollowedSounds(int * param_1)`; per followed id: node gone -> fade to 4000 over 1000 ms then release; sound playing (or 0x20000) -> SetPosition(node+0xa0) (high); semantic signature: `void (BSAudioManager* this)`
 pub const BSAudioManager__UpdateFollowedSounds: u64 = 67707;
 /// `BSAudioManager::UpdateFollowedSounds` as a function pointer type (high).
@@ -13711,8 +13791,12 @@ pub const BSBatchRenderer__AddPass: u64 = 107636;
 pub const BSBatchRenderer__AddPassSorted: u64 = 107635;
 /// `BSBatchRenderer::AddPassToAlphaGroup` at 0x1561630 (semantic, high); signature (untiered): `undefined AddPassToAlphaGroup(longlong param_1, undefined8 param_2, longlong param_3)`; appends a hint-1 (alpha-blended) pass to the given depth group or the alpha group +0xf0 (high); semantic signature: `void (BSBatchRenderer* this, BSRenderPass* pass, BSBatchRendererGroup* group)`
 pub const BSBatchRenderer__AddPassToAlphaGroup: u64 = 107669;
+/// `BSBatchRenderer::AddPassToAlphaGroup` as a function pointer type (high).
+pub type BSBatchRenderer__AddPassToAlphaGroup_fn = unsafe extern "C" fn(this: *mut classes::BSBatchRenderer, pass: *mut c_void, group: *mut c_void);
 /// `BSBatchRenderer::AddPassToGroup` at 0x1561610 (semantic, high); signature (untiered): `undefined AddPassToGroup(longlong param_1, undefined8 param_2, int param_3, undefined1 param_4)`; AddPass on groups[group] (high); semantic signature: `void (BSBatchRenderer* this, BSRenderPass* pass, int group, bool prepend)`
 pub const BSBatchRenderer__AddPassToGroup: u64 = 107668;
+/// `BSBatchRenderer::AddPassToGroup` as a function pointer type (high).
+pub type BSBatchRenderer__AddPassToGroup_fn = unsafe extern "C" fn(this: *mut classes::BSBatchRenderer, pass: *mut c_void, group: i32, prepend: bool);
 /// `BSBatchRenderer::RenderBatches` at 0x155f800 (semantic, high); signature (untiered): `undefined RenderBatches(BSBatchRenderer * this, uint param_1, uint param_2, uint param_3)`
 pub const BSBatchRenderer__RenderBatches: u64 = 107638;
 /// `BSBatchRenderer::ctor` at 0x155e1c0 (layout_inference, medium); signature (low): `BSBatchRenderer * ctor(BSBatchRenderer * this, int param_1, undefined8 param_2, undefined8 param_3)`
@@ -13723,8 +13807,12 @@ pub const BSBatchRenderer__ctor_2: u64 = 107632;
 pub const BSBatchRenderer__vdtor: u64 = 107681;
 /// `BSBatchRendererGroup::AddPass` at 0x155dd70 (semantic, high); signature (untiered): `undefined AddPass(longlong * param_1, longlong param_2, undefined8 param_3)`; list mode: append or prepend to the group's pass list; batch mode: lazily creates the group's BSBatchRenderer(100) and calls its AddPass (high); semantic signature: `void (BSBatchRendererGroup* group, BSRenderPass* pass, bool prepend)`
 pub const BSBatchRendererGroup__AddPass: u64 = 107626;
+/// `BSBatchRendererGroup::AddPass` as a function pointer type (high).
+pub type BSBatchRendererGroup__AddPass_fn = unsafe extern "C" fn(group: *mut c_void, pass: *mut c_void, prepend: bool);
 /// `BSBatchRendererGroup::Render` at 0x155df50 (semantic, high); signature (untiered): `undefined Render(longlong * param_1, uint param_2)`; batch mode: sub-batch RenderBatches(1, 0x5c006074); list mode: RenderPassImmediately per pass in order with cull none for property flag bit 36 and alpha test from the alpha property (high); semantic signature: `void (BSBatchRendererGroup* group, u32 flags)`
 pub const BSBatchRendererGroup__Render: u64 = 107630;
+/// `BSBatchRendererGroup::Render` as a function pointer type (high).
+pub type BSBatchRendererGroup__Render_fn = unsafe extern "C" fn(group: *mut c_void, flags: u32);
 /// `BSBehaviorGraphExtraData::Create` at 0xfeb280 (string, high); signature (low): `NiExtraData * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSBehaviorGraphExtraData__Create: u64 = 76487;
 /// `BSBehaviorGraphExtraData::ctor` at 0xfeb230 (layout_inference, medium); signature (high): `undefined ctor(BSBehaviorGraphExtraData * this)`
@@ -14225,6 +14313,8 @@ pub const BSDirectAtModifier__vfunc_5: u64 = 63194;
 pub const BSDirectAtModifier__vfunc_7: u64 = 63192;
 /// `BSDirectAtModifierInterface::GetMountFreeRotation` at 0x8f9100 (semantic, high); signature (untiered): `longlong GetMountFreeRotation(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; &state10.freeRotation, or &state12.freeRotation on a flying mount (high); semantic signature: `NiPoint2* (PlayerCamera* this)`
 pub const BSDirectAtModifierInterface__GetMountFreeRotation: u64 = 50802;
+/// `BSDirectAtModifierInterface::GetMountFreeRotation` as a function pointer type (high).
+pub type BSDirectAtModifierInterface__GetMountFreeRotation_fn = unsafe extern "C" fn(this: *mut classes::PlayerCamera) -> *mut c_void;
 /// `BSDirectAtModifierInterface::ctor` at 0x7db580 (layout_inference, high); signature (high): `BSDirectAtModifierInterface * ctor(BSDirectAtModifierInterface * this)`
 pub const BSDirectAtModifierInterface__ctor: u64 = 43655;
 /// `BSDirectAtModifierInterface::vdtor` at 0x7db9f0 (layout_inference, medium); signature (low): `BSDirectAtModifierInterface * vdtor(BSDirectAtModifierInterface * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -16955,6 +17045,8 @@ pub const BSLight__vdtor: u64 = 108312;
 pub const BSLight__vfunc_2: u64 = 108289;
 /// `BSLightingShader::GetTechniqueDefines` at 0x1589240 (semantic, high); signature (untiered): `undefined8 * GetTechniqueDefines(uint param_1, undefined8 * param_2)`; technique bits -> defines: 1 VC, 2 SKINNED, 4 MODELSPACENORMALS, 0x200 SPECULAR, 0x400 SOFT_LIGHTING, 0x800 RIM_LIGHTING, 0x1000 BACK_LIGHTING, 0x2000 SHADOW_DIR, 0x4000 DEFSHADOW, 0x8000 PROJECTED_UV (DEPTH_WRITE_DECALS for type 6), 0x10000 ANISO_LIGHTING, 0x20000 AMBIENT_SPECULAR, 0x40000 WORLD_MAP, 0x80000 BASE_OBJECT_IS_SNOW, 0x100000 DO_ALPHA_TEST, 0x200000 SNOW, 0x400000 CHARACTER_LIGHT, 0x800000 ADDITIONAL_ALPHA_MASK; bits 24-29 the feature (high); semantic signature: `ShaderDefine* (u32 technique, ShaderDefine* out)`
 pub const BSLightingShader__GetTechniqueDefines: u64 = 108698;
+/// `BSLightingShader::GetTechniqueDefines` as a function pointer type (high).
+pub type BSLightingShader__GetTechniqueDefines_fn = unsafe extern "C" fn(technique: u32, out: *mut c_void) -> *mut c_void;
 /// `BSLightingShader::GetTechniqueName` at 0x1589700 (semantic, high); signature (untiered): `char * GetTechniqueName(uint param_1, char * param_2, ulonglong param_3)`; readable technique name ('EnvMap  - Spec Soft ...'); 'Required ' for -1 (high); semantic signature: `char* (u32 technique, char* out, u32 size)`
 pub const BSLightingShader__GetTechniqueName: u64 = 108702;
 /// `BSLightingShader::GetTechniqueName` as a function pointer type (high).
@@ -18197,8 +18289,12 @@ pub const BSMultiTargetTreadTransfController__vfunc_59: u64 = 72627;
 pub const BSMusicManager__ProcessEvent: u64 = 90320;
 /// `BSMusicManager::PushType` at 0x11b5140 (semantic, high); signature (untiered): `bool PushType(longlong * param_1, undefined8 * param_2)`; heap push keyed on byte +0xc (lowest on top) (high); semantic signature: `bool (BSTArray<BSIMusicType*>* heap, BSIMusicType** type)`
 pub const BSMusicManager__PushType: u64 = 90333;
+/// `BSMusicManager::PushType` as a function pointer type (high).
+pub type BSMusicManager__PushType_fn = unsafe extern "C" fn(heap: *mut c_void, type_: *mut *mut classes::BSIMusicType) -> bool;
 /// `BSMusicManager::RemoveType` at 0x11b4de0 (semantic, high); signature (untiered): `undefined1 RemoveType(longlong * param_1, undefined8 * param_2)`; heap removal by pointer (high); semantic signature: `bool (BSTArray<BSIMusicType*>* heap, BSIMusicType*** type)`
 pub const BSMusicManager__RemoveType: u64 = 90326;
+/// `BSMusicManager::RemoveType` as a function pointer type (high).
+pub type BSMusicManager__RemoveType_fn = unsafe extern "C" fn(heap: *mut c_void, type_: *mut *mut *mut classes::BSIMusicType) -> bool;
 /// `BSMusicManager::Reset` at 0x11b4780 (semantic, high); signature (untiered): `DWORD Reset(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; clears the heap and pushes NoMusic as current (high); semantic signature: `void (BSMusicManager* this)`
 pub const BSMusicManager__Reset: u64 = 90318;
 /// `BSMusicManager::Reset` as a function pointer type (high).
@@ -20045,8 +20141,12 @@ pub const BSReference__vfunc_27: u64 = 77022;
 pub const BSReference__vfunc_28: u64 = 77023;
 /// `BSRenderPass::Alloc` at 0x1555820 (semantic, high); signature (untiered): `undefined Alloc(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, byte param_5, longlong param_6)`; takes a pass from this thread's pool (index TLS+0x9f4) and initialises it (high); semantic signature: `BSRenderPass* (BSShader* shader, BSShaderProperty* property, BSGeometry* geometry, u32 techniqueId, u8 numLights, BSLight** lights)`
 pub const BSRenderPass__Alloc: u64 = 107497;
+/// `BSRenderPass::Alloc` as a function pointer type (high).
+pub type BSRenderPass__Alloc_fn = unsafe extern "C" fn(shader: *mut classes::BSShader, property: *mut classes::BSShaderProperty, geometry: *mut classes::BSGeometry, techniqueId: u32, numLights: u8, lights: *mut *mut classes::BSLight) -> *mut c_void;
 /// `BSRenderPass::QueueRelease` at 0x1555920 (semantic, high); signature (untiered): `undefined QueueRelease(longlong param_1)`; queues a pass for return to its pool through a lock-free ring (drained by 0x1555d91, which RenderFrame calls before PresentFrame) (high); semantic signature: `void (BSRenderPass* pass)`
 pub const BSRenderPass__QueueRelease: u64 = 107498;
+/// `BSRenderPass::QueueRelease` as a function pointer type (high).
+pub type BSRenderPass__QueueRelease_fn = unsafe extern "C" fn(pass: *mut c_void);
 /// `BSResource::ArchiveFoundStreamCB::vdtor` at 0x9f0520 (layout_inference, medium); signature (low): `ArchiveFoundStreamCB * vdtor(ArchiveFoundStreamCB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSResource__ArchiveFoundStreamCB__vdtor: u64 = 54361;
 /// `BSResource::ArchiveManager::ctor` at 0xeca130 (layout_inference, medium); signature (low): `undefined ctor(ArchiveManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -21361,6 +21461,8 @@ pub const BSScript__Internal__ScriptFunction__vfunc_8: u64 = 105459;
 pub const BSScript__Internal__ScriptFunction__vfunc_9: u64 = 105460;
 /// `BSScript::Internal::VirtualMachine::AttachObjectToHandle` at 0x14b5160 (runtime, high); signature (untiered): `undefined AttachObjectToHandle(VirtualMachine * this, ulonglong * param_1, ulonglong param_2, undefined1 * param_3)`; bind interface slot 4: removes the object from the list of the handle it has, appends it (with a reference; the flag in bit 0 of the stored pointer) to the new handle's list in the +0x93a0 map and stores the handle in the object (+0x20) (high); semantic signature: `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle, bool flag)`
 pub const BSScript__Internal__VirtualMachine__AttachObjectToHandle: u64 = 104821;
+/// `BSScript::Internal::VirtualMachine::AttachObjectToHandle` as a function pointer type (high).
+pub type BSScript__Internal__VirtualMachine__AttachObjectToHandle_fn = unsafe extern "C" fn(this: *mut c_void, object: *mut c_void, handle: u64, flag: bool);
 /// `BSScript::Internal::VirtualMachine::BSScript_IVMDebugInterface_vdtor` at 0x14c8784 (slot_propagation, medium); signature (low): `undefined BSScript_IVMDebugInterface_vdtor(VirtualMachine * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__BSScript_IVMDebugInterface_vdtor: u64 = 105020;
 /// `BSScript::Internal::VirtualMachine::BSScript_IVMDebugInterface_vfunc_1` at 0x14b8fa0 (rtti, high); signature (low): `undefined BSScript_IVMDebugInterface_vfunc_1(VirtualMachine * this, undefined8 param_1, int * * param_2, char * * param_3)`
@@ -21485,6 +21587,8 @@ pub const BSScript__Internal__VirtualMachine__BSScript_IVMSaveLoadInterface_vfun
 pub const BSScript__Internal__VirtualMachine__BindNativeMethod: u64 = 104788;
 /// `BSScript::Internal::VirtualMachine::BindObject` at 0x14b4fb0 (runtime, high); signature (untiered): `undefined BindObject(VirtualMachine * this, longlong * param_1, uint * param_2, undefined8 param_3)`; bind interface slot 3, what ObjectBindPolicy::BindObject forwards to: attaches the object to the handle (slot 4), then walks the object's type and its parents for the first class with a registered type id that HandleIsType accepts for the handle; when none does, the object's own handle is reset to the invalid handle while it stays in the handle's object list (high); semantic signature: `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle)`
 pub const BSScript__Internal__VirtualMachine__BindObject: u64 = 104820;
+/// `BSScript::Internal::VirtualMachine::BindObject` as a function pointer type (high).
+pub type BSScript__Internal__VirtualMachine__BindObject_fn = unsafe extern "C" fn(this: *mut c_void, object: *mut c_void, handle: u64);
 /// `BSScript::Internal::VirtualMachine::CreateArray` at 0x14b1f00 (runtime, high); signature (untiered): `undefined1 CreateArray(VirtualMachine * this, ulonglong * param_1, undefined4 param_2, undefined8 param_3)`
 pub const BSScript__Internal__VirtualMachine__CreateArray: u64 = 104787;
 /// `BSScript::Internal::VirtualMachine::CreateArrayOfType` at 0x14b1de0 (semantic, medium); signature (untiered): `undefined1 CreateArrayOfType(VirtualMachine * this, uint param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`
@@ -23895,8 +23999,12 @@ pub const BSScript__Object__IncRef: u64 = 104252;
 pub type BSScript__Object__IncRef_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Object) -> u32;
 /// `BSScript::Object::ctor` at 0x148f060 (semantic, high); signature (untiered): `uint * ctor(uint * param_1, undefined8 * param_2, longlong * param_3, undefined8 param_4)`; fills the header: flags variableCount * 8 | 4, the type (with a reference), a string at +0x10, no stack, handle = policy->GetInvalidHandle(), count 0; stores policy in g_IObjectHandlePolicy_ptr (high); semantic signature: `BSScript::Object* (BSScript::Object* this, BSTSmartPointer<BSScript::ObjectTypeInfo>* type, BSScript::IObjectHandlePolicy* policy, u32 variableCount)`
 pub const BSScript__Object__ctor: u64 = 104255;
+/// `BSScript::Object::ctor` as a function pointer type (high).
+pub type BSScript__Object__ctor_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Object, type_: *mut c_void, policy: *mut classes::partial::BSScript__IObjectHandlePolicy, variableCount: u32) -> *mut classes::BSScript__Object;
 /// `BSScript::ObjectBindPolicy::BindObject` at 0x1489b40 (semantic, high); signature (untiered): `undefined BindObject(longlong param_1)`; binds a script object to a handle: forwards its arguments to slot 3 of the VM's bind interface held at +0x10 (high); semantic signature: `void (BSScript::ObjectBindPolicy* this, BSTSmartPointer<BSScript::Object>* object, u64 handle)`
 pub const BSScript__ObjectBindPolicy__BindObject: u64 = 104184;
+/// `BSScript::ObjectBindPolicy::BindObject` as a function pointer type (high).
+pub type BSScript__ObjectBindPolicy__BindObject_fn = unsafe extern "C" fn(this: *mut classes::partial::BSScript__ObjectBindPolicy, object: *mut c_void, handle: u64);
 /// `BSScript::ObjectBindPolicy::dtor` at 0x1488250 (layout_inference, high); signature (low): `undefined8 * dtor(ObjectBindPolicy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSScript__ObjectBindPolicy__dtor: u64 = 104173;
 /// `BSScript::ObjectBindPolicy::dtor_sub0` at 0x9f1920 (callgraph, medium); signature (untiered): `undefined dtor_sub0(void)`
@@ -23909,6 +24017,8 @@ pub const BSScript__ObjectTypeInfo__BindNativeFunction: u64 = 104325;
 pub type BSScript__ObjectTypeInfo__BindNativeFunction_fn = unsafe extern "C" fn(this: *mut classes::BSScript__ObjectTypeInfo, function: *mut classes::BSScript__IFunction, logger: *mut classes::BSScript__ErrorLogger) -> bool;
 /// `BSScript::ObjectTypeInfo::GetFunction` at 0x1492470 (semantic, high); signature (untiered): `undefined8 GetFunction(longlong param_1, longlong * param_2, longlong * param_3, char param_4)`; finds a static (global) function by name: on a type in link state 3 (or state 2 when linkedOnly is false) through ID_104355 (the skyrim-rs papyrus run got static natives for either flag value and no method on a linked type); on an unlinked type, only when linkedOnly is false, the pending native whose IFunction slot 9 (GetIsStatic) is true, so DispatchStaticCall needs the script loaded (high); semantic signature: `bool (BSScript::ObjectTypeInfo* this, const BSFixedString* name, BSTSmartPointer<BSScript::IFunction>* out, bool linkedOnly)`
 pub const BSScript__ObjectTypeInfo__GetFunction: u64 = 104311;
+/// `BSScript::ObjectTypeInfo::GetFunction` as a function pointer type (high).
+pub type BSScript__ObjectTypeInfo__GetFunction_fn = unsafe extern "C" fn(this: *mut classes::BSScript__ObjectTypeInfo, name: *const classes::BSFixedString, out: *mut c_void, linkedOnly: bool) -> bool;
 /// `BSScript::ObjectTypeInfo::GetTotalNumVariables` at 0x1492b90 (semantic, high); the variable count of the type and its linked parents (bits 8-17 of +0x20 along +0x10) (high); semantic signature: `u32 (const BSScript::ObjectTypeInfo* this)`
 pub const BSScript__ObjectTypeInfo__GetTotalNumVariables: u64 = 104317;
 /// `BSScript::ObjectTypeInfo::GetTotalNumVariables` as a function pointer type (high).
@@ -23937,6 +24047,8 @@ pub const BSScript__Stack__GetStackFrameVariable: u64 = 104484;
 pub type BSScript__Stack__GetStackFrameVariable_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Stack, frame: *const classes::BSScript__StackFrame, index: u32, page: u32) -> *mut classes::BSScript__Variable;
 /// `BSScript::Stack::ctor` at 0x149e2a0 (runtime, high); signature (untiered): `undefined4 * ctor(undefined4 * param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5, longlong * param_6)`; zero count, the two policies at +8/+0x10, an empty page array, the two u32 at +0x80/+0x84, the callback at +0x90 with a reference (high); semantic signature: `BSScript::Stack* (BSScript::Stack* this, void* pagePolicy, void* profilePolicy, u32 a3, u32 a4, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback)`
 pub const BSScript__Stack__ctor: u64 = 104479;
+/// `BSScript::Stack::ctor` as a function pointer type (high).
+pub type BSScript__Stack__ctor_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Stack, pagePolicy: *mut c_void, profilePolicy: *mut c_void, a3: u32, a4: u32, callback: *mut c_void) -> *mut classes::BSScript__Stack;
 /// `BSScript::UnlinkedTypes::Function::ConvertTypeFunctor::ctor` at 0x14a1510 (callgraph, high); signature (untiered): `undefined ctor(ConvertTypeFunctor * this)`
 pub const BSScript__UnlinkedTypes__Function__ConvertTypeFunctor__ctor: u64 = 104508;
 /// `BSScript::UnlinkedTypes::Function::ConvertTypeFunctor::ctor` at 0x14e36b0 (callgraph, high); signature (untiered): `undefined ctor(ConvertTypeFunctor * this)`
@@ -23993,10 +24105,16 @@ pub const BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor__vfu
 pub const BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor__vfunc_2: u64 = 105315;
 /// `BSScript::Variable::GetObjectPtr` at 0x1490780 (semantic, high); signature (untiered): `uint * GetObjectPtr(uint * param_1)`; address of the Object* payload when the type is an object, else a static null (high); semantic signature: `BSTSmartPointer<BSScript::Object>* (BSScript::Variable* this)`
 pub const BSScript__Variable__GetObjectPtr: u64 = 104287;
+/// `BSScript::Variable::GetObjectPtr` as a function pointer type (high).
+pub type BSScript__Variable__GetObjectPtr_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Variable) -> *mut c_void;
 /// `BSScript::Variable::GetString` at 0x1490600 (semantic, high); signature (untiered): `uint * GetString(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; the string payload for a String Variable, else the empty string (high); semantic signature: `const BSFixedString* (const BSScript::Variable* this)`
 pub const BSScript__Variable__GetString: u64 = 104285;
+/// `BSScript::Variable::GetString` as a function pointer type (high).
+pub type BSScript__Variable__GetString_fn = unsafe extern "C" fn(this: *const classes::BSScript__Variable) -> *const classes::BSFixedString;
 /// `BSScript::Variable::SetObject` at 0x1490830 (semantic, high); signature (untiered): `undefined SetObject(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; for an object-typed Variable: reset, store the Object* and IncRef it (high); semantic signature: `void (BSScript::Variable* this, BSTSmartPointer<BSScript::Object>* object)`
 pub const BSScript__Variable__SetObject: u64 = 104288;
+/// `BSScript::Variable::SetObject` as a function pointer type (high).
+pub type BSScript__Variable__SetObject_fn = unsafe extern "C" fn(this: *mut classes::BSScript__Variable, object: *mut c_void);
 /// `BSScript::Variable::assign` at 0x1491b00 (semantic, high); signature (untiered): `undefined assign(ulonglong * param_1, ulonglong * param_2, undefined8 param_3, ulonglong param_4)`; resets this, then copies other by type: arrays and objects add a reference, strings copy the BSFixedString, scalars copy the qword (high); semantic signature: `void (BSScript::Variable* this, const BSScript::Variable* other)`
 pub const BSScript__Variable__assign: u64 = 104297;
 /// `BSScript::Variable::assign` as a function pointer type (high).
@@ -24055,6 +24173,8 @@ pub const BSSegmentedTriShape__vfunc_52: u64 = 76792;
 pub const BSShader__BSReloadShaderI_vfunc_0: u64 = 108325;
 /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`; slot 1 of the setter interface at BSShader+0x10: when skin differs from the thread's last skin (TLS+0x2a00) and partition+0x3c != 0, UpdatePalette, then upload palette to VS constant buffer 10 and previousPalette to buffer 9 (count*3 float4 each) (high); semantic signature: `void (NiBoneMatrixSetterI* this, NiSkinInstance* skin, NiSkinPartition::Partition* partition, const NiTransform* geometryWorld)`
 pub const BSShader__NiBoneMatrixSetterI__SetBoneMatrices: u64 = 108322;
+/// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` as a function pointer type (high).
+pub type BSShader__NiBoneMatrixSetterI__SetBoneMatrices_fn = unsafe extern "C" fn(this: *mut classes::NiBoneMatrixSetterI, skin: *mut classes::NiSkinInstance, partition: *mut classes::NiSkinPartition__Partition, geometryWorld: *const c_void);
 /// `BSShader::NiBoneMatrixSetterI_vdtor` at 0x15796dc (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSShader * this)`
 pub const BSShader__NiBoneMatrixSetterI_vdtor: u64 = 108337;
 /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
@@ -24753,6 +24873,8 @@ pub const BSStringPool__Entry__release: u64 = 69192;
 pub type BSStringPool__Entry__release_fn = unsafe extern "C" fn(str: *mut classes::BSFixedString);
 /// `BSStringPool::GetEntry` at 0xeb2bb0 (semantic, high); signature (untiered): `longlong * GetEntry(undefined8 * param_1, char * param_2, uint param_3, int param_4)`; finds the narrow entry with the same text (_stricmp) in bucket hash, adding a reference, or creates one; holds the bucket lock hash & 0x1f (high); semantic signature: `void (BSStringPool::Entry** out, const char* text, uint32 hash, int length)`
 pub const BSStringPool__GetEntry: u64 = 69201;
+/// `BSStringPool::GetEntry` as a function pointer type (high).
+pub type BSStringPool__GetEntry_fn = unsafe extern "C" fn(out: *mut *mut classes::BSStringPool__Entry, text: *const c_char, hash: u32, length: i32);
 /// `BSStringPool::IterationCallback::vdtor` at 0xeb27a0 (layout_inference, medium); signature (low): `IterationCallback * vdtor(IterationCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSStringPool__IterationCallback__vdtor: u64 = 69196;
 /// `BSStripPSysData::Create` at 0xfbe300 (string, high); signature (low): `NiPSysData * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -28679,6 +28801,8 @@ pub const BSTEventSource_AssaultCrime__Event__RemoveEventSink: u64 = 38405;
 pub const BSTEventSource_BGSActorCellEvent__AddEventSink: u64 = 35181;
 /// `BSTEventSource<BGSActorCellEvent>::Notify` at 0x76b190 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<BGSActorCellEvent>* this, const BGSActorCellEvent* event)`
 pub const BSTEventSource_BGSActorCellEvent__Notify: u64 = 41034;
+/// `BSTEventSource<BGSActorCellEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_BGSActorCellEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::BGSActorCellEvent);
 /// `BSTEventSource<BGSActorCellEvent>::RemoveEventSink` at 0x5eba40 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BGSActorCellEvent>* this, BSTEventSink<BGSActorCellEvent>* sink)`
 pub const BSTEventSource_BGSActorCellEvent__RemoveEventSink: u64 = 35188;
 /// `BSTEventSource<BGSActorDeathEvent>::Notify` at 0x76b430 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BGSActorDeathEvent>* this, const BGSActorDeathEvent* event)`
@@ -28693,6 +28817,8 @@ pub const BSTEventSource_BGSEventProcessedEvent__RemoveEventSink: u64 = 53779;
 pub const BSTEventSource_BGSFootstepEvent__AddEventSink: u64 = 36782;
 /// `BSTEventSource<BGSFootstepEvent>::Notify` at 0x6beb50 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<BGSFootstepEvent>* this, const BGSFootstepEvent* event)`
 pub const BSTEventSource_BGSFootstepEvent__Notify: u64 = 38311;
+/// `BSTEventSource<BGSFootstepEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_BGSFootstepEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::BGSFootstepEvent);
 /// `BSTEventSource<BGSFootstepEvent>::RemoveEventSink` at 0x664370 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BGSFootstepEvent>* this, BSTEventSink<BGSFootstepEvent>* sink)`
 pub const BSTEventSource_BGSFootstepEvent__RemoveEventSink: u64 = 36801;
 /// `BSTEventSource<BGSSaveLoadManagerEvent>::AddEventSink` at 0x5b9680 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, BSTEventSink<BGSSaveLoadManagerEvent>* sink)`
@@ -28703,10 +28829,16 @@ pub const BSTEventSource_BGSSaveLoadManagerEvent__Notify: u64 = 35869;
 pub const BSTEventSource_BGSSaveLoadManagerEvent__RemoveEventSink: u64 = 34015;
 /// `BSTEventSource<BSAnimationGraphEvent>::AddEventSink` at 0x2fe580 (semantic, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; per-graph AddEventSink instance (the one pass 5b could not name) (high); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* source, BSTEventSink<BSAnimationGraphEvent>* sink)`
 pub const BSTEventSource_BSAnimationGraphEvent__AddEventSink: u64 = 20140;
+/// `BSTEventSource<BSAnimationGraphEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_BSAnimationGraphEvent__AddEventSink_fn = unsafe extern "C" fn(source: *mut c_void, sink: *mut classes::BSTEventSink_BSAnimationGraphEvent);
 /// `BSTEventSource<BSAnimationGraphEvent>::Notify` at 0x2fa4b0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; sends one animation event to the sinks of one graph source (high); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* source, const BSAnimationGraphEvent* event)`
 pub const BSTEventSource_BSAnimationGraphEvent__Notify: u64 = 20036;
+/// `BSTEventSource<BSAnimationGraphEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_BSAnimationGraphEvent__Notify_fn = unsafe extern "C" fn(source: *mut c_void, event: *const classes::BSAnimationGraphEvent);
 /// `BSTEventSource<BSAnimationGraphEvent>::RemoveEventSink` at 0x6c2dd0 (semantic, high); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; per-graph RemoveEventSink instance (high); semantic signature: `void (BSTEventSource<BSAnimationGraphEvent>* source, BSTEventSink<BSAnimationGraphEvent>* sink)`
 pub const BSTEventSource_BSAnimationGraphEvent__RemoveEventSink: u64 = 38402;
+/// `BSTEventSource<BSAnimationGraphEvent>::RemoveEventSink` as a function pointer type (high).
+pub type BSTEventSource_BSAnimationGraphEvent__RemoveEventSink_fn = unsafe extern "C" fn(source: *mut c_void, sink: *mut classes::BSTEventSink_BSAnimationGraphEvent);
 /// `BSTEventSource<BSGamerProfileEvent>::AddEventSink` at 0x5b9800 (xref_inference, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BSGamerProfileEvent>* this, BSTEventSink<BSGamerProfileEvent>* sink)`
 pub const BSTEventSource_BSGamerProfileEvent__AddEventSink: u64 = 34012;
 /// `BSTEventSource<BSGamerProfileEvent>::Notify` at 0xd03100 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSGamerProfileEvent>* this, const BSGamerProfileEvent* event)`
@@ -28743,6 +28875,8 @@ pub const BSTEventSource_BSSaveDataEvent__RemoveEventSink: u64 = 35892;
 pub const BSTEventSource_BSScript__StatsEvent__Notify: u64 = 105105;
 /// `BSTEventSource<BSSystemEvent>::AddEventSink` at 0x1b5440 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<BSSystemEvent>* this, BSTEventSink<BSSystemEvent>* sink)`
 pub const BSTEventSource_BSSystemEvent__AddEventSink: u64 = 13670;
+/// `BSTEventSource<BSSystemEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_BSSystemEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_BSSystemEvent);
 /// `BSTEventSource<BSSystemEvent>::RemoveEventSink` at 0x1b5f10 (xref_inference, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<BSSystemEvent>* this, BSTEventSink<BSSystemEvent>* sink)`
 pub const BSTEventSource_BSSystemEvent__RemoveEventSink: u64 = 13677;
 /// `BSTEventSource<BSTaskManagerWaitAction>::Notify` at 0xfc5470 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BSTaskManagerWaitAction>* this, const BSTaskManagerWaitAction* event)`
@@ -28755,8 +28889,12 @@ pub const BSTEventSource_BSThreadEvent__ThreadEvent__Notify: u64 = 68462;
 pub const BSTEventSource_BSThreadEvent__ThreadEvent__RemoveEventSink: u64 = 68465;
 /// `BSTEventSource<BSTransformDeltaEvent>::AddEventSink` at 0x6c1c70 (semantic, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; adds the actor's root-motion sink to graph+0x10 (high); semantic signature: `void (BSTEventSource<BSTransformDeltaEvent>* source, BSTEventSink<BSTransformDeltaEvent>* sink)`
 pub const BSTEventSource_BSTransformDeltaEvent__AddEventSink: u64 = 38355;
+/// `BSTEventSource<BSTransformDeltaEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_BSTransformDeltaEvent__AddEventSink_fn = unsafe extern "C" fn(source: *mut c_void, sink: *mut classes::BSTEventSink_BSTransformDeltaEvent);
 /// `BSTEventSource<BSTransformDeltaEvent>::RemoveEventSink` at 0x6c3a50 (semantic, high); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the actor's root-motion sink from graph+0x10 (high); semantic signature: `void (BSTEventSource<BSTransformDeltaEvent>* source, BSTEventSink<BSTransformDeltaEvent>* sink)`
 pub const BSTEventSource_BSTransformDeltaEvent__RemoveEventSink: u64 = 38410;
+/// `BSTEventSource<BSTransformDeltaEvent>::RemoveEventSink` as a function pointer type (high).
+pub type BSTEventSource_BSTransformDeltaEvent__RemoveEventSink_fn = unsafe extern "C" fn(source: *mut c_void, sink: *mut classes::BSTEventSink_BSTransformDeltaEvent);
 /// `BSTEventSource<BeamProjectileImpactEvent>::Notify` at 0x7e11c0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<BeamProjectileImpactEvent>* this, const BeamProjectileImpactEvent* event)`
 pub const BSTEventSource_BeamProjectileImpactEvent__Notify: u64 = 43779;
 /// `BSTEventSource<BooksRead::Event>::AddEventSink` at 0x280cc0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<BooksRead::Event>* this, BSTEventSink<BooksRead::Event>* sink)`
@@ -28839,6 +28977,8 @@ pub const BSTEventSource_HoursPassed__Event__Notify: u64 = 52500;
 pub const BSTEventSource_HoursPassed__Event__RemoveEventSink: u64 = 52504;
 /// `BSTEventSource<InputEvent*___ptr64>::AddEventSink` at 0x644f40 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<InputEvent*___ptr64>* this, BSTEventSink<InputEvent*___ptr64>* sink)`
 pub const BSTEventSource_InputEvent____ptr64__AddEventSink: u64 = 36271;
+/// `BSTEventSource<InputEvent*___ptr64>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_InputEvent____ptr64__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_InputEvent____ptr64);
 /// `BSTEventSource<InputEvent*___ptr64>::RemoveEventSink` at 0x645140 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<InputEvent*___ptr64>* this, BSTEventSink<InputEvent*___ptr64>* sink)`
 pub const BSTEventSource_InputEvent____ptr64__RemoveEventSink: u64 = 36275;
 /// `BSTEventSource<Inventory::Event>::AddEventSink` at 0x241b90 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<Inventory::Event>* this, BSTEventSink<Inventory::Event>* sink)`
@@ -28903,12 +29043,18 @@ pub const BSTEventSource_LocksPicked__Event__Notify: u64 = 51996;
 pub const BSTEventSource_LocksPicked__Event__RemoveEventSink: u64 = 52000;
 /// `BSTEventSource<MenuModeChangeEvent>::AddEventSink` at 0x5eb480 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<MenuModeChangeEvent>* this, BSTEventSink<MenuModeChangeEvent>* sink)`
 pub const BSTEventSource_MenuModeChangeEvent__AddEventSink: u64 = 35182;
+/// `BSTEventSource<MenuModeChangeEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_MenuModeChangeEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_MenuModeChangeEvent);
 /// `BSTEventSource<MenuModeChangeEvent>::RemoveEventSink` at 0x5ebbd0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<MenuModeChangeEvent>* this, BSTEventSink<MenuModeChangeEvent>* sink)`
 pub const BSTEventSource_MenuModeChangeEvent__RemoveEventSink: u64 = 35189;
 /// `BSTEventSource<MenuOpenCloseEvent>::AddEventSink` at 0x3ccde0 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<MenuOpenCloseEvent>* this, BSTEventSink<MenuOpenCloseEvent>* sink)`
 pub const BSTEventSource_MenuOpenCloseEvent__AddEventSink: u64 = 24925;
+/// `BSTEventSource<MenuOpenCloseEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_MenuOpenCloseEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_MenuOpenCloseEvent);
 /// `BSTEventSource<MenuOpenCloseEvent>::RemoveEventSink` at 0x3cd9e0 (runtime, high); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (high); semantic signature: `void (BSTEventSource<MenuOpenCloseEvent>* this, BSTEventSink<MenuOpenCloseEvent>* sink)`
 pub const BSTEventSource_MenuOpenCloseEvent__RemoveEventSink: u64 = 24940;
+/// `BSTEventSource<MenuOpenCloseEvent>::RemoveEventSink` as a function pointer type (high).
+pub type BSTEventSource_MenuOpenCloseEvent__RemoveEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_MenuOpenCloseEvent);
 /// `BSTEventSource<MurderCrime::Event>::AddEventSink` at 0x6c1af0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<MurderCrime::Event>* this, BSTEventSink<MurderCrime::Event>* sink)`
 pub const BSTEventSource_MurderCrime__Event__AddEventSink: u64 = 38354;
 /// `BSTEventSource<MurderCrime::Event>::Notify` at 0x6bfb70 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<MurderCrime::Event>* this, const MurderCrime::Event* event)`
@@ -28935,6 +29081,8 @@ pub const BSTEventSource_PoisonedWeapon__Event__Notify: u64 = 41044;
 pub const BSTEventSource_PoisonedWeapon__Event__RemoveEventSink: u64 = 41156;
 /// `BSTEventSource<PositionPlayerEvent>::AddEventSink` at 0x4b8a50 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<PositionPlayerEvent>* this, BSTEventSink<PositionPlayerEvent>* sink)`
 pub const BSTEventSource_PositionPlayerEvent__AddEventSink: u64 = 30206;
+/// `BSTEventSource<PositionPlayerEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_PositionPlayerEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_PositionPlayerEvent);
 /// `BSTEventSource<PositionPlayerEvent>::RemoveEventSink` at 0x4b8c50 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<PositionPlayerEvent>* this, BSTEventSink<PositionPlayerEvent>* sink)`
 pub const BSTEventSource_PositionPlayerEvent__RemoveEventSink: u64 = 30209;
 /// `BSTEventSource<QuestStatus::Event>::AddEventSink` at 0x3e0040 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<QuestStatus::Event>* this, BSTEventSink<QuestStatus::Event>* sink)`
@@ -28993,8 +29141,12 @@ pub const BSTEventSource_SpellsLearned__Event__Notify: u64 = 38870;
 pub const BSTEventSource_SpellsLearned__Event__RemoveEventSink: u64 = 38880;
 /// `BSTEventSource<TESActivateEvent>::AddEventSink` at 0x9f1eb0 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESActivateEvent>* this, BSTEventSink<TESActivateEvent>* sink)`
 pub const BSTEventSource_TESActivateEvent__AddEventSink: u64 = 54425;
+/// `BSTEventSource<TESActivateEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESActivateEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESActivateEvent);
 /// `BSTEventSource<TESActivateEvent>::Notify` at 0x2fa990 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESActivateEvent>* this, const TESActivateEvent* event)`
 pub const BSTEventSource_TESActivateEvent__Notify: u64 = 20038;
+/// `BSTEventSource<TESActivateEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESActivateEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESActivateEvent);
 /// `BSTEventSource<TESActivateEvent>::RemoveEventSink` at 0x9f7730 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESActivateEvent>* this, BSTEventSink<TESActivateEvent>* sink)`
 pub const BSTEventSource_TESActivateEvent__RemoveEventSink: u64 = 54522;
 /// `BSTEventSource<TESActiveEffectApplyRemoveEvent>::AddEventSink` at 0x9f2020 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESActiveEffectApplyRemoveEvent>* this, BSTEventSink<TESActiveEffectApplyRemoveEvent>* sink)`
@@ -29005,6 +29157,8 @@ pub const BSTEventSource_TESActiveEffectApplyRemoveEvent__RemoveEventSink: u64 =
 pub const BSTEventSource_TESActorLocationChangeEvent__AddEventSink: u64 = 54427;
 /// `BSTEventSource<TESActorLocationChangeEvent>::Notify` at 0x2fabd0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESActorLocationChangeEvent>* this, const TESActorLocationChangeEvent* event)`
 pub const BSTEventSource_TESActorLocationChangeEvent__Notify: u64 = 20039;
+/// `BSTEventSource<TESActorLocationChangeEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESActorLocationChangeEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESActorLocationChangeEvent);
 /// `BSTEventSource<TESActorLocationChangeEvent>::RemoveEventSink` at 0x9f7a30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESActorLocationChangeEvent>* this, BSTEventSink<TESActorLocationChangeEvent>* sink)`
 pub const BSTEventSource_TESActorLocationChangeEvent__RemoveEventSink: u64 = 54524;
 /// `BSTEventSource<TESAmiiboForcedStopDetectionEvent>::AddEventSink` at 0x9f2300 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESAmiiboForcedStopDetectionEvent>* this, BSTEventSink<TESAmiiboForcedStopDetectionEvent>* sink)`
@@ -29021,12 +29175,18 @@ pub const BSTEventSource_TESBookReadEvent__Notify: u64 = 51075;
 pub const BSTEventSource_TESBookReadEvent__RemoveEventSink: u64 = 54525;
 /// `BSTEventSource<TESCellAttachDetachEvent>::AddEventSink` at 0x9f2750 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESCellAttachDetachEvent>* this, BSTEventSink<TESCellAttachDetachEvent>* sink)`
 pub const BSTEventSource_TESCellAttachDetachEvent__AddEventSink: u64 = 54429;
+/// `BSTEventSource<TESCellAttachDetachEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESCellAttachDetachEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESCellAttachDetachEvent);
 /// `BSTEventSource<TESCellAttachDetachEvent>::Notify` at 0x2d4c90 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESCellAttachDetachEvent>* this, const TESCellAttachDetachEvent* event)`
 pub const BSTEventSource_TESCellAttachDetachEvent__Notify: u64 = 19362;
+/// `BSTEventSource<TESCellAttachDetachEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESCellAttachDetachEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESCellAttachDetachEvent);
 /// `BSTEventSource<TESCellAttachDetachEvent>::RemoveEventSink` at 0x9f7d30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESCellAttachDetachEvent>* this, BSTEventSink<TESCellAttachDetachEvent>* sink)`
 pub const BSTEventSource_TESCellAttachDetachEvent__RemoveEventSink: u64 = 54526;
 /// `BSTEventSource<TESCellFullyLoadedEvent>::AddEventSink` at 0x9f28c0 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESCellFullyLoadedEvent>* this, BSTEventSink<TESCellFullyLoadedEvent>* sink)`
 pub const BSTEventSource_TESCellFullyLoadedEvent__AddEventSink: u64 = 54430;
+/// `BSTEventSource<TESCellFullyLoadedEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESCellFullyLoadedEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESCellFullyLoadedEvent);
 /// `BSTEventSource<TESCellFullyLoadedEvent>::Notify` at 0x1b4e50 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESCellFullyLoadedEvent>* this, const TESCellFullyLoadedEvent* event)`
 pub const BSTEventSource_TESCellFullyLoadedEvent__Notify: u64 = 13664;
 /// `BSTEventSource<TESCellFullyLoadedEvent>::RemoveEventSink` at 0x9f7eb0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESCellFullyLoadedEvent>* this, BSTEventSink<TESCellFullyLoadedEvent>* sink)`
@@ -29039,14 +29199,22 @@ pub const BSTEventSource_TESCellReadyToApplyDecalsEvent__Notify: u64 = 19363;
 pub const BSTEventSource_TESCellReadyToApplyDecalsEvent__RemoveEventSink: u64 = 19386;
 /// `BSTEventSource<TESCombatEvent>::AddEventSink` at 0x9f2a30 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESCombatEvent>* this, BSTEventSink<TESCombatEvent>* sink)`
 pub const BSTEventSource_TESCombatEvent__AddEventSink: u64 = 54431;
+/// `BSTEventSource<TESCombatEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESCombatEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESCombatEvent);
 /// `BSTEventSource<TESCombatEvent>::Notify` at 0x564b70 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESCombatEvent>* this, const TESCombatEvent* event)`
 pub const BSTEventSource_TESCombatEvent__Notify: u64 = 33305;
+/// `BSTEventSource<TESCombatEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESCombatEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESCombatEvent);
 /// `BSTEventSource<TESCombatEvent>::RemoveEventSink` at 0x9f8030 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESCombatEvent>* this, BSTEventSink<TESCombatEvent>* sink)`
 pub const BSTEventSource_TESCombatEvent__RemoveEventSink: u64 = 54528;
 /// `BSTEventSource<TESContainerChangedEvent>::AddEventSink` at 0x9f2ba0 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESContainerChangedEvent>* this, BSTEventSink<TESContainerChangedEvent>* sink)`
 pub const BSTEventSource_TESContainerChangedEvent__AddEventSink: u64 = 54432;
+/// `BSTEventSource<TESContainerChangedEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESContainerChangedEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESContainerChangedEvent);
 /// `BSTEventSource<TESContainerChangedEvent>::Notify` at 0x2413e0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESContainerChangedEvent>* this, const TESContainerChangedEvent* event)`
 pub const BSTEventSource_TESContainerChangedEvent__Notify: u64 = 16222;
+/// `BSTEventSource<TESContainerChangedEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESContainerChangedEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESContainerChangedEvent);
 /// `BSTEventSource<TESContainerChangedEvent>::RemoveEventSink` at 0x9f81b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESContainerChangedEvent>* this, BSTEventSink<TESContainerChangedEvent>* sink)`
 pub const BSTEventSource_TESContainerChangedEvent__RemoveEventSink: u64 = 54529;
 /// `BSTEventSource<TESDataHandlerPostBuildFileListEvent>::AddEventSink` at 0x63d8d0 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESDataHandlerPostBuildFileListEvent>* this, BSTEventSink<TESDataHandlerPostBuildFileListEvent>* sink)`
@@ -29055,6 +29223,8 @@ pub const BSTEventSource_TESDataHandlerPostBuildFileListEvent__AddEventSink: u64
 pub const BSTEventSource_TESDataHandlerPostBuildFileListEvent__RemoveEventSink: u64 = 36154;
 /// `BSTEventSource<TESDeathEvent>::AddEventSink` at 0x9f2d10 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESDeathEvent>* this, BSTEventSink<TESDeathEvent>* sink)`
 pub const BSTEventSource_TESDeathEvent__AddEventSink: u64 = 54433;
+/// `BSTEventSource<TESDeathEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESDeathEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESDeathEvent);
 /// `BSTEventSource<TESDeathEvent>::Notify` at 0x6bfdb0 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESDeathEvent>* this, const TESDeathEvent* event)`
 pub const BSTEventSource_TESDeathEvent__Notify: u64 = 38319;
 /// `BSTEventSource<TESDeathEvent>::RemoveEventSink` at 0x9f8330 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESDeathEvent>* this, BSTEventSink<TESDeathEvent>* sink)`
@@ -29073,8 +29243,12 @@ pub const BSTEventSource_TESEnterBleedoutEvent__Notify: u64 = 38320;
 pub const BSTEventSource_TESEnterBleedoutEvent__RemoveEventSink: u64 = 54532;
 /// `BSTEventSource<TESEquipEvent>::AddEventSink` at 0x9f3160 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESEquipEvent>* this, BSTEventSink<TESEquipEvent>* sink)`
 pub const BSTEventSource_TESEquipEvent__AddEventSink: u64 = 54436;
+/// `BSTEventSource<TESEquipEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESEquipEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESEquipEvent);
 /// `BSTEventSource<TESEquipEvent>::Notify` at 0x6c0230 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESEquipEvent>* this, const TESEquipEvent* event)`
 pub const BSTEventSource_TESEquipEvent__Notify: u64 = 38321;
+/// `BSTEventSource<TESEquipEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESEquipEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESEquipEvent);
 /// `BSTEventSource<TESEquipEvent>::RemoveEventSink` at 0x9f87b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESEquipEvent>* this, BSTEventSink<TESEquipEvent>* sink)`
 pub const BSTEventSource_TESEquipEvent__RemoveEventSink: u64 = 54533;
 /// `BSTEventSource<TESFastTravelEndEvent>::AddEventSink` at 0x9f32d0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESFastTravelEndEvent>* this, BSTEventSink<TESFastTravelEndEvent>* sink)`
@@ -29083,6 +29257,8 @@ pub const BSTEventSource_TESFastTravelEndEvent__AddEventSink: u64 = 54437;
 pub const BSTEventSource_TESFastTravelEndEvent__Notify: u64 = 41052;
 /// `BSTEventSource<TESFastTravelEndEvent>::RemoveEventSink` at 0x9f8930 (runtime, high); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (high); semantic signature: `void (BSTEventSource<TESFastTravelEndEvent>* this, BSTEventSink<TESFastTravelEndEvent>* sink)`
 pub const BSTEventSource_TESFastTravelEndEvent__RemoveEventSink: u64 = 54534;
+/// `BSTEventSource<TESFastTravelEndEvent>::RemoveEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESFastTravelEndEvent__RemoveEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESFastTravelEndEvent);
 /// `BSTEventSource<TESFormDeleteEvent>::AddEventSink` at 0x9f3440 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESFormDeleteEvent>* this, BSTEventSink<TESFormDeleteEvent>* sink)`
 pub const BSTEventSource_TESFormDeleteEvent__AddEventSink: u64 = 54438;
 /// `BSTEventSource<TESFormDeleteEvent>::Notify` at 0x2fae10 (semantic, medium); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (medium); semantic signature: `void (BSTEventSource<TESFormDeleteEvent>* this, const TESFormDeleteEvent* event)`
@@ -29093,6 +29269,8 @@ pub const BSTEventSource_TESFormDeleteEvent__RemoveEventSink: u64 = 54535;
 pub const BSTEventSource_TESFurnitureEvent__AddEventSink: u64 = 42446;
 /// `BSTEventSource<TESFurnitureEvent>::Notify` at 0x736480 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESFurnitureEvent>* this, const TESFurnitureEvent* event)`
 pub const BSTEventSource_TESFurnitureEvent__Notify: u64 = 40155;
+/// `BSTEventSource<TESFurnitureEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESFurnitureEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESFurnitureEvent);
 /// `BSTEventSource<TESFurnitureEvent>::RemoveEventSink` at 0x7b5680 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESFurnitureEvent>* this, BSTEventSink<TESFurnitureEvent>* sink)`
 pub const BSTEventSource_TESFurnitureEvent__RemoveEventSink: u64 = 42468;
 /// `BSTEventSource<TESGrabReleaseEvent>::AddEventSink` at 0x9f35b0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESGrabReleaseEvent>* this, BSTEventSink<TESGrabReleaseEvent>* sink)`
@@ -29109,26 +29287,38 @@ pub const BSTEventSource_TESHarvestEvent__ItemHarvested__Notify: u64 = 14874;
 pub const BSTEventSource_TESHarvestEvent__ItemHarvested__RemoveEventSink: u64 = 14878;
 /// `BSTEventSource<TESHitEvent>::AddEventSink` at 0x9f3720 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESHitEvent>* this, BSTEventSink<TESHitEvent>* sink)`
 pub const BSTEventSource_TESHitEvent__AddEventSink: u64 = 54440;
+/// `BSTEventSource<TESHitEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESHitEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESHitEvent);
 /// `BSTEventSource<TESHitEvent>::Notify` at 0x6d1330 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESHitEvent>* this, const TESHitEvent* event)`
 pub const BSTEventSource_TESHitEvent__Notify: u64 = 38668;
+/// `BSTEventSource<TESHitEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESHitEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESHitEvent);
 /// `BSTEventSource<TESHitEvent>::RemoveEventSink` at 0x9f8db0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESHitEvent>* this, BSTEventSink<TESHitEvent>* sink)`
 pub const BSTEventSource_TESHitEvent__RemoveEventSink: u64 = 54537;
 /// `BSTEventSource<TESInitScriptEvent>::AddEventSink` at 0x9f3890 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESInitScriptEvent>* this, BSTEventSink<TESInitScriptEvent>* sink)`
 pub const BSTEventSource_TESInitScriptEvent__AddEventSink: u64 = 54441;
 /// `BSTEventSource<TESInitScriptEvent>::Notify` at 0x2fb050 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESInitScriptEvent>* this, const TESInitScriptEvent* event)`
 pub const BSTEventSource_TESInitScriptEvent__Notify: u64 = 20041;
+/// `BSTEventSource<TESInitScriptEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESInitScriptEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESInitScriptEvent);
 /// `BSTEventSource<TESInitScriptEvent>::RemoveEventSink` at 0x9f8f30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESInitScriptEvent>* this, BSTEventSink<TESInitScriptEvent>* sink)`
 pub const BSTEventSource_TESInitScriptEvent__RemoveEventSink: u64 = 54538;
 /// `BSTEventSource<TESLoadGameEvent>::AddEventSink` at 0x60b0a0 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESLoadGameEvent>* this, BSTEventSink<TESLoadGameEvent>* sink)`
 pub const BSTEventSource_TESLoadGameEvent__AddEventSink: u64 = 442486;
+/// `BSTEventSource<TESLoadGameEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESLoadGameEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESLoadGameEvent);
 /// `BSTEventSource<TESLoadGameEvent>::Notify` at 0x62f530 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESLoadGameEvent>* this, const TESLoadGameEvent* event)`
 pub const BSTEventSource_TESLoadGameEvent__Notify: u64 = 35870;
+/// `BSTEventSource<TESLoadGameEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESLoadGameEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESLoadGameEvent);
 /// `BSTEventSource<TESLoadGameEvent>::RemoveEventSink` at 0x60b2e0 (semantic, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESLoadGameEvent>* this, BSTEventSink<TESLoadGameEvent>* sink)`
 pub const BSTEventSource_TESLoadGameEvent__RemoveEventSink: u64 = 442488;
 /// `BSTEventSource<TESLockChangedEvent>::AddEventSink` at 0x9f3a00 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESLockChangedEvent>* this, BSTEventSink<TESLockChangedEvent>* sink)`
 pub const BSTEventSource_TESLockChangedEvent__AddEventSink: u64 = 54443;
 /// `BSTEventSource<TESLockChangedEvent>::Notify` at 0x2fb290 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESLockChangedEvent>* this, const TESLockChangedEvent* event)`
 pub const BSTEventSource_TESLockChangedEvent__Notify: u64 = 20042;
+/// `BSTEventSource<TESLockChangedEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESLockChangedEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESLockChangedEvent);
 /// `BSTEventSource<TESLockChangedEvent>::RemoveEventSink` at 0x9f90b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESLockChangedEvent>* this, BSTEventSink<TESLockChangedEvent>* sink)`
 pub const BSTEventSource_TESLockChangedEvent__RemoveEventSink: u64 = 54540;
 /// `BSTEventSource<TESMagicEffectApplyEvent>::AddEventSink` at 0x9f3b70 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESMagicEffectApplyEvent>* this, BSTEventSink<TESMagicEffectApplyEvent>* sink)`
@@ -29151,14 +29341,20 @@ pub const BSTEventSource_TESMoveAttachDetachEvent__Notify: u64 = 20043;
 pub const BSTEventSource_TESMoveAttachDetachEvent__RemoveEventSink: u64 = 54543;
 /// `BSTEventSource<TESObjectLoadedEvent>::AddEventSink` at 0x9f3fc0 (runtime, high); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<TESObjectLoadedEvent>* this, BSTEventSink<TESObjectLoadedEvent>* sink)`
 pub const BSTEventSource_TESObjectLoadedEvent__AddEventSink: u64 = 54447;
+/// `BSTEventSource<TESObjectLoadedEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_TESObjectLoadedEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_TESObjectLoadedEvent);
 /// `BSTEventSource<TESObjectLoadedEvent>::Notify` at 0x1b50a0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESObjectLoadedEvent>* this, const TESObjectLoadedEvent* event)`
 pub const BSTEventSource_TESObjectLoadedEvent__Notify: u64 = 13665;
+/// `BSTEventSource<TESObjectLoadedEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESObjectLoadedEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESObjectLoadedEvent);
 /// `BSTEventSource<TESObjectLoadedEvent>::RemoveEventSink` at 0x9f96b0 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESObjectLoadedEvent>* this, BSTEventSink<TESObjectLoadedEvent>* sink)`
 pub const BSTEventSource_TESObjectLoadedEvent__RemoveEventSink: u64 = 54544;
 /// `BSTEventSource<TESObjectREFRTranslationEvent>::AddEventSink` at 0x9f4130 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESObjectREFRTranslationEvent>* this, BSTEventSink<TESObjectREFRTranslationEvent>* sink)`
 pub const BSTEventSource_TESObjectREFRTranslationEvent__AddEventSink: u64 = 54448;
 /// `BSTEventSource<TESObjectREFRTranslationEvent>::Notify` at 0x2d5130 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESObjectREFRTranslationEvent>* this, const TESObjectREFRTranslationEvent* event)`
 pub const BSTEventSource_TESObjectREFRTranslationEvent__Notify: u64 = 19364;
+/// `BSTEventSource<TESObjectREFRTranslationEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESObjectREFRTranslationEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESObjectREFRTranslationEvent);
 /// `BSTEventSource<TESObjectREFRTranslationEvent>::RemoveEventSink` at 0x9f9830 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESObjectREFRTranslationEvent>* this, BSTEventSink<TESObjectREFRTranslationEvent>* sink)`
 pub const BSTEventSource_TESObjectREFRTranslationEvent__RemoveEventSink: u64 = 54545;
 /// `BSTEventSource<TESOpenCloseEvent>::AddEventSink` at 0x663730 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESOpenCloseEvent>* this, BSTEventSink<TESOpenCloseEvent>* sink)`
@@ -29169,6 +29365,8 @@ pub const BSTEventSource_TESOpenCloseEvent__RemoveEventSink: u64 = 54546;
 pub const BSTEventSource_TESPackageEvent__AddEventSink: u64 = 54449;
 /// `BSTEventSource<TESPackageEvent>::Notify` at 0x71e7c0 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESPackageEvent>* this, const TESPackageEvent* event)`
 pub const BSTEventSource_TESPackageEvent__Notify: u64 = 39769;
+/// `BSTEventSource<TESPackageEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESPackageEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESPackageEvent);
 /// `BSTEventSource<TESPackageEvent>::RemoveEventSink` at 0x9f9b30 (semantic, medium); signature (untiered): `ulonglong RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESPackageEvent>* this, BSTEventSink<TESPackageEvent>* sink)`
 pub const BSTEventSource_TESPackageEvent__RemoveEventSink: u64 = 54547;
 /// `BSTEventSource<TESPerkEntryRunEvent>::AddEventSink` at 0x9f4410 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESPerkEntryRunEvent>* this, BSTEventSink<TESPerkEntryRunEvent>* sink)`
@@ -29205,6 +29403,8 @@ pub const BSTEventSource_TESQuestStageItemDoneEvent__RemoveEventSink: u64 = 3254
 pub const BSTEventSource_TESQuestStartStopEvent__AddEventSink: u64 = 53769;
 /// `BSTEventSource<TESQuestStartStopEvent>::Notify` at 0x3dfc60 (runtime, high); signature (untiered): `ulonglong Notify(longlong * param_1, undefined8 param_2)`; flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high); semantic signature: `void (BSTEventSource<TESQuestStartStopEvent>* this, const TESQuestStartStopEvent* event)`
 pub const BSTEventSource_TESQuestStartStopEvent__Notify: u64 = 25193;
+/// `BSTEventSource<TESQuestStartStopEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_TESQuestStartStopEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESQuestStartStopEvent);
 /// `BSTEventSource<TESQuestStartStopEvent>::RemoveEventSink` at 0x9ccaa0 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<TESQuestStartStopEvent>* this, BSTEventSink<TESQuestStartStopEvent>* sink)`
 pub const BSTEventSource_TESQuestStartStopEvent__RemoveEventSink: u64 = 53780;
 /// `BSTEventSource<TESResetEvent>::AddEventSink` at 0x9f49d0 (semantic, medium); signature (untiered): `ulonglong AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<TESResetEvent>* this, BSTEventSink<TESResetEvent>* sink)`
@@ -29335,8 +29535,12 @@ pub const BSTEventSource_Trespass__Event__Notify: u64 = 42690;
 pub const BSTEventSource_Trespass__Event__RemoveEventSink: u64 = 42694;
 /// `BSTEventSource<UserEventEnabledEvent>::AddEventSink` at 0x771060 (runtime, high); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (high); semantic signature: `void (BSTEventSource<UserEventEnabledEvent>* this, BSTEventSink<UserEventEnabledEvent>* sink)`
 pub const BSTEventSource_UserEventEnabledEvent__AddEventSink: u64 = 41095;
+/// `BSTEventSource<UserEventEnabledEvent>::AddEventSink` as a function pointer type (high).
+pub type BSTEventSource_UserEventEnabledEvent__AddEventSink_fn = unsafe extern "C" fn(this: *mut c_void, sink: *mut classes::BSTEventSink_UserEventEnabledEvent);
 /// `BSTEventSource<UserEventEnabledEvent>::Notify` at 0xcf2b60 (semantic, high); signature (untiered): `DWORD Notify(longlong * param_1, undefined8 param_2)`; template Notify instance (stops at the first non-zero result) (high); semantic signature: `void (BSTEventSource<UserEventEnabledEvent>* this, const UserEventEnabledEvent* e)`
 pub const BSTEventSource_UserEventEnabledEvent__Notify: u64 = 68600;
+/// `BSTEventSource<UserEventEnabledEvent>::Notify` as a function pointer type (high).
+pub type BSTEventSource_UserEventEnabledEvent__Notify_fn = unsafe extern "C" fn(this: *mut c_void, e: *const classes::UserEventEnabledEvent);
 /// `BSTEventSource<UserEventEnabledEvent>::RemoveEventSink` at 0x774b50 (xref_inference, medium); signature (untiered): `undefined8 * RemoveEventSink(longlong * param_1, longlong param_2)`; removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters (medium); semantic signature: `void (BSTEventSource<UserEventEnabledEvent>* this, BSTEventSink<UserEventEnabledEvent>* sink)`
 pub const BSTEventSource_UserEventEnabledEvent__RemoveEventSink: u64 = 41164;
 /// `BSTEventSource<WeaponAttack::Event>::AddEventSink` at 0x770a60 (semantic, medium); signature (untiered): `undefined8 * AddEventSink(longlong * param_1, longlong param_2)`; appends the sink to sinks (or to pendingRegisters while a notification is running) unless already present and drops it from pendingUnregisters; a null sink is ignored (medium); semantic signature: `void (BSTEventSource<WeaponAttack::Event>* this, BSTEventSink<WeaponAttack::Event>* sink)`
@@ -29839,6 +30043,8 @@ pub const BSThread__vfunc_2: u64 = 35422;
 pub const BSThreadEvent___anon_939FB6BB__Source__vdtor: u64 = 68459;
 /// `BSTimer::Update` at 0xce36b0 (semantic, high); signature (untiered): `undefined Update(longlong * param_1, int param_2)`; delta = (now - last) * 0.001 (fixed step when +0x10 != 0, 0 when +0x34, 1/6 s when the gap exceeds a limit), optional history average; +0x1c = delta, +0x18 = delta * time multiplier 0x20ccac8 (high); semantic signature: `void (BSTimer* this, u32 nowMs)`
 pub const BSTimer__Update: u64 = 68244;
+/// `BSTimer::Update` as a function pointer type (high).
+pub type BSTimer__Update_fn = unsafe extern "C" fn(this: *mut c_void, nowMs: u32);
 /// `BSTimerModifier::ctor` at 0xbbbbd0 (layout_inference, medium); signature (high): `BSTimerModifier * ctor(BSTimerModifier * this)`
 pub const BSTimerModifier__ctor: u64 = 63309;
 /// `BSTimerModifier::ctor` at 0xbbbc60 (layout_inference, high); signature (high): `BSTimerModifier * ctor(BSTimerModifier * this)`
@@ -30547,6 +30753,8 @@ pub const BShkVisibilityController__vfunc_2: u64 = 63835;
 pub const BShkbAnimationGraph__AddRagdollToWorld: u64 = 63621;
 /// `BShkbAnimationGraph::CollectGraphEvents` at 0xbccea0 (semantic, high); signature (untiered): `undefined CollectGraphEvents(longlong param_1, longlong * param_2, longlong param_3)`; drains the Havok event queue (up to 5 passes through 0xacd4b0) and, when eventsOut is given, appends {projectData->eventNames[id] (+0xd0), payload string} for each id < projectData+0xe0 (high); semantic signature: `void (BShkbAnimationGraph* this, hkbContext* ctx, BSScrapArray<GraphEventPair>* eventsOut)`
 pub const BShkbAnimationGraph__CollectGraphEvents: u64 = 63583;
+/// `BShkbAnimationGraph::CollectGraphEvents` as a function pointer type (high).
+pub type BShkbAnimationGraph__CollectGraphEvents_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, ctx: *mut c_void, eventsOut: *mut c_void);
 /// `BShkbAnimationGraph::FinalizePose` at 0xbcc7e0 (semantic, medium); signature (untiered): `undefined FinalizePose(longlong param_1, ushort param_2)`; blends current/previous outputs when interpolating, runs the foot IK controller under the world read lock and copies the result into the character pose buffer (medium); semantic signature: `void (BShkbAnimationGraph* this, u16 boneCount)`
 pub const BShkbAnimationGraph__FinalizePose: u64 = 63581;
 /// `BShkbAnimationGraph::Generate` at 0xbcb290 (semantic, high); signature (untiered): `undefined Generate(longlong param_1, char param_2)`; hkbBehaviorGraph::generate into +0x220, pose listeners, foot IK, then the bone write (high); semantic signature: `void (BShkbAnimationGraph* this, bool useSpuGenerate)`
@@ -30555,16 +30763,24 @@ pub const BShkbAnimationGraph__Generate: u64 = 63568;
 pub type BShkbAnimationGraph__Generate_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, useSpuGenerate: bool);
 /// `BShkbAnimationGraph::GetGraphVariableBool` at 0xbd3350 (semantic, high); signature (untiered): `ulonglong GetGraphVariableBool(longlong param_1, ulonglong * param_2, undefined8 param_3)`; as the float getter, out = value != 0 (high); semantic signature: `bool (BShkbAnimationGraph* this, const BSFixedString& name, bool& out)`
 pub const BShkbAnimationGraph__GetGraphVariableBool: u64 = 63613;
+/// `BShkbAnimationGraph::GetGraphVariableBool` as a function pointer type (high).
+pub type BShkbAnimationGraph__GetGraphVariableBool_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, name: *const classes::BSFixedString, out: *mut bool) -> bool;
 /// `BShkbAnimationGraph::GetGraphVariableFloat` at 0xbd3420 (semantic, high); signature (untiered): `ulonglong GetGraphVariableFloat(longlong param_1, ulonglong * param_2, undefined4 * param_3)`; name -> index through projectData+0x70 (CRC32 of the interned string pointer, pointer-equality compare); value = behaviorGraph+0xd8 hkbVariableValueSet->values[index] (high); semantic signature: `bool (BShkbAnimationGraph* this, const BSFixedString& name, float& out)`
 pub const BShkbAnimationGraph__GetGraphVariableFloat: u64 = 63614;
+/// `BShkbAnimationGraph::GetGraphVariableFloat` as a function pointer type (high).
+pub type BShkbAnimationGraph__GetGraphVariableFloat_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, name: *const classes::BSFixedString, out: *mut f32) -> bool;
 /// `BShkbAnimationGraph::GetGraphVariableInt` at 0xbd34e0 (semantic, high); signature (untiered): `ulonglong GetGraphVariableInt(longlong param_1, ulonglong * param_2, undefined4 * param_3)`; as the float getter, int result (high); semantic signature: `bool (BShkbAnimationGraph* this, const BSFixedString& name, int& out)`
 pub const BShkbAnimationGraph__GetGraphVariableInt: u64 = 63615;
+/// `BShkbAnimationGraph::GetGraphVariableInt` as a function pointer type (high).
+pub type BShkbAnimationGraph__GetGraphVariableInt_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, name: *const classes::BSFixedString, out: *mut i32) -> bool;
 /// `BShkbAnimationGraph::HasRagdoll` at 0xbd3660 (semantic, medium); signature (untiered): `bool HasRagdoll(BShkbAnimationGraph * this)`
 pub const BShkbAnimationGraph__HasRagdoll: u64 = 63620;
 /// `BShkbAnimationGraph::LoadProject` at 0xbcd240 (semantic, medium); signature (untiered): `undefined8 LoadProject(longlong param_1, undefined8 param_2, byte param_3)`; loads the project into graph+0x1f0/+0x1f8, sets projectData +0x200, clones the behaviour graph into +0x208, sets up the character and pose buffers (medium); semantic signature: `bool (BShkbAnimationGraph* this, const char* projectPath, bool skipPreload)`
 pub const BShkbAnimationGraph__LoadProject: u64 = 63585;
 /// `BShkbAnimationGraph::NotifyGraphEvents` at 0xbcf360 (semantic, high); signature (untiered): `undefined NotifyGraphEvents(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; the per-graph Notify site: for each collected {tag, payload} pair sends {tag, this->owner(+0x210), payload} through this+0x68, then releases the +0x1a8 objects (high); semantic signature: `void (BShkbAnimationGraph* this, BSScrapArray<GraphEventPair>& events)`
 pub const BShkbAnimationGraph__NotifyGraphEvents: u64 = 63588;
+/// `BShkbAnimationGraph::NotifyGraphEvents` as a function pointer type (high).
+pub type BShkbAnimationGraph__NotifyGraphEvents_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, events: *mut c_void);
 /// `BShkbAnimationGraph::NotifyPoseListeners` at 0xbcbf70 (semantic, medium); signature (untiered): `undefined NotifyPoseListeners(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; calls slot 2 of each +0x178 listener with the fresh output, before foot IK and the bone write (medium); semantic signature: `void (BShkbAnimationGraph* this, hkbGeneratorOutput* output)`
 pub const BShkbAnimationGraph__NotifyPoseListeners: u64 = 63573;
 /// `BShkbAnimationGraph::ReadPoseFromBoneNodes` at 0xbd02f0 (semantic, high); signature (untiered): `undefined ReadPoseFromBoneNodes(longlong param_1)`; inverse of ApplyPoseToBoneNodes: each bone node's local rotation matrix -> quaternion and translation into poseLocal, and the root node (+0x218) world translation/rotation into worldFromModel (+0x148) (high); semantic signature: `void (BShkbAnimationGraph* graph)`
@@ -30573,12 +30789,20 @@ pub const BShkbAnimationGraph__ReadPoseFromBoneNodes: u64 = 63598;
 pub type BShkbAnimationGraph__ReadPoseFromBoneNodes_fn = unsafe extern "C" fn(graph: *mut classes::BShkbAnimationGraph);
 /// `BShkbAnimationGraph::SendEventToGraph` at 0xbcf690 (semantic, high); signature (untiered): `bool SendEventToGraph(longlong param_1, ulonglong * param_2)`; looks the name up in projectData's event map (+0xa0) and calls behaviorGraph->handleEvent (vtable+0x30) with {id, payload 0, sender 0} in an hkbContext from the character (+0xc0) and the world (high); semantic signature: `bool (BShkbAnimationGraph* this, const BSFixedString& eventName)`
 pub const BShkbAnimationGraph__SendEventToGraph: u64 = 63591;
+/// `BShkbAnimationGraph::SendEventToGraph` as a function pointer type (high).
+pub type BShkbAnimationGraph__SendEventToGraph_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, eventName: *const classes::BSFixedString) -> bool;
 /// `BShkbAnimationGraph::SetGraphVariableBool` at 0xbd3040 (semantic, high); signature (untiered): `ulonglong SetGraphVariableBool(longlong param_1, ulonglong * param_2, byte param_3)`; writes (uint)value to values[index] (high); semantic signature: `bool (BShkbAnimationGraph* this, const BSFixedString& name, bool value)`
 pub const BShkbAnimationGraph__SetGraphVariableBool: u64 = 63607;
+/// `BShkbAnimationGraph::SetGraphVariableBool` as a function pointer type (high).
+pub type BShkbAnimationGraph__SetGraphVariableBool_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, name: *const classes::BSFixedString, value: bool) -> bool;
 /// `BShkbAnimationGraph::SetGraphVariableFloat` at 0xbd3100 (semantic, high); signature (untiered): `ulonglong SetGraphVariableFloat(longlong param_1, ulonglong * param_2, undefined4 param_3)`; writes values[index] (high); semantic signature: `bool (BShkbAnimationGraph* this, const BSFixedString& name, float value)`
 pub const BShkbAnimationGraph__SetGraphVariableFloat: u64 = 63608;
+/// `BShkbAnimationGraph::SetGraphVariableFloat` as a function pointer type (high).
+pub type BShkbAnimationGraph__SetGraphVariableFloat_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, name: *const classes::BSFixedString, value: f32) -> bool;
 /// `BShkbAnimationGraph::SetGraphVariableInt` at 0xbd31d0 (semantic, high); signature (untiered): `ulonglong SetGraphVariableInt(longlong param_1, ulonglong * param_2, undefined4 param_3)`; writes values[index] (high); semantic signature: `bool (BShkbAnimationGraph* this, const BSFixedString& name, int value)`
 pub const BShkbAnimationGraph__SetGraphVariableInt: u64 = 63609;
+/// `BShkbAnimationGraph::SetGraphVariableInt` as a function pointer type (high).
+pub type BShkbAnimationGraph__SetGraphVariableInt_fn = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, name: *const classes::BSFixedString, value: i32) -> bool;
 /// `BShkbAnimationGraph::SetRootNode` at 0xbcfdb0 (semantic, high); signature (untiered): `undefined SetRootNode(longlong * param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`; binds the graph to a 3D root: stores +0x218, resolves the animation skeleton's bone names under the root into boneNodes (+0x160), rebuilds +0x178/+0x190 and the pose buffers (high); semantic signature: `void (BShkbAnimationGraph* this, NiNode* root)`
 pub const BShkbAnimationGraph__SetRootNode: u64 = 63596;
 /// `BShkbAnimationGraph::SetRootNode` as a function pointer type (high).
@@ -30949,8 +31173,12 @@ pub const BaseFormComponent__vdtor: u64 = 10865;
 pub const BaseFormComponent__vfunc_3: u64 = 10813;
 /// `BaseHandleReaderWriter::ReadHandle` at 0x9ba920 (semantic, high); signature (untiered): `undefined8 ReadHandle(void * this, longlong * param_1, ulonglong * param_2)`; reads the two u16 and the id through slot 5 (SaveFile: DecodeThreeByteFormID, i.e. remapped); rebuilds 1<<48 / 2<<48 handles; invalid = 0xffff00000000 (high); semantic signature: `bool (IHandleReaderWriter* this, Storage* s, u64* out)`
 pub const BaseHandleReaderWriter__ReadHandle: u64 = 53523;
+/// `BaseHandleReaderWriter::ReadHandle` as a function pointer type (high).
+pub type BaseHandleReaderWriter__ReadHandle_fn = unsafe extern "C" fn(this: *mut c_void, s: *mut c_void, out: *mut u64) -> bool;
 /// `BaseHandleReaderWriter::WriteHandle` at 0x9ba880 (semantic, high); signature (untiered): `undefined8 WriteHandle(void * this, longlong * param_1, ulonglong param_2)`; u16 handle>>48, u16 bits 32..47, then the low 32 bits through slot 4 (SaveFile: 3-byte ref id) (high); semantic signature: `bool (IHandleReaderWriter* this, Storage* s, u64 handle)`
 pub const BaseHandleReaderWriter__WriteHandle: u64 = 53522;
+/// `BaseHandleReaderWriter::WriteHandle` as a function pointer type (high).
+pub type BaseHandleReaderWriter__WriteHandle_fn = unsafe extern "C" fn(this: *mut c_void, s: *mut c_void, handle: u64) -> bool;
 /// `BasicArrayImplementation<char*___ptr64,10>::vdtor` at 0xc5dd40 (layout_inference, medium); signature (low): `BasicArrayImplementation<char*___ptr64,10> * vdtor(BasicArrayImplementation<char*___ptr64,10> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BasicArrayImplementation_char____ptr64_10__vdtor: u64 = 65912;
 /// `BasicArrayImplementation<char*___ptr64,10>::vfunc_1` at 0xc610c0 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
@@ -31347,6 +31575,8 @@ pub const BuildAngularJacobianSchema: u64 = 64779;
 pub const BuildAngularJacobianSchemas: u64 = 64781;
 /// `BuildAnimationGraphManager` at 0x5537e0 (semantic, high); signature (untiered): `undefined8 BuildAnimationGraphManager(longlong * param_1, longlong param_2)`; per project: slot 5 create, 0xbcd240 load (flag slot 6), slot 7 variables, slot 8 sinks (slot 9 on failure); then BSAnimationGraphManager (0xb8, cache size slot 15), slot 10 channels, slot 11, install 0x554060, activate 0xbc0480 (high); semantic signature: `bool (IAnimationGraphManagerHolder* holder, BSScrapArray<ProjectPath>& projects)`
 pub const BuildAnimationGraphManager: u64 = 32893;
+/// `BuildAnimationGraphManager` as a function pointer type (high).
+pub type BuildAnimationGraphManager_fn = unsafe extern "C" fn(holder: *mut classes::IAnimationGraphManagerHolder, projects: *mut c_void) -> bool;
 /// `BuildAnimationGraphManagerFromPath` at 0x553620 (decompiler, medium); signature (untiered): `undefined1 BuildAnimationGraphManagerFromPath(undefined8 param_1, undefined1 * param_2)`
 pub const BuildAnimationGraphManagerFromPath: u64 = 32892;
 /// `BuildAnimationGraphManagerOnce` at 0x554990 (decompiler, medium); signature (untiered): `undefined8 BuildAnimationGraphManagerOnce(longlong * param_1)`
@@ -32215,6 +32445,8 @@ pub const CastAliasSpells: u64 = 38753;
 pub const CastAttackHitSpells: u64 = 38748;
 /// `CastCameraLinearAndCollectHits` at 0x5574f0 (runtime, high); signature (untiered): `ulonglong CastCameraLinearAndCollectHits(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float * param_5, undefined8 * param_6, float param_7)`; sphere cast of caster+0 from 'from' to 'to' in havok units under the world read lock; 'to' comes back clipped; hitRecord gets the hit data; *hitRef the hit reference (high); semantic signature: `bool (CameraCasterHolder* caster, bhkWorld* world, NiPoint3* from, NiPoint3* to, float* hitRecord, TESObjectREFR** hitRef, float radius)`
 pub const CastCameraLinearAndCollectHits: u64 = 33007;
+/// `CastCameraLinearAndCollectHits` as a function pointer type (high).
+pub type CastCameraLinearAndCollectHits_fn = unsafe extern "C" fn(caster: *mut classes::CameraCasterHolder, world: *mut classes::bhkWorld, from: *mut c_void, to: *mut c_void, hitRecord: *mut f32, hitRef: *mut *mut classes::TESObjectREFR, radius: f32) -> bool;
 /// `CastIfDerivedFrom` at 0x2163f0 (decompiler, medium); signature (medium): `longlong * CastIfDerivedFrom(longlong param_1, longlong * param_2)`
 pub const CastIfDerivedFrom: u64 = 15619;
 /// `CastLinearFromPointAlongDirection` at 0x3ff900 (decompiler, medium); signature (untiered): `undefined8 CastLinearFromPointAlongDirection(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float param_5)`
@@ -37495,6 +37727,8 @@ pub const Cmd__QuitGame_Execute: u64 = 22896;
 pub const Cmd__RecvAnimEvent_Execute: u64 = 22585;
 /// `Cmd::RecvAnimEvent_Send` at 0x36d9e0 (semantic, high); signature (untiered): `undefined8 RecvAnimEvent_Send(longlong * param_1, char * param_2, char * param_3, undefined8 param_4)`; console RecvAnimEvent: builds {tag, holder, payload} and notifies every graph's +0x68 without the behaviour graph (high); semantic signature: `bool (BSTSmartPointer<BSAnimationGraphManager>& mgr, const char* tag, const char* payload, TESObjectREFR* holder)`
 pub const Cmd__RecvAnimEvent_Send: u64 = 22789;
+/// `Cmd::RecvAnimEvent_Send` as a function pointer type (high).
+pub type Cmd__RecvAnimEvent_Send_fn = unsafe extern "C" fn(mgr: *mut c_void, tag: *const c_char, payload: *const c_char, holder: *mut classes::TESObjectREFR) -> bool;
 /// `Cmd::RefreshINI_Execute` at 0x371300 (console_cmd, high); signature (low): `undefined8 RefreshINI_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
 pub const Cmd__RefreshINI_Execute: u64 = 22867;
 /// `Cmd::RefreshShaders_Execute` at 0x375930 (console_cmd, high); signature (low): `undefined8 RefreshShaders_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
@@ -45211,12 +45445,18 @@ pub const Compass__vfunc_1: u64 = 51668;
 pub const Compass__vfunc_3: u64 = 51669;
 /// `CompileAndRunScript` at 0x343d00 (runtime, high); signature (untiered): `undefined CompileAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`; compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run (high); semantic signature: `void (Script* script, ScriptCompiler* compiler, uint compileType, TESObjectREFR* thisRef)`
 pub const CompileAndRunScript: u64 = 441582;
+/// `CompileAndRunScript` as a function pointer type (high).
+pub type CompileAndRunScript_fn = unsafe extern "C" fn(script: *mut classes::Script, compiler: *mut c_void, compileType: u32, thisRef: *mut classes::TESObjectREFR);
 /// `CompileExpressionTokens` at 0x34b9f0 (semantic, medium); signature (untiered): `int CompileExpressionTokens(undefined8 param_1, longlong param_2, undefined4 * param_3, longlong param_4, longlong param_5)`; compiles function calls inside set/if expressions as 'X' u16 opcode u16 len params, variables as 'r'/'G'/'Z' tokens (medium); semantic signature: `int (ScriptCompiler*, ScriptCompileBuffer*, uint* lineNo, const char* expr, char* out)`
 pub const CompileExpressionTokens: u64 = 21971;
 /// `CompileNextLine` at 0x34b150 (semantic, high); signature (untiered): `int CompileNextLine(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; reads the next line into a ScriptLineBuffer (0x41c), reads its first token and looks the command up; returns the line's opcode or 0xffff (high); semantic signature: `uint (ScriptCompileBuffer* buf)`
 pub const CompileNextLine: u64 = 21966;
+/// `CompileNextLine` as a function pointer type (high).
+pub type CompileNextLine_fn = unsafe extern "C" fn(buf: *mut c_void) -> u32;
 /// `CompileScriptLine` at 0x34a4e0 (semantic, high); signature (untiered): `undefined8 CompileScriptLine(undefined8 param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`; per-opcode compile of a line; for a command: reference checks, then entry->parse(numParams, params, line, buf) when params != 0, then emits [u16 0x1c, u16 refIndex] u16 opcode, u16 dataLen, data (MAX_SCRIPT_SIZE 0x4000) (high); semantic signature: `bool (ScriptCompiler*, Script*, ScriptCompileBuffer* buf, ScriptLineBuffer* line)`
 pub const CompileScriptLine: u64 = 21965;
+/// `CompileScriptLine` as a function pointer type (high).
+pub type CompileScriptLine_fn = unsafe extern "C" fn(a0: *mut c_void, a1: *mut classes::Script, buf: *mut c_void, line: *mut classes::ScriptLineBuffer) -> bool;
 /// `CompileScriptWithLocalBuffer` at 0x347a30 (decompiler, medium); signature (untiered): `ulonglong CompileScriptWithLocalBuffer(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined4 * param_4)`
 pub const CompileScriptWithLocalBuffer: u64 = 21955;
 /// `CompleteAsyncRequest` at 0x12c6490 (decompiler, medium); signature (untiered): `undefined CompleteAsyncRequest(void * param_1, undefined8 param_2, undefined4 param_3)`
@@ -45257,6 +45497,8 @@ pub const ComposeScaledTransformFromField50: u64 = 64076;
 pub const ComposeTranslationRotation: u64 = 60052;
 /// `CompressAndWritePayload` at 0x159b530 (runtime, high); signature (untiered): `undefined CompressAndWritePayload(ulonglong * param_1)`; compresses data[headerEnd..size] (zlib or LZ4 by +0xbc8) and rewrites it in place after u32 uncompressed size, u32 compressed size (high); semantic signature: `void (Win32FileType*)`
 pub const CompressAndWritePayload: u64 = 109333;
+/// `CompressAndWritePayload` as a function pointer type (high).
+pub type CompressAndWritePayload_fn = unsafe extern "C" fn(a0: *mut c_void);
 /// `CompressDeflateFast` at 0xa97c30 (decompiler, medium); signature (untiered): `char CompressDeflateFast(longlong * param_1, int param_2)`
 pub const CompressDeflateFast: u64 = 56902;
 /// `CompressLZ4BlockWithState` at 0x15b0a70 (decompiler, medium); signature (untiered): `int CompressLZ4BlockWithState(void * param_1, longlong * param_2, short * param_3, uint param_4, uint param_5, int param_6)`
@@ -45401,6 +45643,8 @@ pub const ComputeBoxMassProperties: u64 = 65065;
 pub const ComputeBudgetCategoryUsage: u64 = 15568;
 /// `ComputeCameraCasterCollision` at 0x8fa5d0 (semantic, high); signature (untiered): `undefined8 ComputeCameraCasterCollision(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`; clip cameraPos against the world between the target point and the camera; returns true when moved; manages fadedActorHandle (high); semantic signature: `bool (PlayerCamera* this, NiPoint3* cameraPos, bool fadeActors)`
 pub const ComputeCameraCasterCollision: u64 = 50832;
+/// `ComputeCameraCasterCollision` as a function pointer type (high).
+pub type ComputeCameraCasterCollision_fn = unsafe extern "C" fn(this: *mut classes::PlayerCamera, cameraPos: *mut c_void, fadeActors: bool) -> bool;
 /// `ComputeCameraPositionCheckingCollision` at 0x8f4530 (decompiler, medium); signature (untiered): `bool ComputeCameraPositionCheckingCollision(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`
 pub const ComputeCameraPositionCheckingCollision: u64 = 50720;
 /// `ComputeCameraShakeRotation` at 0x558600 (decompiler, medium); signature (untiered): `float ComputeCameraShakeRotation(undefined4 param_1, float * param_2)`
@@ -48435,32 +48679,44 @@ pub const Console__FlushLog: u64 = 51094;
 pub type Console__FlushLog_fn = unsafe extern "C" fn(this: *mut classes::Console);
 /// `Console::HideComplete` at 0x90a610 (semantic, high); signature (untiered): `undefined HideComplete(void)`; FxDelegate callback: QueueMessage(UI queue, 'Console', 3 (hide), null) (high); semantic signature: `void (FxDelegateArgs* args)`
 pub const Console__HideComplete: u64 = 51085;
+/// `Console::HideComplete` as a function pointer type (high).
+pub type Console__HideComplete_fn = unsafe extern "C" fn(args: *mut c_void);
 /// `Console::InitGlobals` at 0x909ba0 (semantic, medium); signature (untiered): `undefined InitGlobals(void)`; loads the console INI (macros, hotkeys), registers the ConsoleHotkeyManager input sink, resolves the L/R Shift/Ctrl/Alt ids and allocates g_ScriptCompiler (1 byte) (medium); semantic signature: `void ()`
 pub const Console__InitGlobals: u64 = 442670;
 /// `Console::ProcessMessage` at 0x9092d0 (semantic, high); signature (untiered): `byte ProcessMessage(Console * this, longlong param_1)`
 pub const Console__ProcessMessage: u64 = 442669;
 /// `Console::SetSelectedRef` at 0x90b9d0 (semantic, high); signature (untiered): `undefined SetSelectedRef(longlong param_1, uint * param_2)`; stores g_ConsoleSelectedRef and Invokes 'Console.SetCurrentSelection' with "'%s' RefID: (%08x)..." (high); semantic signature: `void (Console* this, const RefHandle* handle)`
 pub const Console__SetSelectedRef: u64 = 51093;
+/// `Console::SetSelectedRef` as a function pointer type (high).
+pub type Console__SetSelectedRef_fn = unsafe extern "C" fn(this: *mut classes::Console, handle: *const c_void);
 /// `Console::ctor` at 0x9091d0 (layout_inference, high); signature (high): `Console * ctor(Console * this)`
 pub const Console__ctor: u64 = 524000;
 /// `Console::vfunc_4_sub1` at 0x90a930 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub1(longlong param_1)`
 pub const Console__vfunc_4_sub1: u64 = 51089;
 /// `ConsoleCommandQueue::Push` at 0x9927c0 (runtime, high); signature (untiered): `undefined8 * Push(DWORD * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; appends a task to the spinlock-protected list at q+8 (high); semantic signature: `void (ConsoleCommandQueue* q, ConsoleCommandTask* task)`
 pub const ConsoleCommandQueue__Push: u64 = 52951;
+/// `ConsoleCommandQueue::Push` as a function pointer type (high).
+pub type ConsoleCommandQueue__Push_fn = unsafe extern "C" fn(q: *mut c_void, task: *mut classes::ConsoleCommandTask);
 /// `ConsoleCommandTask::ctor` at 0x992640 (semantic, high); signature (untiered): `longlong * ctor(longlong * param_1, longlong * param_2, longlong * param_3, longlong param_4)`; fills the 0x18 task (high); semantic signature: `ConsoleCommandTask* (ConsoleCommandTask* this, Script** script, TESObjectREFR** ref, ScriptCompiler* compiler)`
 pub const ConsoleCommandTask__ctor: u64 = 52948;
+/// `ConsoleCommandTask::ctor` as a function pointer type (high).
+pub type ConsoleCommandTask__ctor_fn = unsafe extern "C" fn(this: *mut classes::ConsoleCommandTask, script: *mut *mut classes::Script, ref_: *mut *mut classes::TESObjectREFR, compiler: *mut c_void) -> *mut classes::ConsoleCommandTask;
 /// `ConsoleData::dtor` at 0x98dc90 (layout_inference, high); signature (low): `undefined dtor(ConsoleData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const ConsoleData__dtor: u64 = 52846;
 /// `ConsoleData::vdtor` at 0x98d520 (layout_inference, medium); signature (low): `ConsoleData * vdtor(ConsoleData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ConsoleData__vdtor: u64 = 52823;
 /// `ConsoleHotkeyManager::ProcessEvent` at 0x90df60 (semantic, high); signature (untiered): `undefined1 ProcessEvent(void * this, ulonglong * param_1)`; first sink on the input source: when bUseConsoleHotkeys:Menu is set, hotkeys exist, no pausing menu and no text entry, a pressed key whose modifiers (L/R Shift/Ctrl/Alt) match a configured hotkey runs its console line and returns 1 (Stop), which hides the whole frame list from MenuControls and PlayerControls (high); semantic signature: `BSEventNotifyControl (ConsoleHotkeyManager* this, InputEvent* const* head, BSTEventSource<InputEvent*>* source)`
 pub const ConsoleHotkeyManager__ProcessEvent: u64 = 442700;
+/// `ConsoleHotkeyManager::ProcessEvent` as a function pointer type (high).
+pub type ConsoleHotkeyManager__ProcessEvent_fn = unsafe extern "C" fn(this: *mut c_void, head: *mut *mut classes::InputEvent, source: *mut c_void) -> u32;
 /// `ConsoleLog::Print` at 0x90f1b0 (semantic, high); signature (untiered): `undefined Print(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; printf-style console print; the single wrapper over VPrint (959 call sites) (high); semantic signature: `void (ConsoleLog* log, const char* fmt, ...)`
 pub const ConsoleLog__Print: u64 = 51109;
 /// `ConsoleLog::VPrint` at 0x90f1e0 (runtime, high); signature (untiered): `undefined VPrint(longlong param_1, undefined8 param_2, undefined8 param_3)`; formats into log+1 and appends the line plus '\n' to log+0x408; if the buffer was empty, first posts a ConsoleData (type 0) update to 'Console' so the menu flushes it. The function to hook to capture console output (high); semantic signature: `void (ConsoleLog* log, const char* fmt, va_list args)`
 pub const ConsoleLog__VPrint: u64 = 51110;
 /// `ConsoleLogPrinter::Print` at 0x90d590 (semantic, high); signature (untiered): `undefined Print(void * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; ConsoleLog::Print(g_ConsoleLog, fmt, line) (high); semantic signature: `void (ConsoleLogPrinter* this, const char* line)`
 pub const ConsoleLogPrinter__Print: u64 = 51105;
+/// `ConsoleLogPrinter::Print` as a function pointer type (high).
+pub type ConsoleLogPrinter__Print_fn = unsafe extern "C" fn(this: *mut c_void, line: *const c_char);
 /// `ConsoleNativeUIMenu::ctor` at 0x90f5d0 (layout_inference, high); signature (high): `ConsoleNativeUIMenu * ctor(ConsoleNativeUIMenu * this)`
 pub const ConsoleNativeUIMenu__ctor: u64 = 51111;
 /// `ConsoleNativeUIMenu::vdtor` at 0x90f650 (layout_inference, medium); signature (low): `ConsoleNativeUIMenu * vdtor(ConsoleNativeUIMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -49413,54 +49669,102 @@ pub const ContractedDisease__RegisterSink: u64 = 38529;
 pub const ContractedDisease__UnregisterSink: u64 = 38530;
 /// `ControlMap::AllowTextEntry` at 0xcefd60 (runtime, high); signature (untiered): `undefined AllowTextEntry(longlong param_1, char param_2)`; increments (true) or decrements (false, not below 0) textEntryCount at +0x128; a plain byte update with no lock (high); semantic signature: `void (ControlMap* this, bool begin)`
 pub const ControlMap__AllowTextEntry: u64 = 68552;
+/// `ControlMap::AllowTextEntry` as a function pointer type (high).
+pub type ControlMap__AllowTextEntry_fn = unsafe extern "C" fn(this: *mut c_void, begin: bool);
 /// `ControlMap::GetButtonNameForUserEvent` at 0xcefd90 (semantic, high); signature (untiered): `undefined8 GetButtonNameForUserEvent(longlong param_1, longlong * param_2, int param_3, undefined8 param_4)`; user event -> key: first record with that name in contexts 0..0x11 (array order, not the stack) whose key low byte != 0xff; asks the device (EventSourceHolder_Input device[device] vtable+0x20) for the key's name (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, BSFixedString* outName)`
 pub const ControlMap__GetButtonNameForUserEvent: u64 = 68553;
+/// `ControlMap::GetButtonNameForUserEvent` as a function pointer type (high).
+pub type ControlMap__GetButtonNameForUserEvent_fn = unsafe extern "C" fn(this: *mut c_void, userEvent: *const classes::BSFixedString, device: u32, outName: *mut classes::BSFixedString) -> bool;
 /// `ControlMap::GetControlState` at 0xcefb80 (semantic, high); signature (untiered): `undefined GetControlState(longlong param_1, undefined4 * param_2, undefined4 * param_3)`; getter (save game, free camera) (high); semantic signature: `void (ControlMap* this, u32* enabled, u32* saved)`
 pub const ControlMap__GetControlState: u64 = 68548;
+/// `ControlMap::GetControlState` as a function pointer type (high).
+pub type ControlMap__GetControlState_fn = unsafe extern "C" fn(this: *mut c_void, enabled: *mut u32, saved: *mut u32);
 /// `ControlMap::GetMapping` at 0xcf1150 (semantic, medium); signature (untiered): `ulonglong GetMapping(longlong param_1, longlong * param_2, int param_3, int param_4, longlong * param_5)`; copies the record of a user event in one context/device; no static caller in 1.7.104 (only its .pdata entry) (medium); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 context, u32 device, UserEventMapping* out)`
 pub const ControlMap__GetMapping: u64 = 68567;
 /// `ControlMap::HasMappingInContextStack` at 0xcefbe0 (semantic, high); signature (untiered): `char HasMappingInContextStack(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; true if any context on the stack maps the user event on any device (used by CursorMenu) (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent)`
 pub const ControlMap__HasMappingInContextStack: u64 = 68551;
+/// `ControlMap::HasMappingInContextStack` as a function pointer type (high).
+pub type ControlMap__HasMappingInContextStack_fn = unsafe extern "C" fn(this: *mut c_void, userEvent: *const classes::BSFixedString) -> bool;
 /// `ControlMap::LoadRemapFile` at 0xcef0f0 (semantic, high); signature (untiered): `undefined LoadRemapFile(longlong param_1)`; reads sControlsRemapFile: per device a block {2, len hi, len lo, then 5-byte {lineIndex, key big-endian}}; sets the key of remappable context-0 records; re-sorts and resolves links (high); semantic signature: `void (ControlMap* this)`
 pub const ControlMap__LoadRemapFile: u64 = 68540;
+/// `ControlMap::LoadRemapFile` as a function pointer type (high).
+pub type ControlMap__LoadRemapFile_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ControlMap::MapInputEvents` at 0xcef3b0 (runtime, high); signature (untiered): `undefined MapInputEvents(longlong param_1, longlong * param_2, ulonglong param_3, undefined8 param_4)`; for every event with an id (vtable+8) and a user event not yet 'Skip': walk the context stack from the top, binary-search the device table by key; first context with a record wins; combos: a record key|modifier<<16 is used when the modifier's ButtonEvent is in the same list and the modifier event is renamed (or set to 'Skip'); a record whose group flags are not enabled (or filtered by +0x128/+0x129/+0x12a) yields 'Skip'; at the end every 'Skip' becomes the empty string. eventType 4 sets +0x129 (high); semantic signature: `void (ControlMap* this, InputEvent* head)`
 pub const ControlMap__MapInputEvents: u64 = 68542;
+/// `ControlMap::MapInputEvents` as a function pointer type (high).
+pub type ControlMap__MapInputEvents_fn = unsafe extern "C" fn(this: *mut c_void, head: *mut classes::InputEvent);
 /// `ControlMap::ParseDefinitionFile` at 0xcf17d0 (semantic, high); signature (untiered): `undefined ParseDefinitionFile(longlong param_1, undefined * param_2, uint param_3)`; parses the tab-separated control map: blank line = next context (max 0x12), '//' comments, columns name, key per device (3), remappable per device (3), group flags (hex/sscanf); device 7 = all and rebuilds everything, otherwise only that device (high); semantic signature: `void (ControlMap* this, const char* path, u32 device)`
 pub const ControlMap__ParseDefinitionFile: u64 = 524121;
+/// `ControlMap::ParseDefinitionFile` as a function pointer type (high).
+pub type ControlMap__ParseDefinitionFile_fn = unsafe extern "C" fn(this: *mut c_void, path: *const c_char, device: u32);
 /// `ControlMap::ParseKeyList` at 0xcf0560 (semantic, high); signature (untiered): `undefined ParseKeyList(undefined8 param_1, void * param_2, longlong * param_3, undefined8 param_4)`; splits a key column on ',' and 'A+B' (modifier<<16|key); default 0xff (high); semantic signature: `void (ControlMap* this, const char* text, BSTArray<u32>* out, u32 device)`
 pub const ControlMap__ParseKeyList: u64 = 68556;
+/// `ControlMap::ParseKeyList` as a function pointer type (high).
+pub type ControlMap__ParseKeyList_fn = unsafe extern "C" fn(this: *mut c_void, text: *const c_char, out: *mut c_void, device: u32);
 /// `ControlMap::ParseLinkedMapping` at 0xcf0a60 (semantic, high); signature (untiered): `undefined ParseLinkedMapping(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4, undefined4 param_5, void * param_6)`; '!ctx,name' column: appends a LinkedMapping and key 0x7fffffff (high); semantic signature: `void (ControlMap* this, BSTArray<u32>* keys, BSFixedString* name, u32 context, u32 device, const char* text)`
 pub const ControlMap__ParseLinkedMapping: u64 = 68557;
+/// `ControlMap::ParseLinkedMapping` as a function pointer type (high).
+pub type ControlMap__ParseLinkedMapping_fn = unsafe extern "C" fn(this: *mut c_void, keys: *mut c_void, name: *mut classes::BSFixedString, context: u32, device: u32, text: *const c_char);
 /// `ControlMap::PopInputContext` at 0xcef980 (runtime, high); signature (untiered): `char PopInputContext(longlong param_1, int param_2)`; remove every occurrence of the context; true if one was removed (high); semantic signature: `bool (ControlMap* this, u32 context)`
 pub const ControlMap__PopInputContext: u64 = 68544;
+/// `ControlMap::PopInputContext` as a function pointer type (high).
+pub type ControlMap__PopInputContext_fn = unsafe extern "C" fn(this: *mut c_void, context: u32) -> bool;
 /// `ControlMap::PushInputContext` at 0xcef8a0 (runtime, high); signature (untiered): `undefined PushInputContext(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; push a context (0 goes to the bottom; a top 2 stays on top) (high); semantic signature: `void (ControlMap* this, u32 context)`
 pub const ControlMap__PushInputContext: u64 = 68543;
+/// `ControlMap::PushInputContext` as a function pointer type (high).
+pub type ControlMap__PushInputContext_fn = unsafe extern "C" fn(this: *mut c_void, context: u32);
 /// `ControlMap::ReloadDefinitionFile` at 0xceece0 (semantic, high); signature (untiered): `undefined ReloadDefinitionFile(longlong param_1)`; re-parses sControlsDefinitionFile for all devices (reset to defaults) (high); semantic signature: `void (ControlMap* this)`
 pub const ControlMap__ReloadDefinitionFile: u64 = 68536;
+/// `ControlMap::ReloadDefinitionFile` as a function pointer type (high).
+pub type ControlMap__ReloadDefinitionFile_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ControlMap::RemapUserEvent` at 0xceee40 (semantic, high); signature (untiered): `char RemapUserEvent(longlong param_1, longlong * param_2, uint param_3, int param_4)`; rebinds a remappable user event; for keyboard/mouse also unbinds it on the other of the two devices (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, u32 newKey)`
 pub const ControlMap__RemapUserEvent: u64 = 68538;
+/// `ControlMap::RemapUserEvent` as a function pointer type (high).
+pub type ControlMap__RemapUserEvent_fn = unsafe extern "C" fn(this: *mut c_void, userEvent: *const classes::BSFixedString, device: u32, newKey: u32) -> bool;
 /// `ControlMap::RemapUserEventOnDevice` at 0xcf1470 (semantic, high); signature (untiered): `undefined1 RemapUserEventOnDevice(longlong param_1, longlong * param_2, int param_3, int param_4, longlong * param_5, undefined4 * param_6)`; finds the first context with the user event, swaps keys with a remappable (or 'Look') record already on newKey, sets the key, re-sorts (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, u32 newKey, BSFixedString* swappedEvent, u32* oldKey)`
 pub const ControlMap__RemapUserEventOnDevice: u64 = 68570;
+/// `ControlMap::RemapUserEventOnDevice` as a function pointer type (high).
+pub type ControlMap__RemapUserEventOnDevice_fn = unsafe extern "C" fn(this: *mut c_void, userEvent: *const classes::BSFixedString, device: u32, newKey: u32, swappedEvent: *mut classes::BSFixedString, oldKey: *mut u32) -> bool;
 /// `ControlMap::ResetControlState` at 0xcefbc0 (semantic, high); signature (untiered): `undefined ResetControlState(longlong param_1)`; -1 / 0x80000000 (PlayerCharacter::Revert) (high); semantic signature: `void (ControlMap* this)`
 pub const ControlMap__ResetControlState: u64 = 68550;
+/// `ControlMap::ResetControlState` as a function pointer type (high).
+pub type ControlMap__ResetControlState_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ControlMap::ResolveLinkedMappings` at 0xcefed0 (semantic, high); signature (untiered): `undefined ResolveLinkedMappings(longlong param_1)`; resets linked records to 0x7fffffff and copies the key of the linked user event (high); semantic signature: `void (ControlMap* this)`
 pub const ControlMap__ResolveLinkedMappings: u64 = 68554;
+/// `ControlMap::ResolveLinkedMappings` as a function pointer type (high).
+pub type ControlMap__ResolveLinkedMappings_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ControlMap::RestoreControlState` at 0xcefb50 (semantic, high); signature (untiered): `undefined RestoreControlState(longlong param_1)`; +0x120 = +0x124 and clears the snapshot (no event sent) (high); semantic signature: `void (ControlMap* this)`
 pub const ControlMap__RestoreControlState: u64 = 68547;
+/// `ControlMap::RestoreControlState` as a function pointer type (high).
+pub type ControlMap__RestoreControlState_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ControlMap::SaveControlState` at 0xcefb30 (semantic, high); signature (untiered): `undefined SaveControlState(longlong param_1)`; +0x124 = +0x120 when no snapshot (high); semantic signature: `void (ControlMap* this)`
 pub const ControlMap__SaveControlState: u64 = 68546;
+/// `ControlMap::SaveControlState` as a function pointer type (high).
+pub type ControlMap__SaveControlState_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ControlMap::SaveRemapFile` at 0xceef40 (semantic, high); signature (untiered): `undefined SaveRemapFile(longlong param_1)`; serialises the remappable context-0 records in the same format and hands the buffer to BSGamerProfile (high); semantic signature: `void (ControlMap* this)`
 pub const ControlMap__SaveRemapFile: u64 = 68539;
+/// `ControlMap::SaveRemapFile` as a function pointer type (high).
+pub type ControlMap__SaveRemapFile_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ControlMap::SetControlState` at 0xcefba0 (semantic, high); signature (untiered): `undefined SetControlState(longlong param_1, undefined4 param_2, undefined4 param_3)`; setter (load game, free camera) (high); semantic signature: `void (ControlMap* this, u32 enabled, u32 saved)`
 pub const ControlMap__SetControlState: u64 = 68549;
+/// `ControlMap::SetControlState` as a function pointer type (high).
+pub type ControlMap__SetControlState_fn = unsafe extern "C" fn(this: *mut c_void, enabled: u32, saved: u32);
 /// `ControlMap::SetControlsEnabled` at 0xcefaa0 (semantic, high); signature (untiered): `undefined SetControlsEnabled(longlong param_1, uint param_2, char param_3, char param_4)`; sets or clears group bits in +0x120 (and +0x124 when alsoSaved and a snapshot exists) and notifies UserEventEnabledEvent {new, old} (high); semantic signature: `void (ControlMap* this, u32 groups, bool enable, bool alsoSaved)`
 pub const ControlMap__SetControlsEnabled: u64 = 68545;
+/// `ControlMap::SetControlsEnabled` as a function pointer type (high).
+pub type ControlMap__SetControlsEnabled_fn = unsafe extern "C" fn(this: *mut c_void, groups: u32, enable: bool, alsoSaved: bool);
 /// `ControlMap::SetGamepadLayout` at 0xceed20 (semantic, high); signature (untiered): `undefined SetGamepadLayout(longlong param_1, int param_2)`; translates every gamepad key through table ID_236686 and stores +0x12c (high); semantic signature: `void (ControlMap* this, u32 layout)`
 pub const ControlMap__SetGamepadLayout: u64 = 68537;
+/// `ControlMap::SetGamepadLayout` as a function pointer type (high).
+pub type ControlMap__SetGamepadLayout_fn = unsafe extern "C" fn(this: *mut c_void, layout: u32);
 /// `ControlMap::ctor` at 0xceeaa0 (semantic, high); signature (untiered): `longlong ctor(longlong param_1)`; initialises the map, creates UserEventNames, parses the definition file, loads the remap file, resolves links (high); semantic signature: `ControlMap* (ControlMap* this)`
 pub const ControlMap__ctor: u64 = 68534;
+/// `ControlMap::ctor` as a function pointer type (high).
+pub type ControlMap__ctor_fn = unsafe extern "C" fn(this: *mut c_void) -> *mut c_void;
 /// `ControlMap::dtor` at 0xceec30 (semantic, high); signature (untiered): `undefined dtor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined * param_4)`; frees contexts, UserEventNames, the stack and links; clears the global (high); semantic signature: `void (ControlMap* this)`
 pub const ControlMap__dtor: u64 = 68535;
+/// `ControlMap::dtor` as a function pointer type (high).
+pub type ControlMap__dtor_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ConvertBundle` at 0x13fd240 (decompiler, medium); signature (untiered): `undefined ConvertBundle(undefined8 param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
 pub const ConvertBundle: u64 = 527388;
 /// `ConvertByteBufferToBase64JsonString` at 0x14082b0 (decompiler, medium); signature (untiered): `undefined ConvertByteBufferToBase64JsonString(ulonglong * param_1, longlong param_2)`
@@ -51535,6 +51839,8 @@ pub const CreateArchiveFileForEntry_2: u64 = 69248;
 pub const CreateArchiveStreamForEntry: u64 = 69691;
 /// `CreateArrayAndTrack` at 0x14bd670 (runtime, high); signature (untiered): `undefined8 CreateArrayAndTrack(longlong param_1, ulonglong * param_2, ulonglong param_3, longlong * param_4)`; the allocation behind CreateArray and CreateArrayOfType (slots 22 and 23): global heap in memory context 0x16, InitTypedArrayObject, out gets a reference and the tracking list at +0x9408 another (high); semantic signature: `bool (BSScript::Internal::VirtualMachine* vm, const BSScript::TypeInfo* elementType, u32 size, BSTSmartPointer<BSScript::Array>* out)`
 pub const CreateArrayAndTrack: u64 = 104877;
+/// `CreateArrayAndTrack` as a function pointer type (high).
+pub type CreateArrayAndTrack_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__Internal__VirtualMachine, elementType: *const classes::BSScript__TypeInfo, size: u32, out: *mut c_void) -> bool;
 /// `CreateArrayImplementationForType` at 0xc612a0 (decompiler, medium); signature (untiered): `PointerArrayImplementation * CreateArrayImplementationForType(undefined8 param_1, uint param_2, longlong param_3, undefined4 param_4, undefined4 param_5)`
 pub const CreateArrayImplementationForType: u64 = 66076;
 /// `CreateArtObjectCloneTask` at 0x25d220 (decompiler, medium); signature (untiered): `undefined CreateArtObjectCloneTask(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -52835,6 +53141,8 @@ pub const CriticalHitEvent__RegisterSink: u64 = 38531;
 pub const CriticalHitEvent__UnregisterSink: u64 = 38532;
 /// `CrosshairPickData::Pick` at 0x409fd0 (runtime, high); signature (untiered): `undefined Pick(longlong param_1, longlong * param_2, float * param_3, float * param_4)`; the crosshair pick cast: clears the target handles (+4, +8, +0xc), +0x20 and hitPoint (+0x10); length = fFavorRequestPickDistance when a favor request is pending, else max(fActivatePickLength, player +0xae4); casts the pick phantom (+0x28) from origin * Havok scale along direction under the world's read lock (Str_TtworldLinCast) and resolves the target (high); semantic signature: `void (CrosshairPickData* this, bhkWorld* world, const NiPoint3* origin, const NiPoint3* direction)`
 pub const CrosshairPickData__Pick: u64 = 26127;
+/// `CrosshairPickData::Pick` as a function pointer type (high).
+pub type CrosshairPickData__Pick_fn = unsafe extern "C" fn(this: *mut classes::CrosshairPickData, world: *mut classes::bhkWorld, origin: *const c_void, direction: *const c_void);
 /// `CrosshairPickData::ctor` at 0x409c30 (semantic, high); signature (untiered): `longlong ctor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; ID_401585 (g_CrosshairPickData_ptr 0x31e0b70) = this; target handles +4/+8 invalid, +0xc = 0, hitPoint +0x10 = zero, +0x20/+0x28/+0x30/+0x34 = 0; builds a bhkSphereShape of radius fActivatePickRadius * Havok scale (slot 46) and a bhkSimpleShapePhantom (layer 0x2c) stored refcounted at +0x28; returns this (high); semantic signature: `CrosshairPickData* (CrosshairPickData* this)`
 pub const CrosshairPickData__ctor: u64 = 26125;
 /// `CrosshairPickData::ctor` as a function pointer type (high).
@@ -53845,6 +54153,8 @@ pub const DeleteRefPtrHolder: u64 = 19924;
 pub const DeleteRefPtrScalarOrArray: u64 = 72405;
 /// `DeleteSaveEntry` at 0x614690 (semantic, high); signature (untiered): `undefined DeleteSaveEntry(undefined8 * param_1)`; DeleteSaveFile(mgr, entry->name) (call 0x6146a7, S1 delete hook 2) then RemoveSaveEntry (high); semantic signature: `void (Entry*)`
 pub const DeleteSaveEntry: u64 = 35535;
+/// `DeleteSaveEntry` as a function pointer type (high).
+pub type DeleteSaveEntry_fn = unsafe extern "C" fn(a0: *mut c_void);
 /// `DeleteSaveEntryAtGFxIndex` at 0x991250 (decompiler, medium); signature (untiered): `undefined DeleteSaveEntryAtGFxIndex(undefined8 param_1, longlong param_2)`
 pub const DeleteSaveEntryAtGFxIndex: u64 = 52920;
 /// `DeleteSaveEntryAtIndex` at 0x9902c0 (decompiler, medium); signature (untiered): `undefined DeleteSaveEntryAtIndex(longlong param_1, uint param_2)`
@@ -56679,6 +56989,8 @@ pub const DrawDynamicIndexedTriangleStrip: u64 = 77278;
 pub const DrawDynamicQuads: u64 = 77277;
 /// `DrawGeometryByPrimitiveKind` at 0x155f050 (semantic, high); signature (untiered): `undefined DrawGeometryByPrimitiveKind(longlong param_1)`; issues the draw call by the geometry type byte (geometry+0x150: 1 particles, 3 tri-shape, 4 dynamic, 5/6 skinned partitions, 7, 8/9 multi-index, 0xa instanced, 0xb dynamic quads, 0xc/0xd lines) (high); semantic signature: `void (BSRenderPass* pass)`
 pub const DrawGeometryByPrimitiveKind: u64 = 107637;
+/// `DrawGeometryByPrimitiveKind` as a function pointer type (high).
+pub type DrawGeometryByPrimitiveKind_fn = unsafe extern "C" fn(pass: *mut c_void);
 /// `DrawNineSliceImage` at 0x15d54d0 (decompiler, medium); signature (untiered): `undefined DrawNineSliceImage(undefined8 * param_1, float param_2, float param_3, undefined4 param_4, float param_5, float param_6, float param_7, float param_8, float param_9)`
 pub const DrawNineSliceImage: u64 = 453831;
 /// `DrawNineSliceImageSymmetric` at 0x15d5770 (decompiler, medium); signature (untiered): `undefined DrawNineSliceImageSymmetric(undefined8 * param_1, float param_2, float param_3, float param_4, float param_5)`
@@ -57109,8 +57421,6 @@ pub const EncodeBC5UnormBlock_2: u64 = 77724;
 pub const EncodeCodepointToUtf8: u64 = 443088;
 /// `EncodeFormIDTo3Bytes` at 0x632d10 (semantic, high); signature (medium): `undefined EncodeFormIDTo3Bytes(undefined1 * param_1, uint param_2)`; ids of plugin 0 store id|0x400000, 0xFF ids store id|0x800000 (22 bits kept), everything else and 0 stores the form-id index; big-endian 3 bytes (high); semantic signature: `void (u8 out[3], u32 formID)`
 pub const EncodeFormIDTo3Bytes: u64 = 35928;
-/// `EncodeFormIDTo3Bytes` as a function pointer type (high).
-pub type EncodeFormIDTo3Bytes_fn = unsafe extern "C" fn(out_3: u8, formID: u32);
 /// `EncodeFourValuesToPagedBytes` at 0xe7fb60 (decompiler, medium); signature (untiered): `undefined8 EncodeFourValuesToPagedBytes(undefined8 * param_1, int param_2, int param_3, int param_4, int param_5)`
 pub const EncodeFourValuesToPagedBytes: u64 = 89821;
 /// `EncodeOneValueTag0ToPagedBytes` at 0xe7f5b0 (decompiler, medium); signature (untiered): `undefined8 EncodeOneValueTag0ToPagedBytes(undefined8 * param_1, int param_2)`
@@ -57923,6 +58233,8 @@ pub const EventSourceHolder_Input__IsUsingGamepad: u64 = 443396;
 pub type EventSourceHolder_Input__IsUsingGamepad_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_Input) -> bool;
 /// `EventSourceHolder_Input::NotifySinks` at 0xcfa650 (runtime, high); signature (untiered): `ulonglong NotifySinks(longlong * param_1, undefined8 param_2)`; each sink's slot 1 (sink, head, source) in registration order; stops at the first non-zero return; all sinks get the same pointer to Update's local head (high); semantic signature: `void (BSTEventSource<InputEvent*>* this, InputEvent* const* head)`
 pub const EventSourceHolder_Input__NotifySinks: u64 = 68655;
+/// `EventSourceHolder_Input::NotifySinks` as a function pointer type (high).
+pub type EventSourceHolder_Input__NotifySinks_fn = unsafe extern "C" fn(this: *mut c_void, head: *mut *mut classes::InputEvent);
 /// `EventSourceHolder_Input::ReinitializeMouse` at 0xcf9790 (semantic, high); signature (untiered): `undefined ReinitializeMouse(longlong param_1)`; mouse slot 9 (high); semantic signature: `void (EventSourceHolder_Input* this)`
 pub const EventSourceHolder_Input__ReinitializeMouse: u64 = 68621;
 /// `EventSourceHolder_Input::ReinitializeMouse` as a function pointer type (high).
@@ -58009,6 +58321,8 @@ pub const ExecutePendingWorldOperations: u64 = 62204;
 pub const ExecuteQuestStageItem: u64 = 25260;
 /// `ExecuteQueuedTask` at 0x669920 (semantic, high); signature (untiered): `undefined ExecuteQueuedTask(undefined4 * param_1, undefined8 param_2, int * param_3, TypeDescriptor * param_4)`; (existing name) executes one packed task by id: a fixed switch over ids 2..0x62 (high); semantic signature: `void (const BSPackedTask* task)`
 pub const ExecuteQueuedTask: u64 = 36991;
+/// `ExecuteQueuedTask` as a function pointer type (high).
+pub type ExecuteQueuedTask_fn = unsafe extern "C" fn(task: *const c_void);
 /// `ExitCartBeginHandler::vdtor` at 0x7d3dc0 (layout_inference, medium); signature (low): `ExitCartBeginHandler * vdtor(ExitCartBeginHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ExitCartBeginHandler__vdtor: u64 = 43318;
 /// `ExitCartBeginHandler::vfunc_1` at 0x7cede0 (rtti, high); signature (low): `undefined1 vfunc_1(ExitCartBeginHandler * this, longlong * param_1)`
@@ -60419,6 +60733,8 @@ pub const FindOrAppendVec3InGlobalArray: u64 = 106521;
 pub const FindOrAppendVector4: u64 = 80754;
 /// `FindOrClaimCategoryVolumeSlot` at 0x329df0 (semantic, high); signature (untiered): `undefined8 FindOrClaimCategoryVolumeSlot(int param_1, longlong * param_2)`; finds the menu volume slot (8 x 0x50 at 0x31df750, id at +8) for a category, or claims a free one (returns false then) (high); semantic signature: `bool (u32 formID, CategoryVolumeSlot** out)`
 pub const FindOrClaimCategoryVolumeSlot: u64 = 21237;
+/// `FindOrClaimCategoryVolumeSlot` as a function pointer type (high).
+pub type FindOrClaimCategoryVolumeSlot_fn = unsafe extern "C" fn(formID: u32, out: *mut *mut c_void) -> bool;
 /// `FindOrCreateArchiveStreamEntry_4` at 0x42dd50 (decompiler, medium); signature (untiered): `bool FindOrCreateArchiveStreamEntry_4(longlong param_1, uint * param_2, undefined8 * param_3, ulonglong param_4)`
 pub const FindOrCreateArchiveStreamEntry_4: u64 = 26747;
 /// `FindOrCreateCachedEntry20` at 0xdfe0d0 (decompiler, medium); signature (untiered): `undefined4 * FindOrCreateCachedEntry20(longlong param_1, int * param_2)`
@@ -61219,6 +61535,8 @@ pub const ForEachRigidBodyInTreeRecursive: u64 = 78507;
 pub const ForceRefIntoAlias: u64 = 25052;
 /// `FormIDIndexMap::GetFormID` at 0x614dc0 (semantic, high); signature (untiered): `ulonglong GetFormID(longlong param_1, uint param_2)`; index -> form id through the reverse map, 0 when absent (high); semantic signature: `u32 (FormIDIndexMap* map, u32 index)`
 pub const FormIDIndexMap__GetFormID: u64 = 35555;
+/// `FormIDIndexMap::GetFormID` as a function pointer type (high).
+pub type FormIDIndexMap__GetFormID_fn = unsafe extern "C" fn(map: *mut c_void, index: u32) -> u32;
 /// `FormatAndDispatchWideLogMessage` at 0x128c5f0 (decompiler, medium); signature (untiered): `undefined FormatAndDispatchWideLogMessage(undefined4 param_1, undefined4 param_2, longlong param_3, undefined8 param_4, undefined8 param_5)`
 pub const FormatAndDispatchWideLogMessage: u64 = 94344;
 /// `FormatAndLogMessage` at 0x9d55a0 (decompiler, medium); signature (untiered): `undefined FormatAndLogMessage(undefined8 param_1, char * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`
@@ -63919,6 +64237,8 @@ pub const GFxFunctionHandler__dtor: u64 = 418782;
 pub const GFxFunctionObject__Call: u64 = 82255;
 /// `GFxFunctionObject::CallHandler` at 0xcf63c0 (semantic, high); signature (untiered): `undefined CallHandler(longlong param_1, longlong param_2)`; converts this and the arguments, builds Params (0x38), calls handler->Call, converts retVal back (high); semantic signature: `void (GFxFunctionObject* this, void* fnCall)`
 pub const GFxFunctionObject__CallHandler: u64 = 82257;
+/// `GFxFunctionObject::CallHandler` as a function pointer type (high).
+pub type GFxFunctionObject__CallHandler_fn = unsafe extern "C" fn(this: *mut c_void, fnCall: *mut c_void);
 /// `GFxImageLoader::vdtor` at 0x1173ae0 (layout_inference, medium); signature (low): `GFxImageLoader * vdtor(GFxImageLoader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const GFxImageLoader__vdtor: u64 = 84485;
 /// `GFxLoader::CreateMovie` at 0xdf2c10 (semantic, medium); signature (untiered): `undefined8 * CreateMovie(longlong param_1, char * param_2, uint param_3, undefined8 param_4)`; creates or finds a movie definition from a path; flags ORed with loader+0x18 (medium); semantic signature: `void* (GFxLoader* this, const char* path, uint flags, uint)`
@@ -63961,6 +64281,8 @@ pub const GFxMovieView__HandleEvent: u64 = 83874;
 pub const GFxMovieView__Invoke: u64 = 83885;
 /// `GFxMovieView::InvokeArgsToString` at 0xd00380 (semantic, high); signature (untiered): `undefined8 InvokeArgsToString(longlong param_1, longlong param_2, longlong param_3, int param_4)`; non-virtual Invoke with a GFxValue array, result returned as string (high); semantic signature: `const char* (GFxMovieView* this, const char* path, const GFxValue* args, int argCount)`
 pub const GFxMovieView__InvokeArgsToString: u64 = 82665;
+/// `GFxMovieView::InvokeArgsToString` as a function pointer type (high).
+pub type GFxMovieView__InvokeArgsToString_fn = unsafe extern "C" fn(this: *mut classes::GFxMovieView, path: *const c_char, args: *const classes::GFxValue, argCount: i32) -> *const c_char;
 /// `GFxMovieView::InvokeFmt` at 0xd4b070 (semantic, high); signature (untiered): `ulonglong InvokeFmt(longlong param_1, longlong param_2, undefined8 * param_3, undefined8 param_4)`
 pub const GFxMovieView__InvokeFmt: u64 = 83884;
 /// `GFxMovieView::InvokeFmtToString` at 0xd00200 (semantic, high); signature (untiered): `undefined8 InvokeFmtToString(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; non-virtual Invoke whose result is returned as a string kept in +0x24a8 (high); semantic signature: `const char* (GFxMovieView* this, const char* path, const char* argFmt, ...)`
@@ -64041,40 +64363,72 @@ pub type GFxValue__Assign_fn = unsafe extern "C" fn(this: *mut classes::GFxValue
 pub const GFxValue__ObjectInterface__CreateEmptyMovieClip: u64 = 82224;
 /// `GFxValue::ObjectInterface::GetArraySize` at 0xcf54a0 (semantic, high); signature (untiered): `undefined4 GetArraySize(undefined8 param_1, longlong param_2)`; *(data+0x58) (high); semantic signature: `uint (ObjectInterface* this, void* data)`
 pub const GFxValue__ObjectInterface__GetArraySize: u64 = 82237;
+/// `GFxValue::ObjectInterface::GetArraySize` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__GetArraySize_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void) -> u32;
 /// `GFxValue::ObjectInterface::GetDisplayInfo` at 0xcf5500 (semantic, high); signature (untiered): `undefined GetDisplayInfo(undefined8 * param_1, longlong param_2, double * param_3)`; reads transform, alpha, visibility (high); semantic signature: `bool (ObjectInterface* this, void* data, GFxValue::DisplayInfo* out)`
 pub const GFxValue__ObjectInterface__GetDisplayInfo: u64 = 82239;
+/// `GFxValue::ObjectInterface::GetDisplayInfo` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__GetDisplayInfo_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, out: *mut classes::GFxValue__DisplayInfo) -> bool;
 /// `GFxValue::ObjectInterface::GetElement` at 0xcf5820 (semantic, high); signature (untiered): `undefined8 GetElement(longlong * param_1, longlong param_2, uint param_3, undefined8 * param_4)`; array element (high); semantic signature: `bool (ObjectInterface* this, void* data, uint index, GFxValue* out)`
 pub const GFxValue__ObjectInterface__GetElement: u64 = 82241;
+/// `GFxValue::ObjectInterface::GetElement` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__GetElement_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, index: u32, out: *mut classes::GFxValue) -> bool;
 /// `GFxValue::ObjectInterface::GetMember` at 0xcf5a40 (semantic, high); signature (untiered): `ulonglong GetMember(longlong * param_1, longlong * param_2, longlong param_3, undefined8 * param_4, char param_5)`; reads a member (resolves the display handle first) (high); semantic signature: `bool (ObjectInterface* this, void* data, const char* name, GFxValue* out, bool isDisplayObject)`
 pub const GFxValue__ObjectInterface__GetMember: u64 = 82245;
+/// `GFxValue::ObjectInterface::GetMember` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__GetMember_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, out: *mut classes::GFxValue, isDisplayObject: bool) -> bool;
 /// `GFxValue::ObjectInterface::GetText` at 0xcf5c00 (semantic, high); signature (untiered): `ulonglong GetText(longlong * param_1, longlong * param_2, undefined8 * param_3, char param_4)`; reads text/htmlText (high); semantic signature: `bool (ObjectInterface* this, void* data, GFxValue* out, bool isHtml)`
 pub const GFxValue__ObjectInterface__GetText: u64 = 82248;
+/// `GFxValue::ObjectInterface::GetText` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__GetText_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, out: *mut classes::GFxValue, isHtml: bool) -> bool;
 /// `GFxValue::ObjectInterface::GotoFrame` at 0xcf5dc0 (semantic, medium); signature (untiered): `undefined8 GotoFrame(undefined8 * param_1, longlong param_2, int param_3, undefined1 param_4)`; sprite goto (frame-1) then play state (medium); semantic signature: `bool (ObjectInterface* this, void* data, uint frame, bool playState)`
 pub const GFxValue__ObjectInterface__GotoFrame: u64 = 82252;
 /// `GFxValue::ObjectInterface::GotoLabeledFrame` at 0xcf5e50 (semantic, medium); signature (untiered): `undefined8 GotoLabeledFrame(undefined8 * param_1, longlong param_2, undefined8 param_3, undefined1 param_4)`; label lookup (vt[0x280]) then goto and play state (medium); semantic signature: `bool (ObjectInterface* this, void* data, const char* label, bool playState)`
 pub const GFxValue__ObjectInterface__GotoLabeledFrame: u64 = 82253;
 /// `GFxValue::ObjectInterface::HasMember` at 0xcf5ef0 (semantic, high); signature (untiered): `ulonglong HasMember(longlong * param_1, longlong * param_2, char * param_3, char param_4)`; true when the member exists (high); semantic signature: `bool (ObjectInterface* this, void* data, const char* name, bool isDisplayObject)`
 pub const GFxValue__ObjectInterface__HasMember: u64 = 82254;
+/// `GFxValue::ObjectInterface::HasMember` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__HasMember_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, isDisplayObject: bool) -> bool;
 /// `GFxValue::ObjectInterface::Invoke` at 0xcf6160 (runtime, high); signature (untiered): `ulonglong Invoke(longlong * param_1, longlong * param_2, longlong param_3, char * param_4, longlong param_5, uint param_6, char param_7)`; calls a method of the object (high); semantic signature: `bool (ObjectInterface* this, void* data, GFxValue* result, const char* name, const GFxValue* args, uint argCount, bool isDisplayObject)`
 pub const GFxValue__ObjectInterface__Invoke: u64 = 82256;
+/// `GFxValue::ObjectInterface::Invoke` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__Invoke_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, result: *mut classes::GFxValue, name: *const c_char, args: *const classes::GFxValue, argCount: u32, isDisplayObject: bool) -> bool;
 /// `GFxValue::ObjectInterface::ObjectAddRef` at 0xcf6830 (semantic, high); signature (untiered): `undefined ObjectAddRef(undefined8 param_1, longlong param_2, longlong * param_3)`; AddRef by type: 4 string node +0x10, 5 wide header (data-0x18), 6/7 AS object (data-0x20)+0x10, 8 display handle +0 (high); semantic signature: `void (ObjectInterface* this, GFxValue* v, void* data)`
 pub const GFxValue__ObjectInterface__ObjectAddRef: u64 = 82269;
+/// `GFxValue::ObjectInterface::ObjectAddRef` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__ObjectAddRef_fn = unsafe extern "C" fn(this: *mut c_void, v: *mut classes::GFxValue, data: *mut c_void);
 /// `GFxValue::ObjectInterface::ObjectRelease` at 0xcf6890 (semantic, high); signature (untiered): `undefined ObjectRelease(undefined8 param_1, longlong param_2, longlong * param_3)`; Release by type, frees at zero (high); semantic signature: `void (ObjectInterface* this, GFxValue* v, void* data)`
 pub const GFxValue__ObjectInterface__ObjectRelease: u64 = 82270;
+/// `GFxValue::ObjectInterface::ObjectRelease` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__ObjectRelease_fn = unsafe extern "C" fn(this: *mut c_void, v: *mut classes::GFxValue, data: *mut c_void);
 /// `GFxValue::ObjectInterface::PushBack` at 0xcf6ab0 (semantic, high); signature (untiered): `undefined8 PushBack(longlong * param_1, longlong param_2, longlong param_3)`; appends to the array (high); semantic signature: `bool (ObjectInterface* this, void* data, const GFxValue* v)`
 pub const GFxValue__ObjectInterface__PushBack: u64 = 82273;
+/// `GFxValue::ObjectInterface::PushBack` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__PushBack_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, v: *const classes::GFxValue) -> bool;
 /// `GFxValue::ObjectInterface::RemoveElements` at 0xcf6f40 (semantic, high); signature (untiered): `undefined8 RemoveElements(undefined8 param_1, longlong param_2, uint param_3, uint param_4)`; removes count elements (count < 0: to the end) (high); semantic signature: `bool (ObjectInterface* this, void* data, uint index, int count)`
 pub const GFxValue__ObjectInterface__RemoveElements: u64 = 82280;
+/// `GFxValue::ObjectInterface::RemoveElements` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__RemoveElements_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, index: u32, count: i32) -> bool;
 /// `GFxValue::ObjectInterface::SetArraySize` at 0xcf72b0 (semantic, high); signature (untiered): `undefined8 SetArraySize(undefined8 param_1, longlong param_2, int param_3)`; resizes the array (high); semantic signature: `bool (ObjectInterface* this, void* data, uint n)`
 pub const GFxValue__ObjectInterface__SetArraySize: u64 = 82285;
+/// `GFxValue::ObjectInterface::SetArraySize` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__SetArraySize_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, n: u32) -> bool;
 /// `GFxValue::ObjectInterface::SetDisplayInfo` at 0xcf7330 (semantic, high); signature (untiered): `undefined SetDisplayInfo(undefined8 * param_1, longlong param_2, undefined8 * param_3)`; applies the fields whose mask bit is set (high); semantic signature: `bool (ObjectInterface* this, void* data, const GFxValue::DisplayInfo* info)`
 pub const GFxValue__ObjectInterface__SetDisplayInfo: u64 = 82287;
+/// `GFxValue::ObjectInterface::SetDisplayInfo` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__SetDisplayInfo_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, info: *const classes::GFxValue__DisplayInfo) -> bool;
 /// `GFxValue::ObjectInterface::SetElement` at 0xcf8100 (semantic, high); signature (untiered): `undefined8 SetElement(longlong * param_1, longlong param_2, undefined4 param_3, longlong param_4)`; sets an array element (high); semantic signature: `bool (ObjectInterface* this, void* data, uint index, const GFxValue* v)`
 pub const GFxValue__ObjectInterface__SetElement: u64 = 82289;
+/// `GFxValue::ObjectInterface::SetElement` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__SetElement_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, index: u32, v: *const classes::GFxValue) -> bool;
 /// `GFxValue::ObjectInterface::SetMember` at 0xcf8350 (semantic, high); signature (untiered): `ulonglong SetMember(longlong * param_1, longlong * param_2, longlong param_3, longlong param_4, char param_5)`; writes a member (high); semantic signature: `bool (ObjectInterface* this, void* data, const char* name, const GFxValue* value, bool isDisplayObject)`
 pub const GFxValue__ObjectInterface__SetMember: u64 = 82292;
+/// `GFxValue::ObjectInterface::SetMember` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__SetMember_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, value: *const classes::GFxValue, isDisplayObject: bool) -> bool;
 /// `GFxValue::ObjectInterface::SetText` at 0xcf8450 (semantic, high); signature (untiered): `ulonglong SetText(longlong * param_1, longlong * param_2, undefined8 param_3, char param_4)`; text or htmlText of a text field (falls back to SetMember 'text'/'htmlText') (high); semantic signature: `bool (ObjectInterface* this, void* data, const char* text, bool isHtml)`
 pub const GFxValue__ObjectInterface__SetText: u64 = 82293;
+/// `GFxValue::ObjectInterface::SetText` as a function pointer type (high).
+pub type GFxValue__ObjectInterface__SetText_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, text: *const c_char, isHtml: bool) -> bool;
 /// `GFxValue::ReleaseInternal` at 0xcf6e60 (semantic, high); signature (untiered): `undefined ReleaseInternal(undefined8 * param_1)`; GFx-side release of a managed value; clears +0 (high); semantic signature: `void (GFxValue* v)`
 pub const GFxValue__ReleaseInternal: u64 = 82279;
 /// `GFxValue::ReleaseInternal` as a function pointer type (high).
@@ -64103,6 +64457,8 @@ pub const GFxZlibSupportBase__vdtor: u64 = 82372;
 pub const GFx_DefineFontInfoLoader: u64 = 87621;
 /// `GFx_GetButtonFromUserEvent` at 0x991e30 (semantic, high); signature (untiered): `undefined GFx_GetButtonFromUserEvent(undefined8 * param_1)`; Scaleform callback 'GetButtonFromUserEvent' registered by HUDMenu, TutorialMenu and Journal: answers the key name of a user event (gamepad device 2 when the gamepad is active, else keyboard then mouse) (high); semantic signature: `void (FxDelegateArgs* args)`
 pub const GFx_GetButtonFromUserEvent: u64 = 52937;
+/// `GFx_GetButtonFromUserEvent` as a function pointer type (high).
+pub type GFx_GetButtonFromUserEvent_fn = unsafe extern "C" fn(args: *mut c_void);
 /// `GMemoryFile::ctor` at 0x120fb0 (layout_inference, high); signature (low): `GMemoryFile * ctor(GMemoryFile * this, longlong param_1, longlong param_2, int param_3)`
 pub const GMemoryFile__ctor: u64 = 440346;
 /// `GMemoryFile::vdtor` at 0x121040 (slot_propagation, medium); signature (low): `GMemoryFile * vdtor(GMemoryFile * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -78609,6 +78965,8 @@ pub const GenerateRgba8MipChain: u64 = 27043;
 pub const GenerateStaticRandomBelow: u64 = 13669;
 /// `GenerateUniquePlayerID` at 0x624840 (semantic, high); signature (untiered): `undefined GenerateUniquePlayerID(longlong param_1)`; random u32 not already in +0x70, stored in +0xd0 and +0xd8, record added in +0xe8 (high); semantic signature: `void (BGSSaveLoadManager*)`
 pub const GenerateUniquePlayerID: u64 = 35757;
+/// `GenerateUniquePlayerID` as a function pointer type (high).
+pub type GenerateUniquePlayerID_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager);
 /// `GetAbsHeadingAngleToPoint` at 0x6a32c0 (decompiler, medium); signature (untiered): `undefined8 GetAbsHeadingAngleToPoint(longlong * param_1, float * param_2)`
 pub const GetAbsHeadingAngleToPoint: u64 = 37773;
 /// `GetAccountPlatformName` at 0x1309ae0 (decompiler, high); signature (high): `char * GetAccountPlatformName(undefined4 param_1)`
@@ -81397,6 +81755,8 @@ pub const GetListE0EntryTextureStringAtIndex: u64 = 24502;
 pub const GetListItemAtIndexInFieldB0Slot: u64 = 41362;
 /// `GetListenerPosition` at 0xcccf30 (semantic, high); signature (untiered): `undefined GetListenerPosition(void)`; listener+8 or a static zero vector (high); semantic signature: `const float* ()`
 pub const GetListenerPosition: u64 = 67710;
+/// `GetListenerPosition` as a function pointer type (high).
+pub type GetListenerPosition_fn = unsafe extern "C" fn() -> *const f32;
 /// `GetLoadCollatedAnimTextDataSetting` at 0x549d00 (decompiler, high); signature (high): `undefined1 GetLoadCollatedAnimTextDataSetting(void)`
 pub const GetLoadCollatedAnimTextDataSetting: u64 = 32721;
 /// `GetLoadVarsField48AsNumber` at 0xd86bf0 (decompiler, medium); signature (untiered): `undefined GetLoadVarsField48AsNumber(longlong param_1)`
@@ -81683,6 +82043,8 @@ pub const GetOptionalByteValue: u64 = 524613;
 pub const GetOptionalQwordValue: u64 = 526298;
 /// `GetOrAssignFormIDIndex` at 0x614cf0 (semantic, high); signature (medium): `ulonglong GetOrAssignFormIDIndex(longlong param_1, uint param_2)`; index of a form id, assigning the next one; 0xFF ids return themselves (high); semantic signature: `u32 (FormIDIndexMap* map, u32 formID)`
 pub const GetOrAssignFormIDIndex: u64 = 35554;
+/// `GetOrAssignFormIDIndex` as a function pointer type (high).
+pub type GetOrAssignFormIDIndex_fn = unsafe extern "C" fn(map: *mut c_void, formID: u32) -> u32;
 /// `GetOrComputeCachedFloatRange` at 0x2b0850 (decompiler, medium); signature (untiered): `undefined8 * GetOrComputeCachedFloatRange(longlong param_1, undefined8 * param_2)`
 pub const GetOrComputeCachedFloatRange: u64 = 18767;
 /// `GetOrCreateActivatorAt220` at 0x307300 (decompiler, medium); signature (untiered): `longlong GetOrCreateActivatorAt220(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -83355,6 +83717,8 @@ pub const HUDMenu__Dtor: u64 = 51715;
 pub const HUDMenu__ProcessMessage: u64 = 51612;
 /// `HUDMenu::RegisterHUDComponents` at 0x934e20 (semantic, high); signature (untiered): `undefined RegisterHUDComponents(longlong param_1)`; FxDelegate callback: stores args[0] as the HUD root (+0x78) and gives the args to every HUDObject's slot 3 (high); semantic signature: `void (FxDelegateArgs* args)`
 pub const HUDMenu__RegisterHUDComponents: u64 = 51616;
+/// `HUDMenu::RegisterHUDComponents` as a function pointer type (high).
+pub type HUDMenu__RegisterHUDComponents_fn = unsafe extern "C" fn(args: *mut c_void);
 /// `HUDMenu::ctor` at 0x932540 (layout_inference, high); signature (high): `HUDMenu * ctor(HUDMenu * this)`; loads 'HUDMenu', builds the 10 HUD objects, Invokes 'HUDMovieBaseInstance.RegisterComponents', registers the two sinks (high); semantic signature: `HUDMenu* (HUDMenu* this)`
 pub const HUDMenu__ctor: u64 = 51610;
 /// `HUDMenu::ctor` as a function pointer type (high).
@@ -84363,22 +84727,38 @@ pub const IAnimationGraphManagerHolder__PostBuildAnimationGraphManager: u64 = 32
 pub const IAnimationGraphManagerHolder__RegisterGraphEventSinks: u64 = 32905;
 /// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify` at 0x554060 (semantic, high); signature (untiered): `char SetAnimationGraphManagerAndNotify(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; installs a manager through slot 3 and, when it changed, calls slot 13(new, old) (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSTSmartPointer<BSAnimationGraphManager>& newMgr)`
 pub const IAnimationGraphManagerHolder__SetAnimationGraphManagerAndNotify: u64 = 32900;
+/// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify` as a function pointer type (high).
+pub type IAnimationGraphManagerHolder__SetAnimationGraphManagerAndNotify_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, newMgr: *mut c_void) -> bool;
 /// `IAnimationGraphManagerHolder::SetGraphVariableBool` at 0x553560 (semantic, high); signature (untiered): `undefined SetGraphVariableBool(undefined8 param_1, undefined8 param_2, undefined1 param_3)`; sets a bool variable on every graph of the manager; returns true whenever the holder yields a manager (the result starts at 1 and is only ORed) (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableBool: u64 = 32885;
+/// `IAnimationGraphManagerHolder::SetGraphVariableBool` as a function pointer type (high).
+pub type IAnimationGraphManagerHolder__SetGraphVariableBool_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, value: bool) -> bool;
 /// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs` at 0x555ac0 (semantic, high); signature (untiered): `char SetGraphVariableBoolOnAllGraphs(longlong * param_1, longlong * param_2, undefined1 * param_3)`; implementation of 0x553560 (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableBoolOnAllGraphs: u64 = 32936;
+/// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs` as a function pointer type (high).
+pub type IAnimationGraphManagerHolder__SetGraphVariableBoolOnAllGraphs_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, value: *mut bool) -> bool;
 /// `IAnimationGraphManagerHolder::SetGraphVariableFloat` at 0x5535a0 (semantic, high); signature (untiered): `undefined SetGraphVariableFloat(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; sets a float variable on every graph (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableFloat: u64 = 32887;
+/// `IAnimationGraphManagerHolder::SetGraphVariableFloat` as a function pointer type (high).
+pub type IAnimationGraphManagerHolder__SetGraphVariableFloat_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, value: f32) -> bool;
 /// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs` at 0x555650 (semantic, high); signature (untiered): `char SetGraphVariableFloatOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; implementation of 0x5535a0 (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableFloatOnAllGraphs: u64 = 32933;
+/// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs` as a function pointer type (high).
+pub type IAnimationGraphManagerHolder__SetGraphVariableFloatOnAllGraphs_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, value: *mut f32) -> bool;
 /// `IAnimationGraphManagerHolder::SetGraphVariableInt` at 0x553580 (semantic, high); signature (untiered): `undefined SetGraphVariableInt(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; sets an int variable on every graph (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableInt: u64 = 32886;
+/// `IAnimationGraphManagerHolder::SetGraphVariableInt` as a function pointer type (high).
+pub type IAnimationGraphManagerHolder__SetGraphVariableInt_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, value: i32) -> bool;
 /// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs` at 0x5554f0 (semantic, high); signature (untiered): `char SetGraphVariableIntOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; implementation of 0x553580 (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableIntOnAllGraphs: u64 = 32932;
+/// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs` as a function pointer type (high).
+pub type IAnimationGraphManagerHolder__SetGraphVariableIntOnAllGraphs_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, value: *mut i32) -> bool;
 /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
 pub const IAnimationGraphManagerHolder__ShouldUpdateAnimation: u64 = 32912;
 /// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager` at 0x553fc0 (semantic, high); signature (untiered): `undefined1 UpdateAnimationGraphManager(longlong * param_1, longlong param_2)`; gets the manager (slot 2) and calls BSAnimationGraphManager::Update, gated by slot 14 unless data+0x2a (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSAnimationUpdateData* data)`
 pub const IAnimationGraphManagerHolder__UpdateAnimationGraphManager: u64 = 32899;
+/// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager` as a function pointer type (high).
+pub type IAnimationGraphManagerHolder__UpdateAnimationGraphManager_fn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, data: *mut c_void) -> bool;
 /// `IAnimationGraphManagerHolder::dtor` at 0x553600 (layout_inference, high); signature (high): `undefined dtor(IAnimationGraphManagerHolder * this)`
 pub const IAnimationGraphManagerHolder__dtor: u64 = 32891;
 /// `IAnimationGraphManagerHolder::dtor` at 0x555d90 (semantic, high); signature (untiered): `IAnimationGraphManagerHolder * dtor(IAnimationGraphManagerHolder * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -93725,8 +94105,12 @@ pub const ImageSpaceEffectWorldMap__vfunc_5: u64 = 107803;
 pub const ImageSpaceEffectWorldMap__vfunc_7: u64 = 107802;
 /// `ImageSpaceManager::RenderEffect` at 0x14ee060 (semantic, high); signature (untiered): `undefined RenderEffect(longlong param_1, uint param_2, undefined4 param_3, undefined4 param_4, longlong param_5)`; runs effect effectId from colour target sourceTarget into destTarget (effect input slot 1 = source, output slot 0 = dest) (high); semantic signature: `void (ImageSpaceManager* this, u32 effectId, i32 sourceTarget, i32 destTarget, ImageSpaceShaderParam* params)`
 pub const ImageSpaceManager__RenderEffect: u64 = 105676;
+/// `ImageSpaceManager::RenderEffect` as a function pointer type (high).
+pub type ImageSpaceManager__RenderEffect_fn = unsafe extern "C" fn(this: *mut c_void, effectId: u32, sourceTarget: i32, destTarget: i32, params: *mut classes::ImageSpaceShaderParam);
 /// `ImageSpaceManager::ctor` at 0x14ed370 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; constructs the manager, then the effect setup 0x14ed620 -> 0x14eee10 (high); semantic signature: `ImageSpaceManager* (ImageSpaceManager* this)`
 pub const ImageSpaceManager__ctor: u64 = 105666;
+/// `ImageSpaceManager::ctor` as a function pointer type (high).
+pub type ImageSpaceManager__ctor_fn = unsafe extern "C" fn(this: *mut c_void) -> *mut c_void;
 /// `ImageSpaceModifier::Apply` at 0x2a3940 (runtime, medium); signature (untiered): `longlong * Apply(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`; trigger: allocates an instance (0x50), appends it to g_TES+0x108, returns it (not addref'd for the caller) (medium); semantic signature: `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
 pub const ImageSpaceModifier__Apply: u64 = 18570;
 /// `ImageSpaceModifier::ApplyIfAbsent` at 0x2a3bc0 (semantic, high); signature (untiered): `ImageSpaceModifierInstanceForm * ApplyIfAbsent(longlong param_1, float param_2, longlong param_3, undefined8 param_4)`; as Apply but returns null without adding when an instance of imod is already on the list (high); semantic signature: `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
@@ -96361,6 +96745,8 @@ pub const InstallModFiles: u64 = 33790;
 pub const InstallYesToAllCbtHook: u64 = 76180;
 /// `InstalledContent::ProcessLoadGameEvent` at 0x609560 (runtime, high); signature (untiered): `undefined8 ProcessLoadGameEvent(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`; forwards to 0x60b6c0 when the byte at +0x18 is set; returns 0 (high); semantic signature: `BSEventNotifyControl (InstalledContent* this, const TESLoadGameEvent* event, BSTEventSource<TESLoadGameEvent>* source)`
 pub const InstalledContent__ProcessLoadGameEvent: u64 = 442465;
+/// `InstalledContent::ProcessLoadGameEvent` as a function pointer type (high).
+pub type InstalledContent__ProcessLoadGameEvent_fn = unsafe extern "C" fn(this: *mut classes::partial::InstalledContent, event: *const classes::TESLoadGameEvent, source: *mut c_void) -> u32;
 /// `InstalledContent::ctor` at 0x607ce0 (layout_inference, medium); signature (low): `InstalledContent * ctor(InstalledContent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const InstalledContent__ctor: u64 = 442446;
 /// `InstalledContent::dtor` at 0x607df0 (layout_inference, high); signature (low): `undefined dtor(InstalledContent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -96577,6 +96963,8 @@ pub const Inventory__StatInventoryVisitor__vfunc_1: u64 = 16236;
 pub const Inventory__UnregisterSink: u64 = 15979;
 /// `InventoryChanges::CountItem` at 0x240fe0 (runtime, high); signature (untiered): `int CountItem(longlong param_1, undefined8 * param_2, longlong * param_3)`; count of an item, base plus delta (high); semantic signature: `int InventoryChanges::CountItem(TESForm* item, InventoryChanges* changes, ItemFilter* filter)`
 pub const InventoryChanges__CountItem: u64 = 16214;
+/// `InventoryChanges::CountItem` as a function pointer type (high).
+pub type InventoryChanges__CountItem_fn = unsafe extern "C" fn(item: *mut classes::TESForm, changes: *mut classes::InventoryChanges, filter: *mut c_void) -> i32;
 /// `InventoryChanges::CountItemsWithKeyword` at 0x239750 (semantic, medium); signature (untiered): `ulonglong CountItemsWithKeyword(undefined8 * param_1, longlong param_2)`; count of items carrying a keyword (medium); semantic signature: `uint InventoryChanges::CountItemsWithKeyword(InventoryChanges* this, BGSKeyword* keyword)`
 pub const InventoryChanges__CountItemsWithKeyword: u64 = 16111;
 /// `InventoryChanges::FindBestSoulGemVisitor::vdtor` at 0x6daba0 (layout_inference, medium); signature (low): `FindBestSoulGemVisitor * vdtor(FindBestSoulGemVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -97351,6 +97739,8 @@ pub const IsByteField8Zero: u64 = 443179;
 pub const IsCJKCodepointWithHangulOption: u64 = 88006;
 /// `IsCameraCasterOverlapping` at 0x557ad0 (semantic, high); signature (untiered): `bool IsCameraCasterOverlapping(longlong * param_1, longlong param_2, float * param_3, undefined4 param_4, float param_5)`; pair test of the camera phantom placed at cameraPos (radius radiusHavok) against the target's character controller shape, lowered by heightOffset when above it; under the world read and write locks (high); semantic signature: `bool (CameraCollisionHolder* holder, Actor* target, const NiPoint3* cameraPos, float radiusHavok, float heightOffset)`
 pub const IsCameraCasterOverlapping: u64 = 33008;
+/// `IsCameraCasterOverlapping` as a function pointer type (high).
+pub type IsCameraCasterOverlapping_fn = unsafe extern "C" fn(holder: *mut c_void, target: *mut classes::Actor, cameraPos: *const c_void, radiusHavok: f32, heightOffset: f32) -> bool;
 /// `IsCasterUsableWithValidTarget` at 0x837980 (decompiler, medium); signature (untiered): `bool IsCasterUsableWithValidTarget(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const IsCasterUsableWithValidTarget: u64 = 45433;
 /// `IsCellOwnedByActor` at 0x2bb630 (decompiler, medium); signature (untiered): `char IsCellOwnedByActor(longlong param_1, longlong param_2)`
@@ -98427,6 +98817,8 @@ pub const ItemCrafted__RegisterSink: u64 = 51196;
 pub const ItemCrafted__UnregisterSink: u64 = 51197;
 /// `ItemList::AddItem` at 0x904df0 (semantic, high); signature (untiered): `undefined8 AddItem(longlong param_1, undefined8 param_2, undefined8 param_3)`; allocates a StandardItemData (0x40) and appends it to list+0x38 (high); semantic signature: `StandardItemData* (ItemList* list, InventoryEntry* entry, const RefHandle* owner)`
 pub const ItemList__AddItem: u64 = 51011;
+/// `ItemList::AddItem` as a function pointer type (high).
+pub type ItemList__AddItem_fn = unsafe extern "C" fn(list: *mut classes::ItemList, entry: *mut classes::InventoryEntry, owner: *const c_void) -> *mut classes::StandardItemData;
 /// `ItemList::Clear` at 0x904f70 (semantic, high); signature (untiered): `undefined Clear(longlong param_1)`; empties entryList and deletes every entry (high); semantic signature: `void (ItemList* list)`
 pub const ItemList__Clear: u64 = 51014;
 /// `ItemList::Clear` as a function pointer type (high).
@@ -98469,6 +98861,8 @@ pub const Jailing__RegisterSink: u64 = 40383;
 pub const Jailing__UnregisterSink: u64 = 40384;
 /// `JobListManager::ServingThread::Run` at 0x60f1e0 (semantic, high); signature (untiered): `undefined8 Run(ServingThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; game update thread: per frame waits its start event, runs the 7 segment job lists in order (start, wait completion event, call the segment's end callback), signals done (high); semantic signature: `u64 (ServingThread* this)`
 pub const JobListManager__ServingThread__Run: u64 = 35423;
+/// `JobListManager::ServingThread::Run` as a function pointer type (high).
+pub type JobListManager__ServingThread__Run_fn = unsafe extern "C" fn(this: *mut c_void) -> u64;
 /// `JobListManager::ServingThread::vdtor` at 0x60f130 (layout_inference, medium); signature (low): `ServingThread * vdtor(ServingThread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const JobListManager__ServingThread__vdtor: u64 = 35420;
 /// `JobListManager::ServingThread::vfunc_1_sub0` at 0x6e4c20 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(undefined8 param_1, ulonglong param_2, undefined8 param_3, longlong * param_4)`
@@ -98611,6 +99005,8 @@ pub const Journal_SystemTab__BSTEventSink_BSSaveDataEvent_vfunc_1: u64 = 53278;
 pub const Journal_SystemTab__BSTEventSink_BSSaveDataEvent_vfunc_1_sub0: u64 = 442572;
 /// `Journal_SystemTab::OnOptionChanged` at 0x9ab260 (semantic, high); signature (untiered): `undefined OnOptionChanged(longlong param_1, char * param_2, undefined8 param_3, IMAGE_DOS_HEADER * param_4)`; the settings menu's change callback: ids 0..0x1b are fixed options (0x1b master volume: audio manager +0x170 and command 0x10 via 0xcd0db0, plus the AudioMasterVolume setting); any other id is a form id, and an SNCT form gets SetCategoryVolume(&p with p = form+0x30, (float)value) (high); semantic signature: `void (FxDelegateArgs* args)`
 pub const Journal_SystemTab__OnOptionChanged: u64 = 53310;
+/// `Journal_SystemTab::OnOptionChanged` as a function pointer type (high).
+pub type Journal_SystemTab__OnOptionChanged_fn = unsafe extern "C" fn(args: *mut c_void);
 /// `Journal_SystemTab::ctor` at 0x9a5d20 (layout_inference, high); signature (high): `Journal_SystemTab * ctor(Journal_SystemTab * this)`
 pub const Journal_SystemTab__ctor: u64 = 53259;
 /// `Journal_SystemTab::dtor` at 0x9a5e10 (layout_inference, high); signature (low): `undefined dtor(Journal_SystemTab * this, undefined8 param_1, ulonglong param_2, ulonglong param_3)`
@@ -98813,6 +99209,8 @@ pub const LatchField38FromField338Once: u64 = 452014;
 pub const LaunchProjectileAtTarget: u64 = 36419;
 /// `LaunchProjectileFromCaster` at 0x5ce8b0 (semantic, high); signature (untiered): `undefined8 LaunchProjectileFromCaster(longlong * param_1, longlong param_2, longlong param_3, BeamProjectile * * param_4, float * param_5, uint param_6, uint param_7, uint param_8, longlong param_9)`; builds a Projectile::LaunchData (origin = *origin, +0x48/+0x4c = angleZ/angleX, +0x90 = area, +0x70 = caster->currentSpell (+0x28), +0x78 = caster slot 21 (+0xa8), +0x20/+0x28/+0x30 = projectile/shooter/combatController, cell = shooter's or the flying-mount world cell, VATS target, dual-cast power, hitRecord +0x30 -> +0x14) and calls CreateProjectileByType at +0x354; then VATS follow and the hit record's impact; always returns true (high); semantic signature: `bool (MagicCaster* caster, BGSProjectile* projectile, TESObjectREFR* shooter, CombatController* combatController, const NiPoint3* origin, float angleZ, float angleX, u32 area, const void* hitRecord)`
 pub const LaunchProjectileFromCaster: u64 = 34452;
+/// `LaunchProjectileFromCaster` as a function pointer type (high).
+pub type LaunchProjectileFromCaster_fn = unsafe extern "C" fn(caster: *mut classes::MagicCaster, projectile: *mut classes::BGSProjectile, shooter: *mut classes::TESObjectREFR, combatController: *mut c_void, origin: *const c_void, angleZ: f32, angleX: f32, area: u32, hitRecord: *const c_void) -> bool;
 /// `LayoutGridEntries` at 0x16134c0 (decompiler, medium); signature (untiered): `undefined LayoutGridEntries(longlong param_1, undefined4 param_2, float * param_3)`
 pub const LayoutGridEntries: u64 = 505944;
 /// `LeaveCriticalSectionOfArg2` at 0x1257f60 (decompiler, high); signature (untiered): `undefined LeaveCriticalSectionOfArg2(undefined8 param_1, undefined8 param_2)`
@@ -99399,6 +99797,8 @@ pub const LoadResourceFromFile: u64 = 84469;
 pub const LoadResponseTableFromFile: u64 = 42790;
 /// `LoadSaveEntry` at 0x614660 (semantic, high); signature (untiered): `undefined LoadSaveEntry(undefined8 * param_1)`; RequestLoad(mgr, entry->name, entry+0x60, 0, false) (high); semantic signature: `void (Entry*)`
 pub const LoadSaveEntry: u64 = 35534;
+/// `LoadSaveEntry` as a function pointer type (high).
+pub type LoadSaveEntry_fn = unsafe extern "C" fn(a0: *mut c_void);
 /// `LoadSaveHeaderAtGFxIndex` at 0x9912d0 (decompiler, medium); signature (untiered): `undefined LoadSaveHeaderAtGFxIndex(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const LoadSaveHeaderAtGFxIndex: u64 = 52921;
 /// `LoadSharedObjectRef` at 0x883ab0 (decompiler, medium); signature (untiered): `undefined LoadSharedObjectRef(longlong * param_1, longlong param_2)`
@@ -99895,6 +100295,8 @@ pub const LookupByFixedString: u64 = 14295;
 pub const LookupCachedMeshByPath: u64 = 75783;
 /// `LookupCommandByName` at 0x34be50 (runtime, high); signature (untiered): `ulonglong LookupCommandByName(char * param_1)`; linear _stricmp of the token against name and short name of the 16 keywords (0x207e590), then the 737 script functions (0x207ea90..), then the 449 console commands (0x208d130..); on a hit sets token+0x204 = 'X' and token+0x208 = opcode (high); semantic signature: `bool (ScriptToken* token)`
 pub const LookupCommandByName: u64 = 21973;
+/// `LookupCommandByName` as a function pointer type (high).
+pub type LookupCommandByName_fn = unsafe extern "C" fn(token: *mut c_void) -> bool;
 /// `LookupEntryByObjectModelPath` at 0x3b8e80 (decompiler, medium); signature (untiered): `ulonglong LookupEntryByObjectModelPath(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const LookupEntryByObjectModelPath: u64 = 24599;
 /// `LookupEntryField94ByField30` at 0x4f4b20 (decompiler, medium); signature (untiered): `undefined4 LookupEntryField94ByField30(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -101161,6 +101563,8 @@ pub const MenuEventHandler__dtor: u64 = 33577;
 pub const MenuEventHandler__vdtor: u64 = 33611;
 /// `MenuModeChangeListener::ProcessEvent` at 0x5e80d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(void * this, longlong * param_1, longlong param_2, undefined8 param_3)`; menu mode: pause categories default objects 0x8b (fade fMenuModeFadeOutTime) and 0x8c, MenuMode sleep; back: unpause, GameMode sleep (high); semantic signature: `uint32 (MenuModeChangeListener* this, const void* event, void* source)`
 pub const MenuModeChangeListener__ProcessEvent: u64 = 35103;
+/// `MenuModeChangeListener::ProcessEvent` as a function pointer type (high).
+pub type MenuModeChangeListener__ProcessEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const c_void, source: *mut c_void) -> u32;
 /// `MenuOpenHandler::CanProcess` at 0x962180 (semantic, high); signature (untiered): `char CanProcess(MenuOpenHandler * this, longlong * param_1)`
 pub const MenuOpenHandler__CanProcess: u64 = 52259;
 /// `MenuOpenHandler::ProcessButtonEvent` at 0x961580 (semantic, high); signature (untiered): `undefined1 ProcessButtonEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -101263,6 +101667,8 @@ pub const MergeWeightedParams: u64 = 107120;
 pub const MersenneTwisterNextUInt32: u64 = 96150;
 /// `MessageBoxData::ctor` at 0x963f40 (semantic, high); signature (low): `MessageBoxData * ctor(MessageBoxData * this, longlong * param_1, longlong * param_2, longlong * param_3, undefined1 param_4, undefined4 param_5, undefined4 param_6)`;  (high); semantic signature: `MessageBoxData* (MessageBoxData* this, const BSString* text, const BSTArray<BSString>* buttons, IMessageBoxCallback** cb, u8 buttonBase, u32 type, u32 depth)`
 pub const MessageBoxData__ctor: u64 = 52292;
+/// `MessageBoxData::ctor` as a function pointer type (high).
+pub type MessageBoxData__ctor_fn = unsafe extern "C" fn(this: *mut classes::MessageBoxData, text: *const c_void, buttons: *const c_void, cb: *mut *mut classes::IMessageBoxCallback, buttonBase: u8, type_: u32, depth: u32) -> *mut classes::MessageBoxData;
 /// `MessageBoxData::ctor` at 0x5821b0 (layout_inference, medium); signature (high): `MessageBoxData * ctor(MessageBoxData * this)`
 pub const MessageBoxData__ctor_2: u64 = 418922;
 /// `MessageBoxData::vdtor` at 0x575b30 (layout_inference, medium); signature (low): `MessageBoxData * vdtor(MessageBoxData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -101271,6 +101677,8 @@ pub const MessageBoxData__vdtor: u64 = 33612;
 pub const MessageBoxMenu__Accept: u64 = 52278;
 /// `MessageBoxMenu::ButtonPress` at 0x962f50 (semantic, high); signature (untiered): `undefined ButtonPress(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; AS 'buttonPress' callback: button = top.buttonBase + (u32)args[0]; stores top.type in g_LastMessageBoxType, plays 'UIMenuOK', removes and deletes the top box, showing=0, ShowNextMessage, then callback->Run(button) (high); semantic signature: `void (FxDelegateArgs* args)`
 pub const MessageBoxMenu__ButtonPress: u64 = 52279;
+/// `MessageBoxMenu::ButtonPress` as a function pointer type (high).
+pub type MessageBoxMenu__ButtonPress_fn = unsafe extern "C" fn(args: *mut c_void);
 /// `MessageBoxMenu::Create` at 0x964260 (semantic, high); signature (untiered): `void Create(void)`; creator registered under 'MessageBoxMenu' (high); semantic signature: `IMenu* ()`
 pub const MessageBoxMenu__Create: u64 = 52297;
 /// `MessageBoxMenu::Create` as a function pointer type (high).
@@ -103075,6 +103483,8 @@ pub const MovementHandlerAgentLargeDeltaIdle__vfunc_4: u64 = 92670;
 pub const MovementHandlerAgentLargeDeltaIdle__vfunc_6: u64 = 92672;
 /// `MovementHandlerAgentPlayerControls::HandleMovement` at 0x7a3fd0 (semantic, high); signature (untiered): `undefined HandleMovement(MovementHandlerAgentPlayerControls * this, longlong * param_1, undefined1 * param_2, float * param_3)`; the player controls movement agent: from PlayerControls move/look input (+0x24, look), the camera state and the horse clamp, computes heading = atan2(move) and speed = |move|, feeds the direction history (subobject +0x28, freeze direction thresholds, fControllerBufferDepth) only when the player is in third person (+0x303), dampens by fControllerDampenTime/fMaxMoveRampDownDelta, and writes args->output: {+0 NiPoint3 = 0 with +8 heading, +0xc speed, +0x10 NiPoint3 = 0 with +0x18 rotation speed (look x * factor)} by mode (subobject +0x20: 0 both, 1 heading and rotation only) (high); semantic signature: `void (IMovementHandlerAgent* this, MovementHandlerArgs* args)`
 pub const MovementHandlerAgentPlayerControls__HandleMovement: u64 = 41996;
+/// `MovementHandlerAgentPlayerControls::HandleMovement` as a function pointer type (high).
+pub type MovementHandlerAgentPlayerControls__HandleMovement_fn = unsafe extern "C" fn(this: *mut classes::IMovementHandlerAgent, args: *mut c_void);
 /// `MovementHandlerAgentPlayerControls::IMovementHandlerAgent_vfunc_0` at 0x7a4d2c (rtti, high); signature (high): `undefined IMovementHandlerAgent_vfunc_0(MovementHandlerAgentPlayerControls * this)`
 pub const MovementHandlerAgentPlayerControls__IMovementHandlerAgent_vfunc_0: u64 = 42009;
 /// `MovementHandlerAgentPlayerControls::IMovementHandlerAgent_vfunc_2_sub0` at 0x7a4ce0 (callgraph, medium); signature (untiered): `undefined IMovementHandlerAgent_vfunc_2_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -105925,6 +106335,8 @@ pub const NiBoxSphereIntersector__vfunc_4: u64 = 72282;
 pub const NiCamera__Create: u64 = 70623;
 /// `NiCamera::SetFrustum` at 0xeefae0 (semantic, high); signature (untiered): `undefined SetFrustum(longlong param_1, undefined4 * param_2)`; copies left, right, top, bottom, far, ortho and clamps near (see the field rows); does not rebuild the matrix (high); semantic signature: `void (NiCamera* this, const NiFrustum* f)`
 pub const NiCamera__SetFrustum: u64 = 70626;
+/// `NiCamera::SetFrustum` as a function pointer type (high).
+pub type NiCamera__SetFrustum_fn = unsafe extern "C" fn(this: *mut classes::NiCamera, f: *const c_void);
 /// `NiCamera::SetPerspectiveFromFov` at 0xef17a0 (semantic, medium); signature (untiered): `undefined SetPerspectiveFromFov(longlong * param_1, float param_2, float param_3, float param_4, uint param_5, uint param_6, char param_7, char param_8, float param_9)`; frustum from tan(fov/2) and the aspect, viewport reset to (0,1,1,0), maxFarNearRatio = far/near, then Update; lodAdjust = fov/defaultFov when setLodAdjust (medium); semantic signature: `void (NiCamera* this, float fovDegrees, float near, float far, u32 width, u32 height, bool flag7, bool setLodAdjust, float defaultFov)`
 pub const NiCamera__SetPerspectiveFromFov: u64 = 70643;
 /// `NiCamera::UpdateWorldBound` at 0xef1950 (semantic, high); signature (untiered): `undefined UpdateWorldBound(NiCamera * this)`
@@ -105937,6 +106349,8 @@ pub const NiCamera__UpdateWorldToCamera: u64 = 70641;
 pub type NiCamera__UpdateWorldToCamera_fn = unsafe extern "C" fn(this: *mut classes::NiCamera);
 /// `NiCamera::WorldPtToScreenPt` at 0xef0fb0 (semantic, high); signature (untiered): `undefined8 WorldPtToScreenPt(longlong param_1, float * param_2, float * param_3, float * param_4, float * param_5, float param_6)`; projects a world point to viewport coordinates (default viewport [0,1], y up) and depth; false when |w| <= zeroTolerance (high); semantic signature: `bool (const NiCamera* this, const NiPoint3* p, float* x, float* y, float* z, float zeroTolerance)`
 pub const NiCamera__WorldPtToScreenPt: u64 = 70639;
+/// `NiCamera::WorldPtToScreenPt` as a function pointer type (high).
+pub type NiCamera__WorldPtToScreenPt_fn = unsafe extern "C" fn(this: *const classes::NiCamera, p: *const c_void, x: *mut f32, y: *mut f32, z: *mut f32, zeroTolerance: f32) -> bool;
 /// `NiCamera::ctor` at 0xeef9a0 (layout_inference, medium); signature (low): `NiCamera * ctor(NiCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiCamera__ctor: u64 = 70624;
 /// `NiCamera::dtor` at 0xeefac0 (layout_inference, high); signature (low): `undefined dtor(NiCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -106283,6 +106697,8 @@ pub const NiControllerSequence__vfunc_30: u64 = 72476;
 pub const NiControllerSequence__vfunc_37: u64 = 72464;
 /// `NiCullingProcess::SetFrustum` at 0xf04850 (semantic, high); signature (untiered): `undefined SetFrustum(longlong param_1, undefined8 * param_2)`; copies the frustum to +0x20, recomputes the planes from the camera's world transform, sets activePlaneMask = 0x3f (high); semantic signature: `void (NiCullingProcess* this, const NiFrustum* frustum)`
 pub const NiCullingProcess__SetFrustum: u64 = 71081;
+/// `NiCullingProcess::SetFrustum` as a function pointer type (high).
+pub type NiCullingProcess__SetFrustum_fn = unsafe extern "C" fn(this: *mut classes::partial::NiCullingProcess, frustum: *const c_void);
 /// `NiCullingProcess::ctor` at 0xf04740 (layout_inference, medium); signature (low): `NiCullingProcess * ctor(NiCullingProcess * this, undefined8 param_1)`
 pub const NiCullingProcess__ctor: u64 = 71079;
 /// `NiCullingProcess::ctor` at 0xf048b0 (layout_inference, medium); signature (low): `NiCullingProcess * ctor(NiCullingProcess * this, undefined8 param_1, undefined1 param_2)`
@@ -109877,6 +110293,8 @@ pub const NiSkinInstance__RenderPartitions: u64 = 71211;
 pub const NiSkinInstance__SaveBinary: u64 = 71205;
 /// `NiSkinInstance::UpdatePalette` at 0x1015800 (runtime, high); signature (untiered): `undefined UpdatePalette(longlong param_1, float * param_2)`; rebuilds the bone matrix palette once per render frame (paletteFrame against g_RenderFrameCounter), keeping the previous palette (high); semantic signature: `void (NiSkinInstance* this, const NiTransform* geometryWorld)`
 pub const NiSkinInstance__UpdatePalette: u64 = 77461;
+/// `NiSkinInstance::UpdatePalette` as a function pointer type (high).
+pub type NiSkinInstance__UpdatePalette_fn = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, geometryWorld: *const c_void);
 /// `NiSkinInstance::ctor` at 0xf09ab0 (layout_inference, high); signature (low): `NiSkinInstance * ctor(NiSkinInstance * this, longlong param_1, longlong param_2, undefined8 param_3)`
 pub const NiSkinInstance__ctor: u64 = 71208;
 /// `NiSkinInstance::ctor` at 0xf0a690 (layout_inference, high); signature (high): `NiSkinInstance * ctor(NiSkinInstance * this)`
@@ -109899,6 +110317,8 @@ pub const NiSkinPartition__IsEqual: u64 = 71130;
 pub const NiSkinPartition__LoadBinary: u64 = 71126;
 /// `NiSkinPartition::RenderAll` at 0xf08460 (semantic, high); signature (untiered): `undefined RenderAll(longlong * param_1, undefined8 param_2)`; calls slot 37 for each partition (high); semantic signature: `void (NiSkinPartition* this, SkinDrawContext* ctx)`
 pub const NiSkinPartition__RenderAll: u64 = 71150;
+/// `NiSkinPartition::RenderAll` as a function pointer type (high).
+pub type NiSkinPartition__RenderAll_fn = unsafe extern "C" fn(this: *mut classes::NiSkinPartition, ctx: *mut c_void);
 /// `NiSkinPartition::RenderPartition` at 0xf084c0 (semantic, medium); signature (untiered): `undefined * RenderPartition(NiSkinPartition * this, undefined8 * param_1, ulonglong param_2)`
 pub const NiSkinPartition__RenderPartition: u64 = 71151;
 /// `NiSkinPartition::SaveBinary` at 0xf07040 (semantic, high); signature (untiered): `undefined SaveBinary(NiSkinPartition * this, longlong param_1)`
@@ -111141,12 +111561,18 @@ pub const NiTimeController__vfunc_44: u64 = 70825;
 pub const NiTimeController__vfunc_45: u64 = 20327;
 /// `NiTransform::ApplyToBound` at 0xefcf20 (semantic, high); signature (untiered): `undefined ApplyToBound(float * param_1, float * param_2, float * param_3)`; centre' = xf.rot*centre*xf.scale + xf.trans, radius' = radius*xf.scale; with radius 0 this is the point transform (high); semantic signature: `void (NiBound* out, const NiBound* in, const NiTransform* xf)`
 pub const NiTransform__ApplyToBound: u64 = 70938;
+/// `NiTransform::ApplyToBound` as a function pointer type (high).
+pub type NiTransform__ApplyToBound_fn = unsafe extern "C" fn(out: *mut c_void, in_: *const c_void, xf: *const c_void);
 /// `NiTransform::Invert` at 0x6bdfd0 (semantic, high); signature (untiered): `undefined Invert(float * param_1, float * param_2)`; out.rot = inverse(rot) by adjugate/det (left unscaled when |det| <= 1e-6), out.scale = 1/scale, out.trans = -(out.rot*trans)/scale (high); semantic signature: `void (const NiTransform* this, NiTransform* out)`
 pub const NiTransform__Invert: u64 = 38302;
+/// `NiTransform::Invert` as a function pointer type (high).
+pub type NiTransform__Invert_fn = unsafe extern "C" fn(this: *const c_void, out: *mut c_void);
 /// `NiTransform::IsIdentity` at 0xef5c60 (semantic, medium); signature (untiered): `undefined1 IsIdentity(float * param_1)`; identity test (medium); semantic signature: `bool (const NiTransform* this)`
 pub const NiTransform__IsIdentity: u64 = 70762;
 /// `NiTransform::Multiply` at 0x3059a0 (semantic, high); signature (untiered): `float * Multiply(float * param_1, float * param_2, float * param_3)`; out = lhs * rhs: rot = lhs.rot*rhs.rot (row-major 3x3, column vectors), trans = lhs.rot*rhs.trans*lhs.scale + lhs.trans, scale = lhs.scale*rhs.scale; returns out (high); semantic signature: `NiTransform* (const NiTransform* lhs, NiTransform* out, const NiTransform* rhs)`
 pub const NiTransform__Multiply: u64 = 20324;
+/// `NiTransform::Multiply` as a function pointer type (high).
+pub type NiTransform__Multiply_fn = unsafe extern "C" fn(lhs: *const c_void, out: *mut c_void, rhs: *const c_void) -> *mut c_void;
 /// `NiTransform::SetIdentity` at 0xef5b60 (semantic, medium); signature (untiered): `undefined SetIdentity(undefined8 * param_1)`; identity rotation, zero translation, scale 1 (medium); semantic signature: `void (NiTransform* this)`
 pub const NiTransform__SetIdentity: u64 = 70760;
 /// `NiTransformController::ctor` at 0xf69730 (layout_inference, high); signature (high): `NiTransformController * ctor(NiTransformController * this)`
@@ -112499,6 +112925,8 @@ pub const OffsetPointerBy30OrNull: u64 = 21360;
 pub const OffsetRectangleObject: u64 = 85888;
 /// `OffsetSubtreeWorldTranslation` at 0x153ae40 (semantic, high); signature (untiered): `undefined OffsetSubtreeWorldTranslation(longlong * param_1, float * param_2, float * param_3)`; recursively adds offset to world translation (+0xa0) and previousOffset to the previous world translation (+0xd4) of the subtree, sets flag bit 11 of +0xf4 (high); semantic signature: `void (NiAVObject* node, const NiPoint3* offset, const NiPoint3* previousOffset)`
 pub const OffsetSubtreeWorldTranslation: u64 = 107150;
+/// `OffsetSubtreeWorldTranslation` as a function pointer type (high).
+pub type OffsetSubtreeWorldTranslation_fn = unsafe extern "C" fn(node: *mut classes::NiAVObject, offset: *const c_void, previousOffset: *const c_void);
 /// `OnCompletion` at 0x13a56d0 (decompiler, medium); signature (untiered): `undefined OnCompletion(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const OnCompletion: u64 = 450290;
 /// `OnCompletion_2` at 0x13ab230 (decompiler, medium); signature (untiered): `undefined OnCompletion_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -112939,6 +113367,8 @@ pub const Papyrus__Actor__GetEquippedArmorInSlot: u64 = 54684;
 pub const Papyrus__Actor__GetEquippedArmorInSlot_sub0: u64 = 16113;
 /// `Papyrus::Actor::GetEquippedItemType` at 0xa00940 (papyrus_native, high); signature (medium): `int GetEquippedItemType(IVirtualMachine * vm, uint stackId, Actor * self, uint a0)`; hand 0 left, 1 right: the equipped item's type; vm is used only on the error paths (high); semantic signature: `int (IVirtualMachine* vm, u32 stackId, Actor* self, u32 hand)`
 pub const Papyrus__Actor__GetEquippedItemType: u64 = 54685;
+/// `Papyrus::Actor::GetEquippedItemType` as a function pointer type (high).
+pub type Papyrus__Actor__GetEquippedItemType_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, hand: u32) -> i32;
 /// `Papyrus::Actor::GetEquippedShield` at 0xa0d4e0 (papyrus_native, high); signature (medium): `TESObjectARMO * GetEquippedShield(IVirtualMachine * vm, uint stackId, Actor * self)`
 pub const Papyrus__Actor__GetEquippedShield: u64 = 54922;
 /// `Papyrus::Actor::GetEquippedShout` at 0xa0d4f0 (papyrus_native, high); signature (medium): `TESShout * GetEquippedShout(IVirtualMachine * vm, uint stackId, Actor * self)`
@@ -113367,6 +113797,8 @@ pub const Papyrus__Debug__DumpAliasData: u64 = 55372;
 pub const Papyrus__Debug__DumpAliasData_sub0: u64 = 55396;
 /// `Papyrus::Debug::GetConfigName` at 0xa1f310 (runtime, high); signature (untiered): `bool GetConfigName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; the latent GetConfigName native of Debug (returns its string through ReturnFromLatent) (high); semantic signature: `bool (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
 pub const Papyrus__Debug__GetConfigName: u64 = 55373;
+/// `Papyrus::Debug::GetConfigName` as a function pointer type (high).
+pub type Papyrus__Debug__GetConfigName_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void) -> bool;
 /// `Papyrus::Debug::GetPlatformName` at 0xa1f3c0 (papyrus_native, high); signature (medium): `bool GetPlatformName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 pub const Papyrus__Debug__GetPlatformName: u64 = 55374;
 /// `Papyrus::Debug::GetPlatformName_sub0` at 0xeac650 (callgraph, medium); signature (untiered): `char * GetPlatformName_sub0(void)`
@@ -113375,14 +113807,20 @@ pub const Papyrus__Debug__GetPlatformName_sub0: u64 = 68970;
 pub const Papyrus__Debug__GetVersionNumber: u64 = 55375;
 /// `Papyrus::Debug::MessageBox` at 0xa1f520 (papyrus_native, high); signature (medium): `void MessageBox(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`; ShowMessageBox(text, null, 0, 4, 10, "OK", null) (high); semantic signature: `void (IVirtualMachine* vm, u32 stackId, void*, const BSFixedString* text)`
 pub const Papyrus__Debug__MessageBox: u64 = 55376;
+/// `Papyrus::Debug::MessageBox` as a function pointer type (high).
+pub type Papyrus__Debug__MessageBox_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, a2: *mut c_void, text: *const classes::BSFixedString);
 /// `Papyrus::Debug::Notification` at 0xa1f570 (papyrus_native, high); signature (medium): `void Notification(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`; Debug.Notification native: ShowHUDMessage(text, nullptr, true) if the text is not empty (high); semantic signature: `void (IVirtualMachine* vm, u32 stackId, void*, const BSFixedString* text)`
 pub const Papyrus__Debug__Notification: u64 = 55377;
+/// `Papyrus::Debug::Notification` as a function pointer type (high).
+pub type Papyrus__Debug__Notification_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, a2: *mut c_void, text: *const classes::BSFixedString);
 /// `Papyrus::Debug::OpenUserLog` at 0xa1f5b0 (papyrus_native, high); signature (medium): `bool OpenUserLog(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 pub const Papyrus__Debug__OpenUserLog: u64 = 55378;
 /// `Papyrus::Debug::PlayerMoveToAndWait` at 0xa1f000 (papyrus_native, high); signature (medium): `bool PlayerMoveToAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 pub const Papyrus__Debug__PlayerMoveToAndWait: u64 = 55369;
 /// `Papyrus::Debug::QuitGame` at 0xa1f600 (runtime, high); signature (untiered): `void QuitGame(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; the QuitGame native of Debug (high); semantic signature: `void (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
 pub const Papyrus__Debug__QuitGame: u64 = 55379;
+/// `Papyrus::Debug::QuitGame` as a function pointer type (high).
+pub type Papyrus__Debug__QuitGame_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void);
 /// `Papyrus::Debug::RegisterFuncs` at 0xa1fbf0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Papyrus__Debug__RegisterFuncs: u64 = 55394;
 /// `Papyrus::Debug::SendAnimationEvent` at 0xa1f620 (papyrus_native, high); signature (medium): `void SendAnimationEvent(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, BSFixedString * a1)`
@@ -113593,8 +114031,12 @@ pub const Papyrus__Game__FindRandomReferenceOfType: u64 = 55460;
 pub const Papyrus__Game__FindRandomReferenceOfType_sub0: u64 = 13421;
 /// `Papyrus::Game::ForceFirstPerson` at 0xa2ad20 (papyrus_native, high); signature (medium): `void ForceFirstPerson(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; exactly 12 bytes: 48 8B 0D <rel32> (mov rcx,[g_PlayerCamera_ptr]) + E9 <rel32> (jmp 0x8f8de0) (high); semantic signature: `void (IVirtualMachine* vm, u32 stackId, void* unused)`
 pub const Papyrus__Game__ForceFirstPerson: u64 = 55564;
+/// `Papyrus::Game::ForceFirstPerson` as a function pointer type (high).
+pub type Papyrus__Game__ForceFirstPerson_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void);
 /// `Papyrus::Game::ForceThirdPerson` at 0xa2ad30 (papyrus_native, high); signature (medium): `void ForceThirdPerson(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; exactly 12 bytes: mov rcx,[0x31a5478] + jmp 0x8f8f40 (high); semantic signature: `void (IVirtualMachine* vm, u32 stackId, void* unused)`
 pub const Papyrus__Game__ForceThirdPerson: u64 = 55565;
+/// `Papyrus::Game::ForceThirdPerson` as a function pointer type (high).
+pub type Papyrus__Game__ForceThirdPerson_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void);
 /// `Papyrus::Game::GetForm` at 0xa2ad40 (papyrus_native, high); signature (medium): `TESForm * GetForm(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
 pub const Papyrus__Game__GetForm: u64 = 55566;
 /// `Papyrus::Game::GetFormFromFile` at 0xa24a10 (papyrus_native, high); signature (medium): `TESForm * GetFormFromFile(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0, BSFixedString * a1)`
@@ -113689,6 +114131,8 @@ pub const Papyrus__Game__SetAllowFlyingMountLandingRequests: u64 = 55574;
 pub const Papyrus__Game__SetBeastForm: u64 = 55497;
 /// `Papyrus::Game::SetCameraTarget` at 0xa2ade0 (papyrus_native, high); signature (medium): `void SetCameraTarget(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, Actor * a0)`; PlayerCamera::SetTarget(target) (high); semantic signature: `void (IVirtualMachine* vm, u32 stackId, void* unused, Actor* target)`
 pub const Papyrus__Game__SetCameraTarget: u64 = 55575;
+/// `Papyrus::Game::SetCameraTarget` as a function pointer type (high).
+pub type Papyrus__Game__SetCameraTarget_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void, target: *mut classes::Actor);
 /// `Papyrus::Game::SetHudCartMode` at 0xa25650 (papyrus_native, high); signature (medium): `void SetHudCartMode(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
 pub const Papyrus__Game__SetHudCartMode: u64 = 55498;
 /// `Papyrus::Game::SetInChargen` at 0xa2adf0 (papyrus_native, high); signature (medium): `void SetInChargen(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0, bool a1, bool a2)`
@@ -113699,6 +114143,8 @@ pub const Papyrus__Game__SetPlayerAIDriven: u64 = 55577;
 pub const Papyrus__Game__SetPlayerReportCrime: u64 = 55578;
 /// `Papyrus::Game::SetSittingRotation` at 0xa25670 (papyrus_native, high); signature (medium): `void SetSittingRotation(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`; FirstPersonState.sittingYaw = degrees * K (0x8f8eb0) (high); semantic signature: `void (IVirtualMachine* vm, u32 stackId, void* unused, float degrees)`
 pub const Papyrus__Game__SetSittingRotation: u64 = 55499;
+/// `Papyrus::Game::SetSittingRotation` as a function pointer type (high).
+pub type Papyrus__Game__SetSittingRotation_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void, degrees: f32);
 /// `Papyrus::Game::SetSunGazeImageSpaceModifier` at 0xa255f0 (papyrus_native, high); signature (medium): `void SetSunGazeImageSpaceModifier(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESImageSpaceModifier * a0)`
 pub const Papyrus__Game__SetSunGazeImageSpaceModifier: u64 = 55496;
 /// `Papyrus::Game::ShakeCamera` at 0xa25500 (papyrus_native, high); signature (medium): `void ShakeCamera(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, float a1, float a2)`
@@ -113707,6 +114153,8 @@ pub const Papyrus__Game__ShakeCamera: u64 = 55494;
 pub const Papyrus__Game__ShakeController: u64 = 55495;
 /// `Papyrus::Game::ShowFirstPersonGeometry` at 0xa24940 (papyrus_native, high); signature (medium): `void ShowFirstPersonGeometry(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`; PlayerCharacter viewFlags bit 1 = !show (high); semantic signature: `void (IVirtualMachine* vm, u32 stackId, void* unused, bool show)`
 pub const Papyrus__Game__ShowFirstPersonGeometry: u64 = 55464;
+/// `Papyrus::Game::ShowFirstPersonGeometry` as a function pointer type (high).
+pub type Papyrus__Game__ShowFirstPersonGeometry_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void, show: bool);
 /// `Papyrus::Game::ShowLimitedRaceMenu` at 0xa2ae70 (papyrus_native, high); signature (medium): `void ShowLimitedRaceMenu(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 pub const Papyrus__Game__ShowLimitedRaceMenu: u64 = 55579;
 /// `Papyrus::Game::ShowRaceMenu` at 0xa2ae80 (papyrus_native, high); signature (medium): `void ShowRaceMenu(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
@@ -113829,6 +114277,8 @@ pub const Papyrus__MagicEffect__GetAssociatedSkill: u64 = 55431;
 pub const Papyrus__MagicEffect__RegisterFuncs: u64 = 55433;
 /// `Papyrus::Math::Ceiling` at 0xa30800 (runtime, high); signature (untiered): `int Ceiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`; the Ceiling native of Math (high); semantic signature: `int (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self, float a0)`
 pub const Papyrus__Math__Ceiling: u64 = 55700;
+/// `Papyrus::Math::Ceiling` as a function pointer type (high).
+pub type Papyrus__Math__Ceiling_fn = unsafe extern "C" fn(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void, a0: f32) -> i32;
 /// `Papyrus::Math::DegreesToRadians` at 0xa30890 (papyrus_native, high); signature (medium): `float DegreesToRadians(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
 pub const Papyrus__Math__DegreesToRadians: u64 = 55703;
 /// `Papyrus::Math::Floor` at 0xa308b0 (papyrus_native, high); signature (medium): `int Floor(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
@@ -113869,10 +114319,14 @@ pub const Papyrus__Message__Show_cb0: u64 = 173265;
 pub const Papyrus__Message__Show_cb1: u64 = 173266;
 /// `Papyrus::MusicType::Add` at 0xa1b020 (papyrus_native, high); signature (medium): `void Add(IVirtualMachine * vm, uint stackId, BGSMusicType * self)`; ScriptedMusicState::Add(*0x31dfd80, self) (high); semantic signature: `void (VM*, u32, BGSMusicType* self)`
 pub const Papyrus__MusicType__Add: u64 = 55273;
+/// `Papyrus::MusicType::Add` as a function pointer type (high).
+pub type Papyrus__MusicType__Add_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, self_: *mut classes::BGSMusicType);
 /// `Papyrus::MusicType::RegisterFuncs` at 0xa1b080 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Papyrus__MusicType__RegisterFuncs: u64 = 55276;
 /// `Papyrus::MusicType::Remove` at 0xa1b040 (papyrus_native, high); signature (medium): `void Remove(IVirtualMachine * vm, uint stackId, BGSMusicType * self)`; ScriptedMusicState::Remove(*0x31dfd80, self) (high); semantic signature: `void (VM*, u32, BGSMusicType* self)`
 pub const Papyrus__MusicType__Remove: u64 = 55274;
+/// `Papyrus::MusicType::Remove` as a function pointer type (high).
+pub type Papyrus__MusicType__Remove_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, self_: *mut classes::BGSMusicType);
 /// `Papyrus::ObjectReference::Activate` at 0xa446e0 (papyrus_native, high); signature (medium): `bool Activate(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, bool a1)`
 pub const Papyrus__ObjectReference__Activate: u64 = 56139;
 /// `Papyrus::ObjectReference::AddDependentAnimatedObjectReference` at 0xa44a70 (papyrus_native, high); signature (medium): `bool AddDependentAnimatedObjectReference(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
@@ -114255,18 +114709,30 @@ pub const Papyrus__Sound__SetInstanceVolume: u64 = 56743;
 pub const Papyrus__Sound__StopInstance: u64 = 56742;
 /// `Papyrus::SoundCategory::Mute` at 0xa1e520 (papyrus_native, high); signature (medium): `void Mute(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; MuteCategory(&p with p = self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
 pub const Papyrus__SoundCategory__Mute: u64 = 55351;
+/// `Papyrus::SoundCategory::Mute` as a function pointer type (high).
+pub type Papyrus__SoundCategory__Mute_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, a2: *mut classes::BGSSoundCategory);
 /// `Papyrus::SoundCategory::Pause` at 0xa1e4a0 (papyrus_native, high); signature (medium): `void Pause(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; PauseCategory(&p with p = self+0x30, fade 0) (high); semantic signature: `void (VM*, u32 stackId, BGSSoundCategory* self)`
 pub const Papyrus__SoundCategory__Pause: u64 = 55349;
+/// `Papyrus::SoundCategory::Pause` as a function pointer type (high).
+pub type Papyrus__SoundCategory__Pause_fn = unsafe extern "C" fn(a0: *mut c_void, stackId: u32, self_: *mut classes::BGSSoundCategory);
 /// `Papyrus::SoundCategory::RegisterFuncs` at 0xa1e640 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Papyrus__SoundCategory__RegisterFuncs: u64 = 55356;
 /// `Papyrus::SoundCategory::SetFrequency` at 0xa1e5e0 (papyrus_native, high); signature (medium): `void SetFrequency(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self, float a0)`; SetCategoryFrequency(&p with p = self+0x30, frequency) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*, float frequency)`
 pub const Papyrus__SoundCategory__SetFrequency: u64 = 55354;
+/// `Papyrus::SoundCategory::SetFrequency` as a function pointer type (high).
+pub type Papyrus__SoundCategory__SetFrequency_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, a2: *mut classes::BGSSoundCategory, frequency: f32);
 /// `Papyrus::SoundCategory::SetVolume` at 0xa1e5a0 (papyrus_native, high); signature (medium): `void SetVolume(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self, float a0)`; SetCategoryVolume(&p with p = self+0x30, volume) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*, float volume)`
 pub const Papyrus__SoundCategory__SetVolume: u64 = 55353;
+/// `Papyrus::SoundCategory::SetVolume` as a function pointer type (high).
+pub type Papyrus__SoundCategory__SetVolume_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, a2: *mut classes::BGSSoundCategory, volume: f32);
 /// `Papyrus::SoundCategory::UnMute` at 0xa1e560 (papyrus_native, high); signature (medium): `void UnMute(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; UnmuteCategory(&p with p = self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
 pub const Papyrus__SoundCategory__UnMute: u64 = 55352;
+/// `Papyrus::SoundCategory::UnMute` as a function pointer type (high).
+pub type Papyrus__SoundCategory__UnMute_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, a2: *mut classes::BGSSoundCategory);
 /// `Papyrus::SoundCategory::UnPause` at 0xa1e4e0 (papyrus_native, high); signature (medium): `void UnPause(IVirtualMachine * vm, uint stackId, BGSSoundCategory * self)`; UnpauseCategory(&p with p = self+0x30, 0) (high); semantic signature: `void (VM*, u32, BGSSoundCategory*)`
 pub const Papyrus__SoundCategory__UnPause: u64 = 55350;
+/// `Papyrus::SoundCategory::UnPause` as a function pointer type (high).
+pub type Papyrus__SoundCategory__UnPause_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, a2: *mut classes::BGSSoundCategory);
 /// `Papyrus::Spell::Cast` at 0xa32e90 (papyrus_native, high); signature (medium): `bool Cast(IVirtualMachine * vm, uint stackId, SpellItem * self, TESObjectREFR * a0, TESObjectREFR * a1)`
 pub const Papyrus__Spell__Cast: u64 = 55747;
 /// `Papyrus::Spell::IsHostile` at 0xa33f30 (papyrus_native, high); signature (medium): `bool IsHostile(IVirtualMachine * vm, uint stackId, SpellItem * self)`
@@ -114373,6 +114839,8 @@ pub const ParseCellPositionRecordsFromFile: u64 = 19125;
 pub const ParseColonSeparatedNameParts: u64 = 63814;
 /// `ParseCommandParams` at 0x347ac0 (semantic, high); signature (untiered): `ulonglong ParseCommandParams(ushort param_1, longlong param_2, longlong param_3, TypeDescriptor * param_4)`; the shared parse callback: writes u16 numParams, then per parameter reads a token and encodes it by type (enums ScriptParamType, ScriptOperandTag); a missing optional parameter stores the parsed count and stops; trailing text -> 'Expected end of line.' (high); semantic signature: `bool (uint16 numParams, const ParamInfo* params, ScriptLineBuffer* line, ScriptCompileBuffer* buf)`
 pub const ParseCommandParams: u64 = 21956;
+/// `ParseCommandParams` as a function pointer type (high).
+pub type ParseCommandParams_fn = unsafe extern "C" fn(numParams: u16, params: *const classes::ParamInfo, line: *mut classes::ScriptLineBuffer, buf: *mut c_void) -> bool;
 /// `ParseContentLengthFromHttpHeaders` at 0x1467870 (decompiler, medium); signature (untiered): `undefined ParseContentLengthFromHttpHeaders(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ParseContentLengthFromHttpHeaders: u64 = 103109;
 /// `ParseContentsResponse` at 0x1442500 (decompiler, medium); signature (untiered): `undefined ParseContentsResponse(longlong * param_1, longlong * param_2, longlong param_3, char * param_4)`
@@ -115397,12 +115865,16 @@ pub const PlayShaderReferenceEffect: u64 = 19872;
 pub const PlaySoundAndInvokeCallbacks: u64 = 454406;
 /// `PlaySoundDescriptorAt` at 0x5598c0 (semantic, high); signature (untiered): `undefined PlaySoundDescriptorAt(longlong param_1, uint param_2, undefined4 * param_3, longlong param_4)`; fire-and-forget: build (flags|0x10), SetPosition, FollowNode, Play (high); semantic signature: `void (BGSSoundDescriptorForm* descriptor, uint32 flags, const float* position, NiAVObject* follow)`
 pub const PlaySoundDescriptorAt: u64 = 33041;
+/// `PlaySoundDescriptorAt` as a function pointer type (high).
+pub type PlaySoundDescriptorAt_fn = unsafe extern "C" fn(descriptor: *mut classes::BGSSoundDescriptorForm, flags: u32, position: *const f32, follow: *mut classes::NiAVObject);
 /// `PlaySoundFile` at 0x559970 (decompiler, medium); signature (medium): `undefined PlaySoundFile(char * param_1, uint param_2)`
 pub const PlaySoundFile: u64 = 33042;
 /// `PlaySoundFileOnReference` at 0x2f6700 (decompiler, medium); signature (medium): `undefined PlaySoundFileOnReference(longlong * param_1, char * param_2, int * param_3, longlong param_4)`
 pub const PlaySoundFileOnReference: u64 = 19859;
 /// `PlayTESSoundAt` at 0x559800 (semantic, high); signature (untiered): `undefined PlayTESSoundAt(longlong param_1, uint param_2, undefined4 * param_3, longlong param_4)`; same through TESSound+0x30 (high); semantic signature: `void (TESSound* sound, uint32 flags, const float* position, NiAVObject* follow)`
 pub const PlayTESSoundAt: u64 = 33040;
+/// `PlayTESSoundAt` as a function pointer type (high).
+pub type PlayTESSoundAt_fn = unsafe extern "C" fn(sound: *mut classes::TESSound, flags: u32, position: *const f32, follow: *mut classes::NiAVObject);
 /// `PlayUISoundOrMusicByEditorId` at 0x9920a0 (runtime, high); signature (untiered): `undefined PlayUISoundOrMusicByEditorId(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; descriptor by editor id -> build (0x10), SetOutputModel(default object 0x97 +0x20), Play; no position or follow. A BGSMusicType (type 0x6d) goes to BSMusicManager slot 1 (high); semantic signature: `void (const char* editorId)`
 pub const PlayUISoundOrMusicByEditorId: u64 = 52939;
 /// `PlayUISoundOrMusicByEditorId` as a function pointer type (high).
@@ -115413,6 +115885,8 @@ pub const PlayerBedEnterHandler__vdtor: u64 = 43356;
 pub const PlayerBedEnterHandler__vfunc_1: u64 = 42834;
 /// `PlayerCamera::AddFreeRotation` at 0x8f9070 (semantic, high); signature (untiered): `undefined AddFreeRotation(longlong param_1, float * param_2)`; current third-person freeRotation += delta when slot 12 is true (high); semantic signature: `void (PlayerCamera* this, NiPoint2* delta)`
 pub const PlayerCamera__AddFreeRotation: u64 = 50800;
+/// `PlayerCamera::AddFreeRotation` as a function pointer type (high).
+pub type PlayerCamera__AddFreeRotation_fn = unsafe extern "C" fn(this: *mut classes::PlayerCamera, delta: *mut c_void);
 /// `PlayerCamera::ApplyLookPitch` at 0x8fb2e0 (semantic, medium); signature (untiered): `undefined ApplyLookPitch(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; applies look.y * fLookingSpeed * FOV ratio to the target's pitch (0x693050) or runs the pitch-to-zero blend; clamps through 0x692eb0 (medium); semantic signature: `void (PlayerCamera* this)`
 pub const PlayerCamera__ApplyLookPitch: u64 = 50840;
 /// `PlayerCamera::ApplyShake` at 0x8fa2b0 (semantic, medium); signature (untiered): `float * ApplyShake(undefined8 param_1, float * param_2, float * param_3)`; out = shake rotation (0x558600 on 0x219e5f0, scaled by its weight) * rotation (medium); semantic signature: `NiQuaternion* (PlayerCamera* this, NiQuaternion* out, NiQuaternion* rotation)`
@@ -115443,6 +115917,8 @@ pub type PlayerCamera__EnterAutoVanity_fn = unsafe extern "C" fn(this: *mut clas
 pub const PlayerCamera__EnterFurnitureCamera: u64 = 50813;
 /// `PlayerCamera::EnterMountCamera` at 0x8f9aa0 (semantic, high); signature (untiered): `undefined EnterMountCamera(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; unless horse or dragon is current: target = mount (player for a dragon with bDragonCameraTargetPlayer), slot 9(&handle) and slot 10 on state 10 or 12, PushState, HUD 'HorseMode' (high); semantic signature: `void (PlayerCamera* this, NiPointer<Actor>* mount)`
 pub const PlayerCamera__EnterMountCamera: u64 = 50821;
+/// `PlayerCamera::EnterMountCamera` as a function pointer type (high).
+pub type PlayerCamera__EnterMountCamera_fn = unsafe extern "C" fn(this: *mut classes::PlayerCamera, mount: *mut c_void);
 /// `PlayerCamera::ExitAutoVanity` at 0x8fc1c0 (semantic, high); signature (untiered): `undefined ExitAutoVanity(longlong param_1)`; pops when auto vanity is current and zeroes idleTimer (high); semantic signature: `void (PlayerCamera* this)`
 pub const PlayerCamera__ExitAutoVanity: u64 = 50852;
 /// `PlayerCamera::ExitAutoVanity` as a function pointer type (high).
@@ -115471,10 +115947,16 @@ pub const PlayerCamera__GetEyeHeightFromCam3: u64 = 50787;
 pub type PlayerCamera__GetEyeHeightFromCam3_fn = unsafe extern "C" fn(this: *mut classes::PlayerCamera) -> f32;
 /// `PlayerCamera::GetFirstPersonCameraNodePosition` at 0x8f8c10 (semantic, high); signature (untiered): `undefined GetFirstPersonCameraNodePosition(longlong param_1, undefined4 * param_2)`; Cam1 node world translation or zero (high); semantic signature: `void (PlayerCamera* this, NiPoint3* out)`
 pub const PlayerCamera__GetFirstPersonCameraNodePosition: u64 = 50786;
+/// `PlayerCamera::GetFirstPersonCameraNodePosition` as a function pointer type (high).
+pub type PlayerCamera__GetFirstPersonCameraNodePosition_fn = unsafe extern "C" fn(this: *mut classes::PlayerCamera, out: *mut c_void);
 /// `PlayerCamera::GetPosition` at 0x8f89b0 (semantic, high); signature (untiered): `undefined8 GetPosition(longlong param_1, float * param_2)`; camera position cached per frame under the lock: first-person camera node, else cameraRoot world translation, else target position + eye height (high); semantic signature: `bool (PlayerCamera* this, NiPoint3* out)`
 pub const PlayerCamera__GetPosition: u64 = 50785;
+/// `PlayerCamera::GetPosition` as a function pointer type (high).
+pub type PlayerCamera__GetPosition_fn = unsafe extern "C" fn(this: *mut classes::PlayerCamera, out: *mut c_void) -> bool;
 /// `PlayerCamera::GetTarget` at 0x8fb240 (semantic, high); signature (untiered): `undefined GetTarget(longlong param_1, longlong * param_2)`; ResolveRefHandle_2(+0x3c) (high); semantic signature: `bool (PlayerCamera* this, NiPointer<TESObjectREFR>* out)`
 pub const PlayerCamera__GetTarget: u64 = 50837;
+/// `PlayerCamera::GetTarget` as a function pointer type (high).
+pub type PlayerCamera__GetTarget_fn = unsafe extern "C" fn(this: *mut classes::PlayerCamera, out: *mut c_void) -> bool;
 /// `PlayerCamera::GetThirdPersonOffsetVector` at 0x8f9030 (semantic, medium); signature (untiered): `undefined GetThirdPersonOffsetVector(longlong param_1, float * param_2, char param_3)`; state 9's currentOffset rotated by its rotation (medium); semantic signature: `void (PlayerCamera* this, NiPoint3* out, bool ignoreForward)`
 pub const PlayerCamera__GetThirdPersonOffsetVector: u64 = 50799;
 /// `PlayerCamera::IsThirdPersonFreeLook` at 0x8f8ff0 (semantic, high); signature (untiered): `undefined8 IsThirdPersonFreeLook(longlong param_1)`; current id > 8 && current slot 12 (high); semantic signature: `bool (PlayerCamera* this)`
@@ -115609,6 +116091,8 @@ pub const PlayerCamera__ctor_sub1: u64 = 50858;
 pub const PlayerCameraTransitionState__Begin: u64 = 50892;
 /// `PlayerCameraTransitionState::Configure` at 0x8fcb50 (semantic, high); signature (untiered): `undefined Configure(longlong param_1, longlong * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`; sets +0x28/+0x30 (refcounted), +0x24, +0x38, clears +0x3c/+0x3d (high); semantic signature: `void (PlayerCameraTransitionState* this, BSTSmartPointer<TESCameraState>* from, BSTSmartPointer<TESCameraState>* to, u32 durationMs, u32 easing)`
 pub const PlayerCameraTransitionState__Configure: u64 = 50888;
+/// `PlayerCameraTransitionState::Configure` as a function pointer type (high).
+pub type PlayerCameraTransitionState__Configure_fn = unsafe extern "C" fn(this: *mut classes::PlayerCameraTransitionState, from: *mut c_void, to: *mut c_void, durationMs: u32, easing: u32);
 /// `PlayerCameraTransitionState::GetRotation` at 0x8fcc30 (semantic, high); signature (untiered): `undefined GetRotation(PlayerCameraTransitionState * this, float * param_1)`
 pub const PlayerCameraTransitionState__GetRotation: u64 = 50889;
 /// `PlayerCameraTransitionState::GetTranslation` at 0x8fccb0 (semantic, high); signature (untiered): `undefined GetTranslation(PlayerCameraTransitionState * this, undefined4 * param_1)`
@@ -115701,6 +116185,8 @@ pub const PlayerCharacter__MagicTarget_vfunc_4: u64 = 40504;
 pub const PlayerCharacter__MagicTarget_vfunc_8: u64 = 40762;
 /// `PlayerCharacter::ProcessMenuOpenCloseEvent` at 0x75eb40 (runtime, high); signature (untiered): `undefined8 ProcessMenuOpenCloseEvent(PlayerCharacter * this, longlong * param_1)`; compares event->menuName.data with the UI string table entries and reacts to the console, journal and container menus; returns 0 (high); semantic signature: `BSEventNotifyControl (PlayerCharacter::sink_2B8* this, const MenuOpenCloseEvent* event, BSTEventSource<MenuOpenCloseEvent>* source)`
 pub const PlayerCharacter__ProcessMenuOpenCloseEvent: u64 = 40740;
+/// `PlayerCharacter::ProcessMenuOpenCloseEvent` as a function pointer type (high).
+pub type PlayerCharacter__ProcessMenuOpenCloseEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::MenuOpenCloseEvent, source: *mut c_void) -> u32;
 /// `PlayerCharacter::SaveGame` at 0x74cec0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(PlayerCharacter * this, longlong * param_1)`
 pub const PlayerCharacter__SaveGame: u64 = 40538;
 /// `PlayerCharacter::SetFirstPerson` at 0x748d10 (runtime, high); signature (untiered): `undefined SetFirstPerson(longlong * param_1, byte param_2, undefined8 param_3, undefined8 param_4)`; switches the player's visible root: sets flags bit 0 on the root not shown and clears it on the other, stores !firstPerson in bit 0 of +0xbeb, copies the reference position and heading into both roots' local transforms and reattaches the camera (high); semantic signature: `void (PlayerCharacter* this, bool firstPerson)`
@@ -116533,8 +117019,12 @@ pub const ProcessLists__GetActorsFilter__dtor_4: u64 = 40922;
 pub const ProcessLists__GetActorsFilter__vdtor: u64 = 34475;
 /// `ProcessLists::QueueActorAnimationJobs` at 0x7836e0 (semantic, high); signature (untiered): `undefined QueueActorAnimationJobs(longlong param_1, longlong * param_2)`; for each actor handle of the process list (+0x30, count +0x40) appends job 0x7898e0, then 0x7899b0 jobs (high); semantic signature: `void (ProcessLists* this, JobList* list)`
 pub const ProcessLists__QueueActorAnimationJobs: u64 = 41370;
+/// `ProcessLists::QueueActorAnimationJobs` as a function pointer type (high).
+pub type ProcessLists__QueueActorAnimationJobs_fn = unsafe extern "C" fn(this: *mut c_void, list: *mut c_void);
 /// `ProcessLists::UpdatePlayerAnimation` at 0x7839c0 (semantic, high); signature (untiered): `undefined UpdatePlayerAnimation(longlong param_1)`; PlayerCharacter slot 125 with g_FrameDelta * time scale when ProcessLists+0x1e6 is set (high); semantic signature: `void (ProcessLists* this)`
 pub const ProcessLists__UpdatePlayerAnimation: u64 = 41371;
+/// `ProcessLists::UpdatePlayerAnimation` as a function pointer type (high).
+pub type ProcessLists__UpdatePlayerAnimation_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `ProcessLoadQueue` at 0xd4ea30 (decompiler, medium); signature (untiered): `undefined ProcessLoadQueue(longlong param_1)`
 pub const ProcessLoadQueue: u64 = 83917;
 /// `ProcessMagicWardHit` at 0x6d7f70 (decompiler, medium); signature (untiered): `undefined8 ProcessMagicWardHit(longlong * param_1, longlong param_2, longlong * param_3, float * param_4, undefined4 * param_5)`
@@ -116589,8 +117079,12 @@ pub const ProcessReferenceQueuesAndDrainTaskQueue: u64 = 36588;
 pub const ProcessReferencesFromHandleArray: u64 = 15329;
 /// `ProcessSaveLoadRequests` at 0x625b90 (semantic, high); signature (untiered): `undefined ProcessSaveLoadRequests(longlong param_1, undefined8 param_2, undefined8 param_3, BSWin32SaveDataSystemUtility_vtbl * param_4)`; main-thread drain of +0x3b8: save kinds (0xf00000xx), load kinds (0xd00000xx), quicksave/quickload with a 2-frame message delay (high); semantic signature: `void (BGSSaveLoadManager*)`
 pub const ProcessSaveLoadRequests: u64 = 35772;
+/// `ProcessSaveLoadRequests` as a function pointer type (high).
+pub type ProcessSaveLoadRequests_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager);
 /// `ProcessSaveLoadThreadRequest` at 0x62a300 (semantic, high); signature (untiered): `undefined ProcessSaveLoadThreadRequest(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; worker handler: 0x40000001 write save, 0x40000004 delete file, 0x50000008 build list, 0x50000020 enumerate, 0x50001000 load entry, 0x10008000 release list (high); semantic signature: `void (Thread*, BSTSmartPointer<Request>*)`
 pub const ProcessSaveLoadThreadRequest: u64 = 35794;
+/// `ProcessSaveLoadThreadRequest` as a function pointer type (high).
+pub type ProcessSaveLoadThreadRequest_fn = unsafe extern "C" fn(a0: *mut c_void, a1: *mut c_void);
 /// `ProcessShadowSceneNodeQueues` at 0x150e040 (runtime, high); signature (untiered): `undefined ProcessShadowSceneNodeQueues(longlong param_1, undefined8 param_2, ulonglong param_3)`; ShadowSceneNode::ProcessQueues on each of the four g_ShadowSceneNode entries (high); semantic signature: `void (BSCullingProcess* culler)`
 pub const ProcessShadowSceneNodeQueues: u64 = 106337;
 /// `ProcessShadowSceneNodeQueues` as a function pointer type (high).
@@ -117161,6 +117655,8 @@ pub const QueueEntitlementListRequestResponse: u64 = 419110;
 pub const QueueEntryCheckingImageScheme: u64 = 83757;
 /// `QueueFaceMorphJobs` at 0x43a3b0 (semantic, high); signature (untiered): `undefined QueueFaceMorphJobs(longlong * param_1)`; adds the job 0x43a900 for every queued BSFaceGenNiNode and empties the queue (high); semantic signature: `void (JobList* list)`
 pub const QueueFaceMorphJobs: u64 = 26996;
+/// `QueueFaceMorphJobs` as a function pointer type (high).
+pub type QueueFaceMorphJobs_fn = unsafe extern "C" fn(list: *mut c_void);
 /// `QueueFadeMessage` at 0x98dd00 (runtime, high); signature (untiered): `undefined QueueFadeMessage(byte param_1, undefined1 param_2, undefined4 param_3, undefined1 param_4, undefined4 param_5)`; creates a FaderData (0x28) for the fader menu (g_UIStrings+8) and queues it: +0x24 = !fadingOut, +0x25 = black, +0x26 = hold, +0x20 = duration, +0x1c = secondTime (high); semantic signature: `void (bool fadingOut, bool black, float duration, bool hold, float secondTime)`
 pub const QueueFadeMessage: u64 = 52847;
 /// `QueueFadeMessage` as a function pointer type (high).
@@ -117225,6 +117721,8 @@ pub const QueueMessage4CWithRef: u64 = 36935;
 pub const QueueMessage5FWithRefHandle: u64 = 36982;
 /// `QueueMessageBox` at 0x962940 (semantic, high); signature (untiered): `ulonglong QueueMessageBox(longlong * param_1, longlong * param_2, ulonglong param_3, ulonglong param_4, undefined4 param_5, longlong * param_6)`; same as ShowMessageBox with an IMessageBoxCallback and a button array (Papyrus Message.Show uses it) (high); semantic signature: `bool (const BSString* text, IMessageBoxCallback** callback, u8 buttonBase, u32 type, u32 depth, const BSTArray<BSString>* buttons)`
 pub const QueueMessageBox: u64 = 442726;
+/// `QueueMessageBox` as a function pointer type (high).
+pub type QueueMessageBox_fn = unsafe extern "C" fn(text: *const c_void, callback: *mut *mut classes::IMessageBoxCallback, buttonBase: u8, type_: u32, depth: u32, buttons: *const c_void) -> bool;
 /// `QueueMessageBoxData` at 0x962a90 (runtime, high); signature (untiered): `ulonglong QueueMessageBoxData(longlong param_1, undefined8 param_2, ulonglong param_3, ulonglong param_4)`; replaces '\r' with ' ', inserts by depth into g_MessageBoxQueue under its spin lock, then queues show (1) for 'MessageBoxMenu' unless 'Loading Menu' is open (high); semantic signature: `bool (MessageBoxData* data)`
 pub const QueueMessageBoxData: u64 = 52271;
 /// `QueueMessageBoxData` as a function pointer type (high).
@@ -117303,6 +117801,8 @@ pub const QueueRotatePathingRequestOnRootMount: u64 = 37814;
 pub const QueueRumbleEntry: u64 = 68528;
 /// `QueueSaveLoadRequest` at 0x625850 (semantic, high); signature (untiered): `undefined QueueSaveLoadRequest(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`; allocates a Request and pushes it to the main queue (bit31) or the worker (high); semantic signature: `void (BGSSaveLoadManager*, u32 kind)`
 pub const QueueSaveLoadRequest: u64 = 35769;
+/// `QueueSaveLoadRequest` as a function pointer type (high).
+pub type QueueSaveLoadRequest_fn = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, kind: u32);
 /// `QueueSaveLoadUIMessageWithNumberArg` at 0x9913c0 (decompiler, medium); signature (untiered): `undefined QueueSaveLoadUIMessageWithNumberArg(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const QueueSaveLoadUIMessageWithNumberArg: u64 = 52922;
 /// `QueueScaleformEvent` at 0x116eca0 (semantic, high); signature (untiered): `undefined QueueScaleformEvent(longlong * param_1, undefined8 param_2)`; AddMessage(name, 6, BSUIScaleformData{event}) (high); semantic signature: `void (const BSFixedString* menuName, void* scaleformEvent)`
@@ -118041,6 +118541,8 @@ pub const ReadAndDiscardEntryArray: u64 = 63979;
 pub const ReadAndUnescapeJsonStringField: u64 = 527280;
 /// `ReadAndVerifyMagicHeader` at 0x61f310 (semantic, high); signature (untiered): `bool ReadAndVerifyMagicHeader(longlong * param_1, undefined8 param_2)`; seek 0, check 'TESV_SAVEGAME' (0x1908f30) and read the header buffer (high); semantic signature: `bool (Win32FileType*, BGSLoadGameBuffer* out)`
 pub const ReadAndVerifyMagicHeader: u64 = 35675;
+/// `ReadAndVerifyMagicHeader` as a function pointer type (high).
+pub type ReadAndVerifyMagicHeader_fn = unsafe extern "C" fn(a0: *mut c_void, out: *mut classes::BGSLoadGameBuffer) -> bool;
 /// `ReadArchiveEntryArraysFromChunk` at 0x1ebe20 (decompiler, medium); signature (untiered): `undefined ReadArchiveEntryArraysFromChunk(longlong * param_1, longlong * param_2, longlong param_3, ulonglong param_4)`
 pub const ReadArchiveEntryArraysFromChunk: u64 = 14799;
 /// `ReadArchiveFileBuffered` at 0xec4d20 (decompiler, medium); signature (untiered): `int ReadArchiveFileBuffered(longlong param_1, void * param_2, uint param_3)`
@@ -118129,8 +118631,12 @@ pub const ReadCOEDChunk: u64 = 11516;
 pub const ReadCellFromSave: u64 = 27366;
 /// `ReadChangeFormData` at 0x637590 (semantic, high); signature (untiered): `undefined ReadChangeFormData(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; reads the data and inflates it when uncompressedLength != 0 (high); semantic signature: `void (BGSLoadFormBuffer* buf, BGSLoadStream* stream)`
 pub const ReadChangeFormData: u64 = 35991;
+/// `ReadChangeFormData` as a function pointer type (high).
+pub type ReadChangeFormData_fn = unsafe extern "C" fn(buf: *mut classes::BGSLoadFormBuffer, stream: *mut c_void);
 /// `ReadChangeFormHeader` at 0x6373a0 (semantic, high); signature (untiered): `undefined ReadChangeFormHeader(undefined4 * param_1, longlong param_2)`; reads the 9-byte header and the lengths (high); semantic signature: `void (SavedChangeFormRecord* rec, BGSLoadStream* stream)`
 pub const ReadChangeFormHeader: u64 = 35985;
+/// `ReadChangeFormHeader` as a function pointer type (high).
+pub type ReadChangeFormHeader_fn = unsafe extern "C" fn(rec: *mut classes::SavedChangeFormRecord, stream: *mut c_void);
 /// `ReadCharFromStream` at 0xc5a060 (decompiler, medium); signature (medium): `longlong ReadCharFromStream(longlong param_1, undefined8 param_2)`
 pub const ReadCharFromStream: u64 = 65768;
 /// `ReadChunk` at 0x137b590 (decompiler, medium); signature (untiered): `undefined8 ReadChunk(longlong param_1, undefined8 param_2, longlong param_3)`
@@ -118745,6 +119251,8 @@ pub const ReadScriptCallingReference: u64 = 23331;
 pub const ReadScriptCallingReferenceOptional: u64 = 23330;
 /// `ReadScriptToken` at 0x34bfd0 (semantic, high); signature (untiered): `ulonglong ReadScriptToken(longlong param_1, char * param_2, TypeDescriptor * param_3, uint * param_4, char param_5, byte param_6)`; reads one token (skips tab, space and comma; quoted strings; a 'name.' prefix becomes a reference variable via FindOrAddScriptRefVariable stored at token+0x200) and classifies it (variable, else LookupCommandByName) (high); semantic signature: `uint (ScriptCompileBuffer* buf, ScriptToken* out, const char* text, uint* offset, bool allowRef, bool flag)`
 pub const ReadScriptToken: u64 = 21974;
+/// `ReadScriptToken` as a function pointer type (high).
+pub type ReadScriptToken_fn = unsafe extern "C" fn(buf: *mut c_void, out: *mut c_void, text: *const c_char, offset: *mut u32, allowRef: bool, flag: bool) -> u32;
 /// `ReadShaderParticleGeometryDataRef` at 0x4b53a0 (decompiler, high); signature (untiered): `ulonglong ReadShaderParticleGeometryDataRef(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReadShaderParticleGeometryDataRef: u64 = 30143;
 /// `ReadShapeKeysFromBlockStream` at 0xca0b40 (decompiler, medium); signature (untiered): `longlong ReadShapeKeysFromBlockStream(longlong param_1, int param_2)`
@@ -119647,6 +120155,8 @@ pub const RegisterCellRefsWithNavMeshObstacleManager: u64 = 19043;
 pub const RegisterCharacterUpdateJobHandler: u64 = 80673;
 /// `RegisterChildGeometriesWithAccumulator` at 0x1521ad0 (semantic, high); signature (untiered): `undefined8 RegisterChildGeometriesWithAccumulator(longlong * param_1, longlong param_2)`; (existing row) focus maps: registers every non-hidden geometry child of a node into the accumulator without any frustum or NiAVObject::Cull (returns 2 for a hidden node) (high); semantic signature: `u32 (AccumulatorRef* ctx, NiNode* node)`
 pub const RegisterChildGeometriesWithAccumulator: u64 = 106623;
+/// `RegisterChildGeometriesWithAccumulator` as a function pointer type (high).
+pub type RegisterChildGeometriesWithAccumulator_fn = unsafe extern "C" fn(ctx: *mut c_void, node: *mut classes::NiNode) -> u32;
 /// `RegisterCollisionQueryJobHandlers` at 0x110c6a0 (decompiler, medium); signature (medium): `undefined RegisterCollisionQueryJobHandlers(longlong param_1)`
 pub const RegisterCollisionQueryJobHandlers: u64 = 81118;
 /// `RegisterConvexListAgent` at 0xc8bbd0 (decompiler, medium); signature (untiered): `undefined RegisterConvexListAgent(longlong param_1)`
@@ -122931,6 +123441,8 @@ pub const RemoveDwordKeyedEntryLocked: u64 = 30389;
 pub const RemoveEdgeFromVertexPairMap: u64 = 81841;
 /// `RemoveEffectShaderData` at 0x26c750 (semantic, high); signature (untiered): `undefined RemoveEffectShaderData(undefined8 param_1, longlong * param_2, longlong param_3)`; walks node's subtree like ApplyEffectShaderData (same name filter at data+8) and clears effectOverlay (+0x68) on each shader property whose effectOverlay == data (tail jump to SetField68RefPtr(property, null)) (high); semantic signature: `void (TESEffectShader* shader, NiAVObject* node, BSEffectShaderData* data)`
 pub const RemoveEffectShaderData: u64 = 17331;
+/// `RemoveEffectShaderData` as a function pointer type (high).
+pub type RemoveEffectShaderData_fn = unsafe extern "C" fn(shader: *mut classes::TESEffectShader, node: *mut classes::NiAVObject, data: *mut c_void);
 /// `RemoveElementBySwapWithLast` at 0xc06de0 (decompiler, medium); signature (untiered): `undefined RemoveElementBySwapWithLast(ushort * param_1, longlong param_2)`
 pub const RemoveElementBySwapWithLast: u64 = 64657;
 /// `RemoveElementRange16` at 0x14c910 (decompiler, medium); signature (medium): `undefined RemoveElementRange16(longlong * param_1, int param_2, int param_3)`
@@ -124119,18 +124631,24 @@ pub const RenderAccumulatorBatchGroupE0: u64 = 106594;
 pub const RenderAccumulatorBatchGroups70And78: u64 = 106593;
 /// `RenderActiveImageSpaceEffects` at 0x14edbf0 (semantic, high); signature (untiered): `undefined RenderActiveImageSpaceEffects(longlong param_1, undefined4 param_2, int param_3)`; the post-process chain: effects 0..7 that are active; HDR tonemap (effect 30, or copy 0x22 when 0x20d75e4 is 0) from source (1) into finalTarget directly when no TAA, no later effect and no dynamic resolution, else into 0x29; TAA (RenderPingPongTargetEffect, 0x29 -> 0x2a or final); optional save-game screenshot into 0x4b; effects 3..7 (3 = depth of field) ping-ponging 0x29/0x2a; dynamic-resolution upsample (RenderPassIfTargetScaled 0x1546520) into finalTarget (high); semantic signature: `void (ImageSpaceManager* this, i32 sourceTarget, i32 finalTarget)`
 pub const RenderActiveImageSpaceEffects: u64 = 105674;
+/// `RenderActiveImageSpaceEffects` as a function pointer type (high).
+pub type RenderActiveImageSpaceEffects_fn = unsafe extern "C" fn(this: *mut c_void, sourceTarget: i32, finalTarget: i32);
 /// `RenderAndMeasureViewsAtPosition` at 0x2c63f0 (decompiler, medium); signature (untiered): `undefined1 RenderAndMeasureViewsAtPosition(undefined8 param_1, undefined8 * param_2, longlong * * param_3, longlong * * param_4)`
 pub const RenderAndMeasureViewsAtPosition: u64 = 19121;
 /// `RenderField58AccumulatorUnderLock` at 0x40f6f0 (decompiler, medium); signature (untiered): `undefined RenderField58AccumulatorUnderLock(longlong param_1, longlong param_2)`
 pub const RenderField58AccumulatorUnderLock: u64 = 26184;
 /// `RenderFirstPerson` at 0x1537b10 (runtime, high); signature (untiered): `undefined RenderFirstPerson(byte param_1, char param_2)`; draws the first-person root (arms and weapon) after the main scene; runs only when the first-person root is shown at frame start and the camera is not the free camera (high); semantic signature: `void (void* renderTargets, bool)`
 pub const RenderFirstPerson: u64 = 107129;
+/// `RenderFirstPerson` as a function pointer type (high).
+pub type RenderFirstPerson_fn = unsafe extern "C" fn(renderTargets: *mut c_void, a1: bool);
 /// `RenderFrame` at 0x6565b0 (runtime, high); signature (untiered): `undefined RenderFrame(longlong * param_1, undefined8 param_2, longlong * * param_3, longlong * * param_4)`; per-frame render: world draw when the player's 3D is loaded (0x656d10), menus, screenshots, then PresentFrame (high); semantic signature: `void (void* owner)`
 pub const RenderFrame: u64 = 36555;
 /// `RenderFrame` as a function pointer type (high).
 pub type RenderFrame_fn = unsafe extern "C" fn(owner: *mut c_void);
 /// `RenderImageSpace` at 0x153ac00 (runtime, high); signature (untiered): `undefined RenderImageSpace(int param_1)`; post-processing after the world and first person: unbinds the colour slots, volumetric lighting, then the image space chain on 0x33d40a0 (ID_105674) (high); semantic signature: `void (int)`
 pub const RenderImageSpace: u64 = 107148;
+/// `RenderImageSpace` as a function pointer type (high).
+pub type RenderImageSpace_fn = unsafe extern "C" fn(a0: i32);
 /// `RenderInventory3DItem` at 0x93dae0 (decompiler, medium); signature (untiered): `undefined RenderInventory3DItem(longlong param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`
 pub const RenderInventory3DItem: u64 = 51755;
 /// `RenderMenuStack` at 0x116ac80 (runtime, high); signature (untiered): `undefined RenderMenuStack(longlong param_1)`; (pass 6) draws the open menus: from the topmost menu with flag 0x200 (or the bottom) upward, slot 6 of each; nothing when +0x1c0 is 0 (high); semantic signature: `void (EventSourceHolder_MenuOpenClose* this)`
@@ -124139,6 +124657,8 @@ pub const RenderMenuStack: u64 = 82084;
 pub type RenderMenuStack_fn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_MenuOpenClose);
 /// `RenderPassImmediately` at 0x1560340 (semantic, high); signature (untiered): `undefined RenderPassImmediately(longlong * param_1, int param_2, char param_3, undefined4 param_4)`; draws one pass now: switches technique on the cached shader (RestoreTechnique old, SetupTechnique new; returns if false), SetupMaterial when the material changes, then SetupGeometry (via ID_107685), DrawGeometryByPrimitiveKind, RestoreGeometry; a skinned/dynamic branch for geometry+0x130 (high); semantic signature: `void (BSRenderPass* pass, u32 techniqueId, bool alphaTest, u32 flags)`
 pub const RenderPassImmediately: u64 = 107644;
+/// `RenderPassImmediately` as a function pointer type (high).
+pub type RenderPassImmediately_fn = unsafe extern "C" fn(pass: *mut c_void, techniqueId: u32, alphaTest: bool, flags: u32);
 /// `RenderScreenSpaceReflectionPass` at 0x15419a0 (decompiler, medium); signature (untiered): `int RenderScreenSpaceReflectionPass(undefined8 * param_1, int param_2)`
 pub const RenderScreenSpaceReflectionPass: u64 = 107239;
 /// `RenderShadowMaps` at 0x1538430 (runtime, high); signature (untiered): `undefined RenderShadowMaps(void)`; draws the shadow maps: the sun's slot 10 (cascades and focus maps) and the other shadow lights (high); semantic signature: `void (...)`
@@ -124149,6 +124669,8 @@ pub const RenderShadowMaskPasses: u64 = 107141;
 pub type RenderShadowMaskPasses_fn = unsafe extern "C" fn();
 /// `RenderShadowMasks` at 0x1539a70 (runtime, high); signature (untiered): `undefined RenderShadowMasks(byte param_1)`; step 13a: when shadows are on (0x20d6811 or 0x3436300 > 0), one immediate BSUtilityShader pass per light of 0x34362f0 into target 0x12 (Msg_ClearLists_sub16_sub0 0x1539b10: Alloc, RenderPassImmediately, QueueRelease) (high); semantic signature: `void (bool)`
 pub const RenderShadowMasks: u64 = 107140;
+/// `RenderShadowMasks` as a function pointer type (high).
+pub type RenderShadowMasks_fn = unsafe extern "C" fn(a0: bool);
 /// `RenderStackedPassesImmediatelyAndFreeList` at 0x15215b0 (decompiler, medium); signature (untiered): `undefined RenderStackedPassesImmediatelyAndFreeList(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const RenderStackedPassesImmediatelyAndFreeList: u64 = 106616;
 /// `RenderTargetManager::CreateCubeMapRenderTarget` at 0x10154a0 (semantic, high); signature (untiered): `undefined CreateCubeMapRenderTarget(longlong param_1, uint param_2, undefined8 * param_3)`; stores {w, h, format}, creates the cube objects (0x100ad40) (high); semantic signature: `void (RenderTargetManager* this, u32 id, const void* p)`
@@ -124209,6 +124731,8 @@ pub const Renderer__FlushDirtyRenderState: u64 = 77247;
 pub type Renderer__FlushDirtyRenderState_fn = unsafe extern "C" fn(this: *mut classes::Renderer, targetsOnly: bool);
 /// `Renderer::Init` at 0x1007b70 (semantic, high); signature (untiered): `undefined Init(longlong param_1, longlong * param_2, int * param_3, undefined8 * param_4)`; stores the screen settings, registers the class, creates (or adopts) the window, creates device and swap chain, back buffer views, calls g_CreateRenderTargetsCallback, sets default state (high); semantic signature: `void (Renderer* this, const void* windowParams, const void* screenSettings, HWND* outHwnd)`
 pub const Renderer__Init: u64 = 77226;
+/// `Renderer::Init` as a function pointer type (high).
+pub type Renderer__Init_fn = unsafe extern "C" fn(this: *mut classes::Renderer, windowParams: *const c_void, screenSettings: *const c_void, outHwnd: *mut c_void);
 /// `Renderer::Lock` at 0x1009cf0 (semantic, high); signature (untiered): `undefined Lock(longlong param_1)`; EnterCriticalSection(this+0x27f0); 0x1009d10 unlocks (high); semantic signature: `void (Renderer* this)`
 pub const Renderer__Lock: u64 = 77243;
 /// `Renderer::Lock` as a function pointer type (high).
@@ -127475,6 +127999,8 @@ pub const ResizeValueArray: u64 = 83116;
 pub const ResizeValueArray_2: u64 = 83952;
 /// `ResizeVariableArray` at 0x9d5630 (semantic, high); signature (medium): `char ResizeVariableArray(longlong * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`; sets the array's size: 0 resets every element (the buffer stays); growing allocates (first time) or reallocates the 0x10-byte elements on the scrap heap and initialises the new ones to None, returning false without changing the size when the allocation fails; shrinking resets the dropped tail; returns true otherwise (high); semantic signature: `bool (BSScrapArray<BSScript::Variable>* array, u32 newSize)`
 pub const ResizeVariableArray: u64 = 53915;
+/// `ResizeVariableArray` as a function pointer type (high).
+pub type ResizeVariableArray_fn = unsafe extern "C" fn(array: *mut c_void, newSize: u32) -> bool;
 /// `ResizeVector0xA8` at 0x13c19d0 (decompiler, medium); signature (untiered): `undefined ResizeVector0xA8(longlong * param_1, ulonglong param_2, undefined8 param_3)`
 pub const ResizeVector0xA8: u64 = 99333;
 /// `ResizeVector88` at 0x15a36f0 (decompiler, medium); signature (untiered): `undefined ResizeVector88(longlong * param_1, ulonglong param_2, undefined8 param_3)`
@@ -127485,6 +128011,8 @@ pub const ResizeWordVectorZeroFill: u64 = 109505;
 pub const ResolveActivatorFormReferences: u64 = 17697;
 /// `ResolveActorHandle` at 0x2676c0 (runtime, high); signature (untiered): `bool ResolveActorHandle(uint * param_1, longlong * param_2)`; resolves an actor handle (high); semantic signature: `bool ResolveActorHandle(const uint* handle, NiPointer<Actor>* out)`
 pub const ResolveActorHandle: u64 = 17201;
+/// `ResolveActorHandle` as a function pointer type (high).
+pub type ResolveActorHandle_fn = unsafe extern "C" fn(handle: *const u32, out: *mut c_void) -> bool;
 /// `ResolveAllTextureSetEntries` at 0x1ec870 (decompiler, medium); signature (untiered): `undefined ResolveAllTextureSetEntries(longlong param_1, longlong param_2, longlong param_3, TypeDescriptor * param_4)`
 pub const ResolveAllTextureSetEntries: u64 = 14815;
 /// `ResolveAndPrecacheSoundDescriptor` at 0xccd2c0 (decompiler, medium); signature (untiered): `undefined ResolveAndPrecacheSoundDescriptor(longlong param_1, undefined8 param_2, uint param_3)`
@@ -127631,10 +128159,14 @@ pub const ResolvePathTargetOrFallback: u64 = 83091;
 pub const ResolvePendingRequestAndQueueResponse: u64 = 442300;
 /// `ResolveRefHandle` at 0x17ebe0 (runtime, high); signature (untiered): `bool ResolveRefHandle(uint * param_1, longlong * param_2)`; resolves a reference handle, zeroing a stale handle (high); semantic signature: `bool ResolveRefHandle(uint* handle, NiPointer<TESObjectREFR>* out)`
 pub const ResolveRefHandle: u64 = 12331;
+/// `ResolveRefHandle` as a function pointer type (high).
+pub type ResolveRefHandle_fn = unsafe extern "C" fn(handle: *mut u32, out: *mut c_void) -> bool;
 /// `ResolveRefHandleAndSanitizeVectors` at 0x191dc0 (decompiler, medium); signature (untiered): `undefined8 ResolveRefHandleAndSanitizeVectors(uint * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const ResolveRefHandleAndSanitizeVectors: u64 = 12983;
 /// `ResolveRefHandleConst` at 0x17ed00 (runtime, high); signature (untiered): `bool ResolveRefHandleConst(uint * param_1, longlong * param_2)`; resolves a reference handle without modifying it (high); semantic signature: `bool ResolveRefHandleConst(const uint* handle, NiPointer<TESObjectREFR>* out)`
 pub const ResolveRefHandleConst: u64 = 12332;
+/// `ResolveRefHandleConst` as a function pointer type (high).
+pub type ResolveRefHandleConst_fn = unsafe extern "C" fn(handle: *const u32, out: *mut c_void) -> bool;
 /// `ResolveRefHandleIntoSmartPtr` at 0x1917d0 (decompiler, medium); signature (medium): `undefined ResolveRefHandleIntoSmartPtr(uint * param_1, longlong * param_2)`
 pub const ResolveRefHandleIntoSmartPtr: u64 = 12971;
 /// `ResolveRefHandle_2` at 0x18ff80 (runtime, medium); signature (untiered): `bool ResolveRefHandle_2(uint * param_1, longlong * param_2)`; second copy of ResolveRefHandle (medium); semantic signature: `bool ResolveRefHandle_2(uint* handle, NiPointer<TESObjectREFR>* out)`
@@ -128137,6 +128669,8 @@ pub const RunCheckSphereVisitor: u64 = 90425;
 pub const RunCleanupCallbacksAndFreeBlock: u64 = 60122;
 /// `RunConsoleLinesFromStream` at 0x343ee0 (semantic, high); signature (untiered): `undefined RunConsoleLinesFromStream(undefined8 param_1, undefined8 param_2, uint * param_3, longlong * param_4)`; bat path: for each line (0x104 bytes) echoes it through the printer, compiles it into a stack Script with compileType 1 and runs it immediately with TLS+0x600 set (high); semantic signature: `void (Stream* stream, ScriptCompiler* compiler, RefHandle* selectedRef, ConsoleLogPrinter* printer)`
 pub const RunConsoleLinesFromStream: u64 = 21891;
+/// `RunConsoleLinesFromStream` as a function pointer type (high).
+pub type RunConsoleLinesFromStream_fn = unsafe extern "C" fn(stream: *mut c_void, compiler: *mut c_void, selectedRef: *mut c_void, printer: *mut c_void);
 /// `RunCrtCommonMain` at 0x15a8338 (decompiler, medium); signature (medium): `ulonglong RunCrtCommonMain(void)`
 pub const RunCrtCommonMain: u64 = 109636;
 /// `RunCullingWithStaticProcess` at 0x152b740 (decompiler, medium); signature (medium): `undefined RunCullingWithStaticProcess(longlong * param_1, int param_2, int param_3)`
@@ -128175,10 +128709,14 @@ pub const RunQuestStagesWithFlag2: u64 = 25000;
 pub const RunQuestStagesWithFlag4: u64 = 25001;
 /// `RunQueuedConsoleCommands` at 0x9928f0 (runtime, high); signature (untiered): `undefined RunQueuedConsoleCommands(undefined8 param_1)`; pops each task and calls CompileAndRunScript(task.script, task.compiler, 1, task.ref), then deletes the Script and the task (high); semantic signature: `void (ConsoleCommandQueue* q)`
 pub const RunQueuedConsoleCommands: u64 = 52952;
+/// `RunQueuedConsoleCommands` as a function pointer type (high).
+pub type RunQueuedConsoleCommands_fn = unsafe extern "C" fn(q: *mut c_void);
 /// `RunRaycastSearch` at 0x8deb50 (decompiler, medium); signature (untiered): `undefined RunRaycastSearch(longlong param_1, undefined8 * * * * * * * * param_2, undefined8 param_3, ulonglong param_4)`
 pub const RunRaycastSearch: u64 = 50060;
 /// `RunScriptIfDelayElapsed` at 0x343960 (semantic, high); signature (untiered): `ulonglong RunScriptIfDelayElapsed(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4, char param_5)`; quest-delay gate, publishes ownerQuest/actor in TLS (+0x620 +0x648 +0x650), then RunWithReentrantScriptContext (high); semantic signature: `bool (Script* script, TESObjectREFR* thisRef, ScriptLocals* locals, TESObjectREFR* containingObj, bool force)`
 pub const RunScriptIfDelayElapsed: u64 = 21886;
+/// `RunScriptIfDelayElapsed` as a function pointer type (high).
+pub type RunScriptIfDelayElapsed_fn = unsafe extern "C" fn(script: *mut classes::Script, thisRef: *mut classes::TESObjectREFR, locals: *mut c_void, containingObj: *mut classes::TESObjectREFR, force: bool) -> bool;
 /// `RunScriptWithCachedLocals` at 0x3872e0 (decompiler, medium); signature (untiered): `undefined RunScriptWithCachedLocals(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const RunScriptWithCachedLocals: u64 = 23338;
 /// `RunScriptWithProvidedLocals` at 0x385e90 (decompiler, medium); signature (untiered): `undefined8 RunScriptWithProvidedLocals(longlong param_1, longlong * param_2, longlong param_3, undefined8 param_4)`
@@ -128203,6 +128741,8 @@ pub const RunTeleportDoorSearch: u64 = 30656;
 pub const RunThreadEntry: u64 = 87894;
 /// `RunWithReentrantScriptContext` at 0x386f20 (semantic, high); signature (untiered): `ulonglong RunWithReentrantScriptContext(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined1 param_6, undefined1 param_7, undefined1 param_8, undefined4 param_9)`; allocates or reuses a ScriptRunContext (0x60) and runs; depth counter 0x31e016c (high); semantic signature: `bool (ScriptRunState* state, Script*, TESObjectREFR* thisRef, ScriptLocals*, TESObjectREFR* containingObj, bool, u8, u8, u32)`
 pub const RunWithReentrantScriptContext: u64 = 23336;
+/// `RunWithReentrantScriptContext` as a function pointer type (high).
+pub type RunWithReentrantScriptContext_fn = unsafe extern "C" fn(state: *mut c_void, a1: *mut classes::Script, thisRef: *mut classes::TESObjectREFR, a3: *mut c_void, containingObj: *mut classes::TESObjectREFR, a5: bool, a6: u8, a7: u8, a8: u32) -> bool;
 /// `SafeMemcpy` at 0x1031520 (decompiler, high); signature (high): `undefined8 SafeMemcpy(void * param_1, ulonglong param_2, void * param_3, ulonglong param_4)`
 pub const SafeMemcpy: u64 = 77678;
 /// `SafeMemcpy_10` at 0x134f130 (decompiler, high); signature (high): `undefined8 SafeMemcpy_10(void * param_1, ulonglong param_2, void * param_3, ulonglong param_4)`
@@ -128425,6 +128965,8 @@ pub const SaveObjectRefAndAdjustedFloat: u64 = 48669;
 pub const SaveObjectRefAndForm: u64 = 33142;
 /// `SaveOverEntry` at 0x6145c0 (semantic, high); signature (untiered): `undefined8 SaveOverEntry(undefined8 * param_1)`; custom-named entry: Save(2, entry name) and drop the old entry; 'Save'/'Autosave'/'Quicksave' entry: Save(2, generated name), then DeleteSaveFile(old name) (call 0x614637, S1 delete hook 1) and RemoveSaveEntry (high); semantic signature: `bool (Entry*)`
 pub const SaveOverEntry: u64 = 35533;
+/// `SaveOverEntry` as a function pointer type (high).
+pub type SaveOverEntry_fn = unsafe extern "C" fn(a0: *mut c_void) -> bool;
 /// `SaveOverSaveEntryAtIndex` at 0x990190 (decompiler, medium); signature (untiered): `undefined SaveOverSaveEntryAtIndex(undefined8 param_1, uint param_2)`
 pub const SaveOverSaveEntryAtIndex: u64 = 52896;
 /// `SavePackageLocation` at 0x4a5300 (decompiler, medium); signature (untiered): `undefined SavePackageLocation(longlong param_1, longlong param_2)`
@@ -129503,8 +130045,12 @@ pub const ScriptEffect__vfunc_8: u64 = 34890;
 pub const ScriptEffect__vfunc_9: u64 = 34891;
 /// `ScriptRunner::ExecuteStatement` at 0x386320 (semantic, high); signature (untiered): `undefined1 ExecuteStatement(undefined8 * param_1, longlong * param_2, uint param_3, longlong * param_4, int * param_5, uint param_6, int * param_7, uint param_8, char param_9, char param_10)`; handles keywords (begin 0x10, set 0x15, if 0x16-0x19, return 0x1e); for a command: entry = GetCommandTableEntryByOpcode, skipped silently when referenceFunction && !thisRef, else entry->execute(params, script->data, thisRef, ctx->containingObj, script, ctx->locals, &result, &offset) (high); semantic signature: `bool (ScriptRunContext* ctx, Script* script, uint opcode, TESObjectREFR* thisRef, int* blockSkip, uint offset, int* skip, uint line, bool evalOnly, bool)`
 pub const ScriptRunner__ExecuteStatement: u64 = 23329;
+/// `ScriptRunner::ExecuteStatement` as a function pointer type (high).
+pub type ScriptRunner__ExecuteStatement_fn = unsafe extern "C" fn(ctx: *mut classes::ScriptRunContext, script: *mut classes::Script, opcode: u32, thisRef: *mut classes::TESObjectREFR, blockSkip: *mut i32, offset: u32, skip: *mut i32, line: u32, evalOnly: bool, a9: bool) -> bool;
 /// `ScriptRunner::Run` at 0x385b40 (semantic, high); signature (untiered): `ulonglong Run(undefined8 * param_1, longlong * param_2, TypeDescriptor * param_3, TypeDescriptor * param_4, undefined8 param_5, char param_6, undefined1 param_7, undefined1 param_8, undefined4 param_9)`; bytecode loop: per statement u16 opcode (0x1c = explicit reference: u16 refIndex then u16 opcode), u16 length, then ExecuteStatement (high); semantic signature: `bool (ScriptRunContext* ctx, Script* script, TESObjectREFR* thisRef, ScriptLocals* locals, TESObjectREFR* containingObj, bool, u8, u8, u32)`
 pub const ScriptRunner__Run: u64 = 23326;
+/// `ScriptRunner::Run` as a function pointer type (high).
+pub type ScriptRunner__Run_fn = unsafe extern "C" fn(ctx: *mut classes::ScriptRunContext, script: *mut classes::Script, thisRef: *mut classes::TESObjectREFR, locals: *mut c_void, containingObj: *mut classes::TESObjectREFR, a5: bool, a6: u8, a7: u8, a8: u32) -> bool;
 /// `ScriptedRefEffect::vdtor` at 0x5dd710 (layout_inference, medium); signature (low): `ScriptedRefEffect * vdtor(ScriptedRefEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ScriptedRefEffect__vdtor: u64 = 34892;
 /// `ScrollItem::BGSDestructibleObjectForm_vdtor` at 0x154be4 (slot_propagation, medium); signature (high): `undefined BGSDestructibleObjectForm_vdtor(ScrollItem * this)`
@@ -133455,6 +134001,8 @@ pub const SetupMistMenuModelNode: u64 = 52321;
 pub const SetupMountInteraction: u64 = 38704;
 /// `SetupPassGeometryState` at 0x1562270 (semantic, high); signature (untiered): `undefined SetupPassGeometryState(longlong param_1, longlong * param_2, char param_3, uint param_4)`; updates the alpha/blend state from the geometry's alpha property (flags & 4 and technique not 0x5c000058..5b) and the alpha-test reference, then tail-calls shader SetupGeometry (high); semantic signature: `void (BSRenderPass* pass, BSShader* shader, bool alphaTest, u32 flags)`
 pub const SetupPassGeometryState: u64 = 107685;
+/// `SetupPassGeometryState` as a function pointer type (high).
+pub type SetupPassGeometryState_fn = unsafe extern "C" fn(pass: *mut c_void, shader: *mut classes::BSShader, alphaTest: bool, flags: u32);
 /// `SetupRef3DFadeNode` at 0x2db5e0 (decompiler, medium); signature (untiered): `longlong SetupRef3DFadeNode(longlong param_1, TESObjectREFR * param_2, undefined8 param_3, undefined8 param_4)`
 pub const SetupRef3DFadeNode: u64 = 19450;
 /// `SetupReflectedCamera` at 0xfde350 (semantic, medium); signature (untiered): `undefined SetupReflectedCamera(longlong param_1, float * param_2, longlong * param_3)`; mirrors the source camera across the plane and copies its frustum with SetFrustum, so the reflected near is max(source near, far / reflected+0x170, reflected+0x16c) (medium); semantic signature: `void (NiCamera* source, const NiPlane* plane, NiCamera* reflected)`
@@ -133561,6 +134109,8 @@ pub type ShadowSceneNode__AddLight_fn = unsafe extern "C" fn(this: *mut classes:
 pub const ShadowSceneNode__AssignLightsToGeometry: u64 = 106352;
 /// `ShadowSceneNode::CreateLight` at 0x150c810 (semantic, high); signature (untiered): `BSLight * CreateLight(longlong param_1, longlong * param_2, undefined1 * param_3)`; for an NiDirectionalLight or NiPointLight: plain BSLight unless params+1 (casts shadow), else frustum (fov < pi), parabolic with one map (< 2pi) or two; copies biasScale (+0x14) and +0x18; queues it in +0x160 (high); semantic signature: `BSLight* (ShadowSceneNode* this, NiLight* light, const LightParams* params)`
 pub const ShadowSceneNode__CreateLight: u64 = 106326;
+/// `ShadowSceneNode::CreateLight` as a function pointer type (high).
+pub type ShadowSceneNode__CreateLight_fn = unsafe extern "C" fn(this: *mut classes::ShadowSceneNode, light: *mut classes::NiLight, params: *const c_void) -> *mut classes::BSLight;
 /// `ShadowSceneNode::ProcessQueues` at 0x150d410 (runtime, high); signature (untiered): `longlong * ProcessQueues(longlong param_1, longlong param_2, ulonglong param_3)`; under lightQueueLock: updates the queued lights, applies the queued removals and geometry changes, empties the queues (high); semantic signature: `void (ShadowSceneNode* this, BSCullingProcess* culler, ...)`
 pub const ShadowSceneNode__ProcessQueues: u64 = 106335;
 /// `ShadowSceneNode::QueueDetach` at 0x150e1f0 (semantic, medium); signature (untiered): `undefined8 * QueueDetach(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; appends to +0x1b0 and optionally removes the object from the portal graph (medium); semantic signature: `void (ShadowSceneNode* this, NiAVObject* object, bool fromPortalGraph, bool keepInGraph)`
@@ -133571,6 +134121,8 @@ pub const ShadowSceneNode__QueueLightAdd: u64 = 106327;
 pub type ShadowSceneNode__QueueLightAdd_fn = unsafe extern "C" fn(this: *mut classes::ShadowSceneNode, light: *mut classes::BSLight);
 /// `ShadowSceneNode::QueueLightRemoval` at 0x150d120 (semantic, high); signature (untiered): `ulonglong QueueLightRemoval(longlong param_1, ulonglong * param_2)`; appends to +0x178 once the scene was processed (high); semantic signature: `void (ShadowSceneNode* this, NiPointer<BSLight>* light)`
 pub const ShadowSceneNode__QueueLightRemoval: u64 = 106332;
+/// `ShadowSceneNode::QueueLightRemoval` as a function pointer type (high).
+pub type ShadowSceneNode__QueueLightRemoval_fn = unsafe extern "C" fn(this: *mut classes::ShadowSceneNode, light: *mut c_void);
 /// `ShadowSceneNode::QueueLightUpdate` at 0x150e330 (semantic, high); signature (untiered): `DWORD QueueLightUpdate(longlong param_1, longlong param_2)`; appends to +0x190; the current name RemoveFromCollection190Locked is wrong (high); semantic signature: `void (ShadowSceneNode* this, BSLight* light)`
 pub const ShadowSceneNode__QueueLightUpdate: u64 = 106341;
 /// `ShadowSceneNode::QueueLightUpdate` as a function pointer type (high).
@@ -134205,6 +134757,8 @@ pub const SkyrimScript__DelayFunctorFactory__dtor: u64 = 53421;
 pub const SkyrimScript__DelayFunctorFactory__vdtor: u64 = 53426;
 /// `SkyrimScript::GetAnimationEventSourceForFormID` at 0x9b1790 (semantic, high); signature (untiered): `undefined8 GetAnimationEventSourceForFormID(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; Papyrus registration path: FindFormByID, reference check (vtable+0x160), holder slot 2, GetGraphEventSource(mgr, 0) (high); semantic signature: `BSTEventSource<BSAnimationGraphEvent>* (uint formID)`
 pub const SkyrimScript__GetAnimationEventSourceForFormID: u64 = 53402;
+/// `SkyrimScript::GetAnimationEventSourceForFormID` as a function pointer type (high).
+pub type SkyrimScript__GetAnimationEventSourceForFormID_fn = unsafe extern "C" fn(formID: u32) -> *mut c_void;
 /// `SkyrimScript::HandlePolicy::ConvertHandleToString` at 0x9b9ff0 (semantic, high); signature (untiered): `undefined ConvertHandleToString(HandlePolicy * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
 pub const SkyrimScript__HandlePolicy__ConvertHandleToString: u64 = 53515;
 /// `SkyrimScript::HandlePolicy::GetBaseObjectHandle` at 0x9b9760 (semantic, medium); signature (untiered): `ulonglong GetBaseObjectHandle(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -135129,40 +135683,58 @@ pub type SkyrimVM__EventRelayFunctor__operator_fn = unsafe extern "C" fn(this: *
 pub const SkyrimVM__EventRelayFunctor__vdtor: u64 = 54368;
 /// `SkyrimVM::FreezeForSave` at 0x9e19e0 (semantic, high); signature (untiered): `undefined FreezeForSave(longlong param_1)`; sets the freeze flag, runs VM updates until frozen ('VM timed out while waiting to freeze! Save will be bad.'), unregisters the VM's event sinks (high); semantic signature: `void (SkyrimVM*)`
 pub const SkyrimVM__FreezeForSave: u64 = 54015;
+/// `SkyrimVM::FreezeForSave` as a function pointer type (high).
+pub type SkyrimVM__FreezeForSave_fn = unsafe extern "C" fn(a0: *mut classes::partial::SkyrimVM);
 /// `SkyrimVM::InventoryEventFilter::vfunc_0` at 0x9e8690 (rtti, high); signature (low): `undefined1 vfunc_0(InventoryEventFilter * this, void * param_1, undefined8 param_2, undefined8 param_3)`
 pub const SkyrimVM__InventoryEventFilter__vfunc_0: u64 = 54076;
 /// `SkyrimVM::InventoryEventFilter::vfunc_0_sub0` at 0x9e8110 (callgraph, medium); signature (untiered): `ulonglong vfunc_0_sub0(longlong param_1, longlong param_2, ulonglong param_3)`
 pub const SkyrimVM__InventoryEventFilter__vfunc_0_sub0: u64 = 54072;
 /// `SkyrimVM::LoadGame` at 0x9e1c00 (runtime, high); signature (untiered): `undefined LoadGame(longlong param_1)`; reads the VM; corrupt-save message box on failure (high); semantic signature: `void (SkyrimVM*, LoadStorageWrapper*)`
 pub const SkyrimVM__LoadGame: u64 = 54018;
+/// `SkyrimVM::LoadGame` as a function pointer type (high).
+pub type SkyrimVM__LoadGame_fn = unsafe extern "C" fn(a0: *mut classes::partial::SkyrimVM, a1: *mut classes::partial::LoadStorageWrapper);
 /// `SkyrimVM::LoadVMData` at 0x9e5840 (semantic, high); signature (untiered): `undefined8 LoadVMData(longlong param_1, undefined8 * * param_2, undefined1 * param_3, undefined8 param_4)`; slot 2 with a SaveFileHandleReaderWriter, then u16 SkyrimVM version (0xffff = saved unfrozen) and the lists (high); semantic signature: `bool (SkyrimVM* this, LoadStorageWrapper* storage, bool* corrupt, ...)`
 pub const SkyrimVM__LoadVMData: u64 = 54049;
 /// `SkyrimVM::ProcessActivateEvent` at 0x9db090 (runtime, high); signature (untiered): `undefined8 ProcessActivateEvent(SkyrimVM * this, longlong * param_1)`; sends Papyrus OnActivate(actionRef) to objectActivated (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_10* this, const TESActivateEvent* event, BSTEventSource<TESActivateEvent>* source)`
 pub const SkyrimVM__ProcessActivateEvent: u64 = 53959;
+/// `SkyrimVM::ProcessActivateEvent` as a function pointer type (high).
+pub type SkyrimVM__ProcessActivateEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESActivateEvent, source: *mut c_void) -> u32;
 /// `SkyrimVM::ProcessContainerChangedEvent` at 0x9dbac0 (runtime, high); signature (untiered): `undefined8 ProcessContainerChangedEvent(SkyrimVM * this, uint * param_1, undefined8 param_2, longlong param_3)`; sends OnContainerChanged to the item, OnItemRemoved to the old container and OnItemAdded to the new one (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_48* this, const TESContainerChangedEvent* event, BSTEventSource<TESContainerChangedEvent>* source)`
 pub const SkyrimVM__ProcessContainerChangedEvent: u64 = 53966;
+/// `SkyrimVM::ProcessContainerChangedEvent` as a function pointer type (high).
+pub type SkyrimVM__ProcessContainerChangedEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESContainerChangedEvent, source: *mut c_void) -> u32;
 /// `SkyrimVM::ProcessEquipEvent` at 0x9dc4a0 (runtime, high); signature (untiered): `undefined8 ProcessEquipEvent(SkyrimVM * this, longlong * param_1)`; sends OnObjectEquipped / OnObjectUnequipped to the actor and OnEquipped / OnUnequipped to the item; returns 0 (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_68* this, const TESEquipEvent* event, BSTEventSource<TESEquipEvent>* source)`
 pub const SkyrimVM__ProcessEquipEvent: u64 = 53970;
+/// `SkyrimVM::ProcessEquipEvent` as a function pointer type (high).
+pub type SkyrimVM__ProcessEquipEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESEquipEvent, source: *mut c_void) -> u32;
 /// `SkyrimVM::ProcessHitEvent` at 0x9dce00 (runtime, high); signature (untiered): `undefined8 ProcessHitEvent(SkyrimVM * this, longlong * param_1)`; sends OnHit(aggressor, source, projectile, powerAttack, sneakAttack, bash, blocked) to the target through HitArguments (high); semantic signature: `BSEventNotifyControl (SkyrimVM::sink_88* this, const TESHitEvent* event, BSTEventSource<TESHitEvent>* source)`
 pub const SkyrimVM__ProcessHitEvent: u64 = 53974;
+/// `SkyrimVM::ProcessHitEvent` as a function pointer type (high).
+pub type SkyrimVM__ProcessHitEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const classes::TESHitEvent, source: *mut c_void) -> u32;
 /// `SkyrimVM::RegisterEventSinks` at 0x9e27f0 (runtime, high); signature (untiered): `undefined RegisterEventSinks(longlong param_1)`; registers the VM's 49 holder sinks (every SkyrimVM+0x10+8*i except InitScript, which the ctor registers) (high); semantic signature: `void (SkyrimVM* vm)`
 pub const SkyrimVM__RegisterEventSinks: u64 = 54028;
 /// `SkyrimVM::RegisterEventSinks` as a function pointer type (high).
 pub type SkyrimVM__RegisterEventSinks_fn = unsafe extern "C" fn(vm: *mut classes::partial::SkyrimVM);
 /// `SkyrimVM::RegisterNatives` at 0xa325a0 (runtime, high); signature (untiered): `undefined RegisterNatives(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; registers the engine's native functions (every Papyrus::<class>::RegisterFuncs, passing the same pointer on); the script extender's Papyrus moment hooks its one call, at 0x9d645b in SkyrimVM::ctor, where rcx is &g_SkyrimVM+0x210, so *vm is the BSScript::Internal::VirtualMachine that g_SkyrimVM+0x210 holds from then on; rdx, r8 and r9 are passed through untouched to the RegisterFuncs, so a call-site detour should forward all four registers (high); semantic signature: `void (BSTSmartPointer<BSScript::IVirtualMachine>* vm)`
 pub const SkyrimVM__RegisterNatives: u64 = 55739;
+/// `SkyrimVM::RegisterNatives` as a function pointer type (high).
+pub type SkyrimVM__RegisterNatives_fn = unsafe extern "C" fn(vm: *mut c_void);
 /// `SkyrimVM::RelayEventToRefAndEffects` at 0x9e3580 (runtime, high); signature (untiered): `undefined RelayEventToRefAndEffects(longlong param_1, undefined8 param_2, longlong * param_3, undefined8 param_4, undefined8 param_5)`; the second half of an engine event, called after SendEvent to the reference's own handle (it does not send to that handle itself): the reference behind the handle (GetObjectForHandle 0x3d) gets one SendEvent per alias instance (ForEachAliasInstanceOfRef: handle typeID 0x8c) and, when it is an actor (formType 0x3e), one per active effect with a non-zero uniqueID in its MagicTarget list (handle 0x8e); every effect in the list is visited, whatever its state; a non-null filter is an object whose vtable slot 0, bool (filter*, u64 handle), is asked per handle and false skips it; the engine passes null; runs on the caller's thread (high); semantic signature: `void (SkyrimVM* this, u64 handle, const BSFixedString* eventName, BSScript::IFunctionArguments* args, void* filter)`
 pub const SkyrimVM__RelayEventToRefAndEffects: u64 = 54033;
 /// `SkyrimVM::RelayEventToRefAndEffects` as a function pointer type (high).
 pub type SkyrimVM__RelayEventToRefAndEffects_fn = unsafe extern "C" fn(this: *mut classes::partial::SkyrimVM, handle: u64, eventName: *const classes::BSFixedString, args: *mut classes::BSScript__IFunctionArguments, filter: *mut c_void);
 /// `SkyrimVM::Revert` at 0x9e1ca0 (semantic, high); signature (untiered): `undefined Revert(longlong param_1)`; 'Reverting game...' log, ClearPendingArraysLocked 0x9e3fb0, ObjectBindPolicy (+0x3a8) reset (high); semantic signature: `void (SkyrimVM*)`
 pub const SkyrimVM__Revert: u64 = 54019;
+/// `SkyrimVM::Revert` as a function pointer type (high).
+pub type SkyrimVM__Revert_fn = unsafe extern "C" fn(a0: *mut classes::partial::SkyrimVM);
 /// `SkyrimVM::Revert` at 0x9e3fb0 (runtime, high); signature (untiered): `undefined Revert(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; clears the VM's pending lists, calls IVMSaveLoadInterface slot 7 (+0x38) and the handle policy's 0x9ba710 (high); semantic signature: `void (SkyrimVM* this)`
 pub const SkyrimVM__Revert_2: u64 = 54040;
 /// `SkyrimVM::Revert` as a function pointer type (high).
 pub type SkyrimVM__Revert_2_fn = unsafe extern "C" fn(this: *mut classes::partial::SkyrimVM);
 /// `SkyrimVM::SaveGame` at 0x9e1b20 (runtime, high); signature (untiered): `undefined SaveGame(longlong param_1, longlong * param_2)`; writes the VM through +0x218; error string when not frozen (high); semantic signature: `void (SkyrimVM*, SaveStorageWrapper*)`
 pub const SkyrimVM__SaveGame: u64 = 54017;
+/// `SkyrimVM::SaveGame` as a function pointer type (high).
+pub type SkyrimVM__SaveGame_fn = unsafe extern "C" fn(a0: *mut classes::partial::SkyrimVM, a1: *mut classes::partial::SaveStorageWrapper);
 /// `SkyrimVM::SaveVMData` at 0x9e4760 (semantic, high); signature (untiered): `undefined8 SaveVMData(longlong param_1, longlong * param_2, byte param_3)`; IVMSaveLoadInterface slot 1 with a SaveFileHandleReaderWriter, then u16 5 and the SkyrimVM registration lists (high); semantic signature: `bool (SkyrimVM* this, SaveStorageWrapper* storage, bool sizeOnly)`
 pub const SkyrimVM__SaveVMData: u64 = 54041;
 /// `SkyrimVM::SaveVMData` as a function pointer type (high).
@@ -135177,6 +135749,8 @@ pub const SkyrimVM__SleepStopEventFunctor__vfunc_0: u64 = 54394;
 pub const SkyrimVM__SleepStopEventFunctor__vfunc_1: u64 = 54066;
 /// `SkyrimVM::Unfreeze` at 0x9e1ac0 (semantic, high); signature (untiered): `undefined Unfreeze(longlong param_1)`; IVMSaveLoadInterface (+0x218) slots 6 and 5, re-register sinks, clear the freeze flag (high); semantic signature: `void (SkyrimVM*)`
 pub const SkyrimVM__Unfreeze: u64 = 54016;
+/// `SkyrimVM::Unfreeze` as a function pointer type (high).
+pub type SkyrimVM__Unfreeze_fn = unsafe extern "C" fn(a0: *mut classes::partial::SkyrimVM);
 /// `SkyrimVM::UnregisterEventSinks` at 0x9e2e30 (runtime, high); signature (untiered): `undefined UnregisterEventSinks(longlong param_1)`; the matching RemoveEventSink calls (high); semantic signature: `void (SkyrimVM* vm)`
 pub const SkyrimVM__UnregisterEventSinks: u64 = 54029;
 /// `SkyrimVM::UnregisterEventSinks` as a function pointer type (high).
@@ -135411,18 +135985,28 @@ pub const SoulsTrapped__RegisterSink: u64 = 38710;
 pub const SoulsTrapped__UnregisterSink: u64 = 38711;
 /// `SoundHandle::FadeInPlay` at 0xcc9e90 (semantic, high); signature (untiered): `undefined8 FadeInPlay(int * param_1, undefined2 param_2)`; state 1, posts 0xa, 4, then 0x12 to 0 over fadeMs (high); semantic signature: `bool (SoundHandle* this, uint16 fadeMs)`
 pub const SoundHandle__FadeInPlay: u64 = 67645;
+/// `SoundHandle::FadeInPlay` as a function pointer type (high).
+pub type SoundHandle__FadeInPlay_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle, fadeMs: u16) -> bool;
 /// `SoundHandle::FadeOutAndRelease` at 0xcc9ee0 (semantic, high); signature (untiered): `undefined8 FadeOutAndRelease(int * param_1, undefined2 param_2)`; posts 0x12 to 4000 over fadeMs with follow-up 0x1a; id = -1 (high); semantic signature: `bool (SoundHandle* this, uint16 fadeMs)`
 pub const SoundHandle__FadeOutAndRelease: u64 = 67646;
+/// `SoundHandle::FadeOutAndRelease` as a function pointer type (high).
+pub type SoundHandle__FadeOutAndRelease_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle, fadeMs: u16) -> bool;
 /// `SoundHandle::FadeToAttenuation` at 0xcc9e20 (semantic, high); signature (untiered): `ulonglong FadeToAttenuation(int * param_1, undefined2 param_2, undefined2 param_3)`; posts 0x12 (+0x68 ramp, min 100 ms) (high); semantic signature: `bool (SoundHandle* this, uint16 attenuation, uint16 fadeMs)`
 pub const SoundHandle__FadeToAttenuation: u64 = 67644;
+/// `SoundHandle::FadeToAttenuation` as a function pointer type (high).
+pub type SoundHandle__FadeToAttenuation_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle, attenuation: u16, fadeMs: u16) -> bool;
 /// `SoundHandle::FollowNode` at 0xcc9bb0 (runtime, high); signature (untiered): `undefined FollowNode(int * param_1, longlong param_2)`; hook 0x3273910(node), posts 0x13 with node+0xa0 and 0x1d with a reference (high); semantic signature: `void (SoundHandle* this, NiAVObject* node)`
 pub const SoundHandle__FollowNode: u64 = 67636;
 /// `SoundHandle::FollowNode` as a function pointer type (high).
 pub type SoundHandle__FollowNode_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle, node: *mut classes::NiAVObject);
 /// `SoundHandle::GetFlags` at 0xcc9760 (semantic, high); signature (untiered): `undefined8 GetFlags(int * param_1)`; status +0xc (high); semantic signature: `uint32 (const SoundHandle* this)`
 pub const SoundHandle__GetFlags: u64 = 67622;
+/// `SoundHandle::GetFlags` as a function pointer type (high).
+pub type SoundHandle__GetFlags_fn = unsafe extern "C" fn(this: *const classes::SoundHandle) -> u32;
 /// `SoundHandle::GetPositionMs` at 0xcc9c80 (semantic, high); signature (untiered): `undefined8 GetPositionMs(int * param_1)`; status +0x18 (high); semantic signature: `uint32 (const SoundHandle* this)`
 pub const SoundHandle__GetPositionMs: u64 = 67639;
+/// `SoundHandle::GetPositionMs` as a function pointer type (high).
+pub type SoundHandle__GetPositionMs_fn = unsafe extern "C" fn(this: *const classes::SoundHandle) -> u32;
 /// `SoundHandle::GetVolume` at 0xcc9820 (semantic, high); signature (untiered): `undefined8 GetVolume(int * param_1)`; status +8 (high); semantic signature: `float (const SoundHandle* this)`
 pub const SoundHandle__GetVolume: u64 = 67625;
 /// `SoundHandle::GetVolume` as a function pointer type (high).
@@ -135445,6 +136029,8 @@ pub const SoundHandle__Play: u64 = 67616;
 pub type SoundHandle__Play_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle) -> bool;
 /// `SoundHandle::PlayDelayed` at 0xcc9610 (semantic, high); signature (untiered): `undefined8 PlayDelayed(int * param_1, undefined4 param_2)`; state 1, posts 8 with GetTickCount()+min(delayMs,10000); runs as 4 when due (high); semantic signature: `bool (SoundHandle* this, uint32 delayMs)`
 pub const SoundHandle__PlayDelayed: u64 = 67617;
+/// `SoundHandle::PlayDelayed` as a function pointer type (high).
+pub type SoundHandle__PlayDelayed_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle, delayMs: u32) -> bool;
 /// `SoundHandle::Release` at 0xcc9dd0 (semantic, high); signature (untiered): `undefined8 Release(int * param_1)`; posts 0x1a (stop if playing/paused, mark released), id = -1 (high); semantic signature: `bool (SoundHandle* this)`
 pub const SoundHandle__Release: u64 = 67643;
 /// `SoundHandle::Release` as a function pointer type (high).
@@ -135455,8 +136041,12 @@ pub const SoundHandle__SeekMs: u64 = 67638;
 pub const SoundHandle__SetAttenuationCurve: u64 = 67634;
 /// `SoundHandle::SetCategory` at 0xcc9790 (semantic, high); signature (untiered): `undefined SetCategory(int * param_1, longlong param_2, ushort param_3)`; posts 0x31; a playing sound fades to the new category's attenuation (high); semantic signature: `void (SoundHandle* this, BSISoundCategory* category, uint16 fadeMs)`
 pub const SoundHandle__SetCategory: u64 = 67623;
+/// `SoundHandle::SetCategory` as a function pointer type (high).
+pub type SoundHandle__SetCategory_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle, category: *mut classes::BSISoundCategory, fadeMs: u16);
 /// `SoundHandle::SetFinishCallback` at 0xcc9cf0 (semantic, high); signature (untiered): `undefined SetFinishCallback(int * param_1, undefined * param_2, undefined8 param_3)`; posts 0x2b; with audio not running calls cb(ctx,0) at once (high); semantic signature: `void (SoundHandle* this, void (*cb)(void* ctx, uint32 loaded), void* ctx)`
 pub const SoundHandle__SetFinishCallback: u64 = 67641;
+/// `SoundHandle::SetFinishCallback` as a function pointer type (high).
+pub type SoundHandle__SetFinishCallback_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle, cb: *const c_void, ctx: *mut c_void);
 /// `SoundHandle::SetFrequency` at 0xcc98a0 (semantic, high); signature (untiered): `undefined8 SetFrequency(int * param_1, float param_2)`; posts 0xe with ratio*1000; stored clamp(0.1,2.0100 (high); semantic signature: `bool (SoundHandle* this, float ratio)`
 pub const SoundHandle__SetFrequency: u64 = 67627;
 /// `SoundHandle::SetFrequency` as a function pointer type (high).
@@ -135481,6 +136071,8 @@ pub type SoundHandle__SetPosition_fn = unsafe extern "C" fn(this: *mut classes::
 pub const SoundHandle__SetPriority: u64 = 67647;
 /// `SoundHandle::SetStaticAttenuation` at 0xcc9940 (semantic, high); signature (untiered): `undefined8 SetStaticAttenuation(int * param_1, undefined2 param_2)`; posts 0x15 (min 10000) (high); semantic signature: `bool (SoundHandle* this, uint16 attenuation)`
 pub const SoundHandle__SetStaticAttenuation: u64 = 67629;
+/// `SoundHandle::SetStaticAttenuation` as a function pointer type (high).
+pub type SoundHandle__SetStaticAttenuation_fn = unsafe extern "C" fn(this: *mut classes::SoundHandle, attenuation: u16) -> bool;
 /// `SoundHandle::SetVolume` at 0xcc9850 (semantic, high); signature (untiered): `undefined8 SetVolume(int * param_1, undefined4 param_2)`; posts 0xd with volume*1000 (high); semantic signature: `bool (SoundHandle* this, float volume)`
 pub const SoundHandle__SetVolume: u64 = 67626;
 /// `SoundHandle::SetVolume` as a function pointer type (high).
@@ -135747,6 +136339,8 @@ pub const StandardItemData__GetFilterFlag: u64 = 51806;
 pub const StandardItemData__GetName: u64 = 51803;
 /// `StandardItemData::ctor` at 0x903e60 (semantic, high); signature (low): `StandardItemData * ctor(StandardItemData * this, longlong * param_1, undefined8 param_2, undefined4 * param_3)`;  (high); semantic signature: `StandardItemData* (StandardItemData* this, GFxMovieView** view, InventoryEntry* entry, const RefHandle* owner)`
 pub const StandardItemData__ctor: u64 = 50981;
+/// `StandardItemData::ctor` as a function pointer type (high).
+pub type StandardItemData__ctor_fn = unsafe extern "C" fn(this: *mut classes::StandardItemData, view: *mut *mut classes::GFxMovieView, entry: *mut classes::InventoryEntry, owner: *const c_void) -> *mut classes::StandardItemData;
 /// `StandardItemData::dtor` at 0x904500 (semantic, high); signature (untiered): `undefined dtor(StandardItemData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; destructor (currently named StandardItemData::ctor) (high); semantic signature: `void (StandardItemData* this)`
 pub const StandardItemData__dtor: u64 = 50992;
 /// `StandardItemData::dtor` as a function pointer type (high).
@@ -137853,6 +138447,8 @@ pub const SystemTimer__Start: u64 = 109137;
 pub const SystemTimer__Stop: u64 = 109135;
 /// `TAA::Render` at 0x1544da0 (semantic, high); signature (untiered): `int Render(longlong * param_1, int param_2, int param_3)`; temporal AA: history ping-pong 0x51/0x52 (0x53/0x54 for the menu 3D scene mode 2), optional water mask pair 0x56/0x57; inputs: source, history, motion vectors (7), depth 0, TAA mask 0x55, normals; returns destTarget (high); semantic signature: `i32 (TemporalAA* this, i32 sourceTarget, i32 destTarget)`
 pub const TAA__Render: u64 = 527784;
+/// `TAA::Render` as a function pointer type (high).
+pub type TAA__Render_fn = unsafe extern "C" fn(this: *mut c_void, sourceTarget: i32, destTarget: i32) -> i32;
 /// `TES::BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vdtor` at 0x1b4400 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vdtor(TES * this)`
 pub const TES__BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vdtor: u64 = 13617;
 /// `TES::BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vfunc_1` at 0x1aa870 (rtti, high); signature (low): `undefined8 BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vfunc_1(void)`
@@ -138103,8 +138699,12 @@ pub const TESAttackDamageForm__vfunc_3: u64 = 14481;
 pub const TESAttackDamageForm__vfunc_4: u64 = 14482;
 /// `TESAudio::ScriptedMusicState::Add` at 0x5e9f70 (semantic, high); signature (untiered): `undefined Add(ScriptedMusicState * this, longlong param_1)`; appends the type to the scripted list and sends BSMusicEvent{type+0x20, 0} (high); semantic signature: `void (ScriptedMusicState* this, BGSMusicType* type)`
 pub const TESAudio__ScriptedMusicState__Add: u64 = 35145;
+/// `TESAudio::ScriptedMusicState::Add` as a function pointer type (high).
+pub type TESAudio__ScriptedMusicState__Add_fn = unsafe extern "C" fn(this: *mut c_void, type_: *mut classes::BGSMusicType);
 /// `TESAudio::ScriptedMusicState::Remove` at 0x5ea010 (semantic, high); signature (untiered): `undefined Remove(ScriptedMusicState * this, longlong param_1)`; removes the type from the scripted list and sends BSMusicEvent{type+0x20, 1} (high); semantic signature: `void (ScriptedMusicState* this, BGSMusicType* type)`
 pub const TESAudio__ScriptedMusicState__Remove: u64 = 35146;
+/// `TESAudio::ScriptedMusicState::Remove` as a function pointer type (high).
+pub type TESAudio__ScriptedMusicState__Remove_fn = unsafe extern "C" fn(this: *mut c_void, type_: *mut classes::BGSMusicType);
 /// `TESAudio::ScriptedMusicState::ctor` at 0x5ead20 (layout_inference, medium); signature (low): `undefined ctor(ScriptedMusicState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESAudio__ScriptedMusicState__ctor: u64 = 35167;
 /// `TESAudio::ScriptedMusicState::vdtor` at 0x5eaf70 (layout_inference, medium); signature (low): `ScriptedMusicState * vdtor(ScriptedMusicState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -139817,6 +140417,8 @@ pub const TESObjectREFR__BSTEventSink_BSAnimationGraphEvent_vfunc_1: u64 = 20102
 pub const TESObjectREFR__Get3D: u64 = 19735;
 /// `TESObjectREFR::GetAnimationGraphEventSource` at 0x765b00 (semantic, high); signature (untiered): `bool GetAnimationGraphEventSource(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`; ref+0x38 slot 2 then 0x765930; graphIndex 0xffffffff means the active graph (high); semantic signature: `bool (TESObjectREFR* ref, BSTEventSource<BSAnimationGraphEvent>** out, uint graphIndex)`
 pub const TESObjectREFR__GetAnimationGraphEventSource: u64 = 40850;
+/// `TESObjectREFR::GetAnimationGraphEventSource` as a function pointer type (high).
+pub type TESObjectREFR__GetAnimationGraphEventSource_fn = unsafe extern "C" fn(ref_: *mut classes::TESObjectREFR, out: *mut *mut c_void, graphIndex: u32) -> bool;
 /// `TESObjectREFR::GetContainer` at 0x2e8660 (runtime, high); signature (untiered): `longlong GetContainer(longlong param_1)`; the base container component (high); semantic signature: `TESContainer* TESObjectREFR::GetContainer(TESObjectREFR* this)`
 pub const TESObjectREFR__GetContainer: u64 = 19702;
 /// `TESObjectREFR::GetContainer` as a function pointer type (high).
@@ -141691,6 +142293,8 @@ pub const TransformField128PlaneToField138: u64 = 71372;
 pub const TransformIndexedVerticesToWorld: u64 = 35375;
 /// `TransformLocalPosesToModelSpace` at 0xbf17b0 (semantic, high); signature (medium): `undefined TransformLocalPosesToModelSpace(int param_1, longlong param_2, float * param_3, longlong param_4, longlong param_5)`; model[i] = (parents[i] == -1 ? root : model[parents[i]]) * local[i] (rotate+translate, quaternion product, scale product) (high); semantic signature: `void (i32 count, const i16* parents, const hkQsTransform* root, const hkQsTransform* local, hkQsTransform* modelOut)`
 pub const TransformLocalPosesToModelSpace: u64 = 64109;
+/// `TransformLocalPosesToModelSpace` as a function pointer type (high).
+pub type TransformLocalPosesToModelSpace_fn = unsafe extern "C" fn(count: i32, parents: *const i16, root: *const c_void, local: *const c_void, modelOut: *mut c_void);
 /// `TransformLocalPosesToModelSpaceDefault` at 0xbf1250 (decompiler, high); signature (untiered): `undefined TransformLocalPosesToModelSpaceDefault(int param_1, longlong param_2, longlong param_3, longlong param_4)`
 pub const TransformLocalPosesToModelSpaceDefault: u64 = 64104;
 /// `TransformModelPosesToLocalSpace` at 0xbf1930 (decompiler, medium); signature (medium): `undefined TransformModelPosesToLocalSpace(int param_1, longlong param_2, float * param_3, longlong param_4, longlong param_5)`
@@ -142171,12 +142775,18 @@ pub const TypeNode_Init: u64 = 70669;
 pub const UI3DScene__CreateLightsForDef: u64 = 52751;
 /// `UI3DScene::Init` at 0x9894d0 (semantic, high); signature (untiered): `undefined Init(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; creates the UI NiCamera (fUICameraNear/FarDistance, fDefaultFOV), a BSCullingProcess, two BSShaderAccumulators (+0x18 with renderMode 0xc), ShadowSceneNode [1] (sceneIndex 1) and 8 child NiNode roots at +0x38..+0x70 (high); semantic signature: `void (UI3DScene* this)`
 pub const UI3DScene__Init: u64 = 52726;
+/// `UI3DScene::Init` as a function pointer type (high).
+pub type UI3DScene__Init_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `UI3DScene::Render` at 0x9899c0 (runtime, high); signature (untiered): `undefined8 * Render(longlong param_1, int param_2, longlong * param_3, char param_4)`; draws the menu 3D scene g_ShadowSceneNode[1] for the current mode: eye position into both accumulators, ProcessQueues on [1], shadow lights (0x98a670) for mode 4 when 0x20bbdd0 is set, optional depth pass (accumulator +0x18, renderMode 0xc) and shadow masks (0x98a3c0), then the cull of the mode's root with accumulator +0x10 and the draw (high); semantic signature: `void (UI3DScene* this, i32 mode, NiCamera* camera, bool depthPrepass)`
 pub const UI3DScene__Render: u64 = 52727;
+/// `UI3DScene::Render` as a function pointer type (high).
+pub type UI3DScene__Render_fn = unsafe extern "C" fn(this: *mut c_void, mode: i32, camera: *mut classes::NiCamera, depthPrepass: bool);
 /// `UI3DScene::RenderShadowMasks` at 0x98a3c0 (semantic, medium); signature (untiered): `undefined RenderShadowMasks(void)`; one BSUtilityShader shadow-mask pass per frameShadowLights entry of [1]: technique bit 0x400000 frustum (slot 5), 0x1000000 two-map parabolic (slot 8), else 0x800000 (medium); semantic signature: `void ()`
 pub const UI3DScene__RenderShadowMasks: u64 = 52728;
 /// `UI3DScene::UpdateAndRenderShadowLights` at 0x98a670 (runtime, high); signature (untiered): `undefined UpdateAndRenderShadowLights(longlong param_1, longlong param_2)`; for at most 4 shadow lights of [1]: slot 16 with the UI camera, UpdateLight, frameShadowLights, screen rect, slot 9 CullCasters on the mode's root, else slot 12; then slot 10 RenderShadowMaps over frameShadowLights (high); semantic signature: `void (UI3DScene* this, NiCamera* camera)`
 pub const UI3DScene__UpdateAndRenderShadowLights: u64 = 52729;
+/// `UI3DScene::UpdateAndRenderShadowLights` as a function pointer type (high).
+pub type UI3DScene__UpdateAndRenderShadowLights_fn = unsafe extern "C" fn(this: *mut c_void, camera: *mut classes::NiCamera);
 /// `UIBlurManager::ctor` at 0x98c910 (layout_inference, medium); signature (high): `UIBlurManager * ctor(UIBlurManager * this)`
 pub const UIBlurManager__ctor: u64 = 52773;
 /// `UIBlurManager::ctor_sub0` at 0x98cb00 (callgraph, medium); signature (untiered): `undefined ctor_sub0(void)`
@@ -143651,6 +144261,8 @@ pub const UpdateStealthPoints: u64 = 44805;
 pub const UpdateString50FromNumber48: u64 = 86163;
 /// `UpdateSunShadowConstants` at 0x1531b30 (semantic, high); signature (untiered): `undefined UpdateSunShadowConstants(longlong param_1, longlong param_2)`; converts the sun's split distances (+0x5a4, +0x5a8) into post-projection depth with the camera's near/far: (s*f - f*n) / ((f - n) * s) (high); semantic signature: `void (VolumetricLightingParams* params, NiCamera* camera)`
 pub const UpdateSunShadowConstants: u64 = 107027;
+/// `UpdateSunShadowConstants` as a function pointer type (high).
+pub type UpdateSunShadowConstants_fn = unsafe extern "C" fn(params: *mut c_void, camera: *mut classes::NiCamera);
 /// `UpdateSwitchNodeFromFlagBit13` at 0x1eeb10 (decompiler, medium); signature (untiered): `undefined UpdateSwitchNodeFromFlagBit13(longlong param_1, longlong * param_2)`
 pub const UpdateSwitchNodeFromFlagBit13: u64 = 14865;
 /// `UpdateTakeBackItemProcedure` at 0x7182a0 (decompiler, medium); signature (untiered): `undefined UpdateTakeBackItemProcedure(longlong * param_1, TESObjectREFR * param_2, undefined8 param_3, undefined8 param_4)`
@@ -146073,6 +146685,8 @@ pub const WriteChangeFormInitialData: u64 = 35715;
 pub type WriteChangeFormInitialData_fn = unsafe extern "C" fn(buf: *mut classes::BGSSaveFormBuffer, form: *mut classes::TESForm, changeFlags: u32) -> u8;
 /// `WriteChangeFormRecord` at 0x6395d0 (semantic, high); signature (untiered): `undefined WriteChangeFormRecord(longlong param_1, longlong param_2)`; writes 9 header bytes (refID[3], u32 changeFlags, u8 type|sizeCode, u8 version), length (compressed or raw) and uncompressed length (0 when raw) sized by the code, then the data (high); semantic signature: `void (BGSSaveFormBuffer* buf, BGSSaveStream* stream)`
 pub const WriteChangeFormRecord: u64 = 36036;
+/// `WriteChangeFormRecord` as a function pointer type (high).
+pub type WriteChangeFormRecord_fn = unsafe extern "C" fn(buf: *mut classes::BGSSaveFormBuffer, stream: *mut c_void);
 /// `WriteChangedEntriesToStream` at 0xbd5300 (decompiler, medium); signature (untiered): `undefined8 WriteChangedEntriesToStream(longlong param_1, longlong * param_2)`
 pub const WriteChangedEntriesToStream: u64 = 63635;
 /// `WriteChunk` at 0x13dd970 (decompiler, medium); signature (untiered): `undefined8 WriteChunk(longlong param_1, undefined8 param_2, ulonglong param_3)`
@@ -146191,6 +146805,8 @@ pub const WriteFormEntryWithEffectsToSave: u64 = 36177;
 pub const WriteFormIDAs3Bytes: u64 = 53826;
 /// `WriteFormIDIndexArray` at 0x614e70 (semantic, high); signature (untiered): `undefined WriteFormIDIndexArray(longlong param_1, longlong param_2)`; writes u32 (count-1) then the form id of each index 1..count-1 (0 when the index has none) (high); semantic signature: `void (FormIDIndexMap* map, BGSSaveStream* stream)`
 pub const WriteFormIDIndexArray: u64 = 35558;
+/// `WriteFormIDIndexArray` as a function pointer type (high).
+pub type WriteFormIDIndexArray_fn = unsafe extern "C" fn(map: *mut c_void, stream: *mut c_void);
 /// `WriteFormIndexAndFieldsToSave` at 0x7346c0 (decompiler, medium); signature (untiered): `undefined WriteFormIndexAndFieldsToSave(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const WriteFormIndexAndFieldsToSave: u64 = 40116;
 /// `WriteFormNodeIndexAndTransform` at 0x18a9c0 (decompiler, medium); signature (untiered): `undefined WriteFormNodeIndexAndTransform(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
@@ -146355,6 +146971,8 @@ pub const WritePaddedCharsToOstream: u64 = 442927;
 pub const WritePathingRequestAndDwordArrayToSave: u64 = 49967;
 /// `WritePendingChangeFormRecord` at 0x63a790 (semantic, high); signature (untiered): `undefined WritePendingChangeFormRecord(longlong * param_1, longlong param_2, uint param_3, undefined4 param_4)`; re-emits a change form kept from a load for a form that does not exist now (raw copy of its saved data) (high); semantic signature: `void (void** pendingData, BGSSaveStream* stream, u32 formID, u32 changeFlags)`
 pub const WritePendingChangeFormRecord: u64 = 36077;
+/// `WritePendingChangeFormRecord` as a function pointer type (high).
+pub type WritePendingChangeFormRecord_fn = unsafe extern "C" fn(pendingData: *mut *mut c_void, stream: *mut c_void, formID: u32, changeFlags: u32);
 /// `WritePixelShaderCacheFile` at 0x1013540 (decompiler, medium); signature (untiered): `undefined WritePixelShaderCacheFile(undefined8 param_1, undefined8 param_2, undefined1 * param_3, longlong * param_4)`
 pub const WritePixelShaderCacheFile: u64 = 77412;
 /// `WritePlayerLocationToSaveBuffer` at 0x61d490 (decompiler, medium); signature (untiered): `undefined WritePlayerLocationToSaveBuffer(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -146433,6 +147051,8 @@ pub const WriteSaveFields180To1C0: u64 = 42362;
 pub const WriteSaveFieldsAndListsB0: u64 = 41414;
 /// `WriteSaveHeader` at 0x61e9e0 (runtime, high); signature (untiered): `int WriteSaveHeader(ulonglong param_1)`; writes 'TESV_SAVEGAME' then a length-prefixed header {u32 version, u32 save number, wstring player name, u32 level, wstring location, wstring play time, wstring race, u16 sex, f32 xp, f32 xp needed, FILETIME, u32 width, u32 height, u16 compression} and the screenshot; returns bytes written (high); semantic signature: `u32 (Win32FileType* stream)`
 pub const WriteSaveHeader: u64 = 35672;
+/// `WriteSaveHeader` as a function pointer type (high).
+pub type WriteSaveHeader_fn = unsafe extern "C" fn(stream: *mut c_void) -> u32;
 /// `WriteSharedObjectRef` at 0x854fa0 (decompiler, medium); signature (untiered): `undefined WriteSharedObjectRef(longlong param_1, longlong * param_2)`
 pub const WriteSharedObjectRef: u64 = 46920;
 /// `WriteSignPrefixBackward` at 0xd70bc0 (decompiler, medium); signature (untiered): `undefined WriteSignPrefixBackward(longlong param_1, char param_2, char param_3)`
@@ -157797,12 +158417,16 @@ pub const hkbBehaviorGraph__ctor_4: u64 = 58387;
 pub const hkbBehaviorGraph__dtor: u64 = 58326;
 /// `hkbBehaviorGraph::generate` at 0xacd1d0 (semantic, high); signature (low): `undefined generate(hkbBehaviorGraph * this, undefined8 param_1, undefined8 param_2, undefined1 param_3, undefined4 param_4, undefined1 param_5)`; preGenerate, generateInternal (0xacf480), postGenerate (0xacdd80) (high); semantic signature: `void (hkbBehaviorGraph* this, const hkbContext* ctx, hkbGeneratorOutput* out, bool, u32, bool)`
 pub const hkbBehaviorGraph__generate: u64 = 58343;
+/// `hkbBehaviorGraph::generate` as a function pointer type (high).
+pub type hkbBehaviorGraph__generate_fn = unsafe extern "C" fn(this: *mut classes::hkbBehaviorGraph, ctx: *const c_void, out: *mut c_void, a3: bool, a4: u32, a5: bool);
 /// `hkbBehaviorGraph::generateInternal` at 0xacf480 (semantic, medium); signature (untiered): `undefined generateInternal(longlong param_1, longlong * param_2)`; generates the active nodes into the output (medium); semantic signature: `void (hkbBehaviorGraph* this, GenerateState* st)`
 pub const hkbBehaviorGraph__generateInternal: u64 = 58376;
 /// `hkbBehaviorGraph::postGenerate` at 0xacdd80 (semantic, medium); signature (untiered): `undefined postGenerate(undefined8 param_1, longlong param_2)`; post-generate step (medium); semantic signature: `void (hkbBehaviorGraph* this, GenerateState* st)`
 pub const hkbBehaviorGraph__postGenerate: u64 = 58356;
 /// `hkbBehaviorGraph::preGenerate` at 0xacd8f0 (semantic, high); signature (low): `undefined preGenerate(hkbBehaviorGraph * this, longlong param_1, char param_2, char param_3)`; copies variables to members, updates the active node list, writes attribute defaults into output track 10, computes per-node timesteps (high); semantic signature: `void (hkbBehaviorGraph* this, GenerateState* st, bool updateActiveNodes, bool analyzeRecycling)`
 pub const hkbBehaviorGraph__preGenerate: u64 = 58355;
+/// `hkbBehaviorGraph::preGenerate` as a function pointer type (high).
+pub type hkbBehaviorGraph__preGenerate_fn = unsafe extern "C" fn(this: *mut classes::hkbBehaviorGraph, st: *mut c_void, updateActiveNodes: bool, analyzeRecycling: bool);
 /// `hkbBehaviorGraph::vdtor` at 0xad1c70 (slot_propagation, medium); signature (low): `hkbBehaviorGraph * vdtor(hkbBehaviorGraph * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbBehaviorGraph__vdtor: u64 = 58394;
 /// `hkbBehaviorGraph::vfunc_1` at 0xacbb40 (rtti, high); signature (untiered): `undefined * vfunc_1(void)`
@@ -158023,6 +158647,8 @@ pub const hkbCharacter__GetNearbyCharacters: u64 = 58452;
 pub const hkbCharacter__GetNearbyRigidBodies: u64 = 58451;
 /// `hkbCharacter::GetPoseLocal` at 0xad7d00 (semantic, high); signature (untiered): `undefined8 GetPoseLocal(longlong param_1)`; returns poseLocal (+0x90), creating it from the reference pose first (high); semantic signature: `hkQsTransform* (hkbCharacter* this)`
 pub const hkbCharacter__GetPoseLocal: u64 = 58458;
+/// `hkbCharacter::GetPoseLocal` as a function pointer type (high).
+pub type hkbCharacter__GetPoseLocal_fn = unsafe extern "C" fn(this: *mut classes::hkbCharacter) -> *mut c_void;
 /// `hkbCharacter::InitPoseLocalFromReferencePose` at 0xad8060 (semantic, high); signature (untiered): `undefined InitPoseLocalFromReferencePose(longlong param_1)`; allocates poseLocal = skeleton bone count * 0x30 and copies the skeleton's reference pose (high); semantic signature: `void (hkbCharacter* this)`
 pub const hkbCharacter__InitPoseLocalFromReferencePose: u64 = 58466;
 /// `hkbCharacter::InitPoseLocalFromReferencePose` as a function pointer type (high).
@@ -160857,6 +161483,8 @@ pub const hkpConvexVerticesConnectivity__vdtor: u64 = 60532;
 pub const hkpConvexVerticesConnectivity__vfunc_3: u64 = 60718;
 /// `hkpConvexVerticesShape::UnpackSoAVerticesToVector4Array` at 0xc3abd0 (semantic, high); signature (untiered): `undefined UnpackSoAVerticesToVector4Array(longlong param_1, longlong * param_2)`; copies the shape's vertices out of its 4-wide SoA blocks (+0x50, 0x30 bytes per block: x[4], y[4], z[4]; count +0x60) into outVertices as (x, y, z, 0), growing the array (data +0, size +8, capacity|flags +0xc) to the count (high); semantic signature: `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* outVertices)`
 pub const hkpConvexVerticesShape__UnpackSoAVerticesToVector4Array: u64 = 65093;
+/// `hkpConvexVerticesShape::UnpackSoAVerticesToVector4Array` as a function pointer type (high).
+pub type hkpConvexVerticesShape__UnpackSoAVerticesToVector4Array_fn = unsafe extern "C" fn(this: *const classes::hkpConvexVerticesShape, outVertices: *mut c_void);
 /// `hkpConvexVerticesShape::ctor` at 0xc3a870 (layout_inference, medium); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined8 * param_2, longlong * param_3, undefined4 param_4)`
 pub const hkpConvexVerticesShape__ctor: u64 = 65089;
 /// `hkpConvexVerticesShape::ctor` at 0xc3a9a0 (layout_inference, medium); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined4 param_2)`
@@ -160865,6 +161493,8 @@ pub const hkpConvexVerticesShape__ctor_2: u64 = 65090;
 pub const hkpConvexVerticesShape__ctor_3: u64 = 65091;
 /// `hkpConvexVerticesShape::ctor` at 0x10ee650 (semantic, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, ulonglong * param_1, char * param_2)`; builds the shape from a convex hull of the vertices. vertices = {const float* data +0, i32 count +8, i32 strideBytes +0xc} (12 bytes read per vertex). config (0x18 bytes) = {u8 createConnectivity +0 (builds an hkpConvexVerticesConnectivity, else deletes it), u8 shrinkByRadius +1 (with radius > 0), u8 shrinkOption +2 (passed to the shrinker 0x10c3e20), float convexRadius +4 (-> this+0x20), i32 maxVertices +8 (hull reduced when > 3), float shrinkParamA +0xc, float shrinkParamB +0x10, float +0x14 (default -0.1, not read here)} (high); semantic signature: `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const StridedVertices* vertices, const ConvexVerticesBuildConfig* config)`
 pub const hkpConvexVerticesShape__ctor_4: u64 = 80831;
+/// `hkpConvexVerticesShape::ctor` as a function pointer type (high).
+pub type hkpConvexVerticesShape__ctor_4_fn = unsafe extern "C" fn(this: *mut classes::hkpConvexVerticesShape, vertices: *const c_void, config: *const c_void) -> *mut classes::hkpConvexVerticesShape;
 /// `hkpConvexVerticesShape::dtor` at 0xc3ab10 (layout_inference, high); signature (high): `undefined dtor(hkpConvexVerticesShape * this)`
 pub const hkpConvexVerticesShape__dtor: u64 = 65092;
 /// `hkpConvexVerticesShape::vdtor` at 0xc3c180 (slot_propagation, medium); signature (low): `hkpConvexVerticesShape * vdtor(hkpConvexVerticesShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -163613,6 +164243,8 @@ pub const noCreationsDownloadedCallback__vdtor: u64 = 505799;
 pub const noCreationsDownloadedCallback__vfunc_1: u64 = 505798;
 /// `processGenerateBehaviorGraphJob` at 0xc41730 (semantic, high); signature (untiered): `undefined processGenerateBehaviorGraphJob(undefined8 param_1, longlong param_2)`; job body: generate(job+0x40 graph, +0x48 ctx, +0x50 output, +0x7a, +0x70) (high); semantic signature: `void (void* jobQueue, Job* job)`
 pub const processGenerateBehaviorGraphJob: u64 = 65198;
+/// `processGenerateBehaviorGraphJob` as a function pointer type (high).
+pub type processGenerateBehaviorGraphJob_fn = unsafe extern "C" fn(jobQueue: *mut c_void, job: *mut c_void);
 /// `std::_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_0` at 0x12c2670 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
 pub const std___Func_impl_no_alloc_lambda_011e18ed6303dee988fa3bd3cbcd3f6c_void_BSPlatform__BNetResult_uns_7a8bcc4348d2: u64 = 525079;
 /// `std::_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_1` at 0x12c3640 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`

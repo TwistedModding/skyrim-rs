@@ -11,9 +11,39 @@ pub mod fns;
 #[rustfmt::skip]
 pub mod globals;
 #[rustfmt::skip]
+pub mod statics;
+#[rustfmt::skip]
 pub mod symbols;
 #[rustfmt::skip]
 pub mod vtables;
+#[rustfmt::skip]
+mod api;
+#[cfg(feature = "tier-high")]
+#[rustfmt::skip]
+mod api_tier_high;
+#[cfg(feature = "tier-medium")]
+#[rustfmt::skip]
+mod api_tier_medium;
+#[cfg(feature = "tier-low")]
+#[rustfmt::skip]
+mod api_tier_low;
+#[cfg(feature = "untiered")]
+#[rustfmt::skip]
+mod api_untiered;
+
+/// Engine functions of no laid-out class: the semantic passes' always, the decompiler-typed ones
+/// by tier feature.
+pub mod functions {
+    pub use super::api::functions::*;
+    #[cfg(feature = "tier-high")]
+    pub use super::api_tier_high::functions::*;
+    #[cfg(feature = "tier-medium")]
+    pub use super::api_tier_medium::functions::*;
+    #[cfg(feature = "tier-low")]
+    pub use super::api_tier_low::functions::*;
+    #[cfg(feature = "untiered")]
+    pub use super::api_untiered::functions::*;
+}
 
 /// The runtime these definitions describe, as `[major, minor, build]`.
 pub const VERSION: [u32; 3] = [1, 7, 104];

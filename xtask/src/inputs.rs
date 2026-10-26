@@ -56,6 +56,7 @@ pub struct NoRttiStruct {
 #[derive(Deserialize)]
 pub struct Label {
     pub rva: u64,
+    pub name: String,
     pub cls: String,
     pub pointer: bool,
     pub detail: String,
