@@ -81,11 +81,12 @@ if ($Launch -eq "standalone") {
     if (Test-Path $AppId) { throw "$AppId already exists" }
     Set-Content $AppId "489830" -Encoding ascii -NoNewline
 }
+# Another run's install (its game not started yet) must not be touched, and nothing is copied before that is known.
+if ($Mod.dir -and (Test-Path "$Plugins\$($Mod.dir)")) { throw "$Plugins\$($Mod.dir) already exists" }
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
 if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
 if ($Mod.dir) {
     $ModDir = "$Plugins\$($Mod.dir)"
-    if (Test-Path $ModDir) { throw "$ModDir already exists" }
     New-Item -ItemType Directory $ModDir | Out-Null
     foreach ($d in @($Mod.dll) + @(if ($Mod.dlls) { $Mod.dlls })) { Copy-Item "$Root\target\release\$d" $ModDir }
     Copy-Item $Dll "$ModDir\decoy.dll"

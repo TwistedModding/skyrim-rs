@@ -107,17 +107,16 @@ pub fn on_frame(f: fn()) {
     let _ = FRAME.set(f);
 }
 
-/// Drops the state the context keeps between frames apart from its options (window positions,
-/// collapsed headers, scroll offsets, the frame caches): it holds trait objects from the code
-/// that drew the widgets, so a host clears it before unloading a DLL that drew windows. Every
-/// window starts afresh.
-pub fn clear_widget_state() {
-    if let Some(state) = STATE.lock().unwrap().as_ref() {
-        state.ctx.memory_mut(|memory| {
-            let mut fresh = egui::Memory::default();
-            fresh.options = memory.options.clone();
-            *memory = fresh;
-        });
+/// Replaces the `egui` context with a fresh one. What a context accumulates (widget state, the
+/// fonts' shaping tables, caches) holds objects and function pointers of the copy of `egui` that
+/// first used it, which is the DLL that drew the windows, so a host resets the context before
+/// unloading such a DLL. Every window starts afresh; the font atlas is sent again.
+pub fn reset_context() {
+    let Some(fonts) = system_fonts() else { return };
+    if let Some(state) = STATE.lock().unwrap().as_mut() {
+        let ctx = Context::default();
+        ctx.set_fonts(fonts);
+        state.ctx = ctx;
     }
 }
 

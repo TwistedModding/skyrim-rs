@@ -239,7 +239,7 @@ fn detach(owner: &str) -> String {
     let (natives, commands) = (natives.len(), commands.len());
     let windows = WINDOWS.remove_owner(owner);
     if windows > 0 {
-        overlay::clear_widget_state();
+        overlay::reset_context();
     }
     let messages = MESSAGES.remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
