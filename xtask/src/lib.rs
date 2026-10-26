@@ -60,7 +60,7 @@ pub fn decode(dump: &Path) -> Result<String, Box<dyn Error>> {
         Some(rec) => (rec, "decoded offline from the logger's record in the dump"),
         None => (dump.reconstruct(), "decoded offline from the dump's own streams: no logger record, so the frames are a scan of the stack for return addresses and the loader facts are missing"),
     };
-    let pdb = crash::pdb::DbgHelp::new(0x4D50 as _);
+    let pdb = crash::pdb::DbgHelp::new(0x4D50 as _, None);
     let mut text = format!("({note})\n");
     crash::report::write(&mut text, &rec, &dump, None, Some(&pdb));
     Ok(text)

@@ -430,6 +430,10 @@ fn stack(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
         code_location(w, frame.rip, ctx, i > 0)?;
         writeln!(w)?;
     }
+    if let Some(pdb) = ctx.pdb {
+        pdb.status(w)?;
+        writeln!(w)?;
+    }
     Ok(())
 }
 

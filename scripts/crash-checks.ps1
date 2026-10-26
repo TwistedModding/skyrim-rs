@@ -76,15 +76,16 @@ foreach ($s in $Mod.scenarios) {
             $dec = if (Test-Path $decoded) { @(Get-Content $decoded) } else { @() }
             $decNote = First $dec '^\(decoded offline'
             $decCode = First $dec '^code 0x'
+            # The decoder runs after the shadow copy and its PDB are gone, so only the module and offset of its location can agree.
             $decAt = First $dec '^at '
             $decFrames = (Count $dec '^#\d+ ')
             $decRcx = First $dec '^rcx 0x'
             $rows += @{ name = "form: offline decoder"; plugin = "$codeLine | $atLine | $($frames.Count) frames"; devbench = "$decNote | $decCode | $decAt | $decFrames frames | $decRcx";
-                        ok = ($dec.Count -gt 20 -and $decNote -match 'from the logger' -and $decCode -eq $codeLine -and $decAt -eq $atLine -and $decFrames -eq $frames.Count) }
+                        ok = ($dec.Count -gt 20 -and $decNote -match 'from the logger' -and $decCode -eq $codeLine -and ($decAt -split ' ')[1] -eq ($atLine -split ' ')[1] -and $decFrames -eq $frames.Count) }
         }
         "deleted" {
             $rows += @{ name = "deleted: register probe"; plugin = $atLine; devbench = "$accessLine | $rcx";
-                        ok = ($accessLine -eq 'reading address 0x0: null' -and $rcx -match '^rcx 0x[0-9a-f]+  PlayerCharacter form 00000014 ACHR DELETED, from "Skyrim\.esm", refcount \d+, base TESNPC form 00000007 NPC_, from "Skyrim\.esm", in cell 00009732 ' -and $explanation -match '^rule deleted-record:') }
+                        ok = ($accessLine -eq 'reading address 0x0: null' -and $rcx -match '^rcx 0x[0-9a-f]+  PlayerCharacter form 00000014 ACHR DELETED, .*refcount \d+, base TESNPC form 00000007 NPC_, from "[^"]+\.es[lmp]".*, in cell 00009732 .* at \(.*\), name "Prisoner", race 00013746' -and $explanation -match '^rule deleted-record:') }
         }
         "write" {
             $rows += @{ name = "write: exception"; plugin = $atLine; devbench = "$codeLine | $accessLine";

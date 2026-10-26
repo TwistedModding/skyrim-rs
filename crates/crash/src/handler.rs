@@ -14,7 +14,7 @@ use windows_sys::Win32::Storage::FileSystem::{CREATE_ALWAYS, CreateFileW, FILE_A
 use windows_sys::Win32::System::Diagnostics::Debug::{AddVectoredExceptionHandler, CONTEXT, EXCEPTION_CONTINUE_SEARCH, EXCEPTION_EXECUTE_HANDLER, EXCEPTION_POINTERS, EXCEPTION_RECORD, MINIDUMP_EXCEPTION_INFORMATION, MINIDUMP_USER_STREAM, MINIDUMP_USER_STREAM_INFORMATION, MiniDumpIgnoreInaccessibleMemory, MiniDumpWithFullMemoryInfo, MiniDumpWithIndirectlyReferencedMemory, MiniDumpWithThreadInfo, MiniDumpWithUnloadedModules, MiniDumpWriteDump, SetUnhandledExceptionFilter};
 use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
 use windows_sys::Win32::System::SystemInformation::GetTickCount64;
-use windows_sys::Win32::System::Threading::{CreateEventW, CreateThread, GetCurrentProcess, GetCurrentProcessId, GetCurrentThreadId, INFINITE, ResetEvent, STACK_SIZE_PARAM_IS_A_RESERVATION, SetEvent, WaitForSingleObject};
+use windows_sys::Win32::System::Threading::{CreateEventW, CreateThread, GetCurrentProcess, GetCurrentProcessId, GetCurrentThreadId, INFINITE, OpenProcess, PROCESS_QUERY_INFORMATION, PROCESS_VM_READ, ResetEvent, STACK_SIZE_PARAM_IS_A_RESERVATION, SetEvent, WaitForSingleObject};
 
 use crate::live::{self, GameAddresses, THREAD_NAME_EXCEPTION};
 use crate::record::{self, Record, store};
@@ -55,6 +55,8 @@ static STATE: AtomicU32 = AtomicU32::new(IDLE);
 static CRASH_EVENT: AtomicIsize = AtomicIsize::new(0);
 static DONE_EVENT: AtomicIsize = AtomicIsize::new(0);
 static WATCHDOG: AtomicU32 = AtomicU32::new(0);
+/// A handle of our own on the process for the symbol server, since another DLL may own the session on the pseudo-handle.
+static SYMBOL_PROCESS: AtomicIsize = AtomicIsize::new(0);
 static MAIN_THREAD: AtomicU32 = AtomicU32::new(0);
 static NEXT_FILTER: AtomicUsize = AtomicUsize::new(0);
 static FIRST_CHANCE: AtomicU32 = AtomicU32::new(0);
@@ -70,6 +72,7 @@ static VERSION_INFO: Shared<[u8; 64 * 1024]> = Shared::new([0; 64 * 1024]);
 static LOG_DIR: Shared<([u16; PATH_UNITS], usize)> = Shared::new(([0; PATH_UNITS], 0));
 static DUMP_PATH: Shared<[u16; PATH_UNITS]> = Shared::new([0; PATH_UNITS]);
 static LOG_PATH: Shared<[u16; PATH_UNITS]> = Shared::new([0; PATH_UNITS]);
+static SYMBOL_PATH: Shared<([u16; 1024], usize)> = Shared::new(([0; 1024], 0));
 static NAME: Shared<([u8; record::NAME_LEN], usize)> = Shared::new(([0; record::NAME_LEN], 0));
 static BUILD: Shared<([u8; 256], usize)> = Shared::new(([0; 256], 0));
 static GAME: Shared<GameAddresses> = Shared::new(GameAddresses { frame_counter: 0, player: 0, save_manager: 0 });
@@ -105,6 +108,7 @@ pub(crate) fn install(options: &Options, log_dir: &str, game: GameAddresses) -> 
     }
     CRASH_EVENT.store(crash as isize, Ordering::Release);
     DONE_EVENT.store(done as isize, Ordering::Release);
+    SYMBOL_PROCESS.store(unsafe { OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, 0, GetCurrentProcessId()) } as isize, Ordering::Release);
     unsafe {
         let dir = LOG_DIR.get();
         dir.1 = wide(log_dir, &mut dir.0);
@@ -114,6 +118,10 @@ pub(crate) fn install(options: &Options, log_dir: &str, game: GameAddresses) -> 
         build.1 = store(&mut build.0, options.build);
         *GAME.get() = game;
         *FACTS.get() = options.facts;
+        if let Some(path) = &options.symbol_path {
+            let symbols = SYMBOL_PATH.get();
+            symbols.1 = wide(path, &mut symbols.0);
+        }
     }
     let (mode, mismatches) = symbols::init(options.runtime_version);
     SYMBOLS.store(mode as u32, Ordering::Release);
@@ -298,7 +306,10 @@ fn report() {
     if log == INVALID_HANDLE_VALUE {
         return;
     }
-    let pdb = crate::pdb::DbgHelp::new(unsafe { GetCurrentProcess() });
+    let symbol_process = SYMBOL_PROCESS.load(Ordering::Acquire) as HANDLE;
+    let symbol_path = unsafe { SYMBOL_PATH.get() };
+    let search_path = (symbol_path.1 > 0).then(|| &symbol_path.0[..=symbol_path.1]);
+    let pdb = crate::pdb::DbgHelp::new(if symbol_process.is_null() { unsafe { GetCurrentProcess() } } else { symbol_process }, search_path);
     let mut out = FileWriter::new(log, unsafe { IO.get() });
     report::write(&mut out, rec, &crate::mem::Live, Some((unsafe { &*DUMP_PATH.get() }, unsafe { &*LOG_PATH.get() })), Some(&pdb));
     out.flush();

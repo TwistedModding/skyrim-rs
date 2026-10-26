@@ -54,6 +54,8 @@ pub struct Options {
     /// A build string for the header.
     pub build: &'static str,
     pub facts: Option<FactsFn>,
+    /// Folders searched for the PDBs of DLLs, `;`-separated, besides each DLL's own folder.
+    pub symbol_path: Option<String>,
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]

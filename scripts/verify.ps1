@@ -31,7 +31,9 @@ param(
     # Runs the legacy suite with these plugins instead of its list, to try a candidate alone.
     [string[]]$Legacy = @(),
     # Compares the logs an earlier run left in -OutDir again, without building, installing or launching.
-    [switch]$CheckOnly
+    [switch]$CheckOnly,
+    # Runs only these scenarios of a scenario suite (the crash suite), to retry one.
+    [string[]]$Scenarios = @()
 )
 $ErrorActionPreference = "Stop"
 $MyGames = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition"
@@ -66,6 +68,7 @@ $Mods = @{
 $TagDir = "$Root\target\release\reload-tags"
 $Mod = $Mods[$Suite]
 if ($Suite -eq "legacy" -and $Legacy) { $Mod.legacy = @($Legacy -split ",") }
+if ($Mod.scenarios -and $Scenarios) { $Mod.scenarios = @($Scenarios -split ",") }
 $PluginLog = "skyrim-rs-test.log"
 $HostDll = "skyrim_rs.dll"
 $ModLogs = @($Mods.Values | ForEach-Object { $_.log; $_.logs } | Where-Object { $_ }) + @("skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
@@ -125,7 +128,8 @@ if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
 if ($Mod.dir) {
     $ModDir = "$Plugins\$($Mod.dir)"
     New-Item -ItemType Directory $ModDir | Out-Null
-    foreach ($d in @($Mod.dll) + @(if ($Mod.dlls) { $Mod.dlls })) { if ($d) { Copy-Item "$Root\target\release\$d" $ModDir } }
+    # A plugin built with its PDB (the crash suite's) gets it next to the DLL, for the crash log's names.
+    foreach ($d in @($Mod.dll) + @(if ($Mod.dlls) { $Mod.dlls })) { if ($d) { Copy-Item "$Root\target\release\$d" $ModDir; $pdb = "$Root\target\release\$([IO.Path]::ChangeExtension($d, 'pdb'))"; if (Test-Path $pdb) { Copy-Item $pdb $ModDir } } }
     Copy-Item $Dll "$ModDir\decoy.dll"
     Copy-Item "$Root\target\release\$HostDll" "$Plugins\$HostDll" -Force
 } elseif ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }

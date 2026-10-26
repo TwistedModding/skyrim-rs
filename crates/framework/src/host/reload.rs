@@ -22,7 +22,7 @@ use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 use super::{detach, flush_settings, plugin_name, read_descriptor};
 use crate::{Descriptor, Host, Plugin};
 
-const SHADOW_DIR: &str = ".loaded";
+pub(super) const SHADOW_DIR: &str = ".loaded";
 const POLL: Duration = Duration::from_secs(1);
 
 type Stamp = (u64, SystemTime);
@@ -71,11 +71,16 @@ pub(super) fn clean(dir: &Path) -> PathBuf {
     shadow
 }
 
-/// Copies `source` into `shadow` as `<stem>.<generation>.dll`.
+/// Copies `source` into `shadow` as `<stem>.<generation>.dll`, and a `<stem>.pdb` next to it as
+/// is, so the crash log names the plugin's functions.
 pub(super) fn copy(source: &Path, shadow: &Path, generation: u32) -> io::Result<PathBuf> {
     let stem = source.file_stem().map(|s| s.to_string_lossy().into_owned()).unwrap_or_default();
     let copy = shadow.join(format!("{stem}.{generation}.dll"));
     fs::copy(source, &copy)?;
+    let pdb = source.with_extension("pdb");
+    if pdb.is_file() {
+        let _ = fs::copy(&pdb, shadow.join(format!("{stem}.pdb")));
+    }
     Ok(copy)
 }
 

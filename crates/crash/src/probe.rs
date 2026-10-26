@@ -89,8 +89,9 @@ fn form(w: &mut dyn Write, address: u64, ctx: &Context<'_>) -> fmt::Result {
     let index = id >> 24;
     match src.read_u64(address + SOURCE_FILES).filter(|&p| p != 0) {
         Some(array) => {
-            let count = src.read_u32(array + 8).unwrap_or(0);
-            let files = src.read_u64(array).unwrap_or(0);
+            let (Some(count), Some(files)) = (src.read_u32(array + 8), src.read_u64(array)) else {
+                return w.write_str(", source files not readable");
+            };
             if count == 0 || files == 0 {
                 w.write_str(", no source file")?;
             } else if let Some(file) = src.read_u64(files + u64::from(count - 1) * 8).filter(|&f| f != 0) {

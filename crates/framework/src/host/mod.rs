@@ -131,7 +131,8 @@ pub fn load(skse: &skse::Interface) -> bool {
     let hosted_by = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
     let _ = HOSTED_BY.set(hosted_by);
     log!("hosted by {hosted_by}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
-    match crash::install(&crash::Options { name: NAME, runtime_version: skse.runtime_version, build: BUILD.to_str().unwrap_or(""), facts: Some(crash_facts) }) {
+    let symbol_path = [plugins_dir(), plugins_dir().join(PLUGIN_DIR), plugins_dir().join(PLUGIN_DIR).join(reload::SHADOW_DIR)].iter().map(|p| p.to_string_lossy().into_owned()).collect::<Vec<_>>().join(";");
+    match crash::install(&crash::Options { name: NAME, runtime_version: skse.runtime_version, build: BUILD.to_str().unwrap_or(""), facts: Some(crash_facts), symbol_path: Some(symbol_path) }) {
         Ok(crash::Installed::Here { watchdog, symbols, symbol_mismatches }) => log!("crash handler installed, watchdog thread {watchdog}, game symbols {symbols:?} ({} functions, {symbol_mismatches} offsets differ from the ledger)", crash::symbols::count()),
         Ok(crash::Installed::Elsewhere) => log!("crash handler: another copy in the process reports crashes"),
         Err(e) => log!("crash handler not installed: {e}"),
