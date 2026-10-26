@@ -4,6 +4,10 @@
 //! skipped for every camera but the shadow cameras: the body is drawn, the head is not, and the
 //! shadow includes both. The first-person arms stay out of the shadow maps, as the frame itself
 //! arranges. Counts of what the detour saw are logged at every save as the acceptance evidence.
+//! Because the root is shown, every path takes the body on its own: the sun's list walk, the
+//! cascade replays (which skip only entries hidden themselves) and the focus maps; the face skip
+//! only has to hold for the main-camera walk, which is the one path that goes through `Cull`
+//! for every node. The detour runs on the job threads and the frame thread concurrently.
 
 use std::fs::File;
 use std::sync::{Mutex, OnceLock};
