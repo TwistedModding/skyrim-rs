@@ -192,19 +192,41 @@ pub unsafe fn write_branch(site: usize, target: usize) -> Result<usize, Error> {
 /// A redirected `call rel32`. `F` is the `extern "C" fn` type shared by the callee and the detour.
 pub struct CallSite<F: Copy> {
     site: usize,
+    detour: usize,
     original: F,
 }
 
 impl<F: Copy> CallSite<F> {
-    /// Redirects the call at `site` to `detour`.
+    /// Redirects the call at `site` to `detour`: [`create`](Self::create) and [`enable`](Self::enable) in one step.
     ///
     /// # Safety
     /// Same as [`write_call`]; `F` must be a function pointer type matching the callee.
     pub unsafe fn install(site: usize, detour: F) -> Result<Self, Error> {
+        let hook = unsafe { Self::create(site, detour) }?;
+        unsafe { hook.enable() }?;
+        Ok(hook)
+    }
+
+    /// Reads the callee at `site` without writing anything, so the hook can be stored where the
+    /// detour finds [`original`](Self::original) before [`enable`](Self::enable) redirects the call.
+    ///
+    /// # Safety
+    /// `F` must be a function pointer type matching the callee.
+    pub unsafe fn create(site: usize, detour: F) -> Result<Self, Error> {
         const { assert!(size_of::<F>() == size_of::<usize>(), "F must be a function pointer type") };
-        let detour: usize = unsafe { core::mem::transmute_copy(&detour) };
-        let previous = unsafe { write_call(site, detour) }?;
-        Ok(Self { site, original: unsafe { core::mem::transmute_copy(&previous) } })
+        if unsafe { *(site as *const u8) } != CALL {
+            return Err(Error::NotRel32(site));
+        }
+        let previous = Trampoline::shared().resolve(rel32_target(site));
+        Ok(Self { site, detour: unsafe { core::mem::transmute_copy(&detour) }, original: unsafe { core::mem::transmute_copy(&previous) } })
+    }
+
+    /// Points the site at the detour.
+    ///
+    /// # Safety
+    /// Same as [`write_call`].
+    pub unsafe fn enable(&self) -> Result<(), Error> {
+        unsafe { write_call(self.site, self.detour) }.map(drop)
     }
 
     /// The callee the site reached before, callable from the detour.
