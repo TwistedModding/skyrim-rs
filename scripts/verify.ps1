@@ -29,7 +29,9 @@ param(
     # The legacy suite's plugins, one folder per plugin holding its SKSE\Plugins files as the mod ships them.
     [string]$LegacyDir = $(if ($env:SKYRIM_RS_LEGACY_DIR) { $env:SKYRIM_RS_LEGACY_DIR } else { "$env:LOCALAPPDATA\skyrim-rs\legacy" }),
     # Runs the legacy suite with these plugins instead of its list, to try a candidate alone.
-    [string[]]$Legacy = @()
+    [string[]]$Legacy = @(),
+    # Compares the logs an earlier run left in -OutDir again, without building, installing or launching.
+    [switch]$CheckOnly
 )
 $ErrorActionPreference = "Stop"
 $MyGames = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition"
@@ -74,6 +76,7 @@ $TestSave = "skyrim-rs-$StepsName"
 $Ini = "$Plugins\skyrim-rs.ini"
 
 if ($Suite -eq "overlay") { $Mode = "overlay" }
+if (-not $CheckOnly) {
 & "$PSScriptRoot\game-free.ps1"
 Push-Location $Root
 $crates = @(@("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.crates) { $Mod.crates }) + @(if ($Mod.dir) { "host" }) + @(if ($Launch -ne "skse") { "standalone" }) | Where-Object { $_ })
@@ -216,6 +219,8 @@ try {
         elseif ($f -in @($PluginLog) + $ModLogs) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
     }
 }
+}
+$OutDir = (Resolve-Path $OutDir).Path
 
 # The plugin's PASS/FAIL lines per "<suite> <phase>" run (the summary line closes a run) and, for the chosen suite, the last one per test.
 $plugin = @{}
@@ -233,7 +238,8 @@ foreach ($line in $ReportLines) {
         $summaries += $line
     }
 }
-$steps = ((Get-Content "$OutDir\result.json" -Raw | ConvertFrom-Json).result.results)
+# A scenario suite's sessions keep their own result.json per scenario folder.
+$steps = @(if (Test-Path "$OutDir\result.json") { (Get-Content "$OutDir\result.json" -Raw | ConvertFrom-Json).result.results })
 function Step($i) { $s = $steps | Where-Object { $_.index -eq $i }; if ($s -and $s.ok) { $s.result } else { $null } }
 function Returned($i) { $r = Step $i; if ($r) { $r.returned } else { $null } }
 function Lines($i) { $r = Step $i; if ($r) { $r.lines -join " | " } else { "" } }
@@ -260,7 +266,7 @@ function Near($a, $b, $tol) { ($a -ne $null) -and ($b -ne $null) -and ([math]::A
 "plugin summary: $($summaries -join '; ')"
 "scenario ok: $scenarioOk"
 ""
-$allOk = $scenarioOk
+$allOk = $scenarioOk -ne $false
 foreach ($phase in $Phases) {
     if (($summaries -match "^summary $Suite $phase`: \d+ pass, 0 fail").Count -ne 1) { "no clean $Suite run in phase $phase"; $allOk = $false }
 }
