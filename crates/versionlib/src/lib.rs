@@ -1,11 +1,14 @@
-//! Address Library reader: formats 1 and 2 (delta stream) and 5 (dense table).
+//! Address Library reader: formats 1 and 2 (delta stream) and 5 (dense table), and the running
+//! game's database, opened once per process.
 
 use std::fmt;
 use std::fs::File;
 use std::io;
-use std::path::Path;
+use std::path::{Path, PathBuf};
+use std::sync::OnceLock;
 
 use memmap2::Mmap;
+use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
 
 #[derive(Debug)]
 pub enum Error {
@@ -132,6 +135,63 @@ impl VersionDb {
         };
         sorted.into_iter().flatten().chain(dense.into_iter().flatten())
     }
+}
+
+/// Base address of the executable that started this process.
+#[must_use]
+pub fn module_base() -> usize {
+    unsafe { GetModuleHandleW(core::ptr::null()) as usize }
+}
+
+/// The running game's Address Library, `<exe dir>\Data\SKSE\Plugins\<file>`, with the
+/// executable's base address.
+pub struct Running {
+    db: VersionDb,
+    base: usize,
+    path: PathBuf,
+}
+
+impl Running {
+    #[must_use]
+    pub fn db(&self) -> &VersionDb {
+        &self.db
+    }
+
+    #[must_use]
+    pub fn base(&self) -> usize {
+        self.base
+    }
+
+    #[must_use]
+    pub fn path(&self) -> &Path {
+        &self.path
+    }
+
+    /// The live address of an id, `None` when the file does not hold it.
+    #[must_use]
+    pub fn address(&self, id: u64) -> Option<usize> {
+        Some(self.base + usize::try_from(self.db.offset(id)?).ok()?)
+    }
+}
+
+static RUNNING: OnceLock<Running> = OnceLock::new();
+
+/// The running game's database named `file`, opened by the first call and shared by every later
+/// one. A later call naming another file is an error: one process runs one game.
+pub fn running(file: &str) -> Result<&'static Running, Error> {
+    if RUNNING.get().is_none() {
+        let path = std::env::current_exe()?.with_file_name("Data").join("SKSE").join("Plugins").join(file);
+        let db = VersionDb::open(&path).map_err(|e| match e {
+            Error::Io(io) => Error::Io(io::Error::new(io.kind(), format!("{}: {io}", path.display()))),
+            other @ Error::Format(_) => other,
+        })?;
+        let _ = RUNNING.set(Running { db, base: module_base(), path });
+    }
+    let running = RUNNING.get().unwrap();
+    if running.path.file_name().is_some_and(|name| name != file) {
+        return Err(Error::Format("another Address Library file is already open in this process"));
+    }
+    Ok(running)
 }
 
 struct Reader<'a> {

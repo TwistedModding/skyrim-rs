@@ -8,7 +8,7 @@ publish.workspace = true
 skse.workspace = true
 versionlib.workspace = true
 minhook = "0.9"
-windows-sys = { workspace = true, features = ["Win32_System_Diagnostics_Debug", "Win32_System_LibraryLoader", "Win32_System_Memory", "Win32_System_Threading"] }
+windows-sys = { workspace = true, features = ["Win32_System_Diagnostics_Debug", "Win32_System_Memory", "Win32_System_Threading"] }
 
 [lints]
 workspace = true

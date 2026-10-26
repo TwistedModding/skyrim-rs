@@ -59,11 +59,7 @@ pub fn init(runtime: u32) -> (Mode, u32) {
         if skse::runtime::unpack(runtime)[..3] != layout::v1_7_104::VERSION {
             return Mode::None;
         }
-        let table = std::env::current_exe().ok().and_then(|exe| {
-            let path = exe.with_file_name("Data").join("SKSE").join("Plugins").join(skse::runtime::versionlib_name(runtime));
-            versionlib::VersionDb::open(&path).ok()
-        });
-        let Some(db) = table else {
+        let Ok(db) = versionlib::running(&skse::runtime::versionlib_name(runtime)).map(versionlib::Running::db) else {
             let _ = TABLE.set(None);
             return Mode::Ledger;
         };

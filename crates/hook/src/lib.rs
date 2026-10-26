@@ -5,7 +5,6 @@ use std::fmt;
 use std::io;
 
 use minhook::{MH_STATUS, MinHook};
-use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
 
 mod site;
 
@@ -119,40 +118,32 @@ impl<F: Copy> Hook<F> {
     }
 }
 
-/// Base address of the game executable.
-#[must_use]
-pub fn module_base() -> usize {
-    unsafe { GetModuleHandleW(core::ptr::null()) as usize }
-}
+pub use versionlib::module_base;
 
-/// Address Library ids resolved against the running game.
+/// Address Library ids resolved against the running game, through the process's one
+/// [`versionlib::running`] database.
 pub struct Reloc {
-    db: versionlib::VersionDb,
-    base: usize,
+    running: &'static versionlib::Running,
 }
 
 impl Reloc {
     /// Opens `<exe dir>\Data\SKSE\Plugins\<versionlib file>` for the packed runtime version SKSE reports.
     pub fn open(packed_runtime: u32) -> Result<Self, Error> {
-        let exe = std::env::current_exe()?;
-        let dir = exe.parent().ok_or_else(|| io::Error::other("executable has no parent directory"))?;
-        let path = dir.join("Data").join("SKSE").join("Plugins").join(skse::runtime::versionlib_name(packed_runtime));
-        Ok(Self { db: versionlib::VersionDb::open(&path)?, base: module_base() })
+        Ok(Self { running: versionlib::running(&skse::runtime::versionlib_name(packed_runtime))? })
     }
 
     #[must_use]
     pub fn base(&self) -> usize {
-        self.base
+        self.running.base()
     }
 
     #[must_use]
     pub fn db(&self) -> &versionlib::VersionDb {
-        &self.db
+        self.running.db()
     }
 
     pub fn address(&self, id: u64) -> Result<usize, Error> {
-        let offset = self.db.offset(id).ok_or(Error::UnknownId(id))?;
-        Ok(self.base + usize::try_from(offset).map_err(|_| Error::UnknownId(id))?)
+        self.running.address(id).ok_or(Error::UnknownId(id))
     }
 
     /// Installs `detour` on the function the Address Library knows as `id`.

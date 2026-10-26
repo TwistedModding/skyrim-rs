@@ -103,11 +103,8 @@ fn game_addresses(runtime: u32) -> live::GameAddresses {
     if skse::runtime::unpack(runtime)[..3] != layout::v1_7_104::VERSION {
         return out;
     }
-    let Ok(exe) = std::env::current_exe() else { return out };
-    let path = exe.with_file_name("Data").join("SKSE").join("Plugins").join(skse::runtime::versionlib_name(runtime));
-    let Ok(db) = versionlib::VersionDb::open(&path) else { return out };
-    let base = unsafe { windows_sys::Win32::System::LibraryLoader::GetModuleHandleW(core::ptr::null()) } as u64;
-    let resolve = |id: u64| db.offset(id).map_or(0, |o| base + o);
+    let Ok(db) = versionlib::running(&skse::runtime::versionlib_name(runtime)) else { return out };
+    let resolve = |id: u64| db.address(id).map_or(0, |a| a as u64);
     out.frame_counter = resolve(globals::g_RenderFrameCounter);
     out.player = resolve(globals::g_PlayerCharacter_ptr);
     out.save_manager = resolve(globals::g_BGSSaveLoadManager_ptr);
