@@ -385,8 +385,8 @@ fn install_moments() -> Result<(), String> {
     }
     patch(&CONTROLS, site(fns::Main__ctor, 0xd7a, fns::PlayerControls__ctor)?, controls_ready as ControlsFn)?;
     patch(&NEW_GAME, site(fns::MainMenu__StartNewGame, 0x59, fns::TryStartQuest)?, new_game as StartQuestFn)?;
-    patch(&INIT_DONE, site(fns::InitTESThread__vfunc_1_sub0, 0x3f7, fns::CallVfunc98OnArrayEntries)?, init_done as OneArgFn)?;
-    patch(&VM_SETUP, site(fns::SkyrimVM__ctor, 0xcfb, fns::SkyrimVM__ctor_sub14)?, register_natives as RegisterNativesFn)?;
+    patch(&INIT_DONE, site(fns::InitTESThread__vfunc_1_sub0, 0x3f7, fns::TESDataHandler__CallSlot19OnArray1D8)?, init_done as OneArgFn)?;
+    patch(&VM_SETUP, site(fns::SkyrimVM__ctor, 0xcfb, fns::SkyrimVM__RegisterNatives)?, register_natives as RegisterNativesFn)?;
     for (caller, offset) in DRAIN_SITES {
         let installed = unsafe { hook::CallSite::install(site(caller, offset, fns::TaskQueue__Drain)?, drain_tasks as OneArgFn) }.map_err(|e| e.to_string())?;
         let _ = DRAIN.set(installed);

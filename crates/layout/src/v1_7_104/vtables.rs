@@ -1195,7 +1195,7 @@ pub struct Actor_vtable_A0 {
     pub slot_5: *const c_void,
     /// `Actor::MagicTarget_vfunc_6` at 0x6d8570 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,
-    /// `Actor::MagicTarget_vfunc_7` at 0x6d85b0 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_7(Actor * this)`
+    /// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`
     pub slot_7: *const c_void,
     /// `Actor::MagicTarget_vfunc_8` at 0x6d50c0 (rtti, medium); signature (low): `undefined MagicTarget_vfunc_8(Actor * this, longlong param_1, ulonglong param_2, TypeDescriptor * param_3)`
     pub slot_8: *const c_void,
@@ -73362,9 +73362,9 @@ pub struct BSScript__Internal__VirtualMachine_vtable_10 {
     pub slot_1: *const c_void,
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_2` at 0x14b4e00 (rtti, high); signature (low): `undefined1 BSScript_IVMObjectBindInterface_vfunc_2(VirtualMachine * this, int * param_1, int * * param_2)`
     pub slot_2: *const c_void,
-    /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_3` at 0x14b4fb0 (rtti, high); signature (low): `undefined BSScript_IVMObjectBindInterface_vfunc_3(VirtualMachine * this, longlong * param_1, uint * param_2, undefined8 param_3)`
+    /// `BSScript::Internal::VirtualMachine::BindObject` at 0x14b4fb0 (runtime, high); signature (untiered): `undefined BindObject(VirtualMachine * this, longlong * param_1, uint * param_2, undefined8 param_3)`
     pub slot_3: *const c_void,
-    /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_4` at 0x14b5160 (rtti, high); signature (low): `undefined BSScript_IVMObjectBindInterface_vfunc_4(VirtualMachine * this, ulonglong * param_1, ulonglong param_2, undefined1 * param_3)`
+    /// `BSScript::Internal::VirtualMachine::AttachObjectToHandle` at 0x14b5160 (runtime, high); signature (untiered): `undefined AttachObjectToHandle(VirtualMachine * this, ulonglong * param_1, ulonglong param_2, undefined1 * param_3)`
     pub slot_4: *const c_void,
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_5` at 0x14b54d0 (rtti, high); signature (low): `undefined BSScript_IVMObjectBindInterface_vfunc_5(VirtualMachine * this, uint * * * * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
@@ -106934,7 +106934,7 @@ pub struct BSWin32KeyboardDevice_vtable {
     pub slot_0: *const c_void,
     /// `BSWin32KeyboardDevice::Initialize` at 0xe126f0 (semantic, high); signature (untiered): `undefined Initialize(BSWin32KeyboardDevice * this)`; `Initialize`: create and configure the DirectInput keyboard (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_1: *const c_void,
-    /// `BSWin32KeyboardDevice::Poll` at 0xe127c0 (semantic, high); signature (untiered): `undefined Poll(BSWin32KeyboardDevice * this, float param_1)`; `Poll`: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down only, a CharEvent: numpad digits with Num Lock, otherwise MapVirtualKeyA(scan, 1) and ToUnicode with a key state built from the device (Shift, Caps Lock toggled on its press, Alt/Ctrl); no flag or menu gates it and a held key repeats nothing; then a hold for every scan code down in both arrays (high); semantic signature: `void (BSWin32KeyboardDevice* this, float realDelta)`
+    /// `BSWin32KeyboardDevice::Poll` at 0xe127c0 (runtime, high); signature (untiered): `undefined Poll(BSWin32KeyboardDevice * this, float param_1)`; `Poll`: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down only, a CharEvent: numpad digits with Num Lock, otherwise MapVirtualKeyA(scan, 1) and ToUnicode with a key state built from the device (Shift, Caps Lock toggled on its press, Alt/Ctrl); no flag or menu gates it and a held key repeats nothing; then a hold for every scan code down in both arrays (high); semantic signature: `void (BSWin32KeyboardDevice* this, float realDelta)`
     pub slot_2: *const c_void,
     /// `BSWin32KeyboardDevice::Release` at 0xe12bd0 (semantic, high); signature (untiered): `undefined Release(BSWin32KeyboardDevice * this)`; `Release`: release the DirectInput device (high); semantic signature: `void (BSWin32KeyboardDevice* this)`
     pub slot_3: *const c_void,
@@ -111354,7 +111354,7 @@ pub struct Character_vtable_A0 {
     pub slot_5: *const c_void,
     /// `Actor::MagicTarget_vfunc_6` at 0x6d8570 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,
-    /// `Actor::MagicTarget_vfunc_7` at 0x6d85b0 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_7(Actor * this)`
+    /// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`
     pub slot_7: *const c_void,
     /// `Actor::MagicTarget_vfunc_8` at 0x6d50c0 (rtti, medium); signature (low): `undefined MagicTarget_vfunc_8(Actor * this, longlong param_1, ulonglong param_2, TypeDescriptor * param_3)`
     pub slot_8: *const c_void,
@@ -180843,7 +180843,7 @@ pub struct PlayerCharacter_vtable_A0 {
     pub slot_5: *const c_void,
     /// `Actor::MagicTarget_vfunc_6` at 0x6d8570 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,
-    /// `Actor::MagicTarget_vfunc_7` at 0x6d85b0 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_7(Actor * this)`
+    /// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`
     pub slot_7: *const c_void,
     /// `PlayerCharacter::MagicTarget_vfunc_8` at 0x761690 (rtti, high); signature (low): `undefined MagicTarget_vfunc_8(PlayerCharacter * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
     pub slot_8: *const c_void,
@@ -188058,7 +188058,7 @@ impl SkyrimVM_vtable_1A8 {
 pub struct SkyrimVM__EffectEventRelayFunctor_vtable {
     /// `SkyrimVM::EffectEventRelayFunctor::vdtor` at 0x9f0650 (layout_inference, medium); signature (low): `EffectEventRelayFunctor * vdtor(EffectEventRelayFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::EffectEventRelayFunctor::vfunc_1` at 0x9e3460 (rtti, high); signature (low): `undefined8 vfunc_1(EffectEventRelayFunctor * this, longlong param_1)`
+    /// `SkyrimVM::EffectEventRelayFunctor::operator()` at 0x9e3460 (runtime, high); signature (untiered): `undefined8 operator()(EffectEventRelayFunctor * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM__EffectEventRelayFunctor_vtable {
@@ -188070,7 +188070,7 @@ impl SkyrimVM__EffectEventRelayFunctor_vtable {
 pub struct SkyrimVM__EventRelayFunctor_vtable {
     /// `SkyrimVM::EventRelayFunctor::vdtor` at 0x9f0710 (layout_inference, medium); signature (low): `EventRelayFunctor * vdtor(EventRelayFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `SkyrimVM::EventRelayFunctor::vfunc_1` at 0x9e33e0 (rtti, high); signature (low): `undefined8 vfunc_1(EventRelayFunctor * this, undefined8 param_1)`
+    /// `SkyrimVM::EventRelayFunctor::operator()` at 0x9e33e0 (runtime, high); signature (untiered): `undefined8 operator()(EventRelayFunctor * this, undefined8 param_1)`
     pub slot_1: *const c_void,
 }
 impl SkyrimVM__EventRelayFunctor_vtable {

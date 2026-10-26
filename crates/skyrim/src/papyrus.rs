@@ -153,7 +153,7 @@ impl Fns {
                 bind_object: crate::resolve(reloc, fns::BSScript__ObjectBindPolicy__BindObject)?,
                 resize_args: crate::resolve(reloc, fns::ResizeVariableArray)?,
                 relay: crate::resolve(reloc, fns::SkyrimVM__RelayEventToRefAndEffects)?,
-                effect_list: crate::resolve(reloc, fns::Actor__MagicTarget_vfunc_7)?,
+                effect_list: crate::resolve(reloc, fns::Actor__GetActiveEffectList)?,
                 lock_read: crate::resolve(reloc, fns::BSReadWriteLock__LockForRead)?,
                 unlock_read: crate::resolve(reloc, fns::BSReadWriteLock__UnlockForRead)?,
                 skyrim_vm: reloc.address(globals::g_SkyrimVM)? as *const classes::partial::SkyrimVM,
