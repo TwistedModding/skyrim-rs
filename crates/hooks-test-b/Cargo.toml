@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 framework.workspace = true
-hooks-test = { path = "../hooks-test" }
+hooks-test = { path = "../hooks-test", version = "0.1.0" }
 
 [lints]
 workspace = true
