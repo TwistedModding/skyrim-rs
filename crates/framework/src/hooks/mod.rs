@@ -186,14 +186,18 @@ pub(crate) struct Request {
     pub phase: Phase,
     pub owner: String,
     pub constraints: Constraints,
+    /// `type_name` of the callback's type: the host matches it against the site's instead of a
+    /// `TypeId`, which hashes crate metadata (features, dependency builds) that a plugin built on
+    /// its own may not share with the host.
+    pub signature: &'static str,
     pub callback: Box<dyn Any + Send + Sync>,
 }
 
 impl Request {
-    fn new(target: Target, phase: Phase, options: Options<'_>, callback: Box<dyn Any + Send + Sync>) -> Self {
+    fn new<C: Send + Sync + 'static>(target: Target, phase: Phase, options: Options<'_>, callback: C) -> Self {
         let names = |list: &[&str]| list.iter().map(|s| (*s).to_owned()).collect();
         let constraints = Constraints { before: names(options.before), after: names(options.after), priority: options.priority };
-        Self { target, phase, owner: options.owner.to_owned(), constraints, callback }
+        Self { target, phase, owner: options.owner.to_owned(), constraints, signature: core::any::type_name::<C>(), callback: Box::new(callback) }
     }
 }
 
@@ -316,7 +320,7 @@ impl Hooks {
         registry::revalidate(moment, &resolved);
     }
 
-    fn request(&self, target: Target, phase: Phase, options: Options<'_>, callback: Box<dyn Any + Send + Sync>) -> Result<SubscriptionId, Error> {
+    fn request<C: Send + Sync + 'static>(&self, target: Target, phase: Phase, options: Options<'_>, callback: C) -> Result<SubscriptionId, Error> {
         if let Some(plugin) = self.owner
             && plugin != options.owner
         {
@@ -328,26 +332,26 @@ impl Hooks {
     /// Runs `f` before the function with the arguments, which it may edit.
     pub fn before<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(&mut Args<H::Fn>) + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
         let f: Box<BeforeFn<H::Fn>> = Box::new(f);
-        self.request(target.target(), Phase::Before, options, Box::new(f))
+        self.request(target.target(), Phase::Before, options, f)
     }
 
     /// Runs `f` around the function: it receives the arguments and the rest of the chain, which it
     /// may call once with any arguments or not at all, and returns the result.
     pub fn around<H: Hookable>(&self, target: H, options: Options<'_>, f: impl for<'a> Fn(Args<H::Fn>, Next<'a, H::Fn>) -> Ret<H::Fn> + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
         let f: Box<AroundFn<H::Fn>> = Box::new(f);
-        self.request(target.target(), Phase::Around, options, Box::new(f))
+        self.request(target.target(), Phase::Around, options, f)
     }
 
     /// Runs `f` in place of the function, with the original to delegate to; one per site.
     pub fn replace<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(Args<H::Fn>, Original<H::Fn>) -> Ret<H::Fn> + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
         let f: Box<ReplaceFn<H::Fn>> = Box::new(f);
-        self.request(target.target(), Phase::Replace, options, Box::new(f))
+        self.request(target.target(), Phase::Replace, options, f)
     }
 
     /// Runs `f` after the function with the arguments it received, its result and the outcome.
     pub fn after<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(&Args<H::Fn>, &Ret<H::Fn>, Outcome) + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
         let f: Box<AfterFn<H::Fn>> = Box::new(f);
-        self.request(target.target(), Phase::After, options, Box::new(f))
+        self.request(target.target(), Phase::After, options, f)
     }
 
     /// Removes one subscription; true when it existed. Returns once no call is inside it.

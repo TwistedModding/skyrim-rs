@@ -6,7 +6,7 @@ use std::collections::{BTreeMap, VecDeque};
 use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 
 use super::ops::{self, OpVisitor, RAW_MAX_ARITY, RAW_SLOTS};
-use super::site::{self, AfterFn, AroundFn, BeforeFn, Callback, Chain, Entry, Meta, Op, Ranks, ReplaceFn, Signature, Site, SiteMeta, Stats, Timing};
+use super::site::{self, Callback, Chain, Entry, Meta, Op, Ranks, Signature, Site, SiteMeta, Stats, Timing};
 use super::validate::{Validation, validate};
 use super::{Compat, EntryReport, Error, Phase, Request, SiteReport, SubscriptionId, Target};
 
@@ -164,7 +164,7 @@ impl OpVisitor<Result<SubscriptionId, Error>> for Subscriber<'_> {
         let Self { reg, req, name, address } = self;
         let site = O::site();
         install::<O>(reg, site, &name, address, &req.owner)?;
-        let callback = downcast::<O::Fn>(req.phase, req.callback).ok_or_else(|| Error::Callback { site: name.clone(), owner: req.owner.clone() })?;
+        let callback = downcast::<O::Fn>(req.phase, req.signature, req.callback).ok_or_else(|| Error::Callback { site: name.clone(), owner: req.owner.clone() })?;
         let id = reg.next_id;
         reg.next_id += 1;
         let meta = Arc::new(Meta { id, owner: req.owner, phase: req.phase, constraints: req.constraints, stats: Stats::new(), enabled: AtomicBool::new(true) });
@@ -183,13 +183,20 @@ impl OpVisitor<Result<SubscriptionId, Error>> for Subscriber<'_> {
     }
 }
 
-fn downcast<F: Signature>(phase: Phase, callback: Box<dyn Any + Send + Sync>) -> Option<Callback<F>> {
+fn downcast<F: Signature>(phase: Phase, signature: &str, callback: Box<dyn Any + Send + Sync>) -> Option<Callback<F>> {
     Some(match phase {
-        Phase::Before => Callback::Before(*callback.downcast::<Box<BeforeFn<F>>>().ok()?),
-        Phase::Around => Callback::Around(*callback.downcast::<Box<AroundFn<F>>>().ok()?),
-        Phase::Replace => Callback::Replace(*callback.downcast::<Box<ReplaceFn<F>>>().ok()?),
-        Phase::After => Callback::After(*callback.downcast::<Box<AfterFn<F>>>().ok()?),
+        Phase::Before => Callback::Before(cast(signature, callback)?),
+        Phase::Around => Callback::Around(cast(signature, callback)?),
+        Phase::Replace => Callback::Replace(cast(signature, callback)?),
+        Phase::After => Callback::After(cast(signature, callback)?),
     })
+}
+
+/// The callback as `T` when the plugin named its type as the host names `T`. A plugin is loaded
+/// only when its descriptor's ABI number, framework version, rustc and source hash match the
+/// host's, so the same type name stands for the same type even where crate metadata differs.
+fn cast<T: Send + Sync + 'static>(signature: &str, callback: Box<dyn Any + Send + Sync>) -> Option<T> {
+    (signature == core::any::type_name::<T>()).then(|| *unsafe { Box::from_raw(Box::into_raw(callback).cast::<T>()) })
 }
 
 /// Validates the entry and puts the one detour in, with an empty chain published first.

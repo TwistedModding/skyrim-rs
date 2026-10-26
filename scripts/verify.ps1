@@ -89,7 +89,9 @@ try {
         New-Item -ItemType Directory -Force $TagDir | Out-Null
         foreach ($t in $Mod.tags) {
             $env:SKYRIM_RS_RELOAD_TAG = "$t"
-            try { cargo build --release -p $Mod.crate; if ($LASTEXITCODE -ne 0) { throw "cargo build failed for tag $t" } } finally { Remove-Item env:SKYRIM_RS_RELOAD_TAG }
+            # The last tag enables a layout feature the host lacks, so its crates hash differently from the host's.
+            $features = if ($t -eq $Mod.tags[-1]) { @("--features", "layout/tier-low") } else { @() }
+            try { cargo build --release -p $Mod.crate @features; if ($LASTEXITCODE -ne 0) { throw "cargo build failed for tag $t" } } finally { Remove-Item env:SKYRIM_RS_RELOAD_TAG }
             Copy-Item "$Root\target\release\$($Mod.dll)" "$TagDir\$t.dll" -Force
         }
     }
