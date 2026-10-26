@@ -51,6 +51,21 @@ pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>
     Ok((files, stats))
 }
 
+/// The crash log of a minidump the crash logger wrote: the record from its user stream (or what
+/// the dump's own streams give) formatted by the logger's own `report`, with DLL symbols from
+/// `DbgHelp` where their PDBs are found.
+pub fn decode(dump: &Path) -> Result<String, Box<dyn Error>> {
+    let dump = crash::dump::Dump::open(dump)?;
+    let (rec, note) = match dump.record() {
+        Some(rec) => (rec, "decoded offline from the logger's record in the dump"),
+        None => (dump.reconstruct(), "decoded offline from the dump's own streams: no logger record, so the frames are a scan of the stack for return addresses and the loader facts are missing"),
+    };
+    let pdb = crash::pdb::DbgHelp::new(0x4D50 as _);
+    let mut text = format!("({note})\n");
+    crash::report::write(&mut text, &rec, &dump, None, Some(&pdb));
+    Ok(text)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

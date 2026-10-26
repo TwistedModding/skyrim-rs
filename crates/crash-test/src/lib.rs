@@ -2,8 +2,11 @@
 //! then happens where the scenario triggers it. `null`, `overflow` and `write` fire in the
 //! plugin's `SAVE_GAME` handler, on the main thread, at the next console `save`; `hook` fires
 //! inside the plugin's `Before` subscriber on `Actor::ModActorValueImpl` at the next
-//! `player.damageactorvalue`, on the console's job thread. The plugin logs the thread id of
-//! every step to `skyrim-rs-crash-test.log` so the suite can compare them with the crash log.
+//! `player.damageactorvalue`, on the console's job thread. `form` reads through null with the Iron
+//! Sword's record in rcx, `deleted` the same with the player's reference after setting its DELETED
+//! flag, so the register probe must name the form and its plugin file. The plugin logs the
+//! thread id of every step to `skyrim-rs-crash-test.log` so the suite can compare them with the
+//! crash log.
 
 use core::ffi::c_void;
 use core::sync::atomic::{AtomicU8, Ordering};
@@ -28,6 +31,13 @@ const NULL: u8 = 1;
 const OVERFLOW: u8 = 2;
 const WRITE: u8 = 3;
 const HOOK: u8 = 4;
+const FORM: u8 = 5;
+const DELETED: u8 = 6;
+
+/// The Iron Sword, a `WEAP` record of Skyrim.esm.
+const IRON_SWORD: skyrim::forms::FormId = skyrim::forms::FormId(0x12EB7);
+/// `TESForm::formFlags` bit 5.
+const FLAG_DELETED: u32 = 0x20;
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 static HOST: OnceLock<&'static Host> = OnceLock::new();
@@ -90,6 +100,8 @@ fn on_message(msg: &skse::Message) {
                 NULL => "null",
                 OVERFLOW => "overflow",
                 WRITE => "write",
+                FORM => "form",
+                DELETED => "deleted",
                 _ => return,
             };
             log(&format!("crashing on thread {} ({what})", thread()));
@@ -98,7 +110,16 @@ fn on_message(msg: &skse::Message) {
                 OVERFLOW => {
                     let _ = recurse(0);
                 }
-                _ => image_write(),
+                WRITE => image_write(),
+                FORM => null_read_holding(IRON_SWORD.lookup().map_or(0, |f| f.as_ptr() as usize)),
+                _ => {
+                    let player = skyrim::actors::PlayerCharacter::get().map_or(0, |p| p.as_ptr() as usize);
+                    if player != 0 {
+                        let flags = (player + 0x10) as *mut u32;
+                        unsafe { core::ptr::write_volatile(flags, core::ptr::read_volatile(flags) | FLAG_DELETED) };
+                    }
+                    null_read_holding(player);
+                }
             }
         }
         _ => {}
@@ -109,6 +130,12 @@ fn on_message(msg: &skse::Message) {
 fn null_read() {
     let value = unsafe { core::ptr::read_volatile(core::hint::black_box(core::ptr::null::<u32>())) };
     core::hint::black_box(value);
+}
+
+/// Reads through a null pointer with `object`'s address in rcx, so the register probe names the object.
+#[inline(never)]
+fn null_read_holding(object: usize) {
+    unsafe { core::arch::asm!("mov rax, [rdx]", in("rcx") object, in("rdx") 0usize, out("rax") _, options(nostack, readonly)) };
 }
 
 /// Writes into the game's code, the first page of `.text`.
@@ -134,7 +161,7 @@ struct CrashCommand;
 
 impl Command for CrashCommand {
     const NAME: &'static core::ffi::CStr = c"SkyrimRsCrash";
-    const HELP: &'static core::ffi::CStr = c"skyrim-rs crash test: arm null, overflow or write (fires at the next save) or hook (fires at the next damageactorvalue)";
+    const HELP: &'static core::ffi::CStr = c"skyrim-rs crash test: arm null, overflow, write, form or deleted (fires at the next save) or hook (fires at the next damageactorvalue)";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -143,7 +170,9 @@ impl Command for CrashCommand {
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("overflow") => (OVERFLOW, "armed overflow: unbounded recursion in the SAVE_GAME handler at the next save"),
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("write") => (WRITE, "armed write: a write into SkyrimSE.exe's code in the SAVE_GAME handler at the next save"),
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("hook") => (HOOK, "armed hook: a null read inside the Before subscriber at the next damageactorvalue"),
-            _ => (NONE, "SkyrimRsCrash null | overflow | write | hook"),
+            [Arg::Str(what), ..] if what.eq_ignore_ascii_case("form") => (FORM, "armed form: a null read with the Iron Sword's record in rcx at the next save"),
+            [Arg::Str(what), ..] if what.eq_ignore_ascii_case("deleted") => (DELETED, "armed deleted: the player's reference flagged DELETED, then a null read with it in rcx at the next save"),
+            _ => (NONE, "SkyrimRsCrash null | overflow | write | hook | form | deleted"),
         };
         ARMED.store(armed, Ordering::Relaxed);
         log(&format!("{line} (command thread {})", thread()));

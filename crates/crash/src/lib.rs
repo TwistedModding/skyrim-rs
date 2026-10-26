@@ -10,9 +10,13 @@
 
 use core::fmt;
 
+pub mod dump;
 pub mod mem;
+pub mod pdb;
+pub mod probe;
 pub mod record;
 pub mod report;
+pub mod rules;
 pub mod symbols;
 pub mod text;
 

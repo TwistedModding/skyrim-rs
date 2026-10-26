@@ -6,6 +6,7 @@
 use core::sync::atomic::{AtomicU32, Ordering};
 
 use windows_sys::Win32::Foundation::{CloseHandle, GetLastError, LocalFree, SYSTEMTIME};
+use windows_sys::Win32::Storage::FileSystem::{GetFileVersionInfoSizeW, GetFileVersionInfoW, VS_FIXEDFILEINFO, VerQueryValueW};
 use windows_sys::Win32::System::Diagnostics::Debug::{CONTEXT, CONTEXT_FULL_AMD64, EXCEPTION_RECORD, GetThreadContext, RtlLookupFunctionEntry, RtlVirtualUnwind};
 use windows_sys::Win32::System::Diagnostics::ToolHelp::{CreateToolhelp32Snapshot, TH32CS_SNAPTHREAD, THREADENTRY32, Thread32First, Thread32Next};
 use windows_sys::Win32::System::SystemInformation::GetLocalTime;
@@ -245,6 +246,31 @@ pub(crate) fn fill_threads(rec: &mut Record, crashing: (u32, &CONTEXT), watchdog
     }
     unsafe { CloseHandle(snapshot) };
     rec.thread_count = u32::try_from(count).unwrap_or(0);
+}
+
+/// Reads every module's file version from its version resource (heap-using, so after the dump).
+pub(crate) fn fill_versions(rec: &mut Record, buffer: &mut [u8]) {
+    let count = (rec.module_count as usize).min(MAX_MODULES);
+    for module in &mut rec.modules[..count] {
+        let mut path = [0u16; 520];
+        for (n, unit) in module.path().encode_utf16().take(519).enumerate() {
+            path[n] = unit;
+        }
+        let mut handle = 0u32;
+        let size = unsafe { GetFileVersionInfoSizeW(path.as_ptr(), &raw mut handle) } as usize;
+        if size == 0 || size > buffer.len() || unsafe { GetFileVersionInfoW(path.as_ptr(), 0, u32::try_from(size).unwrap_or(0), buffer.as_mut_ptr().cast()) } == 0 {
+            continue;
+        }
+        let mut fixed: *mut core::ffi::c_void = core::ptr::null_mut();
+        let mut len = 0u32;
+        let root: [u16; 2] = [u16::from(b'\\'), 0];
+        if unsafe { VerQueryValueW(buffer.as_ptr().cast(), root.as_ptr(), &raw mut fixed, &raw mut len) } == 0 || fixed.is_null() || (len as usize) < size_of::<VS_FIXEDFILEINFO>() {
+            continue;
+        }
+        let info = unsafe { &*fixed.cast::<VS_FIXEDFILEINFO>() };
+        module.version = [(info.dwFileVersionMS >> 16) as u16, (info.dwFileVersionMS & 0xFFFF) as u16, (info.dwFileVersionLS >> 16) as u16, (info.dwFileVersionLS & 0xFFFF) as u16];
+        module.version_known = 1;
+    }
 }
 
 /// The game globals the probes read, as absolute addresses resolved at install (0 when unknown).

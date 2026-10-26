@@ -1,20 +1,42 @@
 //! The text log, formatted from a record and a memory source: the same code in the game and in
 //! the offline decoder.
 
+use core::cell::RefCell;
 use core::fmt::{self, Write};
 
 use crate::mem::Source;
+use crate::pdb::DbgHelp;
+use crate::probe;
 use crate::record::{Record, Thread};
+use crate::rules::{self, Access, Seen};
 use crate::symbols::{self, Code, Data, Mode};
 
+/// How many qwords above the stack pointer are probed.
+const STACK_WORDS: u64 = 48;
+/// Export names this far past the export are not a name but a guess, and left out.
+const MAX_EXPORT_DISPLACEMENT: u64 = 0x4000;
+
+/// Everything a section needs: the record, the memory it describes, the symbol server for DLLs
+/// and what the probes have seen so far (for the explanation).
+pub struct Context<'a> {
+    pub rec: &'a Record,
+    pub src: &'a dyn Source,
+    pub pdb: Option<&'a DbgHelp>,
+    pub seen: RefCell<Seen>,
+}
+
 /// Writes the whole report; `paths` are the dump and log files when written in the game.
-pub fn write(w: &mut dyn Write, rec: &Record, src: &dyn Source, paths: Option<(&[u16], &[u16])>) {
-    let _ = header(w, rec, paths);
-    let _ = exception(w, rec, src);
-    let _ = stack(w, rec);
-    let _ = threads(w, rec);
-    let _ = modules(w, rec);
-    let _ = state(w, rec);
+pub fn write(w: &mut dyn Write, rec: &Record, src: &dyn Source, paths: Option<(&[u16], &[u16])>, pdb: Option<&DbgHelp>) {
+    let ctx = Context { rec, src, pdb, seen: RefCell::new(Seen::default()) };
+    let _ = header(w, &ctx, paths);
+    let _ = exception(w, &ctx);
+    let _ = registers(w, &ctx);
+    let _ = stack(w, &ctx);
+    let _ = stack_top(w, &ctx);
+    let _ = threads(w, &ctx);
+    let _ = modules(w, &ctx);
+    let _ = state(w, &ctx);
+    let _ = explanation(w, &ctx);
 }
 
 fn wide(w: &mut dyn Write, units: &[u16]) -> fmt::Result {
@@ -25,7 +47,8 @@ fn wide(w: &mut dyn Write, units: &[u16]) -> fmt::Result {
     Ok(())
 }
 
-fn header(w: &mut dyn Write, rec: &Record, paths: Option<(&[u16], &[u16])>) -> fmt::Result {
+fn header(w: &mut dyn Write, ctx: &Context<'_>, paths: Option<(&[u16], &[u16])>) -> fmt::Result {
+    let rec = ctx.rec;
     let [year, month, day, hour, minute, second] = rec.time;
     let [major, minor, build, store] = skse::runtime::unpack(rec.runtime);
     writeln!(w, "skyrim-rs crash report")?;
@@ -134,21 +157,25 @@ pub fn code_name(code: u32) -> (&'static str, &'static str) {
     }
 }
 
-/// `module+offset` and, for the game, the ledger name; for a return address the lookup uses the
-/// byte before it so the call instruction's function is named.
-pub fn code_location(w: &mut dyn Write, address: u64, rec: &Record, return_address: bool) -> fmt::Result {
+/// `module+offset` and, for the game, the ledger name, for a DLL its PDB or export name; for a
+/// return address the lookup uses the byte before it so the call instruction's function is named.
+pub fn code_location(w: &mut dyn Write, address: u64, ctx: &Context<'_>, return_address: bool) -> fmt::Result {
+    let rec = ctx.rec;
     let lookup = if return_address { address.wrapping_sub(1) } else { address };
     if let Some(module) = rec.module_at(lookup) {
         write!(w, "{}+{:#x}", module.name(), address - module.base)?;
-        if module.base == rec.exe_base
-            && let Ok(rva) = u32::try_from(lookup - module.base)
-            && let Some(Code { function, offset, meaning }) = symbols::code(rva)
-        {
-            write!(w, " {}+{:#x} ({}", function.name, u64::from(offset) + u64::from(return_address), function.confidence.as_str())?;
-            if let Some(meaning) = meaning {
-                write!(w, "; {meaning}")?;
+        if module.base == rec.exe_base {
+            if let Ok(rva) = u32::try_from(lookup - module.base)
+                && let Some(Code { function, offset, meaning }) = symbols::code(rva)
+            {
+                write!(w, " {}+{:#x} ({}", function.name, u64::from(offset) + u64::from(return_address), function.confidence.as_str())?;
+                if let Some(meaning) = meaning {
+                    write!(w, "; {meaning}")?;
+                }
+                w.write_str(")")?;
             }
-            w.write_str(")")?;
+        } else if let Some(pdb) = ctx.pdb {
+            let _ = pdb.describe(lookup, module, w, MAX_EXPORT_DISPLACEMENT)?;
         }
         if let Some(image) = rec.images().iter().find(|i| i.live != 0 && i.contains(lookup)) {
             write!(w, " (framework plugin {} generation {})", image.name(), image.generation)?;
@@ -156,6 +183,7 @@ pub fn code_location(w: &mut dyn Write, address: u64, rec: &Record, return_addre
         return Ok(());
     }
     if let Some(image) = rec.images().iter().find(|i| i.contains(lookup)) {
+        ctx.seen.borrow_mut().note_freed_plugin(image.name());
         return write!(w, "freed image of {} generation {} +{:#x}", image.name(), image.generation, address - image.base);
     }
     write!(w, "{address:#x}")?;
@@ -166,12 +194,15 @@ pub fn code_location(w: &mut dyn Write, address: u64, rec: &Record, return_addre
 }
 
 /// What an address the code touched is: null, a module, a stack, a freed image, free memory, and so on.
-pub fn classify(w: &mut dyn Write, address: u64, rec: &Record, src: &dyn Source) -> fmt::Result {
+pub fn classify(w: &mut dyn Write, address: u64, ctx: &Context<'_>) -> Result<Access, fmt::Error> {
+    let (rec, src) = (ctx.rec, ctx.src);
     if address == 0 {
-        return w.write_str("null");
+        w.write_str("null")?;
+        return Ok(Access::Null);
     }
     if address < 0x10000 {
-        return write!(w, "near null: offset {address:#x} from a null object");
+        write!(w, "near null: offset {address:#x} from a null object")?;
+        return Ok(Access::NearNull);
     }
     if let Some(module) = rec.module_at(address) {
         write!(w, "inside {}+{:#x}", module.name(), address - module.base)?;
@@ -192,33 +223,42 @@ pub fn classify(w: &mut dyn Write, address: u64, rec: &Record, src: &dyn Source)
         if region.known {
             write!(w, ", {}", Protection(&region))?;
         }
-        return Ok(());
+        return Ok(Access::Image);
     }
     if let Some(image) = rec.images().iter().find(|i| i.contains(address)) {
-        return write!(w, "inside the freed image of {} generation {} (+{:#x}): a pointer kept across a hot reload", image.name(), image.generation, address - image.base);
+        ctx.seen.borrow_mut().note_freed_plugin(image.name());
+        write!(w, "inside the freed image of {} generation {} (+{:#x}): a pointer kept across a hot reload", image.name(), image.generation, address - image.base)?;
+        return Ok(Access::FreedImage);
     }
     if let Some(thread) = rec.threads().iter().find(|t| t.stack_base != 0 && address >= t.stack_base && address < t.stack_end) {
         w.write_str("in the stack of ")?;
-        return thread_kind(w, rec, thread.id);
+        thread_kind(w, ctx, thread.id)?;
+        return Ok(Access::Stack);
     }
     let region = src.region(address);
     if !region.known {
-        return w.write_str("outside the address space");
+        w.write_str("outside the address space")?;
+        return Ok(Access::Unmapped);
     }
     if region.free() {
-        return w.write_str("unmapped memory: freed or never allocated");
+        w.write_str("unmapped memory: freed or never allocated")?;
+        return Ok(Access::Unmapped);
     }
     if region.reserved() {
-        return w.write_str("reserved but not committed memory");
+        w.write_str("reserved but not committed memory")?;
+        return Ok(Access::Unmapped);
     }
     if region.guard() {
-        return w.write_str("a guard page (the end of a stack or a heap's guard)");
+        w.write_str("a guard page (the end of a stack or a heap's guard)")?;
+        return Ok(Access::Guard);
     }
     if region.no_access() {
-        return w.write_str("committed memory with no access");
+        w.write_str("committed memory with no access")?;
+        return Ok(Access::Unmapped);
     }
     let kind = if region.mapped() { "mapped file memory" } else { "heap or other private memory" };
-    write!(w, "{kind}, {}", Protection(&region))
+    write!(w, "{kind}, {}", Protection(&region))?;
+    Ok(Access::Heap)
 }
 
 struct Protection<'a>(&'a crate::mem::Region);
@@ -274,7 +314,8 @@ fn thread_role(rec: &Record, id: u32) -> Option<&'static str> {
     thread.frames[..(thread.frame_count as usize).min(thread.frames.len())].iter().copied().filter_map(names).find_map(role)
 }
 
-pub fn thread_kind(w: &mut dyn Write, rec: &Record, id: u32) -> fmt::Result {
+pub fn thread_kind(w: &mut dyn Write, ctx: &Context<'_>, id: u32) -> fmt::Result {
+    let rec = ctx.rec;
     if id == rec.main_thread {
         return write!(w, "thread {id} (the main thread)");
     }
@@ -290,14 +331,9 @@ pub fn thread_kind(w: &mut dyn Write, rec: &Record, id: u32) -> fmt::Result {
     Ok(())
 }
 
-fn exception(w: &mut dyn Write, rec: &Record, src: &dyn Source) -> fmt::Result {
-    let e = &rec.exception;
-    let (name, meaning) = code_name(e.code);
-    writeln!(w, "\nException")?;
-    writeln!(w, "code {:#010x} {name}: {meaning}", e.code)?;
-    w.write_str("at ")?;
-    code_location(w, e.address, rec, false)?;
-    writeln!(w)?;
+/// The access class of the exception's address, with the line that describes it.
+fn access_line(w: &mut dyn Write, ctx: &Context<'_>) -> Result<Access, fmt::Error> {
+    let e = &ctx.rec.exception;
     if matches!(e.code, 0xC000_0005 | 0xC000_0006 | 0xC000_00FD) && e.parameter_count >= 2 {
         let verb = match e.parameters[0] {
             0 => "reading",
@@ -306,77 +342,120 @@ fn exception(w: &mut dyn Write, rec: &Record, src: &dyn Source) -> fmt::Result {
             _ => "accessing",
         };
         write!(w, "{verb} address {:#x}: ", e.parameters[1])?;
-        classify(w, e.parameters[1], rec, src)?;
+        let access = classify(w, e.parameters[1], ctx)?;
         writeln!(w)?;
-    } else if e.parameter_count > 0 {
+        return Ok(access);
+    }
+    if e.parameter_count > 0 {
         w.write_str("parameters:")?;
         for p in &e.parameters[..(e.parameter_count as usize).min(15)] {
             write!(w, " {p:#x}")?;
         }
         writeln!(w)?;
     }
+    Ok(Access::None)
+}
+
+fn exception(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    let rec = ctx.rec;
+    let e = &rec.exception;
+    let (name, meaning) = code_name(e.code);
+    writeln!(w, "\nException")?;
+    writeln!(w, "code {:#010x} {name}: {meaning}", e.code)?;
+    w.write_str("at ")?;
+    code_location(w, e.address, ctx, false)?;
+    writeln!(w)?;
+    let _ = access_line(w, ctx)?;
     w.write_str("on ")?;
-    thread_kind(w, rec, rec.thread)?;
+    thread_kind(w, ctx, rec.thread)?;
     writeln!(w)?;
     let mut bytes = [0u8; 16];
     w.write_str("instruction bytes:")?;
-    if e.address != 0 && src.read(e.address, &mut bytes) {
+    if e.address != 0 && ctx.src.read(e.address, &mut bytes) {
         for b in bytes {
             write!(w, " {b:02x}")?;
         }
     } else {
         w.write_str(" unreadable")?;
     }
-    writeln!(w)?;
+    writeln!(w)
+}
+
+fn registers(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    let r = &ctx.rec.registers;
     writeln!(w, "\nRegisters")?;
-    for (name, value) in rec.registers.general() {
+    for (name, value) in r.general() {
         write!(w, "{name:>3} {value:#018x}")?;
         if name != "rsp" && name != "rip" {
             w.write_str("  ")?;
-            describe_value(w, value, rec, src)?;
+            describe_value(w, value, ctx)?;
         }
         writeln!(w)?;
     }
-    writeln!(w, "eflags {:#010x}  mxcsr {:#010x}  cs {:#x} ss {:#x} ds {:#x} es {:#x} fs {:#x} gs {:#x}", rec.registers.eflags, rec.registers.mxcsr, rec.registers.segments[0], rec.registers.segments[1], rec.registers.segments[2], rec.registers.segments[3], rec.registers.segments[4], rec.registers.segments[5])?;
-    for (i, [lo, hi]) in rec.registers.xmm.iter().enumerate() {
-        write!(w, "xmm{i:<2} {hi:016x}{lo:016x}  ({}, {})", f32::from_bits((*lo & 0xFFFF_FFFF) as u32), f32::from_bits((*lo >> 32) as u32))?;
-        writeln!(w)?;
+    writeln!(w, "eflags {:#010x}  mxcsr {:#010x}  cs {:#x} ss {:#x} ds {:#x} es {:#x} fs {:#x} gs {:#x}", r.eflags, r.mxcsr, r.segments[0], r.segments[1], r.segments[2], r.segments[3], r.segments[4], r.segments[5])?;
+    for (i, [lo, hi]) in r.xmm.iter().enumerate() {
+        writeln!(w, "xmm{i:<2} {hi:016x}{lo:016x}  ({}, {})", f32::from_bits((*lo & 0xFFFF_FFFF) as u32), f32::from_bits((*lo >> 32) as u32))?;
     }
     Ok(())
 }
 
-/// A word from a register or the stack: a code or data address in a module, a stack address, or
-/// what the memory at it holds. Game objects are named through `probe` once it exists.
-pub fn describe_value(w: &mut dyn Write, value: u64, rec: &Record, src: &dyn Source) -> fmt::Result {
+/// A word from a register or the stack: a code or data address in a module, a stack address, a
+/// game object named by its vtable, or what the memory it points at is.
+pub fn describe_value(w: &mut dyn Write, value: u64, ctx: &Context<'_>) -> fmt::Result {
     if value == 0 {
         return w.write_str("null");
     }
     if value < 0x10000 {
         return write!(w, "small value {value}");
     }
-    if rec.module_at(value).is_some() {
-        let region = src.region(value);
-        if region.executable() {
-            return code_location(w, value, rec, false);
+    if ctx.rec.module_at(value).is_some() {
+        if ctx.src.region(value).executable() {
+            return code_location(w, value, ctx, false);
         }
-        return classify(w, value, rec, src);
+        classify(w, value, ctx)?;
+        return Ok(());
     }
-    classify(w, value, rec, src)
+    if probe::describe(w, value, ctx)? {
+        return Ok(());
+    }
+    classify(w, value, ctx)?;
+    Ok(())
 }
 
-fn stack(w: &mut dyn Write, rec: &Record) -> fmt::Result {
+fn stack(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    let rec = ctx.rec;
     writeln!(w, "\nCall stack of the crashing thread ({} frames)", rec.frame_count)?;
     for (i, frame) in rec.frames().iter().enumerate() {
         write!(w, "#{i:<2} {:#018x} ", frame.rip)?;
-        code_location(w, frame.rip, rec, i > 0)?;
+        code_location(w, frame.rip, ctx, i > 0)?;
         writeln!(w)?;
     }
     Ok(())
 }
 
-fn thread_line(w: &mut dyn Write, rec: &Record, thread: &Thread) -> fmt::Result {
-    thread_kind(w, rec, thread.id)?;
-    if thread.id == rec.thread {
+/// The qwords above the stack pointer, each described; nulls and plain numbers are skipped.
+fn stack_top(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    let rsp = ctx.rec.registers.rsp;
+    writeln!(w, "\nStack top ({STACK_WORDS} words from rsp {rsp:#x}; nulls and small values left out)")?;
+    for i in 0..STACK_WORDS {
+        let at = rsp + i * 8;
+        let Some(value) = ctx.src.read_u64(at) else {
+            writeln!(w, "rsp+{:#05x} unreadable", i * 8)?;
+            break;
+        };
+        if value < 0x10000 {
+            continue;
+        }
+        write!(w, "rsp+{:#05x} {value:#018x}  ", i * 8)?;
+        describe_value(w, value, ctx)?;
+        writeln!(w)?;
+    }
+    Ok(())
+}
+
+fn thread_line(w: &mut dyn Write, ctx: &Context<'_>, thread: &Thread) -> fmt::Result {
+    thread_kind(w, ctx, thread.id)?;
+    if thread.id == ctx.rec.thread {
         w.write_str(" (crashing)")?;
     }
     if thread.frame_count == 0 {
@@ -385,24 +464,26 @@ fn thread_line(w: &mut dyn Write, rec: &Record, thread: &Thread) -> fmt::Result 
     writeln!(w)?;
     for (i, rip) in thread.frames[..(thread.frame_count as usize).min(thread.frames.len())].iter().enumerate() {
         write!(w, "    #{i} ")?;
-        code_location(w, *rip, rec, i > 0)?;
+        code_location(w, *rip, ctx, i > 0)?;
         writeln!(w)?;
     }
     Ok(())
 }
 
-fn threads(w: &mut dyn Write, rec: &Record) -> fmt::Result {
+fn threads(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    let rec = ctx.rec;
     if rec.thread_count == u32::MAX {
         return writeln!(w, "\nThreads: the thread list could not be read");
     }
     writeln!(w, "\nThreads ({})", rec.thread_count)?;
     for thread in rec.threads() {
-        thread_line(w, rec, thread)?;
+        thread_line(w, ctx, thread)?;
     }
     Ok(())
 }
 
-fn modules(w: &mut dyn Write, rec: &Record) -> fmt::Result {
+fn modules(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    let rec = ctx.rec;
     writeln!(w, "\nModules ({})", rec.module_count)?;
     for module in rec.modules() {
         let in_crash = rec.frames().iter().any(|f| module.contains(f.rip));
@@ -431,9 +512,112 @@ fn modules(w: &mut dyn Write, rec: &Record) -> fmt::Result {
     Ok(())
 }
 
-fn state(w: &mut dyn Write, rec: &Record) -> fmt::Result {
-    if rec.state_len > 0 {
-        writeln!(w, "\nFramework state\n{}", rec.state_text().trim_end())?;
+fn state(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    if ctx.rec.state_len > 0 {
+        writeln!(w, "\nFramework state\n{}", ctx.rec.state_text().trim_end())?;
     }
     Ok(())
+}
+
+/// One top frame's name as the hash and the rules see it: `module!function` (the ledger's name in
+/// the game, the PDB's or export's in a DLL) or `module+offset`; the bytes stored in `buf`.
+fn frame_name(ctx: &Context<'_>, index: usize, buf: &mut [u8]) -> usize {
+    let rec = ctx.rec;
+    let frame = &rec.frames()[index];
+    let lookup = if index > 0 { frame.rip.wrapping_sub(1) } else { frame.rip };
+    let Some(module) = rec.module_at(lookup) else {
+        return crate::record::store(buf, "unmapped");
+    };
+    let mut w = crate::text::Writer::new(buf);
+    let _ = w.write_str(module.name());
+    let module_len = w.len();
+    let named = if module.base == rec.exe_base {
+        match u32::try_from(lookup - module.base).ok().and_then(symbols::code) {
+            Some(code) => {
+                let _ = write!(w, "!{}", code.function.name);
+                true
+            }
+            None => false,
+        }
+    } else {
+        ctx.pdb.is_some_and(|pdb| pdb.describe(lookup, module, &mut w, MAX_EXPORT_DISPLACEMENT).unwrap_or(false))
+    };
+    if !named {
+        let _ = write!(w, "+{:#x}", lookup - module.base);
+        return w.len();
+    }
+    let len = w.len();
+    if buf[module_len] == b' ' {
+        buf[module_len] = b'!';
+    }
+    buf[module_len..len].iter().position(|&b| b == b'+').map_or(len, |p| module_len + p)
+}
+
+const TOP_FRAMES: usize = 8;
+
+fn explanation(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    let rec = ctx.rec;
+    let mut buffers = [[0u8; 192]; TOP_FRAMES];
+    let count = rec.frames().len().min(TOP_FRAMES);
+    let lens: [usize; TOP_FRAMES] = core::array::from_fn(|i| if i < count { frame_name(ctx, i, &mut buffers[i]) } else { 0 });
+    let names: [&str; TOP_FRAMES] = core::array::from_fn(|i| crate::record::text(&buffers[i], lens[i]));
+    let names = &names[..count];
+    writeln!(w, "\nExplanation")?;
+    write!(w, "crash signature {:016x} over the top {} frames:", rules::signature_hash(names), count)?;
+    for (i, name) in names.iter().enumerate() {
+        write!(w, "{}{name}", if i == 0 { " " } else { " < " })?;
+    }
+    writeln!(w)?;
+    let access = access_class(ctx);
+    let seen = ctx.seen.borrow();
+    let signature = rules::Signature { code: rec.exception.code, access, frames: names, seen: &seen, rip_unmapped: rec.module_at(rec.exception.address).is_none() };
+    match rules::explain(&signature) {
+        Some(rule) => {
+            writeln!(w, "rule {}: {}", rule.name, rule.explanation)?;
+            write!(w, "likely culprit: ")?;
+            culprit(w, ctx, rule.culprit, &seen, names)?;
+            writeln!(w)
+        }
+        None => writeln!(w, "no rule matches this crash; the sections above are what there is"),
+    }
+}
+
+fn access_class(ctx: &Context<'_>) -> Access {
+    let mut buf = [0u8; 512];
+    let mut w = crate::text::Writer::new(&mut buf);
+    access_line(&mut w, ctx).unwrap_or(Access::None)
+}
+
+fn culprit(w: &mut dyn Write, ctx: &Context<'_>, culprit: rules::Culprit, seen: &Seen, names: &[&str]) -> fmt::Result {
+    let rec = ctx.rec;
+    let module_of = |frame: usize| rec.frames().get(frame).and_then(|f| rec.module_at(if frame > 0 { f.rip.wrapping_sub(1) } else { f.rip }));
+    let describe_module = |w: &mut dyn Write, module: &crate::record::Module| -> fmt::Result {
+        w.write_str(module.name())?;
+        if let Some(image) = rec.images().iter().find(|i| i.live != 0 && i.base == module.base) {
+            write!(w, " (framework plugin {} generation {})", image.name(), image.generation)?;
+        }
+        Ok(())
+    };
+    match culprit {
+        rules::Culprit::Engine => w.write_str("the engine itself"),
+        rules::Culprit::TopFrame => match module_of(0) {
+            Some(module) => describe_module(w, module),
+            None => write!(w, "unknown code at {:#x}", rec.exception.address),
+        },
+        rules::Culprit::FirstPlugin => {
+            let system = |m: &crate::record::Module| m.base == rec.exe_base || m.path().to_ascii_lowercase().contains("\\windows\\");
+            match (0..rec.frames().len()).filter_map(module_of).find(|m| !system(m)) {
+                Some(module) => describe_module(w, module),
+                None => write!(w, "no plugin on this stack ({} frames, all engine or system): the engine, or a plugin's earlier change to the data", names.len()),
+            }
+        }
+        rules::Culprit::FormOwner => {
+            if seen.form_file_len > 0 {
+                write!(w, "the plugin file {} (the owner of the form involved)", seen.form_file())
+            } else {
+                w.write_str("the plugin owning the form involved (its file was not readable)")
+            }
+        }
+        rules::Culprit::FreedImage => write!(w, "whoever kept a pointer into the unloaded generation of {}, or that plugin for handing it out", seen.freed_plugin()),
+    }
 }

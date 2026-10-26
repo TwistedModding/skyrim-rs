@@ -1,11 +1,14 @@
+use std::path::Path;
 use std::process::ExitCode;
 
 fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().collect();
     match args.get(1).map(String::as_str) {
         Some("gen") => generate(),
+        Some("crash") if args.len() >= 3 => decode(Path::new(&args[2]), args.get(3).map(Path::new)),
         _ => {
-            eprintln!("usage: cargo xtask gen    (reads SKYRIMRE_DIR or ../{})", xtask::RE_REPO);
+            eprintln!("usage: cargo xtask gen                      (reads SKYRIMRE_DIR or ../{})", xtask::RE_REPO);
+            eprintln!("       cargo xtask crash <file.dmp> [out.log]  (the crash log from a minidump; stdout without out.log)");
             ExitCode::FAILURE
         }
     }
@@ -47,4 +50,28 @@ fn generate() -> ExitCode {
         stats.symbols
     );
     ExitCode::SUCCESS
+}
+
+fn decode(dump: &Path, out: Option<&Path>) -> ExitCode {
+    let text = match xtask::decode(dump) {
+        Ok(text) => text,
+        Err(e) => {
+            eprintln!("{}: {e}", dump.display());
+            return ExitCode::FAILURE;
+        }
+    };
+    let Some(path) = out else {
+        print!("{text}");
+        return ExitCode::SUCCESS;
+    };
+    match std::fs::write(path, &text) {
+        Ok(()) => {
+            println!("wrote {} ({} bytes)", path.display(), text.len());
+            ExitCode::SUCCESS
+        }
+        Err(e) => {
+            eprintln!("{}: {e}", path.display());
+            ExitCode::FAILURE
+        }
+    }
 }

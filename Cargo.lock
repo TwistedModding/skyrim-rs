@@ -1132,6 +1132,7 @@ dependencies = [
 name = "xtask"
 version = "0.1.0"
 dependencies = [
+ "crash",
  "csv",
  "serde",
  "serde_json",

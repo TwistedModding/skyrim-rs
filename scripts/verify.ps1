@@ -14,7 +14,7 @@
 # suite installs the host with the example mod and the two hook plugins, copies the example's build in again between its
 # two parts (a reload) and keeps the settings files the host wrote. The camera suite installs the camera-demo plugin,
 # drives it through its console command and reads its report log. The crash suite installs the host with its crash-test
-# plugin and runs one game session per scenario (null, hook, overflow, write), each ending in the crash the plugin's
+# plugin and runs one game session per scenario (null, hook, overflow, write, form, deleted), each ending in the crash the plugin's
 # console command armed; the host's crash log and minidump of each session go to <OutDir>\<scenario>. Any suite's run
 # that leaves a skyrim-rs-crash-* file in the SKSE folder has it moved into <OutDir>. See docs/subsystems/<suite>.md.
 param(
@@ -60,8 +60,8 @@ $Mods = @{
     gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-rs"; report = $true; tags = @(2);
              crates = @("hooks-test-a", "hooks-test-b"); dlls = @("skyrim_rs_hooks_a.dll", "skyrim_rs_hooks_b.dll") }
     crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-rs"; report = $true;
-               scenarios = @("null", "hook", "overflow", "write")
-               triggers = @{ null = "save skyrim-rs-crash"; overflow = "save skyrim-rs-crash"; write = "save skyrim-rs-crash"; hook = "player.damageactorvalue health 1" } }
+               scenarios = @("null", "hook", "overflow", "write", "form", "deleted")
+               triggers = @{ null = "save skyrim-rs-crash"; overflow = "save skyrim-rs-crash"; write = "save skyrim-rs-crash"; hook = "player.damageactorvalue health 1"; form = "save skyrim-rs-crash"; deleted = "save skyrim-rs-crash" } }
 }
 $TagDir = "$Root\target\release\reload-tags"
 $Mod = $Mods[$Suite]

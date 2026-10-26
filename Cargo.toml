@@ -36,3 +36,8 @@ codegen-units = 1
 panic = "abort"
 debug = false
 strip = "symbols"
+
+# The crash suite's plugin keeps its PDB, so the crash log's DLL names are exercised.
+[profile.release.package.crash-test]
+debug = "line-tables-only"
+strip = "none"

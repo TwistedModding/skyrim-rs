@@ -66,6 +66,7 @@ static SYMBOL_MISMATCHES: AtomicU32 = AtomicU32::new(0);
 static SNAPSHOT: Shared<Snapshot> = Shared::new(unsafe { core::mem::zeroed() });
 static RECORD: Shared<Record> = Shared::new(Record::ZERO);
 static IO: Shared<[u8; 64 * 1024]> = Shared::new([0; 64 * 1024]);
+static VERSION_INFO: Shared<[u8; 64 * 1024]> = Shared::new([0; 64 * 1024]);
 static LOG_DIR: Shared<([u16; PATH_UNITS], usize)> = Shared::new(([0; PATH_UNITS], 0));
 static DUMP_PATH: Shared<[u16; PATH_UNITS]> = Shared::new([0; PATH_UNITS]);
 static LOG_PATH: Shared<[u16; PATH_UNITS]> = Shared::new([0; PATH_UNITS]);
@@ -292,12 +293,14 @@ fn report() {
     }
 
     live::fill_threads(rec, (snapshot.thread, &snapshot.context), WATCHDOG.load(Ordering::Acquire));
+    live::fill_versions(rec, unsafe { VERSION_INFO.get() });
     let log = create(log_path);
     if log == INVALID_HANDLE_VALUE {
         return;
     }
+    let pdb = crate::pdb::DbgHelp::new(unsafe { GetCurrentProcess() });
     let mut out = FileWriter::new(log, unsafe { IO.get() });
-    report::write(&mut out, rec, &crate::mem::Live, Some((unsafe { &*DUMP_PATH.get() }, unsafe { &*LOG_PATH.get() })));
+    report::write(&mut out, rec, &crate::mem::Live, Some((unsafe { &*DUMP_PATH.get() }, unsafe { &*LOG_PATH.get() })), Some(&pdb));
     out.flush();
     unsafe { CloseHandle(log) };
 }
