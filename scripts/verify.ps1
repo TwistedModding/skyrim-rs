@@ -10,10 +10,11 @@
 # and waits for the host to report the reload. The compat suite runs the hooks scenario with the hooks plugins and two
 # plain SKSE plugins of its own that hook the same functions (legacy-patch-a before the host by file name,
 # legacy-patch-z after it), with skyrim-rs.ini setting the host's compatibility mode to -Compat. The legacy suite copies
-# the third-party SKSE plugins it lists from -LegacyDir into Data\SKSE\Plugins for the run, next to the host. See
-# docs/subsystems/<suite>.md.
+# the third-party SKSE plugins it lists from -LegacyDir into Data\SKSE\Plugins for the run, next to the host. The gui
+# suite installs the host with the example mod and the two hook plugins, copies the example's build in again between its
+# two parts (a reload) and keeps the settings files the host wrote. See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy", "gui")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     [ValidateSet("refuse", "stack")][string]$Compat = "refuse",
@@ -49,6 +50,8 @@ $Mods = @{
     # Third-party plugins built for 1.7.x on the Address Library, each <name>.dll in $LegacyDir\<name>\SKSE\Plugins
     # (DevBench is the other one; it is installed for every suite).
     legacy = @{ dir = "skyrim-rs"; legacy = @("CrashLogger") }
+    gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-rs"; report = $true; tags = @(2);
+             crates = @("hooks-test-a", "hooks-test-b"); dlls = @("skyrim_rs_hooks_a.dll", "skyrim_rs_hooks_b.dll") }
 }
 $TagDir = "$Root\target\release\reload-tags"
 $Mod = $Mods[$Suite]
@@ -81,7 +84,7 @@ try {
 } finally { Pop-Location }
 $Pex = @()
 if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
-if ($Suite -in @("framework", "reload")) { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\$($Mod.crate)\papyrus")) }
+if ($Suite -in @("framework", "reload", "gui")) { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\$($Mod.crate)\papyrus")) }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $OutDir = (Resolve-Path $OutDir).Path
 $Backup = Join-Path $OutDir "backup"
@@ -141,6 +144,8 @@ $Between = {
     param($part)
     $tag = $Mod.tags[$part - 1]
     Copy-Item "$TagDir\$tag.dll" "$ModDir\$($Mod.dll)" -Force
+    # A build that did not change the code keeps the file's time; the host watches size and time.
+    (Get-Item "$ModDir\$($Mod.dll)").LastWriteTime = Get-Date
     $shell = New-Object -ComObject WScript.Shell
     $t0 = Get-Date
     while (-not (Select-String -Path "$SkseLogs\skyrim-rs.log" -Pattern "generation $tag loaded" -Quiet)) {
@@ -158,6 +163,7 @@ try {
     & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$StepsName-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $(if ($Launch -eq "standalone") { "standalone" } else { "skse" })
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
+    if ($Mod.dir) { Get-ChildItem "$Plugins\$($Mod.dir)" -Filter "*.settings.json" -ErrorAction SilentlyContinue | Copy-Item -Destination $OutDir -Force }
     # A game that crashed may still hold the installed DLLs for a few seconds after Stop-Process.
     for ($try = 0; $try -lt 10; $try++) {
         foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll }) + @($Mod.plugins)) { if ($f) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue } }
