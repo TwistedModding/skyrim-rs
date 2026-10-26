@@ -18,7 +18,7 @@ macro_rules! targets {
     };
 }
 
-targets! { phases exclusive cycle ordering removal reentrant shape prepatched overwritten }
+targets! { phases exclusive cycle ordering removal reentrant shape prepatched overwritten toggled }
 
 fn call(f: Fn2, a: usize, b: usize) -> usize {
     unsafe { black_box(f)(a, b) }
@@ -233,4 +233,28 @@ fn compat_parses() {
     assert_eq!(" Stack ".parse::<Compat>(), Ok(Compat::Stack));
     assert_eq!("refuse".parse::<Compat>(), Ok(Compat::Refuse));
     assert!("maybe".parse::<Compat>().is_err());
+}
+
+#[test]
+fn a_disabled_subscriber_keeps_its_place_and_is_skipped() {
+    let hooks = &Hooks::HOST;
+    let before = hooks.before(raw(toggled), Options::new("t1"), |args| args.0 += 10).unwrap();
+    let around = hooks.around(raw(toggled), Options::new("t2"), |args, next| unsafe { next.call((args.0, args.1 * 3)) }).unwrap();
+    let replace = hooks.replace(raw(toggled), Options::new("t3"), |args, _| args.0 * 100).unwrap();
+    assert_eq!(call(toggled, 1, 1), 1100);
+    assert!(hooks.set_enabled(before, false));
+    assert!(hooks.set_enabled(replace, false));
+    assert_eq!(call(toggled, 1, 1), 4);
+    assert!(hooks.set_enabled(around, false));
+    assert_eq!(call(toggled, 1, 1), 2);
+    let report = hooks.diagnostics().into_iter().find(|s| s.address == toggled as *const () as usize).unwrap();
+    let entries: Vec<(&str, bool, u64)> = report.entries.iter().map(|e| (e.owner.as_str(), e.enabled, e.timing.calls)).collect();
+    assert_eq!(entries, [("t1", false, 1), ("t2", false, 2), ("t3", false, 1)]);
+    assert!(report.to_string().contains("disabled"), "{report}");
+    assert!(hooks.set_enabled(before, true));
+    assert_eq!(call(toggled, 1, 1), 12);
+    assert!(!hooks.set_enabled(SubscriptionId::new(u64::MAX), false));
+    let messages = hooks.messages();
+    assert!(messages.iter().any(|m| m.ends_with(&format!("#{} t1 Before disabled", before.get()))), "{messages:?}");
+    assert!(messages.iter().any(|m| m.ends_with(&format!("#{} t1 Before enabled", before.get()))), "{messages:?}");
 }

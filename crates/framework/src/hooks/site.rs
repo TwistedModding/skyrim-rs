@@ -157,6 +157,14 @@ pub(crate) struct Meta {
     pub phase: Phase,
     pub constraints: Constraints,
     pub stats: Stats,
+    /// A disabled subscriber keeps its place in the order and is skipped by the dispatch.
+    pub enabled: AtomicBool,
+}
+
+impl Meta {
+    fn runs(&self) -> bool {
+        self.enabled.load(Relaxed)
+    }
 }
 
 pub type BeforeFn<F> = dyn Fn(&mut Args<F>) + Send + Sync + 'static;
@@ -206,12 +214,15 @@ impl<F: Signature> Next<'_, F> {
     /// `args` must be valid for the engine function.
     pub unsafe fn call(self, args: Args<F>) -> Ret<F> {
         if let Some(entry) = self.chain.arounds.get(self.index) {
-            let Callback::Around(f) = &entry.callback else { unreachable!() };
             let next = Next { chain: self.chain, state: self.state, index: self.index + 1 };
+            if !entry.meta.runs() {
+                return unsafe { next.call(args) };
+            }
+            let Callback::Around(f) = &entry.callback else { unreachable!() };
             return entry.meta.stats.timed(|| f(args, next));
         }
         self.state.received = args;
-        if let Some(entry) = &self.chain.replace {
+        if let Some(entry) = self.chain.replace.as_ref().filter(|e| e.meta.runs()) {
             let Callback::Replace(f) = &entry.callback else { unreachable!() };
             self.state.outcome = Outcome::Replaced;
             return entry.meta.stats.timed(|| f(args, Original(self.chain.original)));
@@ -271,13 +282,13 @@ impl<F: Signature> Chain<F> {
 
     fn run(&self, site: &Site, mut args: Args<F>) -> Ret<F> {
         let start = Instant::now();
-        for entry in &self.befores {
+        for entry in self.befores.iter().filter(|e| e.meta.runs()) {
             let Callback::Before(f) = &entry.callback else { unreachable!() };
             entry.meta.stats.timed(|| f(&mut args));
         }
         let mut state = State { received: args, outcome: Outcome::Skipped };
         let ret = unsafe { Next { chain: self, state: &mut state, index: 0 }.call(args) };
-        for entry in &self.afters {
+        for entry in self.afters.iter().filter(|e| e.meta.runs()) {
             let Callback::After(f) = &entry.callback else { unreachable!() };
             entry.meta.stats.timed(|| f(&state.received, &ret, state.outcome));
         }

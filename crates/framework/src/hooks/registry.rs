@@ -1,8 +1,8 @@
 //! The host's registry: one lock serializes every change to the sites and answers the plugins' requests.
 
 use core::any::Any;
-use core::sync::atomic::Ordering::Relaxed;
-use std::collections::BTreeMap;
+use core::sync::atomic::{AtomicBool, Ordering::Relaxed};
+use std::collections::{BTreeMap, VecDeque};
 use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 
 use super::ops::{self, OpVisitor, RAW_MAX_ARITY, RAW_SLOTS};
@@ -20,20 +20,37 @@ struct Registry {
     compat: Compat,
     /// The unmanaged patches the last check found, by address with the site's name, so each is reported once.
     seen: BTreeMap<usize, (String, Validation)>,
+    /// The last [`MESSAGES`] lines logged, oldest first.
+    messages: VecDeque<String>,
 }
 
-static REGISTRY: Mutex<Registry> =
-    Mutex::new(Registry { ranks: Ranks::new(), next_id: 1, raw: Vec::new(), sites: Vec::new(), log: None, compat: Compat::Refuse, seen: BTreeMap::new() });
+/// How many log lines the registry keeps for [`messages`].
+const MESSAGES: usize = 64;
+
+static REGISTRY: Mutex<Registry> = Mutex::new(Registry {
+    ranks: Ranks::new(),
+    next_id: 1,
+    raw: Vec::new(),
+    sites: Vec::new(),
+    log: None,
+    compat: Compat::Refuse,
+    seen: BTreeMap::new(),
+    messages: VecDeque::new(),
+});
 
 fn lock() -> MutexGuard<'static, Registry> {
     REGISTRY.lock().unwrap_or_else(PoisonError::into_inner)
 }
 
 impl Registry {
-    fn log(&self, line: &str) {
+    fn log(&mut self, line: &str) {
         if let Some(f) = self.log {
             f(line);
         }
+        if self.messages.len() == MESSAGES {
+            self.messages.pop_front();
+        }
+        self.messages.push_back(line.to_owned());
     }
 
     fn raw_slot(&mut self, address: usize, arity: usize) -> Result<usize, Error> {
@@ -106,7 +123,8 @@ pub(crate) fn revalidate(moment: &str, ops: &[(&str, usize)]) {
             reg.log(&format!("{moment}: {name} at {address:#x}: patched by {}: {now}", patcher(&now)));
         }
     }
-    reg.log(&format!("{moment}: {} sites checked, {} patched by another module, compatibility mode {}", checked.len(), reg.seen.len(), reg.compat));
+    let line = format!("{moment}: {} sites checked, {} patched by another module, compatibility mode {}", checked.len(), reg.seen.len(), reg.compat);
+    reg.log(&line);
 }
 
 pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
@@ -145,7 +163,7 @@ impl OpVisitor<Result<SubscriptionId, Error>> for Subscriber<'_> {
         let callback = downcast::<O::Fn>(req.phase, req.callback).ok_or_else(|| Error::Callback { site: name.clone(), owner: req.owner.clone() })?;
         let id = reg.next_id;
         reg.next_id += 1;
-        let meta = Arc::new(Meta { id, owner: req.owner, phase: req.phase, constraints: req.constraints, stats: Stats::new() });
+        let meta = Arc::new(Meta { id, owner: req.owner, phase: req.phase, constraints: req.constraints, stats: Stats::new(), enabled: AtomicBool::new(true) });
         let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
         let site_meta = guard.as_mut().expect("installed above");
         let new = {
@@ -217,7 +235,7 @@ pub(crate) fn unsubscribe(id: SubscriptionId) -> bool {
     if site::in_callback() {
         return false;
     }
-    let reg = lock();
+    let mut reg = lock();
     let removed = edit(&reg, &|m| m.id != id.0) == 1;
     if removed {
         reg.log(&format!("#{} unsubscribed", id.0));
@@ -229,7 +247,7 @@ pub(crate) fn remove_owner(owner: &str) -> usize {
     if site::in_callback() {
         return 0;
     }
-    let reg = lock();
+    let mut reg = lock();
     let removed = edit(&reg, &|m| m.owner != owner);
     reg.log(&format!("{owner}: {removed} subscriptions removed"));
     removed
@@ -248,6 +266,25 @@ pub(crate) fn set_rank(owner: &str, rank: i32) {
             unsafe { rebuild(site, meta, &reg.ranks, &|_| true) };
         }
     }
+}
+
+pub(crate) fn set_enabled(id: SubscriptionId, enabled: bool) -> bool {
+    let mut reg = lock();
+    let found = reg.sites.iter().find_map(|site| {
+        let guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
+        let meta = guard.as_ref()?;
+        let entry = meta.order.iter().find(|m| m.id == id.0)?;
+        entry.enabled.store(enabled, Relaxed);
+        Some(format!("{}: #{} {} {:?} {}", meta.name, id.0, entry.owner, entry.phase, if enabled { "enabled" } else { "disabled" }))
+    });
+    if let Some(line) = &found {
+        reg.log(line);
+    }
+    found.is_some()
+}
+
+pub(crate) fn messages() -> Vec<String> {
+    lock().messages.iter().cloned().collect()
 }
 
 pub(crate) fn diagnostics() -> Vec<SiteReport> {
@@ -269,6 +306,7 @@ pub(crate) fn diagnostics() -> Vec<SiteReport> {
                     constraints: m.constraints.clone(),
                     rank: reg.ranks.get(&m.owner).copied().unwrap_or(0),
                     timing: m.stats.snapshot(),
+                    enabled: m.enabled.load(Relaxed),
                 })
                 .collect();
             let current = validate(meta.address, Some(meta.detour));

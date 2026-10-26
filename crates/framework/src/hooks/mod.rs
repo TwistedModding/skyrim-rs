@@ -113,6 +113,19 @@ impl<'a> Options<'a> {
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub struct SubscriptionId(u64);
 
+impl SubscriptionId {
+    /// The number the logs and reports show as `#n`.
+    #[must_use]
+    pub const fn get(self) -> u64 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn new(n: u64) -> Self {
+        Self(n)
+    }
+}
+
 /// Why a registration was refused.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Error {
@@ -214,6 +227,8 @@ pub struct EntryReport {
     /// The owner's position in the load order.
     pub rank: i32,
     pub timing: Timing,
+    /// False while [`Hooks::set_enabled`] has the subscriber skipped.
+    pub enabled: bool,
 }
 
 impl fmt::Display for SiteReport {
@@ -238,7 +253,11 @@ impl fmt::Display for EntryReport {
         if self.constraints != Constraints::default() {
             write!(f, " ({})", self.constraints)?;
         }
-        write!(f, ": {} calls, last {} ns, mean {} ns", self.timing.calls, self.timing.last_ns, self.timing.mean_ns)
+        write!(f, ": {} calls, last {} ns, mean {} ns", self.timing.calls, self.timing.last_ns, self.timing.mean_ns)?;
+        if !self.enabled {
+            f.write_str(", disabled")?;
+        }
+        Ok(())
     }
 }
 
@@ -250,12 +269,23 @@ pub struct Hooks {
     unsubscribe: fn(SubscriptionId) -> bool,
     remove_owner: fn(&str) -> usize,
     set_rank: fn(&str, i32),
+    set_enabled: fn(SubscriptionId, bool) -> bool,
     diagnostics: fn() -> Vec<SiteReport>,
+    messages: fn() -> Vec<String>,
 }
 
 impl Hooks {
     /// The host's own registry; only the host hands this out.
-    pub(crate) const HOST: Self = Self { owner: None, subscribe: registry::subscribe, unsubscribe: registry::unsubscribe, remove_owner: registry::remove_owner, set_rank: registry::set_rank, diagnostics: registry::diagnostics };
+    pub(crate) const HOST: Self = Self {
+        owner: None,
+        subscribe: registry::subscribe,
+        unsubscribe: registry::unsubscribe,
+        remove_owner: registry::remove_owner,
+        set_rank: registry::set_rank,
+        set_enabled: registry::set_enabled,
+        diagnostics: registry::diagnostics,
+        messages: registry::messages,
+    };
 
     /// The registry as the plugin `name` sees it.
     pub(crate) const fn for_plugin(name: &'static str) -> Self {
@@ -329,10 +359,24 @@ impl Hooks {
         (self.set_rank)(owner, rank);
     }
 
+    /// Disables or re-enables one subscription; a disabled one keeps its place in the order and
+    /// is skipped by the calls that start after this returns (an `Around` passes straight on, a
+    /// `Replace` leaves the original to run). False when no such subscription exists.
+    #[must_use]
+    pub fn set_enabled(&self, id: SubscriptionId, enabled: bool) -> bool {
+        (self.set_enabled)(id, enabled)
+    }
+
     /// Every installed site with its subscribers in execution order.
     #[must_use]
     pub fn diagnostics(&self) -> Vec<SiteReport> {
         (self.diagnostics)()
+    }
+
+    /// The registry's last log lines, oldest first: installs, subscriptions, refusals, removals and toggles.
+    #[must_use]
+    pub fn messages(&self) -> Vec<String> {
+        (self.messages)()
     }
 }
 
