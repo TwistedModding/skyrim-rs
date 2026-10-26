@@ -94,8 +94,8 @@ pub fn load(skse: &skse::Interface) -> bool {
         *LOG.lock().unwrap() = Some(file);
     }
     log!("{}, abi {ABI}", BUILD.to_string_lossy());
-    let loader = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
-    log!("hosted by {loader}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
+    let hosted_by = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
+    log!("hosted by {hosted_by}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
     Hooks::set_logger(|line| log!("hooks: {line}"));
     if let Err(e) = skyrim::init(skse) {
         log!("game layer: {e}");
