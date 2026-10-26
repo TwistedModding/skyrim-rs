@@ -1,0 +1,9 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 5000},
+  {"tool": "console", "args": {"command": "save skyrim-rs-legacy"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000}
+]

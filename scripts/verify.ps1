@@ -9,17 +9,22 @@
 # the host with the tag 1 build, and between the parts of its scenario copies the next tag's DLL over the installed one
 # and waits for the host to report the reload. The compat suite runs the hooks scenario with the hooks plugins and two
 # plain SKSE plugins of its own that hook the same functions (legacy-patch-a before the host by file name,
-# legacy-patch-z after it), with skyrim-rs.ini setting the host's compatibility mode to -Compat. See
+# legacy-patch-z after it), with skyrim-rs.ini setting the host's compatibility mode to -Compat. The legacy suite copies
+# the third-party SKSE plugins it lists from -LegacyDir into Data\SKSE\Plugins for the run, next to the host. See
 # docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     [ValidateSet("refuse", "stack")][string]$Compat = "refuse",
     # skse: the script extender alone; skse-proxy: the standalone host's dinput8.dll next to the game as well, which must
     # leave the script extender in charge; standalone: dinput8.dll and the game started without the script extender.
     [ValidateSet("skse", "skse-proxy", "standalone")][string]$Launch = "skse",
-    [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
+    [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition",
+    # The legacy suite's plugins, one folder per plugin holding its SKSE\Plugins files as the mod ships them.
+    [string]$LegacyDir = $(if ($env:SKYRIM_RS_LEGACY_DIR) { $env:SKYRIM_RS_LEGACY_DIR } else { "$env:LOCALAPPDATA\skyrim-rs\legacy" }),
+    # Runs the legacy suite with these plugins instead of its list, to try a candidate alone.
+    [string[]]$Legacy = @()
 )
 $ErrorActionPreference = "Stop"
 $MyGames = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition"
@@ -41,13 +46,17 @@ $Mods = @{
     compat = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-rs"; report = $true; steps = "hooks";
                 crates = @("hooks-test-b", "legacy-patch-a", "legacy-patch-z"); dlls = @("skyrim_rs_hooks_b.dll");
                 plugins = @("skyrim_legacy_patch_a.dll", "skyrim_rs_legacy_patch_z.dll"); logs = @("skyrim-rs-legacy-patch-a.log", "skyrim-rs-legacy-patch-z.log") }
+    # Third-party plugins built for 1.7.x on the Address Library, each <name>.dll in $LegacyDir\<name>\SKSE\Plugins
+    # (DevBench is the other one; it is installed for every suite).
+    legacy = @{ dir = "skyrim-rs"; legacy = @("CrashLogger") }
 }
 $TagDir = "$Root\target\release\reload-tags"
 $Mod = $Mods[$Suite]
+if ($Suite -eq "legacy" -and $Legacy) { $Mod.legacy = @($Legacy -split ",") }
 $PluginLog = "skyrim-rs-test.log"
 $CrashLog = "skyrim-rs-test-crash.log"
 $HostDll = "skyrim_rs.dll"
-$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($Mods.Values | ForEach-Object { $_.logs } | Where-Object { $_ }) + @($CrashLog, "skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log; $_.logs } | Where-Object { $_ }) + @($CrashLog, "skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
 $Proxy = "$GameDir\dinput8.dll"
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $StepsName = if ($Mod.steps) { $Mod.steps } else { $Suite }
@@ -57,7 +66,7 @@ $Ini = "$Plugins\skyrim-rs.ini"
 if ($Suite -eq "overlay") { $Mode = "overlay" }
 & "$PSScriptRoot\game-free.ps1"
 Push-Location $Root
-$crates = @("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.crates) { $Mod.crates }) + @(if ($Mod.dir) { "host" }) + @(if ($Launch -ne "skse") { "standalone" })
+$crates = @(@("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.crates) { $Mod.crates }) + @(if ($Mod.dir) { "host" }) + @(if ($Launch -ne "skse") { "standalone" }) | Where-Object { $_ })
 try {
     # The tagged builds come first: the untagged build of the main step is the generation installed at launch.
     if ($Mod.tags) {
@@ -79,6 +88,12 @@ $Backup = Join-Path $OutDir "backup"
 New-Item -ItemType Directory -Force $Backup | Out-Null
 foreach ($f in $Logs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$Backup\$f" -Force } }
 foreach ($f in @($PluginLog) + $ModLogs) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
+# Other logs the legacy plugins may write next to ours: kept as they were, the run's copies collected afterwards.
+$OtherLogs = @{}
+if ($Mod.legacy) {
+    New-Item -ItemType Directory -Force "$Backup\other" | Out-Null
+    foreach ($f in Get-ChildItem $SkseLogs -File | Where-Object { $_.Name -notin $Logs }) { $OtherLogs[$f.Name] = $f.LastWriteTime; Copy-Item $f.FullName "$Backup\other\$($f.Name)" -Force }
+}
 
 if ($Launch -ne "skse") {
     if (Test-Path $Proxy) { throw "$Proxy already exists" }
@@ -97,11 +112,25 @@ if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
 if ($Mod.dir) {
     $ModDir = "$Plugins\$($Mod.dir)"
     New-Item -ItemType Directory $ModDir | Out-Null
-    foreach ($d in @($Mod.dll) + @(if ($Mod.dlls) { $Mod.dlls })) { Copy-Item "$Root\target\release\$d" $ModDir }
+    foreach ($d in @($Mod.dll) + @(if ($Mod.dlls) { $Mod.dlls })) { if ($d) { Copy-Item "$Root\target\release\$d" $ModDir } }
     Copy-Item $Dll "$ModDir\decoy.dll"
     Copy-Item "$Root\target\release\$HostDll" "$Plugins\$HostDll" -Force
 } elseif ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
 foreach ($d in @($Mod.plugins)) { if ($d) { Copy-Item "$Root\target\release\$d" "$Plugins\$d" -Force } }
+$LegacyItems = @()
+$LegacyMissing = @()
+$PluginsBefore = @(Get-ChildItem $Plugins -Name)
+foreach ($name in @($Mod.legacy)) {
+    if (-not $name) { continue }
+    $tree = "$LegacyDir\$name\SKSE\Plugins"
+    if (-not (Test-Path "$tree\$name.dll")) { "legacy plugin $name.dll not found in $LegacyDir\$name\SKSE\Plugins; the suite runs without it"; $LegacyMissing += $name; continue }
+    foreach ($item in Get-ChildItem $tree) {
+        $to = "$Plugins\$($item.Name)"
+        if (Test-Path $to) { throw "$to already exists" }
+        Copy-Item $item.FullName $to -Recurse
+        $LegacyItems += $to
+    }
+}
 if ($Suite -eq "compat") {
     if (Test-Path $Ini) { throw "$Ini already exists" }
     Set-Content $Ini "[hooks]`r`ncompat = $Compat" -Encoding ascii
@@ -137,10 +166,19 @@ try {
         Start-Sleep -Seconds 3
     }
     if ($Suite -eq "compat") { Remove-Item $Ini -ErrorAction SilentlyContinue }
+    foreach ($item in $LegacyItems) { Remove-Item $item -Recurse -Force -ErrorAction SilentlyContinue }
     if ($Launch -ne "skse") { Remove-Item $Proxy -ErrorAction SilentlyContinue }
     if ($Launch -eq "standalone") { Remove-Item $AppId -ErrorAction SilentlyContinue }
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }
     if ($retraceOff) { Rename-Item "$Plugins\retrace.dll.off" "retrace.dll" }
+    if ($Mod.legacy) {
+        foreach ($item in Get-ChildItem $Plugins -Name | Where-Object { $_ -notin $PluginsBefore -and $_ -notlike "retrace.dll*" }) { "removing $item, left in Data\SKSE\Plugins by the run"; Remove-Item "$Plugins\$item" -Recurse -Force }
+        New-Item -ItemType Directory -Force "$OutDir\legacy-logs" | Out-Null
+        foreach ($f in Get-ChildItem $SkseLogs -File | Where-Object { $_.Name -notin $Logs -and (-not $OtherLogs.ContainsKey($_.Name) -or $_.LastWriteTime -ne $OtherLogs[$_.Name]) }) {
+            Copy-Item $f.FullName "$OutDir\legacy-logs\$($f.Name)" -Force
+            if ($OtherLogs.ContainsKey($f.Name)) { Copy-Item "$Backup\other\$($f.Name)" $f.FullName -Force } else { Remove-Item $f.FullName }
+        }
+    }
     Remove-Item "$MyGames\Saves\$TestSave*" -ErrorAction SilentlyContinue
     foreach ($f in @($PluginLog) + $ModLogs) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$OutDir\$f" -Force } }
     foreach ($f in $Logs) {
