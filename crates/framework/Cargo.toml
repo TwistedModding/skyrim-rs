@@ -7,8 +7,10 @@ publish.workspace = true
 [dependencies]
 skse.workspace = true
 skyrim.workspace = true
+hook.workspace = true
+layout.workspace = true
 overlay.workspace = true
-windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_System_LibraryLoader"] }
+windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_System_LibraryLoader", "Win32_System_Memory"] }
 
 [lints]
 workspace = true

@@ -11,6 +11,7 @@ use skyrim::papyrus::VirtualMachine;
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 use windows_sys::Win32::System::LibraryLoader::{GetProcAddress, LoadLibraryW};
 
+use crate::hooks::Hooks;
 use crate::order::{self, Constraints};
 use crate::{ABI, BUILD, Descriptor, Host, MessageFn, PapyrusFn, Plugin};
 
@@ -22,6 +23,7 @@ static HOST: OnceLock<Host> = OnceLock::new();
 static PLUGINS: OnceLock<Vec<Plugin>> = OnceLock::new();
 static MESSAGES: Mutex<Vec<MessageFn>> = Mutex::new(Vec::new());
 static PAPYRUS: Mutex<Vec<PapyrusFn>> = Mutex::new(Vec::new());
+static HOOKS: Hooks = Hooks::HOST;
 
 macro_rules! log {
     ($($arg:tt) => {
@@ -41,6 +43,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         *LOG.lock().unwrap() = Some(file);
     }
     log!("{}, abi {ABI}", BUILD.to_string_lossy());
+    Hooks::set_logger(|line| log!("hooks: {line}"));
     if let Err(e) = skyrim::init(skse) {
         log!("game layer: {e}");
         return false;
@@ -63,6 +66,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         on_papyrus: |f| PAPYRUS.lock().unwrap().push(f),
         add_window: |w| overlay::add(w),
         plugins,
+        hooks: &HOOKS,
     });
     let dir = std::env::current_exe().map(|exe| exe.with_file_name("Data").join("SKSE").join("Plugins").join(PLUGIN_DIR)).unwrap_or_default();
     let mut read = Vec::new();
@@ -86,6 +90,9 @@ pub fn load(skse: &skse::Interface) -> bool {
     }
     let sorted: Vec<Plugin> = order.sorted.iter().map(|&i| read[i].2.clone()).collect();
     log!("load order: {}", sorted.iter().map(|p| if p.constraints == Constraints::default() { p.name.clone() } else { format!("{} ({})", p.name, p.constraints) }).collect::<Vec<_>>().join(", "));
+    for (rank, plugin) in sorted.iter().enumerate() {
+        HOOKS.set_rank(&plugin.name, i32::try_from(rank).unwrap_or(i32::MAX));
+    }
     let _ = PLUGINS.set(sorted);
     for &i in &order.sorted {
         let (_, descriptor, plugin) = &read[i];

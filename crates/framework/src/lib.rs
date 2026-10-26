@@ -18,13 +18,14 @@
 //! `load` runs), the loader's messages and the Papyrus registration callback, both fanned out by
 //! the host to every plugin that asks, and windows on the host's overlay. A plugin calls
 //! `skyrim::init` with [`Host::skse`] before using the game layer and never installs the overlay
-//! itself.
+//! itself. Engine functions are hooked through the host's one dispatcher, [`Host::hooks`].
 
 use core::ffi::{CStr, c_char};
 
 pub use overlay::egui;
 use skyrim::papyrus::VirtualMachine;
 
+pub mod hooks;
 pub mod host;
 pub mod order;
 
@@ -78,6 +79,7 @@ pub struct Host {
     on_papyrus: fn(PapyrusFn),
     add_window: fn(Window),
     plugins: fn() -> &'static [Plugin],
+    hooks: &'static hooks::Hooks,
 }
 
 impl Host {
@@ -106,6 +108,12 @@ impl Host {
     #[must_use]
     pub fn plugins(&self) -> &'static [Plugin] {
         (self.plugins)()
+    }
+
+    /// The host's hook dispatcher: one detour per engine function, shared by every plugin.
+    #[must_use]
+    pub fn hooks(&self) -> &'static hooks::Hooks {
+        self.hooks
     }
 }
 

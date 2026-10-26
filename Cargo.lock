@@ -277,6 +277,8 @@ dependencies = [
 name = "framework"
 version = "0.1.0"
 dependencies = [
+ "hook",
+ "layout",
  "overlay",
  "skse",
  "skyrim",
