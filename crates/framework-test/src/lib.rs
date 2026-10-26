@@ -69,7 +69,7 @@ fn load(host: &'static Host) -> bool {
     run("load", &[("interface", interface), ("order", order)]);
     host.on_message(on_message);
     host.on_papyrus(on_papyrus);
-    host.add_window(window);
+    host.add_window("main", "skyrim-rs framework test", window);
     true
 }
 
@@ -116,9 +116,9 @@ fn on_papyrus(vm: &'static VirtualMachine) {
     *REGISTERED.lock().unwrap() = Some(registered.map(|f| format!("{CLASS}.{} bound through the host, refs {}", f.name(), f.ref_count())));
 }
 
-fn window(ctx: &egui::Context) {
+fn window(window: egui::Window<'_>, ctx: &egui::Context) {
     let frames = FRAMES.fetch_add(1, Ordering::Relaxed) + 1;
-    egui::Window::new("skyrim-rs framework test").default_pos([40.0, 80.0]).show(ctx, |ui| ui.label(format!("drawn by a framework plugin, frame {frames}")));
+    window.default_pos([40.0, 80.0]).show(ctx, |ui| ui.label(format!("drawn by a framework plugin, frame {frames}")));
 }
 
 fn startup_messages() -> Result<String, String> {

@@ -99,7 +99,7 @@ fn load(host: &'static Host) -> bool {
     log(format!("tag {TAG}: sink {sink:?}"));
     host.on_papyrus(on_papyrus);
     host.on_message(on_message);
-    host.add_window(window);
+    host.add_window("main", "skyrim-rs reload test", window);
     true
 }
 
@@ -170,12 +170,12 @@ fn on_message(msg: &skse::Message) {
     }
 }
 
-fn window(ctx: &egui::Context) {
+fn window(window: egui::Window<'_>, ctx: &egui::Context) {
     let frames = FRAMES.fetch_add(1, Ordering::Relaxed) + 1;
     if frames == 1 {
         log(format!("tag {TAG}: first window frame"));
     }
-    egui::Window::new("skyrim-rs reload test").default_pos([40.0, 80.0]).show(ctx, |ui| ui.label(format!("tag {TAG}, reloads {}, frame {frames}", RELOADS.load(Ordering::Relaxed))));
+    window.default_pos([40.0, 80.0]).show(ctx, |ui| ui.label(format!("tag {TAG}, reloads {}, frame {frames}", RELOADS.load(Ordering::Relaxed))));
 }
 
 /// The reload counter the previous generation handed over equals the number of reloads this tag is behind.

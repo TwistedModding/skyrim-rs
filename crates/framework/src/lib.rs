@@ -15,9 +15,9 @@
 //!
 //! What a plugin gets from its [`Host`]: the SKSE interface the host was loaded with, forwarded
 //! (`QueryInterface` answers as for the host, and the plugin handle is the host's, valid only while
-//! `load` runs), and every registration it makes in the game: loader messages, the Papyrus
-//! registration pass, windows on the host's overlay, event sinks, Papyrus natives, console commands
-//! and hook subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
+//! `load` runs), its [`settings`], and every registration it makes in the game: loader messages, the
+//! Papyrus registration pass, windows on the host's overlay, event sinks, Papyrus natives, console
+//! commands and hook subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
 //! them and knows which plugin it belongs to, so the plugin's DLL can be unloaded and replaced
 //! while the game runs: the host loads every plugin from a shadow copy, watches the author's file
 //! and swaps generations at a frame boundary (`docs/subsystems/reload.md`). A plugin calls
@@ -35,6 +35,9 @@ use skyrim::papyrus::{ErasedNativeFn, IntoVariable, LatentFn, NativeCall, Native
 pub mod hooks;
 pub mod host;
 pub mod order;
+pub mod settings;
+
+use settings::{Setting, Settings};
 
 /// The descriptor's layout version.
 pub const ABI: u32 = 3;
@@ -51,7 +54,8 @@ pub type LoadFn = fn(&'static Host) -> bool;
 pub type MessageFn = fn(&skse::Message);
 /// Receives the VM at the loader's Papyrus registration pass.
 pub type PapyrusFn = fn(&'static VirtualMachine);
-pub type Window = Box<dyn FnMut(&egui::Context) + Send>;
+/// Draws one window: gets the `egui::Window` the host set up and shows it.
+pub type DrawFn = Box<dyn for<'a> FnMut(egui::Window<'a>, &egui::Context) + Send>;
 
 /// What [`plugin!`] exports as `SkyrimRs_Plugin`. The host reads `abi` and `build` before anything
 /// else, so they stay first and C-typed in every future ABI.
@@ -144,7 +148,11 @@ pub(crate) struct CommandRequest<'a> {
 pub(crate) struct Table {
     pub on_message: fn(&'static str, MessageFn),
     pub on_papyrus: fn(&'static str, PapyrusFn),
-    pub add_window: fn(&'static str, Window),
+    pub add_window: fn(&'static str, &str, &str, DrawFn),
+    pub window_open: fn(&'static str, &str) -> bool,
+    pub set_window_open: fn(&'static str, &str, bool),
+    pub setting: fn(&str, &str) -> Option<Setting>,
+    pub set_setting: fn(&str, &str, Setting),
     pub add_sink: fn(&'static str, ErasedSource, ErasedHandler),
     pub register_native: fn(&'static str, NativeRequest<'_>) -> Result<&'static NativeFunction, Error>,
     pub register_command: fn(&'static str, CommandRequest<'_>) -> Result<CommandSlot, Error>,
@@ -187,9 +195,38 @@ impl Host {
         (self.table.on_papyrus)(self.name, f);
     }
 
-    /// Adds a window to the host's overlay; `draw` runs on the main thread every frame the overlay is open.
-    pub fn add_window(&self, draw: impl FnMut(&egui::Context) + Send + 'static) {
-        (self.table.add_window)(self.name, Box::new(draw));
+    /// Adds a window to the host's overlay. `id` names it within the plugin: a later generation
+    /// adding the same id gets the same place and open state. Every frame the overlay is open,
+    /// `draw` runs on the main thread with an `egui::Window` the host has set up (the `title`, a
+    /// close button bound to the window's open state, the framework theme) and shows it, after
+    /// changing it through `egui`'s builder if it wants to (`default_pos`, `resizable`, `frame`
+    /// for a look of its own):
+    ///
+    /// ```ignore
+    /// host.add_window("main", "My mod", |window, ctx| {
+    ///     window.show(ctx, |ui| ui.label("hello"));
+    /// });
+    /// ```
+    pub fn add_window(&self, id: &str, title: &str, draw: impl for<'a> FnMut(egui::Window<'a>, &egui::Context) + Send + 'static) {
+        (self.table.add_window)(self.name, id, title, Box::new(draw));
+    }
+
+    /// Whether the window `id` is open: shown while the overlay is. A window starts open, and
+    /// the player closes it with its close button or reopens it from the host's window; the
+    /// state is kept in the host's settings across reloads and game sessions.
+    #[must_use]
+    pub fn is_window_open(&self, id: &str) -> bool {
+        (self.table.window_open)(self.name, id)
+    }
+
+    pub fn set_window_open(&self, id: &str, open: bool) {
+        (self.table.set_window_open)(self.name, id, open);
+    }
+
+    /// This plugin's settings, read from its file before `load` and kept by the host across reloads.
+    #[must_use]
+    pub fn settings(&self) -> Settings {
+        Settings::new(self.name, self.table)
     }
 
     /// Registers `f` for events of type `E` through a sink the host owns; `f` runs on the sending

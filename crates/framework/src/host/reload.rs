@@ -19,7 +19,7 @@ use std::time::{Duration, Instant, SystemTime};
 
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 
-use super::{detach, plugin_name, read_descriptor};
+use super::{detach, flush_settings, plugin_name, read_descriptor};
 use crate::{Descriptor, Host, Plugin};
 
 const SHADOW_DIR: &str = ".loaded";
@@ -51,6 +51,11 @@ impl Loaded {
 }
 
 static LOADED: Mutex<Vec<Loaded>> = Mutex::new(Vec::new());
+
+/// Each watched plugin's name, running generation and whether its `load` returned true.
+pub(super) fn generations() -> Vec<(String, u32, bool)> {
+    LOADED.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|l| (l.plugin.name.clone(), l.generation, l.live)).collect()
+}
 static LAST_POLL: Mutex<Option<Instant>> = Mutex::new(None);
 
 /// Empties the shadow folder under `dir` and returns it.
@@ -92,6 +97,7 @@ pub(super) fn tick() {
         }
         *last = Some(Instant::now());
     }
+    flush_settings(None);
     let mut loaded = LOADED.lock().unwrap_or_else(PoisonError::into_inner);
     for entry in loaded.iter_mut() {
         let now = stamp(&entry.source);
@@ -141,6 +147,7 @@ fn swap(entry: &mut Loaded) {
         unload();
     }
     log!("{name}: generation {}: {} detached", entry.generation, detach(&name));
+    flush_settings(Some(&name));
     unsafe { FreeLibrary(entry.module) };
     log!("{name}: generation {} unloaded", entry.generation);
     let previous = (entry.copy.clone(), entry.generation);

@@ -2,7 +2,8 @@
 //! engine and the loader keep for every plugin (one message listener and one Papyrus callback,
 //! one overlay window, one sink per event source, the native function objects, the console
 //! entries and the hook sites) and tags each registration with its plugin, so `reload` can
-//! detach a plugin and unload its DLL.
+//! detach a plugin and unload its DLL. It keeps every plugin's settings and draws its own window,
+//! the inspector (`inspector`), also reachable through the console command `SkyrimRs`.
 
 use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicUsize, Ordering};
@@ -20,9 +21,12 @@ use windows_sys::Win32::System::LibraryLoader::{GetProcAddress, LoadLibraryW};
 
 use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
-use crate::{ABI, BUILD, CommandRequest, Descriptor, Error, Host, MessageFn, NativeRequest, PapyrusFn, Plugin, Table, Window};
+use crate::settings::{self, Setting};
+use crate::{ABI, BUILD, CommandRequest, Descriptor, DrawFn, Error, Host, MessageFn, NativeRequest, PapyrusFn, Plugin, Table};
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
+/// The SKSE log folder, where the host writes its log and the inspector its frame captures.
+static LOG_DIR: OnceLock<PathBuf> = OnceLock::new();
 
 fn log_line(line: core::fmt::Arguments<'_>) {
     if let Some(f) = LOG.lock().unwrap_or_else(PoisonError::into_inner).as_mut() {
@@ -36,6 +40,7 @@ macro_rules! log {
     };
 }
 
+mod inspector;
 mod owned;
 mod reload;
 
@@ -45,11 +50,15 @@ use owned::Owned;
 pub const PLUGIN_DIR: &str = "skyrim-rs";
 /// The host's settings in `Data\SKSE\Plugins`: `compat = refuse` (the default) or `stack`, see [`Compat`].
 pub const CONFIG: &str = "skyrim-rs.ini";
+/// The host's own name, as the owner of its window and settings.
+pub const NAME: &str = "skyrim-rs";
 
 static PLUGINS: OnceLock<Vec<Plugin>> = OnceLock::new();
 static MESSAGES: Owned<MessageFn> = Owned::new();
 static PAPYRUS: Owned<PapyrusFn> = Owned::new();
 static WINDOWS: Owned<PluginWindow> = Owned::new();
+/// Every window added, as the inspector lists them: owner, id, title.
+static WINDOW_LIST: Mutex<Vec<(&'static str, String, String)>> = Mutex::new(Vec::new());
 static SINKS: Mutex<Vec<SourceSinks>> = Mutex::new(Vec::new());
 static NATIVES: Mutex<Vec<Native>> = Mutex::new(Vec::new());
 static COMMANDS: Mutex<Vec<ConsoleCommand>> = Mutex::new(Vec::new());
@@ -58,10 +67,15 @@ static STARTUP: Mutex<Vec<u32>> = Mutex::new(Vec::new());
 /// The VM once the Papyrus registration pass has run.
 static VM: AtomicUsize = AtomicUsize::new(0);
 static HOOKS: Hooks = Hooks::HOST;
-static TABLE: Table = Table { on_message, on_papyrus, add_window, add_sink, register_native, register_command, plugins };
+static TABLE: Table = Table { on_message, on_papyrus, add_window, window_open, set_window_open, setting: settings::get, set_setting: settings::set, add_sink, register_native, register_command, plugins };
 
 /// A plugin's window; only the main thread runs it, under the entry's exclusive lock.
-struct PluginWindow(Window);
+struct PluginWindow {
+    owner: &'static str,
+    id: String,
+    title: String,
+    draw: DrawFn,
+}
 
 unsafe impl Sync for PluginWindow {}
 
@@ -90,6 +104,9 @@ struct ConsoleCommand {
 pub fn load(skse: &skse::Interface) -> bool {
     // The loader hands every plugin the same object in its read-only data, alive for the whole game.
     let skse: &'static skse::Interface = unsafe { &*core::ptr::from_ref(skse) };
+    if let Ok(dir) = skse::log::dir(skse.runtime_version) {
+        let _ = LOG_DIR.set(dir);
+    }
     if let Ok(file) = skse::log::open(skse.runtime_version, "skyrim-rs") {
         *LOG.lock().unwrap() = Some(file);
     }
@@ -109,10 +126,14 @@ pub fn load(skse: &skse::Interface) -> bool {
     log!("hooks: compatibility mode {compat} ({source})");
     Hooks::set_compat(compat);
     Hooks::revalidate("startup");
+    let dir = plugins_dir().join(PLUGIN_DIR);
+    open_settings(NAME, &dir);
     match overlay::install(overlay::DEFAULT_TOGGLE) {
         Ok(()) => log!("overlay installed, toggled with scan code {:#x}", overlay::DEFAULT_TOGGLE),
         Err(e) => log!("overlay: {e}"),
     }
+    log!("overlay font: {}", overlay::font_source());
+    inspector::apply_capture();
     let (Some(messaging), Some(papyrus)) = (skse.messaging(), skse.papyrus()) else {
         log!("no messaging or Papyrus interface");
         return false;
@@ -121,8 +142,8 @@ pub fn load(skse: &skse::Interface) -> bool {
         log!("the loader refused the message listener or the Papyrus callback");
         return false;
     }
-    overlay::add(|ctx| WINDOWS.each_mut(|window| (window.0)(ctx)));
-    let dir = plugins_dir().join(PLUGIN_DIR);
+    overlay::add(|ctx| WINDOWS.each_mut(|window| draw_window(window, ctx)));
+    add_window(NAME, inspector::ID, NAME, Box::new(inspector::draw));
     let shadow = reload::clean(&dir);
     let mut read = Vec::new();
     for path in plugin_files(&dir) {
@@ -155,6 +176,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         let (module, descriptor, plugin, source, copy) = &read[i];
         let name: &'static str = Box::leak(plugin.name.clone().into_boxed_str());
         let host: &'static Host = Box::leak(Box::new(Host { skse, name, hooks: Box::leak(Box::new(Hooks::for_plugin(name))), table: &TABLE }));
+        open_settings(name, &dir);
         let live = (descriptor.load)(host);
         if live {
             log!("loaded {}: {}", plugin.file, plugin.name);
@@ -168,6 +190,52 @@ pub fn load(skse: &skse::Interface) -> bool {
     reload::watch(loaded);
     overlay::on_frame(reload::tick);
     true
+}
+
+/// Reads a plugin's settings file and logs what came of it.
+fn open_settings(owner: &str, dir: &Path) {
+    match settings::open(owner, dir) {
+        Ok(0) => {}
+        Ok(n) => log!("{owner}: {n} settings read from {}", settings::file(dir, owner).display()),
+        Err(e) => log!("{owner}: settings not read, {e}"),
+    }
+}
+
+/// Writes the settings that changed, of every plugin or of one, and logs each file.
+fn flush_settings(owner: Option<&str>) {
+    for written in settings::flush(owner) {
+        match written {
+            Ok(path) => log!("settings written to {}", path.display()),
+            Err(e) => log!("settings not written: {e}"),
+        }
+    }
+}
+
+/// The key of a window's open state in the host's settings.
+fn window_key(owner: &str, id: &str) -> String {
+    format!("window.{owner}.{id}")
+}
+
+/// Shows one window while it is open, with the `egui::Window` set up for it.
+fn draw_window(window: &mut PluginWindow, ctx: &overlay::egui::Context) {
+    let key = window_key(window.owner, &window.id);
+    if !settings::get(NAME, &key).and_then(|s| <bool as settings::Value>::from_setting(&s)).unwrap_or(true) {
+        return;
+    }
+    let mut open = true;
+    let frame = overlay::egui::Window::new(window.title.as_str()).id(overlay::egui::Id::unique((NAME, window.owner, window.id.as_str()))).open(&mut open);
+    (window.draw)(frame, ctx);
+    if !open {
+        settings::set(NAME, &key, Setting::Bool(false));
+    }
+}
+
+fn window_open(owner: &'static str, id: &str) -> bool {
+    settings::get(NAME, &window_key(owner, id)).and_then(|s| <bool as settings::Value>::from_setting(&s)).unwrap_or(true)
+}
+
+fn set_window_open(owner: &'static str, id: &str, open: bool) {
+    settings::set(NAME, &window_key(owner, id), Setting::Bool(open));
 }
 
 /// The accepted plugins in load order, empty before [`load`] resolved it.
@@ -263,6 +331,7 @@ fn detach(owner: &str) -> String {
     }
     let (natives, commands) = (natives.len(), commands.len());
     let windows = WINDOWS.remove_owner(owner);
+    WINDOW_LIST.lock().unwrap_or_else(PoisonError::into_inner).retain(|(o, _, _)| *o != owner);
     if windows > 0 {
         overlay::reset_context();
     }
@@ -282,6 +351,12 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
         skse::MessagingInterface::PLUGINS_LOADED_2 => Hooks::revalidate("PLUGINS_LOADED_2"),
         skse::MessagingInterface::DATA_LOADED => Hooks::revalidate("DATA_LOADED"),
         _ => {}
+    }
+    if msg.kind == skse::MessagingInterface::DATA_LOADED {
+        match skyrim::input::register::<inspector::Command>() {
+            Ok(slot) => log!("command SkyrimRs took over console opcode {:#x} ({})", slot.opcode, slot.replaced),
+            Err(e) => log!("command SkyrimRs: {e}"),
+        }
     }
     if matches!(msg.kind, skse::MessagingInterface::PLUGINS_LOADED | skse::MessagingInterface::PLUGINS_LOADED_2 | skse::MessagingInterface::CONTROLS_READY | skse::MessagingInterface::DATA_LOADED) {
         STARTUP.lock().unwrap_or_else(PoisonError::into_inner).push(msg.kind);
@@ -319,8 +394,9 @@ fn on_papyrus(owner: &'static str, f: PapyrusFn) {
     }
 }
 
-fn add_window(owner: &'static str, window: Window) {
-    WINDOWS.add(owner, PluginWindow(window));
+fn add_window(owner: &'static str, id: &str, title: &str, draw: DrawFn) {
+    WINDOW_LIST.lock().unwrap_or_else(PoisonError::into_inner).push((owner, id.to_owned(), title.to_owned()));
+    WINDOWS.add(owner, PluginWindow { owner, id: id.to_owned(), title: title.to_owned(), draw });
 }
 
 fn add_sink(owner: &'static str, source: ErasedSource, handler: ErasedHandler) {
