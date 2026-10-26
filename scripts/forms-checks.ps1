@@ -40,4 +40,6 @@ $rows = @(
        ok = (Near $hour $pluginHour 0.1) }
     @{ name = "form_arrays";       plugin = (Detail "form_arrays"); devbench = "forms-verify.md recorded KYWD=1290 GLOB=1261 WEAP=3328 NPC_=6462 FLST=1219 on the base game with two Creations; a larger load order adds forms";
        ok = ($plugin["form_arrays"].ok -and @(@("KYWD", 1290), @("GLOB", 1261), @("WEAP", 3328), @("NPC_", 6462), @("FLST", 1219) | ForEach-Object { [int](Captured (Detail "form_arrays") "$($_[0])=(\d+)") -ge $_[1] }) -notcontains $false) }
+    @{ name = "generated_api";     plugin = (Detail "generated_api"); devbench = "the hand-written skyrim wrappers' results in the same run";
+       ok = ($plugin["generated_api"].ok -and (Detail "generated_api") -match '12 comparisons equal') }
 )

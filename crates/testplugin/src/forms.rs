@@ -26,6 +26,7 @@ pub const TESTS: &[(&str, Test)] = &[
     ("get_file", get_file),
     ("form_list", form_list),
     ("next_form_id", next_form_id),
+    ("generated_api", generated_api),
 ];
 
 fn names(keywords: &[Option<&skyrim::forms::BGSKeyword>]) -> Vec<String> {
@@ -224,6 +225,56 @@ fn form_list() -> Result<String, String> {
     check(list.find(form(IRON_SWORD)?).is_none() || entries.iter().flatten().any(|f| f.form_id() == IRON_SWORD), "Find found a form that is not in the list")?;
     check(list.get(list.len()).is_none(), "GetAt(len) returned a form")?;
     Ok(format!("{list:?} has {} entries, first {first:?}: GetAt(0) and Find agree", list.len()))
+}
+
+/// The generated layer called directly, each result against the hand-written wrapper's: a free
+/// function, an associated function, `&self` methods, vtable slots, a base accessor and methods
+/// reached through `Deref`, and global accessors.
+fn generated_api() -> Result<String, String> {
+    use layout::v1_7_104::{classes, functions, statics};
+    use skyrim::actors::ActorValue;
+
+    let player = form(PLAYER)?;
+    let sword = form(IRON_SWORD)?;
+    let found = functions::find_form_by_id(PLAYER.0).ok_or("functions::find_form_by_id(0x14) is None")?;
+    check(std::ptr::eq(found, player.raw()), "functions::find_form_by_id(0x14) is not FormId::lookup's form")?;
+    check(functions::find_form_by_id(0x7FFF_FFFF).is_none(), "functions::find_form_by_id(0x7fffffff) is Some")?;
+
+    let info = classes::ActorValueList::get_actor_value_info(ActorValue::Health as u32).map(std::ptr::from_ref);
+    let wrapped = skyrim::actors::actor_value_info(ActorValue::Health).map(|i| std::ptr::from_ref(i.raw()));
+    check(info.is_some() && info == wrapped, "ActorValueList::get_actor_value_info(Health) differs from actor_value_info")?;
+
+    let component = sword.raw().get_keyword_form().map(|k| std::ptr::from_ref(k).cast::<u8>());
+    let wrapped = sword.keyword_form().map(|k| std::ptr::from_ref(k).cast::<u8>());
+    check(component.is_some() && component == wrapped, "TESForm::get_keyword_form differs from keyword_form")?;
+
+    let keyword = find_form_by_editor_id("VendorItemWeapon").ok_or("VendorItemWeapon did not resolve")?;
+    let name = unsafe { std::ffi::CStr::from_ptr(keyword.raw().get_form_editor_id()) };
+    check(Some(name) == keyword.editor_id(), "slot 50 get_form_editor_id differs from editor_id")?;
+    check(sword.raw().get_form_type() == sword.form_type_raw(), "slot 21 get_form_type differs from formType")?;
+
+    let pc = statics::g_player_character_ptr().ok_or("statics::g_player_character_ptr is None")?;
+    check(std::ptr::eq(std::ptr::from_ref(pc).cast(), player.as_ptr()), "statics::g_player_character_ptr is not the player")?;
+    check(pc.get_form_type() == player.form_type_raw(), "PlayerCharacter -> TESForm slot 21 differs from formType")?;
+    let actor = player.as_reference().and_then(|r| r.as_actor()).ok_or("the player is not an actor")?;
+    let owner = pc.as_actor_value_owner();
+    check(std::ptr::eq(std::ptr::from_ref(owner).cast(), std::ptr::from_ref(actor.actor_value_owner())), "Actor::as_actor_value_owner differs from actor_value_owner")?;
+    let health = owner.get_actor_value(ActorValue::Health as i32);
+    check(health > 0.0 && health.to_bits() == actor.actor_value_owner().get(ActorValue::Health).to_bits(), "ActorValueOwner slot 1 differs from get(Health)")?;
+
+    let handler = classes::TESDataHandler::singleton().ok_or("TESDataHandler::singleton is None")?;
+    let wrapped = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
+    check(std::ptr::eq(handler, wrapped.raw()), "TESDataHandler::singleton differs from TESDataHandler::get")?;
+    let file = unsafe { handler.get_file(c"skyrim.esm".as_ptr()) };
+    let wrapped = wrapped.file("Skyrim.esm").ok_or("Skyrim.esm not found")?;
+    check(std::ptr::eq(file, wrapped.raw()), "TESDataHandler::get_file differs from file")?;
+    Ok(format!(
+        "find_form_by_id(0x14)={:p}, ActorValueList::get_actor_value_info(Health)={:p}, get_keyword_form, slot 50 \"{}\", slot 21 type {}, player health {health} through Deref and as_actor_value_owner, TESDataHandler::singleton().get_file(skyrim.esm)={file:p}: 12 comparisons equal",
+        std::ptr::from_ref(found),
+        info.unwrap(),
+        name.to_string_lossy(),
+        sword.form_type_raw()
+    ))
 }
 
 fn next_form_id() -> Result<String, String> {
