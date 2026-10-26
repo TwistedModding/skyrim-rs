@@ -62,11 +62,11 @@ $rows = @(
        ok = ($window1 -match 'capture Focus' -and $moved -gt 50) }
     @{ name = "hook sites"; plugin = "SkyrimRs hooks: $(Lines 17)"; devbench = "(listed through the console)";
        ok = ((Lines 17) -match 'site Actor::ModActorValueImpl at 0x[0-9a-f]+' -and (Lines 17) -match '#1 skyrim-rs-example Before rank 0' -and (Lines 17) -match 'skyrim-rs-hooks-b Around' -and (Lines 17) -match 'message: refused: Actor::ModActorValueImpl: ordering cycle') }
-    @{ name = "native"; plugin = "SetDamageScale(1.5) = $(Returned 18)"; devbench = "health $($health[0]) -> $($health[1]) after '$(Lines 20)'";
+    @{ name = "native"; plugin = "SetDamageScale(1.5) = $(Returned 18)"; devbench = "health $($health[0]) -> $($health[1]) after a damage of 10";
        ok = ((Near (Returned 18) 1.5 0.001) -and (Near $health[0] 100 0.01) -and (Near $health[1] 84 0.01)) }
-    @{ name = "toggle off"; plugin = "$(Lines 23); #1 ran $(EntryCalls 24 1) then $(EntryCalls 28 1) times while the site ran $(SiteCalls 24) then $(SiteCalls 28); hooks a saw $aBefore"; devbench = "health $($health[1]) -> $($health[2]) after '$(Lines 25)'";
+    @{ name = "toggle off"; plugin = "$(Lines 23); #1 ran $(EntryCalls 24 1) then $(EntryCalls 28 1) times while the site ran $(SiteCalls 24) then $(SiteCalls 28); plugin a's Before $aBefore"; devbench = "health $($health[1]) -> $($health[2]) after a damage of 10";
        ok = ((Lines 23) -match 'SkyrimRs: #1 disabled' -and (Lines 28) -match '#1 skyrim-rs-example Before rank 0: \d+ calls, last \d+ ns, mean \d+ ns, disabled' -and (EntryCalls 24 1) -ne $null -and (EntryCalls 24 1) -eq (EntryCalls 28 1) -and [int](SiteCalls 28) -gt [int](SiteCalls 24) -and $aBefore -match 'saw \[-15\.0, -10\.0, -15\.0\]' -and (Near $health[2] 73 0.01)) }
-    @{ name = "toggle on"; plugin = (Lines 29); devbench = "health $($health[2]) -> $($health[3]) after '$(Lines 30)'";
+    @{ name = "toggle on"; plugin = (Lines 29); devbench = "health $($health[2]) -> $($health[3]) after a damage of 10";
        ok = ((Lines 29) -match 'SkyrimRs: #1 enabled' -and (Near $health[3] 57 0.01)) }
     @{ name = "reload"; plugin = "(host log) $($reloading -join ' | '); $($detached -join ' | '); $($reloaded -join ' | ')"; devbench = "SkyrimRs hooks after the reload: example as #$newId; SkyrimRs window: $(Captured $window2 '(plugin 0: [^|]*)')";
        ok = ($reloading.Count -eq 1 -and $detached.Count -eq 1 -and $reloaded.Count -eq 1 -and $newId -and [int]$newId -gt 1 -and (Lines 36) -notmatch '\|\s+#1 skyrim-rs-example Before rank' -and (Lines 36) -notmatch '\|\s+#\d+ skyrim-rs-hooks-b' -and $window2 -match 'plugin 0: skyrim-rs-example generation 2') }
@@ -74,6 +74,6 @@ $rows = @(
        ok = ($settingsWritten.Count -ge 2 -and (Near $scaleOnDisk 0.5 0.0001) -and (Near (Returned 51) 0.5 0.001) -and (Near $health[4] 41 0.01)) }
     @{ name = "capture"; plugin = "(host log) $($frameWritten -join ' | '); kept as gui-1.7.104.jpg: $shot"; devbench = "journal captured by DevBench, kept as gui-vanilla-1.7.104.jpg: $vanilla";
        ok = ($frameWritten.Count -eq 1 -and $shot -and $vanilla) }
-    @{ name = "saves"; plugin = ($summaries -match 'hooks [ab]Save1') -join ' '; devbench = "saveGame seen: $(($steps | Where-Object { $_.index -eq 34 }).satisfied), $(($steps | Where-Object { $_.index -eq 54 }).satisfied)";
+    @{ name = "saves"; plugin = "(hooks log) $(@($hooksLog | Where-Object { $_ -match '^summary hooks [ab]Save[12]' }) -join ' | ')"; devbench = "saveGame seen: $(($steps | Where-Object { $_.index -eq 34 }).satisfied), $(($steps | Where-Object { $_.index -eq 54 }).satisfied)";
        ok = (($steps | Where-Object { $_.index -eq 34 }).satisfied -eq $true -and ($steps | Where-Object { $_.index -eq 54 }).satisfied -eq $true) }
 )
