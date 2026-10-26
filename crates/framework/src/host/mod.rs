@@ -6,7 +6,8 @@
 //! the inspector (`inspector`), also reachable through the console command `SkyrimRs`.
 
 use core::ffi::{CStr, c_void};
-use core::sync::atomic::{AtomicUsize, Ordering};
+use core::sync::atomic::{AtomicU32, AtomicU64, AtomicUsize, Ordering};
+use std::collections::VecDeque;
 use std::fs::File;
 use std::io::Write as _;
 use std::os::windows::ffi::OsStrExt as _;
@@ -17,7 +18,8 @@ use skyrim::events::{BSEventNotifyControl, ErasedHandler, ErasedSink, ErasedSour
 use skyrim::input::{CommandSlot, ErasedCommand};
 use skyrim::papyrus::{ErasedNative, NativeFunction, VirtualMachine};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
-use windows_sys::Win32::System::LibraryLoader::{GetProcAddress, LoadLibraryW};
+use windows_sys::Win32::System::LibraryLoader::{GetModuleHandleW, GetProcAddress, LoadLibraryW};
+use windows_sys::Win32::System::SystemInformation::GetTickCount64;
 
 use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
@@ -27,11 +29,19 @@ use crate::{ABI, BUILD, CommandRequest, Descriptor, DrawFn, Error, Host, Message
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 /// The SKSE log folder, where the host writes its log and the inspector its frame captures.
 static LOG_DIR: OnceLock<PathBuf> = OnceLock::new();
+/// The last host log lines, for the crash log.
+static RECENT: Mutex<VecDeque<String>> = Mutex::new(VecDeque::new());
+const RECENT_LINES: usize = 24;
 
 fn log_line(line: core::fmt::Arguments<'_>) {
     if let Some(f) = LOG.lock().unwrap_or_else(PoisonError::into_inner).as_mut() {
         let _ = writeln!(f, "{line}");
     }
+    let mut recent = RECENT.lock().unwrap_or_else(PoisonError::into_inner);
+    if recent.len() == RECENT_LINES {
+        recent.pop_front();
+    }
+    recent.push_back(line.to_string());
 }
 
 macro_rules! log {
@@ -66,6 +76,13 @@ static COMMANDS: Mutex<Vec<ConsoleCommand>> = Mutex::new(Vec::new());
 static STARTUP: Mutex<Vec<u32>> = Mutex::new(Vec::new());
 /// The VM once the Papyrus registration pass has run.
 static VM: AtomicUsize = AtomicUsize::new(0);
+/// Which loader hosts the game, for the crash log.
+static HOSTED_BY: OnceLock<&'static str> = OnceLock::new();
+/// The last loader message's kind (`u32::MAX` before the first) and the tick it arrived at.
+static LAST_MESSAGE: AtomicU32 = AtomicU32::new(u32::MAX);
+static LAST_MESSAGE_AT: AtomicU64 = AtomicU64::new(0);
+/// The SKSE plugins in `Data\SKSE\Plugins` with their version data, read once they are all loaded.
+static SKSE_PLUGINS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 static HOOKS: Hooks = Hooks::HOST;
 static TABLE: Table = Table { on_message, on_papyrus, add_window, window_open, set_window_open, setting: settings::get, set_setting: settings::set, add_sink, register_native, register_command, plugins };
 
@@ -112,7 +129,13 @@ pub fn load(skse: &skse::Interface) -> bool {
     }
     log!("{}, abi {ABI}", BUILD.to_string_lossy());
     let hosted_by = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
+    let _ = HOSTED_BY.set(hosted_by);
     log!("hosted by {hosted_by}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
+    match crash::install(&crash::Options { name: NAME, runtime_version: skse.runtime_version, build: BUILD.to_str().unwrap_or(""), facts: Some(crash_facts) }) {
+        Ok(crash::Installed::Here { watchdog, symbols, symbol_mismatches }) => log!("crash handler installed, watchdog thread {watchdog}, game symbols {symbols:?} ({} functions, {symbol_mismatches} offsets differ from the ledger)", crash::symbols::count()),
+        Ok(crash::Installed::Elsewhere) => log!("crash handler: another copy in the process reports crashes"),
+        Err(e) => log!("crash handler not installed: {e}"),
+    }
     Hooks::set_logger(|line| log!("hooks: {line}"));
     if let Err(e) = skyrim::init(skse) {
         log!("game layer: {e}");
@@ -177,6 +200,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         let name: &'static str = Box::leak(plugin.name.clone().into_boxed_str());
         let host: &'static Host = Box::leak(Box::new(Host { skse, name, hooks: Box::leak(Box::new(Hooks::for_plugin(name))), table: &TABLE }));
         open_settings(name, &dir);
+        crash::note_image(&plugin.name, 1, *module as usize, true);
         let live = (descriptor.load)(host);
         if live {
             log!("loaded {}: {}", plugin.file, plugin.name);
@@ -296,6 +320,105 @@ fn read_descriptor(path: &Path) -> Result<(HMODULE, &'static Descriptor), String
     }
 }
 
+fn message_name(kind: u32) -> &'static str {
+    match kind {
+        skse::MessagingInterface::PLUGINS_LOADED => "PLUGINS_LOADED",
+        skse::MessagingInterface::PLUGINS_LOADED_2 => "PLUGINS_LOADED_2",
+        skse::MessagingInterface::PRE_LOAD_GAME => "PRE_LOAD_GAME",
+        skse::MessagingInterface::POST_LOAD_GAME => "POST_LOAD_GAME",
+        skse::MessagingInterface::SAVE_GAME => "SAVE_GAME",
+        skse::MessagingInterface::DELETE_GAME => "DELETE_GAME",
+        skse::MessagingInterface::CONTROLS_READY => "CONTROLS_READY",
+        skse::MessagingInterface::NEW_GAME => "NEW_GAME",
+        skse::MessagingInterface::DATA_LOADED => "DATA_LOADED",
+        _ => "unknown",
+    }
+}
+
+/// Reads the version data of every SKSE plugin DLL in `Data\SKSE\Plugins` the loader has mapped.
+fn snapshot_skse_plugins() {
+    let mut lines = Vec::new();
+    for path in plugin_files(&plugins_dir()) {
+        let file = path.file_name().map(|f| f.to_string_lossy().into_owned()).unwrap_or_default();
+        let wide: Vec<u16> = path.as_os_str().encode_wide().chain([0]).collect();
+        let module = unsafe { GetModuleHandleW(wide.as_ptr()) };
+        if module.is_null() {
+            lines.push(format!("{file}: not loaded"));
+            continue;
+        }
+        let Some(version) = (unsafe { GetProcAddress(module, c"SKSEPlugin_Version".as_ptr().cast()) }) else {
+            lines.push(format!("{file}: no version data"));
+            continue;
+        };
+        let data = unsafe { &*(version as *const skse::PluginVersionData) };
+        let text = |bytes: &[u8]| CStr::from_bytes_until_nul(bytes).ok().map(|s| s.to_string_lossy().into_owned()).unwrap_or_default();
+        lines.push(format!("{file}: {} version {:#x} by {}, flags {:#x}, method {:#x}", text(&data.name), data.plugin_version, text(&data.author), data.flags, data.method));
+    }
+    *SKSE_PLUGINS.lock().unwrap_or_else(PoisonError::into_inner) = lines;
+}
+
+/// The host's facts for the crash log, on the watchdog thread: locks are tried, never waited for.
+fn crash_facts(w: &mut crash::Writer<'_>, crash: &crash::Crash, section: crash::Section) {
+    use core::fmt::Write as _;
+    match section {
+        crash::Section::Context => {
+            let _ = writeln!(w, "hosted by {}; {}", HOSTED_BY.get().unwrap_or(&"an unknown loader"), BUILD.to_str().unwrap_or(""));
+            match reload::try_generations() {
+                Some(generations) if generations.is_empty() => {
+                    let _ = writeln!(w, "framework plugins: none");
+                }
+                Some(generations) => {
+                    let _ = write!(w, "framework plugins:");
+                    for (name, generation, live) in generations {
+                        let _ = write!(w, " {name} generation {generation}{};", if live { "" } else { " (stopped)" });
+                    }
+                    let _ = writeln!(w);
+                }
+                None => {
+                    let _ = writeln!(w, "framework plugins: the list is locked by another thread");
+                }
+            }
+            match SKSE_PLUGINS.try_lock() {
+                Ok(lines) if lines.is_empty() => {
+                    let _ = writeln!(w, "SKSE plugins: not read yet (before PLUGINS_LOADED_2)");
+                }
+                Ok(lines) => {
+                    let _ = writeln!(w, "SKSE plugins:");
+                    for line in lines.iter() {
+                        let _ = writeln!(w, "  {line}");
+                    }
+                }
+                Err(_) => {
+                    let _ = writeln!(w, "SKSE plugins: the list is locked by another thread");
+                }
+            }
+            match LAST_MESSAGE.load(Ordering::Relaxed) {
+                u32::MAX => {
+                    let _ = writeln!(w, "no loader message yet");
+                }
+                kind => {
+                    let ago = unsafe { GetTickCount64() }.saturating_sub(LAST_MESSAGE_AT.load(Ordering::Relaxed));
+                    let _ = writeln!(w, "last loader message: {} (kind {kind}), {ago} ms ago", message_name(kind));
+                }
+            }
+        }
+        crash::Section::State => {
+            Hooks::crash_facts(w, crash.thread);
+            match RECENT.try_lock() {
+                Ok(lines) => {
+                    let _ = writeln!(w, "host log, last {} lines:", lines.len());
+                    for line in lines.iter() {
+                        let _ = writeln!(w, "  {line}");
+                    }
+                }
+                Err(_) => {
+                    let _ = writeln!(w, "host log: locked by another thread, not read");
+                }
+            }
+        }
+    }
+}
+
 fn plugin_name(descriptor: &Descriptor) -> String {
     if descriptor.name.is_null() { String::new() } else { unsafe { CStr::from_ptr(descriptor.name) }.to_string_lossy().into_owned() }
 }
@@ -346,8 +469,13 @@ fn vm() -> Option<&'static VirtualMachine> {
 
 unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
     let Some(msg) = (unsafe { msg.as_ref() }) else { return };
+    LAST_MESSAGE.store(msg.kind, Ordering::Relaxed);
+    LAST_MESSAGE_AT.store(unsafe { GetTickCount64() }, Ordering::Relaxed);
     match msg.kind {
-        skse::MessagingInterface::PLUGINS_LOADED_2 => Hooks::revalidate("PLUGINS_LOADED_2"),
+        skse::MessagingInterface::PLUGINS_LOADED_2 => {
+            Hooks::revalidate("PLUGINS_LOADED_2");
+            snapshot_skse_plugins();
+        }
         skse::MessagingInterface::DATA_LOADED => Hooks::revalidate("DATA_LOADED"),
         _ => {}
     }

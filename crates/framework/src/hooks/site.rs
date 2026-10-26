@@ -2,10 +2,12 @@
 
 use core::cell::Cell;
 use core::sync::atomic::Ordering::{Relaxed, SeqCst};
-use core::sync::atomic::{AtomicBool, AtomicPtr, AtomicU8, AtomicU64, AtomicUsize};
+use core::sync::atomic::{AtomicBool, AtomicPtr, AtomicU8, AtomicU32, AtomicU64, AtomicUsize};
 use std::collections::BTreeMap;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
+
+use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 
 use super::validate::Validation;
 use super::{Error, Phase};
@@ -70,6 +72,7 @@ signatures! {
 
 thread_local! {
     static DEPTH: Cell<u32> = const { Cell::new(0) };
+    static SLOT: Cell<usize> = const { Cell::new(usize::MAX) };
 }
 
 /// Whether this thread is inside a subscriber; a registration there would wait for itself.
@@ -77,12 +80,63 @@ pub(crate) fn in_callback() -> bool {
     DEPTH.with(|d| d.get() > 0)
 }
 
+/// Which site and subscriber a thread is inside, readable from another thread by the crash
+/// logger: one slot per thread, claimed on its first dispatch and kept.
+struct ThreadSlot {
+    thread: AtomicU32,
+    site_name: AtomicPtr<u8>,
+    site_len: AtomicUsize,
+    entry: AtomicPtr<Meta>,
+}
+
+const THREAD_SLOTS: usize = 64;
+
+static THREADS: [ThreadSlot; THREAD_SLOTS] = [const { ThreadSlot { thread: AtomicU32::new(0), site_name: AtomicPtr::new(core::ptr::null_mut()), site_len: AtomicUsize::new(0), entry: AtomicPtr::new(core::ptr::null_mut()) } }; THREAD_SLOTS];
+
+fn slot() -> Option<&'static ThreadSlot> {
+    SLOT.with(|s| {
+        if s.get() != usize::MAX {
+            return Some(&THREADS[s.get()]);
+        }
+        let me = unsafe { GetCurrentThreadId() };
+        let (i, slot) = THREADS.iter().enumerate().find(|(_, slot)| slot.thread.compare_exchange(0, me, Relaxed, Relaxed).is_ok())?;
+        s.set(i);
+        Some(slot)
+    })
+}
+
+/// The site name and the subscriber `thread` is inside right now, for the crash log of a frozen thread.
+pub(crate) fn thread_state(thread: u32) -> Option<(Option<&'static str>, Option<&'static Meta>)> {
+    let slot = THREADS.iter().find(|s| s.thread.load(Relaxed) == thread)?;
+    let name = slot.site_name.load(Relaxed);
+    let site = (!name.is_null()).then(|| unsafe { core::str::from_utf8_unchecked(core::slice::from_raw_parts(name, slot.site_len.load(Relaxed))) });
+    let entry = unsafe { slot.entry.load(Relaxed).as_ref() };
+    Some((site, entry))
+}
+
+/// Runs one subscriber with its `Meta` marked as the thread's current entry.
+fn track<R>(meta: &Arc<Meta>, f: impl FnOnce() -> R) -> R {
+    let slot = slot();
+    let previous = slot.map(|s| s.entry.swap(Arc::as_ptr(meta).cast_mut(), Relaxed));
+    let r = f();
+    if let (Some(s), Some(p)) = (slot, previous) {
+        s.entry.store(p, Relaxed);
+    }
+    r
+}
+
 fn dispatch<O: Op>(args: Args<O::Fn>) -> Ret<O::Fn> {
     let site = O::site();
     let parity = site.enter();
     DEPTH.with(|d| d.set(d.get() + 1));
     let chain = unsafe { &*site.chain.load(SeqCst).cast::<Chain<O::Fn>>() };
+    let slot = slot();
+    let previous = slot.map(|s| (s.site_name.swap(chain.name.as_ptr().cast_mut(), Relaxed), s.site_len.swap(chain.name.len(), Relaxed)));
     let ret = if site.broken.load(Relaxed) { unsafe { chain.original.call(args) } } else { chain.run(site, args) };
+    if let (Some(s), Some((name, len))) = (slot, previous) {
+        s.site_name.store(name, Relaxed);
+        s.site_len.store(len, Relaxed);
+    }
     DEPTH.with(|d| d.set(d.get() - 1));
     site.active[parity].fetch_sub(1, SeqCst);
     ret
@@ -219,13 +273,13 @@ impl<F: Signature> Next<'_, F> {
                 return unsafe { next.call(args) };
             }
             let Callback::Around(f) = &entry.callback else { unreachable!() };
-            return entry.meta.stats.timed(|| f(args, next));
+            return track(&entry.meta, || entry.meta.stats.timed(|| f(args, next)));
         }
         self.state.received = args;
         if let Some(entry) = self.chain.replace.as_ref().filter(|e| e.meta.runs()) {
             let Callback::Replace(f) = &entry.callback else { unreachable!() };
             self.state.outcome = Outcome::Replaced;
-            return entry.meta.stats.timed(|| f(args, Original(self.chain.original)));
+            return track(&entry.meta, || entry.meta.stats.timed(|| f(args, Original(self.chain.original))));
         }
         self.state.outcome = Outcome::Original;
         unsafe { self.chain.original.call(args) }
@@ -235,6 +289,8 @@ impl<F: Signature> Next<'_, F> {
 /// An immutable snapshot of a site's subscribers in execution order; replaced whole on every change.
 pub(crate) struct Chain<F: Signature> {
     pub original: F,
+    /// The site's name, read by the dispatch for the thread's slot.
+    pub name: String,
     /// Every entry in registration order, the input of the next rebuild.
     pub entries: Vec<Arc<Entry<F>>>,
     befores: Vec<Arc<Entry<F>>>,
@@ -267,6 +323,7 @@ impl<F: Signature> Chain<F> {
         };
         Ok(Box::new(Self {
             original,
+            name: site.to_owned(),
             befores: sorted(Phase::Before)?,
             arounds: sorted(Phase::Around)?,
             replace: replaces.first().map(|e| Arc::clone(e)),
@@ -284,13 +341,13 @@ impl<F: Signature> Chain<F> {
         let start = Instant::now();
         for entry in self.befores.iter().filter(|e| e.meta.runs()) {
             let Callback::Before(f) = &entry.callback else { unreachable!() };
-            entry.meta.stats.timed(|| f(&mut args));
+            track(&entry.meta, || entry.meta.stats.timed(|| f(&mut args)));
         }
         let mut state = State { received: args, outcome: Outcome::Skipped };
         let ret = unsafe { Next { chain: self, state: &mut state, index: 0 }.call(args) };
         for entry in self.afters.iter().filter(|e| e.meta.runs()) {
             let Callback::After(f) = &entry.callback else { unreachable!() };
-            entry.meta.stats.timed(|| f(&state.received, &ret, state.outcome));
+            track(&entry.meta, || entry.meta.stats.timed(|| f(&state.received, &ret, state.outcome)));
         }
         site.stats.record(start.elapsed());
         site.last_outcome.store(state.outcome as u8, Relaxed);

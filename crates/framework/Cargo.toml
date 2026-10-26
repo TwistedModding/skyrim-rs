@@ -10,7 +10,8 @@ skyrim.workspace = true
 hook.workspace = true
 layout.workspace = true
 overlay.workspace = true
-windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_System_LibraryLoader", "Win32_System_Memory"] }
+crash.workspace = true
+windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_System_LibraryLoader", "Win32_System_Memory", "Win32_System_SystemInformation", "Win32_System_Threading"] }
 
 [lints]
 workspace = true

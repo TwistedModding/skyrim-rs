@@ -13,9 +13,12 @@
 # the third-party SKSE plugins it lists from -LegacyDir into Data\SKSE\Plugins for the run, next to the host. The gui
 # suite installs the host with the example mod and the two hook plugins, copies the example's build in again between its
 # two parts (a reload) and keeps the settings files the host wrote. The camera suite installs the camera-demo plugin,
-# drives it through its console command and reads its report log. See docs/subsystems/<suite>.md.
+# drives it through its console command and reads its report log. The crash suite installs the host with its crash-test
+# plugin and runs one game session per scenario (null, hook, overflow, write), each ending in the crash the plugin's
+# console command armed; the host's crash log and minidump of each session go to <OutDir>\<scenario>. Any suite's run
+# that leaves a skyrim-rs-crash-* file in the SKSE folder has it moved into <OutDir>. See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy", "gui", "camera")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy", "gui", "camera", "crash")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     [ValidateSet("refuse", "stack")][string]$Compat = "refuse",
@@ -54,14 +57,16 @@ $Mods = @{
     legacy = @{ dir = "skyrim-rs"; legacy = @("CrashLogger") }
     gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-rs"; report = $true; tags = @(2);
              crates = @("hooks-test-a", "hooks-test-b"); dlls = @("skyrim_rs_hooks_a.dll", "skyrim_rs_hooks_b.dll") }
+    crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-rs"; report = $true;
+               scenarios = @("null", "hook", "overflow", "write")
+               triggers = @{ null = "save skyrim-rs-crash"; overflow = "save skyrim-rs-crash"; write = "save skyrim-rs-crash"; hook = "player.damageactorvalue health 1" } }
 }
 $TagDir = "$Root\target\release\reload-tags"
 $Mod = $Mods[$Suite]
 if ($Suite -eq "legacy" -and $Legacy) { $Mod.legacy = @($Legacy -split ",") }
 $PluginLog = "skyrim-rs-test.log"
-$CrashLog = "skyrim-rs-test-crash.log"
 $HostDll = "skyrim_rs.dll"
-$ModLogs = @($Mods.Values | ForEach-Object { $_.log; $_.logs } | Where-Object { $_ }) + @($CrashLog, "skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log; $_.logs } | Where-Object { $_ }) + @("skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
 $Proxy = "$GameDir\dinput8.dll"
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $StepsName = if ($Mod.steps) { $Mod.steps } else { $Suite }
@@ -161,10 +166,27 @@ $Between = {
 foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" }; Copy-Item $p $Scripts -Force }
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
+$DevBenchLaunch = if ($Launch -eq "standalone") { "standalone" } else { "skse" }
 try {
-    & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$StepsName-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $(if ($Launch -eq "standalone") { "standalone" } else { "skse" })
-    $scenarioOk = $LASTEXITCODE -eq 0
+    if ($Mod.scenarios) {
+        # One game session per scenario, each ending in the crash it armed: devbench.ps1 reports the dead game as a
+        # failure, and what matters is the crash log and dump the host's watchdog left in the SKSE folder.
+        $scenarioOk = $true
+        foreach ($s in $Mod.scenarios) {
+            $runDir = "$OutDir\$s"
+            New-Item -ItemType Directory -Force $runDir | Out-Null
+            (Get-Content "$PSScriptRoot\$StepsName-steps.json" -Raw).Replace("{scenario}", $s).Replace("{trigger}", $Mod.triggers[$s]) | Set-Content "$runDir\steps.json" -Encoding ascii
+            try { & "$PSScriptRoot\devbench.ps1" -Steps "$runDir\steps.json" -OutDir $runDir -Launch $DevBenchLaunch } catch { "scenario $s`: the game ended: $($_.Exception.Message)" }
+            foreach ($f in @("skyrim-rs.log", $Mod.log)) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$runDir\$f" -Force } }
+            Get-ChildItem "$SkseLogs" -Filter "skyrim-rs-crash-????????-??????.*" | Move-Item -Destination $runDir -Force
+            if (-not (Get-ChildItem $runDir -Filter "skyrim-rs-crash-????????-??????.log")) { "scenario $s`: no crash log"; $scenarioOk = $false }
+        }
+    } else {
+        & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$StepsName-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $DevBenchLaunch
+        $scenarioOk = $LASTEXITCODE -eq 0
+    }
 } finally {
+    Get-ChildItem "$SkseLogs" -Filter "skyrim-rs-crash-????????-??????.*" | Move-Item -Destination $OutDir -Force
     if ($Mod.dir) { Get-ChildItem "$Plugins\$($Mod.dir)" -Filter "*.settings.json" -ErrorAction SilentlyContinue | Copy-Item -Destination $OutDir -Force }
     # A game that crashed may still hold the installed DLLs for a few seconds after Stop-Process.
     for ($try = 0; $try -lt 10; $try++) {

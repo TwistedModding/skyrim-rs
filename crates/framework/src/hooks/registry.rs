@@ -291,6 +291,45 @@ pub(crate) fn messages() -> Vec<String> {
     lock().messages.iter().cloned().collect()
 }
 
+/// The dispatcher's state for a crash log, written on the watchdog thread: what `thread` is
+/// inside, the sites marked broken and the last log lines; a lock the crash holds is skipped.
+pub(crate) fn crash_facts(w: &mut dyn core::fmt::Write, thread: u32) {
+    match site::thread_state(thread) {
+        Some((Some(site), Some(meta))) => {
+            let _ = writeln!(w, "the crashing thread is inside hook site {site}, subscriber #{} {} {:?}", meta.id, meta.owner, meta.phase);
+        }
+        Some((Some(site), None)) => {
+            let _ = writeln!(w, "the crashing thread is inside hook site {site}, between subscribers (in the engine function or the dispatcher)");
+        }
+        _ => {
+            let _ = writeln!(w, "the crashing thread is not inside a hook subscriber");
+        }
+    }
+    let Ok(reg) = REGISTRY.try_lock() else {
+        let _ = writeln!(w, "hook registry: locked by another thread, not read");
+        return;
+    };
+    for site in &reg.sites {
+        if !site.broken.load(Relaxed) {
+            continue;
+        }
+        match site.meta.try_lock() {
+            Ok(guard) => {
+                if let Some(meta) = guard.as_ref() {
+                    let _ = writeln!(w, "broken site: {} at {:#x}, detour overwritten by {}", meta.name, meta.address, meta.patched_by.as_deref().unwrap_or("an unknown writer"));
+                }
+            }
+            Err(_) => {
+                let _ = writeln!(w, "broken site: its name is locked by another thread");
+            }
+        }
+    }
+    let _ = writeln!(w, "hook log, last {} lines:", reg.messages.len().min(16));
+    for line in reg.messages.iter().skip(reg.messages.len().saturating_sub(16)) {
+        let _ = writeln!(w, "  {line}");
+    }
+}
+
 pub(crate) fn diagnostics() -> Vec<SiteReport> {
     let reg = lock();
     let mut reports: Vec<SiteReport> = reg

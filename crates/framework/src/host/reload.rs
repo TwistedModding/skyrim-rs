@@ -56,6 +56,11 @@ static LOADED: Mutex<Vec<Loaded>> = Mutex::new(Vec::new());
 pub(super) fn generations() -> Vec<(String, u32, bool)> {
     LOADED.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|l| (l.plugin.name.clone(), l.generation, l.live)).collect()
 }
+
+/// [`generations`] without waiting: `None` while another thread holds the list (the crash log's caller).
+pub(super) fn try_generations() -> Option<Vec<(String, u32, bool)>> {
+    LOADED.try_lock().ok().map(|loaded| loaded.iter().map(|l| (l.plugin.name.clone(), l.generation, l.live)).collect())
+}
 static LAST_POLL: Mutex<Option<Instant>> = Mutex::new(None);
 
 /// Empties the shadow folder under `dir` and returns it.
@@ -149,6 +154,7 @@ fn swap(entry: &mut Loaded) {
     log!("{name}: generation {}: {} detached", entry.generation, detach(&name));
     flush_settings(Some(&name));
     unsafe { FreeLibrary(entry.module) };
+    crash::note_image(&name, entry.generation, entry.module as usize, false);
     log!("{name}: generation {} unloaded", entry.generation);
     let previous = (entry.copy.clone(), entry.generation);
     if start(entry, module, descriptor, copy, generation, state.as_deref()) {
@@ -157,6 +163,7 @@ fn swap(entry: &mut Loaded) {
     }
     log!("{name}: generation {generation}: load returned false; loading generation {} again", previous.1);
     unsafe { FreeLibrary(entry.module) };
+    crash::note_image(&name, generation, entry.module as usize, false);
     let _ = fs::remove_file(&entry.copy);
     match read_descriptor(&previous.0) {
         Ok((module, descriptor)) => {
@@ -175,6 +182,7 @@ fn start(entry: &mut Loaded, module: HMODULE, descriptor: &'static Descriptor, c
     entry.descriptor = descriptor;
     entry.copy = copy;
     entry.generation = generation;
+    crash::note_image(&name, generation, module as usize, true);
     entry.live = (descriptor.load)(entry.host);
     if !entry.live {
         log!("{name}: generation {generation}: load returned false; {} detached", detach(&name));

@@ -305,6 +305,11 @@ impl Hooks {
         registry::compat()
     }
 
+    /// Writes the dispatcher's state for a crash log: see `registry::crash_facts`.
+    pub(crate) fn crash_facts(w: &mut dyn fmt::Write, thread: u32) {
+        registry::crash_facts(w, thread);
+    }
+
     /// Checks every typed operation's site and every installed one, logging what changed since the last check.
     pub(crate) fn revalidate(moment: &str) {
         let resolved: Vec<(&str, usize)> = ops::OPS.iter().filter_map(|&(name, id)| Some((name, skyrim::reloc().address(id).ok()?))).collect();
