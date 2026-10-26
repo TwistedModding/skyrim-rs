@@ -4,9 +4,9 @@
 param(
     [string[]]$Source = @("$(Split-Path $PSScriptRoot -Parent)\crates\testplugin\papyrus"),
     [string]$OutDir = "$(Split-Path $PSScriptRoot -Parent)\target\papyrus",
-    [string]$Compiler = "E:\SteamLibrary\steamapps\common\Skyrim Special Edition\Papyrus Compiler\PapyrusCompiler.exe",
-    [string]$ScriptsZip = "E:\SteamLibrary\steamapps\common\Skyrim Special Edition\Data\Scripts.zip",
-    [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"
+    [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition",
+    [string]$Compiler = "$GameDir\Papyrus Compiler\PapyrusCompiler.exe",
+    [string]$ScriptsZip = "$GameDir\Data\Scripts.zip"
 )
 $ErrorActionPreference = "Stop"
 New-Item -ItemType Directory -Force $OutDir | Out-Null
