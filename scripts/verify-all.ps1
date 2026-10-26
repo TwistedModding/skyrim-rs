@@ -2,7 +2,7 @@
 # keeping each run's logs in <OutRoot>\<suite>. A suite that fails is retried once (focus loss can stall a scenario).
 param(
     [ValidateSet("skse", "skse-proxy", "standalone")][string]$Launch = "skse",
-    [string[]]$Suites = @("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload"),
+    [string[]]$Suites = @("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy"),
     [string]$OutRoot = "verify-all-$Launch"
 )
 # Continue: the child's stderr (cargo's progress) would otherwise stop this script in Windows PowerShell.
