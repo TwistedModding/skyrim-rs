@@ -361,6 +361,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "hooks-test"
+version = "0.1.0"
+dependencies = [
+ "framework",
+ "layout",
+ "skse",
+ "skyrim",
+]
+
+[[package]]
+name = "hooks-test-a"
+version = "0.1.0"
+dependencies = [
+ "framework",
+ "hooks-test",
+]
+
+[[package]]
+name = "hooks-test-b"
+version = "0.1.0"
+dependencies = [
+ "framework",
+ "hooks-test",
+]
+
+[[package]]
 name = "host"
 version = "0.1.0"
 dependencies = [

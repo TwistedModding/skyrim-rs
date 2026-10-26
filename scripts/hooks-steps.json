@@ -1,0 +1,23 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 3000},
+  {"tool": "console", "args": {"command": "player.setav healrate 0", "capture": true}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "GetActorValue", "self": {"form": "0x14"}, "args": ["Health"]}},
+  {"tool": "console", "args": {"command": "player.damageactorvalue health 10", "capture": true}},
+  {"wait": 500},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "GetActorValue", "self": {"form": "0x14"}, "args": ["Health"]}},
+  {"tool": "console", "args": {"command": "player.damageactorvalue health 5", "capture": true}},
+  {"wait": 500},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "GetActorValue", "self": {"form": "0x14"}, "args": ["Health"]}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-hooks-1"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000},
+  {"tool": "console", "args": {"command": "player.damageactorvalue health 10", "capture": true}},
+  {"wait": 500},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "GetActorValue", "self": {"form": "0x14"}, "args": ["Health"]}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-hooks-2"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000}
+]

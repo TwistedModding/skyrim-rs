@@ -4,9 +4,10 @@
 # the .pex files for the run; the shadows suite installs the first-person-shadows mod next to the test plugin.
 # The overlay suite runs the plugin in mode overlay. The framework suite installs the host (skyrim_rs.dll) and puts its
 # test plugin, the four order-* plugins and a decoy DLL without a descriptor into Data\SKSE\Plugins\skyrim-rs; the test
-# plugin writes the suite's report. See docs/subsystems/<suite>.md.
+# plugin writes the suite's report. The hooks suite installs the host with its two hook plugins, which share one report
+# log. See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     # skse: the script extender alone; skse-proxy: the standalone host's dinput8.dll next to the game as well, which must
@@ -28,6 +29,8 @@ $Mods = @{
     framework = @{ crate = "framework-test"; dll = "skyrim_rs_framework_test.dll"; log = "skyrim-rs-framework-test.log"; dir = "skyrim-rs"; report = $true;
                    crates = @("order-head", "order-tail", "order-cycle-a", "order-cycle-b")
                    dlls = @("skyrim_rs_order_head.dll", "skyrim_rs_order_tail.dll", "skyrim_rs_order_cycle_a.dll", "skyrim_rs_order_cycle_b.dll") }
+    hooks = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-rs"; report = $true;
+               crates = @("hooks-test-b"); dlls = @("skyrim_rs_hooks_b.dll") }
 }
 $Mod = $Mods[$Suite]
 $PluginLog = "skyrim-rs-test.log"
