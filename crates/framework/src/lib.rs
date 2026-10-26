@@ -2,12 +2,16 @@
 //!
 //! A framework plugin is a `cdylib` in `Data\SKSE\Plugins\skyrim-rs\` (SKSE loads only the folder
 //! above, so it never sees them) that declares itself with [`plugin!`]. The host loads every DLL
-//! there from its own `SKSEPlugin_Load`, in file name order, reads the exported `SkyrimRs_Plugin`
-//! [`Descriptor`] as plain C data and calls the plugin's `load` only when the descriptor's
-//! [`ABI`] and [`BUILD`] equal its own: that call and everything passed through [`Host`] use the
-//! Rust ABI, which holds only for one compiler and one build of this crate and its dependencies,
-//! so a plugin is built against the same framework release (its `Cargo.lock`) with the same
-//! `rustc`. A refused DLL is unloaded and named in `skyrim-rs.log`.
+//! there from its own `SKSEPlugin_Load`, reads the exported `SkyrimRs_Plugin` [`Descriptor`] as
+//! plain C data and calls the plugin's `load` only when the descriptor's [`ABI`] and [`BUILD`]
+//! equal its own: that call and everything passed through [`Host`] use the Rust ABI, which holds
+//! only for one compiler and one build of this crate and its dependencies, so a plugin is built
+//! against the same framework release (its `Cargo.lock`) with the same `rustc`. A refused DLL is
+//! unloaded and named in `skyrim-rs.log`.
+//!
+//! The `load` calls run in the order [`order::sort`] resolves from every accepted descriptor's
+//! `load_before`, `load_after` and `priority`, file name order deciding what they leave open; a
+//! plugin in a constraint cycle is refused. The order is read back from [`Host::plugins`].
 //!
 //! What a plugin gets from the [`Host`]: the SKSE interface the host was loaded with, forwarded
 //! (`QueryInterface` answers as for the host, and the plugin handle is the host's, valid only while
@@ -22,9 +26,10 @@ pub use overlay::egui;
 use skyrim::papyrus::VirtualMachine;
 
 pub mod host;
+pub mod order;
 
 /// The descriptor's layout version.
-pub const ABI: u32 = 1;
+pub const ABI: u32 = 2;
 
 /// This crate's version and the compiler it was built with; a plugin is loaded only when its copy
 /// equals the host's.
@@ -48,9 +53,23 @@ pub struct Descriptor {
     pub build: *const c_char,
     pub name: *const c_char,
     pub load: LoadFn,
+    /// Plugin names this one loads before; [`order::ALL`] for every other plugin.
+    pub load_before: &'static [&'static str],
+    /// Plugin names this one loads after; [`order::ALL`] for every other plugin.
+    pub load_after: &'static [&'static str],
+    /// Higher loads first among plugins whose constraints are satisfied.
+    pub priority: i32,
 }
 
 unsafe impl Sync for Descriptor {}
+
+/// A plugin the host accepted, as [`Host::plugins`] lists it.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct Plugin {
+    pub name: String,
+    pub file: String,
+    pub constraints: order::Constraints,
+}
 
 /// The host as a plugin's `load` receives it, for the life of the game.
 pub struct Host {
@@ -58,6 +77,7 @@ pub struct Host {
     on_message: fn(MessageFn),
     on_papyrus: fn(PapyrusFn),
     add_window: fn(Window),
+    plugins: fn() -> &'static [Plugin],
 }
 
 impl Host {
@@ -81,23 +101,40 @@ impl Host {
     pub fn add_window(&self, draw: impl FnMut(&egui::Context) + Send + 'static) {
         (self.add_window)(Box::new(draw));
     }
+
+    /// Every plugin whose descriptor the host accepted, in load order, known before the first `load` runs.
+    #[must_use]
+    pub fn plugins(&self) -> &'static [Plugin] {
+        (self.plugins)()
+    }
 }
 
-/// Declares a framework plugin: exports its [`Descriptor`].
+/// Declares a framework plugin: exports its [`Descriptor`]. The ordering fields are optional, in
+/// this order, and default to no constraints and priority 0.
 ///
 /// ```ignore
 /// framework::plugin! {
 ///     name: "my-mod",
 ///     load: load,
+///     load_before: ["other-mod"],
+///     load_after: ["*"],
+///     priority: 1,
 /// }
 /// fn load(host: &'static framework::Host) -> bool { skyrim::init(host.skse()).is_ok() }
 /// ```
 #[macro_export]
 macro_rules! plugin {
-    (name: $name:literal, load: $load:path $(,)?) => {
+    (name: $name:literal, load: $load:path $(, load_before: [$($before:literal),* $(,)?])? $(, load_after: [$($after:literal),* $(,)?])? $(, priority: $priority:expr)? $(,)?) => {
         #[unsafe(no_mangle)]
         #[allow(non_upper_case_globals)]
-        pub static SkyrimRs_Plugin: $crate::Descriptor =
-            $crate::Descriptor { abi: $crate::ABI, build: $crate::BUILD.as_ptr(), name: concat!($name, "\0").as_ptr().cast(), load: $load };
+        pub static SkyrimRs_Plugin: $crate::Descriptor = $crate::Descriptor {
+            abi: $crate::ABI,
+            build: $crate::BUILD.as_ptr(),
+            name: concat!($name, "\0").as_ptr().cast(),
+            load: $load,
+            load_before: &[$($($before),*)?],
+            load_after: &[$($($after),*)?],
+            priority: ($($priority,)? 0i32,).0,
+        };
     };
 }
