@@ -51,6 +51,16 @@ impl fmt::Write for Writer<'_> {
     }
 }
 
+/// A `fmt::Write` that drops everything: the probes run through it once before the summary, so the
+/// rules see what they would see in the sections below.
+pub struct Discard;
+
+impl fmt::Write for Discard {
+    fn write_str(&mut self, _: &str) -> fmt::Result {
+        Ok(())
+    }
+}
+
 /// A `fmt::Write` that writes through a buffer to an open file; `flush` after each section so a
 /// report that stops midway still leaves what was written.
 pub struct FileWriter<'a> {

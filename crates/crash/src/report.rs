@@ -29,6 +29,11 @@ pub struct Context<'a> {
 pub fn write(w: &mut dyn Write, rec: &Record, src: &dyn Source, paths: Option<(&[u16], &[u16])>, pdb: Option<&DbgHelp>) {
     let ctx = Context { rec, src, pdb, seen: RefCell::new(Seen::default()) };
     let _ = header(w, &ctx, paths);
+    // The probes note what they see for the rules; run them silently once so the summary can come first.
+    let _ = registers(&mut crate::text::Discard, &ctx);
+    let _ = stack_top(&mut crate::text::Discard, &ctx);
+    let _ = summary(w, &ctx);
+    let _ = loader(w, &ctx);
     let _ = exception(w, &ctx);
     let _ = registers(w, &ctx);
     let _ = stack(w, &ctx);
@@ -37,7 +42,6 @@ pub fn write(w: &mut dyn Write, rec: &Record, src: &dyn Source, paths: Option<(&
     let _ = modules(w, &ctx);
     let _ = state(w, &ctx);
     let _ = crate::papyrus::write(w, &ctx);
-    let _ = explanation(w, &ctx);
 }
 
 fn wide(w: &mut dyn Write, units: &[u16]) -> fmt::Result {
@@ -102,8 +106,12 @@ fn header(w: &mut dyn Write, ctx: &Context<'_>, paths: Option<(&[u16], &[u16])>)
     if rec.first_chance > 0 {
         writeln!(w, "first-chance error exceptions seen earlier in this session: {}", rec.first_chance)?;
     }
-    if rec.context_len > 0 {
-        writeln!(w, "\nLoader\n{}", rec.context_text().trim_end())?;
+    Ok(())
+}
+
+fn loader(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+    if ctx.rec.context_len > 0 {
+        writeln!(w, "\nLoader\n{}", ctx.rec.context_text().trim_end())?;
     }
     Ok(())
 }
@@ -560,20 +568,22 @@ fn frame_name(ctx: &Context<'_>, index: usize, buf: &mut [u8]) -> usize {
 
 const TOP_FRAMES: usize = 8;
 
-fn explanation(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
+/// The verdict first: what happened where and on which thread, the rule's explanation, the culprit, the signature.
+fn summary(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
     let rec = ctx.rec;
     let mut buffers = [[0u8; 192]; TOP_FRAMES];
     let count = rec.frames().len().min(TOP_FRAMES);
     let lens: [usize; TOP_FRAMES] = core::array::from_fn(|i| if i < count { frame_name(ctx, i, &mut buffers[i]) } else { 0 });
     let names: [&str; TOP_FRAMES] = core::array::from_fn(|i| crate::record::text(&buffers[i], lens[i]));
     let names = &names[..count];
-    writeln!(w, "\nExplanation")?;
-    write!(w, "crash signature {:016x} over the top {} frames:", rules::signature_hash(names), count)?;
-    for (i, name) in names.iter().enumerate() {
-        write!(w, "{}{name}", if i == 0 { " " } else { " < " })?;
-    }
+    writeln!(w, "\nSummary")?;
+    let (name, _) = code_name(rec.exception.code);
+    write!(w, "{name} at ")?;
+    code_location(w, rec.exception.address, ctx, false)?;
+    w.write_str(" on ")?;
+    thread_kind(w, ctx, rec.thread)?;
     writeln!(w)?;
-    let access = access_class(ctx);
+    let access = access_line(w, ctx)?;
     let seen = ctx.seen.borrow();
     let signature = rules::Signature { code: rec.exception.code, access, frames: names, seen: &seen, rip_unmapped: rec.module_at(rec.exception.address).is_none() };
     match rules::explain(&signature) {
@@ -581,16 +591,15 @@ fn explanation(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
             writeln!(w, "rule {}: {}", rule.name, rule.explanation)?;
             write!(w, "likely culprit: ")?;
             culprit(w, ctx, rule.culprit, &seen, names)?;
-            writeln!(w)
+            writeln!(w)?;
         }
-        None => writeln!(w, "no rule matches this crash; the sections above are what there is"),
+        None => writeln!(w, "no rule matches this crash; the sections below are what there is")?,
     }
-}
-
-fn access_class(ctx: &Context<'_>) -> Access {
-    let mut buf = [0u8; 512];
-    let mut w = crate::text::Writer::new(&mut buf);
-    access_line(&mut w, ctx).unwrap_or(Access::None)
+    write!(w, "crash signature {:016x} over the top {} frames:", rules::signature_hash(names), count)?;
+    for (i, name) in names.iter().enumerate() {
+        write!(w, "{}{name}", if i == 0 { " " } else { " < " })?;
+    }
+    writeln!(w)
 }
 
 fn culprit(w: &mut dyn Write, ctx: &Context<'_>, culprit: rules::Culprit, seen: &Seen, names: &[&str]) -> fmt::Result {
