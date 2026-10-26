@@ -7,11 +7,15 @@
 # plugin writes the suite's report. The hooks suite installs the host with its two hook plugins, which share one report
 # log. The reload suite builds its plugin three more times with the build tags 2, 3 and 4 before the game starts, installs
 # the host with the tag 1 build, and between the parts of its scenario copies the next tag's DLL over the installed one
-# and waits for the host to report the reload. See docs/subsystems/<suite>.md.
+# and waits for the host to report the reload. The compat suite runs the hooks scenario with the hooks plugins and two
+# plain SKSE plugins of its own that hook the same functions (legacy-patch-a before the host by file name,
+# legacy-patch-z after it), with skyrim-rs.ini setting the host's compatibility mode to -Compat. See
+# docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
+    [ValidateSet("refuse", "stack")][string]$Compat = "refuse",
     # skse: the script extender alone; skse-proxy: the standalone host's dinput8.dll next to the game as well, which must
     # leave the script extender in charge; standalone: dinput8.dll and the game started without the script extender.
     [ValidateSet("skse", "skse-proxy", "standalone")][string]$Launch = "skse",
@@ -34,16 +38,21 @@ $Mods = @{
     hooks = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-rs"; report = $true;
                crates = @("hooks-test-b"); dlls = @("skyrim_rs_hooks_b.dll") }
     reload = @{ crate = "reload-test"; dll = "skyrim_rs_reload_test.dll"; log = "skyrim-rs-reload-test.log"; dir = "skyrim-rs"; report = $true; tags = @(2, 3, 4) }
+    compat = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-rs"; report = $true; steps = "hooks";
+                crates = @("hooks-test-b", "legacy-patch-a", "legacy-patch-z"); dlls = @("skyrim_rs_hooks_b.dll");
+                plugins = @("skyrim_legacy_patch_a.dll", "skyrim_rs_legacy_patch_z.dll"); logs = @("skyrim-rs-legacy-patch-a.log", "skyrim-rs-legacy-patch-z.log") }
 }
 $TagDir = "$Root\target\release\reload-tags"
 $Mod = $Mods[$Suite]
 $PluginLog = "skyrim-rs-test.log"
 $CrashLog = "skyrim-rs-test-crash.log"
 $HostDll = "skyrim_rs.dll"
-$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($CrashLog, "skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log }) + @($Mods.Values | ForEach-Object { $_.logs } | Where-Object { $_ }) + @($CrashLog, "skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
 $Proxy = "$GameDir\dinput8.dll"
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
-$TestSave = "skyrim-rs-$Suite"
+$StepsName = if ($Mod.steps) { $Mod.steps } else { $Suite }
+$TestSave = "skyrim-rs-$StepsName"
+$Ini = "$Plugins\skyrim-rs.ini"
 
 if ($Suite -eq "overlay") { $Mode = "overlay" }
 & "$PSScriptRoot\game-free.ps1"
@@ -92,6 +101,11 @@ if ($Mod.dir) {
     Copy-Item $Dll "$ModDir\decoy.dll"
     Copy-Item "$Root\target\release\$HostDll" "$Plugins\$HostDll" -Force
 } elseif ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
+foreach ($d in @($Mod.plugins)) { if ($d) { Copy-Item "$Root\target\release\$d" "$Plugins\$d" -Force } }
+if ($Suite -eq "compat") {
+    if (Test-Path $Ini) { throw "$Ini already exists" }
+    Set-Content $Ini "[hooks]`r`ncompat = $Compat" -Encoding ascii
+}
 # After part N of the scenario: the next tag's build replaces the installed DLL, as an author's copy would, and the host
 # (polling from the frame, so the game window must stay in front) must report that generation loaded within 90 s.
 $Between = {
@@ -112,16 +126,17 @@ foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw 
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
 try {
-    & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $(if ($Launch -eq "standalone") { "standalone" } else { "skse" })
+    & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$StepsName-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $(if ($Launch -eq "standalone") { "standalone" } else { "skse" })
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
     # A game that crashed may still hold the installed DLLs for a few seconds after Stop-Process.
     for ($try = 0; $try -lt 10; $try++) {
-        foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }
+        foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll }) + @($Mod.plugins)) { if ($f) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue } }
         if ($Mod.dir) { Remove-Item "$Plugins\$($Mod.dir)" -Recurse -Force -ErrorAction SilentlyContinue }
         if (-not (Test-Path "$Plugins\$HostDll") -and -not ($Mod.dir -and (Test-Path "$Plugins\$($Mod.dir)"))) { break }
         Start-Sleep -Seconds 3
     }
+    if ($Suite -eq "compat") { Remove-Item $Ini -ErrorAction SilentlyContinue }
     if ($Launch -ne "skse") { Remove-Item $Proxy -ErrorAction SilentlyContinue }
     if ($Launch -eq "standalone") { Remove-Item $AppId -ErrorAction SilentlyContinue }
     foreach ($p in $Pex) { Remove-Item "$Scripts\$(Split-Path $p -Leaf)" -ErrorAction SilentlyContinue }

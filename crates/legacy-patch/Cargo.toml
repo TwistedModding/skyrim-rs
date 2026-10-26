@@ -1,0 +1,14 @@
+[package]
+name = "legacy-patch"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+skse.workspace = true
+hook.workspace = true
+layout.workspace = true
+skyrim.workspace = true
+
+[lints]
+workspace = true

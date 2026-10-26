@@ -426,6 +426,32 @@ name = "layout"
 version = "0.1.0"
 
 [[package]]
+name = "legacy-patch"
+version = "0.1.0"
+dependencies = [
+ "hook",
+ "layout",
+ "skse",
+ "skyrim",
+]
+
+[[package]]
+name = "legacy-patch-a"
+version = "0.1.0"
+dependencies = [
+ "legacy-patch",
+ "skse",
+]
+
+[[package]]
+name = "legacy-patch-z"
+version = "0.1.0"
+dependencies = [
+ "legacy-patch",
+ "skse",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.190"
 source = "registry+https://github.com/rust-lang/crates.io-index"
