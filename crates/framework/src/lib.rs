@@ -42,9 +42,10 @@ use settings::{Setting, Settings};
 /// The descriptor's layout version.
 pub const ABI: u32 = 3;
 
-/// This crate's version and the compiler it was built with; a plugin is loaded only when its copy
-/// equals the host's.
-pub const BUILD: &CStr = match CStr::from_bytes_with_nul(concat!("framework ", env!("CARGO_PKG_VERSION"), ", ", env!("SKYRIM_RS_RUSTC"), "\0").as_bytes()) {
+/// This crate's version, a hash of the sources whose types cross the host-plugin boundary (this
+/// crate, `overlay`, `skyrim`, `hook`, `skse`, `layout`, `versionlib` and `Cargo.lock`) and the
+/// compiler; a plugin is loaded only when its copy equals the host's.
+pub const BUILD: &CStr = match CStr::from_bytes_with_nul(concat!("framework ", env!("CARGO_PKG_VERSION"), " ", env!("SKYRIM_RS_API_HASH"), ", ", env!("SKYRIM_RS_RUSTC"), "\0").as_bytes()) {
     Ok(build) => build,
     Err(_) => panic!("BUILD holds one nul, at the end"),
 };
