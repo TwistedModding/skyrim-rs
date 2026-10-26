@@ -50,6 +50,8 @@ function HalfJpeg($from, $to) {
 $shot = HalfJpeg "$SkseLogs\skyrim-rs-overlay.bmp" "$OutDir\gui-1.7.104.jpg"
 $vanillaPath = (Step 48).path
 $vanilla = $vanillaPath -and (HalfJpeg $vanillaPath "$OutDir\gui-vanilla-1.7.104.jpg")
+# DevBench writes its capture's metadata beside the picture, inside the game install.
+if ($vanillaPath) { Remove-Item ([IO.Path]::ChangeExtension($vanillaPath, "json")) -ErrorAction SilentlyContinue }
 
 $rows = @(
     @{ name = "host loads"; plugin = "(host log) $($loaded -join ' | '); $($command -join ' | ')"; devbench = "SkyrimRs window: $window1";
