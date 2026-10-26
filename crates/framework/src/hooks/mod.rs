@@ -91,6 +91,8 @@ pub enum Error {
     Callback { site: String, owner: String },
     /// Called from inside a subscriber.
     Reentrant,
+    /// The `Options` owner is not the name of the plugin the handle belongs to.
+    Owner { given: String, plugin: String },
 }
 
 impl fmt::Display for Error {
@@ -103,6 +105,7 @@ impl fmt::Display for Error {
             Self::Raw { address, detail } => write!(f, "raw {address:#x}: {detail}"),
             Self::Callback { site, owner } => write!(f, "{site}: {owner}'s callback is not of the site's signature"),
             Self::Reentrant => f.write_str("registration from inside a hook subscriber"),
+            Self::Owner { given, plugin } => write!(f, "owner {given} given by the plugin {plugin}"),
         }
     }
 }
@@ -186,8 +189,10 @@ impl fmt::Display for EntryReport {
     }
 }
 
-/// The host's dispatcher as a plugin reaches it through `Host::hooks`.
+/// The host's dispatcher as a plugin reaches it through `Host::hooks`: the handle of one plugin
+/// accepts subscriptions whose `Options` owner is that plugin's name, so a reload removes exactly them.
 pub struct Hooks {
+    owner: Option<&'static str>,
     subscribe: fn(Request) -> Result<SubscriptionId, Error>,
     unsubscribe: fn(SubscriptionId) -> bool,
     remove_owner: fn(&str) -> usize,
@@ -197,35 +202,49 @@ pub struct Hooks {
 
 impl Hooks {
     /// The host's own registry; only the host hands this out.
-    pub(crate) const HOST: Self = Self { subscribe: registry::subscribe, unsubscribe: registry::unsubscribe, remove_owner: registry::remove_owner, set_rank: registry::set_rank, diagnostics: registry::diagnostics };
+    pub(crate) const HOST: Self = Self { owner: None, subscribe: registry::subscribe, unsubscribe: registry::unsubscribe, remove_owner: registry::remove_owner, set_rank: registry::set_rank, diagnostics: registry::diagnostics };
+
+    /// The registry as the plugin `name` sees it.
+    pub(crate) const fn for_plugin(name: &'static str) -> Self {
+        Self { owner: Some(name), ..Self::HOST }
+    }
 
     pub(crate) fn set_logger(f: fn(&str)) {
         registry::set_logger(f);
     }
 
+    fn request(&self, target: Target, phase: Phase, options: Options<'_>, callback: Box<dyn Any + Send + Sync>) -> Result<SubscriptionId, Error> {
+        if let Some(plugin) = self.owner
+            && plugin != options.owner
+        {
+            return Err(Error::Owner { given: options.owner.to_owned(), plugin: plugin.to_owned() });
+        }
+        (self.subscribe)(Request::new(target, phase, options, callback))
+    }
+
     /// Runs `f` before the function with the arguments, which it may edit.
     pub fn before<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(&mut Args<H::Fn>) + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
         let f: Box<BeforeFn<H::Fn>> = Box::new(f);
-        (self.subscribe)(Request::new(target.target(), Phase::Before, options, Box::new(f)))
+        self.request(target.target(), Phase::Before, options, Box::new(f))
     }
 
     /// Runs `f` around the function: it receives the arguments and the rest of the chain, which it
     /// may call once with any arguments or not at all, and returns the result.
     pub fn around<H: Hookable>(&self, target: H, options: Options<'_>, f: impl for<'a> Fn(Args<H::Fn>, Next<'a, H::Fn>) -> Ret<H::Fn> + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
         let f: Box<AroundFn<H::Fn>> = Box::new(f);
-        (self.subscribe)(Request::new(target.target(), Phase::Around, options, Box::new(f)))
+        self.request(target.target(), Phase::Around, options, Box::new(f))
     }
 
     /// Runs `f` in place of the function, with the original to delegate to; one per site.
     pub fn replace<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(Args<H::Fn>, Original<H::Fn>) -> Ret<H::Fn> + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
         let f: Box<ReplaceFn<H::Fn>> = Box::new(f);
-        (self.subscribe)(Request::new(target.target(), Phase::Replace, options, Box::new(f)))
+        self.request(target.target(), Phase::Replace, options, Box::new(f))
     }
 
     /// Runs `f` after the function with the arguments it received, its result and the outcome.
     pub fn after<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(&Args<H::Fn>, &Ret<H::Fn>, Outcome) + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
         let f: Box<AfterFn<H::Fn>> = Box::new(f);
-        (self.subscribe)(Request::new(target.target(), Phase::After, options, Box::new(f)))
+        self.request(target.target(), Phase::After, options, Box::new(f))
     }
 
     /// Removes one subscription; true when it existed. Returns once no call is inside it.

@@ -13,24 +13,31 @@
 //! `load_before`, `load_after` and `priority`, file name order deciding what they leave open; a
 //! plugin in a constraint cycle is refused. The order is read back from [`Host::plugins`].
 //!
-//! What a plugin gets from the [`Host`]: the SKSE interface the host was loaded with, forwarded
+//! What a plugin gets from its [`Host`]: the SKSE interface the host was loaded with, forwarded
 //! (`QueryInterface` answers as for the host, and the plugin handle is the host's, valid only while
-//! `load` runs), the loader's messages and the Papyrus registration callback, both fanned out by
-//! the host to every plugin that asks, and windows on the host's overlay. A plugin calls
+//! `load` runs), and every registration it makes in the game: loader messages, the Papyrus
+//! registration pass, windows on the host's overlay, event sinks, Papyrus natives, console commands
+//! and hook subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
+//! them and knows which plugin it belongs to, so the plugin's DLL can be unloaded and replaced
+//! while the game runs: the host loads every plugin from a shadow copy, watches the author's file
+//! and swaps generations at a frame boundary (`docs/subsystems/reload.md`). A plugin calls
 //! `skyrim::init` with [`Host::skse`] before using the game layer and never installs the overlay
-//! itself. Engine functions are hooked through the host's one dispatcher, [`Host::hooks`].
+//! itself.
 
 use core::ffi::{CStr, c_char};
+use std::fmt;
 
 pub use overlay::egui;
-use skyrim::papyrus::VirtualMachine;
+use skyrim::events::{BSEventNotifyControl, BSTEventSource, ErasedHandler, ErasedSource, Event};
+use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
+use skyrim::papyrus::{ErasedNativeFn, IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, VirtualMachine};
 
 pub mod hooks;
 pub mod host;
 pub mod order;
 
 /// The descriptor's layout version.
-pub const ABI: u32 = 2;
+pub const ABI: u32 = 3;
 
 /// This crate's version and the compiler it was built with; a plugin is loaded only when its copy
 /// equals the host's.
@@ -60,6 +67,11 @@ pub struct Descriptor {
     pub load_after: &'static [&'static str],
     /// Higher loads first among plugins whose constraints are satisfied.
     pub priority: i32,
+    /// Runs before the DLL is unloaded for a reload, after `save_state`: stop threads and timers here.
+    pub unload: Option<fn()>,
+    /// The state handed to the version that replaces this one, which receives it in `restore_state` after its `load`.
+    pub save_state: Option<fn() -> Vec<u8>>,
+    pub restore_state: Option<fn(&[u8])>,
 }
 
 unsafe impl Sync for Descriptor {}
@@ -72,14 +84,80 @@ pub struct Plugin {
     pub constraints: order::Constraints,
 }
 
-/// The host as a plugin's `load` receives it, for the life of the game.
+/// Why the host refused a registration.
+#[derive(Debug)]
+pub enum Error {
+    /// The event's source does not exist yet; its holder is created later in startup.
+    NoSource,
+    /// Another plugin registered the native or command of that name.
+    Taken { what: String, owner: String },
+    Papyrus(skyrim::papyrus::Error),
+    Command(skyrim::input::CommandError),
+}
+
+impl fmt::Display for Error {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::NoSource => f.write_str("the event source does not exist yet"),
+            Self::Taken { what, owner } => write!(f, "{what} is registered by {owner}"),
+            Self::Papyrus(e) => e.fmt(f),
+            Self::Command(e) => e.fmt(f),
+        }
+    }
+}
+
+impl std::error::Error for Error {}
+
+impl From<skyrim::papyrus::Error> for Error {
+    fn from(e: skyrim::papyrus::Error) -> Self {
+        Self::Papyrus(e)
+    }
+}
+
+impl From<skyrim::input::CommandError> for Error {
+    fn from(e: skyrim::input::CommandError) -> Self {
+        Self::Command(e)
+    }
+}
+
+/// A native as it crosses from a plugin to the host.
+pub(crate) struct NativeRequest<'a> {
+    pub vm: &'a VirtualMachine,
+    pub class: &'a str,
+    pub name: &'a str,
+    pub kind: NativeKind,
+    pub params: &'static [ParamType],
+    pub ret: Option<ParamType>,
+    pub f: ErasedNativeFn,
+}
+
+/// A console command as it crosses from a plugin to the host.
+pub(crate) struct CommandRequest<'a> {
+    pub name: &'a CStr,
+    pub help: &'a CStr,
+    pub params: &'a [Param],
+    pub needs_reference: bool,
+    pub execute: ErasedExecute,
+}
+
+/// The host's functions, one table shared by every plugin's [`Host`]; the owner comes first.
+pub(crate) struct Table {
+    pub on_message: fn(&'static str, MessageFn),
+    pub on_papyrus: fn(&'static str, PapyrusFn),
+    pub add_window: fn(&'static str, Window),
+    pub add_sink: fn(&'static str, ErasedSource, ErasedHandler),
+    pub register_native: fn(&'static str, NativeRequest<'_>) -> Result<&'static NativeFunction, Error>,
+    pub register_command: fn(&'static str, CommandRequest<'_>) -> Result<CommandSlot, Error>,
+    pub plugins: fn() -> &'static [Plugin],
+}
+
+/// The host as one plugin's `load` receives it, for the life of the game: every registration made
+/// through it belongs to that plugin and is detached when the plugin's DLL is unloaded.
 pub struct Host {
     skse: &'static skse::Interface,
-    on_message: fn(MessageFn),
-    on_papyrus: fn(PapyrusFn),
-    add_window: fn(Window),
-    plugins: fn() -> &'static [Plugin],
+    name: &'static str,
     hooks: &'static hooks::Hooks,
+    table: &'static Table,
 }
 
 impl Host {
@@ -89,36 +167,90 @@ impl Host {
         self.skse
     }
 
-    /// Calls `f` with every loader message from now on, after the host's own handling.
-    pub fn on_message(&self, f: MessageFn) {
-        (self.on_message)(f);
+    /// The plugin's name as its descriptor declares it, the owner its hook subscriptions name.
+    #[must_use]
+    pub fn name(&self) -> &'static str {
+        self.name
     }
 
-    /// Calls `f` with the VM at the Papyrus registration pass; register from `load`, which runs before it.
+    /// Calls `f` with every loader message from now on, after the host's own handling. Registered
+    /// after startup (by a reloaded plugin), `f` first receives the startup messages the host has
+    /// seen (`PLUGINS_LOADED`, `PLUGINS_LOADED_2`, `CONTROLS_READY`, `DATA_LOADED`, without data)
+    /// so setup done at `DATA_LOADED` is done again.
+    pub fn on_message(&self, f: MessageFn) {
+        (self.table.on_message)(self.name, f);
+    }
+
+    /// Calls `f` with the VM at the Papyrus registration pass, or at once when the pass has run
+    /// (a reloaded plugin registers its natives again from here).
     pub fn on_papyrus(&self, f: PapyrusFn) {
-        (self.on_papyrus)(f);
+        (self.table.on_papyrus)(self.name, f);
     }
 
     /// Adds a window to the host's overlay; `draw` runs on the main thread every frame the overlay is open.
     pub fn add_window(&self, draw: impl FnMut(&egui::Context) + Send + 'static) {
-        (self.add_window)(Box::new(draw));
+        (self.table.add_window)(self.name, Box::new(draw));
+    }
+
+    /// Registers `f` for events of type `E` through a sink the host owns; `f` runs on the sending
+    /// thread with the source lock held, as `skyrim::events::EventSink` does. Sinks of every plugin
+    /// on one source run in registration order until one returns `Stop`.
+    pub fn add_sink<E: Event>(&self, f: impl Fn(&E, &BSTEventSource<E>) -> BSEventNotifyControl + Send + Sync + 'static) -> Result<(), Error> {
+        let source = ErasedSource::of::<E>().ok_or(Error::NoSource)?;
+        let handler: ErasedHandler = Box::new(move |event, source| match (unsafe { event.cast::<E>().as_ref() }, unsafe { BSTEventSource::<E>::from_ptr(source) }) {
+            (Some(event), Some(source)) => f(event, source),
+            _ => BSEventNotifyControl::Continue,
+        });
+        (self.table.add_sink)(self.name, source, handler);
+        Ok(())
+    }
+
+    /// Registers `f` as `class.name`, a `native global` function, through a function object the
+    /// host owns (`VirtualMachine::register_native` otherwise). Registered again by a later
+    /// generation of the plugin, the same `class.name` is re-pointed at the new `f`.
+    pub fn register_native<F: NativeFn<M>, M>(&self, vm: &VirtualMachine, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
+        self.native(NativeRequest { vm, class, name, kind: NativeKind::Global, params: F::PARAMS, ret: F::RETURN, f: Box::new(move |call: &NativeCall<'_>| call.global(f)) })
+    }
+
+    /// Registers `f` as `class.name`, a `native` method of a script extending the form class of
+    /// its first parameter, as `VirtualMachine::register_method` does.
+    pub fn register_method<F: NativeMethod<M>, M>(&self, vm: &VirtualMachine, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
+        self.native(NativeRequest { vm, class, name, kind: NativeKind::Method, params: F::PARAMS, ret: F::RETURN, f: Box::new(move |call: &NativeCall<'_>| call.method(f)) })
+    }
+
+    /// Registers `f` as `class.name`, a latent `native global` function, as `VirtualMachine::register_latent` does.
+    pub fn register_latent<F: LatentFn<M>, M>(&self, vm: &VirtualMachine, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
+        self.native(NativeRequest { vm, class, name, kind: NativeKind::Latent, params: F::PARAMS, ret: <F::Output as IntoVariable>::TYPE, f: Box::new(move |call: &NativeCall<'_>| call.latent(f)) })
+    }
+
+    fn native(&self, request: NativeRequest<'_>) -> Result<&'static NativeFunction, Error> {
+        (self.table.register_native)(self.name, request)
+    }
+
+    /// Takes over an unused console entry for `C` through the host (`skyrim::input::register`
+    /// otherwise); register at `DATA_LOADED`. A later generation registering the same name is
+    /// re-pointed at its `execute`; the name, help and parameters stay those of the first.
+    pub fn register_command<C: Command>(&self) -> Result<CommandSlot, Error> {
+        (self.table.register_command)(self.name, CommandRequest { name: C::NAME, help: C::HELP, params: C::PARAMS, needs_reference: C::NEEDS_REFERENCE, execute: Box::new(C::execute) })
     }
 
     /// Every plugin whose descriptor the host accepted, in load order, known before the first `load` runs.
     #[must_use]
     pub fn plugins(&self) -> &'static [Plugin] {
-        (self.plugins)()
+        (self.table.plugins)()
     }
 
-    /// The host's hook dispatcher: one detour per engine function, shared by every plugin.
+    /// The host's hook dispatcher: one detour per engine function, shared by every plugin; this
+    /// handle accepts subscriptions whose `Options` owner is this plugin's name.
     #[must_use]
     pub fn hooks(&self) -> &'static hooks::Hooks {
         self.hooks
     }
 }
 
-/// Declares a framework plugin: exports its [`Descriptor`]. The ordering fields are optional, in
-/// this order, and default to no constraints and priority 0.
+/// Declares a framework plugin: exports its [`Descriptor`]. Everything after `load` is optional,
+/// in this order: the ordering fields (defaults: no constraints, priority 0) and the reload
+/// functions (defaults: none).
 ///
 /// ```ignore
 /// framework::plugin! {
@@ -127,12 +259,18 @@ impl Host {
 ///     load_before: ["other-mod"],
 ///     load_after: ["*"],
 ///     priority: 1,
+///     unload: unload,
+///     save_state: save_state,
+///     restore_state: restore_state,
 /// }
 /// fn load(host: &'static framework::Host) -> bool { skyrim::init(host.skse()).is_ok() }
+/// fn unload() {}
+/// fn save_state() -> Vec<u8> { Vec::new() }
+/// fn restore_state(_: &[u8]) {}
 /// ```
 #[macro_export]
 macro_rules! plugin {
-    (name: $name:literal, load: $load:path $(, load_before: [$($before:literal),* $(,)?])? $(, load_after: [$($after:literal),* $(,)?])? $(, priority: $priority:expr)? $(,)?) => {
+    (name: $name:literal, load: $load:path $(, load_before: [$($before:literal),* $(,)?])? $(, load_after: [$($after:literal),* $(,)?])? $(, priority: $priority:expr)? $(, unload: $unload:path)? $(, save_state: $save:path)? $(, restore_state: $restore:path)? $(,)?) => {
         #[unsafe(no_mangle)]
         #[allow(non_upper_case_globals)]
         pub static SkyrimRs_Plugin: $crate::Descriptor = $crate::Descriptor {
@@ -143,6 +281,9 @@ macro_rules! plugin {
             load_before: &[$($($before),*)?],
             load_after: &[$($($after),*)?],
             priority: ($($priority,)? 0i32,).0,
+            unload: ($(Some($unload as fn()),)? None::<fn()>,).0,
+            save_state: ($(Some($save as fn() -> Vec<u8>),)? None::<fn() -> Vec<u8>>,).0,
+            restore_state: ($(Some($restore as fn(&[u8])),)? None::<fn(&[u8])>,).0,
         };
     };
 }

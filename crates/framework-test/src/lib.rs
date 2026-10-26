@@ -106,11 +106,14 @@ fn on_message(msg: &skse::Message) {
 }
 
 fn on_papyrus(vm: &'static VirtualMachine) {
-    let registered = vm.register_native(CLASS, "Twice", |x: i32| {
-        CALLS.lock().unwrap().push(x);
-        x * 2
+    let registered = HOST.get().ok_or("no host".to_owned()).and_then(|host| {
+        host.register_native(vm, CLASS, "Twice", |x: i32| {
+            CALLS.lock().unwrap().push(x);
+            x * 2
+        })
+        .map_err(|e| e.to_string())
     });
-    *REGISTERED.lock().unwrap() = Some(registered.map(|f| format!("{CLASS}.{} bound, refs {}", f.name(), f.ref_count())).map_err(|e| e.to_string()));
+    *REGISTERED.lock().unwrap() = Some(registered.map(|f| format!("{CLASS}.{} bound through the host, refs {}", f.name(), f.ref_count())));
 }
 
 fn window(ctx: &egui::Context) {
