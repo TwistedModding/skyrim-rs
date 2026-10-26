@@ -5,9 +5,11 @@
 # The overlay suite runs the plugin in mode overlay. The framework suite installs the host (skyrim_rs.dll) and puts its
 # test plugin, the four order-* plugins and a decoy DLL without a descriptor into Data\SKSE\Plugins\skyrim-rs; the test
 # plugin writes the suite's report. The hooks suite installs the host with its two hook plugins, which share one report
-# log. See docs/subsystems/<suite>.md.
+# log. The reload suite builds its plugin three more times with the build tags 2, 3 and 4 before the game starts, installs
+# the host with the tag 1 build, and between the parts of its scenario copies the next tag's DLL over the installed one
+# and waits for the host to report the reload. See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     # skse: the script extender alone; skse-proxy: the standalone host's dinput8.dll next to the game as well, which must
@@ -31,7 +33,9 @@ $Mods = @{
                    dlls = @("skyrim_rs_order_head.dll", "skyrim_rs_order_tail.dll", "skyrim_rs_order_cycle_a.dll", "skyrim_rs_order_cycle_b.dll") }
     hooks = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-rs"; report = $true;
                crates = @("hooks-test-b"); dlls = @("skyrim_rs_hooks_b.dll") }
+    reload = @{ crate = "reload-test"; dll = "skyrim_rs_reload_test.dll"; log = "skyrim-rs-reload-test.log"; dir = "skyrim-rs"; report = $true; tags = @(2, 3, 4) }
 }
+$TagDir = "$Root\target\release\reload-tags"
 $Mod = $Mods[$Suite]
 $PluginLog = "skyrim-rs-test.log"
 $CrashLog = "skyrim-rs-test-crash.log"
@@ -45,10 +49,21 @@ if ($Suite -eq "overlay") { $Mode = "overlay" }
 & "$PSScriptRoot\game-free.ps1"
 Push-Location $Root
 $crates = @("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.crates) { $Mod.crates }) + @(if ($Mod.dir) { "host" }) + @(if ($Launch -ne "skse") { "standalone" })
-try { cargo build --release @($crates | ForEach-Object { "-p"; $_ }); if ($LASTEXITCODE -ne 0) { throw "cargo build failed" } } finally { Pop-Location }
+try {
+    # The tagged builds come first: the untagged build of the main step is the generation installed at launch.
+    if ($Mod.tags) {
+        New-Item -ItemType Directory -Force $TagDir | Out-Null
+        foreach ($t in $Mod.tags) {
+            $env:SKYRIM_RS_RELOAD_TAG = "$t"
+            try { cargo build --release -p $Mod.crate; if ($LASTEXITCODE -ne 0) { throw "cargo build failed for tag $t" } } finally { Remove-Item env:SKYRIM_RS_RELOAD_TAG }
+            Copy-Item "$Root\target\release\$($Mod.dll)" "$TagDir\$t.dll" -Force
+        }
+    }
+    cargo build --release @($crates | ForEach-Object { "-p"; $_ }); if ($LASTEXITCODE -ne 0) { throw "cargo build failed" }
+} finally { Pop-Location }
 $Pex = @()
 if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
-if ($Suite -eq "framework") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\framework-test\papyrus")) }
+if ($Suite -in @("framework", "reload")) { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\$($Mod.crate)\papyrus")) }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $OutDir = (Resolve-Path $OutDir).Path
 $Backup = Join-Path $OutDir "backup"
@@ -76,11 +91,27 @@ if ($Mod.dir) {
     Copy-Item $Dll "$ModDir\decoy.dll"
     Copy-Item "$Root\target\release\$HostDll" "$Plugins\$HostDll" -Force
 } elseif ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
+# After part N of the scenario: the next tag's build replaces the installed DLL, as an author's copy would, and the host
+# (polling from the frame, so the game window must stay in front) must report that generation loaded within 90 s.
+$Between = {
+    param($part)
+    $tag = $Mod.tags[$part - 1]
+    Copy-Item "$TagDir\$tag.dll" "$ModDir\$($Mod.dll)" -Force
+    $shell = New-Object -ComObject WScript.Shell
+    $t0 = Get-Date
+    while (-not (Select-String -Path "$SkseLogs\skyrim-rs.log" -Pattern "generation $tag loaded" -Quiet)) {
+        if (((Get-Date) - $t0).TotalSeconds -gt 90) { throw "the host did not report generation $tag within 90 s" }
+        $game = Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue | Select-Object -First 1
+        if ($game) { [void]$shell.AppActivate($game.Id) }
+        Start-Sleep -Seconds 2
+    }
+    Start-Sleep -Seconds 2
+}.GetNewClosure()
 foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" }; Copy-Item $p $Scripts -Force }
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
 try {
-    & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -OutDir $OutDir -Launch $(if ($Launch -eq "standalone") { "standalone" } else { "skse" })
+    & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$Suite-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $(if ($Launch -eq "standalone") { "standalone" } else { "skse" })
     $scenarioOk = $LASTEXITCODE -eq 0
 } finally {
     foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll })) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue }

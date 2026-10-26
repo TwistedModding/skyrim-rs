@@ -1,8 +1,10 @@
-# Launches Skyrim through SKSE, waits for DevBench, runs one replay or one scenario, collects the result and logs, stops the game.
+# Launches Skyrim through SKSE, waits for DevBench, runs one replay or one scenario (in parts, with -Between run between
+# them, when the steps file holds an array of step arrays), collects the result and logs, stops the game.
 # See docs/DEVBENCH.md.
 param(
     [string]$Replay,
     [string]$Steps,
+    [scriptblock]$Between,
     [string]$OutDir = "devbench-out",
     [int]$TimeoutSec = 300,
     # skse: through skse64_loader.exe; standalone: SkyrimSE.exe itself, for the dinput8.dll host
@@ -81,17 +83,34 @@ try {
     if ($Replay) {
         if ($Replay -notmatch "[/\\]") { $Replay = "Data/SKSE/Plugins/devbench/recordings/$Replay" }
         $queued = Invoke-Tool record "{`"action`":`"replay`",`"path`":`"$Replay`",`"restoreScene`":true,`"closeMenus`":true,`"async`":true}"
-        $tool = "record"
+        $status = Wait-Run record ($queued | ConvertFrom-Json).runId
     } else {
-        $queued = Invoke-Tool scenario ('{"async":true,"continueOnError":true,"steps":' + (Get-Content $Steps -Raw) + '}')
-        $tool = "scenario"
+        # A steps file holding an array of step arrays runs as parts in the one game session, -Between (with the number
+        # of the part just finished) between them; the parts' results are merged with the step indices continuing.
+        $parsed = Get-Content $Steps -Raw | ConvertFrom-Json
+        $parts = @(, $parsed)
+        if ($parsed.Count -gt 0 -and $parsed[0] -is [array]) { $parts = @($parsed) }
+        $merged = @{ ok = $true; aborted = $false; stepsRun = 0; elapsedMs = 0; results = @() }
+        $offset = 0
+        for ($i = 0; $i -lt $parts.Count; $i++) {
+            $queued = Invoke-Tool scenario ('{"async":true,"continueOnError":true,"steps":' + (ConvertTo-Json -InputObject @($parts[$i]) -Depth 20 -Compress) + '}')
+            $status = Wait-Run scenario ($queued | ConvertFrom-Json).runId
+            $r = ($status | ConvertFrom-Json).result
+            foreach ($s in $r.results) { $s.index += $offset }
+            $merged.results += @($r.results)
+            $merged.ok = $merged.ok -and [bool]$r.ok
+            $merged.aborted = $merged.aborted -or [bool]$r.aborted
+            $merged.stepsRun += $r.stepsRun
+            $merged.elapsedMs += $r.elapsedMs
+            $offset += @($parts[$i]).Count
+            if ($Between -and $i -lt $parts.Count - 1) { & $Between ($i + 1) }
+        }
+        if ($parts.Count -gt 1) { $status = @{ done = $true; ok = $merged.ok; result = $merged } | ConvertTo-Json -Depth 20 }
     }
-    $runId = ($queued | ConvertFrom-Json).runId
-    $status = Wait-Run $tool $runId
     $status | Out-File -Encoding utf8 "$OutDir\result.json"
     (Invoke-WebRequest "$Base/api/events" -UseBasicParsing -DisableKeepAlive).Content | Out-File -Encoding utf8 "$OutDir\events.json"
     $r = ($status | ConvertFrom-Json).result
-    "runId=$runId ok=$($r.ok) aborted=$($r.aborted) stepsRun=$($r.stepsRun) elapsedMs=$($r.elapsedMs)"
+    "ok=$($r.ok) aborted=$($r.aborted) stepsRun=$($r.stepsRun) elapsedMs=$($r.elapsedMs)"
     $failed = @($r.results | Where-Object { $_.ok -eq $false -or $_.timedOut })
     foreach ($f in $failed) { "failed step $($f.index): $($f | ConvertTo-Json -Compress)" }
     $ok = [bool]$r.ok
