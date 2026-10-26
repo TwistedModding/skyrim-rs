@@ -176,12 +176,12 @@ fn vtable_ident(class_ident: &str, offset: u64) -> String {
 
 fn resolve(f: &Field, classes: &BTreeMap<&str, Class>, class_idents: &HashMap<&str, String>) -> Ty {
     let prim = match (f.ty.as_str(), f.size) {
-        ("undefined1", 1) => Some(Ty::U8),
-        ("undefined2", 2) => Some(Ty::U16),
-        ("undefined4", 4) => Some(Ty::U32),
-        ("undefined8", 8) => Some(Ty::U64),
-        ("float", 4) => Some(Ty::F32),
-        ("double", 8) => Some(Ty::F64),
+        ("undefined1" | "u8" | "i8" | "bool", 1) => Some(Ty::U8),
+        ("undefined2" | "u16" | "i16", 2) => Some(Ty::U16),
+        ("undefined4" | "u32" | "i32", 4) => Some(Ty::U32),
+        ("undefined8" | "u64" | "i64", 8) => Some(Ty::U64),
+        ("float" | "f32", 4) => Some(Ty::F32),
+        ("double" | "f64", 8) => Some(Ty::F64),
         ("pointer", 8) => Some(Ty::PtrVoid),
         _ => None,
     };

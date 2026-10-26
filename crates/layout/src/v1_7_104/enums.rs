@@ -3621,6 +3621,60 @@ impl ActorState_flags1 {
     }
 }
 
+/// Named bits of `BGSCameraPath.pathFlags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BGSCameraPath_pathFlags(pub u8);
+
+impl BGSCameraPath_pathFlags {
+    /// transitionCut (high)
+    pub const TRANSITION_CUT: Self = Self(0x1);
+    /// transitionDollyOnZoomShots (high)
+    pub const TRANSITION_DOLLY_ON_ZOOM_SHOTS: Self = Self(0x2);
+    /// terminalWithoutShots (medium)
+    pub const TERMINAL_WITHOUT_SHOTS: Self = Self(0x80);
+
+    #[must_use]
+    pub const fn bits(self) -> u8 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `BGSCameraShot.flags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BGSCameraShot_flags(pub u32);
+
+impl BGSCameraShot_flags {
+    /// followLocation (high)
+    pub const FOLLOW_LOCATION: Self = Self(0x1);
+    /// followTarget (high)
+    pub const FOLLOW_TARGET: Self = Self(0x2);
+    /// attackerSpaceOffset (high)
+    pub const ATTACKER_SPACE_OFFSET: Self = Self(0x4);
+    /// firstPerson (high)
+    pub const FIRST_PERSON: Self = Self(0x8);
+    /// clearProjectileBit4 (medium)
+    pub const CLEAR_PROJECTILE_BIT4: Self = Self(0x10);
+    /// restartNifControllers (high)
+    pub const RESTART_NIF_CONTROLLERS: Self = Self(0x20);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `BGSMusicType.flags` (audio pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -3839,6 +3893,26 @@ impl BSFaceGenNiNode_faceFlags {
     }
 }
 
+/// Named bits of `BSScript::CompiledScriptLoader.flags` (vmstack pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BSScript__CompiledScriptLoader_flags(pub u8);
+
+impl BSScript__CompiledScriptLoader_flags {
+    /// loadDebugInformation (high)
+    pub const LOAD_DEBUG_INFORMATION: Self = Self(0x1);
+
+    #[must_use]
+    pub const fn bits(self) -> u8 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `BSShaderProperty.flags` (render pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -4007,6 +4081,26 @@ impl CommandTableEntry_flags {
     }
 }
 
+/// Named bits of `FirstPersonState.flags` (frame pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct FirstPersonState_flags(pub u32);
+
+impl FirstPersonState_flags {
+    /// togglePOVDown (high)
+    pub const TOGGLE_POV_DOWN: Self = Self(0x1);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `GFxMovieView.flags` (ui pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -4111,7 +4205,7 @@ impl IMenu_flags {
 pub struct NiAVObject_flags(pub u32);
 
 impl NiAVObject_flags {
-    /// hidden (medium)
+    /// hidden (high)
     pub const HIDDEN: Self = Self(0x1);
     /// SelectiveUpdate (medium)
     pub const SELECTIVE_UPDATE: Self = Self(0x2);
@@ -4177,7 +4271,7 @@ impl NiAlphaProperty_flags {
 pub struct PlayerCharacter_flags(pub u32);
 
 impl PlayerCharacter_flags {
-    /// thirdPerson (medium)
+    /// thirdPerson (high)
     pub const THIRD_PERSON: Self = Self(0x1);
     /// firstPersonGeometryHidden (high)
     pub const FIRST_PERSON_GEOMETRY_HIDDEN: Self = Self(0x2);

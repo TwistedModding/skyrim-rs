@@ -411,7 +411,7 @@ impl CameraMatrixEntry {
 
     #[must_use]
     pub fn is_jittered(&self) -> bool {
-        self.0.jittered[0] != 0
+        self.0.jittered != 0
     }
 
     /// The projection without the TAA jitter, row-major; standard Z (`[10] = f/(f-n)`, `[14] = -nf/(f-n)`, `[11] = 1`).
@@ -1452,7 +1452,7 @@ impl BSShaderAccumulator {
 
     #[must_use]
     pub fn cascade_index(&self) -> u32 {
-        u32_at(&self.0.cascadeIndex, 0)
+        self.0.cascadeIndex
     }
 
     /// The shadow map this accumulator fills (`0xffff` for the main view).
