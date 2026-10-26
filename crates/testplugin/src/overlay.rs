@@ -9,17 +9,13 @@
 //! through. `SAVE_TESTS` check the clicks, the typed text, the witness, the square in the back buffer
 //! while open and its absence once closed; the frame showing the typed text is written as a bitmap.
 
-use std::io::Write as _;
 use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
 use std::sync::{Mutex, OnceLock};
 
-use layout::v1_7_104::globals;
 use overlay::egui;
 use skyrim::events::{BSEventNotifyControl, BSTEventSource, Event, EventSink, Sink};
 use skyrim::input::{InputDevice, InputEventList};
-use skyrim::render::{PresentFn, RenderWindow};
-use windows::Win32::Graphics::Direct3D11::{D3D11_CPU_ACCESS_READ, D3D11_MAP_READ, D3D11_MAPPED_SUBRESOURCE, D3D11_TEXTURE2D_DESC, D3D11_USAGE_STAGING, ID3D11Device, ID3D11DeviceContext, ID3D11RenderTargetView, ID3D11Texture2D};
-use windows::core::Interface;
+use skyrim::render::PresentFn;
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 
 use crate::{Test, check};
@@ -164,65 +160,20 @@ unsafe extern "C" fn probe() {
     unsafe { PROBE.get().expect("stored before enabling").original()() }
 }
 
-/// Copies the back buffer to a staging texture and returns the pixel at the square's centre,
-/// writing the whole frame as a bitmap when `save` is set.
+/// The pixel at the square's centre in the back buffer, writing the whole frame as a bitmap when `save` is set.
 #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss, clippy::cast_precision_loss)]
 fn read_back(save: bool) -> Result<Option<[u8; 3]>, String> {
-    let e = |e: windows::core::Error| e.to_string();
-    let rtv = RenderWindow::current().map(RenderWindow::back_buffer_rtv).filter(|p| !p.is_null()).ok_or("no back buffer")?;
-    let reloc = skyrim::reloc();
-    let (device, context) = unsafe { (*(reloc.address(globals::g_D3D11Device).map_err(|e| e.to_string())? as *const *mut core::ffi::c_void), *(reloc.address(globals::g_D3D11Context).map_err(|e| e.to_string())? as *const *mut core::ffi::c_void)) };
-    let device = unsafe { ID3D11Device::from_raw_borrowed(&device) }.ok_or("no device")?;
-    let context = unsafe { ID3D11DeviceContext::from_raw_borrowed(&context) }.ok_or("no context")?;
-    let rtv = unsafe { ID3D11RenderTargetView::from_raw_borrowed(&rtv) }.ok_or("no view")?;
-    let back = unsafe { rtv.GetResource() }.map_err(e)?.cast::<ID3D11Texture2D>().map_err(e)?;
-    let mut desc = D3D11_TEXTURE2D_DESC::default();
-    unsafe { back.GetDesc(&raw mut desc) };
-    let staging_desc = D3D11_TEXTURE2D_DESC { Usage: D3D11_USAGE_STAGING, BindFlags: 0, CPUAccessFlags: D3D11_CPU_ACCESS_READ.0.cast_unsigned(), MiscFlags: 0, ..desc };
-    let mut staging = None;
-    unsafe { device.CreateTexture2D(&raw const staging_desc, None, Some(&raw mut staging)) }.map_err(e)?;
-    let staging = staging.ok_or("no staging texture")?;
-    unsafe { context.CopyResource(&staging, &back) };
-    let mut mapped = D3D11_MAPPED_SUBRESOURCE::default();
-    unsafe { context.Map(&staging, 0, D3D11_MAP_READ, 0, Some(&raw mut mapped)) }.map_err(e)?;
-    let (w, h, pitch) = (desc.Width as usize, desc.Height as usize, mapped.RowPitch as usize);
-    let rows = unsafe { core::slice::from_raw_parts(mapped.pData.cast::<u8>(), pitch * h) };
-    let ppp = (h as f32 / 1080.0).max(1.0);
+    let frame = overlay::read_back()?;
+    let ppp = (frame.height as f32 / 1080.0).max(1.0);
     let centre = ((SQUARE.0 + SQUARE.1 / 2.0) * ppp) as usize;
-    let at = centre * pitch + centre * 4;
-    let pixel = rows.get(at..at + 3).map(|p| [p[0], p[1], p[2]]);
-    let written = if save { write_bmp(rows, w, h, pitch) } else { Ok(()) };
-    unsafe { context.Unmap(&staging, 0) };
-    written.map(|()| pixel)
+    if save {
+        frame.write_bmp(&shot_path()).map_err(|e| e.to_string())?;
+    }
+    Ok(frame.pixel(centre, centre))
 }
 
 fn shot_path() -> std::path::PathBuf {
     crate::LOG_DIR.get().cloned().unwrap_or_default().join("skyrim-rs-test-overlay.bmp")
-}
-
-/// A 32-bit top-down bitmap of R8G8B8A8 rows.
-#[allow(clippy::cast_possible_truncation, clippy::cast_possible_wrap)]
-fn write_bmp(rows: &[u8], w: usize, h: usize, pitch: usize) -> Result<(), String> {
-    let path = shot_path();
-    let size = w * h * 4;
-    let mut out = Vec::with_capacity(54 + size);
-    out.extend_from_slice(b"BM");
-    for v in [(54 + size) as u32, 0, 54, 40] {
-        out.extend_from_slice(&v.to_le_bytes());
-    }
-    out.extend_from_slice(&(w as i32).to_le_bytes());
-    out.extend_from_slice(&(-(h as i32)).to_le_bytes());
-    out.extend_from_slice(&1u16.to_le_bytes());
-    out.extend_from_slice(&32u16.to_le_bytes());
-    for v in [0u32, size as u32, 2835, 2835, 0, 0] {
-        out.extend_from_slice(&v.to_le_bytes());
-    }
-    for y in 0..h {
-        for px in rows[y * pitch..y * pitch + w * 4].as_chunks::<4>().0 {
-            out.extend_from_slice(&[px[2], px[1], px[0], 255]);
-        }
-    }
-    std::fs::File::create(path).and_then(|mut f| f.write_all(&out)).map_err(|e| e.to_string())
 }
 
 fn installed() -> Result<String, String> {

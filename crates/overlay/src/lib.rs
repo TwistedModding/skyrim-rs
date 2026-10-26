@@ -24,11 +24,13 @@ use egui::{Context, Pos2, RawInput, Rect, ViewportId, ViewportInfo};
 use layout::v1_7_104::{fns, globals};
 use skyrim::render::{PresentFn, RenderWindow};
 
+mod frame;
 mod input;
 mod paint;
 pub mod theme;
 mod vanilla;
 
+pub use frame::{Frame, read_back, save_next_frame};
 pub use input::{Capture, DEFAULT_TOGGLE, capture, set_capture};
 
 /// How far into `RenderFrame` its one call to `PresentFrame` is looked for (it sits at +0x601).
@@ -213,6 +215,7 @@ fn draw() {
     if let Err(e) = unsafe { painter.paint(rtv, size, output.pixels_per_point, &primitives, &output.textures_delta) } {
         let _ = FAILURE.set(format!("paint: {e}"));
     }
+    frame::after_draw();
 }
 
 /// A context with the fonts and the theme.

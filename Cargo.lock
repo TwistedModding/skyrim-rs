@@ -834,7 +834,6 @@ dependencies = [
  "overlay",
  "skse",
  "skyrim",
- "windows",
  "windows-sys",
 ]
 
