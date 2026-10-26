@@ -237,6 +237,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "example-mod"
+version = "0.1.0"
+dependencies = [
+ "framework",
+ "layout",
+ "skse",
+ "skyrim",
+]
+
+[[package]]
 name = "fearless_simd"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
