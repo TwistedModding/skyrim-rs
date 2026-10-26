@@ -11,6 +11,8 @@ pub mod fns;
 #[rustfmt::skip]
 pub mod globals;
 #[rustfmt::skip]
+pub mod symbols;
+#[rustfmt::skip]
 pub mod vtables;
 
 /// The runtime these definitions describe, as `[major, minor, build]`.

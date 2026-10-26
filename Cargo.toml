@@ -15,6 +15,7 @@ layout = { path = "crates/layout", version = "0.1.0" }
 skyrim = { path = "crates/skyrim", version = "0.1.0" }
 overlay = { path = "crates/overlay", version = "0.1.0" }
 framework = { path = "crates/framework", version = "0.1.0" }
+crash = { path = "crates/crash", version = "0.1.0" }
 windows-sys = "0.61"
 windows = "0.62"
 

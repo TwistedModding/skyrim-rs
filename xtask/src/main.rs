@@ -1,10 +1,17 @@
 use std::process::ExitCode;
 
 fn main() -> ExitCode {
-    if std::env::args().nth(1).as_deref() != Some("gen") {
-        eprintln!("usage: cargo xtask gen    (reads SKYRIMRE_DIR or ../{})", xtask::RE_REPO);
-        return ExitCode::FAILURE;
+    let args: Vec<String> = std::env::args().collect();
+    match args.get(1).map(String::as_str) {
+        Some("gen") => generate(),
+        _ => {
+            eprintln!("usage: cargo xtask gen    (reads SKYRIMRE_DIR or ../{})", xtask::RE_REPO);
+            ExitCode::FAILURE
+        }
     }
+}
+
+fn generate() -> ExitCode {
     let re = xtask::re_dir();
     let (files, stats) = match xtask::generate(&re, &xtask::commit_of(&re)) {
         Ok(r) => r,
@@ -21,7 +28,7 @@ fn main() -> ExitCode {
         println!("wrote {} ({} bytes)", path.display(), text.len());
     }
     println!(
-        "classes {} exact + {} partial, fields {} ({} with a semantic meaning), asserts {} size + {} offset, vtables {} with {} slots ({} named, {} typed), functions {} ({} typed), globals {}, enum values {}, flags {}",
+        "classes {} exact + {} partial, fields {} ({} with a semantic meaning), asserts {} size + {} offset, vtables {} with {} slots ({} named, {} typed), functions {} ({} typed), globals {}, enum values {}, flags {}, symbol table {}",
         stats.exact_classes,
         stats.partial_classes,
         stats.fields,
@@ -36,7 +43,8 @@ fn main() -> ExitCode {
         stats.typed_functions,
         stats.globals,
         stats.enum_values,
-        stats.flags
+        stats.flags,
+        stats.symbols
     );
     ExitCode::SUCCESS
 }

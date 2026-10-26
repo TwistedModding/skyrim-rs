@@ -125,6 +125,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "crash"
+version = "0.1.0"
+dependencies = [
+ "layout",
+ "skse",
+ "versionlib",
+ "windows-sys",
+]
+
+[[package]]
+name = "crash-test"
+version = "0.1.0"
+dependencies = [
+ "framework",
+ "hook",
+ "layout",
+ "skse",
+ "skyrim",
+ "windows-sys",
+]
+
+[[package]]
 name = "crypto-common"
 version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -297,6 +319,7 @@ dependencies = [
 name = "framework"
 version = "0.1.0"
 dependencies = [
+ "crash",
  "hook",
  "layout",
  "overlay",
@@ -849,6 +872,7 @@ dependencies = [
 name = "testplugin"
 version = "0.1.0"
 dependencies = [
+ "crash",
  "hook",
  "layout",
  "overlay",
