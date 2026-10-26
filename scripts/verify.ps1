@@ -12,9 +12,10 @@
 # legacy-patch-z after it), with skyrim-rs.ini setting the host's compatibility mode to -Compat. The legacy suite copies
 # the third-party SKSE plugins it lists from -LegacyDir into Data\SKSE\Plugins for the run, next to the host. The gui
 # suite installs the host with the example mod and the two hook plugins, copies the example's build in again between its
-# two parts (a reload) and keeps the settings files the host wrote. See docs/subsystems/<suite>.md.
+# two parts (a reload) and keeps the settings files the host wrote. The camera suite installs the camera-demo plugin,
+# drives it through its console command and reads its report log. See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy", "gui")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy", "gui", "camera")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     [ValidateSet("refuse", "stack")][string]$Compat = "refuse",
@@ -38,6 +39,7 @@ $Mods = @{
     papyrus = @{ crate = "equip-counter"; dll = "skyrim_rs_equip_counter.dll"; log = "skyrim-rs-equip-counter.log" }
     shadows = @{ crate = "first-person-shadows"; dll = "skyrim_rs_first_person_shadows.dll"; log = "skyrim-rs-first-person-shadows.log" }
     bone = @{ crate = "bone-driver"; dll = "skyrim_rs_bone_driver.dll"; log = "skyrim-rs-bone-driver.log" }
+    camera = @{ crate = "camera-demo"; dll = "skyrim_rs_camera_demo.dll"; log = "skyrim-rs-camera-demo.log"; report = $true }
     framework = @{ crate = "framework-test"; dll = "skyrim_rs_framework_test.dll"; log = "skyrim-rs-framework-test.log"; dir = "skyrim-rs"; report = $true;
                    crates = @("order-head", "order-tail", "order-cycle-a", "order-cycle-b")
                    dlls = @("skyrim_rs_order_head.dll", "skyrim_rs_order_tail.dll", "skyrim_rs_order_cycle_a.dll", "skyrim_rs_order_cycle_b.dll") }
@@ -199,7 +201,8 @@ $runs = @{}
 $pending = @{}
 $summaries = @()
 $ReportLog = if ($Mod.report) { $Mod.log } else { $PluginLog }
-foreach ($line in Get-Content "$OutDir\$ReportLog") {
+$ReportLines = @(Get-Content "$OutDir\$ReportLog")
+foreach ($line in $ReportLines) {
     if ($line -match '^(PASS|FAIL) (\w+): (.*)$') { $pending[$Matches[2]] = @{ ok = ($Matches[1] -eq "PASS"); detail = $Matches[3] } }
     elseif ($line -match '^summary (\w+ \w+): ') {
         $runs[$Matches[1]] = $pending
