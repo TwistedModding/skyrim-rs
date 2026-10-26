@@ -107,6 +107,15 @@ pub fn on_frame(f: fn()) {
     let _ = FRAME.set(f);
 }
 
+/// Drops the per-widget state the context keeps between frames (window positions, collapsed
+/// headers, scroll offsets): it holds trait objects from the code that drew the widgets, so a
+/// host clears it before unloading a DLL that drew windows. Every window starts afresh.
+pub fn clear_widget_state() {
+    if let Some(state) = STATE.lock().unwrap().as_ref() {
+        state.ctx.memory_mut(|memory| memory.data.clear());
+    }
+}
+
 #[must_use]
 pub fn is_open() -> bool {
     OPEN.load(Ordering::Relaxed)

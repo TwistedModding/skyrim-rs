@@ -618,8 +618,8 @@ unsafe fn run(declared: &[Param], params: *const classes::ParamInfo, data: *cons
     let given = if data.is_null() || offset.is_null() { 0 } else { usize::from(unsafe { data.cast::<u8>().add(*offset as usize).cast::<u16>().read_unaligned() }) };
     let mut slots: [ArgSlot; MAX_ARGS] = core::array::from_fn(|_| ArgSlot([0; ARG_SIZE]));
     let out: [*mut ArgSlot; MAX_ARGS] = core::array::from_fn(|i| &raw mut slots[i]);
-    let unpacked = unsafe { (fns().unpack)(params, data, offset, this_ref, containing, script, locals, out[0], out[1], out[2], out[3], out[4], out[5], out[6], out[7]) };
-    if !unpacked {
+    // A command without parameters has no parameter table for the engine to unpack from.
+    if !declared.is_empty() && !unsafe { (fns().unpack)(params, data, offset, this_ref, containing, script, locals, out[0], out[1], out[2], out[3], out[4], out[5], out[6], out[7]) } {
         return false;
     }
     let args: Vec<Arg<'_>> = declared.iter().zip(&slots).enumerate().map(|(i, (param, slot))| if i < given { decode(param.0.typeCode, slot) } else { Arg::Missing }).collect();

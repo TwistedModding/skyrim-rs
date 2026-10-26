@@ -212,27 +212,34 @@ fn describe(descriptor: &Descriptor, file: String) -> Plugin {
     Plugin { name: plugin_name(descriptor), file, constraints: Constraints { before: owned(descriptor.load_before), after: owned(descriptor.load_after), priority: descriptor.priority } }
 }
 
-/// Removes every registration of `owner` and returns what went, with every call inside them drained.
+/// Removes every registration of `owner` and returns what went, with every call inside them
+/// drained. Each registry's lock is released before the drain, so a callback still running
+/// may register through the host while it is waited for.
 fn detach(owner: &str) -> String {
     let hooks = HOOKS.remove_owner(owner);
-    let sinks: usize = SINKS.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|s| s.handlers.remove_owner(owner)).sum();
-    let natives = NATIVES.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|n| n.owner == owner).fold(0, |count, n| {
-        let (what, plugin) = (format!("{}.{}", n.class, n.name), n.owner);
-        n.erased.set(Box::new(move |_| {
+    let sources: Vec<&'static Owned<ErasedHandler>> = SINKS.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|s| s.handlers).collect();
+    let sinks: usize = sources.iter().map(|handlers| handlers.remove_owner(owner)).sum();
+    let natives: Vec<(String, &'static str, ErasedNative)> = NATIVES.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|n| n.owner == owner).map(|n| (format!("{}.{}", n.class, n.name), n.owner, n.erased)).collect();
+    for (what, plugin, erased) in &natives {
+        let (what, plugin) = (what.clone(), *plugin);
+        erased.set(Box::new(move |_| {
             log!("{what} called while {plugin} is unloaded");
             None
         }));
-        count + 1
-    });
-    let commands = COMMANDS.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|c| c.owner == owner).fold(0, |count, c| {
-        let line = format!("{}: {} is unloaded", c.name, c.owner);
-        c.erased.set(Box::new(move |_| {
+    }
+    let commands: Vec<(String, ErasedCommand)> = COMMANDS.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|c| c.owner == owner).map(|c| (format!("{}: {} is unloaded", c.name, c.owner), c.erased)).collect();
+    for (line, erased) in &commands {
+        let line = line.clone();
+        erased.set(Box::new(move |_| {
             skyrim::input::print(&line);
             true
         }));
-        count + 1
-    });
+    }
+    let (natives, commands) = (natives.len(), commands.len());
     let windows = WINDOWS.remove_owner(owner);
+    if windows > 0 {
+        overlay::clear_widget_state();
+    }
     let messages = MESSAGES.remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
     format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {windows} windows, {messages} message handlers, {papyrus} Papyrus callbacks")
