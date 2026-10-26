@@ -1,3 +1,4 @@
+use core::ffi::c_void;
 use core::hint::black_box;
 use std::sync::atomic::{AtomicUsize, Ordering::SeqCst};
 use std::sync::{Arc, Mutex, OnceLock};
@@ -17,7 +18,7 @@ macro_rules! targets {
     };
 }
 
-targets! { phases exclusive cycle ordering removal reentrant shape }
+targets! { phases exclusive cycle ordering removal reentrant shape prepatched overwritten }
 
 fn call(f: Fn2, a: usize, b: usize) -> usize {
     unsafe { black_box(f)(a, b) }
@@ -147,4 +148,89 @@ fn raw_shape_is_fixed_per_address() {
     hooks.before(raw(shape), Options::new("s"), |_| {}).unwrap();
     let other = Raw::<unsafe extern "C" fn(usize) -> usize>::at(shape as *const () as usize);
     assert!(matches!(hooks.before(other, Options::new("s"), |_| {}), Err(Error::Raw { .. })));
+}
+
+fn exe_name() -> String {
+    std::env::current_exe().unwrap().file_name().unwrap().to_string_lossy().into_owned()
+}
+
+/// Writes `jmp rel32` to `to` at `at`, as another module's hook would, and returns the target of
+/// the jump that was there.
+fn patch_jump(at: usize, to: usize) -> usize {
+    use windows_sys::Win32::System::Memory::{PAGE_EXECUTE_READWRITE, VirtualProtect};
+    let previous = unsafe { (at as *const [u8; 5]).read_unaligned() };
+    let rel = |next: usize, to: usize| i32::try_from(to.wrapping_sub(next).cast_signed()).unwrap();
+    let mut old = 0;
+    unsafe { VirtualProtect(at as *const c_void, 5, PAGE_EXECUTE_READWRITE, &raw mut old) };
+    let mut jump = [0xE9, 0, 0, 0, 0];
+    jump[1..].copy_from_slice(&rel(at + 5, to).to_le_bytes());
+    unsafe { (at as *mut [u8; 5]).write_unaligned(jump) };
+    unsafe { VirtualProtect(at as *const c_void, 5, old, &raw mut old) };
+    (at + 5).wrapping_add_signed(i32::from_le_bytes([previous[1], previous[2], previous[3], previous[4]]) as isize)
+}
+
+#[test]
+fn unmanaged_patches_are_refused_stacked_or_break_the_site() {
+    static NEXT: AtomicUsize = AtomicUsize::new(0);
+    unsafe extern "C" fn early(a: usize, b: usize) -> usize {
+        black_box(a).wrapping_add(black_box(b)) * 10
+    }
+    unsafe extern "C" fn late(a: usize, b: usize) -> usize {
+        unsafe { core::mem::transmute::<usize, Fn2>(NEXT.load(SeqCst))(a, b) * 100 }
+    }
+    let hooks = &Hooks::HOST;
+    let address = prepatched as *const () as usize;
+    patch_jump(address, early as *const () as usize);
+    let validation = validate(address, None);
+    assert!(matches!(validation, Validation::Unmanaged { target: Some(t), .. } if t == early as *const () as usize), "{validation}");
+    assert_eq!(validation.patched_by(), Some(exe_name()));
+
+    registry::set_compat(Compat::Refuse);
+    let refused = hooks.before(raw(prepatched), Options::new("r"), |args| args.0 += 1).unwrap_err();
+    assert!(matches!(&refused, Error::Site { validation: v, .. } if v.patched_by() == Some(exe_name())), "{refused}");
+    assert!(refused.to_string().ends_with(&format!(", patched by {}", exe_name())), "{refused}");
+    assert_eq!(call(prepatched, 1, 2), 30);
+
+    registry::set_compat(Compat::Stack);
+    hooks.before(raw(prepatched), Options::new("s"), |args| args.0 += 1).unwrap();
+    assert_eq!(call(prepatched, 1, 2), 40, "the subscriber runs, then the earlier patch as the original");
+    let report = hooks.diagnostics().into_iter().find(|r| r.address == address).unwrap();
+    assert!(!report.validation.accepted() && matches!(report.current, Validation::Managed { .. }) && report.patched_by == Some(exe_name()) && !report.broken, "{report}");
+
+    registry::set_compat(Compat::Refuse);
+    let runs = Arc::new(AtomicUsize::new(0));
+    let counted = Arc::clone(&runs);
+    hooks.before(raw(overwritten), Options::new("o"), move |_| _ = counted.fetch_add(1, SeqCst)).unwrap();
+    assert_eq!(call(overwritten, 1, 2), 3);
+    NEXT.store(patch_jump(overwritten as *const () as usize, late as *const () as usize), SeqCst);
+    assert_eq!(call(overwritten, 1, 2), 300);
+    assert_eq!(runs.load(SeqCst), 2, "the later patch calls on through the dispatcher until the check");
+    registry::revalidate("test", &[]);
+    assert_eq!(call(overwritten, 1, 2), 300);
+    assert_eq!(runs.load(SeqCst), 2, "a broken site's subscribers no longer run");
+    let report = hooks.diagnostics().into_iter().find(|r| r.address == overwritten as *const () as usize).unwrap();
+    assert!(report.broken && report.patched_by == Some(exe_name()) && !report.current.accepted(), "{report}");
+    assert!(report.to_string().contains(&format!("patched by {}, broken; #", exe_name())), "{report}");
+}
+
+#[test]
+fn owner_names_the_module_or_the_page() {
+    use windows_sys::Win32::System::Memory::{MEM_COMMIT, MEM_RESERVE, PAGE_EXECUTE_READWRITE, VirtualAlloc};
+    let target = phases as *const () as usize;
+    assert_eq!(owner(target), exe_name());
+    let page = unsafe { VirtualAlloc(core::ptr::null(), 4096, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE) } as usize;
+    assert_ne!(page, 0);
+    let mut relay = [0xFF, 0x25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    relay[6..].copy_from_slice(&target.to_le_bytes());
+    unsafe { core::ptr::copy_nonoverlapping(relay.as_ptr(), page as *mut u8, relay.len()) };
+    assert_eq!(owner(page), format!("no module, trampoline page {page:#x} jumping to {}", exe_name()));
+    unsafe { (page as *mut u8).write(0xC3) };
+    assert_eq!(owner(page), format!("no module, trampoline page {page:#x}"));
+}
+
+#[test]
+fn compat_parses() {
+    assert_eq!(" Stack ".parse::<Compat>(), Ok(Compat::Stack));
+    assert_eq!("refuse".parse::<Compat>(), Ok(Compat::Refuse));
+    assert!("maybe".parse::<Compat>().is_err());
 }

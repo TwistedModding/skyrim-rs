@@ -9,8 +9,14 @@
 //! Within a phase, subscribers run in the order the plugin loader's [`crate::order::sort`] gives
 //! them: their `before`/`after` constraints on plugin names first, `priority` second (higher
 //! first), then the plugins' load order and registration order. A registration that closes a
-//! constraint cycle or adds a second `Replace` is refused and names the plugins involved. Before a site's detour goes in, its entry bytes are checked against the executable
-//! file ([`Validation`]); an unmanaged patch refuses the detour.
+//! constraint cycle or adds a second `Replace` is refused and names the plugins involved.
+//!
+//! Before a site's detour goes in, its entry bytes are checked against the executable file
+//! ([`Validation`]). What happens on an unmanaged patch (another module's jump at the entry) is the
+//! host's [`Compat`] mode: refuse the detour, or stack on the patch as if it were the function. The
+//! host also re-validates every typed operation's site at startup and at the loader's
+//! `PLUGINS_LOADED_2` and `DATA_LOADED` messages, names the module behind each unmanaged patch, and
+//! marks an installed site whose detour another module overwrote as broken.
 //!
 //! Subscriptions are added and removed from any thread while the detours run; a removal returns
 //! only once no call can still be inside the removed subscriber. Registering or removing from
@@ -27,7 +33,40 @@ mod site;
 mod validate;
 
 pub use site::{AfterFn, Args, AroundFn, BeforeFn, Next, Op, Original, Outcome, ReplaceFn, Ret, Signature, Site, Timing};
-pub use validate::{Bytes, Validation, validate};
+pub use validate::{Bytes, Validation, owner, validate};
+
+/// What the dispatcher does with a site another module has patched.
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+pub enum Compat {
+    /// Refuse subscriptions on a pre-patched entry; stop running the subscribers of a site whose
+    /// detour was overwritten.
+    #[default]
+    Refuse,
+    /// Install on a pre-patched entry anyway, calling the patch as the original; keep running the
+    /// subscribers of an overwritten site behind the other module's detour.
+    Stack,
+}
+
+impl core::str::FromStr for Compat {
+    type Err = String;
+
+    fn from_str(s: &str) -> Result<Self, String> {
+        match s.trim().to_ascii_lowercase().as_str() {
+            "refuse" => Ok(Self::Refuse),
+            "stack" => Ok(Self::Stack),
+            other => Err(format!("unknown compatibility mode {other:?}, expected refuse or stack")),
+        }
+    }
+}
+
+impl fmt::Display for Compat {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(match self {
+            Self::Refuse => "refuse",
+            Self::Stack => "stack",
+        })
+    }
+}
 
 /// When a subscriber runs relative to the engine function.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -81,7 +120,7 @@ pub enum Error {
     Cycle { site: String, names: Vec<String> },
     /// `existing` already replaces the function; `refused` asked to as well.
     Exclusive { site: String, existing: String, refused: String },
-    /// The entry bytes are not the function's own.
+    /// The entry bytes are not the function's own; [`Validation::patched_by`] names the module the patch leads to.
     Site { site: String, owner: String, validation: Validation },
     /// The address did not resolve or the detour could not be written.
     Install { site: String, owner: String, detail: String },
@@ -100,7 +139,10 @@ impl fmt::Display for Error {
         match self {
             Self::Cycle { site, names } => write!(f, "{site}: ordering cycle between {}", names.join(", ")),
             Self::Exclusive { site, existing, refused } => write!(f, "{site}: {refused} cannot replace it, {existing} already does"),
-            Self::Site { site, owner, validation } => write!(f, "{site}: refused for {owner}, {validation}"),
+            Self::Site { site, owner, validation } => {
+                write!(f, "{site}: refused for {owner}, {validation}")?;
+                validation.patched_by().map_or(Ok(()), |by| write!(f, ", patched by {by}"))
+            }
             Self::Install { site, owner, detail } => write!(f, "{site}: refused for {owner}, {detail}"),
             Self::Raw { address, detail } => write!(f, "raw {address:#x}: {detail}"),
             Self::Callback { site, owner } => write!(f, "{site}: {owner}'s callback is not of the site's signature"),
@@ -142,7 +184,8 @@ impl Request {
     }
 }
 
-/// One site's state and subscribers, as [`Hooks::diagnostics`] reports it.
+/// One site's state and subscribers, as [`Hooks::diagnostics`] reports it. A typed operation's
+/// site that no one subscribed to is reported only while another module has patched it.
 #[derive(Clone, Debug)]
 pub struct SiteReport {
     pub name: String,
@@ -151,6 +194,10 @@ pub struct SiteReport {
     pub validation: Validation,
     /// The entry now.
     pub current: Validation,
+    /// The module (or anonymous page) another module's jump at the entry leads to, at install or since.
+    pub patched_by: Option<String>,
+    /// The detour was overwritten by another module in [`Compat::Refuse`] mode; the subscribers no longer run.
+    pub broken: bool,
     pub timing: Timing,
     pub last_outcome: Option<Outcome>,
     /// In execution order: befores, arounds, the replace, afters.
@@ -172,6 +219,12 @@ pub struct EntryReport {
 impl fmt::Display for SiteReport {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{} at {:#x}: {} calls, last {} ns, mean {} ns, last outcome {:?}, entry {}", self.name, self.address, self.timing.calls, self.timing.last_ns, self.timing.mean_ns, self.last_outcome, self.current)?;
+        if let Some(by) = &self.patched_by {
+            write!(f, ", patched by {by}")?;
+        }
+        if self.broken {
+            f.write_str(", broken")?;
+        }
         for e in &self.entries {
             write!(f, "; {e}")?;
         }
@@ -211,6 +264,16 @@ impl Hooks {
 
     pub(crate) fn set_logger(f: fn(&str)) {
         registry::set_logger(f);
+    }
+
+    pub(crate) fn set_compat(compat: Compat) {
+        registry::set_compat(compat);
+    }
+
+    /// Checks every typed operation's site and every installed one, logging what changed since the last check.
+    pub(crate) fn revalidate(moment: &str) {
+        let resolved: Vec<(&str, usize)> = ops::OPS.iter().filter_map(|&(name, id)| Some((name, skyrim::reloc().address(id).ok()?))).collect();
+        registry::revalidate(moment, &resolved);
     }
 
     fn request(&self, target: Target, phase: Phase, options: Options<'_>, callback: Box<dyn Any + Send + Sync>) -> Result<SubscriptionId, Error> {

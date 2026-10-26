@@ -18,7 +18,7 @@ use skyrim::papyrus::{ErasedNative, NativeFunction, VirtualMachine};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 use windows_sys::Win32::System::LibraryLoader::{GetProcAddress, LoadLibraryW};
 
-use crate::hooks::Hooks;
+use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
 use crate::{ABI, BUILD, CommandRequest, Descriptor, Error, Host, MessageFn, NativeRequest, PapyrusFn, Plugin, Table, Window};
 
@@ -43,6 +43,8 @@ use owned::Owned;
 
 /// The folder under `Data\SKSE\Plugins` the host loads plugins from.
 pub const PLUGIN_DIR: &str = "skyrim-rs";
+/// The host's settings in `Data\SKSE\Plugins`: `compat = refuse` (the default) or `stack`, see [`Compat`].
+pub const CONFIG: &str = "skyrim-rs.ini";
 
 static PLUGINS: OnceLock<Vec<Plugin>> = OnceLock::new();
 static MESSAGES: Owned<MessageFn> = Owned::new();
@@ -92,11 +94,21 @@ pub fn load(skse: &skse::Interface) -> bool {
         *LOG.lock().unwrap() = Some(file);
     }
     log!("{}, abi {ABI}", BUILD.to_string_lossy());
+    let loader = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
+    log!("hosted by {loader}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
     Hooks::set_logger(|line| log!("hooks: {line}"));
     if let Err(e) = skyrim::init(skse) {
         log!("game layer: {e}");
         return false;
     }
+    let (compat, source) = match std::fs::read_to_string(plugins_dir().join(CONFIG)).ok().as_deref().and_then(|text| setting(text, "compat")).map(str::parse::<Compat>) {
+        Some(Ok(compat)) => (compat, CONFIG.to_owned()),
+        Some(Err(e)) => (Compat::Refuse, format!("{CONFIG}: {e}")),
+        None => (Compat::Refuse, "default".to_owned()),
+    };
+    log!("hooks: compatibility mode {compat} ({source})");
+    Hooks::set_compat(compat);
+    Hooks::revalidate("startup");
     match overlay::install(overlay::DEFAULT_TOGGLE) {
         Ok(()) => log!("overlay installed, toggled with scan code {:#x}", overlay::DEFAULT_TOGGLE),
         Err(e) => log!("overlay: {e}"),
@@ -110,7 +122,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         return false;
     }
     overlay::add(|ctx| WINDOWS.each_mut(|window| (window.0)(ctx)));
-    let dir = std::env::current_exe().map(|exe| exe.with_file_name("Data").join("SKSE").join("Plugins").join(PLUGIN_DIR)).unwrap_or_default();
+    let dir = plugins_dir().join(PLUGIN_DIR);
     let shadow = reload::clean(&dir);
     let mut read = Vec::new();
     for path in plugin_files(&dir) {
@@ -162,6 +174,19 @@ pub fn load(skse: &skse::Interface) -> bool {
 #[must_use]
 pub fn plugins() -> &'static [Plugin] {
     PLUGINS.get().map_or(&[], Vec::as_slice)
+}
+
+/// `Data\SKSE\Plugins` next to the executable.
+fn plugins_dir() -> PathBuf {
+    std::env::current_exe().map(|exe| exe.with_file_name("Data").join("SKSE").join("Plugins")).unwrap_or_default()
+}
+
+/// The value of `key = value` in an ini text; sections are ignored, `;` and `#` start comments.
+fn setting<'a>(text: &'a str, key: &str) -> Option<&'a str> {
+    text.lines().map(|line| line.split([';', '#']).next().unwrap_or_default()).find_map(|line| {
+        let (k, v) = line.split_once('=')?;
+        k.trim().eq_ignore_ascii_case(key).then(|| v.trim())
+    })
 }
 
 fn plugin_files(dir: &Path) -> Vec<PathBuf> {
@@ -253,6 +278,11 @@ fn vm() -> Option<&'static VirtualMachine> {
 
 unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
     let Some(msg) = (unsafe { msg.as_ref() }) else { return };
+    match msg.kind {
+        skse::MessagingInterface::PLUGINS_LOADED_2 => Hooks::revalidate("PLUGINS_LOADED_2"),
+        skse::MessagingInterface::DATA_LOADED => Hooks::revalidate("DATA_LOADED"),
+        _ => {}
+    }
     if matches!(msg.kind, skse::MessagingInterface::PLUGINS_LOADED | skse::MessagingInterface::PLUGINS_LOADED_2 | skse::MessagingInterface::CONTROLS_READY | skse::MessagingInterface::DATA_LOADED) {
         STARTUP.lock().unwrap_or_else(PoisonError::into_inner).push(msg.kind);
     }
@@ -358,5 +388,13 @@ mod tests {
         assert!(accept(ABI, BUILD).is_ok());
         assert!(accept(ABI + 1, BUILD).is_err());
         assert!(accept(ABI, c"framework 0.0.0, rustc 1.0.0").is_err());
+    }
+
+    #[test]
+    fn reads_a_setting() {
+        let ini = "; host settings\n[hooks]\nCompat = stack ; opt in\nother=1\n";
+        assert_eq!(setting(ini, "compat"), Some("stack"));
+        assert_eq!(setting(ini, "missing"), None);
+        assert_eq!(setting("# compat = stack", "compat"), None);
     }
 }

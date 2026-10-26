@@ -2,7 +2,7 @@
 
 use core::cell::Cell;
 use core::sync::atomic::Ordering::{Relaxed, SeqCst};
-use core::sync::atomic::{AtomicPtr, AtomicU8, AtomicU64, AtomicUsize};
+use core::sync::atomic::{AtomicBool, AtomicPtr, AtomicU8, AtomicU64, AtomicUsize};
 use std::collections::BTreeMap;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
@@ -82,7 +82,7 @@ fn dispatch<O: Op>(args: Args<O::Fn>) -> Ret<O::Fn> {
     let parity = site.enter();
     DEPTH.with(|d| d.set(d.get() + 1));
     let chain = unsafe { &*site.chain.load(SeqCst).cast::<Chain<O::Fn>>() };
-    let ret = chain.run(site, args);
+    let ret = if site.broken.load(Relaxed) { unsafe { chain.original.call(args) } } else { chain.run(site, args) };
     DEPTH.with(|d| d.set(d.get() - 1));
     site.active[parity].fetch_sub(1, SeqCst);
     ret
@@ -296,6 +296,8 @@ pub(crate) struct SiteMeta {
     pub address: usize,
     pub detour: usize,
     pub validation: Validation,
+    /// The module another module's jump at the entry leads to: the patch stacked on at install, or the one that overwrote the detour since.
+    pub patched_by: Option<String>,
     /// The subscribers in execution order, for the reports.
     pub order: Vec<Arc<Meta>>,
     pub rebuild: Rebuild,
@@ -310,6 +312,8 @@ pub struct Site {
     active: [AtomicUsize; 2],
     stats: Stats,
     last_outcome: AtomicU8,
+    /// Set when another module overwrote the detour in refuse mode: calls go straight to the original.
+    pub(crate) broken: AtomicBool,
     pub(crate) meta: Mutex<Option<SiteMeta>>,
 }
 
@@ -322,6 +326,7 @@ impl Site {
             active: [AtomicUsize::new(0), AtomicUsize::new(0)],
             stats: Stats::new(),
             last_outcome: AtomicU8::new(0),
+            broken: AtomicBool::new(false),
             meta: Mutex::new(None),
         }
     }
