@@ -1161,11 +1161,11 @@ pub trait VirtualMachineExt {
     fn relay_script_event(&self, thread: &GameThread, reference: Handle, event: &str, args: &[Variable]);
     /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
     fn new_object(&self, class: &str) -> Option<ObjectPtr>;
-    /// Binds `object` to the form `handle` names through the VM's bind policy (slot 47,
-    /// `ObjectBindPolicy::BindObject` id 104184): from then on [`bound_object`](Self::bound_object)
-    /// returns it and calls with that form as `self` run its methods. The policy passes
-    /// `VirtualMachine::BindObject` a fourth argument, a bool the generated method lacks; called
-    /// without it, a stray value in r9 is or'ed into the pointer the VM stores and later releases.
+    /// Binds `object` to the form `handle` names (`VirtualMachine::BindObject`, id 104820): from
+    /// then on [`bound_object`](Self::bound_object) returns it and calls with that form as `self`
+    /// run its methods. The engine ORs the call's flag into the pointer it stores; this passes
+    /// `false`, as the engine does for forms and its bind policy for every object, a mod's own
+    /// included (`true` marks only some script objects the engine loads).
     fn bind_to_handle(&self, thread: &GameThread, object: &ObjectPtr, handle: Handle);
 }
 
@@ -1295,9 +1295,8 @@ impl VirtualMachineExt for VirtualMachine {
     }
 
     fn bind_to_handle(&self, _: &GameThread, object: &ObjectPtr, handle: Handle) {
-        let Some(policy) = self.get_object_bind_policy() else { return };
         let mut target = object.0.as_ptr();
-        unsafe { policy.bind_object((&raw mut target).cast(), handle.0) };
+        unsafe { self.bind_object((&raw mut target).cast(), handle.0, false) };
     }
 }
 
