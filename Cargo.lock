@@ -257,6 +257,7 @@ version = "0.1.0"
 dependencies = [
  "skse",
  "skyrim",
+ "skyrim-sre",
 ]
 
 [[package]]
