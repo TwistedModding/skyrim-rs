@@ -161,13 +161,6 @@ impl crate::hkaSkeleton {
 }
 
 impl crate::hkbBehaviorGraph {
-    /// `hkbBehaviorGraph::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 58394, rva 0xad1c70).
-    /// `hkbBehaviorGraph * vdtor(hkbBehaviorGraph * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `hkbBehaviorGraph::copyVariablesToMembersRoot` (decompiler signature, tier low; ledger string evidence, name medium; id 58382, rva 0xad0d70).
     /// `undefined copyVariablesToMembersRoot(hkbBehaviorGraph * this, longlong param_1, char param_2)`
     ///
@@ -196,6 +189,13 @@ impl crate::hkbBehaviorGraph {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_4(&self, param_1: i32) -> *mut Self { unsafe { function!(58387, (*const Self, i32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
+    /// `hkbBehaviorGraph::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 58394, rva 0xad1c70).
+    /// `hkbBehaviorGraph * vdtor(hkbBehaviorGraph * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(58394, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::hkbCharacter {

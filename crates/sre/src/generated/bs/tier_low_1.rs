@@ -1264,13 +1264,6 @@ impl crate::BSGrassShader {
 }
 
 impl crate::BSGrassShaderProperty {
-    /// `BSGrassShaderProperty::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 106559, rva 0x151dd60).
-    /// `BSGrassShaderProperty * vdtor(BSGrassShaderProperty * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSGrassShaderProperty::Create` (decompiler signature, tier low; ledger string evidence, name medium; id 106548, rva 0x151d6e0).
     /// `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -1285,6 +1278,13 @@ impl crate::BSGrassShaderProperty {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(106551, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSGrassShaderProperty::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 106559, rva 0x151dd60).
+    /// `BSGrassShaderProperty * vdtor(BSGrassShaderProperty * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(106559, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSIDirectAtModifierSingleton {
@@ -2840,13 +2840,6 @@ impl crate::BSLagBoneController {
 }
 
 impl crate::BSLeafAnimNode {
-    /// `BSLeafAnimNode::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105590, rva 0x14e8af0).
-    /// `BSLeafAnimNode * vdtor(BSLeafAnimNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSLeafAnimNode::Create` (decompiler signature, tier low; ledger string evidence, name medium; id 105589, rva 0x14e8a90).
     /// `BSLeafAnimNode * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -2861,6 +2854,13 @@ impl crate::BSLeafAnimNode {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(105585, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSLeafAnimNode::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105590, rva 0x14e8af0).
+    /// `BSLeafAnimNode * vdtor(BSLeafAnimNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(105590, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSLensFlareSpriteRenderData {
@@ -4711,13 +4711,13 @@ impl crate::BSPathfindingTemporary_BSPathingSolution {
 }
 
 impl crate::BSPathfindingTemporary_PathingDoor {
-    /// `BSPathfindingTemporary<PathingDoor>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 30950, rva 0x4e5c10).
+    /// `BSPathfindingTemporary<PathingDoor>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 30950, rva 0x4e5c10).
     /// `BSPathfindingTemporary<PathingDoor> * vdtor(BSPathfindingTemporary<PathingDoor> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30950, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSPathfindingTemporary_PathingRequest {
@@ -5240,23 +5240,23 @@ impl crate::BSPlatform__BSBNETFile__marketplaceDownload {
 }
 
 impl crate::BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest {
-    /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 524860, rva 0x12945f0).
+    /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 524860, rva 0x12945f0).
     /// `marketplaceDownloadRequest * vdtor(marketplaceDownloadRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(524860, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest {
-    /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 524861, rva 0x1294730).
+    /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 524861, rva 0x1294730).
     /// `marketplaceStreamRequest * vdtor(marketplaceStreamRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(524861, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSPlatform__BSBNETImage {
@@ -5760,13 +5760,6 @@ impl crate::BSQueuedResourceCollectionBase {
 }
 
 impl crate::BSRagdollContactListenerModifier {
-    /// `BSRagdollContactListenerModifier::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 63097, rva 0xbb28d0).
-    /// `BSRagdollContactListenerModifier * vdtor(BSRagdollContactListenerModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSRagdollContactListenerModifier::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 63095, rva 0xbb2790).
     /// `BSRagdollContactListenerModifier * ctor(BSRagdollContactListenerModifier * this, longlong param_1)`
     ///
@@ -5781,6 +5774,13 @@ impl crate::BSRagdollContactListenerModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn hkp_contact_listener_vfunc_0(&self, param_1: i64) -> u64 { unsafe { function!(63092, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `BSRagdollContactListenerModifier::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 63097, rva 0xbb28d0).
+    /// `BSRagdollContactListenerModifier * vdtor(BSRagdollContactListenerModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(63097, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSRagdollContactListenerModifierInterface {
@@ -6012,113 +6012,113 @@ impl crate::BSResource__CompressedArchiveStream {
 }
 
 impl crate::BSResource__EntryDB_BGSBtoDB__DBTraits {
-    /// `BSResource::EntryDB<BGSBtoDB::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 31609, rva 0x507350).
+    /// `BSResource::EntryDB<BGSBtoDB::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 31609, rva 0x507350).
     /// `EntryDB<BGSBtoDB::DBTraits> * vdtor(EntryDB<BGSBtoDB::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(31609, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_BGSBtrDB__DBTraits {
-    /// `BSResource::EntryDB<BGSBtrDB::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 31772, rva 0x512df0).
+    /// `BSResource::EntryDB<BGSBtrDB::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 31772, rva 0x512df0).
     /// `EntryDB<BGSBtrDB::DBTraits> * vdtor(EntryDB<BGSBtrDB::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(31772, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_BGSBttDB__DBTraits {
-    /// `BSResource::EntryDB<BGSBttDB::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 31691, rva 0x50d9c0).
+    /// `BSResource::EntryDB<BGSBttDB::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 31691, rva 0x50d9c0).
     /// `EntryDB<BGSBttDB::DBTraits> * vdtor(EntryDB<BGSBttDB::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(31691, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_BGSTerrainVisibilityDataDB__DBTraits {
-    /// `BSResource::EntryDB<BGSTerrainVisibilityDataDB::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 32003, rva 0x51e710).
+    /// `BSResource::EntryDB<BGSTerrainVisibilityDataDB::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 32003, rva 0x51e710).
     /// `EntryDB<BGSTerrainVisibilityDataDB::DBTraits> * vdtor(EntryDB<BGSTerrainVisibilityDataDB::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(32003, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_BSFaceGenDB__FG__DBTraits {
-    /// `BSResource::EntryDB<BSFaceGenDB::FG::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 26717, rva 0x42b4e0).
+    /// `BSResource::EntryDB<BSFaceGenDB::FG::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 26717, rva 0x42b4e0).
     /// `EntryDB<BSFaceGenDB::FG::DBTraits> * vdtor(EntryDB<BSFaceGenDB::FG::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(26717, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits {
-    /// `BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 26718, rva 0x42b680).
+    /// `BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 26718, rva 0x42b680).
     /// `EntryDB<BSFaceGenDB::TRI::DBTraits> * vdtor(EntryDB<BSFaceGenDB::TRI::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(26718, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_BSModelDB__DBTraits {
-    /// `BSResource::EntryDB<BSModelDB::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 75809, rva 0xfcaaf0).
+    /// `BSResource::EntryDB<BSModelDB::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 75809, rva 0xfcaaf0).
     /// `EntryDB<BSModelDB::DBTraits> * vdtor(EntryDB<BSModelDB::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(75809, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_BSTextureDB__DBTraits {
-    /// `BSResource::EntryDB<BSTextureDB::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 76061, rva 0xfd76f0).
+    /// `BSResource::EntryDB<BSTextureDB::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 76061, rva 0xfd76f0).
     /// `EntryDB<BSTextureDB::DBTraits> * vdtor(EntryDB<BSTextureDB::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(76061, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_BShkbHkxDB__DBTraits {
-    /// `BSResource::EntryDB<BShkbHkxDB::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 63502, rva 0xbc6b40).
+    /// `BSResource::EntryDB<BShkbHkxDB::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 63502, rva 0xbc6b40).
     /// `EntryDB<BShkbHkxDB::DBTraits> * vdtor(EntryDB<BShkbHkxDB::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(63502, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_LipSynchAnimDB__DBTraits {
-    /// `BSResource::EntryDB<LipSynchAnimDB::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 16297, rva 0x2454a0).
+    /// `BSResource::EntryDB<LipSynchAnimDB::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 16297, rva 0x2454a0).
     /// `EntryDB<LipSynchAnimDB::DBTraits> * vdtor(EntryDB<LipSynchAnimDB::DBTraits> * this, uint param_1, undefined8 param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(16297, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__EntryDB_ScaleformFile__DBTraits {
-    /// `BSResource::EntryDB<ScaleformFile::DBTraits>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 82431, rva 0x1175520).
+    /// `BSResource::EntryDB<ScaleformFile::DBTraits>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 82431, rva 0x1175520).
     /// `EntryDB<ScaleformFile::DBTraits> * vdtor(EntryDB<ScaleformFile::DBTraits> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(82431, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSResource__IEntryDB {
@@ -7160,13 +7160,6 @@ impl crate::BSSubIndexTriShape {
 }
 
 impl crate::BSSynchronizedClipGenerator {
-    /// `BSSynchronizedClipGenerator::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 63062, rva 0xbb1a00).
-    /// `BSSynchronizedClipGenerator * vdtor(BSSynchronizedClipGenerator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSSynchronizedClipGenerator::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 63045, rva 0xbb0690).
     /// `BSSynchronizedClipGenerator * ctor(BSSynchronizedClipGenerator * this, longlong param_1, undefined8 param_2)`
     ///
@@ -7174,6 +7167,13 @@ impl crate::BSSynchronizedClipGenerator {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_4(&self, param_1: i64, param_2: u64) -> *mut Self { unsafe { function!(63045, (*const Self, i64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
+    /// `BSSynchronizedClipGenerator::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 63062, rva 0xbb1a00).
+    /// `BSSynchronizedClipGenerator * vdtor(BSSynchronizedClipGenerator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(63062, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSSynchronizedClipGenerator__hkbDefaultSynchronizedScene {
@@ -12604,6 +12604,16 @@ impl crate::BSTEventSink_DaysJailed__Event {
 impl crate::BSTEventSink_DaysPassed__Event {
     /// `BSTEventSink<DaysPassed::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37055, rva 0x66de00).
     /// `BSTEventSink<DaysPassed::Event> * vdtor(BSTEventSink<DaysPassed::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_DefaultObjectsReadyEvent__Event {
+    /// `BSTEventSink<DefaultObjectsReadyEvent::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 35119, rva 0x5e8540).
+    /// `BSTEventSink<DefaultObjectsReadyEvent::Event> * vdtor(BSTEventSink<DefaultObjectsReadyEvent::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.

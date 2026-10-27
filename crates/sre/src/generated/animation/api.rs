@@ -45,6 +45,12 @@ impl core::ops::Deref for crate::NiSkinPartition {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbBehaviorGraph` is laid out from its primary base `hkbGenerator`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbBehaviorGraph {
+    type Target = crate::hkbGenerator;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 impl crate::BSAnimationGraphManager {
     /// `BSAnimationGraphManager::ProcessEvent`, vtable slot 1: forwards the active graph's events (by tag) to the dependent managers' graphs; returns 0 (continue)
     ///

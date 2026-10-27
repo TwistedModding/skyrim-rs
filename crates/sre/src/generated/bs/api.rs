@@ -405,6 +405,12 @@ impl core::ops::Deref for crate::BSGrassShader {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSGrassShaderProperty` is laid out from its primary base `BSLightingShaderProperty`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSGrassShaderProperty {
+    type Target = crate::BSLightingShaderProperty;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSIStateManagerModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSIStateManagerModifier {
     type Target = crate::hkbModifier;
@@ -1221,6 +1227,12 @@ impl core::ops::Deref for crate::BSLagBoneController {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSLeafAnimNode` is laid out from its primary base `BSFadeNode`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSLeafAnimNode {
+    type Target = crate::BSFadeNode;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSLensFlareSpriteRenderData` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSLensFlareSpriteRenderData {
     type Target = crate::NiRefObject;
@@ -1785,6 +1797,12 @@ impl core::ops::Deref for crate::BSPathSmootherPOVSearch {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSPathfindingTemporary<PathingDoor>` is laid out from its primary base `PathingDoor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSPathfindingTemporary_PathingDoor {
+    type Target = crate::PathingDoor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSPathfindingTemporary<PathingRequest>` is laid out from its primary base `PathingRequest`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPathfindingTemporary_PathingRequest {
     type Target = crate::PathingRequest;
@@ -1917,6 +1935,18 @@ impl core::ops::Deref for crate::BSPlatform__BSBNETFile__marketplaceDownload {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest` is laid out from its primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest {
+    type Target = crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest` is laid out from its primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest {
+    type Target = crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSPlatform::BSDownloadRequest` is laid out from its primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSDownloadRequest {
     type Target = crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__;
@@ -2031,6 +2061,12 @@ impl core::ops::Deref for crate::BSQueuedResourceCollectionBase {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSRagdollContactListenerModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSRagdollContactListenerModifier {
+    type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSRagdollContactListenerModifierInterface` is laid out from its primary base `BSIRagdollContactListenerModifierSingleton`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSRagdollContactListenerModifierInterface {
     type Target = crate::BSIRagdollContactListenerModifierSingleton;
@@ -2082,6 +2118,72 @@ impl core::ops::Deref for crate::BSResource__CacheDrive__Impl {
 /// `BSResource::CompressedArchiveStream` is laid out from its primary base `BSResource::ArchiveStream`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSResource__CompressedArchiveStream {
     type Target = crate::BSResource__ArchiveStream;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BGSBtoDB::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BGSBtoDB__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BGSBtrDB::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BGSBtrDB__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BGSBttDB::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BGSBttDB__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BGSTerrainVisibilityDataDB::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BGSTerrainVisibilityDataDB__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BSFaceGenDB::FG::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BSFaceGenDB__FG__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BSModelDB::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BSModelDB__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BSTextureDB::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BSTextureDB__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<BShkbHkxDB::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_BShkbHkxDB__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<LipSynchAnimDB::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_LipSynchAnimDB__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSResource::EntryDB<ScaleformFile::DBTraits>` is laid out from its primary base `BSResource::IEntryDB`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSResource__EntryDB_ScaleformFile__DBTraits {
+    type Target = crate::BSResource__IEntryDB;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2406,6 +2508,12 @@ impl core::ops::Deref for crate::BSSubIndexLandTriShape {
 /// `BSSubIndexTriShape` is laid out from its primary base `BSTriShape`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSSubIndexTriShape {
     type Target = crate::BSTriShape;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSSynchronizedClipGenerator` is laid out from its primary base `hkbGenerator`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSSynchronizedClipGenerator {
+    type Target = crate::hkbGenerator;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -6007,6 +6115,18 @@ impl crate::BSTreeManager__IQueryCullingCamera {
     /// `NiCamera* (const BSTreeManager::IQueryCullingCamera* this)`
     #[inline]
     pub fn get_camera(&self) -> Option<&'static crate::NiCamera> { unsafe { function!(36773, (*const Self) -> Option<&'static crate::NiCamera>)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::BSTreeNode {
+    /// `BSTreeNode::OnVisible`: with bDisableHighTreeShadow and a directional-light culler (+0x121), a tree whose bound centre z is more than fMaxHeightShadowCastingTrees above the camera z (0x33d3cf0, copy of camera+0xa8 made in SetupWorldRenderContext 0x657f9e) is skipped
+    ///
+    /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 105604, rva 0x14e93d0.
+    /// `void (BSTreeNode* this, BSCullingProcess* culler)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn on_visible(&self, culler: *mut crate::BSCullingProcess) { unsafe { function!(105604, (*const Self, *mut crate::BSCullingProcess))(core::ptr::from_ref(self), culler) } }
 }
 
 impl crate::BSUtilityShader {

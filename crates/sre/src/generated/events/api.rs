@@ -9,6 +9,12 @@ impl core::ops::Deref for crate::ButtonEvent {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `IDEvent` is laid out from its primary base `InputEvent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::IDEvent {
+    type Target = crate::InputEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 impl crate::BSAnimationGraphEvent {
     /// `BSAnimationGraphEvent::owner` at +0x8: the reference whose graph raised the event (its IAnimationGraphManagerHolder is at +0x38)
     ///

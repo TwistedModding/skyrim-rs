@@ -21,6 +21,18 @@ impl core::ops::Deref for crate::BGSSaveLoadManager {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BGSSaveLoadManager::Thread` is laid out from its primary base `BSThread`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGSSaveLoadManager__Thread {
+    type Target = crate::BSThread;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_14F04957::Win32FileType` is laid out from its primary base `BSSaveDataSystemUtilityFile`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_14F04957__Win32FileType {
+    type Target = crate::BSSaveDataSystemUtilityFile;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bgs::saveload::LoadEntryRequest` is laid out from its primary base `bgs::saveload::Request`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bgs__saveload__LoadEntryRequest {
     type Target = crate::bgs__saveload__Request;

@@ -9,8 +9,50 @@ impl core::ops::Deref for crate::ExtraAction {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraActivateLoopSound` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraActivateLoopSound {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraActivateRef` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraActivateRef {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraActivateRefChildren` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraActivateRefChildren {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraActorCause` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraActorCause {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraAlphaCutoff` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraAlphaCutoff {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraAmmo` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraAmmo {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraAnimGraphManager` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraAnimGraphManager {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraAnimNoteReceiver` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraAnimNoteReceiver {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -21,8 +63,32 @@ impl core::ops::Deref for crate::ExtraAnimationSequencer {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraAshPileRef` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraAshPileRef {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraAttachRef` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraAttachRef {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraAttachRefChildren` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraAttachRefChildren {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraAttachedArrows3D` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraAttachedArrows3D {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraBadPosition` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraBadPosition {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -33,14 +99,116 @@ impl core::ops::Deref for crate::ExtraBiped {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraCachedScale` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCachedScale {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCanTalkToPlayer` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCanTalkToPlayer {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCannotWear` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCannotWear {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCell3D` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCell3D {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCellAcousticSpace` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCellAcousticSpace {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraCellGrassData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraCellGrassData {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraCellImageSpace` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCellImageSpace {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCellMusicType` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCellMusicType {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCellSkyRegion` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCellSkyRegion {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCellWaterEnvMap` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCellWaterEnvMap {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCellWaterType` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCellWaterType {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCharge` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCharge {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCollisionData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCollisionData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCombatStyle` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCombatStyle {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraCount` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraCount {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCreatureAwakeSound` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCreatureAwakeSound {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraCreatureMovementSound` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraCreatureMovementSound {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraDecalGroup` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraDecalGroup {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraDetachTime` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraDetachTime {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -57,14 +225,74 @@ impl core::ops::Deref for crate::ExtraDistantData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraDroppedItemList` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraDroppedItemList {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraEditorID` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraEditorID {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraEditorRef3DData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraEditorRef3DData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraEditorRefMoveData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraEditorRefMoveData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraEmittanceSource` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraEmittanceSource {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraEnableStateChildren` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraEnableStateChildren {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraEnableStateParent` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraEnableStateParent {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraEnchantment` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraEnchantment {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraEncounterZone` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraEncounterZone {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraFactionChanges` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraFactionChanges {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraFavorCost` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraFavorCost {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraFlags` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraFlags {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -81,8 +309,32 @@ impl core::ops::Deref for crate::ExtraFollowerSwimBreadcrumbs {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraForcedLandingMarker` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraForcedLandingMarker {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraForcedTarget` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraForcedTarget {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraFriendHits` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraFriendHits {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraFromAlias` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraFromAlias {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraGIDBuffer` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraGIDBuffer {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -111,8 +363,56 @@ impl core::ops::Deref for crate::ExtraGuardedRefData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraHasNoRumors` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraHasNoRumors {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraHavok` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraHavok {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraHeadTrackingWeight` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraHeadTrackingWeight {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraHeadingTarget` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraHeadingTarget {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraHealth` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraHealth {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraHealthPerc` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraHealthPerc {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraHorse` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraHorse {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraHotkey` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraHotkey {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraIgnoredBySandbox` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraIgnoredBySandbox {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -129,14 +429,86 @@ impl core::ops::Deref for crate::ExtraInteraction {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraItemDropper` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraItemDropper {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLargeRefOwnerCells` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLargeRefOwnerCells {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLastFinishedSequence` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLastFinishedSequence {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLevCreaModifier` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLevCreaModifier {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraLeveledCreature` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraLeveledCreature {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraLeveledItem` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLeveledItem {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLeveledItemBase` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLeveledItemBase {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraLight` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraLight {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLightData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLightData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLinkedRef` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLinkedRef {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLinkedRefChildren` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLinkedRefChildren {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLitWaterRefs` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLitWaterRefs {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLocation` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLocation {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraLocationRefType` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraLocationRefType {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -153,6 +525,12 @@ impl core::ops::Deref for crate::ExtraLockList {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraMagicCaster` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraMagicCaster {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraMagicLight` is laid out from its primary base `ExtraLight`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraMagicLight {
     type Target = crate::ExtraLight;
@@ -165,8 +543,80 @@ impl core::ops::Deref for crate::ExtraMapMarker {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraMissingLinkedRefIDs` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraMissingLinkedRefIDs {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraMissingRefIDs` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraMissingRefIDs {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraModelSwap` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraModelSwap {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraMultiBound` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraMultiBound {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraMultiBoundRef` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraMultiBoundRef {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraNavMeshPortal` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraNavMeshPortal {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraNorthRotation` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraNorthRotation {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraObjectHealth` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraObjectHealth {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraOcclusionPlaneRefData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraOcclusionPlaneRefData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraOcclusionShape` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraOcclusionShape {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraOpenCloseActivateRef` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraOpenCloseActivateRef {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraOriginalReference` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraOriginalReference {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraOutfitItem` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraOutfitItem {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -183,8 +633,20 @@ impl core::ops::Deref for crate::ExtraPackage {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraPackageData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraPackageData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraPackageStartLocation` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraPackageStartLocation {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraPatrolRefData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraPatrolRefData {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -207,8 +669,32 @@ impl core::ops::Deref for crate::ExtraPlayerCrimeList {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraPoison` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraPoison {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraPortal` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraPortal {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraPortalRefData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraPortalRefData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraPrimitive` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraPrimitive {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraProcessMiddleLow` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraProcessMiddleLow {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -219,8 +705,38 @@ impl core::ops::Deref for crate::ExtraPromotedRef {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraRaceData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRaceData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraRadius` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRadius {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraRagDollData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRagDollData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraRandomTeleportMarker` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRandomTeleportMarker {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraRank` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraRank {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraReferenceHandle` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraReferenceHandle {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -237,6 +753,24 @@ impl core::ops::Deref for crate::ExtraReflectorRefs {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraRefrPath` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRefrPath {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraRefractionProperty` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRefractionProperty {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraRegionList` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRegionList {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraReservedMarkers` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraReservedMarkers {
     type Target = crate::BSExtraData;
@@ -249,8 +783,32 @@ impl core::ops::Deref for crate::ExtraResourcesPreload {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraRoom` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRoom {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraRoomRefData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraRoomRefData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraRunOncePacks` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraRunOncePacks {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraSavedAnimation` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraSavedAnimation {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraSavedHavokData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraSavedHavokData {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -267,8 +825,26 @@ impl core::ops::Deref for crate::ExtraSayTopicInfoOnceADay {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraScale` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraScale {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraSceneData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraSceneData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraScriptedAnimDependence` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraScriptedAnimDependence {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraSeenData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraSeenData {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -285,8 +861,26 @@ impl core::ops::Deref for crate::ExtraSoul {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraSound` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraSound {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraSpawnContainer` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraSpawnContainer {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraStartingPosition` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraStartingPosition {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraStartingWorldOrCell` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraStartingWorldOrCell {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -297,8 +891,86 @@ impl core::ops::Deref for crate::ExtraTeleport {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ExtraTeleportName` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraTeleportName {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraTerminalState` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraTerminalState {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraTextDisplayData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraTextDisplayData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraTimeLeft` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraTimeLeft {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraTresPassPackage` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraTresPassPackage {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraUniqueID` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraUniqueID {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraUsedMarkers` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraUsedMarkers {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ExtraWaterCurrentZoneData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ExtraWaterCurrentZoneData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraWaterData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraWaterData {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraWaterLightRefs` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraWaterLightRefs {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraWeaponAttackSound` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraWeaponAttackSound {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraWeaponIdleSound` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraWeaponIdleSound {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraWorn` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraWorn {
+    type Target = crate::BSExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ExtraWornLeft` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ExtraWornLeft {
     type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }

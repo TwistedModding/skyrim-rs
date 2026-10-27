@@ -3,34 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SendTopicInfoEvent` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 25667, rva 0x3f5960).
-/// `undefined SendTopicInfoEvent(longlong param_1, undefined4 param_2, longlong * param_3, undefined4 param_4, longlong * param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn send_topic_info_event(param_1: i64, param_2: u32, param_3: *mut i64, param_4: u32, param_5: *mut i64) -> u64 { unsafe { function!(25667, (i64, u32, *mut i64, u32, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `SendTrespassAlarm` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37427, rva 0x683c70).
-/// `undefined SendTrespassAlarm(longlong * param_1, longlong param_2, uint * param_3, uint * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn send_trespass_alarm(param_1: *mut i64, param_2: i64, param_3: *mut u32, param_4: *mut u32) -> u64 { unsafe { function!(37427, (*mut i64, i64, *mut u32, *mut u32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SendTriggerLeaveEventsForEntries` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26044, rva 0x407460).
-/// `undefined SendTriggerLeaveEventsForEntries(longlong * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn send_trigger_leave_events_for_entries(param_1: *mut i64, param_2: *mut u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(26044, (*mut i64, *mut u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SendType23MessageWithRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36926, rva 0x668500).
-/// `undefined SendType23MessageWithRef(undefined8 param_1, longlong param_2, undefined4 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn send_type23_message_with_ref(param_1: u64, param_2: i64, param_3: u32) -> u64 { unsafe { function!(36926, (u64, i64, u32) -> u64)(param_1, param_2, param_3) } }
 /// `SendType5MessageWithRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36898, rva 0x667ad0).
 /// `undefined SendType5MessageWithRef(undefined8 param_1, longlong param_2)`
 ///
@@ -13954,3 +13926,38 @@ pub unsafe fn try_build_convex_hull_and_extend_index_array(param_1: i64, param_2
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn try_call_vfunc360_on_flagged_map_refs(param_1: i64) -> u64 { unsafe { function!(19136, (i64) -> u64)(param_1) } }
+/// `TryCallVfunc360OnFlaggedMapRefsForAllCells` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 13377, rva 0x1a7320).
+/// `undefined TryCallVfunc360OnFlaggedMapRefsForAllCells(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_call_vfunc360_on_flagged_map_refs_for_all_cells(param_1: i64) -> u64 { unsafe { function!(13377, (i64) -> u64)(param_1) } }
+/// `TryCancelQueuedTasks` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15335, rva 0x2050e0).
+/// `undefined TryCancelQueuedTasks(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_cancel_queued_tasks(param_1: *mut i64) -> u64 { unsafe { function!(15335, (*mut i64) -> u64)(param_1) } }
+/// `TryCancelTask` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 75638, rva 0xfc2f60).
+/// `undefined8 TryCancelTask(longlong * param_1, longlong * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_cancel_task(param_1: *mut i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(75638, (*mut i64, *mut i64, u64) -> u64)(param_1, param_2, param_3) } }
+/// `TryCastOrDualCastSpellAtTarget` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49083, rva 0x8b42d0).
+/// `ulonglong TryCastOrDualCastSpellAtTarget(ulonglong * param_1, char param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_cast_or_dual_cast_spell_at_target(param_1: *mut u64, param_2: c_char, param_3: u64, param_4: u64) -> u64 { unsafe { function!(49083, (*mut u64, c_char, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `TryCastShoutLevel` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38804, rva 0x6d8df0).
+/// `undefined8 TryCastShoutLevel(longlong * param_1, longlong param_2, uint param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_cast_shout_level(param_1: *mut i64, param_2: i64, param_3: u32, param_4: i64) -> u64 { unsafe { function!(38804, (*mut i64, i64, u32, i64) -> u64)(param_1, param_2, param_3, param_4) } }

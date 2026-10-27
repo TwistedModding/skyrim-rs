@@ -2214,16 +2214,6 @@ impl crate::BSTreeManager__IQueryCullingCamera {
     pub unsafe fn destroy_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::BSTreeNode {
-    /// `BSTreeNode::OnVisible`, vtable slot 52, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 105604, rva 0x14e93d0).
-    /// `undefined OnVisible(BSTreeNode * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn on_visible(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 52, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-}
-
 impl crate::BSTriShape {
     /// `BSTriShape::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 76342, rva 0xfe4230).
     /// `undefined dtor(BSTriShape * this)`

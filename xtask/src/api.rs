@@ -517,7 +517,7 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
         for &(b, disp, virt) in &c.bases {
             let Some(base) = classes.get(b) else { continue };
             let Ok(off) = u64::try_from(disp) else { continue };
-            if virt || off == 0 || inherited.contains(&(b, disp)) || off % base.align != 0 || !holds_alignment(c, base.align, &embedded) || off + base.extent() > c.extent() {
+            if virt || off == 0 || inherited.contains(&(b, disp)) || !holds_base(c, base, off, &embedded) {
                 continue;
             }
             let text = format!(
@@ -566,23 +566,24 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
     stats
 }
 
-/// Whether every reference to `c` is aligned to `align`: it is when the struct is, and when no
-/// class embeds `c` by value, since then a reference to it is a live engine object, which the
-/// engine allocates at its natural alignment even where the ledger packs the struct.
-fn holds_alignment(c: &Class, align: u64, embedded: &HashSet<&str>) -> bool {
-    align <= c.align || !embedded.contains(c.name)
+/// Whether a reference to `c` can be read as its `base` subobject at `off`: the struct reaches
+/// past the subobject or `c` is partial (a live object holds every base, whatever the ledger knows
+/// of its size), and the reference is aligned for the base (the struct is as aligned, or no class
+/// embeds `c` by value, so a reference to it is a live engine object at the engine's alignment).
+/// The two layouts are not compared field by field: every field type is plain data.
+fn holds_base(c: &Class, base: &Class, off: u64, embedded: &HashSet<&str>) -> bool {
+    let bytes = off + base.extent() <= c.extent() || !c.exact();
+    let aligned = off % base.align == 0 && (base.align <= c.align || !embedded.contains(c.name));
+    bytes && aligned
 }
 
 /// Classes whose primary base can be reached through `Deref`, keyed by class name: the base at
-/// offset 0, no larger than the class, every base field at the same offset and width in the
-/// class, and every reference to the class aligned for the base.
+/// offset 0, non-virtual, and held as `holds_base` says.
 fn derefs_of<'a>(classes: &BTreeMap<&'a str, Class<'a>>, embedded: &HashSet<&str>, stats: &mut ApiStats) -> BTreeMap<&'a str, &'a str> {
     let mut out = BTreeMap::new();
     for c in classes.values() {
         let Some(p) = c.primary_base.and_then(|p| classes.get(p)) else { continue };
-        let at_zero = c.bases.iter().any(|&(b, disp, virt)| b == p.name && disp == 0 && !virt);
-        let prefix = p.fields.iter().all(|pf| c.fields.iter().any(|cf| cf.f.off == pf.f.off && cf.f.size == pf.f.size));
-        if at_zero && prefix && p.extent() <= c.extent() && holds_alignment(c, p.align, embedded) {
+        if c.bases.iter().any(|&(b, disp, virt)| b == p.name && disp == 0 && !virt) && holds_base(c, p, 0, embedded) {
             out.insert(c.name, p.name);
             stats.derefs += 1;
         } else {

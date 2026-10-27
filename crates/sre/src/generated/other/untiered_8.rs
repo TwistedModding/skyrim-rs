@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ReleaseThreeCountedBlocks` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83692, rva 0xd3f8c0).
-/// `undefined ReleaseThreeCountedBlocks(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_three_counted_blocks(param_1: *mut u64) -> u64 { unsafe { function!(83692, (*mut u64) -> u64)(param_1) } }
-/// `ReleaseThreeFixedStringArrays` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442591, rva 0x62c3c0).
-/// `undefined ReleaseThreeFixedStringArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_three_fixed_string_arrays(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(442591, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseThreeFixedStrings` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 65158, rva 0xc3f4d0).
-/// `undefined ReleaseThreeFixedStrings(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_three_fixed_strings() -> u64 { unsafe { function!(65158, () -> u64)() } }
-/// `ReleaseThreeHeapBuffers` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 450822, rva 0x13bc3d0).
-/// `undefined ReleaseThreeHeapBuffers(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_three_heap_buffers(param_1: i64) -> u64 { unsafe { function!(450822, (i64) -> u64)(param_1) } }
-/// `ReleaseThreeRefPtrs` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 19464, rva 0x2dc4a0).
-/// `undefined ReleaseThreeRefPtrs(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_three_ref_ptrs(param_1: *mut i64) -> u64 { unsafe { function!(19464, (*mut i64) -> u64)(param_1) } }
 /// `ReleaseThroughFactoryRegistry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 27668, rva 0x450980).
 /// `undefined ReleaseThroughFactoryRegistry(longlong * param_1)`
 ///
@@ -14227,3 +14192,31 @@ pub unsafe fn send_tes_lock_changed_event(param_1: i64, param_2: *mut i64, param
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn send_telemetry_event(param_1: i32, param_2: u64, param_3: *mut c_void, param_4: u64) -> u64 { unsafe { function!(524769, (i32, u64, *mut c_void, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `SendTopicInfoEvent` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 25667, rva 0x3f5960).
+/// `undefined SendTopicInfoEvent(longlong param_1, undefined4 param_2, longlong * param_3, undefined4 param_4, longlong * param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn send_topic_info_event(param_1: i64, param_2: u32, param_3: *mut i64, param_4: u32, param_5: *mut i64) -> u64 { unsafe { function!(25667, (i64, u32, *mut i64, u32, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `SendTrespassAlarm` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37427, rva 0x683c70).
+/// `undefined SendTrespassAlarm(longlong * param_1, longlong param_2, uint * param_3, uint * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn send_trespass_alarm(param_1: *mut i64, param_2: i64, param_3: *mut u32, param_4: *mut u32) -> u64 { unsafe { function!(37427, (*mut i64, i64, *mut u32, *mut u32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `SendTriggerLeaveEventsForEntries` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26044, rva 0x407460).
+/// `undefined SendTriggerLeaveEventsForEntries(longlong * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn send_trigger_leave_events_for_entries(param_1: *mut i64, param_2: *mut u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(26044, (*mut i64, *mut u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `SendType23MessageWithRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36926, rva 0x668500).
+/// `undefined SendType23MessageWithRef(undefined8 param_1, longlong param_2, undefined4 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn send_type23_message_with_ref(param_1: u64, param_2: i64, param_3: u32) -> u64 { unsafe { function!(36926, (u64, i64, u32) -> u64)(param_1, param_2, param_3) } }

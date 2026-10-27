@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `InitFieldsAndContainerAt68` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89222, rva 0xe63a40).
-/// `undefined4 * InitFieldsAndContainerAt68(undefined4 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fields_and_container_at68(param_1: *mut u32) -> *mut u32 { unsafe { function!(89222, (*mut u32) -> *mut u32)(param_1) } }
-/// `InitFiveFixedStrings` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 72520, rva 0xf5b430).
-/// `undefined InitFiveFixedStrings(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_five_fixed_strings(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(72520, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `InitFixedBlockChunk` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69131, rva 0xeb0360).
-/// `undefined InitFixedBlockChunk(longlong * param_1, longlong param_2, byte param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fixed_block_chunk(param_1: *mut i64, param_2: i64, param_3: u8) -> u64 { unsafe { function!(69131, (*mut i64, i64, u8) -> u64)(param_1, param_2, param_3) } }
-/// `InitFixedSizePool` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57954, rva 0xabc360).
-/// `undefined InitFixedSizePool(undefined8 * param_1, ulonglong param_2, ulonglong param_3, ulonglong param_4, longlong param_5, undefined8 param_6)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fixed_size_pool(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64, param_5: i64, param_6: u64) -> u64 { unsafe { function!(57954, (*mut u64, u64, u64, u64, i64, u64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
-/// `InitFixedString2048FromCString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449055, rva 0x13837b0).
-/// `longlong InitFixedString2048FromCString(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fixed_string2048_from_c_string(param_1: i64, param_2: i64, param_3: u64, param_4: u64) -> i64 { unsafe { function!(449055, (i64, i64, u64, u64) -> i64)(param_1, param_2, param_3, param_4) } }
 /// `InitFixedString32FromLookupName` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 445459, rva 0x12abdc0).
 /// `undefined8 * InitFixedString32FromLookupName(undefined8 * param_1, int param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -12813,3 +12778,38 @@ pub unsafe fn on_legal_documents_received(param_1: i32, param_2: u64, param_3: *
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn open_and_register_archive(param_1: *mut *mut *mut *mut c_char, param_2: u64, param_3: *mut i64) -> u64 { unsafe { function!(69852, (*mut *mut *mut *mut c_char, u64, *mut i64) -> u64)(param_1, param_2, param_3) } }
+/// `OpenAndRegisterArchive_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69238, rva 0xeb4ba0).
+/// `undefined8 * OpenAndRegisterArchive_2(char * param_1, short param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_and_register_archive_2(param_1: *mut c_char, param_2: i16) -> *mut u64 { unsafe { function!(69238, (*mut c_char, i16) -> *mut u64)(param_1, param_2) } }
+/// `OpenAndSendWinHttpRequest` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 447333, rva 0x1343860).
+/// `longlong OpenAndSendWinHttpRequest(longlong param_1, undefined8 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_and_send_win_http_request(param_1: i64, param_2: u64) -> i64 { unsafe { function!(447333, (i64, u64) -> i64)(param_1, param_2) } }
+/// `OpenArchiveStreamForKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69697, rva 0xec8d00).
+/// `bool OpenArchiveStreamForKey(longlong * param_1, ulonglong * param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_archive_stream_for_key(param_1: *mut i64, param_2: *mut u64, param_3: *mut i64, param_4: u64) -> u8 { unsafe { function!(69697, (*mut i64, *mut u64, *mut i64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `OpenArchiveWithRegistrationListener` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 13776, rva 0x1c3330).
+/// `undefined OpenArchiveWithRegistrationListener(undefined8 param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_archive_with_registration_listener(param_1: u64, param_2: *mut u64) -> u64 { unsafe { function!(13776, (u64, *mut u64) -> u64)(param_1, param_2) } }
+/// `OpenBinaryFileReader` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449320, rva 0x1388ba0).
+/// `int * OpenBinaryFileReader(int * param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_binary_file_reader(param_1: *mut i32, param_2: *mut c_char) -> *mut i32 { unsafe { function!(449320, (*mut i32, *mut c_char) -> *mut i32)(param_1, param_2) } }

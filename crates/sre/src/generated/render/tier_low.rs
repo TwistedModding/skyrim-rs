@@ -4,13 +4,6 @@
 use core::ffi::{c_char, c_void};
 
 impl crate::BSCullingProcess {
-    /// `BSCullingProcess::vdtor`, vtable slot 21, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 76576, rva 0xfeee10).
-    /// `BSCullingProcess * vdtor(BSCullingProcess * this, ulonglong param_1, ulonglong * param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 21, (*const Self, u64, *mut u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSCullingProcess::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 76552, rva 0xfed8e0).
     /// `undefined dtor(BSCullingProcess * this, ulonglong param_1, ulonglong * param_2, undefined8 param_3)`
     ///
@@ -18,6 +11,13 @@ impl crate::BSCullingProcess {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> u64 { unsafe { function!(76552, (*const Self, u64, *mut u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSCullingProcess::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 76576, rva 0xfeee10).
+    /// `BSCullingProcess * vdtor(BSCullingProcess * this, ulonglong param_1, ulonglong * param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> *mut Self { unsafe { function!(76576, (*const Self, u64, *mut u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSGeometry {
@@ -100,13 +100,6 @@ impl crate::BSLightingShaderProperty {
 }
 
 impl crate::BSShaderAccumulator {
-    /// `BSShaderAccumulator::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 106626, rva 0x1521db0).
-    /// `BSShaderAccumulator * vdtor(BSShaderAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSShaderAccumulator::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 106564, rva 0x151dea0).
     /// `BSShaderAccumulator * ctor(BSShaderAccumulator * this, undefined4 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -121,6 +114,13 @@ impl crate::BSShaderAccumulator {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(106565, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSShaderAccumulator::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 106626, rva 0x1521db0).
+    /// `BSShaderAccumulator * vdtor(BSShaderAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(106626, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSShaderProperty {

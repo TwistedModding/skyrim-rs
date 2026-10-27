@@ -1275,6 +1275,12 @@ impl core::ops::Deref for crate::NiTPrimitiveArray_BGSCameraPath____ptr64 {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `NiTPrimitiveArray<BSAnimNoteListener::BSAnimReceiverType*___ptr64>` is laid out from its primary base `NiTArray<BSAnimNoteListener::BSAnimReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteListener::BSAnimReceiverType*___ptr64>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::NiTPrimitiveArray_BSAnimNoteListener__BSAnimReceiverType____ptr64 {
+    type Target = crate::NiTArray_BSAnimNoteListener__BSAnimReceiverType____ptr64_NiTMallocInterface_BSAnimNoteListener___4e46c9b8682f;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `NiTPrimitiveArray<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64>` is laid out from its primary base `NiTArray<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NiTPrimitiveArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64 {
     type Target = crate::NiTArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64_NiTMallocInterface_BSAnimNoteReceiv_05209fee2a29;

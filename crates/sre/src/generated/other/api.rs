@@ -345,6 +345,36 @@ impl core::ops::Deref for crate::BGShkMatFadeController {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BGShkPhonemeController` is laid out from its primary base `BShkFloatController`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGShkPhonemeController {
+    type Target = crate::BShkFloatController;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BNETSystem::ModsChanged_ConfirmResetCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BNETSystem__ModsChanged_ConfirmResetCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BNetUnavailable::ModsNotMountedCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BNetUnavailable__ModsNotMountedCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BNetUnavailable::OpenConnectingToNetworkCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BNetUnavailable__OpenConnectingToNetworkCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BNetUnavailable::OpenMarketplaceCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BNetUnavailable__OpenMarketplaceCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BShkFloatController` is laid out from its primary base `BShkNonTransformController`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BShkFloatController {
     type Target = crate::BShkNonTransformController;
@@ -423,6 +453,12 @@ impl core::ops::Deref for crate::BarrierProjectile {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BarterMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BarterMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BasicArrayImplementation<char*___ptr64,10>` is laid out from its primary base `hkDataArrayImpl`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BasicArrayImplementation_char____ptr64_10 {
     type Target = crate::hkDataArrayImpl;
@@ -456,6 +492,12 @@ impl core::ops::Deref for crate::BedEnterHandler {
 /// `BedFurnitureExitHandler` is laid out from its primary base `IHandlerFunctor<Actor,BSFixedStringCI>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BedFurnitureExitHandler {
     type Target = crate::IHandlerFunctor_Actor_BSFixedStringCI;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BookMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BookMenu {
+    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -657,6 +699,12 @@ impl core::ops::Deref for crate::CompactingStore__Store {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `Compass` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::Compass {
+    type Target = crate::HUDObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `CompressedArchiveFile` is laid out from its primary base `ArchiveFile`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CompressedArchiveFile {
     type Target = crate::ArchiveFile;
@@ -675,15 +723,63 @@ impl core::ops::Deref for crate::ConeProjectile {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ConfirmResetCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ConfirmResetCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ConsoleNativeUIMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ConsoleNativeUIMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ContentMenu::errorCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ContentMenu__errorCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `CraftingSubMenus::AlchemyMenu` is laid out from its primary base `CraftingSubMenus::CraftingSubMenu`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CraftingSubMenus__AlchemyMenu {
     type Target = crate::CraftingSubMenus__CraftingSubMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `CraftingSubMenus::AlchemyMenu::CraftItemCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__AlchemyMenu__CraftItemCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingSubMenus::AlchemyMenu::QuitMenuCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__AlchemyMenu__QuitMenuCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `CraftingSubMenus::ConstructibleObjectMenu` is laid out from its primary base `CraftingSubMenus::CraftingSubMenu`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CraftingSubMenus__ConstructibleObjectMenu {
     type Target = crate::CraftingSubMenus__CraftingSubMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingSubMenus::ConstructibleObjectMenu::CreationConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__ConstructibleObjectMenu__CreationConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingSubMenus::CraftingSubMenu` is laid out from its primary base `FxDelegateHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__CraftingSubMenu {
+    type Target = crate::FxDelegateHandler;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -699,6 +795,36 @@ impl core::ops::Deref for crate::CraftingSubMenus__EnchantConstructMenu__CreateE
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `CraftingSubMenus::EnchantConstructMenu::EnchantMenuCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__EnchantConstructMenu__EnchantMenuCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingSubMenus::EnchantConstructMenu::EnchantMenuCraftCallback` is laid out from its primary base `CraftingSubMenus::EnchantConstructMenu::EnchantMenuCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__EnchantConstructMenu__EnchantMenuCraftCallback {
+    type Target = crate::CraftingSubMenus__EnchantConstructMenu__EnchantMenuCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingSubMenus::EnchantConstructMenu::EnchantMenuDisenchantCallback` is laid out from its primary base `CraftingSubMenus::EnchantConstructMenu::EnchantMenuCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__EnchantConstructMenu__EnchantMenuDisenchantCallback {
+    type Target = crate::CraftingSubMenus__EnchantConstructMenu__EnchantMenuCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingSubMenus::EnchantConstructMenu::EnchantMenuExitCallback` is laid out from its primary base `CraftingSubMenus::EnchantConstructMenu::EnchantMenuCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__EnchantConstructMenu__EnchantMenuExitCallback {
+    type Target = crate::CraftingSubMenus__EnchantConstructMenu__EnchantMenuCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingSubMenus::EnchantConstructMenu::EnchantmentEntry` is laid out from its primary base `CraftingSubMenus::EnchantConstructMenu::CategoryListEntry`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__EnchantConstructMenu__EnchantmentEntry {
+    type Target = crate::CraftingSubMenus__EnchantConstructMenu__CategoryListEntry;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `CraftingSubMenus::EnchantConstructMenu::ItemChangeEntry` is laid out from its primary base `CraftingSubMenus::EnchantConstructMenu::CategoryListEntry`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CraftingSubMenus__EnchantConstructMenu__ItemChangeEntry {
     type Target = crate::CraftingSubMenus__EnchantConstructMenu__CategoryListEntry;
@@ -708,6 +834,18 @@ impl core::ops::Deref for crate::CraftingSubMenus__EnchantConstructMenu__ItemCha
 /// `CraftingSubMenus::SmithingMenu` is laid out from its primary base `CraftingSubMenus::CraftingSubMenu`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CraftingSubMenus__SmithingMenu {
     type Target = crate::CraftingSubMenus__CraftingSubMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CraftingSubMenus::SmithingMenu::SmithingConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CraftingSubMenus__SmithingMenu__SmithingConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CreditsMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CreditsMenu {
+    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -732,6 +870,18 @@ impl core::ops::Deref for crate::CustomActorPackageData {
 /// `CustomUtils::HasForceGreetVisitor` is laid out from its primary base `IProcedureTreeVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CustomUtils__HasForceGreetVisitor {
     type Target = crate::IProcedureTreeVisitor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `DLCPurchased::OpenVisitCreationClubCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::DLCPurchased__OpenVisitCreationClubCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `DLCPurchased::PurchasedDLCDialogCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::DLCPurchased__PurchasedDLCDialogCallback {
+    type Target = crate::IMessageBoxCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -849,9 +999,21 @@ impl core::ops::Deref for crate::DispelEffect {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `DiveBombSpeedController` is laid out from its primary base `CombatPathSpeedController`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::DiveBombSpeedController {
+    type Target = crate::CombatPathSpeedController;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `DoorObstacleAdapter` is laid out from its primary base `BSTEventSink<TESOpenCloseEvent>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::DoorObstacleAdapter {
     type Target = crate::BSTEventSink_TESOpenCloseEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `DownloadAll::uiCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::DownloadAll__uiCallback {
+    type Target = crate::IMessageBoxCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -948,6 +1110,24 @@ impl core::ops::Deref for crate::FOCollisionListener {
 /// `FOIslandActivationListener` is laid out from its primary base `hkpIslandActivationListener`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::FOIslandActivationListener {
     type Target = crate::hkpIslandActivationListener;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `FaderData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::FaderData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `FaderMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::FaderMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `FavoritesMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::FavoritesMenu {
+    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1092,6 +1272,12 @@ impl core::ops::Deref for crate::FlightPerchingHandler {
 /// `FlightTakeOffHandler` is laid out from its primary base `IHandlerFunctor<Actor,BSFixedStringCI>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::FlightTakeOffHandler {
     type Target = crate::IHandlerFunctor_Actor_BSFixedStringCI;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `FloatingQuestMarker` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::FloatingQuestMarker {
+    type Target = crate::HUDObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1269,6 +1455,12 @@ impl core::ops::Deref for crate::GetUpStartHandler {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `GiftMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::GiftMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `GrabActorEffect` is laid out from its primary base `ValueModifierEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::GrabActorEffect {
     type Target = crate::ValueModifierEffect;
@@ -1314,6 +1506,18 @@ impl core::ops::Deref for crate::GuardPackageData {
 /// `GuideEffect` is laid out from its primary base `ActiveEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::GuideEffect {
     type Target = crate::ActiveEffect;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `HUDChargeMeter` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::HUDChargeMeter {
+    type Target = crate::HUDObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `HUDMeter` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::HUDMeter {
+    type Target = crate::HUDObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1803,6 +2007,12 @@ impl core::ops::Deref for crate::InterruptCastHandler {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `Inventory3DManager` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::Inventory3DManager {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `Inventory::StatInventoryVisitor` is laid out from its primary base `InventoryChanges::IItemChangeVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::Inventory__StatInventoryVisitor {
     type Target = crate::InventoryChanges__IItemChangeVisitor;
@@ -1812,6 +2022,12 @@ impl core::ops::Deref for crate::Inventory__StatInventoryVisitor {
 /// `InventoryChanges::FindBestSoulGemVisitor` is laid out from its primary base `InventoryChanges::IItemChangeVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::InventoryChanges__FindBestSoulGemVisitor {
     type Target = crate::InventoryChanges__IItemChangeVisitor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `InventoryUpdateData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::InventoryUpdateData {
+    type Target = crate::IUIMessageData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1875,6 +2091,12 @@ impl core::ops::Deref for crate::JournalInputMapping__RemapHandler {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `JournalMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::JournalMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `JournalTab` is laid out from its primary base `FxDelegateHandler`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::JournalTab {
     type Target = crate::FxDelegateHandler;
@@ -1889,6 +2111,12 @@ impl core::ops::Deref for crate::Journal_QuestsTab {
 }
 /// `Journal_StatsTab` is laid out from its primary base `JournalTab`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::Journal_StatsTab {
+    type Target = crate::JournalTab;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `Journal_SystemTab` is laid out from its primary base `JournalTab`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::Journal_SystemTab {
     type Target = crate::JournalTab;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -1977,6 +2205,24 @@ impl core::ops::Deref for crate::KillMoveStartHandler {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `KinectMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::KinectMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `KinectStateChangeData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::KinectStateChangeData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `KinectUserEventData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::KinectUserEventData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `LargestAreaFunctor` is laid out from its primary base `MagicItemTraversalFunctor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::LargestAreaFunctor {
     type Target = crate::MagicItemTraversalFunctor;
@@ -1995,6 +2241,12 @@ impl core::ops::Deref for crate::LeftHandSpellFireHandler {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `LevelUpMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LevelUpMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `LightEffect` is laid out from its primary base `ActiveEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::LightEffect {
     type Target = crate::ActiveEffect;
@@ -2004,6 +2256,12 @@ impl core::ops::Deref for crate::LightEffect {
 /// `LightEffect::AttachBestLightVisitor` is laid out from its primary base `MagicTarget::ForEachActiveEffectVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::LightEffect__AttachBestLightVisitor {
     type Target = crate::MagicTarget__ForEachActiveEffectVisitor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `Likes` is laid out from its primary base `UI_element`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::Likes {
+    type Target = crate::UI_element;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2019,9 +2277,39 @@ impl core::ops::Deref for crate::LipSynchAnimDB__LipAudioInterface {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `LoadGameDifferentLoadOrderCallBack` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoadGameDifferentLoadOrderCallBack {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LoadGameInactiveContentCallBack` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoadGameInactiveContentCallBack {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `LoadGameMagicCasterVisitor` is laid out from its primary base `SaveLoadMagicCasterVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::LoadGameMagicCasterVisitor {
     type Target = crate::SaveLoadMagicCasterVisitor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LoadGameMissingContentCallBack` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoadGameMissingContentCallBack {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LoadGameMissingContentDownloadCallBack` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoadGameMissingContentDownloadCallBack {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LoadGameUnrecognizedContentCallBack` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoadGameUnrecognizedContentCallBack {
+    type Target = crate::IMessageBoxCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2067,15 +2355,51 @@ impl core::ops::Deref for crate::LoadStorageWrapper {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `LoadWaitSpinner` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoadWaitSpinner {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `LoadedAreaBound` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::LoadedAreaBound {
     type Target = crate::NiRefObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `LoadingMenuData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoadingMenuData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LocalMapMenu::InputHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LocalMapMenu__InputHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `LockEffect` is laid out from its primary base `ActiveEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::LockEffect {
     type Target = crate::ActiveEffect;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LockpickingMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LockpickingMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LoginMenu::errorCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoginMenu__errorCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LoginMenu::loginMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoginMenu__loginMenu {
+    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2094,6 +2418,12 @@ impl core::ops::Deref for crate::MTStateHandler {
 /// `MagicCaster::PostCreationCallback` is laid out from its primary base `MagicTarget::IPostCreationModification`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MagicCaster__PostCreationCallback {
     type Target = crate::MagicTarget__IPostCreationModification;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MagicItem` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MagicItem {
+    type Target = crate::TESBoundObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2127,9 +2457,21 @@ impl core::ops::Deref for crate::Main {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `MapInputHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MapInputHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `MapLookHandler` is laid out from its primary base `MapInputHandler`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MapLookHandler {
     type Target = crate::MapInputHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MapMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MapMenu {
+    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2154,6 +2496,24 @@ impl core::ops::Deref for crate::MarketplaceBundleContent {
 /// `MarketplaceContentCollection` is laid out from its primary base `MarketplaceContent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MarketplaceContentCollection {
     type Target = crate::MarketplaceContent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MarketplaceMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MarketplaceMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MarketplaceMenu::InputHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MarketplaceMenu__InputHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MarketplaceMenu::errorCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MarketplaceMenu__errorCallback {
+    type Target = crate::IMessageBoxCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2208,6 +2568,66 @@ impl core::ops::Deref for crate::MissileProjectile {
 /// `MissingContent` is laid out from its primary base `UI_page`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MissingContent {
     type Target = crate::UI_page;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MistMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MistMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManager::CloseModManager_ConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManager__CloseModManager_ConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManager::DeleteAllModsConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManager__DeleteAllModsConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManager::DeleteLibraryModConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManager__DeleteLibraryModConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManager::DeleteMod_ConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManager__DeleteMod_ConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManager::ModsChanged_ConfirmResetCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManager__ModsChanged_ConfirmResetCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManager::ReportMod_CategoryCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManager__ReportMod_CategoryCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManager::ReportMod_ConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManager__ReportMod_ConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManagerData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManagerData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ModManagerMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ModManagerMenu {
+    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2325,6 +2745,12 @@ impl core::ops::Deref for crate::NavMeshSearchSLPoint {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `NeedToUpdateCreationClubCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::NeedToUpdateCreationClubCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `NewInventoryMenuItemLoadTask` is laid out from its primary base `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NewInventoryMenuItemLoadTask {
     type Target = crate::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1;
@@ -2340,6 +2766,12 @@ impl core::ops::Deref for crate::NightEyeEffect {
 /// `NonActorMagicCaster` is laid out from its primary base `ExtraMagicCaster`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NonActorMagicCaster {
     type Target = crate::ExtraMagicCaster;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `NonActorMagicTarget` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::NonActorMagicTarget {
+    type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2643,6 +3075,12 @@ impl core::ops::Deref for crate::REFREventCallbacks__ConcreteEventCallbackFactor
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `RaceSexMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::RaceSexMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `RagdollFurnitureListener` is laid out from its primary base `hkpContactListener`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::RagdollFurnitureListener {
     type Target = crate::hkpContactListener;
@@ -2682,6 +3120,12 @@ impl core::ops::Deref for crate::RecoilStopHandler {
 /// `RefAttachTechniqueInput` is laid out from its primary base `BSAttachTechniques::AttachTechniqueInput`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::RefAttachTechniqueInput {
     type Target = crate::BSAttachTechniques__AttachTechniqueInput;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `RefHandleUIData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::RefHandleUIData {
+    type Target = crate::IUIMessageData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2754,6 +3198,12 @@ impl core::ops::Deref for crate::RightHandWeaponSheatheHandler {
 /// `RunActionAnimationLoadedCallback` is laid out from its primary base `IAnimationSetCallbackFunctor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::RunActionAnimationLoadedCallback {
     type Target = crate::IAnimationSetCallbackFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SafeZoneMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SafeZoneMenu {
+    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2847,6 +3297,12 @@ impl core::ops::Deref for crate::Sizing__mpBoxSizer {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `Sizing::mpSizer` is laid out from its primary base `UI_element`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::Sizing__mpSizer {
+    type Target = crate::UI_element;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `SkyEffectController` is laid out from its primary base `ReferenceEffectController`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::SkyEffectController {
     type Target = crate::ReferenceEffectController;
@@ -2862,6 +3318,12 @@ impl core::ops::Deref for crate::SkyStaticFindFunctor {
 /// `SkyrimSpeechRecognition` is laid out from its primary base `BSTEventSink<SpeechRecognitionEvents::DeviceConnected>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::SkyrimSpeechRecognition {
     type Target = crate::BSTEventSink_SpeechRecognitionEvents__DeviceConnected;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SleepWaitMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SleepWaitMenu {
+    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2943,9 +3405,21 @@ impl core::ops::Deref for crate::StaticAvoidNodeManager {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `StatsMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::StatsMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `StatsNode` is laid out from its primary base `SimpleAnimationGraphManagerHolder`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::StatsNode {
     type Target = crate::SimpleAnimationGraphManagerHolder;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `StealthMeter` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::StealthMeter {
+    type Target = crate::HUDObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3015,6 +3489,12 @@ impl core::ops::Deref for crate::SystemEventAdapter {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TagField` is laid out from its primary base `UI_element`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TagField {
+    type Target = crate::UI_element;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `TailAnimationGraphManagerHolder` is laid out from its primary base `WeaponAnimationGraphManagerHolder`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TailAnimationGraphManagerHolder {
     type Target = crate::WeaponAnimationGraphManagerHolder;
@@ -3057,6 +3537,18 @@ impl core::ops::Deref for crate::TempLoadGameBuffer {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TitleSequenceMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TitleSequenceMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TrainingMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TrainingMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `TrapEntry` is laid out from its primary base `ZoneEntry`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TrapEntry {
     type Target = crate::ZoneEntry;
@@ -3093,9 +3585,21 @@ impl core::ops::Deref for crate::TurnUndeadEffect {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TutorialMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TutorialMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `UIBlurManager` is laid out from its primary base `BSTEventSink<DefaultObjectsReadyEvent::Event>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::UIBlurManager {
     type Target = crate::BSTEventSink_DefaultObjectsReadyEvent__Event;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `UIMessageDataPtr<Actor>` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::UIMessageDataPtr_Actor {
+    type Target = crate::IUIMessageData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3215,6 +3719,12 @@ impl core::ops::Deref for crate::UI_image3 {
 }
 /// `UI_listEntry` is laid out from its primary base `UI_element`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::UI_listEntry {
+    type Target = crate::UI_element;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `UI_tag` is laid out from its primary base `UI_element`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::UI_tag {
     type Target = crate::UI_element;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -3477,6 +3987,12 @@ impl core::ops::Deref for crate::_anon_025735F6__DestructionStageChangedArgument
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_025735F6::EventCallbackAdapter` is laid out from its primary base `BSScript::IStackCallbackFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_025735F6__EventCallbackAdapter {
+    type Target = crate::BSScript__IStackCallbackFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_025735F6::HitArguments` is laid out from its primary base `BSScript::IFunctionArguments`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_025735F6__HitArguments {
     type Target = crate::BSScript__IFunctionArguments;
@@ -3615,6 +4131,18 @@ impl core::ops::Deref for crate::_anon_207FFA87__AudioLoadTask {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_228DD50F::AutoDoorFadeCallback` is laid out from its primary base `IFadeDoneCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_228DD50F__AutoDoorFadeCallback {
+    type Target = crate::IFadeDoneCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_228DD50F::NormalDoorFadeCallback` is laid out from its primary base `IFadeDoneCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_228DD50F__NormalDoorFadeCallback {
+    type Target = crate::IFadeDoneCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_279BB6B4::CheckNavmeshPathFilter` is laid out from its primary base `BSPathing::CheckLineOfSightFilter`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_279BB6B4__CheckNavmeshPathFilter {
     type Target = crate::BSPathing__CheckLineOfSightFilter;
@@ -3633,6 +4161,12 @@ impl core::ops::Deref for crate::_anon_2DBBCB74__WarmthCalcFunc {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_2E811767::ActivateChoiceMenuCallbackFunctor` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_2E811767__ActivateChoiceMenuCallbackFunctor {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_2E811767::PlayerControlsEGMClear` is laid out from its primary base `IAllowEGMCacheClear`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_2E811767__PlayerControlsEGMClear {
     type Target = crate::IAllowEGMCacheClear;
@@ -3642,6 +4176,12 @@ impl core::ops::Deref for crate::_anon_2E811767__PlayerControlsEGMClear {
 /// `_anon_2E88EB60::UnequipAllVisitor` is laid out from its primary base `InventoryChanges::IItemChangeVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_2E88EB60__UnequipAllVisitor {
     type Target = crate::InventoryChanges__IItemChangeVisitor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_2F998B1B::FadeThenMainMenuCallback` is laid out from its primary base `IFadeDoneCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_2F998B1B__FadeThenMainMenuCallback {
+    type Target = crate::IFadeDoneCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3927,9 +4467,21 @@ impl core::ops::Deref for crate::_anon_705FD51E__MagicMenuAddSpellVisitor {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_705FD51E::SpendSoulCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_705FD51E__SpendSoulCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_705FD51E::StoreEnchantedItemsVisitor` is laid out from its primary base `InventoryChanges::IItemChangeVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_705FD51E__StoreEnchantedItemsVisitor {
     type Target = crate::InventoryChanges__IItemChangeVisitor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_7174C251::TopicResultCallBack` is laid out from its primary base `REFREventCallbacks::IEventCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_7174C251__TopicResultCallBack {
+    type Target = crate::REFREventCallbacks__IEventCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -4209,9 +4761,21 @@ impl core::ops::Deref for crate::_anon_76F1AC9E__RefreshEnchantedWeaponsVisitor 
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_77E528F2::SceneActionResultsCallBack` is laid out from its primary base `REFREventCallbacks::IEventCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_77E528F2__SceneActionResultsCallBack {
+    type Target = crate::REFREventCallbacks__IEventCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_7816FE07::AddExtraMissingRefIDFunctor` is laid out from its primary base `TESObjectREFRDef::ILinkedReferenceFunctor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_7816FE07__AddExtraMissingRefIDFunctor {
     type Target = crate::TESObjectREFRDef__ILinkedReferenceFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_7816FE07::HavokLink` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_7816FE07__HavokLink {
+    type Target = crate::BSExtraData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -4395,6 +4959,24 @@ impl core::ops::Deref for crate::_anon_B19E5BB3__ApparelUnequipper {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_B19E5BB3::ConfirmAndNameCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_B19E5BB3__ConfirmAndNameCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_B19E5BB3::ConfirmCloseRaceSexMenuCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_B19E5BB3__ConfirmCloseRaceSexMenuCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_B19E5BB3::ConfirmDestructiveChangesCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_B19E5BB3__ConfirmDestructiveChangesCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_C0BCB154::UpdateArmorWornVisitor` is laid out from its primary base `InventoryChanges::IItemChangeVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_C0BCB154__UpdateArmorWornVisitor {
     type Target = crate::InventoryChanges__IItemChangeVisitor;
@@ -4455,9 +5037,33 @@ impl core::ops::Deref for crate::_anon_D74036DD__HavokThreadMemorySink {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_D9AF04FF::LegendarySkillResetConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_D9AF04FF__LegendarySkillResetConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_D9AF04FF::PerkSelectConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_D9AF04FF__PerkSelectConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_DCFB5256::ConfirmLevelUpAttributeCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_DCFB5256__ConfirmLevelUpAttributeCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_DD5AEEBC::GraphVarTypeQuery` is laid out from its primary base `BSAnimGraphVisit::BShkbVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_DD5AEEBC__GraphVarTypeQuery {
     type Target = crate::BSAnimGraphVisit__BShkbVisitor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_EA65E547::DeviceSelectCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_EA65E547__DeviceSelectCallback {
+    type Target = crate::IMessageBoxCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -4557,6 +5163,24 @@ impl core::ops::Deref for crate::_anon_F5A7A308__SetPapyrusVarFunctor {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_F5B877CC::FadeThenFastTravelCallback` is laid out from its primary base `IFadeDoneCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_F5B877CC__FadeThenFastTravelCallback {
+    type Target = crate::IFadeDoneCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_F5B877CC::FastTravelConfirmCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_F5B877CC__FastTravelConfirmCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_F5B877CC::PlacePlayerMarkerCallbackFunctor` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_F5B877CC__PlacePlayerMarkerCallbackFunctor {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_FA78E63F::BShkbAnimationGraphLoadScrapper` is laid out from its primary base `BSAnimationGraphLoadScrapper`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_FA78E63F__BShkbAnimationGraphLoadScrapper {
     type Target = crate::BSAnimationGraphLoadScrapper;
@@ -4611,6 +5235,18 @@ impl core::ops::Deref for crate::_public__static_bool___cdecl_Script__ResetDialo
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// ``public:_static_void___cdecl_MainMenu::OpenCreationClubMenu(void)'::__l8::errorCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_public__static_void___cdecl_MainMenu__OpenCreationClubMenu_void____l8__errorCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// ``public:_static_void___cdecl_MarketplaceMenu::Start(MarketplaceMenu::MarketplaceMode)'::__l8::doNothingCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_public__static_void___cdecl_MarketplaceMenu__Start_MarketplaceMenu__MarketplaceMode____l8__doNothingCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// ``void___cdecl_BSResource::RegisterPrefix(char_const*___ptr64,char_const*___ptr64,BSResource::Location*___ptr64)'::__l2::Traverser` is laid out from its primary base `BSResource::LocationTraverser`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_void___cdecl_BSResource__RegisterPrefix_char_const____ptr64_char_const____ptr64_BSResource__Loc_97d1ac573c19 {
     type Target = crate::BSResource__LocationTraverser;
@@ -4635,9 +5271,33 @@ impl core::ops::Deref for crate::ahkpWorld {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `allCreationsDownloadedCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::allCreationsDownloadedCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bgs::saveload::BuildSaveListRequest` is laid out from its primary base `bgs::saveload::Request`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bgs__saveload__BuildSaveListRequest {
     type Target = crate::bgs__saveload__Request;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `doDownloads::waitingCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::doDownloads__waitingCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `downloadConfirmResetCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::downloadConfirmResetCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `noCreationsDownloadedCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::noCreationsDownloadedCallback {
+    type Target = crate::IMessageBoxCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -4934,6 +5594,12 @@ impl crate::JournalMenu {
     /// `void ()`
     #[inline]
     pub fn close_tween_and_reset_camera() { unsafe { function!(52713, ())() } }
+    /// `JournalMenu::PostDisplay`: JournalMenu's slot 6: the movie view's display (+0x10 -> vtable +0x130), then when menu flags (+0x1c) bit 7 is set UI3DScene::Render(g_UI3DScene, 0, null, false)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53317, rva 0x9ac480.
+    /// `void (JournalMenu* this)`
+    #[inline]
+    pub fn post_display(&self) { unsafe { function!(53317, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::Journal_SystemTab {
@@ -4976,6 +5642,15 @@ impl crate::LoadWaitSpinner {
     /// The `BSTEventSink<BSSystemEvent>` base at +0x30.
     #[inline]
     pub fn as_bst_event_sink_bs_system_event(&self) -> &crate::BSTEventSink_BSSystemEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+}
+
+impl crate::LocalMapMenu__InputHandler {
+    /// `LocalMapMenu::InputHandler::ProcessButtonEvent`: 'Zoom In'/'Zoom Out': zoom input of the local map camera (owner+0x302a0, TESCamera+0x1c) += value * fMapLocalMouseZoomSpeed (mouse) or fMapLocalGamepadZoomSpeed (gamepad):MapMenu, negated for Zoom Out; 'LocalMapMoveMode': owner+0x303fd = 1 on a press with the cursor (address-library id 403551, +4 x, +8 y) inside the map rectangle (owner+0x30..+0x3c), 0 on release
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52978, rva 0x994a30.
+    /// `bool (LocalMapMenu::InputHandler* this, ButtonEvent* event)`
+    #[inline]
+    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { function!(52978, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::LockpickingMenu {
@@ -5075,6 +5750,12 @@ impl crate::MapMenu {
     /// The `IMapCameraCallbacks` base at +0x38.
     #[inline]
     pub fn as_i_map_camera_callbacks(&self) -> &crate::IMapCameraCallbacks { unsafe { &*core::ptr::from_ref(self).byte_add(0x38).cast() } }
+    /// `MapMenu::AdvanceMovie`: IMenu slot 5. While the map camera has no root (the first frame): near override fMapMenuNearClipPlane (128), far override kFarDistanceWithLOD, SetFieldOfView(fDefaultFOV, force), MapCamera::Enter(scene graph child 0, map position). Every frame: UpdateMapCamera 0x9969f0 unless the Console menu is open, markers, pending pick
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53101, rva 0x99bd30.
+    /// `void (MapMenu* this, float interval, u32 currentTimeMs)`
+    #[inline]
+    pub fn advance_movie(&self, interval: f32, currentTimeMs: u32) { unsafe { function!(53101, (*const Self, f32, u32))(core::ptr::from_ref(self), interval, currentTimeMs) } }
     /// `MapMenu::UpdateMapCamera`: camera+0x4c = delta; tail-jump TESCamera::Update
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 53016, rva 0x9969f0.
@@ -5090,6 +5771,15 @@ impl crate::MapMenu {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(53094, (*const Self))(core::ptr::from_ref(self)) } }
+}
+
+impl crate::MapZoomHandler {
+    /// `MapZoomHandler::ProcessButtonEvent`: zoom input of the world map camera (MapMenu+0x304a0, TESCamera+0x1c) += value (* fMapZoomMouseSpeed:MapMenu for the mouse) * real delta, negated for 'Zoom Out'; returns true
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53068, rva 0x998ff0.
+    /// `bool (MapZoomHandler* this, ButtonEvent* event)`
+    #[inline]
+    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { function!(53068, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::MarketplaceMenu {
@@ -5144,6 +5834,12 @@ impl crate::MistMenu {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn adjust_logo_zoom_fov(&self, delta: f32) { unsafe { function!(52325, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
+    /// `MistMenu::AdvanceMovie`: IMenu slot 5: logo fade, first-frame model setup (fUIMistModel_* transform, AttachNodeToCurrentUI3DScene, InitMistMenuCameraAndModel), per-frame UI3DScene root update and, when a camera node exists in the model, the UI camera follows it: translate = fUIMistMenu_Camera(X - node.x, Y - node.y, Z + node.z), rotate = node world rotation * saved base rotation (+0x110)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 52307, rva 0x964c80.
+    /// `void (MistMenu* this, float interval, u32 currentTimeMs)`
+    #[inline]
+    pub fn advance_movie(&self, interval: f32, currentTimeMs: u32) { unsafe { function!(52307, (*const Self, f32, u32))(core::ptr::from_ref(self), interval, currentTimeMs) } }
 }
 
 impl crate::ModManagerMenu {

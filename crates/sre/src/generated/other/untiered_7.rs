@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `OpenAndRegisterArchive_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69238, rva 0xeb4ba0).
-/// `undefined8 * OpenAndRegisterArchive_2(char * param_1, short param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_and_register_archive_2(param_1: *mut c_char, param_2: i16) -> *mut u64 { unsafe { function!(69238, (*mut c_char, i16) -> *mut u64)(param_1, param_2) } }
-/// `OpenAndSendWinHttpRequest` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 447333, rva 0x1343860).
-/// `longlong OpenAndSendWinHttpRequest(longlong param_1, undefined8 param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_and_send_win_http_request(param_1: i64, param_2: u64) -> i64 { unsafe { function!(447333, (i64, u64) -> i64)(param_1, param_2) } }
-/// `OpenArchiveStreamForKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69697, rva 0xec8d00).
-/// `bool OpenArchiveStreamForKey(longlong * param_1, ulonglong * param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_archive_stream_for_key(param_1: *mut i64, param_2: *mut u64, param_3: *mut i64, param_4: u64) -> u8 { unsafe { function!(69697, (*mut i64, *mut u64, *mut i64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `OpenArchiveWithRegistrationListener` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 13776, rva 0x1c3330).
-/// `undefined OpenArchiveWithRegistrationListener(undefined8 param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_archive_with_registration_listener(param_1: u64, param_2: *mut u64) -> u64 { unsafe { function!(13776, (u64, *mut u64) -> u64)(param_1, param_2) } }
-/// `OpenBinaryFileReader` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449320, rva 0x1388ba0).
-/// `int * OpenBinaryFileReader(int * param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_binary_file_reader(param_1: *mut i32, param_2: *mut c_char) -> *mut i32 { unsafe { function!(449320, (*mut i32, *mut c_char) -> *mut i32)(param_1, param_2) } }
 /// `OpenBinkMovie` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90290, rva 0x11b3a50).
 /// `ulonglong OpenBinkMovie(longlong param_1, longlong * param_2, ulonglong param_3, ulonglong param_4, char param_5)`
 ///
@@ -13485,3 +13450,38 @@ pub unsafe fn release_three_array_buffers_5(param_1: *mut i64, param_2: u64, par
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_three_array_buffers_6(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(63695, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseThreeCountedBlocks` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83692, rva 0xd3f8c0).
+/// `undefined ReleaseThreeCountedBlocks(undefined8 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_three_counted_blocks(param_1: *mut u64) -> u64 { unsafe { function!(83692, (*mut u64) -> u64)(param_1) } }
+/// `ReleaseThreeFixedStringArrays` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442591, rva 0x62c3c0).
+/// `undefined ReleaseThreeFixedStringArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_three_fixed_string_arrays(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(442591, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseThreeFixedStrings` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 65158, rva 0xc3f4d0).
+/// `undefined ReleaseThreeFixedStrings(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_three_fixed_strings() -> u64 { unsafe { function!(65158, () -> u64)() } }
+/// `ReleaseThreeHeapBuffers` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 450822, rva 0x13bc3d0).
+/// `undefined ReleaseThreeHeapBuffers(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_three_heap_buffers(param_1: i64) -> u64 { unsafe { function!(450822, (i64) -> u64)(param_1) } }
+/// `ReleaseThreeRefPtrs` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 19464, rva 0x2dc4a0).
+/// `undefined ReleaseThreeRefPtrs(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_three_ref_ptrs(param_1: *mut i64) -> u64 { unsafe { function!(19464, (*mut i64) -> u64)(param_1) } }

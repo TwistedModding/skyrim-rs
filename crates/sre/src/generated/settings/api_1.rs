@@ -27,6 +27,12 @@ impl core::ops::Deref for crate::SettingCollectionList_Setting {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `SettingCollectionMap<Setting>` is laid out from its primary base `SettingCollection<Setting>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SettingCollectionMap_Setting {
+    type Target = crate::SettingCollection_Setting;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `SettingT<GameSettingCollection>` is laid out from its primary base `Setting`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::SettingT_GameSettingCollection {
     type Target = crate::Setting;
@@ -15309,9 +15315,3 @@ pub fn ini_setting_i_update_detections_allowed_per_frame_general() -> *mut c_voi
 /// `INISetting_iVolumetricLightingNoiseTextureDepth_Display` at 0x20d70a8, id 391199 (setting, high)
 #[inline]
 pub fn ini_setting_i_volumetric_lighting_noise_texture_depth_display() -> *mut c_void { address!(391199) as *mut c_void }
-/// `INISetting_iVolumetricLightingNoiseTextureHeight_Display` at 0x20d7090, id 391196 (setting, high)
-#[inline]
-pub fn ini_setting_i_volumetric_lighting_noise_texture_height_display() -> *mut c_void { address!(391196) as *mut c_void }
-/// `INISetting_iVolumetricLightingNoiseTextureWidth_Display` at 0x20d7078, id 391193 (setting, high)
-#[inline]
-pub fn ini_setting_i_volumetric_lighting_noise_texture_width_display() -> *mut c_void { address!(391193) as *mut c_void }

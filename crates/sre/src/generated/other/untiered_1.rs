@@ -1999,20 +1999,20 @@ impl crate::ImageSpaceModifierInstance {
 }
 
 impl crate::IngredientItem {
-    /// `IngredientItem::LoadGame`, vtable slot 15, through the object's vtable (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 11240, rva 0x14f400).
+    /// `IngredientItem::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 11240, rva 0x14f400).
     /// `undefined LoadGame(IngredientItem * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 15, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `IngredientItem::SaveGame`, vtable slot 14, through the object's vtable (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 11239, rva 0x14f3b0).
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(11240, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `IngredientItem::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 11239, rva 0x14f3b0).
     /// `undefined SaveGame(IngredientItem * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 14, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(11239, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::InitTESThread {
@@ -2114,13 +2114,6 @@ impl crate::JobListManager__ServingThread {
 }
 
 impl crate::JournalMenu {
-    /// `JournalMenu::PostDisplay`, vtable slot 6, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 53317, rva 0x9ac480).
-    /// `undefined PostDisplay(JournalMenu * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn post_display(&self) -> u64 { unsafe { virtual_function!(self, 6, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `JournalMenu::vfunc_1_cb0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 53319, rva 0x9ac6d0).
     /// `undefined vfunc_1_cb0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -2456,16 +2449,6 @@ impl crate::LoadedAreaBound {
     pub unsafe fn ctor_sub0(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25961, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl crate::LocalMapMenu__InputHandler {
-    /// `LocalMapMenu::InputHandler::ProcessButtonEvent`, vtable slot 7, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52978, rva 0x994a30).
-    /// `undefined8 ProcessButtonEvent(InputHandler * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn process_button_event(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 7, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-}
-
 impl crate::LockpickingMenu {
     /// `LockpickingMenu::vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51960, rva 0x94dde0).
     /// `undefined vfunc_4_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -2613,13 +2596,6 @@ impl crate::Main {
 }
 
 impl crate::MapMenu {
-    /// `MapMenu::AdvanceMovie`, vtable slot 5, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 53101, rva 0x99bd30).
-    /// `undefined AdvanceMovie(MapMenu * this, float param_1, float * param_2, char * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn advance_movie(&self, param_1: f32, param_2: *mut f32, param_3: *mut c_char) -> u64 { unsafe { virtual_function!(self, 5, (*const Self, f32, *mut f32, *mut c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MapMenu::ProcessMessage`, vtable slot 4, through the object's vtable (decompiler signature, tier untiered; ledger runtime evidence, name high; id 53102, rva 0x99c180).
     /// `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`
     ///
@@ -2791,13 +2767,6 @@ impl crate::MapZoomHandler {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `MapZoomHandler::ProcessButtonEvent`, vtable slot 7, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 53068, rva 0x998ff0).
-    /// `undefined8 ProcessButtonEvent(MapZoomHandler * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn process_button_event(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 7, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::MarketplaceBundleContent {
@@ -3022,13 +2991,6 @@ impl crate::MissileProjectile {
 }
 
 impl crate::MistMenu {
-    /// `MistMenu::AdvanceMovie`, vtable slot 5, through the object's vtable (decompiler signature, tier untiered; ledger runtime evidence, name high; id 52307, rva 0x964c80).
-    /// `undefined AdvanceMovie(MistMenu * this, float param_1, float * param_2, float * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn advance_movie(&self, param_1: f32, param_2: *mut f32, param_3: *mut f32) -> u64 { unsafe { virtual_function!(self, 5, (*const Self, f32, *mut f32, *mut f32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MistMenu::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52737, rva 0x98af00).
     /// `undefined ctor_sub0(longlong param_1)`
     ///
@@ -13898,3 +13860,45 @@ pub unsafe fn assign_named_qs_transform(param_1: *mut u64, param_2: *mut u64, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_next_token_as_pooled_string(param_1: *mut i64, param_2: *mut *mut *mut *mut c_char, param_3: *mut u64, param_4: *mut *mut *mut *mut c_char) -> u64 { unsafe { function!(69174, (*mut i64, *mut *mut *mut *mut c_char, *mut u64, *mut *mut *mut *mut c_char) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignObjectToValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82903, rva 0xd0d660).
+/// `undefined AssignObjectToValue(char * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_object_to_value(param_1: *mut c_char, param_2: *mut i64) -> u64 { unsafe { function!(82903, (*mut c_char, *mut i64) -> u64)(param_1, param_2) } }
+/// `AssignObjectVariant` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 105009, rva 0x14c7d60).
+/// `int * AssignObjectVariant(int * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_object_variant(param_1: *mut i32, param_2: *mut i32, param_3: u64, param_4: u64) -> *mut i32 { unsafe { function!(105009, (*mut i32, *mut i32, u64, u64) -> *mut i32)(param_1, param_2, param_3, param_4) } }
+/// `AssignOperandValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 105214, rva 0x14d4cc0).
+/// `ulonglong AssignOperandValue(longlong param_1, int * param_2, ulonglong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_operand_value(param_1: i64, param_2: *mut i32, param_3: u64) -> u64 { unsafe { function!(105214, (i64, *mut i32, u64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignOptionalFixedString80Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 443545, rva 0x1261e30).
+/// `longlong * AssignOptionalFixedString80Vector(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_optional_fixed_string80_vector(param_1: *mut i64, param_2: *mut i64, param_3: u64, param_4: u64) -> *mut i64 { unsafe { function!(443545, (*mut i64, *mut i64, u64, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }
+/// `AssignOwnedPtr` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84700, rva 0x1180990).
+/// `longlong * AssignOwnedPtr(longlong * param_1, ulonglong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_owned_ptr(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(84700, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
+/// `AssignPackageTargetFromPacked` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 29843, rva 0x4a5840).
+/// `char * AssignPackageTargetFromPacked(char * param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_package_target_from_packed(param_1: *mut c_char, param_2: *mut c_char) -> *mut c_char { unsafe { function!(29843, (*mut c_char, *mut c_char) -> *mut c_char)(param_1, param_2) } }

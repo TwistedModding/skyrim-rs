@@ -2373,6 +2373,24 @@ impl core::ops::Deref for crate::SkyrimScript__Store {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_0D8D4B7E__ResurrectFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `SkyrimScript::_anon_0D8D4B7E::_anon_0D8D4B7E::GiftMenuCallbackFunc` is laid out from its primary base `IGiftMenuScriptCallback`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc {
     type Target = crate::IGiftMenuScriptCallback;
@@ -2565,14 +2583,50 @@ impl core::ops::Deref for crate::SkyrimScript___anon_967A6C5B__FindExactObjectFu
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `SkyrimScript::_anon_A72C052E::AddItemFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__AddItemFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::ApplyHavokImpulseFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::DamageObjectFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__DamageObjectFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::DeleteFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__DeleteFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `SkyrimScript::_anon_A72C052E::DisableFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__DisableFunctor {
     type Target = crate::SkyrimScript__DelayFunctor;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `SkyrimScript::_anon_A72C052E::DropObjectFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__DropObjectFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `SkyrimScript::_anon_A72C052E::EnableFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__EnableFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::ForceAddRemoveRagdollFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor {
     type Target = crate::SkyrimScript__DelayFunctor;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -2592,6 +2646,78 @@ impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__MoveToOwnEditorLo
 /// `SkyrimScript::_anon_A72C052E::NonLatentDeleteFunctor` is laid out from its primary base `SkyrimScript::_anon_A72C052E::DeleteFunctor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor {
     type Target = crate::SkyrimScript___anon_A72C052E__DeleteFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::RemoveItemFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__RemoveItemFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::ResetFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__ResetFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::SetAngleFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__SetAngleFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::SetMotionTypeFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__SetMotionTypeFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::SetPositionFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__SetPositionFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::SetScaleFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__SetScaleFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_A72C052E::TetherFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_A72C052E__TetherFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_BCEAF3CE::ScrollCastFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_BDD43BCC::AddRemoveConstraintFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_BDD43BCC::FadeThenMainMenuCallback` is laid out from its primary base `IFadeDoneCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_BDD43BCC__FadeThenMainMenuCallback {
+    type Target = crate::IFadeDoneCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_C56CCD02::CastFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_C56CCD02__CastFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_EF7C75B8::SendPlayerToJailFunctor` is laid out from its primary base `SkyrimScript::DelayFunctor`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor {
+    type Target = crate::SkyrimScript__DelayFunctor;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }

@@ -161,6 +161,10 @@ impl Class<'_> {
         }
     }
 
+    pub(crate) fn exact(&self) -> bool {
+        matches!(self.size, Size::Exact { .. })
+    }
+
     /// The struct's path anywhere in the crate, through the root's re-export.
     pub(crate) fn path(&self) -> String {
         format!("crate::{}", self.ident)

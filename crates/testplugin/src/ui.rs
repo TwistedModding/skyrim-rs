@@ -276,10 +276,9 @@ fn queue() -> Result<String, String> {
 fn hud() -> Result<String, String> {
     let ui = ui()?;
     let hud = ui.hud().ok_or("HUD Menu is not a live HUDMenu")?;
-    let menu = ui.menu("HUD Menu").ok_or("the HUD Menu has no live menu")?;
-    check(menu.flags & 0x40 != 0 && menu.depth == 2, &format!("HUD depth {} flags {:#x}", menu.depth, menu.flags))?;
-    check(menu.flags == 0x18942, &format!("HUD flags {:#x}", menu.flags))?;
-    let movie = menu.movie().ok_or("the HUD has no movie")?;
+    check(hud.flags & 0x40 != 0 && hud.depth == 2, &format!("HUD depth {} flags {:#x}", hud.depth, hud.flags))?;
+    check(hud.flags == 0x18942, &format!("HUD flags {:#x}", hud.flags))?;
+    let movie = hud.movie().ok_or("the HUD has no movie")?;
     check(movie.is_engine_view(), "the HUD movie's vtable is not GFxMovieView_vftable")?;
     let root = Value::view(&hud.root);
     check(root.value_type() == Some(ValueType::DisplayObject) && root.is_managed(), &format!("the HUD root is {root:?}"))?;
@@ -290,7 +289,7 @@ fn hud() -> Result<String, String> {
 
 fn probe(ui: &Ui) -> Result<String, String> {
     let hud = ui.hud().ok_or("HUD Menu is not a live HUDMenu")?;
-    let movie = ui.menu("HUD Menu").and_then(IMenu::movie).ok_or("the HUD has no movie")?;
+    let movie = hud.movie().ok_or("the HUD has no movie")?;
     let root = movie.variable("_root").ok_or("_root does not resolve")?;
     check(root.is_object() && root.is_managed(), &format!("_root is {root:?}"))?;
     let text = movie.create_string("probe");

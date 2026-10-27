@@ -81,6 +81,12 @@ impl core::ops::Deref for crate::CameraShakeHandler {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `EnemyHealth` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::EnemyHealth {
+    type Target = crate::HUDObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `FlameProjectile` is laid out from its primary base `Projectile`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::FlameProjectile {
     type Target = crate::Projectile;

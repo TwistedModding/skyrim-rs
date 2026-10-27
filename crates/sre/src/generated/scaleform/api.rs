@@ -21,6 +21,12 @@ impl core::ops::Deref for crate::GFxImageLoader {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `GFxLog` is laid out from its primary base `GFxState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::GFxLog {
+    type Target = crate::GFxState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `GFxState` is laid out from its primary base `GRefCountBase<GFxState,2>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::GFxState {
     type Target = crate::GRefCountBase_GFxState_2;

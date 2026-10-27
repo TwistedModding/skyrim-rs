@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSCullingProcess` is laid out from its primary base `NiCullingProcess`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSCullingProcess {
+    type Target = crate::NiCullingProcess;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSGeometry` is laid out from its primary base `NiAVObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSGeometry {
     type Target = crate::NiAVObject;
@@ -18,6 +24,12 @@ impl core::ops::Deref for crate::BSLight {
 /// `BSLightingShaderProperty` is laid out from its primary base `BSShaderProperty`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSLightingShaderProperty {
     type Target = crate::BSShaderProperty;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSShaderAccumulator` is laid out from its primary base `NiAlphaAccumulator`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSShaderAccumulator {
+    type Target = crate::NiAlphaAccumulator;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }

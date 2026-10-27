@@ -327,6 +327,12 @@ impl core::ops::Deref for crate::MovementParameters {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `MovementParametersFixed` is laid out from its primary base `IMovementParameters`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MovementParametersFixed {
+    type Target = crate::IMovementParameters;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `MovementPathManagerAgent` is laid out from its primary base `MovementAgent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MovementPathManagerAgent {
     type Target = crate::MovementAgent;

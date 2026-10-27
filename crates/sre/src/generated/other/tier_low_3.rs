@@ -3,55 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Wrap___std_type_info_compare_ID_447422` (decompiler signature, tier low; ledger os_api evidence, name medium; id 447422, rva 0x1348c60).
-/// `longlong Wrap___std_type_info_compare_ID_447422(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap___std_type_info_compare_id_447422(param_1: i64, param_2: i64) -> i64 { unsafe { function!(447422, (i64, i64) -> i64)(param_1, param_2) } }
-/// `Wrap___std_type_info_compare_ID_97358` (decompiler signature, tier low; ledger os_api evidence, name medium; id 97358, rva 0x139b3f0).
-/// `longlong Wrap___std_type_info_compare_ID_97358(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap___std_type_info_compare_id_97358(param_1: i64, param_2: i64) -> i64 { unsafe { function!(97358, (i64, i64) -> i64)(param_1, param_2) } }
-/// `Wrap__getcwd` (decompiler signature, tier low; ledger os_api evidence, name medium; id 69154, rva 0xead8a0).
-/// `bool Wrap__getcwd(char * param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__getcwd(param_1: *mut c_char, param_2: i32) -> u8 { unsafe { function!(69154, (*mut c_char, i32) -> u8)(param_1, param_2) } }
-/// `Wrap__invalid_parameter_noinfo_noreturn` (decompiler signature, tier low; ledger os_api evidence, name medium; id 522979, rva 0x10c170).
-/// `undefined Wrap__invalid_parameter_noinfo_noreturn(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__invalid_parameter_noinfo_noreturn(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(522979, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `Wrap__seh_filter_exe_ID_165300` (decompiler signature, tier low; ledger os_api evidence, name medium; id 165300, rva 0x17364ad).
-/// `undefined Wrap__seh_filter_exe_ID_165300(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__seh_filter_exe_id_165300(param_1: *mut u64) -> u64 { unsafe { function!(165300, (*mut u64) -> u64)(param_1) } }
-/// `Wrap__stat64i32` (decompiler signature, tier low; ledger os_api evidence, name medium; id 69011, rva 0xeacf20).
-/// `undefined4 Wrap__stat64i32(undefined8 param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__stat64i32(param_1: u64) -> u32 { unsafe { function!(69011, (u64) -> u32)(param_1) } }
-/// `Wrap__stricmp_ID_454057` (decompiler signature, tier low; ledger os_api evidence, name medium; id 454057, rva 0x15e4c20).
-/// `bool Wrap__stricmp_ID_454057(char * param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__stricmp_id_454057(param_1: *mut c_char, param_2: *mut c_char) -> u8 { unsafe { function!(454057, (*mut c_char, *mut c_char) -> u8)(param_1, param_2) } }
 /// `Wrap__stricmp_ID_454058` (decompiler signature, tier low; ledger os_api evidence, name medium; id 454058, rva 0x15e4c50).
 /// `bool Wrap__stricmp_ID_454058(char * param_1, char * param_2)`
 ///

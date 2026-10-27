@@ -2655,8 +2655,44 @@ impl core::ops::Deref for crate::CombatPathSpeedController {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationRef>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestFlyingAttack,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSear_5c9bca834317 {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyS_dac5fb67c20c {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPol_0190485cce3e {
     type Target = crate::CombatPath;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -2667,8 +2703,26 @@ impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPath
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_49bd684b3924 {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPoli_c9b31fcffb81 {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStanda_6e4e84560055 {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicySta_73e3f5f652b9 {
     type Target = crate::CombatPath;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -2681,6 +2735,66 @@ impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPath
 }
 /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStan_27fa9f4ce879 {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestHover_CombatPathDestinationNone {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations {
+    type Target = crate::CombatPath;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>` is laid out from its primary base `CombatPath`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs {
     type Target = crate::CombatPath;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }

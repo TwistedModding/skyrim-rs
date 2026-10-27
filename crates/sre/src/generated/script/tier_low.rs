@@ -4627,33 +4627,33 @@ impl crate::SkyrimScript__Store {
 }
 
 impl crate::SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor {
-    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54788, rva 0xa09030).
+    /// `SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54788, rva 0xa09030).
     /// `AttachAshPileFunctor * vdtor(AttachAshPileFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54788, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor {
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54800, rva 0xa093c0).
+    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54800, rva 0xa093c0).
     /// `MoveToPackLocFunctor * vdtor(MoveToPackLocFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54800, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_0D8D4B7E__ResurrectFunctor {
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54794, rva 0xa09200).
+    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54794, rva 0xa09200).
     /// `ResurrectFunctor * vdtor(ResurrectFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54794, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc {
@@ -4727,43 +4727,43 @@ impl crate::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___ano
 }
 
 impl crate::SkyrimScript___anon_A72C052E__AddItemFunctor {
-    /// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56348, rva 0xa4fa30).
+    /// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56348, rva 0xa4fa30).
     /// `AddItemFunctor * vdtor(AddItemFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56348, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor {
-    /// `SkyrimScript::_anon_A72C052E::ApplyHavokImpulseFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56315, rva 0xa51190).
+    /// `SkyrimScript::_anon_A72C052E::ApplyHavokImpulseFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56315, rva 0xa51190).
     /// `ApplyHavokImpulseFunctor * vdtor(ApplyHavokImpulseFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56315, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__DamageObjectFunctor {
-    /// `SkyrimScript::_anon_A72C052E::DamageObjectFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56259, rva 0xa50160).
+    /// `SkyrimScript::_anon_A72C052E::DamageObjectFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56259, rva 0xa50160).
     /// `DamageObjectFunctor * vdtor(DamageObjectFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56259, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__DeleteFunctor {
-    /// `SkyrimScript::_anon_A72C052E::DeleteFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56279, rva 0xa506e0).
+    /// `SkyrimScript::_anon_A72C052E::DeleteFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56279, rva 0xa506e0).
     /// `DeleteFunctor * vdtor(DeleteFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56279, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__DisableFunctor {
@@ -4777,13 +4777,13 @@ impl crate::SkyrimScript___anon_A72C052E__DisableFunctor {
 }
 
 impl crate::SkyrimScript___anon_A72C052E__DropObjectFunctor {
-    /// `SkyrimScript::_anon_A72C052E::DropObjectFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56303, rva 0xa50e00).
+    /// `SkyrimScript::_anon_A72C052E::DropObjectFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56303, rva 0xa50e00).
     /// `DropObjectFunctor * vdtor(DropObjectFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56303, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__EnableFunctor {
@@ -4797,13 +4797,13 @@ impl crate::SkyrimScript___anon_A72C052E__EnableFunctor {
 }
 
 impl crate::SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor {
-    /// `SkyrimScript::_anon_A72C052E::ForceAddRemoveRagdollFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56309, rva 0xa50fc0).
+    /// `SkyrimScript::_anon_A72C052E::ForceAddRemoveRagdollFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56309, rva 0xa50fc0).
     /// `ForceAddRemoveRagdollFunctor * vdtor(ForceAddRemoveRagdollFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56309, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__MoveToFunctor {
@@ -4837,123 +4837,123 @@ impl crate::SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor {
 }
 
 impl crate::SkyrimScript___anon_A72C052E__RemoveItemFunctor {
-    /// `SkyrimScript::_anon_A72C052E::RemoveItemFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56354, rva 0xa4fc00).
+    /// `SkyrimScript::_anon_A72C052E::RemoveItemFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56354, rva 0xa4fc00).
     /// `RemoveItemFunctor * vdtor(RemoveItemFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56354, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__ResetFunctor {
-    /// `SkyrimScript::_anon_A72C052E::ResetFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56321, rva 0xa51360).
+    /// `SkyrimScript::_anon_A72C052E::ResetFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56321, rva 0xa51360).
     /// `ResetFunctor * vdtor(ResetFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56321, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__SetAngleFunctor {
-    /// `SkyrimScript::_anon_A72C052E::SetAngleFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56297, rva 0xa50c30).
+    /// `SkyrimScript::_anon_A72C052E::SetAngleFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56297, rva 0xa50c30).
     /// `SetAngleFunctor * vdtor(SetAngleFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56297, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__SetMotionTypeFunctor {
-    /// `SkyrimScript::_anon_A72C052E::SetMotionTypeFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56335, rva 0xa51950).
+    /// `SkyrimScript::_anon_A72C052E::SetMotionTypeFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56335, rva 0xa51950).
     /// `SetMotionTypeFunctor * vdtor(SetMotionTypeFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56335, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__SetPositionFunctor {
-    /// `SkyrimScript::_anon_A72C052E::SetPositionFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56291, rva 0xa50a60).
+    /// `SkyrimScript::_anon_A72C052E::SetPositionFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56291, rva 0xa50a60).
     /// `SetPositionFunctor * vdtor(SetPositionFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56291, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__SetScaleFunctor {
-    /// `SkyrimScript::_anon_A72C052E::SetScaleFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56342, rva 0xa51bf0).
+    /// `SkyrimScript::_anon_A72C052E::SetScaleFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56342, rva 0xa51bf0).
     /// `SetScaleFunctor * vdtor(SetScaleFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56342, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__TetherFunctor {
-    /// `SkyrimScript::_anon_A72C052E::TetherFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56328, rva 0xa51630).
+    /// `SkyrimScript::_anon_A72C052E::TetherFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56328, rva 0xa51630).
     /// `TetherFunctor * vdtor(TetherFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56328, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor {
-    /// `SkyrimScript::_anon_BCEAF3CE::ScrollCastFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55730, rva 0xa32160).
+    /// `SkyrimScript::_anon_BCEAF3CE::ScrollCastFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55730, rva 0xa32160).
     /// `ScrollCastFunctor * vdtor(ScrollCastFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55730, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor {
-    /// `SkyrimScript::_anon_BDD43BCC::AddRemoveConstraintFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55506, rva 0xa28d50).
+    /// `SkyrimScript::_anon_BDD43BCC::AddRemoveConstraintFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55506, rva 0xa28d50).
     /// `AddRemoveConstraintFunctor * vdtor(AddRemoveConstraintFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55506, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_BDD43BCC__FadeThenMainMenuCallback {
-    /// `SkyrimScript::_anon_BDD43BCC::FadeThenMainMenuCallback::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 55560, rva 0xa2acb0).
+    /// `SkyrimScript::_anon_BDD43BCC::FadeThenMainMenuCallback::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 55560, rva 0xa2acb0).
     /// `FadeThenMainMenuCallback * vdtor(FadeThenMainMenuCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55560, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_C56CCD02__CastFunctor {
-    /// `SkyrimScript::_anon_C56CCD02::CastFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55753, rva 0xa33630).
+    /// `SkyrimScript::_anon_C56CCD02::CastFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55753, rva 0xa33630).
     /// `CastFunctor * vdtor(CastFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55753, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor {
-    /// `SkyrimScript::_anon_EF7C75B8::SendPlayerToJailFunctor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55818, rva 0xa35ee0).
+    /// `SkyrimScript::_anon_EF7C75B8::SendPlayerToJailFunctor::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55818, rva 0xa35ee0).
     /// `SendPlayerToJailFunctor * vdtor(SendPlayerToJailFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55818, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimVM {

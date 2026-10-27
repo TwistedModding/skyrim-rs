@@ -57,6 +57,12 @@ impl core::ops::Deref for crate::BGSStandardSoundDef__SoundPlaybackCharacteristi
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSAudioManagerThread` is laid out from its primary base `BSThread`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSAudioManagerThread {
+    type Target = crate::BSThread;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSMusicManager` is laid out from its primary base `BSTEventSink<BSMusicEvent>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSMusicManager {
     type Target = crate::BSTEventSink_BSMusicEvent;

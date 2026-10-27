@@ -27,9 +27,21 @@ impl core::ops::Deref for crate::TESActionData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TESActorBase` is laid out from its primary base `TESBoundAnimObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESActorBase {
+    type Target = crate::TESBoundAnimObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `TESAmbushPackageData` is laid out from its primary base `TESPackageData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESAmbushPackageData {
     type Target = crate::TESPackageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESAmmo` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESAmmo {
+    type Target = crate::TESBoundObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -147,6 +159,12 @@ impl core::ops::Deref for crate::TESFollowPackageData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TESFormUIData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESFormUIData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `TESGrass` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESGrass {
     type Target = crate::TESBoundObject;
@@ -156,6 +174,12 @@ impl core::ops::Deref for crate::TESGrass {
 /// `TESHealthForm` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESHealthForm {
     type Target = crate::BaseFormComponent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESIcon` is laid out from its primary base `TESTexture`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESIcon {
+    type Target = crate::TESTexture;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -279,6 +303,12 @@ impl core::ops::Deref for crate::TESObject {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TESObjectACTI` is laid out from its primary base `TESBoundAnimObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESObjectACTI {
+    type Target = crate::TESBoundAnimObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `TESObjectANIO` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESObjectANIO {
     type Target = crate::TESForm;
@@ -288,6 +318,18 @@ impl core::ops::Deref for crate::TESObjectANIO {
 /// `TESObjectARMA` is laid out from its primary base `TESObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESObjectARMA {
     type Target = crate::TESObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESObjectARMO` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESObjectARMO {
+    type Target = crate::TESBoundObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESObjectBOOK` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESObjectBOOK {
+    type Target = crate::TESBoundObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -321,6 +363,12 @@ impl core::ops::Deref for crate::TESObjectLIGH {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TESObjectMISC` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESObjectMISC {
+    type Target = crate::TESBoundObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `TESObjectREFRSync::REFRSyncController` is laid out from its primary base `NiTimeController`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESObjectREFRSync__REFRSyncController {
     type Target = crate::NiTimeController;
@@ -335,6 +383,12 @@ impl core::ops::Deref for crate::TESObjectSTAT {
 }
 /// `TESObjectTREE` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESObjectTREE {
+    type Target = crate::TESBoundObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESObjectWEAP` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESObjectWEAP {
     type Target = crate::TESBoundObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -468,6 +522,12 @@ impl core::ops::Deref for crate::TESSpellList {
 /// `TESTexture` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESTexture {
     type Target = crate::BaseFormComponent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESTexture1024` is laid out from its primary base `TESTexture`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESTexture1024 {
+    type Target = crate::TESTexture;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }

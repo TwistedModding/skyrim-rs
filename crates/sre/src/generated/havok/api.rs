@@ -51,6 +51,12 @@ impl core::ops::Deref for crate::_anon_9334B8D7__bhkConstraintDisabler {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `_anon_A5798209::bhkClosestRBRayHitCollector` is laid out from its primary base `hkpClosestRayHitCollector`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_A5798209__bhkClosestRBRayHitCollector {
+    type Target = crate::hkpClosestRayHitCollector;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `_anon_FB16BEF9::hkNativeResource` is laid out from its primary base `hkResource`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_FB16BEF9__hkNativeResource {
     type Target = crate::hkResource;
@@ -84,6 +90,12 @@ impl core::ops::Deref for crate::bhkAngularDashpotAction {
 /// `bhkAttachmentCollisionObject` is laid out from its primary base `bhkBlendCollisionObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bhkAttachmentCollisionObject {
     type Target = crate::bhkBlendCollisionObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bhkAvoidBox` is laid out from its primary base `bhkAabbPhantom`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bhkAvoidBox {
+    type Target = crate::bhkAabbPhantom;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -258,6 +270,12 @@ impl core::ops::Deref for crate::bhkCharacterStateOnGround {
 /// `bhkCharacterStateSwimming` is laid out from its primary base `bhkCharacterState`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bhkCharacterStateSwimming {
     type Target = crate::bhkCharacterState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bhkCollisionBox` is laid out from its primary base `bhkSimpleShapePhantom`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bhkCollisionBox {
+    type Target = crate::bhkSimpleShapePhantom;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2373,6 +2391,12 @@ impl core::ops::Deref for crate::hkbProjectStringData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbProxyModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbProxyModifier {
+    type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbRagdollSceneModifier` is laid out from its primary base `hkbSceneModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbRagdollSceneModifier {
     type Target = crate::hkbSceneModifier;
@@ -2673,6 +2697,12 @@ impl core::ops::Deref for crate::hkp3AxisSweep {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkpAabbPhantom` is laid out from its primary base `hkpPhantom`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpAabbPhantom {
+    type Target = crate::hkpPhantom;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkpAction` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpAction {
     type Target = crate::hkReferencedObject;
@@ -2949,6 +2979,12 @@ impl core::ops::Deref for crate::hkpCompressedSampledHeightFieldShape {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkpConstrainedSystemFilter` is laid out from its primary base `hkpCollisionFilter`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpConstrainedSystemFilter {
+    type Target = crate::hkpCollisionFilter;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkpConstraintChainData` is laid out from its primary base `hkpConstraintData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpConstraintChainData {
     type Target = crate::hkpConstraintData;
@@ -2964,6 +3000,12 @@ impl core::ops::Deref for crate::hkpConstraintChainInstance {
 /// `hkpConstraintChainInstanceAction` is laid out from its primary base `hkpAction`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpConstraintChainInstanceAction {
     type Target = crate::hkpAction;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpConstraintCollisionFilter` is laid out from its primary base `hkpPairCollisionFilter`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpConstraintCollisionFilter {
+    type Target = crate::hkpPairCollisionFilter;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3090,6 +3132,12 @@ impl core::ops::Deref for crate::hkpDefaultWorldMemoryWatchDog {
 /// `hkpDeferredConstraintOwner` is laid out from its primary base `hkpConstraintOwner`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpDeferredConstraintOwner {
     type Target = crate::hkpConstraintOwner;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpDisableEntityCollisionFilter` is laid out from its primary base `hkpCollisionFilter`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpDisableEntityCollisionFilter {
+    type Target = crate::hkpCollisionFilter;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3411,6 +3459,12 @@ impl core::ops::Deref for crate::hkpMoppSplitter {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkpMotion` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpMotion {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkpMotorAction` is laid out from its primary base `hkpUnaryAction`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpMotorAction {
     type Target = crate::hkpUnaryAction;
@@ -3657,6 +3711,12 @@ impl core::ops::Deref for crate::hkpRotationalConstraintData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkpSafeEaseConstraintsAction` is laid out from its primary base `hkpEaseConstraintsAction`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpSafeEaseConstraintsAction {
+    type Target = crate::hkpEaseConstraintsAction;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkpSampledHeightFieldShape` is laid out from its primary base `hkpHeightFieldShape`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpSampledHeightFieldShape {
     type Target = crate::hkpHeightFieldShape;
@@ -3768,6 +3828,12 @@ impl core::ops::Deref for crate::hkpSimulation {
 /// `hkpSimulationIsland` is laid out from its primary base `hkpConstraintOwner`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpSimulationIsland {
     type Target = crate::hkpConstraintOwner;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpSingleShapeContainer` is laid out from its primary base `hkpShapeContainer`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpSingleShapeContainer {
+    type Target = crate::hkpShapeContainer;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -4044,6 +4110,12 @@ impl core::ops::Deref for crate::hkpTriggerVolume {
 /// `hkpUnaryAction` is laid out from its primary base `hkpAction`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpUnaryAction {
     type Target = crate::hkpAction;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpWheelConstraintData` is laid out from its primary base `hkpConstraintData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpWheelConstraintData {
+    type Target = crate::hkpConstraintData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -4468,39 +4540,15 @@ impl crate::hkpCollisionFilter {
 }
 
 impl crate::hkpConstrainedSystemFilter {
-    /// The `hkpCollidableCollidableFilter` base at +0x10.
-    #[inline]
-    pub fn as_hkp_collidable_collidable_filter(&self) -> &crate::hkpCollidableCollidableFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
     /// The `hkpConstraintListener` base at +0x48.
     #[inline]
     pub fn as_hkp_constraint_listener(&self) -> &crate::hkpConstraintListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
-    /// The `hkpRayCollidableFilter` base at +0x28.
-    #[inline]
-    pub fn as_hkp_ray_collidable_filter(&self) -> &crate::hkpRayCollidableFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
-    /// The `hkpRayShapeCollectionFilter` base at +0x20.
-    #[inline]
-    pub fn as_hkp_ray_shape_collection_filter(&self) -> &crate::hkpRayShapeCollectionFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// The `hkpShapeCollectionFilter` base at +0x18.
-    #[inline]
-    pub fn as_hkp_shape_collection_filter(&self) -> &crate::hkpShapeCollectionFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
 }
 
 impl crate::hkpConstraintCollisionFilter {
-    /// The `hkpCollidableCollidableFilter` base at +0x10.
-    #[inline]
-    pub fn as_hkp_collidable_collidable_filter(&self) -> &crate::hkpCollidableCollidableFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
     /// The `hkpConstraintListener` base at +0x60.
     #[inline]
     pub fn as_hkp_constraint_listener(&self) -> &crate::hkpConstraintListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x60).cast() } }
-    /// The `hkpRayCollidableFilter` base at +0x28.
-    #[inline]
-    pub fn as_hkp_ray_collidable_filter(&self) -> &crate::hkpRayCollidableFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
-    /// The `hkpRayShapeCollectionFilter` base at +0x20.
-    #[inline]
-    pub fn as_hkp_ray_shape_collection_filter(&self) -> &crate::hkpRayShapeCollectionFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// The `hkpShapeCollectionFilter` base at +0x18.
-    #[inline]
-    pub fn as_hkp_shape_collection_filter(&self) -> &crate::hkpShapeCollectionFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
 }
 
 impl crate::hkpConvexListShape {
@@ -4531,21 +4579,9 @@ impl crate::hkpConvexVerticesShape {
 }
 
 impl crate::hkpDisableEntityCollisionFilter {
-    /// The `hkpCollidableCollidableFilter` base at +0x10.
-    #[inline]
-    pub fn as_hkp_collidable_collidable_filter(&self) -> &crate::hkpCollidableCollidableFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
     /// The `hkpEntityListener` base at +0x48.
     #[inline]
     pub fn as_hkp_entity_listener(&self) -> &crate::hkpEntityListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
-    /// The `hkpRayCollidableFilter` base at +0x28.
-    #[inline]
-    pub fn as_hkp_ray_collidable_filter(&self) -> &crate::hkpRayCollidableFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
-    /// The `hkpRayShapeCollectionFilter` base at +0x20.
-    #[inline]
-    pub fn as_hkp_ray_shape_collection_filter(&self) -> &crate::hkpRayShapeCollectionFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// The `hkpShapeCollectionFilter` base at +0x18.
-    #[inline]
-    pub fn as_hkp_shape_collection_filter(&self) -> &crate::hkpShapeCollectionFilter { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
 }
 
 impl crate::hkpEndOfStepCallbackUtil {

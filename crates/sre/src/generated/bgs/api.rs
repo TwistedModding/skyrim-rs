@@ -441,6 +441,12 @@ impl core::ops::Deref for crate::BGSMessageIcon {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BGSMovableStatic` is laid out from its primary base `TESFullName`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGSMovableStatic {
+    type Target = crate::TESFullName;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BGSMovementType` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSMovementType {
     type Target = crate::TESForm;
@@ -546,6 +552,12 @@ impl core::ops::Deref for crate::BGSOutfit {
 /// `BGSOverridePackCollection` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSOverridePackCollection {
     type Target = crate::BaseFormComponent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>` is laid out from its primary base `BGSNamedPackageData<IAITarget>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd {
+    type Target = crate::BGSNamedPackageData_IAITarget;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2185,6 +2197,9 @@ impl crate::BGSMenuIcon {
     /// The `TESIcon` base at +0x20.
     #[inline]
     pub fn as_tes_icon(&self) -> &crate::TESIcon { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    /// The `TESTexture` base at +0x20.
+    #[inline]
+    pub fn as_tes_texture(&self) -> &crate::TESTexture { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
 }
 
 impl crate::BGSMessage {
@@ -2269,12 +2284,6 @@ impl crate::BGSNote {
     /// The `TESTexture` base at +0x68.
     #[inline]
     pub fn as_tes_texture(&self) -> &crate::TESTexture { unsafe { &*core::ptr::from_ref(self).byte_add(0x68).cast() } }
-}
-
-impl crate::BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd {
-    /// The `IPackageData` base at +0x8.
-    #[inline]
-    pub fn as_i_package_data(&self) -> &crate::IPackageData { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
 }
 
 impl crate::BGSPerk {
@@ -2407,6 +2416,12 @@ impl crate::BGSWaterCollisionManager__bhkWaterfall {
     /// The `BGSWaterCollisionManager::BGSWaterUpdateI` base at +0x20.
     #[inline]
     pub fn as_bgs_water_collision_manager__bgs_water_update_i(&self) -> &crate::BGSWaterCollisionManager__BGSWaterUpdateI { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+}
+
+impl crate::BGSWaterCollisionManager__bshkAutoWater {
+    /// The `BGSWaterCollisionManager::BGSWaterUpdateI` base at +0x130.
+    #[inline]
+    pub fn as_bgs_water_collision_manager__bgs_water_update_i(&self) -> &crate::BGSWaterCollisionManager__BGSWaterUpdateI { unsafe { &*core::ptr::from_ref(self).byte_add(0x130).cast() } }
 }
 
 /// `g_BGSAnimSoundStateManager` at 0x3231550, id 403608 (layout_inference, medium)

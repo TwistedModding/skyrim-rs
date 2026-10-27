@@ -15,9 +15,129 @@ impl core::ops::Deref for crate::BSTCommonStaticMessageQueue_UIMessage____ptr64_
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSUIMessageData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSUIMessageData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSUIScaleformData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSUIScaleformData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `Console` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::Console {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ConsoleData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ConsoleData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ContainerMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ContainerMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CursorMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CursorMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `DialogueMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::DialogueMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `HUDData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::HUDData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `HUDMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::HUDMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `HUDNotifications` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::HUDNotifications {
+    type Target = crate::HUDObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `InventoryMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::InventoryMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `LoadingMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::LoadingMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MagicMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MagicMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MainMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MainMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `MenuControls` is laid out from its primary base `BSTEventSink<InputEvent*___ptr64>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MenuControls {
     type Target = crate::BSTEventSink_InputEvent____ptr64;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MenuOpenHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MenuOpenHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MessageBoxData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MessageBoxData {
+    type Target = crate::IUIMessageData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MessageBoxMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MessageBoxMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback {
+    type Target = crate::IMessageBoxCallback;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TweenMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TweenMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_7C6875DF::OldMessageBoxCallback` is laid out from its primary base `IMessageBoxCallback`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_7C6875DF__OldMessageBoxCallback {
+    type Target = crate::IMessageBoxCallback;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -76,12 +196,6 @@ impl crate::BSScaleformManager {
 }
 
 impl crate::Console {
-    /// `Console::Accept`, vtable slot 1: registers 'ExecuteCommand' (0x909e00) and 'HideComplete' (0x90a610)
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `void (Console* this, FxDelegateHandler::CallbackProcessor* p)`
-    #[inline]
-    pub fn accept(&self, p: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::FxDelegateHandler__CallbackProcessor))(core::ptr::from_ref(self), core::ptr::from_ref(p)) } }
     /// `Console::Dtor`, vtable slot 0: deleting destructor
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -280,21 +394,6 @@ impl crate::HUDMenu {
     /// The `BSTEventSink<UserEventEnabledEvent>` base at +0x30.
     #[inline]
     pub fn as_bst_event_sink_user_event_enabled_event(&self) -> &crate::BSTEventSink_UserEventEnabledEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-    /// `HUDMenu::Accept`, vtable slot 1: registers the movie's FxDelegate callbacks
-    ///
-    /// Semantic, ui pass, medium; called through the object's vtable.
-    /// `void (HUDMenu* this, FxDelegateHandler::CallbackProcessor* p)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn accept(&self, p: *mut crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (*const Self, *mut crate::FxDelegateHandler__CallbackProcessor))(core::ptr::from_ref(self), p) } }
-    /// `HUDMenu::AdvanceMovie`, vtable slot 5: IMenu's advance with the interval clamped to the constant ID_215451, then queues a HUD data message when the tracked globals change (only while numPausesGame == 0)
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `void (HUDMenu* this, float interval, u32 currentTimeMs)`
-    #[inline]
-    pub fn advance_movie(&self, interval: f32, currentTimeMs: u32) { unsafe { virtual_function!(self, 5, (*const Self, f32, u32))(core::ptr::from_ref(self), interval, currentTimeMs) } }
     /// `HUDMenu::Dtor`, vtable slot 0: deleting destructor
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -379,30 +478,6 @@ impl crate::HUDMenu {
 }
 
 impl crate::HUDNotifications {
-    /// `HUDNotifications::Cleanup`, vtable slot 4: clears the queue and the quest-name letters
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `void (HUDNotifications* this)`
-    #[inline]
-    pub fn cleanup(&self) { unsafe { virtual_function!(self, 4, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `HUDNotifications::ProcessMessage`, vtable slot 2: queues HUDData types 0xe..0x1a (quest started/completed/failed, objectives, level up, shout)
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `bool (HUDNotifications* this, UIMessage* msg)`
-    ///
-    /// # Safety
-    /// `msg` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 2, (*const Self, *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), msg) } }
-    /// `HUDNotifications::RegisterHUDComponent`, vtable slot 3: takes args[0] and args[1] and caches 'ObjectivesA'
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `void (HUDNotifications* this, FxDelegateArgs* args)`
-    ///
-    /// # Safety
-    /// `args` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn register_hud_component(&self, args: *mut c_void) { unsafe { virtual_function!(self, 3, (*const Self, *mut c_void))(core::ptr::from_ref(self), args) } }
     /// `HUDNotifications::Update`, vtable slot 1: if AS 'CanShowNotification' is true, shows the first ready entry via 'ShowNotification' (9 args) and removes it
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -857,21 +932,6 @@ impl crate::MenuOpenHandler {
     /// `bool (MenuOpenHandler* this, InputEvent* event)`
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
-    /// `MenuOpenHandler::ProcessButtonEvent`, vtable slot 7: 
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `bool (MenuOpenHandler* this, ButtonEvent* event)`
-    #[inline]
-    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
-    /// `MenuOpenHandler::ProcessKinectEvent`, vtable slot 4: 
-    ///
-    /// Semantic, ui pass, medium; called through the object's vtable.
-    /// `bool (MenuOpenHandler* this, KinectEvent* event)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn process_kinect_event(&self, event: *mut crate::KinectEvent) -> bool { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::KinectEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuOpenHandler::OpenTweenMenu`: opens the TweenMenu (UIStrings+0xf0 'TweenMenu') and closes the FavoritesMenu (+0x158) unless VATS is active, the player is busy, the camera is in cameraStates[8] or the +0xe0/+0x48 check holds (save-on-pause option)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52714, rva 0x988600.
@@ -911,12 +971,6 @@ impl crate::MessageBoxData {
 }
 
 impl crate::MessageBoxMenu {
-    /// `MessageBoxMenu::Accept`, vtable slot 1: registers 'buttonPress' (0x962f50) and 'PlaySound'
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `void (MessageBoxMenu* this, FxDelegateHandler::CallbackProcessor* p)`
-    #[inline]
-    pub fn accept(&self, p: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::FxDelegateHandler__CallbackProcessor))(core::ptr::from_ref(self), core::ptr::from_ref(p)) } }
     /// `MessageBoxMenu::Dtor`, vtable slot 0: deletes every queued MessageBoxData, clears g_MessageBoxMenu
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -1068,12 +1122,6 @@ impl crate::TaskQueueHolder {
 }
 
 impl crate::TweenMenu {
-    /// `TweenMenu::PostDisplay`, vtable slot 6: PlayerCamera::Update, then movie display
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `void (TweenMenu* this)`
-    #[inline]
-    pub fn post_display(&self) { unsafe { virtual_function!(self, 6, (*const Self))(core::ptr::from_ref(self)) } }
     /// `TweenMenu::Create`: menu creator registered under 'TweenMenu' (ctor inlined except ContainerMenu)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52723, rva 0x989000.

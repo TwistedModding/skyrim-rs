@@ -4598,43 +4598,43 @@ impl crate::CombatPathSpeedController {
 }
 
 impl crate::CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation {
-    /// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50344, rva 0x8ea5f0).
+    /// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50344, rva 0x8ea5f0).
     /// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation> * vdtor(CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50344, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef {
-    /// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationRef>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50368, rva 0x8ea9c0).
+    /// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationRef>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50368, rva 0x8ea9c0).
     /// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationRef> * vdtor(CombatPathT<CombatPathRequestFlight,CombatPathDestinationRef> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50368, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone {
-    /// `CombatPathT<CombatPathRequestFlyingAttack,CombatPathDestinationNone>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50500, rva 0x8ec510).
+    /// `CombatPathT<CombatPathRequestFlyingAttack,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50500, rva 0x8ec510).
     /// `CombatPathT<CombatPathRequestFlyingAttack,CombatPathDestinationNone> * vdtor(CombatPathT<CombatPathRequestFlyingAttack,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50500, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e {
-    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49341, rva 0x8c0020).
+    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49341, rva 0x8c0020).
     /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * vdtor(CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49341, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSear_5c9bca834317 {
@@ -4648,23 +4648,23 @@ impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAtta
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyS_dac5fb67c20c {
-    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49847, rva 0x8d5af0).
+    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49847, rva 0x8d5af0).
     /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * vdtor(CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49847, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPol_0190485cce3e {
-    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48644, rva 0x8a5080).
+    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48644, rva 0x8a5080).
     /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * vdtor(CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48644, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSear_ec6a40e82518 {
@@ -4678,13 +4678,13 @@ impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTarg
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_49bd684b3924 {
-    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48333, rva 0x8950c0).
+    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48333, rva 0x8950c0).
     /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef> * vdtor(CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48333, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPoli_c9b31fcffb81 {
@@ -4698,23 +4698,23 @@ impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDis
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStanda_6e4e84560055 {
-    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48625, rva 0x8a4850).
+    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48625, rva 0x8a4850).
     /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * vdtor(CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48625, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicySta_73e3f5f652b9 {
-    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 47977, rva 0x888690).
+    /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 47977, rva 0x888690).
     /// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * vdtor(CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47977, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSear_d4585321471c {
@@ -4748,13 +4748,6 @@ impl crate::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWa
 }
 
 impl crate::CombatPathT_CombatPathRequestHover_CombatPathDestinationNone {
-    /// `CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50488, rva 0x8ec1e0).
-    /// `CombatPathT<CombatPathRequestHover,CombatPathDestinationNone> * vdtor(CombatPathT<CombatPathRequestHover,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 50544, rva 0x8ee9d0).
     /// `CombatPathT<CombatPathRequestHover,CombatPathDestinationNone> * ctor(CombatPathT<CombatPathRequestHover,CombatPathDestinationNone> * this, longlong param_1, longlong * param_2)`
     ///
@@ -4762,66 +4755,73 @@ impl crate::CombatPathT_CombatPathRequestHover_CombatPathDestinationNone {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self, param_1: i64, param_2: *mut i64) -> *mut Self { unsafe { function!(50544, (*const Self, i64, *mut i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
+    /// `CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50488, rva 0x8ec1e0).
+    /// `CombatPathT<CombatPathRequestHover,CombatPathDestinationNone> * vdtor(CombatPathT<CombatPathRequestHover,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50488, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation {
-    /// `CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50476, rva 0x8ebec0).
+    /// `CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50476, rva 0x8ebec0).
     /// `CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation> * vdtor(CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50476, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations {
-    /// `CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50392, rva 0x8eade0).
+    /// `CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50392, rva 0x8eade0).
     /// `CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations> * vdtor(CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50392, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs {
-    /// `CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50404, rva 0x8eb050).
+    /// `CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50404, rva 0x8eb050).
     /// `CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs> * vdtor(CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50404, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation {
-    /// `CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50464, rva 0x8ebb80).
+    /// `CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50464, rva 0x8ebb80).
     /// `CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation> * vdtor(CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50464, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation {
-    /// `CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50452, rva 0x8eb840).
+    /// `CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50452, rva 0x8eb840).
     /// `CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation> * vdtor(CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50452, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation {
-    /// `CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50356, rva 0x8ea7e0).
+    /// `CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50356, rva 0x8ea7e0).
     /// `CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation> * vdtor(CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50356, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef {
@@ -4835,33 +4835,33 @@ impl crate::CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef {
 }
 
 impl crate::CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation {
-    /// `CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50440, rva 0x8eb6a0).
+    /// `CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50440, rva 0x8eb6a0).
     /// `CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation> * vdtor(CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50440, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations {
-    /// `CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50416, rva 0x8eb280).
+    /// `CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50416, rva 0x8eb280).
     /// `CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations> * vdtor(CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50416, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs {
-    /// `CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50428, rva 0x8eb4d0).
+    /// `CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50428, rva 0x8eb4d0).
     /// `CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs> * vdtor(CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50428, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CombatPathingDebugData {

@@ -3,9 +3,51 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ActivateHandler` is laid out from its primary base `HeldStateHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ActivateHandler {
+    type Target = crate::HeldStateHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `AmiiboEvent` is laid out from its primary base `IDEvent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::AmiiboEvent {
+    type Target = crate::IDEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `AttackBlockHandler` is laid out from its primary base `HeldStateHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::AttackBlockHandler {
+    type Target = crate::HeldStateHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `AutoMoveHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::AutoMoveHandler {
+    type Target = crate::PlayerInputHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSGamepadDevice` is laid out from its primary base `BSInputDevice`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSGamepadDevice {
+    type Target = crate::BSInputDevice;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSInputDevice` is laid out from its primary base `BSIInputDevice`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSInputDevice {
     type Target = crate::BSIInputDevice;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSKeyboardDevice` is laid out from its primary base `BSInputDevice`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSKeyboardDevice {
+    type Target = crate::BSInputDevice;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSMouseDevice` is laid out from its primary base `BSInputDevice`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSMouseDevice {
+    type Target = crate::BSInputDevice;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -45,8 +87,80 @@ impl core::ops::Deref for crate::BSWin32VirtualKeyboardDevice {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `CharEvent` is laid out from its primary base `InputEvent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CharEvent {
+    type Target = crate::InputEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ClickHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ClickHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ConsoleOpenHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ConsoleOpenHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `DeviceConnectEvent` is laid out from its primary base `InputEvent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::DeviceConnectEvent {
+    type Target = crate::InputEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `DirectionHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::DirectionHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `FavoritesHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::FavoritesHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `HeldStateHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::HeldStateHandler {
+    type Target = crate::PlayerInputHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `JumpHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::JumpHandler {
+    type Target = crate::PlayerInputHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `KinectEvent` is laid out from its primary base `IDEvent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::KinectEvent {
+    type Target = crate::IDEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `LookHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::LookHandler {
+    type Target = crate::PlayerInputHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MotionGestureEvent` is laid out from its primary base `IDEvent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MotionGestureEvent {
+    type Target = crate::IDEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MouseMoveEvent` is laid out from its primary base `IDEvent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MouseMoveEvent {
+    type Target = crate::IDEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MovementHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MovementHandler {
     type Target = crate::PlayerInputHandler;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -57,15 +171,69 @@ impl core::ops::Deref for crate::PlayerControls {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `QuickSaveLoadHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::QuickSaveLoadHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ReadyWeaponHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ReadyWeaponHandler {
+    type Target = crate::PlayerInputHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `RunHandler` is laid out from its primary base `HeldStateHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::RunHandler {
+    type Target = crate::HeldStateHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ScreenshotHandler` is laid out from its primary base `MenuEventHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ScreenshotHandler {
+    type Target = crate::MenuEventHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `Script` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::Script {
     type Target = crate::TESForm;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ShoutHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ShoutHandler {
+    type Target = crate::PlayerInputHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SneakHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SneakHandler {
+    type Target = crate::PlayerInputHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `SprintHandler` is laid out from its primary base `HeldStateHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::SprintHandler {
+    type Target = crate::HeldStateHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ThumbstickEvent` is laid out from its primary base `IDEvent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ThumbstickEvent {
+    type Target = crate::IDEvent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `TogglePOVHandler` is laid out from its primary base `HeldStateHandler`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TogglePOVHandler {
     type Target = crate::HeldStateHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `ToggleRunHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ToggleRunHandler {
+    type Target = crate::PlayerInputHandler;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -103,12 +271,6 @@ impl crate::AutoMoveHandler {
 }
 
 impl crate::BSGamepadDevice {
-    /// `BSGamepadDevice::IsEnabled`, vtable slot 7: connected && userIndex != -1
-    ///
-    /// Semantic, input pass, high; called through the object's vtable.
-    /// `bool (BSGamepadDevice* this)`
-    #[inline]
-    pub fn is_enabled(&self) -> bool { unsafe { virtual_function!(self, 7, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSGamepadDevice::NormalizeStick`, vtable slot 13: raw * (1/32767) clamped to [-1, 1]
     ///
     /// Semantic, input pass, high; called through the object's vtable.
@@ -348,12 +510,6 @@ impl crate::ClickHandler {
     /// `bool (ClickHandler* this, InputEvent* event)`
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
-    /// `ClickHandler::ProcessButtonEvent`, vtable slot 7: mouse button to Scaleform
-    ///
-    /// Semantic, input pass, high; called through the object's vtable.
-    /// `bool (ClickHandler* this, ButtonEvent* event)`
-    #[inline]
-    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::CommandTableEntry {
@@ -388,12 +544,6 @@ impl crate::ConsoleOpenHandler {
     /// `bool (ConsoleOpenHandler* this, InputEvent* event)`
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
-    /// `ConsoleOpenHandler::ProcessButtonEvent`, vtable slot 7: press edge -> open/close console
-    ///
-    /// Semantic, input pass, high; called through the object's vtable.
-    /// `bool (ConsoleOpenHandler* this, ButtonEvent* event)`
-    #[inline]
-    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::DirectionHandler {
@@ -701,12 +851,6 @@ impl crate::QuickSaveLoadHandler {
     /// `bool (QuickSaveLoadHandler* this, InputEvent* event)`
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
-    /// `QuickSaveLoadHandler::ProcessButtonEvent`, vtable slot 7: queues the request
-    ///
-    /// Semantic, input pass, high; called through the object's vtable.
-    /// `bool (QuickSaveLoadHandler* this, ButtonEvent* event)`
-    #[inline]
-    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::ReadyWeaponHandler {
@@ -805,21 +949,6 @@ impl crate::TogglePOVHandler {
     /// `bool (TogglePOVHandler* this, InputEvent* event)`
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
-    /// `TogglePOVHandler::Destroy`, vtable slot 0: 
-    ///
-    /// Semantic, input pass, high; called through the object's vtable.
-    /// `TogglePOVHandler* (TogglePOVHandler* this, u32 flags)`
-    #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
-    /// `TogglePOVHandler::ProcessButton`, vtable slot 6: sets PlayerControls+0x4b (vanity held)
-    ///
-    /// Semantic, input pass, high; called through the object's vtable.
-    /// `void (TogglePOVHandler* this, ButtonEvent* event, PlayerControlsData* data)`
-    ///
-    /// # Safety
-    /// `data` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_button(&self, event: *mut crate::ButtonEvent, data: *mut c_void) { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::ButtonEvent, *mut c_void))(core::ptr::from_ref(self), event, data) } }
 }
 
 impl crate::ToggleRunHandler {

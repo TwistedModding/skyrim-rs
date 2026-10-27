@@ -48,6 +48,16 @@ impl crate::BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
     pub unsafe fn try_push(&self) -> u32 { unsafe { function!(82152, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::Console {
+    /// `Console::Accept` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51083, rva 0x909ad0).
+    /// `undefined Accept(Console * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn accept(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51083, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::ContainerMenu {
     /// `ContainerMenu::vfunc_1_cb0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51129, rva 0x9112b0).
     /// `undefined vfunc_1_cb0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -362,6 +372,20 @@ impl crate::GFxMovieView {
 }
 
 impl crate::HUDMenu {
+    /// `HUDMenu::Accept` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 51615, rva 0x934cc0).
+    /// `undefined Accept(HUDMenu * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn accept(&self, param_1: *mut i64) -> u64 { unsafe { function!(51615, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `HUDMenu::AdvanceMovie` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51613, rva 0x934a50).
+    /// `undefined AdvanceMovie(HUDMenu * this, float param_1, longlong * param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn advance_movie(&self, param_1: f32, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(51613, (*const Self, f32, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `HUDMenu::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51677, rva 0x939b00).
     /// `undefined ctor_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -421,6 +445,27 @@ impl crate::HUDMenu {
 }
 
 impl crate::HUDNotifications {
+    /// `HUDNotifications::Cleanup` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51651, rva 0x936b10).
+    /// `undefined Cleanup(HUDNotifications * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn cleanup(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51651, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `HUDNotifications::ProcessMessage` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51653, rva 0x937570).
+    /// `undefined1 * ProcessMessage(HUDNotifications * this, void * * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: *mut *mut c_void) -> *mut u8 { unsafe { function!(51653, (*const Self, *mut *mut c_void) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    /// `HUDNotifications::RegisterHUDComponent` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51650, rva 0x936a80).
+    /// `undefined RegisterHUDComponent(HUDNotifications * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn register_hud_component(&self, param_1: i64) -> u64 { unsafe { function!(51650, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `HUDNotifications::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51690, rva 0x93ae60).
     /// `undefined vfunc_2_sub0(longlong * param_1, ulonglong param_2, uint param_3, longlong * param_4)`
     ///
@@ -862,6 +907,20 @@ impl crate::MenuControls {
 }
 
 impl crate::MenuOpenHandler {
+    /// `MenuOpenHandler::ProcessButtonEvent` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52249, rva 0x961580).
+    /// `undefined1 ProcessButtonEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_button_event(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u8 { unsafe { function!(52249, (*const Self, *mut i64, u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `MenuOpenHandler::ProcessKinectEvent` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 52250, rva 0x961a90).
+    /// `byte ProcessKinectEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_kinect_event(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u8 { unsafe { function!(52250, (*const Self, *mut i64, u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MenuOpenHandler::vfunc_7_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52516, rva 0x978140).
     /// `undefined vfunc_7_sub0(undefined1 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -871,7 +930,24 @@ impl crate::MenuOpenHandler {
     pub unsafe fn vfunc_7_sub0(param_1: u8, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(52516, (u8, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
+impl crate::MessageBoxMenu {
+    /// `MessageBoxMenu::Accept` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52278, rva 0x962e80).
+    /// `undefined Accept(MessageBoxMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn accept(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52278, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::TweenMenu {
+    /// `TweenMenu::PostDisplay` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52706, rva 0x988250).
+    /// `undefined PostDisplay(TweenMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn post_display(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52706, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `TweenMenu::ProcessMessage` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52705, rva 0x987c00).
     /// `ulonglong ProcessMessage(TweenMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///

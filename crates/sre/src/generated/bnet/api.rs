@@ -9,9 +9,21 @@ impl core::ops::Deref for crate::bnet__AsyncOperationProxy {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `bnet::Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bnet::Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo {
     type Target = crate::bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -21,9 +33,141 @@ impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Account__E
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `bnet::Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_bnet__impl__S_cc1647b345a1 {
     type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_fed1531e66d0;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_5_1_1_bnet__i_03ab651bc6e9 {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_d0731f9d3b54;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__StdAllocator_bne_13cada492529 {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__St_cffbae195d6d;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -36,6 +180,18 @@ impl core::ops::Deref for crate::bnet__Callback_bnet_std__void_t_bnet__HttpRespo
 /// `bnet::Callback<bool,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,bool,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet__Callback_bool_bnet__HttpResponseInfo {
     type Target = crate::bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet::Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>` is laid out from its primary base `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet__Callback_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo {
+    type Target = crate::bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -234,6 +390,12 @@ impl core::ops::Deref for crate::bnet__detail__CallbackImpl_1_std__shared_ptr_bn
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e7363663d7a {
     type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0a3e76f905f8;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d9874610e96 {
+    type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e7363663d7a;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -561,6 +723,12 @@ impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70 {
+    type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9cb166b5828e {
     type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9;
@@ -723,6 +891,12 @@ impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_2c0586bafc78585bda7c70f1ee53129f>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f2302e41d59b {
+    type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31803902b818;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_37d93f6d237fec52d272d7677b362e70>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_487f983e92d2 {
     type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8321aa80d928;
@@ -750,6 +924,12 @@ impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_99647caeb1d555456edf28d2fb97c094>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d1306a274e4f {
     type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_10cf3ba9da25;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_a3c4541099af4325677440eef8bea468>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_a3c4541099af4325677440eef8bea468>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7663c8a05ea4 {
+    type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4491bfd240e8;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -867,6 +1047,12 @@ impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_caae1aea9061e3c0fb576427985b4372>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_caae1aea9061e3c0fb576427985b4372>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_93752dba2931 {
+    type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_890e41bc9508;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9488de88a56e {
     type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6fa9ed21f02f;
@@ -897,6 +1083,12 @@ impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_80759a00069d6d049cb09c78beb9f55e>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_80759a00069d6d049cb09c78beb9f55e>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4d018e589778 {
+    type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_294ecf7a5391;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_46232825fa18 {
     type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b504e48d364c;
@@ -912,6 +1104,12 @@ impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_fce559dc0e0d343f4b4e66666cd3217e>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b904c865a047 {
     type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_86557b3a0a5d;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1a6b1f879a3937e0aa4f278b4f9cce50>_>` is laid out from its primary base `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1a6b1f879a3937e0aa4f278b4f9cce50>_>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c314e774de8f {
+    type Target = crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_78c7c0943654;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }

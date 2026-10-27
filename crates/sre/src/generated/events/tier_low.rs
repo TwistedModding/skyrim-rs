@@ -14,13 +14,13 @@ impl crate::ButtonEvent {
 }
 
 impl crate::IDEvent {
-    /// `IDEvent::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42399, rva 0x7b1b10).
+    /// `IDEvent::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42399, rva 0x7b1b10).
     /// `IDEvent * vdtor(IDEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42399, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::InputEvent {
