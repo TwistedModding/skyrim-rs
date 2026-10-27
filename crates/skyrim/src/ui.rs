@@ -16,8 +16,9 @@ use std::ffi::CString;
 use std::sync::OnceLock;
 use std::sync::atomic::{AtomicU32, Ordering};
 
+use sre::raw::vtables::{IMenu_vtable_AdvanceMovie, IMenu_vtable_PostCreate, IMenu_vtable_PostDisplay, IMenu_vtable_ProcessMessage, IMenu_vtable_RefreshPlatform, IMenu_vtable_vdtor};
 use sre::raw::{fns, vtables};
-use sre::{EventSourceHolder_MenuOpenClose, GFxMovieView, HUDMenu, IMenu, UIMessage, UIMessageQueue};
+use sre::{EventSourceHolder_MenuOpenClose, GFxMovieView, GFxScaleMode, HUDMenu, IMenu, UIMessage, UIMessageQueue, UIMessageResult};
 
 use crate::BSFixedString;
 use crate::SpinGuard;
@@ -29,16 +30,10 @@ pub type ShowHudMessageFn = fns::ShowHUDMessage_fn;
 /// `MenuTable::Find` (id 82135): the table is the UI singleton's `menuTable`; the out value is
 /// `{menu (one reference added), create}`.
 type FindFn = unsafe extern "C" fn(table: *mut c_void, name: *const sre::BSFixedString, out: *mut MenuTableValue) -> bool;
-type LoadMovieFn = unsafe extern "C" fn(this: *mut sre::BSScaleformManager, menu: *mut IMenu, out: *mut *mut GFxMovieView, name: *const c_char, scale_mode: u32, alpha: f32) -> bool;
 type ObjectInvokeFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, result: *mut sre::GFxValue, name: *const c_char, args: *const sre::GFxValue, count: u32, is_display: bool) -> bool;
 type ObjectGetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, out: *mut sre::GFxValue, is_display: bool) -> bool;
 type ObjectSetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, value: *const sre::GFxValue, is_display: bool) -> bool;
 type ObjectHasMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, is_display: bool) -> bool;
-
-type MenuVdtor = unsafe extern "C" fn(this: *mut IMenu, flags: u32) -> *mut IMenu;
-type MenuProcessMessage = unsafe extern "C" fn(this: *mut IMenu, message: *mut UIMessage) -> u32;
-type MenuAdvance = unsafe extern "C" fn(this: *mut IMenu, interval: f32, time_ms: u32);
-type MenuSlot = unsafe extern "C" fn(this: *mut IMenu);
 
 type MovieSetVisible = unsafe extern "C" fn(this: *mut GFxMovieView, visible: bool);
 type MovieGetVisible = unsafe extern "C" fn(this: *mut GFxMovieView) -> bool;
@@ -159,19 +154,6 @@ impl MessageType {
     }
 }
 
-/// What a menu's `ProcessMessage` answers.
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MessageResult {
-    /// Consumed.
-    Handled,
-    /// Refused: a show is dropped, a hide deferred.
-    Refused,
-    /// Passed to the next menu down the stack.
-    Pass,
-    /// Whatever `IMenu`'s own implementation answers (it hands Scaleform events to the movie, passes the rest).
-    Default,
-}
-
 pub trait UIMessageQueueExt {
     /// Queues a message for the menu registered under `menu` (`UIMessageQueue::AddMessage`,
     /// id 13631). `data` is null for show, hide and update.
@@ -202,7 +184,7 @@ impl UIMessageQueueExt for UIMessageQueue {
 unsafe fn release_menu(menu: *mut IMenu) {
     let count = unsafe { AtomicU32::from_ptr(&raw mut (*menu).refCount) };
     if count.fetch_sub(1, Ordering::AcqRel) == 1 {
-        let dtor: MenuVdtor = unsafe { slot((*menu).__vftable.cast(), vtables::IMenu_vtable::SLOT_vdtor) };
+        let dtor: IMenu_vtable_vdtor = unsafe { slot((*menu).__vftable.cast(), vtables::IMenu_vtable::SLOT_vdtor) };
         unsafe { dtor(menu, 1) };
     }
 }
@@ -300,16 +282,6 @@ fn find(ui: &EventSourceHolder_MenuOpenClose, name: &str) -> Option<MenuTableVal
     unsafe { find(table, name.raw(), &raw mut value) }.then_some(value)
 }
 
-/// How `LoadMovie` fits a movie to the screen.
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum ScaleMode {
-    NoScale = 0,
-    ShowAll = 1,
-    ExactFit = 2,
-    NoBorder = 3,
-}
-
 /// The `IMenu` part of a menu of this mod's own, handed to the [`Menu`] callbacks.
 #[repr(transparent)]
 pub struct MenuBase(IMenu);
@@ -340,17 +312,24 @@ impl MenuBase {
     /// Loads `Interface/<name>.swf` (or `Interface/Exported/<name>.gfx`) into this menu
     /// (`BSScaleformManager::LoadMovie`, id 82325), creating the menu's `FxDelegate` on the way.
     /// `false` when the file is missing; the movie stays `None`.
-    pub fn load_movie(&mut self, name: &str, scale_mode: ScaleMode, background_alpha: f32) -> bool {
+    pub fn load_movie(&mut self, name: &str, scale_mode: GFxScaleMode, background_alpha: f32) -> bool {
         let Some(manager) = sre::BSScaleformManager::singleton() else { return false };
         let name = c_string(name);
-        let load: LoadMovieFn = unsafe { crate::engine_fn(fns::BSScaleformManager__LoadMovie) };
-        unsafe { load(core::ptr::from_ref(manager).cast_mut(), &raw mut self.0, &raw mut self.0.movie, name.as_ptr(), scale_mode as u32, background_alpha) }
+        unsafe { manager.load_movie(&raw mut self.0, &raw mut self.0.movie, name.as_ptr(), scale_mode, background_alpha) }
+    }
+
+    /// `IMenu`'s own handler: hands a Scaleform event (6) to the movie and answers `Handled`,
+    /// passes everything else on.
+    pub fn default_process_message(&mut self, message: &UIMessage) -> UIMessageResult {
+        let f: IMenu_vtable_ProcessMessage = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_ProcessMessage) };
+        let raw = unsafe { f(&raw mut self.0, core::ptr::from_ref(message).cast_mut()) };
+        UIMessageResult::from_u32(raw).unwrap_or(UIMessageResult::PassOn)
     }
 
     /// `IMenu`'s own advance: sets `CurrentTime` on the movie and advances it. Nothing without a movie.
     pub fn advance_movie(&mut self, interval: f32, time_ms: u32) {
         if !self.0.movie.is_null() {
-            let f: MenuAdvance = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_AdvanceMovie) };
+            let f: IMenu_vtable_AdvanceMovie = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_AdvanceMovie) };
             unsafe { f(&raw mut self.0, interval, time_ms) }
         }
     }
@@ -358,7 +337,7 @@ impl MenuBase {
     /// `IMenu`'s own draw: the movie's `Display`. Nothing without a movie.
     pub fn display_movie(&mut self) {
         if !self.0.movie.is_null() {
-            let f: MenuSlot = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_PostDisplay) };
+            let f: IMenu_vtable_PostDisplay = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_PostDisplay) };
             unsafe { f(&raw mut self.0) }
         }
     }
@@ -375,9 +354,10 @@ pub trait Menu: Sized + 'static {
     fn post_create(&mut self, _base: &mut MenuBase) {}
 
     /// Every message `ProcessMessages` delivers to this menu: show (1) first, then hide (3), the
-    /// per-frame update (0) and events.
-    fn process_message(&mut self, _base: &mut MenuBase, _message: &UIMessage) -> MessageResult {
-        MessageResult::Default
+    /// per-frame update (0) and events. `Refused` drops a show and defers a hide; `PassOn` hands
+    /// the message to the next menu down the stack.
+    fn process_message(&mut self, base: &mut MenuBase, message: &UIMessage) -> UIMessageResult {
+        base.default_process_message(message)
     }
 
     /// Per frame while open, from `AdvanceMenus`.
@@ -422,15 +402,15 @@ unsafe extern "C" fn create_menu<M: Menu>() -> *mut IMenu {
             __engine: sre::Engine::new(),
         },
         vtable: [
-            menu_dtor::<M> as MenuVdtor as *const c_void,
+            menu_dtor::<M> as IMenu_vtable_vdtor as *const c_void,
             engine[vtables::IMenu_vtable::SLOT_Accept],
-            menu_post_create::<M> as MenuSlot as *const c_void,
+            menu_post_create::<M> as IMenu_vtable_PostCreate as *const c_void,
             engine[vtables::IMenu_vtable::SLOT_Refresh],
-            menu_process_message::<M> as MenuProcessMessage as *const c_void,
-            menu_advance::<M> as MenuAdvance as *const c_void,
-            menu_display::<M> as MenuSlot as *const c_void,
+            menu_process_message::<M> as IMenu_vtable_ProcessMessage as *const c_void,
+            menu_advance::<M> as IMenu_vtable_AdvanceMovie as *const c_void,
+            menu_display::<M> as IMenu_vtable_PostDisplay as *const c_void,
             engine[vtables::IMenu_vtable::SLOT_PreDisplay],
-            menu_refresh_platform as MenuSlot as *const c_void,
+            menu_refresh_platform as IMenu_vtable_RefreshPlatform as *const c_void,
         ],
         menu: MaybeUninit::uninit(),
     });
@@ -445,7 +425,7 @@ unsafe extern "C" fn create_menu<M: Menu>() -> *mut IMenu {
 unsafe extern "C" fn menu_dtor<M: Menu>(this: *mut IMenu, flags: u32) -> *mut IMenu {
     let object = this.cast::<MenuObject<M>>();
     unsafe { (*object).menu.assume_init_drop() };
-    let base: MenuVdtor = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_vdtor) };
+    let base: IMenu_vtable_vdtor = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_vdtor) };
     unsafe { base(this, flags & !1) };
     if flags & 1 != 0 {
         drop(unsafe { Box::from_raw(object) });
@@ -460,16 +440,8 @@ unsafe extern "C" fn menu_post_create<M: Menu>(this: *mut IMenu) {
 
 unsafe extern "C" fn menu_process_message<M: Menu>(this: *mut IMenu, message: *mut UIMessage) -> u32 {
     let (base, menu) = unsafe { MenuObject::<M>::parts(this) };
-    let Some(msg) = (unsafe { message.as_ref() }) else { return 2 };
-    match menu.process_message(base, msg) {
-        MessageResult::Handled => 0,
-        MessageResult::Refused => 1,
-        MessageResult::Pass => 2,
-        MessageResult::Default => {
-            let f: MenuProcessMessage = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_ProcessMessage) };
-            unsafe { f(this, message) }
-        }
-    }
+    let Some(message) = (unsafe { message.as_ref() }) else { return UIMessageResult::PassOn as u32 };
+    menu.process_message(base, message) as u32
 }
 
 unsafe extern "C" fn menu_advance<M: Menu>(this: *mut IMenu, interval: f32, time_ms: u32) {
@@ -484,7 +456,7 @@ unsafe extern "C" fn menu_display<M: Menu>(this: *mut IMenu) {
 
 unsafe extern "C" fn menu_refresh_platform(this: *mut IMenu) {
     if unsafe { !(*this).movie.is_null() } {
-        let f: MenuSlot = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_RefreshPlatform) };
+        let f: IMenu_vtable_RefreshPlatform = unsafe { slot(engine_menu_vtable().as_ptr(), vtables::IMenu_vtable::SLOT_RefreshPlatform) };
         unsafe { f(this) }
     }
 }

@@ -14,8 +14,8 @@ use std::sync::{Mutex, OnceLock};
 use skyrim::BSFixedString;
 use skyrim::events::{BSTEventSource, Event, EventSink, Sink};
 use skyrim::prelude::*;
-use skyrim::ui::{AddMessageFn, Function, FunctionHandler, Menu, MenuBase, MessageResult, MessageType, Params, RenderMenuStackFn, ShowHudMessageFn, Value, ValueType};
-use sre::{BSEventNotifyControl, EventSourceHolder_MenuOpenClose as Ui, IMenu, IMenu_flags, MenuOpenCloseEvent, UIMessage, UIMessageQueue};
+use skyrim::ui::{AddMessageFn, Function, FunctionHandler, Menu, MenuBase, MessageType, Params, RenderMenuStackFn, ShowHudMessageFn, Value, ValueType};
+use sre::{BSEventNotifyControl, EventSourceHolder_MenuOpenClose as Ui, IMenu, IMenu_flags, MenuOpenCloseEvent, UIMessage, UIMessageQueue, UIMessageResult};
 
 use crate::{Test, check};
 
@@ -81,13 +81,13 @@ impl Menu for TestMenu {
         POST_CREATED.fetch_add(1, Ordering::Relaxed);
     }
 
-    fn process_message(&mut self, _: &mut MenuBase, message: &UIMessage) -> MessageResult {
+    fn process_message(&mut self, base: &mut MenuBase, message: &UIMessage) -> UIMessageResult {
         match MessageType::from_raw(message.type_) {
             Some(MessageType::Show) => SHOWN.fetch_add(1, Ordering::Relaxed),
             Some(MessageType::Hide) => HIDDEN.fetch_add(1, Ordering::Relaxed),
             _ => 0,
         };
-        MessageResult::Default
+        base.default_process_message(message)
     }
 
     fn advance(&mut self, base: &mut MenuBase, interval: f32, time_ms: u32) {
