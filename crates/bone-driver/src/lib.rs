@@ -25,8 +25,8 @@ const TURN_DEGREES: f32 = 35.0;
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 static APPLY: OnceLock<hook::Hook<ApplyPoseFn>> = OnceLock::new();
-static HEAD: AtomicPtr<skre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
-static PLAYER: AtomicPtr<skre::TESObjectREFR> = AtomicPtr::new(core::ptr::null_mut());
+static HEAD: AtomicPtr<sre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
+static PLAYER: AtomicPtr<sre::TESObjectREFR> = AtomicPtr::new(core::ptr::null_mut());
 static APPLIED: AtomicU32 = AtomicU32::new(0);
 static LAST: Mutex<Option<(Transform, Transform)>> = Mutex::new(None);
 
@@ -73,7 +73,7 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
 /// Caches the player and its head bone on the main thread after a load; clears them before one.
 fn bind(active: bool) {
     let head = active.then(PlayerCharacter::get).flatten().and_then(|p| {
-        PLAYER.store(core::ptr::from_ref::<skyrim::actors::TESObjectREFR>(p).cast::<skre::TESObjectREFR>().cast_mut(), Ordering::Relaxed);
+        PLAYER.store(core::ptr::from_ref::<skyrim::actors::TESObjectREFR>(p).cast::<sre::TESObjectREFR>().cast_mut(), Ordering::Relaxed);
         p.third_person_root()?.object_by_name(&BSFixedString::new("NPC Head [Head]")).map(|h| h.as_ptr().cast_mut())
     });
     HEAD.store(head.unwrap_or(core::ptr::null_mut()), Ordering::Release);

@@ -17,7 +17,7 @@ use core::ffi::c_void;
 use std::sync::Mutex;
 use std::sync::atomic::{AtomicPtr, AtomicU32, Ordering};
 
-use skre::raw::globals;
+use sre::raw::globals;
 use skyrim::actors::{Actor, ActorValue, TESObjectREFR};
 use skyrim::forms::TESForm;
 use skyrim::papyrus::{BSFixedString, GameThread, Handle, HandlePolicy, Latent, NativeFunction, PapyrusType, TypeInfo, VMTypeID, Variable, VirtualMachine, active_effect_handles, alias_handles, current_stack_id};
@@ -243,8 +243,8 @@ fn vm_identity() -> Result<String, String> {
     let skyrim_vm = skyrim::reloc().address(globals::g_SkyrimVM).map_err(|e| e.to_string())?;
     let policy = registry.raw().handlePolicy as usize;
     let bind = registry.raw().objectBindPolicy as usize;
-    check(policy == skyrim_vm + core::mem::offset_of!(skre::SkyrimVM, m_HandlePolicy_338), "VM+0x90 is not g_SkyrimVM + 0x338")?;
-    check(bind == skyrim_vm + core::mem::offset_of!(skre::SkyrimVM, m_ObjectBindPolicy_3A8), "VM+0x98 is not g_SkyrimVM + 0x3a8")?;
+    check(policy == skyrim_vm + core::mem::offset_of!(sre::SkyrimVM, m_HandlePolicy_338), "VM+0x90 is not g_SkyrimVM + 0x338")?;
+    check(bind == skyrim_vm + core::mem::offset_of!(sre::SkyrimVM, m_ObjectBindPolicy_3A8), "VM+0x98 is not g_SkyrimVM + 0x3a8")?;
     let via_slot = registry.handle_policy();
     check(core::ptr::from_ref(via_slot) as usize == policy && HandlePolicy::get().is_some_and(|p| core::ptr::eq(p, via_slot)), "GetObjectHandlePolicy is not VM+0x90")?;
     let global = unsafe { *(skyrim::reloc().address(globals::g_IObjectHandlePolicy_ptr).map_err(|e| e.to_string())? as *const usize) };

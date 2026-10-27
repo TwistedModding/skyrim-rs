@@ -11,7 +11,7 @@ crate-type = ["cdylib"]
 [dependencies]
 skse.workspace = true
 hook.workspace = true
-skre.workspace = true
+sre.workspace = true
 skyrim.workspace = true
 overlay.workspace = true
 crash.workspace = true

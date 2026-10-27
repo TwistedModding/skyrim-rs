@@ -23,8 +23,8 @@ pub const RUN_TESTS: &[(&str, Test)] = &[("variables", variables), ("weapon_stat
 static APPLY: OnceLock<hook::Hook<ApplyPoseFn>> = OnceLock::new();
 static UPDATE: OnceLock<hook::Hook<UpdateNodesAfterRenderFn>> = OnceLock::new();
 static ACTIVE: AtomicBool = AtomicBool::new(false);
-static PLAYER: AtomicPtr<skre::TESObjectREFR> = AtomicPtr::new(core::ptr::null_mut());
-static HEAD: AtomicPtr<skre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
+static PLAYER: AtomicPtr<sre::TESObjectREFR> = AtomicPtr::new(core::ptr::null_mut());
+static HEAD: AtomicPtr<sre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
 static POSE_WRITES: [AtomicU32; 2] = [const { AtomicU32::new(0) }; 2];
 static POSE_WRITES_OTHER: AtomicU32 = AtomicU32::new(0);
 static UPDATES: AtomicU32 = AtomicU32::new(0);
@@ -81,7 +81,7 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
     }
 }
 
-unsafe extern "C" fn update_detour(player: *mut skre::PlayerCharacter) {
+unsafe extern "C" fn update_detour(player: *mut sre::PlayerCharacter) {
     let head = unsafe { NiAVObject::from_ptr(HEAD.load(Ordering::Relaxed)) };
     let before = head.map(|h| (h.local(), h.world()));
     unsafe { UPDATE.get().expect("stored before enabling").original()(player) }
@@ -120,7 +120,7 @@ pub fn suspend() {
 /// starts sampling; called after a load.
 pub fn register() -> Result<String, String> {
     let player = PlayerCharacter::get().ok_or("g_PlayerCharacter_ptr is null")?;
-    PLAYER.store(core::ptr::from_ref::<skyrim::actors::TESObjectREFR>(player).cast::<skre::TESObjectREFR>().cast_mut(), Ordering::Relaxed);
+    PLAYER.store(core::ptr::from_ref::<skyrim::actors::TESObjectREFR>(player).cast::<sre::TESObjectREFR>().cast_mut(), Ordering::Relaxed);
     let root = player.third_person_root().ok_or("loadedData->node3D is null")?;
     let head = root.object_by_name(&BSFixedString::new("NPC Head [Head]")).ok_or("GetObjectByName(NPC Head [Head]) returned null")?;
     HEAD.store(head.as_ptr().cast_mut(), Ordering::Relaxed);

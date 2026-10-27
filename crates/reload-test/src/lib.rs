@@ -47,7 +47,7 @@ static HOOK: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static NATIVE: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static COMMAND: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 
-type ModArgs = (*mut skre::Actor, i32, i32, f32, *mut c_void);
+type ModArgs = (*mut sre::Actor, i32, i32, f32, *mut c_void);
 type Test = fn() -> Result<String, String>;
 
 fn tag() -> i32 {

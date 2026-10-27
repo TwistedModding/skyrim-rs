@@ -57,7 +57,7 @@ static DISPLAYS: AtomicU32 = AtomicU32::new(0);
 static DROPPED: AtomicU32 = AtomicU32::new(0);
 static OPEN_EVENTS: AtomicU32 = AtomicU32::new(0);
 static CLOSE_EVENTS: AtomicU32 = AtomicU32::new(0);
-static OWN: AtomicPtr<skre::IMenu> = AtomicPtr::new(core::ptr::null_mut());
+static OWN: AtomicPtr<sre::IMenu> = AtomicPtr::new(core::ptr::null_mut());
 
 struct TestMenu;
 
@@ -135,7 +135,7 @@ fn name_of(menu: &IMenu) -> String {
     if core::ptr::eq(menu.as_ptr(), OWN.load(Ordering::Relaxed)) { MENU.to_owned() } else { menu.class_name().to_owned() }
 }
 
-unsafe extern "C" fn render_detour(ui: *mut skre::EventSourceHolder_MenuOpenClose) {
+unsafe extern "C" fn render_detour(ui: *mut sre::EventSourceHolder_MenuOpenClose) {
     unsafe { RENDER.get().expect("stored before enabling").original()(ui) }
     let Some(ui) = Ui::get() else { return };
     let stack = ui.stack();
@@ -179,7 +179,7 @@ pub fn own_menu_events() -> (u32, u32) {
     (OPEN_EVENTS.load(Ordering::Relaxed), CLOSE_EVENTS.load(Ordering::Relaxed))
 }
 
-unsafe extern "C" fn add_detour(queue: *mut skre::UIMessageQueue, name: *const skre::BSFixedString, kind: u32, data: *mut skre::IUIMessageData) {
+unsafe extern "C" fn add_detour(queue: *mut sre::UIMessageQueue, name: *const sre::BSFixedString, kind: u32, data: *mut sre::IUIMessageData) {
     unsafe { ADD.get().expect("stored before enabling").original()(queue, name, kind, data) }
     if !name.is_null() {
         let name = unsafe { BSFixedString::from_ptr(name) }.to_string();

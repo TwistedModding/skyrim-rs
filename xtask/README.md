@@ -1,6 +1,6 @@
 # xtask
 
-`cargo xtask gen` turns the SkyrimRE-1.7.104 ledgers into `crates/skre/src/generated/`, `crates/skre/Cargo.toml` (its features follow the groups) and `crates/skre/generated.lock`; it replaces the `generated` folder, so a file no longer generated disappears. The RE repository is found through `SKYRIMRE_DIR` or, by default, as `../SkyrimRE-1.7.104` next to this workspace. The output is committed; `cargo test -p xtask` regenerates in memory with the commit recorded in `generated.lock` and fails if anything on disk differs or the `generated` folder holds a file it does not generate, so the test depends on the input files alone and the recorded commit moves only when `cargo xtask gen` runs (it skips with a message when the RE repository is absent).
+`cargo xtask gen` turns the SkyrimRE-1.7.104 ledgers into `crates/sre/src/generated/`, `crates/sre/Cargo.toml` (its features follow the groups) and `crates/sre/generated.lock`; it replaces the `generated` folder, so a file no longer generated disappears. The RE repository is found through `SKYRIMRE_DIR` or, by default, as `../SkyrimRE-1.7.104` next to this workspace. The output is committed; `cargo test -p xtask` regenerates in memory with the commit recorded in `generated.lock` and fails if anything on disk differs or the `generated` folder holds a file it does not generate, so the test depends on the input files alone and the recorded commit moves only when `cargo xtask gen` runs (it skips with a message when the RE repository is absent).
 
 ## Inputs
 
@@ -19,7 +19,7 @@ Exactly these files are read and hashed into `generated.lock`:
 
 ## Output
 
-The crate reads like one namespace: every class, enum, flag set, free function and global accessor is at the crate root (`skre::TESForm`, `skre::FormType`, `skre::find_form_by_id`), and also in its group module (`skre::forms::TESForm`). The ids and tables the API is built on are under `skre::raw`, hidden from the docs and from completion; `VERSION` is the root's one constant. `src/lib.rs` is hand-written: the resolver, the three call macros and the table types `raw` re-exports.
+The crate reads like one namespace: every class, enum, flag set, free function and global accessor is at the crate root (`sre::TESForm`, `sre::FormType`, `sre::find_form_by_id`), and also in its group module (`sre::forms::TESForm`). The ids and tables the API is built on are under `sre::raw`, hidden from the docs and from completion; `VERSION` is the root's one constant. `src/lib.rs` is hand-written: the resolver, the three call macros and the table types `raw` re-exports.
 
 ### Groups
 
@@ -52,7 +52,7 @@ The generated root `mod.rs` declares the groups, glob re-exports each (every nam
 
 ## Callable layer
 
-Every engine function a signature can type is a Rust function that resolves its address through the Address Library on the first call and caches it in a static of its own, the way an author calls a member function: `TESDataHandler::singleton()?.get_file(..)`, `form.get_keyword_form()`, `find_form_by_id(0x14)`. The resolver is `versionlib::running`, the process's one database (`<exe dir>\Data\SKSE\Plugins\versionlib-1-7-104-0.bin` with the executable's base), which `hook::Reloc` shares; a missing file or id panics naming both. Each body is one line through three macros of `skre/src/lib.rs`: `address!(id)`, `function!(id, (params) -> ret)` and `virtual_function!(self, index, (params) -> ret)`, which reads the slot from the object's own vtable at every call.
+Every engine function a signature can type is a Rust function that resolves its address through the Address Library on the first call and caches it in a static of its own, the way an author calls a member function: `TESDataHandler::singleton()?.get_file(..)`, `form.get_keyword_form()`, `find_form_by_id(0x14)`. The resolver is `versionlib::running`, the process's one database (`<exe dir>\Data\SKSE\Plugins\versionlib-1-7-104-0.bin` with the executable's base), which `hook::Reloc` shares; a missing file or id panics naming both. Each body is one line through three macros of `sre/src/lib.rs`: `address!(id)`, `function!(id, (params) -> ret)` and `virtual_function!(self, index, (params) -> ret)`, which reads the slot from the object's own vtable at every call.
 
 - Placement: a function whose first parameter is `this`, or a pointer to the class its name is scoped to, is a `&self` method on that class (the class of `this` when it is laid out, else the scope); a function scoped to a laid-out class without one is an associated function; every other function is a free function of its group. Names are the snake case of the engine name's last segment (the whole name for free functions, `::` as `__`), made unique within one `impl` (free functions: across the crate) across every tier with the most proven tier keeping the plain name; the engine name opens the doc.
 - Slots: a slot of a class's primary vtable is a method when a semantic pass names it, or when its target is a ledger-named function of that same class (`Class::Name`, not `vfunc_<n>` or `ID_<n>`) with medium or high name confidence; it is typed by the pass's signature, or by the target's decompiler prototype in that prototype's tier. A derived class whose `Deref` chain already has the method at that slot, under the same name and in a tier at least as proven, does not repeat it. A function reached that way on its own class is not also emitted as a direct call (1,647).
@@ -67,15 +67,15 @@ Structs, enums, flag sets and `raw` are always compiled. The callable layer is n
 - one feature per group (`actors`, ..., `ui`, `bs`, `havok`, `other`, ...): that group's semantic tier, so its methods, `Deref` impls, base accessors, singletons, free functions and global accessors;
 - `tier-high`, `tier-medium`, `tier-low`, `untiered`: in every enabled group, the decompiler-typed functions of that rating.
 
-`default` is every group plus `tier-high`, so `skre = { workspace = true }` gives the whole API. A crate that needs less writes `skre = { workspace = true, default-features = false, features = ["forms", "actors"] }`; the library crates (`skyrim`, `framework`, `overlay`, `crash`) use no feature at all, so a mod built on them compiles only what it asks for. A method reached through `Deref` needs its own class's group: `Actor` methods come with `actors`, the `TESForm` methods an `Actor` derefs to with `forms`. Features never move a type: every struct is always compiled at the same path, so the type names the hook dispatcher compares are the same in a host and a plugin built with other features.
+`default` is every group plus `tier-high`, so `sre = { workspace = true }` gives the whole API. A crate that needs less writes `sre = { workspace = true, default-features = false, features = ["forms", "actors"] }`; the library crates (`skyrim`, `framework`, `overlay`, `crash`) use no feature at all, so a mod built on them compiles only what it asks for. A method reached through `Deref` needs its own class's group: `Actor` methods come with `actors`, the `TESForm` methods an `Actor` derefs to with `forms`. Features never move a type: every struct is always compiled at the same path, so the type names the hook dispatcher compares are the same in a host and a plugin built with other features.
 
 Gating the structs too was measured and left out: following pointer and embedded fields, the structs of `forms` reach 15 of the 29 groups with types, 65 % of the struct source, and every pass group reaches the same set; only `bnet`, `combat`, `extra`, `factory`, `pathing`, `scaleform`, `settings` and `stl` stand alone, together under 20 %. Feature dependencies derived from those edges would save little and tie every group to every other.
 
 ### Build cost
 
-Measured on 2026-10-26 on the development machine (16 threads, shared with other sessions' builds, so a few seconds of noise), each a build after `cargo clean -p skre` (`--release` for the release builds). The baseline is master `a51a683` (one `v1_7_104` module, files up to 22 MB) measured the same hour; the item 1 numbers (debug 53.6 s with defaults, release 38.5 s) were taken on a busier machine.
+Measured on 2026-10-26 on the development machine (16 threads, shared with other sessions' builds, so a few seconds of noise), each a build after `cargo clean -p skyrim-sre` (`--release` for the release builds). The baseline is master `a51a683` (one `v1_7_104` module, files up to 22 MB) measured the same hour; the item 1 numbers (debug 53.6 s with defaults, release 38.5 s) were taken on a busier machine.
 
-| features | debug `cargo build -p skre` | baseline `layout` | release `cargo build --release -p sample-plugin` | baseline |
+| features | debug `cargo build -p skyrim-sre` | baseline `layout` | release `cargo build --release -p sample-plugin` | baseline |
 |---|---|---|---|---|
 | none (`default-features = false`) | 25.4 s | 34.3 s (semantic tier always on) | 22.0 s | |
 | `forms` | 25.5 s | | 22.6 s | |

@@ -11,21 +11,21 @@ use core::ffi::{CStr, c_char, c_void};
 use core::ops::Deref;
 use std::sync::{Mutex, OnceLock, PoisonError, RwLock};
 
-use skre::raw::{fns, globals};
+use sre::raw::{fns, globals};
 
 pub use crate::events::EventSourceHolderInput as InputManager;
 pub use crate::events::{InputEvent, InputEventList};
 use crate::forms::{TESForm, TESObjectREFR};
 use crate::string::BSFixedString;
 
-pub use skre::{InputContextEnum as InputContext, InputDevice, InputEventType, ScriptParamType};
+pub use sre::{InputContextEnum as InputContext, InputDevice, InputEventType, ScriptParamType};
 
-type GetButtonNameFn = unsafe extern "C" fn(this: *mut skre::EventSourceHolder_User, user_event: *const skre::BSFixedString, device: u32, out: *mut skre::BSFixedString) -> bool;
+type GetButtonNameFn = unsafe extern "C" fn(this: *mut sre::EventSourceHolder_User, user_event: *const sre::BSFixedString, device: u32, out: *mut sre::BSFixedString) -> bool;
 type PrintFn = unsafe extern "C" fn(log: *mut c_void, format: *const c_char, ...);
-type UnpackFn = unsafe extern "C" fn(params: *const skre::ParamInfo, data: *const c_void, offset: *mut u32, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, ...) -> bool;
+type UnpackFn = unsafe extern "C" fn(params: *const sre::ParamInfo, data: *const c_void, offset: *mut u32, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, ...) -> bool;
 
 /// A console command's execute function as `ScriptRunner::ExecuteStatement` calls it; `false` stops the script.
-pub type ExecuteFn = unsafe extern "C" fn(params: *const skre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
+pub type ExecuteFn = unsafe extern "C" fn(params: *const sre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 
 /// Console commands, opcodes 0x100 to 0x2c0 and the sentinel.
 const CONSOLE_COMMANDS: usize = 450;
@@ -36,13 +36,13 @@ const MAX_ARGS: usize = 8;
 const ARG_SIZE: usize = 0x208;
 
 pub(crate) struct Fns {
-    control_map: *const *mut skre::EventSourceHolder_User,
-    player_controls: *const *mut skre::PlayerControls,
+    control_map: *const *mut sre::EventSourceHolder_User,
+    player_controls: *const *mut sre::PlayerControls,
     console_log: *const *mut c_void,
-    keywords: *mut skre::CommandTableEntry,
-    script_functions: *mut skre::CommandTableEntry,
-    console_commands: *mut skre::CommandTableEntry,
-    param_types: *const skre::ScriptParamTypeInfo,
+    keywords: *mut sre::CommandTableEntry,
+    script_functions: *mut sre::CommandTableEntry,
+    console_commands: *mut sre::CommandTableEntry,
+    param_types: *const sre::ScriptParamTypeInfo,
     parse: *mut c_void,
     get_key_name: fns::EventSourceHolder_Input__GetKeyName_fn,
     get_key_code: fns::EventSourceHolder_Input__GetKeyCode_fn,
@@ -58,13 +58,13 @@ impl Fns {
     pub(crate) fn resolve(reloc: &hook::Reloc) -> Result<Self, hook::Error> {
         unsafe {
             Ok(Self {
-                control_map: reloc.address(globals::g_EventSourceHolder_User_ptr)? as *const *mut skre::EventSourceHolder_User,
-                player_controls: reloc.address(globals::g_PlayerControls_ptr)? as *const *mut skre::PlayerControls,
+                control_map: reloc.address(globals::g_EventSourceHolder_User_ptr)? as *const *mut sre::EventSourceHolder_User,
+                player_controls: reloc.address(globals::g_PlayerControls_ptr)? as *const *mut sre::PlayerControls,
                 console_log: reloc.address(globals::g_ConsoleLog)? as *const *mut c_void,
-                keywords: reloc.address(globals::g_ScriptKeywordTable)? as *mut skre::CommandTableEntry,
-                script_functions: reloc.address(globals::g_ScriptCommandTable)? as *mut skre::CommandTableEntry,
-                console_commands: reloc.address(globals::g_ConsoleCommandTable)? as *mut skre::CommandTableEntry,
-                param_types: reloc.address(globals::g_ScriptParamTypeInfo)? as *const skre::ScriptParamTypeInfo,
+                keywords: reloc.address(globals::g_ScriptKeywordTable)? as *mut sre::CommandTableEntry,
+                script_functions: reloc.address(globals::g_ScriptCommandTable)? as *mut sre::CommandTableEntry,
+                console_commands: reloc.address(globals::g_ConsoleCommandTable)? as *mut sre::CommandTableEntry,
+                param_types: reloc.address(globals::g_ScriptParamTypeInfo)? as *const sre::ScriptParamTypeInfo,
                 parse: reloc.address(fns::ParseCommandParams)? as *mut c_void,
                 get_key_name: crate::resolve(reloc, fns::EventSourceHolder_Input__GetKeyName)?,
                 get_key_code: crate::resolve(reloc, fns::EventSourceHolder_Input__GetKeyCode)?,
@@ -120,11 +120,11 @@ macro_rules! input_event {
     ($(#[$doc:meta] $name:ident) => {
         $(#[$doc]
         #[repr(transparent)]
-        pub struct $name(skre::$name);
+        pub struct $name(sre::$name);
 
         impl $name {
             #[must_use]
-            pub fn raw(&self) -> &skre::$name {
+            pub fn raw(&self) -> &sre::$name {
                 &self.0
             }
         }
@@ -229,11 +229,11 @@ impl ThumbstickEvent {
 
 /// The `DirectInput` keyboard (`BSWin32KeyboardDevice`, 0x370).
 #[repr(transparent)]
-pub struct Keyboard(skre::BSWin32KeyboardDevice);
+pub struct Keyboard(sre::BSWin32KeyboardDevice);
 
 impl Keyboard {
     #[must_use]
-    pub fn raw(&self) -> &skre::BSWin32KeyboardDevice {
+    pub fn raw(&self) -> &sre::BSWin32KeyboardDevice {
         &self.0
     }
 
@@ -251,7 +251,7 @@ impl Keyboard {
 }
 
 impl InputManager {
-    fn as_ptr(&self) -> *mut skre::EventSourceHolder_Input {
+    fn as_ptr(&self) -> *mut sre::EventSourceHolder_Input {
         (&raw const *self.raw()).cast_mut()
     }
 
@@ -279,7 +279,7 @@ impl InputManager {
 /// The control map (`EventSourceHolder_User`, 0x130): user event names per input context, the
 /// context stack the open menus push, and the enabled control groups.
 #[repr(transparent)]
-pub struct ControlMap(skre::EventSourceHolder_User);
+pub struct ControlMap(sre::EventSourceHolder_User);
 
 impl ControlMap {
     /// `None` before the control map is constructed.
@@ -289,7 +289,7 @@ impl ControlMap {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::EventSourceHolder_User {
+    pub fn raw(&self) -> &sre::EventSourceHolder_User {
         &self.0
     }
 
@@ -323,7 +323,7 @@ impl ControlMap {
 
 /// The player's input handlers (`PlayerControls`, 0x1e0).
 #[repr(transparent)]
-pub struct PlayerControls(skre::PlayerControls);
+pub struct PlayerControls(sre::PlayerControls);
 
 impl PlayerControls {
     #[must_use]
@@ -332,7 +332,7 @@ impl PlayerControls {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::PlayerControls {
+    pub fn raw(&self) -> &sre::PlayerControls {
         &self.0
     }
 
@@ -361,14 +361,14 @@ pub fn print(text: &str) {
 
 /// One parameter of a console command.
 #[repr(transparent)]
-pub struct Param(skre::ParamInfo);
+pub struct Param(sre::ParamInfo);
 
 unsafe impl Sync for Param {}
 
 impl Param {
     #[must_use]
     pub const fn new(name: &'static CStr, kind: ScriptParamType, optional: bool) -> Self {
-        Self(skre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, optional: optional as u8, unknown_D: [0; 3] })
+        Self(sre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, optional: optional as u8, unknown_D: [0; 3] })
     }
 }
 
@@ -446,11 +446,11 @@ impl std::error::Error for CommandError {}
 
 /// One record of the command tables (0x50).
 #[repr(transparent)]
-pub struct CommandEntry(skre::CommandTableEntry);
+pub struct CommandEntry(sre::CommandTableEntry);
 
 impl CommandEntry {
     #[must_use]
-    pub fn raw(&self) -> &skre::CommandTableEntry {
+    pub fn raw(&self) -> &sre::CommandTableEntry {
         &self.0
     }
 
@@ -489,7 +489,7 @@ fn text<'a>(p: *mut c_void) -> &'a str {
     text_c(p).to_str().unwrap_or("")
 }
 
-fn table(base: *mut skre::CommandTableEntry, len: usize) -> &'static mut [CommandEntry] {
+fn table(base: *mut sre::CommandTableEntry, len: usize) -> &'static mut [CommandEntry] {
     unsafe { core::slice::from_raw_parts_mut(base.cast::<CommandEntry>(), len) }
 }
 
@@ -555,7 +555,7 @@ pub fn register_erased(name: &CStr, help: &CStr, params: &[Param], needs_referen
     let _serialized = REGISTER.lock().unwrap_or_else(PoisonError::into_inner);
     let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
     let leak = |s: &CStr| -> &'static CStr { Box::leak(s.to_owned().into_boxed_c_str()) };
-    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(skre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), ..p.0 })).collect());
+    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(sre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), ..p.0 })).collect());
     let slot = take_entry(leak(name), leak(help), params, needs_reference, EXECUTES[index])?;
     *ERASED[index].execute.write().unwrap_or_else(PoisonError::into_inner) = Some(execute);
     let _ = ERASED[index].params.set(params);
@@ -590,11 +590,11 @@ fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param]
 #[repr(C, align(8))]
 struct ArgSlot([u8; ARG_SIZE]);
 
-unsafe extern "C" fn execute<C: Command>(params: *const skre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool {
+unsafe extern "C" fn execute<C: Command>(params: *const sre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool {
     unsafe { run(C::PARAMS, params, data, this_ref, containing, script, locals, result, offset, C::execute) }
 }
 
-unsafe extern "C" fn execute_erased<const I: usize>(params: *const skre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool {
+unsafe extern "C" fn execute_erased<const I: usize>(params: *const sre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool {
     let (Some(declared), guard) = (ERASED[I].params.get(), ERASED[I].execute.read().unwrap_or_else(PoisonError::into_inner)) else {
         return true;
     };
@@ -614,7 +614,7 @@ executes!(0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15);
 
 /// Unpacks the line's arguments as `declared` describes them and runs `execute` with them.
 #[allow(clippy::too_many_arguments)]
-unsafe fn run(declared: &[Param], params: *const skre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32, execute: impl FnOnce(&mut CommandContext<'_>) -> bool) -> bool {
+unsafe fn run(declared: &[Param], params: *const sre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32, execute: impl FnOnce(&mut CommandContext<'_>) -> bool) -> bool {
     let given = if data.is_null() || offset.is_null() { 0 } else { usize::from(unsafe { data.cast::<u8>().add(*offset as usize).cast::<u16>().read_unaligned() }) };
     let mut slots: [ArgSlot; MAX_ARGS] = core::array::from_fn(|_| ArgSlot([0; ARG_SIZE]));
     let out: [*mut ArgSlot; MAX_ARGS] = core::array::from_fn(|i| &raw mut slots[i]);
@@ -630,7 +630,7 @@ fn decode(kind: u32, slot: &ArgSlot) -> Arg<'_> {
     let bytes = &slot.0;
     let info = unsafe { &*fns().param_types.add(kind as usize) };
     if info.isForm != 0 {
-        let form = usize::from_le_bytes(bytes[..8].try_into().expect("8 bytes")) as *const skre::TESForm;
+        let form = usize::from_le_bytes(bytes[..8].try_into().expect("8 bytes")) as *const sre::TESForm;
         return unsafe { TESForm::from_ptr(form) }.map_or(Arg::Missing, Arg::Form);
     }
     match kind {

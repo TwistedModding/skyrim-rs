@@ -20,22 +20,22 @@ use core::ffi::c_void;
 use core::marker::PhantomData;
 use std::fmt;
 
-use skre::raw::{fns, globals};
+use sre::raw::{fns, globals};
 
 use crate::actors::{PlayerCharacter, RefHandle, TESObjectREFR};
 use crate::forms::{BGSLocation, FormId};
 pub use crate::string::BSFixedString;
-pub use skre::{BSEventNotifyControl, TESHitEvent_flags as HitFlags};
+pub use sre::{BSEventNotifyControl, TESHitEvent_flags as HitFlags};
 
-type GetTesHolder = unsafe extern "C" fn() -> *mut skre::EventSourceHolder_TES;
-type GetSource = unsafe extern "C" fn() -> *mut skre::BSTEventSource;
-type SinkFn = unsafe extern "C" fn(source: *mut skre::BSTEventSource, sink: *const c_void);
+type GetTesHolder = unsafe extern "C" fn() -> *mut sre::EventSourceHolder_TES;
+type GetSource = unsafe extern "C" fn() -> *mut sre::BSTEventSource;
+type SinkFn = unsafe extern "C" fn(source: *mut sre::BSTEventSource, sink: *const c_void);
 
 pub(crate) struct Fns {
     tes_holder: GetTesHolder,
-    ui: *const *const skre::EventSourceHolder_MenuOpenClose,
-    input: *const *const skre::EventSourceHolder_Input,
-    footstep: *const *const skre::BSTEventSource,
+    ui: *const *const sre::EventSourceHolder_MenuOpenClose,
+    input: *const *const sre::EventSourceHolder_Input,
+    footstep: *const *const sre::BSTEventSource,
 }
 
 unsafe impl Send for Fns {}
@@ -49,9 +49,9 @@ impl Fns {
         unsafe {
             Ok(Self {
                 tes_holder: crate::resolve(reloc, fns::EventSourceHolder_TES__GetSingleton)?,
-                ui: reloc.address(globals::g_EventSourceHolder_MenuOpenClose_ptr)? as *const *const skre::EventSourceHolder_MenuOpenClose,
-                input: reloc.address(globals::g_EventSourceHolder_Input_ptr)? as *const *const skre::EventSourceHolder_Input,
-                footstep: reloc.address(globals::g_FootstepEventSource_ptr)? as *const *const skre::BSTEventSource,
+                ui: reloc.address(globals::g_EventSourceHolder_MenuOpenClose_ptr)? as *const *const sre::EventSourceHolder_MenuOpenClose,
+                input: reloc.address(globals::g_EventSourceHolder_Input_ptr)? as *const *const sre::EventSourceHolder_Input,
+                footstep: reloc.address(globals::g_FootstepEventSource_ptr)? as *const *const sre::BSTEventSource,
             })
         }
     }
@@ -86,7 +86,7 @@ pub trait EventSink<E: Event>: Sync + 'static {
 #[repr(C)]
 struct SinkVtable<T, E> {
     dtor: unsafe extern "C" fn(this: *mut T, flags: u32) -> *mut T,
-    process: unsafe extern "C" fn(this: *const T, event: *const E, source: *mut skre::BSTEventSource) -> BSEventNotifyControl,
+    process: unsafe extern "C" fn(this: *const T, event: *const E, source: *mut sre::BSTEventSource) -> BSEventNotifyControl,
 }
 
 /// The sink object the engine sees: the vtable pointer, then the handler.
@@ -118,7 +118,7 @@ impl<E: Event, S: EventSink<E>> Sink<E, S> {
         this
     }
 
-    unsafe extern "C" fn process(this: *const Self, event: *const E, source: *mut skre::BSTEventSource) -> BSEventNotifyControl {
+    unsafe extern "C" fn process(this: *const Self, event: *const E, source: *mut sre::BSTEventSource) -> BSEventNotifyControl {
         let (Some(this), Some(event), Some(source)) = (unsafe { this.as_ref() }, unsafe { event.as_ref() }, unsafe { source.cast::<BSTEventSource<E>>().as_ref() }) else {
             return BSEventNotifyControl::Continue;
         };
@@ -127,7 +127,7 @@ impl<E: Event, S: EventSink<E>> Sink<E, S> {
 }
 
 /// What an [`ErasedSink`] runs: the event and the source as the engine passes them.
-pub type ErasedHandler = Box<dyn Fn(*const c_void, *const skre::BSTEventSource) -> BSEventNotifyControl + Send + Sync>;
+pub type ErasedHandler = Box<dyn Fn(*const c_void, *const sre::BSTEventSource) -> BSEventNotifyControl + Send + Sync>;
 
 /// A sink whose event type is chosen at run time, for a host that registers on behalf of code it
 /// may unload: the engine keeps the host's object while the handler decides what runs behind it.
@@ -150,7 +150,7 @@ impl ErasedSink {
         this
     }
 
-    unsafe extern "C" fn process(this: *const Self, event: *const c_void, source: *mut skre::BSTEventSource) -> BSEventNotifyControl {
+    unsafe extern "C" fn process(this: *const Self, event: *const c_void, source: *mut sre::BSTEventSource) -> BSEventNotifyControl {
         match unsafe { this.as_ref() } {
             Some(this) => (this.handler)(event, source),
             None => BSEventNotifyControl::Continue,
@@ -161,7 +161,7 @@ impl ErasedSink {
 /// A source known by address with its event type's registration function, for an [`ErasedSink`].
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct ErasedSource {
-    source: *mut skre::BSTEventSource,
+    source: *mut sre::BSTEventSource,
     add: u64,
 }
 
@@ -217,22 +217,22 @@ impl<E: Event> Drop for Registration<E> {
 /// A `BSTEventSource<E>`: the registered sinks, the deferred changes while a notification runs,
 /// its spin lock and the notifying flag.
 #[repr(transparent)]
-pub struct BSTEventSource<E: Event>(skre::BSTEventSource, PhantomData<E>);
+pub struct BSTEventSource<E: Event>(sre::BSTEventSource, PhantomData<E>);
 
 impl<E: Event> BSTEventSource<E> {
     /// # Safety
     /// `p` must point to a live `BSTEventSource<E>` that is never freed.
     #[must_use]
-    pub unsafe fn from_ptr(p: *const skre::BSTEventSource) -> Option<&'static Self> {
+    pub unsafe fn from_ptr(p: *const sre::BSTEventSource) -> Option<&'static Self> {
         unsafe { p.cast::<Self>().as_ref() }
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::BSTEventSource {
+    pub fn raw(&self) -> &sre::BSTEventSource {
         &self.0
     }
 
-    fn as_mut_ptr(&self) -> *mut skre::BSTEventSource {
+    fn as_mut_ptr(&self) -> *mut sre::BSTEventSource {
         (&raw const self.0).cast_mut()
     }
 
@@ -288,14 +288,14 @@ impl<E: Event> BSTEventSource<E> {
 
 /// # Safety
 /// `p` must point to a `BSTEventSource<E>` inside an object that lives for the rest of the game.
-unsafe fn source_at<E: Event>(p: *const skre::BSTEventSource) -> Option<&'static BSTEventSource<E>> {
+unsafe fn source_at<E: Event>(p: *const sre::BSTEventSource) -> Option<&'static BSTEventSource<E>> {
     unsafe { BSTEventSource::from_ptr(p) }
 }
 
 /// The holder of the 56 script event sources, the static object
 /// `g_EventSourceHolder_TES` (id 400420).
 #[repr(transparent)]
-pub struct EventSourceHolderTes(skre::EventSourceHolder_TES);
+pub struct EventSourceHolderTes(sre::EventSourceHolder_TES);
 
 impl EventSourceHolderTes {
     /// Through `EventSourceHolder_TES::GetSingleton` (id 14298), which constructs the holder on first use.
@@ -305,20 +305,20 @@ impl EventSourceHolderTes {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::EventSourceHolder_TES {
+    pub fn raw(&self) -> &sre::EventSourceHolder_TES {
         &self.0
     }
 
     /// Source `index` of the 56, at stride 0x58.
     #[must_use]
-    pub fn source_at(&self, index: usize) -> Option<&skre::BSTEventSource> {
-        (index < 56).then(|| unsafe { &*(&raw const self.0).cast::<skre::BSTEventSource>().add(index) })
+    pub fn source_at(&self, index: usize) -> Option<&sre::BSTEventSource> {
+        (index < 56).then(|| unsafe { &*(&raw const self.0).cast::<sre::BSTEventSource>().add(index) })
     }
 }
 
 /// The UI singleton behind `g_EventSourceHolder_MenuOpenClose_ptr` (id 400327); `skyrim::ui` adds the menu table, stack and queue.
 #[repr(transparent)]
-pub struct EventSourceHolderMenuOpenClose(skre::EventSourceHolder_MenuOpenClose);
+pub struct EventSourceHolderMenuOpenClose(sre::EventSourceHolder_MenuOpenClose);
 
 impl EventSourceHolderMenuOpenClose {
     /// `None` until the UI is constructed, which is before the main menu.
@@ -328,7 +328,7 @@ impl EventSourceHolderMenuOpenClose {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::EventSourceHolder_MenuOpenClose {
+    pub fn raw(&self) -> &sre::EventSourceHolder_MenuOpenClose {
         &self.0
     }
 
@@ -341,7 +341,7 @@ impl EventSourceHolderMenuOpenClose {
 
 /// The input device manager behind `g_EventSourceHolder_Input_ptr` (id 402776).
 #[repr(transparent)]
-pub struct EventSourceHolderInput(skre::EventSourceHolder_Input);
+pub struct EventSourceHolderInput(sre::EventSourceHolder_Input);
 
 impl EventSourceHolderInput {
     #[must_use]
@@ -350,7 +350,7 @@ impl EventSourceHolderInput {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::EventSourceHolder_Input {
+    pub fn raw(&self) -> &sre::EventSourceHolder_Input {
         &self.0
     }
 }
@@ -360,11 +360,11 @@ macro_rules! event_structs {
         $(
             $(#[$doc]
             #[repr(transparent)]
-            pub struct $name(skre::$name);
+            pub struct $name(sre::$name);
 
             impl $name {
                 #[must_use]
-                pub fn raw(&self) -> &skre::$name {
+                pub fn raw(&self) -> &sre::$name {
                     &self.0
                 }
             }
@@ -604,7 +604,7 @@ sources! { TES_IDS;
 /// The input source sends a pointer to the head of the frame's `InputEvent` list (pass 9
 /// describes the events; `device`, `eventType` and `next` are medium here).
 #[repr(transparent)]
-pub struct InputEventList(*mut skre::InputEvent);
+pub struct InputEventList(*mut sre::InputEvent);
 
 impl InputEventList {
     pub fn iter(&self) -> impl Iterator<Item = &InputEvent> {
@@ -633,11 +633,11 @@ impl fmt::Debug for InputEventList {
 
 /// One event of the frame's input list; the typed events (`ButtonEvent`, ...) are pass 9's.
 #[repr(transparent)]
-pub struct InputEvent(skre::InputEvent);
+pub struct InputEvent(sre::InputEvent);
 
 impl InputEvent {
     #[must_use]
-    pub fn raw(&self) -> &skre::InputEvent {
+    pub fn raw(&self) -> &sre::InputEvent {
         &self.0
     }
 
@@ -659,11 +659,11 @@ impl InputEvent {
     }
 }
 
-fn ui_source(offset: fn(&skre::EventSourceHolder_MenuOpenClose) -> *const skre::BSTEventSource) -> *const skre::BSTEventSource {
+fn ui_source(offset: fn(&sre::EventSourceHolder_MenuOpenClose) -> *const sre::BSTEventSource) -> *const sre::BSTEventSource {
     EventSourceHolderMenuOpenClose::get().map_or(core::ptr::null(), |ui| offset(&ui.0))
 }
 
-fn player_source(offset: fn(*const skre::PlayerCharacter) -> *const skre::BSTEventSource) -> *const skre::BSTEventSource {
+fn player_source(offset: fn(*const sre::PlayerCharacter) -> *const sre::BSTEventSource) -> *const sre::BSTEventSource {
     PlayerCharacter::get().map_or(core::ptr::null(), |p| offset(p.as_ptr()))
 }
 
@@ -683,7 +683,7 @@ sources! { OTHER_IDS;
 /// event types are opaque.
 pub mod story {
     use super::{BSTEventSource, Event, GetSource, resolved, source_at};
-    use skre::raw::fns;
+    use sre::raw::fns;
 
     macro_rules! story_events {
         ($($name:ident: $get:ident, $add:ident, $remove:ident;) => {
@@ -758,7 +758,7 @@ pub mod story {
 
 /// # Safety
 /// `p` is a reference pointer of an event the engine built, null or live for the event's lifetime.
-unsafe fn refr<'a>(p: *mut skre::TESObjectREFR) -> Option<&'a TESObjectREFR> {
+unsafe fn refr<'a>(p: *mut sre::TESObjectREFR) -> Option<&'a TESObjectREFR> {
     unsafe { p.cast::<TESObjectREFR>().as_ref() }
 }
 

@@ -43,7 +43,7 @@ use settings::{Setting, Settings};
 pub const ABI: u32 = 3;
 
 /// This crate's version, a hash of the sources whose types cross the host-plugin boundary (this
-/// crate, `overlay`, `skyrim`, `hook`, `skse`, `skre`, `versionlib` and `Cargo.lock`) and the
+/// crate, `overlay`, `skyrim`, `hook`, `skse`, `sre`, `versionlib` and `Cargo.lock`) and the
 /// compiler; a plugin is loaded only when its copy equals the host's.
 pub const BUILD: &CStr = match CStr::from_bytes_with_nul(concat!("framework ", env!("CARGO_PKG_VERSION"), " ", env!("SKYRIM_RS_API_HASH"), ", ", env!("SKYRIM_RS_RUSTC"), "\0").as_bytes()) {
     Ok(build) => build,

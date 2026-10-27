@@ -7,7 +7,7 @@
 
 use core::fmt::{self, Write};
 
-use skre::raw::{fns, symbols as ledger, vtables};
+use sre::raw::{fns, symbols as ledger, vtables};
 
 use crate::mem::Source;
 use crate::report::{Context, code_location};

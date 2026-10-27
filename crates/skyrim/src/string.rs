@@ -12,11 +12,11 @@ use core::ffi::{CStr, c_char};
 use std::ffi::CString;
 use std::fmt;
 
-use skre::raw::fns;
+use sre::raw::fns;
 
-type Ctor = unsafe extern "C" fn(this: *mut skre::BSFixedString, text: *const c_char) -> *mut skre::BSFixedString;
-type Copy_ = unsafe extern "C" fn(this: *mut skre::BSFixedString, other: *const skre::BSFixedString) -> *mut skre::BSFixedString;
-type Release = unsafe extern "C" fn(this: *mut skre::BSFixedString);
+type Ctor = unsafe extern "C" fn(this: *mut sre::BSFixedString, text: *const c_char) -> *mut sre::BSFixedString;
+type Copy_ = unsafe extern "C" fn(this: *mut sre::BSFixedString, other: *const sre::BSFixedString) -> *mut sre::BSFixedString;
+type Release = unsafe extern "C" fn(this: *mut sre::BSFixedString);
 
 pub(crate) struct Fns {
     ctor: Ctor,
@@ -46,7 +46,7 @@ pub const PINNED: u32 = 0x7FFF;
 /// An interned string: owned when made by [`new`](Self::new) or [`clone`](Clone::clone) (released on
 /// drop), borrowed when viewed inside an engine object through [`from_ptr`](Self::from_ptr).
 #[repr(transparent)]
-pub struct BSFixedString(skre::BSFixedString);
+pub struct BSFixedString(sre::BSFixedString);
 
 impl BSFixedString {
     /// Interns `text` through `BSFixedString::ctor` (id 69161); a text with an interior NUL interns
@@ -54,7 +54,7 @@ impl BSFixedString {
     #[must_use]
     pub fn new(text: &str) -> Self {
         let text = CString::new(text.split('\0').next().unwrap_or("")).unwrap_or_default();
-        let mut s = skre::BSFixedString { data: core::ptr::null_mut() };
+        let mut s = sre::BSFixedString { data: core::ptr::null_mut() };
         unsafe { (fns().ctor)(&raw mut s, text.as_ptr()) };
         Self(s)
     }
@@ -63,13 +63,13 @@ impl BSFixedString {
     /// pointer comparisons such as a native's state name need.
     #[must_use]
     pub const fn empty() -> Self {
-        Self(skre::BSFixedString { data: core::ptr::null_mut() })
+        Self(sre::BSFixedString { data: core::ptr::null_mut() })
     }
 
     /// Gives the reference up to an engine object that will hold it from now on.
     #[must_use]
-    pub fn into_raw(self) -> skre::BSFixedString {
-        let raw = skre::BSFixedString { data: self.0.data };
+    pub fn into_raw(self) -> sre::BSFixedString {
+        let raw = sre::BSFixedString { data: self.0.data };
         core::mem::forget(self);
         raw
     }
@@ -79,17 +79,17 @@ impl BSFixedString {
     /// # Safety
     /// `p` must point to a `BSFixedString` field that stays valid for `'a`.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const skre::BSFixedString) -> &'a Self {
+    pub unsafe fn from_ptr<'a>(p: *const sre::BSFixedString) -> &'a Self {
         unsafe { &*p.cast::<Self>() }
     }
 
     /// For an engine out parameter that stores one reference into the string.
-    pub(crate) fn as_mut_ptr(&mut self) -> *mut skre::BSFixedString {
+    pub(crate) fn as_mut_ptr(&mut self) -> *mut sre::BSFixedString {
         &raw mut self.0
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::BSFixedString {
+    pub fn raw(&self) -> &sre::BSFixedString {
         &self.0
     }
 
@@ -106,11 +106,11 @@ impl BSFixedString {
 
     /// The pool entry header, `None` for the empty string.
     #[must_use]
-    pub fn entry(&self) -> Option<&skre::BSStringPool__Entry> {
+    pub fn entry(&self) -> Option<&sre::BSStringPool__Entry> {
         if self.is_empty() {
             return None;
         }
-        unsafe { self.0.data.cast::<skre::BSStringPool__Entry>().sub(1).as_ref() }
+        unsafe { self.0.data.cast::<sre::BSStringPool__Entry>().sub(1).as_ref() }
     }
 
     /// Byte count up to the NUL.
@@ -122,7 +122,7 @@ impl BSFixedString {
     /// Whether the entry holds `wchar_t` characters.
     #[must_use]
     pub fn is_wide(&self) -> bool {
-        self.entry().is_some_and(|e| skre::BSStringPool__Entry_flags(e.flags).contains(skre::BSStringPool__Entry_flags::WIDE))
+        self.entry().is_some_and(|e| sre::BSStringPool__Entry_flags(e.flags).contains(sre::BSStringPool__Entry_flags::WIDE))
     }
 
     /// Bits 0-14 of the entry flags: the reference count, [`PINNED`] for a pinned entry; 0 for the empty string.
@@ -162,7 +162,7 @@ impl BSFixedString {
 impl Clone for BSFixedString {
     /// Adds a reference through `BSFixedString::copy` (id 69162).
     fn clone(&self) -> Self {
-        let mut s = skre::BSFixedString { data: core::ptr::null_mut() };
+        let mut s = sre::BSFixedString { data: core::ptr::null_mut() };
         unsafe { (fns().copy)(&raw mut s, &raw const self.0) };
         Self(s)
     }

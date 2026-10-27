@@ -13,7 +13,7 @@ use std::fs::File;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 
-use skre::raw::vtables;
+use sre::raw::vtables;
 use skyrim::actors::PlayerCharacter;
 use skyrim::render::{CullFn, CullingProcess, NiAVObject, SetFirstPersonFn};
 
@@ -29,7 +29,7 @@ static CULL: OnceLock<hook::Hook<CullFn>> = OnceLock::new();
 static SWITCH: OnceLock<hook::Hook<SetFirstPersonFn>> = OnceLock::new();
 /// The third-person root cached on the main thread; null outside a loaded game, when the
 /// detour must not touch the player.
-static THIRD_ROOT: AtomicPtr<skre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
+static THIRD_ROOT: AtomicPtr<sre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
 static FIRST_PERSON: AtomicBool = AtomicBool::new(false);
 /// In first person: visits of the third-person root by shadow cameras, by other cameras, the
 /// face node skipped for other cameras, the face node passed to shadow cameras.
@@ -58,12 +58,12 @@ fn apply(first_person: bool) {
     }
 }
 
-unsafe extern "C" fn switch_detour(player: *mut skre::PlayerCharacter, first_person: bool) {
+unsafe extern "C" fn switch_detour(player: *mut sre::PlayerCharacter, first_person: bool) {
     unsafe { SWITCH.get().expect("stored before enabling").original()(player, first_person) }
     apply(first_person);
 }
 
-unsafe extern "C" fn cull_detour(node: *mut skre::NiAVObject, culler: *mut skre::NiCullingProcess, plane_mask: u32) {
+unsafe extern "C" fn cull_detour(node: *mut sre::NiAVObject, culler: *mut sre::NiCullingProcess, plane_mask: u32) {
     let original = CULL.get().expect("stored before enabling").original();
     if FIRST_PERSON.load(Ordering::Relaxed)
         && let (Some(n), Some(c), Some(root)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) }, unsafe { NiAVObject::from_ptr(THIRD_ROOT.load(Ordering::Acquire)) })

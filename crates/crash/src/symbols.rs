@@ -1,10 +1,10 @@
-//! Game addresses to the ledger's names: the functions and globals `skre` names and the vtables
+//! Game addresses to the ledger's names: the functions and globals `sre` names and the vtables
 //! the RTTI records, each found by the module-relative address.
 
 use std::sync::OnceLock;
 
-use skre::raw::{symbols as ledger, vtables};
-use skre::raw::{Function, Global, Vtable};
+use sre::raw::{symbols as ledger, vtables};
+use sre::raw::{Function, Global, Vtable};
 
 /// A code address inside the game: the function holding it and the offset into it.
 pub struct Code {
@@ -56,7 +56,7 @@ static MODE: OnceLock<Mode> = OnceLock::new();
 /// offsets disagreed with the ledger.
 pub fn init(runtime: u32) -> (Mode, u32) {
     let mode = *MODE.get_or_init(|| {
-        if skse::runtime::unpack(runtime)[..3] != skre::VERSION {
+        if skse::runtime::unpack(runtime)[..3] != sre::VERSION {
             return Mode::None;
         }
         let Ok(db) = versionlib::running(&skse::runtime::versionlib_name(runtime)).map(versionlib::Running::db) else {

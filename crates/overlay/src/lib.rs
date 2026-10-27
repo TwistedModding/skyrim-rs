@@ -21,7 +21,7 @@ use std::time::Instant;
 
 pub use egui;
 use egui::{Context, Pos2, RawInput, Rect, ViewportId, ViewportInfo};
-use skre::raw::{fns, globals};
+use sre::raw::{fns, globals};
 use skyrim::render::{PresentFn, RenderWindow};
 
 mod frame;

@@ -3,7 +3,7 @@
 use std::path::Path;
 
 /// The workspace crates whose types cross the host-plugin boundary, plus the lock that pins the rest.
-const ABI_SOURCES: [&str; 8] = ["framework/src", "overlay/src", "skyrim/src", "hook/src", "skse/src", "skre/src", "versionlib/src", "../Cargo.lock"];
+const ABI_SOURCES: [&str; 8] = ["framework/src", "overlay/src", "skyrim/src", "hook/src", "skse/src", "sre/src", "versionlib/src", "../Cargo.lock"];
 
 fn main() {
     let rustc = std::env::var_os("RUSTC").unwrap_or_else(|| "rustc".into());

@@ -9,7 +9,7 @@ use std::collections::BTreeMap;
 use std::sync::Mutex;
 use std::sync::atomic::{AtomicU32, Ordering};
 
-use skre::raw::globals;
+use sre::raw::globals;
 use skyrim::events::{BSEventNotifyControl, BSTEventSource, Event, EventSink, Sink};
 use skyrim::input::{Arg, Command, CommandContext, ControlMap, InputDevice, InputEventList, InputManager, Param, PlayerControls, ScriptParamType};
 

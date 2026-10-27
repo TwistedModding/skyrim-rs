@@ -6,8 +6,8 @@
 
 use core::fmt::{self, Write};
 
-use skre::FormType;
-use skre::raw::{symbols as ledger, vtables};
+use sre::FormType;
+use sre::raw::{symbols as ledger, vtables};
 
 use crate::mem::Source;
 use crate::record::Record;
@@ -34,7 +34,7 @@ const LIGHT_INDEX: u32 = 0xFE;
 const RUNTIME_INDEX: u32 = 0xFF;
 
 /// The ledger's class for the object at `address`, from its first word.
-fn class_of(address: u64, rec: &Record, src: &dyn Source) -> Option<&'static skre::raw::Vtable> {
+fn class_of(address: u64, rec: &Record, src: &dyn Source) -> Option<&'static sre::raw::Vtable> {
     let vtable = src.read_u64(address)?;
     if vtable == 0 || rec.exe_base == 0 || rec.module_at(vtable).is_none_or(|m| m.base != rec.exe_base) {
         return None;

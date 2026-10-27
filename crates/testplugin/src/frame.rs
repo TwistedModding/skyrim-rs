@@ -9,7 +9,7 @@ use std::collections::BTreeMap;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicU32, Ordering};
 
-use skre::raw::vtables;
+use sre::raw::vtables;
 use skyrim::actors::PlayerCharacter;
 use skyrim::camera::{CameraState, CameraUpdateFn, PlayerCamera, frame_delta, frame_delta_real, main_camera};
 use skyrim::render::{AccumulatorRenderMode, BSShaderAccumulator, PresentFn, RenderWindow, ShaderFlags, ShaderMaterialType, ShadowSceneNode, Sky, frame_counter, world_scene_graph};
@@ -86,7 +86,7 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
     ))
 }
 
-unsafe extern "C" fn update_detour(camera: *mut skre::TESCamera) {
+unsafe extern "C" fn update_detour(camera: *mut sre::TESCamera) {
     unsafe { UPDATE.get().expect("stored before enabling").original()(camera) }
     if PlayerCamera::is(camera)
         && let Some(player_camera) = PlayerCamera::get()

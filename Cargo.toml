@@ -11,7 +11,7 @@ publish = false
 skse = { path = "crates/skse", version = "0.1.0" }
 versionlib = { path = "crates/versionlib", version = "0.1.0" }
 hook = { path = "crates/hook", version = "0.1.0" }
-skre = { path = "crates/skre", version = "0.1.0" }
+sre = { path = "crates/sre", version = "0.1.0", package = "skyrim-sre" }
 skyrim = { path = "crates/skyrim", version = "0.1.0" }
 overlay = { path = "crates/overlay", version = "0.1.0" }
 framework = { path = "crates/framework", version = "0.1.0" }

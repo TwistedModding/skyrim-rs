@@ -14,11 +14,11 @@ use core::ffi::{CStr, c_void};
 use std::ffi::CString;
 use std::fmt;
 
-use skre::raw::{fns, globals, vtables};
+use sre::raw::{fns, globals, vtables};
 
 pub use crate::actors::TESObjectREFR;
 pub use crate::string::BSFixedString;
-pub use skre::{FormType, TESFile_fileFlags as FileFlags, TESForm_formFlags as FormFlags};
+pub use sre::{FormType, TESFile_fileFlags as FileFlags, TESForm_formFlags as FormFlags};
 
 /// Light files resolve to `0xFE` in the mod index byte, runtime-created forms to `0xFF`.
 pub const LIGHT_INDEX: u8 = 0xFE;
@@ -33,7 +33,7 @@ pub(crate) struct Fns {
     list_get_at: fns::BGSListForm__GetAt_fn,
     list_find: fns::BGSListForm__Find_fn,
     list_len: fns::BGSListForm__GetFormsSize_fn,
-    data_handler: *const *const skre::TESDataHandler,
+    data_handler: *const *const sre::TESDataHandler,
 }
 
 unsafe impl Send for Fns {}
@@ -51,7 +51,7 @@ impl Fns {
                 list_get_at: crate::resolve(reloc, fns::BGSListForm__GetAt)?,
                 list_find: crate::resolve(reloc, fns::BGSListForm__Find)?,
                 list_len: crate::resolve(reloc, fns::BGSListForm__GetFormsSize)?,
-                data_handler: reloc.address(globals::g_TESDataHandler_ptr)? as *const *const skre::TESDataHandler,
+                data_handler: reloc.address(globals::g_TESDataHandler_ptr)? as *const *const sre::TESDataHandler,
             })
         }
     }
@@ -75,7 +75,7 @@ pub(crate) unsafe fn ptr_slice<'a, T>(data: *const c_void, len: u32) -> &'a [Opt
 
 /// # Safety
 /// `arr` must hold pointers as [`ptr_slice`] requires.
-unsafe fn array<T>(arr: &skre::BSTArray) -> &[Option<&T>] {
+unsafe fn array<T>(arr: &sre::BSTArray) -> &[Option<&T>] {
     unsafe { ptr_slice(arr.data, arr.size) }
 }
 
@@ -148,34 +148,34 @@ pub fn find_form_by_editor_id(editor_id: &str) -> Option<&'static TESForm> {
     unsafe { TESForm::from_ptr((fns().find_by_editor_id)(name.as_ptr())) }
 }
 
-/// Base of every record form: `skre::TESForm` with typed accessors.
+/// Base of every record form: `sre::TESForm` with typed accessors.
 #[repr(transparent)]
-pub struct TESForm(skre::TESForm);
+pub struct TESForm(sre::TESForm);
 
-type AsReferenceSlot = unsafe extern "C" fn(this: *mut skre::TESForm) -> *mut skre::TESObjectREFR;
+type AsReferenceSlot = unsafe extern "C" fn(this: *mut sre::TESForm) -> *mut sre::TESObjectREFR;
 
 impl TESForm {
     /// # Safety
     /// `ptr` must be null or point to a live form of any class derived from `TESForm` that stays
     /// alive for `'a`.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(ptr: *const skre::TESForm) -> Option<&'a Self> {
+    pub unsafe fn from_ptr<'a>(ptr: *const sre::TESForm) -> Option<&'a Self> {
         unsafe { ptr.cast::<Self>().as_ref() }
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::TESForm {
+    pub fn raw(&self) -> &sre::TESForm {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const skre::TESForm {
+    pub fn as_ptr(&self) -> *const sre::TESForm {
         &raw const self.0
     }
 
     /// The form's dynamic class from its vtable pointer, `None` when the vtable is not in the ledger.
     #[must_use]
-    pub fn class(&self) -> Option<&'static skre::raw::Vtable> {
+    pub fn class(&self) -> Option<&'static sre::raw::Vtable> {
         unsafe { crate::class_of(self.as_ptr().cast()) }
     }
 
@@ -267,11 +267,11 @@ macro_rules! form_class {
     ($(#[$doc:meta] $name:ident($layout:ident), $ty:ident, $as:ident) => {
         $(#[$doc]
         #[repr(transparent)]
-        pub struct $name(skre::$layout);
+        pub struct $name(sre::$layout);
 
         impl $name {
             #[must_use]
-            pub fn raw(&self) -> &skre::$layout {
+            pub fn raw(&self) -> &sre::$layout {
                 &self.0
             }
         }
@@ -361,7 +361,7 @@ impl TESGlobal {
 
 /// The keyword component embedded in forms that carry keywords (`TESObjectWEAP` at +0x140, `TESNPC` at +0x110, ...).
 #[repr(transparent)]
-pub struct BGSKeywordForm(skre::BGSKeywordForm);
+pub struct BGSKeywordForm(sre::BGSKeywordForm);
 
 impl BGSKeywordForm {
     #[must_use]
@@ -411,11 +411,11 @@ impl BGSListForm {
 
 /// One plugin file the data handler found in `Data`.
 #[repr(transparent)]
-pub struct TESFile(skre::TESFile);
+pub struct TESFile(sre::TESFile);
 
 impl TESFile {
     #[must_use]
-    pub fn raw(&self) -> &skre::TESFile {
+    pub fn raw(&self) -> &sre::TESFile {
         &self.0
     }
 
@@ -482,7 +482,7 @@ impl TESFile {
 
 /// The data handler singleton: every loaded file and the per-type form arrays.
 #[repr(transparent)]
-pub struct TESDataHandler(skre::TESDataHandler);
+pub struct TESDataHandler(sre::TESDataHandler);
 
 impl TESDataHandler {
     /// The singleton behind `g_TESDataHandler_ptr` (id 400269); `None` before `TES::ctor` has run.
@@ -492,14 +492,14 @@ impl TESDataHandler {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &skre::TESDataHandler {
+    pub fn raw(&self) -> &sre::TESDataHandler {
         &self.0
     }
 
     /// Every form of one type, in load order.
     #[must_use]
     pub fn forms_of_type(&self, ty: FormType) -> &[Option<&TESForm>] {
-        let arrays = (&raw const self.0).cast::<skre::BSTArray>().wrapping_byte_add(core::mem::offset_of!(skre::TESDataHandler, formArrays));
+        let arrays = (&raw const self.0).cast::<sre::BSTArray>().wrapping_byte_add(core::mem::offset_of!(sre::TESDataHandler, formArrays));
         unsafe { array(&*arrays.add(ty as usize)) }
     }
 
@@ -508,7 +508,7 @@ impl TESDataHandler {
         let mut node = Some(&self.0.files);
         core::iter::from_fn(move || {
             let n = node?;
-            node = unsafe { n.next.cast::<skre::BSSimpleListNode>().as_ref() };
+            node = unsafe { n.next.cast::<sre::BSSimpleListNode>().as_ref() };
             unsafe { n.item.cast::<TESFile>().as_ref() }
         })
     }

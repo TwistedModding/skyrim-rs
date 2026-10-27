@@ -59,7 +59,7 @@ fn load(host: &'static Host) -> bool {
     log(&format!("loaded, damage scale {}", scale()));
 
     // Actor::ModActorValueImpl(actor, modifier, value, delta, source): the player's health damage is multiplied by the factor.
-    let subscribed = host.hooks().before(Actor__ModActorValueImpl, Options::new(host.name()), |args: &mut (*mut skre::Actor, i32, i32, f32, *mut c_void)| {
+    let subscribed = host.hooks().before(Actor__ModActorValueImpl, Options::new(host.name()), |args: &mut (*mut sre::Actor, i32, i32, f32, *mut c_void)| {
         let player = PlayerCharacter::get().map_or(core::ptr::null(), |p| p.as_ptr().cast::<c_void>());
         if args.0.cast_const().cast::<c_void>() == player && args.1 == Modifier::Damage as i32 && args.2 == ActorValue::Health as i32 && args.3 < 0.0 {
             let scaled = args.3 * scale();

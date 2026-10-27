@@ -53,7 +53,7 @@ static SHADOW: AtomicBool = AtomicBool::new(false);
 /// With the shadow mode: the cascade replays also keep hidden list entries.
 static REPLAY_EXCEPTION: AtomicBool = AtomicBool::new(false);
 static FIRST_PERSON: AtomicBool = AtomicBool::new(false);
-static THIRD_ROOT: AtomicPtr<skre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
+static THIRD_ROOT: AtomicPtr<sre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
 
 static STEPS: AtomicU32 = AtomicU32::new(0);
 static ORBIT_ANGLE: AtomicU32 = AtomicU32::new(0);
@@ -134,7 +134,7 @@ fn near3(a: [f32; 3], b: [f32; 3], tol: f32) -> bool {
 }
 
 /// After the state's own update: the FOV and near writes, then the placement of the camera root.
-unsafe extern "C" fn state_step(camera: *mut skre::TESCamera) {
+unsafe extern "C" fn state_step(camera: *mut sre::TESCamera) {
     unsafe { STEP.get().expect("stored before enabling").original()(camera) }
     if !PlayerCamera::is(camera) {
         return;
@@ -172,7 +172,7 @@ unsafe extern "C" fn state_step(camera: *mut skre::TESCamera) {
     store3(&WRITTEN_POS, placed.translation);
 }
 
-unsafe extern "C" fn hands_projection(camera: *mut skre::NiCamera, fov: f32, near: f32, far: f32, width: u32, height: u32, spans_width: bool, set_lod: bool, reference: f32) {
+unsafe extern "C" fn hands_projection(camera: *mut sre::NiCamera, fov: f32, near: f32, far: f32, width: u32, height: u32, spans_width: bool, set_lod: bool, reference: f32) {
     HANDS_CALLS.fetch_add(1, Ordering::Relaxed);
     HANDS_FOV_SEEN.store(fov.to_bits(), Ordering::Relaxed);
     let target = HANDS_FOV_TARGET.load(Ordering::Relaxed);
@@ -180,7 +180,7 @@ unsafe extern "C" fn hands_projection(camera: *mut skre::NiCamera, fov: f32, nea
     unsafe { HANDS.get().expect("stored before enabling").original()(camera, fov, near, far, width, height, spans_width, set_lod, reference) }
 }
 
-unsafe extern "C" fn cull(node: *mut skre::NiAVObject, culler: *mut skre::NiCullingProcess, ordered_group: u32) {
+unsafe extern "C" fn cull(node: *mut sre::NiAVObject, culler: *mut sre::NiCullingProcess, ordered_group: u32) {
     if SHADOW.load(Ordering::Relaxed)
         && FIRST_PERSON.load(Ordering::Relaxed)
         && let (Some(n), Some(c)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) })
@@ -209,7 +209,7 @@ unsafe extern "C" fn cull(node: *mut skre::NiAVObject, culler: *mut skre::NiCull
     unsafe { CULL.get().expect("stored before enabling").original()(node, culler, ordered_group) }
 }
 
-unsafe extern "C" fn register_depth_geometry(accumulator: *mut skre::BSShaderAccumulator, geometry: *mut skre::BSGeometry, property: *mut skre::BSShaderProperty) -> bool {
+unsafe extern "C" fn register_depth_geometry(accumulator: *mut sre::BSShaderAccumulator, geometry: *mut sre::BSGeometry, property: *mut sre::BSShaderProperty) -> bool {
     if SHADOW.load(Ordering::Relaxed)
         && FIRST_PERSON.load(Ordering::Relaxed)
         && let (Some(a), Some(g), Some(root)) = (unsafe { BSShaderAccumulator::from_ptr(accumulator) }, unsafe { NiAVObject::from_ptr(geometry.cast()) }, unsafe { NiAVObject::from_ptr(THIRD_ROOT.load(Ordering::Acquire)) })
@@ -225,7 +225,7 @@ unsafe extern "C" fn register_depth_geometry(accumulator: *mut skre::BSShaderAcc
     unsafe { REGISTER.get().expect("stored before enabling").original()(accumulator, geometry, property) }
 }
 
-unsafe extern "C" fn replay(culler: *mut skre::BSCullingProcess, objects: *mut skre::BSTArray, camera: *mut skre::NiCamera, skip_hidden: bool, parallel: bool) {
+unsafe extern "C" fn replay(culler: *mut sre::BSCullingProcess, objects: *mut sre::BSTArray, camera: *mut sre::NiCamera, skip_hidden: bool, parallel: bool) {
     let mut skip = skip_hidden;
     if skip_hidden
         && SHADOW.load(Ordering::Relaxed)

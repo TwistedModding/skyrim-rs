@@ -99,9 +99,9 @@ pub fn install(options: &Options) -> Result<Installed, Error> {
 
 /// The globals the game-state probes read, through the Address Library when it opens.
 fn game_addresses(runtime: u32) -> live::GameAddresses {
-    use skre::raw::globals;
+    use sre::raw::globals;
     let mut out = live::GameAddresses::default();
-    if skse::runtime::unpack(runtime)[..3] != skre::VERSION {
+    if skse::runtime::unpack(runtime)[..3] != sre::VERSION {
         return out;
     }
     let Ok(db) = versionlib::running(&skse::runtime::versionlib_name(runtime)) else { return out };

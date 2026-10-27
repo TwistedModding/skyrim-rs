@@ -1,6 +1,6 @@
 //! Game layer: safe Rust over the generated layouts, one module per subsystem pass.
 //!
-//! Everything here is for the runtime `skre` describes. [`init`] checks the running
+//! Everything here is for the runtime `sre` describes. [`init`] checks the running
 //! game against it, resolves every Address Library id the modules need once, and keeps the
 //! [`hook::Reloc`] for the mod's own use.
 
@@ -35,7 +35,7 @@ impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Runtime([major, minor, build, store]) => {
-                let [a, b, c] = skre::VERSION;
+                let [a, b, c] = sre::VERSION;
                 write!(f, "runtime {major}.{minor}.{build} store {store} is not {a}.{b}.{c}, the only runtime the layouts describe")
             }
             Self::Hook(e) => e.fmt(f),
@@ -90,7 +90,7 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
         return Ok(());
     }
     let version = skse::runtime::unpack(skse.runtime_version);
-    if version[..3] != skre::VERSION {
+    if version[..3] != sre::VERSION {
         return Err(Error::Runtime(version));
     }
     let reloc = hook::Reloc::open(skse.runtime_version)?;
@@ -123,20 +123,20 @@ pub fn reloc() -> &'static hook::Reloc {
 ///
 /// # Safety
 /// `object` must point to a live object of a class with a vtable at offset 0.
-pub(crate) unsafe fn class_of(object: *const c_void) -> Option<&'static skre::raw::Vtable> {
+pub(crate) unsafe fn class_of(object: *const c_void) -> Option<&'static sre::raw::Vtable> {
     let vtable = unsafe { *object.cast::<usize>() };
     let rva = u32::try_from(vtable.checked_sub(reloc().base())?).ok()?;
-    skre::raw::vtables::find(rva)
+    sre::raw::vtables::find(rva)
 }
 
 /// A held `BSSpinLock`, the engine's recursive lock (owner thread id at +0, recursion count at +4),
 /// spun on the way the engine does (`Sleep(0)`, then `Sleep(1)` after 10,000 tries) and released on drop.
-pub(crate) struct SpinGuard(*const skre::BSSpinLock);
+pub(crate) struct SpinGuard(*const sre::BSSpinLock);
 
 impl SpinGuard {
     /// # Safety
     /// `lock` must point to a `BSSpinLock` that outlives the guard.
-    pub(crate) unsafe fn lock(lock: *const skre::BSSpinLock) -> Self {
+    pub(crate) unsafe fn lock(lock: *const sre::BSSpinLock) -> Self {
         let (owner, count) = unsafe { Self::words(lock) };
         let me = unsafe { GetCurrentThreadId() };
         let mut spins = 0u32;
@@ -154,7 +154,7 @@ impl SpinGuard {
         }
     }
 
-    unsafe fn words<'a>(lock: *const skre::BSSpinLock) -> (&'a AtomicU32, &'a AtomicU32) {
+    unsafe fn words<'a>(lock: *const sre::BSSpinLock) -> (&'a AtomicU32, &'a AtomicU32) {
         unsafe { (AtomicU32::from_ptr((&raw const (*lock).owningThread).cast_mut()), AtomicU32::from_ptr((&raw const (*lock).lockCount).cast_mut())) }
     }
 }

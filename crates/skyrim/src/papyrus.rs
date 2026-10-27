@@ -45,43 +45,43 @@ use std::ffi::CString;
 use std::fmt;
 use std::sync::{PoisonError, RwLock};
 
-use skre::raw::{fns, globals, vtables};
+use sre::raw::{fns, globals, vtables};
 
 use crate::actors::{Actor, TESObjectREFR};
 use crate::forms::{BGSKeyword, BGSListForm, BGSLocation, FormId, TESClass, TESForm, TESGlobal, TESNPC, TESObjectCELL, TESObjectWEAP, TESRace, TESWorldSpace};
 pub use crate::string::BSFixedString;
-pub use skre::{PapyrusType, VMTypeID};
+pub use sre::{PapyrusType, VMTypeID};
 
-type VmRaw = skre::BSScript__Internal__VirtualMachine;
-type VariableRaw = skre::BSScript__Variable;
-type TypeRaw = skre::BSScript__ObjectTypeInfo;
-type PolicyRaw = skre::SkyrimScript__HandlePolicy;
+type VmRaw = sre::BSScript__Internal__VirtualMachine;
+type VariableRaw = sre::BSScript__Variable;
+type TypeRaw = sre::BSScript__ObjectTypeInfo;
+type PolicyRaw = sre::SkyrimScript__HandlePolicy;
 
-type GetPageForFrame = unsafe extern "C" fn(stack: *mut skre::BSScript__Stack, frame: *const skre::BSScript__StackFrame) -> u32;
-type GetStackFrameVariable = unsafe extern "C" fn(stack: *mut skre::BSScript__Stack, frame: *const skre::BSScript__StackFrame, index: u32, page: u32) -> *mut VariableRaw;
+type GetPageForFrame = unsafe extern "C" fn(stack: *mut sre::BSScript__Stack, frame: *const sre::BSScript__StackFrame) -> u32;
+type GetStackFrameVariable = unsafe extern "C" fn(stack: *mut sre::BSScript__Stack, frame: *const sre::BSScript__StackFrame, index: u32, page: u32) -> *mut VariableRaw;
 type VariableAssign = unsafe extern "C" fn(this: *mut VariableRaw, other: *const VariableRaw);
 type VariableReset = unsafe extern "C" fn(this: *mut VariableRaw);
-type ObjectGetHandle = unsafe extern "C" fn(this: *mut skre::BSScript__Object) -> u64;
-type ObjectDecRef = unsafe extern "C" fn(this: *mut skre::BSScript__Object) -> u32;
-type PackFormToVariable = unsafe extern "C" fn(out: *mut VariableRaw, form: *mut skre::TESForm, vm: *mut VmRaw) -> *mut VariableRaw;
-type TypeGetFunction = unsafe extern "C" fn(this: *mut TypeRaw, name: *const skre::BSFixedString, out: *mut *mut c_void, is_static: bool) -> u8;
+type ObjectGetHandle = unsafe extern "C" fn(this: *mut sre::BSScript__Object) -> u64;
+type ObjectDecRef = unsafe extern "C" fn(this: *mut sre::BSScript__Object) -> u32;
+type PackFormToVariable = unsafe extern "C" fn(out: *mut VariableRaw, form: *mut sre::TESForm, vm: *mut VmRaw) -> *mut VariableRaw;
+type TypeGetFunction = unsafe extern "C" fn(this: *mut TypeRaw, name: *const sre::BSFixedString, out: *mut *mut c_void, is_static: bool) -> u8;
 
-type GetScriptObjectType = unsafe extern "C" fn(vm: *mut VmRaw, name: *const skre::BSFixedString, out: *mut *mut TypeRaw) -> u8;
+type GetScriptObjectType = unsafe extern "C" fn(vm: *mut VmRaw, name: *const sre::BSFixedString, out: *mut *mut TypeRaw) -> u8;
 type GetScriptObjectTypeByID = unsafe extern "C" fn(vm: *mut VmRaw, type_id: u32, out: *mut *mut TypeRaw) -> u8;
-type GetTypeIDForScriptObject = unsafe extern "C" fn(vm: *mut VmRaw, name: *const skre::BSFixedString, out: *mut u32) -> u8;
+type GetTypeIDForScriptObject = unsafe extern "C" fn(vm: *mut VmRaw, name: *const sre::BSFixedString, out: *mut u32) -> u8;
 type BindNativeMethod = unsafe extern "C" fn(vm: *mut VmRaw, function: *mut c_void) -> u8;
 type SetCallableFromTasklets = unsafe extern "C" fn(vm: *mut VmRaw, class: *const c_char, name: *const c_char, callable: bool);
-type FindBoundObject = unsafe extern "C" fn(vm: *mut VmRaw, handle: u64, class: *const c_char, out: *mut *mut skre::BSScript__Object) -> u8;
-type DispatchStaticCall = unsafe extern "C" fn(vm: *mut VmRaw, class: *const skre::BSFixedString, name: *const skre::BSFixedString, args: *mut c_void, callback: *mut *mut c_void) -> u8;
-type DispatchMethodCall = unsafe extern "C" fn(vm: *mut VmRaw, object: *mut *mut skre::BSScript__Object, name: *const skre::BSFixedString, args: *mut c_void, callback: *mut *mut c_void) -> u8;
-type CreateObject = unsafe extern "C" fn(vm: *mut VmRaw, class: *const skre::BSFixedString, out: *mut *mut skre::BSScript__Object) -> u8;
+type FindBoundObject = unsafe extern "C" fn(vm: *mut VmRaw, handle: u64, class: *const c_char, out: *mut *mut sre::BSScript__Object) -> u8;
+type DispatchStaticCall = unsafe extern "C" fn(vm: *mut VmRaw, class: *const sre::BSFixedString, name: *const sre::BSFixedString, args: *mut c_void, callback: *mut *mut c_void) -> u8;
+type DispatchMethodCall = unsafe extern "C" fn(vm: *mut VmRaw, object: *mut *mut sre::BSScript__Object, name: *const sre::BSFixedString, args: *mut c_void, callback: *mut *mut c_void) -> u8;
+type CreateObject = unsafe extern "C" fn(vm: *mut VmRaw, class: *const sre::BSFixedString, out: *mut *mut sre::BSScript__Object) -> u8;
 type GetObjectBindPolicy = unsafe extern "C" fn(vm: *mut VmRaw) -> *mut c_void;
-type BindObject = unsafe extern "C" fn(policy: *mut c_void, object: *mut *mut skre::BSScript__Object, handle: u64);
+type BindObject = unsafe extern "C" fn(policy: *mut c_void, object: *mut *mut sre::BSScript__Object, handle: u64);
 type ResizeVariableArray = unsafe extern "C" fn(array: *mut c_void, count: u64) -> u8;
 type GetObjectHandlePolicy = unsafe extern "C" fn(vm: *mut VmRaw) -> *mut PolicyRaw;
-type CreateArray = unsafe extern "C" fn(vm: *mut VmRaw, element: *const skre::BSScript__TypeInfo, size: u32, out: *mut *mut skre::BSScript__Array) -> u8;
+type CreateArray = unsafe extern "C" fn(vm: *mut VmRaw, element: *const sre::BSScript__TypeInfo, size: u32, out: *mut *mut sre::BSScript__Array) -> u8;
 type ReturnFromLatent = unsafe extern "C" fn(vm: *mut VmRaw, stack_id: u32, result: *const VariableRaw);
-type SendEvent = unsafe extern "C" fn(vm: *mut VmRaw, handle: u64, event: *const skre::BSFixedString, args: *mut c_void);
+type SendEvent = unsafe extern "C" fn(vm: *mut VmRaw, handle: u64, event: *const sre::BSFixedString, args: *mut c_void);
 
 type HandleIsType = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, handle: u64) -> u8;
 type IsHandleObjectAvailable = unsafe extern "C" fn(this: *mut PolicyRaw, handle: u64) -> u8;
@@ -94,7 +94,7 @@ type EffectListFn = unsafe extern "C" fn(magic_target: *mut c_void) -> *const Ef
 /// A node of the actor's `BSSimpleList<ActiveEffect*>`.
 #[repr(C)]
 struct EffectNode {
-    effect: *const skre::ActiveEffect,
+    effect: *const sre::ActiveEffect,
     next: *const EffectNode,
 }
 
@@ -103,7 +103,7 @@ const ALIAS_INSTANCES: u32 = 0x88;
 /// `Actor`'s `MagicTarget` subobject.
 const MAGIC_TARGET: usize = 0xa0;
 
-type CallBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut skre::BSScript__StackFrame) -> bool;
+type CallBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut sre::BSScript__StackFrame) -> bool;
 type HasBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader) -> bool;
 
 const IFUNCTION_SLOTS: usize = 23;
@@ -125,7 +125,7 @@ pub(crate) struct Fns {
     effect_list: EffectListFn,
     lock_read: fns::BSReadWriteLock__LockForRead_fn,
     unlock_read: fns::BSReadWriteLock__UnlockForRead_fn,
-    skyrim_vm: *const skre::SkyrimVM,
+    skyrim_vm: *const sre::SkyrimVM,
     vtable: [*const c_void; IFUNCTION_SLOTS],
 }
 
@@ -157,7 +157,7 @@ impl Fns {
                 effect_list: crate::resolve(reloc, fns::Actor__GetActiveEffectList)?,
                 lock_read: crate::resolve(reloc, fns::BSReadWriteLock__LockForRead)?,
                 unlock_read: crate::resolve(reloc, fns::BSReadWriteLock__UnlockForRead)?,
-                skyrim_vm: reloc.address(globals::g_SkyrimVM)? as *const skre::SkyrimVM,
+                skyrim_vm: reloc.address(globals::g_SkyrimVM)? as *const sre::SkyrimVM,
                 vtable,
             })
         }
@@ -321,10 +321,10 @@ impl HandlePolicy {
 #[allow(clippy::cast_possible_truncation)]
 pub fn alias_handles(reference: &TESObjectREFR) -> Vec<Handle> {
     let Some(extra) = reference.extra_list().get_by_type(ALIAS_INSTANCES) else { return Vec::new() };
-    let array = core::ptr::from_ref(extra).cast::<skre::ExtraAliasInstanceArray>().cast_mut();
+    let array = core::ptr::from_ref(extra).cast::<sre::ExtraAliasInstanceArray>().cast_mut();
     let lock = unsafe { &raw mut (*array).lock };
     unsafe { (fns().lock_read)(lock) };
-    let (entries, count) = unsafe { ((*array).entries.cast::<*const skre::ExtraAliasInstanceArray__Entry>(), (*array).count as usize) };
+    let (entries, count) = unsafe { ((*array).entries.cast::<*const sre::ExtraAliasInstanceArray__Entry>(), (*array).count as usize) };
     let handles = (0..count)
         .filter_map(|i| {
             let entry = unsafe { (*entries.add(i)).as_ref() }?;
@@ -557,11 +557,11 @@ impl fmt::Debug for ObjectTypeInfo {
 
 /// `BSScript::Object`: a script object bound to a handle, as the payload of an object [`Variable`].
 #[repr(transparent)]
-pub struct Object(skre::BSScript__Object);
+pub struct Object(sre::BSScript__Object);
 
 impl Object {
     #[must_use]
-    pub fn raw(&self) -> &skre::BSScript__Object {
+    pub fn raw(&self) -> &sre::BSScript__Object {
         &self.0
     }
 
@@ -618,11 +618,11 @@ impl fmt::Debug for ObjectPtr {
 /// after the 0x20 header, each carrying its own type. Held through the Variables that point at it;
 /// the last reference resets the elements and frees the block.
 #[repr(transparent)]
-pub struct Array(skre::BSScript__Array);
+pub struct Array(sre::BSScript__Array);
 
 impl Array {
     #[must_use]
-    pub fn raw(&self) -> &skre::BSScript__Array {
+    pub fn raw(&self) -> &sre::BSScript__Array {
         &self.0
     }
 
@@ -681,7 +681,7 @@ impl Variable {
     }
 
     const fn scalar(ty: PapyrusType, value: u64) -> Self {
-        Self(VariableRaw { type_: skre::BSScript__TypeInfo { rawTypeOrObjectType: ty as u64 }, value })
+        Self(VariableRaw { type_: sre::BSScript__TypeInfo { rawTypeOrObjectType: ty as u64 }, value })
     }
 
     #[must_use]
@@ -1117,7 +1117,7 @@ native_fns!(A0 0, A1 1, A2 2, A3 3);
 /// the Rust entry `run` dispatches to.
 #[repr(C)]
 struct NativeHeader {
-    base: skre::BSScript__NF_util__NativeFunctionBase,
+    base: sre::BSScript__NF_util__NativeFunctionBase,
     invoke: unsafe fn(this: *const NativeHeader, call: &NativeCall<'_>) -> Option<Variable>,
 }
 
@@ -1142,7 +1142,7 @@ unsafe impl Sync for NativeFunction {}
 
 impl NativeFunction {
     #[must_use]
-    pub fn raw(&self) -> &skre::BSScript__NF_util__NativeFunctionBase {
+    pub fn raw(&self) -> &sre::BSScript__NF_util__NativeFunctionBase {
         &self.0.base
     }
 
@@ -1243,7 +1243,7 @@ thread_local! {
     static STACK_ID: Cell<Option<u32>> = const { Cell::new(None) };
 }
 
-unsafe extern "C" fn call_binding(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut skre::BSScript__StackFrame) -> bool {
+unsafe extern "C" fn call_binding(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut sre::BSScript__StackFrame) -> bool {
     let (Some(this), Some(self_), Some(vm), Some(frame)) = (unsafe { this.as_ref() }, unsafe { Variable::from_ptr(self_) }, unsafe { vm.cast::<VirtualMachine>().as_ref() }, unsafe { frame.as_ref() }) else {
         return false;
     };
@@ -1352,7 +1352,7 @@ struct CallbackVtable {
 /// count) and calls slot 0 with 1 when its count reaches zero (RE request 4c).
 #[repr(C)]
 struct Callback {
-    header: skre::BSScript__IStackCallbackFunctor,
+    header: sre::BSScript__IStackCallbackFunctor,
     f: Option<ResultFn>,
 }
 
@@ -1362,7 +1362,7 @@ impl Callback {
     /// A callback holding the one reference the dispatch call borrows.
     fn new(f: ResultFn) -> *mut Self {
         Box::into_raw(Box::new(Self {
-            header: skre::BSScript__IStackCallbackFunctor { __vftable: core::ptr::from_ref(Self::VTABLE).cast(), refCount: 1, unknown_C: [0; 4] },
+            header: sre::BSScript__IStackCallbackFunctor { __vftable: core::ptr::from_ref(Self::VTABLE).cast(), refCount: 1, unknown_C: [0; 4] },
             f: Some(f),
         }))
     }
@@ -1425,7 +1425,7 @@ impl Args {
         if unsafe { (fns().resize_args)(out, this.len as u64) } == 0 {
             return false;
         }
-        let data = unsafe { (*out.cast::<skre::BSScrapArray>()).data.cast::<VariableRaw>() };
+        let data = unsafe { (*out.cast::<sre::BSScrapArray>()).data.cast::<VariableRaw>() };
         for i in 0..this.len {
             unsafe { (fns().assign)(data.add(i), &raw const (*this.values.add(i)).0) };
         }
@@ -1442,7 +1442,7 @@ impl VirtualMachine {
     /// The VM through `g_SkyrimVM` (id 403618) + 0x210, `None` before `SkyrimVM::ctor` stored it.
     #[must_use]
     pub fn get() -> Option<&'static Self> {
-        let holder = (fns().skyrim_vm as usize + core::mem::offset_of!(skre::SkyrimVM, field_210)) as *const *const Self;
+        let holder = (fns().skyrim_vm as usize + core::mem::offset_of!(sre::SkyrimVM, field_210)) as *const *const Self;
         unsafe { (*holder).as_ref() }
     }
 
@@ -1586,14 +1586,14 @@ impl VirtualMachine {
         let param_infos = Box::leak(param_infos.into_boxed_slice());
         let native = Box::leak(Box::new(Native {
             header: NativeHeader {
-                base: skre::BSScript__NF_util__NativeFunctionBase {
+                base: sre::BSScript__NF_util__NativeFunctionBase {
                     __vftable: (&raw const fns().vtable).cast(),
                     refCount: 1,
                     unknown_C: [0; 4],
                     name: BSFixedString::new(name).into_raw(),
                     objectTypeName: BSFixedString::new(class).into_raw(),
                     stateName: BSFixedString::new("").into_raw(),
-                    returnType: skre::BSScript__TypeInfo { rawTypeOrObjectType: return_type.bits() },
+                    returnType: sre::BSScript__TypeInfo { rawTypeOrObjectType: return_type.bits() },
                     params: param_infos[1..].as_mut_ptr().cast(),
                     paramCount: count,
                     variableCount: count,
@@ -1641,7 +1641,7 @@ impl VirtualMachine {
     pub fn dispatch_method_call(&self, _: &GameThread, object: &ObjectPtr, function: &str, args: &[Variable], on_result: ResultFn) -> bool {
         let function = BSFixedString::new(function);
         let mut args = Args::new(args);
-        let mut target = object.0.as_ptr().cast::<skre::BSScript__Object>();
+        let mut target = object.0.as_ptr().cast::<sre::BSScript__Object>();
         let mut callback = Callback::new(on_result);
         let queued = unsafe {
             self.slot::<DispatchMethodCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchMethodCall)(self.as_ptr(), &raw mut target, function.raw(), (&raw mut args).cast(), (&raw mut callback).cast()) != 0
@@ -1656,12 +1656,12 @@ impl VirtualMachine {
     #[must_use]
     pub fn create_array(&self, element: TypeInfo, len: u32) -> Option<Variable> {
         let mut out = core::ptr::null_mut();
-        let ty = skre::BSScript__TypeInfo { rawTypeOrObjectType: element.bits() };
+        let ty = sre::BSScript__TypeInfo { rawTypeOrObjectType: element.bits() };
         let created = unsafe { self.slot::<CreateArray>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_CreateArray)(self.as_ptr(), &raw const ty, len, &raw mut out) };
         if created == 0 || out.is_null() {
             return None;
         }
-        Some(Variable(VariableRaw { type_: skre::BSScript__TypeInfo { rawTypeOrObjectType: element.array_of().bits() }, value: out as u64 }))
+        Some(Variable(VariableRaw { type_: sre::BSScript__TypeInfo { rawTypeOrObjectType: element.array_of().bits() }, value: out as u64 }))
     }
 
     /// Slot 36 `SendEvent`: calls `event(args)` on every script object bound to exactly `handle`
@@ -1702,7 +1702,7 @@ impl VirtualMachine {
     /// returns it and calls with that form as `self` run its methods. Call it on a game thread.
     pub fn bind_object(&self, _: &GameThread, object: &ObjectPtr, handle: Handle) {
         let policy = unsafe { self.slot::<GetObjectBindPolicy>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_GetObjectBindPolicy)(self.as_ptr()) };
-        let mut target = object.0.as_ptr().cast::<skre::BSScript__Object>();
+        let mut target = object.0.as_ptr().cast::<sre::BSScript__Object>();
         unsafe { (fns().bind_object)(policy, &raw mut target, handle.0) };
     }
 }

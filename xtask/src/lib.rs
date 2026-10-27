@@ -1,4 +1,4 @@
-//! Generates `crates/skre` from the SkyrimRE-1.7.104 ledgers.
+//! Generates `crates/sre` from the SkyrimRE-1.7.104 ledgers.
 
 mod api;
 mod emit;
@@ -14,12 +14,13 @@ use std::process::Command;
 pub use emit::Stats;
 
 pub const RE_REPO: &str = "SkyrimRE-1.7.104";
-/// The generated crate's package name.
-pub const PACKAGE: &str = "skre";
-pub const CRATE_DIR: &str = "crates/skre";
+/// The generated crate's package name and the library name authors write in paths.
+pub const PACKAGE: &str = "skyrim-sre";
+pub const LIB: &str = "sre";
+pub const CRATE_DIR: &str = "crates/sre";
 /// Everything under it is generated; `cargo xtask gen` replaces the folder.
-pub const MODULE_DIR: &str = "crates/skre/src/generated";
-pub const LOCK: &str = "crates/skre/generated.lock";
+pub const MODULE_DIR: &str = "crates/sre/src/generated";
+pub const LOCK: &str = "crates/sre/generated.lock";
 
 #[must_use]
 pub fn workspace_root() -> PathBuf {

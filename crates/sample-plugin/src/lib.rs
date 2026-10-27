@@ -1,4 +1,4 @@
-//! Smallest complete plugin on the generated layouts: resolves ids through `skre`, installs
+//! Smallest complete plugin on the generated layouts: resolves ids through `sre`, installs
 //! two pass-through entry hooks and one call-site patch, and reads live forms through the generated `TESForm` struct.
 
 use core::ffi::c_void;
@@ -7,7 +7,7 @@ use std::io::Write;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Mutex, OnceLock};
 
-use skre::raw::{fns, globals, vtables};
+use sre::raw::{fns, globals, vtables};
 
 skse::plugin! {
     name: "skyrim-rs-sample",
@@ -84,7 +84,7 @@ fn patch_add_sink_call(reloc: &hook::Reloc, add_sink: usize) {
 }
 
 /// What the generated `TESForm` layout says about a live object: its vtable's class and the raw fields.
-fn describe(form: *const skre::TESForm) -> String {
+fn describe(form: *const sre::TESForm) -> String {
     if form.is_null() {
         return "null".into();
     }
@@ -107,7 +107,7 @@ fn read_layouts() {
     let reloc = RELOC.get().unwrap();
     match reloc.address(globals::g_PlayerCharacter_ptr) {
         Ok(addr) => {
-            let player = unsafe { *(addr as *const *const skre::TESForm) };
+            let player = unsafe { *(addr as *const *const sre::TESForm) };
             log!("g_PlayerCharacter_ptr (global id {}) -> {}", globals::g_PlayerCharacter_ptr, describe(player));
         }
         Err(e) => log!("{e}"),
@@ -116,7 +116,7 @@ fn read_layouts() {
     for form_id in [0x14u32, 0x7] {
         log!("FindFormByID({form_id:#x}) -> {}", describe(lookup(form_id).cast()));
     }
-    log!("generated PlayerCharacter is {:#x} bytes", size_of::<skre::PlayerCharacter>());
+    log!("generated PlayerCharacter is {:#x} bytes", size_of::<sre::PlayerCharacter>());
 }
 
 unsafe extern "C" fn on_message(msg: *mut skse::Message) {
@@ -170,7 +170,7 @@ fn load(skse: &skse::Interface) -> bool {
         }
     }
 
-    if [major, minor, build] == skre::VERSION {
+    if [major, minor, build] == sre::VERSION {
         let id = fns::BSTEventSource_MenuOpenCloseEvent__AddEventSink;
         match unsafe { reloc.hook(id, add_sink_detour as AddEventSink) } {
             Ok(h) => {
