@@ -3,6 +3,40 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fMagicLightForwardOffset__atexit` at 0x17783f0 (crt_init, medium); signature (high): `void GameSetting_fMagicLightForwardOffset__atexit(void)`
+pub const GameSetting_fMagicLightForwardOffset__atexit: u64 = 168945;
+/// `GameSetting_fMagicLightForwardOffset__init` at 0x66a00 (crt_init, medium); signature (high): `void GameSetting_fMagicLightForwardOffset__init(void)`
+pub const GameSetting_fMagicLightForwardOffset__init: u64 = 3735;
+/// `GameSetting_fMagicLightHeightOffset__atexit` at 0x1778440 (crt_init, medium); signature (high): `void GameSetting_fMagicLightHeightOffset__atexit(void)`
+pub const GameSetting_fMagicLightHeightOffset__atexit: u64 = 168946;
+/// `GameSetting_fMagicLightHeightOffset__init` at 0x66a80 (crt_init, medium); signature (high): `void GameSetting_fMagicLightHeightOffset__init(void)`
+pub const GameSetting_fMagicLightHeightOffset__init: u64 = 3736;
+/// `GameSetting_fMagicLightRadiusBase__atexit` at 0x1778490 (crt_init, medium); signature (high): `void GameSetting_fMagicLightRadiusBase__atexit(void)`
+pub const GameSetting_fMagicLightRadiusBase__atexit: u64 = 168947;
+/// `GameSetting_fMagicLightRadiusBase__init` at 0x66b00 (crt_init, medium); signature (high): `void GameSetting_fMagicLightRadiusBase__init(void)`
+pub const GameSetting_fMagicLightRadiusBase__init: u64 = 3737;
+/// `GameSetting_fMagicLightSideOffset__atexit` at 0x17784e0 (crt_init, medium); signature (high): `void GameSetting_fMagicLightSideOffset__atexit(void)`
+pub const GameSetting_fMagicLightSideOffset__atexit: u64 = 168948;
+/// `GameSetting_fMagicLightSideOffset__init` at 0x66b80 (crt_init, medium); signature (high): `void GameSetting_fMagicLightSideOffset__init(void)`
+pub const GameSetting_fMagicLightSideOffset__init: u64 = 3738;
+/// `GameSetting_fMagicNightEyeAmbient__atexit` at 0x1778530 (crt_init, medium); signature (high): `void GameSetting_fMagicNightEyeAmbient__atexit(void)`
+pub const GameSetting_fMagicNightEyeAmbient__atexit: u64 = 168949;
+/// `GameSetting_fMagicNightEyeAmbient__init` at 0x66c00 (crt_init, medium); signature (high): `void GameSetting_fMagicNightEyeAmbient__init(void)`
+pub const GameSetting_fMagicNightEyeAmbient__init: u64 = 3739;
+/// `GameSetting_fMagicPCSkillCostScale__atexit` at 0x1778580 (crt_init, medium); signature (high): `void GameSetting_fMagicPCSkillCostScale__atexit(void)`
+pub const GameSetting_fMagicPCSkillCostScale__atexit: u64 = 168950;
+/// `GameSetting_fMagicPCSkillCostScale__init` at 0x66c80 (crt_init, medium); signature (high): `void GameSetting_fMagicPCSkillCostScale__init(void)`
+pub const GameSetting_fMagicPCSkillCostScale__init: u64 = 3740;
+/// `GameSetting_fMagicPlayerMinimumInvisibility__atexit` at 0x17785d0 (crt_init, medium); signature (high): `void GameSetting_fMagicPlayerMinimumInvisibility__atexit(void)`
+pub const GameSetting_fMagicPlayerMinimumInvisibility__atexit: u64 = 168951;
+/// `GameSetting_fMagicPlayerMinimumInvisibility__init` at 0x66d00 (crt_init, medium); signature (high): `void GameSetting_fMagicPlayerMinimumInvisibility__init(void)`
+pub const GameSetting_fMagicPlayerMinimumInvisibility__init: u64 = 3741;
+/// `GameSetting_fMagicPostDrawCastDelay__atexit` at 0x1778620 (crt_init, medium); signature (high): `void GameSetting_fMagicPostDrawCastDelay__atexit(void)`
+pub const GameSetting_fMagicPostDrawCastDelay__atexit: u64 = 168952;
+/// `GameSetting_fMagicPostDrawCastDelay__init` at 0x66d80 (crt_init, medium); signature (high): `void GameSetting_fMagicPostDrawCastDelay__init(void)`
+pub const GameSetting_fMagicPostDrawCastDelay__init: u64 = 3742;
+/// `GameSetting_fMagicProjectileMaxDistance__atexit` at 0x1778670 (crt_init, medium); signature (high): `void GameSetting_fMagicProjectileMaxDistance__atexit(void)`
+pub const GameSetting_fMagicProjectileMaxDistance__atexit: u64 = 168953;
 /// `GameSetting_fMagicProjectileMaxDistance__init` at 0x66e00 (crt_init, medium); signature (high): `void GameSetting_fMagicProjectileMaxDistance__init(void)`
 pub const GameSetting_fMagicProjectileMaxDistance__init: u64 = 3743;
 /// `GameSetting_fMagicRangeTargetCostMult__atexit` at 0x17786c0 (crt_init, medium); signature (high): `void GameSetting_fMagicRangeTargetCostMult__atexit(void)`
@@ -9467,47 +9501,3 @@ pub const GetExtraWaterDataVec3At10OrDefault: u64 = 19185;
 pub const GetExtraWeaponAttackSoundData: u64 = 11715;
 /// `GetExtraWeaponIdleSound` at 0x164b30 (decompiler, medium); signature (untiered): `undefined GetExtraWeaponIdleSound(longlong param_1, undefined4 * param_2)`
 pub const GetExtraWeaponIdleSound: u64 = 11714;
-/// `GetFaceGenMorphDataHair` at 0x43b330 (decompiler, medium); signature (untiered): `longlong * GetFaceGenMorphDataHair(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetFaceGenMorphDataHair: u64 = 27021;
-/// `GetFaceGenMorphDataHead` at 0x43b2e0 (decompiler, medium); signature (untiered): `longlong * GetFaceGenMorphDataHead(void)`
-pub const GetFaceGenMorphDataHead: u64 = 27020;
-/// `GetFactionRank` at 0x1dd650 (decompiler, medium); signature (untiered): `undefined1 GetFactionRank(longlong param_1, longlong param_2, char param_3)`
-pub const GetFactionRank: u64 = 14393;
-/// `GetFactionRankWithChanges` at 0x69d3c0 (decompiler, medium); signature (untiered): `int GetFactionRankWithChanges(longlong param_1, longlong param_2, char param_3)`
-pub const GetFactionRankWithChanges: u64 = 37676;
-/// `GetFactionReaction` at 0x69ca50 (decompiler, medium); signature (untiered): `undefined GetFactionReaction(longlong * * * * * * * param_1, longlong * * * * * * * param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetFactionReaction: u64 = 37666;
-/// `GetField0` at 0xeaea40 (decompiler, high); signature (high): `undefined8 GetField0(undefined8 * param_1)`
-pub const GetField0: u64 = 69059;
-/// `GetField08` at 0xab16d0 (decompiler, high); signature (untiered): `undefined8 GetField08(longlong param_1)`
-pub const GetField08: u64 = 57622;
-/// `GetField08Times30` at 0xc76590 (decompiler, medium); signature (medium): `int GetField08Times30(longlong param_1)`
-pub const GetField08Times30: u64 = 66538;
-/// `GetField0Byte` at 0x4a5b10 (decompiler, high); signature (high): `undefined1 GetField0Byte(undefined1 * param_1)`
-pub const GetField0Byte: u64 = 29847;
-/// `GetField0C` at 0x159b3e0 (decompiler, high); signature (high): `undefined2 GetField0C(longlong param_1)`
-pub const GetField0C: u64 = 109320;
-/// `GetField0E` at 0x159b3f0 (decompiler, high); signature (high): `undefined2 GetField0E(longlong param_1)`
-pub const GetField0E: u64 = 109321;
-/// `GetField0EEFromParentChain` at 0xd339d0 (decompiler, medium); signature (untiered): `ulonglong GetField0EEFromParentChain(longlong param_1)`
-pub const GetField0EEFromParentChain: u64 = 83480;
-/// `GetField0EEInherited` at 0xd33990 (decompiler, medium); signature (medium): `ulonglong GetField0EEInherited(longlong param_1)`
-pub const GetField0EEInherited: u64 = 83479;
-/// `GetField0Plus1800` at 0x142a470 (decompiler, high); signature (high): `longlong GetField0Plus1800(longlong * param_1)`
-pub const GetField0Plus1800: u64 = 452100;
-/// `GetField0UnlessFlagBit10` at 0x1488a0 (decompiler, medium); signature (medium): `undefined4 GetField0UnlessFlagBit10(undefined4 * param_1)`
-pub const GetField0UnlessFlagBit10: u64 = 11007;
-/// `GetField0Vec4` at 0x10ec660 (decompiler, high); signature (high): `undefined8 * GetField0Vec4(undefined8 * param_1, undefined8 * param_2)`
-pub const GetField0Vec4: u64 = 80782;
-/// `GetField0Word` at 0xcfac70 (decompiler, high); signature (high): `undefined2 GetField0Word(undefined2 * param_1)`
-pub const GetField0Word: u64 = 68665;
-/// `GetField0_2` at 0xab16c0 (decompiler, high); signature (untiered): `undefined8 GetField0_2(undefined8 * param_1)`
-pub const GetField0_2: u64 = 57621;
-/// `GetField0_3` at 0xeb1be0 (decompiler, high); signature (untiered): `undefined8 GetField0_3(undefined8 * param_1)`
-pub const GetField0_3: u64 = 443404;
-/// `GetField0_4` at 0x159b400 (decompiler, high); signature (untiered): `undefined8 GetField0_4(undefined8 * param_1)`
-pub const GetField0_4: u64 = 109322;
-/// `GetField0_5` at 0x15550a0 (decompiler, high); signature (untiered): `undefined8 GetField0_5(undefined8 * param_1)`
-pub const GetField0_5: u64 = 107481;
-/// `GetField0_6` at 0xab01f0 (decompiler, high); signature (high): `undefined8 GetField0_6(undefined8 * param_1)`
-pub const GetField0_6: u64 = 57558;

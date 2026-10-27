@@ -3,6 +3,50 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetFaceGenMorphDataHair` at 0x43b330 (decompiler, medium); signature (untiered): `longlong * GetFaceGenMorphDataHair(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetFaceGenMorphDataHair: u64 = 27021;
+/// `GetFaceGenMorphDataHead` at 0x43b2e0 (decompiler, medium); signature (untiered): `longlong * GetFaceGenMorphDataHead(void)`
+pub const GetFaceGenMorphDataHead: u64 = 27020;
+/// `GetFactionRank` at 0x1dd650 (decompiler, medium); signature (untiered): `undefined1 GetFactionRank(longlong param_1, longlong param_2, char param_3)`
+pub const GetFactionRank: u64 = 14393;
+/// `GetFactionRankWithChanges` at 0x69d3c0 (decompiler, medium); signature (untiered): `int GetFactionRankWithChanges(longlong param_1, longlong param_2, char param_3)`
+pub const GetFactionRankWithChanges: u64 = 37676;
+/// `GetFactionReaction` at 0x69ca50 (decompiler, medium); signature (untiered): `undefined GetFactionReaction(longlong * * * * * * * param_1, longlong * * * * * * * param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetFactionReaction: u64 = 37666;
+/// `GetField0` at 0xeaea40 (decompiler, high); signature (high): `undefined8 GetField0(undefined8 * param_1)`
+pub const GetField0: u64 = 69059;
+/// `GetField08` at 0xab16d0 (decompiler, high); signature (untiered): `undefined8 GetField08(longlong param_1)`
+pub const GetField08: u64 = 57622;
+/// `GetField08Times30` at 0xc76590 (decompiler, medium); signature (medium): `int GetField08Times30(longlong param_1)`
+pub const GetField08Times30: u64 = 66538;
+/// `GetField0Byte` at 0x4a5b10 (decompiler, high); signature (high): `undefined1 GetField0Byte(undefined1 * param_1)`
+pub const GetField0Byte: u64 = 29847;
+/// `GetField0C` at 0x159b3e0 (decompiler, high); signature (high): `undefined2 GetField0C(longlong param_1)`
+pub const GetField0C: u64 = 109320;
+/// `GetField0E` at 0x159b3f0 (decompiler, high); signature (high): `undefined2 GetField0E(longlong param_1)`
+pub const GetField0E: u64 = 109321;
+/// `GetField0EEFromParentChain` at 0xd339d0 (decompiler, medium); signature (untiered): `ulonglong GetField0EEFromParentChain(longlong param_1)`
+pub const GetField0EEFromParentChain: u64 = 83480;
+/// `GetField0EEInherited` at 0xd33990 (decompiler, medium); signature (medium): `ulonglong GetField0EEInherited(longlong param_1)`
+pub const GetField0EEInherited: u64 = 83479;
+/// `GetField0Plus1800` at 0x142a470 (decompiler, high); signature (high): `longlong GetField0Plus1800(longlong * param_1)`
+pub const GetField0Plus1800: u64 = 452100;
+/// `GetField0UnlessFlagBit10` at 0x1488a0 (decompiler, medium); signature (medium): `undefined4 GetField0UnlessFlagBit10(undefined4 * param_1)`
+pub const GetField0UnlessFlagBit10: u64 = 11007;
+/// `GetField0Vec4` at 0x10ec660 (decompiler, high); signature (high): `undefined8 * GetField0Vec4(undefined8 * param_1, undefined8 * param_2)`
+pub const GetField0Vec4: u64 = 80782;
+/// `GetField0Word` at 0xcfac70 (decompiler, high); signature (high): `undefined2 GetField0Word(undefined2 * param_1)`
+pub const GetField0Word: u64 = 68665;
+/// `GetField0_2` at 0xab16c0 (decompiler, high); signature (untiered): `undefined8 GetField0_2(undefined8 * param_1)`
+pub const GetField0_2: u64 = 57621;
+/// `GetField0_3` at 0xeb1be0 (decompiler, high); signature (untiered): `undefined8 GetField0_3(undefined8 * param_1)`
+pub const GetField0_3: u64 = 443404;
+/// `GetField0_4` at 0x159b400 (decompiler, high); signature (untiered): `undefined8 GetField0_4(undefined8 * param_1)`
+pub const GetField0_4: u64 = 109322;
+/// `GetField0_5` at 0x15550a0 (decompiler, high); signature (untiered): `undefined8 GetField0_5(undefined8 * param_1)`
+pub const GetField0_5: u64 = 107481;
+/// `GetField0_6` at 0xab01f0 (decompiler, high); signature (high): `undefined8 GetField0_6(undefined8 * param_1)`
+pub const GetField0_6: u64 = 57558;
 /// `GetField0_7` at 0xab01e0 (decompiler, high); signature (untiered): `undefined8 GetField0_7(undefined8 * param_1)`
 pub const GetField0_7: u64 = 57557;
 /// `GetField0_8` at 0xe98100 (decompiler, high); signature (high): `undefined4 GetField0_8(undefined4 * param_1)`
@@ -8981,37 +9025,3 @@ pub const INISetting_fEncumberedReminderTimer_General__atexit: u64 = 171443;
 pub const INISetting_fEncumberedReminderTimer_General__init: u64 = 6229;
 /// `INISetting_fEnvmapLODFadeEnd_LightingShader__atexit` at 0x17c19d0 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeEnd_LightingShader__atexit(void)`
 pub const INISetting_fEnvmapLODFadeEnd_LightingShader__atexit: u64 = 174447;
-/// `INISetting_fEnvmapLODFadeEnd_LightingShader__init` at 0x100730 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeEnd_LightingShader__init(void)`
-pub const INISetting_fEnvmapLODFadeEnd_LightingShader__init: u64 = 10284;
-/// `INISetting_fEnvmapLODFadeStart_LightingShader__atexit` at 0x17c1a20 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeStart_LightingShader__atexit(void)`
-pub const INISetting_fEnvmapLODFadeStart_LightingShader__atexit: u64 = 174448;
-/// `INISetting_fEnvmapLODFadeStart_LightingShader__init` at 0x1007b0 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeStart_LightingShader__init(void)`
-pub const INISetting_fEnvmapLODFadeStart_LightingShader__init: u64 = 10285;
-/// `INISetting_fExponentialShadowMapScale_Display__atexit` at 0x17c6880 (crt_init, medium); signature (high): `void INISetting_fExponentialShadowMapScale_Display__atexit(void)`
-pub const INISetting_fExponentialShadowMapScale_Display__atexit: u64 = 174841;
-/// `INISetting_fExponentialShadowMapScale_Display__init` at 0x109050 (crt_init, medium); signature (high): `void INISetting_fExponentialShadowMapScale_Display__init(void)`
-pub const INISetting_fExponentialShadowMapScale_Display__init: u64 = 10709;
-/// `INISetting_fExteriorWaterReflectionThreshold_Water__atexit` at 0x178f530 (crt_init, medium); signature (high): `void INISetting_fExteriorWaterReflectionThreshold_Water__atexit(void)`
-pub const INISetting_fExteriorWaterReflectionThreshold_Water__atexit: u64 = 170406;
-/// `INISetting_fExteriorWaterReflectionThreshold_Water__init` at 0x8ca70 (crt_init, medium); signature (high): `void INISetting_fExteriorWaterReflectionThreshold_Water__init(void)`
-pub const INISetting_fExteriorWaterReflectionThreshold_Water__init: u64 = 5143;
-/// `INISetting_fExtraTaskletBudgetMS_Papyrus__atexit` at 0x17adcf0 (crt_init, medium); signature (high): `void INISetting_fExtraTaskletBudgetMS_Papyrus__atexit(void)`
-pub const INISetting_fExtraTaskletBudgetMS_Papyrus__atexit: u64 = 173106;
-/// `INISetting_fExtraTaskletBudgetMS_Papyrus__init` at 0xc4c20 (crt_init, medium); signature (high): `void INISetting_fExtraTaskletBudgetMS_Papyrus__init(void)`
-pub const INISetting_fExtraTaskletBudgetMS_Papyrus__init: u64 = 7635;
-/// `INISetting_fEyeEnvmapLODEnd_LightingShader__atexit` at 0x17c1a70 (crt_init, medium); signature (high): `void INISetting_fEyeEnvmapLODEnd_LightingShader__atexit(void)`
-pub const INISetting_fEyeEnvmapLODEnd_LightingShader__atexit: u64 = 174449;
-/// `INISetting_fEyeEnvmapLODEnd_LightingShader__init` at 0x100830 (crt_init, medium); signature (high): `void INISetting_fEyeEnvmapLODEnd_LightingShader__init(void)`
-pub const INISetting_fEyeEnvmapLODEnd_LightingShader__init: u64 = 10286;
-/// `INISetting_fEyeIKDistanceMax_LookIK__atexit` at 0x17b44c0 (crt_init, medium); signature (high): `void INISetting_fEyeIKDistanceMax_LookIK__atexit(void)`
-pub const INISetting_fEyeIKDistanceMax_LookIK__atexit: u64 = 173895;
-/// `INISetting_fEyeIKDistanceMax_LookIK__init` at 0xebc20 (crt_init, medium); signature (high): `void INISetting_fEyeIKDistanceMax_LookIK__init(void)`
-pub const INISetting_fEyeIKDistanceMax_LookIK__init: u64 = 9642;
-/// `INISetting_fFadeInThreshold_LOD__atexit` at 0x173efb0 (crt_init, medium); signature (high): `void INISetting_fFadeInThreshold_LOD__atexit(void)`
-pub const INISetting_fFadeInThreshold_LOD__atexit: u64 = 165464;
-/// `INISetting_fFadeInThreshold_LOD__init` at 0xbcf0 (crt_init, medium); signature (high): `void INISetting_fFadeInThreshold_LOD__init(void)`
-pub const INISetting_fFadeInThreshold_LOD__init: u64 = 269;
-/// `INISetting_fFadeInTime_LOD__atexit` at 0x173f000 (crt_init, medium); signature (high): `void INISetting_fFadeInTime_LOD__atexit(void)`
-pub const INISetting_fFadeInTime_LOD__atexit: u64 = 165465;
-/// `INISetting_fFadeInTime_LOD__init` at 0xbd70 (crt_init, medium); signature (high): `void INISetting_fFadeInTime_LOD__init(void)`
-pub const INISetting_fFadeInTime_LOD__init: u64 = 270;

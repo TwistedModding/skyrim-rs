@@ -862,6 +862,16 @@ pub fn apply_face_morph_job(node: &crate::BSFaceGenNiNode) { unsafe { function!(
 /// `nodes` must point to what the engine expects.
 #[inline]
 pub unsafe fn apply_pose_to_bone_nodes(pose: *const crate::hkQsTransform, nodes: *mut c_void, count: i32) { unsafe { function!(63856, (*const crate::hkQsTransform, *mut c_void, i32))(pose, nodes, count) } }
+/// `AttachFaceGenNodeTo3D`: sets faceFlags bits 2 and 4, zeroes the face node's local translation (+0x6c..+0x74), AttachChild (slot 53) to the actor node, BindSkinsToSkeleton (slot 62), resets the animation, NiAVObject::UpdateNode
+///
+/// Semantic, animation pass, high; ledger semantic evidence, name high; id 24732, rva 0x3c3cb0.
+/// `void (TESNPC* npc, TESObjectREFR* ref, BSFaceGenNiNode** faceNode)`
+/// Retyped: (existing) -> void (TESNPC* npc, TESObjectREFR* ref, BSFaceGenNiNode** faceNode): rcx is the key stored with the face node into the map 0x209c960 (InsertOrAssignQwordKeyRefPtrValue) and is passed to UpdateDismemberedLimbNodes(npc, ref, null); callers 0x198080 and 0x198c30 pass ref->baseObject (TESObjectREFR+0x40), and the other two (0x6f6720, Cmd::ModifyFaceGen_Execute 0x3782e0) first pass the same value to SetupFaceGenHead 0x3c3b70, which reads it as TESNPC (+0x1f0 face template, +0x158 race); rdx is Get3D'd and given to SetFaceGenNodeFrom3D; r8 is a holder read as *r8 (null tested): the node's +0x160 faceFlags |= 4|0x10, +0x6c..+0x74 zeroed, AttachChild (vt+0x1a8) to the actor node, vt+0x1f0; no value returned (callers ignore rax).
+///
+/// # Safety
+/// `faceNode` must point to what the engine expects.
+#[inline]
+pub unsafe fn attach_face_gen_node_to3_d(npc: *mut crate::TESNPC, ref_: *mut crate::TESObjectREFR, faceNode: *mut *mut crate::BSFaceGenNiNode) { unsafe { function!(24732, (*mut crate::TESNPC, *mut crate::TESObjectREFR, *mut *mut crate::BSFaceGenNiNode))(npc, ref_, faceNode) } }
 /// `BSTEventSource<BSAnimationGraphEvent>::AddEventSink`: per-graph AddEventSink instance (the one pass 5b could not name)
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 20140, rva 0x2fe580.
@@ -920,6 +930,16 @@ pub unsafe fn bst_event_source_bs_transform_delta_event__remove_event_sink(sourc
 /// `projects` must point to what the engine expects.
 #[inline]
 pub unsafe fn build_animation_graph_manager(holder: *mut crate::IAnimationGraphManagerHolder, projects: *mut c_void) -> bool { unsafe { function!(32893, (*mut crate::IAnimationGraphManagerHolder, *mut c_void) -> bool)(holder, projects) } }
+/// `BuildSegmentJobList`: builds one segment from the {fn,name} table up to the JobListEnd entry; 0x60d700/0x60d710/0x60d720 entries become signal / sync / signal+sync barriers; the JobListEnd fn becomes the segment's completion callback (+0x10)
+///
+/// Semantic, animation pass, high; ledger semantic evidence, name high; id 35419, rva 0x60ef30.
+/// `JobList* (void* context, const JobEntry* entries, const char* name, u8 listByteD4, u32 workerLimit)`
+/// Retyped: JobList* (out, const JobEntry* first, const char* name, u8, u32) -> JobList* (void* context, const JobEntry* entries, const char* name, u8 listByteD4, u32 workerLimit): rcx is never read (overwritten by MOV RCX,RDX at 0x60ef62; the 7 callers in BuildFrameJobLists pass &frame+0x80) and nothing is written through it, so the earlier 'out' was wrong: the list is returned in rax (the 0x18 object allocated here: +0 the 0xd8 list from CreateAndRegisterInGlobalList 0xebac00, +8 a CreateEventA event, +0x10 the JobListEnd entry); rdx walks {fn, name} 0x10 entries; r8 is the name (BSFixedString ctor); r9b (0x87 at every caller) is stored by ConstructJobList 0xebcdc0 at list+0xd4; the 5th argument (dword 0x20b5238 = 6) is clamped to 32 and stored at list+0xcc, and below 7 leaves list flag 0x40 clear. The last two names come from those stores only.
+///
+/// # Safety
+/// `context`, `entries`, `name` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn build_segment_job_list(context: *mut c_void, entries: *const c_void, name: *const c_char, listByteD4: u8, workerLimit: u32) -> *mut c_void { unsafe { function!(35419, (*mut c_void, *const c_void, *const c_char, u8, u32) -> *mut c_void)(context, entries, name, listByteD4, workerLimit) } }
 /// `Cmd::RecvAnimEvent_Send`: console RecvAnimEvent: builds {tag, holder, payload} and notifies every graph's +0x68 without the behaviour graph
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 22789, rva 0x36d9e0.

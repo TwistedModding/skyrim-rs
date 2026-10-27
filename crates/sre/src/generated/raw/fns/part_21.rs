@@ -3,6 +3,36 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0` at 0x174af90 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0: u64 = 166461;
+/// `g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init` at 0x1eae0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init: u64 = 1249;
+/// `g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0` at 0x174afd0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0: u64 = 166462;
+/// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit` at 0x1749ae0 (semantic, high); signature (untiered): `void g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit(void)`; semantic: static destructor of the BGSCameraShot form factory: clears factory slot 0x60 (high); signature `void (void)`
+pub const g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit: u64 = 166299;
+/// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit` as a function pointer type (high).
+pub type g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit_fn = unsafe extern "C" fn();
+/// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__init` at 0x1c320 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__init: u64 = 1092;
+/// `g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init` at 0x1c370 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init: u64 = 1094;
+/// `g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0` at 0x1749b30 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSCollisionLayer_132_99_4__init_cb0: u64 = 166301;
+/// `g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init` at 0x1c3b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init: u64 = 1095;
+/// `g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0` at 0x1749b70 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSColorForm_133_101_4__init_cb0: u64 = 166302;
+/// `g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init` at 0x16170 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init: u64 = 771;
+/// `g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0` at 0x17457e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSConstructibleObject_49_63_1__init_cb0: u64 = 165974;
+/// `g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init` at 0x161b0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init: u64 = 772;
+/// `g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0` at 0x1745820 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0: u64 = 165975;
+/// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init` at 0x7c00 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init: u64 = 115;
 /// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0` at 0x173c0e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0: u64 = 165305;
 /// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init` at 0x195a0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init(void)`
@@ -8693,43 +8723,3 @@ pub const hkpPredGskfAgent__vdtor: u64 = 66652;
 pub const hkpPredGskfAgent__vfunc_6: u64 = 66650;
 /// `hkpPredGskfAgent::vfunc_6_sub0` at 0xcc2fe0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, uint * param_4, float * param_5)`
 pub const hkpPredGskfAgent__vfunc_6_sub0: u64 = 67529;
-/// `hkpPrismaticConstraintData::ctor` at 0xb4f760 (layout_inference, medium); signature (high): `hkpPrismaticConstraintData * ctor(hkpPrismaticConstraintData * this)`
-pub const hkpPrismaticConstraintData__ctor: u64 = 60974;
-/// `hkpPrismaticConstraintData::dtor` at 0xb4f880 (layout_inference, high); signature (high): `undefined dtor(hkpPrismaticConstraintData * this)`
-pub const hkpPrismaticConstraintData__dtor: u64 = 60975;
-/// `hkpPrismaticConstraintData::vdtor` at 0xb4ffa0 (slot_propagation, medium); signature (low): `hkpPrismaticConstraintData * vdtor(hkpPrismaticConstraintData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpPrismaticConstraintData__vdtor: u64 = 60987;
-/// `hkpPrismaticConstraintData::vfunc_10` at 0xb4fe40 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpPrismaticConstraintData * this, undefined1 * param_1)`
-pub const hkpPrismaticConstraintData__vfunc_10: u64 = 60981;
-/// `hkpPrismaticConstraintData::vfunc_11` at 0xb4fec0 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
-pub const hkpPrismaticConstraintData__vfunc_11: u64 = 60982;
-/// `hkpPrismaticConstraintData::vfunc_12` at 0xb4fef0 (rtti, high); signature (low): `undefined vfunc_12(hkpPrismaticConstraintData * this, undefined8 param_1, undefined4 * param_2)`
-pub const hkpPrismaticConstraintData__vfunc_12: u64 = 60984;
-/// `hkpPrismaticConstraintData::vfunc_18` at 0xb4fed0 (rtti, high); signature (low): `undefined vfunc_18(hkpPrismaticConstraintData * this, int * param_1)`
-pub const hkpPrismaticConstraintData__vfunc_18: u64 = 60983;
-/// `hkpProjectileGun::ctor` at 0xba8bc0 (layout_inference, high); signature (low): `hkpProjectileGun * ctor(hkpProjectileGun * this, undefined8 param_1, undefined8 param_2)`
-pub const hkpProjectileGun__ctor: u64 = 62823;
-/// `hkpProjectileGun::ctor` at 0xba8c30 (layout_inference, high); signature (low): `hkpProjectileGun * ctor(hkpProjectileGun * this, int param_1)`
-pub const hkpProjectileGun__ctor_2: u64 = 62824;
-/// `hkpProjectileGun::ctor` at 0xba8c70 (layout_inference, medium); signature (high): `undefined ctor(hkpProjectileGun * this)`
-pub const hkpProjectileGun__ctor_3: u64 = 62825;
-/// `hkpProjectileGun::ctor_sub0` at 0xba8d80 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1)`
-pub const hkpProjectileGun__ctor_sub0: u64 = 62830;
-/// `hkpProjectileGun::vdtor` at 0xba90e0 (slot_propagation, medium); signature (low): `hkpProjectileGun * vdtor(hkpProjectileGun * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpProjectileGun__vdtor: u64 = 62841;
-/// `hkpProjectileGun::vfunc_10` at 0xba8d50 (rtti, high); signature (high): `undefined vfunc_10(hkpProjectileGun * this)`
-pub const hkpProjectileGun__vfunc_10: u64 = 62829;
-/// `hkpProjectileGun::vfunc_10_sub0` at 0xba8e80 (callgraph, medium); signature (untiered): `undefined vfunc_10_sub0(longlong param_1)`
-pub const hkpProjectileGun__vfunc_10_sub0: u64 = 62832;
-/// `hkpProjectileGun::vfunc_10_sub1` at 0xba8f00 (callgraph, medium); signature (untiered): `undefined vfunc_10_sub1(longlong param_1, float param_2)`
-pub const hkpProjectileGun__vfunc_10_sub1: u64 = 62833;
-/// `hkpProjectileGun::vfunc_10_sub2` at 0xba8f70 (callgraph, medium); signature (untiered): `undefined vfunc_10_sub2(longlong param_1)`
-pub const hkpProjectileGun__vfunc_10_sub2: u64 = 62834;
-/// `hkpProjectileGun::vfunc_4` at 0xba8d20 (rtti, high); signature (high): `undefined vfunc_4(hkpProjectileGun * this)`
-pub const hkpProjectileGun__vfunc_4: u64 = 62827;
-/// `hkpProjectileGun::vfunc_5` at 0xba8ce0 (rtti, high); signature (medium): `undefined vfunc_5(hkpProjectileGun * this, float param_1)`
-pub const hkpProjectileGun__vfunc_5: u64 = 62826;
-/// `hkpProjectileGun::vfunc_8` at 0xba8d40 (rtti, high); signature (untiered): `undefined vfunc_8(longlong param_1)`
-pub const hkpProjectileGun__vfunc_8: u64 = 62828;
-/// `hkpProjectileGun::vfunc_9` at 0xba9170 (rtti, high); signature (low): `undefined vfunc_9(void)`
-pub const hkpProjectileGun__vfunc_9: u64 = 62843;

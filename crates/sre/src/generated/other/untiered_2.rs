@@ -3,34 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `AssignPackageTargetFromPacked` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 29843, rva 0x4a5840).
-/// `char * AssignPackageTargetFromPacked(char * param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_package_target_from_packed(param_1: *mut c_char, param_2: *mut c_char) -> *mut c_char { unsafe { function!(29843, (*mut c_char, *mut c_char) -> *mut c_char)(param_1, param_2) } }
-/// `AssignPackageTargetFromPacked_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 29844, rva 0x4a5930).
-/// `char * AssignPackageTargetFromPacked_2(char * param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_package_target_from_packed_2(param_1: *mut c_char, param_2: *mut c_char) -> *mut c_char { unsafe { function!(29844, (*mut c_char, *mut c_char) -> *mut c_char)(param_1, param_2) } }
-/// `AssignPaddedFloatMatrix` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 64217, rva 0xbf83f0).
-/// `undefined AssignPaddedFloatMatrix(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_padded_float_matrix(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(64217, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `AssignPlayerTargetPackageToActor` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39300, rva 0x6f3370).
-/// `undefined AssignPlayerTargetPackageToActor(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_player_target_package_to_actor(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(39300, (i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `AssignPointerClearingHandle` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87498, rva 0xe03b80).
 /// `int * AssignPointerClearingHandle(int * param_1, longlong param_2)`
 ///
@@ -13331,3 +13303,24 @@ pub unsafe fn compute_jail_days(param_1: *mut i64) -> u64 { unsafe { function!(4
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_land_normal_at_point(param_1: i64, param_2: i64, param_3: *mut f32, param_4: *mut f32) -> u64 { unsafe { function!(18774, (i64, i64, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ComputeLaunchVelocityFromAngles` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44184, rva 0x7fe600).
+/// `undefined ComputeLaunchVelocityFromAngles(longlong * param_1, undefined8 param_2, undefined4 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_launch_velocity_from_angles(param_1: *mut i64, param_2: u64, param_3: u32, param_4: u64) -> u64 { unsafe { function!(44184, (*mut i64, u64, u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ComputeLeadAimPointForTarget` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47288, rva 0x8671b0).
+/// `undefined8 ComputeLeadAimPointForTarget(undefined8 param_1, float * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5, int param_6, undefined1 param_7)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_lead_aim_point_for_target(param_1: u64, param_2: *mut f32, param_3: *mut i64, param_4: u32, param_5: u32, param_6: i32, param_7: u8) -> u64 { unsafe { function!(47288, (u64, *mut f32, *mut i64, u32, u32, i32, u8) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
+/// `ComputeLightIntensityAtPoint` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 108293, rva 0x1576db0).
+/// `undefined8 ComputeLightIntensityAtPoint(longlong param_1, float * param_2, float * param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_light_intensity_at_point(param_1: i64, param_2: *mut f32, param_3: *mut f32, param_4: i64) -> u64 { unsafe { function!(108293, (i64, *mut f32, *mut f32, i64) -> u64)(param_1, param_2, param_3, param_4) } }

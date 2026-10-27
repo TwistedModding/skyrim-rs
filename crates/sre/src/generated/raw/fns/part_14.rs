@@ -3,6 +3,46 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `IronSightsState::GetRotation` at 0x8f7970 (semantic, high); signature (untiered): `undefined GetRotation(IronSightsState * this, float * param_1)`
+pub const IronSightsState__GetRotation: u64 = 50779;
+/// `IronSightsState::GetTranslation` at 0x8f79a0 (semantic, high); signature (untiered): `undefined GetTranslation(IronSightsState * this, undefined4 * param_1)`
+pub const IronSightsState__GetTranslation: u64 = 50780;
+/// `IronSightsState::Update` at 0x8f7700 (semantic, high); signature (untiered): `undefined Update(IronSightsState * this, undefined8 param_2, undefined4 param_3, undefined4 param_4)`
+pub const IronSightsState__Update: u64 = 50778;
+/// `IronSightsState::dtor` at 0x8f76c0 (semantic, high); signature (untiered): `undefined dtor(IronSightsState * this)`; semantic: non-deleting destructor: vtable = TESCameraState's (high); signature `void (IronSightsState* this)`
+pub const IronSightsState__dtor: u64 = 50776;
+/// `IronSightsState::dtor` as a function pointer type (high).
+pub type IronSightsState__dtor_fn = unsafe extern "C" fn(this: *mut crate::IronSightsState);
+/// `IsAabbValid` at 0x1101660 (decompiler, medium); signature (medium): `undefined1 * IsAabbValid(float * param_1, undefined1 * param_2)`
+pub const IsAabbValid: u64 = 80985;
+/// `IsAbsValue39AboveGlobal187052` at 0x6739d0 (decompiler, medium); signature (medium): `bool IsAbsValue39AboveGlobal187052(longlong param_1)`
+pub const IsAbsValue39AboveGlobal187052: u64 = 37210;
+/// `IsAbsentFromField80Chain` at 0xf5a030 (decompiler, high); signature (high): `ulonglong IsAbsentFromField80Chain(ulonglong param_1, longlong param_2)`
+pub const IsAbsentFromField80Chain: u64 = 72494;
+/// `IsAbsolutePath` at 0xdf3000 (decompiler, medium); signature (medium): `undefined4 IsAbsolutePath(char * param_1)`
+pub const IsAbsolutePath: u64 = 84648;
+/// `IsActionEntryActive` at 0x756c60 (decompiler, medium); signature (medium): `ulonglong IsActionEntryActive(longlong param_1, int param_2)`
+pub const IsActionEntryActive: u64 = 40600;
+/// `IsActorFieldC8State3Or7` at 0x679460 (decompiler, medium); signature (medium): `ulonglong IsActorFieldC8State3Or7(longlong param_1, char param_2)`
+pub const IsActorFieldC8State3Or7: u64 = 37329;
+/// `IsActorMatchedByFormOrList` at 0x447270 (decompiler, medium); signature (untiered): `ulonglong IsActorMatchedByFormOrList(longlong param_1, longlong param_2)`
+pub const IsActorMatchedByFormOrList: u64 = 27289;
+/// `IsActorValueBelowRestoreThreshold` at 0x835240 (decompiler, medium); signature (untiered): `void * IsActorValueBelowRestoreThreshold(longlong param_1, longlong param_2, int param_3, char param_4)`
+pub const IsActorValueBelowRestoreThreshold: u64 = 45376;
+/// `IsAddressInBlockList` at 0xc06d60 (decompiler, medium); signature (untiered): `ulonglong IsAddressInBlockList(ushort * param_1, ulonglong param_2)`
+pub const IsAddressInBlockList: u64 = 64656;
+/// `IsAddressInEntryRanges` at 0xec4a40 (decompiler, medium); signature (untiered): `ulonglong IsAddressInEntryRanges(longlong param_1, ulonglong param_2)`
+pub const IsAddressInEntryRanges: u64 = 69598;
+/// `IsAddressInField1238Range` at 0xcea520 (decompiler, high); signature (high): `undefined1 IsAddressInField1238Range(longlong param_1, ulonglong param_2)`
+pub const IsAddressInField1238Range: u64 = 68426;
+/// `IsAddressInField48Range` at 0xcdfde0 (decompiler, high); signature (high): `undefined1 IsAddressInField48Range(longlong param_1, ulonglong param_2)`
+pub const IsAddressInField48Range: u64 = 68149;
+/// `IsAddressInNonWritableImageSection` at 0x15a77bc (decompiler, medium); signature (medium): `ulonglong IsAddressInNonWritableImageSection(longlong param_1)`
+pub const IsAddressInNonWritableImageSection: u64 = 109602;
+/// `IsAllowedWhileOnFlyingMount` at 0x76a540 (decompiler, medium); signature (untiered): `undefined8 IsAllowedWhileOnFlyingMount(longlong * param_1, longlong * param_2, int * param_3, undefined8 param_4)`
+pub const IsAllowedWhileOnFlyingMount: u64 = 40996;
+/// `IsAncestorOrNull` at 0x8730a0 (decompiler, medium); signature (medium): `undefined8 IsAncestorOrNull(longlong param_1, longlong param_2)`
+pub const IsAncestorOrNull: u64 = 47490;
 /// `IsAnotherThreadInUpdatePhase` at 0x6e49e0 (semantic, medium); signature (untiered): `ulonglong IsAnotherThreadInUpdatePhase(void)`; semantic: true when a global state holds (ID_403107+0x6c == 1) and a thread other than the caller has its bit in the mask 0x3244170; callers then queue the work instead of doing it (medium); signature `bool ()`
 pub const IsAnotherThreadInUpdatePhase: u64 = 39033;
 /// `IsAnyMagicCasterCasting` at 0x6d6780 (decompiler, medium); signature (medium): `undefined8 IsAnyMagicCasterCasting(longlong param_1, longlong param_2)`
@@ -3649,7 +3689,7 @@ pub type MapMenu__OnExitBegin_fn = unsafe extern "C" fn(this: *mut crate::IMapCa
 pub const MapMenu__OnWorldStateBegin: u64 = 53119;
 /// `MapMenu::OnWorldStateBegin` as a function pointer type (high).
 pub type MapMenu__OnWorldStateBegin_fn = unsafe extern "C" fn(this: *mut crate::IMapCameraCallbacks);
-/// `MapMenu::ProcessMessage` at 0x99c180 (runtime, high); signature (untiered): `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: The world map's UI message handler: update (0) centres the map camera on a marker reference; show (1) records the target handle, sets the cursor rect, hides cell nodes, enters WorldMapMode, fades and sets the date string; hide (3) restores world rendering, shadows, cursor and fade; Scaleform, user and Kinect events select markers, fast travel, zoom or the local map. (high); signature `u32 (MapMenu* this, UIMessage* message)`
+/// `MapMenu::ProcessMessage` at 0x99c180 (runtime, high); signature (untiered): `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: The world map's UI message handler: update (0) centres the map camera on a marker reference; show (1) records the target handle, sets the cursor rect, hides cell nodes, enters WorldMapMode, fades and sets the date string; hide (3) restores world rendering, shadows, cursor and fade; Scaleform, user and Kinect events select markers, fast travel, zoom or the local map. (high); signature `UIMessageResult (MapMenu* this, UIMessage* message)`
 pub const MapMenu__ProcessMessage: u64 = 53102;
 /// `MapMenu::ProcessMessage` as a function pointer type (high).
 pub type MapMenu__ProcessMessage_fn = unsafe extern "C" fn(this: *mut crate::MapMenu, message: *mut crate::UIMessage) -> u32;
@@ -8523,45 +8563,3 @@ pub const NiBlendFloatInterpolator__vfunc_23: u64 = 72884;
 pub const NiBlendFloatInterpolator__vfunc_24: u64 = 72886;
 /// `NiBlendFloatInterpolator::vfunc_25` at 0xf68840 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
 pub const NiBlendFloatInterpolator__vfunc_25: u64 = 72887;
-/// `NiBlendFloatInterpolator::vfunc_26` at 0xf68850 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBlendFloatInterpolator * this, longlong * param_1)`
-pub const NiBlendFloatInterpolator__vfunc_26: u64 = 72888;
-/// `NiBlendFloatInterpolator::vfunc_27` at 0xf68860 (rtti, high); signature (low): `undefined vfunc_27(NiBlendFloatInterpolator * this, longlong * param_1)`
-pub const NiBlendFloatInterpolator__vfunc_27: u64 = 72889;
-/// `NiBlendFloatInterpolator::vfunc_28` at 0xf688c0 (rtti, high); signature (low): `undefined8 vfunc_28(NiBlendFloatInterpolator * this, longlong * param_1)`
-pub const NiBlendFloatInterpolator__vfunc_28: u64 = 72890;
-/// `NiBlendFloatInterpolator::vfunc_37` at 0xf68f60 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
-pub const NiBlendFloatInterpolator__vfunc_37: u64 = 72904;
-/// `NiBlendFloatInterpolator::vfunc_38` at 0xf68f40 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
-pub const NiBlendFloatInterpolator__vfunc_38: u64 = 72902;
-/// `NiBlendFloatInterpolator::vfunc_39` at 0xf68f50 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
-pub const NiBlendFloatInterpolator__vfunc_39: u64 = 72903;
-/// `NiBlendFloatInterpolator::vfunc_40` at 0xf68f70 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBlendFloatInterpolator__vfunc_40: u64 = 72905;
-/// `NiBlendFloatInterpolator::vfunc_41` at 0xf68a10 (rtti, high); signature (low): `undefined8 vfunc_41(NiBlendFloatInterpolator * this, float param_1, undefined8 param_2, float * param_3)`
-pub const NiBlendFloatInterpolator__vfunc_41: u64 = 72893;
-/// `NiBlendFloatInterpolator::vfunc_42` at 0xf68f80 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBlendFloatInterpolator__vfunc_42: u64 = 72906;
-/// `NiBlendFloatInterpolator::vfunc_44` at 0xf68bd0 (rtti, high); signature (low): `undefined1 vfunc_44(void)`
-pub const NiBlendFloatInterpolator__vfunc_44: u64 = 72894;
-/// `NiBlendFloatInterpolator::vfunc_59` at 0xf68c20 (rtti, high); signature (low): `undefined vfunc_59(NiBlendFloatInterpolator * this, longlong * param_1)`
-pub const NiBlendFloatInterpolator__vfunc_59: u64 = 72896;
-/// `NiBlendInterpolator::ctor` at 0xf5cba0 (layout_inference, high); signature (low): `NiBlendInterpolator * ctor(NiBlendInterpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
-pub const NiBlendInterpolator__ctor: u64 = 72550;
-/// `NiBlendInterpolator::ctor` at 0xf5ccf0 (layout_inference, high); signature (high): `NiBlendInterpolator * ctor(NiBlendInterpolator * this)`
-pub const NiBlendInterpolator__ctor_2: u64 = 72551;
-/// `NiBlendInterpolator::dtor` at 0xf5c300 (layout_inference, high); signature (high): `undefined dtor(NiBlendInterpolator * this)`
-pub const NiBlendInterpolator__dtor: u64 = 72535;
-/// `NiBlendInterpolator::vdtor` at 0xf5d540 (layout_inference, medium); signature (low): `NiBlendInterpolator * vdtor(NiBlendInterpolator * this, uint param_1, longlong param_2, undefined * param_3)`
-pub const NiBlendInterpolator__vdtor: u64 = 72564;
-/// `NiBlendInterpolator::vfunc_2` at 0xf5d5d0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBlendInterpolator__vfunc_2: u64 = 72565;
-/// `NiBlendInterpolator::vfunc_24` at 0xf5b9c0 (rtti, high); signature (low): `undefined vfunc_24(NiBlendInterpolator * this, longlong param_1)`
-pub const NiBlendInterpolator__vfunc_24: u64 = 72530;
-/// `NiBlendInterpolator::vfunc_25` at 0xf5bdc0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBlendInterpolator__vfunc_25: u64 = 72531;
-/// `NiBlendInterpolator::vfunc_26` at 0xf5bdd0 (rtti, high); signature (low): `undefined1 vfunc_26(NiBlendInterpolator * this, longlong * param_1)`
-pub const NiBlendInterpolator__vfunc_26: u64 = 72532;
-/// `NiBlendInterpolator::vfunc_27` at 0xf5be50 (rtti, high); signature (low): `undefined vfunc_27(NiBlendInterpolator * this, longlong * param_1)`
-pub const NiBlendInterpolator__vfunc_27: u64 = 72533;
-/// `NiBlendInterpolator::vfunc_28` at 0xf5c190 (rtti, high); signature (low): `ulonglong vfunc_28(NiBlendInterpolator * this, longlong * param_1)`
-pub const NiBlendInterpolator__vfunc_28: u64 = 72534;

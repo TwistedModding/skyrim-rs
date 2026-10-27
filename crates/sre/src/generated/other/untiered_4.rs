@@ -3,20 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `DeletingDtorFreeField10Size28` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87156, rva 0xde7d10).
-/// `GRefCountImplCore * DeletingDtorFreeField10Size28(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_free_field10_size28(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87156, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDtorFreeField20Size38` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87160, rva 0xde7ee0).
-/// `GRefCountImplCore * DeletingDtorFreeField20Size38(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_free_field20_size38(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87160, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DeletingDtorFreeOwnedBuffer` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 443018, rva 0xa7e020).
 /// `undefined8 * DeletingDtorFreeOwnedBuffer(undefined8 * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13142,3 +13128,24 @@ pub unsafe fn free_arrays_at8_and_release_fixed_string(param_1: i64) -> u64 { un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn free_b_tree_subtree(param_1: *mut i64, param_2: *mut u64, param_3: u64, param_4: c_char) -> u64 { unsafe { function!(104905, (*mut i64, *mut u64, u64, c_char) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeBatchBuffersAndReleaseOwner` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 109053, rva 0x158ec50).
+/// `undefined FreeBatchBuffersAndReleaseOwner(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_batch_buffers_and_release_owner(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(109053, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeBatchBuffersAndReleaseOwner_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 109060, rva 0x158f4c0).
+/// `undefined FreeBatchBuffersAndReleaseOwner_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_batch_buffers_and_release_owner_2(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(109060, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeBlockArrayWithThreadAllocator` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 64253, rva 0xbfa030).
+/// `undefined FreeBlockArrayWithThreadAllocator(undefined8 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_block_array_with_thread_allocator(param_1: *mut u64) -> u64 { unsafe { function!(64253, (*mut u64) -> u64)(param_1) } }

@@ -6219,8 +6219,10 @@ pub const AttachDistant3DTask__vfunc_6: u64 = 13005;
 pub const AttachFaceGenModelExtraData: u64 = 24729;
 /// `AttachFaceGenModelExtraData_2` at 0x4352c0 (decompiler, medium); signature (untiered): `undefined8 AttachFaceGenModelExtraData_2(longlong param_1, longlong * param_2, longlong param_3, BSFaceGenBaseMorphExtraData * param_4)`
 pub const AttachFaceGenModelExtraData_2: u64 = 26881;
-/// `AttachFaceGenNodeTo3D` at 0x3c3cb0 (semantic, high); signature (untiered): `undefined AttachFaceGenNodeTo3D(ulonglong param_1, TESObjectREFR * param_2, ulonglong * param_3)`; semantic: sets faceFlags bits 2 and 4, zeroes the face node's local translation (+0x6c..+0x74), AttachChild (slot 53) to the actor node, BindSkinsToSkeleton (slot 62), resets the animation, NiAVObject::UpdateNode (high); signature `(existing)`
+/// `AttachFaceGenNodeTo3D` at 0x3c3cb0 (semantic, high); signature (untiered): `undefined AttachFaceGenNodeTo3D(ulonglong param_1, TESObjectREFR * param_2, ulonglong * param_3)`; semantic: sets faceFlags bits 2 and 4, zeroes the face node's local translation (+0x6c..+0x74), AttachChild (slot 53) to the actor node, BindSkinsToSkeleton (slot 62), resets the animation, NiAVObject::UpdateNode (high); signature `void (TESNPC* npc, TESObjectREFR* ref, BSFaceGenNiNode** faceNode)`
 pub const AttachFaceGenNodeTo3D: u64 = 24732;
+/// `AttachFaceGenNodeTo3D` as a function pointer type (high).
+pub type AttachFaceGenNodeTo3D_fn = unsafe extern "C" fn(npc: *mut crate::TESNPC, ref_: *mut crate::TESObjectREFR, faceNode: *mut *mut crate::BSFaceGenNiNode);
 /// `AttachFaceGenNodeToResolvedRef3D` at 0x198c30 (decompiler, medium); signature (untiered): `undefined AttachFaceGenNodeToResolvedRef3D(longlong param_1)`
 pub const AttachFaceGenNodeToResolvedRef3D: u64 = 13110;
 /// `AttachFurnitureMarkerModels` at 0x26f900 (decompiler, medium); signature (untiered): `undefined AttachFurnitureMarkerModels(longlong param_1, longlong * param_2, undefined4 * param_3, undefined8 param_4)`

@@ -3,6 +3,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `LoadWaitSpinner::vftable` at 0x18f5140, id 205791 (rtti, high); 9 slots.
+#[repr(C)]
+pub struct LoadWaitSpinner_vtable {
+    /// `LoadWaitSpinner::vdtor` at 0x5b9290 (layout_inference, medium); signature (low): `LoadWaitSpinner * vdtor(LoadWaitSpinner * this, uint param_1, longlong * param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `LoadWaitSpinner::vfunc_1` at 0x5b8e40 (rtti, high); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
+    pub slot_2: *const c_void,
+    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
+    pub slot_3: *const c_void,
+    /// `LoadWaitSpinner::vfunc_4` at 0x5b8e50 (rtti, high); signature (low): `undefined8 vfunc_4(LoadWaitSpinner * this, longlong * param_1)`
+    pub slot_4: *const c_void,
+    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
+    pub slot_5: *const c_void,
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    pub slot_6: *const c_void,
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    pub slot_7: *const c_void,
+    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
+    pub slot_8: *const c_void,
+}
+impl LoadWaitSpinner_vtable {
+    pub const ID: u64 = 205791;
+}
+
+/// `LoadWaitSpinner::vftable_30` at 0x18f5190, id 205793 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct LoadWaitSpinner_vtable_30 {
+    /// `LoadWaitSpinner::BSTEventSink_BSSystemEvent_vdtor` at 0x5b920c (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSSystemEvent_vdtor(LoadWaitSpinner * this)`
+    pub slot_0: *const c_void,
+    /// `LoadWaitSpinner::BSTEventSink_BSSystemEvent_vfunc_1` at 0x5b9020 (rtti, high); signature (low): `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(LoadWaitSpinner * this, longlong param_1)`
+    pub slot_1: *const c_void,
+}
+impl LoadWaitSpinner_vtable_30 {
+    pub const ID: u64 = 205793;
+}
+
 /// `LoadWaitSpinner::vftable_38` at 0x18f51a8, id 205795 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct LoadWaitSpinner_vtable_38 {
@@ -1847,7 +1885,7 @@ pub struct MessageBoxMenu_vtable {
     pub slot_2: *const c_void,
     /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
     pub slot_3: *const c_void,
-    /// `MessageBoxMenu::ProcessMessage` at 0x963050 (semantic, high); signature (untiered): `undefined8 ProcessMessage(MessageBoxMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `ProcessMessage`: on show (1) shows the top queued box unless 'Loading Menu' is open; refuses hide (3) while boxes remain (high); semantic signature: `u32 (MessageBoxMenu* this, UIMessage* msg)`
+    /// `MessageBoxMenu::ProcessMessage` at 0x963050 (semantic, high); signature (untiered): `undefined8 ProcessMessage(MessageBoxMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `ProcessMessage`: on show (1) shows the top queued box unless 'Loading Menu' is open; refuses hide (3) while boxes remain (high); semantic signature: `UIMessageResult (MessageBoxMenu* this, UIMessage* msg)`
     pub slot_4: *const c_void,
     /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,

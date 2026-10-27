@@ -2596,13 +2596,6 @@ impl crate::Main {
 }
 
 impl crate::MapMenu {
-    /// `MapMenu::ProcessMessage`, vtable slot 4, through the object's vtable (decompiler signature, tier untiered; ledger runtime evidence, name high; id 53102, rva 0x99c180).
-    /// `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn process_message(&self, param_1: i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 4, (*const Self, i64, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MapMenu::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52964, rva 0x992f30).
     /// `undefined8 * ctor_sub0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -3759,13 +3752,6 @@ impl crate::QueuedTree {
 }
 
 impl crate::RaceSexMenu {
-    /// `RaceSexMenu::ProcessMessage`, vtable slot 4, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52345, rva 0x968010).
-    /// `longlong * ProcessMessage(RaceSexMenu * this, longlong param_1, undefined8 param_2, char * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn process_message(&self, param_1: i64, param_2: u64, param_3: *mut c_char) -> *mut i64 { unsafe { virtual_function!(self, 4, (*const Self, i64, u64, *mut c_char) -> *mut i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `RaceSexMenu::ctor_cb0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52425, rva 0x972570).
     /// `undefined8 * ctor_cb0(undefined8 * param_1)`
     ///
@@ -4173,13 +4159,6 @@ impl crate::StaticAvoidNodeManager {
 }
 
 impl crate::StatsMenu {
-    /// `StatsMenu::ProcessMessage`, vtable slot 4, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52510, rva 0x976a50).
-    /// `longlong * ProcessMessage(StatsMenu * this, longlong param_1, char * param_2, longlong * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn process_message(&self, param_1: i64, param_2: *mut c_char, param_3: *mut i64) -> *mut i64 { unsafe { virtual_function!(self, 4, (*const Self, i64, *mut c_char, *mut i64) -> *mut i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `StatsMenu::MenuEventHandler_vfunc_7_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52585, rva 0x981f00).
     /// `undefined MenuEventHandler_vfunc_7_sub0(longlong param_1)`
     ///
@@ -13895,3 +13874,31 @@ pub unsafe fn assign_optional_fixed_string80_vector(param_1: *mut i64, param_2: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_owned_ptr(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(84700, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
+/// `AssignPackageTargetFromPacked` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 29843, rva 0x4a5840).
+/// `char * AssignPackageTargetFromPacked(char * param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_package_target_from_packed(param_1: *mut c_char, param_2: *mut c_char) -> *mut c_char { unsafe { function!(29843, (*mut c_char, *mut c_char) -> *mut c_char)(param_1, param_2) } }
+/// `AssignPackageTargetFromPacked_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 29844, rva 0x4a5930).
+/// `char * AssignPackageTargetFromPacked_2(char * param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_package_target_from_packed_2(param_1: *mut c_char, param_2: *mut c_char) -> *mut c_char { unsafe { function!(29844, (*mut c_char, *mut c_char) -> *mut c_char)(param_1, param_2) } }
+/// `AssignPaddedFloatMatrix` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 64217, rva 0xbf83f0).
+/// `undefined AssignPaddedFloatMatrix(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_padded_float_matrix(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(64217, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `AssignPlayerTargetPackageToActor` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39300, rva 0x6f3370).
+/// `undefined AssignPlayerTargetPackageToActor(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_player_target_package_to_actor(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(39300, (i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

@@ -2656,6 +2656,26 @@ pub unsafe fn cmd__show1st_person_execute(paramInfo: *mut c_void, scriptData: *m
 /// `bool (void)`
 #[inline]
 pub fn cmd__toggle_animator_cam_execute() -> bool { unsafe { function!(22888, () -> bool)() } }
+/// `Cmd::ToggleControlsDriven_Execute`: console 'ToggleControlsDriven' on an actor: toggles its movement controller (+0x150) between AI-driven (slot 13) and controls-driven (slot 12) and points the camera at it (PlayerCamera::SetTarget) when controls-driven, back at the player when AI-driven; prints the result
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 23089, rva 0x37b3a0.
+/// `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+/// Retyped: bool (execute args) -> bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset): the console-command execute prototype of docs/subsystems/input.md section 5, also spelled by the binary's own RTTI: the local class MobDialogueFlagResetter is scoped in 'bool Script::ResetDialogueFlags(SCRIPT_PARAMETER const*, char const*, TESObjectREFR*, TESObjectREFR*, Script*, ScriptLocals*, double&, unsigned int&)' (data/rtti.json; ScriptLocals is named there). Body: r8 is tested as an actor (formType 0x3e at +0x1a) before UnpackCommandArguments(rcx, rdx, offset, r8, r9, script, locals); every path returns al 1; table entry 0x2091c10.
+///
+/// # Safety
+/// `scriptData`, `locals`, `result`, `offset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__toggle_controls_driven_execute(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(23089, (*const crate::ParamInfo, *const c_void, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, scriptData, thisRef, containingObj, script, locals, result, offset) } }
+/// `Cmd::ToggleFlyCam_Execute`: console 'ToggleFlyCam' (tfc): ToggleFreeCamera(camera, false); pushes input context 0xd when the free camera (+0xd0) is now current, else pops it; prints 'Fly Camera Is %s'
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 441593, rva 0x372c20.
+/// `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+/// Retyped: bool (execute args) -> bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset): the console-command execute prototype of docs/subsystems/input.md section 5, also spelled by the binary's own RTTI: the local class MobDialogueFlagResetter is scoped in 'bool Script::ResetDialogueFlags(SCRIPT_PARAMETER const*, char const*, TESObjectREFR*, TESObjectREFR*, Script*, ScriptLocals*, double&, unsigned int&)' (data/rtti.json; ScriptLocals is named there). Body: rcx, rdx, r8, r9, the 5th, 6th and 8th (offset) arguments go to UnpackCommandArguments 0x344ca0 in its order; returns al 1, or the unpack result; console table entry 0x208fc30.
+///
+/// # Safety
+/// `scriptData`, `locals`, `result`, `offset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__toggle_fly_cam_execute(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(441593, (*const crate::ParamInfo, *const c_void, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, scriptData, thisRef, containingObj, script, locals, result, offset) } }
 /// `ComputeAutoAimAngles`: turns the shooter's aim toward the auto-aim target: computes yaw/pitch deltas from origin to the target and adds them to the base angles (FLT_MIN base = add to current)
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 41248, rva 0x777c00.
@@ -3668,12 +3688,12 @@ pub fn g_camera_shake_time_left() -> *mut f32 { address!(402623) as *mut f32 }
 /// `g_CrosshairPickData` at 0x3245340, id 404421 (semantic, high); the static pick data object (high, camera pass), type `class:CrosshairPickData`
 #[inline]
 pub fn g_crosshair_pick_data() -> &'static crate::CrosshairPickData { unsafe { &*(address!(404421) as *const crate::CrosshairPickData) } }
-/// `g_CurrentCameraEyePosition` at 0x20cff5c, id 388909 (semantic, high); eye position of the bound camera entry (entry+0x260) (high, camera pass), type `undefined1`
+/// `g_CurrentCameraEyePosition` at 0x20cff5c, id 388909 (semantic, high); eye position of the bound camera entry (entry+0x260) (high, camera pass), type `class:NiPoint3`
 #[inline]
-pub fn g_current_camera_eye_position() -> *mut u8 { address!(388909) as *mut u8 }
-/// `g_CurrentCameraEyePositionOlder` at 0x20cff68, id 388912 (semantic, medium); entry+0x278: the older of the two previous eye positions (medium, camera pass), type `undefined1`
+pub fn g_current_camera_eye_position() -> &'static crate::NiPoint3 { unsafe { &*(address!(388909) as *const crate::NiPoint3) } }
+/// `g_CurrentCameraEyePositionOlder` at 0x20cff68, id 388912 (semantic, medium); entry+0x278: the older of the two previous eye positions (medium, camera pass), type `class:NiPoint3`
 #[inline]
-pub fn g_current_camera_eye_position_older() -> *mut u8 { address!(388912) as *mut u8 }
+pub fn g_current_camera_eye_position_older() -> &'static crate::NiPoint3 { unsafe { &*(address!(388912) as *const crate::NiPoint3) } }
 /// `g_DefaultCameraPath` at 0x31df550, id 401130 (semantic, high); pointer to `BGSCameraPath`: form 0x16 "DefaultCameraPath"; form 0x16 "DefaultCameraPath" (high, camera pass), type `ptr:BGSCameraPath`
 #[inline]
 pub fn g_default_camera_path() -> Option<&'static crate::BGSCameraPath> { unsafe { *(address!(401130) as *const Option<&'static crate::BGSCameraPath>) } }
@@ -3731,9 +3751,9 @@ pub fn g_havok_world_scale_inverse() -> *mut f32 { address!(187407) as *mut f32 
 /// `g_HorseMaxTurnAngle` at 0x3255af0, id 405797 (runtime, high); fHorseMaxAngleBeforeTurn:Camera in radians (pi/2 by default) (high, camera pass), type `float`
 #[inline]
 pub fn g_horse_max_turn_angle() -> *mut f32 { address!(405797) as *mut f32 }
-/// `g_LastPlayerPosition` at 0x3244c90, id 404241 (semantic, high); player position cached by Main::UpdatePlayer each frame (the flying mount code reads it) (high, camera pass), type `undefined1`
+/// `g_LastPlayerPosition` at 0x3244c90, id 404241 (semantic, high); player position cached by Main::UpdatePlayer each frame (the flying mount code reads it) (high, camera pass), type `class:NiPoint3`
 #[inline]
-pub fn g_last_player_position() -> *mut u8 { address!(404241) as *mut u8 }
+pub fn g_last_player_position() -> &'static crate::NiPoint3 { unsafe { &*(address!(404241) as *const crate::NiPoint3) } }
 /// `g_LowHealthIMod` at 0x3244a98, id 404166 (xref_inference, medium); pointer to `TESImageSpaceModifier`: cached default object 0x84 applied while low on health; cached default object 0x84 applied while low on health (medium, camera pass), type `ptr:TESImageSpaceModifier`
 #[inline]
 pub fn g_low_health_i_mod() -> Option<&'static crate::TESImageSpaceModifier> { unsafe { *(address!(404166) as *const Option<&'static crate::TESImageSpaceModifier>) } }

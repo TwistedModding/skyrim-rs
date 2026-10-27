@@ -74,6 +74,16 @@ pub fn build_frame_job_lists() { unsafe { function!(35402, ())() } }
 /// `void (void)`
 #[inline]
 pub fn cache_shadow_map_resolution() { unsafe { function!(107596, ())() } }
+/// `Cmd::DynamicResolution_Execute`: console 'DynamicResolution [w|h <ratio>|toggle]'
+///
+/// Semantic, graphics pass, high; ledger console_cmd evidence, name high; id 23220, rva 0x380ee0.
+/// `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+/// Retyped: bool (console callback) -> bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset): the console-command execute prototype of docs/subsystems/input.md section 5, also spelled by the binary's own RTTI: the local class MobDialogueFlagResetter is scoped in 'bool Script::ResetDialogueFlags(SCRIPT_PARAMETER const*, char const*, TESObjectREFR*, TESObjectREFR*, Script*, ScriptLocals*, double&, unsigned int&)' (data/rtti.json; ScriptLocals is named there). Body: params (rcx) is null-tested before UnpackCommandArguments(rcx, rdx, offset, r8, r9, script, locals, mode, value); returns al 1 or the unpack result; table entry 0x2095a40.
+///
+/// # Safety
+/// `scriptData`, `locals`, `result`, `offset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__dynamic_resolution_execute(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(23220, (*const crate::ParamInfo, *const c_void, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, scriptData, thisRef, containingObj, script, locals, result, offset) } }
 /// `ComputeTargetTexelConstants`: image-space ping-pong constants: [0x14] = near, [0x15] = far of g_CurrentRenderCamera (also _2 0x1545ab0, _3 0x1545fa0)
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107276, rva 0x15455c0.

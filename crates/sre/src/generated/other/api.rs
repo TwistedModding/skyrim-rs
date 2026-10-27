@@ -5750,6 +5750,17 @@ impl crate::MapMenu {
     /// `void (IMapCameraCallbacks* this)`
     #[inline]
     pub fn on_world_state_begin(&self) { unsafe { function!(53119, (*const Self))(core::ptr::from_ref(self).byte_add(0x38)) } }
+    /// `MapMenu::ProcessMessage`: The world map's UI message handler: update (0) centres the map camera on a marker reference; show (1) records the target handle, sets the cursor rect, hides cell nodes, enters WorldMapMode, fades and sets the date string; hide (3) restores world rendering, shadows, cursor and fade; Scaleform, user and Kinect events select markers, fast travel, zoom or the local map.
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 53102, rva 0x99c180.
+    /// `UIMessageResult (MapMenu* this, UIMessage* message)`
+    /// Retyped: return u32 -> UIMessageResult: MapMenu's IMenu slot 4; returns 0 (0x99ccf9); see enum UIMessageResult.
+    /// May be null: `message`.
+    ///
+    /// # Safety
+    /// `message` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_message(&self, message: *mut crate::UIMessage) -> Result<crate::UIMessageResult, u32> { unsafe { let raw = function!(53102, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), message); crate::UIMessageResult::from_u32(raw).ok_or(raw) } }
     /// `MapMenu::UpdateMapCamera`: camera+0x4c = delta; tail-jump TESCamera::Update
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 53016, rva 0x9969f0.
@@ -5952,6 +5963,16 @@ impl crate::RaceSexMenu {
     /// The `MenuEventHandler` base at +0x30.
     #[inline]
     pub fn as_menu_event_handler(&self) -> &crate::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `RaceSexMenu::ProcessMessage`: IMenu slot 4: name entry/confirm boxes, and on the update path applies a queued camera zoom (pending from/to pose pointers 0x3258478/0x3258480 and duration 0x3258488, set by StartCloseFadeOut and by its own appearance-refresh path) to g_RaceMenuCameraInterp, refreshes the player's appearance, updates the player and its 3D, then calls RaceSexCamera slot 2
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52345, rva 0x968010.
+    /// `UIMessageResult (RaceSexMenu* this, UIMessage* message)`
+    /// May be null: `message`.
+    ///
+    /// # Safety
+    /// `message` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_message(&self, message: *mut crate::UIMessage) -> Result<crate::UIMessageResult, u32> { unsafe { let raw = function!(52345, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), message); crate::UIMessageResult::from_u32(raw).ok_or(raw) } }
     /// `RaceSexMenu::SetupPlayerLookAt`: sets the player's head-tracking graph variables for the race menu camera (fRSMLookAtOnGain:Interface)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 52389, rva 0x96b930.
@@ -6140,6 +6161,17 @@ impl crate::StatsMenu {
     /// `void (void)`
     #[inline]
     pub fn init_skill_view_table() { unsafe { function!(52559, ())() } }
+    /// `StatsMenu::ProcessMessage`: The skills menu's UI message handler (IMenu slot 4): switch on message type +0x8 (0 update, 1 show, 3 hide, 6 Scaleform event, 7 user event, 0xc Kinect). Update drives the constellation intro/outro, perk animations and level-up; show plays UISkillsTransitionUp; hide closes back to the tween menu; input opens the legendary-reset and perk-confirm message boxes. Returns 0 handled, 1 refuse (hide deferred while the outro runs).
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52510, rva 0x976a50.
+    /// `UIMessageResult (StatsMenu* this, UIMessage* message)`
+    /// Retyped: return u32 -> UIMessageResult: StatsMenu's IMenu slot 4; returns R14D: 0 (0x976ab8) or 1 (0x977e54, 0x977ecc); see enum UIMessageResult.
+    /// May be null: `message`.
+    ///
+    /// # Safety
+    /// `message` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_message(&self, message: *mut crate::UIMessage) -> Result<crate::UIMessageResult, u32> { unsafe { let raw = function!(52510, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), message); crate::UIMessageResult::from_u32(raw).ok_or(raw) } }
     /// `StatsMenu::SetupScene`: builds the stats menu 3D scene: constellation models (AssignModelFromLookup), star scale (fStatsStarScale), materials and the intro sequence
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52531, rva 0x97c4b0.

@@ -2758,7 +2758,7 @@ impl core::ops::Deref for crate::SkyrimVM__SleepStopEventFunctor {
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 impl crate::BSScript__ObjectBindPolicy {
-    /// `BSScript::ObjectBindPolicy::BindObject`: binds a script object to a handle: forwards its arguments to slot 3 of the VM's bind interface held at +0x10
+    /// `BSScript::ObjectBindPolicy::BindObject`: binds a script object to a handle: forwards its arguments, with flag false (xor r9d,r9d at 0x1489b89; request GA2), to slot 3 of the VM's bind interface held at +0x10
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104184, rva 0x1489b40.
     /// `void (BSScript::ObjectBindPolicy* this, BSTSmartPointer<BSScript::Object>* object, u64 handle)`

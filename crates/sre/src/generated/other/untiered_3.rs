@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ComputeLaunchVelocityFromAngles` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44184, rva 0x7fe600).
-/// `undefined ComputeLaunchVelocityFromAngles(longlong * param_1, undefined8 param_2, undefined4 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_launch_velocity_from_angles(param_1: *mut i64, param_2: u64, param_3: u32, param_4: u64) -> u64 { unsafe { function!(44184, (*mut i64, u64, u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ComputeLeadAimPointForTarget` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47288, rva 0x8671b0).
-/// `undefined8 ComputeLeadAimPointForTarget(undefined8 param_1, float * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5, int param_6, undefined1 param_7)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_lead_aim_point_for_target(param_1: u64, param_2: *mut f32, param_3: *mut i64, param_4: u32, param_5: u32, param_6: i32, param_7: u8) -> u64 { unsafe { function!(47288, (u64, *mut f32, *mut i64, u32, u32, i32, u8) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
-/// `ComputeLightIntensityAtPoint` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 108293, rva 0x1576db0).
-/// `undefined8 ComputeLightIntensityAtPoint(longlong param_1, float * param_2, float * param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_light_intensity_at_point(param_1: i64, param_2: *mut f32, param_3: *mut f32, param_4: i64) -> u64 { unsafe { function!(108293, (i64, *mut f32, *mut f32, i64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ComputeLinearJacobianAndEffMass` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 64797, rva 0xc25d90).
 /// `undefined ComputeLinearJacobianAndEffMass(float * param_1, float * param_2, longlong param_3, undefined8 * param_4, float * param_5)`
 ///
@@ -12456,3 +12435,17 @@ pub unsafe fn deleting_dtor_d8_2(param_1: *mut u64, param_2: u32, param_3: u64, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn deleting_dtor_for_vtable241943(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(82210, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorFreeField10Size28` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87156, rva 0xde7d10).
+/// `GRefCountImplCore * DeletingDtorFreeField10Size28(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_free_field10_size28(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87156, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorFreeField20Size38` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87160, rva 0xde7ee0).
+/// `GRefCountImplCore * DeletingDtorFreeField20Size38(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_free_field20_size38(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87160, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }

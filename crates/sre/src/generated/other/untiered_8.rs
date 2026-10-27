@@ -3,34 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ReleaseThroughFactoryRegistry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 27668, rva 0x450980).
-/// `undefined ReleaseThroughFactoryRegistry(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_through_factory_registry(param_1: *mut i64) -> u64 { unsafe { function!(27668, (*mut i64) -> u64)(param_1) } }
-/// `ReleaseTrackedEntities` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 63094, rva 0xbb26c0).
-/// `undefined ReleaseTrackedEntities(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_tracked_entities(param_1: i64) -> u64 { unsafe { function!(63094, (i64) -> u64)(param_1) } }
-/// `ReleaseTrackedFormIfType2E` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 22776, rva 0x36d550).
-/// `undefined ReleaseTrackedFormIfType2E(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_tracked_form_if_type2_e(param_1: *mut u64) -> u64 { unsafe { function!(22776, (*mut u64) -> u64)(param_1) } }
-/// `ReleaseTrackedFormReference` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36171, rva 0x63f650).
-/// `undefined ReleaseTrackedFormReference(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_tracked_form_reference(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(36171, (i64, *mut i64) -> u64)(param_1, param_2) } }
 /// `ReleaseTriggerEventStorage` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26040, rva 0x407030).
 /// `undefined ReleaseTriggerEventStorage(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -14220,3 +14192,24 @@ pub unsafe fn send_trigger_leave_events_for_entries(param_1: *mut i64, param_2: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn send_type23_message_with_ref(param_1: u64, param_2: i64, param_3: u32) -> u64 { unsafe { function!(36926, (u64, i64, u32) -> u64)(param_1, param_2, param_3) } }
+/// `SendType5MessageWithRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36898, rva 0x667ad0).
+/// `undefined SendType5MessageWithRef(undefined8 param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn send_type5_message_with_ref(param_1: u64, param_2: i64) -> u64 { unsafe { function!(36898, (u64, i64) -> u64)(param_1, param_2) } }
+/// `SendWeaponAttackEvent` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 40790, rva 0x762460).
+/// `undefined SendWeaponAttackEvent(undefined8 param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn send_weapon_attack_event(param_1: u64) -> u64 { unsafe { function!(40790, (u64) -> u64)(param_1) } }
+/// `SendWebSocketFrameType10Locked` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 452957, rva 0x146dc10).
+/// `undefined SendWebSocketFrameType10Locked(longlong param_1, undefined8 param_2, undefined4 * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn send_web_socket_frame_type10_locked(param_1: i64, param_2: u64, param_3: *mut u32) -> u64 { unsafe { function!(452957, (i64, u64, *mut u32) -> u64)(param_1, param_2, param_3) } }

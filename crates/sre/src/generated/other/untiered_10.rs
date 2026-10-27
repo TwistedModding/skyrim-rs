@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `TryClaimFreeArc` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47036, rva 0x85b510).
-/// `undefined8 TryClaimFreeArc(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_claim_free_arc(param_1: i64, param_2: i64) -> u64 { unsafe { function!(47036, (i64, i64) -> u64)(param_1, param_2) } }
-/// `TryConsumePendingValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 92773, rva 0x1230670).
-/// `bool TryConsumePendingValue(undefined4 * param_1, undefined4 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_consume_pending_value(param_1: *mut u32, param_2: *mut u32) -> u8 { unsafe { function!(92773, (*mut u32, *mut u32) -> u8)(param_1, param_2) } }
-/// `TryCopyField58OfVfunc28Object` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49946, rva 0x8d9290).
-/// `bool TryCopyField58OfVfunc28Object(longlong * param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_copy_field58_of_vfunc28_object(param_1: *mut i64, param_2: *mut u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(49946, (*mut i64, *mut u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
 /// `TryCreateCombatCoverLocationAt` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44619, rva 0x8154e0).
 /// `bool TryCreateCombatCoverLocationAt(byte * param_1, float param_2, longlong param_3)`
 ///

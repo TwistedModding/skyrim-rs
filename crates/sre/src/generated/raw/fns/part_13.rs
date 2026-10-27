@@ -3,6 +3,40 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fEnvmapLODFadeEnd_LightingShader__init` at 0x100730 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeEnd_LightingShader__init(void)`
+pub const INISetting_fEnvmapLODFadeEnd_LightingShader__init: u64 = 10284;
+/// `INISetting_fEnvmapLODFadeStart_LightingShader__atexit` at 0x17c1a20 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeStart_LightingShader__atexit(void)`
+pub const INISetting_fEnvmapLODFadeStart_LightingShader__atexit: u64 = 174448;
+/// `INISetting_fEnvmapLODFadeStart_LightingShader__init` at 0x1007b0 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeStart_LightingShader__init(void)`
+pub const INISetting_fEnvmapLODFadeStart_LightingShader__init: u64 = 10285;
+/// `INISetting_fExponentialShadowMapScale_Display__atexit` at 0x17c6880 (crt_init, medium); signature (high): `void INISetting_fExponentialShadowMapScale_Display__atexit(void)`
+pub const INISetting_fExponentialShadowMapScale_Display__atexit: u64 = 174841;
+/// `INISetting_fExponentialShadowMapScale_Display__init` at 0x109050 (crt_init, medium); signature (high): `void INISetting_fExponentialShadowMapScale_Display__init(void)`
+pub const INISetting_fExponentialShadowMapScale_Display__init: u64 = 10709;
+/// `INISetting_fExteriorWaterReflectionThreshold_Water__atexit` at 0x178f530 (crt_init, medium); signature (high): `void INISetting_fExteriorWaterReflectionThreshold_Water__atexit(void)`
+pub const INISetting_fExteriorWaterReflectionThreshold_Water__atexit: u64 = 170406;
+/// `INISetting_fExteriorWaterReflectionThreshold_Water__init` at 0x8ca70 (crt_init, medium); signature (high): `void INISetting_fExteriorWaterReflectionThreshold_Water__init(void)`
+pub const INISetting_fExteriorWaterReflectionThreshold_Water__init: u64 = 5143;
+/// `INISetting_fExtraTaskletBudgetMS_Papyrus__atexit` at 0x17adcf0 (crt_init, medium); signature (high): `void INISetting_fExtraTaskletBudgetMS_Papyrus__atexit(void)`
+pub const INISetting_fExtraTaskletBudgetMS_Papyrus__atexit: u64 = 173106;
+/// `INISetting_fExtraTaskletBudgetMS_Papyrus__init` at 0xc4c20 (crt_init, medium); signature (high): `void INISetting_fExtraTaskletBudgetMS_Papyrus__init(void)`
+pub const INISetting_fExtraTaskletBudgetMS_Papyrus__init: u64 = 7635;
+/// `INISetting_fEyeEnvmapLODEnd_LightingShader__atexit` at 0x17c1a70 (crt_init, medium); signature (high): `void INISetting_fEyeEnvmapLODEnd_LightingShader__atexit(void)`
+pub const INISetting_fEyeEnvmapLODEnd_LightingShader__atexit: u64 = 174449;
+/// `INISetting_fEyeEnvmapLODEnd_LightingShader__init` at 0x100830 (crt_init, medium); signature (high): `void INISetting_fEyeEnvmapLODEnd_LightingShader__init(void)`
+pub const INISetting_fEyeEnvmapLODEnd_LightingShader__init: u64 = 10286;
+/// `INISetting_fEyeIKDistanceMax_LookIK__atexit` at 0x17b44c0 (crt_init, medium); signature (high): `void INISetting_fEyeIKDistanceMax_LookIK__atexit(void)`
+pub const INISetting_fEyeIKDistanceMax_LookIK__atexit: u64 = 173895;
+/// `INISetting_fEyeIKDistanceMax_LookIK__init` at 0xebc20 (crt_init, medium); signature (high): `void INISetting_fEyeIKDistanceMax_LookIK__init(void)`
+pub const INISetting_fEyeIKDistanceMax_LookIK__init: u64 = 9642;
+/// `INISetting_fFadeInThreshold_LOD__atexit` at 0x173efb0 (crt_init, medium); signature (high): `void INISetting_fFadeInThreshold_LOD__atexit(void)`
+pub const INISetting_fFadeInThreshold_LOD__atexit: u64 = 165464;
+/// `INISetting_fFadeInThreshold_LOD__init` at 0xbcf0 (crt_init, medium); signature (high): `void INISetting_fFadeInThreshold_LOD__init(void)`
+pub const INISetting_fFadeInThreshold_LOD__init: u64 = 269;
+/// `INISetting_fFadeInTime_LOD__atexit` at 0x173f000 (crt_init, medium); signature (high): `void INISetting_fFadeInTime_LOD__atexit(void)`
+pub const INISetting_fFadeInTime_LOD__atexit: u64 = 165465;
+/// `INISetting_fFadeInTime_LOD__init` at 0xbd70 (crt_init, medium); signature (high): `void INISetting_fFadeInTime_LOD__init(void)`
+pub const INISetting_fFadeInTime_LOD__init: u64 = 270;
 /// `INISetting_fFadeOutThreshold_LOD__atexit` at 0x173f050 (crt_init, medium); signature (high): `void INISetting_fFadeOutThreshold_LOD__atexit(void)`
 pub const INISetting_fFadeOutThreshold_LOD__atexit: u64 = 165466;
 /// `INISetting_fFadeOutThreshold_LOD__init` at 0xbdf0 (crt_init, medium); signature (high): `void INISetting_fFadeOutThreshold_LOD__init(void)`
@@ -8373,43 +8407,3 @@ pub const InvokeWithThreadEventNotifications: u64 = 68445;
 pub const IronSightsState__Begin: u64 = 50777;
 /// `IronSightsState::Destroy` at 0x8fc630 (semantic, high); signature (untiered): `IronSightsState * Destroy(IronSightsState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const IronSightsState__Destroy: u64 = 50871;
-/// `IronSightsState::GetRotation` at 0x8f7970 (semantic, high); signature (untiered): `undefined GetRotation(IronSightsState * this, float * param_1)`
-pub const IronSightsState__GetRotation: u64 = 50779;
-/// `IronSightsState::GetTranslation` at 0x8f79a0 (semantic, high); signature (untiered): `undefined GetTranslation(IronSightsState * this, undefined4 * param_1)`
-pub const IronSightsState__GetTranslation: u64 = 50780;
-/// `IronSightsState::Update` at 0x8f7700 (semantic, high); signature (untiered): `undefined Update(IronSightsState * this, undefined8 param_2, undefined4 param_3, undefined4 param_4)`
-pub const IronSightsState__Update: u64 = 50778;
-/// `IronSightsState::dtor` at 0x8f76c0 (semantic, high); signature (untiered): `undefined dtor(IronSightsState * this)`; semantic: non-deleting destructor: vtable = TESCameraState's (high); signature `void (IronSightsState* this)`
-pub const IronSightsState__dtor: u64 = 50776;
-/// `IronSightsState::dtor` as a function pointer type (high).
-pub type IronSightsState__dtor_fn = unsafe extern "C" fn(this: *mut crate::IronSightsState);
-/// `IsAabbValid` at 0x1101660 (decompiler, medium); signature (medium): `undefined1 * IsAabbValid(float * param_1, undefined1 * param_2)`
-pub const IsAabbValid: u64 = 80985;
-/// `IsAbsValue39AboveGlobal187052` at 0x6739d0 (decompiler, medium); signature (medium): `bool IsAbsValue39AboveGlobal187052(longlong param_1)`
-pub const IsAbsValue39AboveGlobal187052: u64 = 37210;
-/// `IsAbsentFromField80Chain` at 0xf5a030 (decompiler, high); signature (high): `ulonglong IsAbsentFromField80Chain(ulonglong param_1, longlong param_2)`
-pub const IsAbsentFromField80Chain: u64 = 72494;
-/// `IsAbsolutePath` at 0xdf3000 (decompiler, medium); signature (medium): `undefined4 IsAbsolutePath(char * param_1)`
-pub const IsAbsolutePath: u64 = 84648;
-/// `IsActionEntryActive` at 0x756c60 (decompiler, medium); signature (medium): `ulonglong IsActionEntryActive(longlong param_1, int param_2)`
-pub const IsActionEntryActive: u64 = 40600;
-/// `IsActorFieldC8State3Or7` at 0x679460 (decompiler, medium); signature (medium): `ulonglong IsActorFieldC8State3Or7(longlong param_1, char param_2)`
-pub const IsActorFieldC8State3Or7: u64 = 37329;
-/// `IsActorMatchedByFormOrList` at 0x447270 (decompiler, medium); signature (untiered): `ulonglong IsActorMatchedByFormOrList(longlong param_1, longlong param_2)`
-pub const IsActorMatchedByFormOrList: u64 = 27289;
-/// `IsActorValueBelowRestoreThreshold` at 0x835240 (decompiler, medium); signature (untiered): `void * IsActorValueBelowRestoreThreshold(longlong param_1, longlong param_2, int param_3, char param_4)`
-pub const IsActorValueBelowRestoreThreshold: u64 = 45376;
-/// `IsAddressInBlockList` at 0xc06d60 (decompiler, medium); signature (untiered): `ulonglong IsAddressInBlockList(ushort * param_1, ulonglong param_2)`
-pub const IsAddressInBlockList: u64 = 64656;
-/// `IsAddressInEntryRanges` at 0xec4a40 (decompiler, medium); signature (untiered): `ulonglong IsAddressInEntryRanges(longlong param_1, ulonglong param_2)`
-pub const IsAddressInEntryRanges: u64 = 69598;
-/// `IsAddressInField1238Range` at 0xcea520 (decompiler, high); signature (high): `undefined1 IsAddressInField1238Range(longlong param_1, ulonglong param_2)`
-pub const IsAddressInField1238Range: u64 = 68426;
-/// `IsAddressInField48Range` at 0xcdfde0 (decompiler, high); signature (high): `undefined1 IsAddressInField48Range(longlong param_1, ulonglong param_2)`
-pub const IsAddressInField48Range: u64 = 68149;
-/// `IsAddressInNonWritableImageSection` at 0x15a77bc (decompiler, medium); signature (medium): `ulonglong IsAddressInNonWritableImageSection(longlong param_1)`
-pub const IsAddressInNonWritableImageSection: u64 = 109602;
-/// `IsAllowedWhileOnFlyingMount` at 0x76a540 (decompiler, medium); signature (untiered): `undefined8 IsAllowedWhileOnFlyingMount(longlong * param_1, longlong * param_2, int * param_3, undefined8 param_4)`
-pub const IsAllowedWhileOnFlyingMount: u64 = 40996;
-/// `IsAncestorOrNull` at 0x8730a0 (decompiler, medium); signature (medium): `undefined8 IsAncestorOrNull(longlong param_1, longlong param_2)`
-pub const IsAncestorOrNull: u64 = 47490;

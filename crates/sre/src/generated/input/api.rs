@@ -1011,6 +1011,26 @@ impl crate::UserEventNames {
 /// `this` must point to what the engine expects.
 #[inline]
 pub unsafe fn bst_event_source_user_event_enabled_event__notify(this: *mut c_void, e: *const crate::UserEventEnabledEvent) { unsafe { function!(68600, (*mut c_void, *const crate::UserEventEnabledEvent))(this, e) } }
+/// `Cmd::GetPos_Execute`: UnpackCommandArguments(.., &axis) then GetPos_Eval(thisRef, axis, 0, result); the eval 0x3303d0 reads ref +0x54/+0x58/+0x5c and prints 'GetPos: %c >> %0.2f' only when TLS+0x600 (console run) is set
+///
+/// Semantic, input pass, high; ledger console_cmd evidence, name high; id 22045, rva 0x3501a0.
+/// `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+/// Retyped: bool (execute args) -> bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset): the console-command execute prototype of docs/subsystems/input.md section 5, also spelled by the binary's own RTTI: the local class MobDialogueFlagResetter is scoped in 'bool Script::ResetDialogueFlags(SCRIPT_PARAMETER const*, char const*, TESObjectREFR*, TESObjectREFR*, Script*, ScriptLocals*, double&, unsigned int&)' (data/rtti.json; ScriptLocals is named there). Body: UnpackCommandArguments(rcx, rdx, [rsp+0x98] offset, r8, r9, [rsp+0x80] script, [rsp+0x88] locals, &axis), then GetPos_Eval(r8, axis, 0, [rsp+0x90]): the 7th argument is the double* result; returns al from the unpack or the eval; script-function entry 0x207eca0.
+///
+/// # Safety
+/// `scriptData`, `locals`, `result`, `offset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_pos_execute(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(22045, (*const crate::ParamInfo, *const c_void, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, scriptData, thisRef, containingObj, script, locals, result, offset) } }
+/// `Cmd::Help_Execute`: Unpack(String search, Integer filter, String formType); an empty search prints 'usage: help <search word> <filter> <form type>' and two more lines; walks exactly 0x1c1 console and 0x2e1 script entries
+///
+/// Semantic, input pass, high; ledger console_cmd evidence, name high; id 22839, rva 0x36efb0.
+/// `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+/// Retyped: bool (execute args) -> bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset): the console-command execute prototype of docs/subsystems/input.md section 5, also spelled by the binary's own RTTI: the local class MobDialogueFlagResetter is scoped in 'bool Script::ResetDialogueFlags(SCRIPT_PARAMETER const*, char const*, TESObjectREFR*, TESObjectREFR*, Script*, ScriptLocals*, double&, unsigned int&)' (data/rtti.json; ScriptLocals is named there). Body: UnpackCommandArguments(rcx, rdx, offset, r8, r9, script, locals, search, filter, formType); returns al 1 (0 when the unpack fails); table entry 0x208da20.
+///
+/// # Safety
+/// `scriptData`, `locals`, `result`, `offset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__help_execute(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(22839, (*const crate::ParamInfo, *const c_void, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, scriptData, thisRef, containingObj, script, locals, result, offset) } }
 /// `CompareMappingKey`: orders by key low word, then high word
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68573, rva 0xcf1770.

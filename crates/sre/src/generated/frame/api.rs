@@ -1322,6 +1322,16 @@ pub fn compute_frustum_planes(planes: &mut crate::NiPlane, frustum: &crate::NiFr
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn create_decal_shader_property(d: *mut c_void, g: *mut crate::BSGeometry, ts: *mut crate::BGSTextureSet, a3: bool) { unsafe { function!(30108, (*mut c_void, *mut crate::BSGeometry, *mut crate::BGSTextureSet, bool))(d, g, ts, a3) } }
+/// `CreateLandShaderProperty`: landscape lighting property: bit 14, bit 8 always, bit 9 = bDrawLandShadows, bit 46, bit 0 = bLandSpecular
+///
+/// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 18791, rva 0x2b3380.
+/// `bool (TESObjectLAND* land)`
+/// Retyped: ? (...) -> bool (TESObjectLAND* land): only caller SetupLandQuadGeometry 0x2ae650 passes its own first argument (0x2aeaec MOV RCX,RSI), which ProcessGridCellLandOnce 0x227510 gets from GetOrCreateLand(cell) and LoadAndSetBit3OfField28 0x2ad4b0 fills with LoadLandRecordData; the body reads land+0x40 (loaded data: quad geometry +0..+0x18, textures +0x4890 and +0x48b0..) and sets land+0x28 |= 8; rdx, r8, r9 are not read; returns 0 when the loaded data or its first quad is null, 1 after the four properties are built (the caller ignores it).
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn create_land_shader_property(land: *mut crate::TESObjectLAND) -> bool { unsafe { function!(18791, (*mut crate::TESObjectLAND) -> bool)(land) } }
 /// `CreateLightingShaderMaterial`: factory used by BSLightingShaderProperty::LoadBinary: feature -> class and size
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106723, rva 0x1524370.

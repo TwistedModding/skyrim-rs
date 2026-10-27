@@ -3308,6 +3308,11 @@ pub struct TweenMenu_vtable {
 impl TweenMenu_vtable {
     pub const ID: u64 = 216145;
     pub const SLOT_ProcessMessage: usize = 4;
+    /// Slot 4 as `TweenMenu_vtable_ProcessMessage`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessMessage(&self) -> Option<TweenMenu_vtable_ProcessMessage> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TweenMenu_vtable_ProcessMessage>>(self.slot_4) }
+    }
     pub const SLOT_PostDisplay: usize = 6;
     /// Slot 6 as `TweenMenu_vtable_PostDisplay`, `None` when the slot is null.
     #[must_use]
@@ -3315,6 +3320,8 @@ impl TweenMenu_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<TweenMenu_vtable_PostDisplay>>(self.slot_6) }
     }
 }
+/// `TweenMenu::ProcessMessage`, slot 4: type 1: returns 1 (refuse) when *(ID_400883+0x20) != 0, else pushes the tween camera, blur, mesh list, repeat rates, CenterAndHideCursor, returns 0; type 3: pops the tween camera; type 0xc: menu-switch user events; others to IMenu (high).
+pub type TweenMenu_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::TweenMenu, message: *mut crate::UIMessage) -> u32;
 /// `TweenMenu::PostDisplay`, slot 6: PlayerCamera::Update, then movie display (high).
 pub type TweenMenu_vtable_PostDisplay = unsafe extern "C" fn(this: *mut crate::TweenMenu);
 

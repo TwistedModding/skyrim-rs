@@ -12051,9 +12051,9 @@ pub const g_CrosshairPickData: u64 = 404421;
 pub const g_CrosshairPickData_ptr: u64 = 401585;
 /// `g_CullRootLists` at 0x3436270 (semantic, high); BSTArray of 0x18-byte root lists walked by the main and the sun's cullers (high); type `pointer`
 pub const g_CullRootLists: u64 = 415017;
-/// `g_CurrentCameraEyePosition` at 0x20cff5c (semantic, high); eye position of the bound camera entry (entry+0x260) (high); type `undefined1`
+/// `g_CurrentCameraEyePosition` at 0x20cff5c (semantic, high); eye position of the bound camera entry (entry+0x260) (high); type `class:NiPoint3`
 pub const g_CurrentCameraEyePosition: u64 = 388909;
-/// `g_CurrentCameraEyePositionOlder` at 0x20cff68 (semantic, medium); entry+0x278: the older of the two previous eye positions (medium); type `undefined1`
+/// `g_CurrentCameraEyePositionOlder` at 0x20cff68 (semantic, medium); entry+0x278: the older of the two previous eye positions (medium); type `class:NiPoint3`
 pub const g_CurrentCameraEyePositionOlder: u64 = 388912;
 /// `g_CurrentCameraState` at 0x20cff80 (runtime, medium); the bound camera's matrices (copied from a CameraMatrixEntry), viewport, depth range +0x240/+0x244 (0x20d01c0/0x20d01c4), eye position 0x20cff5c.. (medium); type `undefined1`
 pub const g_CurrentCameraState: u64 = 388915;
@@ -12313,7 +12313,7 @@ pub const g_JobListServingThread: u64 = 403109;
 pub const g_JournalInputMapping_RemapHandler: u64 = 383628;
 /// `g_LastMessageBoxType` at 0x20bb3f8 (semantic, medium); type of the last answered box (medium); type `u32`
 pub const g_LastMessageBoxType: u64 = 383037;
-/// `g_LastPlayerPosition` at 0x3244c90 (semantic, high); player position cached by Main::UpdatePlayer each frame (the flying mount code reads it) (high); type `undefined1`
+/// `g_LastPlayerPosition` at 0x3244c90 (semantic, high); player position cached by Main::UpdatePlayer each frame (the flying mount code reads it) (high); type `class:NiPoint3`
 pub const g_LastPlayerPosition: u64 = 404241;
 /// `g_LastSoundId` at 0x3273924 (runtime, medium); sound id counter (new id = value+1) (medium); type `undefined4`
 pub const g_LastSoundId: u64 = 410106;

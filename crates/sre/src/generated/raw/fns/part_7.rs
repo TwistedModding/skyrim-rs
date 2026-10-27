@@ -3,6 +3,26 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeNode::vfunc_3` at 0x875550 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const CombatBehaviorTreeNode__vfunc_3: u64 = 47553;
+/// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
+pub const CombatBehaviorTreeNode__vfunc_4: u64 = 47554;
+/// `CombatBehaviorTreeNode::vfunc_5` at 0x875570 (rtti, medium); signature (low): `undefined vfunc_5(CombatBehaviorTreeNode * this, longlong param_1)`
+pub const CombatBehaviorTreeNode__vfunc_5: u64 = 47555;
+/// `CombatBehaviorTreeNode::vfunc_6` at 0x875580 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const CombatBehaviorTreeNode__vfunc_6: u64 = 47556;
+/// `CombatBehaviorTreeNode::vfunc_7` at 0x875590 (rtti, medium); signature (low): `undefined vfunc_7(void)`
+pub const CombatBehaviorTreeNode__vfunc_7: u64 = 47557;
+/// `CombatBehaviorTreeNode::vfunc_8` at 0x8755a0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+pub const CombatBehaviorTreeNode__vfunc_8: u64 = 47558;
+/// `CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_>::vdtor` at 0x8af480 (slot_propagation, medium); signature (low): `CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_> * vdtor(CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_d74ac991ce5c: u64 = 48887;
+/// `CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_>::vfunc_2` at 0x8b01e0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_> * this, longlong param_1)`
+pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_90f08f147d8c: u64 = 48937;
+/// `CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_>::vfunc_9` at 0x8b0f90 (rtti, high); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_8254b378a045: u64 = 48971;
+/// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vdtor` at 0x8d6820 (slot_propagation, medium); signature (low): `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_3944110546dd: u64 = 49870;
 /// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vfunc_4` at 0x8d7a90 (rtti, high); signature (low): `undefined vfunc_4(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * this, longlong param_1)`
 pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_feee67809d6b: u64 = 49908;
 /// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vfunc_9` at 0x8d73d0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
@@ -5759,31 +5779,3 @@ pub const ComputeBoundsOfEntriesAndField38: u64 = 93093;
 pub const ComputeBoundsOfStridedPoints: u64 = 57239;
 /// `ComputeBoxMassProperties` at 0xc364c0 (decompiler, medium); signature (medium): `undefined8 ComputeBoxMassProperties(float * param_1, float param_2, float * param_3)`
 pub const ComputeBoxMassProperties: u64 = 65065;
-/// `ComputeBudgetCategoryUsage` at 0x213d70 (decompiler, medium); signature (medium): `float ComputeBudgetCategoryUsage(longlong param_1, uint param_2)`
-pub const ComputeBudgetCategoryUsage: u64 = 15568;
-/// `ComputeCameraCasterCollision` at 0x8fa5d0 (runtime, high); signature (untiered): `undefined8 ComputeCameraCasterCollision(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`; semantic: clip cameraPos against the world between the target point and the camera; returns true when moved; manages fadedActorHandle (high); signature `bool (PlayerCamera* this, NiPoint3* cameraPos, bool fadeActors)`
-pub const ComputeCameraCasterCollision: u64 = 50832;
-/// `ComputeCameraCasterCollision` as a function pointer type (high).
-pub type ComputeCameraCasterCollision_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, cameraPos: *mut crate::NiPoint3, fadeActors: bool) -> bool;
-/// `ComputeCameraShakeRotation` at 0x558600 (runtime, high); signature (untiered): `float ComputeCameraShakeRotation(undefined4 param_1, float * param_2)`; semantic: when strength and time left are > 1e-4: UpdateNode the CameraShake.nif root at the time stored at (root+0x18)+0x1c (its reference pose), keep that local rotation R0, UpdateNode again at `time`, outDelta = inverse(R0) * R(time); timeLeft -= g_FrameDelta; returns strength, faded linearly over the last fCameraShakeFadeTime; else zeroes both and returns 0 (high); signature `float (float time, NiMatrix3* outDelta)`
-pub const ComputeCameraShakeRotation: u64 = 33013;
-/// `ComputeCameraShakeRotation` as a function pointer type (high).
-pub type ComputeCameraShakeRotation_fn = unsafe extern "C" fn(time: f32, outDelta: *mut crate::NiMatrix3) -> f32;
-/// `ComputeCapsuleCapsuleContact` at 0xc948d0 (decompiler, medium); signature (untiered): `undefined8 ComputeCapsuleCapsuleContact(float * param_1, float param_2, float * param_3, undefined8 param_4, float param_5, float * param_6)`
-pub const ComputeCapsuleCapsuleContact: u64 = 67079;
-/// `ComputeCapsuleCapsuleMinkowskiSupport` at 0x56a550 (decompiler, medium); signature (medium): `float * ComputeCapsuleCapsuleMinkowskiSupport(float * param_1, longlong param_2, longlong param_3, float * param_4)`
-pub const ComputeCapsuleCapsuleMinkowskiSupport: u64 = 33350;
-/// `ComputeCapsuleSegmentFromCenterAndAxis` at 0xf39b40 (decompiler, medium); signature (medium): `undefined ComputeCapsuleSegmentFromCenterAndAxis(longlong param_1)`
-pub const ComputeCapsuleSegmentFromCenterAndAxis: u64 = 72153;
-/// `ComputeCapsuleSupportPoint` at 0x5691d0 (decompiler, medium); signature (medium): `float * ComputeCapsuleSupportPoint(float * param_1, longlong param_2, float * param_3)`
-pub const ComputeCapsuleSupportPoint: u64 = 33341;
-/// `ComputeCapsuleTaperedCapsuleMinkowskiSupport` at 0x56a9d0 (decompiler, medium); signature (medium): `float * ComputeCapsuleTaperedCapsuleMinkowskiSupport(float * param_1, longlong param_2, longlong param_3, float * param_4)`
-pub const ComputeCapsuleTaperedCapsuleMinkowskiSupport: u64 = 33354;
-/// `ComputeCeilOfArg0` at 0xdb6b50 (decompiler, high); signature (untiered): `undefined ComputeCeilOfArg0(longlong param_1)`
-pub const ComputeCeilOfArg0: u64 = 86210;
-/// `ComputeCellGridHashKey` at 0x2b9650 (decompiler, medium); signature (medium): `uint ComputeCellGridHashKey(longlong param_1)`
-pub const ComputeCellGridHashKey: u64 = 18885;
-/// `ComputeCellGridOrigin` at 0x2b2960 (decompiler, medium); signature (medium): `float * ComputeCellGridOrigin(longlong param_1, float * param_2)`
-pub const ComputeCellGridOrigin: u64 = 18785;
-/// `ComputeCellGridPriority` at 0x1a3b50 (decompiler, medium); signature (untiered): `undefined4 ComputeCellGridPriority(longlong param_1, longlong param_2, float * param_3)`
-pub const ComputeCellGridPriority: u64 = 13321;

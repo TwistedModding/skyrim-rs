@@ -72,7 +72,7 @@ pub struct Console_vtable {
     pub slot_2: *const c_void,
     /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
     pub slot_3: *const c_void,
-    /// `Console::ProcessMessage` at 0x9092d0 (semantic, high); signature (untiered): `byte ProcessMessage(Console * this, longlong param_1)`; `ProcessMessage`: ConsoleData updates (flush log, select ref, execute, clear history), show/hide, key input (high); semantic signature: `u32 (Console* this, UIMessage* msg)`
+    /// `Console::ProcessMessage` at 0x9092d0 (semantic, high); signature (untiered): `byte ProcessMessage(Console * this, longlong param_1)`; `ProcessMessage`: ConsoleData updates (flush log, select ref, execute, clear history), show/hide, key input (high); semantic signature: `UIMessageResult (Console* this, UIMessage* msg)`
     pub slot_4: *const c_void,
     /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
@@ -818,7 +818,14 @@ pub struct CursorMenu_vtable {
 impl CursorMenu_vtable {
     pub const ID: u64 = 215246;
     pub const SLOT_ProcessMessage: usize = 4;
+    /// Slot 4 as `CursorMenu_vtable_ProcessMessage`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessMessage(&self) -> Option<CursorMenu_vtable_ProcessMessage> {
+        unsafe { core::mem::transmute::<*const c_void, Option<CursorMenu_vtable_ProcessMessage>>(self.slot_4) }
+    }
 }
+/// `CursorMenu::ProcessMessage`, slot 4: show: registers its handler, sends a GFx event with the cursor position; hide: unregisters, pops input context 9; always returns 2 (never consumes) (high).
+pub type CursorMenu_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::CursorMenu, message: *mut crate::UIMessage) -> u32;
 
 /// `CursorMenu::vftable_30` at 0x19745d8, id 215248 (rtti, high); 8 slots.
 #[repr(C)]
@@ -8569,7 +8576,7 @@ pub struct HUDMenu_vtable {
     pub slot_2: *const c_void,
     /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
     pub slot_3: *const c_void,
-    /// `HUDMenu::ProcessMessage` at 0x933180 (semantic, high); signature (untiered): `undefined8 ProcessMessage(HUDMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessMessage`: handles HUD messages; HUDData (type at data+0x10) on 'HUD Menu' drives the AS calls (high); semantic signature: `u32 (HUDMenu* this, UIMessage* msg)`
+    /// `HUDMenu::ProcessMessage` at 0x933180 (semantic, high); signature (untiered): `undefined8 ProcessMessage(HUDMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessMessage`: handles HUD messages; HUDData (type at data+0x10) on 'HUD Menu' drives the AS calls (high); semantic signature: `UIMessageResult (HUDMenu* this, UIMessage* msg)`
     pub slot_4: *const c_void,
     /// `HUDMenu::AdvanceMovie` at 0x934a50 (semantic, high); signature (untiered): `undefined AdvanceMovie(HUDMenu * this, float param_1, longlong * param_2, undefined8 param_3)`; `AdvanceMovie`: IMenu's advance with the interval clamped to the constant ID_215451, then queues a HUD data message when the tracked globals change (only while numPausesGame == 0) (high); semantic signature: `void (HUDMenu* this, float interval, u32 currentTimeMs)`
     pub slot_5: *const c_void,
@@ -10805,6 +10812,11 @@ impl IMenu_vtable {
     }
     pub const SLOT_Refresh: usize = 3;
     pub const SLOT_ProcessMessage: usize = 4;
+    /// Slot 4 as `IMenu_vtable_ProcessMessage`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessMessage(&self) -> Option<IMenu_vtable_ProcessMessage> {
+        unsafe { core::mem::transmute::<*const c_void, Option<IMenu_vtable_ProcessMessage>>(self.slot_4) }
+    }
     pub const SLOT_AdvanceMovie: usize = 5;
     /// Slot 5 as `IMenu_vtable_AdvanceMovie`, `None` when the slot is null.
     #[must_use]
@@ -10836,6 +10848,8 @@ pub type IMenu_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::IMenu, flag
 pub type IMenu_vtable_Accept = unsafe extern "C" fn(this: *mut crate::IMenu, processor: *mut crate::FxDelegateHandler__CallbackProcessor);
 /// `IMenu::PostCreate`, slot 2: called once right after the creator returned the new menu, before it is stored in the UI table; empty in IMenu (high).
 pub type IMenu_vtable_PostCreate = unsafe extern "C" fn(this: *mut crate::IMenu);
+/// `IMenu::ProcessMessage`, slot 4: the UI message handler: every message ProcessMessages delivers (show 1, hide 3/4, Scaleform event 6, user event 7, the per-frame type 0, ...). IMenu's default handles type 6 by passing the BSUIScaleformData's GFx event (data+0x10) to movie slot 0x168 and returns 0; anything else returns 2 (high).
+pub type IMenu_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::IMenu, message: *mut crate::UIMessage) -> u32;
 /// `IMenu::AdvanceMovie`, slot 5: per-frame advance: sets the movie variable "CurrentTime" (a number) and advances the movie by interval (movie slot 0x128 with frame catch-up 2) (high).
 pub type IMenu_vtable_AdvanceMovie = unsafe extern "C" fn(this: *mut crate::IMenu, interval: f32, currentTimeMs: u32);
 /// `IMenu::PostDisplay`, slot 6: draws the menu in the UI pass after the world: IMenu's default tail-calls movie slot 0x130 (display) when the movie exists (high).
@@ -15378,43 +15392,5 @@ pub struct LoadStorageWrapper_vtable {
 }
 impl LoadStorageWrapper_vtable {
     pub const ID: u64 = 206731;
-}
-
-/// `LoadWaitSpinner::vftable` at 0x18f5140, id 205791 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct LoadWaitSpinner_vtable {
-    /// `LoadWaitSpinner::vdtor` at 0x5b9290 (layout_inference, medium); signature (low): `LoadWaitSpinner * vdtor(LoadWaitSpinner * this, uint param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LoadWaitSpinner::vfunc_1` at 0x5b8e40 (rtti, high); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `LoadWaitSpinner::vfunc_4` at 0x5b8e50 (rtti, high); signature (low): `undefined8 vfunc_4(LoadWaitSpinner * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
-}
-impl LoadWaitSpinner_vtable {
-    pub const ID: u64 = 205791;
-}
-
-/// `LoadWaitSpinner::vftable_30` at 0x18f5190, id 205793 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LoadWaitSpinner_vtable_30 {
-    /// `LoadWaitSpinner::BSTEventSink_BSSystemEvent_vdtor` at 0x5b920c (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSSystemEvent_vdtor(LoadWaitSpinner * this)`
-    pub slot_0: *const c_void,
-    /// `LoadWaitSpinner::BSTEventSink_BSSystemEvent_vfunc_1` at 0x5b9020 (rtti, high); signature (low): `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(LoadWaitSpinner * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl LoadWaitSpinner_vtable_30 {
-    pub const ID: u64 = 205793;
 }
 

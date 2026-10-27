@@ -2216,7 +2216,7 @@ pub struct MapCameraStates__World {
     pub id: u32,
     /// +0x1C `undefined4`, semantic; alignment padding to 0x20 (high)
     pub padding1C: u32,
-    /// +0x20 `class:NiPoint3`, semantic; NiPoint3 point the map was configured around (entry point or marker) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; SetPositionAndBounds 0x998060
+    /// +0x20 `class:NiPoint3`, semantic; NiPoint3 point the map was configured around (entry point or marker) (high)
     pub basePosition: crate::NiPoint3,
     /// +0x2C `class:NiPoint3`, semantic; NiPoint3 pan offset (x, y moved by input; z only reset) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
     pub panOffset: crate::NiPoint3,

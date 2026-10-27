@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `InitFixedString32FromLookupName` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 445459, rva 0x12abdc0).
-/// `undefined8 * InitFixedString32FromLookupName(undefined8 * param_1, int param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fixed_string32_from_lookup_name(param_1: *mut u64, param_2: i32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(445459, (*mut u64, i32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `InitFixedString512FromCString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 450039, rva 0x1390280).
-/// `ulonglong * InitFixedString512FromCString(ulonglong * param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fixed_string512_from_c_string(param_1: *mut u64, param_2: *mut c_void, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(450039, (*mut u64, *mut c_void, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `InitFixedStringFromCString` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 15451, rva 0x20d060).
-/// `longlong * InitFixedStringFromCString(longlong * param_1, char * param_2, undefined8 param_3, char * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fixed_string_from_c_string(param_1: *mut i64, param_2: *mut c_char, param_3: u64, param_4: *mut c_char) -> *mut i64 { unsafe { function!(15451, (*mut i64, *mut c_char, u64, *mut c_char) -> *mut i64)(param_1, param_2, param_3, param_4) } }
 /// `InitFixedStringFromConstant` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 448987, rva 0x12fff00).
 /// `ulonglong * InitFixedStringFromConstant(ulonglong * param_1)`
 ///
@@ -12813,3 +12792,24 @@ pub unsafe fn open_archive_with_registration_listener(param_1: u64, param_2: *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn open_binary_file_reader(param_1: *mut i32, param_2: *mut c_char) -> *mut i32 { unsafe { function!(449320, (*mut i32, *mut c_char) -> *mut i32)(param_1, param_2) } }
+/// `OpenBinkMovie` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90290, rva 0x11b3a50).
+/// `ulonglong OpenBinkMovie(longlong param_1, longlong * param_2, ulonglong param_3, ulonglong param_4, char param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_bink_movie(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64, param_5: c_char) -> u64 { unsafe { function!(90290, (i64, *mut i64, u64, u64, c_char) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `OpenBookMenu` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51053, rva 0x907290).
+/// `undefined OpenBookMenu(longlong * param_1, longlong param_2, longlong param_3, undefined8 param_4, undefined4 * param_5, undefined8 * param_6, undefined4 param_7, char param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_book_menu(param_1: *mut i64, param_2: i64, param_3: i64, param_4: u64, param_5: *mut u32, param_6: *mut u64, param_7: u32, param_8: c_char) -> u64 { unsafe { function!(51053, (*mut i64, i64, i64, u64, *mut u32, *mut u64, u32, c_char) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `OpenContainerMenu` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51140, rva 0x911fb0).
+/// `undefined OpenContainerMenu(longlong param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_container_menu(param_1: i64, param_2: i32) -> u64 { unsafe { function!(51140, (i64, i32) -> u64)(param_1, param_2) } }

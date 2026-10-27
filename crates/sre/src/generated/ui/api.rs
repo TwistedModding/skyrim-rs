@@ -165,6 +165,15 @@ impl crate::BSScaleformManager {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn end_display(renderConfigHolder: *mut c_void) { unsafe { function!(82733, (*mut c_void))(renderConfigHolder) } }
+    /// `BSScaleformManager::LoadMovie`: formats 'Interface/%s.swf' (else 'Interface/Exported/%s.gfx'), creates the definition through the loader (flags 0x82), instantiates the view (movieDef vt[0xc0]), sets scale mode, background alpha (movie variable 'BackgroundAlpha' clamped, else the argument), safe rect, viewport, the menu's FxDelegate, Advance(0,2), calls _root.InitExtensions and _root.SetPlatform, stores the view into *outView releasing the old one
+    ///
+    /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82325, rva 0x116fda0.
+    /// `bool (BSScaleformManager* this, IMenu* menu, GFxMovieView** outView, const char* name, GFxScaleMode scaleMode, float backgroundAlpha)`
+    ///
+    /// # Safety
+    /// `outView`, `name` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn load_movie(&self, menu: *mut crate::IMenu, outView: *mut *mut crate::GFxMovieView, name: *const c_char, scaleMode: crate::GFxScaleMode, backgroundAlpha: f32) -> bool { unsafe { function!(82325, (*const Self, *mut crate::IMenu, *mut *mut crate::GFxMovieView, *const c_char, crate::GFxScaleMode, f32) -> bool)(core::ptr::from_ref(self), menu, outView, name, scaleMode, backgroundAlpha) } }
     /// `BSScaleformManager::Shutdown`: releases image loader, font map, loader, render config, the allocator, clears 0x369b060
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82324, rva 0x116fc90.
@@ -262,16 +271,6 @@ impl crate::Console {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
-    /// `Console::ProcessMessage`, vtable slot 4: ConsoleData updates (flush log, select ref, execute, clear history), show/hide, key input
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `u32 (Console* this, UIMessage* msg)`
-    /// May be null: `msg`.
-    ///
-    /// # Safety
-    /// `msg` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), msg) } }
     /// `Console::Create`: creator registered under 'Console'
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 442696, rva 0x90d400.
@@ -466,16 +465,6 @@ impl crate::HUDMenu {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
-    /// `HUDMenu::ProcessMessage`, vtable slot 4: handles HUD messages; HUDData (type at data+0x10) on 'HUD Menu' drives the AS calls
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `u32 (HUDMenu* this, UIMessage* msg)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `msg` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), msg) } }
     /// `HUDMenu::Create`: menu creator registered under 'HUD Menu'
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51730, rva 0x93c8a0.
@@ -627,6 +616,16 @@ impl crate::IMenu {
     /// `void (IMenu* this)`
     #[inline]
     pub fn pre_display(&self) { unsafe { virtual_function!(self, 7, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `IMenu::ProcessMessage`, vtable slot 4: the UI message handler: every message ProcessMessages delivers (show 1, hide 3/4, Scaleform event 6, user event 7, the per-frame type 0, ...). IMenu's default handles type 6 by passing the BSUIScaleformData's GFx event (data+0x10) to movie slot 0x168 and returns 0; anything else returns 2
+    ///
+    /// Semantic, ui pass, high; called through the object's vtable.
+    /// `UIMessageResult (IMenu* this, UIMessage* message)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    ///
+    /// # Safety
+    /// `message` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_message(&self, message: *mut crate::UIMessage) -> Result<crate::UIMessageResult, u32> { unsafe { let raw = virtual_function!(self, 4, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), message); crate::UIMessageResult::from_u32(raw).ok_or(raw) } }
     /// `IMenu::Refresh`, vtable slot 3: request to rebuild the menu's data on its next update; empty in IMenu
     ///
     /// Semantic, ui pass, low; called through the object's vtable.
@@ -1054,16 +1053,6 @@ impl crate::MessageBoxMenu {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
-    /// `MessageBoxMenu::ProcessMessage`, vtable slot 4: on show (1) shows the top queued box unless 'Loading Menu' is open; refuses hide (3) while boxes remain
-    ///
-    /// Semantic, ui pass, high; called through the object's vtable.
-    /// `u32 (MessageBoxMenu* this, UIMessage* msg)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `msg` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), msg) } }
     /// `MessageBoxMenu::ButtonPress`: AS 'buttonPress' callback: button = top.buttonBase + (u32)args[0]; stores top.type in g_LastMessageBoxType, plays 'UIMenuOK', removes and deletes the top box, showing=0, ShowNextMessage, then callback->Run(button)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52279, rva 0x962f50.

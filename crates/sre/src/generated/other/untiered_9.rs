@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SendType5MessageWithRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36898, rva 0x667ad0).
-/// `undefined SendType5MessageWithRef(undefined8 param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn send_type5_message_with_ref(param_1: u64, param_2: i64) -> u64 { unsafe { function!(36898, (u64, i64) -> u64)(param_1, param_2) } }
-/// `SendWeaponAttackEvent` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 40790, rva 0x762460).
-/// `undefined SendWeaponAttackEvent(undefined8 param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn send_weapon_attack_event(param_1: u64) -> u64 { unsafe { function!(40790, (u64) -> u64)(param_1) } }
-/// `SendWebSocketFrameType10Locked` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 452957, rva 0x146dc10).
-/// `undefined SendWebSocketFrameType10Locked(longlong param_1, undefined8 param_2, undefined4 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn send_web_socket_frame_type10_locked(param_1: i64, param_2: u64, param_3: *mut u32) -> u64 { unsafe { function!(452957, (i64, u64, *mut u32) -> u64)(param_1, param_2, param_3) } }
 /// `SendWebSocketNotificationWithHeader` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 100970, rva 0x1420530).
 /// `undefined SendWebSocketNotificationWithHeader(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, longlong * param_5, undefined8 param_6, undefined8 param_7)`
 ///
@@ -13961,3 +13940,24 @@ pub unsafe fn try_cast_shout_level(param_1: *mut i64, param_2: i64, param_3: u32
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn try_claim_field_pointers(param_1: i64, param_2: *mut i64) -> u8 { unsafe { function!(63455, (i64, *mut i64) -> u8)(param_1, param_2) } }
+/// `TryClaimFreeArc` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47036, rva 0x85b510).
+/// `undefined8 TryClaimFreeArc(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_claim_free_arc(param_1: i64, param_2: i64) -> u64 { unsafe { function!(47036, (i64, i64) -> u64)(param_1, param_2) } }
+/// `TryConsumePendingValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 92773, rva 0x1230670).
+/// `bool TryConsumePendingValue(undefined4 * param_1, undefined4 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_consume_pending_value(param_1: *mut u32, param_2: *mut u32) -> u8 { unsafe { function!(92773, (*mut u32, *mut u32) -> u8)(param_1, param_2) } }
+/// `TryCopyField58OfVfunc28Object` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49946, rva 0x8d9290).
+/// `bool TryCopyField58OfVfunc28Object(longlong * param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_copy_field58_of_vfunc28_object(param_1: *mut i64, param_2: *mut u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(49946, (*mut i64, *mut u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }

@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ComputeBudgetCategoryUsage` at 0x213d70 (decompiler, medium); signature (medium): `float ComputeBudgetCategoryUsage(longlong param_1, uint param_2)`
+pub const ComputeBudgetCategoryUsage: u64 = 15568;
+/// `ComputeCameraCasterCollision` at 0x8fa5d0 (runtime, high); signature (untiered): `undefined8 ComputeCameraCasterCollision(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`; semantic: clip cameraPos against the world between the target point and the camera; returns true when moved; manages fadedActorHandle (high); signature `bool (PlayerCamera* this, NiPoint3* cameraPos, bool fadeActors)`
+pub const ComputeCameraCasterCollision: u64 = 50832;
+/// `ComputeCameraCasterCollision` as a function pointer type (high).
+pub type ComputeCameraCasterCollision_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, cameraPos: *mut crate::NiPoint3, fadeActors: bool) -> bool;
+/// `ComputeCameraShakeRotation` at 0x558600 (runtime, high); signature (untiered): `float ComputeCameraShakeRotation(undefined4 param_1, float * param_2)`; semantic: when strength and time left are > 1e-4: UpdateNode the CameraShake.nif root at the time stored at (root+0x18)+0x1c (its reference pose), keep that local rotation R0, UpdateNode again at `time`, outDelta = inverse(R0) * R(time); timeLeft -= g_FrameDelta; returns strength, faded linearly over the last fCameraShakeFadeTime; else zeroes both and returns 0 (high); signature `float (float time, NiMatrix3* outDelta)`
+pub const ComputeCameraShakeRotation: u64 = 33013;
+/// `ComputeCameraShakeRotation` as a function pointer type (high).
+pub type ComputeCameraShakeRotation_fn = unsafe extern "C" fn(time: f32, outDelta: *mut crate::NiMatrix3) -> f32;
+/// `ComputeCapsuleCapsuleContact` at 0xc948d0 (decompiler, medium); signature (untiered): `undefined8 ComputeCapsuleCapsuleContact(float * param_1, float param_2, float * param_3, undefined8 param_4, float param_5, float * param_6)`
+pub const ComputeCapsuleCapsuleContact: u64 = 67079;
+/// `ComputeCapsuleCapsuleMinkowskiSupport` at 0x56a550 (decompiler, medium); signature (medium): `float * ComputeCapsuleCapsuleMinkowskiSupport(float * param_1, longlong param_2, longlong param_3, float * param_4)`
+pub const ComputeCapsuleCapsuleMinkowskiSupport: u64 = 33350;
+/// `ComputeCapsuleSegmentFromCenterAndAxis` at 0xf39b40 (decompiler, medium); signature (medium): `undefined ComputeCapsuleSegmentFromCenterAndAxis(longlong param_1)`
+pub const ComputeCapsuleSegmentFromCenterAndAxis: u64 = 72153;
+/// `ComputeCapsuleSupportPoint` at 0x5691d0 (decompiler, medium); signature (medium): `float * ComputeCapsuleSupportPoint(float * param_1, longlong param_2, float * param_3)`
+pub const ComputeCapsuleSupportPoint: u64 = 33341;
+/// `ComputeCapsuleTaperedCapsuleMinkowskiSupport` at 0x56a9d0 (decompiler, medium); signature (medium): `float * ComputeCapsuleTaperedCapsuleMinkowskiSupport(float * param_1, longlong param_2, longlong param_3, float * param_4)`
+pub const ComputeCapsuleTaperedCapsuleMinkowskiSupport: u64 = 33354;
+/// `ComputeCeilOfArg0` at 0xdb6b50 (decompiler, high); signature (untiered): `undefined ComputeCeilOfArg0(longlong param_1)`
+pub const ComputeCeilOfArg0: u64 = 86210;
+/// `ComputeCellGridHashKey` at 0x2b9650 (decompiler, medium); signature (medium): `uint ComputeCellGridHashKey(longlong param_1)`
+pub const ComputeCellGridHashKey: u64 = 18885;
+/// `ComputeCellGridOrigin` at 0x2b2960 (decompiler, medium); signature (medium): `float * ComputeCellGridOrigin(longlong param_1, float * param_2)`
+pub const ComputeCellGridOrigin: u64 = 18785;
+/// `ComputeCellGridPriority` at 0x1a3b50 (decompiler, medium); signature (untiered): `undefined4 ComputeCellGridPriority(longlong param_1, longlong param_2, float * param_3)`
+pub const ComputeCellGridPriority: u64 = 13321;
 /// `ComputeCellPlacementPositionAndRotation` at 0x2c35c0 (decompiler, medium); signature (medium): `undefined ComputeCellPlacementPositionAndRotation(TESObjectCELL * param_1, TESObjectCELL * param_2, undefined4 * param_3, undefined8 param_4)`
 pub const ComputeCellPlacementPositionAndRotation: u64 = 19075;
 /// `ComputeCentroidIfUnset` at 0x10f89e0 (decompiler, medium); signature (untiered): `undefined ComputeCentroidIfUnset(longlong param_1)`
@@ -6795,7 +6823,7 @@ pub const CreateInventoryGrenadeProjectile: u64 = 44109;
 pub const CreateJsonObjectMemberNode: u64 = 442910;
 /// `CreateLabeledButton` at 0x15e5de0 (decompiler, medium); signature (untiered): `undefined CreateLabeledButton(longlong param_1, void * param_2, undefined8 param_3, longlong * param_4, undefined8 param_5, undefined8 param_6, undefined4 param_7)`
 pub const CreateLabeledButton: u64 = 454181;
-/// `CreateLandShaderProperty` at 0x2b3380 (semantic, medium); signature (untiered): `undefined8 CreateLandShaderProperty(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: landscape lighting property: bit 14, bit 8 always, bit 9 = bDrawLandShadows, bit 46, bit 0 = bLandSpecular (medium); signature `? (...)`
+/// `CreateLandShaderProperty` at 0x2b3380 (semantic, medium); signature (untiered): `undefined8 CreateLandShaderProperty(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: landscape lighting property: bit 14, bit 8 always, bit 9 = bDrawLandShadows, bit 46, bit 0 = bLandSpecular (medium); signature `bool (TESObjectLAND* land)`
 pub const CreateLandShaderProperty: u64 = 18791;
 /// `CreateLandingCombatPath` at 0x8eda70 (decompiler, medium); signature (untiered): `CombatPath * CreateLandingCombatPath(longlong param_1, undefined4 * param_2, undefined4 param_3, uint param_4, uint param_5, int param_6)`
 pub const CreateLandingCombatPath: u64 = 50527;
@@ -7755,39 +7783,3 @@ pub const DeallocateStride0x38: u64 = 525717;
 pub const DeallocateStride0x58: u64 = 525715;
 /// `DeallocateStride0x78` at 0x12f4d50 (decompiler, medium); signature (untiered): `undefined DeallocateStride0x78(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
 pub const DeallocateStride0x78: u64 = 525716;
-/// `DeallocateStride16Buffer` at 0x1274990 (decompiler, medium); signature (untiered): `undefined DeallocateStride16Buffer(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateStride16Buffer: u64 = 505870;
-/// `DeallocateViaMemoryManager` at 0x10bf3c0 (decompiler, high); signature (untiered): `undefined DeallocateViaMemoryManager(undefined8 param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
-pub const DeallocateViaMemoryManager: u64 = 79939;
-/// `DeallocateWithLargeBlockAlignment` at 0x10d430 (decompiler, high); signature (high): `undefined DeallocateWithLargeBlockAlignment(undefined8 param_1, void * param_2, ulonglong param_3, undefined8 param_4)`
-pub const DeallocateWithLargeBlockAlignment: u64 = 439871;
-/// `DeathEmoteHandler::vdtor` at 0x7d3c40 (layout_inference, medium); signature (low): `DeathEmoteHandler * vdtor(DeathEmoteHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const DeathEmoteHandler__vdtor: u64 = 43310;
-/// `DeathEmoteHandler::vfunc_1` at 0x7ce440 (rtti, high); signature (low): `undefined1 vfunc_1(DeathEmoteHandler * this, longlong param_1)`
-pub const DeathEmoteHandler__vfunc_1: u64 = 42872;
-/// `DeathStopHandler::vdtor` at 0x7d3c70 (layout_inference, medium); signature (low): `DeathStopHandler * vdtor(DeathStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const DeathStopHandler__vdtor: u64 = 43311;
-/// `DeathStopHandler::vfunc_1` at 0x7ce160 (rtti, high); signature (low): `undefined8 vfunc_1(DeathStopHandler * this, longlong * param_1)`
-pub const DeathStopHandler__vfunc_1: u64 = 42865;
-/// `DebugText::ctor` at 0x11780d0 (layout_inference, medium); signature (low): `DebugText * ctor(DebugText * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const DebugText__ctor: u64 = 82487;
-/// `DebugText::dtor` at 0x11782c0 (layout_inference, high); signature (low): `undefined dtor(DebugText * this, longlong param_1, longlong * param_2, longlong * param_3)`
-pub const DebugText__dtor: u64 = 82488;
-/// `DebugText::vdtor` at 0x117a060 (slot_propagation, medium); signature (low): `DebugText * vdtor(DebugText * this, ulonglong param_1, longlong * param_2, longlong * param_3)`
-pub const DebugText__vdtor: u64 = 82533;
-/// `DebugText::vfunc_1` at 0x1178b40 (rtti, high); signature (high): `undefined vfunc_1(DebugText * this)`
-pub const DebugText__vfunc_1: u64 = 82496;
-/// `DebugText::vfunc_10` at 0x1178f50 (rtti, high); signature (low): `undefined vfunc_10(DebugText * this, undefined8 param_1, undefined4 param_2, undefined4 param_3, undefined8 param_4)`
-pub const DebugText__vfunc_10: u64 = 82505;
-/// `DebugText::vfunc_11` at 0x1178f90 (rtti, high); signature (low): `undefined4 vfunc_11(DebugText * this, int param_1)`
-pub const DebugText__vfunc_11: u64 = 82506;
-/// `DebugText::vfunc_12` at 0x117a110 (rtti, high); signature (low): `undefined vfunc_12(DebugText * this, int param_1, undefined4 param_2)`
-pub const DebugText__vfunc_12: u64 = 82536;
-/// `DebugText::vfunc_2` at 0x1178c60 (rtti, high); signature (low): `undefined vfunc_2(DebugText * this, int param_1, int param_2)`
-pub const DebugText__vfunc_2: u64 = 82497;
-/// `DebugText::vfunc_3` at 0x1178cc0 (rtti, high); signature (high): `undefined vfunc_3(DebugText * this)`
-pub const DebugText__vfunc_3: u64 = 82499;
-/// `DebugText::vfunc_4` at 0x1178c80 (rtti, high); signature (low): `undefined vfunc_4(DebugText * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const DebugText__vfunc_4: u64 = 82498;
-/// `DebugText::vfunc_5` at 0x1178d00 (rtti, high); signature (low): `undefined vfunc_5(DebugText * this, int param_2, int param_3, float param_4, undefined8 param_5, undefined8 param_6, undefined8 * param_7)`
-pub const DebugText__vfunc_5: u64 = 82500;

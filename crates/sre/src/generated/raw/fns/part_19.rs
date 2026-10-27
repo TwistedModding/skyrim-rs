@@ -3,6 +3,50 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESObject::vfunc_71` at 0x276430 (rtti, medium); signature (low): `BSFadeNode_vtbl * vfunc_71(TESObject * this, longlong param_1, undefined8 param_2, undefined1 * param_3)`
+pub const TESObject__vfunc_71: u64 = 17653;
+/// `TESObjectACTI::BGSDestructibleObjectForm_vdtor` at 0x27aca4 (slot_propagation, medium); signature (high): `undefined BGSDestructibleObjectForm_vdtor(TESObjectACTI * this)`
+pub const TESObjectACTI__BGSDestructibleObjectForm_vdtor: u64 = 17717;
+/// `TESObjectACTI::BGSKeywordForm_vdtor` at 0x27acbc (slot_propagation, medium); signature (high): `undefined BGSKeywordForm_vdtor(TESObjectACTI * this)`
+pub const TESObjectACTI__BGSKeywordForm_vdtor: u64 = 17719;
+/// `TESObjectACTI::BGSOpenCloseForm_vdtor` at 0x27acb0 (slot_propagation, medium); signature (high): `undefined BGSOpenCloseForm_vdtor(TESObjectACTI * this)`
+pub const TESObjectACTI__BGSOpenCloseForm_vdtor: u64 = 17718;
+/// `TESObjectACTI::LoadGame` at 0x27a5f0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, char * param_3)`
+pub const TESObjectACTI__LoadGame: u64 = 17706;
+/// `TESObjectACTI::SaveGame` at 0x27a5a0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectACTI * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectACTI__SaveGame: u64 = 17705;
+/// `TESObjectACTI::TESFullName_vdtor` at 0x27ac8c (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESObjectACTI * this)`
+pub const TESObjectACTI__TESFullName_vdtor: u64 = 17715;
+/// `TESObjectACTI::TESModelTextureSwap_vdtor` at 0x27ac98 (slot_propagation, medium); signature (high): `undefined TESModelTextureSwap_vdtor(TESObjectACTI * this)`
+pub const TESObjectACTI__TESModelTextureSwap_vdtor: u64 = 17716;
+/// `TESObjectACTI::ctor` at 0x279580 (layout_inference, high); signature (low): `TESObjectACTI * ctor(TESObjectACTI * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const TESObjectACTI__ctor: u64 = 17690;
+/// `TESObjectACTI::dtor` at 0x279690 (layout_inference, high); signature (low): `undefined dtor(TESObjectACTI * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectACTI__dtor: u64 = 17691;
+/// `TESObjectACTI::vdtor` at 0x27ad00 (layout_inference, medium); signature (low): `TESObjectACTI * vdtor(TESObjectACTI * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectACTI__vdtor: u64 = 17721;
+/// `TESObjectACTI::vfunc_19` at 0x279ce0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectACTI * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+pub const TESObjectACTI__vfunc_19: u64 = 17696;
+/// `TESObjectACTI::vfunc_34` at 0x267690 (rtti, medium); signature (high): `byte vfunc_34(TESObjectACTI * this)`
+pub const TESObjectACTI__vfunc_34: u64 = 17198;
+/// `TESObjectACTI::vfunc_4` at 0x279750 (rtti, medium); signature (high): `undefined vfunc_4(TESObjectACTI * this)`
+pub const TESObjectACTI__vfunc_4: u64 = 17692;
+/// `TESObjectACTI::vfunc_42` at 0x27a690 (rtti, medium); signature (high): `bool vfunc_42(TESObjectACTI * this)`
+pub const TESObjectACTI__vfunc_42: u64 = 17707;
+/// `TESObjectACTI::vfunc_5` at 0x279780 (rtti, medium); signature (high): `undefined vfunc_5(TESObjectACTI * this)`
+pub const TESObjectACTI__vfunc_5: u64 = 17693;
+/// `TESObjectACTI::vfunc_55` at 0x27a130 (rtti, high); signature (low): `undefined8 vfunc_55(TESObjectACTI * this, longlong * param_1, uint * param_2, uint * param_3, undefined8 param_4, undefined4 param_5)`
+pub const TESObjectACTI__vfunc_55: u64 = 17702;
+/// `TESObjectACTI::vfunc_6` at 0x279890 (rtti, high); signature (low): `undefined8 vfunc_6(TESObjectACTI * this, int * param_1, undefined8 param_2, char * param_3)`
+pub const TESObjectACTI__vfunc_6: u64 = 17694;
+/// `TESObjectACTI::vfunc_61` at 0x2677d0 (rtti, medium); signature (high): `undefined8 vfunc_61(TESObjectACTI * this)`
+pub const TESObjectACTI__vfunc_61: u64 = 17202;
+/// `TESObjectACTI::vfunc_76` at 0x27a320 (rtti, medium); signature (low): `undefined8 vfunc_76(TESObjectACTI * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectACTI__vfunc_76: u64 = 17703;
+/// `TESObjectACTI::vfunc_77` at 0x27a590 (rtti, medium); signature (low): `undefined1 vfunc_77(void)`
+pub const TESObjectACTI__vfunc_77: u64 = 17704;
+/// `TESObjectANIO::GetFormEditorID` at 0x27bb70 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(TESObjectANIO * this)`
+pub const TESObjectANIO__GetFormEditorID: u64 = 17743;
 /// `TESObjectANIO::SetFormEditorID` at 0x27b9f0 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(TESObjectANIO * this, char * param_1, undefined8 param_2, ulonglong param_3)`
 pub const TESObjectANIO__SetFormEditorID: u64 = 17739;
 /// `TESObjectANIO::TESModelTextureSwap_vdtor` at 0x27bad4 (slot_propagation, medium); signature (high): `undefined TESModelTextureSwap_vdtor(TESObjectANIO * this)`
@@ -8699,23 +8743,3 @@ pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak__
 pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak__ctor: u64 = 46563;
 /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::ctor_sub0` at 0x84dc60 (callgraph, medium); signature (untiered): `uint ctor_sub0(void)`
 pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak__ctor_sub0: u64 = 46768;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::ctor_sub1` at 0x84e4d0 (callgraph, medium); signature (untiered): `uint ctor_sub1(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak__ctor_sub1: u64 = 46783;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::ctor_sub2` at 0x84ed40 (callgraph, medium); signature (untiered): `uint ctor_sub2(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak__ctor_sub2: u64 = 46798;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::ctor_sub3` at 0x84f5b0 (callgraph, medium); signature (untiered): `uint ctor_sub3(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak__ctor_sub3: u64 = 46813;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::ctor_sub4` at 0x84fe20 (callgraph, medium); signature (untiered): `uint ctor_sub4(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak__ctor_sub4: u64 = 46828;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::vdtor` at 0x843370 (slot_propagation, medium); signature (low): `AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak__vdtor: u64 = 46018;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm_vdtor` at 0x830a88 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__AutoRegisterCombatObject__be00fdb6866b: u64 = 45148;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm_vdtor` at 0x830ae4 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__AutoRegisterCombatObject__5eff4ced0c88: u64 = 45152;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm_vdtor` at 0x830af0 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__AutoRegisterCombatObject__d7a883836f3d: u64 = 45153;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm_vdtor` at 0x830acc (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__AutoRegisterCombatObject__972354c97be4: u64 = 45150;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vdtor` at 0x830ad8 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__AutoRegisterCombatObject__fa3ac5409b92: u64 = 45151;

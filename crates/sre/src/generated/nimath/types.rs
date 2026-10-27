@@ -322,3 +322,96 @@ const _: () = assert!(core::mem::offset_of!(hkVector4, y) == 0x4);
 const _: () = assert!(core::mem::offset_of!(hkVector4, z) == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkVector4, w) == 0xC);
 
+/// values in data/uimessageresults.json (nimath pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum UIMessageResult {
+    /// `Handled`
+    Handled = 0,
+    /// `Refused`
+    Refused = 1,
+    /// `PassOn`
+    PassOn = 2,
+}
+
+impl UIMessageResult {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Handled),
+            1 => Some(Self::Refused),
+            2 => Some(Self::PassOn),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/gfxscalemodes.json (nimath pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum GFxScaleMode {
+    /// `NoScale`
+    NoScale = 0,
+    /// `ShowAll`
+    ShowAll = 1,
+    /// `ExactFit`
+    ExactFit = 2,
+    /// `NoBorder`
+    NoBorder = 3,
+}
+
+impl GFxScaleMode {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::NoScale),
+            1 => Some(Self::ShowAll),
+            2 => Some(Self::ExactFit),
+            3 => Some(Self::NoBorder),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/gfxalignments.json (nimath pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum GFxAlignment {
+    /// `Center`
+    Center = 0,
+    /// `TopCenter`
+    TopCenter = 1,
+    /// `BottomCenter`
+    BottomCenter = 2,
+    /// `CenterLeft`
+    CenterLeft = 3,
+    /// `CenterRight`
+    CenterRight = 4,
+    /// `TopLeft`
+    TopLeft = 5,
+    /// `TopRight`
+    TopRight = 6,
+    /// `BottomLeft`
+    BottomLeft = 7,
+    /// `BottomRight`
+    BottomRight = 8,
+}
+
+impl GFxAlignment {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Center),
+            1 => Some(Self::TopCenter),
+            2 => Some(Self::BottomCenter),
+            3 => Some(Self::CenterLeft),
+            4 => Some(Self::CenterRight),
+            5 => Some(Self::TopLeft),
+            6 => Some(Self::TopRight),
+            7 => Some(Self::BottomLeft),
+            8 => Some(Self::BottomRight),
+            _ => None,
+        }
+    }
+}
+

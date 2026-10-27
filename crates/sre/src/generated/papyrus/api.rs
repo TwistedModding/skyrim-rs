@@ -400,7 +400,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// `void (BSScript::Internal::VirtualMachine* this, float budget)`
     #[inline]
     pub fn update(&self, budget: f32) { unsafe { virtual_function!(self, 4, (*const Self, f32))(core::ptr::from_ref(self), budget) } }
-    /// `BSScript::Internal::VirtualMachine::AttachObjectToHandle`: bind interface slot 4: removes the object from the list of the handle it has, appends it (with a reference; the flag in bit 0 of the stored pointer) to the new handle's list in the +0x93a0 map and stores the handle in the object (+0x20)
+    /// `BSScript::Internal::VirtualMachine::AttachObjectToHandle`: bind interface slot 4: removes the object from the list of the handle it has, appends it (with a reference; the flag in bit 0 of the stored pointer) to the new handle's list in the +0x93a0 map and stores the handle in the object (+0x20); request GA2: the caller's reference is neither taken nor released, but removing the object from its previous handle's list releases the reference that list held, so an object rebound to a handle it already had (or to a new one) must still be held by the caller (skyrim-rs crashed in Object::Destroy from ReleaseScriptObjectPtr at +0x2bd binding an uncounted pointer a second time)
     ///
     /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104821, rva 0x14b5160.
     /// `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle, bool flag)`
@@ -409,15 +409,15 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// `object` must point to what the engine expects.
     #[inline]
     pub unsafe fn attach_object_to_handle(&self, object: *mut c_void, handle: u64, flag: bool) { unsafe { function!(104821, (*const Self, *mut c_void, u64, bool))(core::ptr::from_ref(self).byte_add(0x10), object, handle, flag) } }
-    /// `BSScript::Internal::VirtualMachine::BindObject`: bind interface slot 3, what ObjectBindPolicy::BindObject forwards to: attaches the object to the handle (slot 4), then walks the object's type and its parents for the first class with a registered type id that HandleIsType accepts for the handle; when none does, the object's own handle is reset to the invalid handle while it stays in the handle's object list
+    /// `BSScript::Internal::VirtualMachine::BindObject`: bind interface slot 3, what ObjectBindPolicy::BindObject forwards to (request GA2: a fourth argument, the bool in r9, reaches slot 4 AttachObjectToHandle unchanged at 0x14b5019 and is ORed into the stored object pointer, so a caller must pass 0/1, never leave r9 undefined: skyrim-rs crashed with garbage there; the policy passes false, the engine passes false for forms and 1 for some loaded script objects): attaches the object to the handle (slot 4), then walks the object's type and its parents for the first class with a registered type id that HandleIsType accepts for the handle; when none does, the object's own handle is reset to the invalid handle while it stays in the handle's object list
     ///
     /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104820, rva 0x14b4fb0.
-    /// `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle)`
+    /// `void (IVMObjectBindInterface* this, BSTSmartPointer<BSScript::Object>* object, u64 handle, bool flag)`
     ///
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64) { unsafe { function!(104820, (*const Self, *mut c_void, u64))(core::ptr::from_ref(self).byte_add(0x10), object, handle) } }
+    pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64, flag: bool) { unsafe { function!(104820, (*const Self, *mut c_void, u64, bool))(core::ptr::from_ref(self).byte_add(0x10), object, handle, flag) } }
     /// `BSScript::Internal::VirtualMachine::DumpRunningStacksToLog`: IVMDebugInterface slot 1 (this = VM+0x20): dumps the queued calls and every stack of the running-stacks map (VM+0x9320 under VM+0x9318) through DumpStackToLog
     ///
     /// Semantic, vmstack pass, medium; ledger semantic evidence, name medium; id 104844, rva 0x14b8fa0.

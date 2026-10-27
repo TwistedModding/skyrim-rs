@@ -3,6 +3,48 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiBlendFloatInterpolator::vfunc_26` at 0xf68850 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBlendFloatInterpolator * this, longlong * param_1)`
+pub const NiBlendFloatInterpolator__vfunc_26: u64 = 72888;
+/// `NiBlendFloatInterpolator::vfunc_27` at 0xf68860 (rtti, high); signature (low): `undefined vfunc_27(NiBlendFloatInterpolator * this, longlong * param_1)`
+pub const NiBlendFloatInterpolator__vfunc_27: u64 = 72889;
+/// `NiBlendFloatInterpolator::vfunc_28` at 0xf688c0 (rtti, high); signature (low): `undefined8 vfunc_28(NiBlendFloatInterpolator * this, longlong * param_1)`
+pub const NiBlendFloatInterpolator__vfunc_28: u64 = 72890;
+/// `NiBlendFloatInterpolator::vfunc_37` at 0xf68f60 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
+pub const NiBlendFloatInterpolator__vfunc_37: u64 = 72904;
+/// `NiBlendFloatInterpolator::vfunc_38` at 0xf68f40 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
+pub const NiBlendFloatInterpolator__vfunc_38: u64 = 72902;
+/// `NiBlendFloatInterpolator::vfunc_39` at 0xf68f50 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
+pub const NiBlendFloatInterpolator__vfunc_39: u64 = 72903;
+/// `NiBlendFloatInterpolator::vfunc_40` at 0xf68f70 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
+pub const NiBlendFloatInterpolator__vfunc_40: u64 = 72905;
+/// `NiBlendFloatInterpolator::vfunc_41` at 0xf68a10 (rtti, high); signature (low): `undefined8 vfunc_41(NiBlendFloatInterpolator * this, float param_1, undefined8 param_2, float * param_3)`
+pub const NiBlendFloatInterpolator__vfunc_41: u64 = 72893;
+/// `NiBlendFloatInterpolator::vfunc_42` at 0xf68f80 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
+pub const NiBlendFloatInterpolator__vfunc_42: u64 = 72906;
+/// `NiBlendFloatInterpolator::vfunc_44` at 0xf68bd0 (rtti, high); signature (low): `undefined1 vfunc_44(void)`
+pub const NiBlendFloatInterpolator__vfunc_44: u64 = 72894;
+/// `NiBlendFloatInterpolator::vfunc_59` at 0xf68c20 (rtti, high); signature (low): `undefined vfunc_59(NiBlendFloatInterpolator * this, longlong * param_1)`
+pub const NiBlendFloatInterpolator__vfunc_59: u64 = 72896;
+/// `NiBlendInterpolator::ctor` at 0xf5cba0 (layout_inference, high); signature (low): `NiBlendInterpolator * ctor(NiBlendInterpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
+pub const NiBlendInterpolator__ctor: u64 = 72550;
+/// `NiBlendInterpolator::ctor` at 0xf5ccf0 (layout_inference, high); signature (high): `NiBlendInterpolator * ctor(NiBlendInterpolator * this)`
+pub const NiBlendInterpolator__ctor_2: u64 = 72551;
+/// `NiBlendInterpolator::dtor` at 0xf5c300 (layout_inference, high); signature (high): `undefined dtor(NiBlendInterpolator * this)`
+pub const NiBlendInterpolator__dtor: u64 = 72535;
+/// `NiBlendInterpolator::vdtor` at 0xf5d540 (layout_inference, medium); signature (low): `NiBlendInterpolator * vdtor(NiBlendInterpolator * this, uint param_1, longlong param_2, undefined * param_3)`
+pub const NiBlendInterpolator__vdtor: u64 = 72564;
+/// `NiBlendInterpolator::vfunc_2` at 0xf5d5d0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiBlendInterpolator__vfunc_2: u64 = 72565;
+/// `NiBlendInterpolator::vfunc_24` at 0xf5b9c0 (rtti, high); signature (low): `undefined vfunc_24(NiBlendInterpolator * this, longlong param_1)`
+pub const NiBlendInterpolator__vfunc_24: u64 = 72530;
+/// `NiBlendInterpolator::vfunc_25` at 0xf5bdc0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiBlendInterpolator__vfunc_25: u64 = 72531;
+/// `NiBlendInterpolator::vfunc_26` at 0xf5bdd0 (rtti, high); signature (low): `undefined1 vfunc_26(NiBlendInterpolator * this, longlong * param_1)`
+pub const NiBlendInterpolator__vfunc_26: u64 = 72532;
+/// `NiBlendInterpolator::vfunc_27` at 0xf5be50 (rtti, high); signature (low): `undefined vfunc_27(NiBlendInterpolator * this, longlong * param_1)`
+pub const NiBlendInterpolator__vfunc_27: u64 = 72533;
+/// `NiBlendInterpolator::vfunc_28` at 0xf5c190 (rtti, high); signature (low): `ulonglong vfunc_28(NiBlendInterpolator * this, longlong * param_1)`
+pub const NiBlendInterpolator__vfunc_28: u64 = 72534;
 /// `NiBlendInterpolator::vfunc_29` at 0xf5c9f0 (rtti, medium); signature (low): `undefined vfunc_29(NiBlendInterpolator * this, longlong param_1)`
 pub const NiBlendInterpolator__vfunc_29: u64 = 72548;
 /// `NiBlendInterpolator::vfunc_49` at 0xf5c6b0 (rtti, medium); signature (high): `undefined vfunc_49(NiBlendInterpolator * this)`
@@ -8571,29 +8613,3 @@ pub const Papyrus__ObjectReference__Lock: u64 = 56198;
 pub const Papyrus__ObjectReference__MoveTo: u64 = 56199;
 /// `Papyrus::ObjectReference::MoveToInteractionLocation` at 0xa46680 (papyrus_native, high); signature (low): `ulonglong MoveToInteractionLocation(longlong * param_1, uint param_2, longlong * param_3, longlong * param_4)`
 pub const Papyrus__ObjectReference__MoveToInteractionLocation: u64 = 56200;
-/// `Papyrus::ObjectReference::MoveToMyEditorLocation` at 0xa46950 (papyrus_native, high); signature (medium): `bool MoveToMyEditorLocation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__MoveToMyEditorLocation: u64 = 56201;
-/// `Papyrus::ObjectReference::MoveToNode` at 0xa46af0 (papyrus_native, high); signature (medium): `bool MoveToNode(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, BSFixedString * a1)`
-pub const Papyrus__ObjectReference__MoveToNode: u64 = 56202;
-/// `Papyrus::ObjectReference::PlaceActorAtMe` at 0xa47180 (papyrus_native, high); signature (medium): `Actor * PlaceActorAtMe(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESNPC * a0, uint a1, BGSEncounterZone * a2)`
-pub const Papyrus__ObjectReference__PlaceActorAtMe: u64 = 56204;
-/// `Papyrus::ObjectReference::PlaceAtMe` at 0xa46de0 (papyrus_native, high); signature (medium): `TESObjectREFR * PlaceAtMe(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1, bool a2, bool a3)`
-pub const Papyrus__ObjectReference__PlaceAtMe: u64 = 56203;
-/// `Papyrus::ObjectReference::PlayAnimation` at 0xa47370 (papyrus_native, high); signature (medium): `bool PlayAnimation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
-pub const Papyrus__ObjectReference__PlayAnimation: u64 = 56205;
-/// `Papyrus::ObjectReference::PlayAnimationAndWait` at 0xa473f0 (papyrus_native, high); signature (medium): `bool PlayAnimationAndWait(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, BSFixedString * a1)`
-pub const Papyrus__ObjectReference__PlayAnimationAndWait: u64 = 56206;
-/// `Papyrus::ObjectReference::PlayGamebryoAnimation` at 0xa47580 (papyrus_native, high); signature (medium): `bool PlayGamebryoAnimation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, bool a1, float a2)`
-pub const Papyrus__ObjectReference__PlayGamebryoAnimation: u64 = 56207;
-/// `Papyrus::ObjectReference::PlayImpactEffect` at 0xa477c0 (papyrus_native, high); signature (medium): `bool PlayImpactEffect(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BGSImpactDataSet * a0, BSFixedString * a1, float a2, float a3, float a4, float a5, bool a6, bool a7)`
-pub const Papyrus__ObjectReference__PlayImpactEffect: u64 = 56208;
-/// `Papyrus::ObjectReference::PlaySyncedAnimationAndWaitSS` at 0xa479f0 (papyrus_native, high); signature (medium): `bool PlaySyncedAnimationAndWaitSS(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, BSFixedString * a1, TESObjectREFR * a2, BSFixedString * a3, BSFixedString * a4)`
-pub const Papyrus__ObjectReference__PlaySyncedAnimationAndWaitSS: u64 = 56210;
-/// `Papyrus::ObjectReference::PlaySyncedAnimationAndWaitSS_sub0` at 0xa56190 (callgraph, medium); signature (untiered): `uint PlaySyncedAnimationAndWaitSS_sub0(longlong * param_1, undefined4 * param_2)`
-pub const Papyrus__ObjectReference__PlaySyncedAnimationAndWaitSS_sub0: u64 = 56488;
-/// `Papyrus::ObjectReference::PlaySyncedAnimationSS` at 0xa478c0 (papyrus_native, high); signature (medium): `bool PlaySyncedAnimationSS(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, TESObjectREFR * a1, BSFixedString * a2)`
-pub const Papyrus__ObjectReference__PlaySyncedAnimationSS: u64 = 56209;
-/// `Papyrus::ObjectReference::PlayTerrainEffect` at 0xa47cb0 (papyrus_native, high); signature (medium): `void PlayTerrainEffect(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, BSFixedString * a1)`
-pub const Papyrus__ObjectReference__PlayTerrainEffect: u64 = 56211;
-/// `Papyrus::ObjectReference::ProcessTrapHit` at 0xa47e60 (papyrus_native, high); signature (medium): `void ProcessTrapHit(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8, int a9, float a10)`
-pub const Papyrus__ObjectReference__ProcessTrapHit: u64 = 56212;

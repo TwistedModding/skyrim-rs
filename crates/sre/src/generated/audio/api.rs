@@ -1484,6 +1484,16 @@ pub unsafe fn set_category_frequency(handle: *mut *mut crate::BSISoundCategory, 
 /// `handle` must point to what the engine expects.
 #[inline]
 pub unsafe fn set_category_volume(handle: *mut *mut crate::BSISoundCategory, volume: f32) { unsafe { function!(67845, (*mut *mut crate::BSISoundCategory, f32))(handle, volume) } }
+/// `SetFlaggedCategoriesMuted`: when on: plays the default-object 0x99 sound on handle 0x20b36e0 and applies reverb default 0x9a, and mutes (fade 100) every SNCT with flags bit 0; when off: stops the handle and unmutes them
+///
+/// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 32061, rva 0x524080.
+/// `void (void* waterAudio, bool mute)`
+/// Retyped: void (?, bool on) -> void (void* waterAudio, bool mute): rcx is never read (first write MOV ECX,[tls index] at 0x524097); all three callers (0x529a7f WaterSystem::UpdateForCamera, 0x52d3ce, 0x99f680) pass rcx = [0x3203fe0], the object 0x523200 sets up at 0x3204090 (sizes its arrays from uWaterAudioSamplePointsToUse); dl is zero-extended (0x524094); true mutes the flagged sound categories (fade 100), false unmutes them.
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn set_flagged_categories_muted(waterAudio: *mut c_void, mute: bool) { unsafe { function!(32061, (*mut c_void, bool))(waterAudio, mute) } }
 /// `TESAudio::UpdatePerFrame`: main thread once per frame after the UI: category default object 0x92 frequency follows the time multiplier (0x33/0xe), then 0x5e8b80 and 0x5e8e30 (acoustic space, ambient)
 ///
 /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 35125, rva 0x5e8a50.

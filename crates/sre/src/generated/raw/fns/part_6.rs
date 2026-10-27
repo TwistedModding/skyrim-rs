@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CallIndexedHandleVfunc48` at 0xc5b0b0 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc48(undefined8 * param_1)`
+pub const CallIndexedHandleVfunc48: u64 = 65832;
+/// `CallIndexedHandleVfunc70WithArg` at 0xc5af00 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc70WithArg(undefined8 * param_1, undefined4 param_2)`
+pub const CallIndexedHandleVfunc70WithArg: u64 = 65821;
+/// `CallIndexedHandleVfunc88WithZero` at 0xc5abb0 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc88WithZero(undefined8 * param_1)`
+pub const CallIndexedHandleVfunc88WithZero: u64 = 65799;
+/// `CallIndexedHandleVfunc98` at 0xc5afd0 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc98(undefined8 * param_1)`
+pub const CallIndexedHandleVfunc98: u64 = 65827;
+/// `CallIndexedHandleVfuncB0WithZero` at 0xc5af90 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfuncB0WithZero(undefined8 * param_1)`
+pub const CallIndexedHandleVfuncB0WithZero: u64 = 65825;
+/// `CallMotdListMessages` at 0x1257d50 (decompiler, medium); signature (untiered): `longlong CallMotdListMessages(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallMotdListMessages: u64 = 93716;
 /// `CallOnExtraType78Locked` at 0x1719a0 (decompiler, medium); signature (untiered): `undefined CallOnExtraType78Locked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CallOnExtraType78Locked: u64 = 12023;
 /// `CallOwnerVfunc20WithHeldObject` at 0xcbb1e0 (decompiler, medium); signature (untiered): `undefined CallOwnerVfunc20WithHeldObject(undefined8 * param_1, undefined8 * param_2)`
@@ -3631,8 +3643,10 @@ pub const Cmd__DuplicateAllItems_Execute: u64 = 22421;
 pub const Cmd__DuplicateAllItems_Execute_sub0: u64 = 16119;
 /// `Cmd::DuplicateNPCStats_Execute` at 0x35f190 (console_cmd, high); signature (low): `ulonglong DuplicateNPCStats_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__DuplicateNPCStats_Execute: u64 = 22426;
-/// `Cmd::DynamicResolution_Execute` at 0x380ee0 (console_cmd, high); signature (low): `ulonglong DynamicResolution_Execute(longlong param_1, longlong param_2, ulonglong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'DynamicResolution [w|h <ratio>|toggle]' (high); signature `bool (console callback)`
+/// `Cmd::DynamicResolution_Execute` at 0x380ee0 (console_cmd, high); signature (low): `ulonglong DynamicResolution_Execute(longlong param_1, longlong param_2, ulonglong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'DynamicResolution [w|h <ratio>|toggle]' (high); signature `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__DynamicResolution_Execute: u64 = 23220;
+/// `Cmd::DynamicResolution_Execute` as a function pointer type (high).
+pub type Cmd__DynamicResolution_Execute_fn = unsafe extern "C" fn(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::EPAlchemyEffectHasKeyword_Eval` at 0x33ed80 (console_cmd, high); signature (low): `undefined8 EPAlchemyEffectHasKeyword_Eval(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
 pub const Cmd__EPAlchemyEffectHasKeyword_Eval: u64 = 21756;
 /// `Cmd::EPAlchemyGetMakingPoison_Eval` at 0x33ed40 (console_cmd, high); signature (low): `undefined8 EPAlchemyGetMakingPoison_Eval(void)`
@@ -4569,8 +4583,10 @@ pub const Cmd__GetPlayerTeammate_Eval: u64 = 21623;
 pub const Cmd__GetPlayerTeammate_Execute: u64 = 22524;
 /// `Cmd::GetPos_Eval` at 0x3303d0 (console_cmd, high); signature (low): `undefined8 GetPos_Eval(longlong param_1, uint param_2, undefined8 param_3, double * param_4)`
 pub const Cmd__GetPos_Eval: u64 = 21407;
-/// `Cmd::GetPos_Execute` at 0x3501a0 (console_cmd, high); signature (low): `undefined GetPos_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`; semantic: UnpackCommandArguments(.., &axis) then GetPos_Eval(thisRef, axis, 0, result); the eval 0x3303d0 reads ref +0x54/+0x58/+0x5c and prints 'GetPos: %c >> %0.2f' only when TLS+0x600 (console run) is set (high); signature `bool (execute args)`
+/// `Cmd::GetPos_Execute` at 0x3501a0 (console_cmd, high); signature (low): `undefined GetPos_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`; semantic: UnpackCommandArguments(.., &axis) then GetPos_Eval(thisRef, axis, 0, result); the eval 0x3303d0 reads ref +0x54/+0x58/+0x5c and prints 'GetPos: %c >> %0.2f' only when TLS+0x600 (console run) is set (high); signature `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__GetPos_Execute: u64 = 22045;
+/// `Cmd::GetPos_Execute` as a function pointer type (high).
+pub type Cmd__GetPos_Execute_fn = unsafe extern "C" fn(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::GetQuestCompleted_Eval` at 0x332260 (console_cmd, high); signature (low): `undefined8 GetQuestCompleted_Eval(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
 pub const Cmd__GetQuestCompleted_Eval: u64 = 21448;
 /// `Cmd::GetQuestCompleted_Execute` at 0x354170 (console_cmd, high); signature (low): `undefined GetQuestCompleted_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 * param_7, uint * param_8)`
@@ -4885,8 +4901,10 @@ pub const Cmd__HasTwoHandedWeaponEquipped_Eval: u64 = 21728;
 pub const Cmd__HasTwoHandedWeaponEquipped_Execute: u64 = 22652;
 /// `Cmd::HavokVDBCapture_Execute` at 0x371fd0 (console_cmd, high); signature (low): `undefined1 HavokVDBCapture_Execute(void)`
 pub const Cmd__HavokVDBCapture_Execute: u64 = 22890;
-/// `Cmd::Help_Execute` at 0x36efb0 (console_cmd, high); signature (low): `undefined8 Help_Execute(longlong param_1, longlong param_2, _Func_impl_no_alloc<<lambda_2bb8a2fdec3e2af3a230c268838d13f1>,void,char_const*___ptr64,char_const*___ptr64>_vtbl * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: Unpack(String search, Integer filter, String formType); an empty search prints 'usage: help <search word> <filter> <form type>' and two more lines; walks exactly 0x1c1 console and 0x2e1 script entries (high); signature `bool (execute args)`
+/// `Cmd::Help_Execute` at 0x36efb0 (console_cmd, high); signature (low): `undefined8 Help_Execute(longlong param_1, longlong param_2, _Func_impl_no_alloc<<lambda_2bb8a2fdec3e2af3a230c268838d13f1>,void,char_const*___ptr64,char_const*___ptr64>_vtbl * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: Unpack(String search, Integer filter, String formType); an empty search prints 'usage: help <search word> <filter> <form type>' and two more lines; walks exactly 0x1c1 console and 0x2e1 script entries (high); signature `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__Help_Execute: u64 = 22839;
+/// `Cmd::Help_Execute` as a function pointer type (high).
+pub type Cmd__Help_Execute_fn = unsafe extern "C" fn(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::Help_Execute_sub0` at 0x1bb570 (callgraph, medium); signature (untiered): `undefined Help_Execute_sub0(longlong param_1, longlong param_2, char param_3, undefined8 param_4)`
 pub const Cmd__Help_Execute_sub0: u64 = 441527;
 /// `Cmd::Help_Execute_sub1` at 0x1e5c60 (callgraph, medium); signature (untiered): `uint Help_Execute_sub1(char * param_1)`
@@ -6465,8 +6483,10 @@ pub const Cmd__ToggleCombatDebug_Execute_sub0: u64 = 46901;
 pub const Cmd__ToggleCombatStats_Execute: u64 = 22812;
 /// `Cmd::ToggleContextOverlay_Execute` at 0x37a8d0 (console_cmd, high); signature (low): `undefined1 ToggleContextOverlay_Execute(void)`
 pub const Cmd__ToggleContextOverlay_Execute: u64 = 23070;
-/// `Cmd::ToggleControlsDriven_Execute` at 0x37b3a0 (console_cmd, high); signature (low): `undefined8 ToggleControlsDriven_Execute(longlong param_1, longlong param_2, uint * param_3, uint * param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'ToggleControlsDriven' on an actor: toggles its movement controller (+0x150) between AI-driven (slot 13) and controls-driven (slot 12) and points the camera at it (PlayerCamera::SetTarget) when controls-driven, back at the player when AI-driven; prints the result (high); signature `bool (execute args)`
+/// `Cmd::ToggleControlsDriven_Execute` at 0x37b3a0 (console_cmd, high); signature (low): `undefined8 ToggleControlsDriven_Execute(longlong param_1, longlong param_2, uint * param_3, uint * param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'ToggleControlsDriven' on an actor: toggles its movement controller (+0x150) between AI-driven (slot 13) and controls-driven (slot 12) and points the camera at it (PlayerCamera::SetTarget) when controls-driven, back at the player when AI-driven; prints the result (high); signature `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__ToggleControlsDriven_Execute: u64 = 23089;
+/// `Cmd::ToggleControlsDriven_Execute` as a function pointer type (high).
+pub type Cmd__ToggleControlsDriven_Execute_fn = unsafe extern "C" fn(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::ToggleConversations_Execute` at 0x36e200 (console_cmd, high); signature (low): `undefined1 ToggleConversations_Execute(void)`
 pub const Cmd__ToggleConversations_Execute: u64 = 22810;
 /// `Cmd::ToggleDDOF_Execute` at 0x37d080 (console_cmd, high); signature (low): `undefined1 ToggleDDOF_Execute(void)`
@@ -6507,8 +6527,10 @@ pub const Cmd__ToggleEmotions_Execute: u64 = 22868;
 pub const Cmd__ToggleEventLog_Execute: u64 = 22828;
 /// `Cmd::ToggleFXAA_Execute` at 0x37cde0 (console_cmd, high); signature (low): `undefined8 ToggleFXAA_Execute(void)`
 pub const Cmd__ToggleFXAA_Execute: u64 = 23123;
-/// `Cmd::ToggleFlyCam_Execute` at 0x372c20 (console_cmd, high); signature (low): `ulonglong ToggleFlyCam_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'ToggleFlyCam' (tfc): ToggleFreeCamera(camera, false); pushes input context 0xd when the free camera (+0xd0) is now current, else pops it; prints 'Fly Camera Is %s' (high); signature `bool (execute args)`
+/// `Cmd::ToggleFlyCam_Execute` at 0x372c20 (console_cmd, high); signature (low): `ulonglong ToggleFlyCam_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'ToggleFlyCam' (tfc): ToggleFreeCamera(camera, false); pushes input context 0xd when the free camera (+0xd0) is now current, else pops it; prints 'Fly Camera Is %s' (high); signature `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__ToggleFlyCam_Execute: u64 = 441593;
+/// `Cmd::ToggleFlyCam_Execute` as a function pointer type (high).
+pub type Cmd__ToggleFlyCam_Execute_fn = unsafe extern "C" fn(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::ToggleFogOfWar_Execute` at 0x3777d0 (console_cmd, high); signature (low): `undefined8 ToggleFogOfWar_Execute(void)`
 pub const Cmd__ToggleFogOfWar_Execute: u64 = 22988;
 /// `Cmd::ToggleFog_Execute` at 0x37d490 (console_cmd, high); signature (low): `undefined1 ToggleFog_Execute(void)`
@@ -7789,23 +7811,3 @@ pub const CombatBehaviorTreeNode__vdtor: u64 = 47579;
 pub const CombatBehaviorTreeNode__vfunc_1: u64 = 47547;
 /// `CombatBehaviorTreeNode::vfunc_2` at 0x875540 (rtti, medium); signature (low): `undefined vfunc_2(void)`
 pub const CombatBehaviorTreeNode__vfunc_2: u64 = 47552;
-/// `CombatBehaviorTreeNode::vfunc_3` at 0x875550 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-pub const CombatBehaviorTreeNode__vfunc_3: u64 = 47553;
-/// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
-pub const CombatBehaviorTreeNode__vfunc_4: u64 = 47554;
-/// `CombatBehaviorTreeNode::vfunc_5` at 0x875570 (rtti, medium); signature (low): `undefined vfunc_5(CombatBehaviorTreeNode * this, longlong param_1)`
-pub const CombatBehaviorTreeNode__vfunc_5: u64 = 47555;
-/// `CombatBehaviorTreeNode::vfunc_6` at 0x875580 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-pub const CombatBehaviorTreeNode__vfunc_6: u64 = 47556;
-/// `CombatBehaviorTreeNode::vfunc_7` at 0x875590 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-pub const CombatBehaviorTreeNode__vfunc_7: u64 = 47557;
-/// `CombatBehaviorTreeNode::vfunc_8` at 0x8755a0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-pub const CombatBehaviorTreeNode__vfunc_8: u64 = 47558;
-/// `CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_>::vdtor` at 0x8af480 (slot_propagation, medium); signature (low): `CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_> * vdtor(CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_d74ac991ce5c: u64 = 48887;
-/// `CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_>::vfunc_2` at 0x8b01e0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_> * this, longlong param_1)`
-pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_90f08f147d8c: u64 = 48937;
-/// `CombatBehaviorTreeNodeCondition<CombatBehaviorExpression<CombatBehaviorBinaryExpression<CombatBehaviorMemberFunc<Actor,enum_FLY_STATE_(__cdecl_ActorState::*)(void)const___ptr64>,FLY_STATE,OpEquals>_>_>::vfunc_9` at 0x8b0f90 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_8254b378a045: u64 = 48971;
-/// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vdtor` at 0x8d6820 (slot_propagation, medium); signature (low): `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_3944110546dd: u64 = 49870;

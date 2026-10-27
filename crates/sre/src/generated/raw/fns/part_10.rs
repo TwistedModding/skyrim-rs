@@ -3,6 +3,36 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FreeArrayBufferAndClearSize_14` at 0x1ae860 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_14(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_14: u64 = 523467;
+/// `FreeArrayBufferAndClearSize_15` at 0x1ae8c0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_15(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_15: u64 = 523468;
+/// `FreeArrayBufferAndClearSize_16` at 0x1ae920 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_16(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_16: u64 = 523469;
+/// `FreeArrayBufferAndClearSize_17` at 0x1ae980 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_17(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_17: u64 = 523470;
+/// `FreeArrayBufferAndClearSize_18` at 0x1ae9e0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_18(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_18: u64 = 523471;
+/// `FreeArrayBufferAndClearSize_19` at 0x1aea40 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_19(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_19: u64 = 523472;
+/// `FreeArrayBufferAndClearSize_2` at 0x29c850 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearSize_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_2: u64 = 18409;
+/// `FreeArrayBufferAndClearSize_20` at 0x1aeaa0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_20(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_20: u64 = 523473;
+/// `FreeArrayBufferAndClearSize_21` at 0x1aeb00 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_21(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_21: u64 = 523474;
+/// `FreeArrayBufferAndClearSize_22` at 0x1aeb60 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_22(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_22: u64 = 523475;
+/// `FreeArrayBufferAndClearSize_23` at 0x1aebc0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_23(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_23: u64 = 523476;
+/// `FreeArrayBufferAndClearSize_24` at 0x1aec20 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_24(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_24: u64 = 523477;
+/// `FreeArrayBufferAndClearSize_25` at 0x1aec80 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_25(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_25: u64 = 523478;
+/// `FreeArrayBufferAndClearSize_26` at 0x1aece0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_26(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_26: u64 = 523479;
+/// `FreeArrayBufferAndClearSize_27` at 0x1aed40 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_27(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_27: u64 = 523480;
 /// `FreeArrayBufferAndClearSize_28` at 0x1aeda0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_28(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FreeArrayBufferAndClearSize_28: u64 = 523481;
 /// `FreeArrayBufferAndClearSize_29` at 0x1aee00 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_29(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8551,37 +8581,3 @@ pub const GameSetting_fMagicGuideSpacing__init: u64 = 3733;
 pub const GameSetting_fMagicLesserPowerCooldownTimer__atexit: u64 = 168944;
 /// `GameSetting_fMagicLesserPowerCooldownTimer__init` at 0x66980 (crt_init, medium); signature (high): `void GameSetting_fMagicLesserPowerCooldownTimer__init(void)`
 pub const GameSetting_fMagicLesserPowerCooldownTimer__init: u64 = 3734;
-/// `GameSetting_fMagicLightForwardOffset__atexit` at 0x17783f0 (crt_init, medium); signature (high): `void GameSetting_fMagicLightForwardOffset__atexit(void)`
-pub const GameSetting_fMagicLightForwardOffset__atexit: u64 = 168945;
-/// `GameSetting_fMagicLightForwardOffset__init` at 0x66a00 (crt_init, medium); signature (high): `void GameSetting_fMagicLightForwardOffset__init(void)`
-pub const GameSetting_fMagicLightForwardOffset__init: u64 = 3735;
-/// `GameSetting_fMagicLightHeightOffset__atexit` at 0x1778440 (crt_init, medium); signature (high): `void GameSetting_fMagicLightHeightOffset__atexit(void)`
-pub const GameSetting_fMagicLightHeightOffset__atexit: u64 = 168946;
-/// `GameSetting_fMagicLightHeightOffset__init` at 0x66a80 (crt_init, medium); signature (high): `void GameSetting_fMagicLightHeightOffset__init(void)`
-pub const GameSetting_fMagicLightHeightOffset__init: u64 = 3736;
-/// `GameSetting_fMagicLightRadiusBase__atexit` at 0x1778490 (crt_init, medium); signature (high): `void GameSetting_fMagicLightRadiusBase__atexit(void)`
-pub const GameSetting_fMagicLightRadiusBase__atexit: u64 = 168947;
-/// `GameSetting_fMagicLightRadiusBase__init` at 0x66b00 (crt_init, medium); signature (high): `void GameSetting_fMagicLightRadiusBase__init(void)`
-pub const GameSetting_fMagicLightRadiusBase__init: u64 = 3737;
-/// `GameSetting_fMagicLightSideOffset__atexit` at 0x17784e0 (crt_init, medium); signature (high): `void GameSetting_fMagicLightSideOffset__atexit(void)`
-pub const GameSetting_fMagicLightSideOffset__atexit: u64 = 168948;
-/// `GameSetting_fMagicLightSideOffset__init` at 0x66b80 (crt_init, medium); signature (high): `void GameSetting_fMagicLightSideOffset__init(void)`
-pub const GameSetting_fMagicLightSideOffset__init: u64 = 3738;
-/// `GameSetting_fMagicNightEyeAmbient__atexit` at 0x1778530 (crt_init, medium); signature (high): `void GameSetting_fMagicNightEyeAmbient__atexit(void)`
-pub const GameSetting_fMagicNightEyeAmbient__atexit: u64 = 168949;
-/// `GameSetting_fMagicNightEyeAmbient__init` at 0x66c00 (crt_init, medium); signature (high): `void GameSetting_fMagicNightEyeAmbient__init(void)`
-pub const GameSetting_fMagicNightEyeAmbient__init: u64 = 3739;
-/// `GameSetting_fMagicPCSkillCostScale__atexit` at 0x1778580 (crt_init, medium); signature (high): `void GameSetting_fMagicPCSkillCostScale__atexit(void)`
-pub const GameSetting_fMagicPCSkillCostScale__atexit: u64 = 168950;
-/// `GameSetting_fMagicPCSkillCostScale__init` at 0x66c80 (crt_init, medium); signature (high): `void GameSetting_fMagicPCSkillCostScale__init(void)`
-pub const GameSetting_fMagicPCSkillCostScale__init: u64 = 3740;
-/// `GameSetting_fMagicPlayerMinimumInvisibility__atexit` at 0x17785d0 (crt_init, medium); signature (high): `void GameSetting_fMagicPlayerMinimumInvisibility__atexit(void)`
-pub const GameSetting_fMagicPlayerMinimumInvisibility__atexit: u64 = 168951;
-/// `GameSetting_fMagicPlayerMinimumInvisibility__init` at 0x66d00 (crt_init, medium); signature (high): `void GameSetting_fMagicPlayerMinimumInvisibility__init(void)`
-pub const GameSetting_fMagicPlayerMinimumInvisibility__init: u64 = 3741;
-/// `GameSetting_fMagicPostDrawCastDelay__atexit` at 0x1778620 (crt_init, medium); signature (high): `void GameSetting_fMagicPostDrawCastDelay__atexit(void)`
-pub const GameSetting_fMagicPostDrawCastDelay__atexit: u64 = 168952;
-/// `GameSetting_fMagicPostDrawCastDelay__init` at 0x66d80 (crt_init, medium); signature (high): `void GameSetting_fMagicPostDrawCastDelay__init(void)`
-pub const GameSetting_fMagicPostDrawCastDelay__init: u64 = 3742;
-/// `GameSetting_fMagicProjectileMaxDistance__atexit` at 0x1778670 (crt_init, medium); signature (high): `void GameSetting_fMagicProjectileMaxDistance__atexit(void)`
-pub const GameSetting_fMagicProjectileMaxDistance__atexit: u64 = 168953;

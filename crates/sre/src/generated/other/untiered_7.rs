@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `OpenBinkMovie` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90290, rva 0x11b3a50).
-/// `ulonglong OpenBinkMovie(longlong param_1, longlong * param_2, ulonglong param_3, ulonglong param_4, char param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_bink_movie(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64, param_5: c_char) -> u64 { unsafe { function!(90290, (i64, *mut i64, u64, u64, c_char) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `OpenBookMenu` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51053, rva 0x907290).
-/// `undefined OpenBookMenu(longlong * param_1, longlong param_2, longlong param_3, undefined8 param_4, undefined4 * param_5, undefined8 * param_6, undefined4 param_7, char param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_book_menu(param_1: *mut i64, param_2: i64, param_3: i64, param_4: u64, param_5: *mut u32, param_6: *mut u64, param_7: u32, param_8: c_char) -> u64 { unsafe { function!(51053, (*mut i64, i64, i64, u64, *mut u32, *mut u64, u32, c_char) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `OpenContainerMenu` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51140, rva 0x911fb0).
-/// `undefined OpenContainerMenu(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_container_menu(param_1: i64, param_2: i32) -> u64 { unsafe { function!(51140, (i64, i32) -> u64)(param_1, param_2) } }
 /// `OpenFile` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89412, rva 0xe9c1a0).
 /// `undefined8 OpenFile(longlong param_1, ulonglong * param_2, uint param_3)`
 ///
@@ -13485,3 +13464,31 @@ pub unsafe fn release_three_heap_buffers(param_1: i64) -> u64 { unsafe { functio
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_three_ref_ptrs(param_1: *mut i64) -> u64 { unsafe { function!(19464, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseThroughFactoryRegistry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 27668, rva 0x450980).
+/// `undefined ReleaseThroughFactoryRegistry(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_through_factory_registry(param_1: *mut i64) -> u64 { unsafe { function!(27668, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTrackedEntities` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 63094, rva 0xbb26c0).
+/// `undefined ReleaseTrackedEntities(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_tracked_entities(param_1: i64) -> u64 { unsafe { function!(63094, (i64) -> u64)(param_1) } }
+/// `ReleaseTrackedFormIfType2E` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 22776, rva 0x36d550).
+/// `undefined ReleaseTrackedFormIfType2E(undefined8 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_tracked_form_if_type2_e(param_1: *mut u64) -> u64 { unsafe { function!(22776, (*mut u64) -> u64)(param_1) } }
+/// `ReleaseTrackedFormReference` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36171, rva 0x63f650).
+/// `undefined ReleaseTrackedFormReference(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_tracked_form_reference(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(36171, (i64, *mut i64) -> u64)(param_1, param_2) } }

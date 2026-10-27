@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController>::vdtor` at 0xbde3d0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController> * vdtor(BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController__vdtor: u64 = 63840;
+/// `BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController>::vfunc_1` at 0xbde340 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController__vfunc_1: u64 = 63838;
+/// `BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController>::vfunc_2` at 0xbde3b0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController__vfunc_2: u64 = 63839;
 /// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vdtor` at 0x7d2860 (layout_inference, medium); signature (low): `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * vdtor(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vdtor: u64 = 43204;
 /// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vfunc_1` at 0x7d4ea0 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -5397,8 +5403,10 @@ pub const BuildScaledMeshesPathWithDmOrDsSuffix: u64 = 17652;
 pub const BuildSearchResultsPageControls: u64 = 454459;
 /// `BuildSegmentIndexPairsFromFlags` at 0x1019620 (decompiler, medium); signature (medium): `ulonglong BuildSegmentIndexPairsFromFlags(int param_1, char * param_2, longlong param_3)`
 pub const BuildSegmentIndexPairsFromFlags: u64 = 77480;
-/// `BuildSegmentJobList` at 0x60ef30 (semantic, high); signature (untiered): `longlong * BuildSegmentJobList(undefined8 param_1, undefined8 * param_2, char * param_3, ulonglong param_4, uint param_5)`; semantic: builds one segment from the {fn,name} table up to the JobListEnd entry; 0x60d700/0x60d710/0x60d720 entries become signal / sync / signal+sync barriers; the JobListEnd fn becomes the segment's completion callback (+0x10) (high); signature `JobList* (out, const JobEntry* first, const char* name, u8, u32)`
+/// `BuildSegmentJobList` at 0x60ef30 (semantic, high); signature (untiered): `longlong * BuildSegmentJobList(undefined8 param_1, undefined8 * param_2, char * param_3, ulonglong param_4, uint param_5)`; semantic: builds one segment from the {fn,name} table up to the JobListEnd entry; 0x60d700/0x60d710/0x60d720 entries become signal / sync / signal+sync barriers; the JobListEnd fn becomes the segment's completion callback (+0x10) (high); signature `JobList* (void* context, const JobEntry* entries, const char* name, u8 listByteD4, u32 workerLimit)`
 pub const BuildSegmentJobList: u64 = 35419;
+/// `BuildSegmentJobList` as a function pointer type (high).
+pub type BuildSegmentJobList_fn = unsafe extern "C" fn(context: *mut c_void, entries: *const c_void, name: *const c_char, listByteD4: u8, workerLimit: u32) -> *mut c_void;
 /// `BuildSideBarControls` at 0x15fcc50 (decompiler, medium); signature (untiered): `undefined BuildSideBarControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const BuildSideBarControls: u64 = 454079;
 /// `BuildSmoothedPathForLargeZDelta` at 0x11be8f0 (decompiler, medium); signature (untiered): `undefined8 BuildSmoothedPathForLargeZDelta(undefined8 param_1, float * param_2, float * param_3, longlong param_4, undefined8 param_5, longlong param_6)`
@@ -5749,15 +5757,3 @@ pub const CallHook414364AndClearTriple: u64 = 524745;
 pub const CallHook414364AndClearTriple_2: u64 = 445184;
 /// `CallHook414364AndClearTriple_3` at 0x12dc1c0 (decompiler, medium); signature (untiered): `undefined CallHook414364AndClearTriple_3(longlong * param_1)`
 pub const CallHook414364AndClearTriple_3: u64 = 525429;
-/// `CallIndexedHandleVfunc48` at 0xc5b0b0 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc48(undefined8 * param_1)`
-pub const CallIndexedHandleVfunc48: u64 = 65832;
-/// `CallIndexedHandleVfunc70WithArg` at 0xc5af00 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc70WithArg(undefined8 * param_1, undefined4 param_2)`
-pub const CallIndexedHandleVfunc70WithArg: u64 = 65821;
-/// `CallIndexedHandleVfunc88WithZero` at 0xc5abb0 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc88WithZero(undefined8 * param_1)`
-pub const CallIndexedHandleVfunc88WithZero: u64 = 65799;
-/// `CallIndexedHandleVfunc98` at 0xc5afd0 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc98(undefined8 * param_1)`
-pub const CallIndexedHandleVfunc98: u64 = 65827;
-/// `CallIndexedHandleVfuncB0WithZero` at 0xc5af90 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfuncB0WithZero(undefined8 * param_1)`
-pub const CallIndexedHandleVfuncB0WithZero: u64 = 65825;
-/// `CallMotdListMessages` at 0x1257d50 (decompiler, medium); signature (untiered): `longlong CallMotdListMessages(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallMotdListMessages: u64 = 93716;
