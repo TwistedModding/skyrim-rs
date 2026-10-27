@@ -172,7 +172,7 @@ fn form_arrays() -> Result<String, String> {
 }
 
 fn masters(file: &TESFile) -> Vec<&str> {
-    (0..file.get_master_count()).map(|i| file.get_master(i).map_or("null", file_name)).collect()
+    (1..=file.get_master_count()).map(|i| file.get_master(i).map_or("null", file_name)).collect()
 }
 
 fn files() -> Result<String, String> {
