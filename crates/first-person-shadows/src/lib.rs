@@ -51,7 +51,7 @@ macro_rules! log {
 /// Caches the third-person root and shows it in first person; third person is the engine's own state.
 fn apply(first_person: bool) {
     FIRST_PERSON.store(first_person, Ordering::Relaxed);
-    let root = sre::g_player_character_ptr().and_then(third_person_root);
+    let root = sre::PlayerCharacter::singleton().and_then(third_person_root);
     THIRD_ROOT.store(root.map_or(core::ptr::null_mut(), |r| core::ptr::from_ref(r).cast_mut()), Ordering::Release);
     if first_person && let Some(root) = root {
         root.set_hidden(false);
@@ -114,13 +114,13 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             for c in [&BODY_SHADOW, &BODY_CAMERA, &HEAD_SKIPPED, &HEAD_SHADOW] {
                 c.store(0, Ordering::Relaxed);
             }
-            if let Some(p) = sre::g_player_character_ptr() {
+            if let Some(p) = sre::PlayerCharacter::singleton() {
                 apply(!p.is_third_person());
             }
         }
         skse::MessagingInterface::SAVE_GAME => {
             let first_person = FIRST_PERSON.load(Ordering::Relaxed);
-            let roots = sre::g_player_character_ptr().map(|p| (third_person_root(p).map(|r| r.flags), p.first_person_root().map(|r| r.flags)));
+            let roots = sre::PlayerCharacter::singleton().map(|p| (third_person_root(p).map(|r| r.flags), p.first_person_root().map(|r| r.flags)));
             log!(
                 "save: first_person={first_person} root flags {roots:?}; in first person the body root was visited {} times by shadow cameras and {} by other cameras, the face skipped {} times for other cameras and passed {} times to shadow cameras",
                 BODY_SHADOW.load(Ordering::Relaxed),

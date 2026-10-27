@@ -327,7 +327,7 @@ fn ui() -> Result<String, String> {
     check(counts == expected, &format!("UI sink counts {counts:?}, expected {expected:?} at the main menu with DevBench (script extender loaded: {skse})"))?;
     let input = source::<InputEventList>("InputEventList")?;
     let footstep = source::<BGSFootstepEvent>("BGSFootstepEvent")?;
-    let player = sre::g_player_character_ptr().ok_or("no player")?;
+    let player = sre::PlayerCharacter::singleton().ok_or("no player")?;
     let actor_cell = source::<BGSActorCellEvent>("BGSActorCellEvent")?;
     check(core::ptr::from_ref(actor_cell.raw()) as usize == core::ptr::from_ref(player) as usize + 0x2E0, "the BGSActorCellEvent source is not player + 0x2e0")?;
     Ok(format!(
@@ -536,7 +536,7 @@ fn cell_attach_detach() -> Result<String, String> {
 
 fn actor_cell() -> Result<String, String> {
     let events = records("actor cell");
-    let player = sre::g_player_character_ptr().ok_or("no player")?;
+    let player = sre::PlayerCharacter::singleton().ok_or("no player")?;
     let handle = player.handle();
     let entered = events.iter().position(|d| d == &format!("BGSActorCellEvent {{ actorHandle: {handle}, cell: {RIVERWOOD_CELL:08X}, attached: true }}")).ok_or_else(|| format!("no enter of Riverwood by handle {handle}: {events:?}"))?;
     let left = events.iter().position(|d| d.contains("attached: false")).ok_or("no detach")?;

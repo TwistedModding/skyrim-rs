@@ -981,6 +981,11 @@ impl crate::MiddleHighProcessData {
 }
 
 impl crate::PlayerCharacter {
+    /// `g_PlayerCharacter_ptr` at 0x3230778, id 403521 (runtime, high); pointer to `PlayerCharacter`: pointer to the player; pointer to the player (high, actors pass), type `ptr:PlayerCharacter`
+    ///
+    /// `None` until the engine creates it.
+    #[inline]
+    pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(403521) as *const Option<&'static Self>) } }
     /// The `BSTEventSink<BSSystemEvent>` base at +0x2D8.
     #[inline]
     pub fn as_bst_event_sink_bs_system_event(&self) -> &crate::BSTEventSink_BSSystemEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x2D8).cast() } }
@@ -1566,6 +1571,3 @@ pub fn g_handle_table_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(ad
 /// `g_InvalidRefHandle` at 0x219e55c, id 400312 (runtime, high); the null handle value (0) (high, actors pass), type `undefined4`
 #[inline]
 pub fn g_invalid_ref_handle() -> *mut u32 { address!(400312) as *mut u32 }
-/// `g_PlayerCharacter_ptr` at 0x3230778, id 403521 (runtime, high); pointer to `PlayerCharacter`: pointer to the player; pointer to the player (high, actors pass), type `ptr:PlayerCharacter`
-#[inline]
-pub fn g_player_character_ptr() -> Option<&'static crate::PlayerCharacter> { unsafe { *(address!(403521) as *const Option<&'static crate::PlayerCharacter>) } }

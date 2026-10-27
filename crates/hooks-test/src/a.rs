@@ -83,7 +83,7 @@ fn subscribe() -> Result<String, String> {
                 BEFORE.lock().unwrap().push(args.3);
                 args.3 -= 1.0;
             }
-            if args.2 == sre::ActorValue::Health as i32 && sre::g_player_character_ptr().is_some_and(|p| core::ptr::eq(core::ptr::from_ref(p).cast(), args.0)) {
+            if args.2 == sre::ActorValue::Health as i32 && sre::PlayerCharacter::singleton().is_some_and(|p| core::ptr::eq(core::ptr::from_ref(p).cast(), args.0)) {
                 CALLS.lock().unwrap().push((args.1, args.3));
             }
         })

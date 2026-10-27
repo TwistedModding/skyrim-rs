@@ -810,8 +810,8 @@ fn fields(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>) {
     }
 }
 
-/// Accessors for the globals: `singleton()` on a class with exactly one `g_*_ptr` label, the rest
-/// as functions keyed by group: the semantic pass's, else the group of the class the global holds
+/// Accessors for the globals: `singleton()` on a class with exactly one `g_*_ptr` label, or from its
+/// `g_<Class>_ptr` label when it has several, the rest as functions keyed by group: the semantic pass's, else the group of the class the global holds
 /// or points to, else the group of its name.
 fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiStats) -> BTreeMap<String, Vec<String>> {
     let mut semantic: HashMap<u64, (&SemGlobal, &str)> = HashMap::new();
@@ -875,8 +875,7 @@ fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiSta
             _ => (raw.clone(), format!("address!({id}) as {raw}")),
         };
         if let Some(c) = &pointee
-            && label.is_some_and(|l| l.pointer && l.name.ends_with("_ptr") && l.cls == *c)
-            && singles.get(c.as_str()) == Some(&1)
+            && label.is_some_and(|l| l.pointer && l.name.ends_with("_ptr") && l.cls == *c && (singles.get(c.as_str()) == Some(&1) || l.name == format!("g_{c}_ptr")))
         {
             lines.push(String::new());
             lines.push("`None` until the engine creates it.".into());

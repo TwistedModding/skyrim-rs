@@ -129,7 +129,7 @@ fn on_message(msg: &skse::Message) {
                 WRITE => image_write(),
                 FORM => null_read_holding(sre::find_form_by_id(IRON_SWORD).map_or(0, |f| core::ptr::from_ref(f) as usize)),
                 _ => {
-                    let player = sre::g_player_character_ptr().map_or(0, |p| core::ptr::from_ref(p) as usize);
+                    let player = sre::PlayerCharacter::singleton().map_or(0, |p| core::ptr::from_ref(p) as usize);
                     if player != 0 {
                         let flags = (player + 0x10) as *mut u32;
                         unsafe { core::ptr::write_volatile(flags, core::ptr::read_volatile(flags) | FLAG_DELETED) };

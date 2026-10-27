@@ -73,7 +73,7 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
 
 /// Caches the player and its head bone on the main thread after a load; clears them before one.
 fn bind(active: bool) {
-    let head = active.then(sre::g_player_character_ptr).flatten().and_then(|p| {
+    let head = active.then(sre::PlayerCharacter::singleton).flatten().and_then(|p| {
         PLAYER.store(core::ptr::from_ref::<sre::TESObjectREFR>(p).cast_mut(), Ordering::Relaxed);
         let root = p.loaded_data()?.node3_d()?;
         root.get_object_by_name(BSFixedString::new("NPC Head [Head]").raw()).map(|h| core::ptr::from_ref(h).cast_mut())

@@ -123,7 +123,7 @@ fn subscribe(host: &'static Host) -> Result<String, String> {
     check(matches!(foreign, Err(hooks::Error::Owner { .. })), format!("a subscription owned by another name was not refused: {foreign:?}"))?;
     let id = hooks
         .before(Actor__ModActorValueImpl, Options::new(host.name()), |args: &mut ModArgs| {
-            let player = sre::g_player_character_ptr().map_or(core::ptr::null(), |p| core::ptr::from_ref(p).cast::<c_void>());
+            let player = sre::PlayerCharacter::singleton().map_or(core::ptr::null(), |p| core::ptr::from_ref(p).cast::<c_void>());
             if args.0.cast_const().cast::<c_void>() == player && args.2 == ActorValue::Health as i32 && args.1 == Modifier::Damage as i32 && args.3 < 0.0 {
                 DAMAGE.lock().unwrap().push(args.3);
                 log(format!("tag {TAG}: health damage {}", args.3));

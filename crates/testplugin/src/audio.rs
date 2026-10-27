@@ -55,7 +55,7 @@ fn wait_for(limit: Duration, test: impl Fn() -> bool) -> Option<Duration> {
 }
 
 fn play_marker() -> Result<String, String> {
-    let player = sre::g_player_character_ptr().ok_or("no player")?;
+    let player = sre::PlayerCharacter::singleton().ok_or("no player")?;
     let handle = sound_from_form(UI_SKILL_INCREASE, RELEASE_WHEN_DONE).ok_or("BuildSoundHandleByFormId gave no handle")?;
     update(|r| r.ids.push(handle.id));
     check(handle.set_position(player.posX, player.posY, player.posZ), "SetPosition refused")?;

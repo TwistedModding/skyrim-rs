@@ -128,7 +128,7 @@ pub fn suspend() {
 /// Caches the player and its head bone, registers the sink on graph 0, clears the counters and
 /// starts sampling; called after a load.
 pub fn register() -> Result<String, String> {
-    let player = sre::g_player_character_ptr().ok_or("g_PlayerCharacter_ptr is null")?;
+    let player = sre::PlayerCharacter::singleton().ok_or("g_PlayerCharacter_ptr is null")?;
     PLAYER.store(core::ptr::from_ref::<sre::TESObjectREFR>(player).cast_mut(), Ordering::Relaxed);
     let root = third_person_root(player).ok_or("loadedData->node3D is null")?;
     let head = root.get_object_by_name(BSFixedString::new("NPC Head [Head]").raw()).ok_or("GetObjectByName(NPC Head [Head]) returned null")?;
@@ -148,7 +148,7 @@ pub fn register() -> Result<String, String> {
 }
 
 fn player() -> Result<&'static PlayerCharacter, String> {
-    sre::g_player_character_ptr().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
+    sre::PlayerCharacter::singleton().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
 }
 
 fn graphs() -> Result<String, String> {

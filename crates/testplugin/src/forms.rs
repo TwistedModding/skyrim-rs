@@ -263,8 +263,8 @@ fn generated_api() -> Result<String, String> {
     check(keyword.cast::<BGSKeyword>().is_some_and(|k| keyword_field(k).as_c_str() == Some(name)), "slot 50 get_form_editor_id differs from BGSKeyword.keyword")?;
     check(sword.get_form_type() == sword.formType, "slot 21 get_form_type differs from formType")?;
 
-    let pc = sre::g_player_character_ptr().ok_or("sre::g_player_character_ptr is None")?;
-    check(address(pc) == address(player), "sre::g_player_character_ptr is not the player")?;
+    let pc = sre::PlayerCharacter::singleton().ok_or("PlayerCharacter::singleton is None")?;
+    check(address(pc) == address(player), "PlayerCharacter::singleton is not the player")?;
     check(pc.get_form_type() == player.formType, "PlayerCharacter -> TESForm slot 21 differs from formType")?;
     let owner = pc.as_actor_value_owner();
     check(address(owner) == address(pc) + 0xB8, "Actor::as_actor_value_owner is not at +0xB8")?;

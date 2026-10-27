@@ -135,7 +135,7 @@ pub fn reset() {
 }
 
 fn player() -> Result<&'static PlayerCharacter, String> {
-    sre::g_player_character_ptr().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
+    sre::PlayerCharacter::singleton().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
 }
 
 fn names() -> Result<String, String> {

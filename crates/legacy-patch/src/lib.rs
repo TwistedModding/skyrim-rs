@@ -60,7 +60,7 @@ fn install<F: Copy>(plugin: &str, cell: &'static OnceLock<hook::Hook<F>>, name: 
 }
 
 unsafe extern "C" fn mod_actor_value(this: *mut sre::Actor, modifier: i32, value: i32, delta: f32, source: *mut c_void) {
-    let player = sre::g_player_character_ptr().is_some_and(|p| core::ptr::eq(core::ptr::from_ref(p).cast(), this));
+    let player = sre::PlayerCharacter::singleton().is_some_and(|p| core::ptr::eq(core::ptr::from_ref(p).cast(), this));
     if player && value == sre::ActorValue::Health as i32 && modifier == Modifier::Damage as i32 && delta < 0.0 {
         log(A, format_args!("player health damage {delta}"));
     }

@@ -381,7 +381,7 @@ fn ui_source(offset: fn(&sre::EventSourceHolder_MenuOpenClose) -> *const sre::BS
 }
 
 fn player_source(offset: fn(&sre::PlayerCharacter) -> *const sre::BSTEventSource) -> *const sre::BSTEventSource {
-    sre::g_player_character_ptr().map_or(core::ptr::null(), offset)
+    sre::PlayerCharacter::singleton().map_or(core::ptr::null(), offset)
 }
 
 sources! {

@@ -151,7 +151,7 @@ fn snapshot_near(entry: &sre::CameraMatrixEntry) -> f32 {
 /// After the state's own update: the FOV and near writes, then the placement of the camera root.
 unsafe extern "C" fn state_step(camera: *mut sre::TESCamera) {
     unsafe { STEP.get().expect("stored before enabling").original()(camera) }
-    let (Some(pc), Some(player)) = (PlayerCamera::singleton(), sre::g_player_character_ptr()) else { return };
+    let (Some(pc), Some(player)) = (PlayerCamera::singleton(), sre::PlayerCharacter::singleton()) else { return };
     if !core::ptr::eq(core::ptr::from_ref::<sre::TESCamera>(pc), camera) {
         return;
     }

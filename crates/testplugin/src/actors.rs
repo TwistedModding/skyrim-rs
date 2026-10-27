@@ -52,7 +52,7 @@ pub const TESTS: &[(&str, Test)] = &[
 ];
 
 fn player_ref() -> Result<&'static PlayerCharacter, String> {
-    sre::g_player_character_ptr().ok_or_else(|| "g_PlayerCharacter_ptr is null".into())
+    sre::PlayerCharacter::singleton().ok_or_else(|| "g_PlayerCharacter_ptr is null".into())
 }
 
 fn base_npc(player: &PlayerCharacter) -> Result<&TESNPC, String> {

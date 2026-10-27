@@ -115,7 +115,7 @@ pub fn suspend() {
 /// Caches the roots and the view from the player, clears the counters and starts counting when
 /// `count` is set; called after a load.
 pub fn reset(count: bool) {
-    if let Some(p) = sre::g_player_character_ptr() {
+    if let Some(p) = sre::PlayerCharacter::singleton() {
         FIRST_PERSON.store(!p.is_third_person(), Ordering::Relaxed);
         THIRD_ROOT.store(third_person_root(p).map_or(core::ptr::null_mut(), |r| core::ptr::from_ref::<NiAVObject>(r).cast_mut()), Ordering::Relaxed);
         FIRST_ROOT.store(p.first_person_root().map_or(core::ptr::null_mut(), |r| core::ptr::from_ref::<NiAVObject>(r).cast_mut()), Ordering::Relaxed);
@@ -131,7 +131,7 @@ pub fn reset(count: bool) {
 }
 
 fn player() -> Result<&'static PlayerCharacter, String> {
-    sre::g_player_character_ptr().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
+    sre::PlayerCharacter::singleton().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
 }
 
 fn world() -> Result<&'static ShadowSceneNode, String> {

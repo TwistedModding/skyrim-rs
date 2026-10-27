@@ -52,7 +52,7 @@ fn sample_ids() -> Option<[u32; 3]> {
 }
 
 fn player_gold() -> Result<i32, String> {
-    let player = sre::g_player_character_ptr().ok_or("no player")?;
+    let player = sre::PlayerCharacter::singleton().ok_or("no player")?;
     let gold = form(GOLD)?;
     Ok(player.get_inventory_changes().map_or(0, |c| c.get_item_count(gold)))
 }
