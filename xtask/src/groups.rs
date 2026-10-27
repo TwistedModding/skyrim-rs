@@ -30,6 +30,15 @@ const FAMILIES: &[(&str, &str)] = &[
     ("other", "Every name no other group takes."),
 ];
 
+/// Class hierarchies kept in one group whichever passes describe their members: a class that is
+/// or derives from one of the bases goes to the group, before the pass rule.
+const HIERARCHIES: &[(&str, &[&str])] = &[("camera", &["TESCamera", "TESCameraState"])];
+
+/// The group of a class's hierarchy, from the names of the class and all its RTTI bases.
+pub(crate) fn hierarchy(names: &[&str]) -> Option<&'static str> {
+    HIERARCHIES.iter().find(|(_, roots)| names.iter().any(|n| roots.contains(n))).map(|(group, _)| *group)
+}
+
 /// Whether `name` starts with `prefix` followed by an uppercase letter, a digit, `_` or nothing.
 fn word(name: &str, prefix: &str) -> bool {
     name.strip_prefix(prefix).is_some_and(|rest| rest.chars().next().is_none_or(|c| c.is_ascii_uppercase() || c.is_ascii_digit() || c == '_'))
@@ -255,6 +264,9 @@ mod tests {
         assert_eq!(family("AutoRegisterCreator<A,B>"), "factory");
         assert_eq!(family("INISetting_bUseArchives_Archive"), "settings");
         assert_eq!(family("CraftingSubMenus::AlchemyMenu"), "other");
+        assert_eq!(hierarchy(&["FurnitureCameraState", "TESCameraState"]), Some("camera"));
+        assert_eq!(hierarchy(&["TESCamera"]), Some("camera"));
+        assert_eq!(hierarchy(&["NiCamera", "NiAVObject"]), None);
     }
 
     #[test]

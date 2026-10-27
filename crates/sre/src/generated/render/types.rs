@@ -1576,39 +1576,6 @@ const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, eyePosition) == 0x2
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, queuesProcessed) == 0x300);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_304) == 0x304);
 
-/// `TESCamera`: size 0x38 (exact, low).
-/// Meaning: base camera: root node and current state (high, render pass).
-/// Evidence: lower bound field field_30 meets upper bound first own field of LocalMapCamera at 0x38 (soft).
-#[repr(C)]
-pub struct TESCamera {
-    /// +0x0 `vtbl:TESCamera:0`, rtti
-    pub __vftable: *const crate::raw::vtables::TESCamera_vtable,
-    /// +0x8 `class:NiPoint2`, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
-    pub rotationInput: crate::NiPoint2,
-    /// +0x10 `class:NiPoint3`, semantic; NiPoint3 pan input of the frame; reset after every Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; reset from the NiPoint3 zero constant 0x20ccc28
-    pub translationInput: crate::NiPoint3,
-    /// +0x1C `float`, semantic; zoom input of the frame; reset to 0 after every Update (high)
-    pub zoomInput: f32,
-    /// +0x20 `ptr:NiNode`, ctor store, semantic, runtime; the camera's scene graph node (high)
-    pub cameraRoot: *mut crate::NiNode,
-    /// +0x28 `pointer`, ctor store, semantic, runtime; the active TESCameraState (for the player camera one of the 13 states at PlayerCamera+0xb8 + 8 * CameraState) (high)
-    pub currentState: *mut c_void,
-    /// +0x30 `undefined1`, semantic; Update runs the state only while this byte is set (high)
-    pub enabled: u8,
-    /// +0x31 `undefined1`, semantic; tail padding to 0x38 (8-byte alignment of the class) (high)
-    pub pad_31: [u8; 7],
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<TESCamera>() == 0x38);
-const _: () = assert!(core::mem::offset_of!(TESCamera, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESCamera, rotationInput) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESCamera, translationInput) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESCamera, zoomInput) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(TESCamera, cameraRoot) == 0x20);
-const _: () = assert!(core::mem::offset_of!(TESCamera, currentState) == 0x28);
-const _: () = assert!(core::mem::offset_of!(TESCamera, enabled) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESCamera, pad_31) == 0x31);
-
 /// index of a player camera state: PlayerCamera+0xb8 + 8 * id holds the state object and the state stores its id; values from data/camerastates.json (render pass).
 #[repr(u32)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]

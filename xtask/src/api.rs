@@ -5,7 +5,7 @@ use std::collections::{BTreeMap, HashMap, HashSet};
 use std::fmt::Write;
 
 use crate::emit::{Class, KEYWORDS, colon, doc, ident, is_funclet, is_placeholder, screaming, unique};
-use crate::groups::{Items, Kind, family};
+use crate::groups::{Items, Kind, family, hierarchy};
 use crate::inputs::{Inputs, SemFunction, SemGlobal, SemSlot, Symbol};
 
 /// Where a callable's signature comes from, most proven first.
@@ -554,6 +554,12 @@ pub(crate) fn context<'a>(inp: &'a Inputs, classes: &'a BTreeMap<&'a str, Class<
     for pass in &inp.semantic {
         for c in pass.classes.iter().filter(|c| classes.contains_key(c.name.as_str())) {
             groups.insert(c.name.as_str(), pass.subsystem.as_str());
+        }
+    }
+    for c in classes.values() {
+        let names: Vec<&str> = std::iter::once(c.name).chain(c.bases.iter().map(|b| b.0)).collect();
+        if let Some(group) = hierarchy(&names) {
+            groups.insert(c.name, group);
         }
     }
     let values = inp.semantic.iter().filter(|p| p.subsystem == VALUE_PASS).flat_map(|p| &p.classes).map(|c| c.name.as_str()).filter(|c| classes.contains_key(c)).collect();
