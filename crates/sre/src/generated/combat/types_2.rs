@@ -3,12 +3,204 @@
 
 use core::ffi::c_void;
 
+/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, medium); primary base `CombatPathBuilderOpen`.
+/// Evidence: runtime: 0xD8 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
+#[repr(C)]
+pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard {
+    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard_vtable,
+    /// +0x8 `undefined8`, base CombatPathBuilder
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base CombatPathBuilder
+    pub field_10: u64,
+    pub unknown_18: [u8; 48],
+    /// +0x48 `undefined8`, base CombatPathBuilder
+    pub field_48: u64,
+    /// +0x50 `undefined8`, base CombatPathBuilderOpen
+    pub field_50: u64,
+    pub unknown_58: [u8; 128],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard>() == 0xD8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_50) == 0x50);
+
+/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, medium); primary base `CombatPathBuilderOpen`.
+/// Evidence: runtime: 0xD8 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
+#[repr(C)]
+pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard {
+    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_vtable,
+    /// +0x8 `undefined8`, base CombatPathBuilder
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base CombatPathBuilder
+    pub field_10: u64,
+    pub unknown_18: [u8; 48],
+    /// +0x48 `undefined8`, base CombatPathBuilder
+    pub field_48: u64,
+    /// +0x50 `undefined8`, base CombatPathBuilderOpen
+    pub field_50: u64,
+    pub unknown_58: [u8; 128],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard>() == 0xD8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_50) == 0x50);
+
+/// `CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>`: size 0x1A0 (exact, medium); primary base `CombatPathBuilderStandard`.
+/// Evidence: runtime: 0x1A0 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `CombatPathBuilderStandard`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
+#[repr(C)]
+pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard {
+    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard_vtable,
+    /// +0x8 `undefined8`, base CombatPathBuilder
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base CombatPathBuilder
+    pub field_10: u64,
+    pub unknown_18: [u8; 48],
+    /// +0x48 `undefined8`, base CombatPathBuilder
+    pub field_48: u64,
+    pub unknown_50: [u8; 48],
+    /// +0x80 `float`, base CombatPathBuilderStandard
+    pub field_80: f32,
+    /// +0x84 `float`, base CombatPathBuilderStandard
+    pub field_84: f32,
+    /// +0x88 `float`, base CombatPathBuilderStandard
+    pub field_88: f32,
+    /// +0x8C `undefined4`, base CombatPathBuilderStandard
+    pub field_8C: u32,
+    /// +0x90 `undefined8`, base CombatPathBuilderStandard
+    pub field_90: u64,
+    pub unknown_98: [u8; 128],
+    /// +0x118 `undefined8`, base CombatPathBuilderStandard
+    pub field_118: u64,
+    pub unknown_120: [u8; 128],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard>() == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_118) == 0x118);
+
+/// `CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>`: size 0x1A0 (exact, medium); primary base `CombatPathBuilderStandard`.
+/// Evidence: allocation sites (medium): {'416': 1}.
+/// Bases: `CombatPathBuilderStandard`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
+#[repr(C)]
+pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank {
+    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_vtable,
+    /// +0x8 `undefined8`, base CombatPathBuilder
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base CombatPathBuilder
+    pub field_10: u64,
+    pub unknown_18: [u8; 48],
+    /// +0x48 `undefined8`, base CombatPathBuilder
+    pub field_48: u64,
+    pub unknown_50: [u8; 48],
+    /// +0x80 `float`, base CombatPathBuilderStandard
+    pub field_80: f32,
+    /// +0x84 `float`, base CombatPathBuilderStandard
+    pub field_84: f32,
+    /// +0x88 `float`, base CombatPathBuilderStandard
+    pub field_88: f32,
+    /// +0x8C `undefined4`, base CombatPathBuilderStandard
+    pub field_8C: u32,
+    /// +0x90 `undefined8`, base CombatPathBuilderStandard
+    pub field_90: u64,
+    pub unknown_98: [u8; 128],
+    /// +0x118 `undefined8`, base CombatPathBuilderStandard
+    pub field_118: u64,
+    pub unknown_120: [u8; 128],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank>() == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_118) == 0x118);
+
+/// `CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>`: size 0x1A0 (exact, medium); primary base `CombatPathBuilderStandard`.
+/// Evidence: allocation sites (medium): {'416': 1}.
+/// Bases: `CombatPathBuilderStandard`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
+#[repr(C)]
+pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard {
+    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_vtable,
+    /// +0x8 `undefined8`, base CombatPathBuilder
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base CombatPathBuilder
+    pub field_10: u64,
+    pub unknown_18: [u8; 48],
+    /// +0x48 `undefined8`, base CombatPathBuilder
+    pub field_48: u64,
+    pub unknown_50: [u8; 48],
+    /// +0x80 `float`, base CombatPathBuilderStandard
+    pub field_80: f32,
+    /// +0x84 `float`, base CombatPathBuilderStandard
+    pub field_84: f32,
+    /// +0x88 `float`, base CombatPathBuilderStandard
+    pub field_88: f32,
+    /// +0x8C `undefined4`, base CombatPathBuilderStandard
+    pub field_8C: u32,
+    /// +0x90 `undefined8`, base CombatPathBuilderStandard
+    pub field_90: u64,
+    pub unknown_98: [u8; 128],
+    /// +0x118 `undefined8`, base CombatPathBuilderStandard
+    pub field_118: u64,
+    pub unknown_120: [u8; 128],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard>() == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_118) == 0x118);
+
 /// `CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>`: size 0x1A0 (exact, high); primary base `CombatPathBuilderStandard`.
 /// Evidence: runtime: 0x1A0 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `CombatPathBuilderStandard`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
 #[repr(C)]
 pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base CombatPathBuilder
     pub field_8: u64,
@@ -32,6 +224,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyS
     /// +0x118 `undefined8`, base CombatPathBuilderStandard
     pub field_118: u64,
     pub unknown_120: [u8; 128],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard>() == 0x1A0);
@@ -52,8 +245,10 @@ const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilder
 #[repr(C)]
 pub struct CombatPathSpeedController {
     /// +0x0 `vtbl:CombatPathSpeedController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathSpeedController_vtable,
     pub unknown_8: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathSpeedController>() == 0x30);
@@ -66,6 +261,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathSpeedController, __vftable
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -83,6 +279,7 @@ pub struct CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation {
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, __vftable) == 0x0);
@@ -101,6 +298,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestFlight,CombatPathDestinationRef>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -118,6 +316,7 @@ pub struct CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef {
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, __vftable) == 0x0);
@@ -136,6 +335,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestFlyingAttack,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -153,6 +353,7 @@ pub struct CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone {
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, __vftable) == 0x0);
@@ -171,6 +372,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingA
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -188,6 +390,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, __vftable) == 0x0);
@@ -206,6 +409,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSear_5c9bca834317 {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSear_5c9bca834317_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -224,6 +428,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttac
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
     pub unknown_38: [u8; 104],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSear_5c9bca834317>() == 0xA0);
@@ -243,6 +448,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyS_dac5fb67c20c {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyS_dac5fb67c20c_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -260,6 +466,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyS_dac5fb67c20c, __vftable) == 0x0);
@@ -278,6 +485,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPol_0190485cce3e {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPol_0190485cce3e_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -295,6 +503,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideC
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPol_0190485cce3e, __vftable) == 0x0);
@@ -313,6 +522,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSear_ec6a40e82518 {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationRef>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSear_ec6a40e82518_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -331,6 +541,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTarge
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
     pub unknown_38: [u8; 128],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSear_ec6a40e82518>() == 0xB8);
@@ -350,6 +561,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_49bd684b3924 {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_49bd684b3924_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -367,6 +579,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_Com
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_49bd684b3924, __vftable) == 0x0);
@@ -385,6 +598,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPoli_c9b31fcffb81 {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPoli_c9b31fcffb81_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -403,6 +617,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDist
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
     pub unknown_38: [u8; 96],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPoli_c9b31fcffb81>() == 0x98);
@@ -422,6 +637,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStanda_6e4e84560055 {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStanda_6e4e84560055_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -439,6 +655,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_Comb
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStanda_6e4e84560055, __vftable) == 0x0);
@@ -457,6 +674,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicySta_73e3f5f652b9 {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicySta_73e3f5f652b9_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -474,6 +692,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_C
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicySta_73e3f5f652b9, __vftable) == 0x0);
@@ -492,6 +711,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSear_d4585321471c {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSear_d4585321471c_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -510,6 +730,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToC
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
     pub unknown_38: [u8; 120],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSear_d4585321471c>() == 0xB0);
@@ -529,6 +750,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStan_27fa9f4ce879 {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStan_27fa9f4ce879_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -547,6 +769,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_Co
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
     pub unknown_38: [u8; 96],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStan_27fa9f4ce879>() == 0x98);
@@ -566,6 +789,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPoli_f2133b87d480 {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPoli_f2133b87d480_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -584,6 +808,7 @@ pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWan
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
     pub unknown_38: [u8; 80],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPoli_f2133b87d480>() == 0x88);
@@ -603,6 +828,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestHover_CombatPathDestinationNone {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestHover_CombatPathDestinationNone_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -622,6 +848,7 @@ pub struct CombatPathT_CombatPathRequestHover_CombatPathDestinationNone {
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestHover_CombatPathDestinationNone, __vftable) == 0x0);
@@ -641,6 +868,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestHover_C
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -658,6 +886,7 @@ pub struct CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation {
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation, __vftable) == 0x0);
@@ -676,6 +905,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestLanding
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -693,6 +923,7 @@ pub struct CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations, __vftable) == 0x0);
@@ -711,6 +942,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestMultiGo
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -728,6 +960,7 @@ pub struct CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs {
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs, __vftable) == 0x0);
@@ -746,6 +979,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestMultiGo
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -763,6 +997,7 @@ pub struct CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation {
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation, __vftable) == 0x0);
@@ -781,6 +1016,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestOrbit_C
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -798,6 +1034,7 @@ pub struct CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation, __vftable) == 0x0);
@@ -816,6 +1053,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestRotateP
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -833,6 +1071,7 @@ pub struct CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation {
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation, __vftable) == 0x0);
@@ -851,6 +1090,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestStandar
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -869,6 +1109,7 @@ pub struct CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef {
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
     pub unknown_38: [u8; 64],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef>() == 0x78);
@@ -888,6 +1129,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestStandar
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -905,6 +1147,7 @@ pub struct CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocati
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation, __vftable) == 0x0);
@@ -923,6 +1166,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestStraigh
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -940,6 +1184,7 @@ pub struct CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationL
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations, __vftable) == 0x0);
@@ -958,6 +1203,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestWeighte
 #[repr(C, packed)]
 pub struct CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs {
     /// +0x0 `vtbl:CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs_vtable,
     /// +0x8 `undefined4`, base CombatPath
     pub field_8: u32,
@@ -975,6 +1221,7 @@ pub struct CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationR
     pub field_2C: u32,
     /// +0x30 `undefined8`, base CombatPath
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs, __vftable) == 0x0);
@@ -992,6 +1239,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestWeighte
 #[repr(C)]
 pub struct CombatPathingDebugData {
     /// +0x0 `vtbl:CombatPathingDebugData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingDebugData_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -1001,6 +1249,7 @@ pub struct CombatPathingDebugData {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatPathingDebugData, __vftable) == 0x0);
@@ -1014,6 +1263,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingDebugData, field_60) ==
 #[repr(C)]
 pub struct CombatPathingRequest {
     /// +0x0 `vtbl:CombatPathingRequest:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequest_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1072,6 +1322,7 @@ pub struct CombatPathingRequest {
     pub unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, ctor store
     pub field_110: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequest>() == 0x118);
@@ -1107,6 +1358,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequest, field_110) == 
 #[repr(C)]
 pub struct CombatPathingRequestAdapter {
     /// +0x0 `vtbl:CombatPathingRequestAdapter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestAdapter_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1167,6 +1419,7 @@ pub struct CombatPathingRequestAdapter {
     pub field_110: u64,
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestAdapter>() == 0x120);
@@ -1203,6 +1456,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestAdapter, field_1
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1262,6 +1516,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPa
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard>() == 0x140);
@@ -1297,6 +1552,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1356,6 +1612,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 88],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard>() == 0x170);
@@ -1391,6 +1648,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1450,6 +1708,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPa
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard>() == 0x130);
@@ -1485,6 +1744,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1544,6 +1804,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_Comb
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard>() == 0x130);
@@ -1579,6 +1840,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1638,6 +1900,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 64],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard>() == 0x158);
@@ -1673,6 +1936,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1732,6 +1996,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathin
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 144],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank>() == 0x1A8);
@@ -1767,6 +2032,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1826,6 +2092,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_Comba
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 48],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard>() == 0x148);
@@ -1861,6 +2128,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -1920,6 +2188,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathing
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard>() == 0x140);
@@ -1955,6 +2224,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -2014,6 +2284,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPath
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard>() == 0x138);
@@ -2049,6 +2320,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -2108,6 +2380,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 72],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard>() == 0x160);
@@ -2143,6 +2416,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -2202,6 +2476,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathi
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 80],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard>() == 0x168);
@@ -2237,6 +2512,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard {
     /// +0x0 `vtbl:CombatPathingRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -2296,6 +2572,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_Comba
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     pub unknown_118: [u8; 64],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard>() == 0x158);
@@ -2331,6 +2608,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestGeneric_CombatPa
 #[repr(C)]
 pub struct CombatPathingRequestMultiGoal {
     /// +0x0 `vtbl:CombatPathingRequestMultiGoal:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestMultiGoal_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -2393,6 +2671,7 @@ pub struct CombatPathingRequestMultiGoal {
     /// +0x148 `undefined4`, ctor store
     pub field_148: u32,
     pub unknown_14C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestMultiGoal>() == 0x150);
@@ -2429,6 +2708,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestMultiGoal, field
 #[repr(C)]
 pub struct CombatPathingRequestStandard {
     /// +0x0 `vtbl:CombatPathingRequestStandard:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
@@ -2487,6 +2767,7 @@ pub struct CombatPathingRequestStandard {
     pub unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathingRequestStandard>() == 0x118);
@@ -2523,6 +2804,7 @@ const _: () = assert!(core::mem::offset_of!(CombatPathingRequestStandard, field_
 #[repr(C, packed)]
 pub struct CombatProjectileAimController {
     /// +0x0 `vtbl:CombatProjectileAimController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatProjectileAimController_vtable,
     /// +0x8 `undefined4`, base CombatAimController
     pub field_8: u32,
@@ -2607,6 +2889,7 @@ pub struct CombatProjectileAimController {
     pub unknown_C4: [u8; 4],
     /// +0xC8 `undefined8`, ctor store
     pub field_C8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatProjectileAimController>() == 0xD0);
@@ -2657,6 +2940,7 @@ const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field
 #[repr(C)]
 pub struct CombatSearchLockData {
     /// +0x0 `vtbl:CombatSearchLockData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatSearchLockData_vtable,
     /// +0x8 `undefined4`, base PathingLockData
     pub field_8: u32,
@@ -2667,6 +2951,7 @@ pub struct CombatSearchLockData {
     /// +0x40 `undefined1`, base PathingLockData
     pub field_40: u8,
     pub unknown_41: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatSearchLockData, __vftable) == 0x0);
@@ -2680,8 +2965,10 @@ const _: () = assert!(core::mem::offset_of!(CombatSearchLockData, field_40) == 0
 #[repr(C)]
 pub struct CombatTargetLocation {
     /// +0x0 `vtbl:CombatTargetLocation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatTargetLocation_vtable,
     pub unknown_8: [u8; 48],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatTargetLocation>() == 0x38);
@@ -2693,6 +2980,7 @@ const _: () = assert!(core::mem::offset_of!(CombatTargetLocation, __vftable) == 
 #[repr(C)]
 pub struct CombatTargetLocationSearch {
     /// +0x0 `vtbl:CombatTargetLocationSearch:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatTargetLocationSearch_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -2722,6 +3010,7 @@ pub struct CombatTargetLocationSearch {
     pub field_6C: u32,
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatTargetLocationSearch>() == 0x78);
@@ -2746,6 +3035,7 @@ const _: () = assert!(core::mem::offset_of!(CombatTargetLocationSearch, field_70
 #[repr(C)]
 pub struct CombatTargetLocationSearchResult {
     /// +0x0 `vtbl:CombatTargetLocationSearchResult:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatTargetLocationSearchResult_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -2754,6 +3044,7 @@ pub struct CombatTargetLocationSearchResult {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatTargetLocationSearchResult>() == 0x20);
@@ -2768,6 +3059,7 @@ const _: () = assert!(core::mem::offset_of!(CombatTargetLocationSearchResult, fi
 #[repr(C)]
 pub struct CombatTargetSelector {
     /// +0x0 `vtbl:CombatTargetSelector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatTargetSelector_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -2781,6 +3073,7 @@ pub struct CombatTargetSelector {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatTargetSelector>() == 0x28);
@@ -2797,6 +3090,7 @@ const _: () = assert!(core::mem::offset_of!(CombatTargetSelector, field_20) == 0
 #[repr(C)]
 pub struct CombatTargetSelectorFixed {
     /// +0x0 `vtbl:CombatTargetSelectorFixed:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatTargetSelectorFixed_vtable,
     /// +0x8 `undefined4`, base CombatTargetSelector
     pub field_8: u32,
@@ -2810,6 +3104,7 @@ pub struct CombatTargetSelectorFixed {
     /// +0x20 `undefined4`, base CombatTargetSelector
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatTargetSelectorFixed>() == 0x28);
@@ -2826,6 +3121,7 @@ const _: () = assert!(core::mem::offset_of!(CombatTargetSelectorFixed, field_20)
 #[repr(C)]
 pub struct CombatTargetSelectorStandard {
     /// +0x0 `vtbl:CombatTargetSelectorStandard:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatTargetSelectorStandard_vtable,
     /// +0x8 `undefined4`, base CombatTargetSelector
     pub field_8: u32,
@@ -2841,6 +3137,7 @@ pub struct CombatTargetSelectorStandard {
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatTargetSelectorStandard>() == 0x30);
@@ -2859,6 +3156,7 @@ const _: () = assert!(core::mem::offset_of!(CombatTargetSelectorStandard, field_
 #[repr(C, packed)]
 pub struct CombatThreat {
     /// +0x0 `vtbl:CombatThreat:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatThreat_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -2888,6 +3186,7 @@ pub struct CombatThreat {
     pub field_60: f32,
     /// +0x64 `undefined4`, ctor store
     pub field_64: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatThreat, __vftable) == 0x0);
@@ -2912,6 +3211,7 @@ const _: () = assert!(core::mem::offset_of!(CombatThreat, field_64) == 0x64);
 #[repr(C, packed)]
 pub struct CombatTrackTargetAimController {
     /// +0x0 `vtbl:CombatTrackTargetAimController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatTrackTargetAimController_vtable,
     /// +0x8 `undefined4`, base CombatAimController
     pub field_8: u32,
@@ -2942,6 +3242,7 @@ pub struct CombatTrackTargetAimController {
     /// +0x4C `undefined1`, ctor store
     pub field_4C: u8,
     pub unknown_4D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatTrackTargetAimController>() == 0x50);

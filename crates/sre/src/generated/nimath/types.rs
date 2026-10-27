@@ -13,6 +13,7 @@ pub struct NiBound {
     pub center: crate::NiPoint3,
     /// +0xC `float`, semantic; sphere radius (high)
     pub radius: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBound>() == 0x10);
@@ -31,6 +32,7 @@ pub struct NiColor {
     pub g: f32,
     /// +0x8 `float`, semantic; blue (medium)
     pub b: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiColor>() == 0xC);
@@ -52,6 +54,7 @@ pub struct NiColorA {
     pub b: f32,
     /// +0xC `float`, semantic; alpha (high)
     pub a: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiColorA>() == 0x10);
@@ -82,6 +85,7 @@ pub struct NiFrustum {
     pub ortho: u8,
     /// +0x19 `undefined1`, semantic; alignment padding to 0x1c (high)
     pub padding19: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFrustum>() == 0x1C);
@@ -118,6 +122,7 @@ pub struct NiMatrix3 {
     pub entry21: f32,
     /// +0x20 `float`, semantic; row 2, column 2 (high)
     pub entry22: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiMatrix3>() == 0x24);
@@ -141,6 +146,7 @@ pub struct NiPlane {
     pub normal: crate::NiPoint3,
     /// +0xC `float`, semantic; dot(normal, any point on the plane) (high)
     pub constant: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPlane>() == 0x10);
@@ -157,6 +163,7 @@ pub struct NiPoint2 {
     pub x: f32,
     /// +0x4 `float`, semantic; y (pitch for look input) (high)
     pub y: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint2>() == 0x8);
@@ -175,6 +182,7 @@ pub struct NiPoint3 {
     pub y: f32,
     /// +0x8 `float`, semantic; z (up) (high)
     pub z: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint3>() == 0xC);
@@ -196,6 +204,7 @@ pub struct NiPoint4 {
     pub z: f32,
     /// +0xC `float`, semantic; w (0 in the only writer) (high)
     pub w: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint4>() == 0x10);
@@ -218,6 +227,7 @@ pub struct NiQuaternion {
     pub y: f32,
     /// +0xC `float`, semantic; z (high)
     pub z: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiQuaternion>() == 0x10);
@@ -238,6 +248,7 @@ pub struct NiTransform {
     pub translate: crate::NiPoint3,
     /// +0x30 `float`, semantic; uniform scale (high)
     pub scale: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTransform>() == 0x34);
@@ -257,6 +268,7 @@ pub struct hkQsTransform {
     pub rotation: crate::hkQuaternion,
     /// +0x20 `class:hkVector4`, semantic; per-axis scale (high)
     pub scale: crate::hkVector4,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkQsTransform>() == 0x30);
@@ -278,6 +290,7 @@ pub struct hkQuaternion {
     pub z: f32,
     /// +0xC `float`, semantic; scalar part (high)
     pub w: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkQuaternion>() == 0x10);
@@ -300,6 +313,7 @@ pub struct hkVector4 {
     pub z: f32,
     /// +0xC `float`, semantic; w (SIMD lane 3) (high)
     pub w: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkVector4>() == 0x10);

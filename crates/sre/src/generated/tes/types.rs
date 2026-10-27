@@ -10,12 +10,15 @@ use core::ffi::c_void;
 #[repr(C, packed)]
 pub struct TES {
     /// +0x0 `vtbl:TES:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TES_vtable,
     /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<CellAttachDetachEvent>
     pub source_CellAttachDetachEvent: crate::BSTEventSource,
     /// +0x60 `vtbl:TES:60`, rtti
+    #[doc(hidden)]
     pub __vftable_60: *const crate::raw::vtables::TES_vtable_60,
     /// +0x68 `vtbl:TES:68`, rtti
+    #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::TES_vtable_68,
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
@@ -120,6 +123,7 @@ pub struct TES {
     pub field_2B0: u64,
     /// +0x2B8 `undefined8`, ctor store
     pub field_2B8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TES>() == 0x2C0);
@@ -181,10 +185,12 @@ const _: () = assert!(core::mem::offset_of!(TES, field_2B8) == 0x2B8);
 #[repr(C)]
 pub struct TES__SystemEventAdapter {
     /// +0x0 `vtbl:TES::SystemEventAdapter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TES__SystemEventAdapter_vtable,
     /// +0x8 `undefined1`, ctor store
     pub field_8: u8,
     pub unknown_9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TES__SystemEventAdapter, __vftable) == 0x0);
@@ -196,6 +202,7 @@ const _: () = assert!(core::mem::offset_of!(TES__SystemEventAdapter, field_8) ==
 #[repr(C)]
 pub struct TESAIForm {
     /// +0x0 `vtbl:TESAIForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESAIForm_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -204,6 +211,7 @@ pub struct TESAIForm {
     /// +0x10 `undefined2`, ctor store
     pub field_10: u16,
     pub unknown_12: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESAIForm, __vftable) == 0x0);
@@ -217,6 +225,7 @@ const _: () = assert!(core::mem::offset_of!(TESAIForm, field_10) == 0x10);
 #[repr(C)]
 pub struct TESActionData {
     /// +0x0 `vtbl:TESActionData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESActionData_vtable,
     /// +0x8 `undefined8`, base ActionInput
     pub field_8: u64,
@@ -250,6 +259,7 @@ pub struct TESActionData {
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
     pub unknown_84: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESActionData, __vftable) == 0x0);
@@ -273,6 +283,7 @@ const _: () = assert!(core::mem::offset_of!(TESActionData, field_80) == 0x80);
 #[repr(C)]
 pub struct TESActorBase {
     /// +0x0 `vtbl:TESActorBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESActorBase_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -291,6 +302,7 @@ pub struct TESActorBase {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESActorBase:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESActorBase_vtable_30,
     /// +0x38 `undefined4`, base TESActorBaseData, semantic; ACBS flags; see the flag rows (high)
     pub flags: u32,
@@ -320,6 +332,7 @@ pub struct TESActorBase {
     pub field_68: u32,
     pub unknown_6C: [u8; 28],
     /// +0x88 `vtbl:TESActorBase:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESActorBase_vtable_88,
     /// +0x90 `pointer`, base TESContainer, semantic; ContainerEntry*[numEntries] (high)
     pub entries: *mut c_void,
@@ -329,10 +342,12 @@ pub struct TESActorBase {
     pub field_9C: u8,
     pub unknown_9D: [u8; 3],
     /// +0xA0 `vtbl:TESActorBase:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESActorBase_vtable_A0,
     /// +0xA8 `undefined8`, base TESSpellList
     pub field_A8: u64,
     /// +0xB0 `vtbl:TESActorBase:B0`, rtti
+    #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESActorBase_vtable_B0,
     /// +0xB8 `undefined4`, base TESAIForm
     pub field_B8: u32,
@@ -342,19 +357,24 @@ pub struct TESActorBase {
     pub field_C0: u16,
     pub unknown_C2: [u8; 22],
     /// +0xD8 `vtbl:TESActorBase:D8`, rtti
+    #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::TESActorBase_vtable_D8,
     pub unknown_E0: [u8; 8],
     /// +0xE8 `vtbl:TESActorBase:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::TESActorBase_vtable_E8,
     /// +0xF0 `vtbl:TESActorBase:F0`, rtti
+    #[doc(hidden)]
     pub __vftable_F0: *const crate::raw::vtables::TESActorBase_vtable_F0,
     /// +0xF8 `undefined8`, base BGSDestructibleObjectForm
     pub field_F8: u64,
     /// +0x100 `vtbl:TESActorBase:100`, rtti
+    #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::TESActorBase_vtable_100,
     /// +0x108 `undefined8`, base BGSSkinForm
     pub field_108: u64,
     /// +0x110 `vtbl:TESActorBase:110`, rtti
+    #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::TESActorBase_vtable_110,
     /// +0x118 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -362,16 +382,19 @@ pub struct TESActorBase {
     pub numKeywords: u32,
     pub unknown_124: [u8; 4],
     /// +0x128 `vtbl:TESActorBase:128`, rtti
+    #[doc(hidden)]
     pub __vftable_128: *const crate::raw::vtables::TESActorBase_vtable_128,
     /// +0x130 `undefined8`, base BGSAttackDataForm
     pub field_130: u64,
     /// +0x138 `vtbl:TESActorBase:138`, rtti
+    #[doc(hidden)]
     pub __vftable_138: *const crate::raw::vtables::TESActorBase_vtable_138,
     /// +0x140 `undefined8`, base BGSPerkRankArray
     pub field_140: u64,
     /// +0x148 `undefined4`, base BGSPerkRankArray
     pub field_148: u32,
     pub unknown_14C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESActorBase>() == 0x150);
@@ -427,9 +450,11 @@ const _: () = assert!(core::mem::offset_of!(TESActorBase, field_148) == 0x148);
 #[repr(C)]
 pub struct TESAmbushPackageData {
     /// +0x0 `vtbl:TESAmbushPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESAmbushPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESAmbushPackageData>() == 0x10);
@@ -442,6 +467,7 @@ const _: () = assert!(core::mem::offset_of!(TESAmbushPackageData, field_8) == 0x
 #[repr(C)]
 pub struct TESAmmo {
     /// +0x0 `vtbl:TESAmmo:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESAmmo_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -460,9 +486,11 @@ pub struct TESAmmo {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESAmmo:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESAmmo_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESAmmo:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESAmmo_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -474,43 +502,52 @@ pub struct TESAmmo {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESAmmo:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESAmmo_vtable_78,
     pub unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESAmmo:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESAmmo_vtable_88,
     pub unknown_90: [u8; 16],
     /// +0xA0 `vtbl:TESAmmo:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESAmmo_vtable_A0,
     /// +0xA8 `undefined4`, base TESValueForm
     pub field_A8: u32,
     pub unknown_AC: [u8; 4],
     /// +0xB0 `vtbl:TESAmmo:B0`, rtti
+    #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESAmmo_vtable_B0,
     /// +0xB8 `undefined4`, base TESWeightForm
     pub field_B8: u32,
     pub unknown_BC: [u8; 4],
     /// +0xC0 `vtbl:TESAmmo:C0`, rtti
+    #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::TESAmmo_vtable_C0,
     /// +0xC8 `undefined8`, base BGSDestructibleObjectForm
     pub field_C8: u64,
     /// +0xD0 `vtbl:TESAmmo:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESAmmo_vtable_D0,
     /// +0xD8 `undefined8`, base BGSPickupPutdownSounds
     pub field_D8: u64,
     /// +0xE0 `undefined8`, base BGSPickupPutdownSounds
     pub field_E0: u64,
     /// +0xE8 `vtbl:TESAmmo:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::TESAmmo_vtable_E8,
     /// +0xF0 `undefined4`, base TESDescription
     pub field_F0: u32,
     pub unknown_F4: [u8; 4],
     /// +0xF8 `vtbl:TESAmmo:F8`, rtti
+    #[doc(hidden)]
     pub __vftable_F8: *const crate::raw::vtables::TESAmmo_vtable_F8,
     /// +0x100 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
     /// +0x108 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_10C: [u8; 28],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESAmmo>() == 0x128);
@@ -550,6 +587,7 @@ const _: () = assert!(core::mem::offset_of!(TESAmmo, numKeywords) == 0x108);
 #[repr(C)]
 pub struct TESAnimGroup {
     /// +0x0 `vtbl:TESAnimGroup:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESAnimGroup_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -573,6 +611,7 @@ pub struct TESAnimGroup {
     pub unknown_4C: [u8; 4],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESAnimGroup, __vftable) == 0x0);
@@ -592,10 +631,12 @@ const _: () = assert!(core::mem::offset_of!(TESAnimGroup, field_50) == 0x50);
 #[repr(C)]
 pub struct TESAttackDamageForm {
     /// +0x0 `vtbl:TESAttackDamageForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESAttackDamageForm_vtable,
     /// +0x8 `undefined2`, ctor store
     pub field_8: u16,
     pub unknown_A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESAttackDamageForm>() == 0x10);
@@ -608,10 +649,12 @@ const _: () = assert!(core::mem::offset_of!(TESAttackDamageForm, field_8) == 0x8
 #[repr(C)]
 pub struct TESBipedModelForm {
     /// +0x0 `vtbl:TESBipedModelForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESBipedModelForm_vtable,
     pub unknown_8: [u8; 192],
     /// +0xC8 `undefined8`, member ctor TESModelRDT
     pub m_TESModelRDT_C8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESBipedModelForm, __vftable) == 0x0);
@@ -623,6 +666,7 @@ const _: () = assert!(core::mem::offset_of!(TESBipedModelForm, m_TESModelRDT_C8)
 #[repr(C)]
 pub struct TESBoundAnimObject {
     /// +0x0 `vtbl:TESBoundAnimObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESBoundAnimObject_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -648,6 +692,7 @@ pub struct TESBoundAnimObject {
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESBoundAnimObject>() == 0x30);
@@ -670,6 +715,7 @@ const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, field_2A) == 0x2
 #[repr(C)]
 pub struct TESBoundObject {
     /// +0x0 `vtbl:TESBoundObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESBoundObject_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -695,6 +741,7 @@ pub struct TESBoundObject {
     /// +0x2A `undefined2`, ctor store
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESBoundObject>() == 0x30);
@@ -716,7 +763,9 @@ const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_2A) == 0x2A);
 #[repr(C)]
 pub struct TESChildCell {
     /// +0x0 `vtbl:TESChildCell:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESChildCell_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESChildCell>() == 0x8);
@@ -728,6 +777,7 @@ const _: () = assert!(core::mem::offset_of!(TESChildCell, __vftable) == 0x0);
 #[repr(C)]
 pub struct TESClass {
     /// +0x0 `vtbl:TESClass:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESClass_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -741,14 +791,17 @@ pub struct TESClass {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESClass:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESClass_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESClass:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESClass_vtable_30,
     /// +0x38 `undefined4`, base TESDescription
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
     /// +0x40 `vtbl:TESClass:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESClass_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, ctor store
@@ -764,6 +817,7 @@ pub struct TESClass {
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
     pub unknown_74: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESClass>() == 0x78);
@@ -790,6 +844,7 @@ const _: () = assert!(core::mem::offset_of!(TESClass, field_70) == 0x70);
 #[repr(C)]
 pub struct TESClimate {
     /// +0x0 `vtbl:TESClimate:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESClimate_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -810,6 +865,7 @@ pub struct TESClimate {
     /// +0x7C `undefined2`, ctor store
     pub field_7C: u16,
     pub unknown_7E: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESClimate>() == 0x80);
@@ -829,6 +885,7 @@ const _: () = assert!(core::mem::offset_of!(TESClimate, field_7C) == 0x7C);
 #[repr(C)]
 pub struct TESCombatStyle {
     /// +0x0 `vtbl:TESCombatStyle:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESCombatStyle_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -905,6 +962,7 @@ pub struct TESCombatStyle {
     pub field_98: u32,
     /// +0x9C `undefined4`, ctor store
     pub field_9C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCombatStyle>() == 0xA0);
@@ -953,6 +1011,7 @@ const _: () = assert!(core::mem::offset_of!(TESCombatStyle, field_9C) == 0x9C);
 #[repr(C)]
 pub struct TESCustomPackageData {
     /// +0x0 `vtbl:TESCustomPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESCustomPackageData_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined8`, ctor store
@@ -964,6 +1023,7 @@ pub struct TESCustomPackageData {
     /// +0x38 `undefined2`, ctor store
     pub field_38: u16,
     pub unknown_3A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCustomPackageData>() == 0x40);
@@ -979,10 +1039,12 @@ const _: () = assert!(core::mem::offset_of!(TESCustomPackageData, field_38) == 0
 #[repr(C)]
 pub struct TESDescription {
     /// +0x0 `vtbl:TESDescription:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESDescription_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDescription>() == 0x10);
@@ -995,6 +1057,7 @@ const _: () = assert!(core::mem::offset_of!(TESDescription, field_8) == 0x8);
 #[repr(C)]
 pub struct TESDialoguePackageData {
     /// +0x0 `vtbl:TESDialoguePackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESDialoguePackageData_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -1015,6 +1078,7 @@ pub struct TESDialoguePackageData {
     pub unknown_29: [u8; 3],
     /// +0x2C `undefined4`, ctor store
     pub field_2C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDialoguePackageData>() == 0x30);
@@ -1034,9 +1098,11 @@ const _: () = assert!(core::mem::offset_of!(TESDialoguePackageData, field_2C) ==
 #[repr(C)]
 pub struct TESEatPackageData {
     /// +0x0 `vtbl:TESEatPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESEatPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEatPackageData>() == 0x10);
@@ -1050,6 +1116,7 @@ const _: () = assert!(core::mem::offset_of!(TESEatPackageData, field_8) == 0x8);
 #[repr(C, packed)]
 pub struct TESEffectShader {
     /// +0x0 `vtbl:TESEffectShader:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESEffectShader_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1069,6 +1136,7 @@ pub struct TESEffectShader {
     /// +0xC4 `undefined8`, ctor store
     pub field_C4: u64,
     pub unknown_CC: [u8; 340],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEffectShader>() == 0x220);
@@ -1088,12 +1156,14 @@ const _: () = assert!(core::mem::offset_of!(TESEffectShader, field_C4) == 0xC4);
 #[repr(C)]
 pub struct TESEnchantableForm {
     /// +0x0 `vtbl:TESEnchantableForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESEnchantableForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEnchantableForm>() == 0x18);
@@ -1107,12 +1177,14 @@ const _: () = assert!(core::mem::offset_of!(TESEnchantableForm, field_10) == 0x1
 #[repr(C)]
 pub struct TESEscortPackageData {
     /// +0x0 `vtbl:TESEscortPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESEscortPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEscortPackageData>() == 0x18);
@@ -1126,6 +1198,7 @@ const _: () = assert!(core::mem::offset_of!(TESEscortPackageData, field_10) == 0
 #[repr(C)]
 pub struct TESEyes {
     /// +0x0 `vtbl:TESEyes:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESEyes_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1139,14 +1212,17 @@ pub struct TESEyes {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESEyes:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESEyes_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESEyes:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESEyes_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
     pub unknown_41: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEyes>() == 0x48);
@@ -1166,6 +1242,7 @@ const _: () = assert!(core::mem::offset_of!(TESEyes, field_40) == 0x40);
 #[repr(C)]
 pub struct TESFaction {
     /// +0x0 `vtbl:TESFaction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESFaction_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1179,9 +1256,11 @@ pub struct TESFaction {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESFaction:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESFaction_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESFaction:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESFaction_vtable_30,
     /// +0x38 `undefined8`, base TESReactionForm
     pub field_38: u64,
@@ -1239,6 +1318,7 @@ pub struct TESFaction {
     pub field_F8: u32,
     /// +0xFC `undefined4`, ctor store
     pub field_FC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFaction>() == 0x100);
@@ -1283,6 +1363,7 @@ const _: () = assert!(core::mem::offset_of!(TESFaction, field_FC) == 0xFC);
 #[repr(C)]
 pub struct TESFlora {
     /// +0x0 `vtbl:TESFlora:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESFlora_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1301,9 +1382,11 @@ pub struct TESFlora {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESFlora:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESFlora_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESFlora:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESFlora_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -1315,12 +1398,15 @@ pub struct TESFlora {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESFlora:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESFlora_vtable_78,
     /// +0x80 `undefined8`, base BGSDestructibleObjectForm
     pub field_80: u64,
     /// +0x88 `vtbl:TESFlora:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESFlora_vtable_88,
     /// +0x90 `vtbl:TESFlora:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::TESFlora_vtable_90,
     /// +0x98 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -1337,6 +1423,7 @@ pub struct TESFlora {
     pub field_C0: u16,
     pub unknown_C2: [u8; 6],
     /// +0xC8 `vtbl:TESFlora:C8`, rtti
+    #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::TESFlora_vtable_C8,
     /// +0xD0 `undefined8`, base TESProduceForm
     pub field_D0: u64,
@@ -1345,6 +1432,7 @@ pub struct TESFlora {
     /// +0xE0 `undefined4`, base TESProduceForm
     pub field_E0: u32,
     pub unknown_E4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFlora>() == 0xE8);
@@ -1382,12 +1470,14 @@ const _: () = assert!(core::mem::offset_of!(TESFlora, field_E0) == 0xE0);
 #[repr(C)]
 pub struct TESFollowPackageData {
     /// +0x0 `vtbl:TESFollowPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESFollowPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFollowPackageData>() == 0x18);
@@ -1401,8 +1491,10 @@ const _: () = assert!(core::mem::offset_of!(TESFollowPackageData, field_10) == 0
 #[repr(C)]
 pub struct TESFormUIData {
     /// +0x0 `vtbl:TESFormUIData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESFormUIData_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormUIData>() == 0x18);
@@ -1414,6 +1506,7 @@ const _: () = assert!(core::mem::offset_of!(TESFormUIData, __vftable) == 0x0);
 #[repr(C)]
 pub struct TESGrass {
     /// +0x0 `vtbl:TESGrass:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESGrass_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1440,6 +1533,7 @@ pub struct TESGrass {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESGrass:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESGrass_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModel
@@ -1466,6 +1560,7 @@ pub struct TESGrass {
     /// +0x74 `undefined1`, ctor store
     pub field_74: u8,
     pub unknown_75: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESGrass>() == 0x78);
@@ -1499,7 +1594,9 @@ const _: () = assert!(core::mem::offset_of!(TESGrass, field_74) == 0x74);
 #[repr(C)]
 pub struct TESHealthForm {
     /// +0x0 `vtbl:TESHealthForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESHealthForm_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESHealthForm, __vftable) == 0x0);
@@ -1510,7 +1607,9 @@ const _: () = assert!(core::mem::offset_of!(TESHealthForm, __vftable) == 0x0);
 #[repr(C)]
 pub struct TESIcon {
     /// +0x0 `vtbl:TESIcon:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESIcon_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESIcon, __vftable) == 0x0);
@@ -1521,6 +1620,7 @@ const _: () = assert!(core::mem::offset_of!(TESIcon, __vftable) == 0x0);
 #[repr(C)]
 pub struct TESIdleForm {
     /// +0x0 `vtbl:TESIdleForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESIdleForm_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1555,6 +1655,7 @@ pub struct TESIdleForm {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESIdleForm>() == 0x68);
@@ -1581,6 +1682,7 @@ const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_60) == 0x60);
 #[repr(C, packed)]
 pub struct TESImageSpace {
     /// +0x0 `vtbl:TESImageSpace:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESImageSpace_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1624,6 +1726,7 @@ pub struct TESImageSpace {
     /// +0x64 `undefined8`, ctor store
     pub field_64: u64,
     pub unknown_6C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESImageSpace>() == 0x70);
@@ -1655,9 +1758,11 @@ const _: () = assert!(core::mem::offset_of!(TESImageSpace, field_64) == 0x64);
 #[repr(C)]
 pub struct TESImageSpaceModifiableForm {
     /// +0x0 `vtbl:TESImageSpaceModifiableForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESImageSpaceModifiableForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESImageSpaceModifiableForm>() == 0x10);
@@ -1670,6 +1775,7 @@ const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifiableForm, field_8
 #[repr(C)]
 pub struct TESImageSpaceModifier {
     /// +0x0 `vtbl:TESImageSpaceModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESImageSpaceModifier_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1730,6 +1836,7 @@ pub struct TESImageSpaceModifier {
     /// +0x2D8 `undefined4`, ctor store
     pub field_2D8: u32,
     pub unknown_2DC: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESImageSpaceModifier>() == 0x2E0);
@@ -1767,6 +1874,7 @@ const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, field_2D8) ==
 #[repr(C)]
 pub struct TESKey {
     /// +0x0 `vtbl:TESKey:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESKey_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1785,9 +1893,11 @@ pub struct TESKey {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESKey:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESKey_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESKey:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESKey_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -1799,38 +1909,46 @@ pub struct TESKey {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESKey:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESKey_vtable_78,
     pub unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESKey:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESKey_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
     pub unknown_94: [u8; 4],
     /// +0x98 `vtbl:TESKey:98`, rtti
+    #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESKey_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:TESKey:A8`, rtti
+    #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::TESKey_vtable_A8,
     /// +0xB0 `undefined8`, base BGSDestructibleObjectForm
     pub field_B0: u64,
     /// +0xB8 `vtbl:TESKey:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::TESKey_vtable_B8,
     pub unknown_C0: [u8; 16],
     /// +0xD0 `vtbl:TESKey:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESKey_vtable_D0,
     /// +0xD8 `undefined8`, base BGSPickupPutdownSounds
     pub field_D8: u64,
     /// +0xE0 `undefined8`, base BGSPickupPutdownSounds
     pub field_E0: u64,
     /// +0xE8 `vtbl:TESKey:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::TESKey_vtable_E8,
     /// +0xF0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_FC: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESKey>() == 0x100);
@@ -1868,6 +1986,7 @@ const _: () = assert!(core::mem::offset_of!(TESKey, numKeywords) == 0xF8);
 #[repr(C)]
 pub struct TESLandTexture {
     /// +0x0 `vtbl:TESLandTexture:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESLandTexture_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1896,6 +2015,7 @@ pub struct TESLandTexture {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLandTexture>() == 0x50);
@@ -1919,6 +2039,7 @@ const _: () = assert!(core::mem::offset_of!(TESLandTexture, field_48) == 0x48);
 #[repr(C)]
 pub struct TESLevCharacter {
     /// +0x0 `vtbl:TESLevCharacter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESLevCharacter_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1945,6 +2066,7 @@ pub struct TESLevCharacter {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESLevCharacter:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESLevCharacter_vtable_30,
     /// +0x38 `undefined8`, base TESLeveledList
     pub field_38: u64,
@@ -1956,6 +2078,7 @@ pub struct TESLevCharacter {
     /// +0x50 `undefined8`, base TESLeveledList
     pub field_50: u64,
     /// +0x58 `vtbl:TESLevCharacter:58`, rtti
+    #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::TESLevCharacter_vtable_58,
     pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base TESModelTextureSwap
@@ -1966,6 +2089,7 @@ pub struct TESLevCharacter {
     /// +0x88 `undefined4`, base TESModelTextureSwap
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLevCharacter>() == 0x90);
@@ -1997,6 +2121,7 @@ const _: () = assert!(core::mem::offset_of!(TESLevCharacter, field_88) == 0x88);
 #[repr(C)]
 pub struct TESLevItem {
     /// +0x0 `vtbl:TESLevItem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESLevItem_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2023,6 +2148,7 @@ pub struct TESLevItem {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESLevItem:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESLevItem_vtable_30,
     /// +0x38 `undefined8`, base TESLeveledList
     pub field_38: u64,
@@ -2033,6 +2159,7 @@ pub struct TESLevItem {
     pub field_48: u64,
     /// +0x50 `undefined8`, base TESLeveledList
     pub field_50: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLevItem>() == 0x58);
@@ -2060,6 +2187,7 @@ const _: () = assert!(core::mem::offset_of!(TESLevItem, field_50) == 0x50);
 #[repr(C)]
 pub struct TESLevSpell {
     /// +0x0 `vtbl:TESLevSpell:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESLevSpell_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2086,6 +2214,7 @@ pub struct TESLevSpell {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESLevSpell:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESLevSpell_vtable_30,
     /// +0x38 `undefined8`, base TESLeveledList
     pub field_38: u64,
@@ -2096,6 +2225,7 @@ pub struct TESLevSpell {
     pub field_48: u64,
     /// +0x50 `undefined8`, base TESLeveledList
     pub field_50: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLevSpell>() == 0x58);
@@ -2123,6 +2253,7 @@ const _: () = assert!(core::mem::offset_of!(TESLevSpell, field_50) == 0x50);
 #[repr(C)]
 pub struct TESLeveledList {
     /// +0x0 `vtbl:TESLeveledList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESLeveledList_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -2133,6 +2264,7 @@ pub struct TESLeveledList {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLeveledList>() == 0x28);
@@ -2148,6 +2280,7 @@ const _: () = assert!(core::mem::offset_of!(TESLeveledList, field_20) == 0x20);
 #[repr(C)]
 pub struct TESLoadScreen {
     /// +0x0 `vtbl:TESLoadScreen:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESLoadScreen_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2163,6 +2296,7 @@ pub struct TESLoadScreen {
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     pub unknown_30: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLoadScreen>() == 0x38);
@@ -2180,10 +2314,12 @@ const _: () = assert!(core::mem::offset_of!(TESLoadScreen, field_28) == 0x28);
 #[repr(C)]
 pub struct TESModel {
     /// +0x0 `vtbl:TESModel:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModel_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModel>() == 0x18);
@@ -2196,6 +2332,7 @@ const _: () = assert!(core::mem::offset_of!(TESModel, field_10) == 0x10);
 #[repr(C)]
 pub struct TESModelDB__TESQueuedHandles {
     /// +0x0 `vtbl:TESModelDB::TESQueuedHandles:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelDB__TESQueuedHandles_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -2214,6 +2351,7 @@ pub struct TESModelDB__TESQueuedHandles {
     pub field_30: u32,
     pub unknown_34: [u8; 4],
     /// +0x38 `vtbl:TESModelDB::TESQueuedHandles:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::TESModelDB__TESQueuedHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
@@ -2225,6 +2363,7 @@ pub struct TESModelDB__TESQueuedHandles {
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
     pub unknown_56: [u8; 50],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModelDB__TESQueuedHandles>() == 0x88);
@@ -2248,7 +2387,9 @@ const _: () = assert!(core::mem::offset_of!(TESModelDB__TESQueuedHandles, field_
 #[repr(C)]
 pub struct TESModelDB___anon_42B16DF0__TESProcessor {
     /// +0x0 `vtbl:TESModelDB::_anon_42B16DF0::TESProcessor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelDB___anon_42B16DF0__TESProcessor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModelDB___anon_42B16DF0__TESProcessor>() == 0x8);
@@ -2260,7 +2401,9 @@ const _: () = assert!(core::mem::offset_of!(TESModelDB___anon_42B16DF0__TESProce
 #[repr(C)]
 pub struct TESModelLODList {
     /// +0x0 `vtbl:TESModelLODList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelLODList_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelLODList, __vftable) == 0x0);
@@ -2271,10 +2414,12 @@ const _: () = assert!(core::mem::offset_of!(TESModelLODList, __vftable) == 0x0);
 #[repr(C)]
 pub struct TESModelPSA {
     /// +0x0 `vtbl:TESModelPSA:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelPSA_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelPSA, __vftable) == 0x0);
@@ -2286,10 +2431,12 @@ const _: () = assert!(core::mem::offset_of!(TESModelPSA, field_10) == 0x10);
 #[repr(C)]
 pub struct TESModelRDT {
     /// +0x0 `vtbl:TESModelRDT:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelRDT_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelRDT, __vftable) == 0x0);
@@ -2301,6 +2448,7 @@ const _: () = assert!(core::mem::offset_of!(TESModelRDT, field_10) == 0x10);
 #[repr(C)]
 pub struct TESModelTextureSwap {
     /// +0x0 `vtbl:TESModelTextureSwap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelTextureSwap_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
@@ -2311,6 +2459,7 @@ pub struct TESModelTextureSwap {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModelTextureSwap>() == 0x38);
@@ -2325,10 +2474,12 @@ const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, field_30) == 0x
 #[repr(C)]
 pub struct TESModelTri {
     /// +0x0 `vtbl:TESModelTri:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelTri_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelTri, __vftable) == 0x0);
@@ -2340,6 +2491,7 @@ const _: () = assert!(core::mem::offset_of!(TESModelTri, field_10) == 0x10);
 #[repr(C)]
 pub struct TESObject {
     /// +0x0 `vtbl:TESObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObject_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2352,6 +2504,7 @@ pub struct TESObject {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObject>() == 0x20);
@@ -2368,6 +2521,7 @@ const _: () = assert!(core::mem::offset_of!(TESObject, formType) == 0x1A);
 #[repr(C)]
 pub struct TESObjectACTI {
     /// +0x0 `vtbl:TESObjectACTI:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectACTI_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2386,9 +2540,11 @@ pub struct TESObjectACTI {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectACTI:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectACTI_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectACTI:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectACTI_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -2400,12 +2556,15 @@ pub struct TESObjectACTI {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectACTI:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectACTI_vtable_78,
     /// +0x80 `undefined8`, base BGSDestructibleObjectForm
     pub field_80: u64,
     /// +0x88 `vtbl:TESObjectACTI:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectACTI_vtable_88,
     /// +0x90 `vtbl:TESObjectACTI:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::TESObjectACTI_vtable_90,
     /// +0x98 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -2421,6 +2580,7 @@ pub struct TESObjectACTI {
     /// +0xC0 `undefined2`, ctor store
     pub field_C0: u16,
     pub unknown_C2: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectACTI>() == 0xC8);
@@ -2454,6 +2614,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectACTI, field_C0) == 0xC0);
 #[repr(C)]
 pub struct TESObjectANIO {
     /// +0x0 `vtbl:TESObjectANIO:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectANIO_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2467,6 +2628,7 @@ pub struct TESObjectANIO {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectANIO:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectANIO_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `undefined8`, base TESModelTextureSwap
@@ -2480,6 +2642,7 @@ pub struct TESObjectANIO {
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     pub unknown_60: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectANIO>() == 0x68);
@@ -2501,6 +2664,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectANIO, field_58) == 0x58);
 #[repr(C)]
 pub struct TESObjectARMA {
     /// +0x0 `vtbl:TESObjectARMA:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectARMA_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2514,10 +2678,12 @@ pub struct TESObjectARMA {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectARMA:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectARMA_vtable_20,
     /// +0x28 `undefined8`, base TESRaceForm
     pub field_28: u64,
     /// +0x30 `vtbl:TESObjectARMA:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectARMA_vtable_30,
     /// +0x38 `undefined4`, base BGSBipedObjectForm
     pub field_38: u32,
@@ -2549,6 +2715,7 @@ pub struct TESObjectARMA {
     pub field_168: u64,
     /// +0x170 `undefined8`, ctor store
     pub field_170: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectARMA>() == 0x178);
@@ -2581,6 +2748,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectARMA, field_170) == 0x170);
 #[repr(C)]
 pub struct TESObjectARMO {
     /// +0x0 `vtbl:TESObjectARMO:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectARMO_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2599,13 +2767,16 @@ pub struct TESObjectARMO {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectARMO:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectARMO_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectARMO:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectARMO_vtable_40,
     /// +0x48 `undefined8`, base TESRaceForm
     pub field_48: u64,
     /// +0x50 `vtbl:TESObjectARMO:50`, rtti
+    #[doc(hidden)]
     pub __vftable_50: *const crate::raw::vtables::TESObjectARMO_vtable_50,
     /// +0x58 `undefined8`, base TESEnchantableForm
     pub field_58: u64,
@@ -2613,48 +2784,57 @@ pub struct TESObjectARMO {
     pub field_60: u32,
     pub unknown_64: [u8; 4],
     /// +0x68 `vtbl:TESObjectARMO:68`, rtti
+    #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::TESObjectARMO_vtable_68,
     /// +0x70 `undefined4`, base TESValueForm
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectARMO:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectARMO_vtable_78,
     /// +0x80 `undefined4`, base TESWeightForm
     pub field_80: u32,
     pub unknown_84: [u8; 4],
     /// +0x88 `vtbl:TESObjectARMO:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectARMO_vtable_88,
     /// +0x90 `undefined8`, base BGSDestructibleObjectForm
     pub field_90: u64,
     /// +0x98 `vtbl:TESObjectARMO:98`, rtti
+    #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESObjectARMO_vtable_98,
     /// +0xA0 `undefined8`, base BGSPickupPutdownSounds
     pub field_A0: u64,
     /// +0xA8 `undefined8`, base BGSPickupPutdownSounds
     pub field_A8: u64,
     /// +0xB0 `vtbl:TESObjectARMO:B0`, rtti
+    #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESObjectARMO_vtable_B0,
     pub unknown_B8: [u8; 192],
     /// +0x178 `undefined8`, base TESBipedModelForm
     pub m_TESModelRDT_178: u64,
     pub unknown_180: [u8; 32],
     /// +0x1A0 `vtbl:TESObjectARMO:1A0`, rtti
+    #[doc(hidden)]
     pub __vftable_1A0: *const crate::raw::vtables::TESObjectARMO_vtable_1A0,
     /// +0x1A8 `undefined8`, base BGSEquipType
     pub field_1A8: u64,
     /// +0x1B0 `vtbl:TESObjectARMO:1B0`, rtti
+    #[doc(hidden)]
     pub __vftable_1B0: *const crate::raw::vtables::TESObjectARMO_vtable_1B0,
     /// +0x1B8 `undefined4`, base BGSBipedObjectForm
     pub field_1B8: u32,
     /// +0x1BC `undefined4`, base BGSBipedObjectForm
     pub field_1BC: u32,
     /// +0x1C0 `vtbl:TESObjectARMO:1C0`, rtti
+    #[doc(hidden)]
     pub __vftable_1C0: *const crate::raw::vtables::TESObjectARMO_vtable_1C0,
     /// +0x1C8 `undefined8`, base BGSBlockBashData
     pub field_1C8: u64,
     /// +0x1D0 `undefined8`, base BGSBlockBashData
     pub field_1D0: u64,
     /// +0x1D8 `vtbl:TESObjectARMO:1D8`, rtti
+    #[doc(hidden)]
     pub __vftable_1D8: *const crate::raw::vtables::TESObjectARMO_vtable_1D8,
     /// +0x1E0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -2662,10 +2842,12 @@ pub struct TESObjectARMO {
     pub numKeywords: u32,
     pub unknown_1EC: [u8; 4],
     /// +0x1F0 `vtbl:TESObjectARMO:1F0`, rtti
+    #[doc(hidden)]
     pub __vftable_1F0: *const crate::raw::vtables::TESObjectARMO_vtable_1F0,
     /// +0x1F8 `undefined4`, base TESDescription
     pub field_1F8: u32,
     pub unknown_1FC: [u8; 44],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectARMO>() == 0x228);
@@ -2714,6 +2896,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectARMO, field_1F8) == 0x1F8);
 #[repr(C)]
 pub struct TESObjectBOOK {
     /// +0x0 `vtbl:TESObjectBOOK:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectBOOK_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2732,9 +2915,11 @@ pub struct TESObjectBOOK {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectBOOK:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectBOOK_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectBOOK:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectBOOK_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -2746,43 +2931,52 @@ pub struct TESObjectBOOK {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectBOOK:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectBOOK_vtable_78,
     pub unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESObjectBOOK:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectBOOK_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
     pub unknown_94: [u8; 4],
     /// +0x98 `vtbl:TESObjectBOOK:98`, rtti
+    #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESObjectBOOK_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:TESObjectBOOK:A8`, rtti
+    #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::TESObjectBOOK_vtable_A8,
     /// +0xB0 `undefined4`, base TESDescription
     pub field_B0: u32,
     pub unknown_B4: [u8; 4],
     /// +0xB8 `vtbl:TESObjectBOOK:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::TESObjectBOOK_vtable_B8,
     /// +0xC0 `undefined8`, base BGSDestructibleObjectForm
     pub field_C0: u64,
     /// +0xC8 `vtbl:TESObjectBOOK:C8`, rtti
+    #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::TESObjectBOOK_vtable_C8,
     pub unknown_D0: [u8; 16],
     /// +0xE0 `vtbl:TESObjectBOOK:E0`, rtti
+    #[doc(hidden)]
     pub __vftable_E0: *const crate::raw::vtables::TESObjectBOOK_vtable_E0,
     /// +0xE8 `undefined8`, base BGSPickupPutdownSounds
     pub field_E8: u64,
     /// +0xF0 `undefined8`, base BGSPickupPutdownSounds
     pub field_F0: u64,
     /// +0xF8 `vtbl:TESObjectBOOK:F8`, rtti
+    #[doc(hidden)]
     pub __vftable_F8: *const crate::raw::vtables::TESObjectBOOK_vtable_F8,
     /// +0x100 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
     /// +0x108 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_10C: [u8; 44],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectBOOK>() == 0x138);
@@ -2822,6 +3016,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, numKeywords) == 0x108
 #[repr(C)]
 pub struct TESObjectCELL {
     /// +0x0 `vtbl:TESObjectCELL:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectCELL_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2835,6 +3030,7 @@ pub struct TESObjectCELL {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectCELL:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectCELL_vtable_20,
     /// +0x28 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
     pub name: *mut c_void,
@@ -2896,6 +3092,7 @@ pub struct TESObjectCELL {
     pub field_138: u64,
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectCELL>() == 0x148);
@@ -2938,7 +3135,9 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_140) == 0x140);
 #[repr(C)]
 pub struct TESObjectCELL__IDecalRefFunctor {
     /// +0x0 `vtbl:TESObjectCELL::IDecalRefFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectCELL__IDecalRefFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL__IDecalRefFunctor, __vftable) == 0x0);
@@ -2949,6 +3148,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCELL__IDecalRefFunctor, __v
 #[repr(C)]
 pub struct TESObjectCONT {
     /// +0x0 `vtbl:TESObjectCONT:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectCONT_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2975,6 +3175,7 @@ pub struct TESObjectCONT {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectCONT:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectCONT_vtable_30,
     /// +0x38 `pointer`, base TESContainer, semantic; ContainerEntry*[numEntries] (high)
     pub entries: *mut c_void,
@@ -2984,9 +3185,11 @@ pub struct TESObjectCONT {
     pub field_44: u8,
     pub unknown_45: [u8; 3],
     /// +0x48 `vtbl:TESObjectCONT:48`, rtti
+    #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::TESObjectCONT_vtable_48,
     pub unknown_50: [u8; 8],
     /// +0x58 `vtbl:TESObjectCONT:58`, rtti
+    #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::TESObjectCONT_vtable_58,
     pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base TESModelTextureSwap
@@ -2998,15 +3201,18 @@ pub struct TESObjectCONT {
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
     /// +0x90 `vtbl:TESObjectCONT:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::TESObjectCONT_vtable_90,
     /// +0x98 `undefined4`, base TESWeightForm
     pub field_98: u32,
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:TESObjectCONT:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESObjectCONT_vtable_A0,
     /// +0xA8 `undefined8`, base BGSDestructibleObjectForm
     pub field_A8: u64,
     /// +0xB0 `vtbl:TESObjectCONT:B0`, rtti
+    #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESObjectCONT_vtable_B0,
     pub unknown_B8: [u8; 1],
     /// +0xB9 `undefined1`, ctor store
@@ -3016,6 +3222,7 @@ pub struct TESObjectCONT {
     pub field_C0: u64,
     /// +0xC8 `undefined8`, ctor store
     pub field_C8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectCONT>() == 0xD0);
@@ -3055,6 +3262,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCONT, field_C8) == 0xC8);
 #[repr(C)]
 pub struct TESObjectDOOR {
     /// +0x0 `vtbl:TESObjectDOOR:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectDOOR_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3081,9 +3289,11 @@ pub struct TESObjectDOOR {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectDOOR:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectDOOR_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectDOOR:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectDOOR_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -3095,10 +3305,12 @@ pub struct TESObjectDOOR {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectDOOR:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectDOOR_vtable_78,
     /// +0x80 `undefined8`, base BGSDestructibleObjectForm
     pub field_80: u64,
     /// +0x88 `vtbl:TESObjectDOOR:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectDOOR_vtable_88,
     pub unknown_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
@@ -3110,6 +3322,7 @@ pub struct TESObjectDOOR {
     /// +0xB0 `undefined1`, ctor store
     pub field_B0: u8,
     pub unknown_B1: [u8; 31],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectDOOR>() == 0xD0);
@@ -3144,6 +3357,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_B0) == 0xB0);
 #[repr(C)]
 pub struct TESObjectLAND {
     /// +0x0 `vtbl:TESObjectLAND:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectLAND_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3157,6 +3371,7 @@ pub struct TESObjectLAND {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectLAND:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectLAND_vtable_20,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
@@ -3167,6 +3382,7 @@ pub struct TESObjectLAND {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectLAND>() == 0x48);
@@ -3188,6 +3404,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLAND, field_40) == 0x40);
 #[repr(C)]
 pub struct TESObjectLIGH {
     /// +0x0 `vtbl:TESObjectLIGH:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectLIGH_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3214,9 +3431,11 @@ pub struct TESObjectLIGH {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectLIGH:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectLIGH_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectLIGH:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectLIGH_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -3228,30 +3447,37 @@ pub struct TESObjectLIGH {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectLIGH:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectLIGH_vtable_78,
     pub unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESObjectLIGH:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectLIGH_vtable_88,
     pub unknown_90: [u8; 16],
     /// +0xA0 `vtbl:TESObjectLIGH:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESObjectLIGH_vtable_A0,
     /// +0xA8 `undefined4`, base TESWeightForm
     pub field_A8: u32,
     pub unknown_AC: [u8; 4],
     /// +0xB0 `vtbl:TESObjectLIGH:B0`, rtti
+    #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESObjectLIGH_vtable_B0,
     /// +0xB8 `undefined4`, base TESValueForm
     pub field_B8: u32,
     pub unknown_BC: [u8; 4],
     /// +0xC0 `vtbl:TESObjectLIGH:C0`, rtti
+    #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::TESObjectLIGH_vtable_C0,
     /// +0xC8 `undefined8`, base BGSDestructibleObjectForm
     pub field_C8: u64,
     /// +0xD0 `vtbl:TESObjectLIGH:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESObjectLIGH_vtable_D0,
     /// +0xD8 `undefined8`, base BGSEquipType
     pub field_D8: u64,
     pub unknown_E0: [u8; 80],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectLIGH>() == 0x130);
@@ -3289,6 +3515,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_D8) == 0xD8);
 #[repr(C)]
 pub struct TESObjectMISC {
     /// +0x0 `vtbl:TESObjectMISC:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectMISC_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3307,9 +3534,11 @@ pub struct TESObjectMISC {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectMISC:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectMISC_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectMISC:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectMISC_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -3321,38 +3550,46 @@ pub struct TESObjectMISC {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectMISC:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectMISC_vtable_78,
     pub unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESObjectMISC:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectMISC_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
     pub unknown_94: [u8; 4],
     /// +0x98 `vtbl:TESObjectMISC:98`, rtti
+    #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESObjectMISC_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:TESObjectMISC:A8`, rtti
+    #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::TESObjectMISC_vtable_A8,
     /// +0xB0 `undefined8`, base BGSDestructibleObjectForm
     pub field_B0: u64,
     /// +0xB8 `vtbl:TESObjectMISC:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::TESObjectMISC_vtable_B8,
     pub unknown_C0: [u8; 16],
     /// +0xD0 `vtbl:TESObjectMISC:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESObjectMISC_vtable_D0,
     /// +0xD8 `undefined8`, base BGSPickupPutdownSounds
     pub field_D8: u64,
     /// +0xE0 `undefined8`, base BGSPickupPutdownSounds
     pub field_E0: u64,
     /// +0xE8 `vtbl:TESObjectMISC:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::TESObjectMISC_vtable_E8,
     /// +0xF0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_FC: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectMISC>() == 0x100);
@@ -3389,7 +3626,9 @@ const _: () = assert!(core::mem::offset_of!(TESObjectMISC, numKeywords) == 0xF8)
 #[repr(C)]
 pub struct TESObjectREFRDef__IAliasFunctor {
     /// +0x0 `vtbl:TESObjectREFRDef::IAliasFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectREFRDef__IAliasFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRDef__IAliasFunctor, __vftable) == 0x0);
@@ -3399,7 +3638,9 @@ const _: () = assert!(core::mem::offset_of!(TESObjectREFRDef__IAliasFunctor, __v
 #[repr(C)]
 pub struct TESObjectREFRDef__ILinkedReferenceFunctor {
     /// +0x0 `vtbl:TESObjectREFRDef::ILinkedReferenceFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectREFRDef__ILinkedReferenceFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRDef__ILinkedReferenceFunctor, __vftable) == 0x0);
@@ -3411,6 +3652,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectREFRDef__ILinkedReferenceFu
 #[repr(C, packed)]
 pub struct TESObjectREFRSync__REFRSyncController {
     /// +0x0 `vtbl:TESObjectREFRSync::REFRSyncController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectREFRSync__REFRSyncController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3460,6 +3702,7 @@ pub struct TESObjectREFRSync__REFRSyncController {
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
     pub unknown_94: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectREFRSync__REFRSyncController>() == 0x98);
@@ -3494,6 +3737,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncControlle
 #[repr(C, packed)]
 pub struct TESObjectSTAT {
     /// +0x0 `vtbl:TESObjectSTAT:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectSTAT_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3520,6 +3764,7 @@ pub struct TESObjectSTAT {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectSTAT:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectSTAT_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
@@ -3542,6 +3787,7 @@ pub struct TESObjectSTAT {
     /// +0x7B `undefined1`, ctor store
     pub field_7B: u8,
     pub unknown_7C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectSTAT>() == 0x80);
@@ -3573,6 +3819,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, field_7B) == 0x7B);
 #[repr(C)]
 pub struct TESObjectTREE {
     /// +0x0 `vtbl:TESObjectTREE:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectTREE_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3599,15 +3846,18 @@ pub struct TESObjectTREE {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectTREE:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectTREE_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModel
     pub field_40: u64,
     pub unknown_48: [u8; 16],
     /// +0x58 `vtbl:TESObjectTREE:58`, rtti
+    #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::TESObjectTREE_vtable_58,
     pub unknown_60: [u8; 8],
     /// +0x68 `vtbl:TESObjectTREE:68`, rtti
+    #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::TESObjectTREE_vtable_68,
     /// +0x70 `undefined8`, base TESProduceForm
     pub field_70: u64,
@@ -3645,6 +3895,7 @@ pub struct TESObjectTREE {
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     pub unknown_C4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectTREE>() == 0xC8);
@@ -3688,6 +3939,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_C0) == 0xC0);
 #[repr(C)]
 pub struct TESObjectWEAP {
     /// +0x0 `vtbl:TESObjectWEAP:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectWEAP_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3706,9 +3958,11 @@ pub struct TESObjectWEAP {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectWEAP:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectWEAP_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectWEAP:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectWEAP_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -3720,9 +3974,11 @@ pub struct TESObjectWEAP {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectWEAP:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectWEAP_vtable_78,
     pub unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESObjectWEAP:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectWEAP_vtable_88,
     /// +0x90 `undefined8`, base TESEnchantableForm
     pub field_90: u64,
@@ -3730,46 +3986,56 @@ pub struct TESObjectWEAP {
     pub field_98: u32,
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:TESObjectWEAP:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESObjectWEAP_vtable_A0,
     /// +0xA8 `undefined4`, base TESValueForm
     pub field_A8: u32,
     pub unknown_AC: [u8; 4],
     /// +0xB0 `vtbl:TESObjectWEAP:B0`, rtti
+    #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESObjectWEAP_vtable_B0,
     /// +0xB8 `undefined4`, base TESWeightForm
     pub field_B8: u32,
     pub unknown_BC: [u8; 4],
     /// +0xC0 `vtbl:TESObjectWEAP:C0`, rtti
+    #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::TESObjectWEAP_vtable_C0,
     /// +0xC8 `undefined2`, base TESAttackDamageForm
     pub field_C8: u16,
     pub unknown_CA: [u8; 6],
     /// +0xD0 `vtbl:TESObjectWEAP:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESObjectWEAP_vtable_D0,
     /// +0xD8 `undefined8`, base BGSDestructibleObjectForm
     pub field_D8: u64,
     /// +0xE0 `vtbl:TESObjectWEAP:E0`, rtti
+    #[doc(hidden)]
     pub __vftable_E0: *const crate::raw::vtables::TESObjectWEAP_vtable_E0,
     /// +0xE8 `undefined8`, base BGSEquipType
     pub field_E8: u64,
     /// +0xF0 `vtbl:TESObjectWEAP:F0`, rtti
+    #[doc(hidden)]
     pub __vftable_F0: *const crate::raw::vtables::TESObjectWEAP_vtable_F0,
     /// +0xF8 `vtbl:TESObjectWEAP:F8`, rtti
+    #[doc(hidden)]
     pub __vftable_F8: *const crate::raw::vtables::TESObjectWEAP_vtable_F8,
     pub unknown_100: [u8; 16],
     /// +0x110 `vtbl:TESObjectWEAP:110`, rtti
+    #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::TESObjectWEAP_vtable_110,
     /// +0x118 `undefined8`, base BGSPickupPutdownSounds
     pub field_118: u64,
     /// +0x120 `undefined8`, base BGSPickupPutdownSounds
     pub field_120: u64,
     /// +0x128 `vtbl:TESObjectWEAP:128`, rtti
+    #[doc(hidden)]
     pub __vftable_128: *const crate::raw::vtables::TESObjectWEAP_vtable_128,
     /// +0x130 `undefined8`, base BGSBlockBashData
     pub field_130: u64,
     /// +0x138 `undefined8`, base BGSBlockBashData
     pub field_138: u64,
     /// +0x140 `vtbl:TESObjectWEAP:140`, rtti
+    #[doc(hidden)]
     pub __vftable_140: *const crate::raw::vtables::TESObjectWEAP_vtable_140,
     /// +0x148 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -3777,10 +4043,12 @@ pub struct TESObjectWEAP {
     pub numKeywords: u32,
     pub unknown_154: [u8; 4],
     /// +0x158 `vtbl:TESObjectWEAP:158`, rtti
+    #[doc(hidden)]
     pub __vftable_158: *const crate::raw::vtables::TESObjectWEAP_vtable_158,
     /// +0x160 `undefined4`, base TESDescription
     pub field_160: u32,
     pub unknown_164: [u8; 188],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectWEAP>() == 0x220);
@@ -3832,6 +4100,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_160) == 0x160);
 #[repr(C, packed)]
 pub struct TESPackage {
     /// +0x0 `vtbl:TESPackage:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESPackage_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3872,6 +4141,7 @@ pub struct TESPackage {
     pub field_D8: u32,
     /// +0xDC `undefined4`, ctor store
     pub field_DC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPackage>() == 0xE0);
@@ -3899,7 +4169,9 @@ const _: () = assert!(core::mem::offset_of!(TESPackage, field_DC) == 0xDC);
 #[repr(C)]
 pub struct TESPackageData {
     /// +0x0 `vtbl:TESPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESPackageData_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPackageData>() == 0x8);
@@ -3911,12 +4183,14 @@ const _: () = assert!(core::mem::offset_of!(TESPackageData, __vftable) == 0x0);
 #[repr(C)]
 pub struct TESPatrolPackageData {
     /// +0x0 `vtbl:TESPatrolPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESPatrolPackageData_vtable,
     /// +0x8 `undefined1`, ctor store (widths [1, 2])
     pub field_8: u8,
     /// +0x9 `undefined1`, ctor store
     pub field_9: u8,
     pub unknown_A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPatrolPackageData>() == 0x10);
@@ -3930,6 +4204,7 @@ const _: () = assert!(core::mem::offset_of!(TESPatrolPackageData, field_9) == 0x
 #[repr(C)]
 pub struct TESProduceForm {
     /// +0x0 `vtbl:TESProduceForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESProduceForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -3938,6 +4213,7 @@ pub struct TESProduceForm {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESProduceForm>() == 0x20);
@@ -3952,10 +4228,12 @@ const _: () = assert!(core::mem::offset_of!(TESProduceForm, field_18) == 0x18);
 #[repr(C)]
 pub struct TESQualityForm {
     /// +0x0 `vtbl:TESQualityForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESQualityForm_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQualityForm>() == 0x10);
@@ -3969,6 +4247,7 @@ const _: () = assert!(core::mem::offset_of!(TESQualityForm, field_8) == 0x8);
 #[repr(C, packed)]
 pub struct TESQuest {
     /// +0x0 `vtbl:TESQuest:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESQuest_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3985,6 +4264,7 @@ pub struct TESQuest {
     pub field_20: u32,
     pub unknown_24: [u8; 4],
     /// +0x28 `vtbl:TESQuest:28`, rtti
+    #[doc(hidden)]
     pub __vftable_28: *const crate::raw::vtables::TESQuest_vtable_28,
     /// +0x30 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
     pub name: *mut c_void,
@@ -4068,6 +4348,7 @@ pub struct TESQuest {
     /// +0x260 `undefined4`, ctor store
     pub field_260: u32,
     pub unknown_264: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQuest>() == 0x268);
@@ -4119,6 +4400,7 @@ const _: () = assert!(core::mem::offset_of!(TESQuest, field_260) == 0x260);
 #[repr(C)]
 pub struct TESRace {
     /// +0x0 `vtbl:TESRace:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRace_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -4132,25 +4414,30 @@ pub struct TESRace {
     pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `vtbl:TESRace:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESRace_vtable_30,
     /// +0x38 `undefined4`, base TESDescription
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
     /// +0x40 `vtbl:TESRace:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESRace_vtable_40,
     /// +0x48 `undefined8`, base TESSpellList
     pub field_48: u64,
     /// +0x50 `vtbl:TESRace:50`, rtti
+    #[doc(hidden)]
     pub __vftable_50: *const crate::raw::vtables::TESRace_vtable_50,
     /// +0x58 `undefined8`, base BGSSkinForm
     pub field_58: u64,
     /// +0x60 `vtbl:TESRace:60`, rtti
+    #[doc(hidden)]
     pub __vftable_60: *const crate::raw::vtables::TESRace_vtable_60,
     /// +0x68 `undefined4`, base BGSBipedObjectForm
     pub field_68: u32,
     /// +0x6C `undefined4`, base BGSBipedObjectForm
     pub field_6C: u32,
     /// +0x70 `vtbl:TESRace:70`, rtti
+    #[doc(hidden)]
     pub __vftable_70: *const crate::raw::vtables::TESRace_vtable_70,
     /// +0x78 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -4158,6 +4445,7 @@ pub struct TESRace {
     pub numKeywords: u32,
     pub unknown_84: [u8; 4],
     /// +0x88 `vtbl:TESRace:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESRace_vtable_88,
     /// +0x90 `undefined8`, base BGSAttackDataForm
     pub field_90: u64,
@@ -4176,6 +4464,7 @@ pub struct TESRace {
     /// +0x2E0 `undefined8`, ctor store
     pub field_2E0: u64,
     pub unknown_2E8: [u8; 464],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRace>() == 0x4B8);
@@ -4212,9 +4501,11 @@ const _: () = assert!(core::mem::offset_of!(TESRace, field_2E0) == 0x2E0);
 #[repr(C)]
 pub struct TESRaceForm {
     /// +0x0 `vtbl:TESRaceForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRaceForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRaceForm>() == 0x10);
@@ -4227,6 +4518,7 @@ const _: () = assert!(core::mem::offset_of!(TESRaceForm, field_8) == 0x8);
 #[repr(C)]
 pub struct TESReactionForm {
     /// +0x0 `vtbl:TESReactionForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESReactionForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -4235,6 +4527,7 @@ pub struct TESReactionForm {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESReactionForm>() == 0x20);
@@ -4249,6 +4542,7 @@ const _: () = assert!(core::mem::offset_of!(TESReactionForm, field_18) == 0x18);
 #[repr(C)]
 pub struct TESRegion {
     /// +0x0 `vtbl:TESRegion:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegion_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -4274,6 +4568,7 @@ pub struct TESRegion {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegion>() == 0x50);
@@ -4295,6 +4590,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegion, field_48) == 0x48);
 #[repr(C)]
 pub struct TESRegionData {
     /// +0x0 `vtbl:TESRegionData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionData_vtable,
     /// +0x8 `undefined1`, ctor store (widths [1, 2])
     pub field_8: u8,
@@ -4303,6 +4599,7 @@ pub struct TESRegionData {
     /// +0xA `undefined1`, ctor store
     pub field_A: u8,
     pub unknown_B: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionData>() == 0x10);
@@ -4317,6 +4614,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionData, field_A) == 0xA);
 #[repr(C)]
 pub struct TESRegionDataGrass {
     /// +0x0 `vtbl:TESRegionDataGrass:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionDataGrass_vtable,
     /// +0x8 `undefined1`, base TESRegionData
     pub field_8: u8,
@@ -4327,6 +4625,7 @@ pub struct TESRegionDataGrass {
     pub unknown_B: [u8; 5],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionDataGrass, __vftable) == 0x0);
@@ -4341,6 +4640,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionDataGrass, field_10) == 0x1
 #[repr(C)]
 pub struct TESRegionDataLandscape {
     /// +0x0 `vtbl:TESRegionDataLandscape:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionDataLandscape_vtable,
     /// +0x8 `undefined1`, base TESRegionData
     pub field_8: u8,
@@ -4351,6 +4651,7 @@ pub struct TESRegionDataLandscape {
     pub unknown_B: [u8; 5],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataLandscape>() == 0x18);
@@ -4365,9 +4666,11 @@ const _: () = assert!(core::mem::offset_of!(TESRegionDataLandscape, field_10) ==
 #[repr(C)]
 pub struct TESRegionDataManager {
     /// +0x0 `vtbl:TESRegionDataManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionDataManager_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataManager>() == 0x10);
@@ -4380,6 +4683,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionDataManager, field_8) == 0x
 #[repr(C)]
 pub struct TESRegionDataMap {
     /// +0x0 `vtbl:TESRegionDataMap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionDataMap_vtable,
     /// +0x8 `undefined1`, base TESRegionData
     pub field_8: u8,
@@ -4388,6 +4692,7 @@ pub struct TESRegionDataMap {
     /// +0xA `undefined1`, base TESRegionData
     pub field_A: u8,
     pub unknown_B: [u8; 13],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataMap>() == 0x18);
@@ -4402,6 +4707,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionDataMap, field_A) == 0xA);
 #[repr(C)]
 pub struct TESRegionDataObjects {
     /// +0x0 `vtbl:TESRegionDataObjects:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionDataObjects_vtable,
     /// +0x8 `undefined1`, base TESRegionData
     pub field_8: u8,
@@ -4415,6 +4721,7 @@ pub struct TESRegionDataObjects {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionDataObjects, __vftable) == 0x0);
@@ -4430,6 +4737,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionDataObjects, field_18) == 0
 #[repr(C)]
 pub struct TESRegionDataSound {
     /// +0x0 `vtbl:TESRegionDataSound:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionDataSound_vtable,
     /// +0x8 `undefined1`, base TESRegionData
     pub field_8: u8,
@@ -4444,6 +4752,7 @@ pub struct TESRegionDataSound {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataSound>() == 0x30);
@@ -4460,6 +4769,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionDataSound, field_28) == 0x2
 #[repr(C)]
 pub struct TESRegionDataWeather {
     /// +0x0 `vtbl:TESRegionDataWeather:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionDataWeather_vtable,
     /// +0x8 `undefined1`, base TESRegionData
     pub field_8: u8,
@@ -4468,6 +4778,7 @@ pub struct TESRegionDataWeather {
     /// +0xA `undefined1`, base TESRegionData
     pub field_A: u8,
     pub unknown_B: [u8; 21],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataWeather>() == 0x20);
@@ -4482,11 +4793,13 @@ const _: () = assert!(core::mem::offset_of!(TESRegionDataWeather, field_A) == 0x
 #[repr(C)]
 pub struct TESRegionGrassObject {
     /// +0x0 `vtbl:TESRegionGrassObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionGrassObject_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionGrassObject, __vftable) == 0x0);
@@ -4499,6 +4812,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionGrassObject, field_10) == 0
 #[repr(C)]
 pub struct TESRegionGrassObjectList {
     /// +0x0 `vtbl:TESRegionGrassObjectList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionGrassObjectList_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -4509,6 +4823,7 @@ pub struct TESRegionGrassObjectList {
     pub unknown_19: [u8; 3],
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionGrassObjectList, __vftable) == 0x0);
@@ -4523,6 +4838,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionGrassObjectList, field_1C) 
 #[repr(C)]
 pub struct TESRegionList {
     /// +0x0 `vtbl:TESRegionList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionList_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -4531,6 +4847,7 @@ pub struct TESRegionList {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionList>() == 0x20);
@@ -4544,7 +4861,9 @@ const _: () = assert!(core::mem::offset_of!(TESRegionList, field_18) == 0x18);
 #[repr(C)]
 pub struct TESRegionNoiseFunction {
     /// +0x0 `vtbl:TESRegionNoiseFunction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionNoiseFunction_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionNoiseFunction, __vftable) == 0x0);
@@ -4555,6 +4874,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionNoiseFunction, __vftable) =
 #[repr(C)]
 pub struct TESRegionObject {
     /// +0x0 `vtbl:TESRegionObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionObject_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -4596,6 +4916,7 @@ pub struct TESRegionObject {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionObject, __vftable) == 0x0);
@@ -4624,7 +4945,9 @@ const _: () = assert!(core::mem::offset_of!(TESRegionObject, field_48) == 0x48);
 #[repr(C)]
 pub struct TESRegionObjectBase {
     /// +0x0 `vtbl:TESRegionObjectBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionObjectBase_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionObjectBase>() == 0x8);
@@ -4636,6 +4959,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionObjectBase, __vftable) == 0
 #[repr(C)]
 pub struct TESRegionObjectList {
     /// +0x0 `vtbl:TESRegionObjectList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESRegionObjectList_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -4646,6 +4970,7 @@ pub struct TESRegionObjectList {
     pub unknown_19: [u8; 3],
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionObjectList>() == 0x20);
@@ -4661,6 +4986,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionObjectList, field_1C) == 0x
 #[repr(C)]
 pub struct TESShout {
     /// +0x0 `vtbl:TESShout:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESShout_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -4674,17 +5000,21 @@ pub struct TESShout {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESShout:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESShout_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESShout:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESShout_vtable_30,
     /// +0x38 `undefined8`, base BGSMenuDisplayObject
     pub field_38: u64,
     /// +0x40 `vtbl:TESShout:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESShout_vtable_40,
     /// +0x48 `undefined8`, base BGSEquipType
     pub field_48: u64,
     /// +0x50 `vtbl:TESShout:50`, rtti
+    #[doc(hidden)]
     pub __vftable_50: *const crate::raw::vtables::TESShout_vtable_50,
     /// +0x58 `undefined4`, base TESDescription
     pub field_58: u32,
@@ -4710,6 +5040,7 @@ pub struct TESShout {
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESShout>() == 0xA8);
@@ -4742,6 +5073,7 @@ const _: () = assert!(core::mem::offset_of!(TESShout, field_A0) == 0xA0);
 #[repr(C)]
 pub struct TESSoulGem {
     /// +0x0 `vtbl:TESSoulGem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESSoulGem_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -4760,9 +5092,11 @@ pub struct TESSoulGem {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESSoulGem:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESSoulGem_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESSoulGem:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESSoulGem_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -4774,38 +5108,46 @@ pub struct TESSoulGem {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESSoulGem:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESSoulGem_vtable_78,
     pub unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESSoulGem:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESSoulGem_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
     pub unknown_94: [u8; 4],
     /// +0x98 `vtbl:TESSoulGem:98`, rtti
+    #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESSoulGem_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:TESSoulGem:A8`, rtti
+    #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::TESSoulGem_vtable_A8,
     /// +0xB0 `undefined8`, base BGSDestructibleObjectForm
     pub field_B0: u64,
     /// +0xB8 `vtbl:TESSoulGem:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::TESSoulGem_vtable_B8,
     pub unknown_C0: [u8; 16],
     /// +0xD0 `vtbl:TESSoulGem:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESSoulGem_vtable_D0,
     /// +0xD8 `undefined8`, base BGSPickupPutdownSounds
     pub field_D8: u64,
     /// +0xE0 `undefined8`, base BGSPickupPutdownSounds
     pub field_E0: u64,
     /// +0xE8 `vtbl:TESSoulGem:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::TESSoulGem_vtable_E8,
     /// +0xF0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_FC: [u8; 20],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSoulGem>() == 0x110);
@@ -4843,6 +5185,7 @@ const _: () = assert!(core::mem::offset_of!(TESSoulGem, numKeywords) == 0xF8);
 #[repr(C)]
 pub struct TESSound {
     /// +0x0 `vtbl:TESSound:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESSound_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -4870,6 +5213,7 @@ pub struct TESSound {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSound>() == 0x38);
@@ -4893,9 +5237,11 @@ const _: () = assert!(core::mem::offset_of!(TESSound, field_30) == 0x30);
 #[repr(C)]
 pub struct TESSpellList {
     /// +0x0 `vtbl:TESSpellList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESSpellList_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSpellList>() == 0x10);
@@ -4908,8 +5254,10 @@ const _: () = assert!(core::mem::offset_of!(TESSpellList, field_8) == 0x8);
 #[repr(C)]
 pub struct TESTexture {
     /// +0x0 `vtbl:TESTexture:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESTexture_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTexture>() == 0x10);
@@ -4921,7 +5269,9 @@ const _: () = assert!(core::mem::offset_of!(TESTexture, __vftable) == 0x0);
 #[repr(C)]
 pub struct TESTexture1024 {
     /// +0x0 `vtbl:TESTexture1024:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESTexture1024_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESTexture1024, __vftable) == 0x0);
@@ -4932,6 +5282,7 @@ const _: () = assert!(core::mem::offset_of!(TESTexture1024, __vftable) == 0x0);
 #[repr(C)]
 pub struct TESTopic {
     /// +0x0 `vtbl:TESTopic:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESTopic_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -4945,6 +5296,7 @@ pub struct TESTopic {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESTopic:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESTopic_vtable_20,
     /// +0x28 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
     pub name: *mut c_void,
@@ -4966,6 +5318,7 @@ pub struct TESTopic {
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTopic>() == 0x60);
@@ -4994,6 +5347,7 @@ const _: () = assert!(core::mem::offset_of!(TESTopic, field_58) == 0x58);
 #[repr(C, packed)]
 pub struct TESTopicInfo {
     /// +0x0 `vtbl:TESTopicInfo:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESTopicInfo_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -5018,6 +5372,7 @@ pub struct TESTopicInfo {
     /// +0x44 `undefined8`, ctor store
     pub field_44: u64,
     pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTopicInfo>() == 0x50);
@@ -5039,10 +5394,12 @@ const _: () = assert!(core::mem::offset_of!(TESTopicInfo, field_44) == 0x44);
 #[repr(C)]
 pub struct TESTrapListener {
     /// +0x0 `vtbl:TESTrapListener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESTrapListener_vtable,
     /// +0x8 `undefined8`, base BGSZoneTargetListener
     pub field_8: u64,
     /// +0x10 `vtbl:TESTrapListener:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::TESTrapListener_vtable_10,
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
@@ -5052,12 +5409,14 @@ pub struct TESTrapListener {
     /// +0x20 `undefined8`, base bhkTrapListener
     pub field_20: u64,
     /// +0x28 `vtbl:TESTrapListener:28`, rtti
+    #[doc(hidden)]
     pub __vftable_28: *const crate::raw::vtables::TESTrapListener_vtable_28,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined1`, ctor store
     pub field_38: u8,
     pub unknown_39: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTrapListener>() == 0x40);
@@ -5077,9 +5436,11 @@ const _: () = assert!(core::mem::offset_of!(TESTrapListener, field_38) == 0x38);
 #[repr(C)]
 pub struct TESUseItemPackageData {
     /// +0x0 `vtbl:TESUseItemPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESUseItemPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESUseItemPackageData>() == 0x10);
@@ -5092,6 +5453,7 @@ const _: () = assert!(core::mem::offset_of!(TESUseItemPackageData, field_8) == 0
 #[repr(C)]
 pub struct TESUseWeaponPackageData {
     /// +0x0 `vtbl:TESUseWeaponPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESUseWeaponPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -5122,6 +5484,7 @@ pub struct TESUseWeaponPackageData {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESUseWeaponPackageData>() == 0x38);
@@ -5147,10 +5510,12 @@ const _: () = assert!(core::mem::offset_of!(TESUseWeaponPackageData, field_30) =
 #[repr(C)]
 pub struct TESValueForm {
     /// +0x0 `vtbl:TESValueForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESValueForm_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESValueForm>() == 0x10);
@@ -5163,6 +5528,7 @@ const _: () = assert!(core::mem::offset_of!(TESValueForm, field_8) == 0x8);
 #[repr(C)]
 pub struct TESWaterDisplacement {
     /// +0x0 `vtbl:TESWaterDisplacement:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWaterDisplacement_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -5178,6 +5544,7 @@ pub struct TESWaterDisplacement {
     pub unknown_21: [u8; 7],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterDisplacement>() == 0x30);
@@ -5196,6 +5563,7 @@ const _: () = assert!(core::mem::offset_of!(TESWaterDisplacement, field_28) == 0
 #[repr(C, packed)]
 pub struct TESWaterForm {
     /// +0x0 `vtbl:TESWaterForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWaterForm_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -5209,9 +5577,11 @@ pub struct TESWaterForm {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWaterForm:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESWaterForm_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESWaterForm:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESWaterForm_vtable_30,
     /// +0x38 `undefined2`, base TESAttackDamageForm
     pub field_38: u16,
@@ -5293,6 +5663,7 @@ pub struct TESWaterForm {
     pub field_258: f32,
     /// +0x25C `float`, ctor store
     pub field_25C: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterForm>() == 0x260);
@@ -5348,6 +5719,7 @@ const _: () = assert!(core::mem::offset_of!(TESWaterForm, field_25C) == 0x25C);
 #[repr(C)]
 pub struct TESWaterNormals {
     /// +0x0 `vtbl:TESWaterNormals:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWaterNormals_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -5370,6 +5742,7 @@ pub struct TESWaterNormals {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterNormals>() == 0x50);
@@ -5390,6 +5763,7 @@ const _: () = assert!(core::mem::offset_of!(TESWaterNormals, field_48) == 0x48);
 #[repr(C)]
 pub struct TESWaterObject {
     /// +0x0 `vtbl:TESWaterObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWaterObject_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -5412,6 +5786,7 @@ pub struct TESWaterObject {
     /// +0x70 `undefined1`, ctor store
     pub field_70: u8,
     pub unknown_71: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterObject>() == 0x78);
@@ -5432,6 +5807,7 @@ const _: () = assert!(core::mem::offset_of!(TESWaterObject, field_70) == 0x70);
 #[repr(C)]
 pub struct TESWaterReflections {
     /// +0x0 `vtbl:TESWaterReflections:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWaterReflections_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -5479,6 +5855,7 @@ pub struct TESWaterReflections {
     /// +0x80 `undefined1`, ctor store
     pub field_80: u8,
     pub unknown_81: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterReflections>() == 0x88);
@@ -5509,6 +5886,7 @@ const _: () = assert!(core::mem::offset_of!(TESWaterReflections, field_80) == 0x
 #[repr(C, packed)]
 pub struct TESWeather {
     /// +0x0 `vtbl:TESWeather:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWeather_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -5629,6 +6007,7 @@ pub struct TESWeather {
     pub field_8C8: u64,
     /// +0x8D0 `undefined8`, ctor store
     pub field_8D0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWeather>() == 0x8D8);
@@ -5694,7 +6073,9 @@ const _: () = assert!(core::mem::offset_of!(TESWeather, field_8D0) == 0x8D0);
 #[repr(C)]
 pub struct TESWeather__SkyStaticFunctor {
     /// +0x0 `vtbl:TESWeather::SkyStaticFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWeather__SkyStaticFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESWeather__SkyStaticFunctor, __vftable) == 0x0);
@@ -5705,10 +6086,12 @@ const _: () = assert!(core::mem::offset_of!(TESWeather__SkyStaticFunctor, __vfta
 #[repr(C)]
 pub struct TESWeightForm {
     /// +0x0 `vtbl:TESWeightForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWeightForm_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWeightForm>() == 0x10);
@@ -5721,6 +6104,7 @@ const _: () = assert!(core::mem::offset_of!(TESWeightForm, field_8) == 0x8);
 #[repr(C)]
 pub struct TESWindListener {
     /// +0x0 `vtbl:TESWindListener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWindListener_vtable,
     /// +0x8 `undefined4`, base bhkWindListener
     pub field_8: u32,
@@ -5729,6 +6113,7 @@ pub struct TESWindListener {
     pub unknown_D: [u8; 3],
     /// +0x10 `undefined8`, base hkpEntityListener
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWindListener>() == 0x18);
@@ -5743,6 +6128,7 @@ const _: () = assert!(core::mem::offset_of!(TESWindListener, field_10) == 0x10);
 #[repr(C)]
 pub struct TESWordOfPower {
     /// +0x0 `vtbl:TESWordOfPower:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWordOfPower_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -5756,6 +6142,7 @@ pub struct TESWordOfPower {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWordOfPower:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESWordOfPower_vtable_20,
     /// +0x28 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
     pub name: *mut c_void,
@@ -5766,6 +6153,7 @@ pub struct TESWordOfPower {
     /// +0x32 `undefined2`, base TESFullName
     pub field_32: u16,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWordOfPower>() == 0x38);
@@ -5788,6 +6176,7 @@ const _: () = assert!(core::mem::offset_of!(TESWordOfPower, field_32) == 0x32);
 #[repr(C, packed)]
 pub struct TESWorldSpace {
     /// +0x0 `vtbl:TESWorldSpace:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESWorldSpace_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -5801,9 +6190,11 @@ pub struct TESWorldSpace {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWorldSpace:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESWorldSpace_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESWorldSpace:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESWorldSpace_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModel
@@ -5936,6 +6327,7 @@ pub struct TESWorldSpace {
     pub unknown_34C: [u8; 4],
     /// +0x350 `undefined8`, ctor store
     pub field_350: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWorldSpace>() == 0x358);
@@ -6011,7 +6403,9 @@ const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_350) == 0x350);
 #[repr(C)]
 pub struct _anon_7816FE07__TESObjectREFRFactory {
     /// +0x0 `vtbl:_anon_7816FE07::TESObjectREFRFactory:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_7816FE07__TESObjectREFRFactory_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_7816FE07__TESObjectREFRFactory, __vftable) == 0x0);

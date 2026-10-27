@@ -11,6 +11,7 @@ use core::ffi::c_void;
 #[repr(C, packed)]
 pub struct BSCullingProcess {
     /// +0x0 `vtbl:BSCullingProcess:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSCullingProcess_vtable,
     /// +0x8 `undefined1`, base NiCullingProcess
     pub field_8: u8,
@@ -80,6 +81,7 @@ pub struct BSCullingProcess {
     pub lastGroupIndex: u32,
     /// +0x301F4 `undefined4`, semantic; value passed with each appended object (AppendGeometry's second argument); BSParabolicCullingProcess stores the hemisphere (1 or 2) its bound test returned (medium)
     pub appendTag: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSCullingProcess>() == 0x301F8);
@@ -121,6 +123,7 @@ const _: () = assert!(core::mem::offset_of!(BSCullingProcess, appendTag) == 0x30
 #[repr(C)]
 pub struct BSGeometry {
     /// +0x0 `vtbl:BSGeometry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSGeometry_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -187,6 +190,7 @@ pub struct BSGeometry {
     /// +0x150 `undefined1`, ctor store, semantic, runtime; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     pub unknown_151: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSGeometry>() == 0x158);
@@ -229,6 +233,7 @@ const _: () = assert!(core::mem::offset_of!(BSGeometry, type_) == 0x150);
 #[repr(C)]
 pub struct BSLight {
     /// +0x0 `vtbl:BSLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLight_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -274,6 +279,7 @@ pub struct BSLight {
     pub field_130: u64,
     /// +0x138 `undefined8`, ctor store
     pub field_138: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLight>() == 0x140);
@@ -304,6 +310,7 @@ const _: () = assert!(core::mem::offset_of!(BSLight, field_138) == 0x138);
 #[repr(C)]
 pub struct BSLightingShaderProperty {
     /// +0x0 `vtbl:BSLightingShaderProperty:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLightingShaderProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -380,6 +387,7 @@ pub struct BSLightingShaderProperty {
     /// +0x138 `undefined1`, semantic; the record lightData (+0x70) points at; shadow light mask at +0x154, dirty byte at +0x158 (medium)
     pub lightDataStorage: [u8; 36],
     pub unknown_15C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLightingShaderProperty>() == 0x160);
@@ -426,6 +434,7 @@ const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, lightDataS
 #[repr(C)]
 pub struct BSShaderAccumulator {
     /// +0x0 `vtbl:BSShaderAccumulator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShaderAccumulator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -549,6 +558,7 @@ pub struct BSShaderAccumulator {
     /// +0x178 `undefined1`, semantic; set to 1 on the main colour and first-person accumulators (low)
     pub field_178: u8,
     pub unknown_179: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShaderAccumulator>() == 0x180);
@@ -613,6 +623,7 @@ const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_178) == 0
 #[repr(C)]
 pub struct BSShaderProperty {
     /// +0x0 `vtbl:BSShaderProperty:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShaderProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -653,6 +664,7 @@ pub struct BSShaderProperty {
     /// +0x80 `undefined4`, semantic; render frame the pass lists were last rebuilt in (high)
     pub passFrame: u32,
     pub unknown_84: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShaderProperty>() == 0x88);
@@ -683,6 +695,7 @@ const _: () = assert!(core::mem::offset_of!(BSShaderProperty, passFrame) == 0x80
 #[repr(C)]
 pub struct BSShadowDirectionalLight {
     /// +0x0 `vtbl:BSShadowDirectionalLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShadowDirectionalLight_vtable,
     /// +0x8 `undefined4`, base BSLight
     pub field_8: u32,
@@ -768,6 +781,7 @@ pub struct BSShadowDirectionalLight {
     pub directionBlend: f32,
     /// +0x5B4 `u32`, semantic; 1 when the frame camera moved more than 0.01 since its previous world position (+0xd4) (high)
     pub cameraJumped: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShadowDirectionalLight>() == 0x5B8);
@@ -816,6 +830,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, cameraJump
 #[repr(C)]
 pub struct BSShadowFrustumLight {
     /// +0x0 `vtbl:BSShadowFrustumLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShadowFrustumLight_vtable,
     /// +0x8 `undefined4`, base BSLight
     pub field_8: u32,
@@ -896,6 +911,7 @@ pub struct BSShadowFrustumLight {
     /// +0x570 `float`, semantic; far plane override; <= 0 uses the NiLight radius (+0x128) (high)
     pub farDistance: f32,
     pub unknown_574: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShadowFrustumLight>() == 0x578);
@@ -941,6 +957,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, farDistance) =
 #[repr(C)]
 pub struct BSShadowLight {
     /// +0x0 `vtbl:BSShadowLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShadowLight_vtable,
     /// +0x8 `undefined4`, base BSLight
     pub field_8: u32,
@@ -1010,6 +1027,7 @@ pub struct BSShadowLight {
     /// +0x558 `undefined1`, ctor store, semantic, runtime; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
     pub unknown_559: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShadowLight>() == 0x560);
@@ -1050,6 +1068,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowLight, focusShadowsActive) =
 #[repr(C)]
 pub struct BSShadowParabolicLight {
     /// +0x0 `vtbl:BSShadowParabolicLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShadowParabolicLight_vtable,
     /// +0x8 `undefined4`, base BSLight
     pub field_8: u32,
@@ -1119,6 +1138,7 @@ pub struct BSShadowParabolicLight {
     /// +0x558 `undefined1`, base BSShadowLight, semantic; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
     pub unknown_559: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShadowParabolicLight>() == 0x560);
@@ -1159,6 +1179,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, focusShadows
 #[repr(C)]
 pub struct NiAVObject {
     /// +0x0 `vtbl:NiAVObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAVObject_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1202,6 +1223,7 @@ pub struct NiAVObject {
     /// +0x109 `undefined1`, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
     pub unknown_10A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiAVObject>() == 0x110);
@@ -1233,6 +1255,7 @@ const _: () = assert!(core::mem::offset_of!(NiAVObject, flags2) == 0x109);
 #[repr(C)]
 pub struct NiNode {
     /// +0x0 `vtbl:NiNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1278,6 +1301,7 @@ pub struct NiNode {
     pub unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, member ctor NiTObjectArray<NiPointer<NiAVObject>_>, semantic, runtime; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiNode>() == 0x128);
@@ -1310,6 +1334,7 @@ const _: () = assert!(core::mem::offset_of!(NiNode, children) == 0x110);
 #[repr(C)]
 pub struct NiSkinInstance {
     /// +0x0 `vtbl:NiSkinInstance:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSkinInstance_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1340,6 +1365,7 @@ pub struct NiSkinInstance {
     pub field58: u64,
     /// +0x60 `undefined1`, semantic; serialises palette builds (the skin can be drawn from several threads) (high)
     pub paletteLock: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinInstance>() == 0x88);
@@ -1389,6 +1415,7 @@ pub struct ShadowMapData {
     /// +0xE8 `undefined1`, semantic; set when the target slice must be bound and cleared before the casters are drawn (medium)
     pub clearBeforeRender: u8,
     pub unknown_E9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ShadowMapData>() == 0xF0);
@@ -1412,6 +1439,7 @@ const _: () = assert!(core::mem::offset_of!(ShadowMapData, clearBeforeRender) ==
 #[repr(C, packed)]
 pub struct ShadowSceneNode {
     /// +0x0 `vtbl:ShadowSceneNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ShadowSceneNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1521,6 +1549,7 @@ pub struct ShadowSceneNode {
     pub unknown_301: [u8; 3],
     /// +0x304 `undefined4`, ctor store
     pub field_304: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ShadowSceneNode>() == 0x308);

@@ -20,6 +20,7 @@ pub struct AIProcess {
     /// +0x136 `undefined1`, semantic; process flags; bit 3 alerted (medium)
     pub flags: u8,
     pub unknown_137: [u8; 9],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AIProcess>() == 0x140);
@@ -35,6 +36,7 @@ const _: () = assert!(core::mem::offset_of!(AIProcess, flags) == 0x136);
 #[repr(C)]
 pub struct Actor {
     /// +0x0 `vtbl:Actor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Actor_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -48,13 +50,16 @@ pub struct Actor {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Actor:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Actor_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Actor:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::Actor_vtable_30,
     /// +0x38 `vtbl:Actor:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::Actor_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -86,6 +91,7 @@ pub struct Actor {
     pub field_9B: u8,
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:Actor:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::Actor_vtable_A0,
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
@@ -93,18 +99,23 @@ pub struct Actor {
     pub field_B0: u8,
     pub unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:Actor:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::Actor_vtable_B8,
     /// +0xC0 `vtbl:Actor:C0`, rtti
+    #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::Actor_vtable_C0,
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
     pub flags1: u32,
     /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:Actor:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::Actor_vtable_D0,
     /// +0xD8 `vtbl:Actor:D8`, rtti
+    #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::Actor_vtable_D8,
     /// +0xE0 `vtbl:Actor:E0`, rtti
+    #[doc(hidden)]
     pub __vftable_E0: *const crate::raw::vtables::Actor_vtable_E0,
     /// +0xE8 `undefined4`, semantic, runtime; actor flags; see the flag rows (high)
     pub boolFlags: u32,
@@ -165,6 +176,7 @@ pub struct Actor {
     pub unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, semantic; CRITICAL_SECTION (high)
     pub criticalSection: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Actor>() == 0x2B8);
@@ -233,11 +245,13 @@ const _: () = assert!(core::mem::offset_of!(Actor, criticalSection) == 0x290);
 #[repr(C)]
 pub struct ActorState {
     /// +0x0 `vtbl:ActorState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorState_vtable,
     /// +0x8 `undefined4`, ctor store, semantic, runtime; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
     pub flags1: u32,
     /// +0xC `undefined4`, ctor store, semantic, runtime; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
     pub flags2: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorState>() == 0x10);
@@ -252,6 +266,7 @@ const _: () = assert!(core::mem::offset_of!(ActorState, flags2) == 0xC);
 #[repr(C)]
 pub struct ActorValueInfo {
     /// +0x0 `vtbl:ActorValueInfo:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorValueInfo_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -265,14 +280,17 @@ pub struct ActorValueInfo {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ActorValueInfo:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::ActorValueInfo_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:ActorValueInfo:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::ActorValueInfo_vtable_30,
     /// +0x38 `undefined4`, base TESDescription
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
     /// +0x40 `vtbl:ActorValueInfo:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::ActorValueInfo_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `pointer`, ctor store, semantic, runtime; const char* editor name of the value (high)
@@ -345,6 +363,7 @@ pub struct ActorValueInfo {
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     pub unknown_120: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueInfo>() == 0x128);
@@ -401,6 +420,7 @@ pub struct ActorValueList {
     /// +0x8 `undefined1`, semantic; ActorValueInfo*[164] indexed by ActorValue (high)
     pub infos: [u8; 1312],
     pub unknown_528: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueList>() == 0x530);
@@ -412,7 +432,9 @@ const _: () = assert!(core::mem::offset_of!(ActorValueList, infos) == 0x8);
 #[repr(C)]
 pub struct ActorValueOwner {
     /// +0x0 `vtbl:ActorValueOwner:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorValueOwner_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueOwner>() == 0x8);
@@ -428,6 +450,7 @@ pub struct ActorValueStorage {
     pub modifierKeys: *mut c_void,
     /// +0x18 `pointer`, semantic; float[3] per key: permanent, temporary, damage (high)
     pub modifierValues: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueStorage>() == 0x20);
@@ -440,9 +463,11 @@ const _: () = assert!(core::mem::offset_of!(ActorValueStorage, modifierValues) =
 #[repr(C)]
 pub struct BSExtraData {
     /// +0x0 `vtbl:BSExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSExtraData_vtable,
     /// +0x8 `ptr:BSExtraData`, semantic, runtime; next node (high)
     pub next: *mut crate::BSExtraData,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSExtraData>() == 0x10);
@@ -456,10 +481,12 @@ const _: () = assert!(core::mem::offset_of!(BSExtraData, next) == 0x8);
 #[repr(C)]
 pub struct BSHandleRefObject {
     /// +0x0 `vtbl:BSHandleRefObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSHandleRefObject_vtable,
     /// +0x8 `undefined4`, semantic, runtime; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSHandleRefObject>() == 0x10);
@@ -472,6 +499,7 @@ const _: () = assert!(core::mem::offset_of!(BSHandleRefObject, refCount) == 0x8)
 #[repr(C)]
 pub struct BaseExtraList {
     /// +0x0 `vtbl:BaseExtraList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BaseExtraList_vtable,
     /// +0x8 `ptr:BSExtraData`, ctor store, semantic, runtime; first extra data node (high)
     pub head: *mut crate::BSExtraData,
@@ -479,6 +507,7 @@ pub struct BaseExtraList {
     pub presence: *mut c_void,
     /// +0x18 `class:BSReadWriteLock`, semantic, runtime; lock of the list (high)
     pub lock: crate::BSReadWriteLock,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BaseExtraList>() == 0x20);
@@ -495,6 +524,7 @@ const _: () = assert!(core::mem::offset_of!(BaseExtraList, lock) == 0x18);
 #[repr(C, packed)]
 pub struct Character {
     /// +0x0 `vtbl:Character:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Character_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -508,13 +538,16 @@ pub struct Character {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Character:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Character_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Character:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::Character_vtable_30,
     /// +0x38 `vtbl:Character:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::Character_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -546,6 +579,7 @@ pub struct Character {
     pub field_9B: u8,
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:Character:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::Character_vtable_A0,
     /// +0xA8 `undefined8`, base Actor
     pub field_A8: u64,
@@ -553,18 +587,23 @@ pub struct Character {
     pub field_B0: u8,
     pub unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:Character:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::Character_vtable_B8,
     /// +0xC0 `vtbl:Character:C0`, rtti
+    #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::Character_vtable_C0,
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
     pub flags1: u32,
     /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:Character:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::Character_vtable_D0,
     /// +0xD8 `vtbl:Character:D8`, rtti
+    #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::Character_vtable_D8,
     /// +0xE0 `vtbl:Character:E0`, rtti
+    #[doc(hidden)]
     pub __vftable_E0: *const crate::raw::vtables::Character_vtable_E0,
     /// +0xE8 `undefined4`, base Actor, semantic; actor flags; see the flag rows (high)
     pub boolFlags: u32,
@@ -635,6 +674,7 @@ pub struct Character {
     pub unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
     pub criticalSection: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Character>() == 0x2B8);
@@ -711,6 +751,7 @@ pub struct ContainerEntry {
     /// +0x8 `ptr:TESForm`, semantic; the item (high)
     pub form: *mut crate::TESForm,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ContainerEntry>() == 0x18);
@@ -724,11 +765,13 @@ const _: () = assert!(core::mem::offset_of!(ContainerEntry, form) == 0x8);
 #[repr(C)]
 pub struct ExtraContainerChanges {
     /// +0x0 `vtbl:ExtraContainerChanges:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExtraContainerChanges_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `ptr:InventoryChanges`, ctor store, semantic, runtime; the inventory changes (high)
     pub changes: *mut crate::InventoryChanges,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraContainerChanges>() == 0x18);
@@ -746,6 +789,7 @@ pub struct HandleEntry {
     pub unknown_4: [u8; 4],
     /// +0x8 `pointer`, semantic; NiPointer<BSHandleRefObject> (high)
     pub ref_: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HandleEntry>() == 0x10);
@@ -766,6 +810,7 @@ pub struct InventoryChanges {
     /// +0x14 `float`, semantic; the value of +0x10 before its last reset (medium)
     pub previousCachedValue: f32,
     pub unknown_18: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InventoryChanges>() == 0x20);
@@ -786,6 +831,7 @@ pub struct InventoryEntry {
     /// +0x10 `undefined4`, semantic; count relative to the base container (high)
     pub countDelta: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InventoryEntry>() == 0x18);
@@ -801,6 +847,7 @@ pub struct LoadedReferenceData {
     pub unknown_0: [u8; 104],
     /// +0x68 `ptr:NiNode`, semantic; root node of the reference's 3D (high)
     pub node3D: *mut crate::NiNode,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadedReferenceData>() == 0x70);
@@ -854,6 +901,7 @@ pub struct MiddleHighProcessData {
     /// +0x326 `undefined1`, semantic; head tracking on; graph bool bHeadTracking (high)
     pub headTrackingEnabled: u8,
     pub unknown_327: [u8; 1],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MiddleHighProcessData>() == 0x328);
@@ -882,6 +930,7 @@ const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, headTrackingE
 #[repr(C, packed)]
 pub struct PlayerCharacter {
     /// +0x0 `vtbl:PlayerCharacter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::PlayerCharacter_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -895,13 +944,16 @@ pub struct PlayerCharacter {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:PlayerCharacter:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::PlayerCharacter_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:PlayerCharacter:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::PlayerCharacter_vtable_30,
     /// +0x38 `vtbl:PlayerCharacter:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::PlayerCharacter_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -933,6 +985,7 @@ pub struct PlayerCharacter {
     pub field_9B: u8,
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:PlayerCharacter:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::PlayerCharacter_vtable_A0,
     /// +0xA8 `undefined8`, base Actor
     pub field_A8: u64,
@@ -940,18 +993,23 @@ pub struct PlayerCharacter {
     pub field_B0: u8,
     pub unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:PlayerCharacter:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::PlayerCharacter_vtable_B8,
     /// +0xC0 `vtbl:PlayerCharacter:C0`, rtti
+    #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::PlayerCharacter_vtable_C0,
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
     pub flags1: u32,
     /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:PlayerCharacter:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::PlayerCharacter_vtable_D0,
     /// +0xD8 `vtbl:PlayerCharacter:D8`, rtti
+    #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::PlayerCharacter_vtable_D8,
     /// +0xE0 `vtbl:PlayerCharacter:E0`, rtti
+    #[doc(hidden)]
     pub __vftable_E0: *const crate::raw::vtables::PlayerCharacter_vtable_E0,
     /// +0xE8 `undefined4`, base Actor, semantic; actor flags; see the flag rows (high)
     pub boolFlags: u32,
@@ -1030,14 +1088,19 @@ pub struct PlayerCharacter {
     /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
     pub criticalSection: [u8; 40],
     /// +0x2B8 `vtbl:PlayerCharacter:2B8`, rtti
+    #[doc(hidden)]
     pub __vftable_2B8: *const crate::raw::vtables::PlayerCharacter_vtable_2B8,
     /// +0x2C0 `vtbl:PlayerCharacter:2C0`, rtti
+    #[doc(hidden)]
     pub __vftable_2C0: *const crate::raw::vtables::PlayerCharacter_vtable_2C0,
     /// +0x2C8 `vtbl:PlayerCharacter:2C8`, rtti
+    #[doc(hidden)]
     pub __vftable_2C8: *const crate::raw::vtables::PlayerCharacter_vtable_2C8,
     /// +0x2D0 `vtbl:PlayerCharacter:2D0`, rtti
+    #[doc(hidden)]
     pub __vftable_2D0: *const crate::raw::vtables::PlayerCharacter_vtable_2D0,
     /// +0x2D8 `vtbl:PlayerCharacter:2D8`, rtti
+    #[doc(hidden)]
     pub __vftable_2D8: *const crate::raw::vtables::PlayerCharacter_vtable_2D8,
     /// +0x2E0 `class:BSTEventSource`, RTTI base BSTEventSource<BGSActorCellEvent>
     pub source_BGSActorCellEvent: crate::BSTEventSource,
@@ -1511,6 +1574,7 @@ pub struct PlayerCharacter {
     /// +0xBEC `undefined1`, ctor store
     pub field_BEC: u8,
     pub unknown_BED: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerCharacter>() == 0xBF0);
@@ -1804,6 +1868,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BEC) == 0xBEC
 #[repr(C)]
 pub struct TESActorBaseData {
     /// +0x0 `vtbl:TESActorBaseData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESActorBaseData_vtable,
     /// +0x8 `undefined4`, ctor store, semantic, runtime; ACBS flags; see the flag rows (high)
     pub flags: u32,
@@ -1832,6 +1897,7 @@ pub struct TESActorBaseData {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 28],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESActorBaseData>() == 0x58);
@@ -1856,6 +1922,7 @@ const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_38) == 0x38)
 #[repr(C)]
 pub struct TESContainer {
     /// +0x0 `vtbl:TESContainer:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESContainer_vtable,
     /// +0x8 `pointer`, ctor store, semantic, runtime; ContainerEntry*[numEntries] (high)
     pub entries: *mut c_void,
@@ -1864,6 +1931,7 @@ pub struct TESContainer {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESContainer>() == 0x18);
@@ -1879,6 +1947,7 @@ const _: () = assert!(core::mem::offset_of!(TESContainer, field_14) == 0x14);
 #[repr(C)]
 pub struct TESFullName {
     /// +0x0 `vtbl:TESFullName:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESFullName_vtable,
     /// +0x8 `pointer`, semantic, runtime; BSFixedString full name (high)
     pub name: *mut c_void,
@@ -1889,6 +1958,7 @@ pub struct TESFullName {
     /// +0x12 `undefined2`, ctor store
     pub field_12: u16,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFullName>() == 0x18);
@@ -1905,6 +1975,7 @@ const _: () = assert!(core::mem::offset_of!(TESFullName, field_12) == 0x12);
 #[repr(C)]
 pub struct TESNPC {
     /// +0x0 `vtbl:TESNPC:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESNPC_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1923,6 +1994,7 @@ pub struct TESNPC {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESNPC:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESNPC_vtable_30,
     /// +0x38 `undefined4`, base TESActorBaseData, semantic; ACBS flags; see the flag rows (high)
     pub flags: u32,
@@ -1952,6 +2024,7 @@ pub struct TESNPC {
     pub field_68: u32,
     pub unknown_6C: [u8; 28],
     /// +0x88 `vtbl:TESNPC:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESNPC_vtable_88,
     /// +0x90 `pointer`, base TESContainer, semantic; ContainerEntry*[numEntries] (high)
     pub entries: *mut c_void,
@@ -1961,10 +2034,12 @@ pub struct TESNPC {
     pub field_9C: u8,
     pub unknown_9D: [u8; 3],
     /// +0xA0 `vtbl:TESNPC:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESNPC_vtable_A0,
     /// +0xA8 `undefined8`, base TESSpellList
     pub field_A8: u64,
     /// +0xB0 `vtbl:TESNPC:B0`, rtti
+    #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESNPC_vtable_B0,
     /// +0xB8 `undefined4`, base TESAIForm
     pub field_B8: u32,
@@ -1974,20 +2049,25 @@ pub struct TESNPC {
     pub field_C0: u16,
     pub unknown_C2: [u8; 22],
     /// +0xD8 `vtbl:TESNPC:D8`, rtti
+    #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::TESNPC_vtable_D8,
     /// +0xE0 `pointer`, semantic, runtime; the NPC's full name (BSFixedString) (high)
     pub fullName: *mut c_void,
     /// +0xE8 `vtbl:TESNPC:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::TESNPC_vtable_E8,
     /// +0xF0 `vtbl:TESNPC:F0`, rtti
+    #[doc(hidden)]
     pub __vftable_F0: *const crate::raw::vtables::TESNPC_vtable_F0,
     /// +0xF8 `undefined8`, base BGSDestructibleObjectForm
     pub field_F8: u64,
     /// +0x100 `vtbl:TESNPC:100`, rtti
+    #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::TESNPC_vtable_100,
     /// +0x108 `undefined8`, base BGSSkinForm
     pub field_108: u64,
     /// +0x110 `vtbl:TESNPC:110`, rtti
+    #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::TESNPC_vtable_110,
     /// +0x118 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -1995,10 +2075,12 @@ pub struct TESNPC {
     pub numKeywords: u32,
     pub unknown_124: [u8; 4],
     /// +0x128 `vtbl:TESNPC:128`, rtti
+    #[doc(hidden)]
     pub __vftable_128: *const crate::raw::vtables::TESNPC_vtable_128,
     /// +0x130 `ptr:BGSAttackDataMap`, base BGSAttackDataForm, runtime
     pub field_130: *mut crate::BGSAttackDataMap,
     /// +0x138 `vtbl:TESNPC:138`, rtti
+    #[doc(hidden)]
     pub __vftable_138: *const crate::raw::vtables::TESNPC_vtable_138,
     /// +0x140 `undefined8`, base BGSPerkRankArray
     pub field_140: u64,
@@ -2006,10 +2088,12 @@ pub struct TESNPC {
     pub field_148: u32,
     pub unknown_14C: [u8; 4],
     /// +0x150 `vtbl:TESNPC:150`, rtti
+    #[doc(hidden)]
     pub __vftable_150: *const crate::raw::vtables::TESNPC_vtable_150,
     /// +0x158 `ptr:TESRace`, base TESRaceForm, runtime, semantic; the NPC's race (high)
     pub race: *mut crate::TESRace,
     /// +0x160 `vtbl:TESNPC:160`, rtti
+    #[doc(hidden)]
     pub __vftable_160: *const crate::raw::vtables::TESNPC_vtable_160,
     /// +0x168 `undefined8`, base BGSOverridePackCollection
     pub field_168: u64,
@@ -2020,6 +2104,7 @@ pub struct TESNPC {
     /// +0x180 `undefined8`, base BGSOverridePackCollection
     pub field_180: u64,
     /// +0x188 `vtbl:TESNPC:188`, rtti
+    #[doc(hidden)]
     pub __vftable_188: *const crate::raw::vtables::TESNPC_vtable_188,
     pub unknown_190: [u8; 48],
     /// +0x1C0 `ptr:TESClass`, semantic, runtime; the NPC's class (high)
@@ -2033,6 +2118,7 @@ pub struct TESNPC {
     /// +0x1FC `float`, semantic, runtime; weight (0-100) (high)
     pub weight: f32,
     pub unknown_200: [u8; 104],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESNPC>() == 0x268);
@@ -2102,6 +2188,7 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, weight) == 0x1FC);
 #[repr(C)]
 pub struct TESObjectREFR {
     /// +0x0 `vtbl:TESObjectREFR:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectREFR_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2115,13 +2202,16 @@ pub struct TESObjectREFR {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectREFR:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectREFR_vtable_20,
     /// +0x28 `undefined4`, ctor store, semantic, runtime; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectREFR:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectREFR_vtable_30,
     /// +0x38 `vtbl:TESObjectREFR:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::TESObjectREFR_vtable_38,
     /// +0x40 `ptr:TESForm`, ctor store, semantic, runtime; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -2152,6 +2242,7 @@ pub struct TESObjectREFR {
     /// +0x9B `undefined1`, ctor store
     pub field_9B: u8,
     pub unknown_9C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectREFR>() == 0xA0);

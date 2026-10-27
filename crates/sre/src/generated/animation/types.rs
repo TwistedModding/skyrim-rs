@@ -31,6 +31,7 @@ pub struct BSAnimationGraphManager {
     /// +0xB0 `undefined4`, ctor store, semantic, runtime; index of the active graph in graphs (high)
     pub activeGraph: u32,
     pub unknown_B4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAnimationGraphManager>() == 0xB8);
@@ -52,6 +53,7 @@ const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, activeGraph
 #[repr(C)]
 pub struct BSDismemberSkinInstance {
     /// +0x0 `vtbl:BSDismemberSkinInstance:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSDismemberSkinInstance_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -90,6 +92,7 @@ pub struct BSDismemberSkinInstance {
     /// +0x98 `undefined1`, semantic; OR of the entries' byte 0 (high)
     pub anyPartitionVisible: u8,
     pub unknown_99: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDismemberSkinInstance>() == 0xA0);
@@ -120,6 +123,7 @@ const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, anyPartitio
 #[repr(C, packed)]
 pub struct BSFaceGenAnimationData {
     /// +0x0 `vtbl:BSFaceGenAnimationData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFaceGenAnimationData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -185,6 +189,7 @@ pub struct BSFaceGenAnimationData {
     pub lock: crate::BSSpinLock,
     /// +0x228 `pointer`, semantic; sampled lip-sync channel data (17 floats per sample) (low)
     pub phonemeAnim: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenAnimationData>() == 0x230);
@@ -226,6 +231,7 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeAnim)
 #[repr(C)]
 pub struct BSFaceGenNiNode {
     /// +0x0 `vtbl:BSFaceGenNiNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFaceGenNiNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -283,6 +289,7 @@ pub struct BSFaceGenNiNode {
     /// +0x160 `undefined2`, semantic; face update flags (see flags); see the flag rows (high)
     pub faceFlags: u16,
     pub unknown_162: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenNiNode>() == 0x168);
@@ -379,6 +386,7 @@ pub struct BShkbAnimationGraph {
     /// +0x248 `undefined2`, ctor store
     pub field_248: u16,
     pub unknown_24A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BShkbAnimationGraph>() == 0x250);
@@ -417,7 +425,9 @@ const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_248) == 0
 #[repr(C)]
 pub struct IAnimationGraphManagerHolder {
     /// +0x0 `vtbl:IAnimationGraphManagerHolder:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAnimationGraphManagerHolder_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IAnimationGraphManagerHolder>() == 0x8);
@@ -430,6 +440,7 @@ const _: () = assert!(core::mem::offset_of!(IAnimationGraphManagerHolder, __vfta
 #[repr(C)]
 pub struct NiSkinData {
     /// +0x0 `vtbl:NiSkinData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSkinData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -444,6 +455,7 @@ pub struct NiSkinData {
     /// +0x58 `undefined4`, semantic; number of bones (high)
     pub boneCount: u32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinData>() == 0x60);
@@ -469,6 +481,7 @@ pub struct NiSkinData__BoneData {
     /// +0x50 `undefined2`, semantic; number of weights (high)
     pub weightCount: u16,
     pub unknown_52: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinData__BoneData>() == 0x58);
@@ -484,6 +497,7 @@ const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, weightCount) =
 #[repr(C)]
 pub struct NiSkinPartition {
     /// +0x0 `vtbl:NiSkinPartition:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSkinPartition_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -496,6 +510,7 @@ pub struct NiSkinPartition {
     /// +0x20 `undefined4`, semantic; shared vertex block size / vertex stride (medium)
     pub vertexCount: u32,
     pub unknown_24: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinPartition>() == 0x28);
@@ -541,6 +556,7 @@ pub struct NiSkinPartition__Partition {
     pub unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; renderer index buffer built from the triangles (low)
     pub triangleBuffer: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinPartition__Partition>() == 0x50);
@@ -567,6 +583,7 @@ const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangle
 #[repr(C)]
 pub struct hkaSkeleton {
     /// +0x0 `vtbl:hkaSkeleton:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkaSkeleton_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -612,6 +629,7 @@ pub struct hkaSkeleton {
     pub field_70: u32,
     /// +0x74 `undefined4`, base hkBaseObject
     pub field_74: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkaSkeleton>() == 0x78);
@@ -645,6 +663,7 @@ const _: () = assert!(core::mem::offset_of!(hkaSkeleton, field_74) == 0x74);
 #[repr(C)]
 pub struct hkbBehaviorGraph {
     /// +0x0 `vtbl:hkbBehaviorGraph:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbBehaviorGraph_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
@@ -758,6 +777,7 @@ pub struct hkbBehaviorGraph {
     /// +0x12C `undefined1`, semantic; graph has been activated (medium)
     pub isActive: u8,
     pub unknown_12D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbBehaviorGraph>() == 0x130);
@@ -824,6 +844,7 @@ const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, isActive) == 0x12C
 #[repr(C)]
 pub struct hkbCharacter {
     /// +0x0 `vtbl:hkbCharacter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbCharacter_vtable,
     /// +0x8 `undefined4`, semantic; hkReferencedObject size/ref word (medium)
     pub memSizeAndRefCount: u32,
@@ -869,6 +890,7 @@ pub struct hkbCharacter {
     /// +0x9D `undefined1`, semantic; poseLocal was allocated by the character (high)
     pub ownsPoseLocal: u8,
     pub unknown_9E: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbCharacter>() == 0xA0);
@@ -902,6 +924,7 @@ const _: () = assert!(core::mem::offset_of!(hkbCharacter, ownsPoseLocal) == 0x9D
 #[repr(C)]
 pub struct hkbRagdollDriver {
     /// +0x0 `vtbl:hkbRagdollDriver:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbRagdollDriver_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -983,6 +1006,7 @@ pub struct hkbRagdollDriver {
     /// +0xC4 `undefined4`, base hkBaseObject
     pub field_C4: u32,
     pub unknown_C8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbRagdollDriver>() == 0xD0);
@@ -1034,6 +1058,7 @@ const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, field_C4) == 0xC4)
 #[repr(C)]
 pub struct hkbVariableValueSet {
     /// +0x0 `vtbl:hkbVariableValueSet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkbVariableValueSet_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `pointer`, base hkBaseObject, semantic; 4-byte value per variable (int, bool as int, float bits), indexed by variable id (high)
@@ -1045,6 +1070,7 @@ pub struct hkbVariableValueSet {
     pub quadValues: [u8; 16],
     /// +0x30 `undefined1`, base hkBaseObject, semantic; third hkArray (ref-counted entries) (low)
     pub variantValues: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbVariableValueSet>() == 0x40);

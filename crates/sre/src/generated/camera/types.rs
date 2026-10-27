@@ -11,6 +11,7 @@ use core::ffi::c_void;
 #[repr(C, packed)]
 pub struct ActorMagicCaster {
     /// +0x0 `vtbl:ActorMagicCaster:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMagicCaster_vtable,
     pub unknown_8: [u8; 16],
     /// +0x18 `undefined4`, base MagicCaster
@@ -32,12 +33,14 @@ pub struct ActorMagicCaster {
     /// +0x44 `undefined4`, base MagicCaster
     pub field_44: u32,
     /// +0x48 `vtbl:ActorMagicCaster:48`, rtti
+    #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::ActorMagicCaster_vtable_48,
     /// +0x50 `undefined8`, base SimpleAnimationGraphManagerHolder
     pub field_50: u64,
     /// +0x58 `undefined8`, base SimpleAnimationGraphManagerHolder
     pub field_58: u64,
     /// +0x60 `vtbl:ActorMagicCaster:60`, rtti
+    #[doc(hidden)]
     pub __vftable_60: *const crate::raw::vtables::ActorMagicCaster_vtable_60,
     /// +0x68 `undefined8`, member ctor RefAttachTechniqueInput
     pub m_RefAttachTechniqueInput_68: u64,
@@ -82,6 +85,7 @@ pub struct ActorMagicCaster {
     /// +0xF8 `undefined4`, ctor store
     pub field_F8: u32,
     pub unknown_FC: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorMagicCaster>() == 0x100);
@@ -126,11 +130,13 @@ const _: () = assert!(core::mem::offset_of!(ActorMagicCaster, field_F8) == 0xF8)
 #[repr(C)]
 pub struct AnimatedCameraDeltaStartHandler {
     /// +0x0 `vtbl:AnimatedCameraDeltaStartHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimatedCameraDeltaStartHandler_vtable,
     /// +0x8 `u32`, semantic; IHandlerFunctor reference count (BSIntrusiveRefCounted) (medium)
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimatedCameraDeltaStartHandler>() == 0x10);
@@ -145,11 +151,13 @@ const _: () = assert!(core::mem::offset_of!(AnimatedCameraDeltaStartHandler, pad
 #[repr(C)]
 pub struct AnimatedCameraEndHandler {
     /// +0x0 `vtbl:AnimatedCameraEndHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimatedCameraEndHandler_vtable,
     /// +0x8 `u32`, semantic; IHandlerFunctor reference count (BSIntrusiveRefCounted) (medium)
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimatedCameraEndHandler>() == 0x10);
@@ -164,11 +172,13 @@ const _: () = assert!(core::mem::offset_of!(AnimatedCameraEndHandler, pad0C) == 
 #[repr(C)]
 pub struct AnimatedCameraStartHandler {
     /// +0x0 `vtbl:AnimatedCameraStartHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimatedCameraStartHandler_vtable,
     /// +0x8 `u32`, semantic; IHandlerFunctor reference count (BSIntrusiveRefCounted) (medium)
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimatedCameraStartHandler>() == 0x10);
@@ -183,6 +193,7 @@ const _: () = assert!(core::mem::offset_of!(AnimatedCameraStartHandler, pad0C) =
 #[repr(C)]
 pub struct AutoVanityState {
     /// +0x0 `vtbl:AutoVanityState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AutoVanityState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -198,6 +209,7 @@ pub struct AutoVanityState {
     pub yaw: f32,
     /// +0x24 `undefined4`, semantic; tail padding (size 0x28, 8-aligned) (high)
     pub pad24: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AutoVanityState>() == 0x28);
@@ -218,6 +230,7 @@ const _: () = assert!(core::mem::offset_of!(AutoVanityState, pad24) == 0x24);
 #[repr(C, packed)]
 pub struct BGSAcousticSpaceListener {
     /// +0x0 `vtbl:BGSAcousticSpaceListener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAcousticSpaceListener_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -238,6 +251,7 @@ pub struct BGSAcousticSpaceListener {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAcousticSpaceListener>() == 0x50);
@@ -258,6 +272,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_48) 
 #[repr(C)]
 pub struct BGSCameraPath {
     /// +0x0 `vtbl:BGSCameraPath:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSCameraPath_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -285,6 +300,7 @@ pub struct BGSCameraPath {
     pub parent: *mut crate::BGSCameraPath,
     /// +0x50 `ptr:BGSCameraPath`, semantic; path placed right before this one among its siblings (ANAM high dword until resolved) (high)
     pub previousSibling: *mut crate::BGSCameraPath,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSCameraPath>() == 0x58);
@@ -310,6 +326,7 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraPath, previousSibling) == 0
 #[repr(C)]
 pub struct BGSCameraShot {
     /// +0x0 `vtbl:BGSCameraShot:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSCameraShot_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -373,6 +390,7 @@ pub struct BGSCameraShot {
     pub padB2: [u8; 6],
     /// +0xB8 `pointer`, semantic; loaded model handle (refcounted, released through DecRefAndQueueForReleaseOnLast); +0x28 of it is the NIF root (high)
     pub modelHandle: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSCameraShot>() == 0xC0);
@@ -416,6 +434,7 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraShot, modelHandle) == 0xB8)
 #[repr(C)]
 pub struct BSFlattenedBoneTree {
     /// +0x0 `vtbl:BSFlattenedBoneTree:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFlattenedBoneTree_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -468,6 +487,7 @@ pub struct BSFlattenedBoneTree {
     pub bones: *mut c_void,
     /// +0x138 `undefined1`, semantic; hash map name -> entry index (count +0x144, entries +0x160) (medium)
     pub nameMap: [u8; 48],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFlattenedBoneTree>() == 0x168);
@@ -504,6 +524,7 @@ const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, nameMap) == 0x1
 #[repr(C, packed)]
 pub struct BSFrustumFOVController {
     /// +0x0 `vtbl:BSFrustumFOVController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFrustumFOVController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -532,6 +553,7 @@ pub struct BSFrustumFOVController {
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFrustumFOVController>() == 0x50);
@@ -557,6 +579,7 @@ const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, field_48) ==
 #[repr(C, packed)]
 pub struct BeamProjectile {
     /// +0x0 `vtbl:BeamProjectile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BeamProjectile_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -570,13 +593,16 @@ pub struct BeamProjectile {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BeamProjectile:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BeamProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BeamProjectile:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BeamProjectile_vtable_30,
     /// +0x38 `vtbl:BeamProjectile:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BeamProjectile_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -703,12 +729,14 @@ pub struct BeamProjectile {
     pub field_1D8: u16,
     pub unknown_1DA: [u8; 6],
     /// +0x1E0 `vtbl:BeamProjectile:1E0`, rtti
+    #[doc(hidden)]
     pub __vftable_1E0: *const crate::raw::vtables::BeamProjectile_vtable_1E0,
     /// +0x1E8 `class:BSTEventSource`, RTTI base BSTEventSource<BeamProjectileImpactEvent>
     pub source_BeamProjectileImpactEvent: crate::BSTEventSource,
     /// +0x240 `undefined1`, ctor store
     pub field_240: u8,
     pub unknown_241: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BeamProjectile>() == 0x248);
@@ -791,6 +819,7 @@ const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_240) == 0x240)
 #[repr(C)]
 pub struct BleedoutCameraState {
     /// +0x0 `vtbl:BleedoutCameraState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BleedoutCameraState_vtable,
     /// +0x8 `u32`, base ThirdPersonState, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -890,6 +919,7 @@ pub struct BleedoutCameraState {
     pub followHeading: u8,
     /// +0x135 `undefined1`, semantic; tail padding (size 0x138) (high)
     pub pad135: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BleedoutCameraState>() == 0x138);
@@ -953,6 +983,7 @@ pub struct CameraCasterHolder {
     pub castPhantom: *mut c_void,
     /// +0x8 `pointer`, semantic; second bhkSimpleShapePhantom (same sphere) (high)
     pub overlapPhantom: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraCasterHolder>() == 0x10);
@@ -966,11 +997,13 @@ const _: () = assert!(core::mem::offset_of!(CameraCasterHolder, overlapPhantom) 
 #[repr(C)]
 pub struct CameraOverrideStartHandler {
     /// +0x0 `vtbl:CameraOverrideStartHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CameraOverrideStartHandler_vtable,
     /// +0x8 `u32`, semantic; IHandlerFunctor reference count (BSIntrusiveRefCounted) (medium)
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraOverrideStartHandler>() == 0x10);
@@ -985,11 +1018,13 @@ const _: () = assert!(core::mem::offset_of!(CameraOverrideStartHandler, pad0C) =
 #[repr(C)]
 pub struct CameraOverrideStopHandler {
     /// +0x0 `vtbl:CameraOverrideStopHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CameraOverrideStopHandler_vtable,
     /// +0x8 `u32`, semantic; IHandlerFunctor reference count (BSIntrusiveRefCounted) (medium)
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraOverrideStopHandler>() == 0x10);
@@ -1004,11 +1039,13 @@ const _: () = assert!(core::mem::offset_of!(CameraOverrideStopHandler, pad0C) ==
 #[repr(C)]
 pub struct CameraShakeHandler {
     /// +0x0 `vtbl:CameraShakeHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CameraShakeHandler_vtable,
     /// +0x8 `u32`, semantic; IHandlerFunctor reference count (BSIntrusiveRefCounted) (medium)
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraShakeHandler>() == 0x10);
@@ -1040,6 +1077,7 @@ pub struct CrosshairPickData {
     /// +0x34 `u8`, semantic; the pick wants a HUD prompt (drives the sWaitHere / clear text messages) (low)
     pub promptActive: u8,
     pub unknown_35: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CrosshairPickData>() == 0x38);
@@ -1059,6 +1097,7 @@ const _: () = assert!(core::mem::offset_of!(CrosshairPickData, promptActive) == 
 #[repr(C)]
 pub struct DragonCameraState {
     /// +0x0 `vtbl:DragonCameraState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DragonCameraState_vtable,
     /// +0x8 `u32`, base ThirdPersonState, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -1152,6 +1191,7 @@ pub struct DragonCameraState {
     pub dollyTo: crate::NiPoint2,
     /// +0x10C `undefined4`, semantic; ObjectRefHandle (low)
     pub targetHandle: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DragonCameraState>() == 0x110);
@@ -1210,8 +1250,10 @@ const _: () = assert!(core::mem::offset_of!(DragonCameraState, targetHandle) == 
 #[repr(C)]
 pub struct EnemyHealth {
     /// +0x0 `vtbl:EnemyHealth:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EnemyHealth_vtable,
     pub unknown_8: [u8; 128],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EnemyHealth>() == 0x88);
@@ -1243,6 +1285,7 @@ pub struct FirstPersonRenderContext {
     /// +0x51 `undefined1`, semantic; set from the current worldspace/cell flags; selects the volumetric lighting pass in RenderWorldScene (low)
     pub unk51: u8,
     pub unknown_52: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FirstPersonRenderContext>() == 0x58);
@@ -1263,6 +1306,7 @@ const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, unk51) == 
 #[repr(C)]
 pub struct FirstPersonState {
     /// +0x0 `vtbl:FirstPersonState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FirstPersonState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -1316,6 +1360,7 @@ pub struct FirstPersonState {
     pub togglePOVPressed: u8,
     /// +0x8D `undefined1`, semantic; tail padding (size 0x90) (high)
     pub pad8D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FirstPersonState>() == 0x90);
@@ -1355,6 +1400,7 @@ const _: () = assert!(core::mem::offset_of!(FirstPersonState, pad8D) == 0x8D);
 #[repr(C, packed)]
 pub struct FlameProjectile {
     /// +0x0 `vtbl:FlameProjectile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlameProjectile_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1368,13 +1414,16 @@ pub struct FlameProjectile {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:FlameProjectile:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::FlameProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:FlameProjectile:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::FlameProjectile_vtable_30,
     /// +0x38 `vtbl:FlameProjectile:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::FlameProjectile_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -1502,6 +1551,7 @@ pub struct FlameProjectile {
     pub unknown_1DA: [u8; 6],
     /// +0x1E0 `undefined8`, ctor store
     pub field_1E0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlameProjectile>() == 0x1E8);
@@ -1582,6 +1632,7 @@ const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_1E0) == 0x1E0
 #[repr(C)]
 pub struct FreeCameraState {
     /// +0x0 `vtbl:FreeCameraState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FreeCameraState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -1611,6 +1662,7 @@ pub struct FreeCameraState {
     pub run: u8,
     /// +0x4F `undefined1`, semantic; toggle: move ignoring pitch (medium)
     pub horizontalMove: u8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FreeCameraState>() == 0x50);
@@ -1637,6 +1689,7 @@ const _: () = assert!(core::mem::offset_of!(FreeCameraState, horizontalMove) == 
 #[repr(C)]
 pub struct FurnitureCameraState {
     /// +0x0 `vtbl:FurnitureCameraState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FurnitureCameraState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -1666,6 +1719,7 @@ pub struct FurnitureCameraState {
     pub savedAutoVanityAllowed: u8,
     /// +0x3F `undefined1`, semantic; tail padding (size 0x40) (high)
     pub pad3F: u8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FurnitureCameraState>() == 0x40);
@@ -1692,6 +1746,7 @@ const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, pad3F) == 0x3F
 #[repr(C)]
 pub struct HorseCameraState {
     /// +0x0 `vtbl:HorseCameraState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HorseCameraState_vtable,
     /// +0x8 `u32`, base ThirdPersonState, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -1773,6 +1828,7 @@ pub struct HorseCameraState {
     pub turning: u8,
     /// +0xF1 `undefined1`, semantic; tail padding (size 0xf8) (high)
     pub padF1: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HorseCameraState>() == 0xF8);
@@ -1824,7 +1880,9 @@ const _: () = assert!(core::mem::offset_of!(HorseCameraState, padF1) == 0xF1);
 #[repr(C)]
 pub struct IMapCameraCallbacks {
     /// +0x0 `vtbl:IMapCameraCallbacks:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMapCameraCallbacks_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMapCameraCallbacks>() == 0x8);
@@ -1837,6 +1895,7 @@ const _: () = assert!(core::mem::offset_of!(IMapCameraCallbacks, __vftable) == 0
 #[repr(C)]
 pub struct IronSightsState {
     /// +0x0 `vtbl:IronSightsState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IronSightsState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -1850,6 +1909,7 @@ pub struct IronSightsState {
     pub pad1c: u32,
     /// +0x20 `ptr:NiAVObject`, semantic; node whose world rotation (+0x7c) and translation (+0xa0) are the pose (high)
     pub sightNode: *mut crate::NiAVObject,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IronSightsState>() == 0x28);
@@ -1868,6 +1928,7 @@ const _: () = assert!(core::mem::offset_of!(IronSightsState, sightNode) == 0x20)
 #[repr(C)]
 pub struct LocalMapCamera {
     /// +0x0 `vtbl:LocalMapCamera:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::LocalMapCamera_vtable,
     /// +0x8 `class:NiPoint2`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
     pub rotationInput: crate::NiPoint2,
@@ -1895,6 +1956,7 @@ pub struct LocalMapCamera {
     pub northRotation: f32,
     /// +0x64 `undefined4`, semantic; alignment padding to 0x68 (high)
     pub padding64: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LocalMapCamera>() == 0x68);
@@ -1920,6 +1982,7 @@ const _: () = assert!(core::mem::offset_of!(LocalMapCamera, padding64) == 0x64);
 #[repr(C)]
 pub struct LocalMapCamera__DefaultState {
     /// +0x0 `vtbl:LocalMapCamera::DefaultState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::LocalMapCamera__DefaultState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -1943,6 +2006,7 @@ pub struct LocalMapCamera__DefaultState {
     pub minHalfHeight: f32,
     /// +0x44 `undefined4`, semantic; alignment padding to 0x48 (high)
     pub padding44: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LocalMapCamera__DefaultState>() == 0x48);
@@ -1966,6 +2030,7 @@ const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, paddin
 #[repr(C)]
 pub struct MapCamera {
     /// +0x0 `vtbl:MapCamera:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MapCamera_vtable,
     /// +0x8 `class:NiPoint2`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
     pub rotationInput: crate::NiPoint2,
@@ -2005,6 +2070,7 @@ pub struct MapCamera {
     pub savedPlayer3DHidden: u8,
     /// +0x89 `undefined1`, semantic; alignment padding to 0x90 (high)
     pub padding89: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapCamera>() == 0x90);
@@ -2036,6 +2102,7 @@ const _: () = assert!(core::mem::offset_of!(MapCamera, padding89) == 0x89);
 #[repr(C)]
 pub struct MapCameraStates__Exit {
     /// +0x0 `vtbl:MapCameraStates::Exit:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MapCameraStates__Exit_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2047,6 +2114,7 @@ pub struct MapCameraStates__Exit {
     pub id: u32,
     /// +0x1C `undefined4`, semantic; alignment padding to 0x20 (high)
     pub padding1C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapCameraStates__Exit>() == 0x20);
@@ -2064,6 +2132,7 @@ const _: () = assert!(core::mem::offset_of!(MapCameraStates__Exit, padding1C) ==
 #[repr(C)]
 pub struct MapCameraStates__Transition {
     /// +0x0 `vtbl:MapCameraStates::Transition:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MapCameraStates__Transition_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2103,6 +2172,7 @@ pub struct MapCameraStates__Transition {
     pub mode: u32,
     /// +0x84 `undefined4`, semantic; alignment padding to 0x88 (high)
     pub padding84: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapCameraStates__Transition>() == 0x88);
@@ -2134,6 +2204,7 @@ const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, padding
 #[repr(C)]
 pub struct MapCameraStates__World {
     /// +0x0 `vtbl:MapCameraStates::World:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MapCameraStates__World_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2171,6 +2242,7 @@ pub struct MapCameraStates__World {
     pub notifyOnBegin: u8,
     /// +0x71 `undefined1`, semantic; alignment padding to 0x78 (high)
     pub padding71: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapCameraStates__World>() == 0x78);
@@ -2203,6 +2275,7 @@ pub struct NiUpdateData {
     pub time: f32,
     /// +0x4 `u32`, semantic; bit 0 run controllers, bit 1 force the previous-world snapshot, bit 13 (0x2000) set by UpdateNodesAfterRender (high)
     pub flags: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiUpdateData>() == 0x8);
@@ -2216,6 +2289,7 @@ const _: () = assert!(core::mem::offset_of!(NiUpdateData, flags) == 0x4);
 #[repr(C)]
 pub struct OwnedCameraEffectController {
     /// +0x0 `vtbl:OwnedCameraEffectController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::OwnedCameraEffectController_vtable,
     /// +0x8 `u32`, semantic; ObjectRefHandle of the reference the effect belongs to (the player for this class) (high)
     pub targetHandle: u32,
@@ -2235,6 +2309,7 @@ pub struct OwnedCameraEffectController {
     pub rotateWithCamera: u8,
     /// +0x31 `undefined1`, semantic; padding to 0x38 (medium)
     pub pad31: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<OwnedCameraEffectController>() == 0x38);
@@ -2256,6 +2331,7 @@ const _: () = assert!(core::mem::offset_of!(OwnedCameraEffectController, pad31) 
 #[repr(C)]
 pub struct PlayerCamera {
     /// +0x0 `vtbl:PlayerCamera:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::PlayerCamera_vtable,
     /// +0x8 `class:NiPoint2`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
     pub rotationInput: crate::NiPoint2,
@@ -2321,6 +2397,7 @@ pub struct PlayerCamera {
     pub popOnAIDrivenEnd: u8,
     /// +0x166 `undefined1`, semantic; tail padding to the 8-aligned size 0x168 (high)
     pub pad_166: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerCamera>() == 0x168);
@@ -2365,6 +2442,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCamera, pad_166) == 0x166);
 #[repr(C)]
 pub struct PlayerCameraTransitionState {
     /// +0x0 `vtbl:PlayerCameraTransitionState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::PlayerCameraTransitionState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2392,6 +2470,7 @@ pub struct PlayerCameraTransitionState {
     pub updateTo: u8,
     /// +0x3E `undefined2`, semantic; tail padding (size 0x40) (high)
     pub pad3E: u16,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerCameraTransitionState>() == 0x40);
@@ -2417,6 +2496,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, pad3E) 
 #[repr(C)]
 pub struct RaceSexCamera {
     /// +0x0 `vtbl:RaceSexCamera:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::RaceSexCamera_vtable,
     /// +0x8 `class:NiPoint2`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
     pub rotationInput: crate::NiPoint2,
@@ -2438,6 +2518,7 @@ pub struct RaceSexCamera {
     pub initialRotation: crate::NiQuaternion,
     /// +0x54 `undefined4`, semantic; alignment padding to 0x58 (high)
     pub padding54: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RaceSexCamera>() == 0x58);
@@ -2460,6 +2541,7 @@ const _: () = assert!(core::mem::offset_of!(RaceSexCamera, padding54) == 0x54);
 #[repr(C)]
 pub struct ShaderReferenceEffect {
     /// +0x0 `vtbl:ShaderReferenceEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ShaderReferenceEffect_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2523,6 +2605,7 @@ pub struct ShaderReferenceEffect {
     /// +0x130 `u32`, semantic; bit 0 attached to the first-person root; 2 force re-apply; 3 particle sources resolved; 4 emitters built; 5 root changed; 6 finish now; 7 no default target; see the flag rows (medium)
     pub effectFlags: u32,
     pub unknown_134: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ShaderReferenceEffect>() == 0x138);
@@ -2562,11 +2645,13 @@ const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, effectFlags) 
 #[repr(C)]
 pub struct StopMountCameraHandler {
     /// +0x0 `vtbl:StopMountCameraHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::StopMountCameraHandler_vtable,
     /// +0x8 `u32`, semantic; IHandlerFunctor reference count (BSIntrusiveRefCounted) (medium)
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StopMountCameraHandler>() == 0x10);
@@ -2580,6 +2665,7 @@ const _: () = assert!(core::mem::offset_of!(StopMountCameraHandler, pad0C) == 0x
 #[repr(C)]
 pub struct TESCamera {
     /// +0x0 `vtbl:TESCamera:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESCamera_vtable,
     /// +0x8 `class:NiPoint2`, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
     pub rotationInput: crate::NiPoint2,
@@ -2595,6 +2681,7 @@ pub struct TESCamera {
     pub enabled: u8,
     /// +0x31 `undefined1`, semantic; tail padding to 0x38 (8-byte alignment of the class) (high)
     pub pad_31: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCamera>() == 0x38);
@@ -2614,6 +2701,7 @@ const _: () = assert!(core::mem::offset_of!(TESCamera, pad_31) == 0x31);
 #[repr(C)]
 pub struct TESCameraState {
     /// +0x0 `vtbl:TESCameraState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESCameraState_vtable,
     /// +0x8 `undefined4`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2625,6 +2713,7 @@ pub struct TESCameraState {
     pub id: u32,
     /// +0x1C `undefined1`, semantic; tail padding after the 32-bit id (+0x18) to 0x20 (high)
     pub pad_1c: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCameraState>() == 0x20);
@@ -2642,6 +2731,7 @@ const _: () = assert!(core::mem::offset_of!(TESCameraState, pad_1c) == 0x1C);
 #[repr(C)]
 pub struct TESFurniture {
     /// +0x0 `vtbl:TESFurniture:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESFurniture_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2660,9 +2750,11 @@ pub struct TESFurniture {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESFurniture:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESFurniture_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESFurniture:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESFurniture_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -2674,12 +2766,15 @@ pub struct TESFurniture {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESFurniture:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESFurniture_vtable_78,
     /// +0x80 `undefined8`, base BGSDestructibleObjectForm
     pub field_80: u64,
     /// +0x88 `vtbl:TESFurniture:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESFurniture_vtable_88,
     /// +0x90 `vtbl:TESFurniture:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::TESFurniture_vtable_90,
     /// +0x98 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -2702,6 +2797,7 @@ pub struct TESFurniture {
     pub field_E4: u32,
     /// +0xE8 `undefined8`, ctor store
     pub field_E8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFurniture>() == 0xF0);
@@ -2739,6 +2835,7 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, field_E8) == 0xE8);
 #[repr(C)]
 pub struct ThirdPersonState {
     /// +0x0 `vtbl:ThirdPersonState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ThirdPersonState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2812,6 +2909,7 @@ pub struct ThirdPersonState {
     pub togglePOVPressed: u8,
     /// +0xE3 `undefined1`, semantic; tail padding (size 0xe8) (high)
     pub padE3: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ThirdPersonState>() == 0xE8);
@@ -2860,6 +2958,7 @@ const _: () = assert!(core::mem::offset_of!(ThirdPersonState, padE3) == 0xE3);
 #[repr(C)]
 pub struct TransitionState {
     /// +0x0 `vtbl:TransitionState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TransitionState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2889,6 +2988,7 @@ pub struct TransitionState {
     pub progress: f32,
     /// +0x70 `ptr:TESCameraState`, semantic; BSTSmartPointer to the state the transition ends in (high)
     pub targetState: *mut crate::TESCameraState,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TransitionState>() == 0x78);
@@ -2915,6 +3015,7 @@ const _: () = assert!(core::mem::offset_of!(TransitionState, targetState) == 0x7
 #[repr(C)]
 pub struct TweenMenuCameraState {
     /// +0x0 `vtbl:TweenMenuCameraState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TweenMenuCameraState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2942,6 +3043,7 @@ pub struct TweenMenuCameraState {
     pub closing: u8,
     /// +0x4D `undefined1`, semantic; tail padding (size 0x50) (high)
     pub pad4D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TweenMenuCameraState>() == 0x50);
@@ -2967,6 +3069,7 @@ const _: () = assert!(core::mem::offset_of!(TweenMenuCameraState, pad4D) == 0x4D
 #[repr(C)]
 pub struct VATSCameraState {
     /// +0x0 `vtbl:VATSCameraState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::VATSCameraState_vtable,
     /// +0x8 `u32`, semantic; BSTSmartPointer reference count (high)
     pub refCount: u32,
@@ -2982,6 +3085,7 @@ pub struct VATSCameraState {
     pub rotationEuler: crate::NiPoint3,
     /// +0x2C `class:NiPoint3`, semantic, runtime; camera position (slot 5 GetTranslation) (high); retyped float -> class:NiPoint3: GetTranslation 0x900260 (slot 5, NiPoint3* out); SetPosition 0x9002a0 takes const NiPoint3*
     pub position: crate::NiPoint3,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VATSCameraState>() == 0x38);

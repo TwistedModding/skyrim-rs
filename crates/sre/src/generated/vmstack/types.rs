@@ -10,6 +10,7 @@ use core::ffi::c_void;
 #[repr(C)]
 pub struct BSScript__CompiledScriptLoader {
     /// +0x0 `vtbl:BSScript::CompiledScriptLoader:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__CompiledScriptLoader_vtable,
     /// +0x8 `pointer`, semantic; SkyrimVM+0x288 (the Papyrus log) (high)
     pub errorLogger: *mut c_void,
@@ -22,6 +23,7 @@ pub struct BSScript__CompiledScriptLoader {
     /// +0x32 `undefined1`, ctor store, semantic, runtime; bit 0: keep the debug section (bLoadDebugInformation:Papyrus); bit 1: second ctor flag (SkyrimVM passes 0); see the flag rows (high)
     pub flags: u8,
     pub unknown_33: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__CompiledScriptLoader>() == 0x38);
@@ -39,6 +41,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__CompiledScriptLoader, flag
 #[repr(C)]
 pub struct BSScript__Internal__AutoPropGetFunction {
     /// +0x0 `vtbl:BSScript::Internal::AutoPropGetFunction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__AutoPropGetFunction_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; class name (high)
@@ -48,6 +51,7 @@ pub struct BSScript__Internal__AutoPropGetFunction {
     /// +0x20 `undefined8`, semantic; TypeInfo (high)
     pub returnType: u64,
     pub unknown_28: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__AutoPropGetFunction>() == 0x30);
@@ -63,6 +67,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunct
 #[repr(C)]
 pub struct BSScript__Internal__AutoPropSetFunction {
     /// +0x0 `vtbl:BSScript::Internal::AutoPropSetFunction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__AutoPropSetFunction_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; class name (high)
@@ -70,6 +75,7 @@ pub struct BSScript__Internal__AutoPropSetFunction {
     /// +0x18 `class:BSFixedString`, semantic; function name (high)
     pub name: crate::BSFixedString,
     pub unknown_20: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__AutoPropSetFunction>() == 0x30);
@@ -84,6 +90,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropSetFunct
 #[repr(C)]
 pub struct BSScript__Internal__CodeTasklet {
     /// +0x0 `vtbl:BSScript::Internal::CodeTasklet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__CodeTasklet_vtable,
     /// +0x8 `u32`, semantic; BSIntrusiveRefCounted count (high)
     pub refCount: u32,
@@ -113,6 +120,7 @@ pub struct BSScript__Internal__CodeTasklet {
     pub unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; u64 words of the bytecode bit stream (high)
     pub code: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__CodeTasklet>() == 0x50);
@@ -142,6 +150,7 @@ pub struct BSScript__Internal__FunctionMessage {
     pub stack: *mut crate::BSScript__Stack,
     /// +0x10 `pointer`, semantic; BSTSmartPointer<IFuncCallQuery> (null for kind 2) (high)
     pub query: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__FunctionMessage>() == 0x18);
@@ -156,6 +165,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage,
 #[repr(C)]
 pub struct BSScript__Internal__NativeFunctionStub {
     /// +0x0 `vtbl:BSScript::Internal::NativeFunctionStub:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__NativeFunctionStub_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; function name (high)
@@ -165,6 +175,7 @@ pub struct BSScript__Internal__NativeFunctionStub {
     /// +0x20 `class:BSFixedString`, semantic; state name (high)
     pub stateName: crate::BSFixedString,
     pub unknown_28: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__NativeFunctionStub>() == 0x50);
@@ -180,6 +191,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionSt
 #[repr(C)]
 pub struct BSScript__Internal__ScriptFunction {
     /// +0x0 `vtbl:BSScript::Internal::ScriptFunction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__ScriptFunction_vtable,
     /// +0x8 `undefined4`, semantic; BSIntrusiveRefCounted count; a StackFrame's owningFunction holds one (high)
     pub refCount: u32,
@@ -226,6 +238,7 @@ pub struct BSScript__Internal__ScriptFunction {
     pub unknown_74: [u8; 4],
     /// +0x78 `pointer`, ctor store, semantic, runtime; u16 source line per instruction index (values above 0xffff clamped to 0xffff) (high)
     pub lineNumbers: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__ScriptFunction>() == 0x80);
@@ -263,6 +276,7 @@ pub struct BSScript__Internal__StackMapEntry {
     pub stack: *mut crate::BSScript__Stack,
     /// +0x10 `pointer`, semantic; next entry of the chain, the sentinel at the end, 0 for an empty slot (high)
     pub next: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__StackMapEntry>() == 0x18);
@@ -279,6 +293,7 @@ pub struct BSScript__Internal__SuspendedStack {
     pub stack: *mut crate::BSScript__Stack,
     /// +0x8 `pointer`, semantic; BSTSmartPointer<IFuncCallQuery> (a CodeTasklet or a RawFuncCallQuery) (high)
     pub query: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__SuspendedStack>() == 0x10);

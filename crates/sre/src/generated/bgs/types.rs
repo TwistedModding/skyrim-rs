@@ -9,7 +9,9 @@ use core::ffi::c_void;
 #[repr(C)]
 pub struct BGSAIWorldLocation {
     /// +0x0 `vtbl:BGSAIWorldLocation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAIWorldLocation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAIWorldLocation>() == 0x8);
@@ -21,6 +23,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocation, __vftable) == 0x
 #[repr(C)]
 pub struct BGSAIWorldLocationInteriorCell {
     /// +0x0 `vtbl:BGSAIWorldLocationInteriorCell:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAIWorldLocationInteriorCell_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -31,6 +34,7 @@ pub struct BGSAIWorldLocationInteriorCell {
     /// +0x18 `float`, ctor store
     pub field_18: f32,
     pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationInteriorCell, __vftable) == 0x0);
@@ -45,6 +49,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationInteriorCell, fiel
 #[repr(C)]
 pub struct BGSAIWorldLocationPointRadius {
     /// +0x0 `vtbl:BGSAIWorldLocationPointRadius:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAIWorldLocationPointRadius_vtable,
     /// +0x8 `float`, ctor store
     pub field_8: f32,
@@ -62,6 +67,7 @@ pub struct BGSAIWorldLocationPointRadius {
     /// +0x30 `undefined2`, ctor store
     pub field_30: u16,
     pub unknown_32: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAIWorldLocationPointRadius>() == 0x38);
@@ -80,6 +86,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, field
 #[repr(C)]
 pub struct BGSAIWorldLocationRefRadius {
     /// +0x0 `vtbl:BGSAIWorldLocationRefRadius:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAIWorldLocationRefRadius_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -90,6 +97,7 @@ pub struct BGSAIWorldLocationRefRadius {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationRefRadius, __vftable) == 0x0);
@@ -104,8 +112,10 @@ const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationRefRadius, field_1
 #[repr(C)]
 pub struct BGSAbilityPerkEntry {
     /// +0x0 `vtbl:BGSAbilityPerkEntry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAbilityPerkEntry_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAbilityPerkEntry>() == 0x18);
@@ -117,6 +127,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAbilityPerkEntry, __vftable) == 0
 #[repr(C)]
 pub struct BGSAcousticSpace {
     /// +0x0 `vtbl:BGSAcousticSpace:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAcousticSpace_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -148,6 +159,7 @@ pub struct BGSAcousticSpace {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAcousticSpace>() == 0x48);
@@ -173,6 +185,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, field_40) == 0x40)
 #[repr(C)]
 pub struct BGSAction {
     /// +0x0 `vtbl:BGSAction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAction_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -190,6 +203,7 @@ pub struct BGSAction {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAction>() == 0x30);
@@ -208,6 +222,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAction, field_28) == 0x28);
 #[repr(C)]
 pub struct BGSActionData {
     /// +0x0 `vtbl:BGSActionData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSActionData_vtable,
     /// +0x8 `undefined8`, base ActionInput
     pub field_8: u64,
@@ -231,6 +246,7 @@ pub struct BGSActionData {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSActionData>() == 0x60);
@@ -251,6 +267,7 @@ const _: () = assert!(core::mem::offset_of!(BGSActionData, field_58) == 0x58);
 #[repr(C)]
 pub struct BGSAddonNode {
     /// +0x0 `vtbl:BGSAddonNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAddonNode_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -277,6 +294,7 @@ pub struct BGSAddonNode {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSAddonNode:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSAddonNode_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
@@ -294,6 +312,7 @@ pub struct BGSAddonNode {
     pub field_70: u64,
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAddonNode>() == 0x80);
@@ -323,6 +342,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_78) == 0x78);
 #[repr(C)]
 pub struct BGSAddonNodeSoundHandleExtra {
     /// +0x0 `vtbl:BGSAddonNodeSoundHandleExtra:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAddonNodeSoundHandleExtra_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -337,6 +357,7 @@ pub struct BGSAddonNodeSoundHandleExtra {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, __vftable) == 0x0);
@@ -352,7 +373,9 @@ const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, field_
 #[repr(C)]
 pub struct BGSAnimSoundStateManager {
     /// +0x0 `vtbl:BGSAnimSoundStateManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAnimSoundStateManager_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAnimSoundStateManager, __vftable) == 0x0);
@@ -363,6 +386,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAnimSoundStateManager, __vftable)
 #[repr(C)]
 pub struct BGSApparatus {
     /// +0x0 `vtbl:BGSApparatus:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSApparatus_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -381,9 +405,11 @@ pub struct BGSApparatus {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSApparatus:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSApparatus_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:BGSApparatus:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSApparatus_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -395,32 +421,39 @@ pub struct BGSApparatus {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:BGSApparatus:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::BGSApparatus_vtable_78,
     pub unknown_80: [u8; 8],
     /// +0x88 `vtbl:BGSApparatus:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::BGSApparatus_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
     pub unknown_94: [u8; 4],
     /// +0x98 `vtbl:BGSApparatus:98`, rtti
+    #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::BGSApparatus_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:BGSApparatus:A8`, rtti
+    #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::BGSApparatus_vtable_A8,
     /// +0xB0 `undefined8`, base BGSDestructibleObjectForm
     pub field_B0: u64,
     /// +0xB8 `vtbl:BGSApparatus:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::BGSApparatus_vtable_B8,
     pub unknown_C0: [u8; 16],
     /// +0xD0 `vtbl:BGSApparatus:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::BGSApparatus_vtable_D0,
     /// +0xD8 `undefined8`, base BGSPickupPutdownSounds
     pub field_D8: u64,
     /// +0xE0 `undefined8`, base BGSPickupPutdownSounds
     pub field_E0: u64,
     /// +0xE8 `vtbl:BGSApparatus:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::BGSApparatus_vtable_E8,
     /// +0xF0 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -428,15 +461,18 @@ pub struct BGSApparatus {
     pub numKeywords: u32,
     pub unknown_FC: [u8; 4],
     /// +0x100 `vtbl:BGSApparatus:100`, rtti
+    #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::BGSApparatus_vtable_100,
     /// +0x108 `undefined4`, base TESQualityForm
     pub field_108: u32,
     pub unknown_10C: [u8; 4],
     /// +0x110 `vtbl:BGSApparatus:110`, rtti
+    #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::BGSApparatus_vtable_110,
     /// +0x118 `undefined4`, base TESDescription
     pub field_118: u32,
     pub unknown_11C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSApparatus>() == 0x120);
@@ -478,6 +514,7 @@ const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_118) == 0x118);
 #[repr(C)]
 pub struct BGSArtObject {
     /// +0x0 `vtbl:BGSArtObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSArtObject_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -504,6 +541,7 @@ pub struct BGSArtObject {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSArtObject:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSArtObject_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
@@ -517,6 +555,7 @@ pub struct BGSArtObject {
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
     pub unknown_6C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSArtObject>() == 0x70);
@@ -544,6 +583,7 @@ const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_68) == 0x68);
 #[repr(C)]
 pub struct BGSArtObjectCloneTask {
     /// +0x0 `vtbl:BGSArtObjectCloneTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSArtObjectCloneTask_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -562,6 +602,7 @@ pub struct BGSArtObjectCloneTask {
     pub field_30: u32,
     pub unknown_34: [u8; 4],
     /// +0x38 `vtbl:BGSArtObjectCloneTask:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BGSArtObjectCloneTask_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
@@ -583,6 +624,7 @@ pub struct BGSArtObjectCloneTask {
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSArtObjectCloneTask>() == 0x90);
@@ -610,6 +652,7 @@ const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_88) == 
 #[repr(C)]
 pub struct BGSAssociationType {
     /// +0x0 `vtbl:BGSAssociationType:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAssociationType_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -625,6 +668,7 @@ pub struct BGSAssociationType {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAssociationType>() == 0x48);
@@ -642,7 +686,9 @@ const _: () = assert!(core::mem::offset_of!(BGSAssociationType, field_40) == 0x4
 #[repr(C)]
 pub struct BGSAttachTechniquesUtil__AttachTechniquesFunctor {
     /// +0x0 `vtbl:BGSAttachTechniquesUtil::AttachTechniquesFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAttachTechniquesUtil__AttachTechniquesFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__AttachTechniquesFunctor, __vftable) == 0x0);
@@ -653,7 +699,9 @@ const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__AttachTechn
 #[repr(C)]
 pub struct BGSAttachTechniquesUtil__DetachTechniquesFunctor {
     /// +0x0 `vtbl:BGSAttachTechniquesUtil::DetachTechniquesFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAttachTechniquesUtil__DetachTechniquesFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__DetachTechniquesFunctor, __vftable) == 0x0);
@@ -663,7 +711,9 @@ const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__DetachTechn
 #[repr(C)]
 pub struct BGSAttachTechniquesUtil__ProcessTechniquesFunctor {
     /// +0x0 `vtbl:BGSAttachTechniquesUtil::ProcessTechniquesFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAttachTechniquesUtil__ProcessTechniquesFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__ProcessTechniquesFunctor, __vftable) == 0x0);
@@ -674,6 +724,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__ProcessTech
 #[repr(C)]
 pub struct BGSAttackData {
     /// +0x0 `vtbl:BGSAttackData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAttackData_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -697,6 +748,7 @@ pub struct BGSAttackData {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAttackData>() == 0x50);
@@ -718,9 +770,11 @@ const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_48) == 0x48);
 #[repr(C)]
 pub struct BGSAttackDataForm {
     /// +0x0 `vtbl:BGSAttackDataForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAttackDataForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAttackDataForm>() == 0x10);
@@ -734,6 +788,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAttackDataForm, field_8) == 0x8);
 #[repr(C, packed)]
 pub struct BGSAttackDataMap {
     /// +0x0 `vtbl:BGSAttackDataMap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAttackDataMap_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -749,6 +804,7 @@ pub struct BGSAttackDataMap {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAttackDataMap>() == 0x48);
@@ -766,10 +822,12 @@ const _: () = assert!(core::mem::offset_of!(BGSAttackDataMap, field_40) == 0x40)
 #[repr(C)]
 pub struct BGSBehaviorGraphModel {
     /// +0x0 `vtbl:BGSBehaviorGraphModel:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSBehaviorGraphModel_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSBehaviorGraphModel, __vftable) == 0x0);
@@ -781,7 +839,9 @@ const _: () = assert!(core::mem::offset_of!(BGSBehaviorGraphModel, field_10) == 
 #[repr(C)]
 pub struct BGSBipedModelList {
     /// +0x0 `vtbl:BGSBipedModelList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSBipedModelList_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSBipedModelList, __vftable) == 0x0);
@@ -792,11 +852,13 @@ const _: () = assert!(core::mem::offset_of!(BGSBipedModelList, __vftable) == 0x0
 #[repr(C)]
 pub struct BGSBipedObjectForm {
     /// +0x0 `vtbl:BGSBipedObjectForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSBipedObjectForm_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     /// +0xC `undefined4`, ctor store
     pub field_C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSBipedObjectForm>() == 0x10);
@@ -810,11 +872,13 @@ const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, field_C) == 0xC)
 #[repr(C)]
 pub struct BGSBlockBashData {
     /// +0x0 `vtbl:BGSBlockBashData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSBlockBashData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSBlockBashData>() == 0x18);
@@ -828,6 +892,7 @@ const _: () = assert!(core::mem::offset_of!(BGSBlockBashData, field_10) == 0x10)
 #[repr(C)]
 pub struct BGSBodyPartData {
     /// +0x0 `vtbl:BGSBodyPartData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSBodyPartData_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -841,12 +906,14 @@ pub struct BGSBodyPartData {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSBodyPartData:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSBodyPartData_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `undefined8`, base TESModel
     pub field_30: u64,
     pub unknown_38: [u8; 16],
     /// +0x48 `vtbl:BGSBodyPartData:48`, rtti
+    #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::BGSBodyPartData_vtable_48,
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
@@ -862,6 +929,7 @@ pub struct BGSBodyPartData {
     pub field_78: u64,
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSBodyPartData>() == 0x88);
@@ -889,6 +957,7 @@ const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_80) == 0x80);
 #[repr(C, packed)]
 pub struct BGSCollisionLayer {
     /// +0x0 `vtbl:BGSCollisionLayer:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSCollisionLayer_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -902,6 +971,7 @@ pub struct BGSCollisionLayer {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSCollisionLayer:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSCollisionLayer_vtable_20,
     /// +0x28 `undefined4`, base TESDescription
     pub field_28: u32,
@@ -917,6 +987,7 @@ pub struct BGSCollisionLayer {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSCollisionLayer>() == 0x60);
@@ -939,6 +1010,7 @@ const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_58) == 0x58
 #[repr(C)]
 pub struct BGSColorForm {
     /// +0x0 `vtbl:BGSColorForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSColorForm_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -952,6 +1024,7 @@ pub struct BGSColorForm {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSColorForm:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSColorForm_vtable_20,
     /// +0x28 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
     pub name: *mut c_void,
@@ -962,6 +1035,7 @@ pub struct BGSColorForm {
     /// +0x32 `undefined2`, base TESFullName
     pub field_32: u16,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSColorForm>() == 0x38);
@@ -983,6 +1057,7 @@ const _: () = assert!(core::mem::offset_of!(BGSColorForm, field_32) == 0x32);
 #[repr(C)]
 pub struct BGSConstructibleObject {
     /// +0x0 `vtbl:BGSConstructibleObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSConstructibleObject_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1005,6 +1080,7 @@ pub struct BGSConstructibleObject {
     /// +0x50 `undefined2`, ctor store
     pub field_50: u16,
     pub unknown_52: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSConstructibleObject>() == 0x58);
@@ -1025,6 +1101,7 @@ const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, field_50) ==
 #[repr(C)]
 pub struct BGSDebris {
     /// +0x0 `vtbl:BGSDebris:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSDebris_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1038,11 +1115,13 @@ pub struct BGSDebris {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSDebris:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSDebris_vtable_20,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDebris>() == 0x38);
@@ -1062,6 +1141,7 @@ const _: () = assert!(core::mem::offset_of!(BGSDebris, field_30) == 0x30);
 #[repr(C)]
 pub struct BGSDecalNode {
     /// +0x0 `vtbl:BGSDecalNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSDecalNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1111,6 +1191,7 @@ pub struct BGSDecalNode {
     /// +0x140 `undefined1`, ctor store
     pub field_140: u8,
     pub unknown_141: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDecalNode>() == 0x148);
@@ -1143,6 +1224,7 @@ const _: () = assert!(core::mem::offset_of!(BGSDecalNode, field_140) == 0x140);
 #[repr(C)]
 pub struct BGSDefaultObjectManager {
     /// +0x0 `vtbl:BGSDefaultObjectManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSDefaultObjectManager_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1155,6 +1237,7 @@ pub struct BGSDefaultObjectManager {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, __vftable) == 0x0);
@@ -1170,9 +1253,11 @@ const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, formType) =
 #[repr(C)]
 pub struct BGSDestructibleObjectForm {
     /// +0x0 `vtbl:BGSDestructibleObjectForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSDestructibleObjectForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDestructibleObjectForm>() == 0x10);
@@ -1185,6 +1270,7 @@ const _: () = assert!(core::mem::offset_of!(BGSDestructibleObjectForm, field_8) 
 #[repr(C)]
 pub struct BGSDialogueBranch {
     /// +0x0 `vtbl:BGSDialogueBranch:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSDialogueBranch_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1207,6 +1293,7 @@ pub struct BGSDialogueBranch {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDialogueBranch>() == 0x40);
@@ -1227,6 +1314,7 @@ const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, field_38) == 0x38
 #[repr(C)]
 pub struct BGSDualCastData {
     /// +0x0 `vtbl:BGSDualCastData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSDualCastData_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1265,6 +1353,7 @@ pub struct BGSDualCastData {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDualCastData>() == 0x60);
@@ -1293,6 +1382,7 @@ const _: () = assert!(core::mem::offset_of!(BGSDualCastData, field_58) == 0x58);
 #[repr(C)]
 pub struct BGSEncounterZone {
     /// +0x0 `vtbl:BGSEncounterZone:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEncounterZone_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1315,6 +1405,7 @@ pub struct BGSEncounterZone {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEncounterZone>() == 0x48);
@@ -1335,8 +1426,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, field_40) == 0x40)
 #[repr(C)]
 pub struct BGSEntryPointFunctionData {
     /// +0x0 `vtbl:BGSEntryPointFunctionData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionData_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionData>() == 0x10);
@@ -1348,8 +1441,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionData, __vftable
 #[repr(C)]
 pub struct BGSEntryPointFunctionDataActivateChoice {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataActivateChoice:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataActivateChoice_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataActivateChoice>() == 0x28);
@@ -1361,8 +1456,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataActivateCho
 #[repr(C)]
 pub struct BGSEntryPointFunctionDataBooleanGraphVariable {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataBooleanGraphVariable:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataBooleanGraphVariable_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataBooleanGraphVariable>() == 0x18);
@@ -1374,8 +1471,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataBooleanGrap
 #[repr(C)]
 pub struct BGSEntryPointFunctionDataLeveledList {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataLeveledList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataLeveledList_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataLeveledList>() == 0x10);
@@ -1387,8 +1486,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataLeveledList
 #[repr(C)]
 pub struct BGSEntryPointFunctionDataOneValue {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataOneValue:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataOneValue_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataOneValue>() == 0x10);
@@ -1400,8 +1501,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataOneValue, _
 #[repr(C)]
 pub struct BGSEntryPointFunctionDataSpellItem {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataSpellItem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataSpellItem_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataSpellItem>() == 0x10);
@@ -1413,8 +1516,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataSpellItem, 
 #[repr(C)]
 pub struct BGSEntryPointFunctionDataText {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataText:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataText_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataText>() == 0x10);
@@ -1426,8 +1531,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataText, __vft
 #[repr(C)]
 pub struct BGSEntryPointFunctionDataTwoValue {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataTwoValue:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataTwoValue_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataTwoValue>() == 0x10);
@@ -1439,8 +1546,10 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataTwoValue, _
 #[repr(C)]
 pub struct BGSEntryPointPerkEntry {
     /// +0x0 `vtbl:BGSEntryPointPerkEntry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEntryPointPerkEntry_vtable,
     pub unknown_8: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointPerkEntry>() == 0x30);
@@ -1452,6 +1561,7 @@ const _: () = assert!(core::mem::offset_of!(BGSEntryPointPerkEntry, __vftable) =
 #[repr(C)]
 pub struct BGSEquipSlot {
     /// +0x0 `vtbl:BGSEquipSlot:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEquipSlot_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1470,6 +1580,7 @@ pub struct BGSEquipSlot {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEquipSlot>() == 0x40);
@@ -1488,9 +1599,11 @@ const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, field_38) == 0x38);
 #[repr(C)]
 pub struct BGSEquipType {
     /// +0x0 `vtbl:BGSEquipType:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSEquipType_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEquipType>() == 0x10);
@@ -1503,6 +1616,7 @@ const _: () = assert!(core::mem::offset_of!(BGSEquipType, field_8) == 0x8);
 #[repr(C)]
 pub struct BGSExplosion {
     /// +0x0 `vtbl:BGSExplosion:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSExplosion_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1529,15 +1643,18 @@ pub struct BGSExplosion {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSExplosion:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSExplosion_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:BGSExplosion:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSExplosion_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModel
     pub field_50: u64,
     pub unknown_58: [u8; 16],
     /// +0x68 `vtbl:BGSExplosion:68`, rtti
+    #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::BGSExplosion_vtable_68,
     /// +0x70 `undefined8`, base TESEnchantableForm
     pub field_70: u64,
@@ -1545,8 +1662,10 @@ pub struct BGSExplosion {
     pub field_78: u32,
     pub unknown_7C: [u8; 4],
     /// +0x80 `vtbl:BGSExplosion:80`, rtti
+    #[doc(hidden)]
     pub __vftable_80: *const crate::raw::vtables::BGSExplosion_vtable_80,
     /// +0x88 `vtbl:BGSExplosion:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::BGSExplosion_vtable_88,
     /// +0x90 `undefined8`, base TESImageSpaceModifiableForm
     pub field_90: u64,
@@ -1571,6 +1690,7 @@ pub struct BGSExplosion {
     /// +0xE0 `undefined4`, ctor store
     pub field_E0: u32,
     pub unknown_E4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSExplosion>() == 0xE8);
@@ -1612,6 +1732,7 @@ const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_E0) == 0xE0);
 #[repr(C)]
 pub struct BGSFootIkRaycastInterfaceDB {
     /// +0x0 `vtbl:BGSFootIkRaycastInterfaceDB:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSFootIkRaycastInterfaceDB_vtable,
     pub unknown_8: [u8; 20],
     /// +0x1C `undefined4`, ctor store
@@ -1625,6 +1746,7 @@ pub struct BGSFootIkRaycastInterfaceDB {
     pub unknown_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, __vftable) == 0x0);
@@ -1640,6 +1762,7 @@ const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, field_3
 #[repr(C)]
 pub struct BGSFootstep {
     /// +0x0 `vtbl:BGSFootstep:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSFootstep_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1656,6 +1779,7 @@ pub struct BGSFootstep {
     pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSFootstep>() == 0x30);
@@ -1674,6 +1798,7 @@ const _: () = assert!(core::mem::offset_of!(BGSFootstep, field_28) == 0x28);
 #[repr(C)]
 pub struct BGSFootstepSet {
     /// +0x0 `vtbl:BGSFootstepSet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSFootstepSet_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1686,6 +1811,7 @@ pub struct BGSFootstepSet {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 125],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSFootstepSet>() == 0x98);
@@ -1702,6 +1828,7 @@ const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, formType) == 0x1A);
 #[repr(C)]
 pub struct BGSGamebryoSequenceGenerator {
     /// +0x0 `vtbl:BGSGamebryoSequenceGenerator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSGamebryoSequenceGenerator_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
@@ -1793,6 +1920,7 @@ pub struct BGSGamebryoSequenceGenerator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __vftable) == 0x0);
@@ -1847,7 +1975,9 @@ const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_
 #[repr(C)]
 pub struct BGSGamebryoSequenceGeneratorHolderSingleton {
     /// +0x0 `vtbl:BGSGamebryoSequenceGeneratorHolderSingleton:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSGamebryoSequenceGeneratorHolderSingleton_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGeneratorHolderSingleton, __vftable) == 0x0);
@@ -1858,7 +1988,9 @@ const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGeneratorHolderSi
 #[repr(C)]
 pub struct BGSHavokGeometryAttach {
     /// +0x0 `vtbl:BGSHavokGeometryAttach:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSHavokGeometryAttach_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach, __vftable) == 0x0);
@@ -1868,7 +2000,9 @@ const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach, __vftable) =
 #[repr(C)]
 pub struct BGSHavokGeometryAttach__ActionPolicy {
     /// +0x0 `vtbl:BGSHavokGeometryAttach::ActionPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSHavokGeometryAttach__ActionPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__ActionPolicy, __vftable) == 0x0);
@@ -1879,7 +2013,9 @@ const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__ActionPolicy
 #[repr(C)]
 pub struct BGSHavokGeometryAttach__AttachPolicy {
     /// +0x0 `vtbl:BGSHavokGeometryAttach::AttachPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSHavokGeometryAttach__AttachPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__AttachPolicy, __vftable) == 0x0);
@@ -1890,7 +2026,9 @@ const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__AttachPolicy
 #[repr(C)]
 pub struct BGSHavokGeometryAttach__DetachPolicy {
     /// +0x0 `vtbl:BGSHavokGeometryAttach::DetachPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSHavokGeometryAttach__DetachPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__DetachPolicy, __vftable) == 0x0);
@@ -1901,6 +2039,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__DetachPolicy
 #[repr(C)]
 pub struct BGSHazard {
     /// +0x0 `vtbl:BGSHazard:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSHazard_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1927,17 +2066,21 @@ pub struct BGSHazard {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSHazard:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSHazard_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:BGSHazard:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSHazard_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModel
     pub field_50: u64,
     pub unknown_58: [u8; 16],
     /// +0x68 `vtbl:BGSHazard:68`, rtti
+    #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::BGSHazard_vtable_68,
     /// +0x70 `vtbl:BGSHazard:70`, rtti
+    #[doc(hidden)]
     pub __vftable_70: *const crate::raw::vtables::BGSHazard_vtable_70,
     /// +0x78 `undefined8`, base TESImageSpaceModifiableForm
     pub field_78: u64,
@@ -1957,6 +2100,7 @@ pub struct BGSHazard {
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSHazard>() == 0xB8);
@@ -1993,6 +2137,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHazard, field_B0) == 0xB0);
 #[repr(C)]
 pub struct BGSHeadPart {
     /// +0x0 `vtbl:BGSHeadPart:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSHeadPart_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2006,9 +2151,11 @@ pub struct BGSHeadPart {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSHeadPart:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSHeadPart_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:BGSHeadPart:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSHeadPart_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
@@ -2034,6 +2181,7 @@ pub struct BGSHeadPart {
     pub field_110: u64,
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSHeadPart>() == 0x120);
@@ -2061,6 +2209,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_118) == 0x118);
 #[repr(C)]
 pub struct BGSIdleCollection {
     /// +0x0 `vtbl:BGSIdleCollection:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSIdleCollection_vtable,
     /// +0x8 `undefined2`, ctor store
     pub field_8: u16,
@@ -2070,6 +2219,7 @@ pub struct BGSIdleCollection {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSIdleCollection>() == 0x20);
@@ -2084,6 +2234,7 @@ const _: () = assert!(core::mem::offset_of!(BGSIdleCollection, field_18) == 0x18
 #[repr(C)]
 pub struct BGSIdleMarker {
     /// +0x0 `vtbl:BGSIdleMarker:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSIdleMarker_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2110,12 +2261,14 @@ pub struct BGSIdleMarker {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSIdleMarker:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSIdleMarker_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModel
     pub field_40: u64,
     pub unknown_48: [u8; 16],
     /// +0x58 `vtbl:BGSIdleMarker:58`, rtti
+    #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::BGSIdleMarker_vtable_58,
     /// +0x60 `undefined2`, base BGSIdleCollection
     pub field_60: u16,
@@ -2125,6 +2278,7 @@ pub struct BGSIdleMarker {
     /// +0x70 `undefined4`, base BGSIdleCollection
     pub field_70: u32,
     pub unknown_74: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSIdleMarker>() == 0x78);
@@ -2153,6 +2307,7 @@ const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_70) == 0x70);
 #[repr(C)]
 pub struct BGSImpactData {
     /// +0x0 `vtbl:BGSImpactData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSImpactData_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2166,6 +2321,7 @@ pub struct BGSImpactData {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSImpactData:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSImpactData_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `undefined8`, base TESModel
@@ -2193,6 +2349,7 @@ pub struct BGSImpactData {
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
     pub unknown_88: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSImpactData>() == 0xB0);
@@ -2222,6 +2379,7 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_80) == 0x80);
 #[repr(C, packed)]
 pub struct BGSImpactDataSet {
     /// +0x0 `vtbl:BGSImpactDataSet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSImpactDataSet_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2235,6 +2393,7 @@ pub struct BGSImpactDataSet {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSImpactDataSet:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSImpactDataSet_vtable_20,
     pub unknown_28: [u8; 12],
     /// +0x34 `undefined8`, ctor store
@@ -2246,6 +2405,7 @@ pub struct BGSImpactDataSet {
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSImpactDataSet>() == 0x58);
@@ -2267,11 +2427,15 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, field_50) == 0x50)
 #[repr(C)]
 pub struct BGSImpactManager {
     /// +0x0 `vtbl:BGSImpactManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSImpactManager_vtable,
     /// +0x8 `vtbl:BGSImpactManager:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSImpactManager_vtable_8,
     /// +0x10 `vtbl:BGSImpactManager:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::BGSImpactManager_vtable_10,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSImpactManager, __vftable) == 0x0);
@@ -2284,7 +2448,9 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactManager, __vftable_10) == 0
 #[repr(C)]
 pub struct BGSLOSData {
     /// +0x0 `vtbl:BGSLOSData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSLOSData_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSLOSData, __vftable) == 0x0);
@@ -2295,6 +2461,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLOSData, __vftable) == 0x0);
 #[repr(C)]
 pub struct BGSLensFlare {
     /// +0x0 `vtbl:BGSLensFlare:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSLensFlare_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2315,6 +2482,7 @@ pub struct BGSLensFlare {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSLensFlare, __vftable) == 0x0);
@@ -2334,6 +2502,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_38) == 0x38);
 #[repr(C, packed)]
 pub struct BGSLensFlareSprite {
     /// +0x0 `vtbl:BGSLensFlareSprite:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSLensFlareSprite_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -2359,6 +2528,7 @@ pub struct BGSLensFlareSprite {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSLensFlareSprite, __vftable) == 0x0);
@@ -2381,6 +2551,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLensFlareSprite, field_40) == 0x4
 #[repr(C, packed)]
 pub struct BGSLightingTemplate {
     /// +0x0 `vtbl:BGSLightingTemplate:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSLightingTemplate_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2416,6 +2587,7 @@ pub struct BGSLightingTemplate {
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
     pub unknown_80: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLightingTemplate>() == 0xA0);
@@ -2442,6 +2614,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_78) == 0x
 #[repr(C)]
 pub struct BGSLocAlias {
     /// +0x0 `vtbl:BGSLocAlias:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSLocAlias_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
@@ -2469,6 +2642,7 @@ pub struct BGSLocAlias {
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLocAlias>() == 0x60);
@@ -2491,6 +2665,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_58) == 0x58);
 #[repr(C)]
 pub struct BGSLocation {
     /// +0x0 `vtbl:BGSLocation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSLocation_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2504,6 +2679,7 @@ pub struct BGSLocation {
     pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `vtbl:BGSLocation:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSLocation_vtable_30,
     /// +0x38 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -2538,6 +2714,7 @@ pub struct BGSLocation {
     /// +0xEC `undefined2`, ctor store
     pub field_EC: u16,
     pub unknown_EE: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLocation>() == 0xF0);
@@ -2569,6 +2746,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLocation, field_EC) == 0xEC);
 #[repr(C)]
 pub struct BGSLocationRefType {
     /// +0x0 `vtbl:BGSLocationRefType:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSLocationRefType_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2583,6 +2761,7 @@ pub struct BGSLocationRefType {
     pub unknown_1B: [u8; 5],
     /// +0x20 `pointer`, base BGSKeyword, semantic; BSFixedString editor id of the keyword (high)
     pub keyword: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLocationRefType>() == 0x28);
@@ -2601,6 +2780,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, keyword) == 0x20
 #[repr(C, packed)]
 pub struct BGSMaterialObject {
     /// +0x0 `vtbl:BGSMaterialObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMaterialObject_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2614,12 +2794,14 @@ pub struct BGSMaterialObject {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMaterialObject:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSMaterialObject_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `undefined8`, base TESModel
     pub field_30: u64,
     pub unknown_38: [u8; 16],
     /// +0x48 `vtbl:BGSMaterialObject:48`, rtti
+    #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::BGSMaterialObject_vtable_48,
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
@@ -2640,6 +2822,7 @@ pub struct BGSMaterialObject {
     /// +0x7C `undefined8`, ctor store
     pub field_7C: u64,
     pub unknown_84: [u8; 52],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMaterialObject>() == 0xB8);
@@ -2669,6 +2852,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_7C) == 0x7C
 #[repr(C, packed)]
 pub struct BGSMaterialType {
     /// +0x0 `vtbl:BGSMaterialType:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMaterialType_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2695,6 +2879,7 @@ pub struct BGSMaterialType {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMaterialType>() == 0x50);
@@ -2718,9 +2903,11 @@ const _: () = assert!(core::mem::offset_of!(BGSMaterialType, field_48) == 0x48);
 #[repr(C)]
 pub struct BGSMenuDisplayObject {
     /// +0x0 `vtbl:BGSMenuDisplayObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMenuDisplayObject_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMenuDisplayObject>() == 0x10);
@@ -2733,6 +2920,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMenuDisplayObject, field_8) == 0x
 #[repr(C)]
 pub struct BGSMenuIcon {
     /// +0x0 `vtbl:BGSMenuIcon:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMenuIcon_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2746,7 +2934,9 @@ pub struct BGSMenuIcon {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMenuIcon:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSMenuIcon_vtable_20,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, __vftable) == 0x0);
@@ -2763,6 +2953,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, __vftable_20) == 0x20);
 #[repr(C)]
 pub struct BGSMessage {
     /// +0x0 `vtbl:BGSMessage:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMessage_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2776,9 +2967,11 @@ pub struct BGSMessage {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMessage:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSMessage_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:BGSMessage:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSMessage_vtable_30,
     /// +0x38 `undefined4`, base TESDescription
     pub field_38: u32,
@@ -2795,6 +2988,7 @@ pub struct BGSMessage {
     pub field_60: u32,
     /// +0x64 `undefined4`, ctor store
     pub field_64: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMessage>() == 0x68);
@@ -2820,7 +3014,9 @@ const _: () = assert!(core::mem::offset_of!(BGSMessage, field_64) == 0x64);
 #[repr(C)]
 pub struct BGSMessageIcon {
     /// +0x0 `vtbl:BGSMessageIcon:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMessageIcon_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMessageIcon, __vftable) == 0x0);
@@ -2832,13 +3028,16 @@ const _: () = assert!(core::mem::offset_of!(BGSMessageIcon, __vftable) == 0x0);
 #[repr(C, packed)]
 pub struct BGSMovableStatic {
     /// +0x0 `vtbl:BGSMovableStatic:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMovableStatic_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `vtbl:BGSMovableStatic:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::BGSMovableStatic_vtable_10,
     /// +0x18 `undefined8`, base BGSDestructibleObjectForm
     pub field_18: u64,
     /// +0x20 `vtbl:BGSMovableStatic:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSMovableStatic_vtable_20,
     /// +0x28 `undefined8`, base TESObjectSTAT
     pub field_28: u64,
@@ -2863,6 +3062,7 @@ pub struct BGSMovableStatic {
     pub field_4A: u16,
     pub unknown_4C: [u8; 4],
     /// +0x50 `vtbl:BGSMovableStatic:50`, rtti
+    #[doc(hidden)]
     pub __vftable_50: *const crate::raw::vtables::BGSMovableStatic_vtable_50,
     pub unknown_58: [u8; 8],
     /// +0x60 `undefined8`, base TESObjectSTAT
@@ -2890,6 +3090,7 @@ pub struct BGSMovableStatic {
     /// +0xA8 `undefined1`, ctor store
     pub field_A8: u8,
     pub unknown_A9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMovableStatic>() == 0xB0);
@@ -2925,6 +3126,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_A8) == 0xA8)
 #[repr(C)]
 pub struct BGSMovementType {
     /// +0x0 `vtbl:BGSMovementType:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMovementType_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -2950,6 +3152,7 @@ pub struct BGSMovementType {
     pub field_58: u32,
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMovementType>() == 0x60);
@@ -2972,6 +3175,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMovementType, field_5C) == 0x5C);
 #[repr(C)]
 pub struct BGSMoviePlayer {
     /// +0x0 `vtbl:BGSMoviePlayer:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMoviePlayer_vtable,
     /// +0x8 `undefined8`, base MoviePlayer
     pub field_8: u64,
@@ -2999,12 +3203,14 @@ pub struct BGSMoviePlayer {
     pub field_48: u64,
     pub unknown_50: [u8; 8],
     /// +0x58 `vtbl:BGSMoviePlayer:58`, rtti
+    #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::BGSMoviePlayer_vtable_58,
     /// +0x60 `class:BSTEventSource`, RTTI base BSTEventSource<BSMusicEvent>
     pub source_BSMusicEvent: crate::BSTEventSource,
     /// +0xB8 `undefined1`, ctor store
     pub field_B8: u8,
     pub unknown_B9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMoviePlayer>() == 0xC0);
@@ -3030,7 +3236,9 @@ const _: () = assert!(core::mem::offset_of!(BGSMoviePlayer, field_B8) == 0xB8);
 #[repr(C)]
 pub struct BGSMultiTechniqueAttach {
     /// +0x0 `vtbl:BGSMultiTechniqueAttach:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMultiTechniqueAttach_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach, __vftable) == 0x0);
@@ -3040,7 +3248,9 @@ const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach, __vftable) 
 #[repr(C)]
 pub struct BGSMultiTechniqueAttach__ActionPolicy {
     /// +0x0 `vtbl:BGSMultiTechniqueAttach::ActionPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMultiTechniqueAttach__ActionPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__ActionPolicy, __vftable) == 0x0);
@@ -3051,7 +3261,9 @@ const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__ActionPolic
 #[repr(C)]
 pub struct BGSMultiTechniqueAttach__AttachPolicy {
     /// +0x0 `vtbl:BGSMultiTechniqueAttach::AttachPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMultiTechniqueAttach__AttachPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__AttachPolicy, __vftable) == 0x0);
@@ -3062,7 +3274,9 @@ const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__AttachPolic
 #[repr(C)]
 pub struct BGSMultiTechniqueAttach__DetachPolicy {
     /// +0x0 `vtbl:BGSMultiTechniqueAttach::DetachPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMultiTechniqueAttach__DetachPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__DetachPolicy, __vftable) == 0x0);
@@ -3074,6 +3288,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__DetachPolic
 #[repr(C, packed)]
 pub struct BGSMusicPaletteTrack {
     /// +0x0 `vtbl:BGSMusicPaletteTrack:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMusicPaletteTrack_vtable,
     /// +0x8 `undefined4`, base BGSMusicTrack
     pub field_8: u32,
@@ -3094,6 +3309,7 @@ pub struct BGSMusicPaletteTrack {
     pub field_80: u64,
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicPaletteTrack>() == 0x90);
@@ -3113,6 +3329,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, field_88) == 0
 #[repr(C)]
 pub struct BGSMusicSilenceTrack {
     /// +0x0 `vtbl:BGSMusicSilenceTrack:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMusicSilenceTrack_vtable,
     /// +0x8 `undefined4`, base BGSMusicTrack
     pub field_8: u32,
@@ -3122,6 +3339,7 @@ pub struct BGSMusicSilenceTrack {
     /// +0x18 `undefined4`, base BGSMusicTrack
     pub field_18: u32,
     pub unknown_1C: [u8; 28],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicSilenceTrack>() == 0x38);
@@ -3136,6 +3354,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicSilenceTrack, field_18) == 0
 #[repr(C)]
 pub struct BGSMusicSingleTrack {
     /// +0x0 `vtbl:BGSMusicSingleTrack:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMusicSingleTrack_vtable,
     /// +0x8 `undefined4`, base BGSMusicTrack
     pub field_8: u32,
@@ -3176,6 +3395,7 @@ pub struct BGSMusicSingleTrack {
     pub unknown_79: [u8; 3],
     /// +0x7C `undefined4`, ctor store
     pub field_7C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicSingleTrack>() == 0x80);
@@ -3203,6 +3423,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicSingleTrack, field_7C) == 0x
 #[repr(C)]
 pub struct BGSMusicTrack {
     /// +0x0 `vtbl:BGSMusicTrack:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMusicTrack_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -3212,6 +3433,7 @@ pub struct BGSMusicTrack {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicTrack>() == 0x20);
@@ -3226,7 +3448,9 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicTrack, field_18) == 0x18);
 #[repr(C)]
 pub struct BGSNamedNodeAttach {
     /// +0x0 `vtbl:BGSNamedNodeAttach:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSNamedNodeAttach_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach, __vftable) == 0x0);
@@ -3236,7 +3460,9 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach, __vftable) == 0x
 #[repr(C)]
 pub struct BGSNamedNodeAttach__ActionPolicy {
     /// +0x0 `vtbl:BGSNamedNodeAttach::ActionPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSNamedNodeAttach__ActionPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__ActionPolicy, __vftable) == 0x0);
@@ -3247,7 +3473,9 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__ActionPolicy, __
 #[repr(C)]
 pub struct BGSNamedNodeAttach__AttachPolicy {
     /// +0x0 `vtbl:BGSNamedNodeAttach::AttachPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSNamedNodeAttach__AttachPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__AttachPolicy, __vftable) == 0x0);
@@ -3258,7 +3486,9 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__AttachPolicy, __
 #[repr(C)]
 pub struct BGSNamedNodeAttach__DetachPolicy {
     /// +0x0 `vtbl:BGSNamedNodeAttach::DetachPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSNamedNodeAttach__DetachPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__DetachPolicy, __vftable) == 0x0);
@@ -3269,10 +3499,13 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__DetachPolicy, __
 #[repr(C)]
 pub struct BGSNamedPackageData_IAITarget {
     /// +0x0 `vtbl:BGSNamedPackageData<IAITarget>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSNamedPackageData_IAITarget_vtable,
     /// +0x8 `vtbl:BGSNamedPackageData<IAITarget>:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSNamedPackageData_IAITarget_vtable_8,
     pub unknown_10: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSNamedPackageData_IAITarget>() == 0x20);
@@ -3285,8 +3518,10 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedPackageData_IAITarget, __vft
 #[repr(C)]
 pub struct BGSNamedPackageData_IPackageData {
     /// +0x0 `vtbl:BGSNamedPackageData<IPackageData>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSNamedPackageData_IPackageData_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSNamedPackageData_IPackageData>() == 0x10);
@@ -3298,10 +3533,13 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedPackageData_IPackageData, __
 #[repr(C)]
 pub struct BGSNamedPackageData_IPackageDataAIWorldLocationHandle {
     /// +0x0 `vtbl:BGSNamedPackageData<IPackageDataAIWorldLocationHandle>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSNamedPackageData_IPackageDataAIWorldLocationHandle_vtable,
     /// +0x8 `vtbl:BGSNamedPackageData<IPackageDataAIWorldLocationHandle>:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSNamedPackageData_IPackageDataAIWorldLocationHandle_vtable_8,
     pub unknown_10: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSNamedPackageData_IPackageDataAIWorldLocationHandle>() == 0x20);
@@ -3314,6 +3552,7 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedPackageData_IPackageDataAIWo
 #[repr(C)]
 pub struct BGSNote {
     /// +0x0 `vtbl:BGSNote:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSNote_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3340,18 +3579,22 @@ pub struct BGSNote {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSNote:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSNote_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModel
     pub field_40: u64,
     pub unknown_48: [u8; 16],
     /// +0x58 `vtbl:BGSNote:58`, rtti
+    #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::BGSNote_vtable_58,
     pub unknown_60: [u8; 8],
     /// +0x68 `vtbl:BGSNote:68`, rtti
+    #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::BGSNote_vtable_68,
     pub unknown_70: [u8; 8],
     /// +0x78 `vtbl:BGSNote:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::BGSNote_vtable_78,
     /// +0x80 `undefined8`, base BGSPickupPutdownSounds
     pub field_80: u64,
@@ -3368,6 +3611,7 @@ pub struct BGSNote {
     /// +0xB0 `undefined2`, ctor store
     pub field_B0: u16,
     pub unknown_B2: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNote, __vftable) == 0x0);
@@ -3400,7 +3644,9 @@ const _: () = assert!(core::mem::offset_of!(BGSNote, field_B0) == 0xB0);
 #[repr(C)]
 pub struct BGSOpenCloseForm {
     /// +0x0 `vtbl:BGSOpenCloseForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSOpenCloseForm_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSOpenCloseForm>() == 0x8);
@@ -3412,6 +3658,7 @@ const _: () = assert!(core::mem::offset_of!(BGSOpenCloseForm, __vftable) == 0x0)
 #[repr(C)]
 pub struct BGSOutfit {
     /// +0x0 `vtbl:BGSOutfit:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSOutfit_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3427,6 +3674,7 @@ pub struct BGSOutfit {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSOutfit>() == 0x38);
@@ -3444,6 +3692,7 @@ const _: () = assert!(core::mem::offset_of!(BGSOutfit, field_30) == 0x30);
 #[repr(C)]
 pub struct BGSOverridePackCollection {
     /// +0x0 `vtbl:BGSOverridePackCollection:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSOverridePackCollection_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -3453,6 +3702,7 @@ pub struct BGSOverridePackCollection {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSOverridePackCollection>() == 0x28);
@@ -3468,9 +3718,12 @@ const _: () = assert!(core::mem::offset_of!(BGSOverridePackCollection, field_20)
 #[repr(C)]
 pub struct BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd {
     /// +0x0 `vtbl:BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd_vtable,
     /// +0x8 `vtbl:BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd_vtable_8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd, __vftable) == 0x0);
@@ -3482,8 +3735,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataBasicTemplate_IAITarge
 #[repr(C)]
 pub struct BGSPackageDataBasicTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTypeNa_8b9ae7e590ff {
     /// +0x0 `vtbl:BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataBasicTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTypeNa_8b9ae7e590ff_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataBasicTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTypeNa_8b9ae7e590ff>() == 0x18);
@@ -3495,8 +3750,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataBasicTemplate_IPackage
 #[repr(C)]
 pub struct BGSPackageDataBasicTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeName_i_5a976714a864 {
     /// +0x0 `vtbl:BGSPackageDataBasicTemplate<IPackageData,int,&class_BSFixedString_const_kPackageDataIntTypeName,&int_const_iPackageDataIntDefault>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataBasicTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeName_i_5a976714a864_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataBasicTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeName_i_5a976714a864>() == 0x18);
@@ -3508,8 +3765,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataBasicTemplate_IPackage
 #[repr(C)]
 pub struct BGSPackageDataBool {
     /// +0x0 `vtbl:BGSPackageDataBool:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataBool_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataBool>() == 0x10);
@@ -3521,8 +3780,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataBool, __vftable) == 0x
 #[repr(C)]
 pub struct BGSPackageDataFloat {
     /// +0x0 `vtbl:BGSPackageDataFloat:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataFloat_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataFloat>() == 0x18);
@@ -3534,8 +3795,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataFloat, __vftable) == 0
 #[repr(C)]
 pub struct BGSPackageDataInt {
     /// +0x0 `vtbl:BGSPackageDataInt:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataInt_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataInt>() == 0x18);
@@ -3547,10 +3810,13 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataInt, __vftable) == 0x0
 #[repr(C)]
 pub struct BGSPackageDataLocation {
     /// +0x0 `vtbl:BGSPackageDataLocation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataLocation_vtable,
     /// +0x8 `vtbl:BGSPackageDataLocation:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataLocation_vtable_8,
     pub unknown_10: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataLocation>() == 0x20);
@@ -3563,11 +3829,14 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataLocation, __vftable_8)
 #[repr(C)]
 pub struct BGSPackageDataLocationWrapper {
     /// +0x0 `vtbl:BGSPackageDataLocationWrapper:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataLocationWrapper_vtable,
     /// +0x8 `vtbl:BGSPackageDataLocationWrapper:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataLocationWrapper_vtable_8,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataLocationWrapper>() == 0x18);
@@ -3581,10 +3850,13 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataLocationWrapper, field
 #[repr(C)]
 pub struct BGSPackageDataObjectList {
     /// +0x0 `vtbl:BGSPackageDataObjectList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataObjectList_vtable,
     /// +0x8 `vtbl:BGSPackageDataObjectList:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataObjectList_vtable_8,
     pub unknown_10: [u8; 48],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataObjectList>() == 0x40);
@@ -3597,10 +3869,13 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataObjectList, __vftable_
 #[repr(C)]
 pub struct BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedString_const_kPackageDataRef2TypeName {
     /// +0x0 `vtbl:BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedString_const_kPackageDataRef2TypeName_vtable,
     /// +0x8 `vtbl:BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName>:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedString_const_kPackageDataRef2TypeName_vtable_8,
     pub unknown_10: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedString_const_kPackageDataRef2TypeName>() == 0x20);
@@ -3613,8 +3888,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataPointerTemplate_IAITar
 #[repr(C)]
 pub struct BGSPackageDataPointerTemplate_IPackageData_PackageTarget_class_BSFixedString_const_kPackageDataTargetSelectorTypeName {
     /// +0x0 `vtbl:BGSPackageDataPointerTemplate<IPackageData,PackageTarget,&class_BSFixedString_const_kPackageDataTargetSelectorTypeName>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataPointerTemplate_IPackageData_PackageTarget_class_BSFixedString_const_kPackageDataTargetSelectorTypeName_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataPointerTemplate_IPackageData_PackageTarget_class_BSFixedString_const_kPackageDataTargetSelectorTypeName>() == 0x18);
@@ -3626,10 +3903,13 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataPointerTemplate_IPacka
 #[repr(C)]
 pub struct BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_PackageLocation_class_BSFixedStr_0ffa3654c476 {
     /// +0x0 `vtbl:BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_PackageLocation_class_BSFixedStr_0ffa3654c476_vtable,
     /// +0x8 `vtbl:BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName>:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_PackageLocation_class_BSFixedStr_0ffa3654c476_vtable_8,
     pub unknown_10: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_PackageLocation_class_BSFixedStr_0ffa3654c476>() == 0x20);
@@ -3642,10 +3922,13 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataPointerTemplate_IPacka
 #[repr(C)]
 pub struct BGSPackageDataRef {
     /// +0x0 `vtbl:BGSPackageDataRef:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataRef_vtable,
     /// +0x8 `vtbl:BGSPackageDataRef:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataRef_vtable_8,
     pub unknown_10: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataRef>() == 0x20);
@@ -3658,9 +3941,12 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataRef, __vftable_8) == 0
 #[repr(C)]
 pub struct BGSPackageDataRefOLD {
     /// +0x0 `vtbl:BGSPackageDataRefOLD:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataRefOLD_vtable,
     /// +0x8 `vtbl:BGSPackageDataRefOLD:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataRefOLD_vtable_8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataRefOLD, __vftable) == 0x0);
@@ -3672,8 +3958,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataRefOLD, __vftable_8) =
 #[repr(C)]
 pub struct BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459 {
     /// +0x0 `vtbl:BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459>() == 0x18);
@@ -3685,8 +3973,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataSaveableTemplate_IPack
 #[repr(C)]
 pub struct BGSPackageDataSaveableTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeNam_68f14969af7c {
     /// +0x0 `vtbl:BGSPackageDataSaveableTemplate<IPackageData,int,&class_BSFixedString_const_kPackageDataIntTypeName,&int_const_iPackageDataIntDefault>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataSaveableTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeNam_68f14969af7c_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataSaveableTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeNam_68f14969af7c>() == 0x18);
@@ -3698,8 +3988,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataSaveableTemplate_IPack
 #[repr(C)]
 pub struct BGSPackageDataTargetSelector {
     /// +0x0 `vtbl:BGSPackageDataTargetSelector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTargetSelector_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataTargetSelector>() == 0x18);
@@ -3711,8 +4003,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTargetSelector, __vfta
 #[repr(C)]
 pub struct BGSPackageDataTopic {
     /// +0x0 `vtbl:BGSPackageDataTopic:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTopic_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataTopic>() == 0x20);
@@ -3724,7 +4018,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTopic, __vftable) == 0
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_BGSPackageDataBool_BGSPackageDataBool {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataBool,BGSPackageDataBool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataBool_BGSPackageDataBool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataBool_BGSPackageDataBool, __vftable) == 0x0);
@@ -3735,7 +4031,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_BGSPackageDataFloat_BGSPackageDataFloat {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataFloat,BGSPackageDataFloat>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataFloat_BGSPackageDataFloat_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataFloat_BGSPackageDataFloat, __vftable) == 0x0);
@@ -3746,7 +4044,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_BGSPackageDataInt_BGSPackageDataInt {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataInt,BGSPackageDataInt>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataInt_BGSPackageDataInt_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataInt_BGSPackageDataInt, __vftable) == 0x0);
@@ -3757,7 +4057,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_BGSPackageDataObjectList_BGSPackageDataObjectList {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataObjectList,BGSPackageDataObjectList>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataObjectList_BGSPackageDataObjectList_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataObjectList_BGSPackageDataObjectList, __vftable) == 0x0);
@@ -3768,7 +4070,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_BGSPackageDataTargetSelector_BGSPackageDataTargetSelector {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataTargetSelector,BGSPackageDataTargetSelector>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataTargetSelector_BGSPackageDataTargetSelector_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataTargetSelector_BGSPackageDataTargetSelector, __vftable) == 0x0);
@@ -3779,7 +4083,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_BGSPackageDataTopic_BGSPackageDataTopic {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataTopic,BGSPackageDataTopic>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataTopic_BGSPackageDataTopic_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataTopic_BGSPackageDataTopic, __vftable) == 0x0);
@@ -3790,7 +4096,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_IAITarget_BGSPackageDataObjectList {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<IAITarget,BGSPackageDataObjectList>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_IAITarget_BGSPackageDataObjectList_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IAITarget_BGSPackageDataObjectList, __vftable) == 0x0);
@@ -3801,7 +4109,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IAITarget_BG
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_IAITarget_BGSPackageDataRef {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<IAITarget,BGSPackageDataRef>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_IAITarget_BGSPackageDataRef_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IAITarget_BGSPackageDataRef, __vftable) == 0x0);
@@ -3812,7 +4122,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IAITarget_BG
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataLocation {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<IPackageDataAIWorldLocationHandle,BGSPackageDataLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataLocation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataLocation, __vftable) == 0x0);
@@ -3823,7 +4135,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IPackageData
 #[repr(C)]
 pub struct BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataRef {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<IPackageDataAIWorldLocationHandle,BGSPackageDataRef>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataRef_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataRef, __vftable) == 0x0);
@@ -3834,7 +4148,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IPackageData
 #[repr(C)]
 pub struct BGSParticleArrayAttach {
     /// +0x0 `vtbl:BGSParticleArrayAttach:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSParticleArrayAttach_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach, __vftable) == 0x0);
@@ -3845,7 +4161,9 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach, __vftable) =
 #[repr(C)]
 pub struct BGSParticleArrayAttach__ClearEmitterPolicy {
     /// +0x0 `vtbl:BGSParticleArrayAttach::ClearEmitterPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSParticleArrayAttach__ClearEmitterPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__ClearEmitterPolicy, __vftable) == 0x0);
@@ -3856,7 +4174,9 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__ClearEmitter
 #[repr(C)]
 pub struct BGSParticleArrayAttach__CollectEmitterPolicy {
     /// +0x0 `vtbl:BGSParticleArrayAttach::CollectEmitterPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSParticleArrayAttach__CollectEmitterPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__CollectEmitterPolicy, __vftable) == 0x0);
@@ -3866,7 +4186,9 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__CollectEmitt
 #[repr(C)]
 pub struct BGSParticleArrayAttach__EmitterPolicy {
     /// +0x0 `vtbl:BGSParticleArrayAttach::EmitterPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSParticleArrayAttach__EmitterPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__EmitterPolicy, __vftable) == 0x0);
@@ -3877,8 +4199,10 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__EmitterPolic
 #[repr(C)]
 pub struct BGSParticleObjectCloneTask {
     /// +0x0 `vtbl:BGSParticleObjectCloneTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSParticleObjectCloneTask_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSParticleObjectCloneTask>() == 0x40);
@@ -3890,6 +4214,7 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleObjectCloneTask, __vftabl
 #[repr(C)]
 pub struct BGSPerk {
     /// +0x0 `vtbl:BGSPerk:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPerk_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3903,14 +4228,17 @@ pub struct BGSPerk {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSPerk:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSPerk_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `vtbl:BGSPerk:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSPerk_vtable_30,
     /// +0x38 `undefined4`, base TESDescription
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
     /// +0x40 `vtbl:BGSPerk:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSPerk_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined4`, ctor store
@@ -3920,6 +4248,7 @@ pub struct BGSPerk {
     pub unknown_55: [u8; 35],
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPerk>() == 0x80);
@@ -3943,7 +4272,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPerk, field_78) == 0x78);
 #[repr(C)]
 pub struct BGSPerk__AddPerkVisitor {
     /// +0x0 `vtbl:BGSPerk::AddPerkVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPerk__AddPerkVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPerk__AddPerkVisitor, __vftable) == 0x0);
@@ -3954,7 +4285,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPerk__AddPerkVisitor, __vftable) 
 #[repr(C)]
 pub struct BGSPerk__ApplyPerksVisitor {
     /// +0x0 `vtbl:BGSPerk::ApplyPerksVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPerk__ApplyPerksVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPerk__ApplyPerksVisitor, __vftable) == 0x0);
@@ -3965,7 +4298,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPerk__ApplyPerksVisitor, __vftabl
 #[repr(C)]
 pub struct BGSPerk__FindPerkInRanksVisitor {
     /// +0x0 `vtbl:BGSPerk::FindPerkInRanksVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPerk__FindPerkInRanksVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPerk__FindPerkInRanksVisitor, __vftable) == 0x0);
@@ -3975,8 +4310,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPerk__FindPerkInRanksVisitor, __v
 #[repr(C)]
 pub struct BGSPerkEntry {
     /// +0x0 `vtbl:BGSPerkEntry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPerkEntry_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPerkEntry>() == 0x18);
@@ -3988,12 +4325,14 @@ const _: () = assert!(core::mem::offset_of!(BGSPerkEntry, __vftable) == 0x0);
 #[repr(C)]
 pub struct BGSPerkRankArray {
     /// +0x0 `vtbl:BGSPerkRankArray:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPerkRankArray_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPerkRankArray>() == 0x18);
@@ -4007,11 +4346,13 @@ const _: () = assert!(core::mem::offset_of!(BGSPerkRankArray, field_10) == 0x10)
 #[repr(C)]
 pub struct BGSPickupPutdownSounds {
     /// +0x0 `vtbl:BGSPickupPutdownSounds:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPickupPutdownSounds_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPickupPutdownSounds>() == 0x18);
@@ -4025,11 +4366,14 @@ const _: () = assert!(core::mem::offset_of!(BGSPickupPutdownSounds, field_10) ==
 #[repr(C)]
 pub struct BGSPlayerMusicChanger {
     /// +0x0 `vtbl:BGSPlayerMusicChanger:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPlayerMusicChanger_vtable,
     /// +0x8 `vtbl:BGSPlayerMusicChanger:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPlayerMusicChanger_vtable_8,
     /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<BSMusicEvent>
     pub source_BSMusicEvent: crate::BSTEventSource,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, __vftable) == 0x0);
@@ -4042,7 +4386,9 @@ const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, source_BSMusi
 #[repr(C)]
 pub struct BGSPreloadable {
     /// +0x0 `vtbl:BGSPreloadable:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPreloadable_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPreloadable>() == 0x8);
@@ -4053,8 +4399,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPreloadable, __vftable) == 0x0);
 #[repr(C)]
 pub struct BGSPrimitive {
     /// +0x0 `vtbl:BGSPrimitive:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPrimitive_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitive>() == 0x18);
@@ -4066,8 +4414,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPrimitive, __vftable) == 0x0);
 #[repr(C)]
 pub struct BGSPrimitiveBox {
     /// +0x0 `vtbl:BGSPrimitiveBox:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPrimitiveBox_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitiveBox>() == 0x18);
@@ -4079,8 +4429,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPrimitiveBox, __vftable) == 0x0);
 #[repr(C)]
 pub struct BGSPrimitiveLine {
     /// +0x0 `vtbl:BGSPrimitiveLine:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPrimitiveLine_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitiveLine>() == 0x18);
@@ -4092,8 +4444,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPrimitiveLine, __vftable) == 0x0)
 #[repr(C)]
 pub struct BGSPrimitivePlane {
     /// +0x0 `vtbl:BGSPrimitivePlane:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPrimitivePlane_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitivePlane>() == 0x18);
@@ -4105,8 +4459,10 @@ const _: () = assert!(core::mem::offset_of!(BGSPrimitivePlane, __vftable) == 0x0
 #[repr(C)]
 pub struct BGSPrimitiveSphere {
     /// +0x0 `vtbl:BGSPrimitiveSphere:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSPrimitiveSphere_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitiveSphere>() == 0x18);
@@ -4118,6 +4474,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPrimitiveSphere, __vftable) == 0x
 #[repr(C)]
 pub struct BGSProcedureAcquire {
     /// +0x0 `vtbl:BGSProcedureAcquire:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureAcquire_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4128,6 +4485,7 @@ pub struct BGSProcedureAcquire {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureAcquire>() == 0x38);
@@ -4142,6 +4500,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquire, field_30) == 0x
 #[repr(C)]
 pub struct BGSProcedureAcquireExecState {
     /// +0x0 `vtbl:BGSProcedureAcquireExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureAcquireExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4160,6 +4519,7 @@ pub struct BGSProcedureAcquireExecState {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, __vftable) == 0x0);
@@ -4178,6 +4538,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_
 #[repr(C)]
 pub struct BGSProcedureActivate {
     /// +0x0 `vtbl:BGSProcedureActivate:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureActivate_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4188,6 +4549,7 @@ pub struct BGSProcedureActivate {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureActivate>() == 0x38);
@@ -4202,6 +4564,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureActivate, field_30) == 0
 #[repr(C)]
 pub struct BGSProcedureActivateExecState {
     /// +0x0 `vtbl:BGSProcedureActivateExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureActivateExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4218,6 +4581,7 @@ pub struct BGSProcedureActivateExecState {
     /// +0x30 `undefined2`, ctor store
     pub field_30: u16,
     pub unknown_32: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureActivateExecState>() == 0x38);
@@ -4236,6 +4600,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureActivateExecState, field
 #[repr(C)]
 pub struct BGSProcedureBase {
     /// +0x0 `vtbl:BGSProcedureBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureBase_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, ctor store
@@ -4246,6 +4611,7 @@ pub struct BGSProcedureBase {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureBase>() == 0x38);
@@ -4260,6 +4626,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureBase, field_30) == 0x30)
 #[repr(C)]
 pub struct BGSProcedureDialogue {
     /// +0x0 `vtbl:BGSProcedureDialogue:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureDialogue_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4270,6 +4637,7 @@ pub struct BGSProcedureDialogue {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogue, __vftable) == 0x0);
@@ -4283,6 +4651,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogue, field_30) == 0
 #[repr(C)]
 pub struct BGSProcedureDialogueActivate {
     /// +0x0 `vtbl:BGSProcedureDialogueActivate:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureDialogueActivate_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4293,6 +4662,7 @@ pub struct BGSProcedureDialogueActivate {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureDialogueActivate>() == 0x38);
@@ -4307,6 +4677,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogueActivate, field_
 #[repr(C)]
 pub struct BGSProcedureDialogueActivateExecState {
     /// +0x0 `vtbl:BGSProcedureDialogueActivateExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureDialogueActivateExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4326,6 +4697,7 @@ pub struct BGSProcedureDialogueActivateExecState {
     /// +0x42 `undefined1`, ctor store
     pub field_42: u8,
     pub unknown_43: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureDialogueActivateExecState>() == 0x48);
@@ -4345,9 +4717,11 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogueActivateExecStat
 #[repr(C)]
 pub struct BGSProcedureDialogueExecState {
     /// +0x0 `vtbl:BGSProcedureDialogueExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureDialogueExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogueExecState, __vftable) == 0x0);
@@ -4359,6 +4733,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogueExecState, field
 #[repr(C)]
 pub struct BGSProcedureDone {
     /// +0x0 `vtbl:BGSProcedureDone:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureDone_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4369,6 +4744,7 @@ pub struct BGSProcedureDone {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDone, __vftable) == 0x0);
@@ -4382,9 +4758,11 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureDone, field_30) == 0x30)
 #[repr(C)]
 pub struct BGSProcedureDoneExecState {
     /// +0x0 `vtbl:BGSProcedureDoneExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureDoneExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDoneExecState, __vftable) == 0x0);
@@ -4396,6 +4774,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureDoneExecState, field_8) 
 #[repr(C)]
 pub struct BGSProcedureEat {
     /// +0x0 `vtbl:BGSProcedureEat:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureEat_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4406,6 +4785,7 @@ pub struct BGSProcedureEat {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureEat>() == 0x38);
@@ -4420,10 +4800,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureEat, field_30) == 0x30);
 #[repr(C)]
 pub struct BGSProcedureEatExecState {
     /// +0x0 `vtbl:BGSProcedureEatExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureEatExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureEatExecState>() == 0x18);
@@ -4436,6 +4818,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureEatExecState, field_8) =
 #[repr(C)]
 pub struct BGSProcedureEscort {
     /// +0x0 `vtbl:BGSProcedureEscort:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureEscort_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4446,6 +4829,7 @@ pub struct BGSProcedureEscort {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureEscort>() == 0x38);
@@ -4460,6 +4844,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureEscort, field_30) == 0x3
 #[repr(C)]
 pub struct BGSProcedureEscortExecState {
     /// +0x0 `vtbl:BGSProcedureEscortExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureEscortExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4475,6 +4860,7 @@ pub struct BGSProcedureEscortExecState {
     pub unknown_37: [u8; 1],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureEscortExecState, __vftable) == 0x0);
@@ -4491,6 +4877,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureEscortExecState, field_3
 #[repr(C)]
 pub struct BGSProcedureFind {
     /// +0x0 `vtbl:BGSProcedureFind:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFind_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4501,6 +4888,7 @@ pub struct BGSProcedureFind {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFind>() == 0x38);
@@ -4515,9 +4903,11 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFind, field_30) == 0x30)
 #[repr(C)]
 pub struct BGSProcedureFindExecState {
     /// +0x0 `vtbl:BGSProcedureFindExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFindExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFindExecState, __vftable) == 0x0);
@@ -4529,6 +4919,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFindExecState, field_8) 
 #[repr(C)]
 pub struct BGSProcedureFlee {
     /// +0x0 `vtbl:BGSProcedureFlee:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFlee_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4539,6 +4930,7 @@ pub struct BGSProcedureFlee {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFlee>() == 0x38);
@@ -4553,6 +4945,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFlee, field_30) == 0x30)
 #[repr(C)]
 pub struct BGSProcedureFleeExecState {
     /// +0x0 `vtbl:BGSProcedureFleeExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFleeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4586,6 +4979,7 @@ pub struct BGSProcedureFleeExecState {
     /// +0x6C `undefined2`, ctor store
     pub field_6C: u16,
     pub unknown_6E: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFleeExecState, __vftable) == 0x0);
@@ -4611,6 +5005,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFleeExecState, field_6C)
 #[repr(C)]
 pub struct BGSProcedureFlightGrab {
     /// +0x0 `vtbl:BGSProcedureFlightGrab:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFlightGrab_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4621,6 +5016,7 @@ pub struct BGSProcedureFlightGrab {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFlightGrab>() == 0x38);
@@ -4635,6 +5031,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFlightGrab, field_30) ==
 #[repr(C)]
 pub struct BGSProcedureFlightGrabExecState {
     /// +0x0 `vtbl:BGSProcedureFlightGrabExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFlightGrabExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4643,6 +5040,7 @@ pub struct BGSProcedureFlightGrabExecState {
     /// +0x18 `undefined2`, ctor store
     pub field_18: u16,
     pub unknown_1A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFlightGrabExecState, __vftable) == 0x0);
@@ -4656,6 +5054,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFlightGrabExecState, fie
 #[repr(C)]
 pub struct BGSProcedureFollow {
     /// +0x0 `vtbl:BGSProcedureFollow:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFollow_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4666,6 +5065,7 @@ pub struct BGSProcedureFollow {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFollow>() == 0x38);
@@ -4680,6 +5080,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFollow, field_30) == 0x3
 #[repr(C)]
 pub struct BGSProcedureFollowExecState {
     /// +0x0 `vtbl:BGSProcedureFollowExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFollowExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4700,6 +5101,7 @@ pub struct BGSProcedureFollowExecState {
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
     pub unknown_41: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFollowExecState>() == 0x48);
@@ -4720,6 +5122,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, field_4
 #[repr(C)]
 pub struct BGSProcedureFollowTo {
     /// +0x0 `vtbl:BGSProcedureFollowTo:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureFollowTo_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4731,6 +5134,7 @@ pub struct BGSProcedureFollowTo {
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
     pub unknown_38: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFollowTo>() == 0x40);
@@ -4745,6 +5149,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowTo, field_30) == 0
 #[repr(C)]
 pub struct BGSProcedureForceGreet {
     /// +0x0 `vtbl:BGSProcedureForceGreet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureForceGreet_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4755,6 +5160,7 @@ pub struct BGSProcedureForceGreet {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureForceGreet>() == 0x38);
@@ -4769,6 +5175,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureForceGreet, field_30) ==
 #[repr(C)]
 pub struct BGSProcedureGuard {
     /// +0x0 `vtbl:BGSProcedureGuard:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureGuard_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4779,6 +5186,7 @@ pub struct BGSProcedureGuard {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureGuard>() == 0x38);
@@ -4793,10 +5201,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureGuard, field_30) == 0x30
 #[repr(C)]
 pub struct BGSProcedureGuardExecState {
     /// +0x0 `vtbl:BGSProcedureGuardExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureGuardExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureGuardExecState>() == 0x18);
@@ -4809,6 +5219,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureGuardExecState, field_8)
 #[repr(C)]
 pub struct BGSProcedureHoldPosition {
     /// +0x0 `vtbl:BGSProcedureHoldPosition:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureHoldPosition_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4819,6 +5230,7 @@ pub struct BGSProcedureHoldPosition {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureHoldPosition>() == 0x38);
@@ -4833,9 +5245,11 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureHoldPosition, field_30) 
 #[repr(C)]
 pub struct BGSProcedureHoldPositionExecState {
     /// +0x0 `vtbl:BGSProcedureHoldPositionExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureHoldPositionExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureHoldPositionExecState>() == 0x10);
@@ -4848,6 +5262,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureHoldPositionExecState, f
 #[repr(C)]
 pub struct BGSProcedureHover {
     /// +0x0 `vtbl:BGSProcedureHover:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureHover_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4858,6 +5273,7 @@ pub struct BGSProcedureHover {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureHover>() == 0x38);
@@ -4872,6 +5288,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureHover, field_30) == 0x30
 #[repr(C)]
 pub struct BGSProcedureHoverExecState {
     /// +0x0 `vtbl:BGSProcedureHoverExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureHoverExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4880,6 +5297,7 @@ pub struct BGSProcedureHoverExecState {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureHoverExecState, __vftable) == 0x0);
@@ -4893,6 +5311,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureHoverExecState, field_18
 #[repr(C)]
 pub struct BGSProcedureKeepAnEyeOn {
     /// +0x0 `vtbl:BGSProcedureKeepAnEyeOn:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureKeepAnEyeOn_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4903,6 +5322,7 @@ pub struct BGSProcedureKeepAnEyeOn {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureKeepAnEyeOn>() == 0x38);
@@ -4917,10 +5337,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureKeepAnEyeOn, field_30) =
 #[repr(C)]
 pub struct BGSProcedureKeepAnEyeOnExecState {
     /// +0x0 `vtbl:BGSProcedureKeepAnEyeOnExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureKeepAnEyeOnExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureKeepAnEyeOnExecState>() == 0x18);
@@ -4933,6 +5355,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureKeepAnEyeOnExecState, fi
 #[repr(C)]
 pub struct BGSProcedureLock {
     /// +0x0 `vtbl:BGSProcedureLock:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureLock_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4943,6 +5366,7 @@ pub struct BGSProcedureLock {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureLock>() == 0x38);
@@ -4957,6 +5381,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureLock, field_30) == 0x30)
 #[repr(C)]
 pub struct BGSProcedureLockUnlockExecState {
     /// +0x0 `vtbl:BGSProcedureLockUnlockExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureLockUnlockExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -4965,6 +5390,7 @@ pub struct BGSProcedureLockUnlockExecState {
     /// +0x12 `undefined1`, ctor store
     pub field_12: u8,
     pub unknown_13: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureLockUnlockExecState, __vftable) == 0x0);
@@ -4978,6 +5404,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureLockUnlockExecState, fie
 #[repr(C)]
 pub struct BGSProcedureOrbit {
     /// +0x0 `vtbl:BGSProcedureOrbit:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureOrbit_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -4988,6 +5415,7 @@ pub struct BGSProcedureOrbit {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureOrbit>() == 0x38);
@@ -5002,6 +5430,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureOrbit, field_30) == 0x30
 #[repr(C)]
 pub struct BGSProcedureOrbitExecState {
     /// +0x0 `vtbl:BGSProcedureOrbitExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureOrbitExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -5010,6 +5439,7 @@ pub struct BGSProcedureOrbitExecState {
     /// +0x18 `undefined2`, ctor store
     pub field_18: u16,
     pub unknown_1A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureOrbitExecState, __vftable) == 0x0);
@@ -5023,6 +5453,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureOrbitExecState, field_18
 #[repr(C)]
 pub struct BGSProcedurePatrol {
     /// +0x0 `vtbl:BGSProcedurePatrol:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedurePatrol_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5033,6 +5464,7 @@ pub struct BGSProcedurePatrol {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedurePatrol>() == 0x38);
@@ -5047,6 +5479,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrol, field_30) == 0x3
 #[repr(C)]
 pub struct BGSProcedurePatrolExecState {
     /// +0x0 `vtbl:BGSProcedurePatrolExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedurePatrolExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -5071,6 +5504,7 @@ pub struct BGSProcedurePatrolExecState {
     /// +0x52 `undefined1`, ctor store
     pub field_52: u8,
     pub unknown_53: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedurePatrolExecState>() == 0x58);
@@ -5093,6 +5527,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_5
 #[repr(C)]
 pub struct BGSProcedurePursue {
     /// +0x0 `vtbl:BGSProcedurePursue:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedurePursue_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5103,6 +5538,7 @@ pub struct BGSProcedurePursue {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePursue, __vftable) == 0x0);
@@ -5116,6 +5552,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedurePursue, field_30) == 0x3
 #[repr(C)]
 pub struct BGSProcedureSandbox {
     /// +0x0 `vtbl:BGSProcedureSandbox:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureSandbox_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5126,6 +5563,7 @@ pub struct BGSProcedureSandbox {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSandbox>() == 0x38);
@@ -5141,6 +5579,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSandbox, field_30) == 0x
 #[repr(C, packed)]
 pub struct BGSProcedureSandboxExecState {
     /// +0x0 `vtbl:BGSProcedureSandboxExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureSandboxExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -5198,6 +5637,7 @@ pub struct BGSProcedureSandboxExecState {
     /// +0xB1 `undefined1`, ctor store
     pub field_B1: u8,
     pub unknown_B2: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSandboxExecState>() == 0xB8);
@@ -5235,6 +5675,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_
 #[repr(C)]
 pub struct BGSProcedureSay {
     /// +0x0 `vtbl:BGSProcedureSay:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureSay_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5245,6 +5686,7 @@ pub struct BGSProcedureSay {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSay>() == 0x38);
@@ -5259,9 +5701,11 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSay, field_30) == 0x30);
 #[repr(C)]
 pub struct BGSProcedureSayExecState {
     /// +0x0 `vtbl:BGSProcedureSayExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureSayExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSayExecState, __vftable) == 0x0);
@@ -5273,6 +5717,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSayExecState, field_8) =
 #[repr(C)]
 pub struct BGSProcedureShout {
     /// +0x0 `vtbl:BGSProcedureShout:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureShout_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5283,6 +5728,7 @@ pub struct BGSProcedureShout {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureShout>() == 0x38);
@@ -5297,8 +5743,10 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureShout, field_30) == 0x30
 #[repr(C)]
 pub struct BGSProcedureShoutExecState {
     /// +0x0 `vtbl:BGSProcedureShoutExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureShoutExecState_vtable,
     /// +0x8 `vtbl:BGSProcedureShoutExecState:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSProcedureShoutExecState_vtable_8,
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -5319,6 +5767,7 @@ pub struct BGSProcedureShoutExecState {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureShoutExecState, __vftable) == 0x0);
@@ -5339,6 +5788,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureShoutExecState, field_40
 #[repr(C)]
 pub struct BGSProcedureSit {
     /// +0x0 `vtbl:BGSProcedureSit:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureSit_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5349,6 +5799,7 @@ pub struct BGSProcedureSit {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSit>() == 0x38);
@@ -5363,6 +5814,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSit, field_30) == 0x30);
 #[repr(C)]
 pub struct BGSProcedureSitSleepExecState {
     /// +0x0 `vtbl:BGSProcedureSitSleepExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureSitSleepExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -5373,6 +5825,7 @@ pub struct BGSProcedureSitSleepExecState {
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
     pub unknown_21: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSitSleepExecState>() == 0x28);
@@ -5388,6 +5841,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSitSleepExecState, field
 #[repr(C)]
 pub struct BGSProcedureSleep {
     /// +0x0 `vtbl:BGSProcedureSleep:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureSleep_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5398,6 +5852,7 @@ pub struct BGSProcedureSleep {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSleep>() == 0x38);
@@ -5412,6 +5867,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSleep, field_30) == 0x30
 #[repr(C)]
 pub struct BGSProcedureTravel {
     /// +0x0 `vtbl:BGSProcedureTravel:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTravel_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5422,6 +5878,7 @@ pub struct BGSProcedureTravel {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTravel>() == 0x38);
@@ -5436,6 +5893,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTravel, field_30) == 0x3
 #[repr(C)]
 pub struct BGSProcedureTravelExecState {
     /// +0x0 `vtbl:BGSProcedureTravelExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTravelExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -5446,6 +5904,7 @@ pub struct BGSProcedureTravelExecState {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTravelExecState>() == 0x28);
@@ -5461,11 +5920,13 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTravelExecState, field_2
 #[repr(C)]
 pub struct BGSProcedureTreeBranch {
     /// +0x0 `vtbl:BGSProcedureTreeBranch:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeBranch_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeBranch>() == 0x30);
@@ -5478,7 +5939,9 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeBranch, field_28) ==
 #[repr(C)]
 pub struct BGSProcedureTreeConditionalItem {
     /// +0x0 `vtbl:BGSProcedureTreeConditionalItem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeConditionalItem_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeConditionalItem, __vftable) == 0x0);
@@ -5489,10 +5952,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeConditionalItem, __v
 #[repr(C)]
 pub struct BGSProcedureTreeOneChildExecState {
     /// +0x0 `vtbl:BGSProcedureTreeOneChildExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeOneChildExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeOneChildExecState>() == 0x18);
@@ -5505,10 +5970,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeOneChildExecState, f
 #[repr(C)]
 pub struct BGSProcedureTreeProcedure {
     /// +0x0 `vtbl:BGSProcedureTreeProcedure:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeProcedure_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeProcedure>() == 0x18);
@@ -5521,11 +5988,13 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeProcedure, field_10)
 #[repr(C)]
 pub struct BGSProcedureTreeRandom {
     /// +0x0 `vtbl:BGSProcedureTreeRandom:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeRandom_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 12],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeRandom>() == 0x38);
@@ -5538,10 +6007,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeRandom, field_28) ==
 #[repr(C)]
 pub struct BGSProcedureTreeRandomExecState {
     /// +0x0 `vtbl:BGSProcedureTreeRandomExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeRandomExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeRandomExecState>() == 0x30);
@@ -5554,11 +6025,13 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeRandomExecState, fie
 #[repr(C)]
 pub struct BGSProcedureTreeSequence {
     /// +0x0 `vtbl:BGSProcedureTreeSequence:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeSequence_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeSequence>() == 0x30);
@@ -5571,10 +6044,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeSequence, field_28) 
 #[repr(C)]
 pub struct BGSProcedureTreeSequenceExecState {
     /// +0x0 `vtbl:BGSProcedureTreeSequenceExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeSequenceExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeSequenceExecState>() == 0x18);
@@ -5587,11 +6062,13 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeSequenceExecState, f
 #[repr(C)]
 pub struct BGSProcedureTreeSimultaneous {
     /// +0x0 `vtbl:BGSProcedureTreeSimultaneous:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeSimultaneous_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 20],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeSimultaneous>() == 0x40);
@@ -5604,10 +6081,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeSimultaneous, field_
 #[repr(C)]
 pub struct BGSProcedureTreeSimultaneousExecState {
     /// +0x0 `vtbl:BGSProcedureTreeSimultaneousExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeSimultaneousExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeSimultaneousExecState>() == 0x20);
@@ -5620,11 +6099,13 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeSimultaneousExecStat
 #[repr(C)]
 pub struct BGSProcedureTreeStacked {
     /// +0x0 `vtbl:BGSProcedureTreeStacked:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeStacked_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeStacked>() == 0x30);
@@ -5637,10 +6118,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeStacked, field_28) =
 #[repr(C)]
 pub struct BGSProcedureTreeStackedExecState {
     /// +0x0 `vtbl:BGSProcedureTreeStackedExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeStackedExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeStackedExecState>() == 0x18);
@@ -5653,6 +6136,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeStackedExecState, fi
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureAcquireParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureAcquireParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureAcquireParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5663,6 +6147,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureAcquireParamTypes>() == 0x38);
@@ -5677,6 +6162,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureActivateParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureActivateParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureActivateParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5687,6 +6173,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureActivateParamTypes>() == 0x38);
@@ -5701,6 +6188,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueActivateParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureDialogueActivateParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueActivateParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5711,6 +6199,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueActivateParamTypes>() == 0x38);
@@ -5725,6 +6214,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureDialogueParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5735,6 +6225,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueParamTypes, __vftable) == 0x0);
@@ -5748,6 +6239,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDoneParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureDoneParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDoneParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5758,6 +6250,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDoneParamTypes, __vftable) == 0x0);
@@ -5771,6 +6264,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEatParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureEatParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEatParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5781,6 +6275,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEatParamTypes>() == 0x38);
@@ -5795,6 +6290,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEscortParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureEscortParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEscortParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5805,6 +6301,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEscortParamTypes>() == 0x38);
@@ -5819,6 +6316,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFindParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureFindParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFindParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5829,6 +6327,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFindParamTypes>() == 0x38);
@@ -5843,6 +6342,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFleeParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureFleeParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFleeParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5853,6 +6353,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFleeParamTypes>() == 0x38);
@@ -5867,6 +6368,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFlightGrabParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureFlightGrabParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFlightGrabParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5877,6 +6379,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFlightGrabParamTypes>() == 0x38);
@@ -5891,6 +6394,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureFollowParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5901,6 +6405,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowParamTypes>() == 0x38);
@@ -5915,6 +6420,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowToParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureFollowToParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowToParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5926,6 +6432,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
     pub unknown_38: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowToParamTypes>() == 0x40);
@@ -5940,6 +6447,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureForceGreetParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureForceGreetParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureForceGreetParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5950,6 +6458,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureForceGreetParamTypes>() == 0x38);
@@ -5964,6 +6473,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureGuardParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureGuardParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureGuardParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5974,6 +6484,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureGuardParamTypes>() == 0x38);
@@ -5988,6 +6499,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoldPositionParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureHoldPositionParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoldPositionParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -5998,6 +6510,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoldPositionParamTypes>() == 0x38);
@@ -6012,6 +6525,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoverParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureHoverParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoverParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6022,6 +6536,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoverParamTypes>() == 0x38);
@@ -6036,6 +6551,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureKeepAnEyeOnParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureKeepAnEyeOnParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureKeepAnEyeOnParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6046,6 +6562,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureKeepAnEyeOnParamTypes>() == 0x38);
@@ -6060,6 +6577,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureLockParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureLockParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureLockParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6070,6 +6588,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureLockParamTypes>() == 0x38);
@@ -6084,6 +6603,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureOrbitParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureOrbitParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureOrbitParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6094,6 +6614,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureOrbitParamTypes>() == 0x38);
@@ -6108,6 +6629,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePatrolParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedurePatrolParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePatrolParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6118,6 +6640,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePatrolParamTypes>() == 0x38);
@@ -6132,6 +6655,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePursueParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedurePursueParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePursueParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6142,6 +6666,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePursueParamTypes, __vftable) == 0x0);
@@ -6155,6 +6680,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSandboxParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6165,6 +6691,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes>() == 0x38);
@@ -6179,6 +6706,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6189,6 +6717,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes>() == 0x38);
@@ -6203,6 +6732,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6213,6 +6743,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes>() == 0x38);
@@ -6227,6 +6758,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6237,6 +6769,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes>() == 0x38);
@@ -6251,6 +6784,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6261,6 +6795,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes>() == 0x38);
@@ -6275,6 +6810,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6285,6 +6821,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes>() == 0x38);
@@ -6299,6 +6836,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6309,6 +6847,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes>() == 0x38);
@@ -6323,6 +6862,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6333,6 +6873,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes>() == 0x38);
@@ -6347,6 +6888,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6357,6 +6899,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes>() == 0x38);
@@ -6371,6 +6914,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6381,6 +6925,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes>() == 0x38);
@@ -6395,6 +6940,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWaitParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWaitParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWaitParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6405,6 +6951,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWaitParamTypes>() == 0x38);
@@ -6419,6 +6966,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWanderParamTypes {
     /// +0x0 `vtbl:BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWanderParamTypes>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWanderParamTypes_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6429,6 +6977,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWanderParamTypes>() == 0x38);
@@ -6443,6 +6992,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_s
 #[repr(C)]
 pub struct BGSProcedureUnlock {
     /// +0x0 `vtbl:BGSProcedureUnlock:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureUnlock_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6453,6 +7003,7 @@ pub struct BGSProcedureUnlock {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUnlock>() == 0x38);
@@ -6467,6 +7018,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUnlock, field_30) == 0x3
 #[repr(C)]
 pub struct BGSProcedureUseIdleMarker {
     /// +0x0 `vtbl:BGSProcedureUseIdleMarker:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureUseIdleMarker_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6477,6 +7029,7 @@ pub struct BGSProcedureUseIdleMarker {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseIdleMarker>() == 0x38);
@@ -6491,6 +7044,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUseIdleMarker, field_30)
 #[repr(C)]
 pub struct BGSProcedureUseIdleMarkerExecState {
     /// +0x0 `vtbl:BGSProcedureUseIdleMarkerExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureUseIdleMarkerExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -6504,6 +7058,7 @@ pub struct BGSProcedureUseIdleMarkerExecState {
     /// +0x28 `undefined1`, ctor store
     pub field_28: u8,
     pub unknown_29: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseIdleMarkerExecState>() == 0x30);
@@ -6520,6 +7075,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUseIdleMarkerExecState, 
 #[repr(C)]
 pub struct BGSProcedureUseMagic {
     /// +0x0 `vtbl:BGSProcedureUseMagic:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureUseMagic_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6530,6 +7086,7 @@ pub struct BGSProcedureUseMagic {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseMagic>() == 0x38);
@@ -6545,8 +7102,10 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUseMagic, field_30) == 0
 #[repr(C, packed)]
 pub struct BGSProcedureUseMagicExecState {
     /// +0x0 `vtbl:BGSProcedureUseMagicExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureUseMagicExecState_vtable,
     /// +0x8 `vtbl:BGSProcedureUseMagicExecState:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSProcedureUseMagicExecState_vtable_8,
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -6577,6 +7136,7 @@ pub struct BGSProcedureUseMagicExecState {
     /// +0x54 `undefined8`, ctor store
     pub field_54: u64,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseMagicExecState>() == 0x60);
@@ -6602,6 +7162,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUseMagicExecState, field
 #[repr(C)]
 pub struct BGSProcedureUseWeapon {
     /// +0x0 `vtbl:BGSProcedureUseWeapon:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureUseWeapon_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6612,6 +7173,7 @@ pub struct BGSProcedureUseWeapon {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseWeapon>() == 0x38);
@@ -6626,6 +7188,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeapon, field_30) == 
 #[repr(C)]
 pub struct BGSProcedureUseWeaponExecState {
     /// +0x0 `vtbl:BGSProcedureUseWeaponExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureUseWeaponExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -6646,6 +7209,7 @@ pub struct BGSProcedureUseWeaponExecState {
     pub unknown_3A: [u8; 2],
     /// +0x3C `undefined4`, ctor store
     pub field_3C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseWeaponExecState>() == 0x40);
@@ -6666,6 +7230,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, fiel
 #[repr(C)]
 pub struct BGSProcedureWait {
     /// +0x0 `vtbl:BGSProcedureWait:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureWait_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6676,6 +7241,7 @@ pub struct BGSProcedureWait {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureWait>() == 0x38);
@@ -6690,9 +7256,11 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureWait, field_30) == 0x30)
 #[repr(C)]
 pub struct BGSProcedureWaitExecState {
     /// +0x0 `vtbl:BGSProcedureWaitExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureWaitExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureWaitExecState>() == 0x10);
@@ -6705,6 +7273,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureWaitExecState, field_8) 
 #[repr(C)]
 pub struct BGSProcedureWander {
     /// +0x0 `vtbl:BGSProcedureWander:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureWander_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined1`, base BGSProcedureBase
@@ -6715,6 +7284,7 @@ pub struct BGSProcedureWander {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureWander>() == 0x38);
@@ -6729,6 +7299,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureWander, field_30) == 0x3
 #[repr(C)]
 pub struct BGSProcedureWanderExecState {
     /// +0x0 `vtbl:BGSProcedureWanderExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProcedureWanderExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
@@ -6739,6 +7310,7 @@ pub struct BGSProcedureWanderExecState {
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
     pub unknown_21: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureWanderExecState>() == 0x28);
@@ -6755,6 +7327,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureWanderExecState, field_2
 #[repr(C, packed)]
 pub struct BGSProjectile {
     /// +0x0 `vtbl:BGSProjectile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSProjectile_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -6781,17 +7354,21 @@ pub struct BGSProjectile {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSProjectile:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSProjectile_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:BGSProjectile:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSProjectile_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModel
     pub field_50: u64,
     pub unknown_58: [u8; 16],
     /// +0x68 `vtbl:BGSProjectile:68`, rtti
+    #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::BGSProjectile_vtable_68,
     /// +0x70 `vtbl:BGSProjectile:70`, rtti
+    #[doc(hidden)]
     pub __vftable_70: *const crate::raw::vtables::BGSProjectile_vtable_70,
     /// +0x78 `undefined8`, base BGSDestructibleObjectForm
     pub field_78: u64,
@@ -6839,6 +7416,7 @@ pub struct BGSProjectile {
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
     pub unknown_134: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProjectile>() == 0x138);
@@ -6887,8 +7465,10 @@ const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_130) == 0x130);
 #[repr(C)]
 pub struct BGSQuestPerkEntry {
     /// +0x0 `vtbl:BGSQuestPerkEntry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQuestPerkEntry_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQuestPerkEntry>() == 0x20);
@@ -6900,6 +7480,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQuestPerkEntry, __vftable) == 0x0
 #[repr(C)]
 pub struct BGSQueuedGrassModelHandles {
     /// +0x0 `vtbl:BGSQueuedGrassModelHandles:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQueuedGrassModelHandles_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -6918,6 +7499,7 @@ pub struct BGSQueuedGrassModelHandles {
     pub field_30: u32,
     pub unknown_34: [u8; 4],
     /// +0x38 `vtbl:BGSQueuedGrassModelHandles:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BGSQueuedGrassModelHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
@@ -6932,6 +7514,7 @@ pub struct BGSQueuedGrassModelHandles {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 44],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedGrassModelHandles>() == 0x88);
@@ -6956,6 +7539,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, field_58
 #[repr(C)]
 pub struct BGSQueuedObjectDowngrade {
     /// +0x0 `vtbl:BGSQueuedObjectDowngrade:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQueuedObjectDowngrade_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -6964,6 +7548,7 @@ pub struct BGSQueuedObjectDowngrade {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 11],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedObjectDowngrade>() == 0x20);
@@ -6978,8 +7563,10 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedObjectDowngrade, field_14) 
 #[repr(C)]
 pub struct BGSQueuedObjectInitialLoad {
     /// +0x0 `vtbl:BGSQueuedObjectInitialLoad:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQueuedObjectInitialLoad_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedObjectInitialLoad>() == 0x20);
@@ -6991,6 +7578,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedObjectInitialLoad, __vftabl
 #[repr(C)]
 pub struct BGSQueuedObjectUpgrade {
     /// +0x0 `vtbl:BGSQueuedObjectUpgrade:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQueuedObjectUpgrade_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -6999,6 +7587,7 @@ pub struct BGSQueuedObjectUpgrade {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 43],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedObjectUpgrade>() == 0x40);
@@ -7013,6 +7602,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedObjectUpgrade, field_14) ==
 #[repr(C)]
 pub struct BGSQueuedTerrainDowngrade {
     /// +0x0 `vtbl:BGSQueuedTerrainDowngrade:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQueuedTerrainDowngrade_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -7021,6 +7611,7 @@ pub struct BGSQueuedTerrainDowngrade {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 11],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedTerrainDowngrade>() == 0x20);
@@ -7035,8 +7626,10 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainDowngrade, field_14)
 #[repr(C)]
 pub struct BGSQueuedTerrainInitialLoad {
     /// +0x0 `vtbl:BGSQueuedTerrainInitialLoad:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQueuedTerrainInitialLoad_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedTerrainInitialLoad>() == 0x20);
@@ -7047,7 +7640,9 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainInitialLoad, __vftab
 #[repr(C)]
 pub struct BGSQueuedTerrainUpdate {
     /// +0x0 `vtbl:BGSQueuedTerrainUpdate:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQueuedTerrainUpdate_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedTerrainUpdate>() == 0x8);
@@ -7059,6 +7654,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainUpdate, __vftable) =
 #[repr(C)]
 pub struct BGSQueuedTerrainUpgrade {
     /// +0x0 `vtbl:BGSQueuedTerrainUpgrade:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSQueuedTerrainUpgrade_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -7067,6 +7663,7 @@ pub struct BGSQueuedTerrainUpgrade {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 35],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedTerrainUpgrade>() == 0x38);
@@ -7082,6 +7679,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainUpgrade, field_14) =
 #[repr(C, packed)]
 pub struct BGSRagdoll {
     /// +0x0 `vtbl:BGSRagdoll:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSRagdoll_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7095,6 +7693,7 @@ pub struct BGSRagdoll {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSRagdoll:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSRagdoll_vtable_20,
     pub unknown_28: [u8; 8],
     /// +0x30 `undefined8`, base TESModel
@@ -7170,6 +7769,7 @@ pub struct BGSRagdoll {
     /// +0x198 `undefined8`, ctor store
     pub field_198: u64,
     pub unknown_1A0: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSRagdoll>() == 0x1B8);
@@ -7218,6 +7818,7 @@ const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_198) == 0x198);
 #[repr(C)]
 pub struct BGSRefAlias {
     /// +0x0 `vtbl:BGSRefAlias:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSRefAlias_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
@@ -7237,6 +7838,7 @@ pub struct BGSRefAlias {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSRefAlias>() == 0x48);
@@ -7256,6 +7858,7 @@ const _: () = assert!(core::mem::offset_of!(BGSRefAlias, field_40) == 0x40);
 #[repr(C)]
 pub struct BGSReferenceEffect {
     /// +0x0 `vtbl:BGSReferenceEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSReferenceEffect_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7275,6 +7878,7 @@ pub struct BGSReferenceEffect {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSReferenceEffect>() == 0x38);
@@ -7294,6 +7898,7 @@ const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, field_30) == 0x3
 #[repr(C)]
 pub struct BGSRelationship {
     /// +0x0 `vtbl:BGSRelationship:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSRelationship_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7315,6 +7920,7 @@ pub struct BGSRelationship {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSRelationship>() == 0x40);
@@ -7335,6 +7941,7 @@ const _: () = assert!(core::mem::offset_of!(BGSRelationship, field_38) == 0x38);
 #[repr(C)]
 pub struct BGSReverbParameters {
     /// +0x0 `vtbl:BGSReverbParameters:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSReverbParameters_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7348,6 +7955,7 @@ pub struct BGSReverbParameters {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSReverbParameters:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSReverbParameters_vtable_20,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
@@ -7356,6 +7964,7 @@ pub struct BGSReverbParameters {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSReverbParameters>() == 0x38);
@@ -7376,6 +7985,7 @@ const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, field_30) == 0x
 #[repr(C)]
 pub struct BGSSaveLoadStatsMap {
     /// +0x0 `vtbl:BGSSaveLoadStatsMap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSaveLoadStatsMap_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -7394,6 +8004,7 @@ pub struct BGSSaveLoadStatsMap {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadStatsMap, __vftable) == 0x0);
@@ -7411,6 +8022,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadStatsMap, field_38) == 0x
 #[repr(C)]
 pub struct BGSScene {
     /// +0x0 `vtbl:BGSScene:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSScene_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7453,6 +8065,7 @@ pub struct BGSScene {
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     pub unknown_C4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSScene>() == 0xC8);
@@ -7479,7 +8092,9 @@ const _: () = assert!(core::mem::offset_of!(BGSScene, field_C0) == 0xC0);
 #[repr(C)]
 pub struct BGSSceneAction {
     /// +0x0 `vtbl:BGSSceneAction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSceneAction_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSceneAction>() == 0x8);
@@ -7491,8 +8106,10 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneAction, __vftable) == 0x0);
 #[repr(C)]
 pub struct BGSSceneActionDialogue {
     /// +0x0 `vtbl:BGSSceneActionDialogue:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSceneActionDialogue_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSceneActionDialogue>() == 0x40);
@@ -7504,8 +8121,10 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneActionDialogue, __vftable) =
 #[repr(C)]
 pub struct BGSSceneActionPackage {
     /// +0x0 `vtbl:BGSSceneActionPackage:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSceneActionPackage_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSceneActionPackage>() == 0x40);
@@ -7518,6 +8137,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneActionPackage, __vftable) ==
 #[repr(C, packed)]
 pub struct BGSSceneActionTimer {
     /// +0x0 `vtbl:BGSSceneActionTimer:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSceneActionTimer_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -7531,6 +8151,7 @@ pub struct BGSSceneActionTimer {
     /// +0x28 `undefined2`, ctor store
     pub field_28: u16,
     pub unknown_2A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSceneActionTimer>() == 0x30);
@@ -7546,7 +8167,9 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneActionTimer, field_28) == 0x
 #[repr(C)]
 pub struct BGSSceneInfo {
     /// +0x0 `vtbl:BGSSceneInfo:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSceneInfo_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSSceneInfo, __vftable) == 0x0);
@@ -7557,7 +8180,9 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneInfo, __vftable) == 0x0);
 #[repr(C)]
 pub struct BGSSceneInfo__TextureUse {
     /// +0x0 `vtbl:BGSSceneInfo::TextureUse:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSceneInfo__TextureUse_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSSceneInfo__TextureUse, __vftable) == 0x0);
@@ -7568,6 +8193,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneInfo__TextureUse, __vftable)
 #[repr(C)]
 pub struct BGSShaderParticleGeometryData {
     /// +0x0 `vtbl:BGSShaderParticleGeometryData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSShaderParticleGeometryData_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7585,6 +8211,7 @@ pub struct BGSShaderParticleGeometryData {
     pub unknown_34: [u8; 4],
     /// +0x38 `class:TESTexture`, member ctor TESTexture
     pub m_TESTexture_38: crate::TESTexture,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSShaderParticleGeometryData>() == 0x48);
@@ -7602,6 +8229,7 @@ const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, m_TES
 #[repr(C)]
 pub struct BGSSkillPerkTreeNode {
     /// +0x0 `vtbl:BGSSkillPerkTreeNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSkillPerkTreeNode_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -7623,6 +8251,7 @@ pub struct BGSSkillPerkTreeNode {
     pub field_58: u64,
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSkillPerkTreeNode>() == 0x68);
@@ -7642,9 +8271,11 @@ const _: () = assert!(core::mem::offset_of!(BGSSkillPerkTreeNode, field_60) == 0
 #[repr(C)]
 pub struct BGSSkinForm {
     /// +0x0 `vtbl:BGSSkinForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSkinForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSkinForm>() == 0x10);
@@ -7657,6 +8288,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSkinForm, field_8) == 0x8);
 #[repr(C)]
 pub struct BGSStaticCollection {
     /// +0x0 `vtbl:BGSStaticCollection:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStaticCollection_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7683,6 +8315,7 @@ pub struct BGSStaticCollection {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSStaticCollection:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSStaticCollection_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
@@ -7693,6 +8326,7 @@ pub struct BGSStaticCollection {
     /// +0x60 `undefined4`, base TESModelTextureSwap
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, __vftable) == 0x0);
@@ -7719,6 +8353,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_60) == 0x
 #[repr(C, packed)]
 pub struct BGSStoryManager {
     /// +0x0 `vtbl:BGSStoryManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryManager_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
@@ -7740,6 +8375,7 @@ pub struct BGSStoryManager {
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSStoryManager, __vftable) == 0x0);
@@ -7758,6 +8394,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManager, field_58) == 0x58);
 #[repr(C)]
 pub struct BGSStoryManagerBranchNode {
     /// +0x0 `vtbl:BGSStoryManagerBranchNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryManagerBranchNode_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7770,6 +8407,7 @@ pub struct BGSStoryManagerBranchNode {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 69],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerBranchNode>() == 0x60);
@@ -7786,6 +8424,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, formType)
 #[repr(C)]
 pub struct BGSStoryManagerEventNode {
     /// +0x0 `vtbl:BGSStoryManagerEventNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryManagerEventNode_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7798,6 +8437,7 @@ pub struct BGSStoryManagerEventNode {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 77],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerEventNode>() == 0x68);
@@ -7814,6 +8454,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, formType) 
 #[repr(C)]
 pub struct BGSStoryManagerNodeBase {
     /// +0x0 `vtbl:BGSStoryManagerNodeBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryManagerNodeBase_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7826,6 +8467,7 @@ pub struct BGSStoryManagerNodeBase {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 197],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerNodeBase>() == 0xE0);
@@ -7842,11 +8484,13 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, formType) =
 #[repr(C)]
 pub struct BGSStoryManagerQuestFinder {
     /// +0x0 `vtbl:BGSStoryManagerQuestFinder:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryManagerQuestFinder_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined4`, base BGSStoryManagerTreeVisitor
     pub field_30: u32,
     pub unknown_34: [u8; 140],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerQuestFinder>() == 0xC0);
@@ -7859,6 +8503,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestFinder, field_30
 #[repr(C)]
 pub struct BGSStoryManagerQuestNode {
     /// +0x0 `vtbl:BGSStoryManagerQuestNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryManagerQuestNode_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7871,6 +8516,7 @@ pub struct BGSStoryManagerQuestNode {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 197],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerQuestNode>() == 0xE0);
@@ -7887,6 +8533,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, formType) 
 #[repr(C)]
 pub struct BGSStoryManagerTreeForm {
     /// +0x0 `vtbl:BGSStoryManagerTreeForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryManagerTreeForm_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -7899,6 +8546,7 @@ pub struct BGSStoryManagerTreeForm {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerTreeForm>() == 0x20);
@@ -7914,11 +8562,13 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, formType) =
 #[repr(C)]
 pub struct BGSStoryManagerTreeVisitor {
     /// +0x0 `vtbl:BGSStoryManagerTreeVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryManagerTreeVisitor_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 140],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerTreeVisitor>() == 0xC0);
@@ -7932,6 +8582,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeVisitor, field_30
 #[repr(C, packed)]
 pub struct BGSStoryTeller {
     /// +0x0 `vtbl:BGSStoryTeller:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSStoryTeller_vtable,
     pub unknown_8: [u8; 152],
     /// +0xA0 `undefined1`, ctor store
@@ -7946,6 +8597,7 @@ pub struct BGSStoryTeller {
     pub unknown_C8: [u8; 8],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSStoryTeller, __vftable) == 0x0);
@@ -7961,6 +8613,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStoryTeller, field_D0) == 0xD0);
 #[repr(C)]
 pub struct BGSSynchronizedAnimationInstance {
     /// +0x0 `vtbl:BGSSynchronizedAnimationInstance:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSynchronizedAnimationInstance_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -8029,6 +8682,7 @@ pub struct BGSSynchronizedAnimationInstance {
     pub field_98: u32,
     /// +0x9C `undefined4`, base hkBaseObject
     pub field_9C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSynchronizedAnimationInstance>() == 0xA0);
@@ -8073,6 +8727,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSynchronizedAnimationInstance, fi
 #[repr(C)]
 pub struct BGSTalkingActivator {
     /// +0x0 `vtbl:BGSTalkingActivator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTalkingActivator_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -8091,9 +8746,11 @@ pub struct BGSTalkingActivator {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSTalkingActivator:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSTalkingActivator_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:BGSTalkingActivator:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSTalkingActivator_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
@@ -8105,12 +8762,15 @@ pub struct BGSTalkingActivator {
     pub field_70: u32,
     pub unknown_74: [u8; 4],
     /// +0x78 `vtbl:BGSTalkingActivator:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::BGSTalkingActivator_vtable_78,
     /// +0x80 `undefined8`, base BGSDestructibleObjectForm
     pub field_80: u64,
     /// +0x88 `vtbl:BGSTalkingActivator:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::BGSTalkingActivator_vtable_88,
     /// +0x90 `vtbl:BGSTalkingActivator:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::BGSTalkingActivator_vtable_90,
     /// +0x98 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -8128,6 +8788,7 @@ pub struct BGSTalkingActivator {
     pub unknown_C2: [u8; 14],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTalkingActivator>() == 0xD8);
@@ -8162,10 +8823,12 @@ const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_D0) == 0x
 #[repr(C)]
 pub struct BGSTextureModel {
     /// +0x0 `vtbl:BGSTextureModel:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTextureModel_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTextureModel, __vftable) == 0x0);
@@ -8178,6 +8841,7 @@ const _: () = assert!(core::mem::offset_of!(BGSTextureModel, field_10) == 0x10);
 #[repr(C, packed)]
 pub struct BGSTextureSet {
     /// +0x0 `vtbl:BGSTextureSet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTextureSet_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -8204,6 +8868,7 @@ pub struct BGSTextureSet {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSTextureSet:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSTextureSet_vtable_30,
     /// +0x38 `undefined4`, base BSTextureSet
     pub field_38: u32,
@@ -8238,6 +8903,7 @@ pub struct BGSTextureSet {
     /// +0x124 `undefined8`, ctor store
     pub field_124: u64,
     pub unknown_12C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTextureSet>() == 0x130);
@@ -8276,7 +8942,9 @@ const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_124) == 0x124);
 #[repr(C)]
 pub struct BGSTextureUseMap__TextureUse {
     /// +0x0 `vtbl:BGSTextureUseMap::TextureUse:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTextureUseMap__TextureUse_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTextureUseMap__TextureUse, __vftable) == 0x0);
@@ -8287,7 +8955,9 @@ const _: () = assert!(core::mem::offset_of!(BGSTextureUseMap__TextureUse, __vfta
 #[repr(C)]
 pub struct BGSTypedItem_BGSAIWorldLocationInteriorCell_BGSAIWorldLocation {
     /// +0x0 `vtbl:BGSTypedItem<BGSAIWorldLocationInteriorCell,BGSAIWorldLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSAIWorldLocationInteriorCell_BGSAIWorldLocation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSAIWorldLocationInteriorCell_BGSAIWorldLocation>() == 0x8);
@@ -8299,7 +8969,9 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSAIWorldLocationInter
 #[repr(C)]
 pub struct BGSTypedItem_BGSAIWorldLocationPointRadius_BGSAIWorldLocation {
     /// +0x0 `vtbl:BGSTypedItem<BGSAIWorldLocationPointRadius,BGSAIWorldLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSAIWorldLocationPointRadius_BGSAIWorldLocation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSAIWorldLocationPointRadius_BGSAIWorldLocation>() == 0x8);
@@ -8311,7 +8983,9 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSAIWorldLocationPoint
 #[repr(C)]
 pub struct BGSTypedItem_BGSAIWorldLocationRefRadius_BGSAIWorldLocation {
     /// +0x0 `vtbl:BGSTypedItem<BGSAIWorldLocationRefRadius,BGSAIWorldLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSAIWorldLocationRefRadius_BGSAIWorldLocation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSAIWorldLocationRefRadius_BGSAIWorldLocation>() == 0x8);
@@ -8323,9 +8997,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSAIWorldLocationRefRa
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureAcquireExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureAcquireExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureAcquireExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureAcquireExecState_IProcedureTreeExecState>() == 0x10);
@@ -8338,9 +9014,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureAcquireExec
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureActivateExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureActivateExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureActivateExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureActivateExecState_IProcedureTreeExecState>() == 0x10);
@@ -8353,9 +9031,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureActivateExe
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureDialogueActivateExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureDialogueActivateExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureDialogueActivateExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureDialogueActivateExecState_IProcedureTreeExecState>() == 0x10);
@@ -8368,9 +9048,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDialogueAct
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureDialogueExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureDialogueExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureDialogueExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDialogueExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8382,9 +9064,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDialogueExe
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureDoneExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureDoneExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureDoneExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDoneExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8396,10 +9080,12 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDoneExecSta
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureEatExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureEatExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureEatExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureEatExecState_IProcedureTreeExecState>() == 0x18);
@@ -8412,9 +9098,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureEatExecStat
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureEscortExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureEscortExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureEscortExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureEscortExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8426,9 +9114,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureEscortExecS
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureFindExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureFindExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureFindExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFindExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8440,9 +9130,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFindExecSta
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureFleeExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureFleeExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureFleeExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureFleeExecState_IProcedureTreeExecState>() == 0x10);
@@ -8455,9 +9147,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFleeExecSta
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureFlightGrabExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureFlightGrabExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureFlightGrabExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureFlightGrabExecState_IProcedureTreeExecState>() == 0x10);
@@ -8470,9 +9164,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFlightGrabE
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureFollowExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureFollowExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureFollowExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureFollowExecState_IProcedureTreeExecState>() == 0x10);
@@ -8485,10 +9181,12 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFollowExecS
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureGuardExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureGuardExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureGuardExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureGuardExecState_IProcedureTreeExecState>() == 0x18);
@@ -8501,9 +9199,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureGuardExecSt
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureHoldPositionExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureHoldPositionExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureHoldPositionExecState_IProcedureTreeExecState>() == 0x10);
@@ -8516,9 +9216,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureHoldPositio
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureHoverExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureHoverExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureHoverExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureHoverExecState_IProcedureTreeExecState>() == 0x10);
@@ -8531,10 +9233,12 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureHoverExecSt
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState>() == 0x18);
@@ -8547,9 +9251,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureKeepAnEyeOn
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureLockUnlockExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureLockUnlockExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureLockUnlockExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureLockUnlockExecState_IProcedureTreeExecState>() == 0x10);
@@ -8562,9 +9268,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureLockUnlockE
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureOrbitExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureOrbitExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureOrbitExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureOrbitExecState_IProcedureTreeExecState>() == 0x10);
@@ -8577,9 +9285,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureOrbitExecSt
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedurePatrolExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedurePatrolExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedurePatrolExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedurePatrolExecState_IProcedureTreeExecState>() == 0x10);
@@ -8592,9 +9302,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedurePatrolExecS
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureSandboxExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureSandboxExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureSandboxExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSandboxExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8606,9 +9318,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSandboxExec
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureSayExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureSayExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureSayExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSayExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8620,9 +9334,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSayExecStat
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureShoutExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureShoutExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureShoutExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureShoutExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8634,9 +9350,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureShoutExecSt
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureSitSleepExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureSitSleepExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureSitSleepExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureSitSleepExecState_IProcedureTreeExecState>() == 0x10);
@@ -8649,9 +9367,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSitSleepExe
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTravelExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTravelExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTravelExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTravelExecState_IProcedureTreeExecState>() == 0x10);
@@ -8664,7 +9384,9 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTravelExecS
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeProcedure_BGSProcedureTreeConditionalItem {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeProcedure,BGSProcedureTreeConditionalItem>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeProcedure_BGSProcedureTreeConditionalItem_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeProcedure_BGSProcedureTreeConditionalItem, __vftable) == 0x0);
@@ -8675,11 +9397,13 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeProcedu
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeRandom_BGSProcedureTreeBranch {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeRandom,BGSProcedureTreeBranch>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeRandom_BGSProcedureTreeBranch_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 12],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeRandom_BGSProcedureTreeBranch>() == 0x38);
@@ -8692,10 +9416,12 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeRandom_
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeRandomExecState_BGSProcedureTreeOneChildExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeRandomExecState,BGSProcedureTreeOneChildExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeRandomExecState_BGSProcedureTreeOneChildExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeRandomExecState_BGSProcedureTreeOneChildExecState>() == 0x30);
@@ -8708,11 +9434,13 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeRandomE
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeSequence_BGSProcedureTreeBranch {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeSequence,BGSProcedureTreeBranch>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeSequence_BGSProcedureTreeBranch_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeSequence_BGSProcedureTreeBranch>() == 0x30);
@@ -8725,10 +9453,12 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeSequenc
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeSequenceExecState_BGSProcedureTreeOneChildExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeSequenceExecState,BGSProcedureTreeOneChildExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeSequenceExecState_BGSProcedureTreeOneChildExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeSequenceExecState_BGSProcedureTreeOneChildExecState>() == 0x18);
@@ -8741,11 +9471,13 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeSequenc
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeSimultaneous_BGSProcedureTreeBranch {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeSimultaneous,BGSProcedureTreeBranch>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeSimultaneous_BGSProcedureTreeBranch_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 20],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeSimultaneous_BGSProcedureTreeBranch>() == 0x40);
@@ -8758,10 +9490,12 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeSimulta
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeSimultaneousExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecState>() == 0x20);
@@ -8774,11 +9508,13 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeSimulta
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeStacked_BGSProcedureTreeBranch {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeStacked,BGSProcedureTreeBranch>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeStacked_BGSProcedureTreeBranch_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeStacked_BGSProcedureTreeBranch>() == 0x30);
@@ -8791,10 +9527,12 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeStacked
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureTreeStackedExecState_BGSProcedureTreeOneChildExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeStackedExecState,BGSProcedureTreeOneChildExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeStackedExecState_BGSProcedureTreeOneChildExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeStackedExecState_BGSProcedureTreeOneChildExecState>() == 0x18);
@@ -8807,9 +9545,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeStacked
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureUseIdleMarkerExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureUseIdleMarkerExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureUseIdleMarkerExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureUseIdleMarkerExecState_IProcedureTreeExecState>() == 0x10);
@@ -8822,9 +9562,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureUseIdleMark
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureUseMagicExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureUseMagicExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureUseMagicExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureUseMagicExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8836,9 +9578,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureUseMagicExe
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureUseWeaponExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureUseWeaponExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureUseWeaponExecState_IProcedureTreeExecState>() == 0x10);
@@ -8851,9 +9595,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureUseWeaponEx
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureWaitExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureWaitExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureWaitExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureWaitExecState_IProcedureTreeExecState>() == 0x10);
@@ -8866,9 +9612,11 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureWaitExecSta
 #[repr(C)]
 pub struct BGSTypedItem_BGSProcedureWanderExecState_IProcedureTreeExecState {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureWanderExecState,IProcedureTreeExecState>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureWanderExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureWanderExecState_IProcedureTreeExecState>() == 0x10);
@@ -8881,12 +9629,14 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureWanderExecS
 #[repr(C)]
 pub struct BGSVisitProceduresCheckGuardWarnTarget {
     /// +0x0 `vtbl:BGSVisitProceduresCheckGuardWarnTarget:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSVisitProceduresCheckGuardWarnTarget_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined1`, ctor store
     pub field_10: u8,
     pub unknown_11: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresCheckGuardWarnTarget, __vftable) == 0x0);
@@ -8899,7 +9649,9 @@ const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresCheckGuardWarnTarg
 #[repr(C)]
 pub struct BGSVisitProceduresInitActorAnimPose {
     /// +0x0 `vtbl:BGSVisitProceduresInitActorAnimPose:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSVisitProceduresInitActorAnimPose_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresInitActorAnimPose, __vftable) == 0x0);
@@ -8910,7 +9662,9 @@ const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresInitActorAnimPose,
 #[repr(C)]
 pub struct BGSVisitProceduresInitActorLocation {
     /// +0x0 `vtbl:BGSVisitProceduresInitActorLocation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSVisitProceduresInitActorLocation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresInitActorLocation, __vftable) == 0x0);
@@ -8921,7 +9675,9 @@ const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresInitActorLocation,
 #[repr(C)]
 pub struct BGSVisitProceduresProcess {
     /// +0x0 `vtbl:BGSVisitProceduresProcess:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSVisitProceduresProcess_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresProcess, __vftable) == 0x0);
@@ -8932,6 +9688,7 @@ const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresProcess, __vftable
 #[repr(C)]
 pub struct BGSVoiceType {
     /// +0x0 `vtbl:BGSVoiceType:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSVoiceType_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -8952,6 +9709,7 @@ pub struct BGSVoiceType {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSVoiceType>() == 0x38);
@@ -8971,6 +9729,7 @@ const _: () = assert!(core::mem::offset_of!(BGSVoiceType, field_30) == 0x30);
 #[repr(C)]
 pub struct BGSVolumetricLighting {
     /// +0x0 `vtbl:BGSVolumetricLighting:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSVolumetricLighting_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -8983,6 +9742,7 @@ pub struct BGSVolumetricLighting {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 53],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSVolumetricLighting>() == 0x50);
@@ -8998,6 +9758,7 @@ const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, formType) == 
 #[repr(C)]
 pub struct BGSWaterCollisionManager__BGSWaterUpdateI {
     /// +0x0 `vtbl:BGSWaterCollisionManager::BGSWaterUpdateI:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__BGSWaterUpdateI_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -9009,6 +9770,7 @@ pub struct BGSWaterCollisionManager__BGSWaterUpdateI {
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     pub unknown_40: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSWaterCollisionManager__BGSWaterUpdateI>() == 0x50);
@@ -9024,6 +9786,7 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUp
 #[repr(C)]
 pub struct BGSWaterCollisionManager__bhkAutoWater {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bhkAutoWater:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__bhkAutoWater_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9037,6 +9800,7 @@ pub struct BGSWaterCollisionManager__bhkAutoWater {
     /// +0x28 `undefined1`, ctor store
     pub field_28: u8,
     pub unknown_29: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSWaterCollisionManager__bhkAutoWater>() == 0x30);
@@ -9053,6 +9817,7 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWat
 #[repr(C)]
 pub struct BGSWaterCollisionManager__bhkPlaceableWater {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bhkPlaceableWater:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__bhkPlaceableWater_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -9060,6 +9825,7 @@ pub struct BGSWaterCollisionManager__bhkPlaceableWater {
     /// +0x18 `undefined8`, base hkBaseObject
     pub m_hkpShapeCollectionFilter_18: u64,
     /// +0x20 `vtbl:BGSWaterCollisionManager::bhkPlaceableWater:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSWaterCollisionManager__bhkPlaceableWater_vtable_20,
     /// +0x28 `undefined8`, base hkBaseObject
     pub m_hkpRayCollidableFilter_28: u64,
@@ -9095,6 +9861,7 @@ pub struct BGSWaterCollisionManager__bhkPlaceableWater {
     pub field_68: u32,
     /// +0x6C `undefined4`, base hkBaseObject
     pub field_6C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSWaterCollisionManager__bhkPlaceableWater>() == 0x70);
@@ -9126,6 +9893,7 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkPlaceab
 #[repr(C)]
 pub struct BGSWaterCollisionManager__bhkWaterfall {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bhkWaterfall:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__bhkWaterfall_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -9133,6 +9901,7 @@ pub struct BGSWaterCollisionManager__bhkWaterfall {
     /// +0x18 `undefined8`, base hkBaseObject
     pub m_hkpShapeCollectionFilter_18: u64,
     /// +0x20 `vtbl:BGSWaterCollisionManager::bhkWaterfall:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSWaterCollisionManager__bhkWaterfall_vtable_20,
     /// +0x28 `undefined8`, base hkBaseObject
     pub m_hkpRayCollidableFilter_28: u64,
@@ -9215,6 +9984,7 @@ pub struct BGSWaterCollisionManager__bhkWaterfall {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __vftable) == 0x0);
@@ -9268,6 +10038,7 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfa
 #[repr(C)]
 pub struct BGSWaterCollisionManager__bshkAutoWater {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bshkAutoWater:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__bshkAutoWater_vtable,
     /// +0x8 `undefined4`, base hkpWorldObject
     pub field_8: u32,
@@ -9382,6 +10153,7 @@ pub struct BGSWaterCollisionManager__bshkAutoWater {
     pub field_120: u8,
     pub unknown_121: [u8; 15],
     /// +0x130 `vtbl:BGSWaterCollisionManager::bshkAutoWater:130`, rtti
+    #[doc(hidden)]
     pub __vftable_130: *const crate::raw::vtables::BGSWaterCollisionManager__bshkAutoWater_vtable_130,
     /// +0x138 `undefined4`, base BGSWaterCollisionManager::BGSWaterUpdateI
     pub field_138: u32,
@@ -9392,6 +10164,7 @@ pub struct BGSWaterCollisionManager__bshkAutoWater {
     pub field_160: u64,
     /// +0x168 `undefined8`, base BGSWaterCollisionManager::BGSWaterUpdateI
     pub field_168: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __vftable) == 0x0);
@@ -9461,9 +10234,11 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWa
 #[repr(C)]
 pub struct BGSZoneTargetListener {
     /// +0x0 `vtbl:BGSZoneTargetListener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSZoneTargetListener_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSZoneTargetListener>() == 0x10);

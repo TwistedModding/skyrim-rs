@@ -10,6 +10,7 @@ use core::ffi::c_void;
 #[repr(C)]
 pub struct BGSKeyword {
     /// +0x0 `vtbl:BGSKeyword:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSKeyword_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -24,6 +25,7 @@ pub struct BGSKeyword {
     pub unknown_1B: [u8; 5],
     /// +0x20 `pointer`, ctor store, semantic, runtime; BSFixedString editor id of the keyword (high)
     pub keyword: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSKeyword>() == 0x28);
@@ -42,12 +44,14 @@ const _: () = assert!(core::mem::offset_of!(BGSKeyword, keyword) == 0x20);
 #[repr(C)]
 pub struct BGSKeywordForm {
     /// +0x0 `vtbl:BGSKeywordForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSKeywordForm_vtable,
     /// +0x8 `pointer`, ctor store, semantic, runtime; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
     /// +0x10 `undefined4`, ctor store, semantic, runtime; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSKeywordForm>() == 0x18);
@@ -62,6 +66,7 @@ const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, numKeywords) == 0x10
 #[repr(C)]
 pub struct BGSListForm {
     /// +0x0 `vtbl:BGSListForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSListForm_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -81,6 +86,7 @@ pub struct BGSListForm {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSListForm>() == 0x48);
@@ -103,6 +109,7 @@ pub struct BSReadWriteLock {
     pub writerThread: u32,
     /// +0x4 `undefined4`, semantic; reader count, or 0x80000000 | depth while written (high)
     pub lockCount: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSReadWriteLock>() == 0x8);
@@ -118,6 +125,7 @@ pub struct BSSimpleListNode {
     pub item: *mut c_void,
     /// +0x8 `pointer`, semantic; next node or null (high)
     pub next: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSSimpleListNode>() == 0x10);
@@ -137,6 +145,7 @@ pub struct BSTArray {
     /// +0x10 `undefined4`, semantic; used elements (high)
     pub size: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSTArray>() == 0x18);
@@ -181,6 +190,7 @@ pub struct TESDataHandler {
     pub unknown_DB8: [u8; 8],
     /// +0xDC0 `class:BSTArray`, semantic; BSTArray<TESFile*> of the files named by the plugin list (medium)
     pub selectedFiles: crate::BSTArray,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDataHandler>() == 0xDD8);
@@ -215,6 +225,7 @@ pub struct TESEditorIDMap {
     pub unknown_20: [u8; 8],
     /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
     pub entries: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEditorIDMap>() == 0x30);
@@ -235,6 +246,7 @@ pub struct TESEditorIDMapEntry {
     pub form: *mut crate::TESForm,
     /// +0x10 `pointer`, semantic; chain (high)
     pub next: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEditorIDMapEntry>() == 0x18);
@@ -276,6 +288,7 @@ pub struct TESFile {
     /// +0x47A `undefined2`, semantic; index among light files, valid when compileIndex is 0xfe (high)
     pub lightFileIndex: u16,
     pub unknown_47C: [u8; 76],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFile>() == 0x4C8);
@@ -300,6 +313,7 @@ pub struct TESFileArray {
     /// +0x8 `undefined4`, semantic; number of files (high)
     pub count: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFileArray>() == 0x10);
@@ -313,6 +327,7 @@ const _: () = assert!(core::mem::offset_of!(TESFileArray, count) == 0x8);
 #[repr(C)]
 pub struct TESForm {
     /// +0x0 `vtbl:TESForm:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESForm_vtable,
     /// +0x8 `ptr:TESFileArray`, ctor store, semantic, runtime; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -325,6 +340,7 @@ pub struct TESForm {
     /// +0x1A `undefined1`, ctor store, semantic, runtime; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESForm>() == 0x20);
@@ -352,6 +368,7 @@ pub struct TESFormIDMap {
     pub unknown_20: [u8; 8],
     /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
     pub entries: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormIDMap>() == 0x30);
@@ -373,6 +390,7 @@ pub struct TESFormIDMapEntry {
     pub form: *mut crate::TESForm,
     /// +0x10 `pointer`, semantic; chain (high)
     pub next: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormIDMapEntry>() == 0x18);
@@ -387,6 +405,7 @@ const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, next) == 0x10);
 #[repr(C)]
 pub struct TESGlobal {
     /// +0x0 `vtbl:TESGlobal:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESGlobal_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -409,6 +428,7 @@ pub struct TESGlobal {
     pub unknown_31: [u8; 3],
     /// +0x34 `float`, ctor store, semantic, runtime; the value, stored as float (high)
     pub value: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESGlobal>() == 0x38);

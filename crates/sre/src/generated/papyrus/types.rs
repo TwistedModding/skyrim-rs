@@ -9,6 +9,7 @@ use core::ffi::c_void;
 #[repr(C)]
 pub struct ActiveEffect {
     /// +0x0 `vtbl:ActiveEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActiveEffect_vtable,
     /// +0x8 `undefined8`, member ctor ActiveEffectReferenceEffectController
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -59,6 +60,7 @@ pub struct ActiveEffect {
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActiveEffect>() == 0x90);
@@ -93,6 +95,7 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_88) == 0x88);
 #[repr(C)]
 pub struct BGSBaseAlias {
     /// +0x0 `vtbl:BGSBaseAlias:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSBaseAlias_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `ptr:TESQuest`, semantic, runtime; the quest that owns the alias (high)
@@ -100,6 +103,7 @@ pub struct BGSBaseAlias {
     /// +0x18 `undefined4`, semantic, runtime; the alias id; its low 16 bits are bits 32-47 of the alias's script handle (high)
     pub aliasID: u32,
     pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSBaseAlias>() == 0x20);
@@ -121,6 +125,7 @@ pub struct BSScrapArray {
     /// +0x18 `undefined4`, semantic; element count (high)
     pub size: u32,
     pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScrapArray>() == 0x20);
@@ -141,6 +146,7 @@ pub struct BSScript__Array {
     /// +0x10 `undefined4`, semantic; element count (high)
     pub size: u32,
     pub unknown_14: [u8; 12],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Array>() == 0x20);
@@ -154,7 +160,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Array, size) == 0x10);
 #[repr(C)]
 pub struct BSScript__IFunctionArguments {
     /// +0x0 `vtbl:BSScript::IFunctionArguments:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__IFunctionArguments_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IFunctionArguments>() == 0x8);
@@ -167,10 +175,12 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IFunctionArguments, __vfta
 #[repr(C)]
 pub struct BSScript__IStackCallbackFunctor {
     /// +0x0 `vtbl:BSScript::IStackCallbackFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__IStackCallbackFunctor_vtable,
     /// +0x8 `undefined4`, semantic, runtime; BSTSmartPointer count: a holder adds 1 with a locked add; the release subtracts 1 with a locked add and, when the count was 1, calls slot 0 with 1 (delete) (high)
     pub refCount: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IStackCallbackFunctor>() == 0x10);
@@ -185,15 +195,19 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IStackCallbackFunctor, ref
 #[repr(C, packed)]
 pub struct BSScript__Internal__VirtualMachine {
     /// +0x0 `vtbl:BSScript::Internal::VirtualMachine:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__VirtualMachine_vtable,
     /// +0x8 `undefined4`, ctor store, semantic, runtime; BSIntrusiveRefCounted count (1 on the live VM) (high)
     pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:BSScript::Internal::VirtualMachine:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::BSScript__Internal__VirtualMachine_vtable_10,
     /// +0x18 `vtbl:BSScript::Internal::VirtualMachine:18`, rtti
+    #[doc(hidden)]
     pub __vftable_18: *const crate::raw::vtables::BSScript__Internal__VirtualMachine_vtable_18,
     /// +0x20 `vtbl:BSScript::Internal::VirtualMachine:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BSScript__Internal__VirtualMachine_vtable_20,
     /// +0x28 `class:BSTEventSource`, RTTI base BSTEventSource<BSScript::StatsEvent>
     pub source_BSScript_StatsEvent: crate::BSTEventSource,
@@ -352,6 +366,7 @@ pub struct BSScript__Internal__VirtualMachine {
     /// +0x94CC `undefined8`, ctor store
     pub field_94CC: u64,
     pub unknown_94D4: [u8; 68],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__VirtualMachine>() == 0x9518);
@@ -434,6 +449,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, 
 #[repr(C)]
 pub struct BSScript__NF_util__NativeFunctionBase {
     /// +0x0 `vtbl:BSScript::NF_util::NativeFunctionBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NF_util__NativeFunctionBase_vtable,
     /// +0x8 `undefined4`, ctor store, semantic, runtime; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -466,6 +482,7 @@ pub struct BSScript__NF_util__NativeFunctionBase {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, semantic, runtime; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NF_util__NativeFunctionBase>() == 0x58);
@@ -494,6 +511,7 @@ pub struct BSScript__NF_util__ParamInfo {
     pub name: crate::BSFixedString,
     /// +0x8 `class:BSScript::TypeInfo`, semantic; parameter type (high)
     pub type_: crate::BSScript__TypeInfo,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NF_util__ParamInfo>() == 0x10);
@@ -518,6 +536,7 @@ pub struct BSScript__Object {
     /// +0x28 `undefined4`, semantic; reference count in bits 0-30, bit 31 the spin lock IncRef/DecRef/GetHandle take; IncRef calls PersistHandle when the count goes 1 -> 2, DecRef ReleaseHandle on 2 -> 1 (high)
     pub refCountAndLock: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Object>() == 0x30);
@@ -550,6 +569,7 @@ pub struct BSScript__ObjectTypeInfo {
     pub unknown_2C: [u8; 4],
     /// +0x30 `pointer`, semantic; linked: the tables of variables, properties and per-state functions; unlinked: head of the singly linked list {next, IFunction*} of natives bound before the script loaded (high)
     pub data: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__ObjectTypeInfo>() == 0x38);
@@ -604,6 +624,7 @@ pub struct BSScript__Stack {
     pub callback: *mut c_void,
     /// +0x98 `ptr:BSScript::Stack`, semantic; BSTSmartPointer<Stack>: next stack in the VM's frozen list (VM+0x9390) (high)
     pub frozenNext: *mut crate::BSScript__Stack,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Stack>() == 0xA0);
@@ -647,6 +668,7 @@ pub struct BSScript__StackFrame {
     /// +0x3C `u8`, semantic; 1 when the frame's function code may be loaded (medium)
     pub codeValid: u8,
     pub unknown_3D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__StackFrame>() == 0x40);
@@ -666,6 +688,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, codeValid) == 
 pub struct BSScript__TypeInfo {
     /// +0x0 `undefined8`, semantic; PapyrusType value below 0x10, else BSScript::ObjectTypeInfo* with bit 0 set for an array (high)
     pub rawTypeOrObjectType: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__TypeInfo>() == 0x8);
@@ -680,6 +703,7 @@ pub struct BSScript__Variable {
     pub type_: crate::BSScript__TypeInfo,
     /// +0x8 `undefined8`, semantic; i32 at +8 for Int, f32 bits at +8 for Float, u8 for Bool, BSFixedString (char*) for String, BSTSmartPointer<Object> for objects, BSTSmartPointer<Array> for arrays, 0 for None (high)
     pub value: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Variable>() == 0x10);
@@ -693,6 +717,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Variable, value) == 0x8);
 #[repr(C)]
 pub struct ExtraAliasInstanceArray {
     /// +0x0 `vtbl:ExtraAliasInstanceArray:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExtraAliasInstanceArray_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -706,6 +731,7 @@ pub struct ExtraAliasInstanceArray {
     pub unknown_24: [u8; 4],
     /// +0x28 `class:BSReadWriteLock`, semantic; taken for read while visiting, for write while adding (high)
     pub lock: crate::BSReadWriteLock,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAliasInstanceArray>() == 0x30);
@@ -727,6 +753,7 @@ pub struct ExtraAliasInstanceArray__Entry {
     pub alias: *mut crate::BGSBaseAlias,
     /// +0x10 `pointer`, semantic; the third value the adder stores (null in the run) (low)
     pub data: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAliasInstanceArray__Entry>() == 0x18);
@@ -741,10 +768,12 @@ const _: () = assert!(core::mem::offset_of!(ExtraAliasInstanceArray__Entry, data
 #[repr(C)]
 pub struct SkyrimScript__HandlePolicy {
     /// +0x0 `vtbl:SkyrimScript::HandlePolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__HandlePolicy_vtable,
     /// +0x8 `undefined8`, semantic; BSSpinLock guarding the persisted-handle maps (high)
     pub lock: u64,
     pub unknown_10: [u8; 96],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript__HandlePolicy>() == 0x70);

@@ -9,10 +9,12 @@ use core::ffi::c_void;
 #[repr(C)]
 pub struct NiAVObjectPalette {
     /// +0x0 `vtbl:NiAVObjectPalette:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAVObjectPalette_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 60],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiAVObjectPalette>() == 0x48);
@@ -25,12 +27,14 @@ const _: () = assert!(core::mem::offset_of!(NiAVObjectPalette, field_8) == 0x8);
 #[repr(C)]
 pub struct NiAccumulator {
     /// +0x0 `vtbl:NiAccumulator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAccumulator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiAccumulator>() == 0x18);
@@ -44,10 +48,12 @@ const _: () = assert!(core::mem::offset_of!(NiAccumulator, field_10) == 0x10);
 #[repr(C)]
 pub struct NiAdditionalGeometryData {
     /// +0x0 `vtbl:NiAdditionalGeometryData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAdditionalGeometryData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiAdditionalGeometryData, __vftable) == 0x0);
@@ -58,7 +64,9 @@ const _: () = assert!(core::mem::offset_of!(NiAdditionalGeometryData, field_8) =
 #[repr(C)]
 pub struct NiAllocator {
     /// +0x0 `vtbl:NiAllocator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAllocator_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiAllocator, __vftable) == 0x0);
@@ -69,6 +77,7 @@ const _: () = assert!(core::mem::offset_of!(NiAllocator, __vftable) == 0x0);
 #[repr(C)]
 pub struct NiAlphaAccumulator {
     /// +0x0 `vtbl:NiAlphaAccumulator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAlphaAccumulator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -96,6 +105,7 @@ pub struct NiAlphaAccumulator {
     /// +0x52 `undefined1`, ctor store
     pub field_52: u8,
     pub unknown_53: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, __vftable) == 0x0);
@@ -117,6 +127,7 @@ const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, field_52) == 0x5
 #[repr(C)]
 pub struct NiAmbientLight {
     /// +0x0 `vtbl:NiAmbientLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAmbientLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -182,6 +193,7 @@ pub struct NiAmbientLight {
     pub field_134: u32,
     /// +0x138 `undefined8`, base NiLight
     pub field_138: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiAmbientLight>() == 0x140);
@@ -224,6 +236,7 @@ const _: () = assert!(core::mem::offset_of!(NiAmbientLight, field_138) == 0x138)
 #[repr(C, packed)]
 pub struct NiBSBoneLODController {
     /// +0x0 `vtbl:NiBSBoneLODController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSBoneLODController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -262,6 +275,7 @@ pub struct NiBSBoneLODController {
     pub field_60: u32,
     /// +0x64 `undefined4`, ctor store
     pub field_64: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, __vftable) == 0x0);
@@ -289,6 +303,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_64) == 
 #[repr(C)]
 pub struct NiBSPNode {
     /// +0x0 `vtbl:NiBSPNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSPNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -335,6 +350,7 @@ pub struct NiBSPNode {
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     pub unknown_128: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBSPNode>() == 0x148);
@@ -366,6 +382,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSPNode, children) == 0x110);
 #[repr(C)]
 pub struct NiBSplineBasisData {
     /// +0x0 `vtbl:NiBSplineBasisData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineBasisData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -379,6 +396,7 @@ pub struct NiBSplineBasisData {
     pub field_28: u32,
     /// +0x2C `undefined4`, ctor store
     pub field_2C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineBasisData, __vftable) == 0x0);
@@ -394,6 +412,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineBasisData, field_2C) == 0x2
 #[repr(C)]
 pub struct NiBSplineColorInterpolator {
     /// +0x0 `vtbl:NiBSplineColorInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineColorInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -416,6 +435,7 @@ pub struct NiBSplineColorInterpolator {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBSplineColorInterpolator>() == 0x48);
@@ -436,6 +456,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineColorInterpolator, field_40
 #[repr(C)]
 pub struct NiBSplineCompColorInterpolator {
     /// +0x0 `vtbl:NiBSplineCompColorInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompColorInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -462,6 +483,7 @@ pub struct NiBSplineCompColorInterpolator {
     pub field_48: u32,
     /// +0x4C `undefined4`, ctor store
     pub field_4C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompColorInterpolator, __vftable) == 0x0);
@@ -483,6 +505,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineCompColorInterpolator, fiel
 #[repr(C)]
 pub struct NiBSplineCompFloatInterpolator {
     /// +0x0 `vtbl:NiBSplineCompFloatInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompFloatInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -506,6 +529,7 @@ pub struct NiBSplineCompFloatInterpolator {
     pub field_38: u32,
     /// +0x3C `undefined4`, ctor store
     pub field_3C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompFloatInterpolator, __vftable) == 0x0);
@@ -526,6 +550,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineCompFloatInterpolator, fiel
 #[repr(C)]
 pub struct NiBSplineCompPoint3Interpolator {
     /// +0x0 `vtbl:NiBSplineCompPoint3Interpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompPoint3Interpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -553,6 +578,7 @@ pub struct NiBSplineCompPoint3Interpolator {
     pub field_40: u32,
     /// +0x44 `undefined4`, ctor store
     pub field_44: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, __vftable) == 0x0);
@@ -575,6 +601,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, fie
 #[repr(C)]
 pub struct NiBSplineCompTransformInterpolator {
     /// +0x0 `vtbl:NiBSplineCompTransformInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompTransformInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -619,6 +646,7 @@ pub struct NiBSplineCompTransformInterpolator {
     pub field_70: u32,
     /// +0x74 `undefined4`, ctor store
     pub field_74: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, __vftable) == 0x0);
@@ -649,6 +677,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, 
 #[repr(C)]
 pub struct NiBSplineData {
     /// +0x0 `vtbl:NiBSplineData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -659,6 +688,7 @@ pub struct NiBSplineData {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineData, __vftable) == 0x0);
@@ -673,6 +703,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineData, field_20) == 0x20);
 #[repr(C)]
 pub struct NiBSplineFloatInterpolator {
     /// +0x0 `vtbl:NiBSplineFloatInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineFloatInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -692,6 +723,7 @@ pub struct NiBSplineFloatInterpolator {
     pub field_30: f32,
     /// +0x34 `undefined4`, ctor store
     pub field_34: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBSplineFloatInterpolator>() == 0x38);
@@ -711,6 +743,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineFloatInterpolator, field_34
 #[repr(C)]
 pub struct NiBSplineInterpolator {
     /// +0x0 `vtbl:NiBSplineInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -726,6 +759,7 @@ pub struct NiBSplineInterpolator {
     pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBSplineInterpolator>() == 0x30);
@@ -743,6 +777,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineInterpolator, field_28) == 
 #[repr(C)]
 pub struct NiBSplinePoint3Interpolator {
     /// +0x0 `vtbl:NiBSplinePoint3Interpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplinePoint3Interpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -766,6 +801,7 @@ pub struct NiBSplinePoint3Interpolator {
     pub field_38: u32,
     /// +0x3C `undefined4`, ctor store
     pub field_3C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBSplinePoint3Interpolator>() == 0x40);
@@ -787,6 +823,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplinePoint3Interpolator, field_3
 #[repr(C)]
 pub struct NiBSplineTransformInterpolator {
     /// +0x0 `vtbl:NiBSplineTransformInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineTransformInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -819,6 +856,7 @@ pub struct NiBSplineTransformInterpolator {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBSplineTransformInterpolator>() == 0x60);
@@ -844,6 +882,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSplineTransformInterpolator, fiel
 #[repr(C)]
 pub struct NiBackToFrontAccumulator {
     /// +0x0 `vtbl:NiBackToFrontAccumulator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBackToFrontAccumulator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -866,6 +905,7 @@ pub struct NiBackToFrontAccumulator {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBackToFrontAccumulator>() == 0x50);
@@ -886,6 +926,7 @@ const _: () = assert!(core::mem::offset_of!(NiBackToFrontAccumulator, field_48) 
 #[repr(C)]
 pub struct NiBillboardNode {
     /// +0x0 `vtbl:NiBillboardNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBillboardNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -932,6 +973,7 @@ pub struct NiBillboardNode {
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     pub unknown_128: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBillboardNode>() == 0x130);
@@ -963,6 +1005,7 @@ const _: () = assert!(core::mem::offset_of!(NiBillboardNode, children) == 0x110)
 #[repr(C)]
 pub struct NiBinaryExtraData {
     /// +0x0 `vtbl:NiBinaryExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBinaryExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -970,6 +1013,7 @@ pub struct NiBinaryExtraData {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     pub unknown_18: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBinaryExtraData>() == 0x28);
@@ -982,6 +1026,7 @@ const _: () = assert!(core::mem::offset_of!(NiBinaryExtraData, name) == 0x10);
 #[repr(C)]
 pub struct NiBinaryStream {
     /// +0x0 `vtbl:NiBinaryStream:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBinaryStream_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -990,6 +1035,7 @@ pub struct NiBinaryStream {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBinaryStream>() == 0x20);
@@ -1005,6 +1051,7 @@ const _: () = assert!(core::mem::offset_of!(NiBinaryStream, field_18) == 0x18);
 #[repr(C, packed)]
 pub struct NiBlendAccumTransformInterpolator {
     /// +0x0 `vtbl:NiBlendAccumTransformInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendAccumTransformInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1049,6 +1096,7 @@ pub struct NiBlendAccumTransformInterpolator {
     /// +0x70 `undefined1`, ctor store
     pub field_70: u8,
     pub unknown_71: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, __vftable) == 0x0);
@@ -1079,6 +1127,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, f
 #[repr(C, packed)]
 pub struct NiBlendBoolInterpolator {
     /// +0x0 `vtbl:NiBlendBoolInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendBoolInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1111,6 +1160,7 @@ pub struct NiBlendBoolInterpolator {
     /// +0x48 `undefined1`, ctor store
     pub field_48: u8,
     pub unknown_49: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBlendBoolInterpolator>() == 0x50);
@@ -1136,6 +1186,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_48) =
 #[repr(C, packed)]
 pub struct NiBlendColorInterpolator {
     /// +0x0 `vtbl:NiBlendColorInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendColorInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1170,6 +1221,7 @@ pub struct NiBlendColorInterpolator {
     /// +0x58 `undefined1`, ctor store
     pub field_58: u8,
     pub unknown_59: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, __vftable) == 0x0);
@@ -1195,6 +1247,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_58) 
 #[repr(C, packed)]
 pub struct NiBlendFloatInterpolator {
     /// +0x0 `vtbl:NiBlendFloatInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendFloatInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1227,6 +1280,7 @@ pub struct NiBlendFloatInterpolator {
     /// +0x48 `float`, ctor store
     pub field_48: f32,
     pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBlendFloatInterpolator>() == 0x50);
@@ -1252,6 +1306,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_48) 
 #[repr(C, packed)]
 pub struct NiBlendInterpolator {
     /// +0x0 `vtbl:NiBlendInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1281,6 +1336,7 @@ pub struct NiBlendInterpolator {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBlendInterpolator>() == 0x48);
@@ -1305,6 +1361,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_40) == 0x
 #[repr(C, packed)]
 pub struct NiBlendPoint3Interpolator {
     /// +0x0 `vtbl:NiBlendPoint3Interpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendPoint3Interpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1343,6 +1400,7 @@ pub struct NiBlendPoint3Interpolator {
     /// +0x54 `undefined1`, ctor store
     pub field_54: u8,
     pub unknown_55: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBlendPoint3Interpolator>() == 0x58);
@@ -1371,6 +1429,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_54)
 #[repr(C, packed)]
 pub struct NiBlendQuaternionInterpolator {
     /// +0x0 `vtbl:NiBlendQuaternionInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendQuaternionInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1402,6 +1461,7 @@ pub struct NiBlendQuaternionInterpolator {
     pub unknown_44: [u8; 4],
     /// +0x48 `undefined1[16]`, ctor store
     pub field_48: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, __vftable) == 0x0);
@@ -1426,6 +1486,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field
 #[repr(C, packed)]
 pub struct NiBlendTransformInterpolator {
     /// +0x0 `vtbl:NiBlendTransformInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendTransformInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1455,6 +1516,7 @@ pub struct NiBlendTransformInterpolator {
     /// +0x40 `undefined4`, base NiBlendInterpolator
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, __vftable) == 0x0);
@@ -1476,7 +1538,9 @@ const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_
 #[repr(C)]
 pub struct NiBoneMatrixSetterI {
     /// +0x0 `vtbl:NiBoneMatrixSetterI:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoneMatrixSetterI_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBoneMatrixSetterI>() == 0x8);
@@ -1488,10 +1552,12 @@ const _: () = assert!(core::mem::offset_of!(NiBoneMatrixSetterI, __vftable) == 0
 #[repr(C)]
 pub struct NiBoolData {
     /// +0x0 `vtbl:NiBoolData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoolData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 28],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBoolData>() == 0x28);
@@ -1505,6 +1571,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoolData, field_8) == 0x8);
 #[repr(C, packed)]
 pub struct NiBoolInterpController {
     /// +0x0 `vtbl:NiBoolInterpController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoolInterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1533,6 +1600,7 @@ pub struct NiBoolInterpController {
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBoolInterpController>() == 0x50);
@@ -1556,6 +1624,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_48) ==
 #[repr(C)]
 pub struct NiBoolInterpolator {
     /// +0x0 `vtbl:NiBoolInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoolInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1571,6 +1640,7 @@ pub struct NiBoolInterpolator {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBoolInterpolator>() == 0x30);
@@ -1587,6 +1657,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoolInterpolator, field_28) == 0x2
 #[repr(C)]
 pub struct NiBoolTimelineInterpolator {
     /// +0x0 `vtbl:NiBoolTimelineInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoolTimelineInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1607,6 +1678,7 @@ pub struct NiBoolTimelineInterpolator {
     /// +0x34 `undefined1`, ctor store
     pub field_34: u8,
     pub unknown_35: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBoolTimelineInterpolator>() == 0x38);
@@ -1625,6 +1697,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoolTimelineInterpolator, field_34
 #[repr(C)]
 pub struct NiBooleanExtraData {
     /// +0x0 `vtbl:NiBooleanExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBooleanExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1632,6 +1705,7 @@ pub struct NiBooleanExtraData {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     pub unknown_18: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBooleanExtraData>() == 0x20);
@@ -1644,7 +1718,9 @@ const _: () = assert!(core::mem::offset_of!(NiBooleanExtraData, name) == 0x10);
 #[repr(C)]
 pub struct NiBoundingVolume {
     /// +0x0 `vtbl:NiBoundingVolume:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoundingVolume_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBoundingVolume>() == 0x8);
@@ -1656,6 +1732,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoundingVolume, __vftable) == 0x0)
 #[repr(C)]
 pub struct NiBoxBV {
     /// +0x0 `vtbl:NiBoxBV:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoxBV_vtable,
     /// +0x8 `float`, ctor store (widths [4, 4])
     pub field_8: f32,
@@ -1688,6 +1765,7 @@ pub struct NiBoxBV {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBoxBV, __vftable) == 0x0);
@@ -1713,6 +1791,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_40) == 0x40);
 #[repr(C)]
 pub struct NiBoxCapsuleIntersector {
     /// +0x0 `vtbl:NiBoxCapsuleIntersector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoxCapsuleIntersector_vtable,
     /// +0x8 `float`, base NiIntersector
     pub field_8: f32,
@@ -1753,6 +1832,7 @@ pub struct NiBoxCapsuleIntersector {
     pub field_58: u32,
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, __vftable) == 0x0);
@@ -1782,6 +1862,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, field_5C) =
 #[repr(C)]
 pub struct NiBoxSphereIntersector {
     /// +0x0 `vtbl:NiBoxSphereIntersector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoxSphereIntersector_vtable,
     /// +0x8 `float`, base NiIntersector
     pub field_8: f32,
@@ -1822,6 +1903,7 @@ pub struct NiBoxSphereIntersector {
     pub field_58: u32,
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBoxSphereIntersector, __vftable) == 0x0);
@@ -1851,6 +1933,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoxSphereIntersector, field_5C) ==
 #[repr(C)]
 pub struct NiCapsuleBV {
     /// +0x0 `vtbl:NiCapsuleBV:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCapsuleBV_vtable,
     /// +0x8 `undefined4`, ctor store (widths [4, 8])
     pub field_8: u32,
@@ -1880,6 +1963,7 @@ pub struct NiCapsuleBV {
     pub field_38: f32,
     /// +0x3C `float`, ctor store (widths [4, 4])
     pub field_3C: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiCapsuleBV, __vftable) == 0x0);
@@ -1904,6 +1988,7 @@ const _: () = assert!(core::mem::offset_of!(NiCapsuleBV, field_3C) == 0x3C);
 #[repr(C)]
 pub struct NiCapsuleCapsuleIntersector {
     /// +0x0 `vtbl:NiCapsuleCapsuleIntersector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCapsuleCapsuleIntersector_vtable,
     /// +0x8 `float`, base NiIntersector
     pub field_8: f32,
@@ -1943,6 +2028,7 @@ pub struct NiCapsuleCapsuleIntersector {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiCapsuleCapsuleIntersector, __vftable) == 0x0);
@@ -1971,6 +2057,7 @@ const _: () = assert!(core::mem::offset_of!(NiCapsuleCapsuleIntersector, field_5
 #[repr(C)]
 pub struct NiCapsuleSphereIntersector {
     /// +0x0 `vtbl:NiCapsuleSphereIntersector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCapsuleSphereIntersector_vtable,
     /// +0x8 `float`, base NiIntersector
     pub field_8: f32,
@@ -2007,6 +2094,7 @@ pub struct NiCapsuleSphereIntersector {
     pub field_50: f32,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiCapsuleSphereIntersector, __vftable) == 0x0);
@@ -2034,6 +2122,7 @@ const _: () = assert!(core::mem::offset_of!(NiCapsuleSphereIntersector, field_54
 #[repr(C)]
 pub struct NiCapsuleTriIntersector {
     /// +0x0 `vtbl:NiCapsuleTriIntersector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCapsuleTriIntersector_vtable,
     /// +0x8 `float`, base NiIntersector
     pub field_8: f32,
@@ -2088,6 +2177,7 @@ pub struct NiCapsuleTriIntersector {
     pub field_70: u32,
     /// +0x74 `undefined4`, ctor store
     pub field_74: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, __vftable) == 0x0);
@@ -2125,6 +2215,7 @@ const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_74) =
 #[repr(C, packed)]
 pub struct NiCollisionData {
     /// +0x0 `vtbl:NiCollisionData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCollisionData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2168,6 +2259,7 @@ pub struct NiCollisionData {
     /// +0x76 `undefined1`, ctor store
     pub field_76: u8,
     pub unknown_77: [u8; 1],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, __vftable) == 0x0);
@@ -2198,12 +2290,14 @@ const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_76) == 0x76);
 #[repr(C)]
 pub struct NiCollisionObject {
     /// +0x0 `vtbl:NiCollisionObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCollisionObject_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiCollisionObject>() == 0x18);
@@ -2217,7 +2311,9 @@ const _: () = assert!(core::mem::offset_of!(NiCollisionObject, field_10) == 0x10
 #[repr(C)]
 pub struct NiCollisionTraversals__IFindIntersections {
     /// +0x0 `vtbl:NiCollisionTraversals::IFindIntersections:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCollisionTraversals__IFindIntersections_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiCollisionTraversals__IFindIntersections, __vftable) == 0x0);
@@ -2228,6 +2324,7 @@ const _: () = assert!(core::mem::offset_of!(NiCollisionTraversals__IFindIntersec
 #[repr(C)]
 pub struct NiColorData {
     /// +0x0 `vtbl:NiColorData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiColorData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2242,6 +2339,7 @@ pub struct NiColorData {
     /// +0x24 `undefined1`, ctor store
     pub field_24: u8,
     pub unknown_25: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiColorData>() == 0x28);
@@ -2258,6 +2356,7 @@ const _: () = assert!(core::mem::offset_of!(NiColorData, field_24) == 0x24);
 #[repr(C)]
 pub struct NiColorExtraData {
     /// +0x0 `vtbl:NiColorExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiColorExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2272,6 +2371,7 @@ pub struct NiColorExtraData {
     pub field_20: f32,
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __vftable) == 0x0);
@@ -2289,6 +2389,7 @@ const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_24) == 0x24)
 #[repr(C, packed)]
 pub struct NiColorExtraDataController {
     /// +0x0 `vtbl:NiColorExtraDataController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiColorExtraDataController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2321,6 +2422,7 @@ pub struct NiColorExtraDataController {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiExtraDataController
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, __vftable) == 0x0);
@@ -2345,6 +2447,7 @@ const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_58
 #[repr(C)]
 pub struct NiColorInterpolator {
     /// +0x0 `vtbl:NiColorInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiColorInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2359,6 +2462,7 @@ pub struct NiColorInterpolator {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiColorInterpolator>() == 0x38);
@@ -2376,6 +2480,7 @@ const _: () = assert!(core::mem::offset_of!(NiColorInterpolator, field_30) == 0x
 #[repr(C, packed)]
 pub struct NiControllerManager {
     /// +0x0 `vtbl:NiControllerManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiControllerManager_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2435,6 +2540,7 @@ pub struct NiControllerManager {
     pub field_B8: u64,
     /// +0xC0 `undefined8`, ctor store
     pub field_C0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiControllerManager>() == 0xC8);
@@ -2472,6 +2578,7 @@ const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_C0) == 0x
 #[repr(C)]
 pub struct NiControllerSequence {
     /// +0x0 `vtbl:NiControllerSequence:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiControllerSequence_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2537,6 +2644,7 @@ pub struct NiControllerSequence {
     /// +0xB2 `undefined1`, ctor store
     pub field_B2: u8,
     pub unknown_B3: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiControllerSequence>() == 0xB8);
@@ -2576,6 +2684,7 @@ const _: () = assert!(core::mem::offset_of!(NiControllerSequence, field_B2) == 0
 #[repr(C)]
 pub struct NiCullingProcess {
     /// +0x0 `vtbl:NiCullingProcess:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCullingProcess_vtable,
     /// +0x8 `undefined1`, ctor store
     pub field_8: u8,
@@ -2601,6 +2710,7 @@ pub struct NiCullingProcess {
     /// +0x121 `undefined1`, ctor store
     pub field_121: u8,
     pub unknown_122: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiCullingProcess, __vftable) == 0x0);
@@ -2620,10 +2730,12 @@ const _: () = assert!(core::mem::offset_of!(NiCullingProcess, field_121) == 0x12
 #[repr(C)]
 pub struct NiDefaultAVObjectPalette {
     /// +0x0 `vtbl:NiDefaultAVObjectPalette:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiDefaultAVObjectPalette_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 60],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiDefaultAVObjectPalette>() == 0x48);
@@ -2637,6 +2749,7 @@ const _: () = assert!(core::mem::offset_of!(NiDefaultAVObjectPalette, field_8) =
 #[repr(C, packed)]
 pub struct NiDirectionalLight {
     /// +0x0 `vtbl:NiDirectionalLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiDirectionalLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2710,6 +2823,7 @@ pub struct NiDirectionalLight {
     pub field_14C: u64,
     /// +0x154 `undefined4`, ctor store
     pub field_154: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiDirectionalLight>() == 0x158);
@@ -2756,6 +2870,7 @@ const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, field_154) == 0x
 #[repr(C, packed)]
 pub struct NiExtraDataController {
     /// +0x0 `vtbl:NiExtraDataController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiExtraDataController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2788,6 +2903,7 @@ pub struct NiExtraDataController {
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiExtraDataController>() == 0x60);
@@ -2814,6 +2930,7 @@ const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_58) == 
 #[repr(C, packed)]
 pub struct NiFile {
     /// +0x0 `vtbl:NiFile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFile_vtable,
     /// +0x8 `undefined4`, base NiBinaryStream
     pub field_8: u32,
@@ -2837,6 +2954,7 @@ pub struct NiFile {
     /// +0x44 `undefined1`, ctor store
     pub field_44: u8,
     pub unknown_45: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFile>() == 0x48);
@@ -2859,6 +2977,7 @@ const _: () = assert!(core::mem::offset_of!(NiFile, field_44) == 0x44);
 #[repr(C, packed)]
 pub struct NiFloatController {
     /// +0x0 `vtbl:NiFloatController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2888,6 +3007,7 @@ pub struct NiFloatController {
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFloatController, __vftable) == 0x0);
@@ -2910,6 +3030,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatController, field_50) == 0x50
 #[repr(C)]
 pub struct NiFloatData {
     /// +0x0 `vtbl:NiFloatData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2924,6 +3045,7 @@ pub struct NiFloatData {
     /// +0x24 `undefined1`, ctor store
     pub field_24: u8,
     pub unknown_25: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFloatData>() == 0x28);
@@ -2940,6 +3062,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatData, field_24) == 0x24);
 #[repr(C)]
 pub struct NiFloatExtraData {
     /// +0x0 `vtbl:NiFloatExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2947,6 +3070,7 @@ pub struct NiFloatExtraData {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     pub unknown_18: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFloatExtraData>() == 0x20);
@@ -2961,6 +3085,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatExtraData, name) == 0x10);
 #[repr(C, packed)]
 pub struct NiFloatExtraDataController {
     /// +0x0 `vtbl:NiFloatExtraDataController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatExtraDataController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -2993,6 +3118,7 @@ pub struct NiFloatExtraDataController {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiExtraDataController
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFloatExtraDataController>() == 0x60);
@@ -3019,6 +3145,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_58
 #[repr(C, packed)]
 pub struct NiFloatInterpController {
     /// +0x0 `vtbl:NiFloatInterpController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatInterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3047,6 +3174,7 @@ pub struct NiFloatInterpController {
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFloatInterpController>() == 0x50);
@@ -3070,6 +3198,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_48) =
 #[repr(C)]
 pub struct NiFloatInterpolator {
     /// +0x0 `vtbl:NiFloatInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3085,6 +3214,7 @@ pub struct NiFloatInterpolator {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFloatInterpolator>() == 0x30);
@@ -3101,6 +3231,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatInterpolator, field_28) == 0x
 #[repr(C)]
 pub struct NiFloatsExtraData {
     /// +0x0 `vtbl:NiFloatsExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatsExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3112,6 +3243,7 @@ pub struct NiFloatsExtraData {
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraData, __vftable) == 0x0);
@@ -3127,6 +3259,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatsExtraData, field_20) == 0x20
 #[repr(C, packed)]
 pub struct NiFloatsExtraDataController {
     /// +0x0 `vtbl:NiFloatsExtraDataController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatsExtraDataController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3162,6 +3295,7 @@ pub struct NiFloatsExtraDataController {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, __vftable) == 0x0);
@@ -3188,6 +3322,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_6
 #[repr(C, packed)]
 pub struct NiFloatsExtraDataPoint3Controller {
     /// +0x0 `vtbl:NiFloatsExtraDataPoint3Controller:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatsExtraDataPoint3Controller_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3225,6 +3360,7 @@ pub struct NiFloatsExtraDataPoint3Controller {
     pub unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, __vftable) == 0x0);
@@ -3252,6 +3388,7 @@ const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, f
 #[repr(C, packed)]
 pub struct NiFogProperty {
     /// +0x0 `vtbl:NiFogProperty:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFogProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3280,6 +3417,7 @@ pub struct NiFogProperty {
     pub field_44: f64,
     /// +0x4C `undefined4`, ctor store
     pub field_4C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiFogProperty>() == 0x50);
@@ -3303,6 +3441,7 @@ const _: () = assert!(core::mem::offset_of!(NiFogProperty, field_4C) == 0x4C);
 #[repr(C)]
 pub struct NiFormArray {
     /// +0x0 `vtbl:NiFormArray:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFormArray_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -3324,6 +3463,7 @@ pub struct NiFormArray {
     pub field_38: u32,
     /// +0x3C `undefined4`, ctor store
     pub field_3C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFormArray, __vftable) == 0x0);
@@ -3344,6 +3484,7 @@ const _: () = assert!(core::mem::offset_of!(NiFormArray, field_3C) == 0x3C);
 #[repr(C)]
 pub struct NiGeometry {
     /// +0x0 `vtbl:NiGeometry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiGeometry_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3397,6 +3538,7 @@ pub struct NiGeometry {
     pub field_128: u64,
     /// +0x130 `undefined8`, ctor store
     pub field_130: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiGeometry>() == 0x138);
@@ -3432,6 +3574,7 @@ const _: () = assert!(core::mem::offset_of!(NiGeometry, field_130) == 0x130);
 #[repr(C)]
 pub struct NiGeometryData {
     /// +0x0 `vtbl:NiGeometryData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiGeometryData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3467,6 +3610,7 @@ pub struct NiGeometryData {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiGeometryData>() == 0x68);
@@ -3493,6 +3637,7 @@ const _: () = assert!(core::mem::offset_of!(NiGeometryData, field_60) == 0x60);
 #[repr(C)]
 pub struct NiHalfSpaceBV {
     /// +0x0 `vtbl:NiHalfSpaceBV:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiHalfSpaceBV_vtable,
     /// +0x8 `float`, ctor store
     pub field_8: f32,
@@ -3509,6 +3654,7 @@ pub struct NiHalfSpaceBV {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiHalfSpaceBV, __vftable) == 0x0);
@@ -3526,6 +3672,7 @@ const _: () = assert!(core::mem::offset_of!(NiHalfSpaceBV, field_20) == 0x20);
 #[repr(C)]
 pub struct NiIntegersExtraData {
     /// +0x0 `vtbl:NiIntegersExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiIntegersExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3537,6 +3684,7 @@ pub struct NiIntegersExtraData {
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiIntegersExtraData, __vftable) == 0x0);
@@ -3552,6 +3700,7 @@ const _: () = assert!(core::mem::offset_of!(NiIntegersExtraData, field_20) == 0x
 #[repr(C, packed)]
 pub struct NiInterpController {
     /// +0x0 `vtbl:NiInterpController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiInterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3578,6 +3727,7 @@ pub struct NiInterpController {
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiInterpController>() == 0x48);
@@ -3600,6 +3750,7 @@ const _: () = assert!(core::mem::offset_of!(NiInterpController, field_40) == 0x4
 #[repr(C)]
 pub struct NiInterpolator {
     /// +0x0 `vtbl:NiInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3607,6 +3758,7 @@ pub struct NiInterpolator {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiInterpolator>() == 0x18);
@@ -3619,6 +3771,7 @@ const _: () = assert!(core::mem::offset_of!(NiInterpolator, field_10) == 0x10);
 #[repr(C)]
 pub struct NiIntersector {
     /// +0x0 `vtbl:NiIntersector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiIntersector_vtable,
     /// +0x8 `float`, ctor store
     pub field_8: f32,
@@ -3647,6 +3800,7 @@ pub struct NiIntersector {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiIntersector>() == 0x40);
@@ -3671,6 +3825,7 @@ const _: () = assert!(core::mem::offset_of!(NiIntersector, field_38) == 0x38);
 #[repr(C)]
 pub struct NiKeyBasedInterpolator {
     /// +0x0 `vtbl:NiKeyBasedInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiKeyBasedInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3678,6 +3833,7 @@ pub struct NiKeyBasedInterpolator {
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiKeyBasedInterpolator>() == 0x18);
@@ -3692,6 +3848,7 @@ const _: () = assert!(core::mem::offset_of!(NiKeyBasedInterpolator, field_10) ==
 #[repr(C, packed)]
 pub struct NiKeyframeManager {
     /// +0x0 `vtbl:NiKeyframeManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiKeyframeManager_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3731,6 +3888,7 @@ pub struct NiKeyframeManager {
     /// +0x68 `undefined1`, ctor store
     pub field_68: u8,
     pub unknown_69: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, __vftable) == 0x0);
@@ -3757,6 +3915,7 @@ const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_68) == 0x68
 #[repr(C)]
 pub struct NiLight {
     /// +0x0 `vtbl:NiLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3822,6 +3981,7 @@ pub struct NiLight {
     pub field_134: u32,
     /// +0x138 `undefined8`, ctor store
     pub field_138: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiLight>() == 0x140);
@@ -3864,6 +4024,7 @@ const _: () = assert!(core::mem::offset_of!(NiLight, field_138) == 0x138);
 #[repr(C, packed)]
 pub struct NiLightColorController {
     /// +0x0 `vtbl:NiLightColorController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLightColorController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3895,6 +4056,7 @@ pub struct NiLightColorController {
     /// +0x50 `undefined2`, ctor store
     pub field_50: u16,
     pub unknown_52: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, __vftable) == 0x0);
@@ -3919,6 +4081,7 @@ const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_50) ==
 #[repr(C, packed)]
 pub struct NiLightDimmerController {
     /// +0x0 `vtbl:NiLightDimmerController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLightDimmerController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3947,6 +4110,7 @@ pub struct NiLightDimmerController {
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, __vftable) == 0x0);
@@ -3970,6 +4134,7 @@ const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_48) =
 #[repr(C, packed)]
 pub struct NiLookAtController {
     /// +0x0 `vtbl:NiLookAtController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLookAtController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -3996,6 +4161,7 @@ pub struct NiLookAtController {
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, __vftable) == 0x0);
@@ -4017,6 +4183,7 @@ const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_40) == 0x4
 #[repr(C)]
 pub struct NiLookAtInterpolator {
     /// +0x0 `vtbl:NiLookAtInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLookAtInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4047,6 +4214,7 @@ pub struct NiLookAtInterpolator {
     pub field_58: u64,
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiLookAtInterpolator>() == 0x68);
@@ -4071,6 +4239,7 @@ const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, field_60) == 0
 #[repr(C)]
 pub struct NiMemStream {
     /// +0x0 `vtbl:NiMemStream:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMemStream_vtable,
     /// +0x8 `undefined4`, base NiBinaryStream
     pub field_8: u32,
@@ -4090,6 +4259,7 @@ pub struct NiMemStream {
     /// +0x34 `undefined2`, ctor store
     pub field_34: u16,
     pub unknown_36: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiMemStream, __vftable) == 0x0);
@@ -4108,6 +4278,7 @@ const _: () = assert!(core::mem::offset_of!(NiMemStream, field_34) == 0x34);
 #[repr(C)]
 pub struct NiMeshPSysData {
     /// +0x0 `vtbl:NiMeshPSysData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMeshPSysData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4182,6 +4353,7 @@ pub struct NiMeshPSysData {
     pub field_C8: u32,
     /// +0xCC `undefined4`, ctor store
     pub field_CC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiMeshPSysData>() == 0xD0);
@@ -4226,6 +4398,7 @@ const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_CC) == 0xCC);
 #[repr(C)]
 pub struct NiMeshParticleSystem {
     /// +0x0 `vtbl:NiMeshParticleSystem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMeshParticleSystem_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4321,6 +4494,7 @@ pub struct NiMeshParticleSystem {
     /// +0x19C `undefined1`, ctor store
     pub field_19C: u8,
     pub unknown_19D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiMeshParticleSystem>() == 0x1A0);
@@ -4375,6 +4549,7 @@ const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_19C) == 
 #[repr(C)]
 pub struct NiMorphData {
     /// +0x0 `vtbl:NiMorphData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMorphData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4386,6 +4561,7 @@ pub struct NiMorphData {
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
     pub unknown_21: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiMorphData, __vftable) == 0x0);
@@ -4401,6 +4577,7 @@ const _: () = assert!(core::mem::offset_of!(NiMorphData, field_20) == 0x20);
 #[repr(C, packed)]
 pub struct NiMultiTargetTransformController {
     /// +0x0 `vtbl:NiMultiTargetTransformController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMultiTargetTransformController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4428,6 +4605,7 @@ pub struct NiMultiTargetTransformController {
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
     pub unknown_48: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiMultiTargetTransformController>() == 0x60);
@@ -4451,6 +4629,7 @@ const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, fi
 #[repr(C, packed)]
 pub struct NiOBBLeaf {
     /// +0x0 `vtbl:NiOBBLeaf:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiOBBLeaf_vtable,
     /// +0x8 `float`, base NiOBBNode
     pub field_8: f32,
@@ -4507,6 +4686,7 @@ pub struct NiOBBLeaf {
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiOBBLeaf>() == 0xB8);
@@ -4545,6 +4725,7 @@ const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_B0) == 0xB0);
 #[repr(C, packed)]
 pub struct NiOBBNode {
     /// +0x0 `vtbl:NiOBBNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiOBBNode_vtable,
     /// +0x8 `float`, ctor store
     pub field_8: f32,
@@ -4595,6 +4776,7 @@ pub struct NiOBBNode {
     /// +0x98 `undefined4`, ctor store
     pub field_98: u32,
     pub unknown_9C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiOBBNode>() == 0xA0);
@@ -4630,6 +4812,7 @@ const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_98) == 0x98);
 #[repr(C, packed)]
 pub struct NiOBBRoot {
     /// +0x0 `vtbl:NiOBBRoot:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiOBBRoot_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -4653,6 +4836,7 @@ pub struct NiOBBRoot {
     pub unknown_58: [u8; 4],
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiOBBRoot, __vftable) == 0x0);
@@ -4672,10 +4856,12 @@ const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_5C) == 0x5C);
 #[repr(C)]
 pub struct NiObject {
     /// +0x0 `vtbl:NiObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiObject_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiObject>() == 0x10);
@@ -4688,6 +4874,7 @@ const _: () = assert!(core::mem::offset_of!(NiObject, field_8) == 0x8);
 #[repr(C)]
 pub struct NiPSysAgeDeathModifier {
     /// +0x0 `vtbl:NiPSysAgeDeathModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAgeDeathModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4707,6 +4894,7 @@ pub struct NiPSysAgeDeathModifier {
     pub unknown_31: [u8; 7],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysAgeDeathModifier>() == 0x40);
@@ -4726,6 +4914,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAgeDeathModifier, field_38) ==
 #[repr(C, packed)]
 pub struct NiPSysAirFieldAirFrictionCtlr {
     /// +0x0 `vtbl:NiPSysAirFieldAirFrictionCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldAirFrictionCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4758,6 +4947,7 @@ pub struct NiPSysAirFieldAirFrictionCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, __vftable) == 0x0);
@@ -4783,6 +4973,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field
 #[repr(C, packed)]
 pub struct NiPSysAirFieldInheritVelocityCtlr {
     /// +0x0 `vtbl:NiPSysAirFieldInheritVelocityCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldInheritVelocityCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4815,6 +5006,7 @@ pub struct NiPSysAirFieldInheritVelocityCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, __vftable) == 0x0);
@@ -4839,6 +5031,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, f
 #[repr(C)]
 pub struct NiPSysAirFieldModifier {
     /// +0x0 `vtbl:NiPSysAirFieldModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4900,6 +5093,7 @@ pub struct NiPSysAirFieldModifier {
     pub unknown_83: [u8; 1],
     /// +0x84 `float`, ctor store (widths [4, 4])
     pub field_84: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysAirFieldModifier>() == 0x88);
@@ -4939,6 +5133,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_84) ==
 #[repr(C, packed)]
 pub struct NiPSysAirFieldSpreadCtlr {
     /// +0x0 `vtbl:NiPSysAirFieldSpreadCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldSpreadCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -4971,6 +5166,7 @@ pub struct NiPSysAirFieldSpreadCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, __vftable) == 0x0);
@@ -4995,6 +5191,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_58) 
 #[repr(C)]
 pub struct NiPSysBombModifier {
     /// +0x0 `vtbl:NiPSysBombModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysBombModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5026,6 +5223,7 @@ pub struct NiPSysBombModifier {
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
     pub unknown_54: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysBombModifier>() == 0x58);
@@ -5050,6 +5248,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_50) == 0x5
 #[repr(C)]
 pub struct NiPSysBoundUpdateModifier {
     /// +0x0 `vtbl:NiPSysBoundUpdateModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysBoundUpdateModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5071,6 +5270,7 @@ pub struct NiPSysBoundUpdateModifier {
     pub unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysBoundUpdateModifier>() == 0x40);
@@ -5090,6 +5290,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysBoundUpdateModifier, field_38)
 #[repr(C)]
 pub struct NiPSysBoxEmitter {
     /// +0x0 `vtbl:NiPSysBoxEmitter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysBoxEmitter_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5139,6 +5340,7 @@ pub struct NiPSysBoxEmitter {
     /// +0x80 `float`, ctor store (widths [4, 4])
     pub field_80: f32,
     pub unknown_84: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysBoxEmitter>() == 0x88);
@@ -5172,6 +5374,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysBoxEmitter, field_80) == 0x80)
 #[repr(C)]
 pub struct NiPSysCollider {
     /// +0x0 `vtbl:NiPSysCollider:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysCollider_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5197,6 +5400,7 @@ pub struct NiPSysCollider {
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysCollider>() == 0x40);
@@ -5219,6 +5423,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysCollider, field_38) == 0x38);
 #[repr(C)]
 pub struct NiPSysColliderManager {
     /// +0x0 `vtbl:NiPSysColliderManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysColliderManager_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5235,6 +5440,7 @@ pub struct NiPSysColliderManager {
     pub unknown_29: [u8; 7],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysColliderManager>() == 0x38);
@@ -5252,6 +5458,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysColliderManager, field_30) == 
 #[repr(C)]
 pub struct NiPSysColorModifier {
     /// +0x0 `vtbl:NiPSysColorModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysColorModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5270,6 +5477,7 @@ pub struct NiPSysColorModifier {
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysColorModifier, __vftable) == 0x0);
@@ -5287,6 +5495,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysColorModifier, field_38) == 0x
 #[repr(C)]
 pub struct NiPSysCylinderEmitter {
     /// +0x0 `vtbl:NiPSysCylinderEmitter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysCylinderEmitter_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5333,6 +5542,7 @@ pub struct NiPSysCylinderEmitter {
     pub field_78: f32,
     /// +0x7C `float`, ctor store
     pub field_7C: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysCylinderEmitter>() == 0x80);
@@ -5365,6 +5575,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysCylinderEmitter, field_7C) == 
 #[repr(C)]
 pub struct NiPSysData {
     /// +0x0 `vtbl:NiPSysData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5424,6 +5635,7 @@ pub struct NiPSysData {
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysData>() == 0xA8);
@@ -5461,6 +5673,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysData, field_A0) == 0xA0);
 #[repr(C)]
 pub struct NiPSysDragFieldModifier {
     /// +0x0 `vtbl:NiPSysDragFieldModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysDragFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5498,6 +5711,7 @@ pub struct NiPSysDragFieldModifier {
     pub field_58: f32,
     /// +0x5C `float`, ctor store (widths [4, 4])
     pub field_5C: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysDragFieldModifier, __vftable) == 0x0);
@@ -5523,6 +5737,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysDragFieldModifier, field_5C) =
 #[repr(C)]
 pub struct NiPSysDragModifier {
     /// +0x0 `vtbl:NiPSysDragModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysDragModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5551,6 +5766,7 @@ pub struct NiPSysDragModifier {
     pub field_48: f32,
     /// +0x4C `float`, ctor store (widths [4, 4])
     pub field_4C: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysDragModifier>() == 0x50);
@@ -5574,6 +5790,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysDragModifier, field_4C) == 0x4
 #[repr(C)]
 pub struct NiPSysEmitter {
     /// +0x0 `vtbl:NiPSysEmitter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitter_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5614,6 +5831,7 @@ pub struct NiPSysEmitter {
     pub field_68: f32,
     /// +0x6C `undefined4`, ctor store
     pub field_6C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysEmitter>() == 0x70);
@@ -5644,6 +5862,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitter, field_6C) == 0x6C);
 #[repr(C, packed)]
 pub struct NiPSysEmitterCtlr {
     /// +0x0 `vtbl:NiPSysEmitterCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5691,6 +5910,7 @@ pub struct NiPSysEmitterCtlr {
     pub field_80: u64,
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysEmitterCtlr>() == 0x90);
@@ -5723,6 +5943,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_88) == 0x88
 #[repr(C)]
 pub struct NiPSysEmitterCtlrData {
     /// +0x0 `vtbl:NiPSysEmitterCtlrData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterCtlrData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5747,6 +5968,7 @@ pub struct NiPSysEmitterCtlrData {
     /// +0x3C `undefined1`, ctor store
     pub field_3C: u8,
     pub unknown_3D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlrData, __vftable) == 0x0);
@@ -5767,6 +5989,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlrData, field_3C) == 
 #[repr(C, packed)]
 pub struct NiPSysEmitterDeclinationCtlr {
     /// +0x0 `vtbl:NiPSysEmitterDeclinationCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterDeclinationCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5799,6 +6022,7 @@ pub struct NiPSysEmitterDeclinationCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, __vftable) == 0x0);
@@ -5824,6 +6048,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_
 #[repr(C, packed)]
 pub struct NiPSysEmitterDeclinationVarCtlr {
     /// +0x0 `vtbl:NiPSysEmitterDeclinationVarCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterDeclinationVarCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5856,6 +6081,7 @@ pub struct NiPSysEmitterDeclinationVarCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, __vftable) == 0x0);
@@ -5881,6 +6107,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, fie
 #[repr(C, packed)]
 pub struct NiPSysEmitterInitialRadiusCtlr {
     /// +0x0 `vtbl:NiPSysEmitterInitialRadiusCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterInitialRadiusCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5913,6 +6140,7 @@ pub struct NiPSysEmitterInitialRadiusCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysEmitterInitialRadiusCtlr>() == 0x60);
@@ -5939,6 +6167,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, fiel
 #[repr(C, packed)]
 pub struct NiPSysEmitterLifeSpanCtlr {
     /// +0x0 `vtbl:NiPSysEmitterLifeSpanCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterLifeSpanCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -5971,6 +6200,7 @@ pub struct NiPSysEmitterLifeSpanCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysEmitterLifeSpanCtlr>() == 0x60);
@@ -5997,6 +6227,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_58)
 #[repr(C, packed)]
 pub struct NiPSysEmitterPlanarAngleCtlr {
     /// +0x0 `vtbl:NiPSysEmitterPlanarAngleCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterPlanarAngleCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6029,6 +6260,7 @@ pub struct NiPSysEmitterPlanarAngleCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, __vftable) == 0x0);
@@ -6054,6 +6286,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_
 #[repr(C, packed)]
 pub struct NiPSysEmitterPlanarAngleVarCtlr {
     /// +0x0 `vtbl:NiPSysEmitterPlanarAngleVarCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterPlanarAngleVarCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6086,6 +6319,7 @@ pub struct NiPSysEmitterPlanarAngleVarCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, __vftable) == 0x0);
@@ -6111,6 +6345,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, fie
 #[repr(C, packed)]
 pub struct NiPSysEmitterSpeedCtlr {
     /// +0x0 `vtbl:NiPSysEmitterSpeedCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterSpeedCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6143,6 +6378,7 @@ pub struct NiPSysEmitterSpeedCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysEmitterSpeedCtlr>() == 0x60);
@@ -6169,6 +6405,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_58) ==
 #[repr(C, packed)]
 pub struct NiPSysFieldAttenuationCtlr {
     /// +0x0 `vtbl:NiPSysFieldAttenuationCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysFieldAttenuationCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6201,6 +6438,7 @@ pub struct NiPSysFieldAttenuationCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, __vftable) == 0x0);
@@ -6226,6 +6464,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_58
 #[repr(C, packed)]
 pub struct NiPSysFieldMagnitudeCtlr {
     /// +0x0 `vtbl:NiPSysFieldMagnitudeCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysFieldMagnitudeCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6258,6 +6497,7 @@ pub struct NiPSysFieldMagnitudeCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, __vftable) == 0x0);
@@ -6283,6 +6523,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_58) 
 #[repr(C, packed)]
 pub struct NiPSysFieldMaxDistanceCtlr {
     /// +0x0 `vtbl:NiPSysFieldMaxDistanceCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysFieldMaxDistanceCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6315,6 +6556,7 @@ pub struct NiPSysFieldMaxDistanceCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, __vftable) == 0x0);
@@ -6339,6 +6581,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_58
 #[repr(C)]
 pub struct NiPSysFieldModifier {
     /// +0x0 `vtbl:NiPSysFieldModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6367,6 +6610,7 @@ pub struct NiPSysFieldModifier {
     /// +0x48 `float`, ctor store
     pub field_48: f32,
     pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysFieldModifier>() == 0x50);
@@ -6389,6 +6633,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysFieldModifier, field_48) == 0x
 #[repr(C)]
 pub struct NiPSysGravityFieldModifier {
     /// +0x0 `vtbl:NiPSysGravityFieldModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysGravityFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6429,6 +6674,7 @@ pub struct NiPSysGravityFieldModifier {
     pub field_60: f32,
     /// +0x64 `float`, ctor store
     pub field_64: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, __vftable) == 0x0);
@@ -6456,6 +6702,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_64
 #[repr(C)]
 pub struct NiPSysGravityModifier {
     /// +0x0 `vtbl:NiPSysGravityModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysGravityModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6491,6 +6738,7 @@ pub struct NiPSysGravityModifier {
     /// +0x58 `undefined1`, ctor store
     pub field_58: u8,
     pub unknown_59: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysGravityModifier>() == 0x60);
@@ -6518,6 +6766,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysGravityModifier, field_58) == 
 #[repr(C, packed)]
 pub struct NiPSysGravityStrengthCtlr {
     /// +0x0 `vtbl:NiPSysGravityStrengthCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysGravityStrengthCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6550,6 +6799,7 @@ pub struct NiPSysGravityStrengthCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysGravityStrengthCtlr>() == 0x60);
@@ -6575,6 +6825,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_58)
 #[repr(C)]
 pub struct NiPSysGrowFadeModifier {
     /// +0x0 `vtbl:NiPSysGrowFadeModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysGrowFadeModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6602,6 +6853,7 @@ pub struct NiPSysGrowFadeModifier {
     /// +0x40 `float`, ctor store (widths [4, 4])
     pub field_40: f32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysGrowFadeModifier, __vftable) == 0x0);
@@ -6623,6 +6875,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysGrowFadeModifier, field_40) ==
 #[repr(C, packed)]
 pub struct NiPSysInitialRotAngleCtlr {
     /// +0x0 `vtbl:NiPSysInitialRotAngleCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotAngleCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6655,6 +6908,7 @@ pub struct NiPSysInitialRotAngleCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, __vftable) == 0x0);
@@ -6680,6 +6934,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_58)
 #[repr(C, packed)]
 pub struct NiPSysInitialRotAngleVarCtlr {
     /// +0x0 `vtbl:NiPSysInitialRotAngleVarCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotAngleVarCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6712,6 +6967,7 @@ pub struct NiPSysInitialRotAngleVarCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, __vftable) == 0x0);
@@ -6737,6 +6993,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_
 #[repr(C, packed)]
 pub struct NiPSysInitialRotSpeedCtlr {
     /// +0x0 `vtbl:NiPSysInitialRotSpeedCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotSpeedCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6769,6 +7026,7 @@ pub struct NiPSysInitialRotSpeedCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, __vftable) == 0x0);
@@ -6794,6 +7052,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_58)
 #[repr(C, packed)]
 pub struct NiPSysInitialRotSpeedVarCtlr {
     /// +0x0 `vtbl:NiPSysInitialRotSpeedVarCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotSpeedVarCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6826,6 +7085,7 @@ pub struct NiPSysInitialRotSpeedVarCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, __vftable) == 0x0);
@@ -6850,6 +7110,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_
 #[repr(C)]
 pub struct NiPSysMeshEmitter {
     /// +0x0 `vtbl:NiPSysMeshEmitter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysMeshEmitter_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6917,6 +7178,7 @@ pub struct NiPSysMeshEmitter {
     /// +0xB0 `float`, ctor store (widths [4, 4])
     pub field_B0: f32,
     pub unknown_B4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysMeshEmitter>() == 0xB8);
@@ -6959,6 +7221,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysMeshEmitter, field_B0) == 0xB0
 #[repr(C)]
 pub struct NiPSysMeshUpdateModifier {
     /// +0x0 `vtbl:NiPSysMeshUpdateModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysMeshUpdateModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -6981,6 +7244,7 @@ pub struct NiPSysMeshUpdateModifier {
     pub field_40: u32,
     /// +0x44 `undefined4`, ctor store
     pub field_44: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysMeshUpdateModifier>() == 0x48);
@@ -7001,6 +7265,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysMeshUpdateModifier, field_44) 
 #[repr(C)]
 pub struct NiPSysModifier {
     /// +0x0 `vtbl:NiPSysModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7015,6 +7280,7 @@ pub struct NiPSysModifier {
     /// +0x28 `undefined1`, ctor store
     pub field_28: u8,
     pub unknown_29: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysModifier>() == 0x30);
@@ -7032,6 +7298,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifier, field_28) == 0x28);
 #[repr(C, packed)]
 pub struct NiPSysModifierActiveCtlr {
     /// +0x0 `vtbl:NiPSysModifierActiveCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifierActiveCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7064,6 +7331,7 @@ pub struct NiPSysModifierActiveCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysModifierActiveCtlr>() == 0x60);
@@ -7090,6 +7358,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_58) 
 #[repr(C, packed)]
 pub struct NiPSysModifierBoolCtlr {
     /// +0x0 `vtbl:NiPSysModifierBoolCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifierBoolCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7122,6 +7391,7 @@ pub struct NiPSysModifierBoolCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysModifierBoolCtlr>() == 0x60);
@@ -7148,6 +7418,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_58) ==
 #[repr(C, packed)]
 pub struct NiPSysModifierCtlr {
     /// +0x0 `vtbl:NiPSysModifierCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifierCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7180,6 +7451,7 @@ pub struct NiPSysModifierCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysModifierCtlr>() == 0x60);
@@ -7206,6 +7478,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_58) == 0x5
 #[repr(C, packed)]
 pub struct NiPSysModifierFloatCtlr {
     /// +0x0 `vtbl:NiPSysModifierFloatCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifierFloatCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7238,6 +7511,7 @@ pub struct NiPSysModifierFloatCtlr {
     pub field_50: u64,
     /// +0x58 `undefined8`, base NiPSysModifierCtlr
     pub field_58: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysModifierFloatCtlr>() == 0x60);
@@ -7264,6 +7538,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_58) =
 #[repr(C, packed)]
 pub struct NiPSysPlanarCollider {
     /// +0x0 `vtbl:NiPSysPlanarCollider:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysPlanarCollider_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7335,6 +7610,7 @@ pub struct NiPSysPlanarCollider {
     /// +0x110 `undefined4`, ctor store
     pub field_110: u32,
     pub unknown_114: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysPlanarCollider>() == 0x118);
@@ -7378,6 +7654,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_110) == 
 #[repr(C)]
 pub struct NiPSysPositionModifier {
     /// +0x0 `vtbl:NiPSysPositionModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysPositionModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7392,6 +7669,7 @@ pub struct NiPSysPositionModifier {
     /// +0x28 `undefined1`, base NiPSysModifier
     pub field_28: u8,
     pub unknown_29: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysPositionModifier>() == 0x30);
@@ -7408,6 +7686,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysPositionModifier, field_28) ==
 #[repr(C)]
 pub struct NiPSysRadialFieldModifier {
     /// +0x0 `vtbl:NiPSysRadialFieldModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysRadialFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7439,6 +7718,7 @@ pub struct NiPSysRadialFieldModifier {
     /// +0x50 `float`, ctor store (widths [4, 4])
     pub field_50: f32,
     pub unknown_54: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysRadialFieldModifier, __vftable) == 0x0);
@@ -7462,6 +7742,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysRadialFieldModifier, field_50)
 #[repr(C, packed)]
 pub struct NiPSysResetOnLoopCtlr {
     /// +0x0 `vtbl:NiPSysResetOnLoopCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysResetOnLoopCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7491,6 +7772,7 @@ pub struct NiPSysResetOnLoopCtlr {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, __vftable) == 0x0);
@@ -7513,6 +7795,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_48) == 
 #[repr(C)]
 pub struct NiPSysRotationModifier {
     /// +0x0 `vtbl:NiPSysRotationModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysRotationModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7546,6 +7829,7 @@ pub struct NiPSysRotationModifier {
     /// +0x4D `undefined1`, ctor store
     pub field_4D: u8,
     pub unknown_4E: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysRotationModifier>() == 0x50);
@@ -7571,6 +7855,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysRotationModifier, field_4D) ==
 #[repr(C)]
 pub struct NiPSysSpawnModifier {
     /// +0x0 `vtbl:NiPSysSpawnModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysSpawnModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7603,6 +7888,7 @@ pub struct NiPSysSpawnModifier {
     /// +0x48 `float`, ctor store (widths [4, 4])
     pub field_48: f32,
     pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysSpawnModifier>() == 0x50);
@@ -7627,6 +7913,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysSpawnModifier, field_48) == 0x
 #[repr(C)]
 pub struct NiPSysSphereEmitter {
     /// +0x0 `vtbl:NiPSysSphereEmitter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysSphereEmitter_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7672,6 +7959,7 @@ pub struct NiPSysSphereEmitter {
     /// +0x78 `float`, ctor store (widths [4, 4])
     pub field_78: f32,
     pub unknown_7C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysSphereEmitter>() == 0x80);
@@ -7703,6 +7991,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysSphereEmitter, field_78) == 0x
 #[repr(C)]
 pub struct NiPSysSphericalCollider {
     /// +0x0 `vtbl:NiPSysSphericalCollider:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysSphericalCollider_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7769,6 +8058,7 @@ pub struct NiPSysSphericalCollider {
     pub field_C0: u32,
     /// +0xC4 `undefined4`, ctor store
     pub field_C4: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysSphericalCollider>() == 0xC8);
@@ -7811,6 +8101,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_C4) =
 #[repr(C)]
 pub struct NiPSysTurbulenceFieldModifier {
     /// +0x0 `vtbl:NiPSysTurbulenceFieldModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysTurbulenceFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7846,6 +8137,7 @@ pub struct NiPSysTurbulenceFieldModifier {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysTurbulenceFieldModifier, __vftable) == 0x0);
@@ -7871,6 +8163,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysTurbulenceFieldModifier, field
 #[repr(C, packed)]
 pub struct NiPSysUpdateCtlr {
     /// +0x0 `vtbl:NiPSysUpdateCtlr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysUpdateCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7897,6 +8190,7 @@ pub struct NiPSysUpdateCtlr {
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysUpdateCtlr>() == 0x48);
@@ -7919,6 +8213,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_40) == 0x40)
 #[repr(C)]
 pub struct NiPSysVolumeEmitter {
     /// +0x0 `vtbl:NiPSysVolumeEmitter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysVolumeEmitter_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -7961,6 +8256,7 @@ pub struct NiPSysVolumeEmitter {
     pub field_6C: u32,
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPSysVolumeEmitter>() == 0x78);
@@ -7991,6 +8287,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysVolumeEmitter, field_70) == 0x
 #[repr(C)]
 pub struct NiPSysVortexFieldModifier {
     /// +0x0 `vtbl:NiPSysVortexFieldModifier:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysVortexFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8026,6 +8323,7 @@ pub struct NiPSysVortexFieldModifier {
     /// +0x58 `float`, ctor store (widths [4, 4])
     pub field_58: f32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, __vftable) == 0x0);
@@ -8050,6 +8348,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, field_58)
 #[repr(C)]
 pub struct NiParticleMeshes {
     /// +0x0 `vtbl:NiParticleMeshes:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticleMeshes_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8125,6 +8424,7 @@ pub struct NiParticleMeshes {
     /// +0x16C `undefined1`, ctor store
     pub field_16C: u8,
     pub unknown_16D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiParticleMeshes>() == 0x170);
@@ -8170,6 +8470,7 @@ const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_16C) == 0x16
 #[repr(C)]
 pub struct NiParticleMeshesData {
     /// +0x0 `vtbl:NiParticleMeshesData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticleMeshesData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8224,6 +8525,7 @@ pub struct NiParticleMeshesData {
     pub unknown_8A: [u8; 6],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiParticleMeshesData>() == 0x98);
@@ -8259,6 +8561,7 @@ const _: () = assert!(core::mem::offset_of!(NiParticleMeshesData, field_90) == 0
 #[repr(C)]
 pub struct NiParticleSystem {
     /// +0x0 `vtbl:NiParticleSystem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticleSystem_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8349,6 +8652,7 @@ pub struct NiParticleSystem {
     /// +0x192 `undefined1`, ctor store
     pub field_192: u8,
     pub unknown_193: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiParticleSystem>() == 0x198);
@@ -8401,6 +8705,7 @@ const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_192) == 0x19
 #[repr(C)]
 pub struct NiParticles {
     /// +0x0 `vtbl:NiParticles:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticles_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8471,6 +8776,7 @@ pub struct NiParticles {
     pub field_158: u64,
     /// +0x160 `undefined8`, ctor store
     pub field_160: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiParticles>() == 0x168);
@@ -8514,6 +8820,7 @@ const _: () = assert!(core::mem::offset_of!(NiParticles, field_160) == 0x160);
 #[repr(C)]
 pub struct NiParticlesData {
     /// +0x0 `vtbl:NiParticlesData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticlesData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8566,6 +8873,7 @@ pub struct NiParticlesData {
     /// +0x88 `undefined2`, ctor store
     pub field_88: u16,
     pub unknown_8A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiParticlesData>() == 0x90);
@@ -8601,6 +8909,7 @@ const _: () = assert!(core::mem::offset_of!(NiParticlesData, field_88) == 0x88);
 #[repr(C, packed)]
 pub struct NiPathController {
     /// +0x0 `vtbl:NiPathController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPathController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8650,6 +8959,7 @@ pub struct NiPathController {
     pub field_80: u32,
     /// +0x84 `undefined4`, ctor store
     pub field_84: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPathController>() == 0x88);
@@ -8683,6 +8993,7 @@ const _: () = assert!(core::mem::offset_of!(NiPathController, field_84) == 0x84)
 #[repr(C, packed)]
 pub struct NiPathInterpolator {
     /// +0x0 `vtbl:NiPathInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPathInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8723,6 +9034,7 @@ pub struct NiPathInterpolator {
     pub field_70: f32,
     /// +0x74 `undefined4`, ctor store
     pub field_74: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPathInterpolator>() == 0x78);
@@ -8751,7 +9063,9 @@ const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_74) == 0x7
 #[repr(C)]
 pub struct NiPick__Results {
     /// +0x0 `vtbl:NiPick::Results:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPick__Results_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPick__Results, __vftable) == 0x0);
@@ -8763,6 +9077,7 @@ const _: () = assert!(core::mem::offset_of!(NiPick__Results, __vftable) == 0x0);
 #[repr(C, packed)]
 pub struct NiPoint3InterpController {
     /// +0x0 `vtbl:NiPoint3InterpController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPoint3InterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8791,6 +9106,7 @@ pub struct NiPoint3InterpController {
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint3InterpController>() == 0x50);
@@ -8814,6 +9130,7 @@ const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_48) 
 #[repr(C)]
 pub struct NiPoint3Interpolator {
     /// +0x0 `vtbl:NiPoint3Interpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPoint3Interpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8833,6 +9150,7 @@ pub struct NiPoint3Interpolator {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint3Interpolator>() == 0x38);
@@ -8852,6 +9170,7 @@ const _: () = assert!(core::mem::offset_of!(NiPoint3Interpolator, field_30) == 0
 #[repr(C, packed)]
 pub struct NiPointLight {
     /// +0x0 `vtbl:NiPointLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPointLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8922,6 +9241,7 @@ pub struct NiPointLight {
     /// +0x144 `undefined8`, ctor store
     pub field_144: u64,
     pub unknown_14C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPointLight>() == 0x150);
@@ -8965,10 +9285,12 @@ const _: () = assert!(core::mem::offset_of!(NiPointLight, field_144) == 0x144);
 #[repr(C)]
 pub struct NiPosData {
     /// +0x0 `vtbl:NiPosData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPosData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 28],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPosData>() == 0x28);
@@ -8981,6 +9303,7 @@ const _: () = assert!(core::mem::offset_of!(NiPosData, field_8) == 0x8);
 #[repr(C)]
 pub struct NiProperty {
     /// +0x0 `vtbl:NiProperty:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -8996,6 +9319,7 @@ pub struct NiProperty {
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiProperty>() == 0x30);
@@ -9013,6 +9337,7 @@ const _: () = assert!(core::mem::offset_of!(NiProperty, extraDataCapacity) == 0x
 #[repr(C)]
 pub struct NiQuaternionInterpolator {
     /// +0x0 `vtbl:NiQuaternionInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiQuaternionInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9027,6 +9352,7 @@ pub struct NiQuaternionInterpolator {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiQuaternionInterpolator, __vftable) == 0x0);
@@ -9041,7 +9367,9 @@ const _: () = assert!(core::mem::offset_of!(NiQuaternionInterpolator, field_30) 
 #[repr(C)]
 pub struct NiRefObject {
     /// +0x0 `vtbl:NiRefObject:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiRefObject_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiRefObject>() == 0x8);
@@ -9054,6 +9382,7 @@ const _: () = assert!(core::mem::offset_of!(NiRefObject, __vftable) == 0x0);
 #[repr(C, packed)]
 pub struct NiRollController {
     /// +0x0 `vtbl:NiRollController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiRollController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9083,6 +9412,7 @@ pub struct NiRollController {
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base NiFloatController
     pub field_50: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiRollController, __vftable) == 0x0);
@@ -9105,6 +9435,7 @@ const _: () = assert!(core::mem::offset_of!(NiRollController, field_50) == 0x50)
 #[repr(C)]
 pub struct NiRotData {
     /// +0x0 `vtbl:NiRotData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiRotData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9119,6 +9450,7 @@ pub struct NiRotData {
     /// +0x24 `undefined1`, ctor store
     pub field_24: u8,
     pub unknown_25: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiRotData, __vftable) == 0x0);
@@ -9133,6 +9465,7 @@ const _: () = assert!(core::mem::offset_of!(NiRotData, field_24) == 0x24);
 #[repr(C)]
 pub struct NiSearchPath {
     /// +0x0 `vtbl:NiSearchPath:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSearchPath_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -9142,6 +9475,7 @@ pub struct NiSearchPath {
     /// +0x110 `undefined1`, ctor store
     pub field_110: u8,
     pub unknown_111: [u8; 263],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSearchPath>() == 0x218);
@@ -9156,6 +9490,7 @@ const _: () = assert!(core::mem::offset_of!(NiSearchPath, field_110) == 0x110);
 #[repr(C)]
 pub struct NiSequence {
     /// +0x0 `vtbl:NiSequence:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSequence_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9183,6 +9518,7 @@ pub struct NiSequence {
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
     pub unknown_54: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiSequence, __vftable) == 0x0);
@@ -9205,6 +9541,7 @@ const _: () = assert!(core::mem::offset_of!(NiSequence, field_50) == 0x50);
 #[repr(C)]
 pub struct NiSequenceStreamHelper {
     /// +0x0 `vtbl:NiSequenceStreamHelper:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSequenceStreamHelper_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9220,6 +9557,7 @@ pub struct NiSequenceStreamHelper {
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, __vftable) == 0x0);
@@ -9236,6 +9574,7 @@ const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, extraDataCap
 #[repr(C)]
 pub struct NiShadeProperty {
     /// +0x0 `vtbl:NiShadeProperty:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiShadeProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9251,6 +9590,7 @@ pub struct NiShadeProperty {
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiShadeProperty>() == 0x30);
@@ -9269,6 +9609,7 @@ const _: () = assert!(core::mem::offset_of!(NiShadeProperty, extraDataCapacity) 
 #[repr(C, packed)]
 pub struct NiSingleInterpController {
     /// +0x0 `vtbl:NiSingleInterpController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSingleInterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9297,6 +9638,7 @@ pub struct NiSingleInterpController {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSingleInterpController>() == 0x50);
@@ -9320,6 +9662,7 @@ const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_48) 
 #[repr(C)]
 pub struct NiSourceTexture {
     /// +0x0 `vtbl:NiSourceTexture:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSourceTexture_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9347,6 +9690,7 @@ pub struct NiSourceTexture {
     /// +0x50 `undefined1`, ctor store
     pub field_50: u8,
     pub unknown_51: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSourceTexture>() == 0x58);
@@ -9369,6 +9713,7 @@ const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_50) == 0x50);
 #[repr(C)]
 pub struct NiSphereBV {
     /// +0x0 `vtbl:NiSphereBV:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSphereBV_vtable,
     /// +0x8 `float`, ctor store (widths [4, 4])
     pub field_8: f32,
@@ -9378,6 +9723,7 @@ pub struct NiSphereBV {
     pub field_10: f32,
     /// +0x14 `float`, ctor store (widths [4, 4])
     pub field_14: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiSphereBV, __vftable) == 0x0);
@@ -9392,6 +9738,7 @@ const _: () = assert!(core::mem::offset_of!(NiSphereBV, field_14) == 0x14);
 #[repr(C)]
 pub struct NiSphereTriIntersector {
     /// +0x0 `vtbl:NiSphereTriIntersector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSphereTriIntersector_vtable,
     /// +0x8 `float`, base NiIntersector
     pub field_8: f32,
@@ -9446,6 +9793,7 @@ pub struct NiSphereTriIntersector {
     pub field_70: u32,
     /// +0x74 `undefined4`, ctor store
     pub field_74: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, __vftable) == 0x0);
@@ -9483,6 +9831,7 @@ const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_74) ==
 #[repr(C, packed)]
 pub struct NiSpotLight {
     /// +0x0 `vtbl:NiSpotLight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSpotLight_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9561,6 +9910,7 @@ pub struct NiSpotLight {
     pub field_160: u32,
     /// +0x164 `undefined4`, ctor store
     pub field_164: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSpotLight>() == 0x168);
@@ -9608,7 +9958,9 @@ const _: () = assert!(core::mem::offset_of!(NiSpotLight, field_164) == 0x164);
 #[repr(C)]
 pub struct NiStandardAllocator {
     /// +0x0 `vtbl:NiStandardAllocator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStandardAllocator_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiStandardAllocator, __vftable) == 0x0);
@@ -9619,6 +9971,7 @@ const _: () = assert!(core::mem::offset_of!(NiStandardAllocator, __vftable) == 0
 #[repr(C, packed)]
 pub struct NiStream {
     /// +0x0 `vtbl:NiStream:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStream_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -9731,6 +10084,7 @@ pub struct NiStream {
     /// +0x414 `undefined1`, ctor store
     pub field_414: u8,
     pub unknown_415: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiStream, __vftable) == 0x0);
@@ -9790,7 +10144,9 @@ const _: () = assert!(core::mem::offset_of!(NiStream, field_414) == 0x414);
 #[repr(C)]
 pub struct NiStream__BackgroundLoadProcedure {
     /// +0x0 `vtbl:NiStream::BackgroundLoadProcedure:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStream__BackgroundLoadProcedure_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiStream__BackgroundLoadProcedure, __vftable) == 0x0);
@@ -9801,10 +10157,12 @@ const _: () = assert!(core::mem::offset_of!(NiStream__BackgroundLoadProcedure, _
 #[repr(C)]
 pub struct NiStringPalette {
     /// +0x0 `vtbl:NiStringPalette:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStringPalette_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiStringPalette, __vftable) == 0x0);
@@ -9816,6 +10174,7 @@ const _: () = assert!(core::mem::offset_of!(NiStringPalette, field_8) == 0x8);
 #[repr(C)]
 pub struct NiStringsExtraData {
     /// +0x0 `vtbl:NiStringsExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStringsExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9827,6 +10186,7 @@ pub struct NiStringsExtraData {
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiStringsExtraData>() == 0x28);
@@ -9842,6 +10202,7 @@ const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, field_20) == 0x2
 #[repr(C)]
 pub struct NiSwitchNode {
     /// +0x0 `vtbl:NiSwitchNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSwitchNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9904,6 +10265,7 @@ pub struct NiSwitchNode {
     pub field_148: u32,
     /// +0x14C `undefined4`, ctor store
     pub field_14C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSwitchNode>() == 0x150);
@@ -9943,6 +10305,7 @@ const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_14C) == 0x14C);
 #[repr(C)]
 pub struct NiSwitchStringExtraData {
     /// +0x0 `vtbl:NiSwitchStringExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSwitchStringExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -9957,6 +10320,7 @@ pub struct NiSwitchStringExtraData {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, __vftable) == 0x0);
@@ -9971,7 +10335,9 @@ const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, field_28) =
 #[repr(C)]
 pub struct NiTArray_BGSAddonNode____ptr64_NiTMallocInterface_BGSAddonNode____ptr64__ {
     /// +0x0 `vtbl:NiTArray<BGSAddonNode*___ptr64,NiTMallocInterface<BGSAddonNode*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_BGSAddonNode____ptr64_NiTMallocInterface_BGSAddonNode____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_BGSAddonNode____ptr64_NiTMallocInterface_BGSAddonNode____ptr64__, __vftable) == 0x0);
@@ -9981,7 +10347,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_BGSAddonNode____ptr64_NiTMa
 #[repr(C)]
 pub struct NiTArray_BGSCameraPath____ptr64_NiTMallocInterface_BGSCameraPath____ptr64__ {
     /// +0x0 `vtbl:NiTArray<BGSCameraPath*___ptr64,NiTMallocInterface<BGSCameraPath*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_BGSCameraPath____ptr64_NiTMallocInterface_BGSCameraPath____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_BGSCameraPath____ptr64_NiTMallocInterface_BGSCameraPath____ptr64__, __vftable) == 0x0);
@@ -9991,11 +10359,13 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_BGSCameraPath____ptr64_NiTM
 #[repr(C)]
 pub struct NiTArray_BSAnimNoteListener__BSAnimReceiverType____ptr64_NiTMallocInterface_BSAnimNoteListener___4e46c9b8682f {
     /// +0x0 `vtbl:NiTArray<BSAnimNoteListener::BSAnimReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteListener::BSAnimReceiverType*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_BSAnimNoteListener__BSAnimReceiverType____ptr64_NiTMallocInterface_BSAnimNoteListener___4e46c9b8682f_vtable,
     pub unknown_8: [u8; 10],
     /// +0x12 `undefined2`, ctor store
     pub field_12: u16,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTArray_BSAnimNoteListener__BSAnimReceiverType____ptr64_NiTMallocInterface_BSAnimNoteListener___4e46c9b8682f>() == 0x18);
@@ -10007,7 +10377,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_BSAnimNoteListener__BSAnimR
 #[repr(C)]
 pub struct NiTArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64_NiTMallocInterface_BSAnimNoteReceiv_05209fee2a29 {
     /// +0x0 `vtbl:NiTArray<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64,NiTMallocInterface<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64_NiTMallocInterface_BSAnimNoteReceiv_05209fee2a29_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64_NiTMallocInterface_BSAnimNoteReceiv_05209fee2a29, __vftable) == 0x0);
@@ -10017,7 +10389,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_BSAnimNoteReceiver__BSAnimN
 #[repr(C)]
 pub struct NiTArray_BSGraphics__TextureFilterMode_NiTMallocInterface_BSGraphics__TextureFilterMode__ {
     /// +0x0 `vtbl:NiTArray<BSGraphics::TextureFilterMode,NiTMallocInterface<BSGraphics::TextureFilterMode>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_BSGraphics__TextureFilterMode_NiTMallocInterface_BSGraphics__TextureFilterMode___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_BSGraphics__TextureFilterMode_NiTMallocInterface_BSGraphics__TextureFilterMode__, __vftable) == 0x0);
@@ -10027,7 +10401,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_BSGraphics__TextureFilterMo
 #[repr(C)]
 pub struct NiTArray_CombatGroup____ptr64_NiTMallocInterface_CombatGroup____ptr64__ {
     /// +0x0 `vtbl:NiTArray<CombatGroup*___ptr64,NiTMallocInterface<CombatGroup*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_CombatGroup____ptr64_NiTMallocInterface_CombatGroup____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTArray_CombatGroup____ptr64_NiTMallocInterface_CombatGroup____ptr64__>() == 0x8);
@@ -10038,7 +10414,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_CombatGroup____ptr64_NiTMal
 #[repr(C)]
 pub struct NiTArray_ImageSpaceEffect____ptr64_NiTMallocInterface_ImageSpaceEffect____ptr64__ {
     /// +0x0 `vtbl:NiTArray<ImageSpaceEffect*___ptr64,NiTMallocInterface<ImageSpaceEffect*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_ImageSpaceEffect____ptr64_NiTMallocInterface_ImageSpaceEffect____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_ImageSpaceEffect____ptr64_NiTMallocInterface_ImageSpaceEffect____ptr64__, __vftable) == 0x0);
@@ -10048,7 +10426,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_ImageSpaceEffect____ptr64_N
 #[repr(C)]
 pub struct NiTArray_ImageSpaceEffect__EffectInput____ptr64_NiTMallocInterface_ImageSpaceEffect__EffectInput____ptr64__ {
     /// +0x0 `vtbl:NiTArray<ImageSpaceEffect::EffectInput*___ptr64,NiTMallocInterface<ImageSpaceEffect::EffectInput*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_ImageSpaceEffect__EffectInput____ptr64_NiTMallocInterface_ImageSpaceEffect__EffectInput____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_ImageSpaceEffect__EffectInput____ptr64_NiTMallocInterface_ImageSpaceEffect__EffectInput____ptr64__, __vftable) == 0x0);
@@ -10058,7 +10438,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_ImageSpaceEffect__EffectInp
 #[repr(C)]
 pub struct NiTArray_ImageSpaceEffectParam____ptr64_NiTMallocInterface_ImageSpaceEffectParam____ptr64__ {
     /// +0x0 `vtbl:NiTArray<ImageSpaceEffectParam*___ptr64,NiTMallocInterface<ImageSpaceEffectParam*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_ImageSpaceEffectParam____ptr64_NiTMallocInterface_ImageSpaceEffectParam____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_ImageSpaceEffectParam____ptr64_NiTMallocInterface_ImageSpaceEffectParam____ptr64__, __vftable) == 0x0);
@@ -10068,7 +10450,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_ImageSpaceEffectParam____pt
 #[repr(C)]
 pub struct NiTArray_ImageSpaceTexture____ptr64_NiTMallocInterface_ImageSpaceTexture____ptr64__ {
     /// +0x0 `vtbl:NiTArray<ImageSpaceTexture*___ptr64,NiTMallocInterface<ImageSpaceTexture*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_ImageSpaceTexture____ptr64_NiTMallocInterface_ImageSpaceTexture____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_ImageSpaceTexture____ptr64_NiTMallocInterface_ImageSpaceTexture____ptr64__, __vftable) == 0x0);
@@ -10078,7 +10462,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_ImageSpaceTexture____ptr64_
 #[repr(C)]
 pub struct NiTArray_NiAVObject____ptr64_NiTMallocInterface_NiAVObject____ptr64__ {
     /// +0x0 `vtbl:NiTArray<NiAVObject*___ptr64,NiTMallocInterface<NiAVObject*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiAVObject____ptr64_NiTMallocInterface_NiAVObject____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiAVObject____ptr64_NiTMallocInterface_NiAVObject____ptr64__, __vftable) == 0x0);
@@ -10088,7 +10474,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiAVObject____ptr64_NiTMall
 #[repr(C)]
 pub struct NiTArray_NiBoundingVolume____ptr64_NiTMallocInterface_NiBoundingVolume____ptr64__ {
     /// +0x0 `vtbl:NiTArray<NiBoundingVolume*___ptr64,NiTMallocInterface<NiBoundingVolume*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiBoundingVolume____ptr64_NiTMallocInterface_NiBoundingVolume____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiBoundingVolume____ptr64_NiTMallocInterface_NiBoundingVolume____ptr64__, __vftable) == 0x0);
@@ -10098,7 +10486,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiBoundingVolume____ptr64_N
 #[repr(C)]
 pub struct NiTArray_NiPick__Record____ptr64_NiTScrapHeapInterface_NiPick__Record____ptr64__ {
     /// +0x0 `vtbl:NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPick__Record____ptr64_NiTScrapHeapInterface_NiPick__Record____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPick__Record____ptr64_NiTScrapHeapInterface_NiPick__Record____ptr64__, __vftable) == 0x0);
@@ -10108,7 +10498,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPick__Record____ptr64_NiT
 #[repr(C)]
 pub struct NiTArray_NiPointer_BSTriShape_NiTNewInterface_NiPointer_BSTriShape____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_BSTriShape_NiTNewInterface_NiPointer_BSTriShape_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_BSTriShape_NiTNewInterface_NiPointer_BSTriShape____, __vftable) == 0x0);
@@ -10118,7 +10510,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_BSTriShape_NiTNew
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiAVObject_NiTMallocInterface_NiPointer_NiAVObject____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiAVObject_NiTMallocInterface_NiPointer_NiAVObject_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiAVObject_NiTMallocInterface_NiPointer_NiAVObject____, __vftable) == 0x0);
@@ -10128,7 +10522,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiAVObject_NiTMal
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiAVObject_NiTNewInterface_NiPointer_NiAVObject____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiAVObject_NiTNewInterface_NiPointer_NiAVObject_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiAVObject_NiTNewInterface_NiPointer_NiAVObject____, __vftable) == 0x0);
@@ -10138,7 +10534,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiAVObject_NiTNew
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiControllerSequence_NiTNewInterface_NiPointer_NiControllerSequence____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiControllerSequence_NiTNewInterface_NiPointer_NiControllerSequence_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiControllerSequence_NiTNewInterface_NiPointer_NiControllerSequence____, __vftable) == 0x0);
@@ -10148,7 +10546,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiControllerSeque
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiGeometry_NiTNewInterface_NiPointer_NiGeometry____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiGeometry_NiTNewInterface_NiPointer_NiGeometry_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiGeometry_NiTNewInterface_NiPointer_NiGeometry____, __vftable) == 0x0);
@@ -10158,7 +10558,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiGeometry_NiTNew
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiMetricsOutputModule_NiTNewInterface_NiPointer_NiMetricsOutputModule____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiMetricsOutputModule_NiTNewInterface_NiPointer_NiMetricsOutputModule_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiMetricsOutputModule_NiTNewInterface_NiPointer_NiMetricsOutputModule____, __vftable) == 0x0);
@@ -10168,7 +10570,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiMetricsOutputMo
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiNode_NiTNewInterface_NiPointer_NiNode____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiNode_NiTNewInterface_NiPointer_NiNode_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiNode_NiTNewInterface_NiPointer_NiNode____, __vftable) == 0x0);
@@ -10178,7 +10582,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiNode_NiTNewInte
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiRefObject_NiTNewInterface_NiPointer_NiRefObject____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiRefObject_NiTNewInterface_NiPointer_NiRefObject_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiRefObject_NiTNewInterface_NiPointer_NiRefObject____, __vftable) == 0x0);
@@ -10188,7 +10594,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiRefObject_NiTNe
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiTexture_NiTNewInterface_NiPointer_NiTexture____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiTexture_NiTNewInterface_NiPointer_NiTexture_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiTexture_NiTNewInterface_NiPointer_NiTexture____, __vftable) == 0x0);
@@ -10198,7 +10606,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiTexture_NiTNewI
 #[repr(C)]
 pub struct NiTArray_NiPointer_NiTransformController_NiTNewInterface_NiPointer_NiTransformController____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_NiTransformController_NiTNewInterface_NiPointer_NiTransformController_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiTransformController_NiTNewInterface_NiPointer_NiTransformController____, __vftable) == 0x0);
@@ -10208,7 +10618,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_NiTransformContro
 #[repr(C)]
 pub struct NiTArray_NiPointer_bhkRigidBody_NiTNewInterface_NiPointer_bhkRigidBody____ {
     /// +0x0 `vtbl:NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiPointer_bhkRigidBody_NiTNewInterface_NiPointer_bhkRigidBody_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_bhkRigidBody_NiTNewInterface_NiPointer_bhkRigidBody____, __vftable) == 0x0);
@@ -10218,7 +10630,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiPointer_bhkRigidBody_NiTN
 #[repr(C)]
 pub struct NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInterface_NiTObjectArray_NiPoin_6beaedd6e5e3 {
     /// +0x0 `vtbl:NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInterface_NiTObjectArray_NiPoin_6beaedd6e5e3_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInterface_NiTObjectArray_NiPoin_6beaedd6e5e3, __vftable) == 0x0);
@@ -10228,7 +10642,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiTObjectArray_NiPointer_Ni
 #[repr(C)]
 pub struct NiTArray_NiTPrimitiveSet_NiNode____ptr64____ptr64_NiTMallocInterface_NiTPrimitiveSet_NiNode____ptr64____ptr64__ {
     /// +0x0 `vtbl:NiTArray<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64,NiTMallocInterface<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_NiTPrimitiveSet_NiNode____ptr64____ptr64_NiTMallocInterface_NiTPrimitiveSet_NiNode____ptr64____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_NiTPrimitiveSet_NiNode____ptr64____ptr64_NiTMallocInterface_NiTPrimitiveSet_NiNode____ptr64____ptr64__, __vftable) == 0x0);
@@ -10238,7 +10654,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_NiTPrimitiveSet_NiNode____p
 #[repr(C)]
 pub struct NiTArray_TESObjectCELL____ptr64_NiTMallocInterface_TESObjectCELL____ptr64__ {
     /// +0x0 `vtbl:NiTArray<TESObjectCELL*___ptr64,NiTMallocInterface<TESObjectCELL*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_TESObjectCELL____ptr64_NiTMallocInterface_TESObjectCELL____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_TESObjectCELL____ptr64_NiTMallocInterface_TESObjectCELL____ptr64__, __vftable) == 0x0);
@@ -10248,7 +10666,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_TESObjectCELL____ptr64_NiTM
 #[repr(C)]
 pub struct NiTArray_bool_NiTMallocInterface_bool__ {
     /// +0x0 `vtbl:NiTArray<bool,NiTMallocInterface<bool>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_bool_NiTMallocInterface_bool___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_bool_NiTMallocInterface_bool__, __vftable) == 0x0);
@@ -10258,7 +10678,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_bool_NiTMallocInterface_boo
 #[repr(C)]
 pub struct NiTArray_char____ptr64_NiTMallocInterface_char____ptr64__ {
     /// +0x0 `vtbl:NiTArray<char*___ptr64,NiTMallocInterface<char*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_char____ptr64_NiTMallocInterface_char____ptr64___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_char____ptr64_NiTMallocInterface_char____ptr64__, __vftable) == 0x0);
@@ -10268,7 +10690,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_char____ptr64_NiTMallocInte
 #[repr(C)]
 pub struct NiTArray_int_NiTMallocInterface_int__ {
     /// +0x0 `vtbl:NiTArray<int,NiTMallocInterface<int>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_int_NiTMallocInterface_int___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_int_NiTMallocInterface_int__, __vftable) == 0x0);
@@ -10278,7 +10702,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_int_NiTMallocInterface_int_
 #[repr(C)]
 pub struct NiTArray_unsigned_int_NiTMallocInterface_unsigned_int__ {
     /// +0x0 `vtbl:NiTArray<unsigned_int,NiTMallocInterface<unsigned_int>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_unsigned_int_NiTMallocInterface_unsigned_int___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_unsigned_int_NiTMallocInterface_unsigned_int__, __vftable) == 0x0);
@@ -10288,7 +10714,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_unsigned_int_NiTMallocInter
 #[repr(C)]
 pub struct NiTArray_unsigned_short_NiTMallocInterface_unsigned_short__ {
     /// +0x0 `vtbl:NiTArray<unsigned_short,NiTMallocInterface<unsigned_short>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_unsigned_short_NiTMallocInterface_unsigned_short___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTArray_unsigned_short_NiTMallocInterface_unsigned_short__, __vftable) == 0x0);
@@ -10298,8 +10726,10 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_unsigned_short_NiTMallocInt
 #[repr(C)]
 pub struct NiTArray_void____cdecl_NiStream____ptr64_NiObject____ptr64_NiTMallocInterface_void____cdecl_NiSt_d3b4c6c0bccf {
     /// +0x0 `vtbl:NiTArray<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64),NiTMallocInterface<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64)>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTArray_void____cdecl_NiStream____ptr64_NiObject____ptr64_NiTMallocInterface_void____cdecl_NiSt_d3b4c6c0bccf_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTArray_void____cdecl_NiStream____ptr64_NiObject____ptr64_NiTMallocInterface_void____cdecl_NiSt_d3b4c6c0bccf>() == 0x18);
@@ -10310,7 +10740,9 @@ const _: () = assert!(core::mem::offset_of!(NiTArray_void____cdecl_NiStream____p
 #[repr(C)]
 pub struct NiTLargeArray_BSFixedString_NiTNewInterface_BSFixedString__ {
     /// +0x0 `vtbl:NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargeArray_BSFixedString_NiTNewInterface_BSFixedString___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTLargeArray_BSFixedString_NiTNewInterface_BSFixedString__, __vftable) == 0x0);
@@ -10320,7 +10752,9 @@ const _: () = assert!(core::mem::offset_of!(NiTLargeArray_BSFixedString_NiTNewIn
 #[repr(C)]
 pub struct NiTLargeArray_NiPointer_NiObject_NiTNewInterface_NiPointer_NiObject____ {
     /// +0x0 `vtbl:NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargeArray_NiPointer_NiObject_NiTNewInterface_NiPointer_NiObject_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTLargeArray_NiPointer_NiObject_NiTNewInterface_NiPointer_NiObject____, __vftable) == 0x0);
@@ -10330,10 +10764,12 @@ const _: () = assert!(core::mem::offset_of!(NiTLargeArray_NiPointer_NiObject_NiT
 #[repr(C)]
 pub struct NiTLargeArray_TESForm____ptr64_NiTMallocInterface_TESForm____ptr64__ {
     /// +0x0 `vtbl:NiTLargeArray<TESForm*___ptr64,NiTMallocInterface<TESForm*___ptr64>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargeArray_TESForm____ptr64_NiTMallocInterface_TESForm____ptr64___vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined8`, member ctor NiTArray<BGSCameraPath*___ptr64,NiTMallocInterface<BGSCameraPath*___ptr64>_>
     pub m_NiTArray_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTLargeArray_TESForm____ptr64_NiTMallocInterface_TESForm____ptr64__>() == 0x28);
@@ -10345,8 +10781,10 @@ const _: () = assert!(core::mem::offset_of!(NiTLargeArray_TESForm____ptr64_NiTMa
 #[repr(C)]
 pub struct NiTLargeArray_hkNiTriStripsData_NiTNewInterface_hkNiTriStripsData__ {
     /// +0x0 `vtbl:NiTLargeArray<hkNiTriStripsData,NiTNewInterface<hkNiTriStripsData>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargeArray_hkNiTriStripsData_NiTNewInterface_hkNiTriStripsData___vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTLargeArray_hkNiTriStripsData_NiTNewInterface_hkNiTriStripsData__>() == 0x40);
@@ -10357,7 +10795,9 @@ const _: () = assert!(core::mem::offset_of!(NiTLargeArray_hkNiTriStripsData_NiTN
 #[repr(C)]
 pub struct NiTLargeArray_unsigned_int_NiTMallocInterface_unsigned_int__ {
     /// +0x0 `vtbl:NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargeArray_unsigned_int_NiTMallocInterface_unsigned_int___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTLargeArray_unsigned_int_NiTMallocInterface_unsigned_int__, __vftable) == 0x0);
@@ -10368,7 +10808,9 @@ const _: () = assert!(core::mem::offset_of!(NiTLargeArray_unsigned_int_NiTMalloc
 #[repr(C)]
 pub struct NiTLargeObjectArray_BSFixedString {
     /// +0x0 `vtbl:NiTLargeObjectArray<BSFixedString>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargeObjectArray_BSFixedString_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTLargeObjectArray_BSFixedString, __vftable) == 0x0);
@@ -10379,7 +10821,9 @@ const _: () = assert!(core::mem::offset_of!(NiTLargeObjectArray_BSFixedString, _
 #[repr(C)]
 pub struct NiTLargeObjectArray_NiPointer_NiObject__ {
     /// +0x0 `vtbl:NiTLargeObjectArray<NiPointer<NiObject>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargeObjectArray_NiPointer_NiObject___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTLargeObjectArray_NiPointer_NiObject__, __vftable) == 0x0);
@@ -10390,8 +10834,10 @@ const _: () = assert!(core::mem::offset_of!(NiTLargeObjectArray_NiPointer_NiObje
 #[repr(C)]
 pub struct NiTLargeObjectArray_hkNiTriStripsData {
     /// +0x0 `vtbl:NiTLargeObjectArray<hkNiTriStripsData>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargeObjectArray_hkNiTriStripsData_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTLargeObjectArray_hkNiTriStripsData>() == 0x40);
@@ -10403,10 +10849,12 @@ const _: () = assert!(core::mem::offset_of!(NiTLargeObjectArray_hkNiTriStripsDat
 #[repr(C)]
 pub struct NiTLargePrimitiveArray_TESForm____ptr64 {
     /// +0x0 `vtbl:NiTLargePrimitiveArray<TESForm*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargePrimitiveArray_TESForm____ptr64_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined8`, base NiTLargeArray<TESForm*___ptr64,NiTMallocInterface<TESForm*___ptr64>_>
     pub m_NiTArray_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTLargePrimitiveArray_TESForm____ptr64>() == 0x28);
@@ -10419,7 +10867,9 @@ const _: () = assert!(core::mem::offset_of!(NiTLargePrimitiveArray_TESForm____pt
 #[repr(C)]
 pub struct NiTLargePrimitiveArray_unsigned_int {
     /// +0x0 `vtbl:NiTLargePrimitiveArray<unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTLargePrimitiveArray_unsigned_int_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTLargePrimitiveArray_unsigned_int, __vftable) == 0x0);
@@ -10430,8 +10880,10 @@ const _: () = assert!(core::mem::offset_of!(NiTLargePrimitiveArray_unsigned_int,
 #[repr(C)]
 pub struct NiTMap_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6____ {
     /// +0x0 `vtbl:NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6_____vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMap_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6____>() == 0x20);
@@ -10443,7 +10895,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_BSMultiBoundNode____ptr64_BSP
 #[repr(C)]
 pub struct NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointerHandle_class_TESObje_4af09b38d46e {
     /// +0x0 `vtbl:NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointerHandle_class_TESObje_4af09b38d46e_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointerHandle_class_TESObje_4af09b38d46e, __vftable) == 0x0);
@@ -10454,7 +10908,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_BSPointerHandle_TESObjectREFR
 #[repr(C)]
 pub struct NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiNode____ptr64 {
     /// +0x0 `vtbl:NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiNode____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiNode____ptr64, __vftable) == 0x0);
@@ -10465,8 +10921,10 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_BSPointerHandle_TESObjectREFR
 #[repr(C)]
 pub struct NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiPointer_BSMultiBoundNode__ {
     /// +0x0 `vtbl:NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiPointer_BSMultiBoundNode___vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiPointer_BSMultiBoundNode__>() == 0x20);
@@ -10478,7 +10936,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_BSPointerHandle_TESObjectREFR
 #[repr(C)]
 pub struct NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int {
     /// +0x0 `vtbl:NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int, __vftable) == 0x0);
@@ -10489,7 +10949,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_BSPointerHandle_TESObjectREFR
 #[repr(C)]
 pub struct NiTMap_ENUM_FORM_ID_BSSimpleList_SavedFormData____ptr64____ptr64 {
     /// +0x0 `vtbl:NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_ENUM_FORM_ID_BSSimpleList_SavedFormData____ptr64____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMap_ENUM_FORM_ID_BSSimpleList_SavedFormData____ptr64____ptr64>() == 0x8);
@@ -10501,7 +10963,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_ENUM_FORM_ID_BSSimpleList_Sav
 #[repr(C)]
 pub struct NiTMap_NiAVObject____ptr64__anon_9F6D6E70__QUEUED_ATTACH {
     /// +0x0 `vtbl:NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_NiAVObject____ptr64__anon_9F6D6E70__QUEUED_ATTACH_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_NiAVObject____ptr64__anon_9F6D6E70__QUEUED_ATTACH, __vftable) == 0x0);
@@ -10512,7 +10976,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_NiAVObject____ptr64__anon_9F6
 #[repr(C)]
 pub struct NiTMap_NiAVObject____ptr64_bool {
     /// +0x0 `vtbl:NiTMap<NiAVObject*___ptr64,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_NiAVObject____ptr64_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_NiAVObject____ptr64_bool, __vftable) == 0x0);
@@ -10523,7 +10989,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_NiAVObject____ptr64_bool, __v
 #[repr(C)]
 pub struct NiTMap_NiTexture____ptr64_TEX_USER_DATA____ptr64 {
     /// +0x0 `vtbl:NiTMap<NiTexture*___ptr64,TEX_USER_DATA*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_NiTexture____ptr64_TEX_USER_DATA____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_NiTexture____ptr64_TEX_USER_DATA____ptr64, __vftable) == 0x0);
@@ -10534,7 +11002,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_NiTexture____ptr64_TEX_USER_D
 #[repr(C)]
 pub struct NiTMap_NiTexture____ptr64_bool {
     /// +0x0 `vtbl:NiTMap<NiTexture*___ptr64,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_NiTexture____ptr64_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_NiTexture____ptr64_bool, __vftable) == 0x0);
@@ -10545,7 +11015,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_NiTexture____ptr64_bool, __vf
 #[repr(C)]
 pub struct NiTMap_TESForm____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6____ {
     /// +0x0 `vtbl:NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_TESForm____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6_____vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_TESForm____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6____, __vftable) == 0x0);
@@ -10556,7 +11028,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_TESForm____ptr64_BSPointerHan
 #[repr(C)]
 pub struct NiTMap_TESForm____ptr64_bool {
     /// +0x0 `vtbl:NiTMap<TESForm*___ptr64,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_TESForm____ptr64_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_TESForm____ptr64_bool, __vftable) == 0x0);
@@ -10567,7 +11041,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_TESForm____ptr64_bool, __vfta
 #[repr(C)]
 pub struct NiTMap_char_const____ptr64_Setting____ptr64 {
     /// +0x0 `vtbl:NiTMap<char_const*___ptr64,Setting*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_char_const____ptr64_Setting____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_char_const____ptr64_Setting____ptr64, __vftable) == 0x0);
@@ -10578,7 +11054,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_char_const____ptr64_Setting__
 #[repr(C)]
 pub struct NiTMap_unsigned_char_bool {
     /// +0x0 `vtbl:NiTMap<unsigned_char,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_unsigned_char_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_unsigned_char_bool, __vftable) == 0x0);
@@ -10589,7 +11067,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_unsigned_char_bool, __vftable
 #[repr(C)]
 pub struct NiTMap_unsigned_int_unsigned_char {
     /// +0x0 `vtbl:NiTMap<unsigned_int,unsigned_char>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_unsigned_int_unsigned_char_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_unsigned_int_unsigned_char, __vftable) == 0x0);
@@ -10600,7 +11080,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_unsigned_int_unsigned_char, _
 #[repr(C)]
 pub struct NiTMap_unsigned_long_BSNiUpdateTracker____ptr64 {
     /// +0x0 `vtbl:NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMap_unsigned_long_BSNiUpdateTracker____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMap_unsigned_long_BSNiUpdateTracker____ptr64, __vftable) == 0x0);
@@ -10610,8 +11092,10 @@ const _: () = assert!(core::mem::offset_of!(NiTMap_unsigned_long_BSNiUpdateTrack
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPoi_ce74048cdb78 {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPoi_ce74048cdb78_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMapBase_DFALL_NiTMapItem_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPoi_ce74048cdb78>() == 0x20);
@@ -10622,7 +11106,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_BSMultiB
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointe_d937cf8bd36a {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointe_d937cf8bd36a_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointe_d937cf8bd36a, __vftable) == 0x0);
@@ -10632,7 +11118,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_BSPointe
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiNode___cddf6e5bf79e {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiNode___cddf6e5bf79e_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiNode___cddf6e5bf79e, __vftable) == 0x0);
@@ -10642,8 +11130,10 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_BSPointe
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiPointe_c9dfb321abae {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiPointe_c9dfb321abae_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiPointe_c9dfb321abae>() == 0x20);
@@ -10654,7 +11144,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_BSPointe
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_cd04c75f4532 {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_cd04c75f4532_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_cd04c75f4532, __vftable) == 0x0);
@@ -10664,7 +11156,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_BSPointe
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_ENUM_FORM_ID_BSSimpleList_SavedFormData____ptr64____ptr64___ENUM_FOR_67b113fe6ee2 {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>_>,ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_ENUM_FORM_ID_BSSimpleList_SavedFormData____ptr64____ptr64___ENUM_FOR_67b113fe6ee2_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMapBase_DFALL_NiTMapItem_ENUM_FORM_ID_BSSimpleList_SavedFormData____ptr64____ptr64___ENUM_FOR_67b113fe6ee2>() == 0x8);
@@ -10675,7 +11169,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_ENUM_FOR
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_NiAVObject____ptr64__anon_9F6D6E70__QUEUED_ATTACH___NiAVObject____pt_e0e0ee438e05 {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>_>,NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_NiAVObject____ptr64__anon_9F6D6E70__QUEUED_ATTACH___NiAVObject____pt_e0e0ee438e05_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_NiAVObject____ptr64__anon_9F6D6E70__QUEUED_ATTACH___NiAVObject____pt_e0e0ee438e05, __vftable) == 0x0);
@@ -10685,7 +11181,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_NiAVObje
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_NiAVObject____ptr64_bool___NiAVObject____ptr64_bool {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,bool>_>,NiAVObject*___ptr64,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_NiAVObject____ptr64_bool___NiAVObject____ptr64_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_NiAVObject____ptr64_bool___NiAVObject____ptr64_bool, __vftable) == 0x0);
@@ -10695,7 +11193,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_NiAVObje
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_NiTexture____ptr64_TEX_USER_DATA____ptr64___NiTexture____ptr64_TEX_USER_DATA____ptr64 {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<NiTexture*___ptr64,TEX_USER_DATA*___ptr64>_>,NiTexture*___ptr64,TEX_USER_DATA*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_NiTexture____ptr64_TEX_USER_DATA____ptr64___NiTexture____ptr64_TEX_USER_DATA____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_NiTexture____ptr64_TEX_USER_DATA____ptr64___NiTexture____ptr64_TEX_USER_DATA____ptr64, __vftable) == 0x0);
@@ -10705,7 +11205,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_NiTextur
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_NiTexture____ptr64_bool___NiTexture____ptr64_bool {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<NiTexture*___ptr64,bool>_>,NiTexture*___ptr64,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_NiTexture____ptr64_bool___NiTexture____ptr64_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_NiTexture____ptr64_bool___NiTexture____ptr64_bool, __vftable) == 0x0);
@@ -10715,7 +11217,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_NiTextur
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_TESForm____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandl_00cb4c92bf12 {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_TESForm____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandl_00cb4c92bf12_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_TESForm____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandl_00cb4c92bf12, __vftable) == 0x0);
@@ -10725,7 +11229,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_TESForm_
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_TESForm____ptr64_bool___TESForm____ptr64_bool {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,bool>_>,TESForm*___ptr64,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_TESForm____ptr64_bool___TESForm____ptr64_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_TESForm____ptr64_bool___TESForm____ptr64_bool, __vftable) == 0x0);
@@ -10735,7 +11241,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_TESForm_
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_char_const____ptr64_Setting____ptr64___char_const____ptr64_Setting____ptr64 {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<char_const*___ptr64,Setting*___ptr64>_>,char_const*___ptr64,Setting*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_char_const____ptr64_Setting____ptr64___char_const____ptr64_Setting____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_char_const____ptr64_Setting____ptr64___char_const____ptr64_Setting____ptr64, __vftable) == 0x0);
@@ -10745,7 +11253,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_char_con
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_unsigned_char_bool___unsigned_char_bool {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<unsigned_char,bool>_>,unsigned_char,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_unsigned_char_bool___unsigned_char_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_unsigned_char_bool___unsigned_char_bool, __vftable) == 0x0);
@@ -10755,7 +11265,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_unsigned
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_unsigned_int_unsigned_char___unsigned_int_unsigned_char {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_unsigned_int_unsigned_char___unsigned_int_unsigned_char_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_unsigned_int_unsigned_char___unsigned_int_unsigned_char, __vftable) == 0x0);
@@ -10765,7 +11277,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_unsigned
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_unsigned_long_BSNiUpdateTracker____ptr64___unsigned_long_BSNiUpdateTracker____ptr64 {
     /// +0x0 `vtbl:NiTMapBase<DFALL<NiTMapItem<unsigned_long,BSNiUpdateTracker*___ptr64>_>,unsigned_long,BSNiUpdateTracker*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_DFALL_NiTMapItem_unsigned_long_BSNiUpdateTracker____ptr64___unsigned_long_BSNiUpdateTracker____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_unsigned_long_BSNiUpdateTracker____ptr64___unsigned_long_BSNiUpdateTracker____ptr64, __vftable) == 0x0);
@@ -10775,7 +11289,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_DFALL_NiTMapItem_unsigned
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_BSPointerHandle_Actor_BSUntypedPointerHandle_20__faf3a2c7295c {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,BSPointerHandle<Actor,BSUntypedPointerHandle<20,6>_>,WadingWaterData*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_BSPointerHandle_Actor_BSUntypedPointerHandle_20__faf3a2c7295c_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsigned___int64_BSPointerHandle_Actor_BSUntypedPointerHandle_20__faf3a2c7295c, __vftable) == 0x0);
@@ -10785,7 +11301,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_NiNode____ptr64_unsigned_int {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,NiNode*___ptr64,unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_NiNode____ptr64_unsigned_int_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsigned___int64_NiNode____ptr64_unsigned_int, __vftable) == 0x0);
@@ -10795,7 +11313,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_NiObject_const____ptr64_unsigned_int {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,NiObject_const*___ptr64,unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_NiObject_const____ptr64_unsigned_int_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsigned___int64_NiObject_const____ptr64_unsigned_int, __vftable) == 0x0);
@@ -10805,7 +11325,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_NiPointer_NiSequence__ {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,char_const*___ptr64,NiPointer<NiSequence>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_NiPointer_NiSequence___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_NiPointer_NiSequence__, __vftable) == 0x0);
@@ -10815,8 +11337,10 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_class_NiObject____ptr64____cdecl_void {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,char_const*___ptr64,class_NiObject*___ptr64_(__cdecl*)(void)>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_class_NiObject____ptr64____cdecl_void_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_class_NiObject____ptr64____cdecl_void>() == 0x28);
@@ -10827,7 +11351,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_unsigned_short {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,char_const*___ptr64,unsigned_short>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_unsigned_short_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsigned___int64_char_const____ptr64_unsigned_short, __vftable) == 0x0);
@@ -10837,8 +11363,10 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_BSSimpleList_TESObjectREFR____ptr64____ptr64 {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,unsigned_int,BSSimpleList<TESObjectREFR*___ptr64>*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_BSSimpleList_TESObjectREFR____ptr64____ptr64_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_BSSimpleList_TESObjectREFR____ptr64____ptr64>() == 0x20);
@@ -10849,8 +11377,10 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_TESFile____ptr64 {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,unsigned_int,TESFile*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_TESFile____ptr64_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_TESFile____ptr64>() == 0x20);
@@ -10861,7 +11391,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_bool {
     /// +0x0 `vtbl:NiTMapBase<NiTPointerAllocator<unsigned___int64>,unsigned_int,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsigned___int64_unsigned_int_bool, __vftable) == 0x0);
@@ -10872,7 +11404,9 @@ const _: () = assert!(core::mem::offset_of!(NiTMapBase_NiTPointerAllocator_unsig
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_BSTriShape__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<BSTriShape>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_BSTriShape___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_BSTriShape__, __vftable) == 0x0);
@@ -10883,7 +11417,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_BSTriShape_
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_NiAVObject__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<NiAVObject>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_NiAVObject___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiAVObject__, __vftable) == 0x0);
@@ -10894,7 +11430,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiAVObject_
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_NiControllerSequence__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<NiControllerSequence>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_NiControllerSequence___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiControllerSequence__, __vftable) == 0x0);
@@ -10905,7 +11443,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiControlle
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_NiGeometry__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<NiGeometry>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_NiGeometry___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiGeometry__, __vftable) == 0x0);
@@ -10916,7 +11456,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiGeometry_
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_NiMetricsOutputModule__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<NiMetricsOutputModule>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_NiMetricsOutputModule___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiMetricsOutputModule__, __vftable) == 0x0);
@@ -10927,7 +11469,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiMetricsOu
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_NiNode__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<NiNode>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_NiNode___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiNode__, __vftable) == 0x0);
@@ -10938,7 +11482,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiNode__, _
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_NiRefObject__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<NiRefObject>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_NiRefObject___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiRefObject__, __vftable) == 0x0);
@@ -10949,7 +11495,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiRefObject
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_NiTexture__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<NiTexture>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_NiTexture___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiTexture__, __vftable) == 0x0);
@@ -10960,7 +11508,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiTexture__
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_NiTransformController__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<NiTransformController>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_NiTransformController___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiTransformController__, __vftable) == 0x0);
@@ -10971,7 +11521,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_NiTransform
 #[repr(C)]
 pub struct NiTObjectArray_NiPointer_bhkRigidBody__ {
     /// +0x0 `vtbl:NiTObjectArray<NiPointer<bhkRigidBody>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTObjectArray_NiPointer_bhkRigidBody___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_bhkRigidBody__, __vftable) == 0x0);
@@ -10982,7 +11534,9 @@ const _: () = assert!(core::mem::offset_of!(NiTObjectArray_NiPointer_bhkRigidBod
 #[repr(C)]
 pub struct NiTPointerMap_BSPointerHandle_Actor_BSUntypedPointerHandle_20_6___WadingWaterData____ptr64 {
     /// +0x0 `vtbl:NiTPointerMap<BSPointerHandle<Actor,BSUntypedPointerHandle<20,6>_>,WadingWaterData*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_BSPointerHandle_Actor_BSUntypedPointerHandle_20_6___WadingWaterData____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPointerMap_BSPointerHandle_Actor_BSUntypedPointerHandle_20_6___WadingWaterData____ptr64, __vftable) == 0x0);
@@ -10993,7 +11547,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_BSPointerHandle_Actor_
 #[repr(C)]
 pub struct NiTPointerMap_NiNode____ptr64_unsigned_int {
     /// +0x0 `vtbl:NiTPointerMap<NiNode*___ptr64,unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_NiNode____ptr64_unsigned_int_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPointerMap_NiNode____ptr64_unsigned_int, __vftable) == 0x0);
@@ -11004,7 +11560,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_NiNode____ptr64_unsign
 #[repr(C)]
 pub struct NiTPointerMap_NiObject_const____ptr64_unsigned_int {
     /// +0x0 `vtbl:NiTPointerMap<NiObject_const*___ptr64,unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_NiObject_const____ptr64_unsigned_int_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPointerMap_NiObject_const____ptr64_unsigned_int, __vftable) == 0x0);
@@ -11015,7 +11573,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_NiObject_const____ptr6
 #[repr(C)]
 pub struct NiTPointerMap_char_const____ptr64_NiPointer_NiSequence__ {
     /// +0x0 `vtbl:NiTPointerMap<char_const*___ptr64,NiPointer<NiSequence>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_char_const____ptr64_NiPointer_NiSequence___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPointerMap_char_const____ptr64_NiPointer_NiSequence__, __vftable) == 0x0);
@@ -11026,8 +11586,10 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_char_const____ptr64_Ni
 #[repr(C)]
 pub struct NiTPointerMap_char_const____ptr64_class_NiObject____ptr64____cdecl_void {
     /// +0x0 `vtbl:NiTPointerMap<char_const*___ptr64,class_NiObject*___ptr64_(__cdecl*)(void)>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_char_const____ptr64_class_NiObject____ptr64____cdecl_void_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTPointerMap_char_const____ptr64_class_NiObject____ptr64____cdecl_void>() == 0x28);
@@ -11039,7 +11601,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_char_const____ptr64_cl
 #[repr(C)]
 pub struct NiTPointerMap_char_const____ptr64_unsigned_short {
     /// +0x0 `vtbl:NiTPointerMap<char_const*___ptr64,unsigned_short>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_char_const____ptr64_unsigned_short_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPointerMap_char_const____ptr64_unsigned_short, __vftable) == 0x0);
@@ -11050,8 +11614,10 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_char_const____ptr64_un
 #[repr(C)]
 pub struct NiTPointerMap_unsigned_int_BSSimpleList_TESObjectREFR____ptr64____ptr64 {
     /// +0x0 `vtbl:NiTPointerMap<unsigned_int,BSSimpleList<TESObjectREFR*___ptr64>*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_unsigned_int_BSSimpleList_TESObjectREFR____ptr64____ptr64_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTPointerMap_unsigned_int_BSSimpleList_TESObjectREFR____ptr64____ptr64>() == 0x20);
@@ -11063,8 +11629,10 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_unsigned_int_BSSimpleL
 #[repr(C)]
 pub struct NiTPointerMap_unsigned_int_TESFile____ptr64 {
     /// +0x0 `vtbl:NiTPointerMap<unsigned_int,TESFile*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_unsigned_int_TESFile____ptr64_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTPointerMap_unsigned_int_TESFile____ptr64>() == 0x20);
@@ -11076,7 +11644,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_unsigned_int_TESFile__
 #[repr(C)]
 pub struct NiTPointerMap_unsigned_int_bool {
     /// +0x0 `vtbl:NiTPointerMap<unsigned_int,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPointerMap_unsigned_int_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPointerMap_unsigned_int_bool, __vftable) == 0x0);
@@ -11087,7 +11657,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPointerMap_unsigned_int_bool, __v
 #[repr(C)]
 pub struct NiTPrimitiveArray_BGSAddonNode____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<BGSAddonNode*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_BGSAddonNode____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BGSAddonNode____ptr64, __vftable) == 0x0);
@@ -11098,7 +11670,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BGSAddonNode____pt
 #[repr(C)]
 pub struct NiTPrimitiveArray_BGSCameraPath____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<BGSCameraPath*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_BGSCameraPath____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BGSCameraPath____ptr64, __vftable) == 0x0);
@@ -11109,6 +11683,7 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BGSCameraPath____p
 #[repr(C)]
 pub struct NiTPrimitiveArray_BSAnimNoteListener__BSAnimReceiverType____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<BSAnimNoteListener::BSAnimReceiverType*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_BSAnimNoteListener__BSAnimReceiverType____ptr64_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -11116,6 +11691,7 @@ pub struct NiTPrimitiveArray_BSAnimNoteListener__BSAnimReceiverType____ptr64 {
     pub field_10: u32,
     /// +0x14 `undefined4`, ctor store
     pub field_14: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTPrimitiveArray_BSAnimNoteListener__BSAnimReceiverType____ptr64>() == 0x18);
@@ -11130,7 +11706,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BSAnimNoteListener
 #[repr(C)]
 pub struct NiTPrimitiveArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<BSAnimNoteReceiver::BSAnimNoteReceiverType*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BSAnimNoteReceiver__BSAnimNoteReceiverType____ptr64, __vftable) == 0x0);
@@ -11141,7 +11719,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BSAnimNoteReceiver
 #[repr(C)]
 pub struct NiTPrimitiveArray_BSGraphics__TextureFilterMode {
     /// +0x0 `vtbl:NiTPrimitiveArray<BSGraphics::TextureFilterMode>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_BSGraphics__TextureFilterMode_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BSGraphics__TextureFilterMode, __vftable) == 0x0);
@@ -11153,6 +11733,7 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_BSGraphics__Textur
 #[repr(C, packed)]
 pub struct NiTPrimitiveArray_CombatGroup____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<CombatGroup*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_CombatGroup____ptr64_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -11174,6 +11755,7 @@ pub struct NiTPrimitiveArray_CombatGroup____ptr64 {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTPrimitiveArray_CombatGroup____ptr64>() == 0x68);
@@ -11194,7 +11776,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_CombatGroup____ptr
 #[repr(C)]
 pub struct NiTPrimitiveArray_ImageSpaceEffect____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<ImageSpaceEffect*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_ImageSpaceEffect____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_ImageSpaceEffect____ptr64, __vftable) == 0x0);
@@ -11205,7 +11789,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_ImageSpaceEffect__
 #[repr(C)]
 pub struct NiTPrimitiveArray_ImageSpaceEffect__EffectInput____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<ImageSpaceEffect::EffectInput*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_ImageSpaceEffect__EffectInput____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_ImageSpaceEffect__EffectInput____ptr64, __vftable) == 0x0);
@@ -11216,7 +11802,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_ImageSpaceEffect__
 #[repr(C)]
 pub struct NiTPrimitiveArray_ImageSpaceEffectParam____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<ImageSpaceEffectParam*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_ImageSpaceEffectParam____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_ImageSpaceEffectParam____ptr64, __vftable) == 0x0);
@@ -11227,7 +11815,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_ImageSpaceEffectPa
 #[repr(C)]
 pub struct NiTPrimitiveArray_ImageSpaceTexture____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<ImageSpaceTexture*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_ImageSpaceTexture____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_ImageSpaceTexture____ptr64, __vftable) == 0x0);
@@ -11238,7 +11828,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_ImageSpaceTexture_
 #[repr(C)]
 pub struct NiTPrimitiveArray_NiAVObject____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<NiAVObject*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_NiAVObject____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiAVObject____ptr64, __vftable) == 0x0);
@@ -11249,7 +11841,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiAVObject____ptr6
 #[repr(C)]
 pub struct NiTPrimitiveArray_NiBoundingVolume____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<NiBoundingVolume*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_NiBoundingVolume____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiBoundingVolume____ptr64, __vftable) == 0x0);
@@ -11260,7 +11854,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiBoundingVolume__
 #[repr(C)]
 pub struct NiTPrimitiveArray_NiPointer_NiAVObject__ {
     /// +0x0 `vtbl:NiTPrimitiveArray<NiPointer<NiAVObject>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_NiPointer_NiAVObject___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiPointer_NiAVObject__, __vftable) == 0x0);
@@ -11271,7 +11867,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiPointer_NiAVObje
 #[repr(C)]
 pub struct NiTPrimitiveArray_NiTObjectArray_NiPointer_NiAVObject______ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiTObjectArray_NiPointer_NiAVObject______ptr64, __vftable) == 0x0);
@@ -11282,7 +11880,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiTObjectArray_NiP
 #[repr(C)]
 pub struct NiTPrimitiveArray_NiTPrimitiveSet_NiNode____ptr64____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_NiTPrimitiveSet_NiNode____ptr64____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiTPrimitiveSet_NiNode____ptr64____ptr64, __vftable) == 0x0);
@@ -11293,7 +11893,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_NiTPrimitiveSet_Ni
 #[repr(C)]
 pub struct NiTPrimitiveArray_TESObjectCELL____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<TESObjectCELL*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_TESObjectCELL____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_TESObjectCELL____ptr64, __vftable) == 0x0);
@@ -11304,7 +11906,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_TESObjectCELL____p
 #[repr(C)]
 pub struct NiTPrimitiveArray_bool {
     /// +0x0 `vtbl:NiTPrimitiveArray<bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_bool_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_bool, __vftable) == 0x0);
@@ -11315,7 +11919,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_bool, __vftable) =
 #[repr(C)]
 pub struct NiTPrimitiveArray_char____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<char*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_char____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_char____ptr64, __vftable) == 0x0);
@@ -11326,7 +11932,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_char____ptr64, __v
 #[repr(C)]
 pub struct NiTPrimitiveArray_int {
     /// +0x0 `vtbl:NiTPrimitiveArray<int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_int_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_int, __vftable) == 0x0);
@@ -11337,7 +11945,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_int, __vftable) ==
 #[repr(C)]
 pub struct NiTPrimitiveArray_unsigned_int {
     /// +0x0 `vtbl:NiTPrimitiveArray<unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_unsigned_int_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_unsigned_int, __vftable) == 0x0);
@@ -11348,7 +11958,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_unsigned_int, __vf
 #[repr(C)]
 pub struct NiTPrimitiveArray_unsigned_short {
     /// +0x0 `vtbl:NiTPrimitiveArray<unsigned_short>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_unsigned_short_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_unsigned_short, __vftable) == 0x0);
@@ -11359,8 +11971,10 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_unsigned_short, __
 #[repr(C)]
 pub struct NiTPrimitiveArray_void____cdecl_NiStream____ptr64_NiObject____ptr64 {
     /// +0x0 `vtbl:NiTPrimitiveArray<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64)>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTPrimitiveArray_void____cdecl_NiStream____ptr64_NiObject____ptr64_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTPrimitiveArray_void____cdecl_NiStream____ptr64_NiObject____ptr64>() == 0x18);
@@ -11372,7 +11986,9 @@ const _: () = assert!(core::mem::offset_of!(NiTPrimitiveArray_void____cdecl_NiSt
 #[repr(C)]
 pub struct NiTScrapArray_NiPick__Record____ptr64 {
     /// +0x0 `vtbl:NiTScrapArray<NiPick::Record*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTScrapArray_NiPick__Record____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTScrapArray_NiPick__Record____ptr64, __vftable) == 0x0);
@@ -11383,7 +11999,9 @@ const _: () = assert!(core::mem::offset_of!(NiTScrapArray_NiPick__Record____ptr6
 #[repr(C)]
 pub struct NiTStringMap_Setting____ptr64 {
     /// +0x0 `vtbl:NiTStringMap<Setting*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTStringMap_Setting____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTStringMap_Setting____ptr64, __vftable) == 0x0);
@@ -11394,7 +12012,9 @@ const _: () = assert!(core::mem::offset_of!(NiTStringMap_Setting____ptr64, __vft
 #[repr(C)]
 pub struct NiTStringPointerMap_NiPointer_NiSequence__ {
     /// +0x0 `vtbl:NiTStringPointerMap<NiPointer<NiSequence>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTStringPointerMap_NiPointer_NiSequence___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTStringPointerMap_NiPointer_NiSequence__, __vftable) == 0x0);
@@ -11405,8 +12025,10 @@ const _: () = assert!(core::mem::offset_of!(NiTStringPointerMap_NiPointer_NiSequ
 #[repr(C)]
 pub struct NiTStringPointerMap_class_NiObject____ptr64____cdecl_void {
     /// +0x0 `vtbl:NiTStringPointerMap<class_NiObject*___ptr64_(__cdecl*)(void)>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTStringPointerMap_class_NiObject____ptr64____cdecl_void_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTStringPointerMap_class_NiObject____ptr64____cdecl_void>() == 0x28);
@@ -11418,7 +12040,9 @@ const _: () = assert!(core::mem::offset_of!(NiTStringPointerMap_class_NiObject__
 #[repr(C)]
 pub struct NiTStringPointerMap_unsigned_short {
     /// +0x0 `vtbl:NiTStringPointerMap<unsigned_short>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTStringPointerMap_unsigned_short_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTStringPointerMap_unsigned_short, __vftable) == 0x0);
@@ -11429,7 +12053,9 @@ const _: () = assert!(core::mem::offset_of!(NiTStringPointerMap_unsigned_short, 
 #[repr(C)]
 pub struct NiTStringTemplateMap_NiTMap_char_const____ptr64_Setting____ptr64_Setting____ptr64 {
     /// +0x0 `vtbl:NiTStringTemplateMap<NiTMap<char_const*___ptr64,Setting*___ptr64>,Setting*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTStringTemplateMap_NiTMap_char_const____ptr64_Setting____ptr64_Setting____ptr64_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTStringTemplateMap_NiTMap_char_const____ptr64_Setting____ptr64_Setting____ptr64, __vftable) == 0x0);
@@ -11440,7 +12066,9 @@ const _: () = assert!(core::mem::offset_of!(NiTStringTemplateMap_NiTMap_char_con
 #[repr(C)]
 pub struct NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_NiPointer_NiSequence___NiPointer_NiSequence__ {
     /// +0x0 `vtbl:NiTStringTemplateMap<NiTPointerMap<char_const*___ptr64,NiPointer<NiSequence>_>,NiPointer<NiSequence>_>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_NiPointer_NiSequence___NiPointer_NiSequence___vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_NiPointer_NiSequence___NiPointer_NiSequence__, __vftable) == 0x0);
@@ -11451,8 +12079,10 @@ const _: () = assert!(core::mem::offset_of!(NiTStringTemplateMap_NiTPointerMap_c
 #[repr(C)]
 pub struct NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_class_NiObject____ptr64____cdecl_void_cla_169fae2e16d2 {
     /// +0x0 `vtbl:NiTStringTemplateMap<NiTPointerMap<char_const*___ptr64,class_NiObject*___ptr64_(__cdecl*)(void)>,class_NiObject*___ptr64_(__cdecl*)(void)>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_class_NiObject____ptr64____cdecl_void_cla_169fae2e16d2_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_class_NiObject____ptr64____cdecl_void_cla_169fae2e16d2>() == 0x28);
@@ -11464,7 +12094,9 @@ const _: () = assert!(core::mem::offset_of!(NiTStringTemplateMap_NiTPointerMap_c
 #[repr(C)]
 pub struct NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_unsigned_short_unsigned_short {
     /// +0x0 `vtbl:NiTStringTemplateMap<NiTPointerMap<char_const*___ptr64,unsigned_short>,unsigned_short>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_unsigned_short_unsigned_short_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTStringTemplateMap_NiTPointerMap_char_const____ptr64_unsigned_short_unsigned_short, __vftable) == 0x0);
@@ -11475,6 +12107,7 @@ const _: () = assert!(core::mem::offset_of!(NiTStringTemplateMap_NiTPointerMap_c
 #[repr(C)]
 pub struct NiTextKeyExtraData {
     /// +0x0 `vtbl:NiTextKeyExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTextKeyExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -11482,6 +12115,7 @@ pub struct NiTextKeyExtraData {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     pub unknown_18: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTextKeyExtraData>() == 0x28);
@@ -11495,7 +12129,9 @@ const _: () = assert!(core::mem::offset_of!(NiTextKeyExtraData, name) == 0x10);
 #[repr(C)]
 pub struct NiTextKeyMatch {
     /// +0x0 `vtbl:NiTextKeyMatch:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTextKeyMatch_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiTextKeyMatch, __vftable) == 0x0);
@@ -11506,10 +12142,12 @@ const _: () = assert!(core::mem::offset_of!(NiTextKeyMatch, __vftable) == 0x0);
 #[repr(C)]
 pub struct NiTexture {
     /// +0x0 `vtbl:NiTexture:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTexture_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTexture>() == 0x10);
@@ -11521,6 +12159,7 @@ const _: () = assert!(core::mem::offset_of!(NiTexture, field_8) == 0x8);
 #[repr(C)]
 pub struct NiThread {
     /// +0x0 `vtbl:NiThread:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiThread_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -11530,6 +12169,7 @@ pub struct NiThread {
     pub unknown_20: [u8; 16],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiThread, __vftable) == 0x0);
@@ -11542,7 +12182,9 @@ const _: () = assert!(core::mem::offset_of!(NiThread, field_30) == 0x30);
 #[repr(C)]
 pub struct NiThreadProcedure {
     /// +0x0 `vtbl:NiThreadProcedure:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiThreadProcedure_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiThreadProcedure, __vftable) == 0x0);
@@ -11554,6 +12196,7 @@ const _: () = assert!(core::mem::offset_of!(NiThreadProcedure, __vftable) == 0x0
 #[repr(C, packed)]
 pub struct NiTimeController {
     /// +0x0 `vtbl:NiTimeController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTimeController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -11580,6 +12223,7 @@ pub struct NiTimeController {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTimeController>() == 0x48);
@@ -11603,6 +12247,7 @@ const _: () = assert!(core::mem::offset_of!(NiTimeController, field_40) == 0x40)
 #[repr(C, packed)]
 pub struct NiTransformController {
     /// +0x0 `vtbl:NiTransformController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTransformController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -11631,6 +12276,7 @@ pub struct NiTransformController {
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTransformController>() == 0x50);
@@ -11654,6 +12300,7 @@ const _: () = assert!(core::mem::offset_of!(NiTransformController, field_48) == 
 #[repr(C)]
 pub struct NiTransformData {
     /// +0x0 `vtbl:NiTransformData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTransformData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -11678,6 +12325,7 @@ pub struct NiTransformData {
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTransformData>() == 0x40);
@@ -11699,6 +12347,7 @@ const _: () = assert!(core::mem::offset_of!(NiTransformData, field_38) == 0x38);
 #[repr(C)]
 pub struct NiTransformInterpolator {
     /// +0x0 `vtbl:NiTransformInterpolator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTransformInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -11725,6 +12374,7 @@ pub struct NiTransformInterpolator {
     /// +0x46 `undefined1`, ctor store
     pub field_46: u8,
     pub unknown_47: [u8; 1],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTransformInterpolator>() == 0x48);
@@ -11747,6 +12397,7 @@ const _: () = assert!(core::mem::offset_of!(NiTransformInterpolator, field_46) =
 #[repr(C)]
 pub struct NiTriBasedGeom {
     /// +0x0 `vtbl:NiTriBasedGeom:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriBasedGeom_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -11800,6 +12451,7 @@ pub struct NiTriBasedGeom {
     pub field_128: u64,
     /// +0x130 `undefined8`, base NiGeometry
     pub field_130: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTriBasedGeom>() == 0x138);
@@ -11835,6 +12487,7 @@ const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, field_130) == 0x130)
 #[repr(C)]
 pub struct NiTriBasedGeomData {
     /// +0x0 `vtbl:NiTriBasedGeomData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriBasedGeomData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -11873,6 +12526,7 @@ pub struct NiTriBasedGeomData {
     /// +0x68 `undefined2`, ctor store
     pub field_68: u16,
     pub unknown_6A: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTriBasedGeomData>() == 0x70);
@@ -11900,6 +12554,7 @@ const _: () = assert!(core::mem::offset_of!(NiTriBasedGeomData, field_68) == 0x6
 #[repr(C)]
 pub struct NiTriShape {
     /// +0x0 `vtbl:NiTriShape:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriShape_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -11953,6 +12608,7 @@ pub struct NiTriShape {
     pub field_128: u64,
     /// +0x130 `undefined8`, base NiGeometry
     pub field_130: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTriShape>() == 0x138);
@@ -11988,6 +12644,7 @@ const _: () = assert!(core::mem::offset_of!(NiTriShape, field_130) == 0x130);
 #[repr(C)]
 pub struct NiTriShapeData {
     /// +0x0 `vtbl:NiTriShapeData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriShapeData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -12031,6 +12688,7 @@ pub struct NiTriShapeData {
     pub unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTriShapeData>() == 0x80);
@@ -12060,6 +12718,7 @@ const _: () = assert!(core::mem::offset_of!(NiTriShapeData, field_78) == 0x78);
 #[repr(C)]
 pub struct NiTriStrips {
     /// +0x0 `vtbl:NiTriStrips:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriStrips_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -12113,6 +12772,7 @@ pub struct NiTriStrips {
     pub field_128: u64,
     /// +0x130 `undefined8`, base NiGeometry
     pub field_130: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTriStrips>() == 0x138);
@@ -12148,6 +12808,7 @@ const _: () = assert!(core::mem::offset_of!(NiTriStrips, field_130) == 0x130);
 #[repr(C)]
 pub struct NiTriStripsData {
     /// +0x0 `vtbl:NiTriStripsData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriStripsData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -12193,6 +12854,7 @@ pub struct NiTriStripsData {
     pub field_78: u64,
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTriStripsData>() == 0x88);
@@ -12223,6 +12885,7 @@ const _: () = assert!(core::mem::offset_of!(NiTriStripsData, field_80) == 0x80);
 #[repr(C)]
 pub struct NiUVData {
     /// +0x0 `vtbl:NiUVData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiUVData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -12252,6 +12915,7 @@ pub struct NiUVData {
     pub field_5C: u32,
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiUVData, __vftable) == 0x0);
@@ -12275,6 +12939,7 @@ const _: () = assert!(core::mem::offset_of!(NiUVData, field_60) == 0x60);
 #[repr(C)]
 pub struct NiUnionBV {
     /// +0x0 `vtbl:NiUnionBV:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiUnionBV_vtable,
     /// +0x8 `undefined8`, member ctor NiTPrimitiveArray<NiBoundingVolume*___ptr64>
     pub m_NiTPrimitiveArray_8: u64,
@@ -12287,6 +12952,7 @@ pub struct NiUnionBV {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiUnionBV, __vftable) == 0x0);
@@ -12302,6 +12968,7 @@ const _: () = assert!(core::mem::offset_of!(NiUnionBV, field_20) == 0x20);
 #[repr(C)]
 pub struct NiVectorExtraData {
     /// +0x0 `vtbl:NiVectorExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiVectorExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -12316,6 +12983,7 @@ pub struct NiVectorExtraData {
     pub field_20: f32,
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiVectorExtraData, __vftable) == 0x0);
@@ -12332,12 +13000,14 @@ const _: () = assert!(core::mem::offset_of!(NiVectorExtraData, field_24) == 0x24
 #[repr(C)]
 pub struct NiVertWeightsExtraData {
     /// +0x0 `vtbl:NiVertWeightsExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiVertWeightsExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiVertWeightsExtraData, __vftable) == 0x0);
@@ -12351,6 +13021,7 @@ const _: () = assert!(core::mem::offset_of!(NiVertWeightsExtraData, name) == 0x1
 #[repr(C, packed)]
 pub struct NiVisController {
     /// +0x0 `vtbl:NiVisController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiVisController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -12379,6 +13050,7 @@ pub struct NiVisController {
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiVisController>() == 0x50);

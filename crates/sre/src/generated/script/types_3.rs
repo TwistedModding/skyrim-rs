@@ -3,12 +3,131 @@
 
 use core::ffi::c_void;
 
+/// `BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>`.
+/// Evidence: runtime: 0x58 at 1 allocation sites.
+/// Bases: `BSScript::NativeFunction3<SpellItem,bool,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>`@0x0, `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
+#[repr(C)]
+pub struct BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64 {
+    /// +0x0 `vtbl:BSScript::NativeLatentFunction3<SpellItem,void,TESObjectREFR*___ptr64,Actor*___ptr64,TESObjectREFR*___ptr64>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64_vtable,
+    /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
+    pub refCount: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
+    pub name: crate::BSFixedString,
+    /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
+    pub objectTypeName: crate::BSFixedString,
+    /// +0x20 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (a four-argument ctor variant 0x14a9fc0 takes one) (high)
+    pub stateName: crate::BSFixedString,
+    /// +0x28 `class:BSScript::TypeInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the return type; 0 (None) from the ctor, set by the NativeFunction<N> ctor from its template argument (form types through GetScriptObjectTypeByID, 1 when that fails); for a latent native the value type the native returns through ReturnFromLatent (high)
+    pub returnType: crate::BSScript__TypeInfo,
+    /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
+    pub params: *mut crate::BSScript__NF_util__ParamInfo,
+    /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
+    pub paramCount: u16,
+    /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
+    pub variableCount: u16,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
+    pub isStatic: u8,
+    /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
+    pub isCallableFromTasklet: u8,
+    /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
+    pub isLatent: u8,
+    pub unknown_43: [u8; 1],
+    /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
+    pub userFlags: u32,
+    /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
+    pub docString: crate::BSFixedString,
+    /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
+    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64>() == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, objectTypeName) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, stateName) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, returnType) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, params) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, variableCount) == 0x3A);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, isStatic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, isCallableFromTasklet) == 0x41);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, isLatent) == 0x42);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, userFlags) == 0x44);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, docString) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64, binding) == 0x50);
+
+/// `BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>`: size 0x58 (exact, medium); primary base `BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>`.
+/// Evidence: runtime: 0x58 at 1 allocation sites.
+/// Bases: `BSScript::NativeFunction3<TESObjectREFR,bool,TESForm*___ptr64,unsigned_int,bool>`@0x0, `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
+#[repr(C)]
+pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool {
+    /// +0x0 `vtbl:BSScript::NativeLatentFunction3<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_vtable,
+    /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
+    pub refCount: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
+    pub name: crate::BSFixedString,
+    /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
+    pub objectTypeName: crate::BSFixedString,
+    /// +0x20 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (a four-argument ctor variant 0x14a9fc0 takes one) (high)
+    pub stateName: crate::BSFixedString,
+    /// +0x28 `class:BSScript::TypeInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the return type; 0 (None) from the ctor, set by the NativeFunction<N> ctor from its template argument (form types through GetScriptObjectTypeByID, 1 when that fails); for a latent native the value type the native returns through ReturnFromLatent (high)
+    pub returnType: crate::BSScript__TypeInfo,
+    /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
+    pub params: *mut crate::BSScript__NF_util__ParamInfo,
+    /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
+    pub paramCount: u16,
+    /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
+    pub variableCount: u16,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
+    pub isStatic: u8,
+    /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
+    pub isCallableFromTasklet: u8,
+    /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
+    pub isLatent: u8,
+    pub unknown_43: [u8; 1],
+    /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
+    pub userFlags: u32,
+    /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
+    pub docString: crate::BSFixedString,
+    /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
+    pub binding: *mut c_void,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool>() == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, objectTypeName) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, stateName) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, returnType) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, params) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, paramCount) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, variableCount) == 0x3A);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, isStatic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, isCallableFromTasklet) == 0x41);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, isLatent) == 0x42);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, userFlags) == 0x44);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, docString) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool, binding) == 0x50);
+
 /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>`: size 0x58 (exact, high); primary base `BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>`.
 /// Evidence: runtime: 0x58 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSScript::NativeFunction3<TESObjectREFR,bool,float,float,float>`@0x0, `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -41,6 +160,7 @@ pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float 
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float>() == 0x58);
@@ -66,6 +186,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction3_TESO
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_bool_bool {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction4<Actor,int,bool,BGSListForm*___ptr64,bool,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_bool_bool_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -98,6 +219,7 @@ pub struct BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_b
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_bool_bool>() == 0x58);
@@ -123,6 +245,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction4_Acto
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedS_d8b5dbe1c137 {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction4<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedS_d8b5dbe1c137_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -155,6 +278,7 @@ pub struct BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESO
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedS_d8b5dbe1c137>() == 0x58);
@@ -180,6 +304,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction4_BSSc
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64 {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction4<TESObjectREFR,void,TESForm*___ptr64,unsigned_int,bool,TESObjectREFR*___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -212,6 +337,7 @@ pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_u
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64>() == 0x58);
@@ -237,6 +363,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction4_TESO
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_float {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction4<TESObjectREFR,void,float,float,float,float>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_float_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -269,6 +396,7 @@ pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_float>() == 0x58);
@@ -294,6 +422,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction4_TESO
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESO_34fa37a7470b {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESO_34fa37a7470b_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -326,6 +455,7 @@ pub struct BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESO_34fa37a7470b>() == 0x58);
@@ -351,6 +481,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction5_BGSK
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_co_3dc1935df090 {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction5<TESObjectREFR,bool,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,BSFixedString_const&___ptr64>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_co_3dc1935df090_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -383,6 +514,7 @@ pub struct BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_cons
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_co_3dc1935df090>() == 0x58);
@@ -408,6 +540,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction5_TESO
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectREFR*___ptr64,float,float,float,bool>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -440,6 +573,7 @@ pub struct BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____p
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool>() == 0x58);
@@ -465,6 +599,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction5_TESO
 #[repr(C)]
 pub struct BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float {
     /// +0x0 `vtbl:BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
@@ -497,6 +632,7 @@ pub struct BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_floa
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float>() == 0x58);
@@ -521,7 +657,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeLatentFunction9_BGSM
 #[repr(C)]
 pub struct BSScript__ObjectBindPolicy {
     /// +0x0 `vtbl:BSScript::ObjectBindPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__ObjectBindPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__ObjectBindPolicy, __vftable) == 0x0);
@@ -532,6 +670,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__ObjectBindPolicy, __vftabl
 #[repr(C)]
 pub struct BSScript__SimpleAllocMemoryPagePolicy {
     /// +0x0 `vtbl:BSScript::SimpleAllocMemoryPagePolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__SimpleAllocMemoryPagePolicy_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -546,6 +685,7 @@ pub struct BSScript__SimpleAllocMemoryPagePolicy {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__SimpleAllocMemoryPagePolicy, __vftable) == 0x0);
@@ -561,7 +701,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__SimpleAllocMemoryPagePolic
 #[repr(C)]
 pub struct BSScript__UnlinkedTypes__Function__ConvertTypeFunctor {
     /// +0x0 `vtbl:BSScript::UnlinkedTypes::Function::ConvertTypeFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__UnlinkedTypes__Function__ConvertTypeFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes__Function__ConvertTypeFunctor, __vftable) == 0x0);
@@ -571,7 +713,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes__Function__C
 #[repr(C)]
 pub struct BSScript__UnlinkedTypes__InstructionStream__InstructionFunctor {
     /// +0x0 `vtbl:BSScript::UnlinkedTypes::InstructionStream::InstructionFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__UnlinkedTypes__InstructionStream__InstructionFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes__InstructionStream__InstructionFunctor, __vftable) == 0x0);
@@ -582,7 +726,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes__Instruction
 #[repr(C)]
 pub struct BSScript__UnlinkedTypes___anon_E61FEF15__BuildInstructionOffsetMapFunctor {
     /// +0x0 `vtbl:BSScript::UnlinkedTypes::_anon_E61FEF15::BuildInstructionOffsetMapFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__UnlinkedTypes___anon_E61FEF15__BuildInstructionOffsetMapFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FEF15__BuildInstructionOffsetMapFunctor, __vftable) == 0x0);
@@ -593,7 +739,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FE
 #[repr(C)]
 pub struct BSScript__UnlinkedTypes___anon_E61FEF15__CollectStringsFunctor {
     /// +0x0 `vtbl:BSScript::UnlinkedTypes::_anon_E61FEF15::CollectStringsFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__UnlinkedTypes___anon_E61FEF15__CollectStringsFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FEF15__CollectStringsFunctor, __vftable) == 0x0);
@@ -604,7 +752,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FE
 #[repr(C)]
 pub struct BSScript__UnlinkedTypes___anon_E61FEF15__CountInstructionInfo {
     /// +0x0 `vtbl:BSScript::UnlinkedTypes::_anon_E61FEF15::CountInstructionInfo:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__UnlinkedTypes___anon_E61FEF15__CountInstructionInfo_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FEF15__CountInstructionInfo, __vftable) == 0x0);
@@ -615,7 +765,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FE
 #[repr(C)]
 pub struct BSScript__UnlinkedTypes___anon_E61FEF15__UnpackInstructionsFunctor {
     /// +0x0 `vtbl:BSScript::UnlinkedTypes::_anon_E61FEF15::UnpackInstructionsFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__UnlinkedTypes___anon_E61FEF15__UnpackInstructionsFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FEF15__UnpackInstructionsFunctor, __vftable) == 0x0);
@@ -626,7 +778,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FE
 #[repr(C)]
 pub struct BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor {
     /// +0x0 `vtbl:BSScript::UnlinkedTypes::_anon_E61FEF15::WriteInstructionsFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor, __vftable) == 0x0);
@@ -637,7 +791,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__UnlinkedTypes___anon_E61FE
 #[repr(C)]
 pub struct BSScript__ZeroFunctionArguments {
     /// +0x0 `vtbl:BSScript::ZeroFunctionArguments:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__ZeroFunctionArguments_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__ZeroFunctionArguments, __vftable) == 0x0);
@@ -648,7 +804,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript__ZeroFunctionArguments, __v
 #[repr(C)]
 pub struct BSScript___anon_5199D9EE__VMTypeResolveFunctor {
     /// +0x0 `vtbl:BSScript::_anon_5199D9EE::VMTypeResolveFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript___anon_5199D9EE__VMTypeResolveFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript___anon_5199D9EE__VMTypeResolveFunctor, __vftable) == 0x0);
@@ -659,7 +817,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript___anon_5199D9EE__VMTypeReso
 #[repr(C)]
 pub struct BSScript___anon_D7688862__LinkerConvertTypeFunctor {
     /// +0x0 `vtbl:BSScript::_anon_D7688862::LinkerConvertTypeFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript___anon_D7688862__LinkerConvertTypeFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript___anon_D7688862__LinkerConvertTypeFunctor, __vftable) == 0x0);
@@ -670,7 +830,9 @@ const _: () = assert!(core::mem::offset_of!(BSScript___anon_D7688862__LinkerConv
 #[repr(C)]
 pub struct SkyrimScript__BaseHandleReaderWriter {
     /// +0x0 `vtbl:SkyrimScript::BaseHandleReaderWriter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__BaseHandleReaderWriter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__BaseHandleReaderWriter, __vftable) == 0x0);
@@ -681,7 +843,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__BaseHandleReaderWriter
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_14 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor,14>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_14_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_14, __vftable) == 0x0);
@@ -692,7 +856,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_10 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor,10>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_10_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_10, __vftable) == 0x0);
@@ -703,7 +869,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_21 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor,21>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_21_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_21, __vftable) == 0x0);
@@ -714,7 +882,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__AddItemFunctor_20 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::AddItemFunctor,20>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__AddItemFunctor_20_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__AddItemFunctor_20, __vftable) == 0x0);
@@ -725,7 +895,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor_17 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::ApplyHavokImpulseFunctor,17>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor_17_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor_17, __vftable) == 0x0);
@@ -736,7 +908,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DamageObjectFunctor_2 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::DamageObjectFunctor,2>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DamageObjectFunctor_2_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DamageObjectFunctor_2, __vftable) == 0x0);
@@ -747,7 +921,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DeleteFunctor_5 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::DeleteFunctor,5>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DeleteFunctor_5_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DeleteFunctor_5, __vftable) == 0x0);
@@ -758,7 +934,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DisableFunctor_4 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::DisableFunctor,4>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DisableFunctor_4_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DisableFunctor_4, __vftable) == 0x0);
@@ -769,7 +947,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DropObjectFunctor_12 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::DropObjectFunctor,12>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DropObjectFunctor_12_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DropObjectFunctor_12, __vftable) == 0x0);
@@ -780,7 +960,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__EnableFunctor_3 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::EnableFunctor,3>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__EnableFunctor_3_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__EnableFunctor_3, __vftable) == 0x0);
@@ -791,7 +973,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor_16 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::ForceAddRemoveRagdollFunctor,16>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor_16_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor_16, __vftable) == 0x0);
@@ -802,7 +986,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToFunctor_0 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::MoveToFunctor,0>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToFunctor_0_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToFunctor_0, __vftable) == 0x0);
@@ -813,7 +999,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor_1 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::MoveToOwnEditorLocFunctor,1>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor_1_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor_1, __vftable) == 0x0);
@@ -824,7 +1012,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor_9 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::NonLatentDeleteFunctor,9>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor_9_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor_9, __vftable) == 0x0);
@@ -835,7 +1025,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__RemoveItemFunctor_24 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::RemoveItemFunctor,24>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__RemoveItemFunctor_24_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__RemoveItemFunctor_24, __vftable) == 0x0);
@@ -846,7 +1038,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ResetFunctor_18 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::ResetFunctor,18>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ResetFunctor_18_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ResetFunctor_18, __vftable) == 0x0);
@@ -857,7 +1051,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetAngleFunctor_7 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::SetAngleFunctor,7>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetAngleFunctor_7_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetAngleFunctor_7, __vftable) == 0x0);
@@ -868,7 +1064,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetMotionTypeFunctor_8 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::SetMotionTypeFunctor,8>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetMotionTypeFunctor_8_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetMotionTypeFunctor_8, __vftable) == 0x0);
@@ -879,7 +1077,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetPositionFunctor_6 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::SetPositionFunctor,6>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetPositionFunctor_6_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetPositionFunctor_6, __vftable) == 0x0);
@@ -890,7 +1090,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetScaleFunctor_11 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::SetScaleFunctor,11>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetScaleFunctor_11_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetScaleFunctor_11, __vftable) == 0x0);
@@ -901,7 +1103,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__TetherFunctor_13 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_A72C052E::TetherFunctor,13>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__TetherFunctor_13_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__TetherFunctor_13, __vftable) == 0x0);
@@ -912,7 +1116,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor_23 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_BCEAF3CE::ScrollCastFunctor,23>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor_23_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor_23, __vftable) == 0x0);
@@ -923,7 +1129,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor_15 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_BDD43BCC::AddRemoveConstraintFunctor,15>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor_15_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor_15, __vftable) == 0x0);
@@ -934,7 +1142,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_C56CCD02__CastFunctor_22 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_C56CCD02::CastFunctor,22>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_C56CCD02__CastFunctor_22_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_C56CCD02__CastFunctor_22, __vftable) == 0x0);
@@ -945,7 +1155,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor_19 {
     /// +0x0 `vtbl:SkyrimScript::ConcreteDelayFunctorFactory<SkyrimScript::_anon_EF7C75B8::SendPlayerToJailFunctor,19>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor_19_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor_19, __vftable) == 0x0);
@@ -956,7 +1168,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ConcreteDelayFunctorFa
 #[repr(C)]
 pub struct SkyrimScript__DataFileHandleReaderWriter {
     /// +0x0 `vtbl:SkyrimScript::DataFileHandleReaderWriter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__DataFileHandleReaderWriter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__DataFileHandleReaderWriter, __vftable) == 0x0);
@@ -967,8 +1181,10 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__DataFileHandleReaderWr
 #[repr(C)]
 pub struct SkyrimScript__DelayFunctor {
     /// +0x0 `vtbl:SkyrimScript::DelayFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__DelayFunctor_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript__DelayFunctor>() == 0x20);
@@ -979,7 +1195,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__DelayFunctor, __vftabl
 #[repr(C)]
 pub struct SkyrimScript__DelayFunctorFactory {
     /// +0x0 `vtbl:SkyrimScript::DelayFunctorFactory:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__DelayFunctorFactory_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__DelayFunctorFactory, __vftable) == 0x0);
@@ -991,6 +1209,7 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__DelayFunctorFactory, _
 #[repr(C, packed)]
 pub struct SkyrimScript__Internal__AnimationCallbacks {
     /// +0x0 `vtbl:SkyrimScript::Internal::AnimationCallbacks:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__Internal__AnimationCallbacks_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -1009,6 +1228,7 @@ pub struct SkyrimScript__Internal__AnimationCallbacks {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript__Internal__AnimationCallbacks>() == 0x50);
@@ -1028,6 +1248,7 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__Internal__AnimationCal
 #[repr(C, packed)]
 pub struct SkyrimScript__Internal__CallbackList {
     /// +0x0 `vtbl:SkyrimScript::Internal::CallbackList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__Internal__CallbackList_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -1046,6 +1267,7 @@ pub struct SkyrimScript__Internal__CallbackList {
     pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript__Internal__CallbackList>() == 0x70);
@@ -1063,7 +1285,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__Internal__CallbackList
 #[repr(C)]
 pub struct SkyrimScript__Internal__IProfileCallQuery {
     /// +0x0 `vtbl:SkyrimScript::Internal::IProfileCallQuery:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__Internal__IProfileCallQuery_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__Internal__IProfileCallQuery, __vftable) == 0x0);
@@ -1075,6 +1299,7 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__Internal__IProfileCall
 #[repr(C, packed)]
 pub struct SkyrimScript__Logger {
     /// +0x0 `vtbl:SkyrimScript::Logger:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__Logger_vtable,
     /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<BSScript::LogEvent>
     pub source_BSScript_LogEvent: crate::BSTEventSource,
@@ -1091,6 +1316,7 @@ pub struct SkyrimScript__Logger {
     /// +0x90 `undefined8`, base BSScript::ErrorLogger
     pub field_90: u64,
     pub unknown_98: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript__Logger>() == 0xB0);
@@ -1108,7 +1334,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__Logger, field_90) == 0
 #[repr(C)]
 pub struct SkyrimScript__ObjectBindPolicy {
     /// +0x0 `vtbl:SkyrimScript::ObjectBindPolicy:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__ObjectBindPolicy_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__ObjectBindPolicy, __vftable) == 0x0);
@@ -1120,6 +1348,7 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__ObjectBindPolicy, __vf
 #[repr(C, packed)]
 pub struct SkyrimScript__PathingCallbackMgr {
     /// +0x0 `vtbl:SkyrimScript::PathingCallbackMgr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__PathingCallbackMgr_vtable,
     pub unknown_8: [u8; 4],
     /// +0xC `undefined8`, ctor store
@@ -1134,6 +1363,7 @@ pub struct SkyrimScript__PathingCallbackMgr {
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__PathingCallbackMgr, __vftable) == 0x0);
@@ -1149,7 +1379,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__PathingCallbackMgr, fi
 #[repr(C)]
 pub struct SkyrimScript__Profiler {
     /// +0x0 `vtbl:SkyrimScript::Profiler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__Profiler_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__Profiler, __vftable) == 0x0);
@@ -1161,10 +1393,13 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__Profiler, __vftable) =
 #[repr(C, packed)]
 pub struct SkyrimScript__QuestCallbackMgr {
     /// +0x0 `vtbl:SkyrimScript::QuestCallbackMgr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__QuestCallbackMgr_vtable,
     /// +0x8 `vtbl:SkyrimScript::QuestCallbackMgr:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::SkyrimScript__QuestCallbackMgr_vtable_8,
     /// +0x10 `vtbl:SkyrimScript::QuestCallbackMgr:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::SkyrimScript__QuestCallbackMgr_vtable_10,
     pub unknown_18: [u8; 4],
     /// +0x1C `undefined8`, ctor store
@@ -1203,6 +1438,7 @@ pub struct SkyrimScript__QuestCallbackMgr {
     pub unknown_B8: [u8; 8],
     /// +0xC0 `undefined8`, ctor store
     pub field_C0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__QuestCallbackMgr, __vftable) == 0x0);
@@ -1230,7 +1466,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__QuestCallbackMgr, fiel
 #[repr(C)]
 pub struct SkyrimScript__SaveFileHandleReaderWriter {
     /// +0x0 `vtbl:SkyrimScript::SaveFileHandleReaderWriter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__SaveFileHandleReaderWriter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__SaveFileHandleReaderWriter, __vftable) == 0x0);
@@ -1241,7 +1479,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__SaveFileHandleReaderWr
 #[repr(C)]
 pub struct SkyrimScript__SavePatcher {
     /// +0x0 `vtbl:SkyrimScript::SavePatcher:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__SavePatcher_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__SavePatcher, __vftable) == 0x0);
@@ -1253,6 +1493,7 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__SavePatcher, __vftable
 #[repr(C, packed)]
 pub struct SkyrimScript__SoundCallbackMgr {
     /// +0x0 `vtbl:SkyrimScript::SoundCallbackMgr:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__SoundCallbackMgr_vtable,
     pub unknown_8: [u8; 4],
     /// +0xC `undefined8`, ctor store
@@ -1267,6 +1508,7 @@ pub struct SkyrimScript__SoundCallbackMgr {
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript__SoundCallbackMgr, __vftable) == 0x0);
@@ -1282,8 +1524,10 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__SoundCallbackMgr, fiel
 #[repr(C)]
 pub struct SkyrimScript__Store {
     /// +0x0 `vtbl:SkyrimScript::Store:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript__Store_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript__Store>() == 0x40);
@@ -1295,7 +1539,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript__Store, __vftable) == 0
 #[repr(C)]
 pub struct SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_0D8D4B7E::AttachAshPileFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor, __vftable) == 0x0);
@@ -1306,7 +1552,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0D8D4B7E__Attach
 #[repr(C)]
 pub struct SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor, __vftable) == 0x0);
@@ -1317,7 +1565,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0D8D4B7E__MoveTo
 #[repr(C)]
 pub struct SkyrimScript___anon_0D8D4B7E__ResurrectFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0D8D4B7E__ResurrectFunctor, __vftable) == 0x0);
@@ -1328,7 +1578,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0D8D4B7E__Resurr
 #[repr(C)]
 pub struct SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc {
     /// +0x0 `vtbl:SkyrimScript::_anon_0D8D4B7E::_anon_0D8D4B7E::GiftMenuCallbackFunc:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc, __vftable) == 0x0);
@@ -1339,7 +1591,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0D8D4B7E___anon_
 #[repr(C)]
 pub struct SkyrimScript___anon_3A897AB3__LatentPlayerMover {
     /// +0x0 `vtbl:SkyrimScript::_anon_3A897AB3::LatentPlayerMover:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_3A897AB3__LatentPlayerMover_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_3A897AB3__LatentPlayerMover, __vftable) == 0x0);
@@ -1350,7 +1604,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_3A897AB3__Latent
 #[repr(C)]
 pub struct SkyrimScript___anon_74852251__FindActiveEffectFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_74852251::FindActiveEffectFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_74852251__FindActiveEffectFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_74852251__FindActiveEffectFunctor, __vftable) == 0x0);
@@ -1361,7 +1617,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_74852251__FindAc
 #[repr(C)]
 pub struct SkyrimScript___anon_74852251__FindBaseObjVisitor {
     /// +0x0 `vtbl:SkyrimScript::_anon_74852251::FindBaseObjVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_74852251__FindBaseObjVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_74852251__FindBaseObjVisitor, __vftable) == 0x0);
@@ -1372,7 +1630,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_74852251__FindBa
 #[repr(C)]
 pub struct SkyrimScript___anon_74852251__FindRefrObjVisitor {
     /// +0x0 `vtbl:SkyrimScript::_anon_74852251::FindRefrObjVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_74852251__FindRefrObjVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_74852251__FindRefrObjVisitor, __vftable) == 0x0);
@@ -1383,7 +1643,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_74852251__FindRe
 #[repr(C)]
 pub struct SkyrimScript___anon_91892E59__ProfileCallQueryTranslator {
     /// +0x0 `vtbl:SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_91892E59__ProfileCallQueryTranslator_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_91892E59__ProfileCallQueryTranslator, __vftable) == 0x0);
@@ -1394,7 +1656,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_91892E59__Profil
 #[repr(C)]
 pub struct SkyrimScript___anon_91892E59__RawProfileCallQuery {
     /// +0x0 `vtbl:SkyrimScript::_anon_91892E59::RawProfileCallQuery:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_91892E59__RawProfileCallQuery_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_91892E59__RawProfileCallQuery, __vftable) == 0x0);
@@ -1405,7 +1669,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_91892E59__RawPro
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__ActorValueStoryE_af99f9266903 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__ActorValueStoryE_af99f9266903_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__ActorValueStoryE_af99f9266903, __vftable) == 0x0);
@@ -1416,7 +1682,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__FormStoryEventAr_76dadb036768 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__FormStoryEventAr_76dadb036768_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__FormStoryEventAr_76dadb036768, __vftable) == 0x0);
@@ -1427,7 +1695,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__KeywordStoryEven_bed702ed6dde {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::KeywordStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__KeywordStoryEven_bed702ed6dde_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__KeywordStoryEven_bed702ed6dde, __vftable) == 0x0);
@@ -1438,7 +1708,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_28c6de510d72 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_28c6de510d72_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_28c6de510d72, __vftable) == 0x0);
@@ -1449,7 +1721,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_2c9afb76c017 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_2c9afb76c017_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_2c9afb76c017, __vftable) == 0x0);
@@ -1460,7 +1734,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_d3b2b77c97f0 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_d3b2b77c97f0_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_d3b2b77c97f0, __vftable) == 0x0);
@@ -1471,7 +1747,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_135e964d24f7 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_135e964d24f7_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__LocationStoryEve_135e964d24f7, __vftable) == 0x0);
@@ -1482,7 +1760,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_8cf892f296e9 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_8cf892f296e9_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_8cf892f296e9, __vftable) == 0x0);
@@ -1493,7 +1773,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_48b7f123e6e2 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_48b7f123e6e2_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_48b7f123e6e2, __vftable) == 0x0);
@@ -1504,7 +1786,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_60b49341910a {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_60b49341910a_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_60b49341910a, __vftable) == 0x0);
@@ -1515,7 +1799,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_7f4a692fea8f {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_7f4a692fea8f_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_7f4a692fea8f, __vftable) == 0x0);
@@ -1526,7 +1812,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_4c772d06c3f1 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_4c772d06c3f1_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_4c772d06c3f1, __vftable) == 0x0);
@@ -1537,7 +1825,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b31477f13c1 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b31477f13c1_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b31477f13c1, __vftable) == 0x0);
@@ -1548,7 +1838,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_7102a7866e3a {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_7102a7866e3a_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_7102a7866e3a, __vftable) == 0x0);
@@ -1559,7 +1851,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_f81d113e81ee {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_f81d113e81ee_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_f81d113e81ee, __vftable) == 0x0);
@@ -1570,7 +1864,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_df8215ed2758 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_df8215ed2758_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_df8215ed2758, __vftable) == 0x0);
@@ -1581,6 +1877,7 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_42c90c5185a3 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_42c90c5185a3_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -1598,6 +1895,7 @@ pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_42c90c5185a3, __vftable) == 0x0);
@@ -1615,7 +1913,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_152de8046f82 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_152de8046f82_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_152de8046f82, __vftable) == 0x0);
@@ -1626,6 +1926,7 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b2cc26fa2a2 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b2cc26fa2a2_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -1643,6 +1944,7 @@ pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b2cc26fa2a2, __vftable) == 0x0);
@@ -1660,7 +1962,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_873ba2cb5b4a {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_873ba2cb5b4a_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_873ba2cb5b4a, __vftable) == 0x0);
@@ -1671,7 +1975,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_55a65e1f3b96 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_55a65e1f3b96_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_55a65e1f3b96, __vftable) == 0x0);
@@ -1682,7 +1988,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_9d96db5beed0 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_9d96db5beed0_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_9d96db5beed0, __vftable) == 0x0);
@@ -1693,7 +2001,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__UIntStoryEventAr_f8f7b5f73441 {
     /// +0x0 `vtbl:SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__UIntStoryEventAr_f8f7b5f73441_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__UIntStoryEventAr_f8f7b5f73441, __vftable) == 0x0);
@@ -1704,7 +2014,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_946BA6A1__StoryE
 #[repr(C)]
 pub struct SkyrimScript___anon_967A6C5B__FindAttachedObjectFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_967A6C5B::FindAttachedObjectFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_967A6C5B__FindAttachedObjectFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_967A6C5B__FindAttachedObjectFunctor, __vftable) == 0x0);
@@ -1715,7 +2027,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_967A6C5B__FindAt
 #[repr(C)]
 pub struct SkyrimScript___anon_967A6C5B__FindExactObjectFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_967A6C5B::FindExactObjectFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_967A6C5B__FindExactObjectFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_967A6C5B__FindExactObjectFunctor, __vftable) == 0x0);
@@ -1726,7 +2040,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_967A6C5B__FindEx
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__AddItemFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::AddItemFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__AddItemFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__AddItemFunctor, __vftable) == 0x0);
@@ -1737,7 +2053,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__AddIte
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::ApplyHavokImpulseFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor, __vftable) == 0x0);
@@ -1748,7 +2066,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__ApplyH
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__DamageObjectFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::DamageObjectFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__DamageObjectFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__DamageObjectFunctor, __vftable) == 0x0);
@@ -1759,7 +2079,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__Damage
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__DeleteFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::DeleteFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__DeleteFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__DeleteFunctor, __vftable) == 0x0);
@@ -1770,8 +2092,10 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__Delete
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__DisableFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::DisableFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__DisableFunctor_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript___anon_A72C052E__DisableFunctor>() == 0x28);
@@ -1783,7 +2107,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__Disabl
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__DropObjectFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::DropObjectFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__DropObjectFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__DropObjectFunctor, __vftable) == 0x0);
@@ -1794,8 +2120,10 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__DropOb
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__EnableFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::EnableFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__EnableFunctor_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript___anon_A72C052E__EnableFunctor>() == 0x28);
@@ -1807,7 +2135,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__Enable
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::ForceAddRemoveRagdollFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor, __vftable) == 0x0);
@@ -1818,8 +2148,10 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__ForceA
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__MoveToFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::MoveToFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__MoveToFunctor_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript___anon_A72C052E__MoveToFunctor>() == 0x40);
@@ -1831,8 +2163,10 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__MoveTo
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::MoveToOwnEditorLocFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor>() == 0x20);
@@ -1844,7 +2178,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__MoveTo
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::NonLatentDeleteFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor, __vftable) == 0x0);
@@ -1855,7 +2191,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__NonLat
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__RemoveItemFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::RemoveItemFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__RemoveItemFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__RemoveItemFunctor, __vftable) == 0x0);
@@ -1866,7 +2204,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__Remove
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__ResetFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::ResetFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__ResetFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__ResetFunctor, __vftable) == 0x0);
@@ -1877,7 +2217,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__ResetF
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__SetAngleFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::SetAngleFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__SetAngleFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__SetAngleFunctor, __vftable) == 0x0);
@@ -1888,7 +2230,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__SetAng
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__SetMotionTypeFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::SetMotionTypeFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__SetMotionTypeFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__SetMotionTypeFunctor, __vftable) == 0x0);
@@ -1899,7 +2243,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__SetMot
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__SetPositionFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::SetPositionFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__SetPositionFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__SetPositionFunctor, __vftable) == 0x0);
@@ -1910,7 +2256,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__SetPos
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__SetScaleFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::SetScaleFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__SetScaleFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__SetScaleFunctor, __vftable) == 0x0);
@@ -1921,7 +2269,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__SetSca
 #[repr(C)]
 pub struct SkyrimScript___anon_A72C052E__TetherFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_A72C052E::TetherFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_A72C052E__TetherFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__TetherFunctor, __vftable) == 0x0);
@@ -1932,7 +2282,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_A72C052E__Tether
 #[repr(C)]
 pub struct SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_BCEAF3CE::ScrollCastFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor, __vftable) == 0x0);
@@ -1943,7 +2295,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_BCEAF3CE__Scroll
 #[repr(C)]
 pub struct SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_BDD43BCC::AddRemoveConstraintFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor, __vftable) == 0x0);
@@ -1954,7 +2308,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_BDD43BCC__AddRem
 #[repr(C)]
 pub struct SkyrimScript___anon_BDD43BCC__FadeThenMainMenuCallback {
     /// +0x0 `vtbl:SkyrimScript::_anon_BDD43BCC::FadeThenMainMenuCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_BDD43BCC__FadeThenMainMenuCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_BDD43BCC__FadeThenMainMenuCallback, __vftable) == 0x0);
@@ -1965,7 +2321,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_BDD43BCC__FadeTh
 #[repr(C)]
 pub struct SkyrimScript___anon_C56CCD02__CastFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_C56CCD02::CastFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_C56CCD02__CastFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_C56CCD02__CastFunctor, __vftable) == 0x0);
@@ -1976,7 +2334,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_C56CCD02__CastFu
 #[repr(C)]
 pub struct SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor {
     /// +0x0 `vtbl:SkyrimScript::_anon_EF7C75B8::SendPlayerToJailFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor, __vftable) == 0x0);
@@ -1988,112 +2348,166 @@ const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_EF7C75B8__SendPl
 #[repr(C, packed)]
 pub struct SkyrimVM {
     /// +0x0 `vtbl:SkyrimVM:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimVM_vtable,
     /// +0x8 `vtbl:SkyrimVM:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::SkyrimVM_vtable_8,
     /// +0x10 `vtbl:SkyrimVM:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::SkyrimVM_vtable_10,
     /// +0x18 `vtbl:SkyrimVM:18`, rtti
+    #[doc(hidden)]
     pub __vftable_18: *const crate::raw::vtables::SkyrimVM_vtable_18,
     /// +0x20 `vtbl:SkyrimVM:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::SkyrimVM_vtable_20,
     /// +0x28 `vtbl:SkyrimVM:28`, rtti
+    #[doc(hidden)]
     pub __vftable_28: *const crate::raw::vtables::SkyrimVM_vtable_28,
     /// +0x30 `vtbl:SkyrimVM:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::SkyrimVM_vtable_30,
     /// +0x38 `vtbl:SkyrimVM:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::SkyrimVM_vtable_38,
     /// +0x40 `vtbl:SkyrimVM:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::SkyrimVM_vtable_40,
     /// +0x48 `vtbl:SkyrimVM:48`, rtti
+    #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::SkyrimVM_vtable_48,
     /// +0x50 `vtbl:SkyrimVM:50`, rtti
+    #[doc(hidden)]
     pub __vftable_50: *const crate::raw::vtables::SkyrimVM_vtable_50,
     /// +0x58 `vtbl:SkyrimVM:58`, rtti
+    #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::SkyrimVM_vtable_58,
     /// +0x60 `vtbl:SkyrimVM:60`, rtti
+    #[doc(hidden)]
     pub __vftable_60: *const crate::raw::vtables::SkyrimVM_vtable_60,
     /// +0x68 `vtbl:SkyrimVM:68`, rtti
+    #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::SkyrimVM_vtable_68,
     /// +0x70 `vtbl:SkyrimVM:70`, rtti
+    #[doc(hidden)]
     pub __vftable_70: *const crate::raw::vtables::SkyrimVM_vtable_70,
     /// +0x78 `vtbl:SkyrimVM:78`, rtti
+    #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::SkyrimVM_vtable_78,
     /// +0x80 `vtbl:SkyrimVM:80`, rtti
+    #[doc(hidden)]
     pub __vftable_80: *const crate::raw::vtables::SkyrimVM_vtable_80,
     /// +0x88 `vtbl:SkyrimVM:88`, rtti
+    #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::SkyrimVM_vtable_88,
     /// +0x90 `vtbl:SkyrimVM:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::SkyrimVM_vtable_90,
     /// +0x98 `vtbl:SkyrimVM:98`, rtti
+    #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::SkyrimVM_vtable_98,
     /// +0xA0 `vtbl:SkyrimVM:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::SkyrimVM_vtable_A0,
     /// +0xA8 `vtbl:SkyrimVM:A8`, rtti
+    #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::SkyrimVM_vtable_A8,
     /// +0xB0 `vtbl:SkyrimVM:B0`, rtti
+    #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::SkyrimVM_vtable_B0,
     /// +0xB8 `vtbl:SkyrimVM:B8`, rtti
+    #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::SkyrimVM_vtable_B8,
     /// +0xC0 `vtbl:SkyrimVM:C0`, rtti
+    #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::SkyrimVM_vtable_C0,
     /// +0xC8 `vtbl:SkyrimVM:C8`, rtti
+    #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::SkyrimVM_vtable_C8,
     /// +0xD0 `vtbl:SkyrimVM:D0`, rtti
+    #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::SkyrimVM_vtable_D0,
     /// +0xD8 `vtbl:SkyrimVM:D8`, rtti
+    #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::SkyrimVM_vtable_D8,
     /// +0xE0 `vtbl:SkyrimVM:E0`, rtti
+    #[doc(hidden)]
     pub __vftable_E0: *const crate::raw::vtables::SkyrimVM_vtable_E0,
     /// +0xE8 `vtbl:SkyrimVM:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::SkyrimVM_vtable_E8,
     /// +0xF0 `vtbl:SkyrimVM:F0`, rtti
+    #[doc(hidden)]
     pub __vftable_F0: *const crate::raw::vtables::SkyrimVM_vtable_F0,
     /// +0xF8 `vtbl:SkyrimVM:F8`, rtti
+    #[doc(hidden)]
     pub __vftable_F8: *const crate::raw::vtables::SkyrimVM_vtable_F8,
     /// +0x100 `vtbl:SkyrimVM:100`, rtti
+    #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::SkyrimVM_vtable_100,
     /// +0x108 `vtbl:SkyrimVM:108`, rtti
+    #[doc(hidden)]
     pub __vftable_108: *const crate::raw::vtables::SkyrimVM_vtable_108,
     /// +0x110 `vtbl:SkyrimVM:110`, rtti
+    #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::SkyrimVM_vtable_110,
     /// +0x118 `vtbl:SkyrimVM:118`, rtti
+    #[doc(hidden)]
     pub __vftable_118: *const crate::raw::vtables::SkyrimVM_vtable_118,
     /// +0x120 `vtbl:SkyrimVM:120`, rtti
+    #[doc(hidden)]
     pub __vftable_120: *const crate::raw::vtables::SkyrimVM_vtable_120,
     /// +0x128 `vtbl:SkyrimVM:128`, rtti
+    #[doc(hidden)]
     pub __vftable_128: *const crate::raw::vtables::SkyrimVM_vtable_128,
     /// +0x130 `vtbl:SkyrimVM:130`, rtti
+    #[doc(hidden)]
     pub __vftable_130: *const crate::raw::vtables::SkyrimVM_vtable_130,
     /// +0x138 `vtbl:SkyrimVM:138`, rtti
+    #[doc(hidden)]
     pub __vftable_138: *const crate::raw::vtables::SkyrimVM_vtable_138,
     /// +0x140 `vtbl:SkyrimVM:140`, rtti
+    #[doc(hidden)]
     pub __vftable_140: *const crate::raw::vtables::SkyrimVM_vtable_140,
     /// +0x148 `vtbl:SkyrimVM:148`, rtti
+    #[doc(hidden)]
     pub __vftable_148: *const crate::raw::vtables::SkyrimVM_vtable_148,
     /// +0x150 `vtbl:SkyrimVM:150`, rtti
+    #[doc(hidden)]
     pub __vftable_150: *const crate::raw::vtables::SkyrimVM_vtable_150,
     /// +0x158 `vtbl:SkyrimVM:158`, rtti
+    #[doc(hidden)]
     pub __vftable_158: *const crate::raw::vtables::SkyrimVM_vtable_158,
     /// +0x160 `vtbl:SkyrimVM:160`, rtti
+    #[doc(hidden)]
     pub __vftable_160: *const crate::raw::vtables::SkyrimVM_vtable_160,
     /// +0x168 `vtbl:SkyrimVM:168`, rtti
+    #[doc(hidden)]
     pub __vftable_168: *const crate::raw::vtables::SkyrimVM_vtable_168,
     /// +0x170 `vtbl:SkyrimVM:170`, rtti
+    #[doc(hidden)]
     pub __vftable_170: *const crate::raw::vtables::SkyrimVM_vtable_170,
     /// +0x178 `vtbl:SkyrimVM:178`, rtti
+    #[doc(hidden)]
     pub __vftable_178: *const crate::raw::vtables::SkyrimVM_vtable_178,
     /// +0x180 `vtbl:SkyrimVM:180`, rtti
+    #[doc(hidden)]
     pub __vftable_180: *const crate::raw::vtables::SkyrimVM_vtable_180,
     /// +0x188 `vtbl:SkyrimVM:188`, rtti
+    #[doc(hidden)]
     pub __vftable_188: *const crate::raw::vtables::SkyrimVM_vtable_188,
     /// +0x190 `vtbl:SkyrimVM:190`, rtti
+    #[doc(hidden)]
     pub __vftable_190: *const crate::raw::vtables::SkyrimVM_vtable_190,
     /// +0x198 `vtbl:SkyrimVM:198`, rtti
+    #[doc(hidden)]
     pub __vftable_198: *const crate::raw::vtables::SkyrimVM_vtable_198,
     /// +0x1A0 `vtbl:SkyrimVM:1A0`, rtti
+    #[doc(hidden)]
     pub __vftable_1A0: *const crate::raw::vtables::SkyrimVM_vtable_1A0,
     /// +0x1A8 `vtbl:SkyrimVM:1A8`, rtti
+    #[doc(hidden)]
     pub __vftable_1A8: *const crate::raw::vtables::SkyrimVM_vtable_1A8,
     pub unknown_1B0: [u8; 8],
     /// +0x1B8 `class:BSTEventSource`, RTTI base BSTEventSource<SkyrimScript::StatsEvent>
@@ -2268,6 +2682,7 @@ pub struct SkyrimVM {
     pub field_7D0: u64,
     /// +0x7D8 `undefined8`, member ctor BSTStaticFreeList<BSTSmartPointer<SkyrimScript::DelayFunctor,BSTSmartPointerIntrusiveRefCount>,512>
     pub m_DelayFunctor_BSTSmartPointerIntrusiveRefCount_512__7D8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimVM, __vftable) == 0x0);
@@ -2400,7 +2815,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimVM, m_DelayFunctor_BSTSmartPoi
 #[repr(C)]
 pub struct SkyrimVM__EffectEventRelayFunctor {
     /// +0x0 `vtbl:SkyrimVM::EffectEventRelayFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimVM__EffectEventRelayFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimVM__EffectEventRelayFunctor, __vftable) == 0x0);
@@ -2411,7 +2828,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimVM__EffectEventRelayFunctor, _
 #[repr(C)]
 pub struct SkyrimVM__EventRelayFunctor {
     /// +0x0 `vtbl:SkyrimVM::EventRelayFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimVM__EventRelayFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimVM__EventRelayFunctor, __vftable) == 0x0);
@@ -2421,7 +2840,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimVM__EventRelayFunctor, __vftab
 #[repr(C)]
 pub struct SkyrimVM__ISendEventFilter {
     /// +0x0 `vtbl:SkyrimVM::ISendEventFilter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimVM__ISendEventFilter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimVM__ISendEventFilter, __vftable) == 0x0);
@@ -2432,7 +2853,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimVM__ISendEventFilter, __vftabl
 #[repr(C)]
 pub struct SkyrimVM__InventoryEventFilter {
     /// +0x0 `vtbl:SkyrimVM::InventoryEventFilter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimVM__InventoryEventFilter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimVM__InventoryEventFilter, __vftable) == 0x0);
@@ -2443,7 +2866,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimVM__InventoryEventFilter, __vf
 #[repr(C)]
 pub struct SkyrimVM__SleepStartEventFunctor {
     /// +0x0 `vtbl:SkyrimVM::SleepStartEventFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimVM__SleepStartEventFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimVM__SleepStartEventFunctor, __vftable) == 0x0);
@@ -2454,7 +2879,9 @@ const _: () = assert!(core::mem::offset_of!(SkyrimVM__SleepStartEventFunctor, __
 #[repr(C)]
 pub struct SkyrimVM__SleepStopEventFunctor {
     /// +0x0 `vtbl:SkyrimVM::SleepStopEventFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SkyrimVM__SleepStopEventFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimVM__SleepStopEventFunctor, __vftable) == 0x0);

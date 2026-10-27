@@ -13,6 +13,7 @@ pub struct BGSActorCellEvent {
     /// +0x8 `undefined1`, semantic; 1 entered, 0 left (medium)
     pub attached: u8,
     pub unknown_9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSActorCellEvent>() == 0x10);
@@ -29,6 +30,7 @@ pub struct BGSFootstepEvent {
     pub unknown_4: [u8; 4],
     /// +0x8 `class:BSFixedString`, semantic; the animation event name (a copy of the graph event's tag) (high)
     pub tag: crate::BSFixedString,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSFootstepEvent>() == 0x10);
@@ -46,6 +48,7 @@ pub struct BSAnimationGraphEvent {
     pub owner: *mut crate::TESObjectREFR,
     /// +0x10 `class:BSFixedString`, semantic; the event's payload string (high)
     pub payload: crate::BSFixedString,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAnimationGraphEvent>() == 0x18);
@@ -60,6 +63,7 @@ const _: () = assert!(core::mem::offset_of!(BSAnimationGraphEvent, payload) == 0
 pub struct BSFixedString {
     /// +0x0 `pointer`, semantic; the interned characters (null for the empty string); the BSStringPool::Entry header sits 0x18 bytes before them (high)
     pub data: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFixedString>() == 0x8);
@@ -74,6 +78,7 @@ pub struct BSSpinLock {
     pub owningThread: u32,
     /// +0x4 `undefined4`, semantic; recursion count (high)
     pub lockCount: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSSpinLock>() == 0x8);
@@ -93,6 +98,7 @@ pub struct BSStringPool__Entry {
     /// +0x10 `undefined4`, semantic; character count without the terminator; +0xc is unused (high)
     pub length: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSStringPool__Entry>() == 0x18);
@@ -107,6 +113,7 @@ const _: () = assert!(core::mem::offset_of!(BSStringPool__Entry, length) == 0x10
 pub struct BSTEventSink {
     /// +0x0 `pointer`, semantic; vtable: slot 0 the virtual destructor, slot 1 ProcessEvent(const E* event, BSTEventSource<E>* source) -> BSEventNotifyControl (high)
     pub __vftable: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSTEventSink>() == 0x8);
@@ -146,6 +153,7 @@ pub struct BSTEventSource {
     /// +0x50 `undefined1`, semantic; set while Notify walks the sinks; registrations then go to the pending arrays (high)
     pub notifying: u8,
     pub unknown_51: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSTEventSource>() == 0x58);
@@ -168,6 +176,7 @@ const _: () = assert!(core::mem::offset_of!(BSTEventSource, notifying) == 0x50);
 #[repr(C)]
 pub struct ButtonEvent {
     /// +0x0 `vtbl:ButtonEvent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ButtonEvent_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -184,6 +193,7 @@ pub struct ButtonEvent {
     pub value: f32,
     /// +0x2C `float`, semantic; seconds held (medium)
     pub heldDownSecs: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ButtonEvent>() == 0x30);
@@ -226,6 +236,7 @@ pub struct EventSourceHolder_Input {
     /// +0xF0 `undefined1`, semantic; set when a remote gamepad event is queued; cleared by Update (medium)
     pub remoteGamepadPending: u8,
     pub unknown_F1: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EventSourceHolder_Input>() == 0xF8);
@@ -284,6 +295,7 @@ pub struct EventSourceHolder_MenuOpenClose {
     /// +0x1C1 `undefined1`, semantic; set by CloseAllMenus, cleared when ProcessMessages finds the queue empty (medium)
     pub closingAllMenus: u8,
     pub unknown_1C2: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EventSourceHolder_MenuOpenClose>() == 0x1C8);
@@ -422,6 +434,7 @@ pub struct EventSourceHolder_TES {
     pub source_TESAmiiboTouchEvent: crate::BSTEventSource,
     /// +0x12E8 `class:BSTEventSource`, semantic; source of TESAmiiboForcedStopDetectionEvent (high)
     pub source_TESAmiiboForcedStopDetectionEvent: crate::BSTEventSource,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EventSourceHolder_TES>() == 0x1340);
@@ -489,10 +502,12 @@ const _: () = assert!(core::mem::offset_of!(EventSourceHolder_TES, source_TESAmi
 #[repr(C)]
 pub struct IDEvent {
     /// +0x0 `vtbl:IDEvent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IDEvent_vtable,
     pub unknown_8: [u8; 16],
     /// +0x18 `class:BSFixedString`, semantic; the user event name (e.g. 'Activate') mapped from the control map (medium)
     pub userEvent: crate::BSFixedString,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IDEvent>() == 0x20);
@@ -505,6 +520,7 @@ const _: () = assert!(core::mem::offset_of!(IDEvent, userEvent) == 0x18);
 #[repr(C)]
 pub struct InputEvent {
     /// +0x0 `vtbl:InputEvent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InputEvent_vtable,
     /// +0x8 `undefined4`, semantic; INPUT_DEVICE of the event (7 = none in ButtonEvent::ctor's default) (medium)
     pub device: u32,
@@ -512,6 +528,7 @@ pub struct InputEvent {
     pub eventType: u32,
     /// +0x10 `ptr:InputEvent`, semantic; next event of the frame's queue, null at the end (medium)
     pub next: *mut crate::InputEvent,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InputEvent>() == 0x18);
@@ -530,6 +547,7 @@ pub struct MenuModeChangeEvent {
     /// +0x8 `undefined1`, semantic; 1 when the first pausing menu opened, 0 when the last one closed (high)
     pub inMenuMode: u8,
     pub unknown_9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuModeChangeEvent>() == 0x10);
@@ -546,6 +564,7 @@ pub struct MenuOpenCloseEvent {
     /// +0x8 `undefined1`, semantic; 1 when the menu is shown, 0 when hidden (high)
     pub opening: u8,
     pub unknown_9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuOpenCloseEvent>() == 0x10);
@@ -559,6 +578,7 @@ const _: () = assert!(core::mem::offset_of!(MenuOpenCloseEvent, opening) == 0x8)
 pub struct PositionPlayerEvent {
     /// +0x0 `undefined4`, semantic; the step of a player move (the VM handler acts on 4 = finished) (medium)
     pub type_: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PositionPlayerEvent>() == 0x4);
@@ -573,6 +593,7 @@ pub struct TESActivateEvent {
     pub objectActivated: *mut crate::TESObjectREFR,
     /// +0x8 `ptr:TESObjectREFR`, semantic; the activating reference (high)
     pub actionRef: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESActivateEvent>() == 0x10);
@@ -593,6 +614,7 @@ pub struct TESActiveEffectApplyRemoveEvent {
     /// +0x12 `undefined1`, semantic; 1 applied, 0 removed (low)
     pub isApplied: u8,
     pub unknown_13: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESActiveEffectApplyRemoveEvent>() == 0x18);
@@ -612,6 +634,7 @@ pub struct TESActorLocationChangeEvent {
     pub oldLoc: *mut crate::BGSLocation,
     /// +0x10 `ptr:BGSLocation`, semantic; the location entered, null when none (high)
     pub newLoc: *mut crate::BGSLocation,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESActorLocationChangeEvent>() == 0x18);
@@ -631,6 +654,7 @@ pub struct TESBookReadEvent {
     /// +0xC `undefined2`, semantic; inventory unique id (medium)
     pub uniqueID: u16,
     pub unknown_E: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESBookReadEvent>() == 0x10);
@@ -648,6 +672,7 @@ pub struct TESCellAttachDetachEvent {
     /// +0x8 `undefined1`, semantic; 1 attached, 0 detached (high)
     pub attached: u8,
     pub unknown_9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCellAttachDetachEvent>() == 0x10);
@@ -661,6 +686,7 @@ const _: () = assert!(core::mem::offset_of!(TESCellAttachDetachEvent, attached) 
 pub struct TESCellFullyLoadedEvent {
     /// +0x0 `ptr:TESObjectCELL`, semantic; the cell that finished loading (medium)
     pub cell: *mut crate::TESObjectCELL,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCellFullyLoadedEvent>() == 0x8);
@@ -678,6 +704,7 @@ pub struct TESCombatEvent {
     /// +0x10 `undefined4`, semantic; 0 none, 1 combat, 2 searching (high)
     pub newState: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCombatEvent>() == 0x18);
@@ -703,6 +730,7 @@ pub struct TESContainerChangedEvent {
     /// +0x14 `undefined2`, semantic; unique id of the inventory entry (high)
     pub uniqueID: u16,
     pub unknown_16: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESContainerChangedEvent>() == 0x18);
@@ -725,6 +753,7 @@ pub struct TESDeathEvent {
     /// +0x10 `undefined1`, semantic; 0 while dying (OnDying), 1 once dead (OnDeath) (medium)
     pub dead: u8,
     pub unknown_11: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDeathEvent>() == 0x18);
@@ -743,6 +772,7 @@ pub struct TESDestructionStageChangedEvent {
     pub oldStage: u32,
     /// +0xC `undefined4`, semantic; new stage (medium)
     pub newStage: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDestructionStageChangedEvent>() == 0x10);
@@ -757,6 +787,7 @@ const _: () = assert!(core::mem::offset_of!(TESDestructionStageChangedEvent, new
 pub struct TESEnterBleedoutEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the actor entering bleedout (NiPointer) (medium)
     pub actor: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEnterBleedoutEvent>() == 0x8);
@@ -778,6 +809,7 @@ pub struct TESEquipEvent {
     /// +0x12 `undefined1`, semantic; 1 equipped, 0 unequipped (high)
     pub equipped: u8,
     pub unknown_13: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEquipEvent>() == 0x18);
@@ -794,6 +826,7 @@ const _: () = assert!(core::mem::offset_of!(TESEquipEvent, equipped) == 0x12);
 pub struct TESFastTravelEndEvent {
     /// +0x0 `float`, semantic; game hours the travel took (medium)
     pub fastTravelEndHours: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFastTravelEndEvent>() == 0x4);
@@ -806,6 +839,7 @@ const _: () = assert!(core::mem::offset_of!(TESFastTravelEndEvent, fastTravelEnd
 pub struct TESFormDeleteEvent {
     /// +0x0 `undefined4`, semantic; form id of the deleted form (medium)
     pub formID: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormDeleteEvent>() == 0x4);
@@ -823,6 +857,7 @@ pub struct TESFurnitureEvent {
     /// +0x10 `undefined4`, semantic; 0 sit (OnSit), 1 get up (OnGetUp) (high)
     pub type_: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFurnitureEvent>() == 0x18);
@@ -840,6 +875,7 @@ pub struct TESGrabReleaseEvent {
     /// +0x8 `undefined1`, semantic; 1 grabbed, 0 released (medium)
     pub grabbed: u8,
     pub unknown_9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESGrabReleaseEvent>() == 0x10);
@@ -862,6 +898,7 @@ pub struct TESHitEvent {
     /// +0x18 `undefined1`, semantic; bit 0 power attack, 1 sneak attack, 2 bash, 3 blocked (the flag rows); the high nibble is unused (high)
     pub flags: u8,
     pub unknown_19: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESHitEvent>() == 0x20);
@@ -878,6 +915,7 @@ const _: () = assert!(core::mem::offset_of!(TESHitEvent, flags) == 0x18);
 pub struct TESInitScriptEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the reference whose scripts initialise (NiPointer) (high)
     pub reference: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESInitScriptEvent>() == 0x8);
@@ -889,6 +927,7 @@ const _: () = assert!(core::mem::offset_of!(TESInitScriptEvent, reference) == 0x
 #[repr(C)]
 pub struct TESLoadGameEvent {
     pub unknown_0: [u8; 1],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLoadGameEvent>() == 0x1);
@@ -900,6 +939,7 @@ const _: () = assert!(size_of::<TESLoadGameEvent>() == 0x1);
 pub struct TESLockChangedEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the reference whose lock state changed (NiPointer) (high)
     pub lockedObject: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLockChangedEvent>() == 0x8);
@@ -917,6 +957,7 @@ pub struct TESMagicEffectApplyEvent {
     /// +0x10 `undefined4`, semantic; form id of the MGEF (medium)
     pub magicEffect: u32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESMagicEffectApplyEvent>() == 0x18);
@@ -937,6 +978,7 @@ pub struct TESMagicWardHitEvent {
     pub spell: u32,
     /// +0x14 `undefined4`, semantic; ward status (OnWardHit's aiStatus) (medium)
     pub status: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESMagicWardHitEvent>() == 0x18);
@@ -955,6 +997,7 @@ pub struct TESMoveAttachDetachEvent {
     /// +0x8 `undefined1`, semantic; 1 attached to the cell (OnAttachedToCell), 0 detached (medium)
     pub isCellAttached: u8,
     pub unknown_9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESMoveAttachDetachEvent>() == 0x10);
@@ -971,6 +1014,7 @@ pub struct TESObjectLoadedEvent {
     /// +0x4 `undefined1`, semantic; 1 loaded (OnLoad), 0 unloaded (OnUnload) (high)
     pub loaded: u8,
     pub unknown_5: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectLoadedEvent>() == 0x8);
@@ -987,6 +1031,7 @@ pub struct TESObjectREFRTranslationEvent {
     /// +0x8 `undefined4`, semantic; 0 failed, 1 completed, 2 almost completed (the VM handler's OnTranslationFailed / Complete / AlmostComplete order) (high)
     pub type_: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectREFRTranslationEvent>() == 0x10);
@@ -1005,6 +1050,7 @@ pub struct TESOpenCloseEvent {
     /// +0x10 `undefined1`, semantic; 1 opened, 0 closed (low)
     pub opened: u8,
     pub unknown_11: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESOpenCloseEvent>() == 0x18);
@@ -1023,6 +1069,7 @@ pub struct TESPackageEvent {
     pub package: u32,
     /// +0xC `undefined4`, semantic; 0 start (OnPackageStart), 1 end (OnPackageEnd), 2 change (OnPackageChange) (high)
     pub type_: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPackageEvent>() == 0x10);
@@ -1044,6 +1091,7 @@ pub struct TESPerkEntryRunEvent {
     /// +0x14 `undefined2`, semantic; entry index (low)
     pub flag: u16,
     pub unknown_16: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPerkEntryRunEvent>() == 0x18);
@@ -1066,6 +1114,7 @@ pub struct TESPlayerBowShotEvent {
     /// +0xC `undefined1`, semantic; non-zero when aimed at the sun (medium)
     pub isSunGazing: u8,
     pub unknown_D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPlayerBowShotEvent>() == 0x10);
@@ -1088,6 +1137,7 @@ pub struct TESQuestStageEvent {
     /// +0xE `undefined1`, semantic; stage flags byte (medium)
     pub flags: u8,
     pub unknown_F: [u8; 1],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQuestStageEvent>() == 0x10);
@@ -1104,6 +1154,7 @@ pub struct TESQuestStageItemDoneEvent {
     /// +0x0 `undefined4`, semantic; form id of the quest (low)
     pub formID: u32,
     pub unknown_4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQuestStageItemDoneEvent>() == 0x8);
@@ -1119,6 +1170,7 @@ pub struct TESQuestStartStopEvent {
     /// +0x4 `undefined1`, semantic; 1 started, 0 stopped (medium)
     pub started: u8,
     pub unknown_5: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQuestStartStopEvent>() == 0x8);
@@ -1132,6 +1184,7 @@ const _: () = assert!(core::mem::offset_of!(TESQuestStartStopEvent, started) == 
 pub struct TESResetEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the reset reference (NiPointer) (medium)
     pub object: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESResetEvent>() == 0x8);
@@ -1144,6 +1197,7 @@ const _: () = assert!(core::mem::offset_of!(TESResetEvent, object) == 0x0);
 pub struct TESResolveNPCTemplatesEvent {
     /// +0x0 `undefined4`, semantic; form id of the NPC whose templates resolved (medium)
     pub formID: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESResolveNPCTemplatesEvent>() == 0x4);
@@ -1160,6 +1214,7 @@ pub struct TESSceneEvent {
     pub quest: u32,
     /// +0xC `undefined4`, semantic; 0 start, else end (low)
     pub type_: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSceneEvent>() == 0x10);
@@ -1179,6 +1234,7 @@ pub struct TESSellEvent {
     /// +0xC `undefined2`, semantic; inventory unique id (medium)
     pub uniqueID: u16,
     pub unknown_E: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSellEvent>() == 0x10);
@@ -1195,6 +1251,7 @@ pub struct TESSleepStartEvent {
     pub sleepStartTime: f32,
     /// +0x4 `float`, semantic; game hours the sleep should end at (medium)
     pub desiredSleepEndTime: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSleepStartEvent>() == 0x8);
@@ -1208,6 +1265,7 @@ const _: () = assert!(core::mem::offset_of!(TESSleepStartEvent, desiredSleepEndT
 pub struct TESSleepStopEvent {
     /// +0x0 `undefined1`, semantic; non-zero when the sleep was interrupted (medium)
     pub interrupted: u8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSleepStopEvent>() == 0x1);
@@ -1223,6 +1281,7 @@ pub struct TESSpellCastEvent {
     /// +0x8 `undefined4`, semantic; form id of the spell, scroll or shout (medium)
     pub spell: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSpellCastEvent>() == 0x10);
@@ -1236,6 +1295,7 @@ const _: () = assert!(core::mem::offset_of!(TESSpellCastEvent, spell) == 0x8);
 pub struct TESSwitchRaceCompleteEvent {
     /// +0x0 `ptr:TESObjectREFR`, semantic; the actor whose race switch finished (NiPointer) (medium)
     pub subject: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSwitchRaceCompleteEvent>() == 0x8);
@@ -1253,6 +1313,7 @@ pub struct TESTopicInfoEvent {
     pub topicInfo: u32,
     /// +0x14 `undefined4`, semantic; 0 begin, 1 end (low)
     pub type_: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTopicInfoEvent>() == 0x18);
@@ -1270,6 +1331,7 @@ pub struct TESTrackedStatsEvent {
     /// +0x8 `undefined4`, semantic; the stat's new value (low)
     pub value: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTrackedStatsEvent>() == 0x10);
@@ -1286,6 +1348,7 @@ pub struct TESTrapHitEvent {
     /// +0x8 `ptr:TESObjectREFR`, semantic; the trap (NiPointer) (low)
     pub trap: *mut crate::TESObjectREFR,
     pub unknown_10: [u8; 64],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTrapHitEvent>() == 0x50);
@@ -1301,6 +1364,7 @@ pub struct TESTriggerEvent {
     pub target: *mut crate::TESObjectREFR,
     /// +0x8 `ptr:TESObjectREFR`, semantic; the reference that triggered it (NiPointer) (medium)
     pub caster: *mut crate::TESObjectREFR,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTriggerEvent>() == 0x10);
@@ -1322,6 +1386,7 @@ pub struct TESUniqueIDChangeEvent {
     pub oldUniqueID: u16,
     /// +0xE `undefined2`, semantic; new unique id (medium)
     pub newUniqueID: u16,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESUniqueIDChangeEvent>() == 0x10);
@@ -1338,6 +1403,7 @@ const _: () = assert!(core::mem::offset_of!(TESUniqueIDChangeEvent, newUniqueID)
 pub struct TESWaitStartEvent {
     /// +0x0 `float`, semantic; game hours at the start of the wait (medium)
     pub waitStartTime: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaitStartEvent>() == 0x4);
@@ -1350,6 +1416,7 @@ const _: () = assert!(core::mem::offset_of!(TESWaitStartEvent, waitStartTime) ==
 pub struct TESWaitStopEvent {
     /// +0x0 `undefined1`, semantic; non-zero when the wait was interrupted (medium)
     pub interrupted: u8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaitStopEvent>() == 0x1);

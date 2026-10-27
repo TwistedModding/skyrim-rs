@@ -9,6 +9,7 @@ use core::ffi::c_void;
 #[repr(C, packed)]
 pub struct AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3 {
     /// +0x0 `vtbl:AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -49,6 +50,7 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3 {
     /// +0x158 `undefined1`, ctor store
     pub field_158: u8,
     pub unknown_159: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3>() == 0x160);
@@ -77,6 +79,7 @@ const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation
 #[repr(C, packed)]
 pub struct AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3 {
     /// +0x0 `vtbl:AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -117,6 +120,7 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3 {
     /// +0x158 `undefined1`, ctor store
     pub field_158: u8,
     pub unknown_159: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3>() == 0x160);
@@ -145,6 +149,7 @@ const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation
 #[repr(C, packed)]
 pub struct AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22 {
     /// +0x0 `vtbl:AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -185,6 +190,7 @@ pub struct AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoo
     /// +0x1F0 `undefined1`, ctor store
     pub field_1F0: u8,
     pub unknown_1F1: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22>() == 0x1F8);
@@ -213,6 +219,7 @@ const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____p
 #[repr(C, packed)]
 pub struct AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12 {
     /// +0x0 `vtbl:AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -253,6 +260,7 @@ pub struct AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12 {
     /// +0x1A0 `undefined1`, ctor store
     pub field_1A0: u8,
     pub unknown_1A1: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12>() == 0x1A8);
@@ -281,6 +289,7 @@ const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BS
 #[repr(C, packed)]
 pub struct AStarSearch_ParentSpaceNode_TeleportLink_1 {
     /// +0x0 `vtbl:AStarSearch<ParentSpaceNode,TeleportLink,1>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_ParentSpaceNode_TeleportLink_1_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -321,6 +330,7 @@ pub struct AStarSearch_ParentSpaceNode_TeleportLink_1 {
     /// +0x148 `undefined1`, ctor store
     pub field_148: u8,
     pub unknown_149: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, __vftable) == 0x0);
@@ -348,6 +358,7 @@ const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_Teleport
 #[repr(C)]
 pub struct AbsorbEffect {
     /// +0x0 `vtbl:AbsorbEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AbsorbEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -402,6 +413,7 @@ pub struct AbsorbEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AbsorbEffect>() == 0x98);
@@ -438,6 +450,7 @@ const _: () = assert!(core::mem::offset_of!(AbsorbEffect, field_94) == 0x94);
 #[repr(C)]
 pub struct AbstractHeap {
     /// +0x0 `vtbl:AbstractHeap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AbstractHeap_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, ctor store
@@ -478,6 +491,7 @@ pub struct AbstractHeap {
     /// +0xA5 `undefined1`, ctor store
     pub field_A5: u8,
     pub unknown_A6: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AbstractHeap, __vftable) == 0x0);
@@ -506,6 +520,7 @@ const _: () = assert!(core::mem::offset_of!(AbstractHeap, field_A5) == 0xA5);
 #[repr(C)]
 pub struct AccumulatingValueModifierEffect {
     /// +0x0 `vtbl:AccumulatingValueModifierEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AccumulatingValueModifierEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -567,6 +582,7 @@ pub struct AccumulatingValueModifierEffect {
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AccumulatingValueModifierEffect>() == 0xA8);
@@ -606,8 +622,10 @@ const _: () = assert!(core::mem::offset_of!(AccumulatingValueModifierEffect, fie
 #[repr(C)]
 pub struct ActionActivateDoneHandler {
     /// +0x0 `vtbl:ActionActivateDoneHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActionActivateDoneHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActionActivateDoneHandler>() == 0x10);
@@ -618,6 +636,7 @@ const _: () = assert!(core::mem::offset_of!(ActionActivateDoneHandler, __vftable
 #[repr(C)]
 pub struct ActionInput {
     /// +0x0 `vtbl:ActionInput:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActionInput_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -628,6 +647,7 @@ pub struct ActionInput {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 76],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActionInput>() == 0x70);
@@ -642,7 +662,9 @@ const _: () = assert!(core::mem::offset_of!(ActionInput, field_20) == 0x20);
 #[repr(C)]
 pub struct ActiveEffect__ForEachHitEffectVisitor {
     /// +0x0 `vtbl:ActiveEffect::ForEachHitEffectVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActiveEffect__ForEachHitEffectVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActiveEffect__ForEachHitEffectVisitor, __vftable) == 0x0);
@@ -653,7 +675,9 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffect__ForEachHitEffectVisito
 #[repr(C)]
 pub struct ActiveEffectReferenceEffectController {
     /// +0x0 `vtbl:ActiveEffectReferenceEffectController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActiveEffectReferenceEffectController_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActiveEffectReferenceEffectController, __vftable) == 0x0);
@@ -663,7 +687,9 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffectReferenceEffectControlle
 #[repr(C)]
 pub struct Actor__ForEachSpellVisitor {
     /// +0x0 `vtbl:Actor::ForEachSpellVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Actor__ForEachSpellVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Actor__ForEachSpellVisitor>() == 0x8);
@@ -675,6 +701,7 @@ const _: () = assert!(core::mem::offset_of!(Actor__ForEachSpellVisitor, __vftabl
 #[repr(C)]
 pub struct ActorKnowledge {
     /// +0x0 `vtbl:ActorKnowledge:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorKnowledge_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -694,6 +721,7 @@ pub struct ActorKnowledge {
     pub field_40: u32,
     /// +0x44 `undefined4`, ctor store
     pub field_44: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorKnowledge>() == 0x48);
@@ -713,10 +741,12 @@ const _: () = assert!(core::mem::offset_of!(ActorKnowledge, field_44) == 0x44);
 #[repr(C)]
 pub struct ActorMediator {
     /// +0x0 `vtbl:ActorMediator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMediator_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMediator, __vftable) == 0x0);
@@ -727,7 +757,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMediator, field_10) == 0x10);
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__IMessageHandlerWrapper {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::IMessageHandlerWrapper:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__IMessageHandlerWrapper_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__IMessageHandlerWrapper, __vftable) == 0x0);
@@ -738,7 +770,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__IMessage
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageActivateDoor {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageActivateDoor>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageActivateDoor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageActivateDoor, __vftable) == 0x0);
@@ -749,7 +783,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageActorCollision {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageActorCollision>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageActorCollision_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageActorCollision, __vftable) == 0x0);
@@ -760,7 +796,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageApproachingDoor {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageApproachingDoor>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageApproachingDoor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageApproachingDoor, __vftable) == 0x0);
@@ -771,7 +809,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageBlocked {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageBlocked>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageBlocked_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageBlocked, __vftable) == 0x0);
@@ -782,7 +822,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageFreezeDirection {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageFreezeDirection>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageFreezeDirection_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageFreezeDirection, __vftable) == 0x0);
@@ -793,7 +835,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageJump {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageJump>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageJump_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageJump, __vftable) == 0x0);
@@ -804,7 +848,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageMovementTypeChange {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageMovementTypeChange>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageMovementTypeChange_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageMovementTypeChange, __vftable) == 0x0);
@@ -815,7 +861,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageNewPath {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageNewPath>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageNewPath_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageNewPath, __vftable) == 0x0);
@@ -826,7 +874,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePathComplete {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessagePathComplete>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePathComplete_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePathComplete, __vftable) == 0x0);
@@ -837,7 +887,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePathFailed {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessagePathFailed>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePathFailed_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePathFailed, __vftable) == 0x0);
@@ -848,7 +900,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePlayIdle {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessagePlayIdle>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePlayIdle_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessagePlayIdle, __vftable) == 0x0);
@@ -859,7 +913,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageSetStaticPath {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageSetStaticPath>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageSetStaticPath_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageSetStaticPath, __vftable) == 0x0);
@@ -870,7 +926,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageWarpToLocation {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageWarpToLocation>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageWarpToLocation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageWarpToLocation, __vftable) == 0x0);
@@ -881,7 +939,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageWarpToMultiple {
     /// +0x0 `vtbl:ActorMovementMessageMap<16>::MessageHandlerWrapper<MovementMessageWarpToMultiple>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageWarpToMultiple_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageHandlerWrapper_MovementMessageWarpToMultiple, __vftable) == 0x0);
@@ -891,9 +951,11 @@ const _: () = assert!(core::mem::offset_of!(ActorMovementMessageMap_16__MessageH
 #[repr(C)]
 pub struct ActorMover {
     /// +0x0 `vtbl:ActorMover:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMover_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorMover>() == 0x10);
@@ -905,7 +967,9 @@ const _: () = assert!(core::mem::offset_of!(ActorMover, field_8) == 0x8);
 #[repr(C)]
 pub struct ActorPackageData {
     /// +0x0 `vtbl:ActorPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorPackageData_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorPackageData>() == 0x8);
@@ -917,7 +981,9 @@ const _: () = assert!(core::mem::offset_of!(ActorPackageData, __vftable) == 0x0)
 #[repr(C)]
 pub struct ActorTargetCheck {
     /// +0x0 `vtbl:ActorTargetCheck:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorTargetCheck_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ActorTargetCheck, __vftable) == 0x0);
@@ -928,7 +994,9 @@ const _: () = assert!(core::mem::offset_of!(ActorTargetCheck, __vftable) == 0x0)
 #[repr(C)]
 pub struct AddCallbackVisitor {
     /// +0x0 `vtbl:AddCallbackVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AddCallbackVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AddCallbackVisitor, __vftable) == 0x0);
@@ -939,6 +1007,7 @@ const _: () = assert!(core::mem::offset_of!(AddCallbackVisitor, __vftable) == 0x
 #[repr(C)]
 pub struct AddCellGrassTask {
     /// +0x0 `vtbl:AddCellGrassTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AddCellGrassTask_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -956,6 +1025,7 @@ pub struct AddCellGrassTask {
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
     pub unknown_34: [u8; 28],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AddCellGrassTask>() == 0x50);
@@ -974,8 +1044,10 @@ const _: () = assert!(core::mem::offset_of!(AddCellGrassTask, field_30) == 0x30)
 #[repr(C)]
 pub struct AddRagdollHandler {
     /// +0x0 `vtbl:AddRagdollHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AddRagdollHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AddRagdollHandler>() == 0x10);
@@ -988,6 +1060,7 @@ const _: () = assert!(core::mem::offset_of!(AddRagdollHandler, __vftable) == 0x0
 #[repr(C, packed)]
 pub struct AlarmPackage {
     /// +0x0 `vtbl:AlarmPackage:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AlarmPackage_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1035,6 +1108,7 @@ pub struct AlarmPackage {
     /// +0xF0 `undefined1`, ctor store
     pub field_F0: u8,
     pub unknown_F1: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AlarmPackage>() == 0xF8);
@@ -1066,6 +1140,7 @@ const _: () = assert!(core::mem::offset_of!(AlarmPackage, field_F0) == 0xF0);
 #[repr(C)]
 pub struct AlchemyItem {
     /// +0x0 `vtbl:AlchemyItem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AlchemyItem_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1084,9 +1159,11 @@ pub struct AlchemyItem {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:AlchemyItem:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::AlchemyItem_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:AlchemyItem:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::AlchemyItem_vtable_40,
     /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -1104,6 +1181,7 @@ pub struct AlchemyItem {
     /// +0x88 `undefined8`, base MagicItem
     pub field_88: u64,
     /// +0x90 `vtbl:AlchemyItem:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::AlchemyItem_vtable_90,
     pub unknown_98: [u8; 8],
     /// +0xA0 `undefined8`, base TESModelTextureSwap
@@ -1115,25 +1193,31 @@ pub struct AlchemyItem {
     pub field_C0: u32,
     pub unknown_C4: [u8; 4],
     /// +0xC8 `vtbl:AlchemyItem:C8`, rtti
+    #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::AlchemyItem_vtable_C8,
     pub unknown_D0: [u8; 8],
     /// +0xD8 `vtbl:AlchemyItem:D8`, rtti
+    #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::AlchemyItem_vtable_D8,
     pub unknown_E0: [u8; 16],
     /// +0xF0 `vtbl:AlchemyItem:F0`, rtti
+    #[doc(hidden)]
     pub __vftable_F0: *const crate::raw::vtables::AlchemyItem_vtable_F0,
     /// +0xF8 `undefined4`, base TESWeightForm
     pub field_F8: u32,
     pub unknown_FC: [u8; 4],
     /// +0x100 `vtbl:AlchemyItem:100`, rtti
+    #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::AlchemyItem_vtable_100,
     /// +0x108 `undefined8`, base BGSEquipType
     pub field_108: u64,
     /// +0x110 `vtbl:AlchemyItem:110`, rtti
+    #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::AlchemyItem_vtable_110,
     /// +0x118 `undefined8`, base BGSDestructibleObjectForm
     pub field_118: u64,
     /// +0x120 `vtbl:AlchemyItem:120`, rtti
+    #[doc(hidden)]
     pub __vftable_120: *const crate::raw::vtables::AlchemyItem_vtable_120,
     /// +0x128 `undefined8`, base BGSPickupPutdownSounds
     pub field_128: u64,
@@ -1151,6 +1235,7 @@ pub struct AlchemyItem {
     /// +0x150 `undefined8`, ctor store
     pub field_150: u64,
     pub unknown_158: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AlchemyItem>() == 0x168);
@@ -1197,8 +1282,10 @@ const _: () = assert!(core::mem::offset_of!(AlchemyItem, field_150) == 0x150);
 #[repr(C)]
 pub struct AllowRotationHandler {
     /// +0x0 `vtbl:AllowRotationHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AllowRotationHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AllowRotationHandler>() == 0x10);
@@ -1211,6 +1298,7 @@ const _: () = assert!(core::mem::offset_of!(AllowRotationHandler, __vftable) == 
 #[repr(C, packed)]
 pub struct AnimationClipDataSingleton {
     /// +0x0 `vtbl:AnimationClipDataSingleton:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationClipDataSingleton_vtable,
     pub unknown_8: [u8; 20],
     /// +0x1C `undefined8`, ctor store
@@ -1222,6 +1310,7 @@ pub struct AnimationClipDataSingleton {
     pub unknown_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AnimationClipDataSingleton, __vftable) == 0x0);
@@ -1236,8 +1325,10 @@ const _: () = assert!(core::mem::offset_of!(AnimationClipDataSingleton, field_38
 #[repr(C)]
 pub struct AnimationDrivenHandler {
     /// +0x0 `vtbl:AnimationDrivenHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationDrivenHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimationDrivenHandler>() == 0x10);
@@ -1250,6 +1341,7 @@ const _: () = assert!(core::mem::offset_of!(AnimationDrivenHandler, __vftable) =
 #[repr(C, packed)]
 pub struct AnimationFileManagerSingleton {
     /// +0x0 `vtbl:AnimationFileManagerSingleton:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationFileManagerSingleton_vtable,
     pub unknown_8: [u8; 4],
     /// +0xC `undefined8`, ctor store
@@ -1268,6 +1360,7 @@ pub struct AnimationFileManagerSingleton {
     pub unknown_36: [u8; 74],
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AnimationFileManagerSingleton, __vftable) == 0x0);
@@ -1285,8 +1378,10 @@ const _: () = assert!(core::mem::offset_of!(AnimationFileManagerSingleton, field
 #[repr(C)]
 pub struct AnimationObjectDrawHandler {
     /// +0x0 `vtbl:AnimationObjectDrawHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationObjectDrawHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimationObjectDrawHandler>() == 0x10);
@@ -1298,8 +1393,10 @@ const _: () = assert!(core::mem::offset_of!(AnimationObjectDrawHandler, __vftabl
 #[repr(C)]
 pub struct AnimationObjectLoadHandler {
     /// +0x0 `vtbl:AnimationObjectLoadHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationObjectLoadHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimationObjectLoadHandler>() == 0x10);
@@ -1311,7 +1408,9 @@ const _: () = assert!(core::mem::offset_of!(AnimationObjectLoadHandler, __vftabl
 #[repr(C)]
 pub struct AnimationStreamLoadGame {
     /// +0x0 `vtbl:AnimationStreamLoadGame:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationStreamLoadGame_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AnimationStreamLoadGame, __vftable) == 0x0);
@@ -1322,7 +1421,9 @@ const _: () = assert!(core::mem::offset_of!(AnimationStreamLoadGame, __vftable) 
 #[repr(C)]
 pub struct AnimationStreamSaveGame {
     /// +0x0 `vtbl:AnimationStreamSaveGame:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationStreamSaveGame_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AnimationStreamSaveGame, __vftable) == 0x0);
@@ -1333,6 +1434,7 @@ const _: () = assert!(core::mem::offset_of!(AnimationStreamSaveGame, __vftable) 
 #[repr(C)]
 pub struct AnimationSystemUtils__QueuedReferenceAnimationTask {
     /// +0x0 `vtbl:AnimationSystemUtils::QueuedReferenceAnimationTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationSystemUtils__QueuedReferenceAnimationTask_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -1351,6 +1453,7 @@ pub struct AnimationSystemUtils__QueuedReferenceAnimationTask {
     pub field_30: u32,
     pub unknown_34: [u8; 4],
     /// +0x38 `vtbl:AnimationSystemUtils::QueuedReferenceAnimationTask:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::AnimationSystemUtils__QueuedReferenceAnimationTask_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
@@ -1375,6 +1478,7 @@ pub struct AnimationSystemUtils__QueuedReferenceAnimationTask {
     pub unknown_2CC: [u8; 4],
     /// +0x2D0 `undefined8`, ctor store
     pub field_2D0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AnimationSystemUtils__QueuedReferenceAnimationTask, __vftable) == 0x0);
@@ -1402,6 +1506,7 @@ const _: () = assert!(core::mem::offset_of!(AnimationSystemUtils__QueuedReferenc
 #[repr(C)]
 pub struct AnimationSystemUtils__TESModelAndAnimationHandles {
     /// +0x0 `vtbl:AnimationSystemUtils::TESModelAndAnimationHandles:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnimationSystemUtils__TESModelAndAnimationHandles_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -1420,6 +1525,7 @@ pub struct AnimationSystemUtils__TESModelAndAnimationHandles {
     pub field_30: u32,
     pub unknown_34: [u8; 4],
     /// +0x38 `vtbl:AnimationSystemUtils::TESModelAndAnimationHandles:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::AnimationSystemUtils__TESModelAndAnimationHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
@@ -1438,6 +1544,7 @@ pub struct AnimationSystemUtils__TESModelAndAnimationHandles {
     pub field_88: u64,
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimationSystemUtils__TESModelAndAnimationHandles>() == 0x98);
@@ -1464,8 +1571,10 @@ const _: () = assert!(core::mem::offset_of!(AnimationSystemUtils__TESModelAndAni
 #[repr(C)]
 pub struct AnticipateAttackHandler {
     /// +0x0 `vtbl:AnticipateAttackHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AnticipateAttackHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnticipateAttackHandler>() == 0x10);
@@ -1477,6 +1586,7 @@ const _: () = assert!(core::mem::offset_of!(AnticipateAttackHandler, __vftable) 
 #[repr(C)]
 pub struct AppResourceCaching___anon_AE50F340__CacheESMOp {
     /// +0x0 `vtbl:AppResourceCaching::_anon_AE50F340::CacheESMOp:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AppResourceCaching___anon_AE50F340__CacheESMOp_vtable,
     /// +0x8 `undefined4`, base BSResource::CacheDrive::Op
     pub field_8: u32,
@@ -1495,6 +1605,7 @@ pub struct AppResourceCaching___anon_AE50F340__CacheESMOp {
     /// +0x40 `undefined4`, base BSResource::CacheDrive::Op
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AppResourceCaching___anon_AE50F340__CacheESMOp, __vftable) == 0x0);
@@ -1512,11 +1623,15 @@ const _: () = assert!(core::mem::offset_of!(AppResourceCaching___anon_AE50F340__
 #[repr(C)]
 pub struct AppResourceCaching___anon_AE50F340__Manager {
     /// +0x0 `vtbl:AppResourceCaching::_anon_AE50F340::Manager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AppResourceCaching___anon_AE50F340__Manager_vtable,
     /// +0x8 `vtbl:AppResourceCaching::_anon_AE50F340::Manager:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::AppResourceCaching___anon_AE50F340__Manager_vtable_8,
     /// +0x10 `vtbl:AppResourceCaching::_anon_AE50F340::Manager:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::AppResourceCaching___anon_AE50F340__Manager_vtable_10,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AppResourceCaching___anon_AE50F340__Manager, __vftable) == 0x0);
@@ -1530,6 +1645,7 @@ const _: () = assert!(core::mem::offset_of!(AppResourceCaching___anon_AE50F340__
 #[repr(C, packed)]
 pub struct Archive {
     /// +0x0 `vtbl:Archive:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Archive_vtable,
     /// +0x8 `undefined4`, base NiBinaryStream
     pub field_8: u32,
@@ -1575,6 +1691,7 @@ pub struct Archive {
     pub field_178: u8,
     pub unknown_179: [u8; 7],
     /// +0x180 `vtbl:Archive:180`, rtti
+    #[doc(hidden)]
     pub __vftable_180: *const crate::raw::vtables::Archive_vtable_180,
     /// +0x188 `undefined4`, ctor store
     pub field_188: u32,
@@ -1601,6 +1718,7 @@ pub struct Archive {
     pub field_220: u64,
     /// +0x228 `undefined8`, ctor store
     pub field_228: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Archive>() == 0x230);
@@ -1644,6 +1762,7 @@ const _: () = assert!(core::mem::offset_of!(Archive, field_228) == 0x228);
 #[repr(C, packed)]
 pub struct ArchiveFile {
     /// +0x0 `vtbl:ArchiveFile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ArchiveFile_vtable,
     /// +0x8 `undefined4`, base NiBinaryStream
     pub field_8: u32,
@@ -1693,6 +1812,7 @@ pub struct ArchiveFile {
     /// +0x188 `undefined4`, ctor store
     pub field_188: u32,
     pub unknown_18C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ArchiveFile>() == 0x190);
@@ -1725,7 +1845,9 @@ const _: () = assert!(core::mem::offset_of!(ArchiveFile, field_188) == 0x188);
 #[repr(C)]
 pub struct ArrayOfTuplesImplementation {
     /// +0x0 `vtbl:ArrayOfTuplesImplementation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ArrayOfTuplesImplementation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ArrayOfTuplesImplementation, __vftable) == 0x0);
@@ -1736,7 +1858,9 @@ const _: () = assert!(core::mem::offset_of!(ArrayOfTuplesImplementation, __vftab
 #[repr(C)]
 pub struct ArrayOfTuplesImplementation__View {
     /// +0x0 `vtbl:ArrayOfTuplesImplementation::View:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ArrayOfTuplesImplementation__View_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ArrayOfTuplesImplementation__View, __vftable) == 0x0);
@@ -1747,8 +1871,10 @@ const _: () = assert!(core::mem::offset_of!(ArrayOfTuplesImplementation__View, _
 #[repr(C)]
 pub struct ArrowAttachHandler {
     /// +0x0 `vtbl:ArrowAttachHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ArrowAttachHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ArrowAttachHandler>() == 0x10);
@@ -1760,8 +1886,10 @@ const _: () = assert!(core::mem::offset_of!(ArrowAttachHandler, __vftable) == 0x
 #[repr(C)]
 pub struct ArrowDetachHandler {
     /// +0x0 `vtbl:ArrowDetachHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ArrowDetachHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ArrowDetachHandler>() == 0x10);
@@ -1774,6 +1902,7 @@ const _: () = assert!(core::mem::offset_of!(ArrowDetachHandler, __vftable) == 0x
 #[repr(C, packed)]
 pub struct ArrowProjectile {
     /// +0x0 `vtbl:ArrowProjectile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ArrowProjectile_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -1787,13 +1916,16 @@ pub struct ArrowProjectile {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ArrowProjectile:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::ArrowProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ArrowProjectile:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::ArrowProjectile_vtable_30,
     /// +0x38 `vtbl:ArrowProjectile:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::ArrowProjectile_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -1928,6 +2060,7 @@ pub struct ArrowProjectile {
     pub field_1E8: u64,
     /// +0x1F0 `undefined8`, ctor store
     pub field_1F0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ArrowProjectile>() == 0x1F8);
@@ -2010,8 +2143,10 @@ const _: () = assert!(core::mem::offset_of!(ArrowProjectile, field_1F0) == 0x1F0
 #[repr(C)]
 pub struct ArrowReleaseHandler {
     /// +0x0 `vtbl:ArrowReleaseHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ArrowReleaseHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ArrowReleaseHandler>() == 0x10);
@@ -2023,6 +2158,7 @@ const _: () = assert!(core::mem::offset_of!(ArrowReleaseHandler, __vftable) == 0
 #[repr(C)]
 pub struct ArrowScroller {
     /// +0x0 `vtbl:ArrowScroller:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ArrowScroller_vtable,
     /// +0x8 `undefined1`, base UI_element
     pub field_8: u8,
@@ -2067,6 +2203,7 @@ pub struct ArrowScroller {
     /// +0x8C `undefined1`, ctor store
     pub field_8C: u8,
     pub unknown_8D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ArrowScroller, __vftable) == 0x0);
@@ -2096,6 +2233,7 @@ const _: () = assert!(core::mem::offset_of!(ArrowScroller, field_8C) == 0x8C);
 #[repr(C)]
 pub struct Atmosphere {
     /// +0x0 `vtbl:Atmosphere:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Atmosphere_vtable,
     /// +0x8 `undefined8`, base SkyObject
     pub field_8: u64,
@@ -2110,6 +2248,7 @@ pub struct Atmosphere {
     /// +0x30 `undefined1`, ctor store
     pub field_30: u8,
     pub unknown_31: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Atmosphere>() == 0x38);
@@ -2127,7 +2266,9 @@ const _: () = assert!(core::mem::offset_of!(Atmosphere, field_30) == 0x30);
 #[repr(C)]
 pub struct AttachDistant3DTask {
     /// +0x0 `vtbl:AttachDistant3DTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AttachDistant3DTask_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AttachDistant3DTask, __vftable) == 0x0);
@@ -2138,8 +2279,10 @@ const _: () = assert!(core::mem::offset_of!(AttachDistant3DTask, __vftable) == 0
 #[repr(C)]
 pub struct AttackAnimationArrayMap {
     /// +0x0 `vtbl:AttackAnimationArrayMap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AttackAnimationArrayMap_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AttackAnimationArrayMap>() == 0x40);
@@ -2151,8 +2294,10 @@ const _: () = assert!(core::mem::offset_of!(AttackAnimationArrayMap, __vftable) 
 #[repr(C)]
 pub struct AttackStopHandler {
     /// +0x0 `vtbl:AttackStopHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AttackStopHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AttackStopHandler>() == 0x10);
@@ -2164,8 +2309,10 @@ const _: () = assert!(core::mem::offset_of!(AttackStopHandler, __vftable) == 0x0
 #[repr(C)]
 pub struct AttackWinEndHandler {
     /// +0x0 `vtbl:AttackWinEndHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AttackWinEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AttackWinEndHandler>() == 0x10);
@@ -2177,8 +2324,10 @@ const _: () = assert!(core::mem::offset_of!(AttackWinEndHandler, __vftable) == 0
 #[repr(C)]
 pub struct AttackWinStartHandler {
     /// +0x0 `vtbl:AttackWinStartHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AttackWinStartHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AttackWinStartHandler>() == 0x10);
@@ -2190,6 +2339,7 @@ const _: () = assert!(core::mem::offset_of!(AttackWinStartHandler, __vftable) ==
 #[repr(C)]
 pub struct AudioLoadForPlaybackTask {
     /// +0x0 `vtbl:AudioLoadForPlaybackTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AudioLoadForPlaybackTask_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -2207,6 +2357,7 @@ pub struct AudioLoadForPlaybackTask {
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
     pub unknown_34: [u8; 12],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AudioLoadForPlaybackTask>() == 0x40);
@@ -2225,6 +2376,7 @@ const _: () = assert!(core::mem::offset_of!(AudioLoadForPlaybackTask, field_30) 
 #[repr(C)]
 pub struct AudioLoadToCacheTask {
     /// +0x0 `vtbl:AudioLoadToCacheTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AudioLoadToCacheTask_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -2242,6 +2394,7 @@ pub struct AudioLoadToCacheTask {
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
     pub unknown_34: [u8; 12],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AudioLoadToCacheTask>() == 0x40);
@@ -2260,8 +2413,10 @@ const _: () = assert!(core::mem::offset_of!(AudioLoadToCacheTask, field_30) == 0
 #[repr(C)]
 pub struct BGShkMatFadeController {
     /// +0x0 `vtbl:BGShkMatFadeController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGShkMatFadeController_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGShkMatFadeController>() == 0x20);
@@ -2273,7 +2428,9 @@ const _: () = assert!(core::mem::offset_of!(BGShkMatFadeController, __vftable) =
 #[repr(C)]
 pub struct BGShkPhonemeController {
     /// +0x0 `vtbl:BGShkPhonemeController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGShkPhonemeController_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGShkPhonemeController, __vftable) == 0x0);
@@ -2284,7 +2441,9 @@ const _: () = assert!(core::mem::offset_of!(BGShkPhonemeController, __vftable) =
 #[repr(C)]
 pub struct BNETSystem__ModsChanged_ConfirmResetCallback {
     /// +0x0 `vtbl:BNETSystem::ModsChanged_ConfirmResetCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BNETSystem__ModsChanged_ConfirmResetCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BNETSystem__ModsChanged_ConfirmResetCallback, __vftable) == 0x0);
@@ -2295,7 +2454,9 @@ const _: () = assert!(core::mem::offset_of!(BNETSystem__ModsChanged_ConfirmReset
 #[repr(C)]
 pub struct BNetUnavailable__ModsNotMountedCallback {
     /// +0x0 `vtbl:BNetUnavailable::ModsNotMountedCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BNetUnavailable__ModsNotMountedCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BNetUnavailable__ModsNotMountedCallback, __vftable) == 0x0);
@@ -2306,7 +2467,9 @@ const _: () = assert!(core::mem::offset_of!(BNetUnavailable__ModsNotMountedCallb
 #[repr(C)]
 pub struct BNetUnavailable__OpenConnectingToNetworkCallback {
     /// +0x0 `vtbl:BNetUnavailable::OpenConnectingToNetworkCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BNetUnavailable__OpenConnectingToNetworkCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BNetUnavailable__OpenConnectingToNetworkCallback, __vftable) == 0x0);
@@ -2317,7 +2480,9 @@ const _: () = assert!(core::mem::offset_of!(BNetUnavailable__OpenConnectingToNet
 #[repr(C)]
 pub struct BNetUnavailable__OpenMarketplaceCallback {
     /// +0x0 `vtbl:BNetUnavailable::OpenMarketplaceCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BNetUnavailable__OpenMarketplaceCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BNetUnavailable__OpenMarketplaceCallback, __vftable) == 0x0);
@@ -2328,8 +2493,10 @@ const _: () = assert!(core::mem::offset_of!(BNetUnavailable__OpenMarketplaceCall
 #[repr(C)]
 pub struct BShkFloatController {
     /// +0x0 `vtbl:BShkFloatController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkFloatController_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BShkFloatController>() == 0x18);
@@ -2340,8 +2507,10 @@ const _: () = assert!(core::mem::offset_of!(BShkFloatController, __vftable) == 0
 #[repr(C)]
 pub struct BShkNonTransformController {
     /// +0x0 `vtbl:BShkNonTransformController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkNonTransformController_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BShkNonTransformController>() == 0x18);
@@ -2353,8 +2522,10 @@ const _: () = assert!(core::mem::offset_of!(BShkNonTransformController, __vftabl
 #[repr(C)]
 pub struct BShkVisibilityController {
     /// +0x0 `vtbl:BShkVisibilityController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkVisibilityController_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BShkVisibilityController>() == 0x18);
@@ -2366,6 +2537,7 @@ const _: () = assert!(core::mem::offset_of!(BShkVisibilityController, __vftable)
 #[repr(C)]
 pub struct BShkbHkxDB__DBData {
     /// +0x0 `vtbl:BShkbHkxDB::DBData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkbHkxDB__DBData_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -2374,6 +2546,7 @@ pub struct BShkbHkxDB__DBData {
     pub m_hkpShapeCollectionFilter_18: u64,
     /// +0x20 `undefined8`, base hkBaseObject
     pub m_hkpRayShapeCollectionFilter_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BShkbHkxDB__DBData>() == 0x28);
@@ -2389,6 +2562,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbHkxDB__DBData, m_hkpRayShapeCol
 #[repr(C, packed)]
 pub struct BShkbHkxDB__ProjectDBData {
     /// +0x0 `vtbl:BShkbHkxDB::ProjectDBData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkbHkxDB__ProjectDBData_vtable,
     /// +0x8 `undefined4`, ctor store (widths [4, 8])
     pub field_8: u32,
@@ -2450,6 +2624,7 @@ pub struct BShkbHkxDB__ProjectDBData {
     pub field_170: u64,
     /// +0x178 `undefined8`, ctor store
     pub field_178: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BShkbHkxDB__ProjectDBData, __vftable) == 0x0);
@@ -2485,6 +2660,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbHkxDB__ProjectDBData, field_178
 #[repr(C)]
 pub struct BShkbHkxDB__QueuedHandles {
     /// +0x0 `vtbl:BShkbHkxDB::QueuedHandles:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkbHkxDB__QueuedHandles_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -2503,6 +2679,7 @@ pub struct BShkbHkxDB__QueuedHandles {
     pub field_30: u32,
     pub unknown_34: [u8; 4],
     /// +0x38 `vtbl:BShkbHkxDB::QueuedHandles:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BShkbHkxDB__QueuedHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
@@ -2521,6 +2698,7 @@ pub struct BShkbHkxDB__QueuedHandles {
     pub field_88: u64,
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BShkbHkxDB__QueuedHandles>() == 0x98);
@@ -2547,6 +2725,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbHkxDB__QueuedHandles, field_90)
 #[repr(C)]
 pub struct BShkbHkxDB__StreamAdaptor {
     /// +0x0 `vtbl:BShkbHkxDB::StreamAdaptor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkbHkxDB__StreamAdaptor_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -2636,6 +2815,7 @@ pub struct BShkbHkxDB__StreamAdaptor {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BShkbHkxDB__StreamAdaptor, __vftable) == 0x0);
@@ -2688,7 +2868,9 @@ const _: () = assert!(core::mem::offset_of!(BShkbHkxDB__StreamAdaptor, field_114
 #[repr(C)]
 pub struct BShkbUtils__GraphInspectionFunctor {
     /// +0x0 `vtbl:BShkbUtils::GraphInspectionFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkbUtils__GraphInspectionFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BShkbUtils__GraphInspectionFunctor, __vftable) == 0x0);
@@ -2699,7 +2881,9 @@ const _: () = assert!(core::mem::offset_of!(BShkbUtils__GraphInspectionFunctor, 
 #[repr(C)]
 pub struct BShkbUtils__ProspectiveEventClipAddingFunctor {
     /// +0x0 `vtbl:BShkbUtils::ProspectiveEventClipAddingFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkbUtils__ProspectiveEventClipAddingFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BShkbUtils__ProspectiveEventClipAddingFunctor, __vftable) == 0x0);
@@ -2710,7 +2894,9 @@ const _: () = assert!(core::mem::offset_of!(BShkbUtils__ProspectiveEventClipAddi
 #[repr(C)]
 pub struct BShkbUtils__SaveDataRestoreFunctor {
     /// +0x0 `vtbl:BShkbUtils::SaveDataRestoreFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkbUtils__SaveDataRestoreFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BShkbUtils__SaveDataRestoreFunctor, __vftable) == 0x0);
@@ -2721,6 +2907,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbUtils__SaveDataRestoreFunctor, 
 #[repr(C)]
 pub struct BSiStateTaggingGenerator {
     /// +0x0 `vtbl:BSiStateTaggingGenerator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSiStateTaggingGenerator_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
@@ -2812,6 +2999,7 @@ pub struct BSiStateTaggingGenerator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSiStateTaggingGenerator, __vftable) == 0x0);
@@ -2866,6 +3054,7 @@ const _: () = assert!(core::mem::offset_of!(BSiStateTaggingGenerator, field_114)
 #[repr(C)]
 pub struct BSiStateTaggingUtils__BSiStateTaggingStateListener {
     /// +0x0 `vtbl:BSiStateTaggingUtils::BSiStateTaggingStateListener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSiStateTaggingUtils__BSiStateTaggingStateListener_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -2955,6 +3144,7 @@ pub struct BSiStateTaggingUtils__BSiStateTaggingStateListener {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSiStateTaggingUtils__BSiStateTaggingStateListener, __vftable) == 0x0);
@@ -3008,6 +3198,7 @@ const _: () = assert!(core::mem::offset_of!(BSiStateTaggingUtils__BSiStateTaggin
 #[repr(C)]
 pub struct BackgroundProcessThread {
     /// +0x0 `vtbl:BackgroundProcessThread:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BackgroundProcessThread_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSThread
@@ -3031,6 +3222,7 @@ pub struct BackgroundProcessThread {
     pub unknown_6C: [u8; 4],
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BackgroundProcessThread>() == 0x78);
@@ -3051,6 +3243,7 @@ const _: () = assert!(core::mem::offset_of!(BackgroundProcessThread, field_70) =
 #[repr(C)]
 pub struct BanishEffect {
     /// +0x0 `vtbl:BanishEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BanishEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -3105,6 +3298,7 @@ pub struct BanishEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BanishEffect>() == 0x98);
@@ -3141,6 +3335,7 @@ const _: () = assert!(core::mem::offset_of!(BanishEffect, field_94) == 0x94);
 #[repr(C)]
 pub struct BarrierPhantomCallbackShape {
     /// +0x0 `vtbl:BarrierPhantomCallbackShape:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BarrierPhantomCallbackShape_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -3230,6 +3425,7 @@ pub struct BarrierPhantomCallbackShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BarrierPhantomCallbackShape, __vftable) == 0x0);
@@ -3284,6 +3480,7 @@ const _: () = assert!(core::mem::offset_of!(BarrierPhantomCallbackShape, field_1
 #[repr(C, packed)]
 pub struct BarrierProjectile {
     /// +0x0 `vtbl:BarrierProjectile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BarrierProjectile_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -3297,13 +3494,16 @@ pub struct BarrierProjectile {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BarrierProjectile:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BarrierProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BarrierProjectile:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BarrierProjectile_vtable_30,
     /// +0x38 `vtbl:BarrierProjectile:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BarrierProjectile_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -3432,6 +3632,7 @@ pub struct BarrierProjectile {
     /// +0x1E0 `float`, ctor store (widths [4, 4])
     pub field_1E0: f32,
     pub unknown_1E4: [u8; 28],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BarrierProjectile>() == 0x200);
@@ -3511,6 +3712,7 @@ const _: () = assert!(core::mem::offset_of!(BarrierProjectile, field_1E0) == 0x1
 #[repr(C)]
 pub struct BarterMenu {
     /// +0x0 `vtbl:BarterMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BarterMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -3614,6 +3816,7 @@ pub struct BarterMenu {
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base GRefCountImplCore
     pub field_A4: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BarterMenu>() == 0xA8);
@@ -3667,7 +3870,9 @@ const _: () = assert!(core::mem::offset_of!(BarterMenu, field_A4) == 0xA4);
 #[repr(C)]
 pub struct BaseFormComponent {
     /// +0x0 `vtbl:BaseFormComponent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BaseFormComponent_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BaseFormComponent>() == 0x8);
@@ -3679,8 +3884,10 @@ const _: () = assert!(core::mem::offset_of!(BaseFormComponent, __vftable) == 0x0
 #[repr(C)]
 pub struct BasicArrayImplementation_char____ptr64_10 {
     /// +0x0 `vtbl:BasicArrayImplementation<char*___ptr64,10>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BasicArrayImplementation_char____ptr64_10_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BasicArrayImplementation_char____ptr64_10>() == 0x28);
@@ -3692,8 +3899,10 @@ const _: () = assert!(core::mem::offset_of!(BasicArrayImplementation_char____ptr
 #[repr(C)]
 pub struct BasicArrayImplementation_float_3 {
     /// +0x0 `vtbl:BasicArrayImplementation<float,3>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BasicArrayImplementation_float_3_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BasicArrayImplementation_float_3>() == 0x28);
@@ -3705,7 +3914,9 @@ const _: () = assert!(core::mem::offset_of!(BasicArrayImplementation_float_3, __
 #[repr(C)]
 pub struct BasicArrayImplementation_hkDataObjectImpl____ptr64_8 {
     /// +0x0 `vtbl:BasicArrayImplementation<hkDataObjectImpl*___ptr64,8>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BasicArrayImplementation_hkDataObjectImpl____ptr64_8_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BasicArrayImplementation_hkDataObjectImpl____ptr64_8>() == 0x8);
@@ -3717,8 +3928,10 @@ const _: () = assert!(core::mem::offset_of!(BasicArrayImplementation_hkDataObjec
 #[repr(C)]
 pub struct BasicArrayImplementation_unsigned_char_1 {
     /// +0x0 `vtbl:BasicArrayImplementation<unsigned_char,1>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BasicArrayImplementation_unsigned_char_1_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BasicArrayImplementation_unsigned_char_1>() == 0x28);
@@ -3730,8 +3943,10 @@ const _: () = assert!(core::mem::offset_of!(BasicArrayImplementation_unsigned_ch
 #[repr(C)]
 pub struct BedEnterHandler {
     /// +0x0 `vtbl:BedEnterHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BedEnterHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BedEnterHandler>() == 0x10);
@@ -3743,8 +3958,10 @@ const _: () = assert!(core::mem::offset_of!(BedEnterHandler, __vftable) == 0x0);
 #[repr(C)]
 pub struct BedFurnitureExitHandler {
     /// +0x0 `vtbl:BedFurnitureExitHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BedFurnitureExitHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BedFurnitureExitHandler>() == 0x10);
@@ -3756,6 +3973,7 @@ const _: () = assert!(core::mem::offset_of!(BedFurnitureExitHandler, __vftable) 
 #[repr(C)]
 pub struct BookMenu {
     /// +0x0 `vtbl:BookMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BookMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -3783,6 +4001,7 @@ pub struct BookMenu {
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:BookMenu:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BookMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
@@ -3795,6 +4014,7 @@ pub struct BookMenu {
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `vtbl:BookMenu:48`, rtti
+    #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::BookMenu_vtable_48,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
@@ -3851,6 +4071,7 @@ pub struct BookMenu {
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base GRefCountImplCore
     pub field_A4: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BookMenu>() == 0xA8);
@@ -3902,6 +4123,7 @@ const _: () = assert!(core::mem::offset_of!(BookMenu, field_A4) == 0xA4);
 #[repr(C)]
 pub struct BoundItemEffect {
     /// +0x0 `vtbl:BoundItemEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BoundItemEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -3953,6 +4175,7 @@ pub struct BoundItemEffect {
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
     /// +0x90 `vtbl:BoundItemEffect:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::BoundItemEffect_vtable_90,
     pub unknown_98: [u8; 24],
     /// +0xB0 `undefined2`, ctor store
@@ -3960,6 +4183,7 @@ pub struct BoundItemEffect {
     /// +0xB2 `undefined1`, ctor store
     pub field_B2: u8,
     pub unknown_B3: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BoundItemEffect>() == 0xB8);
@@ -3997,8 +4221,10 @@ const _: () = assert!(core::mem::offset_of!(BoundItemEffect, field_B2) == 0xB2);
 #[repr(C)]
 pub struct BowDrawnHandler {
     /// +0x0 `vtbl:BowDrawnHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BowDrawnHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BowDrawnHandler>() == 0x10);
@@ -4010,8 +4236,10 @@ const _: () = assert!(core::mem::offset_of!(BowDrawnHandler, __vftable) == 0x0);
 #[repr(C)]
 pub struct BowReleaseHandler {
     /// +0x0 `vtbl:BowReleaseHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BowReleaseHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BowReleaseHandler>() == 0x10);
@@ -4023,8 +4251,10 @@ const _: () = assert!(core::mem::offset_of!(BowReleaseHandler, __vftable) == 0x0
 #[repr(C)]
 pub struct BowZoomStartHandler {
     /// +0x0 `vtbl:BowZoomStartHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BowZoomStartHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BowZoomStartHandler>() == 0x10);
@@ -4036,8 +4266,10 @@ const _: () = assert!(core::mem::offset_of!(BowZoomStartHandler, __vftable) == 0
 #[repr(C)]
 pub struct BowZoomStopHandler {
     /// +0x0 `vtbl:BowZoomStopHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BowZoomStopHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BowZoomStopHandler>() == 0x10);
@@ -4049,8 +4281,10 @@ const _: () = assert!(core::mem::offset_of!(BowZoomStopHandler, __vftable) == 0x
 #[repr(C)]
 pub struct ByteArrayImplementation {
     /// +0x0 `vtbl:ByteArrayImplementation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ByteArrayImplementation_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ByteArrayImplementation>() == 0x28);
@@ -4062,7 +4296,9 @@ const _: () = assert!(core::mem::offset_of!(ByteArrayImplementation, __vftable) 
 #[repr(C)]
 pub struct CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t {
     /// +0x0 `vtbl:CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t, __vftable) == 0x0);
@@ -4073,7 +4309,9 @@ const _: () = assert!(core::mem::offset_of!(CCallResult_BSWin32SystemUtility_Enc
 #[repr(C)]
 pub struct CCallback_BSWin32SystemUtility_FloatingGamepadTextInputDismissed_t_0 {
     /// +0x0 `vtbl:CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CCallback_BSWin32SystemUtility_FloatingGamepadTextInputDismissed_t_0_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_FloatingGamepadTextInputDismissed_t_0, __vftable) == 0x0);
@@ -4084,7 +4322,9 @@ const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_Float
 #[repr(C)]
 pub struct CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0 {
     /// +0x0 `vtbl:CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0, __vftable) == 0x0);
@@ -4095,7 +4335,9 @@ const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_GameO
 #[repr(C)]
 pub struct CCallback_BSWin32SystemUtility_GamepadTextInputDismissed_t_0 {
     /// +0x0 `vtbl:CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CCallback_BSWin32SystemUtility_GamepadTextInputDismissed_t_0_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_GamepadTextInputDismissed_t_0, __vftable) == 0x0);
@@ -4105,7 +4347,9 @@ const _: () = assert!(core::mem::offset_of!(CCallback_BSWin32SystemUtility_Gamep
 #[repr(C)]
 pub struct CCallbackBase {
     /// +0x0 `vtbl:CCallbackBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CCallbackBase_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CCallbackBase, __vftable) == 0x0);
@@ -4116,7 +4360,9 @@ const _: () = assert!(core::mem::offset_of!(CCallbackBase, __vftable) == 0x0);
 #[repr(C)]
 pub struct CCallbackImpl_1 {
     /// +0x0 `vtbl:CCallbackImpl<1>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CCallbackImpl_1_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CCallbackImpl_1, __vftable) == 0x0);
@@ -4127,7 +4373,9 @@ const _: () = assert!(core::mem::offset_of!(CCallbackImpl_1, __vftable) == 0x0);
 #[repr(C)]
 pub struct CCallbackImpl_8 {
     /// +0x0 `vtbl:CCallbackImpl<8>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CCallbackImpl_8_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CCallbackImpl_8, __vftable) == 0x0);
@@ -4138,7 +4386,9 @@ const _: () = assert!(core::mem::offset_of!(CCallbackImpl_8, __vftable) == 0x0);
 #[repr(C)]
 pub struct CachedRaycastData {
     /// +0x0 `vtbl:CachedRaycastData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CachedRaycastData_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __vftable) == 0x0);
@@ -4149,6 +4399,7 @@ const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __vftable) == 0x0
 #[repr(C)]
 pub struct CalmEffect {
     /// +0x0 `vtbl:CalmEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CalmEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -4203,6 +4454,7 @@ pub struct CalmEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CalmEffect>() == 0x98);
@@ -4239,8 +4491,10 @@ const _: () = assert!(core::mem::offset_of!(CalmEffect, field_94) == 0x94);
 #[repr(C)]
 pub struct CellLoaderTask {
     /// +0x0 `vtbl:CellLoaderTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CellLoaderTask_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CellLoaderTask>() == 0x40);
@@ -4252,6 +4506,7 @@ const _: () = assert!(core::mem::offset_of!(CellLoaderTask, __vftable) == 0x0);
 #[repr(C)]
 pub struct CellMopp {
     /// +0x0 `vtbl:CellMopp:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CellMopp_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -4267,6 +4522,7 @@ pub struct CellMopp {
     pub field_E8: u32,
     /// +0xEC `undefined4`, ctor store
     pub field_EC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CellMopp>() == 0xF0);
@@ -4284,7 +4540,9 @@ const _: () = assert!(core::mem::offset_of!(CellMopp, field_EC) == 0xEC);
 #[repr(C)]
 pub struct CellMopp__HeightFieldWeldingTasklet {
     /// +0x0 `vtbl:CellMopp::HeightFieldWeldingTasklet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CellMopp__HeightFieldWeldingTasklet_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CellMopp__HeightFieldWeldingTasklet, __vftable) == 0x0);
@@ -4296,6 +4554,7 @@ const _: () = assert!(core::mem::offset_of!(CellMopp__HeightFieldWeldingTasklet,
 #[repr(C, packed)]
 pub struct ChainExplosion {
     /// +0x0 `vtbl:ChainExplosion:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ChainExplosion_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -4309,13 +4568,16 @@ pub struct ChainExplosion {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ChainExplosion:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::ChainExplosion_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ChainExplosion:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::ChainExplosion_vtable_30,
     /// +0x38 `vtbl:ChainExplosion:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::ChainExplosion_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -4410,6 +4672,7 @@ pub struct ChainExplosion {
     pub field_140: u32,
     pub unknown_144: [u8; 4],
     /// +0x148 `vtbl:ChainExplosion:148`, rtti
+    #[doc(hidden)]
     pub __vftable_148: *const crate::raw::vtables::ChainExplosion_vtable_148,
     /// +0x150 `undefined4`, ctor store
     pub field_150: u32,
@@ -4437,6 +4700,7 @@ pub struct ChainExplosion {
     /// +0x1A0 `undefined1`, ctor store
     pub field_1A0: u8,
     pub unknown_1A1: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ChainExplosion>() == 0x1A8);
@@ -4512,8 +4776,10 @@ const _: () = assert!(core::mem::offset_of!(ChainExplosion, field_1A0) == 0x1A0)
 #[repr(C)]
 pub struct ChairEnterHandler {
     /// +0x0 `vtbl:ChairEnterHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ChairEnterHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ChairEnterHandler>() == 0x10);
@@ -4525,8 +4791,10 @@ const _: () = assert!(core::mem::offset_of!(ChairEnterHandler, __vftable) == 0x0
 #[repr(C)]
 pub struct ChairFurnitureExitHandler {
     /// +0x0 `vtbl:ChairFurnitureExitHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ChairFurnitureExitHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ChairFurnitureExitHandler>() == 0x10);
@@ -4538,11 +4806,13 @@ const _: () = assert!(core::mem::offset_of!(ChairFurnitureExitHandler, __vftable
 #[repr(C)]
 pub struct CharacterCollisionHandler {
     /// +0x0 `vtbl:CharacterCollisionHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CharacterCollisionHandler_vtable,
     pub unknown_8: [u8; 2],
     /// +0xA `undefined1`, ctor store
     pub field_A: u8,
     pub unknown_B: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CharacterCollisionHandler, __vftable) == 0x0);
@@ -4554,7 +4824,9 @@ const _: () = assert!(core::mem::offset_of!(CharacterCollisionHandler, field_A) 
 #[repr(C)]
 pub struct CharacterCollisionMessagePlayerAdapter {
     /// +0x0 `vtbl:CharacterCollisionMessagePlayerAdapter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CharacterCollisionMessagePlayerAdapter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CharacterCollisionMessagePlayerAdapter, __vftable) == 0x0);
@@ -4565,10 +4837,12 @@ const _: () = assert!(core::mem::offset_of!(CharacterCollisionMessagePlayerAdapt
 #[repr(C)]
 pub struct CheckGoalReachedFunctor {
     /// +0x0 `vtbl:CheckGoalReachedFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CheckGoalReachedFunctor_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CheckGoalReachedFunctor, __vftable) == 0x0);
@@ -4580,7 +4854,9 @@ const _: () = assert!(core::mem::offset_of!(CheckGoalReachedFunctor, field_8) ==
 #[repr(C)]
 pub struct CheckLineOfSightFilterMisc {
     /// +0x0 `vtbl:CheckLineOfSightFilterMisc:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CheckLineOfSightFilterMisc_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CheckLineOfSightFilterMisc, __vftable) == 0x0);
@@ -4591,10 +4867,12 @@ const _: () = assert!(core::mem::offset_of!(CheckLineOfSightFilterMisc, __vftabl
 #[repr(C)]
 pub struct CheckParameterReachedFunctor {
     /// +0x0 `vtbl:CheckParameterReachedFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CheckParameterReachedFunctor_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CheckParameterReachedFunctor, __vftable) == 0x0);
@@ -4606,7 +4884,9 @@ const _: () = assert!(core::mem::offset_of!(CheckParameterReachedFunctor, field_
 #[repr(C)]
 pub struct CheckStoppedMovingFunctor {
     /// +0x0 `vtbl:CheckStoppedMovingFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CheckStoppedMovingFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CheckStoppedMovingFunctor, __vftable) == 0x0);
@@ -4617,8 +4897,10 @@ const _: () = assert!(core::mem::offset_of!(CheckStoppedMovingFunctor, __vftable
 #[repr(C)]
 pub struct CheckWithinMultiBoundTask {
     /// +0x0 `vtbl:CheckWithinMultiBoundTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CheckWithinMultiBoundTask_vtable,
     pub unknown_8: [u8; 48],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CheckWithinMultiBoundTask>() == 0x38);
@@ -4630,6 +4912,7 @@ const _: () = assert!(core::mem::offset_of!(CheckWithinMultiBoundTask, __vftable
 #[repr(C)]
 pub struct CloakEffect {
     /// +0x0 `vtbl:CloakEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CloakEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -4682,6 +4965,7 @@ pub struct CloakEffect {
     pub unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CloakEffect>() == 0x98);
@@ -4717,6 +5001,7 @@ const _: () = assert!(core::mem::offset_of!(CloakEffect, field_90) == 0x90);
 #[repr(C)]
 pub struct Clouds {
     /// +0x0 `vtbl:Clouds:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Clouds_vtable,
     /// +0x8 `undefined8`, base SkyObject
     pub field_8: u64,
@@ -4827,6 +5112,7 @@ pub struct Clouds {
     pub unknown_513: [u8; 5],
     /// +0x518 `undefined8`, ctor store
     pub field_518: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Clouds>() == 0x520);
@@ -4891,6 +5177,7 @@ const _: () = assert!(core::mem::offset_of!(Clouds, field_518) == 0x518);
 #[repr(C)]
 pub struct CommandEffect {
     /// +0x0 `vtbl:CommandEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CommandEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -4944,6 +5231,7 @@ pub struct CommandEffect {
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
     pub unknown_94: [u8; 12],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CommandEffect>() == 0xA0);
@@ -4979,6 +5267,7 @@ const _: () = assert!(core::mem::offset_of!(CommandEffect, field_90) == 0x90);
 #[repr(C)]
 pub struct CommandSummonedEffect {
     /// +0x0 `vtbl:CommandSummonedEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CommandSummonedEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -5029,6 +5318,7 @@ pub struct CommandSummonedEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CommandSummonedEffect>() == 0x90);
@@ -5062,7 +5352,9 @@ const _: () = assert!(core::mem::offset_of!(CommandSummonedEffect, field_88) == 
 #[repr(C)]
 pub struct CompactingStore__MoveCallback {
     /// +0x0 `vtbl:CompactingStore::MoveCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CompactingStore__MoveCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CompactingStore__MoveCallback, __vftable) == 0x0);
@@ -5073,7 +5365,9 @@ const _: () = assert!(core::mem::offset_of!(CompactingStore__MoveCallback, __vft
 #[repr(C)]
 pub struct CompactingStore__NoopMoveCallback {
     /// +0x0 `vtbl:CompactingStore::NoopMoveCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CompactingStore__NoopMoveCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CompactingStore__NoopMoveCallback, __vftable) == 0x0);
@@ -5084,6 +5378,7 @@ const _: () = assert!(core::mem::offset_of!(CompactingStore__NoopMoveCallback, _
 #[repr(C)]
 pub struct CompactingStore__Store {
     /// +0x0 `vtbl:CompactingStore::Store:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CompactingStore__Store_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -5125,6 +5420,7 @@ pub struct CompactingStore__Store {
     /// +0x298 `undefined4`, ctor store
     pub field_298: u32,
     pub unknown_29C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CompactingStore__Store, __vftable) == 0x0);
@@ -5152,8 +5448,10 @@ const _: () = assert!(core::mem::offset_of!(CompactingStore__Store, field_298) =
 #[repr(C)]
 pub struct Compass {
     /// +0x0 `vtbl:Compass:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Compass_vtable,
     pub unknown_8: [u8; 56],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Compass>() == 0x40);
@@ -5166,6 +5464,7 @@ const _: () = assert!(core::mem::offset_of!(Compass, __vftable) == 0x0);
 #[repr(C, packed)]
 pub struct CompressedArchiveFile {
     /// +0x0 `vtbl:CompressedArchiveFile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CompressedArchiveFile_vtable,
     /// +0x8 `undefined4`, base NiBinaryStream
     pub field_8: u32,
@@ -5223,6 +5522,7 @@ pub struct CompressedArchiveFile {
     pub field_1A0: u64,
     /// +0x1A8 `undefined8`, ctor store
     pub field_1A8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CompressedArchiveFile>() == 0x1B0);
@@ -5259,6 +5559,7 @@ const _: () = assert!(core::mem::offset_of!(CompressedArchiveFile, field_1A8) ==
 #[repr(C)]
 pub struct ConcussionEffect {
     /// +0x0 `vtbl:ConcussionEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ConcussionEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -5309,6 +5610,7 @@ pub struct ConcussionEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ConcussionEffect>() == 0x90);
@@ -5344,6 +5646,7 @@ const _: () = assert!(core::mem::offset_of!(ConcussionEffect, field_88) == 0x88)
 #[repr(C, packed)]
 pub struct ConeProjectile {
     /// +0x0 `vtbl:ConeProjectile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ConeProjectile_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -5357,13 +5660,16 @@ pub struct ConeProjectile {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ConeProjectile:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::ConeProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ConeProjectile:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::ConeProjectile_vtable_30,
     /// +0x38 `vtbl:ConeProjectile:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::ConeProjectile_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -5503,6 +5809,7 @@ pub struct ConeProjectile {
     /// +0x200 `undefined8`, ctor store
     pub field_200: u64,
     pub unknown_208: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ConeProjectile>() == 0x220);
@@ -5587,7 +5894,9 @@ const _: () = assert!(core::mem::offset_of!(ConeProjectile, field_200) == 0x200)
 #[repr(C)]
 pub struct ConfirmResetCallback {
     /// +0x0 `vtbl:ConfirmResetCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ConfirmResetCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ConfirmResetCallback, __vftable) == 0x0);
@@ -5598,6 +5907,7 @@ const _: () = assert!(core::mem::offset_of!(ConfirmResetCallback, __vftable) == 
 #[repr(C)]
 pub struct ConsoleNativeUIMenu {
     /// +0x0 `vtbl:ConsoleNativeUIMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ConsoleNativeUIMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -5715,6 +6025,7 @@ pub struct ConsoleNativeUIMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ConsoleNativeUIMenu, __vftable) == 0x0);
@@ -5774,6 +6085,7 @@ const _: () = assert!(core::mem::offset_of!(ConsoleNativeUIMenu, field_BC) == 0x
 #[repr(C, packed)]
 pub struct ContentMenu {
     /// +0x0 `vtbl:ContentMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ContentMenu_vtable,
     pub unknown_8: [u8; 56],
     /// +0x40 `undefined8`, ctor store
@@ -5838,6 +6150,7 @@ pub struct ContentMenu {
     /// +0x150 `undefined4`, ctor store
     pub field_150: u32,
     pub unknown_154: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ContentMenu, __vftable) == 0x0);
@@ -5873,7 +6186,9 @@ const _: () = assert!(core::mem::offset_of!(ContentMenu, field_150) == 0x150);
 #[repr(C)]
 pub struct ContentMenu__errorCallback {
     /// +0x0 `vtbl:ContentMenu::errorCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ContentMenu__errorCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ContentMenu__errorCallback, __vftable) == 0x0);
@@ -5884,6 +6199,7 @@ const _: () = assert!(core::mem::offset_of!(ContentMenu__errorCallback, __vftabl
 #[repr(C)]
 pub struct CraftingMenu {
     /// +0x0 `vtbl:CraftingMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -6001,6 +6317,7 @@ pub struct CraftingMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingMenu, __vftable) == 0x0);
@@ -6060,11 +6377,13 @@ const _: () = assert!(core::mem::offset_of!(CraftingMenu, field_BC) == 0xBC);
 #[repr(C)]
 pub struct CraftingSubMenus__AlchemyMenu {
     /// +0x0 `vtbl:CraftingSubMenus::AlchemyMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__AlchemyMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::AlchemyMenu:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__AlchemyMenu_vtable_10,
     /// +0x18 `undefined4`, base GRefCountImplCore
     pub field_18: u32,
@@ -6213,6 +6532,7 @@ pub struct CraftingSubMenus__AlchemyMenu {
     /// +0x198 `undefined1`, ctor store
     pub field_198: u8,
     pub unknown_199: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CraftingSubMenus__AlchemyMenu>() == 0x1A0);
@@ -6286,7 +6606,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__AlchemyMenu, field
 #[repr(C)]
 pub struct CraftingSubMenus__AlchemyMenu__CraftItemCallback {
     /// +0x0 `vtbl:CraftingSubMenus::AlchemyMenu::CraftItemCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__AlchemyMenu__CraftItemCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__AlchemyMenu__CraftItemCallback, __vftable) == 0x0);
@@ -6296,7 +6618,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__AlchemyMenu__Craft
 #[repr(C)]
 pub struct CraftingSubMenus__AlchemyMenu__ModEffectivenessFunctor {
     /// +0x0 `vtbl:CraftingSubMenus::AlchemyMenu::ModEffectivenessFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__AlchemyMenu__ModEffectivenessFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__AlchemyMenu__ModEffectivenessFunctor, __vftable) == 0x0);
@@ -6307,7 +6631,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__AlchemyMenu__ModEf
 #[repr(C)]
 pub struct CraftingSubMenus__AlchemyMenu__QuitMenuCallback {
     /// +0x0 `vtbl:CraftingSubMenus::AlchemyMenu::QuitMenuCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__AlchemyMenu__QuitMenuCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__AlchemyMenu__QuitMenuCallback, __vftable) == 0x0);
@@ -6319,11 +6645,13 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__AlchemyMenu__QuitM
 #[repr(C, packed)]
 pub struct CraftingSubMenus__ConstructibleObjectMenu {
     /// +0x0 `vtbl:CraftingSubMenus::ConstructibleObjectMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__ConstructibleObjectMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::ConstructibleObjectMenu:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__ConstructibleObjectMenu_vtable_10,
     /// +0x18 `undefined4`, base GRefCountImplCore
     pub field_18: u32,
@@ -6460,6 +6788,7 @@ pub struct CraftingSubMenus__ConstructibleObjectMenu {
     pub field_150: u64,
     /// +0x158 `undefined8`, ctor store
     pub field_158: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CraftingSubMenus__ConstructibleObjectMenu>() == 0x160);
@@ -6529,7 +6858,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__ConstructibleObjec
 #[repr(C)]
 pub struct CraftingSubMenus__ConstructibleObjectMenu__CreationConfirmCallback {
     /// +0x0 `vtbl:CraftingSubMenus::ConstructibleObjectMenu::CreationConfirmCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__ConstructibleObjectMenu__CreationConfirmCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__ConstructibleObjectMenu__CreationConfirmCallback, __vftable) == 0x0);
@@ -6540,11 +6871,13 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__ConstructibleObjec
 #[repr(C)]
 pub struct CraftingSubMenus__CraftingSubMenu {
     /// +0x0 `vtbl:CraftingSubMenus::CraftingSubMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__CraftingSubMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::CraftingSubMenu:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__CraftingSubMenu_vtable_10,
     /// +0x18 `undefined4`, base GRefCountImplCore
     pub field_18: u32,
@@ -6665,6 +6998,7 @@ pub struct CraftingSubMenus__CraftingSubMenu {
     /// +0xF8 `undefined1`, ctor store
     pub field_F8: u8,
     pub unknown_F9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CraftingSubMenus__CraftingSubMenu>() == 0x100);
@@ -6728,11 +7062,13 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__CraftingSubMenu, f
 #[repr(C, packed)]
 pub struct CraftingSubMenus__EnchantConstructMenu {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::EnchantConstructMenu:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu_vtable_10,
     /// +0x18 `undefined4`, base GRefCountImplCore
     pub field_18: u32,
@@ -6923,6 +7259,7 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     /// +0x21E `undefined1`, ctor store
     pub field_21E: u8,
     pub unknown_21F: [u8; 1],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CraftingSubMenus__EnchantConstructMenu>() == 0x220);
@@ -7015,8 +7352,10 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C)]
 pub struct CraftingSubMenus__EnchantConstructMenu__CategoryListEntry {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu::CategoryListEntry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu__CategoryListEntry_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CraftingSubMenus__EnchantConstructMenu__CategoryListEntry>() == 0x20);
@@ -7028,7 +7367,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C)]
 pub struct CraftingSubMenus__EnchantConstructMenu__CreateEffectFunctor {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu::CreateEffectFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu__CreateEffectFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMenu__CreateEffectFunctor, __vftable) == 0x0);
@@ -7039,8 +7380,10 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C)]
 pub struct CraftingSubMenus__EnchantConstructMenu__EnchantMenuCallback {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu::EnchantMenuCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu__EnchantMenuCallback_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CraftingSubMenus__EnchantConstructMenu__EnchantMenuCallback>() == 0x18);
@@ -7052,7 +7395,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C)]
 pub struct CraftingSubMenus__EnchantConstructMenu__EnchantMenuCraftCallback {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu::EnchantMenuCraftCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu__EnchantMenuCraftCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMenu__EnchantMenuCraftCallback, __vftable) == 0x0);
@@ -7063,7 +7408,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C)]
 pub struct CraftingSubMenus__EnchantConstructMenu__EnchantMenuDisenchantCallback {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu::EnchantMenuDisenchantCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu__EnchantMenuDisenchantCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMenu__EnchantMenuDisenchantCallback, __vftable) == 0x0);
@@ -7074,7 +7421,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C)]
 pub struct CraftingSubMenus__EnchantConstructMenu__EnchantMenuExitCallback {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu::EnchantMenuExitCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu__EnchantMenuExitCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMenu__EnchantMenuExitCallback, __vftable) == 0x0);
@@ -7085,7 +7434,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C)]
 pub struct CraftingSubMenus__EnchantConstructMenu__EnchantmentEntry {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu::EnchantmentEntry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu__EnchantmentEntry_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMenu__EnchantmentEntry, __vftable) == 0x0);
@@ -7096,8 +7447,10 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C)]
 pub struct CraftingSubMenus__EnchantConstructMenu__ItemChangeEntry {
     /// +0x0 `vtbl:CraftingSubMenus::EnchantConstructMenu::ItemChangeEntry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu__ItemChangeEntry_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CraftingSubMenus__EnchantConstructMenu__ItemChangeEntry>() == 0x20);
@@ -7110,11 +7463,13 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__EnchantConstructMe
 #[repr(C, packed)]
 pub struct CraftingSubMenus__SmithingMenu {
     /// +0x0 `vtbl:CraftingSubMenus::SmithingMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__SmithingMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::SmithingMenu:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__SmithingMenu_vtable_10,
     /// +0x18 `undefined4`, base GRefCountImplCore
     pub field_18: u32,
@@ -7255,6 +7610,7 @@ pub struct CraftingSubMenus__SmithingMenu {
     pub unknown_15C: [u8; 4],
     /// +0x160 `undefined8`, ctor store
     pub field_160: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CraftingSubMenus__SmithingMenu>() == 0x168);
@@ -7326,7 +7682,9 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__SmithingMenu, fiel
 #[repr(C)]
 pub struct CraftingSubMenus__SmithingMenu__SmithingConfirmCallback {
     /// +0x0 `vtbl:CraftingSubMenus::SmithingMenu::SmithingConfirmCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__SmithingMenu__SmithingConfirmCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__SmithingMenu__SmithingConfirmCallback, __vftable) == 0x0);
@@ -7337,6 +7695,7 @@ const _: () = assert!(core::mem::offset_of!(CraftingSubMenus__SmithingMenu__Smit
 #[repr(C)]
 pub struct CreditsMenu {
     /// +0x0 `vtbl:CreditsMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CreditsMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -7364,6 +7723,7 @@ pub struct CreditsMenu {
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:CreditsMenu:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::CreditsMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
@@ -7484,6 +7844,7 @@ pub struct CreditsMenu {
     pub unknown_E9: [u8; 3],
     /// +0xEC `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_EC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CreditsMenu, __vftable) == 0x0);
@@ -7557,8 +7918,10 @@ const _: () = assert!(core::mem::offset_of!(CreditsMenu, field_EC) == 0xEC);
 #[repr(C)]
 pub struct CstringArrayImplementation {
     /// +0x0 `vtbl:CstringArrayImplementation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CstringArrayImplementation_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CstringArrayImplementation>() == 0x28);
@@ -7570,6 +7933,7 @@ const _: () = assert!(core::mem::offset_of!(CstringArrayImplementation, __vftabl
 #[repr(C)]
 pub struct CureEffect {
     /// +0x0 `vtbl:CureEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CureEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -7624,6 +7988,7 @@ pub struct CureEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, ctor store
     pub field_94: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CureEffect>() == 0x98);
@@ -7660,10 +8025,12 @@ const _: () = assert!(core::mem::offset_of!(CureEffect, field_94) == 0x94);
 #[repr(C)]
 pub struct CustomActorPackageData {
     /// +0x0 `vtbl:CustomActorPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CustomActorPackageData_vtable,
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CustomActorPackageData>() == 0x28);
@@ -7676,7 +8043,9 @@ const _: () = assert!(core::mem::offset_of!(CustomActorPackageData, field_20) ==
 #[repr(C)]
 pub struct CustomUtils__HasForceGreetVisitor {
     /// +0x0 `vtbl:CustomUtils::HasForceGreetVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CustomUtils__HasForceGreetVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CustomUtils__HasForceGreetVisitor, __vftable) == 0x0);
@@ -7687,7 +8056,9 @@ const _: () = assert!(core::mem::offset_of!(CustomUtils__HasForceGreetVisitor, _
 #[repr(C)]
 pub struct DLCPurchased__OpenVisitCreationClubCallback {
     /// +0x0 `vtbl:DLCPurchased::OpenVisitCreationClubCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DLCPurchased__OpenVisitCreationClubCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(DLCPurchased__OpenVisitCreationClubCallback, __vftable) == 0x0);
@@ -7698,7 +8069,9 @@ const _: () = assert!(core::mem::offset_of!(DLCPurchased__OpenVisitCreationClubC
 #[repr(C)]
 pub struct DLCPurchased__PurchasedDLCDialogCallback {
     /// +0x0 `vtbl:DLCPurchased::PurchasedDLCDialogCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DLCPurchased__PurchasedDLCDialogCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(DLCPurchased__PurchasedDLCDialogCallback, __vftable) == 0x0);
@@ -7709,6 +8082,7 @@ const _: () = assert!(core::mem::offset_of!(DLCPurchased__PurchasedDLCDialogCall
 #[repr(C)]
 pub struct DarknessEffect {
     /// +0x0 `vtbl:DarknessEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DarknessEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -7763,6 +8137,7 @@ pub struct DarknessEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DarknessEffect>() == 0x98);
@@ -7799,8 +8174,10 @@ const _: () = assert!(core::mem::offset_of!(DarknessEffect, field_94) == 0x94);
 #[repr(C)]
 pub struct DeathEmoteHandler {
     /// +0x0 `vtbl:DeathEmoteHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DeathEmoteHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DeathEmoteHandler>() == 0x10);
@@ -7812,8 +8189,10 @@ const _: () = assert!(core::mem::offset_of!(DeathEmoteHandler, __vftable) == 0x0
 #[repr(C)]
 pub struct DeathStopHandler {
     /// +0x0 `vtbl:DeathStopHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DeathStopHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DeathStopHandler>() == 0x10);
@@ -7825,6 +8204,7 @@ const _: () = assert!(core::mem::offset_of!(DeathStopHandler, __vftable) == 0x0)
 #[repr(C)]
 pub struct DebugText {
     /// +0x0 `vtbl:DebugText:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DebugText_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -7850,6 +8230,7 @@ pub struct DebugText {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DebugText>() == 0x60);
@@ -7872,8 +8253,10 @@ const _: () = assert!(core::mem::offset_of!(DebugText, field_58) == 0x58);
 #[repr(C)]
 pub struct DecapitateHandler {
     /// +0x0 `vtbl:DecapitateHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DecapitateHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DecapitateHandler>() == 0x10);
@@ -7885,6 +8268,7 @@ const _: () = assert!(core::mem::offset_of!(DecapitateHandler, __vftable) == 0x0
 #[repr(C)]
 pub struct DemoralizeEffect {
     /// +0x0 `vtbl:DemoralizeEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DemoralizeEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -7939,6 +8323,7 @@ pub struct DemoralizeEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DemoralizeEffect>() == 0x98);
@@ -7976,6 +8361,7 @@ const _: () = assert!(core::mem::offset_of!(DemoralizeEffect, field_94) == 0x94)
 #[repr(C, packed)]
 pub struct DescriptionBox {
     /// +0x0 `vtbl:DescriptionBox:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DescriptionBox_vtable,
     /// +0x8 `undefined1`, base UI_element
     pub field_8: u8,
@@ -8053,6 +8439,7 @@ pub struct DescriptionBox {
     pub unknown_EC: [u8; 4],
     /// +0xF0 `undefined8`, ctor store
     pub field_F0: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DescriptionBox>() == 0xF8);
@@ -8098,6 +8485,7 @@ const _: () = assert!(core::mem::offset_of!(DescriptionBox, field_F0) == 0xF0);
 #[repr(C)]
 pub struct DetectLifeEffect {
     /// +0x0 `vtbl:DetectLifeEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DetectLifeEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -8148,6 +8536,7 @@ pub struct DetectLifeEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DetectLifeEffect>() == 0x90);
@@ -8182,7 +8571,9 @@ const _: () = assert!(core::mem::offset_of!(DetectLifeEffect, field_88) == 0x88)
 #[repr(C)]
 pub struct DetectSignOut {
     /// +0x0 `vtbl:DetectSignOut:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DetectSignOut_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(DetectSignOut, __vftable) == 0x0);
@@ -8193,6 +8584,7 @@ const _: () = assert!(core::mem::offset_of!(DetectSignOut, __vftable) == 0x0);
 #[repr(C)]
 pub struct DetectionCollector {
     /// +0x0 `vtbl:DetectionCollector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DetectionCollector_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -8201,6 +8593,7 @@ pub struct DetectionCollector {
     pub field_28: u32,
     /// +0x2C `undefined4`, ctor store
     pub field_2C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DetectionCollector>() == 0x30);
@@ -8215,7 +8608,9 @@ const _: () = assert!(core::mem::offset_of!(DetectionCollector, field_2C) == 0x2
 #[repr(C)]
 pub struct DetectionListener {
     /// +0x0 `vtbl:DetectionListener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DetectionListener_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DetectionListener>() == 0x8);
@@ -8227,6 +8622,7 @@ const _: () = assert!(core::mem::offset_of!(DetectionListener, __vftable) == 0x0
 #[repr(C)]
 pub struct DetectionState {
     /// +0x0 `vtbl:DetectionState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DetectionState_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -8262,6 +8658,7 @@ pub struct DetectionState {
     pub field_40: f32,
     /// +0x44 `float`, ctor store
     pub field_44: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DetectionState>() == 0x48);
@@ -8290,6 +8687,7 @@ const _: () = assert!(core::mem::offset_of!(DetectionState, field_44) == 0x44);
 #[repr(C, packed)]
 pub struct DialoguePackage {
     /// +0x0 `vtbl:DialoguePackage:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DialoguePackage_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -8346,6 +8744,7 @@ pub struct DialoguePackage {
     /// +0xFC `undefined1`, ctor store
     pub field_FC: u8,
     pub unknown_FD: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DialoguePackage>() == 0x100);
@@ -8381,8 +8780,10 @@ const _: () = assert!(core::mem::offset_of!(DialoguePackage, field_FC) == 0xFC);
 #[repr(C)]
 pub struct DisableCharacterBumperHandler {
     /// +0x0 `vtbl:DisableCharacterBumperHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DisableCharacterBumperHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DisableCharacterBumperHandler>() == 0x10);
@@ -8394,8 +8795,10 @@ const _: () = assert!(core::mem::offset_of!(DisableCharacterBumperHandler, __vft
 #[repr(C)]
 pub struct DisableCharacterPitchHandler {
     /// +0x0 `vtbl:DisableCharacterPitchHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DisableCharacterPitchHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DisableCharacterPitchHandler>() == 0x10);
@@ -8407,6 +8810,7 @@ const _: () = assert!(core::mem::offset_of!(DisableCharacterPitchHandler, __vfta
 #[repr(C)]
 pub struct DisarmEffect {
     /// +0x0 `vtbl:DisarmEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DisarmEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -8457,6 +8861,7 @@ pub struct DisarmEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DisarmEffect>() == 0x90);
@@ -8491,6 +8896,7 @@ const _: () = assert!(core::mem::offset_of!(DisarmEffect, field_88) == 0x88);
 #[repr(C)]
 pub struct DisguiseEffect {
     /// +0x0 `vtbl:DisguiseEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DisguiseEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -8541,6 +8947,7 @@ pub struct DisguiseEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 12],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DisguiseEffect>() == 0x98);
@@ -8575,6 +8982,7 @@ const _: () = assert!(core::mem::offset_of!(DisguiseEffect, field_88) == 0x88);
 #[repr(C)]
 pub struct DisguiseEffect__DetectionChecker {
     /// +0x0 `vtbl:DisguiseEffect::DetectionChecker:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DisguiseEffect__DetectionChecker_vtable,
     /// +0x8 `undefined4`, base DetectionCollector
     pub field_8: u32,
@@ -8588,6 +8996,7 @@ pub struct DisguiseEffect__DetectionChecker {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(DisguiseEffect__DetectionChecker, __vftable) == 0x0);
@@ -8603,6 +9012,7 @@ const _: () = assert!(core::mem::offset_of!(DisguiseEffect__DetectionChecker, fi
 #[repr(C)]
 pub struct DispelEffect {
     /// +0x0 `vtbl:DispelEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DispelEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -8653,6 +9063,7 @@ pub struct DispelEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DispelEffect>() == 0x90);
@@ -8687,7 +9098,9 @@ const _: () = assert!(core::mem::offset_of!(DispelEffect, field_88) == 0x88);
 #[repr(C)]
 pub struct DiveBombSpeedController {
     /// +0x0 `vtbl:DiveBombSpeedController:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DiveBombSpeedController_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(DiveBombSpeedController, __vftable) == 0x0);
@@ -8697,8 +9110,10 @@ const _: () = assert!(core::mem::offset_of!(DiveBombSpeedController, __vftable) 
 #[repr(C)]
 pub struct DoNothingUnhandledPolicy_BSFixedStringCI {
     /// +0x0 `vtbl:DoNothingUnhandledPolicy<BSFixedStringCI>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DoNothingUnhandledPolicy_BSFixedStringCI_vtable,
     pub unknown_8: [u8; 64],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DoNothingUnhandledPolicy_BSFixedStringCI>() == 0x48);
@@ -8710,7 +9125,9 @@ const _: () = assert!(core::mem::offset_of!(DoNothingUnhandledPolicy_BSFixedStri
 #[repr(C)]
 pub struct DoorObstacleAdapter {
     /// +0x0 `vtbl:DoorObstacleAdapter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DoorObstacleAdapter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(DoorObstacleAdapter, __vftable) == 0x0);
@@ -8721,7 +9138,9 @@ const _: () = assert!(core::mem::offset_of!(DoorObstacleAdapter, __vftable) == 0
 #[repr(C)]
 pub struct DownloadAll__uiCallback {
     /// +0x0 `vtbl:DownloadAll::uiCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DownloadAll__uiCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(DownloadAll__uiCallback, __vftable) == 0x0);
@@ -8732,6 +9151,7 @@ const _: () = assert!(core::mem::offset_of!(DownloadAll__uiCallback, __vftable) 
 #[repr(C)]
 pub struct DownloadProgressBar {
     /// +0x0 `vtbl:DownloadProgressBar:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DownloadProgressBar_vtable,
     /// +0x8 `undefined1`, base UI_element
     pub field_8: u8,
@@ -8784,6 +9204,7 @@ pub struct DownloadProgressBar {
     /// +0x98 `undefined4`, ctor store
     pub field_98: u32,
     pub unknown_9C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DownloadProgressBar>() == 0xA0);
@@ -8817,6 +9238,7 @@ const _: () = assert!(core::mem::offset_of!(DownloadProgressBar, field_98) == 0x
 #[repr(C)]
 pub struct DualValueModifierEffect {
     /// +0x0 `vtbl:DualValueModifierEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DualValueModifierEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -8874,6 +9296,7 @@ pub struct DualValueModifierEffect {
     /// +0x98 `float`, ctor store
     pub field_98: f32,
     pub unknown_9C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DualValueModifierEffect>() == 0xA0);
@@ -8911,6 +9334,7 @@ const _: () = assert!(core::mem::offset_of!(DualValueModifierEffect, field_98) =
 #[repr(C)]
 pub struct EffectSetting {
     /// +0x0 `vtbl:EffectSetting:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EffectSetting_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -8924,10 +9348,12 @@ pub struct EffectSetting {
     pub formType: u8,
     pub unknown_1B: [u8; 21],
     /// +0x30 `vtbl:EffectSetting:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::EffectSetting_vtable_30,
     /// +0x38 `undefined8`, base BGSMenuDisplayObject
     pub field_38: u64,
     /// +0x40 `vtbl:EffectSetting:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::EffectSetting_vtable_40,
     /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -9016,6 +9442,7 @@ pub struct EffectSetting {
     /// +0x188 `undefined8`, ctor store
     pub field_188: u64,
     pub unknown_190: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EffectSetting>() == 0x198);
@@ -9074,7 +9501,9 @@ const _: () = assert!(core::mem::offset_of!(EffectSetting, field_188) == 0x188);
 #[repr(C)]
 pub struct EffectSettingCollection {
     /// +0x0 `vtbl:EffectSettingCollection:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EffectSettingCollection_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(EffectSettingCollection, __vftable) == 0x0);
@@ -9085,7 +9514,9 @@ const _: () = assert!(core::mem::offset_of!(EffectSettingCollection, __vftable) 
 #[repr(C)]
 pub struct EffectsCausingDamageFunctor {
     /// +0x0 `vtbl:EffectsCausingDamageFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EffectsCausingDamageFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(EffectsCausingDamageFunctor, __vftable) == 0x0);
@@ -9096,8 +9527,10 @@ const _: () = assert!(core::mem::offset_of!(EffectsCausingDamageFunctor, __vftab
 #[repr(C)]
 pub struct EnableCharacterBumperHandler {
     /// +0x0 `vtbl:EnableCharacterBumperHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EnableCharacterBumperHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EnableCharacterBumperHandler>() == 0x10);
@@ -9109,8 +9542,10 @@ const _: () = assert!(core::mem::offset_of!(EnableCharacterBumperHandler, __vfta
 #[repr(C)]
 pub struct EnableCharacterPitchHandler {
     /// +0x0 `vtbl:EnableCharacterPitchHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EnableCharacterPitchHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EnableCharacterPitchHandler>() == 0x10);
@@ -9122,6 +9557,7 @@ const _: () = assert!(core::mem::offset_of!(EnableCharacterPitchHandler, __vftab
 #[repr(C)]
 pub struct EnchantmentItem {
     /// +0x0 `vtbl:EnchantmentItem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EnchantmentItem_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -9140,9 +9576,11 @@ pub struct EnchantmentItem {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:EnchantmentItem:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::EnchantmentItem_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:EnchantmentItem:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::EnchantmentItem_vtable_40,
     /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -9178,6 +9616,7 @@ pub struct EnchantmentItem {
     pub field_B0: u64,
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EnchantmentItem>() == 0xC0);
@@ -9213,8 +9652,10 @@ const _: () = assert!(core::mem::offset_of!(EnchantmentItem, field_B8) == 0xB8);
 #[repr(C)]
 pub struct EndSummonAnimationHandler {
     /// +0x0 `vtbl:EndSummonAnimationHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EndSummonAnimationHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EndSummonAnimationHandler>() == 0x10);
@@ -9226,6 +9667,7 @@ const _: () = assert!(core::mem::offset_of!(EndSummonAnimationHandler, __vftable
 #[repr(C)]
 pub struct EnhanceWeaponEffect {
     /// +0x0 `vtbl:EnhanceWeaponEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EnhanceWeaponEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -9284,8 +9726,10 @@ pub struct EnhanceWeaponEffect {
     pub field_98: f32,
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:EnhanceWeaponEffect:A0`, rtti
+    #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::EnhanceWeaponEffect_vtable_A0,
     pub unknown_A8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EnhanceWeaponEffect>() == 0xB0);
@@ -9324,6 +9768,7 @@ const _: () = assert!(core::mem::offset_of!(EnhanceWeaponEffect, __vftable_A0) =
 #[repr(C)]
 pub struct EscortActorPackageData {
     /// +0x0 `vtbl:EscortActorPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EscortActorPackageData_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -9337,6 +9782,7 @@ pub struct EscortActorPackageData {
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EscortActorPackageData>() == 0x30);
@@ -9353,6 +9799,7 @@ const _: () = assert!(core::mem::offset_of!(EscortActorPackageData, field_28) ==
 #[repr(C)]
 pub struct EtherealizationEffect {
     /// +0x0 `vtbl:EtherealizationEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::EtherealizationEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -9403,6 +9850,7 @@ pub struct EtherealizationEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EtherealizationEffect>() == 0x90);
@@ -9437,6 +9885,7 @@ const _: () = assert!(core::mem::offset_of!(EtherealizationEffect, field_88) == 
 pub struct EventSourceHolder_BGSActorCell {
     /// +0x0 `class:BSTEventSource`
     pub source_BGSActorCellEvent: crate::BSTEventSource,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_BGSActorCell, source_BGSActorCellEvent) == 0x0);
@@ -9447,8 +9896,10 @@ const _: () = assert!(core::mem::offset_of!(EventSourceHolder_BGSActorCell, sour
 #[repr(C)]
 pub struct ExitCartBeginHandler {
     /// +0x0 `vtbl:ExitCartBeginHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExitCartBeginHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExitCartBeginHandler>() == 0x10);
@@ -9460,8 +9911,10 @@ const _: () = assert!(core::mem::offset_of!(ExitCartBeginHandler, __vftable) == 
 #[repr(C)]
 pub struct ExitCartEndHandler {
     /// +0x0 `vtbl:ExitCartEndHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExitCartEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExitCartEndHandler>() == 0x10);
@@ -9474,6 +9927,7 @@ const _: () = assert!(core::mem::offset_of!(ExitCartEndHandler, __vftable) == 0x
 #[repr(C, packed)]
 pub struct Explosion {
     /// +0x0 `vtbl:Explosion:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Explosion_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -9487,13 +9941,16 @@ pub struct Explosion {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Explosion:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Explosion_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Explosion:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::Explosion_vtable_30,
     /// +0x38 `vtbl:Explosion:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::Explosion_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -9587,6 +10044,7 @@ pub struct Explosion {
     /// +0x140 `undefined4`, ctor store (widths [4, 8])
     pub field_140: u32,
     pub unknown_144: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Explosion>() == 0x148);
@@ -9650,7 +10108,9 @@ const _: () = assert!(core::mem::offset_of!(Explosion, field_140) == 0x140);
 #[repr(C)]
 pub struct FOCollisionListener {
     /// +0x0 `vtbl:FOCollisionListener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FOCollisionListener_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FOCollisionListener, __vftable) == 0x0);
@@ -9661,12 +10121,15 @@ const _: () = assert!(core::mem::offset_of!(FOCollisionListener, __vftable) == 0
 #[repr(C)]
 pub struct FOIslandActivationListener {
     /// +0x0 `vtbl:FOIslandActivationListener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FOIslandActivationListener_vtable,
     /// +0x8 `vtbl:FOIslandActivationListener:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::FOIslandActivationListener_vtable_8,
     pub unknown_10: [u8; 8],
     /// +0x18 `undefined8`, base hkpEntityListener
     pub field_18: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FOIslandActivationListener, __vftable) == 0x0);
@@ -9679,8 +10142,10 @@ const _: () = assert!(core::mem::offset_of!(FOIslandActivationListener, field_18
 #[repr(C)]
 pub struct FaderData {
     /// +0x0 `vtbl:FaderData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FaderData_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FaderData>() == 0x28);
@@ -9692,6 +10157,7 @@ const _: () = assert!(core::mem::offset_of!(FaderData, __vftable) == 0x0);
 #[repr(C)]
 pub struct FaderMenu {
     /// +0x0 `vtbl:FaderMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FaderMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -9809,6 +10275,7 @@ pub struct FaderMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FaderMenu, __vftable) == 0x0);
@@ -9868,6 +10335,7 @@ const _: () = assert!(core::mem::offset_of!(FaderMenu, field_BC) == 0xBC);
 #[repr(C)]
 pub struct FavoritesMenu {
     /// +0x0 `vtbl:FavoritesMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FavoritesMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -9895,6 +10363,7 @@ pub struct FavoritesMenu {
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:FavoritesMenu:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::FavoritesMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
@@ -9984,6 +10453,7 @@ pub struct FavoritesMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FavoritesMenu, __vftable) == 0x0);
@@ -10043,6 +10513,7 @@ const _: () = assert!(core::mem::offset_of!(FavoritesMenu, field_BC) == 0xBC);
 #[repr(C)]
 pub struct FilterSideBar {
     /// +0x0 `vtbl:FilterSideBar:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FilterSideBar_vtable,
     /// +0x8 `undefined1`, base UI_element
     pub field_8: u8,
@@ -10091,6 +10562,7 @@ pub struct FilterSideBar {
     /// +0x98 `undefined4`, ctor store
     pub field_98: u32,
     pub unknown_9C: [u8; 68],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FilterSideBar>() == 0xE0);
@@ -10123,7 +10595,9 @@ const _: () = assert!(core::mem::offset_of!(FilterSideBar, field_98) == 0x98);
 #[repr(C)]
 pub struct FindActiveEffectByIDFunctor {
     /// +0x0 `vtbl:FindActiveEffectByIDFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindActiveEffectByIDFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FindActiveEffectByIDFunctor, __vftable) == 0x0);
@@ -10134,7 +10608,9 @@ const _: () = assert!(core::mem::offset_of!(FindActiveEffectByIDFunctor, __vftab
 #[repr(C)]
 pub struct FindByEffectSettingFunctor {
     /// +0x0 `vtbl:FindByEffectSettingFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindByEffectSettingFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FindByEffectSettingFunctor, __vftable) == 0x0);
@@ -10145,9 +10621,12 @@ const _: () = assert!(core::mem::offset_of!(FindByEffectSettingFunctor, __vftabl
 #[repr(C)]
 pub struct FindEffectKeywordOnTargetFunctor {
     /// +0x0 `vtbl:FindEffectKeywordOnTargetFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindEffectKeywordOnTargetFunctor_vtable,
     /// +0x8 `vtbl:FindEffectKeywordOnTargetFunctor:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::FindEffectKeywordOnTargetFunctor_vtable_8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FindEffectKeywordOnTargetFunctor, __vftable) == 0x0);
@@ -10159,7 +10638,9 @@ const _: () = assert!(core::mem::offset_of!(FindEffectKeywordOnTargetFunctor, __
 #[repr(C)]
 pub struct FindEqualsFunctor {
     /// +0x0 `vtbl:FindEqualsFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindEqualsFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FindEqualsFunctor, __vftable) == 0x0);
@@ -10170,7 +10651,9 @@ const _: () = assert!(core::mem::offset_of!(FindEqualsFunctor, __vftable) == 0x0
 #[repr(C)]
 pub struct FindMaxMagnitudeVisitor {
     /// +0x0 `vtbl:FindMaxMagnitudeVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindMaxMagnitudeVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FindMaxMagnitudeVisitor, __vftable) == 0x0);
@@ -10181,7 +10664,9 @@ const _: () = assert!(core::mem::offset_of!(FindMaxMagnitudeVisitor, __vftable) 
 #[repr(C)]
 pub struct FindNonExcludedDeliveryFunctor {
     /// +0x0 `vtbl:FindNonExcludedDeliveryFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindNonExcludedDeliveryFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FindNonExcludedDeliveryFunctor, __vftable) == 0x0);
@@ -10191,7 +10676,9 @@ const _: () = assert!(core::mem::offset_of!(FindNonExcludedDeliveryFunctor, __vf
 #[repr(C)]
 pub struct FindTriangleForLocationFilter {
     /// +0x0 `vtbl:FindTriangleForLocationFilter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindTriangleForLocationFilter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FindTriangleForLocationFilter>() == 0x8);
@@ -10203,7 +10690,9 @@ const _: () = assert!(core::mem::offset_of!(FindTriangleForLocationFilter, __vft
 #[repr(C)]
 pub struct FindTriangleForLocationFilterCheckDeltaZ {
     /// +0x0 `vtbl:FindTriangleForLocationFilterCheckDeltaZ:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindTriangleForLocationFilterCheckDeltaZ_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FindTriangleForLocationFilterCheckDeltaZ>() == 0x8);
@@ -10215,6 +10704,7 @@ const _: () = assert!(core::mem::offset_of!(FindTriangleForLocationFilterCheckDe
 #[repr(C)]
 pub struct FindTriangleForLocationWaterFilter {
     /// +0x0 `vtbl:FindTriangleForLocationWaterFilter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FindTriangleForLocationWaterFilter_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -10223,6 +10713,7 @@ pub struct FindTriangleForLocationWaterFilter {
     /// +0x10 `float`, ctor store
     pub field_10: f32,
     pub unknown_14: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FindTriangleForLocationWaterFilter, __vftable) == 0x0);
@@ -10236,7 +10727,9 @@ const _: () = assert!(core::mem::offset_of!(FindTriangleForLocationWaterFilter, 
 #[repr(C)]
 pub struct FinishActiveEffectVisitor {
     /// +0x0 `vtbl:FinishActiveEffectVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FinishActiveEffectVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FinishActiveEffectVisitor, __vftable) == 0x0);
@@ -10248,6 +10741,7 @@ const _: () = assert!(core::mem::offset_of!(FinishActiveEffectVisitor, __vftable
 #[repr(C, packed)]
 pub struct FleePackage {
     /// +0x0 `vtbl:FleePackage:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FleePackage_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -10311,6 +10805,7 @@ pub struct FleePackage {
     /// +0x114 `undefined1`, ctor store
     pub field_114: u8,
     pub unknown_115: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FleePackage>() == 0x118);
@@ -10349,8 +10844,10 @@ const _: () = assert!(core::mem::offset_of!(FleePackage, field_114) == 0x114);
 #[repr(C)]
 pub struct FlightActionEndHandler {
     /// +0x0 `vtbl:FlightActionEndHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightActionEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightActionEndHandler>() == 0x10);
@@ -10362,8 +10859,10 @@ const _: () = assert!(core::mem::offset_of!(FlightActionEndHandler, __vftable) =
 #[repr(C)]
 pub struct FlightActionEntryEndHandler {
     /// +0x0 `vtbl:FlightActionEntryEndHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightActionEntryEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightActionEntryEndHandler>() == 0x10);
@@ -10375,8 +10874,10 @@ const _: () = assert!(core::mem::offset_of!(FlightActionEntryEndHandler, __vftab
 #[repr(C)]
 pub struct FlightActionGrabHandler {
     /// +0x0 `vtbl:FlightActionGrabHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightActionGrabHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightActionGrabHandler>() == 0x10);
@@ -10388,8 +10889,10 @@ const _: () = assert!(core::mem::offset_of!(FlightActionGrabHandler, __vftable) 
 #[repr(C)]
 pub struct FlightActionHandler {
     /// +0x0 `vtbl:FlightActionHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightActionHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightActionHandler>() == 0x10);
@@ -10401,8 +10904,10 @@ const _: () = assert!(core::mem::offset_of!(FlightActionHandler, __vftable) == 0
 #[repr(C)]
 pub struct FlightActionReleaseHandler {
     /// +0x0 `vtbl:FlightActionReleaseHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightActionReleaseHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightActionReleaseHandler>() == 0x10);
@@ -10414,8 +10919,10 @@ const _: () = assert!(core::mem::offset_of!(FlightActionReleaseHandler, __vftabl
 #[repr(C)]
 pub struct FlightCrashLandStartHandler {
     /// +0x0 `vtbl:FlightCrashLandStartHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightCrashLandStartHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightCrashLandStartHandler>() == 0x10);
@@ -10427,8 +10934,10 @@ const _: () = assert!(core::mem::offset_of!(FlightCrashLandStartHandler, __vftab
 #[repr(C)]
 pub struct FlightCruisingHandler {
     /// +0x0 `vtbl:FlightCruisingHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightCruisingHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightCruisingHandler>() == 0x10);
@@ -10440,8 +10949,10 @@ const _: () = assert!(core::mem::offset_of!(FlightCruisingHandler, __vftable) ==
 #[repr(C)]
 pub struct FlightHoveringHandler {
     /// +0x0 `vtbl:FlightHoveringHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightHoveringHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightHoveringHandler>() == 0x10);
@@ -10453,8 +10964,10 @@ const _: () = assert!(core::mem::offset_of!(FlightHoveringHandler, __vftable) ==
 #[repr(C)]
 pub struct FlightLandEndHandler {
     /// +0x0 `vtbl:FlightLandEndHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightLandEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightLandEndHandler>() == 0x10);
@@ -10466,8 +10979,10 @@ const _: () = assert!(core::mem::offset_of!(FlightLandEndHandler, __vftable) == 
 #[repr(C)]
 pub struct FlightLandHandler {
     /// +0x0 `vtbl:FlightLandHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightLandHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightLandHandler>() == 0x10);
@@ -10479,8 +10994,10 @@ const _: () = assert!(core::mem::offset_of!(FlightLandHandler, __vftable) == 0x0
 #[repr(C)]
 pub struct FlightLandingHandler {
     /// +0x0 `vtbl:FlightLandingHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightLandingHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightLandingHandler>() == 0x10);
@@ -10492,8 +11009,10 @@ const _: () = assert!(core::mem::offset_of!(FlightLandingHandler, __vftable) == 
 #[repr(C)]
 pub struct FlightPerchingHandler {
     /// +0x0 `vtbl:FlightPerchingHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightPerchingHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightPerchingHandler>() == 0x10);
@@ -10505,8 +11024,10 @@ const _: () = assert!(core::mem::offset_of!(FlightPerchingHandler, __vftable) ==
 #[repr(C)]
 pub struct FlightTakeOffHandler {
     /// +0x0 `vtbl:FlightTakeOffHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FlightTakeOffHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlightTakeOffHandler>() == 0x10);
@@ -10518,8 +11039,10 @@ const _: () = assert!(core::mem::offset_of!(FlightTakeOffHandler, __vftable) == 
 #[repr(C)]
 pub struct FloatingQuestMarker {
     /// +0x0 `vtbl:FloatingQuestMarker:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FloatingQuestMarker_vtable,
     pub unknown_8: [u8; 176],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FloatingQuestMarker>() == 0xB8);
@@ -10531,6 +11054,7 @@ const _: () = assert!(core::mem::offset_of!(FloatingQuestMarker, __vftable) == 0
 #[repr(C)]
 pub struct FrenzyEffect {
     /// +0x0 `vtbl:FrenzyEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FrenzyEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -10585,6 +11109,7 @@ pub struct FrenzyEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FrenzyEffect>() == 0x98);
@@ -10620,6 +11145,7 @@ const _: () = assert!(core::mem::offset_of!(FrenzyEffect, field_94) == 0x94);
 #[repr(C)]
 pub struct FutBinaryFileC {
     /// +0x0 `vtbl:FutBinaryFileC:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FutBinaryFileC_vtable,
     /// +0x8 `undefined1`, ctor store
     pub field_8: u8,
@@ -10637,6 +11163,7 @@ pub struct FutBinaryFileC {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FutBinaryFileC>() == 0x50);
@@ -10655,6 +11182,7 @@ const _: () = assert!(core::mem::offset_of!(FutBinaryFileC, field_48) == 0x48);
 #[repr(C)]
 pub struct FxDelegate {
     /// +0x0 `vtbl:FxDelegate:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxDelegate_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -10772,6 +11300,7 @@ pub struct FxDelegate {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxDelegate, __vftable) == 0x0);
@@ -10831,6 +11360,7 @@ const _: () = assert!(core::mem::offset_of!(FxDelegate, field_BC) == 0xBC);
 #[repr(C)]
 pub struct FxDelegateHandler {
     /// +0x0 `vtbl:FxDelegateHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxDelegateHandler_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -10948,6 +11478,7 @@ pub struct FxDelegateHandler {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxDelegateHandler, __vftable) == 0x0);
@@ -11006,7 +11537,9 @@ const _: () = assert!(core::mem::offset_of!(FxDelegateHandler, field_BC) == 0xBC
 #[repr(C)]
 pub struct FxDelegateHandler__CallbackProcessor {
     /// +0x0 `vtbl:FxDelegateHandler::CallbackProcessor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxDelegateHandler__CallbackProcessor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxDelegateHandler__CallbackProcessor, __vftable) == 0x0);
@@ -11017,7 +11550,9 @@ const _: () = assert!(core::mem::offset_of!(FxDelegateHandler__CallbackProcessor
 #[repr(C)]
 pub struct FxResponseArgs_0 {
     /// +0x0 `vtbl:FxResponseArgs<0>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_0_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_0, __vftable) == 0x0);
@@ -11028,7 +11563,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_0, __vftable) == 0x0)
 #[repr(C)]
 pub struct FxResponseArgs_13 {
     /// +0x0 `vtbl:FxResponseArgs<13>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_13_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_13, __vftable) == 0x0);
@@ -11039,7 +11576,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_13, __vftable) == 0x0
 #[repr(C)]
 pub struct FxResponseArgs_15 {
     /// +0x0 `vtbl:FxResponseArgs<15>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_15_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_15, __vftable) == 0x0);
@@ -11050,7 +11589,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_15, __vftable) == 0x0
 #[repr(C)]
 pub struct FxResponseArgs_1 {
     /// +0x0 `vtbl:FxResponseArgs<1>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_1_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_1, __vftable) == 0x0);
@@ -11061,7 +11602,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_1, __vftable) == 0x0)
 #[repr(C)]
 pub struct FxResponseArgs_2 {
     /// +0x0 `vtbl:FxResponseArgs<2>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_2_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_2, __vftable) == 0x0);
@@ -11072,7 +11615,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_2, __vftable) == 0x0)
 #[repr(C)]
 pub struct FxResponseArgs_3 {
     /// +0x0 `vtbl:FxResponseArgs<3>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_3_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_3, __vftable) == 0x0);
@@ -11083,7 +11628,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_3, __vftable) == 0x0)
 #[repr(C)]
 pub struct FxResponseArgs_4 {
     /// +0x0 `vtbl:FxResponseArgs<4>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_4_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_4, __vftable) == 0x0);
@@ -11094,7 +11641,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_4, __vftable) == 0x0)
 #[repr(C)]
 pub struct FxResponseArgs_5 {
     /// +0x0 `vtbl:FxResponseArgs<5>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_5_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_5, __vftable) == 0x0);
@@ -11105,7 +11654,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_5, __vftable) == 0x0)
 #[repr(C)]
 pub struct FxResponseArgs_6 {
     /// +0x0 `vtbl:FxResponseArgs<6>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_6_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_6, __vftable) == 0x0);
@@ -11116,7 +11667,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_6, __vftable) == 0x0)
 #[repr(C)]
 pub struct FxResponseArgs_8 {
     /// +0x0 `vtbl:FxResponseArgs<8>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgs_8_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgs_8, __vftable) == 0x0);
@@ -11126,7 +11679,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgs_8, __vftable) == 0x0)
 #[repr(C)]
 pub struct FxResponseArgsBase {
     /// +0x0 `vtbl:FxResponseArgsBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgsBase_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgsBase, __vftable) == 0x0);
@@ -11137,7 +11692,9 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgsBase, __vftable) == 0x
 #[repr(C)]
 pub struct FxResponseArgsList {
     /// +0x0 `vtbl:FxResponseArgsList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::FxResponseArgsList_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(FxResponseArgsList, __vftable) == 0x0);
@@ -11148,6 +11705,7 @@ const _: () = assert!(core::mem::offset_of!(FxResponseArgsList, __vftable) == 0x
 #[repr(C)]
 pub struct GFile {
     /// +0x0 `vtbl:GFile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GFile_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -11265,6 +11823,7 @@ pub struct GFile {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFile, __vftable) == 0x0);
@@ -11324,6 +11883,7 @@ const _: () = assert!(core::mem::offset_of!(GFile, field_BC) == 0xBC);
 #[repr(C)]
 pub struct GMemoryFile {
     /// +0x0 `vtbl:GMemoryFile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GMemoryFile_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -11441,6 +12001,7 @@ pub struct GMemoryFile {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GMemoryFile, __vftable) == 0x0);
@@ -11500,6 +12061,7 @@ const _: () = assert!(core::mem::offset_of!(GMemoryFile, field_BC) == 0xBC);
 #[repr(C)]
 pub struct GRefCountBase_FxDelegateHandler_2 {
     /// +0x0 `vtbl:GRefCountBase<FxDelegateHandler,2>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GRefCountBase_FxDelegateHandler_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -11617,6 +12179,7 @@ pub struct GRefCountBase_FxDelegateHandler_2 {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GRefCountBase_FxDelegateHandler_2, __vftable) == 0x0);
@@ -11676,6 +12239,7 @@ const _: () = assert!(core::mem::offset_of!(GRefCountBase_FxDelegateHandler_2, f
 #[repr(C)]
 pub struct GRefCountBase_GFile_2 {
     /// +0x0 `vtbl:GRefCountBase<GFile,2>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GRefCountBase_GFile_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -11793,6 +12357,7 @@ pub struct GRefCountBase_GFile_2 {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GRefCountBase_GFile_2, __vftable) == 0x0);
@@ -11852,6 +12417,7 @@ const _: () = assert!(core::mem::offset_of!(GRefCountBase_GFile_2, field_BC) == 
 #[repr(C)]
 pub struct GRefCountBase_GFxFunctionHandler_2 {
     /// +0x0 `vtbl:GRefCountBase<GFxFunctionHandler,2>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GRefCountBase_GFxFunctionHandler_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -11969,6 +12535,7 @@ pub struct GRefCountBase_GFxFunctionHandler_2 {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GRefCountBase_GFxFunctionHandler_2, __vftable) == 0x0);
@@ -12028,6 +12595,7 @@ const _: () = assert!(core::mem::offset_of!(GRefCountBase_GFxFunctionHandler_2, 
 #[repr(C)]
 pub struct GRefCountBase_GFxState_2 {
     /// +0x0 `vtbl:GRefCountBase<GFxState,2>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GRefCountBase_GFxState_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -12145,6 +12713,7 @@ pub struct GRefCountBase_GFxState_2 {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GRefCountBase_GFxState_2, __vftable) == 0x0);
@@ -12204,6 +12773,7 @@ const _: () = assert!(core::mem::offset_of!(GRefCountBase_GFxState_2, field_BC) 
 #[repr(C)]
 pub struct GRefCountBaseStatImpl_GRefCountImpl_2 {
     /// +0x0 `vtbl:GRefCountBaseStatImpl<GRefCountImpl,2>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GRefCountBaseStatImpl_GRefCountImpl_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -12321,6 +12891,7 @@ pub struct GRefCountBaseStatImpl_GRefCountImpl_2 {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GRefCountBaseStatImpl_GRefCountImpl_2, __vftable) == 0x0);
@@ -12380,6 +12951,7 @@ const _: () = assert!(core::mem::offset_of!(GRefCountBaseStatImpl_GRefCountImpl_
 #[repr(C)]
 pub struct GRefCountImpl {
     /// +0x0 `vtbl:GRefCountImpl:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GRefCountImpl_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -12497,6 +13069,7 @@ pub struct GRefCountImpl {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GRefCountImpl, __vftable) == 0x0);
@@ -12555,6 +13128,7 @@ const _: () = assert!(core::mem::offset_of!(GRefCountImpl, field_BC) == 0xBC);
 #[repr(C)]
 pub struct GRefCountImplCore {
     /// +0x0 `vtbl:GRefCountImplCore:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GRefCountImplCore_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -12672,6 +13246,7 @@ pub struct GRefCountImplCore {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, ctor store (widths [4, 8])
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GRefCountImplCore>() == 0xC0);
@@ -12731,7 +13306,9 @@ const _: () = assert!(core::mem::offset_of!(GRefCountImplCore, field_BC) == 0xBC
 #[repr(C)]
 pub struct GSysAllocBase {
     /// +0x0 `vtbl:GSysAllocBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GSysAllocBase_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GSysAllocBase>() == 0x8);
@@ -12743,7 +13320,9 @@ const _: () = assert!(core::mem::offset_of!(GSysAllocBase, __vftable) == 0x0);
 #[repr(C)]
 pub struct GSysAllocPaged {
     /// +0x0 `vtbl:GSysAllocPaged:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GSysAllocPaged_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GSysAllocPaged>() == 0x8);
@@ -12754,7 +13333,9 @@ const _: () = assert!(core::mem::offset_of!(GSysAllocPaged, __vftable) == 0x0);
 #[repr(C)]
 pub struct GSysMemoryMap {
     /// +0x0 `vtbl:GSysMemoryMap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GSysMemoryMap_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GSysMemoryMap, __vftable) == 0x0);
@@ -12765,10 +13346,12 @@ const _: () = assert!(core::mem::offset_of!(GSysMemoryMap, __vftable) == 0x0);
 #[repr(C)]
 pub struct GarbageCollector {
     /// +0x0 `vtbl:GarbageCollector:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GarbageCollector_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GarbageCollector, __vftable) == 0x0);
@@ -12780,7 +13363,9 @@ const _: () = assert!(core::mem::offset_of!(GarbageCollector, field_10) == 0x10)
 #[repr(C)]
 pub struct GatherSpellsFunctor {
     /// +0x0 `vtbl:GatherSpellsFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GatherSpellsFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GatherSpellsFunctor, __vftable) == 0x0);
@@ -12791,7 +13376,9 @@ const _: () = assert!(core::mem::offset_of!(GatherSpellsFunctor, __vftable) == 0
 #[repr(C)]
 pub struct GetCostliestEffectFunctor {
     /// +0x0 `vtbl:GetCostliestEffectFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GetCostliestEffectFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GetCostliestEffectFunctor, __vftable) == 0x0);
@@ -12802,7 +13389,9 @@ const _: () = assert!(core::mem::offset_of!(GetCostliestEffectFunctor, __vftable
 #[repr(C)]
 pub struct GetMagicItemDescriptionFunctor {
     /// +0x0 `vtbl:GetMagicItemDescriptionFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GetMagicItemDescriptionFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GetMagicItemDescriptionFunctor, __vftable) == 0x0);
@@ -12813,8 +13402,10 @@ const _: () = assert!(core::mem::offset_of!(GetMagicItemDescriptionFunctor, __vf
 #[repr(C)]
 pub struct GetUpEndHandler {
     /// +0x0 `vtbl:GetUpEndHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GetUpEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GetUpEndHandler>() == 0x10);
@@ -12826,8 +13417,10 @@ const _: () = assert!(core::mem::offset_of!(GetUpEndHandler, __vftable) == 0x0);
 #[repr(C)]
 pub struct GetUpStartHandler {
     /// +0x0 `vtbl:GetUpStartHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GetUpStartHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GetUpStartHandler>() == 0x10);
@@ -12839,6 +13432,7 @@ const _: () = assert!(core::mem::offset_of!(GetUpStartHandler, __vftable) == 0x0
 #[repr(C)]
 pub struct GiftMenu {
     /// +0x0 `vtbl:GiftMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GiftMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -12918,6 +13512,7 @@ pub struct GiftMenu {
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GiftMenu>() == 0x80);
@@ -12962,6 +13557,7 @@ const _: () = assert!(core::mem::offset_of!(GiftMenu, field_7C) == 0x7C);
 #[repr(C)]
 pub struct GrabActorEffect {
     /// +0x0 `vtbl:GrabActorEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GrabActorEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -13017,6 +13613,7 @@ pub struct GrabActorEffect {
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
     pub unknown_98: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GrabActorEffect>() == 0xB0);
@@ -13054,6 +13651,7 @@ const _: () = assert!(core::mem::offset_of!(GrabActorEffect, field_94) == 0x94);
 #[repr(C, packed)]
 pub struct GrenadeProjectile {
     /// +0x0 `vtbl:GrenadeProjectile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GrenadeProjectile_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -13067,13 +13665,16 @@ pub struct GrenadeProjectile {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:GrenadeProjectile:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::GrenadeProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:GrenadeProjectile:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::GrenadeProjectile_vtable_30,
     /// +0x38 `vtbl:GrenadeProjectile:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::GrenadeProjectile_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -13204,6 +13805,7 @@ pub struct GrenadeProjectile {
     /// +0x1E8 `undefined1`, ctor store
     pub field_1E8: u8,
     pub unknown_1E9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GrenadeProjectile>() == 0x1F0);
@@ -13283,7 +13885,9 @@ const _: () = assert!(core::mem::offset_of!(GrenadeProjectile, field_1E8) == 0x1
 #[repr(C)]
 pub struct GridArray {
     /// +0x0 `vtbl:GridArray:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GridArray_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GridArray, __vftable) == 0x0);
@@ -13294,6 +13898,7 @@ const _: () = assert!(core::mem::offset_of!(GridArray, __vftable) == 0x0);
 #[repr(C)]
 pub struct GridCellArray {
     /// +0x0 `vtbl:GridCellArray:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GridCellArray_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined4`, ctor store
@@ -13308,6 +13913,7 @@ pub struct GridCellArray {
     /// +0x2C `undefined1`, ctor store
     pub field_2C: u8,
     pub unknown_2D: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GridCellArray>() == 0x30);
@@ -13324,6 +13930,7 @@ const _: () = assert!(core::mem::offset_of!(GridCellArray, field_2C) == 0x2C);
 #[repr(C)]
 pub struct GroundPathPathingNodeGenerator {
     /// +0x0 `vtbl:GroundPathPathingNodeGenerator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GroundPathPathingNodeGenerator_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -13333,6 +13940,7 @@ pub struct GroundPathPathingNodeGenerator {
     pub field_18: u32,
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GroundPathPathingNodeGenerator>() == 0x20);
@@ -13348,10 +13956,12 @@ const _: () = assert!(core::mem::offset_of!(GroundPathPathingNodeGenerator, fiel
 #[repr(C)]
 pub struct GroundPathRayValidator {
     /// +0x0 `vtbl:GroundPathRayValidator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GroundPathRayValidator_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GroundPathRayValidator>() == 0x10);
@@ -13364,6 +13974,7 @@ const _: () = assert!(core::mem::offset_of!(GroundPathRayValidator, field_8) == 
 #[repr(C)]
 pub struct GuardActorPackageData {
     /// +0x0 `vtbl:GuardActorPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GuardActorPackageData_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -13379,6 +13990,7 @@ pub struct GuardActorPackageData {
     /// +0x30 `undefined1`, ctor store
     pub field_30: u8,
     pub unknown_31: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GuardActorPackageData>() == 0x38);
@@ -13396,7 +14008,9 @@ const _: () = assert!(core::mem::offset_of!(GuardActorPackageData, field_30) == 
 #[repr(C)]
 pub struct GuardPackageData {
     /// +0x0 `vtbl:GuardPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GuardPackageData_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GuardPackageData, __vftable) == 0x0);
@@ -13407,6 +14021,7 @@ const _: () = assert!(core::mem::offset_of!(GuardPackageData, __vftable) == 0x0)
 #[repr(C)]
 pub struct GuideEffect {
     /// +0x0 `vtbl:GuideEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::GuideEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -13457,6 +14072,7 @@ pub struct GuideEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 44],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GuideEffect>() == 0xB8);
@@ -13491,6 +14107,7 @@ const _: () = assert!(core::mem::offset_of!(GuideEffect, field_88) == 0x88);
 #[repr(C)]
 pub struct HUDChargeMeter {
     /// +0x0 `vtbl:HUDChargeMeter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HUDChargeMeter_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -13503,6 +14120,7 @@ pub struct HUDChargeMeter {
     pub field_28: u32,
     /// +0x2C `undefined4`, ctor store
     pub field_2C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDChargeMeter>() == 0x30);
@@ -13519,6 +14137,7 @@ const _: () = assert!(core::mem::offset_of!(HUDChargeMeter, field_2C) == 0x2C);
 #[repr(C)]
 pub struct HUDMeter {
     /// +0x0 `vtbl:HUDMeter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HUDMeter_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
@@ -13536,6 +14155,7 @@ pub struct HUDMeter {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDMeter>() == 0x48);
@@ -13553,7 +14173,9 @@ const _: () = assert!(core::mem::offset_of!(HUDMeter, field_40) == 0x40);
 #[repr(C)]
 pub struct HandlerCreationMissPolicy_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerI_2193355d749e {
     /// +0x0 `vtbl:HandlerCreationMissPolicy<BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HandlerCreationMissPolicy_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerI_2193355d749e_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HandlerCreationMissPolicy_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerI_2193355d749e>() == 0x8);
@@ -13565,7 +14187,9 @@ const _: () = assert!(core::mem::offset_of!(HandlerCreationMissPolicy_BSTSmartPo
 #[repr(C)]
 pub struct HasSpellVisitor {
     /// +0x0 `vtbl:HasSpellVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HasSpellVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HasSpellVisitor, __vftable) == 0x0);
@@ -13576,6 +14200,7 @@ const _: () = assert!(core::mem::offset_of!(HasSpellVisitor, __vftable) == 0x0);
 #[repr(C)]
 pub struct HavokError {
     /// +0x0 `vtbl:HavokError:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HavokError_vtable,
     /// +0x8 `undefined4`, ctor store (widths [4, 8])
     pub field_8: u32,
@@ -13667,6 +14292,7 @@ pub struct HavokError {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HavokError, __vftable) == 0x0);
@@ -13721,6 +14347,7 @@ const _: () = assert!(core::mem::offset_of!(HavokError, field_114) == 0x114);
 #[repr(C)]
 pub struct HavokFileStreambufReader {
     /// +0x0 `vtbl:HavokFileStreambufReader:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HavokFileStreambufReader_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -13810,6 +14437,7 @@ pub struct HavokFileStreambufReader {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HavokFileStreambufReader, __vftable) == 0x0);
@@ -13863,6 +14491,7 @@ const _: () = assert!(core::mem::offset_of!(HavokFileStreambufReader, field_114)
 #[repr(C)]
 pub struct HavokFileStreambufWriter {
     /// +0x0 `vtbl:HavokFileStreambufWriter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HavokFileStreambufWriter_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -13871,6 +14500,7 @@ pub struct HavokFileStreambufWriter {
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
     pub m_hkpShapeCollectionFilter_18: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HavokFileStreambufWriter>() == 0x20);
@@ -13885,6 +14515,7 @@ const _: () = assert!(core::mem::offset_of!(HavokFileStreambufWriter, m_hkpShape
 #[repr(C)]
 pub struct HavokStreambufReader {
     /// +0x0 `vtbl:HavokStreambufReader:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HavokStreambufReader_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -13974,6 +14605,7 @@ pub struct HavokStreambufReader {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HavokStreambufReader, __vftable) == 0x0);
@@ -14027,6 +14659,7 @@ const _: () = assert!(core::mem::offset_of!(HavokStreambufReader, field_114) == 
 #[repr(C)]
 pub struct HavokStreambufWriter {
     /// +0x0 `vtbl:HavokStreambufWriter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HavokStreambufWriter_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
@@ -14116,6 +14749,7 @@ pub struct HavokStreambufWriter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HavokStreambufWriter, __vftable) == 0x0);
@@ -14169,6 +14803,7 @@ const _: () = assert!(core::mem::offset_of!(HavokStreambufWriter, field_114) == 
 #[repr(C)]
 pub struct Hazard {
     /// +0x0 `vtbl:Hazard:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Hazard_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -14182,13 +14817,16 @@ pub struct Hazard {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Hazard:20`, rtti
+    #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Hazard_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Hazard:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::Hazard_vtable_30,
     /// +0x38 `vtbl:Hazard:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::Hazard_vtable_38,
     /// +0x40 `ptr:TESForm`, base TESObjectREFR, semantic; the base form (TESNPC for actors) (high)
     pub baseObject: *mut crate::TESForm,
@@ -14240,6 +14878,7 @@ pub struct Hazard {
     pub unknown_D5: [u8; 3],
     /// +0xD8 `undefined8`, ctor store
     pub field_D8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Hazard>() == 0xE0);
@@ -14283,8 +14922,10 @@ const _: () = assert!(core::mem::offset_of!(Hazard, field_D8) == 0xD8);
 #[repr(C)]
 pub struct HeadTrackingOffHandler {
     /// +0x0 `vtbl:HeadTrackingOffHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HeadTrackingOffHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HeadTrackingOffHandler>() == 0x10);
@@ -14296,8 +14937,10 @@ const _: () = assert!(core::mem::offset_of!(HeadTrackingOffHandler, __vftable) =
 #[repr(C)]
 pub struct HeadTrackingOnHandler {
     /// +0x0 `vtbl:HeadTrackingOnHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HeadTrackingOnHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HeadTrackingOnHandler>() == 0x10);
@@ -14309,7 +14952,9 @@ const _: () = assert!(core::mem::offset_of!(HeadTrackingOnHandler, __vftable) ==
 #[repr(C)]
 pub struct HealthDamageFunctor {
     /// +0x0 `vtbl:HealthDamageFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HealthDamageFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HealthDamageFunctor, __vftable) == 0x0);
@@ -14320,7 +14965,9 @@ const _: () = assert!(core::mem::offset_of!(HealthDamageFunctor, __vftable) == 0
 #[repr(C)]
 pub struct HelpMessageManager {
     /// +0x0 `vtbl:HelpMessageManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HelpMessageManager_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HelpMessageManager, __vftable) == 0x0);
@@ -14331,6 +14978,7 @@ const _: () = assert!(core::mem::offset_of!(HelpMessageManager, __vftable) == 0x
 #[repr(C)]
 pub struct HighActorCuller {
     /// +0x0 `vtbl:HighActorCuller:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HighActorCuller_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -14344,6 +14992,7 @@ pub struct HighActorCuller {
     pub field_140: u64,
     /// +0x148 `undefined8`, ctor store
     pub field_148: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HighActorCuller, __vftable) == 0x0);
@@ -14359,8 +15008,10 @@ const _: () = assert!(core::mem::offset_of!(HighActorCuller, field_148) == 0x148
 #[repr(C)]
 pub struct HitFrameHandler {
     /// +0x0 `vtbl:HitFrameHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HitFrameHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HitFrameHandler>() == 0x10);
@@ -14372,7 +15023,9 @@ const _: () = assert!(core::mem::offset_of!(HitFrameHandler, __vftable) == 0x0);
 #[repr(C)]
 pub struct HoldWardSpellsActiveEffectVisitor {
     /// +0x0 `vtbl:HoldWardSpellsActiveEffectVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HoldWardSpellsActiveEffectVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(HoldWardSpellsActiveEffectVisitor, __vftable) == 0x0);
@@ -14383,9 +15036,12 @@ const _: () = assert!(core::mem::offset_of!(HoldWardSpellsActiveEffectVisitor, _
 #[repr(C)]
 pub struct IAITarget {
     /// +0x0 `vtbl:IAITarget:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAITarget_vtable,
     /// +0x8 `vtbl:IAITarget:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::IAITarget_vtable_8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IAITarget>() == 0x10);
@@ -14397,7 +15053,9 @@ const _: () = assert!(core::mem::offset_of!(IAITarget, __vftable_8) == 0x8);
 #[repr(C)]
 pub struct IAIWorldLocation {
     /// +0x0 `vtbl:IAIWorldLocation:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAIWorldLocation_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IAIWorldLocation>() == 0x8);
@@ -14408,7 +15066,9 @@ const _: () = assert!(core::mem::offset_of!(IAIWorldLocation, __vftable) == 0x0)
 #[repr(C)]
 pub struct IAIWorldLocationHandle {
     /// +0x0 `vtbl:IAIWorldLocationHandle:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAIWorldLocationHandle_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IAIWorldLocationHandle>() == 0x8);
@@ -14420,7 +15080,9 @@ const _: () = assert!(core::mem::offset_of!(IAIWorldLocationHandle, __vftable) =
 #[repr(C)]
 pub struct IAllowEGMCacheClear {
     /// +0x0 `vtbl:IAllowEGMCacheClear:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAllowEGMCacheClear_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IAllowEGMCacheClear, __vftable) == 0x0);
@@ -14430,7 +15092,9 @@ const _: () = assert!(core::mem::offset_of!(IAllowEGMCacheClear, __vftable) == 0
 #[repr(C)]
 pub struct IAnimationClipLoaderSingleton {
     /// +0x0 `vtbl:IAnimationClipLoaderSingleton:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAnimationClipLoaderSingleton_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IAnimationClipLoaderSingleton>() == 0x8);
@@ -14442,6 +15106,7 @@ const _: () = assert!(core::mem::offset_of!(IAnimationClipLoaderSingleton, __vft
 #[repr(C)]
 pub struct IAnimationGraphManagerLoadingTask {
     /// +0x0 `vtbl:IAnimationGraphManagerLoadingTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAnimationGraphManagerLoadingTask_vtable,
     /// +0x8 `undefined4`, base QueuedFile
     pub field_8: u32,
@@ -14460,6 +15125,7 @@ pub struct IAnimationGraphManagerLoadingTask {
     pub field_30: u32,
     pub unknown_34: [u8; 4],
     /// +0x38 `vtbl:IAnimationGraphManagerLoadingTask:38`, rtti
+    #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::IAnimationGraphManagerLoadingTask_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
@@ -14482,6 +15148,7 @@ pub struct IAnimationGraphManagerLoadingTask {
     /// +0x2C8 `undefined4`, ctor store
     pub field_2C8: u32,
     pub unknown_2CC: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IAnimationGraphManagerLoadingTask>() == 0x2D0);
@@ -14508,7 +15175,9 @@ const _: () = assert!(core::mem::offset_of!(IAnimationGraphManagerLoadingTask, f
 #[repr(C)]
 pub struct IAnimationSetCallbackFunctor {
     /// +0x0 `vtbl:IAnimationSetCallbackFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAnimationSetCallbackFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IAnimationSetCallbackFunctor>() == 0x8);
@@ -14519,7 +15188,9 @@ const _: () = assert!(core::mem::offset_of!(IAnimationSetCallbackFunctor, __vfta
 #[repr(C)]
 pub struct IAnimationStreamRead {
     /// +0x0 `vtbl:IAnimationStreamRead:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAnimationStreamRead_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IAnimationStreamRead, __vftable) == 0x0);
@@ -14529,7 +15200,9 @@ const _: () = assert!(core::mem::offset_of!(IAnimationStreamRead, __vftable) == 
 #[repr(C)]
 pub struct IAnimationStreamWrite {
     /// +0x0 `vtbl:IAnimationStreamWrite:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IAnimationStreamWrite_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IAnimationStreamWrite, __vftable) == 0x0);
@@ -14539,7 +15212,9 @@ const _: () = assert!(core::mem::offset_of!(IAnimationStreamWrite, __vftable) ==
 #[repr(C)]
 pub struct IBSAnimNoteReceiver {
     /// +0x0 `vtbl:IBSAnimNoteReceiver:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IBSAnimNoteReceiver_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IBSAnimNoteReceiver, __vftable) == 0x0);
@@ -14550,9 +15225,11 @@ const _: () = assert!(core::mem::offset_of!(IBSAnimNoteReceiver, __vftable) == 0
 #[repr(C)]
 pub struct ICellAttachDetachEventSource {
     /// +0x0 `vtbl:ICellAttachDetachEventSource:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ICellAttachDetachEventSource_vtable,
     /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<CellAttachDetachEvent>
     pub source_CellAttachDetachEvent: crate::BSTEventSource,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ICellAttachDetachEventSource>() == 0x60);
@@ -14564,7 +15241,9 @@ const _: () = assert!(core::mem::offset_of!(ICellAttachDetachEventSource, source
 #[repr(C)]
 pub struct ICheckEndReachedFunctor {
     /// +0x0 `vtbl:ICheckEndReachedFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ICheckEndReachedFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ICheckEndReachedFunctor>() == 0x8);
@@ -14575,7 +15254,9 @@ const _: () = assert!(core::mem::offset_of!(ICheckEndReachedFunctor, __vftable) 
 #[repr(C)]
 pub struct ICheckEndReachedFunctorMapper {
     /// +0x0 `vtbl:ICheckEndReachedFunctorMapper:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ICheckEndReachedFunctorMapper_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ICheckEndReachedFunctorMapper>() == 0x8);
@@ -14587,7 +15268,9 @@ const _: () = assert!(core::mem::offset_of!(ICheckEndReachedFunctorMapper, __vft
 #[repr(C)]
 pub struct IConvexOverlapImpl {
     /// +0x0 `vtbl:IConvexOverlapImpl:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IConvexOverlapImpl_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IConvexOverlapImpl, __vftable) == 0x0);
@@ -14598,7 +15281,9 @@ const _: () = assert!(core::mem::offset_of!(IConvexOverlapImpl, __vftable) == 0x
 #[repr(C)]
 pub struct IConvexOverlapImpl__ShapeBridge {
     /// +0x0 `vtbl:IConvexOverlapImpl::ShapeBridge:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IConvexOverlapImpl__ShapeBridge_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IConvexOverlapImpl__ShapeBridge, __vftable) == 0x0);
@@ -14608,7 +15293,9 @@ const _: () = assert!(core::mem::offset_of!(IConvexOverlapImpl__ShapeBridge, __v
 #[repr(C)]
 pub struct IDebugText {
     /// +0x0 `vtbl:IDebugText:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IDebugText_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IDebugText>() == 0x8);
@@ -14620,8 +15307,10 @@ const _: () = assert!(core::mem::offset_of!(IDebugText, __vftable) == 0x0);
 #[repr(C)]
 pub struct IFadeDoneCallback {
     /// +0x0 `vtbl:IFadeDoneCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IFadeDoneCallback_vtable,
     pub unknown_8: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IFadeDoneCallback>() == 0x18);
@@ -14632,7 +15321,9 @@ const _: () = assert!(core::mem::offset_of!(IFadeDoneCallback, __vftable) == 0x0
 #[repr(C)]
 pub struct IGamebryoSequenceGeneratorHolderSingleton {
     /// +0x0 `vtbl:IGamebryoSequenceGeneratorHolderSingleton:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IGamebryoSequenceGeneratorHolderSingleton_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IGamebryoSequenceGeneratorHolderSingleton, __vftable) == 0x0);
@@ -14643,7 +15334,9 @@ const _: () = assert!(core::mem::offset_of!(IGamebryoSequenceGeneratorHolderSing
 #[repr(C)]
 pub struct IGiftMenuScriptCallback {
     /// +0x0 `vtbl:IGiftMenuScriptCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IGiftMenuScriptCallback_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IGiftMenuScriptCallback, __vftable) == 0x0);
@@ -14654,8 +15347,10 @@ const _: () = assert!(core::mem::offset_of!(IGiftMenuScriptCallback, __vftable) 
 #[repr(C)]
 pub struct IHandlerFunctor_Actor_BSFixedStringCI {
     /// +0x0 `vtbl:IHandlerFunctor<Actor,BSFixedStringCI>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IHandlerFunctor_Actor_BSFixedStringCI_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IHandlerFunctor_Actor_BSFixedStringCI>() == 0x10);
@@ -14667,7 +15362,9 @@ const _: () = assert!(core::mem::offset_of!(IHandlerFunctor_Actor_BSFixedStringC
 #[repr(C)]
 pub struct IMemoryHeap {
     /// +0x0 `vtbl:IMemoryHeap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMemoryHeap_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMemoryHeap>() == 0x8);
@@ -14678,7 +15375,9 @@ const _: () = assert!(core::mem::offset_of!(IMemoryHeap, __vftable) == 0x0);
 #[repr(C)]
 pub struct IMemoryManagerFile {
     /// +0x0 `vtbl:IMemoryManagerFile:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMemoryManagerFile_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IMemoryManagerFile, __vftable) == 0x0);
@@ -14689,7 +15388,9 @@ const _: () = assert!(core::mem::offset_of!(IMemoryManagerFile, __vftable) == 0x
 #[repr(C)]
 pub struct IMemoryStore {
     /// +0x0 `vtbl:IMemoryStore:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMemoryStore_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMemoryStore>() == 0x8);
@@ -14700,7 +15401,9 @@ const _: () = assert!(core::mem::offset_of!(IMemoryStore, __vftable) == 0x0);
 #[repr(C)]
 pub struct IMemoryStoreBase {
     /// +0x0 `vtbl:IMemoryStoreBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMemoryStoreBase_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMemoryStoreBase>() == 0x8);
@@ -14711,7 +15414,9 @@ const _: () = assert!(core::mem::offset_of!(IMemoryStoreBase, __vftable) == 0x0)
 #[repr(C)]
 pub struct IMovementAgentDataTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta {
     /// +0x0 `vtbl:IMovementAgentDataTracker<IMovementHandlerAgent,MovementHandlerOutputDataSmallDelta>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementAgentDataTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementAgentDataTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta>() == 0x8);
@@ -14722,7 +15427,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementAgentDataTracker_IMovementH
 #[repr(C)]
 pub struct IMovementAgentDataTracker_IMovementHandlerAgent_MovementHandlerUpdateDataSmallDelta {
     /// +0x0 `vtbl:IMovementAgentDataTracker<IMovementHandlerAgent,MovementHandlerUpdateDataSmallDelta>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementAgentDataTracker_IMovementHandlerAgent_MovementHandlerUpdateDataSmallDelta_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementAgentDataTracker_IMovementHandlerAgent_MovementHandlerUpdateDataSmallDelta>() == 0x8);
@@ -14733,7 +15440,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementAgentDataTracker_IMovementH
 #[repr(C)]
 pub struct IMovementAgentDataTracker_IMovementPathManagerAgent_MovementPathManagerAgentReturnData__AGENT_RESULT {
     /// +0x0 `vtbl:IMovementAgentDataTracker<IMovementPathManagerAgent,MovementPathManagerAgentReturnData::AGENT_RESULT>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementAgentDataTracker_IMovementPathManagerAgent_MovementPathManagerAgentReturnData__AGENT_RESULT_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementAgentDataTracker_IMovementPathManagerAgent_MovementPathManagerAgentReturnData__AGENT_RESULT>() == 0x8);
@@ -14744,7 +15453,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementAgentDataTracker_IMovementP
 #[repr(C)]
 pub struct IMovementAgentDataTracker_IMovementPlannerAgent_MovementPlannerAgentReturnDataSmallDelta {
     /// +0x0 `vtbl:IMovementAgentDataTracker<IMovementPlannerAgent,MovementPlannerAgentReturnDataSmallDelta>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementAgentDataTracker_IMovementPlannerAgent_MovementPlannerAgentReturnDataSmallDelta_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementAgentDataTracker_IMovementPlannerAgent_MovementPlannerAgentReturnDataSmallDelta>() == 0x8);
@@ -14755,7 +15466,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementAgentDataTracker_IMovementP
 #[repr(C)]
 pub struct IMovementAgentDataTracker_IMovementTweenerAgent_MovementTweenerAgentOutputData {
     /// +0x0 `vtbl:IMovementAgentDataTracker<IMovementTweenerAgent,MovementTweenerAgentOutputData>:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementAgentDataTracker_IMovementTweenerAgent_MovementTweenerAgentOutputData_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementAgentDataTracker_IMovementTweenerAgent_MovementTweenerAgentOutputData>() == 0x8);
@@ -14767,7 +15480,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementAgentDataTracker_IMovementT
 #[repr(C)]
 pub struct IMovementAvoidanceManager {
     /// +0x0 `vtbl:IMovementAvoidanceManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementAvoidanceManager_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IMovementAvoidanceManager, __vftable) == 0x0);
@@ -14777,7 +15492,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementAvoidanceManager, __vftable
 #[repr(C)]
 pub struct IMovementControllerDataTracker {
     /// +0x0 `vtbl:IMovementControllerDataTracker:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementControllerDataTracker_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementControllerDataTracker>() == 0x8);
@@ -14788,7 +15505,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementControllerDataTracker, __vf
 #[repr(C)]
 pub struct IMovementControllerNPCFunctor {
     /// +0x0 `vtbl:IMovementControllerNPCFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementControllerNPCFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IMovementControllerNPCFunctor, __vftable) == 0x0);
@@ -14798,7 +15517,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementControllerNPCFunctor, __vft
 #[repr(C)]
 pub struct IMovementControllerRegisterInterface {
     /// +0x0 `vtbl:IMovementControllerRegisterInterface:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementControllerRegisterInterface_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementControllerRegisterInterface>() == 0x8);
@@ -14810,7 +15531,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementControllerRegisterInterface
 #[repr(C)]
 pub struct IMovementDirectControl {
     /// +0x0 `vtbl:IMovementDirectControl:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementDirectControl_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementDirectControl>() == 0x8);
@@ -14822,7 +15545,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementDirectControl, __vftable) =
 #[repr(C)]
 pub struct IMovementFormIDManager {
     /// +0x0 `vtbl:IMovementFormIDManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementFormIDManager_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IMovementFormIDManager, __vftable) == 0x0);
@@ -14833,7 +15558,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementFormIDManager, __vftable) =
 #[repr(C)]
 pub struct IMovementHandlerAgent {
     /// +0x0 `vtbl:IMovementHandlerAgent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementHandlerAgent_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementHandlerAgent>() == 0x8);
@@ -14844,7 +15571,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementHandlerAgent, __vftable) ==
 #[repr(C)]
 pub struct IMovementInterface {
     /// +0x0 `vtbl:IMovementInterface:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementInterface_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementInterface>() == 0x8);
@@ -14856,7 +15585,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementInterface, __vftable) == 0x
 #[repr(C)]
 pub struct IMovementMessageInterface {
     /// +0x0 `vtbl:IMovementMessageInterface:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementMessageInterface_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementMessageInterface>() == 0x8);
@@ -14868,7 +15599,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementMessageInterface, __vftable
 #[repr(C)]
 pub struct IMovementMotionDrivenControl {
     /// +0x0 `vtbl:IMovementMotionDrivenControl:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementMotionDrivenControl_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementMotionDrivenControl>() == 0x8);
@@ -14880,8 +15613,10 @@ const _: () = assert!(core::mem::offset_of!(IMovementMotionDrivenControl, __vfta
 #[repr(C)]
 pub struct IMovementParameters {
     /// +0x0 `vtbl:IMovementParameters:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementParameters_vtable,
     pub unknown_8: [u8; 32],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementParameters>() == 0x28);
@@ -14893,7 +15628,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementParameters, __vftable) == 0
 #[repr(C)]
 pub struct IMovementPathManagerAgent {
     /// +0x0 `vtbl:IMovementPathManagerAgent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementPathManagerAgent_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementPathManagerAgent>() == 0x8);
@@ -14905,7 +15642,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementPathManagerAgent, __vftable
 #[repr(C)]
 pub struct IMovementPathManagerDataTracker {
     /// +0x0 `vtbl:IMovementPathManagerDataTracker:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementPathManagerDataTracker_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementPathManagerDataTracker>() == 0x8);
@@ -14917,7 +15656,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementPathManagerDataTracker, __v
 #[repr(C)]
 pub struct IMovementPlannerAgent {
     /// +0x0 `vtbl:IMovementPlannerAgent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementPlannerAgent_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementPlannerAgent>() == 0x8);
@@ -14929,7 +15670,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementPlannerAgent, __vftable) ==
 #[repr(C)]
 pub struct IMovementPlannerDirectControl {
     /// +0x0 `vtbl:IMovementPlannerDirectControl:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementPlannerDirectControl_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementPlannerDirectControl>() == 0x8);
@@ -14941,7 +15684,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementPlannerDirectControl, __vft
 #[repr(C)]
 pub struct IMovementPlannerSetArbitration {
     /// +0x0 `vtbl:IMovementPlannerSetArbitration:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementPlannerSetArbitration_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementPlannerSetArbitration>() == 0x8);
@@ -14952,7 +15697,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementPlannerSetArbitration, __vf
 #[repr(C)]
 pub struct IMovementPlayIdleResult {
     /// +0x0 `vtbl:IMovementPlayIdleResult:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementPlayIdleResult_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementPlayIdleResult>() == 0x8);
@@ -14964,7 +15711,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementPlayIdleResult, __vftable) 
 #[repr(C)]
 pub struct IMovementQueryActorAvoidance {
     /// +0x0 `vtbl:IMovementQueryActorAvoidance:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryActorAvoidance_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementQueryActorAvoidance>() == 0x8);
@@ -14976,7 +15725,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryActorAvoidance, __vfta
 #[repr(C)]
 pub struct IMovementQueryDeltas {
     /// +0x0 `vtbl:IMovementQueryDeltas:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryDeltas_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementQueryDeltas>() == 0x8);
@@ -14988,7 +15739,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryDeltas, __vftable) == 
 #[repr(C)]
 pub struct IMovementQueryFlight {
     /// +0x0 `vtbl:IMovementQueryFlight:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryFlight_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementQueryFlight>() == 0x8);
@@ -15000,7 +15753,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryFlight, __vftable) == 
 #[repr(C)]
 pub struct IMovementQueryPathFollowing {
     /// +0x0 `vtbl:IMovementQueryPathFollowing:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryPathFollowing_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementQueryPathFollowing>() == 0x8);
@@ -15011,7 +15766,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryPathFollowing, __vftab
 #[repr(C)]
 pub struct IMovementQueryPathFollowing__INodeVisitor {
     /// +0x0 `vtbl:IMovementQueryPathFollowing::INodeVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryPathFollowing__INodeVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IMovementQueryPathFollowing__INodeVisitor, __vftable) == 0x0);
@@ -15022,7 +15779,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryPathFollowing__INodeVi
 #[repr(C)]
 pub struct IMovementQueryPathingState {
     /// +0x0 `vtbl:IMovementQueryPathingState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryPathingState_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IMovementQueryPathingState, __vftable) == 0x0);
@@ -15033,7 +15792,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryPathingState, __vftabl
 #[repr(C)]
 pub struct IMovementQueryState {
     /// +0x0 `vtbl:IMovementQueryState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryState_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementQueryState>() == 0x8);
@@ -15045,7 +15806,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryState, __vftable) == 0
 #[repr(C)]
 pub struct IMovementQueryStaticAvoider {
     /// +0x0 `vtbl:IMovementQueryStaticAvoider:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryStaticAvoider_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementQueryStaticAvoider>() == 0x8);
@@ -15057,7 +15820,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryStaticAvoider, __vftab
 #[repr(C)]
 pub struct IMovementQueryTweener {
     /// +0x0 `vtbl:IMovementQueryTweener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementQueryTweener_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IMovementQueryTweener, __vftable) == 0x0);
@@ -15068,7 +15833,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementQueryTweener, __vftable) ==
 #[repr(C)]
 pub struct IMovementSelectIdle {
     /// +0x0 `vtbl:IMovementSelectIdle:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSelectIdle_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSelectIdle>() == 0x8);
@@ -15080,7 +15847,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSelectIdle, __vftable) == 0
 #[repr(C)]
 pub struct IMovementSetCorrectionData {
     /// +0x0 `vtbl:IMovementSetCorrectionData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetCorrectionData_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetCorrectionData>() == 0x8);
@@ -15092,7 +15861,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetCorrectionData, __vftabl
 #[repr(C)]
 pub struct IMovementSetGoal {
     /// +0x0 `vtbl:IMovementSetGoal:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetGoal_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetGoal>() == 0x8);
@@ -15104,7 +15875,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetGoal, __vftable) == 0x0)
 #[repr(C)]
 pub struct IMovementSetKeepOffsetFromActor {
     /// +0x0 `vtbl:IMovementSetKeepOffsetFromActor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetKeepOffsetFromActor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetKeepOffsetFromActor>() == 0x8);
@@ -15116,7 +15889,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetKeepOffsetFromActor, __v
 #[repr(C)]
 pub struct IMovementSetPathFollowing {
     /// +0x0 `vtbl:IMovementSetPathFollowing:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetPathFollowing_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetPathFollowing>() == 0x8);
@@ -15128,7 +15903,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetPathFollowing, __vftable
 #[repr(C)]
 pub struct IMovementSetPlayerControls {
     /// +0x0 `vtbl:IMovementSetPlayerControls:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetPlayerControls_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetPlayerControls>() == 0x8);
@@ -15140,7 +15917,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetPlayerControls, __vftabl
 #[repr(C)]
 pub struct IMovementSetSprinting {
     /// +0x0 `vtbl:IMovementSetSprinting:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetSprinting_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetSprinting>() == 0x8);
@@ -15152,7 +15931,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetSprinting, __vftable) ==
 #[repr(C)]
 pub struct IMovementSetState {
     /// +0x0 `vtbl:IMovementSetState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetState_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetState>() == 0x8);
@@ -15164,7 +15945,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetState, __vftable) == 0x0
 #[repr(C)]
 pub struct IMovementSetStaticAvoider {
     /// +0x0 `vtbl:IMovementSetStaticAvoider:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetStaticAvoider_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetStaticAvoider>() == 0x8);
@@ -15176,7 +15959,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetStaticAvoider, __vftable
 #[repr(C)]
 pub struct IMovementSetTranslationControllerType {
     /// +0x0 `vtbl:IMovementSetTranslationControllerType:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetTranslationControllerType_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetTranslationControllerType>() == 0x8);
@@ -15188,7 +15973,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetTranslationControllerTyp
 #[repr(C)]
 pub struct IMovementSetTweener {
     /// +0x0 `vtbl:IMovementSetTweener:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetTweener_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementSetTweener>() == 0x8);
@@ -15200,7 +15987,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetTweener, __vftable) == 0
 #[repr(C)]
 pub struct IMovementSetWarp {
     /// +0x0 `vtbl:IMovementSetWarp:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementSetWarp_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IMovementSetWarp, __vftable) == 0x0);
@@ -15211,7 +16000,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementSetWarp, __vftable) == 0x0)
 #[repr(C)]
 pub struct IMovementState {
     /// +0x0 `vtbl:IMovementState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementState_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementState>() == 0x8);
@@ -15223,7 +16014,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementState, __vftable) == 0x0);
 #[repr(C)]
 pub struct IMovementTweenerAgent {
     /// +0x0 `vtbl:IMovementTweenerAgent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IMovementTweenerAgent_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMovementTweenerAgent>() == 0x8);
@@ -15234,7 +16027,9 @@ const _: () = assert!(core::mem::offset_of!(IMovementTweenerAgent, __vftable) ==
 #[repr(C)]
 pub struct INavmeshSearchFilterSet {
     /// +0x0 `vtbl:INavmeshSearchFilterSet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::INavmeshSearchFilterSet_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(INavmeshSearchFilterSet, __vftable) == 0x0);
@@ -15246,6 +16041,7 @@ const _: () = assert!(core::mem::offset_of!(INavmeshSearchFilterSet, __vftable) 
 #[repr(C, packed)]
 pub struct IOManager {
     /// +0x0 `vtbl:IOManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IOManager_vtable,
     /// +0x8 `undefined8`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_8: u64,
@@ -15304,6 +16100,7 @@ pub struct IOManager {
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
     pub field_120: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IOManager>() == 0x128);
@@ -15339,7 +16136,9 @@ const _: () = assert!(core::mem::offset_of!(IOManager, field_120) == 0x120);
 #[repr(C)]
 pub struct IOTask {
     /// +0x0 `vtbl:IOTask:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IOTask_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IOTask>() == 0x8);
@@ -15350,7 +16149,9 @@ const _: () = assert!(core::mem::offset_of!(IOTask, __vftable) == 0x0);
 #[repr(C)]
 pub struct IPackageData {
     /// +0x0 `vtbl:IPackageData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPackageData_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPackageData>() == 0x8);
@@ -15362,9 +16163,12 @@ const _: () = assert!(core::mem::offset_of!(IPackageData, __vftable) == 0x0);
 #[repr(C)]
 pub struct IPackageDataAIWorldLocationHandle {
     /// +0x0 `vtbl:IPackageDataAIWorldLocationHandle:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPackageDataAIWorldLocationHandle_vtable,
     /// +0x8 `vtbl:IPackageDataAIWorldLocationHandle:8`, rtti
+    #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::IPackageDataAIWorldLocationHandle_vtable_8,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPackageDataAIWorldLocationHandle>() == 0x10);
@@ -15376,7 +16180,9 @@ const _: () = assert!(core::mem::offset_of!(IPackageDataAIWorldLocationHandle, _
 #[repr(C)]
 pub struct IPackageDataTypeCheck {
     /// +0x0 `vtbl:IPackageDataTypeCheck:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPackageDataTypeCheck_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IPackageDataTypeCheck, __vftable) == 0x0);
@@ -15386,7 +16192,9 @@ const _: () = assert!(core::mem::offset_of!(IPackageDataTypeCheck, __vftable) ==
 #[repr(C)]
 pub struct IPathBuilder {
     /// +0x0 `vtbl:IPathBuilder:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPathBuilder_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPathBuilder>() == 0x8);
@@ -15397,7 +16205,9 @@ const _: () = assert!(core::mem::offset_of!(IPathBuilder, __vftable) == 0x0);
 #[repr(C)]
 pub struct IPathBuilderFactoryBase {
     /// +0x0 `vtbl:IPathBuilderFactoryBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPathBuilderFactoryBase_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPathBuilderFactoryBase>() == 0x8);
@@ -15408,7 +16218,9 @@ const _: () = assert!(core::mem::offset_of!(IPathBuilderFactoryBase, __vftable) 
 #[repr(C)]
 pub struct IPathBuilderTracker {
     /// +0x0 `vtbl:IPathBuilderTracker:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPathBuilderTracker_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPathBuilderTracker>() == 0x8);
@@ -15419,7 +16231,9 @@ const _: () = assert!(core::mem::offset_of!(IPathBuilderTracker, __vftable) == 0
 #[repr(C)]
 pub struct IPathFollowerAction {
     /// +0x0 `vtbl:IPathFollowerAction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPathFollowerAction_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPathFollowerAction>() == 0x8);
@@ -15430,7 +16244,9 @@ const _: () = assert!(core::mem::offset_of!(IPathFollowerAction, __vftable) == 0
 #[repr(C)]
 pub struct IPathFollowerState {
     /// +0x0 `vtbl:IPathFollowerState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPathFollowerState_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPathFollowerState>() == 0x8);
@@ -15441,7 +16257,9 @@ const _: () = assert!(core::mem::offset_of!(IPathFollowerState, __vftable) == 0x
 #[repr(C)]
 pub struct IPathSmootherRayCast {
     /// +0x0 `vtbl:IPathSmootherRayCast:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPathSmootherRayCast_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPathSmootherRayCast>() == 0x8);
@@ -15452,7 +16270,9 @@ const _: () = assert!(core::mem::offset_of!(IPathSmootherRayCast, __vftable) == 
 #[repr(C)]
 pub struct IPathingNodeGenerator {
     /// +0x0 `vtbl:IPathingNodeGenerator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPathingNodeGenerator_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPathingNodeGenerator>() == 0x8);
@@ -15463,7 +16283,9 @@ const _: () = assert!(core::mem::offset_of!(IPathingNodeGenerator, __vftable) ==
 #[repr(C)]
 pub struct IPipelineStageInterface {
     /// +0x0 `vtbl:IPipelineStageInterface:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPipelineStageInterface_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPipelineStageInterface>() == 0x8);
@@ -15474,7 +16296,9 @@ const _: () = assert!(core::mem::offset_of!(IPipelineStageInterface, __vftable) 
 #[repr(C)]
 pub struct IPostAnimationChannelUpdateFunctor {
     /// +0x0 `vtbl:IPostAnimationChannelUpdateFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IPostAnimationChannelUpdateFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IPostAnimationChannelUpdateFunctor>() == 0x8);
@@ -15485,7 +16309,9 @@ const _: () = assert!(core::mem::offset_of!(IPostAnimationChannelUpdateFunctor, 
 #[repr(C)]
 pub struct IProcedure {
     /// +0x0 `vtbl:IProcedure:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IProcedure_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IProcedure, __vftable) == 0x0);
@@ -15495,9 +16321,11 @@ const _: () = assert!(core::mem::offset_of!(IProcedure, __vftable) == 0x0);
 #[repr(C)]
 pub struct IProcedureTreeExecState {
     /// +0x0 `vtbl:IProcedureTreeExecState:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IProcedureTreeExecState, __vftable) == 0x0);
@@ -15508,7 +16336,9 @@ const _: () = assert!(core::mem::offset_of!(IProcedureTreeExecState, field_8) ==
 #[repr(C)]
 pub struct IProcedureTreeItem {
     /// +0x0 `vtbl:IProcedureTreeItem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IProcedureTreeItem_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IProcedureTreeItem, __vftable) == 0x0);
@@ -15518,7 +16348,9 @@ const _: () = assert!(core::mem::offset_of!(IProcedureTreeItem, __vftable) == 0x
 #[repr(C)]
 pub struct IProcedureTreeVisitor {
     /// +0x0 `vtbl:IProcedureTreeVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IProcedureTreeVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IProcedureTreeVisitor, __vftable) == 0x0);
@@ -15528,7 +16360,9 @@ const _: () = assert!(core::mem::offset_of!(IProcedureTreeVisitor, __vftable) ==
 #[repr(C)]
 pub struct IRendererResourceManager {
     /// +0x0 `vtbl:IRendererResourceManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IRendererResourceManager_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IRendererResourceManager, __vftable) == 0x0);
@@ -15540,6 +16374,7 @@ const _: () = assert!(core::mem::offset_of!(IRendererResourceManager, __vftable)
 #[repr(C, packed)]
 pub struct ISEntry {
     /// +0x0 `vtbl:ISEntry:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ISEntry_vtable,
     /// +0x8 `undefined1`, base UI_element
     pub field_8: u8,
@@ -15590,6 +16425,7 @@ pub struct ISEntry {
     /// +0x84 `undefined1`, ctor store
     pub field_84: u8,
     pub unknown_85: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ISEntry>() == 0x88);
@@ -15622,7 +16458,9 @@ const _: () = assert!(core::mem::offset_of!(ISEntry, field_84) == 0x84);
 #[repr(C)]
 pub struct ISelectIdleFilter {
     /// +0x0 `vtbl:ISelectIdleFilter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ISelectIdleFilter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ISelectIdleFilter>() == 0x8);
@@ -15633,7 +16471,9 @@ const _: () = assert!(core::mem::offset_of!(ISelectIdleFilter, __vftable) == 0x0
 #[repr(C)]
 pub struct ISmoothingRayValidator {
     /// +0x0 `vtbl:ISmoothingRayValidator:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ISmoothingRayValidator_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ISmoothingRayValidator>() == 0x8);
@@ -15645,7 +16485,9 @@ const _: () = assert!(core::mem::offset_of!(ISmoothingRayValidator, __vftable) =
 #[repr(C)]
 pub struct IStaticAvoidNodeManager {
     /// +0x0 `vtbl:IStaticAvoidNodeManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IStaticAvoidNodeManager_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IStaticAvoidNodeManager>() == 0x8);
@@ -15656,7 +16498,9 @@ const _: () = assert!(core::mem::offset_of!(IStaticAvoidNodeManager, __vftable) 
 #[repr(C)]
 pub struct IStringForwarder {
     /// +0x0 `vtbl:IStringForwarder:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IStringForwarder_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IStringForwarder, __vftable) == 0x0);
@@ -15666,7 +16510,9 @@ const _: () = assert!(core::mem::offset_of!(IStringForwarder, __vftable) == 0x0)
 #[repr(C)]
 pub struct ITextureDB {
     /// +0x0 `vtbl:ITextureDB:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ITextureDB_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ITextureDB>() == 0x8);
@@ -15677,7 +16523,9 @@ const _: () = assert!(core::mem::offset_of!(ITextureDB, __vftable) == 0x0);
 #[repr(C)]
 pub struct ITrianglePathSplitter {
     /// +0x0 `vtbl:ITrianglePathSplitter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ITrianglePathSplitter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ITrianglePathSplitter>() == 0x8);
@@ -15689,7 +16537,9 @@ const _: () = assert!(core::mem::offset_of!(ITrianglePathSplitter, __vftable) ==
 #[repr(C)]
 pub struct ITweenerNodeFollowerSetup {
     /// +0x0 `vtbl:ITweenerNodeFollowerSetup:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ITweenerNodeFollowerSetup_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ITweenerNodeFollowerSetup>() == 0x8);
@@ -15700,7 +16550,9 @@ const _: () = assert!(core::mem::offset_of!(ITweenerNodeFollowerSetup, __vftable
 #[repr(C)]
 pub struct IVisitProcedures {
     /// +0x0 `vtbl:IVisitProcedures:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IVisitProcedures_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IVisitProcedures>() == 0x8);
@@ -15712,8 +16564,10 @@ const _: () = assert!(core::mem::offset_of!(IVisitProcedures, __vftable) == 0x0)
 #[repr(C)]
 pub struct IdleDialogueEnterHandler {
     /// +0x0 `vtbl:IdleDialogueEnterHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IdleDialogueEnterHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IdleDialogueEnterHandler>() == 0x10);
@@ -15725,8 +16579,10 @@ const _: () = assert!(core::mem::offset_of!(IdleDialogueEnterHandler, __vftable)
 #[repr(C)]
 pub struct IdleDialogueExitHandler {
     /// +0x0 `vtbl:IdleDialogueExitHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IdleDialogueExitHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IdleDialogueExitHandler>() == 0x10);
@@ -15738,6 +16594,7 @@ const _: () = assert!(core::mem::offset_of!(IdleDialogueExitHandler, __vftable) 
 #[repr(C)]
 pub struct ImageCreationThread {
     /// +0x0 `vtbl:ImageCreationThread:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageCreationThread_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSThread
@@ -15756,6 +16613,7 @@ pub struct ImageCreationThread {
     /// +0x60 `undefined1`, base BSTaskThread
     pub field_60: u8,
     pub unknown_61: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ImageCreationThread, __vftable) == 0x0);
@@ -15773,6 +16631,7 @@ const _: () = assert!(core::mem::offset_of!(ImageCreationThread, field_60) == 0x
 #[repr(C)]
 pub struct ImageScroller {
     /// +0x0 `vtbl:ImageScroller:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageScroller_vtable,
     /// +0x8 `undefined1`, base UI_element
     pub field_8: u8,
@@ -15840,6 +16699,7 @@ pub struct ImageScroller {
     /// +0xB8 `undefined1`, ctor store
     pub field_B8: u8,
     pub unknown_B9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageScroller>() == 0xC0);
@@ -15879,6 +16739,7 @@ const _: () = assert!(core::mem::offset_of!(ImageScroller, field_B8) == 0xB8);
 #[repr(C)]
 pub struct ImageSpaceEffect {
     /// +0x0 `vtbl:ImageSpaceEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffect_vtable,
     /// +0x8 `undefined2`, ctor store
     pub field_8: u16,
@@ -15926,6 +16787,7 @@ pub struct ImageSpaceEffect {
     /// +0x88 `undefined1`, ctor store
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffect>() == 0x90);
@@ -15959,6 +16821,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffect, field_88) == 0x88)
 #[repr(C)]
 pub struct ImageSpaceEffectBlur {
     /// +0x0 `vtbl:ImageSpaceEffectBlur:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectBlur_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16011,6 +16874,7 @@ pub struct ImageSpaceEffectBlur {
     /// +0x94 `undefined2`, ctor store
     pub field_94: u16,
     pub unknown_96: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectBlur>() == 0x98);
@@ -16046,6 +16910,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectBlur, field_94) == 0
 #[repr(C)]
 pub struct ImageSpaceEffectFullScreenBlur {
     /// +0x0 `vtbl:ImageSpaceEffectFullScreenBlur:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectFullScreenBlur_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16093,6 +16958,7 @@ pub struct ImageSpaceEffectFullScreenBlur {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 103],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectFullScreenBlur>() == 0xF0);
@@ -16126,6 +16992,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectFullScreenBlur, fiel
 #[repr(C)]
 pub struct ImageSpaceEffectGetHit {
     /// +0x0 `vtbl:ImageSpaceEffectGetHit:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectGetHit_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16173,6 +17040,7 @@ pub struct ImageSpaceEffectGetHit {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 111],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectGetHit>() == 0xF8);
@@ -16206,6 +17074,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectGetHit, field_88) ==
 #[repr(C)]
 pub struct ImageSpaceEffectMap {
     /// +0x0 `vtbl:ImageSpaceEffectMap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectMap_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16253,6 +17122,7 @@ pub struct ImageSpaceEffectMap {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectMap>() == 0x90);
@@ -16287,6 +17157,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectMap, field_88) == 0x
 #[repr(C, packed)]
 pub struct ImageSpaceEffectNoise {
     /// +0x0 `vtbl:ImageSpaceEffectNoise:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectNoise_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16391,6 +17262,7 @@ pub struct ImageSpaceEffectNoise {
     /// +0x330 `undefined1`, ctor store
     pub field_330: u8,
     pub unknown_331: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectNoise>() == 0x338);
@@ -16449,6 +17321,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectNoise, field_330) ==
 #[repr(C)]
 pub struct ImageSpaceEffectOption {
     /// +0x0 `vtbl:ImageSpaceEffectOption:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectOption_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16496,6 +17369,7 @@ pub struct ImageSpaceEffectOption {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectOption>() == 0x90);
@@ -16528,7 +17402,9 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectOption, field_88) ==
 #[repr(C)]
 pub struct ImageSpaceEffectParam {
     /// +0x0 `vtbl:ImageSpaceEffectParam:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectParam_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectParam>() == 0x8);
@@ -16540,6 +17416,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectParam, __vftable) ==
 #[repr(C)]
 pub struct ImageSpaceEffectRadialBlur {
     /// +0x0 `vtbl:ImageSpaceEffectRadialBlur:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectRadialBlur_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16587,6 +17464,7 @@ pub struct ImageSpaceEffectRadialBlur {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectRadialBlur>() == 0x90);
@@ -16621,6 +17499,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectRadialBlur, field_88
 #[repr(C, packed)]
 pub struct ImageSpaceEffectRefraction {
     /// +0x0 `vtbl:ImageSpaceEffectRefraction:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectRefraction_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16679,6 +17558,7 @@ pub struct ImageSpaceEffectRefraction {
     /// +0xA8 `undefined1`, ctor store
     pub field_A8: u8,
     pub unknown_A9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectRefraction>() == 0xB0);
@@ -16717,6 +17597,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectRefraction, field_A8
 #[repr(C)]
 pub struct ImageSpaceEffectVolumetricLighting {
     /// +0x0 `vtbl:ImageSpaceEffectVolumetricLighting:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectVolumetricLighting_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16764,6 +17645,7 @@ pub struct ImageSpaceEffectVolumetricLighting {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectVolumetricLighting>() == 0x90);
@@ -16797,6 +17679,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectVolumetricLighting, 
 #[repr(C)]
 pub struct ImageSpaceEffectWaterDisplacement {
     /// +0x0 `vtbl:ImageSpaceEffectWaterDisplacement:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectWaterDisplacement_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16854,6 +17737,7 @@ pub struct ImageSpaceEffectWaterDisplacement {
     pub field_A4: u32,
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectWaterDisplacement>() == 0xB0);
@@ -16892,6 +17776,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectWaterDisplacement, f
 #[repr(C)]
 pub struct ImageSpaceEffectWorldMap {
     /// +0x0 `vtbl:ImageSpaceEffectWorldMap:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectWorldMap_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -16939,6 +17824,7 @@ pub struct ImageSpaceEffectWorldMap {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectWorldMap>() == 0x90);
@@ -16972,10 +17858,12 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectWorldMap, field_88) 
 #[repr(C)]
 pub struct ImageSpaceModifierInstance {
     /// +0x0 `vtbl:ImageSpaceModifierInstance:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstance_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceModifierInstance>() == 0x10);
@@ -16988,6 +17876,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstance, field_8)
 #[repr(C)]
 pub struct ImageSpaceModifierInstanceDOF {
     /// +0x0 `vtbl:ImageSpaceModifierInstanceDOF:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstanceDOF_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -17027,6 +17916,7 @@ pub struct ImageSpaceModifierInstanceDOF {
     /// +0x70 `float`, ctor store (widths [4, 8])
     pub field_70: f32,
     pub unknown_74: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceModifierInstanceDOF>() == 0x78);
@@ -17055,6 +17945,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceDOF, field
 #[repr(C)]
 pub struct ImageSpaceModifierInstanceRB {
     /// +0x0 `vtbl:ImageSpaceModifierInstanceRB:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstanceRB_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -17098,6 +17989,7 @@ pub struct ImageSpaceModifierInstanceRB {
     pub field_68: u64,
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceRB, __vftable) == 0x0);
@@ -17127,6 +18019,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceRB, field_
 #[repr(C)]
 pub struct ImageSpaceModifierInstanceTemp {
     /// +0x0 `vtbl:ImageSpaceModifierInstanceTemp:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstanceTemp_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -17145,6 +18038,7 @@ pub struct ImageSpaceModifierInstanceTemp {
     /// +0x28 `float`, ctor store
     pub field_28: f32,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceModifierInstanceTemp>() == 0x30);
@@ -17163,6 +18057,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceTemp, fiel
 #[repr(C)]
 pub struct ImageSpaceShaderParam {
     /// +0x0 `vtbl:ImageSpaceShaderParam:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceShaderParam_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -17207,6 +18102,7 @@ pub struct ImageSpaceShaderParam {
     pub field_78: u32,
     /// +0x7C `undefined4`, ctor store
     pub field_7C: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceShaderParam>() == 0x80);
@@ -17237,6 +18133,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceShaderParam, field_7C) == 
 #[repr(C)]
 pub struct InfiniteList {
     /// +0x0 `vtbl:InfiniteList:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InfiniteList_vtable,
     /// +0x8 `undefined1`, base UI_element
     pub field_8: u8,
@@ -17285,6 +18182,7 @@ pub struct InfiniteList {
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
     pub unknown_84: [u8; 12],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InfiniteList>() == 0x90);
@@ -17318,6 +18216,7 @@ const _: () = assert!(core::mem::offset_of!(InfiniteList, field_80) == 0x80);
 #[repr(C, packed)]
 pub struct IngredientItem {
     /// +0x0 `vtbl:IngredientItem:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IngredientItem_vtable,
     /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
     pub sourceFiles: *mut crate::TESFileArray,
@@ -17336,9 +18235,11 @@ pub struct IngredientItem {
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
     /// +0x30 `vtbl:IngredientItem:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::IngredientItem_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `vtbl:IngredientItem:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::IngredientItem_vtable_40,
     /// +0x48 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
     pub keywords: *mut c_void,
@@ -17356,6 +18257,7 @@ pub struct IngredientItem {
     /// +0x88 `undefined8`, base MagicItem
     pub field_88: u64,
     /// +0x90 `vtbl:IngredientItem:90`, rtti
+    #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::IngredientItem_vtable_90,
     pub unknown_98: [u8; 8],
     /// +0xA0 `undefined8`, base TESModelTextureSwap
@@ -17367,28 +18269,34 @@ pub struct IngredientItem {
     pub field_C0: u32,
     pub unknown_C4: [u8; 4],
     /// +0xC8 `vtbl:IngredientItem:C8`, rtti
+    #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::IngredientItem_vtable_C8,
     pub unknown_D0: [u8; 8],
     /// +0xD8 `vtbl:IngredientItem:D8`, rtti
+    #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::IngredientItem_vtable_D8,
     /// +0xE0 `undefined4`, base TESWeightForm
     pub field_E0: u32,
     pub unknown_E4: [u8; 4],
     /// +0xE8 `vtbl:IngredientItem:E8`, rtti
+    #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::IngredientItem_vtable_E8,
     /// +0xF0 `undefined8`, base BGSEquipType
     pub field_F0: u64,
     /// +0xF8 `vtbl:IngredientItem:F8`, rtti
+    #[doc(hidden)]
     pub __vftable_F8: *const crate::raw::vtables::IngredientItem_vtable_F8,
     /// +0x100 `undefined8`, base BGSDestructibleObjectForm
     pub field_100: u64,
     /// +0x108 `vtbl:IngredientItem:108`, rtti
+    #[doc(hidden)]
     pub __vftable_108: *const crate::raw::vtables::IngredientItem_vtable_108,
     /// +0x110 `undefined8`, base BGSPickupPutdownSounds
     pub field_110: u64,
     /// +0x118 `undefined8`, base BGSPickupPutdownSounds
     pub field_118: u64,
     /// +0x120 `vtbl:IngredientItem:120`, rtti
+    #[doc(hidden)]
     pub __vftable_120: *const crate::raw::vtables::IngredientItem_vtable_120,
     /// +0x128 `undefined4`, base TESValueForm
     pub field_128: u32,
@@ -17398,6 +18306,7 @@ pub struct IngredientItem {
     /// +0x134 `undefined8`, ctor store
     pub field_134: u64,
     pub unknown_13C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IngredientItem>() == 0x140);
@@ -17442,6 +18351,7 @@ const _: () = assert!(core::mem::offset_of!(IngredientItem, field_134) == 0x134)
 #[repr(C)]
 pub struct InitTESThread {
     /// +0x0 `vtbl:InitTESThread:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InitTESThread_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSThread
@@ -17453,6 +18363,7 @@ pub struct InitTESThread {
     /// +0x48 `undefined1`, base BSThread
     pub field_48: u8,
     pub unknown_49: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InitTESThread, __vftable) == 0x0);
@@ -17467,6 +18378,7 @@ const _: () = assert!(core::mem::offset_of!(InitTESThread, field_48) == 0x48);
 #[repr(C)]
 pub struct InstalledContent {
     /// +0x0 `vtbl:InstalledContent:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InstalledContent_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
@@ -17474,6 +18386,7 @@ pub struct InstalledContent {
     pub unknown_18: [u8; 8],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InstalledContent, __vftable) == 0x0);
@@ -17486,6 +18399,7 @@ const _: () = assert!(core::mem::offset_of!(InstalledContent, field_20) == 0x20)
 #[repr(C)]
 pub struct InstantInteractionCallback {
     /// +0x0 `vtbl:InstantInteractionCallback:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InstantInteractionCallback_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -17493,6 +18407,7 @@ pub struct InstantInteractionCallback {
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     pub unknown_18: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InstantInteractionCallback>() == 0x20);
@@ -17506,6 +18421,7 @@ const _: () = assert!(core::mem::offset_of!(InstantInteractionCallback, field_10
 #[repr(C)]
 pub struct IntSeenData {
     /// +0x0 `vtbl:IntSeenData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IntSeenData_vtable,
     /// +0x8 `undefined8`, base SeenData
     pub field_8: u64,
@@ -17522,6 +18438,7 @@ pub struct IntSeenData {
     pub unknown_2A: [u8; 6],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IntSeenData>() == 0x38);
@@ -17539,7 +18456,9 @@ const _: () = assert!(core::mem::offset_of!(IntSeenData, field_30) == 0x30);
 #[repr(C)]
 pub struct InterfacedClass {
     /// +0x0 `vtbl:InterfacedClass:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InterfacedClass_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InterfacedClass>() == 0x8);
@@ -17551,8 +18470,10 @@ const _: () = assert!(core::mem::offset_of!(InterfacedClass, __vftable) == 0x0);
 #[repr(C)]
 pub struct InterruptCastHandler {
     /// +0x0 `vtbl:InterruptCastHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InterruptCastHandler_vtable,
     pub unknown_8: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InterruptCastHandler>() == 0x10);
@@ -17564,6 +18485,7 @@ const _: () = assert!(core::mem::offset_of!(InterruptCastHandler, __vftable) == 
 #[repr(C)]
 pub struct Inventory3DManager {
     /// +0x0 `vtbl:Inventory3DManager:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Inventory3DManager_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
@@ -17601,6 +18523,7 @@ pub struct Inventory3DManager {
     /// +0x162 `undefined1`, ctor store
     pub field_162: u8,
     pub unknown_163: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Inventory3DManager, __vftable) == 0x0);
@@ -17627,7 +18550,9 @@ const _: () = assert!(core::mem::offset_of!(Inventory3DManager, field_162) == 0x
 #[repr(C)]
 pub struct Inventory__StatInventoryVisitor {
     /// +0x0 `vtbl:Inventory::StatInventoryVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Inventory__StatInventoryVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Inventory__StatInventoryVisitor, __vftable) == 0x0);
@@ -17638,7 +18563,9 @@ const _: () = assert!(core::mem::offset_of!(Inventory__StatInventoryVisitor, __v
 #[repr(C)]
 pub struct InventoryChanges__FindBestSoulGemVisitor {
     /// +0x0 `vtbl:InventoryChanges::FindBestSoulGemVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryChanges__FindBestSoulGemVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InventoryChanges__FindBestSoulGemVisitor, __vftable) == 0x0);
@@ -17648,7 +18575,9 @@ const _: () = assert!(core::mem::offset_of!(InventoryChanges__FindBestSoulGemVis
 #[repr(C)]
 pub struct InventoryChanges__IItemChangeVisitor {
     /// +0x0 `vtbl:InventoryChanges::IItemChangeVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryChanges__IItemChangeVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InventoryChanges__IItemChangeVisitor, __vftable) == 0x0);
@@ -17659,8 +18588,10 @@ const _: () = assert!(core::mem::offset_of!(InventoryChanges__IItemChangeVisitor
 #[repr(C)]
 pub struct InventoryUpdateData {
     /// +0x0 `vtbl:InventoryUpdateData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryUpdateData_vtable,
     pub unknown_8: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InventoryUpdateData>() == 0x20);
@@ -17671,7 +18602,9 @@ const _: () = assert!(core::mem::offset_of!(InventoryUpdateData, __vftable) == 0
 #[repr(C)]
 pub struct InventoryUtils__ItemFilter {
     /// +0x0 `vtbl:InventoryUtils::ItemFilter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryUtils__ItemFilter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InventoryUtils__ItemFilter, __vftable) == 0x0);
@@ -17682,7 +18615,9 @@ const _: () = assert!(core::mem::offset_of!(InventoryUtils__ItemFilter, __vftabl
 #[repr(C)]
 pub struct InventoryUtils__QuestItemFilter {
     /// +0x0 `vtbl:InventoryUtils::QuestItemFilter:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryUtils__QuestItemFilter_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InventoryUtils__QuestItemFilter, __vftable) == 0x0);
@@ -17693,7 +18628,9 @@ const _: () = assert!(core::mem::offset_of!(InventoryUtils__QuestItemFilter, __v
 #[repr(C)]
 pub struct InventoryUtils___anon_3F954FDF__GetWornMaskVisitor {
     /// +0x0 `vtbl:InventoryUtils::_anon_3F954FDF::GetWornMaskVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryUtils___anon_3F954FDF__GetWornMaskVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InventoryUtils___anon_3F954FDF__GetWornMaskVisitor, __vftable) == 0x0);
@@ -17704,7 +18641,9 @@ const _: () = assert!(core::mem::offset_of!(InventoryUtils___anon_3F954FDF__GetW
 #[repr(C)]
 pub struct InventoryUtils___anon_3F954FDF__IsFavoriteVisitor {
     /// +0x0 `vtbl:InventoryUtils::_anon_3F954FDF::IsFavoriteVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryUtils___anon_3F954FDF__IsFavoriteVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InventoryUtils___anon_3F954FDF__IsFavoriteVisitor, __vftable) == 0x0);
@@ -17715,7 +18654,9 @@ const _: () = assert!(core::mem::offset_of!(InventoryUtils___anon_3F954FDF__IsFa
 #[repr(C)]
 pub struct InventoryUtils___anon_3F954FDF__IsWornVisitor {
     /// +0x0 `vtbl:InventoryUtils::_anon_3F954FDF::IsWornVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryUtils___anon_3F954FDF__IsWornVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InventoryUtils___anon_3F954FDF__IsWornVisitor, __vftable) == 0x0);
@@ -17726,7 +18667,9 @@ const _: () = assert!(core::mem::offset_of!(InventoryUtils___anon_3F954FDF__IsWo
 #[repr(C)]
 pub struct InventoryUtils___anon_3F954FDF__WornHasKeywordVisitor {
     /// +0x0 `vtbl:InventoryUtils::_anon_3F954FDF::WornHasKeywordVisitor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InventoryUtils___anon_3F954FDF__WornHasKeywordVisitor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(InventoryUtils___anon_3F954FDF__WornHasKeywordVisitor, __vftable) == 0x0);
@@ -17737,6 +18680,7 @@ const _: () = assert!(core::mem::offset_of!(InventoryUtils___anon_3F954FDF__Worn
 #[repr(C)]
 pub struct InvisibilityEffect {
     /// +0x0 `vtbl:InvisibilityEffect:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::InvisibilityEffect_vtable,
     /// +0x8 `undefined8`, base ActiveEffect
     pub m_ActiveEffectReferenceEffectController_8: u64,
@@ -17791,6 +18735,7 @@ pub struct InvisibilityEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InvisibilityEffect>() == 0x98);
@@ -17827,7 +18772,9 @@ const _: () = assert!(core::mem::offset_of!(InvisibilityEffect, field_94) == 0x9
 #[repr(C)]
 pub struct IsSpellTargetFunctor {
     /// +0x0 `vtbl:IsSpellTargetFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IsSpellTargetFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IsSpellTargetFunctor, __vftable) == 0x0);
@@ -17838,7 +18785,9 @@ const _: () = assert!(core::mem::offset_of!(IsSpellTargetFunctor, __vftable) == 
 #[repr(C)]
 pub struct IsSpellTypeTargetFunctor {
     /// +0x0 `vtbl:IsSpellTypeTargetFunctor:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IsSpellTypeTargetFunctor_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(IsSpellTypeTargetFunctor, __vftable) == 0x0);
@@ -17849,6 +18798,7 @@ const _: () = assert!(core::mem::offset_of!(IsSpellTypeTargetFunctor, __vftable)
 #[repr(C)]
 pub struct JobListManager__ServingThread {
     /// +0x0 `vtbl:JobListManager::ServingThread:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::JobListManager__ServingThread_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSThread
@@ -17860,6 +18810,7 @@ pub struct JobListManager__ServingThread {
     /// +0x48 `undefined1`, base BSThread
     pub field_48: u8,
     pub unknown_49: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(JobListManager__ServingThread, __vftable) == 0x0);
@@ -17874,7 +18825,9 @@ const _: () = assert!(core::mem::offset_of!(JobListManager__ServingThread, field
 #[repr(C)]
 pub struct JournalInputMapping__RemapHandler {
     /// +0x0 `vtbl:JournalInputMapping::RemapHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::JournalInputMapping__RemapHandler_vtable,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(JournalInputMapping__RemapHandler, __vftable) == 0x0);
@@ -17885,6 +18838,7 @@ const _: () = assert!(core::mem::offset_of!(JournalInputMapping__RemapHandler, _
 #[repr(C)]
 pub struct JournalMenu {
     /// +0x0 `vtbl:JournalMenu:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::JournalMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -17912,6 +18866,7 @@ pub struct JournalMenu {
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:JournalMenu:30`, rtti
+    #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::JournalMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
@@ -17919,6 +18874,7 @@ pub struct JournalMenu {
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `vtbl:JournalMenu:40`, rtti
+    #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::JournalMenu_vtable_40,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
@@ -18002,6 +18958,7 @@ pub struct JournalMenu {
     /// +0xE0 `undefined2`, ctor store
     pub field_E0: u16,
     pub unknown_E2: [u8; 6],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<JournalMenu>() == 0xE8);
@@ -18062,6 +19019,7 @@ const _: () = assert!(core::mem::offset_of!(JournalMenu, field_E0) == 0xE0);
 #[repr(C)]
 pub struct JournalTab {
     /// +0x0 `vtbl:JournalTab:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::JournalTab_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -18179,6 +19137,7 @@ pub struct JournalTab {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(JournalTab, __vftable) == 0x0);
@@ -18238,6 +19197,7 @@ const _: () = assert!(core::mem::offset_of!(JournalTab, field_BC) == 0xBC);
 #[repr(C)]
 pub struct Journal_QuestsTab {
     /// +0x0 `vtbl:Journal_QuestsTab:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Journal_QuestsTab_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -18355,6 +19315,7 @@ pub struct Journal_QuestsTab {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, __vftable) == 0x0);
@@ -18414,6 +19375,7 @@ const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_BC) == 0xBC
 #[repr(C)]
 pub struct Journal_StatsTab {
     /// +0x0 `vtbl:Journal_StatsTab:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Journal_StatsTab_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
@@ -18531,6 +19493,7 @@ pub struct Journal_StatsTab {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, __vftable) == 0x0);
@@ -18583,353 +19546,4 @@ const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_B0) == 0xB0)
 const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_BC) == 0xBC);
-
-/// `Journal_SystemTab`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `JournalTab`.
-/// Evidence: field field_BC.
-/// Bases: `JournalTab`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `BSTEventSink<BSSaveDataEvent>`@0x18, `BSTEventSink<BSGamerProfileEvent>`@0x20, `BSTEventSink<BGSSaveLoadManagerEvent>`@0x28, `BSTEventSink<BSRemoteGamepadEvent>`@0x30.
-#[repr(C)]
-pub struct Journal_SystemTab {
-    /// +0x0 `vtbl:Journal_SystemTab:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Journal_SystemTab_vtable,
-    /// +0x8 `undefined4`, base GRefCountImplCore
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined1`, base GRefCountImplCore
-    pub field_10: u8,
-    /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
-    /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
-    /// +0x14 `undefined4`, base GRefCountImplCore
-    pub field_14: u32,
-    /// +0x18 `vtbl:Journal_SystemTab:18`, rtti
-    pub __vftable_18: *const crate::raw::vtables::Journal_SystemTab_vtable_18,
-    /// +0x20 `vtbl:Journal_SystemTab:20`, rtti
-    pub __vftable_20: *const crate::raw::vtables::Journal_SystemTab_vtable_20,
-    /// +0x28 `vtbl:Journal_SystemTab:28`, rtti
-    pub __vftable_28: *const crate::raw::vtables::Journal_SystemTab_vtable_28,
-    /// +0x30 `vtbl:Journal_SystemTab:30`, rtti
-    pub __vftable_30: *const crate::raw::vtables::Journal_SystemTab_vtable_30,
-    /// +0x38 `undefined1`, base GRefCountImplCore
-    pub field_38: u8,
-    pub unknown_39: [u8; 3],
-    /// +0x3C `undefined4`, base GRefCountImplCore
-    pub field_3C: u32,
-    /// +0x40 `undefined1`, base GRefCountImplCore
-    pub field_40: u8,
-    pub unknown_41: [u8; 3],
-    /// +0x44 `undefined4`, base GRefCountImplCore
-    pub field_44: u32,
-    /// +0x48 `undefined1`, base GRefCountImplCore
-    pub field_48: u8,
-    pub unknown_49: [u8; 3],
-    /// +0x4C `undefined4`, base GRefCountImplCore
-    pub field_4C: u32,
-    /// +0x50 `undefined2`, base GRefCountImplCore
-    pub field_50: u16,
-    pub unknown_52: [u8; 2],
-    /// +0x54 `undefined4`, base GRefCountImplCore
-    pub field_54: u32,
-    /// +0x58 `float`, base GRefCountImplCore
-    pub field_58: f32,
-    /// +0x5C `float`, base GRefCountImplCore
-    pub field_5C: f32,
-    /// +0x60 `undefined1`, base GRefCountImplCore
-    pub field_60: u8,
-    pub unknown_61: [u8; 3],
-    /// +0x64 `undefined1`, base GRefCountImplCore
-    pub field_64: u8,
-    pub unknown_65: [u8; 3],
-    /// +0x68 `undefined4`, base GRefCountImplCore
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base GRefCountImplCore
-    pub field_6C: u32,
-    /// +0x70 `undefined1`, base GRefCountImplCore
-    pub field_70: u8,
-    pub unknown_71: [u8; 3],
-    /// +0x74 `undefined4`, base GRefCountImplCore
-    pub field_74: u32,
-    /// +0x78 `undefined1`, base GRefCountImplCore
-    pub field_78: u8,
-    pub unknown_79: [u8; 1],
-    /// +0x7A `undefined2`, base GRefCountImplCore
-    pub field_7A: u16,
-    /// +0x7C `undefined4`, base GRefCountImplCore
-    pub field_7C: u32,
-    /// +0x80 `undefined1`, base GRefCountImplCore
-    pub field_80: u8,
-    pub unknown_81: [u8; 3],
-    /// +0x84 `undefined4`, base GRefCountImplCore
-    pub field_84: u32,
-    /// +0x88 `undefined1`, base GRefCountImplCore
-    pub field_88: u8,
-    pub unknown_89: [u8; 3],
-    /// +0x8C `undefined4`, base GRefCountImplCore
-    pub field_8C: u32,
-    /// +0x90 `undefined2`, base GRefCountImplCore
-    pub field_90: u16,
-    pub unknown_92: [u8; 2],
-    /// +0x94 `undefined4`, base GRefCountImplCore
-    pub field_94: u32,
-    /// +0x98 `undefined1`, base GRefCountImplCore
-    pub field_98: u8,
-    pub unknown_99: [u8; 3],
-    /// +0x9C `undefined4`, base GRefCountImplCore
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base GRefCountImplCore
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base GRefCountImplCore
-    pub field_A4: u32,
-    /// +0xA8 `undefined1`, base GRefCountImplCore
-    pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
-    /// +0xAC `undefined4`, base GRefCountImplCore
-    pub field_AC: u32,
-    /// +0xB0 `undefined4`, base GRefCountImplCore
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base GRefCountImplCore
-    pub field_B4: u32,
-    /// +0xB8 `undefined1`, base GRefCountImplCore
-    pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
-    /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_12) == 0x12);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_14) == 0x14);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, __vftable_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, __vftable_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_7A) == 0x7A);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_AC) == 0xAC);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(Journal_SystemTab, field_BC) == 0xBC);
-
-/// `Json::BuiltStyledStreamWriter`: size 0xE0 (exact, medium); primary base `Json::StreamWriter`.
-/// Evidence: allocation sites (medium): {'224': 1}.
-/// Bases: `Json::StreamWriter`@0x0.
-#[repr(C)]
-pub struct Json__BuiltStyledStreamWriter {
-    /// +0x0 `vtbl:Json::BuiltStyledStreamWriter:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__BuiltStyledStreamWriter_vtable,
-    /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
-    /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
-    /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
-    /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
-    /// +0x28 `undefined1`, base Json::StreamWriter
-    pub field_28: u8,
-    pub unknown_29: [u8; 15],
-    /// +0x38 `undefined8`, base Json::StreamWriter
-    pub field_38: u64,
-    /// +0x40 `undefined8`, base Json::StreamWriter
-    pub field_40: u64,
-    /// +0x48 `undefined4`, ctor store
-    pub field_48: u32,
-    pub unknown_4C: [u8; 4],
-    /// +0x50 `undefined1`, base Json::StreamWriter
-    pub field_50: u8,
-    pub unknown_51: [u8; 15],
-    /// +0x60 `undefined8`, base Json::StreamWriter
-    pub field_60: u64,
-    /// +0x68 `undefined8`, base Json::StreamWriter
-    pub field_68: u64,
-    /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
-    pub unknown_74: [u8; 4],
-    /// +0x78 `undefined1`, base Json::StreamWriter
-    pub field_78: u8,
-    pub unknown_79: [u8; 15],
-    /// +0x88 `undefined8`, base Json::StreamWriter
-    pub field_88: u64,
-    /// +0x90 `undefined8`, base Json::StreamWriter
-    pub field_90: u64,
-    /// +0x98 `undefined1`, base Json::StreamWriter
-    pub field_98: u8,
-    pub unknown_99: [u8; 15],
-    /// +0xA8 `undefined8`, base Json::StreamWriter
-    pub field_A8: u64,
-    /// +0xB0 `undefined8`, base Json::StreamWriter
-    pub field_B0: u64,
-    /// +0xB8 `undefined1`, base Json::StreamWriter
-    pub field_B8: u8,
-    pub unknown_B9: [u8; 15],
-    /// +0xC8 `undefined8`, base Json::StreamWriter
-    pub field_C8: u64,
-    /// +0xD0 `undefined8`, base Json::StreamWriter
-    pub field_D0: u64,
-    pub unknown_D8: [u8; 8],
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<Json__BuiltStyledStreamWriter>() == 0xE0);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(Json__BuiltStyledStreamWriter, field_D0) == 0xD0);
-
-/// `Json::CharReader`: size 0xE0 (exact, medium).
-/// Evidence: lower bound Json::OurCharReader (size 0xE0 at 0x0) adds no fields or bases meets upper bound derived Json::OurCharReader size 0xE0 at 0x0.
-#[repr(C)]
-pub struct Json__CharReader {
-    /// +0x0 `vtbl:Json::CharReader:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__CharReader_vtable,
-    pub unknown_8: [u8; 216],
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<Json__CharReader>() == 0xE0);
-const _: () = assert!(core::mem::offset_of!(Json__CharReader, __vftable) == 0x0);
-
-/// `Json::CharReader::Factory`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
-/// Evidence: vptr at 0x0.
-#[repr(C)]
-pub struct Json__CharReader__Factory {
-    /// +0x0 `vtbl:Json::CharReader::Factory:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__CharReader__Factory_vtable,
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(Json__CharReader__Factory, __vftable) == 0x0);
-
-/// `Json::CharReaderBuilder`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `Json::CharReader::Factory`.
-/// Evidence: vptr at 0x0.
-/// Bases: `Json::CharReader::Factory`@0x0.
-#[repr(C)]
-pub struct Json__CharReaderBuilder {
-    /// +0x0 `vtbl:Json::CharReaderBuilder:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__CharReaderBuilder_vtable,
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(Json__CharReaderBuilder, __vftable) == 0x0);
-
-/// `Json::Exception`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `std::exception`.
-/// Evidence: field field_10.
-/// Bases: `std::exception`@0x0.
-#[repr(C)]
-pub struct Json__Exception {
-    /// +0x0 `vtbl:Json::Exception:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__Exception_vtable,
-    /// +0x8 `undefined8`, base std::exception
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base std::exception
-    pub field_10: u64,
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(Json__Exception, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Json__Exception, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Json__Exception, field_10) == 0x10);
-
-/// `Json::FastWriter`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `Json::Writer`.
-/// Evidence: vptr at 0x0.
-/// Bases: `Json::Writer`@0x0.
-#[repr(C)]
-pub struct Json__FastWriter {
-    /// +0x0 `vtbl:Json::FastWriter:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__FastWriter_vtable,
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(Json__FastWriter, __vftable) == 0x0);
-
-/// `Json::LogicError`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `Json::Exception`.
-/// Evidence: field field_10.
-/// Bases: `Json::Exception`@0x0, `std::exception`@0x0.
-#[repr(C)]
-pub struct Json__LogicError {
-    /// +0x0 `vtbl:Json::LogicError:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__LogicError_vtable,
-    /// +0x8 `undefined8`, base std::exception
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base std::exception
-    pub field_10: u64,
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(Json__LogicError, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Json__LogicError, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Json__LogicError, field_10) == 0x10);
-
-/// `Json::OurCharReader`: size 0xE0 (exact, medium); primary base `Json::CharReader`.
-/// Evidence: allocation sites (medium): {'224': 1}.
-/// Bases: `Json::CharReader`@0x0.
-#[repr(C)]
-pub struct Json__OurCharReader {
-    /// +0x0 `vtbl:Json::OurCharReader:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__OurCharReader_vtable,
-    pub unknown_8: [u8; 216],
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<Json__OurCharReader>() == 0xE0);
-const _: () = assert!(core::mem::offset_of!(Json__OurCharReader, __vftable) == 0x0);
-
-/// `Json::RuntimeError`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `Json::Exception`.
-/// Evidence: field field_10.
-/// Bases: `Json::Exception`@0x0, `std::exception`@0x0.
-#[repr(C)]
-pub struct Json__RuntimeError {
-    /// +0x0 `vtbl:Json::RuntimeError:0`, rtti
-    pub __vftable: *const crate::raw::vtables::Json__RuntimeError_vtable,
-    /// +0x8 `undefined8`, base std::exception
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base std::exception
-    pub field_10: u64,
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(Json__RuntimeError, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Json__RuntimeError, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Json__RuntimeError, field_10) == 0x10);
 

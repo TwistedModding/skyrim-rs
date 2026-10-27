@@ -439,7 +439,8 @@ fn class_rs(c: &Class, value: bool, classes: &BTreeMap<&str, Class>, stats: &mut
             stats.field_meanings += 1;
         }
         writeln!(out, "    /// +{:#X} `{}`{src}{}", f.off, doc(&f.ty), fo.meaning).unwrap();
-        writeln!(out, "    pub {}: {},", fo.ident, ty_str(&fo.ty, classes)).unwrap();
+        let hidden = if matches!(fo.ty, Ty::Vtable(_)) { "    #[doc(hidden)]\n" } else { "" };
+        writeln!(out, "{hidden}    pub {}: {},", fo.ident, ty_str(&fo.ty, classes)).unwrap();
         pos = f.off + f.size;
         stats.fields += 1;
     }
@@ -448,7 +449,7 @@ fn class_rs(c: &Class, value: bool, classes: &BTreeMap<&str, Class>, stats: &mut
     if pos < extent {
         writeln!(out, "    pub unknown_{pos:X}: [u8; {}],", extent - pos).unwrap();
     }
-    writeln!(out, "    pub __engine: crate::Engine,").unwrap();
+    writeln!(out, "    #[doc(hidden)]\n    pub __engine: crate::Engine,").unwrap();
     writeln!(out, "}}").unwrap();
     if let Size::Exact { size, .. } = c.size {
         writeln!(out, "const _: () = assert!(size_of::<{}>() == {size:#X});", c.ident).unwrap();

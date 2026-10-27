@@ -9,6 +9,7 @@ use core::ffi::c_void;
 #[repr(C)]
 pub struct BSBatchRenderer {
     /// +0x0 `vtbl:BSBatchRenderer:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSBatchRenderer_vtable,
     /// +0x8 `class:BSTArray`, semantic; 0x30-byte technique buckets: five pass-list heads (+0x0..+0x20) and a non-empty mask u32 (+0x28); list 0 plain, 1 alpha-tested (NiAlphaProperty flags bit 9), 2 property flag bit 36, 3 both, 4 property flag bit 54 (high)
     pub buckets: crate::BSTArray,
@@ -34,6 +35,7 @@ pub struct BSBatchRenderer {
     pub field_F8: u64,
     /// +0x100 `undefined8`, ctor store
     pub field_100: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBatchRenderer>() == 0x108);
@@ -57,6 +59,7 @@ const _: () = assert!(core::mem::offset_of!(BSBatchRenderer, field_100) == 0x100
 #[repr(C)]
 pub struct BSEffectShaderMaterial {
     /// +0x0 `vtbl:BSEffectShaderMaterial:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSEffectShaderMaterial_vtable,
     /// +0x8 `undefined4`, base BSShaderMaterial, semantic; reference count of the cache entry (low)
     pub refCount: u32,
@@ -90,6 +93,7 @@ pub struct BSEffectShaderMaterial {
     /// +0x80 `undefined1`, semantic; 3 by default (medium)
     pub textureClampMode: u8,
     pub unknown_81: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSEffectShaderMaterial>() == 0x88);
@@ -117,6 +121,7 @@ const _: () = assert!(core::mem::offset_of!(BSEffectShaderMaterial, textureClamp
 #[repr(C)]
 pub struct BSEffectShaderProperty {
     /// +0x0 `vtbl:BSEffectShaderProperty:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSEffectShaderProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -161,6 +166,7 @@ pub struct BSEffectShaderProperty {
     pub field_88: u64,
     /// +0x90 `undefined1`, semantic; pass list released by the dtor (low)
     pub extraPasses: [u8; 16],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSEffectShaderProperty>() == 0xA0);
@@ -193,6 +199,7 @@ const _: () = assert!(core::mem::offset_of!(BSEffectShaderProperty, extraPasses)
 #[repr(C)]
 pub struct BSFadeNode {
     /// +0x0 `vtbl:BSFadeNode:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFadeNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -266,6 +273,7 @@ pub struct BSFadeNode {
     /// +0x154 `u8`, semantic; the depth pre-pass (mode 0xc) may draw this subtree while it is fading (bEnableStippleFade) (medium)
     pub stippleFade: u8,
     pub unknown_155: [u8; 3],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFadeNode>() == 0x158);
@@ -312,13 +320,16 @@ const _: () = assert!(core::mem::offset_of!(BSFadeNode, stippleFade) == 0x154);
 #[repr(C, packed)]
 pub struct BSLightingShader {
     /// +0x0 `vtbl:BSLightingShader:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLightingShader_vtable,
     /// +0x8 `undefined4`, base BSShader
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:BSLightingShader:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::BSLightingShader_vtable_10,
     /// +0x18 `vtbl:BSLightingShader:18`, rtti
+    #[doc(hidden)]
     pub __vftable_18: *const crate::raw::vtables::BSLightingShader_vtable_18,
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
@@ -372,6 +383,7 @@ pub struct BSLightingShader {
     /// +0xF0 `undefined1`, ctor store
     pub field_F0: u8,
     pub unknown_F1: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLightingShader>() == 0xF8);
@@ -409,6 +421,7 @@ const _: () = assert!(core::mem::offset_of!(BSLightingShader, field_F0) == 0xF0)
 #[repr(C)]
 pub struct BSLightingShaderMaterialBase {
     /// +0x0 `vtbl:BSLightingShaderMaterialBase:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLightingShaderMaterialBase_vtable,
     /// +0x8 `undefined4`, base BSShaderMaterial, semantic; reference count of the cache entry (low)
     pub refCount: u32,
@@ -457,6 +470,7 @@ pub struct BSLightingShaderMaterialBase {
     /// +0x98 `undefined4`, semantic; spin lock of slot 8 (medium)
     pub textureLoadLock: u32,
     pub unknown_9C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLightingShaderMaterialBase>() == 0xA0);
@@ -491,13 +505,16 @@ const _: () = assert!(core::mem::offset_of!(BSLightingShaderMaterialBase, textur
 #[repr(C, packed)]
 pub struct BSShader {
     /// +0x0 `vtbl:BSShader:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShader_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:BSShader:10`, rtti
+    #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::BSShader_vtable_10,
     /// +0x18 `vtbl:BSShader:18`, rtti
+    #[doc(hidden)]
     pub __vftable_18: *const crate::raw::vtables::BSShader_vtable_18,
     pub unknown_20: [u8; 20],
     /// +0x34 `undefined8`, ctor store
@@ -521,6 +538,7 @@ pub struct BSShader {
     pub field_80: u64,
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShader>() == 0x90);
@@ -545,6 +563,7 @@ const _: () = assert!(core::mem::offset_of!(BSShader, field_88) == 0x88);
 #[repr(C)]
 pub struct BSShaderMaterial {
     /// +0x0 `vtbl:BSShaderMaterial:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShaderMaterial_vtable,
     /// +0x8 `undefined4`, semantic; reference count of the cache entry (low)
     pub refCount: u32,
@@ -559,6 +578,7 @@ pub struct BSShaderMaterial {
     /// +0x2C `undefined4`, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
     pub unknown_30: [u8; 8],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShaderMaterial>() == 0x38);
@@ -577,12 +597,14 @@ const _: () = assert!(core::mem::offset_of!(BSShaderMaterial, hash) == 0x2C);
 #[repr(C)]
 pub struct BSShaderTextureSet {
     /// +0x0 `vtbl:BSShaderTextureSet:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShaderTextureSet_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, semantic, runtime; BSFixedString[9]; slot i at +0x10 + 8*i: 0 diffuse, 1 normal, 2 glow/rim/soft, 3 height, 4 environment (cube), 5 environment mask, 6 multilayer inner / facegen extra, 7 specular / back lighting, 8 not read by the lighting materials (high)
     pub texturePaths: [u8; 72],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShaderTextureSet>() == 0x58);
@@ -597,6 +619,7 @@ const _: () = assert!(core::mem::offset_of!(BSShaderTextureSet, texturePaths) ==
 #[repr(C)]
 pub struct BSXFlags {
     /// +0x0 `vtbl:BSXFlags:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSXFlags_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -606,6 +629,7 @@ pub struct BSXFlags {
     /// +0x18 `undefined4`, semantic; the BSX flag word (the inherited integer value); see the flag rows (high)
     pub flags: u32,
     pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSXFlags>() == 0x20);
@@ -625,6 +649,7 @@ pub struct CubeMapRecord {
     pub faceRTV: [u8; 48],
     /// +0x38 `pointer`, semantic; TextureCube SRV (high)
     pub srv: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CubeMapRecord>() == 0x40);
@@ -650,6 +675,7 @@ pub struct DepthStencilProperties {
     /// +0xE `undefined1`, semantic; 16-bit depth (R16/D16) (high)
     pub use16BitDepth: u8,
     pub unknown_F: [u8; 1],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DepthStencilProperties>() == 0x10);
@@ -675,6 +701,7 @@ pub struct DepthStencilRecord {
     pub srv: *mut c_void,
     /// +0x90 `pointer`, semantic; stencil SRV, only with stencil (high)
     pub stencilSRV: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DepthStencilRecord>() == 0x98);
@@ -730,6 +757,7 @@ pub struct FrameState {
     /// +0x12E `u8`, semantic; set by the DynamicResolution console command when a value != 1 was typed: auto adjustment stops (high)
     pub manualRatio: u8,
     pub unknown_12F: [u8; 1],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FrameState>() == 0x130);
@@ -759,6 +787,7 @@ const _: () = assert!(core::mem::offset_of!(FrameState, manualRatio) == 0x12E);
 #[repr(C, packed)]
 pub struct ImageSpaceEffectDepthOfField {
     /// +0x0 `vtbl:ImageSpaceEffectDepthOfField:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectDepthOfField_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -830,6 +859,7 @@ pub struct ImageSpaceEffectDepthOfField {
     /// +0x148 `undefined1`, ctor store
     pub field_148: u8,
     pub unknown_149: [u8; 15],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectDepthOfField>() == 0x158);
@@ -875,6 +905,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectDepthOfField, field_
 #[repr(C)]
 pub struct ImageSpaceEffectHDR {
     /// +0x0 `vtbl:ImageSpaceEffectHDR:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectHDR_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
@@ -922,6 +953,7 @@ pub struct ImageSpaceEffectHDR {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectHDR>() == 0x90);
@@ -966,6 +998,7 @@ pub struct ImageSpaceState {
     /// +0x1F0 `undefined8`, semantic; object whose +0x18 byte enables the TAA jitter (medium)
     pub taaSettings: u64,
     pub unknown_1F8: [u8; 40],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceState>() == 0x220);
@@ -981,6 +1014,7 @@ const _: () = assert!(core::mem::offset_of!(ImageSpaceState, taaSettings) == 0x1
 #[repr(C)]
 pub struct NiAlphaProperty {
     /// +0x0 `vtbl:NiAlphaProperty:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAlphaProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1001,6 +1035,7 @@ pub struct NiAlphaProperty {
     /// +0x32 `undefined1`, semantic; alpha test threshold (0..255) (high)
     pub alphaTestRef: u8,
     pub unknown_33: [u8; 5],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiAlphaProperty>() == 0x38);
@@ -1021,6 +1056,7 @@ const _: () = assert!(core::mem::offset_of!(NiAlphaProperty, alphaTestRef) == 0x
 #[repr(C)]
 pub struct NiCamera {
     /// +0x0 `vtbl:NiCamera:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCamera_vtable,
     /// +0x8 `u32`, base NiObject, semantic; NiRefObject reference count (high)
     pub refCount: u32,
@@ -1100,6 +1136,7 @@ pub struct NiCamera {
     pub portBottom: f32,
     /// +0x184 `float`, semantic; fov / reference FOV, written only when the 'set LOD adjust' flag is passed (world camera: fDefaultFOV:Display 80) (high)
     pub lodAdjust: f32,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiCamera>() == 0x188);
@@ -1151,12 +1188,14 @@ const _: () = assert!(core::mem::offset_of!(NiCamera, lodAdjust) == 0x184);
 #[repr(C)]
 pub struct NiExtraData {
     /// +0x0 `vtbl:NiExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiExtraData>() == 0x18);
@@ -1171,6 +1210,7 @@ const _: () = assert!(core::mem::offset_of!(NiExtraData, name) == 0x10);
 #[repr(C)]
 pub struct NiIntegerExtraData {
     /// +0x0 `vtbl:NiIntegerExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiIntegerExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1180,6 +1220,7 @@ pub struct NiIntegerExtraData {
     /// +0x18 `undefined4`, semantic; the integer (high)
     pub value: u32,
     pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiIntegerExtraData>() == 0x20);
@@ -1195,6 +1236,7 @@ const _: () = assert!(core::mem::offset_of!(NiIntegerExtraData, value) == 0x18);
 #[repr(C)]
 pub struct NiObjectNET {
     /// +0x0 `vtbl:NiObjectNET:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiObjectNET_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1210,6 +1252,7 @@ pub struct NiObjectNET {
     /// +0x2A `undefined2`, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
     pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiObjectNET>() == 0x30);
@@ -1228,6 +1271,7 @@ const _: () = assert!(core::mem::offset_of!(NiObjectNET, extraDataCapacity) == 0
 #[repr(C)]
 pub struct NiStringExtraData {
     /// +0x0 `vtbl:NiStringExtraData:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStringExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
@@ -1236,6 +1280,7 @@ pub struct NiStringExtraData {
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, semantic; the string value; *(char**)(this+0x18) is the C string (high)
     pub value: crate::BSFixedString,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiStringExtraData>() == 0x20);
@@ -1250,11 +1295,13 @@ const _: () = assert!(core::mem::offset_of!(NiStringExtraData, value) == 0x18);
 #[repr(C)]
 pub struct PlayerInputHandler {
     /// +0x0 `vtbl:PlayerInputHandler:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::PlayerInputHandler_vtable,
     /// +0x8 `undefined1`, semantic; the handler is consulted only while set (TESCameraState+0x28 in the states) (high)
     pub enabled: u8,
     /// +0x9 `undefined1`, semantic; tail padding after enabled (+0x8) to 0x10 (high)
     pub pad_9: [u8; 7],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerInputHandler>() == 0x10);
@@ -1295,6 +1342,7 @@ pub struct RenderPass {
     /// +0x40 `undefined4`, semantic; pool the pass came from (TLS +0x9f4 at alloc); the release drain returns it there (high)
     pub poolIndex: u32,
     pub unknown_44: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderPass>() == 0x48);
@@ -1343,6 +1391,7 @@ pub struct RenderStateCache {
     /// +0x70 `float`, semantic; D3D11_VIEWPORT applied with RSSetViewports when dirty bit 2 (high)
     pub viewport: [u8; 24],
     pub unknown_88: [u8; 696],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderStateCache>() == 0x340);
@@ -1371,6 +1420,7 @@ pub struct RenderTargetManager {
     /// +0xD70 `undefined1`, semantic; cube properties of 0xc {width, height, format} (high)
     pub cubeMapProperties: [u8; 24],
     pub unknown_D88: [u8; 24],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderTargetManager>() == 0xDA0);
@@ -1403,6 +1453,7 @@ pub struct RenderTargetProperties {
     /// +0x18 `undefined2`, semantic; 1 in every call, 0x101 for id 0x4c; not read by the creator (low)
     pub unknown18: u16,
     pub unknown_1A: [u8; 2],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderTargetProperties>() == 0x1C);
@@ -1433,6 +1484,7 @@ pub struct RenderTargetRecord {
     pub copySRV: *mut c_void,
     /// +0x28 `pointer`, semantic; UAV (high)
     pub uav: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderTargetRecord>() == 0x30);
@@ -1470,6 +1522,7 @@ pub struct RenderWindow {
     pub unknown_40: [u8; 8],
     /// +0x48 `pointer`, semantic; copied into render target 0's UAV after a resize (low)
     pub backBufferUAV: *mut c_void,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderWindow>() == 0x50);
@@ -1547,6 +1600,7 @@ pub struct Renderer {
     pub windowClassName: u64,
     /// +0x2820 `undefined8`, semantic; HINSTANCE (high)
     pub hInstance: u64,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Renderer>() == 0x2828);
@@ -1584,6 +1638,7 @@ const _: () = assert!(core::mem::offset_of!(Renderer, hInstance) == 0x2820);
 #[repr(C, packed)]
 pub struct Sky {
     /// +0x0 `vtbl:Sky:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Sky_vtable,
     /// +0x8 `ptr:BSMultiBoundNode`, semantic; sky root (0x138) (high)
     pub root: *mut crate::BSMultiBoundNode,
@@ -1779,6 +1834,7 @@ pub struct Sky {
     /// +0x2C0 `undefined4`, ctor store
     pub field_2C0: u32,
     pub unknown_2C4: [u8; 4],
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Sky>() == 0x2C8);
@@ -1884,6 +1940,7 @@ const _: () = assert!(core::mem::offset_of!(Sky, field_2C0) == 0x2C0);
 #[repr(C)]
 pub struct Sun {
     /// +0x0 `vtbl:Sun:0`, rtti
+    #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Sun_vtable,
     /// +0x8 `ptr:NiNode`, base SkyObject, semantic; sun root (medium)
     pub root: *mut crate::NiNode,
@@ -1908,6 +1965,7 @@ pub struct Sun {
     pub unknown_4D: [u8; 3],
     /// +0x50 `ptr:BSShaderAccumulator`, semantic (high)
     pub accumulator: *mut crate::BSShaderAccumulator,
+    #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Sun>() == 0x58);
