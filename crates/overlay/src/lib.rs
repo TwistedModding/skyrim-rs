@@ -22,7 +22,7 @@ use std::time::Instant;
 pub use egui;
 use egui::{Context, Pos2, RawInput, Rect, ViewportId, ViewportInfo};
 use sre::raw::{fns, globals};
-use skyrim::render::{PresentFn, RenderWindow};
+use skyrim::render::PresentFn;
 
 mod frame;
 mod input;
@@ -171,7 +171,7 @@ unsafe extern "C" fn present_detour() {
 
 #[allow(clippy::cast_precision_loss)]
 fn draw() {
-    let Some(rtv) = RenderWindow::current().map(RenderWindow::back_buffer_rtv).filter(|p| !p.is_null()) else {
+    let Some(rtv) = sre::g_current_render_window().map(|w| w.backBufferRTV).filter(|p| !p.is_null()) else {
         return;
     };
     let mut state = STATE.lock().unwrap();

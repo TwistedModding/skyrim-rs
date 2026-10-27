@@ -6,7 +6,6 @@ use std::path::{Path, PathBuf};
 use std::sync::Mutex;
 
 use sre::raw::globals;
-use skyrim::render::RenderWindow;
 use windows::Win32::Graphics::Direct3D11::{D3D11_CPU_ACCESS_READ, D3D11_MAP_READ, D3D11_MAPPED_SUBRESOURCE, D3D11_TEXTURE2D_DESC, D3D11_USAGE_STAGING, ID3D11Device, ID3D11DeviceContext, ID3D11RenderTargetView, ID3D11Texture2D};
 use windows::core::Interface;
 
@@ -55,7 +54,7 @@ impl Frame {
 /// overlay drew (from a detour on `PresentFrame`'s entry, or through [`save_next_frame`]).
 pub fn read_back() -> Result<Frame, String> {
     let e = |e: windows::core::Error| e.to_string();
-    let rtv = RenderWindow::current().map(RenderWindow::back_buffer_rtv).filter(|p| !p.is_null()).ok_or("no back buffer")?;
+    let rtv = sre::g_current_render_window().map(|w| w.backBufferRTV).filter(|p| !p.is_null()).ok_or("no back buffer")?;
     let reloc = skyrim::reloc();
     let global = |id| reloc.address(id).map(|a| unsafe { *(a as *const *mut core::ffi::c_void) }).map_err(|e| e.to_string());
     let (device, context) = (global(globals::g_D3D11Device)?, global(globals::g_D3D11Context)?);

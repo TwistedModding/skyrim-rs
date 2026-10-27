@@ -23,6 +23,8 @@ use std::sync::atomic::{AtomicU32, Ordering};
 use std::sync::{Mutex, OnceLock};
 use std::time::{Duration, Instant};
 
+use skyrim::prelude::*;
+
 use sre::raw::{fns, globals};
 use skse::{Interface, Message, MessageCallback, MessagingInterface, PapyrusInterface, PluginHandle, PluginInfo, PluginVersionData, RegisterFunctions, TaskInterface, TrampolineInterface, compat};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
@@ -452,7 +454,7 @@ unsafe extern "C" fn init_done(this: *mut c_void) -> u64 {
 unsafe extern "C" fn register_natives(registry: *mut *mut c_void, a2: u64, a3: u64, a4: u64) -> u64 {
     let out = unsafe { VM_SETUP.get().expect("set before patching").original()(registry, a2, a3, a4) };
     let vm = if registry.is_null() { core::ptr::null_mut() } else { unsafe { *registry } };
-    if let Some(vm) = unsafe { skyrim::papyrus::VirtualMachine::from_ptr(vm) } {
+    if let Some(vm) = unsafe { skyrim::papyrus::VirtualMachine::from_registry(vm) } {
         let save = vm.register_native("Game", "SaveGame", |name: String| *PENDING.lock().unwrap() = Some((Request::Save(name), Instant::now())));
         let load = vm.register_native("Game", "LoadGame", |name: String| *PENDING.lock().unwrap() = Some((Request::Load(name), Instant::now())));
         log!("Game.SaveGame and Game.LoadGame: {}, {}", save.is_ok(), load.is_ok());
@@ -476,10 +478,10 @@ unsafe extern "C" fn drain_tasks(holder: *mut c_void) -> u64 {
 unsafe extern "C" fn process_requests(manager: *mut c_void) -> u64 {
     let out = unsafe { REQUESTS.get().expect("set before patching").original()(manager) };
     let mut pending = PENDING.lock().unwrap();
-    if let (Some((request, since)), Some(manager)) = (pending.as_ref(), skyrim::save::SaveLoadManager::get()) {
+    if let (Some((request, since)), Some(manager)) = (pending.as_ref(), sre::BGSSaveLoadManager::singleton()) {
         let (what, name, ok) = match request {
-            Request::Save(name) => ("save", name, manager.save(name)),
-            Request::Load(name) => ("load", name, manager.request_load(name)),
+            Request::Save(name) => ("save", name, manager.save_as(name)),
+            Request::Load(name) => ("load", name, manager.load_save(name)),
         };
         let waited = since.elapsed();
         if ok || waited >= RETRY {

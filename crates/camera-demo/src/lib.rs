@@ -14,10 +14,11 @@ use std::fs::File;
 use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, AtomicU8, Ordering};
 use std::sync::{Mutex, OnceLock};
 
-use skyrim::actors::PlayerCharacter;
-use skyrim::camera::{HandsProjectionHook, PlayerCamera, StateStepHook, frame_delta_real, hands_camera, hands_fov, main_camera};
-use skyrim::input::{Arg, Command, CommandContext, Param, ScriptParamType};
-use skyrim::render::{BSShaderAccumulator, CullFn, CullingProcess, FrameState, NiAVObject, ProcessCullObjectListFn, RegisterDepthGeometryFn, SceneGraph, ShadowSceneNode, Transform};
+use skyrim::camera::{HandsProjectionHook, StateStepHook, frame_delta_real, hands_fov};
+use skyrim::input::{Arg, Command, CommandContext, Param};
+use skyrim::prelude::*;
+use skyrim::render::{CullFn, HIDDEN, ProcessCullObjectListFn, RegisterDepthGeometryFn, Transform, floats, shadow_scene_node};
+use sre::{BSGeometry, CameraState, NiAVObject, NiCamera, NiNode, PlayerCamera, ScriptParamType};
 
 skse::plugin! {
     name: "skyrim-rs-camera-demo",
@@ -133,33 +134,48 @@ fn near3(a: [f32; 3], b: [f32; 3], tol: f32) -> bool {
     (0..3).all(|i| (a[i] - b[i]).abs() < tol)
 }
 
+fn is_hidden(node: &NiAVObject) -> bool {
+    node.flags & HIDDEN != 0
+}
+
+fn first_person(camera: &PlayerCamera) -> bool {
+    camera.state() == Some(CameraState::FirstPerson)
+}
+
+/// The near plane a GPU camera snapshot was built with, from its unjittered projection.
+fn snapshot_near(entry: &sre::CameraMatrixEntry) -> f32 {
+    let p = floats::<16>(&entry.projectionUnjittered);
+    -p[14] / p[10]
+}
+
 /// After the state's own update: the FOV and near writes, then the placement of the camera root.
 unsafe extern "C" fn state_step(camera: *mut sre::TESCamera) {
     unsafe { STEP.get().expect("stored before enabling").original()(camera) }
-    if !PlayerCamera::is(camera) {
+    let (Some(pc), Some(player)) = (PlayerCamera::singleton(), sre::g_player_character_ptr()) else { return };
+    if !core::ptr::eq(core::ptr::from_ref::<sre::TESCamera>(pc), camera) {
         return;
     }
-    let (Some(pc), Some(player)) = (PlayerCamera::get(), PlayerCharacter::get()) else { return };
     let Some(root) = pc.camera_root() else { return };
     STEPS.fetch_add(1, Ordering::Relaxed);
-    FIRST_PERSON.store(pc.is_first_person(), Ordering::Relaxed);
-    THIRD_ROOT.store(player.third_person_root().map_or(core::ptr::null_mut(), |r| r.as_ptr().cast_mut().cast()), Ordering::Release);
+    FIRST_PERSON.store(first_person(pc), Ordering::Relaxed);
+    let third = player.loaded_data().and_then(|d| d.node3_d());
+    THIRD_ROOT.store(third.map_or(core::ptr::null_mut(), |r| core::ptr::from_ref::<NiAVObject>(r).cast_mut()), Ordering::Release);
     let fov = WORLD_FOV_TARGET.load(Ordering::Relaxed);
     if fov != 0 {
-        pc.set_world_fov(f32::from_bits(fov));
+        skyrim::store(&pc.worldFOV, f32::from_bits(fov));
     }
     let near = NEAR_PENDING.swap(0, Ordering::Relaxed);
     if near != 0 {
         skyrim::render::set_near_plane(f32::from_bits(near));
         NEAR_FRAME.store(skyrim::render::frame_counter(), Ordering::Relaxed);
     }
-    let engine = root.local();
+    let engine = root.local_transform();
     store3(&ENGINE_POS, engine.translation);
     let placed = match MODE.load(Ordering::Relaxed) {
         MODE_ORBIT => {
             let angle = load_f32(&ORBIT_ANGLE) + ORBIT_SPEED * frame_delta_real();
             ORBIT_ANGLE.store(angle.to_bits(), Ordering::Relaxed);
-            let center = add(player.position(), [0.0, 0.0, ORBIT_CENTER_HEIGHT]);
+            let center = add([player.posX, player.posY, player.posZ], [0.0, 0.0, ORBIT_CENTER_HEIGHT]);
             store3(&CENTER, center);
             let rz = rotation_z(angle);
             Transform { rotation: mul(rz, engine.rotation), translation: add(center, apply(rz, sub(engine.translation, center))), scale: engine.scale }
@@ -167,8 +183,8 @@ unsafe extern "C" fn state_step(camera: *mut sre::TESCamera) {
         MODE_OFFSET => Transform { translation: add(engine.translation, OFFSET), ..engine },
         _ => return,
     };
-    root.set_local(placed);
-    root.update();
+    root.set_local_transform(placed);
+    root.update_transforms();
     store3(&WRITTEN_POS, placed.translation);
 }
 
@@ -183,26 +199,26 @@ unsafe extern "C" fn hands_projection(camera: *mut sre::NiCamera, fov: f32, near
 unsafe extern "C" fn cull(node: *mut sre::NiAVObject, culler: *mut sre::NiCullingProcess, ordered_group: u32) {
     if SHADOW.load(Ordering::Relaxed)
         && FIRST_PERSON.load(Ordering::Relaxed)
-        && let (Some(n), Some(c)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) })
-        && core::ptr::eq(n.as_ptr(), THIRD_ROOT.load(Ordering::Acquire))
+        && let (Some(n), Some(c)) = (unsafe { node.as_ref() }, unsafe { culler.cast::<sre::BSCullingProcess>().as_ref() })
+        && core::ptr::eq(n, THIRD_ROOT.load(Ordering::Acquire))
     {
         if c.is_shadow_pass() {
-            if n.is_hidden() {
+            if is_hidden(n) {
                 ADMITTED.fetch_add(1, Ordering::Relaxed);
                 if c.is_sun_list_walk() {
                     ADMITTED_SUN_WALK.fetch_add(1, Ordering::Relaxed);
                 }
-                if let Some(sun) = ShadowSceneNode::world().and_then(ShadowSceneNode::sun_shadow_light) {
-                    if core::ptr::eq(sun.raw().lightCamera, c.camera_ptr()) {
+                if let Some(sun) = shadow_scene_node(0).and_then(sre::ShadowSceneNode::sun_shadow_light) {
+                    if core::ptr::eq(sun.lightCamera, c.camera) {
                         ADMITTED_LIGHT_CAMERA.fetch_add(1, Ordering::Relaxed);
-                    } else if sun.owns_camera(c.camera_ptr()) {
+                    } else if sun.owns_camera(c.camera) {
                         ADMITTED_CASCADE_CAMERA.fetch_add(1, Ordering::Relaxed);
                     }
                 }
                 c.cull_node(n, ordered_group);
                 return;
             }
-        } else if !n.is_hidden() {
+        } else if !is_hidden(n) {
             BODY_SHOWN_TO_CAMERA.fetch_add(1, Ordering::Relaxed);
         }
     }
@@ -212,11 +228,11 @@ unsafe extern "C" fn cull(node: *mut sre::NiAVObject, culler: *mut sre::NiCullin
 unsafe extern "C" fn register_depth_geometry(accumulator: *mut sre::BSShaderAccumulator, geometry: *mut sre::BSGeometry, property: *mut sre::BSShaderProperty) -> bool {
     if SHADOW.load(Ordering::Relaxed)
         && FIRST_PERSON.load(Ordering::Relaxed)
-        && let (Some(a), Some(g), Some(root)) = (unsafe { BSShaderAccumulator::from_ptr(accumulator) }, unsafe { NiAVObject::from_ptr(geometry.cast()) }, unsafe { NiAVObject::from_ptr(THIRD_ROOT.load(Ordering::Acquire)) })
+        && let (Some(a), Some(g), Some(root)) = (unsafe { accumulator.as_ref() }, unsafe { geometry.cast::<NiAVObject>().as_ref() }, unsafe { THIRD_ROOT.load(Ordering::Acquire).as_ref() })
         && g.is_under(root, 24)
     {
-        match a.render_mode_raw() {
-            0xe if a.is_cascade_accumulator() => CASCADE_REGISTRATIONS[usize::from(a.cascade_index() != 0)].fetch_add(1, Ordering::Relaxed),
+        match a.renderMode {
+            0xe if a.isCascadeAccumulator != 0 => CASCADE_REGISTRATIONS[usize::from(a.cascadeIndex != 0)].fetch_add(1, Ordering::Relaxed),
             0xe => FOCUS_REGISTRATIONS.fetch_add(1, Ordering::Relaxed),
             0xd | 0xf => LOCAL_REGISTRATIONS.fetch_add(1, Ordering::Relaxed),
             _ => PREPASS_REGISTRATIONS.fetch_add(1, Ordering::Relaxed),
@@ -230,7 +246,7 @@ unsafe extern "C" fn replay(culler: *mut sre::BSCullingProcess, objects: *mut sr
     if skip_hidden
         && SHADOW.load(Ordering::Relaxed)
         && FIRST_PERSON.load(Ordering::Relaxed)
-        && ShadowSceneNode::world().and_then(ShadowSceneNode::sun_shadow_light).is_some_and(|sun| sun.is_shadow_camera(camera))
+        && shadow_scene_node(0).and_then(sre::ShadowSceneNode::sun_shadow_light).is_some_and(|sun| core::ptr::eq(sun.lightCamera, camera) || sun.owns_camera(camera))
     {
         REPLAYS.fetch_add(1, Ordering::Relaxed);
         if REPLAY_EXCEPTION.load(Ordering::Relaxed) {
@@ -277,15 +293,20 @@ fn all_off() {
 
 type Check = (&'static str, Result<String, String>);
 
+/// `[left, right, top, bottom, near, far]`; right is tan(fov / 2), top right times the aspect.
+fn frustum(camera: &NiCamera) -> [f32; 6] {
+    [camera.frustumLeft, camera.frustumRight, camera.frustumTop, camera.frustumBottom, camera.frustumNear, camera.frustumFar]
+}
+
 fn check(ok: bool, detail: String) -> Result<String, String> {
     if ok { Ok(detail) } else { Err(detail) }
 }
 
 fn placement_checks(expected: [f32; 3]) -> Vec<Check> {
     let written = load3(&WRITTEN_POS);
-    let root = PlayerCamera::get().and_then(|c| c.camera_root()).map(|r| r.world().translation);
-    let frame = main_camera().map(|c| c.world().translation);
-    let cached = PlayerCamera::get().map(PlayerCamera::cached_position);
+    let root = PlayerCamera::singleton().and_then(|c| c.camera_root()).map(|r| r.world_transform().translation);
+    let frame = sre::get_main_camera().map(|c| c.world_transform().translation);
+    let cached = PlayerCamera::singleton().map(|c| floats::<3>(&c.cachedPosition));
     vec![
         ("steps", check(STEPS.load(Ordering::Relaxed) > 0, format!("{} state steps", STEPS.load(Ordering::Relaxed)))),
         ("written", check(near3(written, expected, 0.5), format!("written {written:?} expected {expected:?}"))),
@@ -317,10 +338,10 @@ fn report(label: &str) {
             format!("camera-demo offset: root ({:.2}, {:.2}, {:.2}) engine ({:.2}, {:.2}, {:.2})", written[0], written[1], written[2], engine[0], engine[1], engine[2])
         }
         "fov" => {
-            let pc = PlayerCamera::get();
-            let world = pc.map_or(0.0, PlayerCamera::world_fov);
-            let frame = main_camera().map(|c| (c.frustum(), c.lod_adjust()));
-            let hands = hands_camera().map(skyrim::render::NiCamera::frustum);
+            let pc = PlayerCamera::singleton();
+            let world = pc.map_or(0.0, |c| c.worldFOV);
+            let frame = sre::get_main_camera().map(|c| (frustum(c), c.lodAdjust));
+            let hands = sre::g_first_person_camera().map(frustum);
             let offset = skyrim::camera::fov_offset();
             let expected_world = ((WORLD_FOV + offset).to_radians() / 2.0).tan();
             let expected_hands = (HANDS_FOV.to_radians() / 2.0).tan();
@@ -329,38 +350,38 @@ fn report(label: &str) {
             checks.push(("world_fov", check((world - WORLD_FOV).abs() < 0.01, format!("PlayerCamera.worldFOV {world}, offset {offset}"))));
             checks.push(("frame_frustum", check(frame.is_some_and(|(f, _)| (f[1] - expected_world).abs() < 0.001 && (f[4] - 15.0).abs() < 0.01), format!("frame frustum {:?} expected right {expected_world:.4}", frame.map(|f| f.0)))));
             checks.push(("lod_adjust", check(frame.is_some_and(|(_, l)| (l - WORLD_FOV / 80.0).abs() < 0.01), format!("lodAdjust {:?}", frame.map(|f| f.1)))));
-            checks.push(("first_person", check(pc.is_some_and(PlayerCamera::is_first_person), format!("state {:?}", pc.and_then(PlayerCamera::state)))));
+            checks.push(("first_person", check(pc.is_some_and(first_person), format!("state {:?}", pc.and_then(PlayerCamera::state)))));
             checks.push(("hands_sites", check(HANDS_CALLS.load(Ordering::Relaxed) >= 2, format!("{} projection calls, fov argument {seen}, hands copy {copy}", HANDS_CALLS.load(Ordering::Relaxed)))));
             checks.push(("hands_frustum", check(hands.is_some_and(|f| (f[1] - expected_hands).abs() < 0.001 && (f[4] - 5.0).abs() < 0.01), format!("hands frustum {hands:?} expected right {expected_hands:.4}"))));
-            checks.push(("hands_copy", check((copy - seen).abs() < 0.01 && (copy - pc.map_or(0.0, PlayerCamera::first_person_fov)).abs() < 0.01, format!("firstPersonFOV {:?} copy {copy} seen at the sites {seen}", pc.map(PlayerCamera::first_person_fov)))));
+            checks.push(("hands_copy", check((copy - seen).abs() < 0.01 && (copy - pc.map_or(0.0, |c| c.firstPersonFOV)).abs() < 0.01, format!("firstPersonFOV {:?} copy {copy} seen at the sites {seen}", pc.map(|c| c.firstPersonFOV)))));
             format!("camera-demo fov: world {world} frame right {:.4} hands right {:.4}", frame.map_or(0.0, |f| f.0[1]), hands.map_or(0.0, |f| f[1]))
         }
         "near5" | "near15" => {
             let expected = if label == "near5" { 5.0 } else { 15.0 };
             let setting = skyrim::render::near_distance();
-            let frame = main_camera().map(|c| (c.frustum(), c.far_near_ratio()));
+            let frame = sre::get_main_camera().map(|c| (frustum(c), c.maxFarNearRatio));
             let shift = skyrim::render::depth_shift_near();
-            let slot = SceneGraph::get().map_or(0.0, SceneGraph::near);
-            let gpu: Vec<f32> = FrameState::get().map(|f| f.camera_entries().iter().filter(|e| main_camera().is_some_and(|c| core::ptr::eq(c.as_ptr(), e.camera_ptr()))).map(skyrim::render::CameraMatrixEntry::near).collect()).unwrap_or_default();
-            let cascades = ShadowSceneNode::world().and_then(ShadowSceneNode::sun_shadow_light).map(|s| (s.cascade_near(), s.cascade_far()));
+            let graph = sre::g_scene_graph().map_or(0.0, |g| g.get_near_distance());
+            let gpu: Vec<f32> = skyrim::render::camera_entries().iter().filter(|e| sre::get_main_camera().is_some_and(|c| core::ptr::eq(c, e.camera))).map(snapshot_near).collect();
+            let cascades = shadow_scene_node(0).and_then(sre::ShadowSceneNode::sun_shadow_light).map(|s| (floats::<3>(&s.cascadeNear), floats::<3>(&s.cascadeFar)));
             let far = frame.map_or(0.0, |f| f.0[5]);
             checks.push(("setting", check((setting - expected).abs() < 0.01, format!("fNearDistance {setting}"))));
             checks.push(("frame_near", check(frame.is_some_and(|(f, r)| (f[4] - expected).abs() < 0.01 && (r - f[5] / expected).abs() < 1.0), format!("frame frustum {:?} far/near {:?}", frame.map(|f| f.0), frame.map(|f| f.1)))));
-            checks.push(("depth_shift", check((shift - expected).abs() < 0.01, format!("g_DepthShiftNear {shift}, slot 63 {slot}"))));
+            checks.push(("depth_shift", check((shift - expected).abs() < 0.01, format!("g_DepthShiftNear {shift}, BSSceneGraph near {graph}"))));
             checks.push(("gpu", check(gpu.len() == 2 && gpu.iter().all(|n| (n - expected).abs() < 0.01), format!("GPU snapshot nears {gpu:?} (frame {} since the write at {})", skyrim::render::frame_counter(), NEAR_FRAME.load(Ordering::Relaxed)))));
             checks.push(("cascades", check(cascades.is_some_and(|(n, _)| (n[0] - expected).abs() < 0.01), format!("cascade near {:?} far {:?}", cascades.map(|c| c.0), cascades.map(|c| c.1)))));
             format!("camera-demo {label}: setting {setting} frame {:.2} shift {shift} gpu {gpu:?} far {far}", frame.map_or(0.0, |f| f.0[4]))
         }
         "shadow" => {
-            let pc = PlayerCamera::get();
-            let root = unsafe { NiAVObject::from_ptr(THIRD_ROOT.load(Ordering::Acquire)) };
+            let pc = PlayerCamera::singleton();
+            let root = unsafe { THIRD_ROOT.load(Ordering::Acquire).as_ref() };
             let skins: Vec<(u32, Option<u32>)> = root
-                .and_then(NiAVObject::as_node)
-                .map(|n| n.children().iter().flatten().filter_map(|c| c.as_geometry()).filter_map(|g| g.shader_property().map(|p| (p.last_render_pass_state(), p.receiver_mask()))).collect())
+                .and_then(NiAVObjectExt::cast::<NiNode>)
+                .map(|n| n.children().iter().flatten().filter_map(|c| c.cast::<BSGeometry>()).filter_map(|g| unsafe { g.shaderProperty.as_ref() }).map(|p| (p.lastRenderPassState, p.receiver_mask())).collect())
                 .unwrap_or_default();
             let cascades = [CASCADE_REGISTRATIONS[0].load(Ordering::Relaxed), CASCADE_REGISTRATIONS[1].load(Ordering::Relaxed)];
-            checks.push(("first_person", check(pc.is_some_and(PlayerCamera::is_first_person), format!("state {:?}", pc.and_then(PlayerCamera::state)))));
-            checks.push(("root_hidden", check(root.is_some_and(NiAVObject::is_hidden), format!("third-person root {:?} flags {:#x?}", root.map(NiAVObject::as_ptr), root.map(NiAVObject::flags)))));
+            checks.push(("first_person", check(pc.is_some_and(first_person), format!("state {:?}", pc.and_then(PlayerCamera::state)))));
+            checks.push(("root_hidden", check(root.is_some_and(is_hidden), format!("third-person root {:?} flags {:#x?}", root.map(core::ptr::from_ref), root.map(|r| r.flags)))));
             checks.push(("admitted", check(ADMITTED.load(Ordering::Relaxed) > 0, format!("hidden root admitted {} times to shadow cullers: {} by the sun's list walk, {} with the sun's light camera, {} with a cascade camera", ADMITTED.load(Ordering::Relaxed), ADMITTED_SUN_WALK.load(Ordering::Relaxed), ADMITTED_LIGHT_CAMERA.load(Ordering::Relaxed), ADMITTED_CASCADE_CAMERA.load(Ordering::Relaxed)))));
             checks.push(("main_view", check(BODY_SHOWN_TO_CAMERA.load(Ordering::Relaxed) == 0 && PREPASS_REGISTRATIONS.load(Ordering::Relaxed) == 0, format!("root shown to other cameras {} times, body skins in the depth pre-pass {}", BODY_SHOWN_TO_CAMERA.load(Ordering::Relaxed), PREPASS_REGISTRATIONS.load(Ordering::Relaxed)))));
             checks.push(("cascades", check(cascades[0] > 0 && cascades[1] > 0, format!("body skins registered into cascade 0 {} and cascade 1 {} times, focus {}, local {}; replays {} ({} with the skip lifted, exception {})", cascades[0], cascades[1], FOCUS_REGISTRATIONS.load(Ordering::Relaxed), LOCAL_REGISTRATIONS.load(Ordering::Relaxed), REPLAYS.load(Ordering::Relaxed), REPLAYS_UNSKIPPED.load(Ordering::Relaxed), REPLAY_EXCEPTION.load(Ordering::Relaxed)))));

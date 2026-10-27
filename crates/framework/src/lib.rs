@@ -28,7 +28,8 @@ use core::ffi::{CStr, c_char};
 use std::fmt;
 
 pub use overlay::{egui, theme};
-use skyrim::events::{BSEventNotifyControl, BSTEventSource, ErasedHandler, ErasedSource, Event};
+use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
+use sre::BSEventNotifyControl;
 use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
 use skyrim::papyrus::{ErasedNativeFn, IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, VirtualMachine};
 

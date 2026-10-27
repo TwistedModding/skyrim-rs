@@ -11,7 +11,8 @@ use std::time::{Duration, Instant};
 
 use overlay::egui::{self, RichText};
 use overlay::theme;
-use skyrim::input::{Arg, CommandContext, Param, ScriptParamType};
+use skyrim::input::{Arg, CommandContext, Param};
+use sre::ScriptParamType;
 
 use super::{HOOKS, NAME, WINDOW_LIST, flush_settings, plugins, reload, set_window_open, window_open};
 use crate::hooks::{Hooks, SiteReport, SubscriptionId};

@@ -13,9 +13,10 @@ use std::fs::File;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 
+use skyrim::prelude::*;
+use skyrim::render::{CullFn, SetFirstPersonFn};
 use sre::raw::vtables;
-use skyrim::actors::PlayerCharacter;
-use skyrim::render::{CullFn, CullingProcess, NiAVObject, SetFirstPersonFn};
+use sre::{NiAVObject, PlayerCharacter};
 
 skse::plugin! {
     name: "skyrim-rs-first-person-shadows",
@@ -50,12 +51,17 @@ macro_rules! log {
 /// Caches the third-person root and shows it in first person; third person is the engine's own state.
 fn apply(first_person: bool) {
     FIRST_PERSON.store(first_person, Ordering::Relaxed);
-    let root = PlayerCharacter::get().and_then(PlayerCharacter::third_person_root);
-    THIRD_ROOT.store(root.map_or(core::ptr::null_mut(), |r| r.as_ptr().cast_mut().cast()), Ordering::Release);
+    let root = sre::g_player_character_ptr().and_then(third_person_root);
+    THIRD_ROOT.store(root.map_or(core::ptr::null_mut(), |r| core::ptr::from_ref(r).cast_mut()), Ordering::Release);
     if first_person && let Some(root) = root {
         root.set_hidden(false);
-        log!("first person: third-person root {:p} shown (flags {:#x})", root.raw(), root.flags());
+        log!("first person: third-person root {root:p} shown (flags {:#x})", root.flags);
     }
+}
+
+/// The third-person root, `loadedData->node3D`.
+fn third_person_root(player: &PlayerCharacter) -> Option<&NiAVObject> {
+    player.loaded_data()?.node3_d().map(|node| &**node)
 }
 
 unsafe extern "C" fn switch_detour(player: *mut sre::PlayerCharacter, first_person: bool) {
@@ -66,11 +72,11 @@ unsafe extern "C" fn switch_detour(player: *mut sre::PlayerCharacter, first_pers
 unsafe extern "C" fn cull_detour(node: *mut sre::NiAVObject, culler: *mut sre::NiCullingProcess, plane_mask: u32) {
     let original = CULL.get().expect("stored before enabling").original();
     if FIRST_PERSON.load(Ordering::Relaxed)
-        && let (Some(n), Some(c), Some(root)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) }, unsafe { NiAVObject::from_ptr(THIRD_ROOT.load(Ordering::Acquire)) })
+        && let (Some(n), Some(c), Some(root)) = (unsafe { node.as_ref() }, unsafe { culler.cast::<sre::BSCullingProcess>().as_ref() }, unsafe { THIRD_ROOT.load(Ordering::Acquire).as_ref() })
     {
-        if core::ptr::eq(n.as_ptr(), root.as_ptr()) {
+        if core::ptr::eq(n, root) {
             if c.is_shadow_pass() { &BODY_SHADOW } else { &BODY_CAMERA }.fetch_add(1, Ordering::Relaxed);
-        } else if n.class().is_some_and(|v| v.id == vtables::BSFaceGenNiNode_vtable::ID) && n.is_under(root, 24) {
+        } else if skyrim::class_of(n).is_some_and(|v| v.id == vtables::BSFaceGenNiNode_vtable::ID) && n.is_under(root, 24) {
             if c.is_shadow_pass() {
                 HEAD_SHADOW.fetch_add(1, Ordering::Relaxed);
             } else {
@@ -108,13 +114,13 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             for c in [&BODY_SHADOW, &BODY_CAMERA, &HEAD_SKIPPED, &HEAD_SHADOW] {
                 c.store(0, Ordering::Relaxed);
             }
-            if let Some(p) = PlayerCharacter::get() {
+            if let Some(p) = sre::g_player_character_ptr() {
                 apply(!p.is_third_person());
             }
         }
         skse::MessagingInterface::SAVE_GAME => {
             let first_person = FIRST_PERSON.load(Ordering::Relaxed);
-            let roots = PlayerCharacter::get().map(|p| (p.third_person_root().map(|r| r.flags()), p.first_person_root().map(|r| r.flags())));
+            let roots = sre::g_player_character_ptr().map(|p| (third_person_root(p).map(|r| r.flags), p.first_person_root().map(|r| r.flags)));
             log!(
                 "save: first_person={first_person} root flags {roots:?}; in first person the body root was visited {} times by shadow cameras and {} by other cameras, the face skipped {} times for other cameras and passed {} times to shadow cameras",
                 BODY_SHADOW.load(Ordering::Relaxed),

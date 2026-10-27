@@ -14,8 +14,8 @@ use std::sync::{Mutex, OnceLock};
 use framework::hooks::ops::Actor__ModActorValueImpl;
 use framework::hooks::{self, Options};
 use framework::{Host, egui};
-use skyrim::actors::{ActorValue, Modifier, PlayerCharacter};
-use skyrim::events::{BSEventNotifyControl, TESEquipEvent};
+use skyrim::actors::Modifier;
+use sre::{ActorValue, BSEventNotifyControl, TESEquipEvent};
 use skyrim::input::{Command, CommandContext, Param};
 use skyrim::papyrus::VirtualMachine;
 
@@ -91,8 +91,9 @@ fn load(host: &'static Host) -> bool {
     log(format!("tag {TAG}: loading"));
     *HOOK.lock().unwrap() = Some(subscribe(host));
     let sink = host.add_sink::<TESEquipEvent>(|event, _| {
-        EQUIPS.lock().unwrap().push(format!("{event:?}"));
-        log(format!("tag {TAG}: equip event {event:?}"));
+        let event = format!("{:08X} equipped {}", event.baseObject, event.equipped);
+        log(format!("tag {TAG}: equip event {event}"));
+        EQUIPS.lock().unwrap().push(event);
         BSEventNotifyControl::Continue
     });
     log(format!("tag {TAG}: sink {sink:?}"));
@@ -122,7 +123,7 @@ fn subscribe(host: &'static Host) -> Result<String, String> {
     check(matches!(foreign, Err(hooks::Error::Owner { .. })), format!("a subscription owned by another name was not refused: {foreign:?}"))?;
     let id = hooks
         .before(Actor__ModActorValueImpl, Options::new(host.name()), |args: &mut ModArgs| {
-            let player = PlayerCharacter::get().map_or(core::ptr::null(), |p| p.as_ptr().cast::<c_void>());
+            let player = sre::g_player_character_ptr().map_or(core::ptr::null(), |p| core::ptr::from_ref(p).cast::<c_void>());
             if args.0.cast_const().cast::<c_void>() == player && args.2 == ActorValue::Health as i32 && args.1 == Modifier::Damage as i32 && args.3 < 0.0 {
                 DAMAGE.lock().unwrap().push(args.3);
                 log(format!("tag {TAG}: health damage {}", args.3));

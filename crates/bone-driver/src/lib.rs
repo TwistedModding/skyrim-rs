@@ -8,10 +8,11 @@ use std::fs::File;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicPtr, AtomicU32, Ordering};
 
-use skyrim::actors::PlayerCharacter;
-use skyrim::animation::{AnimationGraph, ApplyPoseFn, HkQsTransform};
-use skyrim::render::{NiAVObject, Transform};
-use skyrim::string::BSFixedString;
+use skyrim::BSFixedString;
+use skyrim::animation::{ApplyPoseFn, HkQsTransform};
+use skyrim::prelude::*;
+use skyrim::render::Transform;
+use sre::BShkbAnimationGraph;
 
 skse::plugin! {
     name: "skyrim-rs-bone-driver",
@@ -55,15 +56,15 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
     if head.is_null() {
         return;
     }
-    let Some(graph) = (unsafe { AnimationGraph::from_bone_array(nodes) }) else { return };
-    if !graph.owner().is_some_and(|o| core::ptr::eq(o.as_ptr(), PLAYER.load(Ordering::Relaxed))) {
+    let Some(graph) = (unsafe { BShkbAnimationGraph::from_bone_array(nodes) }) else { return };
+    if !graph.owner().is_some_and(|o| core::ptr::eq(o, PLAYER.load(Ordering::Relaxed))) {
         return;
     }
     let Some(entry) = graph.bone_nodes().iter().find(|e| core::ptr::eq(e.node, head)) else { return };
-    let Some(node) = (unsafe { NiAVObject::from_ptr(entry.node) }) else { return };
-    let before = node.local();
+    let Some(node) = (unsafe { entry.node.as_ref() }) else { return };
+    let before = node.local_transform();
     let after = Transform { rotation: multiply(before.rotation, turn(TURN_DEGREES)), ..before };
-    node.set_local(after);
+    node.set_local_transform(after);
     APPLIED.fetch_add(1, Ordering::Relaxed);
     if let Ok(mut last) = LAST.try_lock() {
         *last = Some((before, after));
@@ -72,9 +73,10 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
 
 /// Caches the player and its head bone on the main thread after a load; clears them before one.
 fn bind(active: bool) {
-    let head = active.then(PlayerCharacter::get).flatten().and_then(|p| {
-        PLAYER.store(core::ptr::from_ref::<skyrim::actors::TESObjectREFR>(p).cast::<sre::TESObjectREFR>().cast_mut(), Ordering::Relaxed);
-        p.third_person_root()?.object_by_name(&BSFixedString::new("NPC Head [Head]")).map(|h| h.as_ptr().cast_mut())
+    let head = active.then(sre::g_player_character_ptr).flatten().and_then(|p| {
+        PLAYER.store(core::ptr::from_ref::<sre::TESObjectREFR>(p).cast_mut(), Ordering::Relaxed);
+        let root = p.loaded_data()?.node3_d()?;
+        root.get_object_by_name(BSFixedString::new("NPC Head [Head]").raw()).map(|h| core::ptr::from_ref(h).cast_mut())
     });
     HEAD.store(head.unwrap_or(core::ptr::null_mut()), Ordering::Release);
     if let Some(h) = head {

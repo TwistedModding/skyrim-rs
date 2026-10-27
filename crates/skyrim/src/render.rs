@@ -248,10 +248,10 @@ pub fn shadow_scene_node(index: usize) -> Option<&'static ShadowSceneNode> {
     unsafe { (*slots).get(index)?.as_ref() }
 }
 
-/// Three floats at `bytes[0..12]`.
-pub(crate) fn vec3(bytes: &[u8]) -> [f32; 3] {
-    let f = |i: usize| f32::from_le_bytes([bytes[i], bytes[i + 1], bytes[i + 2], bytes[i + 3]]);
-    [f(0), f(4), f(8)]
+/// The `N` floats at the start of a field the ledger lays out as bytes (a point, a matrix, a frustum).
+#[must_use]
+pub fn floats<const N: usize>(bytes: &[u8]) -> [f32; N] {
+    core::array::from_fn(|i| f32::from_le_bytes([bytes[i * 4], bytes[i * 4 + 1], bytes[i * 4 + 2], bytes[i * 4 + 3]]))
 }
 
 /// Rotation, translation and scale as `NiTransform` lays them out (rotation rows first).
@@ -276,9 +276,9 @@ impl Transform {
     #[must_use]
     pub fn from_bytes(b: &[u8; 0x34]) -> Self {
         Self {
-            rotation: [vec3(&b[0..]), vec3(&b[12..]), vec3(&b[24..])],
-            translation: vec3(&b[36..]),
-            scale: f32::from_le_bytes([b[48], b[49], b[50], b[51]]),
+            rotation: [floats(&b[0..]), floats(&b[12..]), floats(&b[24..])],
+            translation: floats(&b[36..]),
+            scale: floats::<1>(&b[48..])[0],
         }
     }
 }

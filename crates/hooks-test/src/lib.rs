@@ -8,7 +8,8 @@ use std::fmt::Display;
 use std::io::Write as _;
 use std::sync::OnceLock;
 
-use skyrim::actors::{ActorValue, Modifier, PlayerCharacter};
+use skyrim::actors::Modifier;
+use sre::ActorValue;
 
 pub mod a;
 pub mod b;
@@ -27,8 +28,8 @@ pub type OwnerModArgs = (*mut sre::ActorValueOwner, i32, i32, f32);
 /// Whether a modifier change damages the player's health.
 #[must_use]
 pub fn player_health_damage(this: *const c_void, modifier: i32, value: i32, delta: f32) -> bool {
-    let player = PlayerCharacter::get().map_or(core::ptr::null(), |p| p.as_ptr().cast::<c_void>());
-    let owner = PlayerCharacter::get().map_or(core::ptr::null(), |p| core::ptr::from_ref(p.actor_value_owner()).cast::<c_void>());
+    let player = sre::g_player_character_ptr().map_or(core::ptr::null(), |p| core::ptr::from_ref(p).cast::<c_void>());
+    let owner = sre::g_player_character_ptr().map_or(core::ptr::null(), |p| core::ptr::from_ref(p.as_actor_value_owner()).cast::<c_void>());
     (this == player || this == owner) && value == ActorValue::Health as i32 && modifier == Modifier::Damage as i32 && delta < 0.0
 }
 

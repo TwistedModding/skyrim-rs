@@ -7,9 +7,10 @@ use std::fs::File;
 use std::sync::Mutex;
 use std::sync::atomic::{AtomicU32, Ordering};
 
-use skyrim::events::{BSEventNotifyControl, BSTEventSource, Event, EventSink, Sink, TESEquipEvent};
-use skyrim::forms::{FormId, TESForm};
+use skyrim::events::{BSTEventSource, Event, EventSink, Sink};
 use skyrim::papyrus::VirtualMachine;
+use skyrim::prelude::*;
+use sre::{BSEventNotifyControl, TESEquipEvent, TESForm};
 
 skse::plugin! {
     name: "skyrim-rs-equip-counter",
@@ -18,7 +19,7 @@ skse::plugin! {
     load: load,
 }
 
-const PLAYER: FormId = FormId(0x14);
+const PLAYER: u32 = 0x14;
 const CLASS: &str = "SkyrimRsEquipCounter";
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
@@ -38,10 +39,10 @@ struct Counter;
 
 impl EventSink<TESEquipEvent> for Counter {
     fn process(&self, event: &TESEquipEvent, _: &BSTEventSource<TESEquipEvent>) -> BSEventNotifyControl {
-        if event.equipped() && event.actor().is_some_and(|a| a.form_id() == PLAYER) {
+        if event.equipped != 0 && event.actor().is_some_and(|a| a.formID == PLAYER) {
             let count = COUNT.fetch_add(1, Ordering::Relaxed) + 1;
-            LAST.store(event.base_object().0, Ordering::Relaxed);
-            log!("equip {count}: {}", event.base_object());
+            LAST.store(event.baseObject, Ordering::Relaxed);
+            log!("equip {count}: {:08X}", event.baseObject);
         }
         BSEventNotifyControl::Continue
     }
@@ -54,11 +55,11 @@ fn get_equip_count() -> i32 {
 }
 
 fn get_last_equipped() -> Option<&'static TESForm> {
-    FormId(LAST.load(Ordering::Relaxed)).lookup()
+    sre::find_form_by_id(LAST.load(Ordering::Relaxed))
 }
 
 unsafe extern "C" fn on_register(registry: *mut c_void) {
-    let Some(vm) = (unsafe { VirtualMachine::from_ptr(registry) }) else {
+    let Some(vm) = (unsafe { VirtualMachine::from_registry(registry) }) else {
         log!("the registry is not the VM");
         return;
     };

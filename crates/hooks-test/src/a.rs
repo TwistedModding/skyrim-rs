@@ -83,7 +83,7 @@ fn subscribe() -> Result<String, String> {
                 BEFORE.lock().unwrap().push(args.3);
                 args.3 -= 1.0;
             }
-            if args.2 == skyrim::actors::ActorValue::Health as i32 && skyrim::actors::PlayerCharacter::get().is_some_and(|p| core::ptr::eq(p.as_ptr().cast(), args.0)) {
+            if args.2 == sre::ActorValue::Health as i32 && sre::g_player_character_ptr().is_some_and(|p| core::ptr::eq(core::ptr::from_ref(p).cast(), args.0)) {
                 CALLS.lock().unwrap().push((args.1, args.3));
             }
         })

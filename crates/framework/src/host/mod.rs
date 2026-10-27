@@ -14,7 +14,9 @@ use std::os::windows::ffi::OsStrExt as _;
 use std::path::{Path, PathBuf};
 use std::sync::{Mutex, OnceLock, PoisonError};
 
-use skyrim::events::{BSEventNotifyControl, ErasedHandler, ErasedSink, ErasedSource};
+use skyrim::events::{ErasedHandler, ErasedSink, ErasedSource};
+use skyrim::prelude::*;
+use sre::BSEventNotifyControl;
 use skyrim::input::{CommandSlot, ErasedCommand};
 use skyrim::papyrus::{ErasedNative, NativeFunction, VirtualMachine};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
@@ -496,7 +498,7 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
 }
 
 unsafe extern "C" fn on_papyrus_pass(registry: *mut c_void) {
-    let Some(vm) = (unsafe { VirtualMachine::from_ptr(registry) }) else {
+    let Some(vm) = (unsafe { VirtualMachine::from_registry(registry) }) else {
         log!("the Papyrus callback did not receive the VM");
         return;
     };

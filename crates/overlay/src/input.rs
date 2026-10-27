@@ -6,8 +6,9 @@ use std::sync::Mutex;
 use std::sync::atomic::{AtomicBool, AtomicU8, AtomicU32, Ordering};
 
 use egui::{Context, Event, Key, Modifiers, MouseWheelSource, MouseWheelUnit, PointerButton, Pos2, TouchPhase, Vec2};
-use skyrim::events::{BSEventNotifyControl, BSTEventSource, Event as _, EventSink, Sink};
-use skyrim::input::{InputDevice, InputEventList};
+use skyrim::events::{BSTEventSource, Event as _, EventSink, InputEventList, Sink};
+use skyrim::prelude::*;
+use sre::{BSEventNotifyControl, InputDevice, InputEvent};
 
 /// F11's `DirectInput` scan code.
 pub const DEFAULT_TOGGLE: u32 = 0x57;
@@ -106,9 +107,9 @@ impl EventSink<InputEventList> for Gate {
         let mut p = PENDING.lock().unwrap();
         let (mut keyboard, mut overlay_only, mut game_release) = (false, false, false);
         for event in list.iter() {
-            let key = event.as_button().filter(|_| event.device_kind() == Some(InputDevice::Keyboard));
+            let key = event.as_button().filter(|_| InputDevice::from_u32(event.device) == Some(InputDevice::Keyboard));
             if let Some(b) = key
-                && b.id() == toggle
+                && b.idCode == toggle
             {
                 if b.is_pressed() {
                     crate::set_open(!crate::is_open());
@@ -116,11 +117,11 @@ impl EventSink<InputEventList> for Gate {
                 stop = true;
                 continue;
             }
-            match event.device_kind() {
+            match InputDevice::from_u32(event.device) {
                 Some(InputDevice::Keyboard) => {
                     keyboard = true;
-                    overlay_only |= key.is_some_and(|b| b.id() == TAB);
-                    game_release |= key.is_some_and(|b| b.is_released() && p.game_held.get(b.id() as usize).copied().unwrap_or(false));
+                    overlay_only |= key.is_some_and(|b| b.idCode == TAB);
+                    game_release |= key.is_some_and(|b| b.value == 0.0 && p.game_held.get(b.idCode as usize).copied().unwrap_or(false));
                 }
                 Some(InputDevice::Mouse) => overlay_only = true,
                 _ => {}
@@ -133,11 +134,11 @@ impl EventSink<InputEventList> for Gate {
             stop = false;
         }
         if !stop {
-            for b in list.iter().filter(|e| e.device_kind() == Some(InputDevice::Keyboard)).filter_map(|e| e.as_button()) {
-                if let Some(held) = p.game_held.get_mut(b.id() as usize) {
+            for b in list.iter().filter(|e| InputDevice::from_u32(e.device) == Some(InputDevice::Keyboard)).filter_map(|e| e.as_button()) {
+                if let Some(held) = p.game_held.get_mut(b.idCode as usize) {
                     if b.is_pressed() {
                         *held = true;
-                    } else if b.is_released() {
+                    } else if b.value == 0.0 {
                         *held = false;
                     }
                 }
@@ -149,36 +150,36 @@ impl EventSink<InputEventList> for Gate {
 
 impl Pending {
     #[allow(clippy::cast_precision_loss)]
-    fn translate(&mut self, event: &skyrim::input::InputEvent) {
+    fn translate(&mut self, event: &InputEvent) {
         let modifiers = self.modifiers;
         if let Some(m) = event.as_mouse_move() {
-            let (dx, dy) = m.delta();
+            let (dx, dy) = (m.dx.cast_signed(), m.dy.cast_signed());
             self.pointer = (self.pointer + egui::vec2(dx as f32, dy as f32) / self.pixels_per_point).clamp(Pos2::ZERO, self.screen.to_pos2());
             self.events.push(Event::PointerMoved(self.pointer));
         } else if let Some(c) = event.as_char() {
-            if let Some(c) = char::from_u32(c.char_code()).filter(|c| !c.is_control()) {
+            if let Some(c) = char::from_u32(c.charCode).filter(|c| !c.is_control()) {
                 self.events.push(Event::Text(c.to_string()));
             }
         } else if let Some(b) = event.as_button() {
             let pressed = b.is_pressed();
-            if !pressed && !b.is_released() {
+            if !pressed && b.value != 0.0 {
                 return;
             }
-            match event.device_kind() {
+            match InputDevice::from_u32(event.device) {
                 Some(InputDevice::Keyboard) => {
-                    if !set_modifier(&mut self.modifiers, b.id(), pressed)
-                        && let Some(key) = key(b.id())
+                    if !set_modifier(&mut self.modifiers, b.idCode, pressed)
+                        && let Some(key) = key(b.idCode)
                     {
                         self.events.push(Event::Key { key, physical_key: Some(key), pressed, repeat: false, modifiers });
                     }
                 }
                 Some(InputDevice::Mouse) => {
-                    let button = match b.id() {
+                    let button = match b.idCode {
                         0 => PointerButton::Primary,
                         1 => PointerButton::Secondary,
                         2 => PointerButton::Middle,
                         WHEEL_UP | WHEEL_DOWN if pressed => {
-                            let delta = egui::vec2(0.0, if b.id() == WHEEL_UP { 1.0 } else { -1.0 });
+                            let delta = egui::vec2(0.0, if b.idCode == WHEEL_UP { 1.0 } else { -1.0 });
                             self.events.push(Event::MouseWheel { unit: MouseWheelUnit::Line, delta, phase: TouchPhase::Move, source: MouseWheelSource::Wheel, modifiers });
                             return;
                         }

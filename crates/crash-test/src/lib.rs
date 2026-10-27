@@ -19,7 +19,8 @@ use framework::Host;
 use framework::hooks::Options;
 use framework::hooks::ops::Actor__ModActorValueImpl;
 use skyrim::papyrus::VirtualMachine;
-use skyrim::input::{Arg, Command, CommandContext, Param, ScriptParamType};
+use skyrim::input::{Arg, Command, CommandContext, Param};
+use sre::ScriptParamType;
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 
 framework::plugin! {
@@ -37,7 +38,7 @@ const DELETED: u8 = 6;
 const SCRIPT: u8 = 7;
 
 /// The Iron Sword, a `WEAP` record of Skyrim.esm.
-const IRON_SWORD: skyrim::forms::FormId = skyrim::forms::FormId(0x12EB7);
+const IRON_SWORD: u32 = 0x12EB7;
 /// `TESForm::formFlags` bit 5.
 const FLAG_DELETED: u32 = 0x20;
 
@@ -126,9 +127,9 @@ fn on_message(msg: &skse::Message) {
                     let _ = recurse(0);
                 }
                 WRITE => image_write(),
-                FORM => null_read_holding(IRON_SWORD.lookup().map_or(0, |f| f.as_ptr() as usize)),
+                FORM => null_read_holding(sre::find_form_by_id(IRON_SWORD).map_or(0, |f| core::ptr::from_ref(f) as usize)),
                 _ => {
-                    let player = skyrim::actors::PlayerCharacter::get().map_or(0, |p| p.as_ptr() as usize);
+                    let player = sre::g_player_character_ptr().map_or(0, |p| core::ptr::from_ref(p) as usize);
                     if player != 0 {
                         let flags = (player + 0x10) as *mut u32;
                         unsafe { core::ptr::write_volatile(flags, core::ptr::read_volatile(flags) | FLAG_DELETED) };

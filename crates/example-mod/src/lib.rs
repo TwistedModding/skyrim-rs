@@ -11,7 +11,7 @@ use std::sync::atomic::{AtomicU32, Ordering};
 use framework::hooks::Options;
 use framework::hooks::ops::Actor__ModActorValueImpl;
 use framework::{Host, egui, theme};
-use skyrim::actors::{ActorValue, Modifier, PlayerCharacter};
+use skyrim::actors::Modifier;
 use skyrim::papyrus::VirtualMachine;
 
 framework::plugin! {
@@ -60,8 +60,8 @@ fn load(host: &'static Host) -> bool {
 
     // Actor::ModActorValueImpl(actor, modifier, value, delta, source): the player's health damage is multiplied by the factor.
     let subscribed = host.hooks().before(Actor__ModActorValueImpl, Options::new(host.name()), |args: &mut (*mut sre::Actor, i32, i32, f32, *mut c_void)| {
-        let player = PlayerCharacter::get().map_or(core::ptr::null(), |p| p.as_ptr().cast::<c_void>());
-        if args.0.cast_const().cast::<c_void>() == player && args.1 == Modifier::Damage as i32 && args.2 == ActorValue::Health as i32 && args.3 < 0.0 {
+        let is_player = sre::g_player_character_ptr().is_some_and(|p| core::ptr::eq(args.0.cast_const().cast(), p));
+        if is_player && args.1 == Modifier::Damage as i32 && args.2 == sre::ActorValue::Health as i32 && args.3 < 0.0 {
             let scaled = args.3 * scale();
             LAST[0].store(args.3.to_bits(), Ordering::Relaxed);
             LAST[1].store(scaled.to_bits(), Ordering::Relaxed);
