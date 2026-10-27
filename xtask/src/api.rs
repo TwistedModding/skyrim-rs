@@ -402,18 +402,18 @@ fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &st
             args.push(name.clone());
         }
     }
-    let result = match sig.ret.render(safe, true, owner, ctx) {
+    let ffi = match sig.ret.render(safe, true, owner, ctx) {
         r if r.is_empty() => r,
         r => format!(" -> {r}"),
     };
+    let call = format!("{callee}({}){ffi})({})", types.join(", "), args.join(", "));
+    // An enum result crosses as its integer; a value the enum does not name comes back as `Err`.
+    let (result, body) = match &sig.ret {
+        Ty::Enum(path, repr) => (format!(" -> Result<{path}, {repr}>"), format!("let raw = {call}; {path}::from_{repr}(raw).ok_or(raw)")),
+        _ => (ffi, call),
+    };
     let indent = if shape == Shape::Free { "" } else { "    " };
-    format!(
-        "{doc_lines}{indent}#[inline]\n{indent}pub {}fn @NAME@({}){result} {{ unsafe {{ {callee}({}){result})({}) }} }}\n",
-        if safe { "" } else { "unsafe " },
-        decl.join(", "),
-        types.join(", "),
-        args.join(", ")
-    )
+    format!("{doc_lines}{indent}#[inline]\n{indent}pub {}fn @NAME@({}){result} {{ unsafe {{ {body} }} }}\n", if safe { "" } else { "unsafe " }, decl.join(", "))
 }
 
 /// One emitted item before naming: `text` holds `@NAME@` where its unique name goes.
@@ -937,6 +937,15 @@ mod tests {
         assert_eq!(parse_sig("void (InputEvent* const* events)", Source::Semantic, &ctx).unwrap().params[0].ty, Ty::Raw("*mut *mut c_void".into()));
         assert!(parse_sig("void Print(const char* fmt, ...)", Source::Semantic, &ctx).is_none());
         assert!(parse_sig("void Set(NiPoint3 value)", Source::Semantic, &ctx).is_none());
+    }
+
+    #[test]
+    fn enum_results_are_typed() {
+        let classes = test_classes();
+        let ctx = ctx(&classes);
+        let sig = parse_sig("ActorValue TESForm::Get(TESForm* this)", Source::Semantic, &ctx).unwrap();
+        let text = render_call("", Shape::Method, true, &sig, "function!(1, ", Some("TESForm"), &ctx);
+        assert!(text.contains("-> Result<crate::ActorValue, u32> { unsafe { let raw = function!(1, (*const Self) -> u32)(core::ptr::from_ref(self)); crate::ActorValue::from_u32(raw).ok_or(raw) } }"), "{text}");
     }
 
     #[test]

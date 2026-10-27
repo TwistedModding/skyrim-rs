@@ -2844,7 +2844,7 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_activate_event(&self, event: *const crate::TESActivateEvent, source: *mut c_void) -> u32 { unsafe { function!(53959, (*const Self, *const crate::TESActivateEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
+    pub unsafe fn process_activate_event(&self, event: *const crate::TESActivateEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(53959, (*const Self, *const crate::TESActivateEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `SkyrimVM::ProcessContainerChangedEvent`: sends OnContainerChanged to the item, OnItemRemoved to the old container and OnItemAdded to the new one
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 53966, rva 0x9dbac0.
@@ -2853,7 +2853,7 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_container_changed_event(&self, event: *const crate::TESContainerChangedEvent, source: *mut c_void) -> u32 { unsafe { function!(53966, (*const Self, *const crate::TESContainerChangedEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
+    pub unsafe fn process_container_changed_event(&self, event: *const crate::TESContainerChangedEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(53966, (*const Self, *const crate::TESContainerChangedEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `SkyrimVM::ProcessEquipEvent`: sends OnObjectEquipped / OnObjectUnequipped to the actor and OnEquipped / OnUnequipped to the item; returns 0
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 53970, rva 0x9dc4a0.
@@ -2862,7 +2862,7 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_equip_event(&self, event: *const crate::TESEquipEvent, source: *mut c_void) -> u32 { unsafe { function!(53970, (*const Self, *const crate::TESEquipEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
+    pub unsafe fn process_equip_event(&self, event: *const crate::TESEquipEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(53970, (*const Self, *const crate::TESEquipEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `SkyrimVM::ProcessHitEvent`: sends OnHit(aggressor, source, projectile, powerAttack, sneakAttack, bash, blocked) to the target through HitArguments
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 53974, rva 0x9dce00.
@@ -2871,7 +2871,7 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_hit_event(&self, event: *const crate::TESHitEvent, source: *mut c_void) -> u32 { unsafe { function!(53974, (*const Self, *const crate::TESHitEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
+    pub unsafe fn process_hit_event(&self, event: *const crate::TESHitEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(53974, (*const Self, *const crate::TESHitEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `SkyrimVM::RegisterEventSinks`: registers the VM's 49 holder sinks (every SkyrimVM+0x10+8*i except InitScript, which the ctor registers)
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 54028, rva 0x9e27f0.

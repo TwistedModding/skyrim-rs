@@ -702,7 +702,7 @@ impl crate::MenuControls {
     /// # Safety
     /// `head`, `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (*const Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), head, source) } }
+    pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = virtual_function!(self, 1, (*const Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), head, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `MenuControls::vdtor`, vtable slot 0: 
     ///
     /// Semantic, ui pass, high; called through the object's vtable.

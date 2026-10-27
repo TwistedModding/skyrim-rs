@@ -568,7 +568,7 @@ impl crate::PlayerControls {
     /// # Safety
     /// `head`, `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (*const Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), head, source) } }
+    pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = virtual_function!(self, 1, (*const Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), head, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `ApplyLookInputSensitivity`: bInvertYValues:Controls -> look.y negated first; mouse: x *= fMouseHeadingSensitivity * fMouseHeadingXScale / g_FrameDeltaReal, y *= sensitivity * YScale (mounted: both * fHorseHeadingMovementMult); gamepad: snap-to-axis, look curve, exponent, acceleration, sensitivity threshold, X/Y scale, optional time normalisation
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 42354, rva 0x7aeba0.
@@ -911,7 +911,7 @@ pub unsafe fn console_command_queue__push(q: *mut c_void, task: *mut crate::Cons
 /// # Safety
 /// `this`, `head`, `source` must point to what the engine expects.
 #[inline]
-pub unsafe fn console_hotkey_manager__process_event(this: *mut c_void, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32 { unsafe { function!(442700, (*mut c_void, *mut *mut crate::InputEvent, *mut c_void) -> u32)(this, head, source) } }
+pub unsafe fn console_hotkey_manager__process_event(this: *mut c_void, head: *mut *mut crate::InputEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(442700, (*mut c_void, *mut *mut crate::InputEvent, *mut c_void) -> u32)(this, head, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
 /// `ConsoleLogPrinter::Print`: ConsoleLog::Print(g_ConsoleLog, fmt, line)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 51105, rva 0x90d590.

@@ -54,7 +54,7 @@ impl crate::BSAnimationGraphManager {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
+    pub unsafe fn process_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = virtual_function!(self, 1, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `BSAnimationGraphManager::dtor`, vtable slot 0: virtual destructor
     ///
     /// Semantic, animation pass, high; called through the object's vtable.

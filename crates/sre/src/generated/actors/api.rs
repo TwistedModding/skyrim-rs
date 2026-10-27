@@ -552,7 +552,7 @@ impl crate::Actor {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_animation_graph_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> u32 { unsafe { function!(37997, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
+    pub unsafe fn process_animation_graph_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(37997, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `Actor::ReapplySlot166FromFlags2`: when flags2 (+0xcc) bits 5-7 are 0x20 or 0x80, tail-calls Actor slot 166 (+0x530) with (bits == 0x20)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37280, rva 0x675b90.
@@ -1177,7 +1177,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> u32 { unsafe { function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
+    pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `PlayerCharacter::ResetField9C0Block`: ResetField9C0Block_impl(*holder)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41571, rva 0x78e930.
