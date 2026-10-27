@@ -2,7 +2,7 @@
 # The camera-demo plugin is driven through its console command and reports each mode with PASS/FAIL lines and a
 # "summary camera <label>" line; the comparisons set its read-backs against DevBench's camera tool, the console's
 # getini and the captured console output of the same session.
-$Phases = "orbit", "offset", "fov", "near5", "near15", "shadow"
+$Phases = "orbit", "offset", "fov", "near5", "near15", "shadow", "furniture"
 
 function Cam($i) { $r = Step $i; if ($r) { "({0:F1}, {1:F1}, {2:F1})" -f $r.camX, $r.camY, $r.camZ } else { "" } }
 function Root($line) { if ($line -match 'root \(([-0-9.]+), ([-0-9.]+), ([-0-9.]+)\)') { @([double]$Matches[1], [double]$Matches[2], [double]$Matches[3]) } else { $null } }
@@ -23,6 +23,9 @@ $fov = RunDetail "camera fov" "hands_frustum"
 $near5 = RunDetail "camera near5" "gpu"
 $near15 = RunDetail "camera near15" "gpu"
 $shadow = RunDetail "camera shadow" "cascades"
+$furniture = RunDetail "camera furniture" "fields"
+$furnitureZoom = Captured (Lines 59) 'zoom ([-0-9.]+)'
+$furniturePitch = Captured (Lines 59) 'pitch ([-0-9.]+)'
 
 $rows = @(
     @{ name = "hooks";        plugin = ($ReportLines | Where-Object { $_ -match '^state step sites' }) -join ' '; devbench = "SKSE loaded the demo next to the test plugin; CameraDemo took over a console entry";
@@ -39,4 +42,7 @@ $rows = @(
        ok = ((Near (Ini 35) 15 0.01)) }
     @{ name = "shadow";       plugin = "$shadow; console: $(Lines 46)"; devbench = "camera get: pov $((Step 41).pov) stateId $((Step 41).stateId); camera-shadow.png $((Step 44).bytes) bytes";
        ok = ((Step 41).pov -eq "first" -and (Step 44).ok -eq $true) }
+    # A chair of the base save (0x8B825, base 0x6E7A8): the furniture camera is current from the activation until the sit-enter event pops it.
+    @{ name = "furniture";    plugin = "$furniture; console: $(Lines 59)"; devbench = "camera get after the activation: stateId $((Step 54).stateId), seated: stateId $((Step 56).stateId); getgs fFurnitureCameraZoom $(Lines 57), fFurnitureCameraAngle $(Lines 58)";
+       ok = ((Step 54).stateId -eq 5 -and (Step 56).stateId -ne 5 -and (Near $furnitureZoom (Ini 57) 0.01) -and (Near $furniturePitch (Ini 58) 0.001)) }
 )

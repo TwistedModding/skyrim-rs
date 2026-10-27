@@ -6,8 +6,10 @@
 //! from the two frustums; `near <n>` makes the consistent near-plane write and reads the setting,
 //! the frame camera, the depth shift's cached near and the GPU snapshot; `shadow` admits the
 //! hidden third-person root into the shadow culls in first person and counts the cascade
-//! registrations of the body's skins. `report <label>` writes the `PASS`/`FAIL` lines and a
-//! `summary camera <label>` line `scripts/verify.ps1 -Suite camera` reads; `off` ends every mode.
+//! registrations of the body's skins. The state step also records the furniture camera's fields the
+//! first time it is current, for `report furniture` after the player sits down. `report <label>`
+//! writes the `PASS`/`FAIL` lines and a `summary camera <label>` line `scripts/verify.ps1 -Suite
+//! camera` reads; `off` ends every mode.
 
 use core::ffi::CStr;
 use std::fs::File;
@@ -81,6 +83,19 @@ static LOCAL_REGISTRATIONS: AtomicU32 = AtomicU32::new(0);
 static PREPASS_REGISTRATIONS: AtomicU32 = AtomicU32::new(0);
 static REPLAYS: AtomicU32 = AtomicU32::new(0);
 static REPLAYS_UNSKIPPED: AtomicU32 = AtomicU32::new(0);
+/// State steps with the furniture camera current, and its fields at the first of them.
+static FURNITURE_STEPS: AtomicU32 = AtomicU32::new(0);
+static FURNITURE: Mutex<Option<Furniture>> = Mutex::new(None);
+
+#[derive(Clone, Copy, Debug)]
+struct Furniture {
+    zoom: f32,
+    pitch: f32,
+    heading: f32,
+    yaw_offset: f32,
+    keep_after_sit_enter: u8,
+    follow_heading: u8,
+}
 
 macro_rules! log {
     ($($arg:tt) => {
@@ -158,6 +173,11 @@ unsafe extern "C" fn state_step(camera: *mut sre::TESCamera) {
     let Some(root) = pc.camera_root() else { return };
     STEPS.fetch_add(1, Ordering::Relaxed);
     FIRST_PERSON.store(first_person(pc), Ordering::Relaxed);
+    if let Some(f) = pc.current_state().and_then(TESCameraStateExt::as_furniture)
+        && FURNITURE_STEPS.fetch_add(1, Ordering::Relaxed) == 0
+    {
+        *FURNITURE.lock().unwrap() = Some(Furniture { zoom: f.zoom, pitch: f.pitch, heading: f.heading, yaw_offset: f.yawOffset, keep_after_sit_enter: f.keepAfterSitEnter, follow_heading: f.followHeading });
+    }
     let third = player.loaded_data().and_then(|d| d.node3_d());
     THIRD_ROOT.store(third.map_or(core::ptr::null_mut(), |r| core::ptr::from_ref::<NiAVObject>(r).cast_mut()), Ordering::Release);
     let fov = WORLD_FOV_TARGET.load(Ordering::Relaxed);
@@ -387,6 +407,18 @@ fn report(label: &str) {
             checks.push(("cascades", check(cascades[0] > 0 && cascades[1] > 0, format!("body skins registered into cascade 0 {} and cascade 1 {} times, focus {}, local {}; replays {} ({} with the skip lifted, exception {})", cascades[0], cascades[1], FOCUS_REGISTRATIONS.load(Ordering::Relaxed), LOCAL_REGISTRATIONS.load(Ordering::Relaxed), REPLAYS.load(Ordering::Relaxed), REPLAYS_UNSKIPPED.load(Ordering::Relaxed), REPLAY_EXCEPTION.load(Ordering::Relaxed)))));
             checks.push(("receivers", check(!skins.is_empty() && skins.iter().all(|(_, m)| m.is_some_and(|m| m & 3 == 3)), format!("skins (lastRenderPassState, receiver mask) {skins:x?}: the cascade bits stay set while the main view never registers the skins"))));
             format!("camera-demo shadow: admitted {} cascade registrations {:?} main view {}", ADMITTED.load(Ordering::Relaxed), cascades, BODY_SHOWN_TO_CAMERA.load(Ordering::Relaxed))
+        }
+        "furniture" => {
+            let steps = FURNITURE_STEPS.load(Ordering::Relaxed);
+            let seen = *FURNITURE.lock().unwrap();
+            let now = PlayerCamera::singleton().and_then(PlayerCamera::state);
+            checks.push(("current", check(steps > 0, format!("furniture camera current in {steps} state steps"))));
+            checks.push(("fields", check(seen.is_some_and(|f| f.zoom > 0.0 && f.pitch > 0.0 && f.pitch < core::f32::consts::FRAC_PI_2 && f.keep_after_sit_enter == 0 && f.follow_heading == 0), format!("at the first step {seen:?}"))));
+            checks.push(("popped", check(now.is_some_and(|s| s != CameraState::Furniture), format!("state after sitting {now:?}"))));
+            match seen {
+                Some(f) => format!("camera-demo furniture: steps {steps} zoom {:.4} pitch {:.4} heading {:.4} yaw offset {:.4} keep {} follow {}", f.zoom, f.pitch, f.heading, f.yaw_offset, f.keep_after_sit_enter, f.follow_heading),
+                None => "camera-demo furniture: never current".into(),
+            }
         }
         _ => format!("camera-demo: unknown report {label}"),
     };

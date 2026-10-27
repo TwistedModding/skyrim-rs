@@ -1,7 +1,8 @@
 //! The player camera (subsystem passes 6 and 12): the two per-frame hook points a camera mod
 //! places the camera from, the frame time and the field of view the engine keeps as raw globals,
 //! and what the generated `PlayerCamera` and `TESCameraState` methods leave `unsafe`: the 13 state
-//! objects by [`CameraState`], the typed state views and the rotation and translation a state computed.
+//! objects by [`CameraState`], the typed state views (third person, first person, the free camera and
+//! the furniture camera) and the rotation and translation a state computed.
 //!
 //! The camera is updated on the main thread once per frame (`Main::UpdatePlayer` →
 //! `PlayerCharacter::UpdateCamera` → `PlayerCamera::Update` → `TESCamera::Update` → the state's
@@ -13,11 +14,15 @@
 //! and the cached position. [`hook_update`] is the entry of `TESCamera::Update` and also sees the
 //! map cameras. Fields a state's update re-reads (zoom, FOV, override bytes) are written with
 //! [`crate::store`] on the main thread, from the state-step detour at the latest.
+//!
+//! The furniture camera (state 5, `FurnitureCameraState`) is pushed when the player activates a
+//! chair or a bed and popped by the sit- or bed-enter animation event unless `keepAfterSitEnter` is
+//! set, so it is current for the approach only; a crafting station keeps the third-person camera.
 
 use core::ffi::c_void;
 
 use sre::raw::{fns, vtables};
-use sre::{CameraState, FirstPersonState, FreeCameraState, NiPoint3, NiQuaternion, PlayerCamera, TESCameraState, ThirdPersonState};
+use sre::{CameraState, FirstPersonState, FreeCameraState, FurnitureCameraState, NiPoint3, NiQuaternion, PlayerCamera, TESCameraState, ThirdPersonState};
 
 pub use vtables::TESCamera_vtable_Update as CameraUpdateFn;
 
@@ -206,6 +211,8 @@ pub trait TESCameraStateExt {
     fn as_first_person(&self) -> Option<&FirstPersonState>;
     /// The state as the free camera when its id is 3.
     fn as_free(&self) -> Option<&FreeCameraState>;
+    /// The state as the furniture camera when its id is 5.
+    fn as_furniture(&self) -> Option<&FurnitureCameraState>;
 }
 
 impl TESCameraStateExt for TESCameraState {
@@ -231,5 +238,9 @@ impl TESCameraStateExt for TESCameraState {
 
     fn as_free(&self) -> Option<&FreeCameraState> {
         (CameraState::from_u32(self.id) == Some(CameraState::Free)).then(|| unsafe { &*core::ptr::from_ref(self).cast::<FreeCameraState>() })
+    }
+
+    fn as_furniture(&self) -> Option<&FurnitureCameraState> {
+        (CameraState::from_u32(self.id) == Some(CameraState::Furniture)).then(|| unsafe { &*core::ptr::from_ref(self).cast::<FurnitureCameraState>() })
     }
 }
