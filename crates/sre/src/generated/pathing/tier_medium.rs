@@ -10,7 +10,7 @@ impl crate::MovementAgentActorAvoider {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_actor_avoidance_vfunc_1(&self, param_1: f32) -> u8 { unsafe { function!(92196, (&Self, f32) -> u8)(self, param_1) } }
+    pub unsafe fn i_movement_query_actor_avoidance_vfunc_1(&self, param_1: f32) -> u8 { unsafe { function!(92196, (*const Self, f32) -> u8)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::MovementMessageJump {
@@ -20,7 +20,7 @@ impl crate::MovementMessageJump {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(92092, (&Self, f32) -> *mut Self)(self, param_1) } }
+    pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(92092, (*const Self, f32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::PathingRequestFlyOrbit {
@@ -30,7 +30,7 @@ impl crate::PathingRequestFlyOrbit {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(31351, (&Self, f32) -> *mut Self)(self, param_1) } }
+    pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(31351, (*const Self, f32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
 }
 
 /// `PathMatchesHashKeysWithWildcard` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 69259, rva 0xeb71f0).

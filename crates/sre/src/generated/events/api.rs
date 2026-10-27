@@ -23,13 +23,13 @@ impl crate::BSFixedString {
     /// Semantic, events pass, high; ledger semantic evidence, name high; id 69166, rva 0xeb11e0.
     /// `BSFixedString* (BSFixedString* this, const BSFixedString* other)`
     #[inline]
-    pub fn assign(&self, other: &Self) -> Option<&'static Self> { unsafe { function!(69166, (&Self, &Self) -> Option<&'static Self>)(self, other) } }
+    pub fn assign(&self, other: &Self) -> Option<&'static Self> { unsafe { function!(69166, (*const Self, *const Self) -> Option<&'static Self>)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `BSFixedString::copy`: copies the pointer and adds a reference (unless the count is pinned at 0x7fff)
     ///
     /// Semantic, events pass, high; ledger semantic evidence, name high; id 69162, rva 0xeb1040.
     /// `BSFixedString* (BSFixedString* this, const BSFixedString* other)`
     #[inline]
-    pub fn copy(&self, other: &Self) -> Option<&'static Self> { unsafe { function!(69162, (&Self, &Self) -> Option<&'static Self>)(self, other) } }
+    pub fn copy(&self, other: &Self) -> Option<&'static Self> { unsafe { function!(69162, (*const Self, *const Self) -> Option<&'static Self>)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `BSFixedString::ctor`: interns text: 16-bit case-folded CRC, then BSStringPool::GetEntry; stores entry+0x18 (null for a null text)
     ///
     /// Semantic, events pass, high; ledger semantic evidence, name high; id 69161, rva 0xeb0f90.
@@ -38,13 +38,13 @@ impl crate::BSFixedString {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, text: *const c_char) -> *mut Self { unsafe { function!(69161, (&Self, *const c_char) -> *mut Self)(self, text) } }
+    pub unsafe fn ctor(&self, text: *const c_char) -> *mut Self { unsafe { function!(69161, (*const Self, *const c_char) -> *mut Self)(core::ptr::from_ref(self), text) } }
     /// `BSFixedString::release`: drops one reference through BSStringPool::Entry::release
     ///
     /// Semantic, events pass, high; ledger semantic evidence, name high; id 69164, rva 0xeb1100.
     /// `void (BSFixedString* this)`
     #[inline]
-    pub fn release(&self) { unsafe { function!(69164, (&Self))(self) } }
+    pub fn release(&self) { unsafe { function!(69164, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSSpinLock {
@@ -65,7 +65,7 @@ impl crate::BSSpinLock {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn lock_timed(&self, timeout: u32) -> u32 { unsafe { function!(13663, (&Self, u32) -> u32)(self, timeout) } }
+    pub unsafe fn lock_timed(&self, timeout: u32) -> u32 { unsafe { function!(13663, (*const Self, u32) -> u32)(core::ptr::from_ref(self), timeout) } }
 }
 
 impl crate::BSStringPool__Entry {
@@ -86,19 +86,19 @@ impl crate::ButtonEvent {
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68679, rva 0xcfafe0.
     /// `ButtonEvent* (ButtonEvent* this, const ButtonEvent* other)`
     #[inline]
-    pub fn copy_ctor(&self, other: &Self) -> Option<&'static Self> { unsafe { function!(68679, (&Self, &Self) -> Option<&'static Self>)(self, other) } }
+    pub fn copy_ctor(&self, other: &Self) -> Option<&'static Self> { unsafe { function!(68679, (*const Self, *const Self) -> Option<&'static Self>)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `ButtonEvent::Init`: fill a stand-alone ButtonEvent (menus map one through ProcessInputEventMappings)
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68680, rva 0xcfb060.
     /// `void (ButtonEvent* this, u32 device, u32 idCode, float value, float heldDownSecs)`
     #[inline]
-    pub fn init(&self, device: u32, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68680, (&Self, u32, u32, f32, f32))(self, device, idCode, value, heldDownSecs) } }
+    pub fn init(&self, device: u32, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68680, (*const Self, u32, u32, f32, f32))(core::ptr::from_ref(self), device, idCode, value, heldDownSecs) } }
     /// `ButtonEvent::IsPressed`: value != 0 && heldDownSecs == 0
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68601, rva 0xcf2e80.
     /// `bool (const ButtonEvent* this)`
     #[inline]
-    pub fn is_pressed(&self) -> bool { unsafe { function!(68601, (&Self) -> bool)(self) } }
+    pub fn is_pressed(&self) -> bool { unsafe { function!(68601, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::EventSourceHolder_Input {
@@ -115,7 +115,7 @@ impl crate::EventSourceHolder_Input {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn create_devices(&self) { unsafe { function!(68630, (&Self))(self) } }
+    pub unsafe fn create_devices(&self) { unsafe { function!(68630, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::DestroyDevices`: slot 3 + delete per device (no static caller)
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 524133, rva 0xcf99a0.
@@ -124,7 +124,7 @@ impl crate::EventSourceHolder_Input {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn destroy_devices(&self) { unsafe { function!(524133, (&Self))(self) } }
+    pub unsafe fn destroy_devices(&self) { unsafe { function!(524133, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::GetKeyCode`: device[slot] slot 6
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68619, rva 0xcf9700.
@@ -133,13 +133,13 @@ impl crate::EventSourceHolder_Input {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_key_code(&self, slot: i32, id: u32, out: *mut u32) -> bool { unsafe { function!(68619, (&Self, i32, u32, *mut u32) -> bool)(self, slot, id, out) } }
+    pub unsafe fn get_key_code(&self, slot: i32, id: u32, out: *mut u32) -> bool { unsafe { function!(68619, (*const Self, i32, u32, *mut u32) -> bool)(core::ptr::from_ref(self), slot, id, out) } }
     /// `EventSourceHolder_Input::GetKeyIDByName`: device[slot] slot 5, -1 when empty
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 443395, rva 0xcf9740.
     /// `u32 (EventSourceHolder_Input* this, int slot, const BSFixedString* name)`
     #[inline]
-    pub fn get_key_id_by_name(&self, slot: i32, name: &crate::BSFixedString) -> u32 { unsafe { function!(443395, (&Self, i32, &crate::BSFixedString) -> u32)(self, slot, name) } }
+    pub fn get_key_id_by_name(&self, slot: i32, name: &crate::BSFixedString) -> u32 { unsafe { function!(443395, (*const Self, i32, *const crate::BSFixedString) -> u32)(core::ptr::from_ref(self), slot, core::ptr::from_ref(name)) } }
     /// `EventSourceHolder_Input::GetKeyName`: device[slot] slot 4
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68618, rva 0xcf96c0.
@@ -148,31 +148,31 @@ impl crate::EventSourceHolder_Input {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_key_name(&self, slot: i32, id: u32, out: *mut crate::BSFixedString) -> bool { unsafe { function!(68618, (&Self, i32, u32, *mut crate::BSFixedString) -> bool)(self, slot, id, out) } }
+    pub unsafe fn get_key_name(&self, slot: i32, id: u32, out: *mut crate::BSFixedString) -> bool { unsafe { function!(68618, (*const Self, i32, u32, *mut crate::BSFixedString) -> bool)(core::ptr::from_ref(self), slot, id, out) } }
     /// `EventSourceHolder_Input::GetVirtualKeyboard`: +0x88
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 443397, rva 0xcf98b0.
     /// `BSWin32VirtualKeyboardDevice* (EventSourceHolder_Input* this)`
     #[inline]
-    pub fn get_virtual_keyboard(&self) -> Option<&'static crate::BSWin32VirtualKeyboardDevice> { unsafe { function!(443397, (&Self) -> Option<&'static crate::BSWin32VirtualKeyboardDevice>)(self) } }
+    pub fn get_virtual_keyboard(&self) -> Option<&'static crate::BSWin32VirtualKeyboardDevice> { unsafe { function!(443397, (*const Self) -> Option<&'static crate::BSWin32VirtualKeyboardDevice>)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::IsBackgroundMouse`: mouse && mouse+0x70
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68620, rva 0xcf9770.
     /// `bool (EventSourceHolder_Input* this)`
     #[inline]
-    pub fn is_background_mouse(&self) -> bool { unsafe { function!(68620, (&Self) -> bool)(self) } }
+    pub fn is_background_mouse(&self) -> bool { unsafe { function!(68620, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::IsGamepadConnected`: gamepad handler slot 7
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 524132, rva 0xcf9840.
     /// `bool (EventSourceHolder_Input* this)`
     #[inline]
-    pub fn is_gamepad_connected(&self) -> bool { unsafe { function!(524132, (&Self) -> bool)(self) } }
+    pub fn is_gamepad_connected(&self) -> bool { unsafe { function!(524132, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::IsUsingGamepad`: BSSystemUtility+0x208 or IsGamepadConnected (0xcf97f0 is an identical copy for Papyrus Game.UsingGamepad)
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 443396, rva 0xcf97b0.
     /// `bool (EventSourceHolder_Input* this)`
     #[inline]
-    pub fn is_using_gamepad(&self) -> bool { unsafe { function!(443396, (&Self) -> bool)(self) } }
+    pub fn is_using_gamepad(&self) -> bool { unsafe { function!(443396, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::NotifySinks`: each sink's slot 1 (sink, head, source) in registration order; stops at the first non-zero return; all sinks get the same pointer to Update's local head
     ///
     /// Semantic, input pass, high; ledger runtime evidence, name high; id 68655, rva 0xcfa650.
@@ -181,31 +181,31 @@ impl crate::EventSourceHolder_Input {
     /// # Safety
     /// `head` must point to what the engine expects.
     #[inline]
-    pub unsafe fn notify_sinks(&self, head: *mut *mut crate::InputEvent) { unsafe { function!(68655, (&Self, *mut *mut crate::InputEvent))(self, head) } }
+    pub unsafe fn notify_sinks(&self, head: *mut *mut crate::InputEvent) { unsafe { function!(68655, (*const Self, *mut *mut crate::InputEvent))(core::ptr::from_ref(self), head) } }
     /// `EventSourceHolder_Input::ReinitializeMouse`: mouse slot 9
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68621, rva 0xcf9790.
     /// `void (EventSourceHolder_Input* this)`
     #[inline]
-    pub fn reinitialize_mouse(&self) { unsafe { function!(68621, (&Self))(self) } }
+    pub fn reinitialize_mouse(&self) { unsafe { function!(68621, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::ResetDevices`: reset the queue, slot 8 on each device
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68628, rva 0xcf98d0.
     /// `void (EventSourceHolder_Input* this)`
     #[inline]
-    pub fn reset_devices(&self) { unsafe { function!(68628, (&Self))(self) } }
+    pub fn reset_devices(&self) { unsafe { function!(68628, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::Shutdown`: destroy the pools, each device (slot 3, delete), the DirectInput wrapper, the sources
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 524130, rva 0xcf9430.
     /// `void (EventSourceHolder_Input* this)`
     #[inline]
-    pub fn shutdown(&self) { unsafe { function!(524130, (&Self))(self) } }
+    pub fn shutdown(&self) { unsafe { function!(524130, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::Update`: polls the six devices, dispatches the frame's InputEvent list through the source at +0 and the remote gamepad event through +0x98
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 68617, rva 0xcf95f0.
     /// `void (EventSourceHolder_Input* this, float delta)`
     #[inline]
-    pub fn update(&self, delta: f32) { unsafe { function!(68617, (&Self, f32))(self, delta) } }
+    pub fn update(&self, delta: f32) { unsafe { function!(68617, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `EventSourceHolder_Input::ctor`: sources, the queue pools (once), the Scaleform input queue 0x3210e30, six devices (CreateInputDevice + slot 1), User+0x129 = using gamepad
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 524129, rva 0xcf90c0.
@@ -214,7 +214,7 @@ impl crate::EventSourceHolder_Input {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(524129, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(524129, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_Input::gamepadHandler` at +0x70: device slot 2: owner of the current pad device
     ///
     /// Semantic field, events pass, high; `None` while the pointer is null.
@@ -243,7 +243,7 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// Semantic, ui pass, high; ledger runtime evidence, name high; id 82083, rva 0x116aa10.
     /// `void (EventSourceHolder_MenuOpenClose* this)`
     #[inline]
-    pub fn advance_menus(&self) { unsafe { function!(82083, (&Self))(self) } }
+    pub fn advance_menus(&self) { unsafe { function!(82083, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::AllOpenMenusAllowKinect`: count of open flag-0x8000 menus (+0x174) == stack size
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82078, rva 0x1169810.
@@ -252,7 +252,7 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn all_open_menus_allow_kinect(&self) -> bool { unsafe { function!(82078, (&Self) -> bool)(self) } }
+    pub unsafe fn all_open_menus_allow_kinect(&self) -> bool { unsafe { function!(82078, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::AllOpenMenusAllowSaving`: +0x16c == stack size
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82077, rva 0x1169700.
@@ -261,19 +261,19 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn all_open_menus_allow_saving(&self) -> bool { unsafe { function!(82077, (&Self) -> bool)(self) } }
+    pub unsafe fn all_open_menus_allow_saving(&self) -> bool { unsafe { function!(82077, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::AnyOpenMenuHasFlag20`: true if an open menu has flag 0x20
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82075, rva 0x1169590.
     /// `bool (EventSourceHolder_MenuOpenClose* this)`
     #[inline]
-    pub fn any_open_menu_has_flag20(&self) -> bool { unsafe { function!(82075, (&Self) -> bool)(self) } }
+    pub fn any_open_menu_has_flag20(&self) -> bool { unsafe { function!(82075, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::CloseAllMenus`: sets +0x1c1 and queues hide (3) with BSUIMessageData 'Closing All Menus' for every registered menu that is open or has a show queued, except HUD Menu, Debug Text Menu and Kinect Menu
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82088, rva 0x116b3b0.
     /// `void (EventSourceHolder_MenuOpenClose* this)`
     #[inline]
-    pub fn close_all_menus(&self) { unsafe { function!(82088, (&Self))(self) } }
+    pub fn close_all_menus(&self) { unsafe { function!(82088, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::FindInStack`: finds a menu in the stack
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82096, rva 0x116ba60.
@@ -282,7 +282,7 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// `outSlot` must point to what the engine expects.
     #[inline]
-    pub unsafe fn find_in_stack(&self, menu: *mut crate::IMenu, outSlot: *mut *mut *mut crate::IMenu) -> bool { unsafe { function!(82096, (&Self, *mut crate::IMenu, *mut *mut *mut crate::IMenu) -> bool)(self, menu, outSlot) } }
+    pub unsafe fn find_in_stack(&self, menu: *mut crate::IMenu, outSlot: *mut *mut *mut crate::IMenu) -> bool { unsafe { function!(82096, (*const Self, *mut crate::IMenu, *mut *mut *mut crate::IMenu) -> bool)(core::ptr::from_ref(self), menu, outSlot) } }
     /// `EventSourceHolder_MenuOpenClose::GetTopMenuBelowDepth`: topmost open menu whose depth byte (+0x18) < depthLimit (AddRef'd into *out)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82081, rva 0x1169b40.
@@ -291,13 +291,13 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_top_menu_below_depth(&self, out: *mut *mut crate::IMenu, depthLimit: u32) { unsafe { function!(82081, (&Self, *mut *mut crate::IMenu, u32))(self, out, depthLimit) } }
+    pub unsafe fn get_top_menu_below_depth(&self, out: *mut *mut crate::IMenu, depthLimit: u32) { unsafe { function!(82081, (*const Self, *mut *mut crate::IMenu, u32))(core::ptr::from_ref(self), out, depthLimit) } }
     /// `EventSourceHolder_MenuOpenClose::IsMenuOpen`: true when the menu exists in the table and its flag 0x40 (on the stack) is set
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82074, rva 0x1169530.
     /// `bool (EventSourceHolder_MenuOpenClose* this, const BSFixedString* menuName)`
     #[inline]
-    pub fn is_menu_open(&self, menuName: &crate::BSFixedString) -> bool { unsafe { function!(82074, (&Self, &crate::BSFixedString) -> bool)(self, menuName) } }
+    pub fn is_menu_open(&self, menuName: &crate::BSFixedString) -> bool { unsafe { function!(82074, (*const Self, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(menuName)) } }
     /// `EventSourceHolder_MenuOpenClose::IsUI3DSceneMenuOpen`: count of open flag-0x80 menus (+0x168) != 0
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82076, rva 0x11696e0.
@@ -306,7 +306,7 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn is_ui3_d_scene_menu_open(&self) -> bool { unsafe { function!(82076, (&Self) -> bool)(self) } }
+    pub unsafe fn is_ui3_d_scene_menu_open(&self) -> bool { unsafe { function!(82076, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::NotifyMenusSlot8`: calls slot 8 of every open menu; MenuControls::vfunc_1 calls it for an input event of type 4 with id 2
     ///
     /// Semantic, ui pass, low; ledger semantic evidence, name low; id 82087, rva 0x116b270.
@@ -315,7 +315,7 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn notify_menus_slot8(&self) { unsafe { function!(82087, (&Self))(self) } }
+    pub unsafe fn notify_menus_slot8(&self) { unsafe { function!(82087, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::PreRenderMenus`: calls slot 7 of every open menu with flag 0x1000, from RenderFrame before the world draw
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82085, rva 0x116b080.
@@ -324,7 +324,7 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn pre_render_menus(&self) { unsafe { function!(82085, (&Self))(self) } }
+    pub unsafe fn pre_render_menus(&self) { unsafe { function!(82085, (*const Self))(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::Register`: registers (or replaces) a menu's creator: table[name] = {menu = null, create}
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82086, rva 0x116b200.
@@ -333,13 +333,13 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// `menuName`, `create` must point to what the engine expects.
     #[inline]
-    pub unsafe fn register(&self, menuName: *const c_char, create: *const c_void) { unsafe { function!(82086, (&Self, *const c_char, *const c_void))(self, menuName, create) } }
+    pub unsafe fn register(&self, menuName: *const c_char, create: *const c_void) { unsafe { function!(82086, (*const Self, *const c_char, *const c_void))(core::ptr::from_ref(self), menuName, create) } }
     /// `EventSourceHolder_MenuOpenClose::UnloadMenu`: drops the live menu from the table (creator kept), after releasing its callback processor at IMenu+0x28
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82095, rva 0x116b9c0.
     /// `void (EventSourceHolder_MenuOpenClose* this, const BSFixedString* menuName)`
     #[inline]
-    pub fn unload_menu(&self, menuName: &crate::BSFixedString) { unsafe { function!(82095, (&Self, &crate::BSFixedString))(self, menuName) } }
+    pub fn unload_menu(&self, menuName: &crate::BSFixedString) { unsafe { function!(82095, (*const Self, *const crate::BSFixedString))(core::ptr::from_ref(self), core::ptr::from_ref(menuName)) } }
     /// `EventSourceHolder_MenuOpenClose::ctor`: constructs the UI singleton in place, stores g ptr, creates the UI message queue static and the object behind 0x3210e38
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82072, rva 0x1169070.
@@ -348,7 +348,7 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(82072, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(82072, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `EventSourceHolder_MenuOpenClose::dtor`: releases every table menu's callback processor, destroys timer, table, stack and the three sources, clears the g ptr
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82073, rva 0x11693c0.
@@ -357,13 +357,13 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(82073, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(82073, (*const Self))(core::ptr::from_ref(self)) } }
     /// `RenderMenuStack`: (pass 6) draws the open menus: from the topmost menu with flag 0x200 (or the bottom) upward, slot 6 of each; nothing when +0x1c0 is 0
     ///
     /// Semantic, ui pass, high; ledger runtime evidence, name high; id 82084, rva 0x116ac80.
     /// `void (EventSourceHolder_MenuOpenClose* this)`
     #[inline]
-    pub fn render_menu_stack(&self) { unsafe { function!(82084, (&Self))(self) } }
+    pub fn render_menu_stack(&self) { unsafe { function!(82084, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::EventSourceHolder_TES {
@@ -381,7 +381,7 @@ impl crate::EventSourceHolder_TES {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(13458, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(13458, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::InputEvent {
@@ -390,13 +390,13 @@ impl crate::InputEvent {
     /// Semantic, events pass, high; called through the object's vtable.
     /// `bool (InputEvent* this)`
     #[inline]
-    pub fn has_id_code(&self) -> bool { unsafe { virtual_function!(self, 1, (&Self) -> bool)(self) } }
+    pub fn has_id_code(&self) -> bool { unsafe { virtual_function!(self, 1, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `InputEvent::QUserEvent`, vtable slot 2: the empty string here; IDEvent 0x7b4830 returns this+0x18
     ///
     /// Semantic, events pass, high; called through the object's vtable.
     /// `const BSFixedString* (InputEvent* this)`
     #[inline]
-    pub fn q_user_event(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (&Self) -> Option<&'static crate::BSFixedString>)(self) } }
+    pub fn q_user_event(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TESActivateEvent {

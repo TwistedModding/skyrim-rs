@@ -10,7 +10,7 @@ impl crate::GFxExternalInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82655, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82655, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::GFxFileOpenerBase {
@@ -20,7 +20,7 @@ impl crate::GFxFileOpenerBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82435, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82435, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::GFxImageLoader {
@@ -30,7 +30,7 @@ impl crate::GFxImageLoader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84485, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84485, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::GFxLog {
@@ -40,7 +40,7 @@ impl crate::GFxLog {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::GFxLogBase_GFxLog {
@@ -50,7 +50,7 @@ impl crate::GFxLogBase_GFxLog {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::GFxState {
@@ -60,77 +60,77 @@ impl crate::GFxState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84575, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84575, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 84618, rva 0xe74350).
     /// `GFxState * dtor(GFxState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84618, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84618, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 84634, rva 0xdf2620).
     /// `GFxState * dtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84634, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_3(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84634, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 84676, rva 0xe2e9f0).
     /// `GFxState * dtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84676, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_4(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(84676, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 85065, rva 0xe77f20).
     /// `GFxState * dtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(85065, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_5(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(85065, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 85586, rva 0xd8eb20).
     /// `GFxState * dtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(85586, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_6(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(85586, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 85588, rva 0xd8ec90).
     /// `GFxState * dtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(85588, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_7(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(85588, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 86773, rva 0xdd3780).
     /// `GFxState * dtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(86773, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_8(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(86773, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 87294, rva 0xdf16d0).
     /// `GFxState * dtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(87294, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_9(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(87294, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 524190, rva 0xe6e020).
     /// `GFxState * dtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(524190, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_10(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(524190, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GFxState::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 524162, rva 0xd8eab0).
     /// `GFxState * vdtor(GFxState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(524162, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(524162, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::GFxTranslator {
@@ -140,7 +140,7 @@ impl crate::GFxTranslator {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82370, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82370, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::GFxZlibSupport {
@@ -150,7 +150,7 @@ impl crate::GFxZlibSupport {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82371, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82371, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::GFxZlibSupportBase {
@@ -160,7 +160,7 @@ impl crate::GFxZlibSupportBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82372, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82372, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::ScaleformFile__MemoryFile {
@@ -170,7 +170,7 @@ impl crate::ScaleformFile__MemoryFile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(82437, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(82437, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 /// `GFxMovieRoot::Display` (decompiler signature, tier low; ledger string evidence, name medium; id 87188, rva 0xdea0f0).

@@ -10,14 +10,14 @@ impl crate::AutoVanityState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50708, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50708, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoVanityState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50866, rva 0x8fc4b0).
     /// `AutoVanityState * Destroy(AutoVanityState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50866, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50866, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoVanityState::End` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50710, rva 0x8f3980).
     /// `undefined End(void)`
     ///
@@ -31,21 +31,21 @@ impl crate::AutoVanityState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50711, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50711, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `AutoVanityState::GetTranslation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50712, rva 0x8f39c0).
     /// `undefined GetTranslation(AutoVanityState * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_translation(&self, param_1: u64) -> u64 { unsafe { function!(50712, (&Self, u64) -> u64)(self, param_1) } }
+    pub unsafe fn get_translation(&self, param_1: u64) -> u64 { unsafe { function!(50712, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `AutoVanityState::Update` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50709, rva 0x8f3810).
     /// `undefined Update(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50709, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50709, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSEffectShaderProperty {
@@ -55,7 +55,7 @@ impl crate::BSEffectShaderProperty {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_binary(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(106865, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_binary(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(106865, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSEffectShaderProperty::vfunc_42_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 105541, rva 0x14e7f40).
     /// `undefined vfunc_42_sub0(longlong param_1, float param_2)`
     ///
@@ -72,14 +72,14 @@ impl crate::BSFadeNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn on_visible(&self, param_1: *mut i64) -> u64 { unsafe { function!(105485, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn on_visible(&self, param_1: *mut i64) -> u64 { unsafe { function!(105485, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSFadeNode::UpdateSelectedDownwardPass` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 105489, rva 0x14e6850).
     /// `undefined UpdateSelectedDownwardPass(BSFadeNode * this, float * param_1, uint param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update_selected_downward_pass(&self, param_1: *mut f32, param_2: u32) -> u64 { unsafe { function!(105489, (&Self, *mut f32, u32) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn update_selected_downward_pass(&self, param_1: *mut f32, param_2: u32) -> u64 { unsafe { function!(105489, (*const Self, *mut f32, u32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::BSLightingShader {
@@ -155,7 +155,7 @@ impl crate::BSLightingShaderMaterialBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(30124, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(30124, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSShader {
@@ -182,28 +182,28 @@ impl crate::BleedoutCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50714, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50714, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BleedoutCameraState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50867, rva 0x8fc4f0).
     /// `BleedoutCameraState * Destroy(BleedoutCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50867, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50867, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BleedoutCameraState::End` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 50715, rva 0x8f3cd0).
     /// `undefined End(BleedoutCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn end(&self) -> u64 { unsafe { function!(50715, (&Self) -> u64)(self) } }
+    pub unsafe fn end(&self) -> u64 { unsafe { function!(50715, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BleedoutCameraState::Update` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50716, rva 0x8f3d40).
     /// `undefined Update(BleedoutCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50716, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50716, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::DragonCameraState {
@@ -213,70 +213,70 @@ impl crate::DragonCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self) -> u64 { unsafe { function!(33108, (&Self) -> u64)(self) } }
+    pub unsafe fn begin(&self) -> u64 { unsafe { function!(33108, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `DragonCameraState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33125, rva 0x55d460).
     /// `DragonCameraState * Destroy(DragonCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(33125, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(33125, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `DragonCameraState::End` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33109, rva 0x55c770).
     /// `undefined End(DragonCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn end(&self) -> u64 { unsafe { function!(33109, (&Self) -> u64)(self) } }
+    pub unsafe fn end(&self) -> u64 { unsafe { function!(33109, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `DragonCameraState::IsFreeLookActive` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33110, rva 0x55c7a0).
     /// `ulonglong IsFreeLookActive(DragonCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn is_free_look_active(&self) -> u64 { unsafe { function!(33110, (&Self) -> u64)(self) } }
+    pub unsafe fn is_free_look_active(&self) -> u64 { unsafe { function!(33110, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `DragonCameraState::LoadGame` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33114, rva 0x55c980).
     /// `undefined LoadGame(DragonCameraState * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(33114, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(33114, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `DragonCameraState::ProcessLookInput` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33119, rva 0x55cc60).
     /// `undefined ProcessLookInput(DragonCameraState * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_look_input(&self, param_1: *mut u64) -> u64 { unsafe { function!(33119, (&Self, *mut u64) -> u64)(self, param_1) } }
+    pub unsafe fn process_look_input(&self, param_1: *mut u64) -> u64 { unsafe { function!(33119, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `DragonCameraState::ResetOffsets` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33118, rva 0x55cbc0).
     /// `undefined ResetOffsets(DragonCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn reset_offsets(&self) -> u64 { unsafe { function!(33118, (&Self) -> u64)(self) } }
+    pub unsafe fn reset_offsets(&self) -> u64 { unsafe { function!(33118, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `DragonCameraState::Revert` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33115, rva 0x55cab0).
     /// `undefined Revert(DragonCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn revert(&self) -> u64 { unsafe { function!(33115, (&Self) -> u64)(self) } }
+    pub unsafe fn revert(&self) -> u64 { unsafe { function!(33115, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `DragonCameraState::SaveGame` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33113, rva 0x55c8a0).
     /// `undefined SaveGame(DragonCameraState * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(33113, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(33113, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `DragonCameraState::SetCombatOffsets` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33116, rva 0x55cb50).
     /// `undefined SetCombatOffsets(DragonCameraState * this, char param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn set_combat_offsets(&self, param_1: c_char) -> u64 { unsafe { function!(33116, (&Self, c_char) -> u64)(self, param_1) } }
+    pub unsafe fn set_combat_offsets(&self, param_1: c_char) -> u64 { unsafe { function!(33116, (*const Self, c_char) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `DragonCameraState::SetFreeRotationMode` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33111, rva 0x55c7e0).
     /// `undefined SetFreeRotationMode(void)`
     ///
@@ -290,14 +290,14 @@ impl crate::DragonCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn set_target_handle(&self, param_1: *mut u32) -> u64 { unsafe { function!(33117, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn set_target_handle(&self, param_1: *mut u32) -> u64 { unsafe { function!(33117, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `DragonCameraState::UpdateRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33120, rva 0x55cdf0).
     /// `undefined UpdateRotation(DragonCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update_rotation(&self) -> u64 { unsafe { function!(33120, (&Self) -> u64)(self) } }
+    pub unsafe fn update_rotation(&self) -> u64 { unsafe { function!(33120, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::FirstPersonState {
@@ -307,63 +307,63 @@ impl crate::FirstPersonState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50722, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50722, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `FirstPersonState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50868, rva 0x8fc570).
     /// `FirstPersonState * Destroy(FirstPersonState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50868, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50868, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `FirstPersonState::End` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50723, rva 0x8f4770).
     /// `undefined End(FirstPersonState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn end(&self) -> u64 { unsafe { function!(50723, (&Self) -> u64)(self) } }
+    pub unsafe fn end(&self) -> u64 { unsafe { function!(50723, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `FirstPersonState::GetRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50725, rva 0x8f51b0).
     /// `undefined GetRotation(FirstPersonState * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50725, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50725, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FirstPersonState::GetTranslation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50726, rva 0x8f5310).
     /// `undefined GetTranslation(FirstPersonState * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50726, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50726, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FirstPersonState::LoadGame` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50733, rva 0x8f56a0).
     /// `undefined LoadGame(FirstPersonState * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut i64) -> u64 { unsafe { function!(50733, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: *mut i64) -> u64 { unsafe { function!(50733, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FirstPersonState::Revert` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50734, rva 0x8f5740).
     /// `undefined Revert(FirstPersonState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn revert(&self) -> u64 { unsafe { function!(50734, (&Self) -> u64)(self) } }
+    pub unsafe fn revert(&self) -> u64 { unsafe { function!(50734, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `FirstPersonState::SaveGame` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50732, rva 0x8f55f0).
     /// `undefined SaveGame(FirstPersonState * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(50732, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(50732, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FirstPersonState::Update` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 50724, rva 0x8f47a0).
     /// `undefined Update(FirstPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50724, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50724, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::FreeCameraState {
@@ -373,42 +373,42 @@ impl crate::FreeCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self) -> u64 { unsafe { function!(50741, (&Self) -> u64)(self) } }
+    pub unsafe fn begin(&self) -> u64 { unsafe { function!(50741, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `FreeCameraState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50869, rva 0x8fc5b0).
     /// `FreeCameraState * Destroy(FreeCameraState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50869, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50869, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `FreeCameraState::End` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50742, rva 0x8f5ed0).
     /// `undefined End(FreeCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn end(&self) -> u64 { unsafe { function!(50742, (&Self) -> u64)(self) } }
+    pub unsafe fn end(&self) -> u64 { unsafe { function!(50742, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `FreeCameraState::GetRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50744, rva 0x8f6060).
     /// `undefined GetRotation(FreeCameraState * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50744, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50744, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FreeCameraState::GetTranslation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50745, rva 0x8f60a0).
     /// `undefined GetTranslation(FreeCameraState * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50745, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50745, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FreeCameraState::Update` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 50743, rva 0x8f5f50).
     /// `undefined Update(FreeCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50743, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50743, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::FurnitureCameraState {
@@ -418,42 +418,42 @@ impl crate::FurnitureCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50751, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50751, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `FurnitureCameraState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50870, rva 0x8fc5f0).
     /// `FurnitureCameraState * Destroy(FurnitureCameraState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50870, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50870, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `FurnitureCameraState::End` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50753, rva 0x8f6810).
     /// `undefined End(FurnitureCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn end(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50753, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn end(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50753, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `FurnitureCameraState::GetRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50754, rva 0x8f6890).
     /// `undefined GetRotation(FurnitureCameraState * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50754, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50754, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FurnitureCameraState::GetTranslation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50755, rva 0x8f6960).
     /// `undefined GetTranslation(FurnitureCameraState * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_translation(&self, param_1: u64) -> u64 { unsafe { function!(50755, (&Self, u64) -> u64)(self, param_1) } }
+    pub unsafe fn get_translation(&self, param_1: u64) -> u64 { unsafe { function!(50755, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FurnitureCameraState::Update` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50752, rva 0x8f66f0).
     /// `undefined Update(FurnitureCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50752, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50752, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::HorseCameraState {
@@ -463,70 +463,70 @@ impl crate::HorseCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50760, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50760, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `HorseCameraState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50774, rva 0x8f7650).
     /// `HorseCameraState * Destroy(HorseCameraState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50774, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50774, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `HorseCameraState::End` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50761, rva 0x8f6ce0).
     /// `undefined End(HorseCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn end(&self) -> u64 { unsafe { function!(50761, (&Self) -> u64)(self) } }
+    pub unsafe fn end(&self) -> u64 { unsafe { function!(50761, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `HorseCameraState::IsFreeLookActive` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50775, rva 0x8f76a0).
     /// `undefined8 IsFreeLookActive(HorseCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn is_free_look_active(&self) -> u64 { unsafe { function!(50775, (&Self) -> u64)(self) } }
+    pub unsafe fn is_free_look_active(&self) -> u64 { unsafe { function!(50775, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `HorseCameraState::LoadGame` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50765, rva 0x8f6eb0).
     /// `undefined LoadGame(HorseCameraState * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(50765, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(50765, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `HorseCameraState::ProcessLookInput` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50770, rva 0x8f71e0).
     /// `undefined ProcessLookInput(HorseCameraState * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_look_input(&self, param_1: *mut u64) -> u64 { unsafe { function!(50770, (&Self, *mut u64) -> u64)(self, param_1) } }
+    pub unsafe fn process_look_input(&self, param_1: *mut u64) -> u64 { unsafe { function!(50770, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `HorseCameraState::ResetOffsets` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 50769, rva 0x8f7110).
     /// `undefined ResetOffsets(HorseCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn reset_offsets(&self) -> u64 { unsafe { function!(50769, (&Self) -> u64)(self) } }
+    pub unsafe fn reset_offsets(&self) -> u64 { unsafe { function!(50769, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `HorseCameraState::Revert` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50766, rva 0x8f6fd0).
     /// `undefined Revert(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn revert(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50766, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn revert(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50766, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `HorseCameraState::SaveGame` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50764, rva 0x8f6dd0).
     /// `undefined SaveGame(HorseCameraState * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(50764, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(50764, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `HorseCameraState::SetCombatOffsets` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50767, rva 0x8f7010).
     /// `undefined SetCombatOffsets(HorseCameraState * this, char param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn set_combat_offsets(&self, param_1: c_char) -> u64 { unsafe { function!(50767, (&Self, c_char) -> u64)(self, param_1) } }
+    pub unsafe fn set_combat_offsets(&self, param_1: c_char) -> u64 { unsafe { function!(50767, (*const Self, c_char) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `HorseCameraState::SetFreeRotationMode` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50762, rva 0x8f6d10).
     /// `undefined SetFreeRotationMode(void)`
     ///
@@ -540,14 +540,14 @@ impl crate::HorseCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn set_target_handle(&self, param_1: *mut u32) -> u64 { unsafe { function!(50768, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn set_target_handle(&self, param_1: *mut u32) -> u64 { unsafe { function!(50768, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `HorseCameraState::UpdateRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50771, rva 0x8f7360).
     /// `undefined UpdateRotation(HorseCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update_rotation(&self) -> u64 { unsafe { function!(50771, (&Self) -> u64)(self) } }
+    pub unsafe fn update_rotation(&self) -> u64 { unsafe { function!(50771, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ImageSpaceEffectDepthOfField {
@@ -557,7 +557,7 @@ impl crate::ImageSpaceEffectDepthOfField {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn render(&self) -> u64 { unsafe { virtual_function!(self, 7, (&Self) -> u64)(self) } }
+    pub unsafe fn render(&self) -> u64 { unsafe { virtual_function!(self, 7, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ImageSpaceEffectDepthOfField::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 107393, rva 0x1551e30).
     /// `undefined ctor_sub0(ImageSpaceEffect * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -602,35 +602,35 @@ impl crate::IronSightsState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50777, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50777, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `IronSightsState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50871, rva 0x8fc630).
     /// `IronSightsState * Destroy(IronSightsState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50871, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50871, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `IronSightsState::GetRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50779, rva 0x8f7970).
     /// `undefined GetRotation(IronSightsState * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50779, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50779, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `IronSightsState::GetTranslation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50780, rva 0x8f79a0).
     /// `undefined GetTranslation(IronSightsState * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50780, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50780, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `IronSightsState::Update` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50778, rva 0x8f7700).
     /// `undefined Update(IronSightsState * this, undefined8 param_2, undefined4 param_3, undefined4 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_2: u64, param_3: u32, param_4: u32) -> u64 { unsafe { function!(50778, (&Self, u64, u32, u32) -> u64)(self, param_2, param_3, param_4) } }
+    pub unsafe fn update(&self, param_2: u64, param_3: u32, param_4: u32) -> u64 { unsafe { function!(50778, (*const Self, u64, u32, u32) -> u64)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
 }
 
 impl crate::NiCamera {
@@ -640,7 +640,7 @@ impl crate::NiCamera {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn create_clone(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70616, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn create_clone(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70616, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `NiCamera::GetRTTI` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70647, rva 0xef1a50).
     /// `TypeNode * GetRTTI(void)`
     ///
@@ -654,49 +654,49 @@ impl crate::NiCamera {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn is_equal(&self, param_1: i64) -> u64 { unsafe { function!(70622, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn is_equal(&self, param_1: i64) -> u64 { unsafe { function!(70622, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `NiCamera::LinkObject` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70619, rva 0xeef3f0).
     /// `undefined LinkObject(NiCamera * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn link_object(&self, param_1: i64) -> u64 { unsafe { function!(70619, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn link_object(&self, param_1: i64) -> u64 { unsafe { function!(70619, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `NiCamera::LoadBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70618, rva 0xeef130).
     /// `undefined LoadBinary(NiCamera * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(70618, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(70618, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `NiCamera::RegisterStreamables` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70620, rva 0xeef4e0).
     /// `undefined1 RegisterStreamables(NiCamera * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn register_streamables(&self, param_1: u64) -> u8 { unsafe { function!(70620, (&Self, u64) -> u8)(self, param_1) } }
+    pub unsafe fn register_streamables(&self, param_1: u64) -> u8 { unsafe { function!(70620, (*const Self, u64) -> u8)(core::ptr::from_ref(self), param_1) } }
     /// `NiCamera::SaveBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70621, rva 0xeef4f0).
     /// `undefined SaveBinary(NiCamera * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_binary(&self, param_1: *mut i64) -> u64 { unsafe { function!(70621, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_binary(&self, param_1: *mut i64) -> u64 { unsafe { function!(70621, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `NiCamera::UpdateWorldBound` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70644, rva 0xef1950).
     /// `undefined UpdateWorldBound(NiCamera * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update_world_bound(&self) -> u64 { unsafe { function!(70644, (&Self) -> u64)(self) } }
+    pub unsafe fn update_world_bound(&self) -> u64 { unsafe { function!(70644, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `NiCamera::UpdateWorldData` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70642, rva 0xef1770).
     /// `undefined UpdateWorldData(NiCamera * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update_world_data(&self, param_1: i64) -> u64 { unsafe { function!(70642, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn update_world_data(&self, param_1: i64) -> u64 { unsafe { function!(70642, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::NiExtraData {
@@ -706,7 +706,7 @@ impl crate::NiExtraData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(78331, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(78331, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::NiObjectNET {
@@ -716,14 +716,14 @@ impl crate::NiObjectNET {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105558, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105558, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `NiObjectNET::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 107591, rva 0x155c450).
     /// `undefined dtor(NiObjectNET * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(107591, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(107591, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `NiObjectNET::vfunc_28_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 70536, rva 0xeebd60).
     /// `uint vfunc_28_sub0(longlong param_1, uint param_2, short * param_3)`
     ///
@@ -747,14 +747,14 @@ impl crate::PlayerCamera {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50872, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50872, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `PlayerCamera::SetCameraRoot` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50783, rva 0x8f7cf0).
     /// `undefined SetCameraRoot(PlayerCamera * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn set_camera_root(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50783, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn set_camera_root(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50783, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::PlayerCameraTransitionState {
@@ -764,35 +764,35 @@ impl crate::PlayerCameraTransitionState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self) -> u64 { unsafe { function!(50892, (&Self) -> u64)(self) } }
+    pub unsafe fn begin(&self) -> u64 { unsafe { function!(50892, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `PlayerCameraTransitionState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50873, rva 0x8fc6b0).
     /// `PlayerCameraTransitionState * Destroy(PlayerCameraTransitionState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50873, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50873, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `PlayerCameraTransitionState::GetRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50889, rva 0x8fcc30).
     /// `undefined GetRotation(PlayerCameraTransitionState * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50889, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50889, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `PlayerCameraTransitionState::GetTranslation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50890, rva 0x8fccb0).
     /// `undefined GetTranslation(PlayerCameraTransitionState * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50890, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50890, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `PlayerCameraTransitionState::Update` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50891, rva 0x8fcd50).
     /// `undefined Update(PlayerCameraTransitionState * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: *mut i64) -> u64 { unsafe { function!(50891, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn update(&self, param_1: *mut i64) -> u64 { unsafe { function!(50891, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::Sky {
@@ -843,63 +843,63 @@ impl crate::ThirdPersonState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50894, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50894, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ThirdPersonState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 33127, rva 0x55d4e0).
     /// `ThirdPersonState * Destroy(ThirdPersonState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(33127, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(33127, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ThirdPersonState::End` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50895, rva 0x8fd4e0).
     /// `undefined End(ThirdPersonState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn end(&self) -> u64 { unsafe { function!(50895, (&Self) -> u64)(self) } }
+    pub unsafe fn end(&self) -> u64 { unsafe { function!(50895, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ThirdPersonState::GetRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50897, rva 0x8fd870).
     /// `undefined GetRotation(ThirdPersonState * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut u64) -> u64 { unsafe { function!(50897, (&Self, *mut u64) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut u64) -> u64 { unsafe { function!(50897, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `ThirdPersonState::GetTranslation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50898, rva 0x8fd880).
     /// `undefined GetTranslation(ThirdPersonState * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_translation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50898, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_translation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50898, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `ThirdPersonState::LoadGame` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50909, rva 0x8fe190).
     /// `undefined LoadGame(ThirdPersonState * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(50909, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(50909, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `ThirdPersonState::Revert` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50910, rva 0x8fe260).
     /// `undefined Revert(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn revert(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50910, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn revert(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50910, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ThirdPersonState::SaveGame` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50908, rva 0x8fe0c0).
     /// `undefined SaveGame(ThirdPersonState * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(50908, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(50908, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `ThirdPersonState::Update` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 50896, rva 0x8fd590).
     /// `undefined Update(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50896, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50896, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::TweenMenuCameraState {
@@ -909,35 +909,35 @@ impl crate::TweenMenuCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self) -> u64 { unsafe { function!(50923, (&Self) -> u64)(self) } }
+    pub unsafe fn begin(&self) -> u64 { unsafe { function!(50923, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `TweenMenuCameraState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50932, rva 0x8ff9f0).
     /// `TweenMenuCameraState * Destroy(TweenMenuCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50932, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50932, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `TweenMenuCameraState::End` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50924, rva 0x8ff380).
     /// `undefined End(TweenMenuCameraState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn end(&self) -> u64 { unsafe { function!(50924, (&Self) -> u64)(self) } }
+    pub unsafe fn end(&self) -> u64 { unsafe { function!(50924, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `TweenMenuCameraState::GetRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50926, rva 0x8ff5b0).
     /// `undefined GetRotation(TweenMenuCameraState * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50926, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50926, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `TweenMenuCameraState::Update` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50925, rva 0x8ff3a0).
     /// `undefined Update(TweenMenuCameraState * this, undefined8 param_1, float param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: u64, param_2: f32) -> u64 { unsafe { function!(50925, (&Self, u64, f32) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn update(&self, param_1: u64, param_2: f32) -> u64 { unsafe { function!(50925, (*const Self, u64, f32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::VATSCameraState {
@@ -947,34 +947,34 @@ impl crate::VATSCameraState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50934, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn begin(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50934, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `VATSCameraState::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50940, rva 0x9002c0).
     /// `VATSCameraState * Destroy(VATSCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50940, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50940, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `VATSCameraState::GetRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50936, rva 0x8ffd40).
     /// `undefined GetRotation(VATSCameraState * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50936, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_rotation(&self, param_1: *mut f32) -> u64 { unsafe { function!(50936, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `VATSCameraState::GetTranslation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50937, rva 0x900260).
     /// `undefined GetTranslation(VATSCameraState * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50937, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn get_translation(&self, param_1: *mut u32) -> u64 { unsafe { function!(50937, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `VATSCameraState::Update` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50935, rva 0x8ffac0).
     /// `undefined Update(VATSCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50935, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50935, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 

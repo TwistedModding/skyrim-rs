@@ -45,7 +45,7 @@ impl crate::BGSLoadFormBuffer {
     /// Semantic, save pass, high; called through the object's vtable.
     /// `u8 (BGSLoadFormBuffer* this)`
     #[inline]
-    pub fn get_version(&self) -> u8 { unsafe { virtual_function!(self, 1, (&Self) -> u8)(self) } }
+    pub fn get_version(&self) -> u8 { unsafe { virtual_function!(self, 1, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BGSSaveFormBuffer {
@@ -54,13 +54,13 @@ impl crate::BGSSaveFormBuffer {
     /// Semantic, save pass, high; called through the object's vtable.
     /// `Actor* (BGSSaveFormBuffer* this)`
     #[inline]
-    pub fn get_actor(&self) -> Option<&'static crate::Actor> { unsafe { virtual_function!(self, 3, (&Self) -> Option<&'static crate::Actor>)(self) } }
+    pub fn get_actor(&self) -> Option<&'static crate::Actor> { unsafe { virtual_function!(self, 3, (*const Self) -> Option<&'static crate::Actor>)(core::ptr::from_ref(self)) } }
     /// `BGSSaveFormBuffer::GetForm`, vtable slot 1: the form being saved
     ///
     /// Semantic, save pass, high; called through the object's vtable.
     /// `TESForm* (BGSSaveFormBuffer* this)`
     #[inline]
-    pub fn get_form(&self) -> Option<&'static crate::TESForm> { unsafe { virtual_function!(self, 1, (&Self) -> Option<&'static crate::TESForm>)(self) } }
+    pub fn get_form(&self) -> Option<&'static crate::TESForm> { unsafe { virtual_function!(self, 1, (*const Self) -> Option<&'static crate::TESForm>)(core::ptr::from_ref(self)) } }
     /// `BGSSaveFormBuffer::GetReference`, vtable slot 2: slot 1 then TESForm slot 44 (0x160)
     ///
     /// Semantic, save pass, medium; called through the object's vtable.
@@ -69,7 +69,7 @@ impl crate::BGSSaveFormBuffer {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_reference(&self) -> *mut crate::TESObjectREFR { unsafe { virtual_function!(self, 2, (&Self) -> *mut crate::TESObjectREFR)(self) } }
+    pub unsafe fn get_reference(&self) -> *mut crate::TESObjectREFR { unsafe { virtual_function!(self, 2, (*const Self) -> *mut crate::TESObjectREFR)(core::ptr::from_ref(self)) } }
     /// `BGSSaveFormBuffer::form` at +0x28: form being written
     ///
     /// Semantic field, save pass, high; `None` while the pointer is null.
@@ -88,7 +88,7 @@ impl crate::BGSSaveLoadGame {
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35576, rva 0x616ce0.
     /// `bool (BGSSaveLoadGame* this, TESForm* form, u32 flags, bool force)`
     #[inline]
-    pub fn add_change(&self, form: &crate::TESForm, flags: u32, force: bool) -> bool { unsafe { function!(35576, (&Self, &crate::TESForm, u32, bool) -> bool)(self, form, flags, force) } }
+    pub fn add_change(&self, form: &crate::TESForm, flags: u32, force: bool) -> bool { unsafe { function!(35576, (*const Self, *const crate::TESForm, u32, bool) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(form), flags, force) } }
     /// `BGSSaveLoadGame::LoadGame`: reads the body and applies it
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35600, rva 0x618970.
@@ -97,7 +97,7 @@ impl crate::BGSSaveLoadGame {
     /// # Safety
     /// `stream`, `missingNames` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load_game(&self, stream: *mut c_void, ignoreMissing: bool, requestKind: u32, missingNames: *mut crate::BSTArray, skipPluginMatch: bool) -> bool { unsafe { function!(35600, (&Self, *mut c_void, bool, u32, *mut crate::BSTArray, bool) -> bool)(self, stream, ignoreMissing, requestKind, missingNames, skipPluginMatch) } }
+    pub unsafe fn load_game(&self, stream: *mut c_void, ignoreMissing: bool, requestKind: u32, missingNames: *mut crate::BSTArray, skipPluginMatch: bool) -> bool { unsafe { function!(35600, (*const Self, *mut c_void, bool, u32, *mut crate::BSTArray, bool) -> bool)(core::ptr::from_ref(self), stream, ignoreMissing, requestKind, missingNames, skipPluginMatch) } }
     /// `BGSSaveLoadGame::LoadGlobalDataTable`: count x {u32 type, length-prefixed buffer} -> LoadGlobalData; the VM type is read through LoadStorageWrapper and SkyrimVM load 0x9e1c00
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35641, rva 0x61c1a0.
@@ -124,7 +124,7 @@ impl crate::BGSSaveLoadGame {
     /// # Safety
     /// `stream`, `missingNames`, `unknownNames` must point to what the engine expects.
     #[inline]
-    pub unsafe fn read_plugin_list(&self, stream: *mut c_void, missingNames: *mut crate::BSTArray, skipChecks: bool, unknownNames: *mut crate::BSTArray) -> bool { unsafe { function!(442571, (&Self, *mut c_void, *mut crate::BSTArray, bool, *mut crate::BSTArray) -> bool)(self, stream, missingNames, skipChecks, unknownNames) } }
+    pub unsafe fn read_plugin_list(&self, stream: *mut c_void, missingNames: *mut crate::BSTArray, skipChecks: bool, unknownNames: *mut crate::BSTArray) -> bool { unsafe { function!(442571, (*const Self, *mut c_void, *mut crate::BSTArray, bool, *mut crate::BSTArray) -> bool)(core::ptr::from_ref(self), stream, missingNames, skipChecks, unknownNames) } }
     /// `BGSSaveLoadGame::RemapSavedFormID`: saved form id -> current: top byte 0xFE uses savedLightFiles[(id>>12)&0xfff], otherwise savedFiles[id>>24]; then TESFile::ResolveFormID; 0 when the plugin is missing
     ///
     /// Semantic, save pass, medium; ledger runtime evidence, name medium; id 35596, rva 0x6181c0.
@@ -133,19 +133,19 @@ impl crate::BGSSaveLoadGame {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn remap_saved_form_id(&self, savedId: u32) -> u32 { unsafe { function!(35596, (&Self, u32) -> u32)(self, savedId) } }
+    pub unsafe fn remap_saved_form_id(&self, savedId: u32) -> u32 { unsafe { function!(35596, (*const Self, u32) -> u32)(core::ptr::from_ref(self), savedId) } }
     /// `BGSSaveLoadGame::RemoveChange`: clears flags and erases the entry when none remain (non-created forms)
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35581, rva 0x616e80.
     /// `void (BGSSaveLoadGame* this, TESForm* form, u32 flags)`
     #[inline]
-    pub fn remove_change(&self, form: &crate::TESForm, flags: u32) { unsafe { function!(35581, (&Self, &crate::TESForm, u32))(self, form, flags) } }
+    pub fn remove_change(&self, form: &crate::TESForm, flags: u32) { unsafe { function!(35581, (*const Self, *const crate::TESForm, u32))(core::ptr::from_ref(self), core::ptr::from_ref(form), flags) } }
     /// `BGSSaveLoadGame::RevertGame`: full revert used by ResetGame: flag 2, clear +0xc8, RevertAllGlobalData(true), RevertWorld(this, null, null), ProcessAndClearRefHandleMap
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35585, rva 0x617070.
     /// `void (BGSSaveLoadGame*)`
     #[inline]
-    pub fn revert_game(&self) { unsafe { function!(35585, (&Self))(self) } }
+    pub fn revert_game(&self) { unsafe { function!(35585, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSSaveLoadGame::RevertWorld`: installs the new change map and reverts every form changed in the previous session that the save does not change (slot 18 Revert)
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35566, rva 0x615690.
@@ -154,7 +154,7 @@ impl crate::BGSSaveLoadGame {
     /// # Safety
     /// `newMap`, `index` must point to what the engine expects.
     #[inline]
-    pub unsafe fn revert_world(&self, newMap: *mut crate::ChangeFormMap, index: *mut c_void) { unsafe { function!(35566, (&Self, *mut crate::ChangeFormMap, *mut c_void))(self, newMap, index) } }
+    pub unsafe fn revert_world(&self, newMap: *mut crate::ChangeFormMap, index: *mut c_void) { unsafe { function!(35566, (*const Self, *mut crate::ChangeFormMap, *mut c_void))(core::ptr::from_ref(self), newMap, index) } }
     /// `BGSSaveLoadGame::SaveGame`: writes the body after the header
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35599, rva 0x618260.
@@ -163,7 +163,7 @@ impl crate::BGSSaveLoadGame {
     /// # Safety
     /// `stream` must point to what the engine expects.
     #[inline]
-    pub unsafe fn save_game(&self, stream: *mut c_void) { unsafe { function!(35599, (&Self, *mut c_void))(self, stream) } }
+    pub unsafe fn save_game(&self, stream: *mut c_void) { unsafe { function!(35599, (*const Self, *mut c_void))(core::ptr::from_ref(self), stream) } }
     /// `BGSSaveLoadGame::SaveGlobalDataRange`: per type: SaveGlobalData into a buffer, then u32 type + buffer; type 1001 writes the VM directly via SaveStorageWrapper and SkyrimVM save 0x9e1b20 with a back-patched length
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35638, rva 0x61b7e0.
@@ -195,7 +195,7 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// `name` must point to what the engine expects.
     #[inline]
-    pub unsafe fn delete_save_file(&self, name: *const c_char) { unsafe { function!(35726, (&Self, *const c_char))(self, name) } }
+    pub unsafe fn delete_save_file(&self, name: *const c_char) { unsafe { function!(35726, (*const Self, *const c_char))(core::ptr::from_ref(self), name) } }
     /// `BGSSaveLoadManager::FinishLoad`: after a successful load: cell/terrain refresh, resume (ToggleGameSuspendState(0)), clear BGSSaveLoadGame flag 0x40, drain garbage/IO, UnfreezeVM, TESLoadGameEvent, story manager, gamer profile
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35780, rva 0x6278b0.
@@ -207,13 +207,13 @@ impl crate::BGSSaveLoadManager {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 35755, rva 0x6247a0.
     /// `u8 (BGSSaveLoadManager* this)`
     #[inline]
-    pub fn get_byte118(&self) -> u8 { unsafe { function!(35755, (&Self) -> u8)(self) } }
+    pub fn get_byte118(&self) -> u8 { unsafe { function!(35755, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `BGSSaveLoadManager::IsSaveAllowedNow`: save allowed: the save-data system is ready, this+0x130 set, the player is not dead/bleeding out or flagged, VATS idle, no player handle in ID_401100, the camera is neither in cameraStates[8] nor cameraStates[6] (transition) nor the +0xe0/+0x48 check, and every open menu allows saving
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 35734, rva 0x6231f0.
     /// `bool (BGSSaveLoadManager* this, bool unusedFlag)`
     #[inline]
-    pub fn is_save_allowed_now(&self, unusedFlag: bool) -> bool { unsafe { function!(35734, (&Self, bool) -> bool)(self, unusedFlag) } }
+    pub fn is_save_allowed_now(&self, unusedFlag: bool) -> bool { unsafe { function!(35734, (*const Self, bool) -> bool)(core::ptr::from_ref(self), unusedFlag) } }
     /// `BGSSaveLoadManager::LoadGame`: main-thread load: header, missing-content dialogs, BGSSaveLoadGame::LoadGame, then FinishLoad
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 442580, rva 0x627de0.
@@ -222,7 +222,7 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// `stream` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load_game(&self, stream: *mut *mut c_void, entryValue: u32, ignoreMissing: bool, skipPluginMatch: bool, requestKind: u32) -> bool { unsafe { function!(442580, (&Self, *mut *mut c_void, u32, bool, bool, u32) -> bool)(self, stream, entryValue, ignoreMissing, skipPluginMatch, requestKind) } }
+    pub unsafe fn load_game(&self, stream: *mut *mut c_void, entryValue: u32, ignoreMissing: bool, skipPluginMatch: bool, requestKind: u32) -> bool { unsafe { function!(442580, (*const Self, *mut *mut c_void, u32, bool, bool, u32) -> bool)(core::ptr::from_ref(self), stream, entryValue, ignoreMissing, skipPluginMatch, requestKind) } }
     /// `BGSSaveLoadManager::OpenSaveFile`: path via BSSaveDataSystemUtility slot 2 (temp adds '.tmp'), stream via slot 11, stores the name at stream+0xab0, opens it
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35724, rva 0x622390.
@@ -231,13 +231,13 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// `out`, `name` must point to what the engine expects, and the result is an untyped pointer.
     #[inline]
-    pub unsafe fn open_save_file(&self, out: *mut *mut c_void, name: *const c_char, temp: bool, kind: i32) -> *mut *mut c_void { unsafe { function!(35724, (&Self, *mut *mut c_void, *const c_char, bool, i32) -> *mut *mut c_void)(self, out, name, temp, kind) } }
+    pub unsafe fn open_save_file(&self, out: *mut *mut c_void, name: *const c_char, temp: bool, kind: i32) -> *mut *mut c_void { unsafe { function!(35724, (*const Self, *mut *mut c_void, *const c_char, bool, i32) -> *mut *mut c_void)(core::ptr::from_ref(self), out, name, temp, kind) } }
     /// `BGSSaveLoadManager::PrepareForLoad`: freeze the VM, reset TES/ref handle maps, wait for Havok, suspend the game (load kinds) or close all menus, stop VATS, drain navmesh/IO
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35779, rva 0x627680.
     /// `void (BGSSaveLoadManager*, u32 requestKind)`
     #[inline]
-    pub fn prepare_for_load(&self, requestKind: u32) { unsafe { function!(35779, (&Self, u32))(self, requestKind) } }
+    pub fn prepare_for_load(&self, requestKind: u32) { unsafe { function!(35779, (*const Self, u32))(core::ptr::from_ref(self), requestKind) } }
     /// `BGSSaveLoadManager::QueueLoadEntry`: caches the header record and queues LoadEntryRequest 0x50001000
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 442575, rva 0x625a10.
@@ -246,7 +246,7 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// `a1` must point to what the engine expects.
     #[inline]
-    pub unsafe fn queue_load_entry(&self, a1: *mut c_void) { unsafe { function!(442575, (&Self, *mut c_void))(self, a1) } }
+    pub unsafe fn queue_load_entry(&self, a1: *mut c_void) { unsafe { function!(442575, (*const Self, *mut c_void))(core::ptr::from_ref(self), a1) } }
     /// `BGSSaveLoadManager::RemoveSaveEntry`: removes the entry from +0x100; if no other save of that character remains, drops its name (+0x70) and its record (+0xe8)
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35748, rva 0x623a00.
@@ -255,7 +255,7 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// `a1` must point to what the engine expects.
     #[inline]
-    pub unsafe fn remove_save_entry(&self, a1: *mut c_void) { unsafe { function!(35748, (&Self, *mut c_void))(self, a1) } }
+    pub unsafe fn remove_save_entry(&self, a1: *mut c_void) { unsafe { function!(35748, (*const Self, *mut c_void))(core::ptr::from_ref(self), a1) } }
     /// `BGSSaveLoadManager::RequestLoad`: Notify {2,0}, path via slot 2, BSSaveDataSystemUtility slot 23 reads the file and dispatches BSSaveDataEvent (synchronous)
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35728, rva 0x622f30.
@@ -264,7 +264,7 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// `name` must point to what the engine expects.
     #[inline]
-    pub unsafe fn request_load(&self, name: *const c_char, entryValue: u32, value: u32, ignoreMissing: bool) -> bool { unsafe { function!(35728, (&Self, *const c_char, u32, u32, bool) -> bool)(self, name, entryValue, value, ignoreMissing) } }
+    pub unsafe fn request_load(&self, name: *const c_char, entryValue: u32, value: u32, ignoreMissing: bool) -> bool { unsafe { function!(35728, (*const Self, *const c_char, u32, u32, bool) -> bool)(core::ptr::from_ref(self), name, entryValue, value, ignoreMissing) } }
     /// `BGSSaveLoadManager::SetCurrentSaveName`: +0x138 = name, +0x250 = index
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35765, rva 0x624d70.
@@ -273,7 +273,7 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// `name` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_current_save_name(&self, name: *const c_char, index: u32) { unsafe { function!(35765, (&Self, *const c_char, u32))(self, name, index) } }
+    pub unsafe fn set_current_save_name(&self, name: *const c_char, index: u32) { unsafe { function!(35765, (*const Self, *const c_char, u32))(core::ptr::from_ref(self), name, index) } }
     /// `BGSSaveLoadManager::ctor`: 
     ///
     /// Semantic, save pass, high; ledger layout_inference evidence, name high; id 35720, rva 0x621be0.
@@ -282,7 +282,7 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(35720, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(35720, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ChangeFormMap {
@@ -291,7 +291,7 @@ impl crate::ChangeFormMap {
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35507, rva 0x613570.
     /// `void (ChangeFormMap* map, u32 formID, u32 flags)`
     #[inline]
-    pub fn add_flags(&self, formID: u32, flags: u32) { unsafe { function!(35507, (&Self, u32, u32))(self, formID, flags) } }
+    pub fn add_flags(&self, formID: u32, flags: u32) { unsafe { function!(35507, (*const Self, u32, u32))(core::ptr::from_ref(self), formID, flags) } }
 }
 
 impl crate::SavedChangeFormRecord {
@@ -377,13 +377,13 @@ pub unsafe fn form_id_index_map__get_form_id(map: *mut c_void, index: u32) -> u3
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35757, rva 0x624840.
 /// `void (BGSSaveLoadManager*)`
 #[inline]
-pub fn generate_unique_player_id(a0: &crate::BGSSaveLoadManager) { unsafe { function!(35757, (&crate::BGSSaveLoadManager))(a0) } }
+pub fn generate_unique_player_id(a0: &crate::BGSSaveLoadManager) { unsafe { function!(35757, (*const crate::BGSSaveLoadManager))(core::ptr::from_ref(a0)) } }
 /// `GetChangeFormInitialType`: kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35708, rva 0x6204c0.
 /// `u8 (TESForm* form, u32 changeFlags)`
 #[inline]
-pub fn get_change_form_initial_type(form: &crate::TESForm, changeFlags: u32) -> u8 { unsafe { function!(35708, (&crate::TESForm, u32) -> u8)(form, changeFlags) } }
+pub fn get_change_form_initial_type(form: &crate::TESForm, changeFlags: u32) -> u8 { unsafe { function!(35708, (*const crate::TESForm, u32) -> u8)(core::ptr::from_ref(form), changeFlags) } }
 /// `GetOrAssignFormIDIndex`: index of a form id, assigning the next one; 0xFF ids return themselves
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35554, rva 0x614cf0.
@@ -416,7 +416,7 @@ pub unsafe fn global_data_finish_load(first: u32, end: u32) { unsafe { function!
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35642, rva 0x61c2f0.
 /// `bool (u32 type, BGSLoadGameBuffer* buf)`
 #[inline]
-pub fn load_global_data(type_: u32, buf: &crate::BGSLoadGameBuffer) -> bool { unsafe { function!(35642, (u32, &crate::BGSLoadGameBuffer) -> bool)(type_, buf) } }
+pub fn load_global_data(type_: u32, buf: &crate::BGSLoadGameBuffer) -> bool { unsafe { function!(35642, (u32, *const crate::BGSLoadGameBuffer) -> bool)(type_, core::ptr::from_ref(buf)) } }
 /// `LoadSaveEntry`: RequestLoad(mgr, entry->name, entry+0x60, 0, false)
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35534, rva 0x614660.
@@ -431,7 +431,7 @@ pub unsafe fn load_save_entry(a0: *mut c_void) { unsafe { function!(35534, (*mut
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35772, rva 0x625b90.
 /// `void (BGSSaveLoadManager*)`
 #[inline]
-pub fn process_save_load_requests(a0: &crate::BGSSaveLoadManager) { unsafe { function!(35772, (&crate::BGSSaveLoadManager))(a0) } }
+pub fn process_save_load_requests(a0: &crate::BGSSaveLoadManager) { unsafe { function!(35772, (*const crate::BGSSaveLoadManager))(core::ptr::from_ref(a0)) } }
 /// `ProcessSaveLoadThreadRequest`: worker handler: 0x40000001 write save, 0x40000004 delete file, 0x50000008 build list, 0x50000020 enumerate, 0x50001000 load entry, 0x10008000 release list
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35794, rva 0x62a300.
@@ -446,7 +446,7 @@ pub unsafe fn process_save_load_thread_request(a0: *mut c_void, a1: *mut c_void)
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35769, rva 0x625850.
 /// `void (BGSSaveLoadManager*, u32 kind)`
 #[inline]
-pub fn queue_save_load_request(a0: &crate::BGSSaveLoadManager, kind: u32) { unsafe { function!(35769, (&crate::BGSSaveLoadManager, u32))(a0, kind) } }
+pub fn queue_save_load_request(a0: &crate::BGSSaveLoadManager, kind: u32) { unsafe { function!(35769, (*const crate::BGSSaveLoadManager, u32))(core::ptr::from_ref(a0), kind) } }
 /// `ReadAndVerifyMagicHeader`: seek 0, check 'TESV_SAVEGAME' (0x1908f30) and read the header buffer
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35675, rva 0x61f310.
@@ -485,13 +485,13 @@ pub fn revert_all_global_data(revertGlobals: bool) { unsafe { function!(35648, (
 /// Semantic, save pass, high; ledger runtime evidence, name high; id 35650, rva 0x61cfb0.
 /// `bool (u32 type, BGSLoadGameBuffer* buf, bool revertGlobals)`
 #[inline]
-pub fn revert_global_data(type_: u32, buf: &crate::BGSLoadGameBuffer, revertGlobals: bool) -> bool { unsafe { function!(35650, (u32, &crate::BGSLoadGameBuffer, bool) -> bool)(type_, buf, revertGlobals) } }
+pub fn revert_global_data(type_: u32, buf: &crate::BGSLoadGameBuffer, revertGlobals: bool) -> bool { unsafe { function!(35650, (u32, *const crate::BGSLoadGameBuffer, bool) -> bool)(type_, core::ptr::from_ref(buf), revertGlobals) } }
 /// `SaveGlobalData`: global data writer switch (see enum GlobalDataType)
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35639, rva 0x61b9a0.
 /// `bool (u32 type, BGSSaveGameBuffer* buf)`
 #[inline]
-pub fn save_global_data(type_: u32, buf: &crate::BGSSaveGameBuffer) -> bool { unsafe { function!(35639, (u32, &crate::BGSSaveGameBuffer) -> bool)(type_, buf) } }
+pub fn save_global_data(type_: u32, buf: &crate::BGSSaveGameBuffer) -> bool { unsafe { function!(35639, (u32, *const crate::BGSSaveGameBuffer) -> bool)(type_, core::ptr::from_ref(buf)) } }
 /// `SaveOverEntry`: custom-named entry: Save(2, entry name) and drop the old entry; 'Save'/'Autosave'/'Quicksave' entry: Save(2, generated name), then DeleteSaveFile(old name) (call 0x614637, S1 delete hook 1) and RemoveSaveEntry
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35533, rva 0x6145c0.
@@ -506,7 +506,7 @@ pub unsafe fn save_over_entry(a0: *mut c_void) -> bool { unsafe { function!(3553
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35715, rva 0x620bf0.
 /// `u8 (BGSSaveFormBuffer* buf, TESForm* form, u32 changeFlags)`
 #[inline]
-pub fn write_change_form_initial_data(buf: &crate::BGSSaveFormBuffer, form: &crate::TESForm, changeFlags: u32) -> u8 { unsafe { function!(35715, (&crate::BGSSaveFormBuffer, &crate::TESForm, u32) -> u8)(buf, form, changeFlags) } }
+pub fn write_change_form_initial_data(buf: &crate::BGSSaveFormBuffer, form: &crate::TESForm, changeFlags: u32) -> u8 { unsafe { function!(35715, (*const crate::BGSSaveFormBuffer, *const crate::TESForm, u32) -> u8)(core::ptr::from_ref(buf), core::ptr::from_ref(form), changeFlags) } }
 /// `WriteChangeFormRecord`: writes 9 header bytes (refID[3], u32 changeFlags, u8 type|sizeCode, u8 version), length (compressed or raw) and uncompressed length (0 when raw) sized by the code, then the data
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 36036, rva 0x6395d0.

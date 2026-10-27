@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `DeletingDestructorVtable243716_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86152, rva 0xdb4c30).
+/// `undefined8 * DeletingDestructorVtable243716_4(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_destructor_vtable243716_4(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(86152, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtor98` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84381, rva 0xd6b310).
+/// `undefined8 * DeletingDtor98(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor98(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(84381, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorD8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84379, rva 0xd6b220).
+/// `undefined8 * DeletingDtorD8(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_d8(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(84379, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorD8_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84382, rva 0xd6b370).
+/// `undefined8 * DeletingDtorD8_2(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_d8_2(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(84382, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 /// `DeletingDtorForVtable241943` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82210, rva 0xcf35a0).
 /// `undefined8 * DeletingDtorForVtable241943(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13114,31 +13142,3 @@ pub unsafe fn free_arrays_at0_and20(param_1: *mut i64) -> u64 { unsafe { functio
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn free_arrays_at10_to40(param_1: i64) -> u64 { unsafe { function!(61190, (i64) -> u64)(param_1) } }
-/// `FreeArraysAt30And48` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40217, rva 0x738750).
-/// `undefined FreeArraysAt30And48(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_arrays_at30_and48(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(40217, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeArraysAt8And20` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 23878, rva 0x398e80).
-/// `undefined FreeArraysAt8And20(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_arrays_at8_and20(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(23878, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeArraysAt8And20AndMaybeDelete` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 27124, rva 0x441230).
-/// `void * FreeArraysAt8And20AndMaybeDelete(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_arrays_at8_and20_and_maybe_delete(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> *mut c_void { unsafe { function!(27124, (*mut c_void, u64, u64, u64) -> *mut c_void)(param_1, param_2, param_3, param_4) } }
-/// `FreeArraysAt8AndReleaseFixedString` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 65151, rva 0xc3f440).
-/// `undefined FreeArraysAt8AndReleaseFixedString(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_arrays_at8_and_release_fixed_string(param_1: i64) -> u64 { unsafe { function!(65151, (i64) -> u64)(param_1) } }

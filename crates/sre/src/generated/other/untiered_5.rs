@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FreeArraysAt30And48` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40217, rva 0x738750).
+/// `undefined FreeArraysAt30And48(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_arrays_at30_and48(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(40217, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeArraysAt8And20` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 23878, rva 0x398e80).
+/// `undefined FreeArraysAt8And20(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_arrays_at8_and20(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(23878, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeArraysAt8And20AndMaybeDelete` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 27124, rva 0x441230).
+/// `void * FreeArraysAt8And20AndMaybeDelete(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_arrays_at8_and20_and_maybe_delete(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> *mut c_void { unsafe { function!(27124, (*mut c_void, u64, u64, u64) -> *mut c_void)(param_1, param_2, param_3, param_4) } }
+/// `FreeArraysAt8AndReleaseFixedString` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 65151, rva 0xc3f440).
+/// `undefined FreeArraysAt8AndReleaseFixedString(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_arrays_at8_and_release_fixed_string(param_1: i64) -> u64 { unsafe { function!(65151, (i64) -> u64)(param_1) } }
 /// `FreeBTreeSubtree` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 104905, rva 0x14c2860).
 /// `undefined FreeBTreeSubtree(longlong * param_1, ulonglong * param_2, undefined8 param_3, char param_4)`
 ///
@@ -14206,31 +14234,3 @@ pub unsafe fn init_fields8_to18(param_1: i64, param_2: *mut u32, param_3: i64) -
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn init_fields8_to30_from_form_ids35_to3_a(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> i64 { unsafe { function!(36289, (i64, u64, u64, u64) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `InitFieldsAndContainerAt68` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89222, rva 0xe63a40).
-/// `undefined4 * InitFieldsAndContainerAt68(undefined4 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fields_and_container_at68(param_1: *mut u32) -> *mut u32 { unsafe { function!(89222, (*mut u32) -> *mut u32)(param_1) } }
-/// `InitFiveFixedStrings` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 72520, rva 0xf5b430).
-/// `undefined InitFiveFixedStrings(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_five_fixed_strings(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(72520, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `InitFixedBlockChunk` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69131, rva 0xeb0360).
-/// `undefined InitFixedBlockChunk(longlong * param_1, longlong param_2, byte param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fixed_block_chunk(param_1: *mut i64, param_2: i64, param_3: u8) -> u64 { unsafe { function!(69131, (*mut i64, i64, u8) -> u64)(param_1, param_2, param_3) } }
-/// `InitFixedSizePool` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57954, rva 0xabc360).
-/// `undefined InitFixedSizePool(undefined8 * param_1, ulonglong param_2, ulonglong param_3, ulonglong param_4, longlong param_5, undefined8 param_6)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_fixed_size_pool(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64, param_5: i64, param_6: u64) -> u64 { unsafe { function!(57954, (*mut u64, u64, u64, u64, i64, u64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }

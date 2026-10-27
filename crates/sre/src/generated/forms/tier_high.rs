@@ -10,6 +10,6 @@ impl crate::BGSKeywordForm {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14250, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14250, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 

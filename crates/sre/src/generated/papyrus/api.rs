@@ -49,7 +49,7 @@ impl crate::BSScript__Array {
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104468, rva 0x149c290.
     /// `BSScript::Array* (BSScript::Array* this, const BSScript::TypeInfo* elementType, u32 size)`
     #[inline]
-    pub fn init_typed_array_object(&self, elementType: &crate::BSScript__TypeInfo, size: u32) -> Option<&'static Self> { unsafe { function!(104468, (&Self, &crate::BSScript__TypeInfo, u32) -> Option<&'static Self>)(self, elementType, size) } }
+    pub fn init_typed_array_object(&self, elementType: &crate::BSScript__TypeInfo, size: u32) -> Option<&'static Self> { unsafe { function!(104468, (*const Self, *const crate::BSScript__TypeInfo, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), core::ptr::from_ref(elementType), size) } }
 }
 
 impl crate::BSScript__IFunctionArguments {
@@ -61,7 +61,7 @@ impl crate::BSScript__IFunctionArguments {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn operator(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut c_void) -> bool)(self, out) } }
+    pub unsafe fn operator(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), out) } }
 }
 
 impl crate::BSScript__IStackCallbackFunctor {
@@ -73,7 +73,7 @@ impl crate::BSScript__IStackCallbackFunctor {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_object(&self, object: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, object) } }
+    pub unsafe fn set_object(&self, object: *mut c_void) { unsafe { virtual_function!(self, 3, (*const Self, *mut c_void))(core::ptr::from_ref(self), object) } }
     /// `BSScript::IStackCallbackFunctor::dtor`, vtable slot 0: destructor; bit 0 of flags deletes (0x10 bytes for the base)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -82,7 +82,7 @@ impl crate::BSScript__IStackCallbackFunctor {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BSScript::IStackCallbackFunctor::operator()`, vtable slot 1: called once with a copy of the returned Variable (the stack's +0x70) when the stack's last frame returns, before the stack is removed; the copy lives only for the call; on the VM worker thread that completes the stack, not the main thread (skyrim-rs's thread ids: a dispatch from inside a native completed, and its callback ran, on that native's thread), or inside DispatchStaticCall on the caller's thread with None when the function is empty (slot 10)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -91,7 +91,7 @@ impl crate::BSScript__IStackCallbackFunctor {
     /// # Safety
     /// `result` must point to what the engine expects.
     #[inline]
-    pub unsafe fn operator(&self, result: *mut crate::BSScript__Variable) { unsafe { virtual_function!(self, 1, (&Self, *mut crate::BSScript__Variable))(self, result) } }
+    pub unsafe fn operator(&self, result: *mut crate::BSScript__Variable) { unsafe { virtual_function!(self, 1, (*const Self, *mut crate::BSScript__Variable))(core::ptr::from_ref(self), result) } }
     /// `BSScript::IStackCallbackFunctor::vfunc_2`, vtable slot 2: base returns false, the engine's EventCallbackAdapter returns true (0x9f1180); no caller was found (searched the script code for calls through a stack's +0x90 callback), so its meaning is open
     ///
     /// Semantic, papyrus pass, low; called through the object's vtable.
@@ -100,7 +100,7 @@ impl crate::BSScript__IStackCallbackFunctor {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn vfunc_2(&self) -> bool { unsafe { virtual_function!(self, 2, (&Self) -> bool)(self) } }
+    pub unsafe fn vfunc_2(&self) -> bool { unsafe { virtual_function!(self, 2, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__Internal__VirtualMachine {
@@ -118,7 +118,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, BSScript::IFunction* function)`
     #[inline]
-    pub fn bind_native_method(&self, function: &crate::BSScript__IFunction) -> bool { unsafe { virtual_function!(self, 24, (&Self, &crate::BSScript__IFunction) -> bool)(self, function) } }
+    pub fn bind_native_method(&self, function: &crate::BSScript__IFunction) -> bool { unsafe { virtual_function!(self, 24, (*const Self, *const crate::BSScript__IFunction) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(function)) } }
     /// `BSScript::Internal::VirtualMachine::CreateArray`, vtable slot 22: under the +0x93f8 lock: an array type becomes its element type (raw 0xb-0xf minus 10, an object type with bit 0 cleared), anything else is used as the element type; releases what out held, allocates 0x20 + size * 0x10 bytes from the global heap (AllocateMemory 0xcde250 in memory context 0x16, not the scrap heap) and sets every element to {element type, 0}; out receives one reference and the VM's tracking list at +0x9408 another, so a new array has count 2; returns false only when the allocation fails
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -127,7 +127,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn create_array(&self, type_: *const crate::BSScript__TypeInfo, size: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 22, (&Self, *const crate::BSScript__TypeInfo, u32, *mut c_void) -> bool)(self, type_, size, out) } }
+    pub unsafe fn create_array(&self, type_: *const crate::BSScript__TypeInfo, size: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 22, (*const Self, *const crate::BSScript__TypeInfo, u32, *mut c_void) -> bool)(core::ptr::from_ref(self), type_, size, out) } }
     /// `BSScript::Internal::VirtualMachine::CreateArrayOfType`, vtable slot 23: CreateArray for a raw element code: 1 (Object) looks className up through GetScriptObjectType (slot 9, which loads the script) and uses its ObjectTypeInfo; false when the class has no script
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -136,7 +136,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn create_array_of_type(&self, rawElementType: u32, className: *const crate::BSFixedString, size: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 23, (&Self, u32, *const crate::BSFixedString, u32, *mut c_void) -> bool)(self, rawElementType, className, size, out) } }
+    pub unsafe fn create_array_of_type(&self, rawElementType: u32, className: *const crate::BSFixedString, size: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 23, (*const Self, u32, *const crate::BSFixedString, u32, *mut c_void) -> bool)(core::ptr::from_ref(self), rawElementType, className, size, out) } }
     /// `BSScript::Internal::VirtualMachine::CreateObject`, vtable slot 21: creates an unbound script object of the class through the bind interface (+0x10 vtable, slot 9); the caller binds it to a handle with the bind policy
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -145,7 +145,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn create_object(&self, className: *const crate::BSFixedString, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 21, (&Self, *const crate::BSFixedString, *mut c_void) -> bool)(self, className, out) } }
+    pub unsafe fn create_object(&self, className: *const crate::BSFixedString, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 21, (*const Self, *const crate::BSFixedString, *mut c_void) -> bool)(core::ptr::from_ref(self), className, out) } }
     /// `BSScript::Internal::VirtualMachine::DispatchMethodCall`, vtable slot 39: queues a method call on a script object (the function is looked up on the object's type; a native that is callable from tasklets runs synchronously when the VM is not frozen)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -154,7 +154,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `self_`, `callback` must point to what the engine expects.
     #[inline]
-    pub unsafe fn dispatch_method_call(&self, self_: *mut c_void, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool { unsafe { virtual_function!(self, 39, (&Self, *mut c_void, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void) -> bool)(self, self_, fnName, args, callback) } }
+    pub unsafe fn dispatch_method_call(&self, self_: *mut c_void, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool { unsafe { virtual_function!(self, 39, (*const Self, *mut c_void, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void) -> bool)(core::ptr::from_ref(self), self_, fnName, args, callback) } }
     /// `BSScript::Internal::VirtualMachine::DispatchMethodCallByHandle`, vtable slot 40: FindBoundObject(handle, className) then DispatchMethodCall
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -163,7 +163,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `callback` must point to what the engine expects.
     #[inline]
-    pub unsafe fn dispatch_method_call_by_handle(&self, handle: u64, className: *const crate::BSFixedString, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool { unsafe { virtual_function!(self, 40, (&Self, u64, *const crate::BSFixedString, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void) -> bool)(self, handle, className, fnName, args, callback) } }
+    pub unsafe fn dispatch_method_call_by_handle(&self, handle: u64, className: *const crate::BSFixedString, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool { unsafe { virtual_function!(self, 40, (*const Self, u64, *const crate::BSFixedString, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void) -> bool)(core::ptr::from_ref(self), handle, className, fnName, args, callback) } }
     /// `BSScript::Internal::VirtualMachine::DispatchStaticCall`, vtable slot 38: resolves the type (GetScriptObjectType, which loads the script) and the static function, lets args fill the argument array, creates a stack and queues it; the callback receives the result; false when the type or function is missing or the queue is full
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -172,7 +172,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `callback` must point to what the engine expects.
     #[inline]
-    pub unsafe fn dispatch_static_call(&self, className: *const crate::BSFixedString, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool { unsafe { virtual_function!(self, 38, (&Self, *const crate::BSFixedString, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void) -> bool)(self, className, fnName, args, callback) } }
+    pub unsafe fn dispatch_static_call(&self, className: *const crate::BSFixedString, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool { unsafe { virtual_function!(self, 38, (*const Self, *const crate::BSFixedString, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void) -> bool)(core::ptr::from_ref(self), className, fnName, args, callback) } }
     /// `BSScript::Internal::VirtualMachine::FindBoundObject`, vtable slot 28: the script object of that class bound to the handle, if any
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -181,7 +181,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `className`, `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn find_bound_object(&self, handle: u64, className: *const c_char, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 28, (&Self, u64, *const c_char, *mut c_void) -> bool)(self, handle, className, out) } }
+    pub unsafe fn find_bound_object(&self, handle: u64, className: *const c_char, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 28, (*const Self, u64, *const c_char, *mut c_void) -> bool)(core::ptr::from_ref(self), handle, className, out) } }
     /// `BSScript::Internal::VirtualMachine::ForEachBoundObject`, vtable slot 27: calls functor slot 1 for every script object bound to the handle
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -190,37 +190,37 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn for_each_bound_object(&self, handle: u64, functor: *mut crate::BSScript__IForEachScriptObjectFunctor) { unsafe { virtual_function!(self, 27, (&Self, u64, *mut crate::BSScript__IForEachScriptObjectFunctor))(self, handle, functor) } }
+    pub unsafe fn for_each_bound_object(&self, handle: u64, functor: *mut crate::BSScript__IForEachScriptObjectFunctor) { unsafe { virtual_function!(self, 27, (*const Self, u64, *mut crate::BSScript__IForEachScriptObjectFunctor))(core::ptr::from_ref(self), handle, functor) } }
     /// `BSScript::Internal::VirtualMachine::GetErrorLogger`, vtable slot 44: the logger at +0x80
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `BSScript::ErrorLogger* (BSScript::Internal::VirtualMachine* this)`
     #[inline]
-    pub fn get_error_logger(&self) -> Option<&'static crate::BSScript__ErrorLogger> { unsafe { virtual_function!(self, 44, (&Self) -> Option<&'static crate::BSScript__ErrorLogger>)(self) } }
+    pub fn get_error_logger(&self) -> Option<&'static crate::BSScript__ErrorLogger> { unsafe { virtual_function!(self, 44, (*const Self) -> Option<&'static crate::BSScript__ErrorLogger>)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::GetObjectBindPolicy`, vtable slot 47: the bind policy at +0x98 (SkyrimVM+0x3a8)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `BSScript::ObjectBindPolicy* (BSScript::Internal::VirtualMachine* this)`
     #[inline]
-    pub fn get_object_bind_policy(&self) -> Option<&'static crate::BSScript__ObjectBindPolicy> { unsafe { virtual_function!(self, 47, (&Self) -> Option<&'static crate::BSScript__ObjectBindPolicy>)(self) } }
+    pub fn get_object_bind_policy(&self) -> Option<&'static crate::BSScript__ObjectBindPolicy> { unsafe { virtual_function!(self, 47, (*const Self) -> Option<&'static crate::BSScript__ObjectBindPolicy>)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::GetObjectBindPolicyConst`, vtable slot 48: the const overload of GetObjectBindPolicy
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `const BSScript::ObjectBindPolicy* (BSScript::Internal::VirtualMachine* this)`
     #[inline]
-    pub fn get_object_bind_policy_const(&self) -> Option<&'static crate::BSScript__ObjectBindPolicy> { unsafe { virtual_function!(self, 48, (&Self) -> Option<&'static crate::BSScript__ObjectBindPolicy>)(self) } }
+    pub fn get_object_bind_policy_const(&self) -> Option<&'static crate::BSScript__ObjectBindPolicy> { unsafe { virtual_function!(self, 48, (*const Self) -> Option<&'static crate::BSScript__ObjectBindPolicy>)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicy`, vtable slot 45: the handle policy at +0x90 (SkyrimVM+0x338)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `BSScript::IObjectHandlePolicy* (BSScript::Internal::VirtualMachine* this)`
     #[inline]
-    pub fn get_object_handle_policy(&self) -> Option<&'static crate::BSScript__IObjectHandlePolicy> { unsafe { virtual_function!(self, 45, (&Self) -> Option<&'static crate::BSScript__IObjectHandlePolicy>)(self) } }
+    pub fn get_object_handle_policy(&self) -> Option<&'static crate::BSScript__IObjectHandlePolicy> { unsafe { virtual_function!(self, 45, (*const Self) -> Option<&'static crate::BSScript__IObjectHandlePolicy>)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicyConst`, vtable slot 46: the const overload of GetObjectHandlePolicy
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `const BSScript::IObjectHandlePolicy* (BSScript::Internal::VirtualMachine* this)`
     #[inline]
-    pub fn get_object_handle_policy_const(&self) -> Option<&'static crate::BSScript__IObjectHandlePolicy> { unsafe { virtual_function!(self, 46, (&Self) -> Option<&'static crate::BSScript__IObjectHandlePolicy>)(self) } }
+    pub fn get_object_handle_policy_const(&self) -> Option<&'static crate::BSScript__IObjectHandlePolicy> { unsafe { virtual_function!(self, 46, (*const Self) -> Option<&'static crate::BSScript__IObjectHandlePolicy>)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectType`, vtable slot 9: looks the type up in the name map at +0x160; when it is missing or not linked, asks the linker (+0xc8) to load and link <className>.pex first; false when no script exists; a type already in the map with link state 2 or 3 is returned without relinking, so a type a failed link left in state 2 is handed back by later lookups (worker 0x14bc440, follow-up 5b)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -229,7 +229,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_script_object_type(&self, className: *const crate::BSFixedString, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 9, (&Self, *const crate::BSFixedString, *mut c_void) -> bool)(self, className, out) } }
+    pub unsafe fn get_script_object_type(&self, className: *const crate::BSFixedString, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 9, (*const Self, *const crate::BSFixedString, *mut c_void) -> bool)(core::ptr::from_ref(self), className, out) } }
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeByID`, vtable slot 10: the typeID variant of GetScriptObjectType (name from the +0x190 map, then the same load path); NativeFunction<N>::ctor uses it to type form parameters and returns
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -238,7 +238,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_script_object_type_by_id(&self, typeID: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 10, (&Self, u32, *mut c_void) -> bool)(self, typeID, out) } }
+    pub unsafe fn get_script_object_type_by_id(&self, typeID: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 10, (*const Self, u32, *mut c_void) -> bool)(core::ptr::from_ref(self), typeID, out) } }
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoad`, vtable slot 11: map lookup only; succeeds only for a fully linked type (flags & 3 == 3)
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -247,7 +247,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_script_object_type_no_load(&self, className: *const crate::BSFixedString, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 11, (&Self, *const crate::BSFixedString, *mut c_void) -> bool)(self, className, out) } }
+    pub unsafe fn get_script_object_type_no_load(&self, className: *const crate::BSFixedString, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 11, (*const Self, *const crate::BSFixedString, *mut c_void) -> bool)(core::ptr::from_ref(self), className, out) } }
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoadByID`, vtable slot 12: the typeID variant of GetScriptObjectTypeNoLoad
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -256,7 +256,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_script_object_type_no_load_by_id(&self, typeID: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 12, (&Self, u32, *mut c_void) -> bool)(self, typeID, out) } }
+    pub unsafe fn get_script_object_type_no_load_by_id(&self, typeID: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 12, (*const Self, u32, *mut c_void) -> bool)(core::ptr::from_ref(self), typeID, out) } }
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectsWithATypeID`, vtable slot 14: fills out with every registered class name of the +0x1c0 map
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -265,7 +265,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_script_objects_with_a_type_id(&self, out: *mut c_void) { unsafe { virtual_function!(self, 14, (&Self, *mut c_void))(self, out) } }
+    pub unsafe fn get_script_objects_with_a_type_id(&self, out: *mut c_void) { unsafe { virtual_function!(self, 14, (*const Self, *mut c_void))(core::ptr::from_ref(self), out) } }
     /// `BSScript::Internal::VirtualMachine::GetTypeIDForScriptObject`, vtable slot 13: name -> typeID through the map at +0x1c0 (the form type for form classes; 0x8b-0x8e for aliases and active effects)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -274,13 +274,13 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `typeID` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_type_id_for_script_object(&self, className: *const crate::BSFixedString, typeID: *mut u32) -> bool { unsafe { virtual_function!(self, 13, (&Self, *const crate::BSFixedString, *mut u32) -> bool)(self, className, typeID) } }
+    pub unsafe fn get_type_id_for_script_object(&self, className: *const crate::BSFixedString, typeID: *mut u32) -> bool { unsafe { virtual_function!(self, 13, (*const Self, *const crate::BSFixedString, *mut u32) -> bool)(core::ptr::from_ref(self), className, typeID) } }
     /// `BSScript::Internal::VirtualMachine::IsWaitingOnLatent`, vtable slot 42: whether the stack is in the latent-wait map at +0x9350
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, u32 stackId)`
     #[inline]
-    pub fn is_waiting_on_latent(&self, stackId: u32) -> bool { unsafe { virtual_function!(self, 42, (&Self, u32) -> bool)(self, stackId) } }
+    pub fn is_waiting_on_latent(&self, stackId: u32) -> bool { unsafe { virtual_function!(self, 42, (*const Self, u32) -> bool)(core::ptr::from_ref(self), stackId) } }
     /// `BSScript::Internal::VirtualMachine::LinkScript`, vtable slot 17: asks the linker to load and link the script, returns whether the type is fully linked afterwards
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -289,7 +289,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn link_script(&self, className: *const c_char) -> bool { unsafe { virtual_function!(self, 17, (&Self, *const c_char) -> bool)(self, className) } }
+    pub unsafe fn link_script(&self, className: *const c_char) -> bool { unsafe { virtual_function!(self, 17, (*const Self, *const c_char) -> bool)(core::ptr::from_ref(self), className) } }
     /// `BSScript::Internal::VirtualMachine::LogError`, vtable slot 3: formats text and passes it to the error logger at +0x80 (0 info, 1 warning, 2 error, 3 fatal)
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -298,7 +298,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn log_error(&self, text: *const c_char, severity: u32) { unsafe { virtual_function!(self, 3, (&Self, *const c_char, u32))(self, text, severity) } }
+    pub unsafe fn log_error(&self, text: *const c_char, severity: u32) { unsafe { virtual_function!(self, 3, (*const Self, *const c_char, u32))(core::ptr::from_ref(self), text, severity) } }
     /// `BSScript::Internal::VirtualMachine::QueueTaskletsToJobList`, vtable slot 18: under queueLock moves every pending tasklet into the job list as {0x14c2600 (jmp to the interpreter), tasklet} and clears +0x8260
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -307,7 +307,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `jobList` must point to what the engine expects.
     #[inline]
-    pub unsafe fn queue_tasklets_to_job_list(&self, jobList: *mut c_void) { unsafe { virtual_function!(self, 18, (&Self, *mut c_void))(self, jobList) } }
+    pub unsafe fn queue_tasklets_to_job_list(&self, jobList: *mut c_void) { unsafe { virtual_function!(self, 18, (*const Self, *mut c_void))(core::ptr::from_ref(self), jobList) } }
     /// `BSScript::Internal::VirtualMachine::RegisterObjectType`, vtable slot 8: records className for typeID in the two maps at +0x190 (typeID -> name) and +0x1c0 (name -> typeID); returns false when either was already registered
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -316,25 +316,25 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `className` must point to what the engine expects.
     #[inline]
-    pub unsafe fn register_object_type(&self, typeID: u32, className: *const c_char) -> bool { unsafe { virtual_function!(self, 8, (&Self, u32, *const c_char) -> bool)(self, typeID, className) } }
+    pub unsafe fn register_object_type(&self, typeID: u32, className: *const c_char) -> bool { unsafe { virtual_function!(self, 8, (*const Self, u32, *const c_char) -> bool)(core::ptr::from_ref(self), typeID, className) } }
     /// `BSScript::Internal::VirtualMachine::ReturnFromLatent`, vtable slot 43: under the stacks lock (+0x9318): a stack not running or not in the latent-wait map (+0x9350) is logged and ignored; otherwise it leaves the map, state +0x68 goes to 0, result is copied into the return Variable (+0x70, Variable::assign: the caller keeps its value) and CompleteStack runs on the calling thread; no check against the native's returnType (+0x28); a one-frame stack (a direct dispatch) completes there and its callback runs on this thread, a deeper stack is queued and resumes in a later VM update on a worker thread; the engine calls it from inside the native's own binding (Debug.GetConfigName, and Call itself on a failed start) and from SkyrimVM::Update's timer (Utility.Wait)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this, u32 stackId, const BSScript::Variable* result)`
     #[inline]
-    pub fn return_from_latent(&self, stackId: u32, result: &crate::BSScript__Variable) { unsafe { virtual_function!(self, 43, (&Self, u32, &crate::BSScript__Variable))(self, stackId, result) } }
+    pub fn return_from_latent(&self, stackId: u32, result: &crate::BSScript__Variable) { unsafe { virtual_function!(self, 43, (*const Self, u32, *const crate::BSScript__Variable))(core::ptr::from_ref(self), stackId, core::ptr::from_ref(result)) } }
     /// `BSScript::Internal::VirtualMachine::RunQueuedTasklets`, vtable slot 5: copies pendingTasklets (+0x8260) into a scrap array, clears it and runs the interpreter 0x14ce660 on each in the calling thread
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this)`
     #[inline]
-    pub fn run_queued_tasklets(&self) { unsafe { virtual_function!(self, 5, (&Self))(self) } }
+    pub fn run_queued_tasklets(&self) { unsafe { virtual_function!(self, 5, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::SendEvent`, vtable slot 36: copies the script objects bound to exactly this handle (the +0x93a8 map under the +0x93a0 lock, each with a reference) and calls DispatchMethodCall (slot 39) for each with eventName, args and an empty callback, outside the lock; an object whose script has no such function is skipped silently, a handle with no bound object does nothing; args is called during each dispatch that finds the function (once per such object, never kept), so it may live on the caller's stack; aliases and active effects have their own handles and are reached only through RelayEventToRefAndEffects 0x9e3580, which the engine's handlers call after it
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this, u64 handle, const BSFixedString* eventName, BSScript::IFunctionArguments* args)`
     #[inline]
-    pub fn send_event(&self, handle: u64, eventName: &crate::BSFixedString, args: &crate::BSScript__IFunctionArguments) { unsafe { virtual_function!(self, 36, (&Self, u64, &crate::BSFixedString, &crate::BSScript__IFunctionArguments))(self, handle, eventName, args) } }
+    pub fn send_event(&self, handle: u64, eventName: &crate::BSFixedString, args: &crate::BSScript__IFunctionArguments) { unsafe { virtual_function!(self, 36, (*const Self, u64, *const crate::BSFixedString, *const crate::BSScript__IFunctionArguments))(core::ptr::from_ref(self), handle, core::ptr::from_ref(eventName), core::ptr::from_ref(args)) } }
     /// `BSScript::Internal::VirtualMachine::SendEventAll`, vtable slot 37: SendEvent (slot 36) for every handle in the bound-object table (+0x93d0, 0x20 per entry, count at +0x93b4), forms, aliases and active effects alike, holding the +0x93a0 lock for the whole walk; what a loop of SendEvents cannot do without it is enumerate the bound handles
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -343,7 +343,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn send_event_all(&self, eventName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments) { unsafe { virtual_function!(self, 37, (&Self, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments))(self, eventName, args) } }
+    pub unsafe fn send_event_all(&self, eventName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments) { unsafe { virtual_function!(self, 37, (*const Self, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments))(core::ptr::from_ref(self), eventName, args) } }
     /// `BSScript::Internal::VirtualMachine::SetCallableFromTasklets`, vtable slot 26: SetCallableFromTaskletsInState with the empty state; every engine RegisterFuncs calls it right after BindNativeMethod ([vtable+0xd0]) for the natives the tasklet VM may run
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -352,7 +352,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `className`, `fnName` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_callable_from_tasklets(&self, className: *const c_char, fnName: *const c_char, callable: bool) { unsafe { virtual_function!(self, 26, (&Self, *const c_char, *const c_char, bool))(self, className, fnName, callable) } }
+    pub unsafe fn set_callable_from_tasklets(&self, className: *const c_char, fnName: *const c_char, callable: bool) { unsafe { virtual_function!(self, 26, (*const Self, *const c_char, *const c_char, bool))(core::ptr::from_ref(self), className, fnName, callable) } }
     /// `BSScript::Internal::VirtualMachine::SetCallableFromTaskletsInState`, vtable slot 25: flags the function in that state of the type as callable from tasklets; logs when the type, state or function does not exist
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -361,7 +361,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_callable_from_tasklets_in_state(&self, className: *const c_char, stateName: *const c_char, fnName: *const c_char, callable: bool) { unsafe { virtual_function!(self, 25, (&Self, *const c_char, *const c_char, *const c_char, bool))(self, className, stateName, fnName, callable) } }
+    pub unsafe fn set_callable_from_tasklets_in_state(&self, className: *const c_char, stateName: *const c_char, fnName: *const c_char, callable: bool) { unsafe { virtual_function!(self, 25, (*const Self, *const c_char, *const c_char, *const c_char, bool))(core::ptr::from_ref(self), className, stateName, fnName, callable) } }
     /// `BSScript::Internal::VirtualMachine::TraceStack`, vtable slot 2: logs text with the script stack of stackId appended (looks the stack up under the stacks lock at +0x9318, then the error logger at +0x80)
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -370,13 +370,13 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn trace_stack(&self, text: *const c_char, stackId: u32, severity: u32) { unsafe { virtual_function!(self, 2, (&Self, *const c_char, u32, u32))(self, text, stackId, severity) } }
+    pub unsafe fn trace_stack(&self, text: *const c_char, stackId: u32, severity: u32) { unsafe { virtual_function!(self, 2, (*const Self, *const c_char, u32, u32))(core::ptr::from_ref(self), text, stackId, severity) } }
     /// `BSScript::Internal::VirtualMachine::Update`, vtable slot 4: runs the queued and suspended stacks for this frame (budget scaled by 0.05) under the +0x9384 lock and prunes the tracked arrays (0x14bbf00); a non-latent dispatch completes inside the next call; called once per frame by SkyrimVM::Update on whichever worker thread runs it that frame, so not tied to the main thread
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this, float budget)`
     #[inline]
-    pub fn update(&self, budget: f32) { unsafe { virtual_function!(self, 4, (&Self, f32))(self, budget) } }
+    pub fn update(&self, budget: f32) { unsafe { virtual_function!(self, 4, (*const Self, f32))(core::ptr::from_ref(self), budget) } }
     /// `BSScript::Internal::VirtualMachine::AttachObjectToHandle`: bind interface slot 4: removes the object from the list of the handle it has, appends it (with a reference; the flag in bit 0 of the stored pointer) to the new handle's list in the +0x93a0 map and stores the handle in the object (+0x20)
     ///
     /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104821, rva 0x14b5160.
@@ -385,7 +385,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn attach_object_to_handle(&self, object: *mut c_void, handle: u64, flag: bool) { unsafe { function!(104821, (&Self, *mut c_void, u64, bool))(self, object, handle, flag) } }
+    pub unsafe fn attach_object_to_handle(&self, object: *mut c_void, handle: u64, flag: bool) { unsafe { function!(104821, (*const Self, *mut c_void, u64, bool))(core::ptr::from_ref(self), object, handle, flag) } }
     /// `BSScript::Internal::VirtualMachine::BindObject`: bind interface slot 3, what ObjectBindPolicy::BindObject forwards to: attaches the object to the handle (slot 4), then walks the object's type and its parents for the first class with a registered type id that HandleIsType accepts for the handle; when none does, the object's own handle is reset to the invalid handle while it stays in the handle's object list
     ///
     /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104820, rva 0x14b4fb0.
@@ -394,13 +394,13 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64) { unsafe { function!(104820, (&Self, *mut c_void, u64))(self, object, handle) } }
+    pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64) { unsafe { function!(104820, (*const Self, *mut c_void, u64))(core::ptr::from_ref(self), object, handle) } }
     /// `BSScript::Internal::VirtualMachine::DumpStackToLog`: header (0x14a0ac0: 'Dumping stack %d', frame/page count, state, type, return value, callback), then per frame the trace line, 'IP: %d' (frame+0x20), 'Instruction: %d' (InstructionIndexAtBit, script functions only), 'Line: %d' (slot 17), and every variable by slot 18's name
     ///
     /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104491, rva 0x149fc70.
     /// `void (const BSScript::Stack* stack, BSScript::ErrorLogger* logger)`
     #[inline]
-    pub fn dump_stack_to_log(stack: &crate::BSScript__Stack, logger: &crate::BSScript__ErrorLogger) { unsafe { function!(104491, (&crate::BSScript__Stack, &crate::BSScript__ErrorLogger))(stack, logger) } }
+    pub fn dump_stack_to_log(stack: &crate::BSScript__Stack, logger: &crate::BSScript__ErrorLogger) { unsafe { function!(104491, (*const crate::BSScript__Stack, *const crate::BSScript__ErrorLogger))(core::ptr::from_ref(stack), core::ptr::from_ref(logger)) } }
     /// `BSScript::Internal::VirtualMachine::frozenStacks` at +0x9390: BSTSmartPointer<Stack>: head of the frozen list, linked through Stack+0x98
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
@@ -422,7 +422,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// `stack` must point to what the engine expects.
     #[inline]
-    pub unsafe fn call(&self, stack: *mut c_void, logger: *mut crate::BSScript__ErrorLogger, vm: *mut crate::BSScript__Internal__VirtualMachine, a4: bool) -> u32 { unsafe { virtual_function!(self, 15, (&Self, *mut c_void, *mut crate::BSScript__ErrorLogger, *mut crate::BSScript__Internal__VirtualMachine, bool) -> u32)(self, stack, logger, vm, a4) } }
+    pub unsafe fn call(&self, stack: *mut c_void, logger: *mut crate::BSScript__ErrorLogger, vm: *mut crate::BSScript__Internal__VirtualMachine, a4: bool) -> u32 { unsafe { virtual_function!(self, 15, (*const Self, *mut c_void, *mut crate::BSScript__ErrorLogger, *mut crate::BSScript__Internal__VirtualMachine, bool) -> u32)(core::ptr::from_ref(self), stack, logger, vm, a4) } }
     /// `BSScript::NF_util::NativeFunctionBase::CallBinding`, vtable slot 22: pure here; each NativeFunction<N> instantiation reads its arguments from the frame (Stack::GetStackFrameVariable(stack, frame, i, Stack::GetPageForFrame(stack, frame)) for i below frame+0x38), converts self through the handle policy, calls the C callback at +0x50 as callback(vm, stackId, self, args...) and writes the converted return value into result; false when self could not be converted
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -431,7 +431,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// `self_`, `result`, `frame` must point to what the engine expects.
     #[inline]
-    pub unsafe fn call_binding(&self, self_: *mut crate::BSScript__Variable, vm: *mut crate::BSScript__Internal__VirtualMachine, stackId: u32, result: *mut crate::BSScript__Variable, frame: *mut crate::BSScript__StackFrame) -> bool { unsafe { virtual_function!(self, 22, (&Self, *mut crate::BSScript__Variable, *mut crate::BSScript__Internal__VirtualMachine, u32, *mut crate::BSScript__Variable, *mut crate::BSScript__StackFrame) -> bool)(self, self_, vm, stackId, result, frame) } }
+    pub unsafe fn call_binding(&self, self_: *mut crate::BSScript__Variable, vm: *mut crate::BSScript__Internal__VirtualMachine, stackId: u32, result: *mut crate::BSScript__Variable, frame: *mut crate::BSScript__StackFrame) -> bool { unsafe { virtual_function!(self, 22, (*const Self, *mut crate::BSScript__Variable, *mut crate::BSScript__Internal__VirtualMachine, u32, *mut crate::BSScript__Variable, *mut crate::BSScript__StackFrame) -> bool)(core::ptr::from_ref(self), self_, vm, stackId, result, frame) } }
     /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType`, vtable slot 4: copies +0x28 into out and returns out
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -440,19 +440,19 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn copy_return_type(&self, out: *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo { unsafe { virtual_function!(self, 4, (&Self, *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo)(self, out) } }
+    pub unsafe fn copy_return_type(&self, out: *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo)(core::ptr::from_ref(self), out) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetDocString`, vtable slot 13: +0x48 (empty for natives)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_doc_string(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 13, (&Self) -> Option<&'static crate::BSFixedString>)(self) } }
+    pub fn get_doc_string(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 13, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName`, vtable slot 1: the function name at +0x10
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_function_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 1, (&Self) -> Option<&'static crate::BSFixedString>)(self) } }
+    pub fn get_function_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 1, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType`, vtable slot 11: 0 (a normal function, not a getter or setter)
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -461,13 +461,13 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_function_type(&self) -> u32 { unsafe { virtual_function!(self, 11, (&Self) -> u32)(self) } }
+    pub unsafe fn get_function_type(&self) -> u32 { unsafe { virtual_function!(self, 11, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet`, vtable slot 19: +0x41 (never set on a native: the VM keeps the flag in the type's function table)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_is_callable_from_tasklet(&self) -> bool { unsafe { virtual_function!(self, 19, (&Self) -> bool)(self) } }
+    pub fn get_is_callable_from_tasklet(&self) -> bool { unsafe { virtual_function!(self, 19, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty`, vtable slot 10: false
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -476,19 +476,19 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_is_empty(&self) -> bool { unsafe { virtual_function!(self, 10, (&Self) -> bool)(self) } }
+    pub unsafe fn get_is_empty(&self) -> bool { unsafe { virtual_function!(self, 10, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetIsNative`, vtable slot 8: true
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (&Self) -> bool)(self) } }
+    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic`, vtable slot 9: +0x40, set from the ctor's isStatic argument
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_is_static(&self) -> bool { unsafe { virtual_function!(self, 9, (&Self) -> bool)(self) } }
+    pub fn get_is_static(&self) -> bool { unsafe { virtual_function!(self, 9, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP`, vtable slot 17: false, *line = 0: natives have no lines
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -497,19 +497,19 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// `line` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (&Self, u32, *mut u32) -> bool)(self, ip, line) } }
+    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (*const Self, u32, *mut u32) -> bool)(core::ptr::from_ref(self), ip, line) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName`, vtable slot 2: the script class name at +0x18; BindNativeMethod uses it to find or create the type
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_object_type_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (&Self) -> Option<&'static crate::BSFixedString>)(self) } }
+    pub fn get_object_type_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetParamCount`, vtable slot 5: the total variable count at +0x3a (parameters plus locals, equal to the parameter count for natives)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `u16 (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_param_count(&self) -> u16 { unsafe { virtual_function!(self, 5, (&Self) -> u16)(self) } }
+    pub fn get_param_count(&self) -> u16 { unsafe { virtual_function!(self, 5, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType`, vtable slot 6: name and type of parameter index from the array at +0x30 (0x10 per entry); an index past +0x38 yields the empty name
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -518,7 +518,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// `name`, `type_` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_param_name_and_type(&self, index: u32, name: *mut crate::BSFixedString, type_: *mut crate::BSScript__TypeInfo) { unsafe { virtual_function!(self, 6, (&Self, u32, *mut crate::BSFixedString, *mut crate::BSScript__TypeInfo))(self, index, name, type_) } }
+    pub unsafe fn get_param_name_and_type(&self, index: u32, name: *mut crate::BSFixedString, type_: *mut crate::BSScript__TypeInfo) { unsafe { virtual_function!(self, 6, (*const Self, u32, *mut crate::BSFixedString, *mut crate::BSScript__TypeInfo))(core::ptr::from_ref(self), index, name, type_) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename`, vtable slot 16: a static string shared by every native
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -527,31 +527,31 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_source_filename(&self) -> *mut crate::BSFixedString { unsafe { virtual_function!(self, 16, (&Self) -> *mut crate::BSFixedString)(self) } }
+    pub unsafe fn get_source_filename(&self) -> *mut crate::BSFixedString { unsafe { virtual_function!(self, 16, (*const Self) -> *mut crate::BSFixedString)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize`, vtable slot 7: the variable count at +0x3a: the number of Variables the frame holds
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `u16 (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_stack_frame_size(&self) -> u16 { unsafe { virtual_function!(self, 7, (&Self) -> u16)(self) } }
+    pub fn get_stack_frame_size(&self) -> u16 { unsafe { virtual_function!(self, 7, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetStateName`, vtable slot 3: the state name at +0x20 (empty for natives)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_state_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 3, (&Self) -> Option<&'static crate::BSFixedString>)(self) } }
+    pub fn get_state_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 3, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags`, vtable slot 12: +0x44 (0 for every native)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `u32 (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn get_user_flags(&self) -> u32 { unsafe { virtual_function!(self, 12, (&Self) -> u32)(self) } }
+    pub fn get_user_flags(&self) -> u32 { unsafe { virtual_function!(self, 12, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::HasBinding`, vtable slot 21: pure here; every NativeFunction<N> instantiation returns +0x50 != 0
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
-    pub fn has_binding(&self) -> bool { unsafe { virtual_function!(self, 21, (&Self) -> bool)(self) } }
+    pub fn has_binding(&self) -> bool { unsafe { virtual_function!(self, 21, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::InsertLocals`, vtable slot 14: nothing: natives have no locals
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -560,13 +560,13 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn insert_locals(&self, frame: *mut crate::BSScript__StackFrame) { unsafe { virtual_function!(self, 14, (&Self, *mut crate::BSScript__StackFrame))(self, frame) } }
+    pub unsafe fn insert_locals(&self, frame: *mut crate::BSScript__StackFrame) { unsafe { virtual_function!(self, 14, (*const Self, *mut crate::BSScript__StackFrame))(core::ptr::from_ref(self), frame) } }
     /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet`, vtable slot 20: ignored by natives
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::NF_util::NativeFunctionBase* this, bool)`
     #[inline]
-    pub fn set_is_callable_from_tasklet(&self, a1: bool) { unsafe { virtual_function!(self, 20, (&Self, bool))(self, a1) } }
+    pub fn set_is_callable_from_tasklet(&self, a1: bool) { unsafe { virtual_function!(self, 20, (*const Self, bool))(core::ptr::from_ref(self), a1) } }
     /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName`, vtable slot 18: the name of parameter index, false (and the empty name) past the count
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -575,7 +575,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn try_get_param_name(&self, index: u32, out: *mut crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 18, (&Self, u32, *mut crate::BSFixedString) -> bool)(self, index, out) } }
+    pub unsafe fn try_get_param_name(&self, index: u32, out: *mut crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 18, (*const Self, u32, *mut crate::BSFixedString) -> bool)(core::ptr::from_ref(self), index, out) } }
     /// `BSScript::NF_util::NativeFunctionBase::ctor`: refCount 0, the base vtable, the three strings (state empty), returnType 0, the parameter array of paramCount entries named a0.., isStatic, +0x41/+0x44 0, empty doc string
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104653, rva 0x14aa0f0.
@@ -584,7 +584,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, name: *const c_char, className: *const c_char, isStatic: bool, paramCount: u32) -> *mut Self { unsafe { function!(104653, (&Self, *const c_char, *const c_char, bool, u32) -> *mut Self)(self, name, className, isStatic, paramCount) } }
+    pub unsafe fn ctor(&self, name: *const c_char, className: *const c_char, isStatic: bool, paramCount: u32) -> *mut Self { unsafe { function!(104653, (*const Self, *const c_char, *const c_char, bool, u32) -> *mut Self)(core::ptr::from_ref(self), name, className, isStatic, paramCount) } }
     /// `BSScript::NF_util::NativeFunctionBase::params` at +0x30: the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
@@ -598,7 +598,7 @@ impl crate::BSScript__Object {
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104253, rva 0x148ef60.
     /// `u32 (BSScript::Object* this)`
     #[inline]
-    pub fn dec_ref(&self) -> u32 { unsafe { function!(104253, (&Self) -> u32)(self) } }
+    pub fn dec_ref(&self) -> u32 { unsafe { function!(104253, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSScript::Object::Destroy`: resets the variables after the header when bit 0 of +0 is set, drops the stack and type references
     ///
     /// Semantic, papyrus pass, medium; ledger semantic evidence, name medium; id 104246, rva 0x148e1a0.
@@ -607,19 +607,19 @@ impl crate::BSScript__Object {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn destroy(&self) { unsafe { function!(104246, (&Self))(self) } }
+    pub unsafe fn destroy(&self) { unsafe { function!(104246, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSScript::Object::GetHandle`: the handle at +0x20, read under the lock bit of +0x28
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104247, rva 0x148e250.
     /// `u64 (BSScript::Object* this)`
     #[inline]
-    pub fn get_handle(&self) -> u64 { unsafe { function!(104247, (&Self) -> u64)(self) } }
+    pub fn get_handle(&self) -> u64 { unsafe { function!(104247, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::Object::IncRef`: adds a reference (bit 31 of +0x28 as the lock); the 1 -> 2 transition calls IObjectHandlePolicy::PersistHandle
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104252, rva 0x148eeb0.
     /// `u32 (BSScript::Object* this)`
     #[inline]
-    pub fn inc_ref(&self) -> u32 { unsafe { function!(104252, (&Self) -> u32)(self) } }
+    pub fn inc_ref(&self) -> u32 { unsafe { function!(104252, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSScript::Object::ctor`: fills the header: flags variableCount * 8 | 4, the type (with a reference), a string at +0x10, no stack, handle = policy->GetInvalidHandle(), count 0; stores policy in g_IObjectHandlePolicy_ptr
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104255, rva 0x148f060.
@@ -628,7 +628,7 @@ impl crate::BSScript__Object {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, type_: *mut c_void, policy: *mut crate::BSScript__IObjectHandlePolicy, variableCount: u32) -> *mut Self { unsafe { function!(104255, (&Self, *mut c_void, *mut crate::BSScript__IObjectHandlePolicy, u32) -> *mut Self)(self, type_, policy, variableCount) } }
+    pub unsafe fn ctor(&self, type_: *mut c_void, policy: *mut crate::BSScript__IObjectHandlePolicy, variableCount: u32) -> *mut Self { unsafe { function!(104255, (*const Self, *mut c_void, *mut crate::BSScript__IObjectHandlePolicy, u32) -> *mut Self)(core::ptr::from_ref(self), type_, policy, variableCount) } }
     /// `BSScript::Object::type` at +0x8: BSTSmartPointer<ObjectTypeInfo>
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
@@ -642,7 +642,7 @@ impl crate::BSScript__ObjectTypeInfo {
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104325, rva 0x1494c60.
     /// `bool (BSScript::ObjectTypeInfo* this, BSScript::IFunction* function, BSScript::ErrorLogger* logger)`
     #[inline]
-    pub fn bind_native_function(&self, function: &crate::BSScript__IFunction, logger: &crate::BSScript__ErrorLogger) -> bool { unsafe { function!(104325, (&Self, &crate::BSScript__IFunction, &crate::BSScript__ErrorLogger) -> bool)(self, function, logger) } }
+    pub fn bind_native_function(&self, function: &crate::BSScript__IFunction, logger: &crate::BSScript__ErrorLogger) -> bool { unsafe { function!(104325, (*const Self, *const crate::BSScript__IFunction, *const crate::BSScript__ErrorLogger) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(function), core::ptr::from_ref(logger)) } }
     /// `BSScript::ObjectTypeInfo::GetFunction`: finds a static (global) function by name: on a type in link state 3 (or state 2 when linkedOnly is false) through ID_104355 (the skyrim-rs papyrus run got static natives for either flag value and no method on a linked type); on an unlinked type, only when linkedOnly is false, the pending native whose IFunction slot 9 (GetIsStatic) is true, so DispatchStaticCall needs the script loaded
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104311, rva 0x1492470.
@@ -651,13 +651,13 @@ impl crate::BSScript__ObjectTypeInfo {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_function(&self, name: *const crate::BSFixedString, out: *mut c_void, linkedOnly: bool) -> bool { unsafe { function!(104311, (&Self, *const crate::BSFixedString, *mut c_void, bool) -> bool)(self, name, out, linkedOnly) } }
+    pub unsafe fn get_function(&self, name: *const crate::BSFixedString, out: *mut c_void, linkedOnly: bool) -> bool { unsafe { function!(104311, (*const Self, *const crate::BSFixedString, *mut c_void, bool) -> bool)(core::ptr::from_ref(self), name, out, linkedOnly) } }
     /// `BSScript::ObjectTypeInfo::GetTotalNumVariables`: the variable count of the type and its linked parents (bits 8-17 of +0x20 along +0x10)
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104317, rva 0x1492b90.
     /// `u32 (const BSScript::ObjectTypeInfo* this)`
     #[inline]
-    pub fn get_total_num_variables(&self) -> u32 { unsafe { function!(104317, (&Self) -> u32)(self) } }
+    pub fn get_total_num_variables(&self) -> u32 { unsafe { function!(104317, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSScript::ObjectTypeInfo::dtor`: releases the tables, the name, the parent and the doc string
     ///
     /// Semantic, papyrus pass, medium; ledger semantic evidence, name medium; id 104299, rva 0x1491e00.
@@ -666,7 +666,7 @@ impl crate::BSScript__ObjectTypeInfo {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(104299, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(104299, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSScript::ObjectTypeInfo::parent` at +0x10: the parent class (Actor -> ObjectReference -> Form), null for roots
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
@@ -680,13 +680,13 @@ impl crate::BSScript__Stack {
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104483, rva 0x149e7f0.
     /// `u32 (BSScript::Stack* this, const BSScript::StackFrame* frame)`
     #[inline]
-    pub fn get_page_for_frame(&self, frame: &crate::BSScript__StackFrame) -> u32 { unsafe { function!(104483, (&Self, &crate::BSScript__StackFrame) -> u32)(self, frame) } }
+    pub fn get_page_for_frame(&self, frame: &crate::BSScript__StackFrame) -> u32 { unsafe { function!(104483, (*const Self, *const crate::BSScript__StackFrame) -> u32)(core::ptr::from_ref(self), core::ptr::from_ref(frame)) } }
     /// `BSScript::Stack::GetStackFrameVariable`: address of Variable index of the frame: page data + the frame's offset + 0x3c + index * 0x10, crossing into the next page when needed
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104484, rva 0x149e860.
     /// `BSScript::Variable* (BSScript::Stack* this, const BSScript::StackFrame* frame, u32 index, u32 page)`
     #[inline]
-    pub fn get_stack_frame_variable(&self, frame: &crate::BSScript__StackFrame, index: u32, page: u32) -> Option<&'static crate::BSScript__Variable> { unsafe { function!(104484, (&Self, &crate::BSScript__StackFrame, u32, u32) -> Option<&'static crate::BSScript__Variable>)(self, frame, index, page) } }
+    pub fn get_stack_frame_variable(&self, frame: &crate::BSScript__StackFrame, index: u32, page: u32) -> Option<&'static crate::BSScript__Variable> { unsafe { function!(104484, (*const Self, *const crate::BSScript__StackFrame, u32, u32) -> Option<&'static crate::BSScript__Variable>)(core::ptr::from_ref(self), core::ptr::from_ref(frame), index, page) } }
     /// `BSScript::Stack::ctor`: zero count, the two policies at +8/+0x10, an empty page array, the two u32 at +0x80/+0x84, the callback at +0x90 with a reference
     ///
     /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104479, rva 0x149e2a0.
@@ -695,7 +695,7 @@ impl crate::BSScript__Stack {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, pagePolicy: *mut c_void, profilePolicy: *mut c_void, a3: u32, a4: u32, callback: *mut c_void) -> *mut Self { unsafe { function!(104479, (&Self, *mut c_void, *mut c_void, u32, u32, *mut c_void) -> *mut Self)(self, pagePolicy, profilePolicy, a3, a4, callback) } }
+    pub unsafe fn ctor(&self, pagePolicy: *mut c_void, profilePolicy: *mut c_void, a3: u32, a4: u32, callback: *mut c_void) -> *mut Self { unsafe { function!(104479, (*const Self, *mut c_void, *mut c_void, u32, u32, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), pagePolicy, profilePolicy, a3, a4, callback) } }
     /// `BSScript::Stack::frozenNext` at +0x98: BSTSmartPointer<Stack>: next stack in the VM's frozen list (VM+0x9390)
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
@@ -735,13 +735,13 @@ impl crate::BSScript__Variable {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_object_ptr(&self) -> *mut c_void { unsafe { function!(104287, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn get_object_ptr(&self) -> *mut c_void { unsafe { function!(104287, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
     /// `BSScript::Variable::GetString`: the string payload for a String Variable, else the empty string
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104285, rva 0x1490600.
     /// `const BSFixedString* (const BSScript::Variable* this)`
     #[inline]
-    pub fn get_string(&self) -> Option<&'static crate::BSFixedString> { unsafe { function!(104285, (&Self) -> Option<&'static crate::BSFixedString>)(self) } }
+    pub fn get_string(&self) -> Option<&'static crate::BSFixedString> { unsafe { function!(104285, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
     /// `BSScript::Variable::SetObject`: for an object-typed Variable: reset, store the Object* and IncRef it
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104288, rva 0x1490830.
@@ -750,19 +750,19 @@ impl crate::BSScript__Variable {
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_object(&self, object: *mut c_void) { unsafe { function!(104288, (&Self, *mut c_void))(self, object) } }
+    pub unsafe fn set_object(&self, object: *mut c_void) { unsafe { function!(104288, (*const Self, *mut c_void))(core::ptr::from_ref(self), object) } }
     /// `BSScript::Variable::assign`: resets this, then copies other by type: arrays and objects add a reference, strings copy the BSFixedString, scalars copy the qword
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104297, rva 0x1491b00.
     /// `void (BSScript::Variable* this, const BSScript::Variable* other)`
     #[inline]
-    pub fn assign(&self, other: &Self) { unsafe { function!(104297, (&Self, &Self))(self, other) } }
+    pub fn assign(&self, other: &Self) { unsafe { function!(104297, (*const Self, *const Self))(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `BSScript::Variable::reset`: releases the payload by type (array, string, object) and zeroes +8; the type stays
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104296, rva 0x1491a00.
     /// `void (BSScript::Variable* this)`
     #[inline]
-    pub fn reset(&self) { unsafe { function!(104296, (&Self))(self) } }
+    pub fn reset(&self) { unsafe { function!(104296, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraAliasInstanceArray {
@@ -774,7 +774,7 @@ impl crate::ExtraAliasInstanceArray {
     /// # Safety
     /// `functor` must point to what the engine expects.
     #[inline]
-    pub unsafe fn for_each_alias(&self, functor: *mut c_void) { unsafe { function!(12720, (&Self, *mut c_void))(self, functor) } }
+    pub unsafe fn for_each_alias(&self, functor: *mut c_void) { unsafe { function!(12720, (*const Self, *mut c_void))(core::ptr::from_ref(self), functor) } }
 }
 
 impl crate::ExtraAliasInstanceArray__Entry {
@@ -804,7 +804,7 @@ impl crate::SkyrimScript__HandlePolicy {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn convert_handle_to_string(&self, handle: u64, out: *mut crate::BSFixedString) { unsafe { virtual_function!(self, 11, (&Self, u64, *mut crate::BSFixedString))(self, handle, out) } }
+    pub unsafe fn convert_handle_to_string(&self, handle: u64, out: *mut crate::BSFixedString) { unsafe { virtual_function!(self, 11, (*const Self, u64, *mut crate::BSFixedString))(core::ptr::from_ref(self), handle, out) } }
     /// `SkyrimScript::HandlePolicy::GetBaseObjectHandle`, vtable slot 6: the handle of the base object: a reference's leveled base or baseObject, an item's base object, an active effect's effect setting; the invalid handle otherwise
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -813,7 +813,7 @@ impl crate::SkyrimScript__HandlePolicy {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_base_object_handle(&self, handle: u64) -> u64 { unsafe { virtual_function!(self, 6, (&Self, u64) -> u64)(self, handle) } }
+    pub unsafe fn get_base_object_handle(&self, handle: u64) -> u64 { unsafe { virtual_function!(self, 6, (*const Self, u64) -> u64)(core::ptr::from_ref(self), handle) } }
     /// `SkyrimScript::HandlePolicy::GetHandleForObject`, vtable slot 4: form: formID | 0xffff << 32 (a reference carrying an ExtraUniqueID instead gets formID | uniqueID << 32 | 1 << 48); 0x8b-0x8d alias: the quest's formID (alias+0x10, its +0x14) | the alias id (u16 at alias+0x18) << 32; 0x8e active effect: the target actor's formID (ActiveEffect+0x50 is the target's MagicTarget, the actor is 0xa0 before it) | uniqueID (u16 at +0x84) << 32 | 2 << 48, and the invalid handle when the target is null or not an actor or the uniqueID is 0 (request 4f corrected 'caster' to 'target'); null object: the invalid handle
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -822,13 +822,13 @@ impl crate::SkyrimScript__HandlePolicy {
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_handle_for_object(&self, typeID: u32, object: *const c_void) -> u64 { unsafe { virtual_function!(self, 4, (&Self, u32, *const c_void) -> u64)(self, typeID, object) } }
+    pub unsafe fn get_handle_for_object(&self, typeID: u32, object: *const c_void) -> u64 { unsafe { virtual_function!(self, 4, (*const Self, u32, *const c_void) -> u64)(core::ptr::from_ref(self), typeID, object) } }
     /// `SkyrimScript::HandlePolicy::GetInvalidHandle`, vtable slot 3: 0xffff00000000: the form-handle pattern with form id 0
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `u64 (SkyrimScript::HandlePolicy* this)`
     #[inline]
-    pub fn get_invalid_handle(&self) -> u64 { unsafe { virtual_function!(self, 3, (&Self) -> u64)(self) } }
+    pub fn get_invalid_handle(&self) -> u64 { unsafe { virtual_function!(self, 3, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimScript::HandlePolicy::GetItemReferenceHandle`, vtable slot 7: for an item handle (bit 48), the handle of the reference the item itself is (FindRefrObjVisitor over the container's inventory changes); the invalid handle otherwise
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -837,7 +837,7 @@ impl crate::SkyrimScript__HandlePolicy {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_item_reference_handle(&self, handle: u64) -> u64 { unsafe { virtual_function!(self, 7, (&Self, u64) -> u64)(self, handle) } }
+    pub unsafe fn get_item_reference_handle(&self, handle: u64) -> u64 { unsafe { virtual_function!(self, 7, (*const Self, u64) -> u64)(core::ptr::from_ref(self), handle) } }
     /// `SkyrimScript::HandlePolicy::GetObjectForHandle`, vtable slot 8: the object the handle names when HandleIsType holds: FindFormByID for form handles, the alias of the quest for 0x8b-0x8d, the inventory item reference for bit 48, the ActiveEffect found on the actor's magic target for bit 49; null otherwise
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -846,25 +846,25 @@ impl crate::SkyrimScript__HandlePolicy {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_object_for_handle(&self, typeID: u32, handle: u64) -> *mut c_void { unsafe { virtual_function!(self, 8, (&Self, u32, u64) -> *mut c_void)(self, typeID, handle) } }
+    pub unsafe fn get_object_for_handle(&self, typeID: u32, handle: u64) -> *mut c_void { unsafe { virtual_function!(self, 8, (*const Self, u32, u64) -> *mut c_void)(core::ptr::from_ref(self), typeID, handle) } }
     /// `SkyrimScript::HandlePolicy::HandleIsReference`, vtable slot 5: HandleIsType(0x3d, handle)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (SkyrimScript::HandlePolicy* this, u64 handle)`
     #[inline]
-    pub fn handle_is_reference(&self, handle: u64) -> bool { unsafe { virtual_function!(self, 5, (&Self, u64) -> bool)(self, handle) } }
+    pub fn handle_is_reference(&self, handle: u64) -> bool { unsafe { virtual_function!(self, 5, (*const Self, u64) -> bool)(core::ptr::from_ref(self), handle) } }
     /// `SkyrimScript::HandlePolicy::HandleIsType`, vtable slot 1: whether the handle names an object of typeID: form handles (bits 32-47 == 0xffff) compare the form's formType (0 accepts any form, 0x3d any reference, 0x18 armor/arms/outfit, 0x20 the container set); item handles (bit 48) accept 0 and 0x3d; effect handles (bit 49) accept 0x8e only, without looking the effect up; alias handles (bits 48-63 clear, bits 32-47 the alias id): 0x8b any alias id other than 0xffff, 0x8c only when the quest's alias of that id is a reference alias, 0x8d only a location alias
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (SkyrimScript::HandlePolicy* this, u32 typeID, u64 handle)`
     #[inline]
-    pub fn handle_is_type(&self, typeID: u32, handle: u64) -> bool { unsafe { virtual_function!(self, 1, (&Self, u32, u64) -> bool)(self, typeID, handle) } }
+    pub fn handle_is_type(&self, typeID: u32, handle: u64) -> bool { unsafe { virtual_function!(self, 1, (*const Self, u32, u64) -> bool)(core::ptr::from_ref(self), typeID, handle) } }
     /// `SkyrimScript::HandlePolicy::IsHandleObjectAvailable`, vtable slot 2: whether the object behind the handle exists and is not marked unavailable (form flags bit 21 clear); the invalid handle returns true (its first test is handle == GetInvalidHandle), so callers test HandleIsType first
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (SkyrimScript::HandlePolicy* this, u64 handle)`
     #[inline]
-    pub fn is_handle_object_available(&self, handle: u64) -> bool { unsafe { virtual_function!(self, 2, (&Self, u64) -> bool)(self, handle) } }
+    pub fn is_handle_object_available(&self, handle: u64) -> bool { unsafe { virtual_function!(self, 2, (*const Self, u64) -> bool)(core::ptr::from_ref(self), handle) } }
     /// `SkyrimScript::HandlePolicy::PersistHandle`, vtable slot 9: keeps a reference handle alive while a script object holds it (the policy's handle table under its lock at +8); BSScript::Object::IncRef calls it when the count rises above 1
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -873,7 +873,7 @@ impl crate::SkyrimScript__HandlePolicy {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn persist_handle(&self, handle: u64) { unsafe { virtual_function!(self, 9, (&Self, u64))(self, handle) } }
+    pub unsafe fn persist_handle(&self, handle: u64) { unsafe { virtual_function!(self, 9, (*const Self, u64))(core::ptr::from_ref(self), handle) } }
     /// `SkyrimScript::HandlePolicy::ReleaseHandle`, vtable slot 10: the inverse of PersistHandle; BSScript::Object::DecRef calls it when the count drops back to 1
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -882,7 +882,7 @@ impl crate::SkyrimScript__HandlePolicy {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn release_handle(&self, handle: u64) { unsafe { virtual_function!(self, 10, (&Self, u64))(self, handle) } }
+    pub unsafe fn release_handle(&self, handle: u64) { unsafe { virtual_function!(self, 10, (*const Self, u64))(core::ptr::from_ref(self), handle) } }
 }
 
 /// `BSScript::NF_util::SignaturesMatch`: same isStatic (slot 9), same parameter count (slot 5), every parameter type equal (slot 6 on both) and the same return type (slot 4)
@@ -890,13 +890,13 @@ impl crate::SkyrimScript__HandlePolicy {
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104359, rva 0x1496bb0.
 /// `bool (BSScript::IFunction* declared, BSScript::IFunction* native)`
 #[inline]
-pub fn bs_script__nf_util__signatures_match(declared: &crate::BSScript__IFunction, native: &crate::BSScript__IFunction) -> bool { unsafe { function!(104359, (&crate::BSScript__IFunction, &crate::BSScript__IFunction) -> bool)(declared, native) } }
+pub fn bs_script__nf_util__signatures_match(declared: &crate::BSScript__IFunction, native: &crate::BSScript__IFunction) -> bool { unsafe { function!(104359, (*const crate::BSScript__IFunction, *const crate::BSScript__IFunction) -> bool)(core::ptr::from_ref(declared), core::ptr::from_ref(native)) } }
 /// `BSScript::NF_util::WaitForLatent`: Call's latent registration, before CallBinding: under the +0x9318 lock the stack must be running (+0x9320 map) in state 0 ('Stack %d is not running / is waiting but was requested to wait on a latent call - ignoring request'); it goes into the latent-wait map (+0x9350) with state 3 and the self object's current stack (+0x18) is released when it is this stack
 ///
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104851, rva 0x14b9ee0.
 /// `void (BSScript::Internal::VirtualMachine* vm, u32 stackId)`
 #[inline]
-pub fn bs_script__nf_util__wait_for_latent(vm: &crate::BSScript__Internal__VirtualMachine, stackId: u32) { unsafe { function!(104851, (&crate::BSScript__Internal__VirtualMachine, u32))(vm, stackId) } }
+pub fn bs_script__nf_util__wait_for_latent(vm: &crate::BSScript__Internal__VirtualMachine, stackId: u32) { unsafe { function!(104851, (*const crate::BSScript__Internal__VirtualMachine, u32))(core::ptr::from_ref(vm), stackId) } }
 /// `CompleteStack`: the stack's return path: pops the returning frame, and when no frame is left sets +0x68 to 1, copies the return Variable (+0x70) and calls the callback's slot 1 with the copy, then removes the stack from the VM
 ///
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104854, rva 0x14bae50.
@@ -938,25 +938,25 @@ pub unsafe fn for_each_alias_instance_of_ref(ref_: *mut crate::TESObjectREFR, fu
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 54614, rva 0x9fded0.
 /// `void (BSScript::IVirtualMachine* vm, u32 stackId, ActiveEffect* self)`
 #[inline]
-pub fn papyrus__active_magic_effect__dispel(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::ActiveEffect) { unsafe { function!(54614, (&crate::BSScript__IVirtualMachine, u32, &crate::ActiveEffect))(vm, stackId, self_) } }
+pub fn papyrus__active_magic_effect__dispel(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::ActiveEffect) { unsafe { function!(54614, (*const crate::BSScript__IVirtualMachine, u32, *const crate::ActiveEffect))(core::ptr::from_ref(vm), stackId, core::ptr::from_ref(self_)) } }
 /// `Papyrus::ActiveMagicEffect::SelfFromVariable`: the ActiveEffect an object Variable names: Object::GetHandle, HandleIsType(0x8e), IsHandleObjectAvailable, GetObjectForHandle(0x8e) through g_IObjectHandlePolicy_ptr; null when any step fails
 ///
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 54616, rva 0x9fdef0.
 /// `ActiveEffect* (const BSScript::Variable* self)`
 #[inline]
-pub fn papyrus__active_magic_effect__self_from_variable(self_: &crate::BSScript__Variable) -> Option<&'static crate::ActiveEffect> { unsafe { function!(54616, (&crate::BSScript__Variable) -> Option<&'static crate::ActiveEffect>)(self_) } }
+pub fn papyrus__active_magic_effect__self_from_variable(self_: &crate::BSScript__Variable) -> Option<&'static crate::ActiveEffect> { unsafe { function!(54616, (*const crate::BSScript__Variable) -> Option<&'static crate::ActiveEffect>)(core::ptr::from_ref(self_)) } }
 /// `Papyrus::Alias::RegisterForSingleUpdate`: the RegisterForSingleUpdate native of Alias
 ///
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 55131, rva 0xa13b70.
 /// `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSBaseAlias* self, float a0)`
 #[inline]
-pub fn papyrus__alias__register_for_single_update(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::BGSBaseAlias, a0: f32) { unsafe { function!(55131, (&crate::BSScript__IVirtualMachine, u32, &crate::BGSBaseAlias, f32))(vm, stackId, self_, a0) } }
+pub fn papyrus__alias__register_for_single_update(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::BGSBaseAlias, a0: f32) { unsafe { function!(55131, (*const crate::BSScript__IVirtualMachine, u32, *const crate::BGSBaseAlias, f32))(core::ptr::from_ref(vm), stackId, core::ptr::from_ref(self_), a0) } }
 /// `Papyrus::Alias::RegisterForSleep`: the RegisterForSleep native of Alias
 ///
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 55133, rva 0xa13c30.
 /// `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSBaseAlias* self)`
 #[inline]
-pub fn papyrus__alias__register_for_sleep(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::BGSBaseAlias) { unsafe { function!(55133, (&crate::BSScript__IVirtualMachine, u32, &crate::BGSBaseAlias))(vm, stackId, self_) } }
+pub fn papyrus__alias__register_for_sleep(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::BGSBaseAlias) { unsafe { function!(55133, (*const crate::BSScript__IVirtualMachine, u32, *const crate::BGSBaseAlias))(core::ptr::from_ref(vm), stackId, core::ptr::from_ref(self_)) } }
 /// `Papyrus::Debug::GetConfigName`: the latent GetConfigName native of Debug (returns its string through ReturnFromLatent)
 ///
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 55373, rva 0xa1f310.
@@ -980,7 +980,7 @@ pub unsafe fn papyrus__debug__quit_game(vm: *mut crate::BSScript__IVirtualMachin
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 55923, rva 0xa39ec0.
 /// `void (BSScript::IVirtualMachine* vm, u32 stackId, TESGlobal* self, float a0)`
 #[inline]
-pub fn papyrus__global_variable__set_value(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::TESGlobal, a0: f32) { unsafe { function!(55923, (&crate::BSScript__IVirtualMachine, u32, &crate::TESGlobal, f32))(vm, stackId, self_, a0) } }
+pub fn papyrus__global_variable__set_value(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::TESGlobal, a0: f32) { unsafe { function!(55923, (*const crate::BSScript__IVirtualMachine, u32, *const crate::TESGlobal, f32))(core::ptr::from_ref(vm), stackId, core::ptr::from_ref(self_), a0) } }
 /// `Papyrus::Math::Ceiling`: the Ceiling native of Math
 ///
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 55700, rva 0xa30800.
@@ -995,13 +995,13 @@ pub unsafe fn papyrus__math__ceiling(vm: *mut crate::BSScript__IVirtualMachine, 
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 56146, rva 0xa44d40.
 /// `void (BSScript::IVirtualMachine* vm, u32 stackId, TESObjectREFR* self, bool a0)`
 #[inline]
-pub fn papyrus__object_reference__add_to_map(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::TESObjectREFR, a0: bool) { unsafe { function!(56146, (&crate::BSScript__IVirtualMachine, u32, &crate::TESObjectREFR, bool))(vm, stackId, self_, a0) } }
+pub fn papyrus__object_reference__add_to_map(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::TESObjectREFR, a0: bool) { unsafe { function!(56146, (*const crate::BSScript__IVirtualMachine, u32, *const crate::TESObjectREFR, bool))(core::ptr::from_ref(vm), stackId, core::ptr::from_ref(self_), a0) } }
 /// `Papyrus::ObjectReference::SelfFromVariable`: the reference an object Variable names (typeID 0x3d through g_IObjectHandlePolicy_ptr)
 ///
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 56493, rva 0xa56b20.
 /// `TESObjectREFR* (const BSScript::Variable* self)`
 #[inline]
-pub fn papyrus__object_reference__self_from_variable(self_: &crate::BSScript__Variable) -> Option<&'static crate::TESObjectREFR> { unsafe { function!(56493, (&crate::BSScript__Variable) -> Option<&'static crate::TESObjectREFR>)(self_) } }
+pub fn papyrus__object_reference__self_from_variable(self_: &crate::BSScript__Variable) -> Option<&'static crate::TESObjectREFR> { unsafe { function!(56493, (*const crate::BSScript__Variable) -> Option<&'static crate::TESObjectREFR>)(core::ptr::from_ref(self_)) } }
 /// `Papyrus::PackFormToVariable`: the return path of a form-returning native: GetScriptObjectTypeByID for the form's class (1 when unknown), GetHandleForObject(0, form), FindBoundObject(handle, className) or CreateObject + GetTypeIDForScriptObject + HandleIsType + ObjectBindPolicy::BindObject (bind interface slot 3), then Variable::assign {type, 0} and SetObject
 ///
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 55511, rva 0xa291d0.
@@ -1016,13 +1016,13 @@ pub unsafe fn papyrus__pack_form_to_variable(out: *mut crate::BSScript__Variable
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 55286, rva 0xa1b5d0.
 /// `void (BSScript::IVirtualMachine* vm, u32 stackId, BGSRefAlias* self)`
 #[inline]
-pub fn papyrus__reference_alias__clear(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::BGSRefAlias) { unsafe { function!(55286, (&crate::BSScript__IVirtualMachine, u32, &crate::BGSRefAlias))(vm, stackId, self_) } }
+pub fn papyrus__reference_alias__clear(vm: &crate::BSScript__IVirtualMachine, stackId: u32, self_: &crate::BGSRefAlias) { unsafe { function!(55286, (*const crate::BSScript__IVirtualMachine, u32, *const crate::BGSRefAlias))(core::ptr::from_ref(vm), stackId, core::ptr::from_ref(self_)) } }
 /// `PruneTrackedArrays`: walks the VM's array tracking list (+0x9408, count +0x9418, cursor +0x9400) under the +0x93f8 lock and releases the arrays only the list still holds (count 1), within the time budget; VirtualMachine::Update calls it
 ///
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104859, rva 0x14bbf00.
 /// `void (BSScript::Internal::VirtualMachine* vm, float budget)`
 #[inline]
-pub fn prune_tracked_arrays(vm: &crate::BSScript__Internal__VirtualMachine, budget: f32) { unsafe { function!(104859, (&crate::BSScript__Internal__VirtualMachine, f32))(vm, budget) } }
+pub fn prune_tracked_arrays(vm: &crate::BSScript__Internal__VirtualMachine, budget: f32) { unsafe { function!(104859, (*const crate::BSScript__Internal__VirtualMachine, f32))(core::ptr::from_ref(vm), budget) } }
 /// `ResizeVariableArray`: sets the array's size: 0 resets every element (the buffer stays); growing allocates (first time) or reallocates the 0x10-byte elements on the scrap heap and initialises the new ones to None, returning false without changing the size when the allocation fails; shrinking resets the dropped tail; returns true otherwise
 ///
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 53915, rva 0x9d5630.

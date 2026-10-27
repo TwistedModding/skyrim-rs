@@ -89,14 +89,14 @@ impl crate::BGSEncounterZone {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(18204, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(18204, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BGSEncounterZone::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 18203, rva 0x28fbc0).
     /// `undefined SaveGame(BGSEncounterZone * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(18203, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(18203, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BGSEntryPointPerkEntry {
@@ -171,14 +171,14 @@ impl crate::BGSHeadPart {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(23650, (&Self) -> *mut u8)(self) } }
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(23650, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `BGSHeadPart::SetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 23655, rva 0x391210).
     /// `undefined8 SetFormEditorID(BGSHeadPart * this, char * param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn set_form_editor_id(&self, param_1: *mut c_char, param_2: u64, param_3: u64) -> u64 { unsafe { function!(23655, (&Self, *mut c_char, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn set_form_editor_id(&self, param_1: *mut c_char, param_2: u64, param_3: u64) -> u64 { unsafe { function!(23655, (*const Self, *mut c_char, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSIdleMarker {
@@ -273,14 +273,14 @@ impl crate::BGSLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(18385, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(18385, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSLocation::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 18384, rva 0x29b860).
     /// `undefined SaveGame(BGSLocation * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(18384, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(18384, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSLocation::vfunc_6_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18401, rva 0x29c200).
     /// `undefined8 vfunc_6_sub0(longlong param_1, uint * param_2, uint * param_3)`
     ///
@@ -395,7 +395,7 @@ impl crate::BGSNote {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(23765, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(23765, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BGSNote::vfunc_6_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 14964, rva 0x1f30f0).
     /// `bool vfunc_6_sub0(int param_1)`
     ///
@@ -463,7 +463,7 @@ impl crate::BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(28950, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(28950, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_PackageLocation_class_BSFixedStr_0ffa3654c476 {
@@ -473,7 +473,7 @@ impl crate::BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_Pack
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(28851, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(28851, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BGSPackageDataRef {
@@ -523,7 +523,7 @@ impl crate::BGSPlayerMusicChanger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_actor_cell_event(&self, param_1: *mut u32, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut u32, u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_actor_cell_event(&self, param_1: *mut u32, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut u32, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSPlayerMusicChanger::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 19004, rva 0x2bf1e0).
     /// `longlong vfunc_1_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, TypeDescriptor * param_4)`
     ///
@@ -925,14 +925,14 @@ impl crate::BGSRelationship {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(24082, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(24082, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSRelationship::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 24081, rva 0x3a4f30).
     /// `undefined SaveGame(BGSRelationship * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(24081, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(24081, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSRelationship::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 24674, rva 0x3beae0).
     /// `undefined vfunc_19_sub0(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -959,14 +959,14 @@ impl crate::BGSScene {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(24150, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(24150, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BGSScene::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 24149, rva 0x3a8c60).
     /// `undefined SaveGame(BGSScene * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(24149, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(24149, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BGSScene::vfunc_14_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 24308, rva 0x3ae090).
     /// `undefined vfunc_14_sub0(longlong param_1, longlong param_2)`
     ///
@@ -1065,7 +1065,7 @@ impl crate::BGSStoryManagerEventNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_form_editor_id(&self) -> *mut c_char { unsafe { virtual_function!(self, 50, (&Self) -> *mut c_char)(self) } }
+    pub unsafe fn get_form_editor_id(&self) -> *mut c_char { unsafe { virtual_function!(self, 50, (*const Self) -> *mut c_char)(core::ptr::from_ref(self)) } }
     /// `BGSStoryManagerEventNode::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 32375, rva 0x534ae0).
     /// `undefined vfunc_19_sub0(longlong param_1, undefined8 param_2, longlong param_3)`
     ///
@@ -1120,14 +1120,14 @@ impl crate::BGSStoryManagerQuestNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(32459, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(32459, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BGSStoryManagerQuestNode::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 32458, rva 0x539050).
     /// `undefined SaveGame(BGSStoryManagerQuestNode * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(32458, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(32458, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BGSStoryTeller {
@@ -1168,14 +1168,14 @@ impl crate::BGSTalkingActivator {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(17187, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(17187, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSTalkingActivator::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 17186, rva 0x267460).
     /// `undefined SaveGame(BGSTalkingActivator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(17186, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(17186, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSVoiceType {
@@ -1185,14 +1185,14 @@ impl crate::BGSVoiceType {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(24345, (&Self) -> *mut u8)(self) } }
+    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(24345, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `BGSVoiceType::SetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 24346, rva 0x3aee30).
     /// `undefined1 SetFormEditorID(BGSVoiceType * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn set_form_editor_id(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> u8 { unsafe { function!(24346, (&Self, *mut u8, u64, u64) -> u8)(self, param_1, param_2, param_3) } }
+    pub unsafe fn set_form_editor_id(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> u8 { unsafe { function!(24346, (*const Self, *mut u8, u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSWaterCollisionManager__BGSWaterUpdateI {

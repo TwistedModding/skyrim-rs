@@ -97,55 +97,55 @@ impl crate::InputEvent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(68648, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(68648, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `InputEvent::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 68649, rva 0xcfa3e0).
     /// `undefined ctor(InputEvent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(68649, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(68649, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `InputEvent::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 524136, rva 0xcfa3b0).
     /// `undefined ctor(InputEvent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(524136, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(524136, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `InputEvent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42388, rva 0x7b1690).
     /// `undefined dtor(InputEvent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42388, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42388, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `InputEvent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52438, rva 0x972970).
     /// `undefined dtor(InputEvent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(52438, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(52438, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `InputEvent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 523959, rva 0x7b16d0).
     /// `undefined dtor(InputEvent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(523959, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(523959, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `InputEvent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 523960, rva 0x7b1710).
     /// `undefined dtor(InputEvent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(523960, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(523960, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `InputEvent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 523961, rva 0x7b1740).
     /// `undefined dtor(InputEvent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(523961, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(523961, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 

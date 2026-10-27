@@ -4323,7 +4323,7 @@ impl crate::bhkCharacterController {
     /// # Safety
     /// `cameraPosition` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_distance_to_camera(&self, cameraPosition: *const c_void, actor3D: *mut crate::NiAVObject) { unsafe { function!(78274, (&Self, *const c_void, *mut crate::NiAVObject))(self, cameraPosition, actor3D) } }
+    pub unsafe fn set_distance_to_camera(&self, cameraPosition: *const c_void, actor3D: *mut crate::NiAVObject) { unsafe { function!(78274, (*const Self, *const c_void, *mut crate::NiAVObject))(core::ptr::from_ref(self), cameraPosition, actor3D) } }
 }
 
 impl crate::bhkThreadMemorySource {
@@ -4407,7 +4407,7 @@ impl crate::hkbFootIkDriver {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 58428, rva 0xad4260.
     /// `void (hkbFootIkDriver* this, bool disabled)`
     #[inline]
-    pub fn set_disabled(&self, disabled: bool) { unsafe { function!(58428, (&Self, bool))(self, disabled) } }
+    pub fn set_disabled(&self, disabled: bool) { unsafe { function!(58428, (*const Self, bool))(core::ptr::from_ref(self), disabled) } }
 }
 
 impl crate::hkpBroadPhaseBorder {
@@ -4518,7 +4518,7 @@ impl crate::hkpConvexVerticesShape {
     /// # Safety
     /// `outVertices` must point to what the engine expects.
     #[inline]
-    pub unsafe fn unpack_so_a_vertices_to_vector4_array(&self, outVertices: *mut c_void) { unsafe { function!(65093, (&Self, *mut c_void))(self, outVertices) } }
+    pub unsafe fn unpack_so_a_vertices_to_vector4_array(&self, outVertices: *mut c_void) { unsafe { function!(65093, (*const Self, *mut c_void))(core::ptr::from_ref(self), outVertices) } }
     /// `hkpConvexVerticesShape::ctor`: builds the shape from a convex hull of the vertices. vertices = {const float* data +0, i32 count +8, i32 strideBytes +0xc} (12 bytes read per vertex). config (0x18 bytes) = {u8 createConnectivity +0 (builds an hkpConvexVerticesConnectivity, else deletes it), u8 shrinkByRadius +1 (with radius > 0), u8 shrinkOption +2 (passed to the shrinker 0x10c3e20), float convexRadius +4 (-> this+0x20), i32 maxVertices +8 (hull reduced when > 3), float shrinkParamA +0xc, float shrinkParamB +0x10, float +0x14 (default -0.1, not read here)}
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 80831, rva 0x10ee650.
@@ -4527,7 +4527,7 @@ impl crate::hkpConvexVerticesShape {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, vertices: *const c_void, config: *const c_void) -> *mut Self { unsafe { function!(80831, (&Self, *const c_void, *const c_void) -> *mut Self)(self, vertices, config) } }
+    pub unsafe fn ctor(&self, vertices: *const c_void, config: *const c_void) -> *mut Self { unsafe { function!(80831, (*const Self, *const c_void, *const c_void) -> *mut Self)(core::ptr::from_ref(self), vertices, config) } }
 }
 
 impl crate::hkpDisableEntityCollisionFilter {
@@ -4566,25 +4566,25 @@ impl crate::hkpFirstPersonGun {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62785, rva 0xba6f50.
     /// `void (hkpFirstPersonGun* this)`
     #[inline]
-    pub fn slot3_no_op(&self) { unsafe { function!(62785, (&Self))(self) } }
+    pub fn slot3_no_op(&self) { unsafe { function!(62785, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkpFirstPersonGun::Slot4_NoOp`: slot 4: empty (ret)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62784, rva 0xba6f40.
     /// `void (hkpFirstPersonGun* this)`
     #[inline]
-    pub fn slot4_no_op(&self) { unsafe { function!(62784, (&Self))(self) } }
+    pub fn slot4_no_op(&self) { unsafe { function!(62784, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkpFirstPersonGun::Slot5_NoOp`: slot 5: empty (ret)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62787, rva 0xba6f70.
     /// `void (hkpFirstPersonGun* this)`
     #[inline]
-    pub fn slot5_no_op(&self) { unsafe { function!(62787, (&Self))(self) } }
+    pub fn slot5_no_op(&self) { unsafe { function!(62787, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkpFirstPersonGun::Slot8_NoOp`: slot 8: empty (ret) in the base
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62786, rva 0xba6f60.
     /// `void (hkpFirstPersonGun* this)`
     #[inline]
-    pub fn slot8_no_op(&self) { unsafe { function!(62786, (&Self))(self) } }
+    pub fn slot8_no_op(&self) { unsafe { function!(62786, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkpFirstPersonGun::ctor`: default constructor: memSizeAndFlags +8 = 0x1ffff, vtable, +0x10 = 0, name +0x18 = "", +0x20 = 0x71, listener array +0x28 (data null, size +0x30 = 0, capacity +0x34 = 0x80000000)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62776, rva 0xba6a70.
@@ -4593,13 +4593,13 @@ impl crate::hkpFirstPersonGun {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(62776, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(62776, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `hkpFirstPersonGun::ctor_finish`: serialization constructor: vtable, name pointer fix-up, empty listener array; +0x10 = 0 only when finishing != 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62777, rva 0xba6ad0.
     /// `hkpFirstPersonGun* (hkpFirstPersonGun* this, i32 finishing)`
     #[inline]
-    pub fn ctor_finish(&self, finishing: i32) -> Option<&'static Self> { unsafe { function!(62777, (&Self, i32) -> Option<&'static Self>)(self, finishing) } }
+    pub fn ctor_finish(&self, finishing: i32) -> Option<&'static Self> { unsafe { function!(62777, (*const Self, i32) -> Option<&'static Self>)(core::ptr::from_ref(self), finishing) } }
     /// `hkpFirstPersonGun::dtor`: releases every listener (+0x28[i], ReleaseRefCounted16UnderLock), frees the array through the container heap allocator when owned, clears the name, resets the vtable to hkBaseObject
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 62778, rva 0xba6b20.
@@ -4608,7 +4608,7 @@ impl crate::hkpFirstPersonGun {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(62778, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(62778, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkpFirstPersonGun::vdtor`: slot 0: dtor, then when flags bit 0: frees 0x38 bytes (memory router of the thread, or the default heap with bit 2)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62783, rva 0xba6ec0.
@@ -4617,7 +4617,7 @@ impl crate::hkpFirstPersonGun {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { function!(62783, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { function!(62783, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::hkpGunProjectile {
@@ -4686,7 +4686,7 @@ impl crate::hkxCamera {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(65443, (&Self, u64) -> *mut Self)(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(65443, (*const Self, u64) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
 /// `g_bhkBipedOrientationController_ptr` at 0x3336e28, id 411537 (xref_inference, medium)

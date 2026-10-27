@@ -2001,7 +2001,7 @@ impl crate::BGSBodyPartData {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_part(&self, partIndex: i32) -> *mut c_void { unsafe { function!(23473, (&Self, i32) -> *mut c_void)(self, partIndex) } }
+    pub unsafe fn get_part(&self, partIndex: i32) -> *mut c_void { unsafe { function!(23473, (*const Self, i32) -> *mut c_void)(core::ptr::from_ref(self), partIndex) } }
 }
 
 impl crate::BGSCollisionLayer {
@@ -2382,7 +2382,7 @@ impl crate::BGSSynchronizedAnimationInstance {
     /// # Safety
     /// `actorHandle` must point to what the engine expects.
     #[inline]
-    pub unsafe fn add_actor(&self, actorHandle: *const u32, syncClipName: *const crate::BSFixedString) -> bool { unsafe { function!(32782, (&Self, *const u32, *const crate::BSFixedString) -> bool)(self, actorHandle, syncClipName) } }
+    pub unsafe fn add_actor(&self, actorHandle: *const u32, syncClipName: *const crate::BSFixedString) -> bool { unsafe { function!(32782, (*const Self, *const u32, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), actorHandle, syncClipName) } }
 }
 
 impl crate::BGSTextureSet {

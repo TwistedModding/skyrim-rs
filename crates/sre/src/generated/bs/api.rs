@@ -5715,7 +5715,7 @@ impl crate::BSCubeMapCamera {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107565, rva 0x155a2c0.
     /// `BSCubeMapCamera* (BSCubeMapCamera* this, u32 flags)`
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(107565, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(107565, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
     /// `BSCubeMapCamera::GetRTTI`: g_TypeNode_BSCubeMapCamera
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107566, rva 0x155a390.
@@ -5724,13 +5724,13 @@ impl crate::BSCubeMapCamera {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_rtti(&self) -> *const c_void { unsafe { function!(107566, (&Self) -> *const c_void)(self) } }
+    pub unsafe fn get_rtti(&self) -> *const c_void { unsafe { function!(107566, (*const Self) -> *const c_void)(core::ptr::from_ref(self)) } }
     /// `BSCubeMapCamera::RenderFaces`: slot 53 thunk to 0x1559ea0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107562, rva 0x1559a60.
     /// `void (BSCubeMapCamera* this, u32 faceMask, bool useAccumulatorTargets, bool releaseRootsAfter, bool altMode)`
     #[inline]
-    pub fn render_faces(&self, faceMask: u32, useAccumulatorTargets: bool, releaseRootsAfter: bool, altMode: bool) { unsafe { function!(107562, (&Self, u32, bool, bool, bool))(self, faceMask, useAccumulatorTargets, releaseRootsAfter, altMode) } }
+    pub fn render_faces(&self, faceMask: u32, useAccumulatorTargets: bool, releaseRootsAfter: bool, altMode: bool) { unsafe { function!(107562, (*const Self, u32, bool, bool, bool))(core::ptr::from_ref(self), faceMask, useAccumulatorTargets, releaseRootsAfter, altMode) } }
     /// `BSCubeMapCamera::RenderFacesImpl`: renders the selected cube faces of the cube map camera
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 107564, rva 0x1559ea0.
@@ -5739,13 +5739,13 @@ impl crate::BSCubeMapCamera {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn render_faces_impl(&self, faceMask: u32, useAccumulatorTargets: bool, releaseRootsAfter: bool, altMode: bool) { unsafe { function!(107564, (&Self, u32, bool, bool, bool))(self, faceMask, useAccumulatorTargets, releaseRootsAfter, altMode) } }
+    pub unsafe fn render_faces_impl(&self, faceMask: u32, useAccumulatorTargets: bool, releaseRootsAfter: bool, altMode: bool) { unsafe { function!(107564, (*const Self, u32, bool, bool, bool))(core::ptr::from_ref(self), faceMask, useAccumulatorTargets, releaseRootsAfter, altMode) } }
     /// `BSCubeMapCamera::SetFaceRotation`: local rotation = the axis set for cube face 0..5 (unit-axis constants 0x20ced48..0x20ced70, sign-flipped per face), then UpdateWorldData and UpdateWorldBound
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107563, rva 0x1559a80.
     /// `void (BSCubeMapCamera* this, u32 face)`
     #[inline]
-    pub fn set_face_rotation(&self, face: u32) { unsafe { function!(107563, (&Self, u32))(self, face) } }
+    pub fn set_face_rotation(&self, face: u32) { unsafe { function!(107563, (*const Self, u32))(core::ptr::from_ref(self), face) } }
     /// `BSCubeMapCamera::ctor`: NiCamera::ctor; root list +0x188 (count +0x198), two BSShaderAccumulators (+0x1a0, +0x1a8), a second NiCamera +0x1b0, frustum (-1, 1, 1, -1, near 1, far 2048 (0x17f6ba4)): 90-degree faces
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107560, rva 0x1559730.
@@ -5754,7 +5754,7 @@ impl crate::BSCubeMapCamera {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(107560, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(107560, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `BSCubeMapCamera::dtor`: releases +0x1b0, +0x1a8, +0x1a0, the root list, NiCamera::dtor
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 107561, rva 0x15599b0.
@@ -5763,7 +5763,7 @@ impl crate::BSCubeMapCamera {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(107561, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(107561, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSDirectAtModifierInterface {
@@ -5775,7 +5775,7 @@ impl crate::BSDirectAtModifierInterface {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn vfunc_1(&self, characterContext: *mut *mut c_void, found: *mut bool, outPoint: *mut c_void, targetType: i32) { unsafe { function!(43657, (&Self, *mut *mut c_void, *mut bool, *mut c_void, i32))(self, characterContext, found, outPoint, targetType) } }
+    pub unsafe fn vfunc_1(&self, characterContext: *mut *mut c_void, found: *mut bool, outPoint: *mut c_void, targetType: i32) { unsafe { function!(43657, (*const Self, *mut *mut c_void, *mut bool, *mut c_void, i32))(core::ptr::from_ref(self), characterContext, found, outPoint, targetType) } }
 }
 
 impl crate::BSGameSound {
@@ -5787,13 +5787,13 @@ impl crate::BSGameSound {
     /// # Safety
     /// `params` must point to what the engine expects.
     #[inline]
-    pub unsafe fn init_from_playback_params(&self, params: *const c_void) { unsafe { function!(67789, (&Self, *const c_void))(self, params) } }
+    pub unsafe fn init_from_playback_params(&self, params: *const c_void) { unsafe { function!(67789, (*const Self, *const c_void))(core::ptr::from_ref(self), params) } }
     /// `BSGameSound::SetVolumeAndApply`: clamp [1e-5,1], store +0x70, slot 24
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67886, rva 0xcd5ab0.
     /// `void (BSGameSound* this, float volume)`
     #[inline]
-    pub fn set_volume_and_apply(&self, volume: f32) { unsafe { function!(67886, (&Self, f32))(self, volume) } }
+    pub fn set_volume_and_apply(&self, volume: f32) { unsafe { function!(67886, (*const Self, f32))(core::ptr::from_ref(self), volume) } }
 }
 
 impl crate::BSGeometryListCullingProcess {
@@ -5802,7 +5802,7 @@ impl crate::BSGeometryListCullingProcess {
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76772, rva 0xff5bf0.
     /// `void (BSGeometryListCullingProcess* this, NiAVObject* object)`
     #[inline]
-    pub fn append_geometry(&self, object: &crate::NiAVObject) { unsafe { function!(76772, (&Self, &crate::NiAVObject))(self, object) } }
+    pub fn append_geometry(&self, object: &crate::NiAVObject) { unsafe { function!(76772, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(object)) } }
 }
 
 impl crate::BSImagespaceShader {
@@ -5838,7 +5838,7 @@ impl crate::BSImagespaceShaderISSAOCameraZ {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105758, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105758, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `BSImagespaceShaderISSAOCameraZ::vdtor`: BSImagespaceShader::dtor, OperatorDelete(this, 0x1a8) when flags bit 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 106119, rva 0x1508e10.
@@ -5847,7 +5847,7 @@ impl crate::BSImagespaceShaderISSAOCameraZ {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(106119, (&Self, u64) -> *mut Self)(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(106119, (*const Self, u64) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::BSImagespaceShaderISSAOCameraZAndMipsCS {
@@ -5877,7 +5877,7 @@ impl crate::BSImagespaceShaderISSAOCameraZAndMipsCS {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105759, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105759, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `BSImagespaceShaderISSAOCameraZAndMipsCS::vdtor`: BSImagespaceShader::dtor, OperatorDelete(this, 0x1a8) when flags bit 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 106120, rva 0x1508e50.
@@ -5886,7 +5886,7 @@ impl crate::BSImagespaceShaderISSAOCameraZAndMipsCS {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(106120, (&Self, u64) -> *mut Self)(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(106120, (*const Self, u64) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::BSModelDB__QueuedHandles {
@@ -5901,7 +5901,7 @@ impl crate::BSOrderedNode {
     /// Semantic, frame pass, high; ledger runtime evidence, name high; id 108123, rva 0x1570700.
     /// `void (BSOrderedNode* this, BSCullingProcess* culler, i32 groupIndex)`
     #[inline]
-    pub fn on_visible(&self, culler: &crate::BSCullingProcess, groupIndex: i32) { unsafe { function!(108123, (&Self, &crate::BSCullingProcess, i32))(self, culler, groupIndex) } }
+    pub fn on_visible(&self, culler: &crate::BSCullingProcess, groupIndex: i32) { unsafe { function!(108123, (*const Self, *const crate::BSCullingProcess, i32))(core::ptr::from_ref(self), core::ptr::from_ref(culler), groupIndex) } }
 }
 
 impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2 {
@@ -5958,13 +5958,13 @@ impl crate::BSSceneGraph {
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76750, rva 0xff4bb0.
     /// `float (BSSceneGraph* this)`
     #[inline]
-    pub fn get_near_distance(&self) -> f32 { unsafe { function!(76750, (&Self) -> f32)(self) } }
+    pub fn get_near_distance(&self) -> f32 { unsafe { function!(76750, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSSceneGraph::SetFieldOfView`: camera null -> this+0x128 and: if !force and fov == +0x13c, only lodAdjust (+0x184) = fov / fDefaultFOV when updateLodAdjust, return; else +0x13c = fov. Then SetPerspectiveFromFov(camera, fov, near = slot 63, far = slot 62, g_RenderTargets width 0x3335600, height 0x3335604, +0x138 byte, updateLodAdjust, fDefaultFOV)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106461, rva 0x1516f90.
     /// `void (BSSceneGraph* this, float fov, bool force, NiCamera* camera, bool updateLodAdjust)`
     #[inline]
-    pub fn set_field_of_view(&self, fov: f32, force: bool, camera: &crate::NiCamera, updateLodAdjust: bool) { unsafe { function!(106461, (&Self, f32, bool, &crate::NiCamera, bool))(self, fov, force, camera, updateLodAdjust) } }
+    pub fn set_field_of_view(&self, fov: f32, force: bool, camera: &crate::NiCamera, updateLodAdjust: bool) { unsafe { function!(106461, (*const Self, f32, bool, *const crate::NiCamera, bool))(core::ptr::from_ref(self), fov, force, core::ptr::from_ref(camera), updateLodAdjust) } }
     /// `BSSceneGraph::ctor`: NiNode named "<prefix>Root Node"; child 0 is a new NiNode "<prefix>Root CameraNode"; the camera (+0x128) is the given one or a new NiCamera "<prefix>Root Camera" with viewport (+0x174..+0x180) = (0, 1, 1, 0) from 0x1914600, a fixed local rotation (+0x48..+0x68, rows (0,0,1), (1,0,0), (0,1,0) from 0x1b5c180/0x17eab80: camera column 0 = parent +Y, column 1 = parent +Z, column 2 = parent +X), +0x16c = 1.0 and +0x170 = far / fNearDistance (far = 20480.0 (0x1914d08) for menu scenes, else fNoLODFarDistanceMin + (Max - Min) * Pct); the camera is attached under child 0 (child 0's slot 53, +0x1a8, with (camera, 1), the arguments of the direct NiNode::AttachChild call above it) and updated; +0x138 = isMenuScene; worldBound radius 1, flags |= 0x2800
     ///
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76746, rva 0xff46b0.
@@ -5973,7 +5973,7 @@ impl crate::BSSceneGraph {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, namePrefix: *const c_char, isMenuScene: bool, camera: *mut crate::NiCamera) -> *mut Self { unsafe { function!(76746, (&Self, *const c_char, bool, *mut crate::NiCamera) -> *mut Self)(self, namePrefix, isMenuScene, camera) } }
+    pub unsafe fn ctor(&self, namePrefix: *const c_char, isMenuScene: bool, camera: *mut crate::NiCamera) -> *mut Self { unsafe { function!(76746, (*const Self, *const c_char, bool, *mut crate::NiCamera) -> *mut Self)(core::ptr::from_ref(self), namePrefix, isMenuScene, camera) } }
 }
 
 impl crate::BSTObjectDictionary_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStringCI_DoNothingUn_0ac082368f7d {
@@ -6000,13 +6000,13 @@ impl crate::BSTreeManager__IQueryCullingCamera {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36741, rva 0x661e60.
     /// `BSTreeManager::IQueryCullingCamera* (BSTreeManager::IQueryCullingCamera* this, u32 flags)`
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(36741, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(36741, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
     /// `MainCullingCamera::GetCamera`: returns g_SceneGraph+0x128, the frame camera: the tree LOD manager culls with the main camera
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36773, rva 0x6629e0.
     /// `NiCamera* (const BSTreeManager::IQueryCullingCamera* this)`
     #[inline]
-    pub fn get_camera(&self) -> Option<&'static crate::NiCamera> { unsafe { function!(36773, (&Self) -> Option<&'static crate::NiCamera>)(self) } }
+    pub fn get_camera(&self) -> Option<&'static crate::NiCamera> { unsafe { function!(36773, (*const Self) -> Option<&'static crate::NiCamera>)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSUtilityShader {
@@ -6027,7 +6027,7 @@ impl crate::BSUtilityShader {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_shadow_bias_constants(&self, light: *mut crate::BSShadowLight, pass: *mut crate::RenderPass) { unsafe { function!(107764, (&Self, *mut crate::BSShadowLight, *mut crate::RenderPass))(self, light, pass) } }
+    pub unsafe fn set_shadow_bias_constants(&self, light: *mut crate::BSShadowLight, pass: *mut crate::RenderPass) { unsafe { function!(107764, (*const Self, *mut crate::BSShadowLight, *mut crate::RenderPass))(core::ptr::from_ref(self), light, pass) } }
 }
 
 /// `g_BSClearZNode_ptr` at 0x3230498, id 403439 (xref_inference, medium)

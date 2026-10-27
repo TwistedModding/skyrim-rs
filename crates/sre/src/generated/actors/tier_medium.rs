@@ -10,7 +10,7 @@ impl crate::Actor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn send_assault_alarm(&self, param_2: *mut *mut *mut *mut *mut *mut *mut i64, param_3: c_char) -> u64 { unsafe { function!(37424, (&Self, *mut *mut *mut *mut *mut *mut *mut i64, c_char) -> u64)(self, param_2, param_3) } }
+    pub unsafe fn send_assault_alarm(&self, param_2: *mut *mut *mut *mut *mut *mut *mut i64, param_3: c_char) -> u64 { unsafe { function!(37424, (*const Self, *mut *mut *mut *mut *mut *mut *mut i64, c_char) -> u64)(core::ptr::from_ref(self), param_2, param_3) } }
 }
 
 impl crate::TESObjectREFR {
@@ -20,7 +20,7 @@ impl crate::TESObjectREFR {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_animation_graph_state(&self, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(20098, (&Self, i64, u64, u64) -> u64)(self, param_2, param_3, param_4) } }
+    pub unsafe fn save_animation_graph_state(&self, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(20098, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `TESObjectREFR::SetScale` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19665, rva 0x2e6f80).
     /// `undefined SetScale(longlong * param_1, float param_2)`
     ///

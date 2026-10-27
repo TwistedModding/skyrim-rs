@@ -10,7 +10,7 @@ impl crate::FindTriangleForLocationWaterFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(90392, (&Self, f32) -> *mut Self)(self, param_1) } }
+    pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(90392, (*const Self, f32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::GRefCountImplCore {
@@ -20,224 +20,224 @@ impl crate::GRefCountImplCore {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_destructor(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83421, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_destructor(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83421, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDestructor_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 83422, rva 0xd30df0).
     /// `GRefCountImplCore * DeletingDestructor_2(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_destructor_2(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83422, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_destructor_2(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83422, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 82817, rva 0xd09090).
     /// `GRefCountImplCore * DeletingDtor(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(82817, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(82817, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtorSize68` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88387, rva 0xe3be50).
     /// `GRefCountImplCore * DeletingDtorSize68(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_size68(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88387, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_size68(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88387, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88762, rva 0xe18700).
     /// `GRefCountImplCore * DeletingDtor_10(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_10(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88762, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_10(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88762, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_11` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88763, rva 0xe18760).
     /// `GRefCountImplCore * DeletingDtor_11(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_11(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88763, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_11(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88763, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88764, rva 0xe187c0).
     /// `GRefCountImplCore * DeletingDtor_12(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_12(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88764, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_12(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88764, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_13` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88157, rva 0xe25620).
     /// `GRefCountImplCore * DeletingDtor_13(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_13(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88157, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_13(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88157, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_14` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 524167, rva 0xe25680).
     /// `GRefCountImplCore * DeletingDtor_14(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_14(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(524167, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_14(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(524167, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_15` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88165, rva 0xe25a50).
     /// `GRefCountImplCore * DeletingDtor_15(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_15(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88165, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_15(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88165, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_16` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88385, rva 0xe3bcf0).
     /// `GRefCountImplCore * DeletingDtor_16(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_16(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88385, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_16(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88385, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_17` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87226, rva 0xded200).
     /// `GRefCountImplCore * DeletingDtor_17(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_17(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87226, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_17(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87226, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84703, rva 0xdf7c40).
     /// `GRefCountImplCore * DeletingDtor_18(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_18(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(84703, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_18(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(84703, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_19` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87392, rva 0xdfa2e0).
     /// `GRefCountImplCore * DeletingDtor_19(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_19(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87392, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_19(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87392, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 82818, rva 0xd090f0).
     /// `GRefCountImplCore * DeletingDtor_2(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_2(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(82818, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_2(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(82818, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_20` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87647, rva 0xe0e470).
     /// `GRefCountImplCore * DeletingDtor_20(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_20(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87647, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_20(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87647, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_21` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88761, rva 0xe186a0).
     /// `GRefCountImplCore * DeletingDtor_21(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_21(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88761, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_21(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88761, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_22` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88888, rva 0xe2c6d0).
     /// `GRefCountImplCore * DeletingDtor_22(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_22(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88888, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_22(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88888, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_23` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88555, rva 0xe482b0).
     /// `GRefCountImplCore * DeletingDtor_23(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_23(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88555, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_23(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88555, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_24` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88961, rva 0xe50a90).
     /// `GRefCountImplCore * DeletingDtor_24(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_24(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88961, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_24(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88961, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_25` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89030, rva 0xe55900).
     /// `GRefCountImplCore * DeletingDtor_25(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_25(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(89030, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_25(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(89030, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_26` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89099, rva 0xe59e50).
     /// `GRefCountImplCore * DeletingDtor_26(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_26(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(89099, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_26(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(89099, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_27` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89292, rva 0xe692e0).
     /// `GRefCountImplCore * DeletingDtor_27(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_27(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(89292, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_27(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(89292, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_28` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89795, rva 0xe7d580).
     /// `GRefCountImplCore * DeletingDtor_28(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_28(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(89795, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_28(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(89795, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87506, rva 0xe03e10).
     /// `GRefCountImplCore * DeletingDtor_3(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_3(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87506, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_3(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87506, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87507, rva 0xe03e70).
     /// `GRefCountImplCore * DeletingDtor_4(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_4(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87507, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_4(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87507, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_5` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87537, rva 0xe06980).
     /// `GRefCountImplCore * DeletingDtor_5(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_5(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87537, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_5(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87537, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_6` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87538, rva 0xe069e0).
     /// `GRefCountImplCore * DeletingDtor_6(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_6(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87538, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_6(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87538, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_7` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87648, rva 0xe0e4d0).
     /// `GRefCountImplCore * DeletingDtor_7(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_7(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87648, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_7(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87648, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_8` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87650, rva 0xe0e590).
     /// `GRefCountImplCore * DeletingDtor_8(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_8(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87650, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_8(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(87650, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::DeletingDtor_9` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88760, rva 0xe18640).
     /// `GRefCountImplCore * DeletingDtor_9(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn deleting_dtor_9(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88760, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn deleting_dtor_9(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88760, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtor_13` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88156, rva 0xe255c0).
     /// `GRefCountImplCore * ScalarDeletingDtor_13(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_13(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88156, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_13(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88156, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
 }
 
 impl crate::LoadedAreaBound {
@@ -247,7 +247,7 @@ impl crate::LoadedAreaBound {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: f32, param_2: f32, param_3: f32, param_4: f32) -> *mut Self { unsafe { function!(25944, (&Self, f32, f32, f32, f32) -> *mut Self)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: f32, param_2: f32, param_3: f32, param_4: f32) -> *mut Self { unsafe { function!(25944, (*const Self, f32, f32, f32, f32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
 }
 
 impl crate::QueuedFile {
@@ -257,7 +257,7 @@ impl crate::QueuedFile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy_queued_handles_and_flush_notify(&self, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(13139, (&Self, u64, u64, u64) -> u64)(self, param_2, param_3, param_4) } }
+    pub unsafe fn destroy_queued_handles_and_flush_notify(&self, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(13139, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
 }
 
 /// `AabbsOverlap` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90418, rva 0x11bc2c0).
@@ -13777,10 +13777,3 @@ pub unsafe fn detach_result_set_field670_2(param_1: i64, param_2: *mut u64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn detach_result_set_field90(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447479, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447576, rva 0x135bc10).
-/// `undefined8 * DetachResultSetField90_10(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_10(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447576, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }

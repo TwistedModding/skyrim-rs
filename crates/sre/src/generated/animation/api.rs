@@ -54,7 +54,7 @@ impl crate::BSAnimationGraphManager {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (&Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(self, event, source) } }
+    pub unsafe fn process_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
     /// `BSAnimationGraphManager::dtor`, vtable slot 0: virtual destructor
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -63,7 +63,7 @@ impl crate::BSAnimationGraphManager {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BSAnimationGraphManager::GetGraphEventSource`: returns graphs[graphIndex]+0x68
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 40849, rva 0x765930.
@@ -78,19 +78,19 @@ impl crate::BSAnimationGraphManager {
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63362, rva 0xbc0c90.
     /// `int (BSAnimationGraphManager* this, const BSFixedString& eventName)`
     #[inline]
-    pub fn notify_animation_graph(&self, eventName: &crate::BSFixedString) -> i32 { unsafe { function!(63362, (&Self, &crate::BSFixedString) -> i32)(self, eventName) } }
+    pub fn notify_animation_graph(&self, eventName: &crate::BSFixedString) -> i32 { unsafe { function!(63362, (*const Self, *const crate::BSFixedString) -> i32)(core::ptr::from_ref(self), core::ptr::from_ref(eventName)) } }
     /// `BSAnimationGraphManager::NotifyDependentManagers`: sends the event to the graphs of every dependent manager (+0x58), recursively
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63372, rva 0xbc1600.
     /// `bool (BSAnimationGraphManager* this, const BSFixedString& eventName)`
     #[inline]
-    pub fn notify_dependent_managers(&self, eventName: &crate::BSFixedString) -> bool { unsafe { function!(63372, (&Self, &crate::BSFixedString) -> bool)(self, eventName) } }
+    pub fn notify_dependent_managers(&self, eventName: &crate::BSFixedString) -> bool { unsafe { function!(63372, (*const Self, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(eventName)) } }
     /// `BSAnimationGraphManager::SetActiveGraph`: moves the manager's own sink to graphs[index]+0x68, rebinds the variable cache, stores +0xb0
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63363, rva 0xbc0d60.
     /// `bool (BSAnimationGraphManager* this, uint index)`
     #[inline]
-    pub fn set_active_graph(&self, index: u32) -> bool { unsafe { function!(63363, (&Self, u32) -> bool)(self, index) } }
+    pub fn set_active_graph(&self, index: u32) -> bool { unsafe { function!(63363, (*const Self, u32) -> bool)(core::ptr::from_ref(self), index) } }
     /// `BSAnimationGraphManager::Update`: per frame: update channels, push channel values into each graph (0xbcf570), Update every graph (events collected from the active one), unlock, send the collected events through every graph that has sinks (0xbcf360), then write poses inline (0xbcf480 per graph) or hand the manager to the queue ID_409516 and release its semaphore
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63358, rva 0xbc0680.
@@ -99,7 +99,7 @@ impl crate::BSAnimationGraphManager {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update(&self, data: *mut c_void) { unsafe { function!(63358, (&Self, *mut c_void))(self, data) } }
+    pub unsafe fn update(&self, data: *mut c_void) { unsafe { function!(63358, (*const Self, *mut c_void))(core::ptr::from_ref(self), data) } }
 }
 
 impl crate::BSDismemberSkinInstance {
@@ -108,7 +108,7 @@ impl crate::BSDismemberSkinInstance {
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 15753, rva 0x21fe10.
     /// `void (BSDismemberSkinInstance* this, u16 slot, bool visible)`
     #[inline]
-    pub fn set_slot_visible(&self, slot: u16, visible: bool) { unsafe { function!(15753, (&Self, u16, bool))(self, slot, visible) } }
+    pub fn set_slot_visible(&self, slot: u16, visible: bool) { unsafe { function!(15753, (*const Self, u16, bool))(core::ptr::from_ref(self), slot, visible) } }
 }
 
 impl crate::BSFaceGenAnimationData {
@@ -120,7 +120,7 @@ impl crate::BSFaceGenAnimationData {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn advance(&self, dt: f32, advance: bool) -> bool { unsafe { function!(26598, (&Self, f32, bool) -> bool)(self, dt, advance) } }
+    pub unsafe fn advance(&self, dt: f32, advance: bool) -> bool { unsafe { function!(26598, (*const Self, f32, bool) -> bool)(core::ptr::from_ref(self), dt, advance) } }
 }
 
 impl crate::BSFaceGenNiNode {
@@ -129,7 +129,7 @@ impl crate::BSFaceGenNiNode {
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (BSFaceGenNiNode* this, NiNode* skeleton, bool)`
     #[inline]
-    pub fn bind_skins_to_skeleton(&self, skeleton: &crate::NiNode, a2: bool) { unsafe { virtual_function!(self, 62, (&Self, &crate::NiNode, bool))(self, skeleton, a2) } }
+    pub fn bind_skins_to_skeleton(&self, skeleton: &crate::NiNode, a2: bool) { unsafe { virtual_function!(self, 62, (*const Self, *const crate::NiNode, bool))(core::ptr::from_ref(self), core::ptr::from_ref(skeleton), a2) } }
     /// `BSFaceGenNiNode::ApplyMorphs`: per child geometry with morph extra data: applies the animation channel weights to the head vertices with distance LOD (fTalkingDistance, fLodDistance) from the node's world translation; touches no bone
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 26988, rva 0x439970.
@@ -138,7 +138,7 @@ impl crate::BSFaceGenNiNode {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn apply_morphs(&self, force: bool) { unsafe { function!(26988, (&Self, bool))(self, force) } }
+    pub unsafe fn apply_morphs(&self, force: bool) { unsafe { function!(26988, (*const Self, bool))(core::ptr::from_ref(self), force) } }
     /// `BSFaceGenNiNode::UpdateFaceAnimation`: from the node's downward pass: returns if hidden or no animationData; advances the keyframes with g_FrameDelta (0x424ae0) when faceFlags bit 2; resolves the actor (+0x15c); optionally the head-tracking update 0x4256e0 (gated by bDisableHeadTracking); sets/clears faceFlags bit 0 and appends the node (refcounted, spin lock ID_401746) to the morph queue 0x31e76b8
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 26998, rva 0x43a4e0.
@@ -147,7 +147,7 @@ impl crate::BSFaceGenNiNode {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_face_animation(&self, data: *mut crate::NiUpdateData) { unsafe { function!(26998, (&Self, *mut crate::NiUpdateData))(self, data) } }
+    pub unsafe fn update_face_animation(&self, data: *mut crate::NiUpdateData) { unsafe { function!(26998, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), data) } }
     /// `BSFaceGenNiNode::animationData` at +0x150: face keyframe channels
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -164,7 +164,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn add_ragdoll_to_world(&self) -> bool { unsafe { virtual_function!(self, 2, (&Self) -> bool)(self) } }
+    pub unsafe fn add_ragdoll_to_world(&self) -> bool { unsafe { virtual_function!(self, 2, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BShkbAnimationGraph::HasRagdoll`, vtable slot 1: true when the character has a ragdoll instance
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
@@ -173,7 +173,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn has_ragdoll(&self) -> bool { unsafe { virtual_function!(self, 1, (&Self) -> bool)(self) } }
+    pub unsafe fn has_ragdoll(&self) -> bool { unsafe { virtual_function!(self, 1, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BShkbAnimationGraph::RemoveRagdollFromWorld`, vtable slot 3: removes the ragdoll from the world
     ///
     /// Semantic, animation pass, low; called through the object's vtable.
@@ -182,7 +182,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn remove_ragdoll_from_world(&self) -> bool { unsafe { virtual_function!(self, 3, (&Self) -> bool)(self) } }
+    pub unsafe fn remove_ragdoll_from_world(&self) -> bool { unsafe { virtual_function!(self, 3, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BShkbAnimationGraph::ResetRagdoll`, vtable slot 5: resets the ragdoll instance state
     ///
     /// Semantic, animation pass, low; called through the object's vtable.
@@ -191,13 +191,13 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn reset_ragdoll(&self) { unsafe { virtual_function!(self, 5, (&Self))(self) } }
+    pub unsafe fn reset_ragdoll(&self) { unsafe { virtual_function!(self, 5, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BShkbAnimationGraph::SetWorld`, vtable slot 4: stores the physics world
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (BShkbAnimationGraph* this, bhkWorld* world)`
     #[inline]
-    pub fn set_world(&self, world: &crate::bhkWorld) { unsafe { virtual_function!(self, 4, (&Self, &crate::bhkWorld))(self, world) } }
+    pub fn set_world(&self, world: &crate::bhkWorld) { unsafe { virtual_function!(self, 4, (*const Self, *const crate::bhkWorld))(core::ptr::from_ref(self), core::ptr::from_ref(world)) } }
     /// `BShkbAnimationGraph::dtor`, vtable slot 0: virtual destructor
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -206,7 +206,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BShkbAnimationGraph::CollectGraphEvents`: drains the Havok event queue (up to 5 passes through 0xacd4b0) and, when eventsOut is given, appends {projectData->eventNames[id] (+0xd0), payload string} for each id < projectData+0xe0
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63583, rva 0xbccea0.
@@ -215,7 +215,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// `ctx`, `eventsOut` must point to what the engine expects.
     #[inline]
-    pub unsafe fn collect_graph_events(&self, ctx: *mut c_void, eventsOut: *mut c_void) { unsafe { function!(63583, (&Self, *mut c_void, *mut c_void))(self, ctx, eventsOut) } }
+    pub unsafe fn collect_graph_events(&self, ctx: *mut c_void, eventsOut: *mut c_void) { unsafe { function!(63583, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), ctx, eventsOut) } }
     /// `BShkbAnimationGraph::FinalizePose`: blends current/previous outputs when interpolating, runs the foot IK controller under the world read lock and copies the result into the character pose buffer
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63581, rva 0xbcc7e0.
@@ -224,13 +224,13 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn finalize_pose(&self, boneCount: u16) { unsafe { function!(63581, (&Self, u16))(self, boneCount) } }
+    pub unsafe fn finalize_pose(&self, boneCount: u16) { unsafe { function!(63581, (*const Self, u16))(core::ptr::from_ref(self), boneCount) } }
     /// `BShkbAnimationGraph::Generate`: hkbBehaviorGraph::generate into +0x220, pose listeners, foot IK, then the bone write
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63568, rva 0xbcb290.
     /// `void (BShkbAnimationGraph* this, bool useSpuGenerate)`
     #[inline]
-    pub fn generate(&self, useSpuGenerate: bool) { unsafe { function!(63568, (&Self, bool))(self, useSpuGenerate) } }
+    pub fn generate(&self, useSpuGenerate: bool) { unsafe { function!(63568, (*const Self, bool))(core::ptr::from_ref(self), useSpuGenerate) } }
     /// `BShkbAnimationGraph::GetGraphVariableBool`: as the float getter, out = value != 0
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63613, rva 0xbd3350.
@@ -239,7 +239,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_graph_variable_bool(&self, name: *const crate::BSFixedString, out: *mut bool) -> bool { unsafe { function!(63613, (&Self, *const crate::BSFixedString, *mut bool) -> bool)(self, name, out) } }
+    pub unsafe fn get_graph_variable_bool(&self, name: *const crate::BSFixedString, out: *mut bool) -> bool { unsafe { function!(63613, (*const Self, *const crate::BSFixedString, *mut bool) -> bool)(core::ptr::from_ref(self), name, out) } }
     /// `BShkbAnimationGraph::GetGraphVariableFloat`: name -> index through projectData+0x70 (CRC32 of the interned string pointer, pointer-equality compare); value = behaviorGraph+0xd8 hkbVariableValueSet->values[index]
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63614, rva 0xbd3420.
@@ -248,7 +248,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_graph_variable_float(&self, name: *const crate::BSFixedString, out: *mut f32) -> bool { unsafe { function!(63614, (&Self, *const crate::BSFixedString, *mut f32) -> bool)(self, name, out) } }
+    pub unsafe fn get_graph_variable_float(&self, name: *const crate::BSFixedString, out: *mut f32) -> bool { unsafe { function!(63614, (*const Self, *const crate::BSFixedString, *mut f32) -> bool)(core::ptr::from_ref(self), name, out) } }
     /// `BShkbAnimationGraph::GetGraphVariableInt`: as the float getter, int result
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63615, rva 0xbd34e0.
@@ -257,7 +257,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_graph_variable_int(&self, name: *const crate::BSFixedString, out: *mut i32) -> bool { unsafe { function!(63615, (&Self, *const crate::BSFixedString, *mut i32) -> bool)(self, name, out) } }
+    pub unsafe fn get_graph_variable_int(&self, name: *const crate::BSFixedString, out: *mut i32) -> bool { unsafe { function!(63615, (*const Self, *const crate::BSFixedString, *mut i32) -> bool)(core::ptr::from_ref(self), name, out) } }
     /// `BShkbAnimationGraph::LoadProject`: loads the project into graph+0x1f0/+0x1f8, sets projectData +0x200, clones the behaviour graph into +0x208, sets up the character and pose buffers
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63585, rva 0xbcd240.
@@ -266,7 +266,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn load_project(&self, projectPath: *const c_char, skipPreload: bool) -> bool { unsafe { function!(63585, (&Self, *const c_char, bool) -> bool)(self, projectPath, skipPreload) } }
+    pub unsafe fn load_project(&self, projectPath: *const c_char, skipPreload: bool) -> bool { unsafe { function!(63585, (*const Self, *const c_char, bool) -> bool)(core::ptr::from_ref(self), projectPath, skipPreload) } }
     /// `BShkbAnimationGraph::NotifyGraphEvents`: the per-graph Notify site: for each collected {tag, payload} pair sends {tag, this->owner(+0x210), payload} through this+0x68, then releases the +0x1a8 objects
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63588, rva 0xbcf360.
@@ -275,7 +275,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// `events` must point to what the engine expects.
     #[inline]
-    pub unsafe fn notify_graph_events(&self, events: *mut c_void) { unsafe { function!(63588, (&Self, *mut c_void))(self, events) } }
+    pub unsafe fn notify_graph_events(&self, events: *mut c_void) { unsafe { function!(63588, (*const Self, *mut c_void))(core::ptr::from_ref(self), events) } }
     /// `BShkbAnimationGraph::NotifyPoseListeners`: calls slot 2 of each +0x178 listener with the fresh output, before foot IK and the bone write
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63573, rva 0xbcbf70.
@@ -284,43 +284,43 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn notify_pose_listeners(&self, output: *mut c_void) { unsafe { function!(63573, (&Self, *mut c_void))(self, output) } }
+    pub unsafe fn notify_pose_listeners(&self, output: *mut c_void) { unsafe { function!(63573, (*const Self, *mut c_void))(core::ptr::from_ref(self), output) } }
     /// `BShkbAnimationGraph::ReadPoseFromBoneNodes`: inverse of ApplyPoseToBoneNodes: each bone node's local rotation matrix -> quaternion and translation into poseLocal, and the root node (+0x218) world translation/rotation into worldFromModel (+0x148)
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63598, rva 0xbd02f0.
     /// `void (BShkbAnimationGraph* graph)`
     #[inline]
-    pub fn read_pose_from_bone_nodes(&self) { unsafe { function!(63598, (&Self))(self) } }
+    pub fn read_pose_from_bone_nodes(&self) { unsafe { function!(63598, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BShkbAnimationGraph::SendEventToGraph`: looks the name up in projectData's event map (+0xa0) and calls behaviorGraph->handleEvent (vtable+0x30) with {id, payload 0, sender 0} in an hkbContext from the character (+0xc0) and the world
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63591, rva 0xbcf690.
     /// `bool (BShkbAnimationGraph* this, const BSFixedString& eventName)`
     #[inline]
-    pub fn send_event_to_graph(&self, eventName: &crate::BSFixedString) -> bool { unsafe { function!(63591, (&Self, &crate::BSFixedString) -> bool)(self, eventName) } }
+    pub fn send_event_to_graph(&self, eventName: &crate::BSFixedString) -> bool { unsafe { function!(63591, (*const Self, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(eventName)) } }
     /// `BShkbAnimationGraph::SetGraphVariableBool`: writes (uint)value to values[index]
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63607, rva 0xbd3040.
     /// `bool (BShkbAnimationGraph* this, const BSFixedString& name, bool value)`
     #[inline]
-    pub fn set_graph_variable_bool(&self, name: &crate::BSFixedString, value: bool) -> bool { unsafe { function!(63607, (&Self, &crate::BSFixedString, bool) -> bool)(self, name, value) } }
+    pub fn set_graph_variable_bool(&self, name: &crate::BSFixedString, value: bool) -> bool { unsafe { function!(63607, (*const Self, *const crate::BSFixedString, bool) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(name), value) } }
     /// `BShkbAnimationGraph::SetGraphVariableFloat`: writes values[index]
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63608, rva 0xbd3100.
     /// `bool (BShkbAnimationGraph* this, const BSFixedString& name, float value)`
     #[inline]
-    pub fn set_graph_variable_float(&self, name: &crate::BSFixedString, value: f32) -> bool { unsafe { function!(63608, (&Self, &crate::BSFixedString, f32) -> bool)(self, name, value) } }
+    pub fn set_graph_variable_float(&self, name: &crate::BSFixedString, value: f32) -> bool { unsafe { function!(63608, (*const Self, *const crate::BSFixedString, f32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(name), value) } }
     /// `BShkbAnimationGraph::SetGraphVariableInt`: writes values[index]
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63609, rva 0xbd31d0.
     /// `bool (BShkbAnimationGraph* this, const BSFixedString& name, int value)`
     #[inline]
-    pub fn set_graph_variable_int(&self, name: &crate::BSFixedString, value: i32) -> bool { unsafe { function!(63609, (&Self, &crate::BSFixedString, i32) -> bool)(self, name, value) } }
+    pub fn set_graph_variable_int(&self, name: &crate::BSFixedString, value: i32) -> bool { unsafe { function!(63609, (*const Self, *const crate::BSFixedString, i32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(name), value) } }
     /// `BShkbAnimationGraph::SetRootNode`: binds the graph to a 3D root: stores +0x218, resolves the animation skeleton's bone names under the root into boneNodes (+0x160), rebuilds +0x178/+0x190 and the pose buffers
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63596, rva 0xbcfdb0.
     /// `void (BShkbAnimationGraph* this, NiNode* root)`
     #[inline]
-    pub fn set_root_node(&self, root: &crate::NiNode) { unsafe { function!(63596, (&Self, &crate::NiNode))(self, root) } }
+    pub fn set_root_node(&self, root: &crate::NiNode) { unsafe { function!(63596, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), core::ptr::from_ref(root)) } }
     /// `BShkbAnimationGraph::Update`: advances the behaviour graph for the frame and collects its events into eventsOut when non-null
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63587, rva 0xbcedb0.
@@ -329,7 +329,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update(&self, data: *mut c_void, eventsOut: *mut c_void) { unsafe { function!(63587, (&Self, *mut c_void, *mut c_void))(self, data, eventsOut) } }
+    pub unsafe fn update(&self, data: *mut c_void, eventsOut: *mut c_void) { unsafe { function!(63587, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), data, eventsOut) } }
     /// `BShkbAnimationGraph::WritePoseToNodes`: writes the generated pose into the bone nodes: foot IK step then ApplyQuaternionTransformsToNodes(character pose, boneNodes +0x160, boneCount +0x240); GenerateBehaviorGraphPose instead when +0x246
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63589, rva 0xbcf480.
@@ -338,7 +338,7 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// `flag` must point to what the engine expects.
     #[inline]
-    pub unsafe fn write_pose_to_nodes(&self, flag: *mut bool) { unsafe { function!(63589, (&Self, *mut bool))(self, flag) } }
+    pub unsafe fn write_pose_to_nodes(&self, flag: *mut bool) { unsafe { function!(63589, (*const Self, *mut bool))(core::ptr::from_ref(self), flag) } }
     /// `BShkbAnimationGraph::behaviorGraph` at +0x208: this graph's cloned hkbBehaviorGraph: +0xd8 hkbVariableValueSet (values +0x10, count +0x18), +0x12c active byte, vtable+0x30 handleEvent
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -370,7 +370,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn create_animation_channels(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 10, (&Self, *mut c_void) -> bool)(self, out) } }
+    pub unsafe fn create_animation_channels(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 10, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), out) } }
     /// `IAnimationGraphManagerHolder::GetAnimationGraphManager`, vtable slot 2: for actors: the manager at middleHigh+0x1a8 (AIProcess+0x8 -> +0x1a8), add-ref'd into *out
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -379,7 +379,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_animation_graph_manager(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 2, (&Self, *mut c_void) -> bool)(self, out) } }
+    pub unsafe fn get_animation_graph_manager(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 2, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), out) } }
     /// `IAnimationGraphManagerHolder::GetGraphRootNodes`, vtable slot 4: appends the 3D roots the holder's graphs drive; base returns false
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
@@ -388,7 +388,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_graph_root_nodes(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 4, (&Self, *mut c_void) -> bool)(self, out) } }
+    pub unsafe fn get_graph_root_nodes(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 4, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), out) } }
     /// `IAnimationGraphManagerHolder::GetGraphVariableBool`, vtable slot 18: reads a bool graph variable of the active graph
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -397,13 +397,13 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_graph_variable_bool(&self, name: *const crate::BSFixedString, out: *mut bool) -> bool { unsafe { virtual_function!(self, 18, (&Self, *const crate::BSFixedString, *mut bool) -> bool)(self, name, out) } }
+    pub unsafe fn get_graph_variable_bool(&self, name: *const crate::BSFixedString, out: *mut bool) -> bool { unsafe { virtual_function!(self, 18, (*const Self, *const crate::BSFixedString, *mut bool) -> bool)(core::ptr::from_ref(self), name, out) } }
     /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize`, vtable slot 15: capacity of the manager's name -> value-pointer variable cache
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `uint (IAnimationGraphManagerHolder* this)`
     #[inline]
-    pub fn get_graph_variable_cache_size(&self) -> u32 { unsafe { virtual_function!(self, 15, (&Self) -> u32)(self) } }
+    pub fn get_graph_variable_cache_size(&self) -> u32 { unsafe { virtual_function!(self, 15, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `IAnimationGraphManagerHolder::GetGraphVariableFloat`, vtable slot 16: reads a float graph variable of the active graph
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -412,7 +412,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_graph_variable_float(&self, name: *const crate::BSFixedString, out: *mut f32) -> bool { unsafe { virtual_function!(self, 16, (&Self, *const crate::BSFixedString, *mut f32) -> bool)(self, name, out) } }
+    pub unsafe fn get_graph_variable_float(&self, name: *const crate::BSFixedString, out: *mut f32) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::BSFixedString, *mut f32) -> bool)(core::ptr::from_ref(self), name, out) } }
     /// `IAnimationGraphManagerHolder::GetGraphVariableInt`, vtable slot 17: reads an int graph variable of the active graph
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -421,7 +421,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_graph_variable_int(&self, name: *const crate::BSFixedString, out: *mut i32) -> bool { unsafe { virtual_function!(self, 17, (&Self, *const crate::BSFixedString, *mut i32) -> bool)(self, name, out) } }
+    pub unsafe fn get_graph_variable_int(&self, name: *const crate::BSFixedString, out: *mut i32) -> bool { unsafe { virtual_function!(self, 17, (*const Self, *const crate::BSFixedString, *mut i32) -> bool)(core::ptr::from_ref(self), name, out) } }
     /// `IAnimationGraphManagerHolder::InitializeGraphVariables`, vtable slot 7: writes the reference's initial graph variables into a freshly loaded graph
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -430,13 +430,13 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `graph` must point to what the engine expects.
     #[inline]
-    pub unsafe fn initialize_graph_variables(&self, graph: *mut c_void) -> bool { unsafe { virtual_function!(self, 7, (&Self, *mut c_void) -> bool)(self, graph) } }
+    pub unsafe fn initialize_graph_variables(&self, graph: *mut c_void) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), graph) } }
     /// `IAnimationGraphManagerHolder::NotifyAnimationGraph`, vtable slot 1: sends a behaviour event by name to every graph of the holder's manager (and its dependent managers); true if at least one graph accepted it
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
     #[inline]
-    pub fn notify_animation_graph(&self, eventName: &crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::BSFixedString) -> bool)(self, eventName) } }
+    pub fn notify_animation_graph(&self, eventName: &crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(eventName)) } }
     /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged`, vtable slot 13: called by SetAnimationGraphManagerAndNotify 0x554060 after slot 3 when the manager changed
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
@@ -445,7 +445,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn on_animation_graph_manager_changed(&self, newMgr: *mut c_void, oldMgr: *mut c_void) { unsafe { virtual_function!(self, 13, (&Self, *mut c_void, *mut c_void))(self, newMgr, oldMgr) } }
+    pub unsafe fn on_animation_graph_manager_changed(&self, newMgr: *mut c_void, oldMgr: *mut c_void) { unsafe { virtual_function!(self, 13, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), newMgr, oldMgr) } }
     /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady`, vtable slot 12: notification after the manager is installed
     ///
     /// Semantic, animation pass, low; called through the object's vtable.
@@ -454,7 +454,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn on_animation_graph_manager_ready(&self) { unsafe { virtual_function!(self, 12, (&Self))(self) } }
+    pub unsafe fn on_animation_graph_manager_ready(&self) { unsafe { virtual_function!(self, 12, (*const Self))(core::ptr::from_ref(self)) } }
     /// `IAnimationGraphManagerHolder::OnGraphLoadFailed`, vtable slot 9: notification when constructing or loading a project's graph fails
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
@@ -463,7 +463,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn on_graph_load_failed(&self) { unsafe { virtual_function!(self, 9, (&Self))(self) } }
+    pub unsafe fn on_graph_load_failed(&self) { unsafe { virtual_function!(self, 9, (*const Self))(core::ptr::from_ref(self)) } }
     /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager`, vtable slot 11: hook after the manager is built, before it is installed
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
@@ -472,7 +472,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn post_build_animation_graph_manager(&self, mgr: *mut c_void) { unsafe { virtual_function!(self, 11, (&Self, *mut c_void))(self, mgr) } }
+    pub unsafe fn post_build_animation_graph_manager(&self, mgr: *mut c_void) { unsafe { virtual_function!(self, 11, (*const Self, *mut c_void))(core::ptr::from_ref(self), mgr) } }
     /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks`, vtable slot 8: connects the reference's sinks to one graph's event sources
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -481,7 +481,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `graph` must point to what the engine expects.
     #[inline]
-    pub unsafe fn register_graph_event_sinks(&self, graph: *mut c_void) -> bool { unsafe { virtual_function!(self, 8, (&Self, *mut c_void) -> bool)(self, graph) } }
+    pub unsafe fn register_graph_event_sinks(&self, graph: *mut c_void) -> bool { unsafe { virtual_function!(self, 8, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), graph) } }
     /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation`, vtable slot 14: gate checked before the per-frame manager update
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
@@ -490,7 +490,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn should_update_animation(&self) -> bool { unsafe { virtual_function!(self, 14, (&Self) -> bool)(self) } }
+    pub unsafe fn should_update_animation(&self) -> bool { unsafe { virtual_function!(self, 14, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `IAnimationGraphManagerHolder::SkipAnimationPreload`, vtable slot 6: flag passed as the third argument of the project load 0xbcd240; when false (Actor) and the project data has entries (+0x150), the loader resolves the animation file entries at build time
     ///
     /// Semantic, animation pass, low; called through the object's vtable.
@@ -499,7 +499,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn skip_animation_preload(&self) -> bool { unsafe { virtual_function!(self, 6, (&Self) -> bool)(self) } }
+    pub unsafe fn skip_animation_preload(&self) -> bool { unsafe { virtual_function!(self, 6, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `IAnimationGraphManagerHolder::dtor`, vtable slot 0: virtual destructor
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
@@ -508,7 +508,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `Actor::CreateAnimationChannels`: Actor holder slot 10: creates the per-actor graph data channels: Speed, TargetSpeed, Pitch, Roll, Direction, TurnDelta, PitchDelta, weaponSpeedMult, leftWeaponSpeedMult, iWantBlock, bHeadTracking, TimeDelta
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 37984, rva 0x6b0650.
@@ -517,13 +517,13 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn create_animation_channels_2(&self, out: *mut c_void) { unsafe { function!(37984, (&Self, *mut c_void))(self, out) } }
+    pub unsafe fn create_animation_channels_2(&self, out: *mut c_void) { unsafe { function!(37984, (*const Self, *mut c_void))(core::ptr::from_ref(self), out) } }
     /// `Actor::NotifyAnimationGraph`: 5-byte thunk 'jmp 0x554220' to IAnimationGraphManagerHolder::NotifyAnimationGraph (gets the manager through slot 2, BSAnimationGraphManager::NotifyAnimationGraph 0xbc0c90, true when a graph accepted the event)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38048, rva 0x6b61a0.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
     #[inline]
-    pub fn notify_animation_graph_2(&self, eventName: &crate::BSFixedString) -> bool { unsafe { function!(38048, (&Self, &crate::BSFixedString) -> bool)(self, eventName) } }
+    pub fn notify_animation_graph_2(&self, eventName: &crate::BSFixedString) -> bool { unsafe { function!(38048, (*const Self, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(eventName)) } }
     /// `IAnimationGraphManagerHolder::GetGraphVariableFloatDirect`: non-virtual copy of the base slot-16 body (active graph, no actor cache)
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 32929, rva 0x555160.
@@ -532,7 +532,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_graph_variable_float_direct(&self, name: *const crate::BSFixedString, out: *mut f32) -> bool { unsafe { function!(32929, (&Self, *const crate::BSFixedString, *mut f32) -> bool)(self, name, out) } }
+    pub unsafe fn get_graph_variable_float_direct(&self, name: *const crate::BSFixedString, out: *mut f32) -> bool { unsafe { function!(32929, (*const Self, *const crate::BSFixedString, *mut f32) -> bool)(core::ptr::from_ref(self), name, out) } }
     /// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify`: installs a manager through slot 3 and, when it changed, calls slot 13(new, old)
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 32900, rva 0x554060.
@@ -541,13 +541,13 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `newMgr` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_animation_graph_manager_and_notify(&self, newMgr: *mut c_void) -> bool { unsafe { function!(32900, (&Self, *mut c_void) -> bool)(self, newMgr) } }
+    pub unsafe fn set_animation_graph_manager_and_notify(&self, newMgr: *mut c_void) -> bool { unsafe { function!(32900, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), newMgr) } }
     /// `IAnimationGraphManagerHolder::SetGraphVariableBool`: sets a bool variable on every graph of the manager; returns true whenever the holder yields a manager (the result starts at 1 and is only ORed)
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 32885, rva 0x553560.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool value)`
     #[inline]
-    pub fn set_graph_variable_bool(&self, name: &crate::BSFixedString, value: bool) -> bool { unsafe { function!(32885, (&Self, &crate::BSFixedString, bool) -> bool)(self, name, value) } }
+    pub fn set_graph_variable_bool(&self, name: &crate::BSFixedString, value: bool) -> bool { unsafe { function!(32885, (*const Self, *const crate::BSFixedString, bool) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(name), value) } }
     /// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs`: implementation of 0x553560
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 32936, rva 0x555ac0.
@@ -556,13 +556,13 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `value` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_graph_variable_bool_on_all_graphs(&self, name: *const crate::BSFixedString, value: *mut bool) -> bool { unsafe { function!(32936, (&Self, *const crate::BSFixedString, *mut bool) -> bool)(self, name, value) } }
+    pub unsafe fn set_graph_variable_bool_on_all_graphs(&self, name: *const crate::BSFixedString, value: *mut bool) -> bool { unsafe { function!(32936, (*const Self, *const crate::BSFixedString, *mut bool) -> bool)(core::ptr::from_ref(self), name, value) } }
     /// `IAnimationGraphManagerHolder::SetGraphVariableFloat`: sets a float variable on every graph
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 32887, rva 0x5535a0.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float value)`
     #[inline]
-    pub fn set_graph_variable_float(&self, name: &crate::BSFixedString, value: f32) -> bool { unsafe { function!(32887, (&Self, &crate::BSFixedString, f32) -> bool)(self, name, value) } }
+    pub fn set_graph_variable_float(&self, name: &crate::BSFixedString, value: f32) -> bool { unsafe { function!(32887, (*const Self, *const crate::BSFixedString, f32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(name), value) } }
     /// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs`: implementation of 0x5535a0
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 32933, rva 0x555650.
@@ -571,13 +571,13 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `value` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_graph_variable_float_on_all_graphs(&self, name: *const crate::BSFixedString, value: *mut f32) -> bool { unsafe { function!(32933, (&Self, *const crate::BSFixedString, *mut f32) -> bool)(self, name, value) } }
+    pub unsafe fn set_graph_variable_float_on_all_graphs(&self, name: *const crate::BSFixedString, value: *mut f32) -> bool { unsafe { function!(32933, (*const Self, *const crate::BSFixedString, *mut f32) -> bool)(core::ptr::from_ref(self), name, value) } }
     /// `IAnimationGraphManagerHolder::SetGraphVariableInt`: sets an int variable on every graph
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 32886, rva 0x553580.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int value)`
     #[inline]
-    pub fn set_graph_variable_int(&self, name: &crate::BSFixedString, value: i32) -> bool { unsafe { function!(32886, (&Self, &crate::BSFixedString, i32) -> bool)(self, name, value) } }
+    pub fn set_graph_variable_int(&self, name: &crate::BSFixedString, value: i32) -> bool { unsafe { function!(32886, (*const Self, *const crate::BSFixedString, i32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(name), value) } }
     /// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs`: implementation of 0x553580
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 32932, rva 0x5554f0.
@@ -586,7 +586,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `value` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_graph_variable_int_on_all_graphs(&self, name: *const crate::BSFixedString, value: *mut i32) -> bool { unsafe { function!(32932, (&Self, *const crate::BSFixedString, *mut i32) -> bool)(self, name, value) } }
+    pub unsafe fn set_graph_variable_int_on_all_graphs(&self, name: *const crate::BSFixedString, value: *mut i32) -> bool { unsafe { function!(32932, (*const Self, *const crate::BSFixedString, *mut i32) -> bool)(core::ptr::from_ref(self), name, value) } }
     /// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager`: gets the manager (slot 2) and calls BSAnimationGraphManager::Update, gated by slot 14 unless data+0x2a
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 32899, rva 0x553fc0.
@@ -595,7 +595,7 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_animation_graph_manager(&self, data: *mut c_void) -> bool { unsafe { function!(32899, (&Self, *mut c_void) -> bool)(self, data) } }
+    pub unsafe fn update_animation_graph_manager(&self, data: *mut c_void) -> bool { unsafe { function!(32899, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), data) } }
 }
 
 impl crate::NiSkinData {
@@ -604,19 +604,19 @@ impl crate::NiSkinData {
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (NiSkinData* this, NiObject* other)`
     #[inline]
-    pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (&Self, &crate::NiObject) -> bool)(self, other) } }
+    pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const crate::NiObject) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `NiSkinData::LoadBinary`, vtable slot 24: reads the overall transform, bone count, a has-weights byte and per bone: transform, bound sphere, weight count and (when the byte is set) the weights
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (NiSkinData* this, NiStream* s)`
     #[inline]
-    pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (&Self, &crate::NiStream))(self, s) } }
+    pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinData::SaveBinary`, vtable slot 27: writes the same; has-weights = boneData[0].weights != null
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (NiSkinData* this, NiStream* s)`
     #[inline]
-    pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (&Self, &crate::NiStream))(self, s) } }
+    pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
 }
 
 impl crate::NiSkinPartition {
@@ -625,13 +625,13 @@ impl crate::NiSkinPartition {
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (NiSkinPartition* this, NiObject* other)`
     #[inline]
-    pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (&Self, &crate::NiObject) -> bool)(self, other) } }
+    pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const crate::NiObject) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `NiSkinPartition::LoadBinary`, vtable slot 24: reads the partitions and the shared vertex block (vertex descriptor bits choose the stream element sizes)
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (NiSkinPartition* this, NiStream* s)`
     #[inline]
-    pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (&Self, &crate::NiStream))(self, s) } }
+    pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinPartition::RenderPartition`, vtable slot 37: sets the bone matrices through the context's setter and issues the partition's draw
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
@@ -640,13 +640,13 @@ impl crate::NiSkinPartition {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn render_partition(&self, ctx: *mut c_void, index: u32) -> bool { unsafe { virtual_function!(self, 37, (&Self, *mut c_void, u32) -> bool)(self, ctx, index) } }
+    pub unsafe fn render_partition(&self, ctx: *mut c_void, index: u32) -> bool { unsafe { virtual_function!(self, 37, (*const Self, *mut c_void, u32) -> bool)(core::ptr::from_ref(self), ctx, index) } }
     /// `NiSkinPartition::SaveBinary`, vtable slot 27: writes the same
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (NiSkinPartition* this, NiStream* s)`
     #[inline]
-    pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (&Self, &crate::NiStream))(self, s) } }
+    pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinPartition::RenderAll`: calls slot 37 for each partition
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 71150, rva 0xf08460.
@@ -655,7 +655,7 @@ impl crate::NiSkinPartition {
     /// # Safety
     /// `ctx` must point to what the engine expects.
     #[inline]
-    pub unsafe fn render_all(&self, ctx: *mut c_void) { unsafe { function!(71150, (&Self, *mut c_void))(self, ctx) } }
+    pub unsafe fn render_all(&self, ctx: *mut c_void) { unsafe { function!(71150, (*const Self, *mut c_void))(core::ptr::from_ref(self), ctx) } }
 }
 
 impl crate::hkbBehaviorGraph {
@@ -667,13 +667,13 @@ impl crate::hkbBehaviorGraph {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn activate(&self, ctx: *const c_void) { unsafe { virtual_function!(self, 4, (&Self, *const c_void))(self, ctx) } }
+    pub unsafe fn activate(&self, ctx: *const c_void) { unsafe { virtual_function!(self, 4, (*const Self, *const c_void))(core::ptr::from_ref(self), ctx) } }
     /// `hkbBehaviorGraph::EnsureVariableValueSet`: creates variableValueSet (+0xd8) from data+0x70 when the graph data has variables
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58346, rva 0xacd680.
     /// `void (hkbBehaviorGraph* this)`
     #[inline]
-    pub fn ensure_variable_value_set(&self) { unsafe { function!(58346, (&Self))(self) } }
+    pub fn ensure_variable_value_set(&self) { unsafe { function!(58346, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkbBehaviorGraph::GetVariableValueSet`: returns graph+0xd8, creating it (0xacd680) when absent and +0x12c is clear
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63851, rva 0xbdf360.
@@ -682,7 +682,7 @@ impl crate::hkbBehaviorGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_variable_value_set(&self) -> *mut crate::hkbVariableValueSet { unsafe { function!(63851, (&Self) -> *mut crate::hkbVariableValueSet)(self) } }
+    pub unsafe fn get_variable_value_set(&self) -> *mut crate::hkbVariableValueSet { unsafe { function!(63851, (*const Self) -> *mut crate::hkbVariableValueSet)(core::ptr::from_ref(self)) } }
     /// `hkbBehaviorGraph::generate`: preGenerate, generateInternal (0xacf480), postGenerate (0xacdd80)
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58343, rva 0xacd1d0.
@@ -691,7 +691,7 @@ impl crate::hkbBehaviorGraph {
     /// # Safety
     /// `ctx`, `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn generate(&self, ctx: *const c_void, out: *mut c_void, a3: bool, a4: u32, a5: bool) { unsafe { function!(58343, (&Self, *const c_void, *mut c_void, bool, u32, bool))(self, ctx, out, a3, a4, a5) } }
+    pub unsafe fn generate(&self, ctx: *const c_void, out: *mut c_void, a3: bool, a4: u32, a5: bool) { unsafe { function!(58343, (*const Self, *const c_void, *mut c_void, bool, u32, bool))(core::ptr::from_ref(self), ctx, out, a3, a4, a5) } }
     /// `hkbBehaviorGraph::generateInternal`: generates the active nodes into the output
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 58376, rva 0xacf480.
@@ -700,7 +700,7 @@ impl crate::hkbBehaviorGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn generate_internal(&self, st: *mut c_void) { unsafe { function!(58376, (&Self, *mut c_void))(self, st) } }
+    pub unsafe fn generate_internal(&self, st: *mut c_void) { unsafe { function!(58376, (*const Self, *mut c_void))(core::ptr::from_ref(self), st) } }
     /// `hkbBehaviorGraph::postGenerate`: post-generate step
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 58356, rva 0xacdd80.
@@ -709,7 +709,7 @@ impl crate::hkbBehaviorGraph {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn post_generate(&self, st: *mut c_void) { unsafe { function!(58356, (&Self, *mut c_void))(self, st) } }
+    pub unsafe fn post_generate(&self, st: *mut c_void) { unsafe { function!(58356, (*const Self, *mut c_void))(core::ptr::from_ref(self), st) } }
     /// `hkbBehaviorGraph::preGenerate`: copies variables to members, updates the active node list, writes attribute defaults into output track 10, computes per-node timesteps
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58355, rva 0xacd8f0.
@@ -718,7 +718,7 @@ impl crate::hkbBehaviorGraph {
     /// # Safety
     /// `st` must point to what the engine expects.
     #[inline]
-    pub unsafe fn pre_generate(&self, st: *mut c_void, updateActiveNodes: bool, analyzeRecycling: bool) { unsafe { function!(58355, (&Self, *mut c_void, bool, bool))(self, st, updateActiveNodes, analyzeRecycling) } }
+    pub unsafe fn pre_generate(&self, st: *mut c_void, updateActiveNodes: bool, analyzeRecycling: bool) { unsafe { function!(58355, (*const Self, *mut c_void, bool, bool))(core::ptr::from_ref(self), st, updateActiveNodes, analyzeRecycling) } }
     /// `hkbBehaviorGraph::data` at +0x88: graph data: variable count (+0x28), initial variable values (+0x70), attribute defaults (+0x10, count +0x18)
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -740,7 +740,7 @@ impl crate::hkbCharacter {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_nearby_characters(&self, radius: f32, out: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, f32, *mut c_void))(self, radius, out) } }
+    pub unsafe fn get_nearby_characters(&self, radius: f32, out: *mut c_void) { unsafe { virtual_function!(self, 4, (*const Self, f32, *mut c_void))(core::ptr::from_ref(self), radius, out) } }
     /// `hkbCharacter::GetNearbyRigidBodies`, vtable slot 3: collects rigid bodies near a point with a Havok world query
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
@@ -749,19 +749,19 @@ impl crate::hkbCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_nearby_rigid_bodies(&self, pos: *const c_void, radius: f32, world: *mut crate::hkpWorld, out: *mut c_void, filter: u32, excludeSelf: bool, excludeNonCharacters: bool) { unsafe { virtual_function!(self, 3, (&Self, *const c_void, f32, *mut crate::hkpWorld, *mut c_void, u32, bool, bool))(self, pos, radius, world, out, filter, excludeSelf, excludeNonCharacters) } }
+    pub unsafe fn get_nearby_rigid_bodies(&self, pos: *const c_void, radius: f32, world: *mut crate::hkpWorld, out: *mut c_void, filter: u32, excludeSelf: bool, excludeNonCharacters: bool) { unsafe { virtual_function!(self, 3, (*const Self, *const c_void, f32, *mut crate::hkpWorld, *mut c_void, u32, bool, bool))(core::ptr::from_ref(self), pos, radius, world, out, filter, excludeSelf, excludeNonCharacters) } }
     /// `hkbCharacter::FreePoseLocal`: frees poseLocal when owned
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58467, rva 0xad80f0.
     /// `void (hkbCharacter* this)`
     #[inline]
-    pub fn free_pose_local(&self) { unsafe { function!(58467, (&Self))(self) } }
+    pub fn free_pose_local(&self) { unsafe { function!(58467, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkbCharacter::GetAnimationBindingSet`: returns +0x68, else setup+0x38 (created on demand)
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58459, rva 0xad7d40.
     /// `hkbAnimationBindingSet* (hkbCharacter* this)`
     #[inline]
-    pub fn get_animation_binding_set(&self) -> Option<&'static crate::hkbAnimationBindingSet> { unsafe { function!(58459, (&Self) -> Option<&'static crate::hkbAnimationBindingSet>)(self) } }
+    pub fn get_animation_binding_set(&self) -> Option<&'static crate::hkbAnimationBindingSet> { unsafe { function!(58459, (*const Self) -> Option<&'static crate::hkbAnimationBindingSet>)(core::ptr::from_ref(self)) } }
     /// `hkbCharacter::GetPoseLocal`: returns poseLocal (+0x90), creating it from the reference pose first
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58458, rva 0xad7d00.
@@ -770,13 +770,13 @@ impl crate::hkbCharacter {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_pose_local(&self) -> *mut c_void { unsafe { function!(58458, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn get_pose_local(&self) -> *mut c_void { unsafe { function!(58458, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
     /// `hkbCharacter::InitPoseLocalFromReferencePose`: allocates poseLocal = skeleton bone count * 0x30 and copies the skeleton's reference pose
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58466, rva 0xad8060.
     /// `void (hkbCharacter* this)`
     #[inline]
-    pub fn init_pose_local_from_reference_pose(&self) { unsafe { function!(58466, (&Self))(self) } }
+    pub fn init_pose_local_from_reference_pose(&self) { unsafe { function!(58466, (*const Self))(core::ptr::from_ref(self)) } }
     /// `hkbCharacter::SetWorldFromModelBuffer`: replaces worldFromModel, freeing the old 0x30-byte buffer when owned
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 58461, rva 0xad7e30.
@@ -785,7 +785,7 @@ impl crate::hkbCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_world_from_model_buffer(&self, buffer: *mut c_void, owned: bool) { unsafe { function!(58461, (&Self, *mut c_void, bool))(self, buffer, owned) } }
+    pub unsafe fn set_world_from_model_buffer(&self, buffer: *mut c_void, owned: bool) { unsafe { function!(58461, (*const Self, *mut c_void, bool))(core::ptr::from_ref(self), buffer, owned) } }
     /// `hkbCharacter::footIkDriver` at +0x40: foot IK driver
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -814,7 +814,7 @@ impl crate::hkbRagdollDriver {
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58286, rva 0xac6cb0.
     /// `hkaRagdollInstance* (hkbRagdollDriver* this)`
     #[inline]
-    pub fn get_ragdoll_instance(&self) -> Option<&'static crate::hkaRagdollInstance> { unsafe { function!(58286, (&Self) -> Option<&'static crate::hkaRagdollInstance>)(self) } }
+    pub fn get_ragdoll_instance(&self) -> Option<&'static crate::hkaRagdollInstance> { unsafe { function!(58286, (*const Self) -> Option<&'static crate::hkaRagdollInstance>)(core::ptr::from_ref(self)) } }
     /// `hkbRagdollDriver::ragdollInstance` at +0x88: the character's ragdoll (rigid bodies, constraints)
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -827,7 +827,7 @@ impl crate::hkbRagdollDriver {
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 26999, rva 0x43a900.
 /// `void (BSFaceGenNiNode* node)`
 #[inline]
-pub fn apply_face_morph_job(node: &crate::BSFaceGenNiNode) { unsafe { function!(26999, (&crate::BSFaceGenNiNode))(node) } }
+pub fn apply_face_morph_job(node: &crate::BSFaceGenNiNode) { unsafe { function!(26999, (*const crate::BSFaceGenNiNode))(core::ptr::from_ref(node)) } }
 /// `ApplyPoseToBoneNodes`: THE pose write: for each bone, normalises the quaternion and writes local rotation (row-major 3x3 at +0x48) and translation (+0x6c) of the bone node (or of the flattened entry); scale (+0x78) is not written; no world update
 ///
 /// Semantic, animation pass, high; ledger runtime evidence, name high; id 63856, rva 0xbdfa20.
@@ -905,7 +905,7 @@ pub unsafe fn cmd__recv_anim_event_send(mgr: *mut c_void, tag: *const c_char, pa
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 23450, rva 0x38a660.
 /// `void (u32 unused, NiAVObject* node)`
 #[inline]
-pub fn enable_all_dismember_partitions_recursive(unused: u32, node: &crate::NiAVObject) { unsafe { function!(23450, (u32, &crate::NiAVObject))(unused, node) } }
+pub fn enable_all_dismember_partitions_recursive(unused: u32, node: &crate::NiAVObject) { unsafe { function!(23450, (u32, *const crate::NiAVObject))(unused, core::ptr::from_ref(node)) } }
 /// `FaceMorphingStep`: main loop step named 'Face morphing': takes job list 0xc, queues the face morph jobs, runs and waits for the list
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 39096, rva 0x6e6250.

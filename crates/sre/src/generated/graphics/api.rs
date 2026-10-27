@@ -23,13 +23,13 @@ impl crate::ImageSpaceModifierInstanceForm {
     /// Semantic, graphics pass, high; called through the object's vtable.
     /// `void (ImageSpaceModifierInstanceForm* this)`
     #[inline]
-    pub fn apply(&self) { unsafe { virtual_function!(self, 38, (&Self))(self) } }
+    pub fn apply(&self) { unsafe { virtual_function!(self, 38, (*const Self))(core::ptr::from_ref(self)) } }
     /// `ImageSpaceModifierInstanceForm::IsFinished`, vtable slot 37: true when the form has a duration (imod+0x20) and clock - startTime exceeds imod+0x24
     ///
     /// Semantic, graphics pass, high; called through the object's vtable.
     /// `bool (ImageSpaceModifierInstanceForm* this)`
     #[inline]
-    pub fn is_finished(&self) -> bool { unsafe { virtual_function!(self, 37, (&Self) -> bool)(self) } }
+    pub fn is_finished(&self) -> bool { unsafe { virtual_function!(self, 37, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `ImageSpaceModifierInstanceForm::imod` at +0x28: the form
     ///
     /// Semantic field, graphics pass, high; `None` while the pointer is null.
@@ -42,7 +42,7 @@ impl crate::ImageSpaceModifierInstanceForm {
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 36755, rva 0x6623e0.
 /// `void (NiNode* node, float sortKey)`
 #[inline]
-pub fn add_focus_shadow_node(node: &crate::NiNode, sortKey: f32) { unsafe { function!(36755, (&crate::NiNode, f32))(node, sortKey) } }
+pub fn add_focus_shadow_node(node: &crate::NiNode, sortKey: f32) { unsafe { function!(36755, (*const crate::NiNode, f32))(core::ptr::from_ref(node), sortKey) } }
 /// `ApplyViewportDepthRange`: copies 0x20d01c0/0x20d01c4 into RenderStateCache viewport MinDepth/MaxDepth (0x20cfc80/0x20cfc84), dirty bit 2
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 77241, rva 0x1009ab0.
@@ -93,7 +93,7 @@ pub fn downsample_normals_for_ssr() { unsafe { function!(107146, ())() } }
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107283, rva 0x1546520.
 /// `i32 (ImageSpaceEffect* upsample, i32 sourceTarget, i32 destTarget, bool fullViewport)`
 #[inline]
-pub fn dynamic_resolution_upsample(upsample: &crate::ImageSpaceEffect, sourceTarget: i32, destTarget: i32, fullViewport: bool) -> i32 { unsafe { function!(107283, (&crate::ImageSpaceEffect, i32, i32, bool) -> i32)(upsample, sourceTarget, destTarget, fullViewport) } }
+pub fn dynamic_resolution_upsample(upsample: &crate::ImageSpaceEffect, sourceTarget: i32, destTarget: i32, fullViewport: bool) -> i32 { unsafe { function!(107283, (*const crate::ImageSpaceEffect, i32, i32, bool) -> i32)(core::ptr::from_ref(upsample), sourceTarget, destTarget, fullViewport) } }
 /// `EndDepthShift`: same gate: reframes the frame camera with SetPerspectiveFromFov(sg+0x13c, slot 63, cached far 0x3436050) and restores the saved viewport depth range
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107126, rva 0x1537950.
@@ -132,19 +132,19 @@ pub unsafe fn image_space_manager__render_effect(this: *mut c_void, effectId: u3
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 18570, rva 0x2a3940.
 /// `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
 #[inline]
-pub fn image_space_modifier__apply(imod: &crate::TESImageSpaceModifier, strength: f32, target: &crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm> { unsafe { function!(18570, (&crate::TESImageSpaceModifier, f32, &crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm>)(imod, strength, target) } }
+pub fn image_space_modifier__apply(imod: &crate::TESImageSpaceModifier, strength: f32, target: &crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm> { unsafe { function!(18570, (*const crate::TESImageSpaceModifier, f32, *const crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm>)(core::ptr::from_ref(imod), strength, core::ptr::from_ref(target)) } }
 /// `ImageSpaceModifier::ApplyIfAbsent`: as Apply but returns null without adding when an instance of imod is already on the list
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 18572, rva 0x2a3bc0.
 /// `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
 #[inline]
-pub fn image_space_modifier__apply_if_absent(imod: &crate::TESImageSpaceModifier, strength: f32, target: &crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm> { unsafe { function!(18572, (&crate::TESImageSpaceModifier, f32, &crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm>)(imod, strength, target) } }
+pub fn image_space_modifier__apply_if_absent(imod: &crate::TESImageSpaceModifier, strength: f32, target: &crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm> { unsafe { function!(18572, (*const crate::TESImageSpaceModifier, f32, *const crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm>)(core::ptr::from_ref(imod), strength, core::ptr::from_ref(target)) } }
 /// `ImageSpaceModifier::Remove`: stop: unlinks and releases every instance of imod from g_TES+0x108
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 18573, rva 0x2a3dd0.
 /// `void (TESImageSpaceModifier* imod)`
 #[inline]
-pub fn image_space_modifier__remove(imod: &crate::TESImageSpaceModifier) { unsafe { function!(18573, (&crate::TESImageSpaceModifier))(imod) } }
+pub fn image_space_modifier__remove(imod: &crate::TESImageSpaceModifier) { unsafe { function!(18573, (*const crate::TESImageSpaceModifier))(core::ptr::from_ref(imod)) } }
 /// `ImageSpaceModifier::RemoveCrossFade`: Papyrus RemoveCrossFade 0xa3abe0
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 18577, rva 0x2a4400.
@@ -216,7 +216,7 @@ pub fn render_shadow_mask_passes() { unsafe { function!(107141, ())() } }
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 76773, rva 0xff5c90.
 /// `void (BSGeometryListCullingProcess* list, BSCullingProcess* culler, bool parallel)`
 #[inline]
-pub fn replay_geometry_list(list: &crate::BSGeometryListCullingProcess, culler: &crate::BSCullingProcess, parallel: bool) { unsafe { function!(76773, (&crate::BSGeometryListCullingProcess, &crate::BSCullingProcess, bool))(list, culler, parallel) } }
+pub fn replay_geometry_list(list: &crate::BSGeometryListCullingProcess, culler: &crate::BSCullingProcess, parallel: bool) { unsafe { function!(76773, (*const crate::BSGeometryListCullingProcess, *const crate::BSCullingProcess, bool))(core::ptr::from_ref(list), core::ptr::from_ref(culler), parallel) } }
 /// `SetShadowDistanceForInterior`: (existing row) g_IsInteriorShadowDistance = arg; g_ShadowDistance = fInteriorShadowDistance or fShadowDistance; g_ShadowDistanceSq
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 105631, rva 0x14ebf00.

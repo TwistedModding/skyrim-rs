@@ -410,7 +410,7 @@ impl crate::CombatBehaviorTreeNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(47602, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(47602, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatBehaviorTreeNodeObject1_CombatBehaviorAcquireItem_CombatBehaviorExpression_CombatBehaviorM_5a407fb5ae45 {

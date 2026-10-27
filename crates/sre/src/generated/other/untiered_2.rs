@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `AssignObjectToValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82903, rva 0xd0d660).
+/// `undefined AssignObjectToValue(char * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_object_to_value(param_1: *mut c_char, param_2: *mut i64) -> u64 { unsafe { function!(82903, (*mut c_char, *mut i64) -> u64)(param_1, param_2) } }
+/// `AssignObjectVariant` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 105009, rva 0x14c7d60).
+/// `int * AssignObjectVariant(int * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_object_variant(param_1: *mut i32, param_2: *mut i32, param_3: u64, param_4: u64) -> *mut i32 { unsafe { function!(105009, (*mut i32, *mut i32, u64, u64) -> *mut i32)(param_1, param_2, param_3, param_4) } }
+/// `AssignOperandValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 105214, rva 0x14d4cc0).
+/// `ulonglong AssignOperandValue(longlong param_1, int * param_2, ulonglong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_operand_value(param_1: i64, param_2: *mut i32, param_3: u64) -> u64 { unsafe { function!(105214, (i64, *mut i32, u64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignOptionalFixedString80Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 443545, rva 0x1261e30).
+/// `longlong * AssignOptionalFixedString80Vector(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_optional_fixed_string80_vector(param_1: *mut i64, param_2: *mut i64, param_3: u64, param_4: u64) -> *mut i64 { unsafe { function!(443545, (*mut i64, *mut i64, u64, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }
 /// `AssignOwnedPtr` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84700, rva 0x1180990).
 /// `longlong * AssignOwnedPtr(longlong * param_1, ulonglong * param_2)`
 ///
@@ -13303,31 +13331,3 @@ pub unsafe fn compute_interior_flee_position(param_1: i64, param_2: *mut f32, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_inventory_item_value(param_1: *mut u64) -> i32 { unsafe { function!(15995, (*mut u64) -> i32)(param_1) } }
-/// `ComputeItemScoreWithEquippedBonus` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44863, rva 0x824850).
-/// `float ComputeItemScoreWithEquippedBonus(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_item_score_with_equipped_bonus(param_1: i64, param_2: *mut i64) -> f32 { unsafe { function!(44863, (i64, *mut i64) -> f32)(param_1, param_2) } }
-/// `ComputeItemScoreWithRangeBonus` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44864, rva 0x8248d0).
-/// `float ComputeItemScoreWithRangeBonus(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_item_score_with_range_bonus(param_1: i64, param_2: *mut i64) -> f32 { unsafe { function!(44864, (i64, *mut i64) -> f32)(param_1, param_2) } }
-/// `ComputeItemStatDeltaVsEquipped` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51827, rva 0x941680).
-/// `undefined ComputeItemStatDeltaVsEquipped(longlong * param_1, longlong * param_2, float * param_3, int * param_4, char param_5, char param_6)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_item_stat_delta_vs_equipped(param_1: *mut i64, param_2: *mut i64, param_3: *mut f32, param_4: *mut i32, param_5: c_char, param_6: c_char) -> u64 { unsafe { function!(51827, (*mut i64, *mut i64, *mut f32, *mut i32, c_char, c_char) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
-/// `ComputeJailDays` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40662, rva 0x75ac10).
-/// `ulonglong ComputeJailDays(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_jail_days(param_1: *mut i64) -> u64 { unsafe { function!(40662, (*mut i64) -> u64)(param_1) } }

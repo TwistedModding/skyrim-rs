@@ -10,7 +10,7 @@ impl crate::BSScript__ByteCode__PackedInstructionStream__InstructionFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__ErrorLogger {
@@ -20,7 +20,7 @@ impl crate::BSScript__ErrorLogger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IFindBoundObjectFunctor {
@@ -30,7 +30,7 @@ impl crate::BSScript__IFindBoundObjectFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IFunction {
@@ -40,7 +40,7 @@ impl crate::BSScript__IFunction {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__ILoader {
@@ -50,14 +50,14 @@ impl crate::BSScript__ILoader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::ILoader::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 54195, rva 0x9eceb0).
     /// `undefined dtor(ILoader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54195, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54195, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IMemoryPagePolicy {
@@ -67,7 +67,7 @@ impl crate::BSScript__IMemoryPagePolicy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IObjectHandlePolicy {
@@ -77,7 +77,7 @@ impl crate::BSScript__IObjectHandlePolicy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IObjectProcessor {
@@ -87,7 +87,7 @@ impl crate::BSScript__IObjectProcessor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IProfilePolicy {
@@ -97,7 +97,7 @@ impl crate::BSScript__IProfilePolicy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__ISavePatcherInterface {
@@ -107,7 +107,7 @@ impl crate::BSScript__ISavePatcherInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IStore {
@@ -117,14 +117,14 @@ impl crate::BSScript__IStore {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53812, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53812, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::IStore::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53813, rva 0x9cf060).
     /// `IStore * vdtor(IStore * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53813, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53813, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IVMDebugInterface {
@@ -134,7 +134,7 @@ impl crate::BSScript__IVMDebugInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IVMObjectBindInterface {
@@ -144,7 +144,7 @@ impl crate::BSScript__IVMObjectBindInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IVMSaveLoadInterface {
@@ -154,7 +154,7 @@ impl crate::BSScript__IVMSaveLoadInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IVirtualMachine {
@@ -164,7 +164,7 @@ impl crate::BSScript__IVirtualMachine {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__Internal__IFuncCallQuery {
@@ -174,7 +174,7 @@ impl crate::BSScript__Internal__IFuncCallQuery {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__Internal__RawFuncCallQuery {
@@ -184,14 +184,14 @@ impl crate::BSScript__Internal__RawFuncCallQuery {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u32, param_2: *mut u64, param_3: *mut i64, param_4: *mut u64, param_5: i64) -> *mut c_void { unsafe { function!(104943, (&Self, u32, *mut u64, *mut i64, *mut u64, i64) -> *mut c_void)(self, param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn ctor(&self, param_1: u32, param_2: *mut u64, param_3: *mut i64, param_4: *mut u64, param_5: i64) -> *mut c_void { unsafe { function!(104943, (*const Self, u32, *mut u64, *mut i64, *mut u64, i64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
     /// `BSScript::Internal::RawFuncCallQuery::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105032, rva 0x14c8a10).
     /// `RawFuncCallQuery * vdtor(RawFuncCallQuery * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105032, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105032, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__LinkerProcessor {
@@ -201,14 +201,14 @@ impl crate::BSScript__LinkerProcessor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64) -> *mut c_void { unsafe { function!(105378, (&Self, u64, u64) -> *mut c_void)(self, param_1, param_2) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64) -> *mut c_void { unsafe { function!(105378, (*const Self, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSScript::LinkerProcessor::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105431, rva 0x14e3e40).
     /// `LinkerProcessor * vdtor(LinkerProcessor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105431, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105431, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_ActiveEffect_Actor____ptr64 {
@@ -218,7 +218,7 @@ impl crate::BSScript__NativeFunction0_ActiveEffect_Actor____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54606, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54606, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_ActiveEffect_EffectSetting____ptr64 {
@@ -228,7 +228,7 @@ impl crate::BSScript__NativeFunction0_ActiveEffect_EffectSetting____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54607, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54607, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_ActiveEffect_void {
@@ -238,7 +238,7 @@ impl crate::BSScript__NativeFunction0_ActiveEffect_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54608, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54608, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_Actor____ptr64 {
@@ -248,14 +248,14 @@ impl crate::BSScript__NativeFunction0_Actor_Actor____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54819, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54819, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction0<Actor,Actor*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54850, rva 0xa0c470).
     /// `NativeFunction0<Actor,Actor*___ptr64> * vdtor(NativeFunction0<Actor,Actor*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54850, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54850, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_TESFaction____ptr64 {
@@ -265,7 +265,7 @@ impl crate::BSScript__NativeFunction0_Actor_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54851, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54851, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_TESNPC____ptr64 {
@@ -275,7 +275,7 @@ impl crate::BSScript__NativeFunction0_Actor_TESNPC____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54852, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54852, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_TESObjectARMO____ptr64 {
@@ -285,7 +285,7 @@ impl crate::BSScript__NativeFunction0_Actor_TESObjectARMO____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54853, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54853, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_TESObjectREFR____ptr64 {
@@ -295,7 +295,7 @@ impl crate::BSScript__NativeFunction0_Actor_TESObjectREFR____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54854, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54854, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_TESPackage____ptr64 {
@@ -305,7 +305,7 @@ impl crate::BSScript__NativeFunction0_Actor_TESPackage____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54855, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54855, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_TESRace____ptr64 {
@@ -315,7 +315,7 @@ impl crate::BSScript__NativeFunction0_Actor_TESRace____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54856, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54856, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_TESShout____ptr64 {
@@ -325,7 +325,7 @@ impl crate::BSScript__NativeFunction0_Actor_TESShout____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54857, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54857, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_bool {
@@ -335,14 +335,14 @@ impl crate::BSScript__NativeFunction0_Actor_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54821, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54821, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<Actor,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54859, rva 0xa0c6b0).
     /// `NativeFunction0<Actor,bool> * vdtor(NativeFunction0<Actor,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54859, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54859, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_float {
@@ -352,14 +352,14 @@ impl crate::BSScript__NativeFunction0_Actor_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54818, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54818, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<Actor,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54849, rva 0xa0c430).
     /// `NativeFunction0<Actor,float> * vdtor(NativeFunction0<Actor,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54849, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54849, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_int {
@@ -369,14 +369,14 @@ impl crate::BSScript__NativeFunction0_Actor_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54816, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54816, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<Actor,int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54847, rva 0xa0c3b0).
     /// `NativeFunction0<Actor,int> * vdtor(NativeFunction0<Actor,int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54847, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54847, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_unsigned_int {
@@ -386,14 +386,14 @@ impl crate::BSScript__NativeFunction0_Actor_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54817, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54817, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<Actor,unsigned_int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54848, rva 0xa0c3f0).
     /// `NativeFunction0<Actor,unsigned_int> * vdtor(NativeFunction0<Actor,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54848, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54848, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_Actor_void {
@@ -403,14 +403,14 @@ impl crate::BSScript__NativeFunction0_Actor_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54820, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54820, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<Actor,void>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54858, rva 0xa0c670).
     /// `NativeFunction0<Actor,void> * vdtor(NativeFunction0<Actor,void> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54858, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54858, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_AlchemyItem_bool {
@@ -420,7 +420,7 @@ impl crate::BSScript__NativeFunction0_AlchemyItem_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55120, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55120, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSBaseAlias_TESQuest____ptr64 {
@@ -430,7 +430,7 @@ impl crate::BSScript__NativeFunction0_BGSBaseAlias_TESQuest____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55149, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55149, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSBaseAlias_void {
@@ -440,7 +440,7 @@ impl crate::BSScript__NativeFunction0_BGSBaseAlias_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55150, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55150, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSListForm_unsigned_int {
@@ -450,7 +450,7 @@ impl crate::BSScript__NativeFunction0_BGSListForm_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55673, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55673, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSListForm_void {
@@ -460,7 +460,7 @@ impl crate::BSScript__NativeFunction0_BGSListForm_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55674, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55674, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSLocAlias_BGSLocation____ptr64 {
@@ -470,7 +470,7 @@ impl crate::BSScript__NativeFunction0_BGSLocAlias_BGSLocation____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55197, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55197, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSLocAlias_void {
@@ -480,7 +480,7 @@ impl crate::BSScript__NativeFunction0_BGSLocAlias_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55198, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55198, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSLocation_bool {
@@ -490,7 +490,7 @@ impl crate::BSScript__NativeFunction0_BGSLocation_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55218, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55218, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSMusicType_void {
@@ -500,7 +500,7 @@ impl crate::BSScript__NativeFunction0_BGSMusicType_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55277, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55277, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSRefAlias_TESObjectREFR____ptr64 {
@@ -510,7 +510,7 @@ impl crate::BSScript__NativeFunction0_BGSRefAlias_TESObjectREFR____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55295, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55295, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSRefAlias_void {
@@ -520,7 +520,7 @@ impl crate::BSScript__NativeFunction0_BGSRefAlias_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55296, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55296, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSScene_TESQuest____ptr64 {
@@ -530,7 +530,7 @@ impl crate::BSScript__NativeFunction0_BGSScene_TESQuest____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55325, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55325, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSScene_bool {
@@ -540,7 +540,7 @@ impl crate::BSScript__NativeFunction0_BGSScene_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55327, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55327, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSScene_void {
@@ -550,7 +550,7 @@ impl crate::BSScript__NativeFunction0_BGSScene_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55326, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55326, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BGSSoundCategory_void {
@@ -560,7 +560,7 @@ impl crate::BSScript__NativeFunction0_BGSSoundCategory_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55357, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55357, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_Actor____ptr64 {
@@ -570,7 +570,7 @@ impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_Actor____ptr64
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55529, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55529, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESObjectREFR____ptr64 {
@@ -580,7 +580,7 @@ impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESObjectREFR_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55530, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55530, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESWeather____ptr64 {
@@ -590,7 +590,7 @@ impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESWeather____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56783, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56783, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_bool {
@@ -600,14 +600,14 @@ impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(524054, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(524054, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<BSScript::StaticFunctionTag,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55398, rva 0xa215b0).
     /// `NativeFunction0<BSScript::StaticFunctionTag,bool> * vdtor(NativeFunction0<BSScript::StaticFunctionTag,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55398, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55398, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_float {
@@ -617,7 +617,7 @@ impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55528, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55528, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_unsigned_int {
@@ -627,7 +627,7 @@ impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56782, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56782, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_void {
@@ -637,7 +637,7 @@ impl crate::BSScript__NativeFunction0_BSScript__StaticFunctionTag_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55397, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55397, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_EffectSetting_bool {
@@ -647,7 +647,7 @@ impl crate::BSScript__NativeFunction0_EffectSetting_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55434, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55434, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_EnchantmentItem_bool {
@@ -657,7 +657,7 @@ impl crate::BSScript__NativeFunction0_EnchantmentItem_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55440, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55440, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_IngredientItem_bool {
@@ -667,7 +667,7 @@ impl crate::BSScript__NativeFunction0_IngredientItem_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55653, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55653, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_IngredientItem_unsigned_int {
@@ -677,7 +677,7 @@ impl crate::BSScript__NativeFunction0_IngredientItem_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55651, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55651, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_IngredientItem_void {
@@ -687,7 +687,7 @@ impl crate::BSScript__NativeFunction0_IngredientItem_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55652, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55652, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_SpellItem_bool {
@@ -697,7 +697,7 @@ impl crate::BSScript__NativeFunction0_SpellItem_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55759, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55759, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_SpellItem_void {
@@ -707,7 +707,7 @@ impl crate::BSScript__NativeFunction0_SpellItem_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55758, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55758, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESFaction_bool {
@@ -717,7 +717,7 @@ impl crate::BSScript__NativeFunction0_TESFaction_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55827, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55827, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESFaction_unsigned_int {
@@ -727,7 +727,7 @@ impl crate::BSScript__NativeFunction0_TESFaction_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55825, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55825, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESFaction_void {
@@ -737,7 +737,7 @@ impl crate::BSScript__NativeFunction0_TESFaction_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55826, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55826, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESForm_bool {
@@ -747,7 +747,7 @@ impl crate::BSScript__NativeFunction0_TESForm_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55895, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55895, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESForm_int {
@@ -757,7 +757,7 @@ impl crate::BSScript__NativeFunction0_TESForm_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55892, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55892, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESForm_unsigned_int {
@@ -767,7 +767,7 @@ impl crate::BSScript__NativeFunction0_TESForm_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55893, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55893, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESForm_void {
@@ -777,7 +777,7 @@ impl crate::BSScript__NativeFunction0_TESForm_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55894, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55894, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESGlobal_float {
@@ -787,7 +787,7 @@ impl crate::BSScript__NativeFunction0_TESGlobal_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55927, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55927, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESImageSpaceModifier_void {
@@ -797,7 +797,7 @@ impl crate::BSScript__NativeFunction0_TESImageSpaceModifier_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55942, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55942, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESLevCharacter_void {
@@ -807,7 +807,7 @@ impl crate::BSScript__NativeFunction0_TESLevCharacter_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55957, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55957, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESLevItem_void {
@@ -817,7 +817,7 @@ impl crate::BSScript__NativeFunction0_TESLevItem_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55968, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55968, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESLevSpell_void {
@@ -827,7 +827,7 @@ impl crate::BSScript__NativeFunction0_TESLevSpell_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55979, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55979, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESNPC_BGSListForm____ptr64 {
@@ -837,7 +837,7 @@ impl crate::BSScript__NativeFunction0_TESNPC_BGSListForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55996, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55996, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESNPC_TESClass____ptr64 {
@@ -847,7 +847,7 @@ impl crate::BSScript__NativeFunction0_TESNPC_TESClass____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55997, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55997, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESNPC_TESRace____ptr64 {
@@ -857,7 +857,7 @@ impl crate::BSScript__NativeFunction0_TESNPC_TESRace____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55998, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55998, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESNPC_bool {
@@ -867,7 +867,7 @@ impl crate::BSScript__NativeFunction0_TESNPC_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55999, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55999, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESNPC_int {
@@ -877,7 +877,7 @@ impl crate::BSScript__NativeFunction0_TESNPC_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55995, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55995, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectARMO_float {
@@ -887,7 +887,7 @@ impl crate::BSScript__NativeFunction0_TESObjectARMO_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56032, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56032, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectCELL_TESFaction____ptr64 {
@@ -897,7 +897,7 @@ impl crate::BSScript__NativeFunction0_TESObjectCELL_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56045, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56045, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectCELL_TESNPC____ptr64 {
@@ -907,7 +907,7 @@ impl crate::BSScript__NativeFunction0_TESObjectCELL_TESNPC____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56046, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56046, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectCELL_bool {
@@ -917,7 +917,7 @@ impl crate::BSScript__NativeFunction0_TESObjectCELL_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56048, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56048, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectCELL_void {
@@ -927,7 +927,7 @@ impl crate::BSScript__NativeFunction0_TESObjectCELL_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56047, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56047, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectLIGH_float {
@@ -937,7 +937,7 @@ impl crate::BSScript__NativeFunction0_TESObjectLIGH_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56088, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56088, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_BGSLocation____ptr64 {
@@ -947,14 +947,14 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_BGSLocation____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(56375, (&Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(56375, (*const Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction0<TESObjectREFR,BGSLocation*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56412, rva 0xa54e90).
     /// `NativeFunction0<TESObjectREFR,BGSLocation*___ptr64> * vdtor(NativeFunction0<TESObjectREFR,BGSLocation*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56412, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56412, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_BGSScene____ptr64 {
@@ -964,7 +964,7 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_BGSScene____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56413, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56413, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_BGSVoiceType____ptr64 {
@@ -974,7 +974,7 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_BGSVoiceType____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56414, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56414, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_TESFaction____ptr64 {
@@ -984,7 +984,7 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56415, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56415, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_TESForm____ptr64 {
@@ -994,7 +994,7 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56416, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56416, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_TESKey____ptr64 {
@@ -1004,7 +1004,7 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_TESKey____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56417, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56417, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_TESNPC____ptr64 {
@@ -1014,7 +1014,7 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_TESNPC____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56418, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56418, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_TESObjectCELL____ptr64 {
@@ -1024,7 +1024,7 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_TESObjectCELL____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56419, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56419, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_TESWorldSpace____ptr64 {
@@ -1034,7 +1034,7 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_TESWorldSpace____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56420, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56420, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_bool {
@@ -1044,14 +1044,14 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56377, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56377, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<TESObjectREFR,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56422, rva 0xa55110).
     /// `NativeFunction0<TESObjectREFR,bool> * vdtor(NativeFunction0<TESObjectREFR,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56422, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56422, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_float {
@@ -1061,14 +1061,14 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56374, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56374, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<TESObjectREFR,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56411, rva 0xa54e50).
     /// `NativeFunction0<TESObjectREFR,float> * vdtor(NativeFunction0<TESObjectREFR,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56411, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56411, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_int {
@@ -1078,14 +1078,14 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56372, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56372, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<TESObjectREFR,int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56409, rva 0xa54dd0).
     /// `NativeFunction0<TESObjectREFR,int> * vdtor(NativeFunction0<TESObjectREFR,int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56409, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56409, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_unsigned_int {
@@ -1095,14 +1095,14 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56373, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56373, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<TESObjectREFR,unsigned_int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56410, rva 0xa54e10).
     /// `NativeFunction0<TESObjectREFR,unsigned_int> * vdtor(NativeFunction0<TESObjectREFR,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56410, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56410, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESObjectREFR_void {
@@ -1112,14 +1112,14 @@ impl crate::BSScript__NativeFunction0_TESObjectREFR_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56376, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56376, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction0<TESObjectREFR,void>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56421, rva 0xa550d0).
     /// `NativeFunction0<TESObjectREFR,void> * vdtor(NativeFunction0<TESObjectREFR,void> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56421, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56421, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESPackage_TESPackage_const____ptr64 {
@@ -1129,7 +1129,7 @@ impl crate::BSScript__NativeFunction0_TESPackage_TESPackage_const____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56667, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56667, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESPackage_TESQuest____ptr64 {
@@ -1139,7 +1139,7 @@ impl crate::BSScript__NativeFunction0_TESPackage_TESQuest____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56666, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56666, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESQuest_bool {
@@ -1149,7 +1149,7 @@ impl crate::BSScript__NativeFunction0_TESQuest_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56693, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56693, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESQuest_unsigned_int {
@@ -1159,7 +1159,7 @@ impl crate::BSScript__NativeFunction0_TESQuest_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56691, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56691, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESQuest_void {
@@ -1169,7 +1169,7 @@ impl crate::BSScript__NativeFunction0_TESQuest_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56692, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56692, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESTopic_void {
@@ -1179,7 +1179,7 @@ impl crate::BSScript__NativeFunction0_TESTopic_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56761, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56761, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESTopicInfo_TESQuest____ptr64 {
@@ -1189,7 +1189,7 @@ impl crate::BSScript__NativeFunction0_TESTopicInfo_TESQuest____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56770, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56770, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction0_TESWeather_int {
@@ -1199,7 +1199,7 @@ impl crate::BSScript__NativeFunction0_TESWeather_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56784, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56784, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString_9e413a14af52 {
@@ -1209,7 +1209,7 @@ impl crate::BSScript__NativeFunction10_BSScript__StaticFunctionTag_bool_TESObjec
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55531, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55531, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction11_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_float_flo_693c6ff4f2d3 {
@@ -1219,7 +1219,7 @@ impl crate::BSScript__NativeFunction11_TESObjectREFR_void_TESObjectREFR____ptr64
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56423, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56423, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_ActiveEffect_void_TESForm____ptr64 {
@@ -1229,14 +1229,14 @@ impl crate::BSScript__NativeFunction1_ActiveEffect_void_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(54603, (&Self, u64, u64, u64, *mut i32) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(54603, (*const Self, u64, u64, u64, *mut i32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<ActiveEffect,void,TESForm*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54610, rva 0x9fddd0).
     /// `NativeFunction1<ActiveEffect,void,TESForm*___ptr64> * vdtor(NativeFunction1<ActiveEffect,void,TESForm*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54610, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54610, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_ActiveEffect_void_float {
@@ -1246,7 +1246,7 @@ impl crate::BSScript__NativeFunction1_ActiveEffect_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54609, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54609, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_SpellItem____ptr64_unsigned_int {
@@ -1256,7 +1256,7 @@ impl crate::BSScript__NativeFunction1_Actor_SpellItem____ptr64_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54865, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54865, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_TESObjectARMO____ptr64_unsigned_int {
@@ -1266,7 +1266,7 @@ impl crate::BSScript__NativeFunction1_Actor_TESObjectARMO____ptr64_unsigned_int 
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54866, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54866, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_TESObjectWEAP____ptr64_bool {
@@ -1276,7 +1276,7 @@ impl crate::BSScript__NativeFunction1_Actor_TESObjectWEAP____ptr64_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54867, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54867, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_Actor____ptr64 {
@@ -1286,14 +1286,14 @@ impl crate::BSScript__NativeFunction1_Actor_bool_Actor____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54830, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54830, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,bool,Actor*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54880, rva 0xa0cbf0).
     /// `NativeFunction1<Actor,bool,Actor*___ptr64> * vdtor(NativeFunction1<Actor,bool,Actor*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54880, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54880, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_BGSKeyword____ptr64 {
@@ -1303,14 +1303,14 @@ impl crate::BSScript__NativeFunction1_Actor_bool_BGSKeyword____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(54831, (&Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(54831, (*const Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,bool,BGSKeyword*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54881, rva 0xa0cc30).
     /// `NativeFunction1<Actor,bool,BGSKeyword*___ptr64> * vdtor(NativeFunction1<Actor,bool,BGSKeyword*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54881, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54881, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_BGSPerk____ptr64 {
@@ -1320,7 +1320,7 @@ impl crate::BSScript__NativeFunction1_Actor_bool_BGSPerk____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54882, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54882, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_EffectSetting____ptr64 {
@@ -1330,7 +1330,7 @@ impl crate::BSScript__NativeFunction1_Actor_bool_EffectSetting____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54883, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54883, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_SpellItem____ptr64 {
@@ -1340,14 +1340,14 @@ impl crate::BSScript__NativeFunction1_Actor_bool_SpellItem____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54832, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54832, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,bool,SpellItem*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54884, rva 0xa0ccf0).
     /// `NativeFunction1<Actor,bool,SpellItem*___ptr64> * vdtor(NativeFunction1<Actor,bool,SpellItem*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54884, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54884, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_TESFaction____ptr64 {
@@ -1357,7 +1357,7 @@ impl crate::BSScript__NativeFunction1_Actor_bool_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54885, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54885, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_TESForm____ptr64 {
@@ -1367,14 +1367,14 @@ impl crate::BSScript__NativeFunction1_Actor_bool_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54833, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54833, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,bool,TESForm*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54886, rva 0xa0cd70).
     /// `NativeFunction1<Actor,bool,TESForm*___ptr64> * vdtor(NativeFunction1<Actor,bool,TESForm*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54886, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54886, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_TESIdleForm____ptr64 {
@@ -1384,7 +1384,7 @@ impl crate::BSScript__NativeFunction1_Actor_bool_TESIdleForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54887, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54887, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_TESObjectREFR____ptr64 {
@@ -1394,7 +1394,7 @@ impl crate::BSScript__NativeFunction1_Actor_bool_TESObjectREFR____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54888, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54888, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_bool_TESShout____ptr64 {
@@ -1404,14 +1404,14 @@ impl crate::BSScript__NativeFunction1_Actor_bool_TESShout____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54834, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54834, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,bool,TESShout*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54889, rva 0xa0ce30).
     /// `NativeFunction1<Actor,bool,TESShout*___ptr64> * vdtor(NativeFunction1<Actor,bool,TESShout*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54889, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54889, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_float_BSFixedString_const____ptr64 {
@@ -1421,14 +1421,14 @@ impl crate::BSScript__NativeFunction1_Actor_float_BSFixedString_const____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54822, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54822, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<Actor,float,BSFixedString_const&___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54864, rva 0xa0c7f0).
     /// `NativeFunction1<Actor,float,BSFixedString_const&___ptr64> * vdtor(NativeFunction1<Actor,float,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54864, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54864, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_int_Actor____ptr64 {
@@ -1438,7 +1438,7 @@ impl crate::BSScript__NativeFunction1_Actor_int_Actor____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54861, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54861, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_int_TESFaction____ptr64 {
@@ -1448,7 +1448,7 @@ impl crate::BSScript__NativeFunction1_Actor_int_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54862, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54862, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_int_unsigned_int {
@@ -1458,7 +1458,7 @@ impl crate::BSScript__NativeFunction1_Actor_int_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54860, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54860, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_unsigned_int_Actor____ptr64 {
@@ -1468,7 +1468,7 @@ impl crate::BSScript__NativeFunction1_Actor_unsigned_int_Actor____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54863, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54863, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_Actor____ptr64 {
@@ -1478,14 +1478,14 @@ impl crate::BSScript__NativeFunction1_Actor_void_Actor____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54824, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54824, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,void,Actor*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54871, rva 0xa0c9b0).
     /// `NativeFunction1<Actor,void,Actor*___ptr64> * vdtor(NativeFunction1<Actor,void,Actor*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54871, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54871, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_BGSPerk____ptr64 {
@@ -1495,14 +1495,14 @@ impl crate::BSScript__NativeFunction1_Actor_void_BGSPerk____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54825, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54825, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,void,BGSPerk*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54872, rva 0xa0c9f0).
     /// `NativeFunction1<Actor,void,BGSPerk*___ptr64> * vdtor(NativeFunction1<Actor,void,BGSPerk*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54872, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54872, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_BGSTextureSet____ptr64 {
@@ -1512,7 +1512,7 @@ impl crate::BSScript__NativeFunction1_Actor_void_BGSTextureSet____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54873, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54873, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_BSFixedString_const____ptr64 {
@@ -1522,7 +1522,7 @@ impl crate::BSScript__NativeFunction1_Actor_void_BSFixedString_const____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54868, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54868, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_TESFaction____ptr64 {
@@ -1532,14 +1532,14 @@ impl crate::BSScript__NativeFunction1_Actor_void_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54826, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54826, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,void,TESFaction*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54874, rva 0xa0ca70).
     /// `NativeFunction1<Actor,void,TESFaction*___ptr64> * vdtor(NativeFunction1<Actor,void,TESFaction*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54874, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54874, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_TESForm____ptr64 {
@@ -1549,7 +1549,7 @@ impl crate::BSScript__NativeFunction1_Actor_void_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54875, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54875, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_TESObjectREFR____ptr64 {
@@ -1559,14 +1559,14 @@ impl crate::BSScript__NativeFunction1_Actor_void_TESObjectREFR____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54827, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54827, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54876, rva 0xa0caf0).
     /// `NativeFunction1<Actor,void,TESObjectREFR*___ptr64> * vdtor(NativeFunction1<Actor,void,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54876, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54876, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_TESRace____ptr64 {
@@ -1576,7 +1576,7 @@ impl crate::BSScript__NativeFunction1_Actor_void_TESRace____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54877, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54877, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_TESShout____ptr64 {
@@ -1586,14 +1586,14 @@ impl crate::BSScript__NativeFunction1_Actor_void_TESShout____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54828, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54828, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<Actor,void,TESShout*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54878, rva 0xa0cb70).
     /// `NativeFunction1<Actor,void,TESShout*___ptr64> * vdtor(NativeFunction1<Actor,void,TESShout*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54878, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54878, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_bool {
@@ -1603,14 +1603,14 @@ impl crate::BSScript__NativeFunction1_Actor_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54829, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54829, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<Actor,void,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54879, rva 0xa0cbb0).
     /// `NativeFunction1<Actor,void,bool> * vdtor(NativeFunction1<Actor,void,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54879, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54879, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_float {
@@ -1620,7 +1620,7 @@ impl crate::BSScript__NativeFunction1_Actor_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54870, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54870, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_Actor_void_unsigned_int {
@@ -1630,14 +1630,14 @@ impl crate::BSScript__NativeFunction1_Actor_void_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54823, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54823, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<Actor,void,unsigned_int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54869, rva 0xa0c930).
     /// `NativeFunction1<Actor,void,unsigned_int> * vdtor(NativeFunction1<Actor,void,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54869, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54869, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSBaseAlias_void_float {
@@ -1647,7 +1647,7 @@ impl crate::BSScript__NativeFunction1_BGSBaseAlias_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55151, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55151, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSListForm_TESForm____ptr64_unsigned_int {
@@ -1657,7 +1657,7 @@ impl crate::BSScript__NativeFunction1_BGSListForm_TESForm____ptr64_unsigned_int 
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55676, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55676, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSListForm_bool_TESForm____ptr64 {
@@ -1667,7 +1667,7 @@ impl crate::BSScript__NativeFunction1_BGSListForm_bool_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55678, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55678, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSListForm_int_TESForm____ptr64 {
@@ -1677,7 +1677,7 @@ impl crate::BSScript__NativeFunction1_BGSListForm_int_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55675, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55675, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSListForm_void_TESForm____ptr64 {
@@ -1687,7 +1687,7 @@ impl crate::BSScript__NativeFunction1_BGSListForm_void_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55677, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55677, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSLocAlias_void_BGSLocation____ptr64 {
@@ -1697,7 +1697,7 @@ impl crate::BSScript__NativeFunction1_BGSLocAlias_void_BGSLocation____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55199, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55199, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSLocation_bool_BGSLocation____ptr64 {
@@ -1707,7 +1707,7 @@ impl crate::BSScript__NativeFunction1_BGSLocation_bool_BGSLocation____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55222, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55222, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSLocation_bool_BGSLocationRefType____ptr64 {
@@ -1717,7 +1717,7 @@ impl crate::BSScript__NativeFunction1_BGSLocation_bool_BGSLocationRefType____ptr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55223, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55223, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSLocation_float_BGSKeyword____ptr64 {
@@ -1727,7 +1727,7 @@ impl crate::BSScript__NativeFunction1_BGSLocation_float_BGSKeyword____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55220, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55220, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSLocation_unsigned_int_BGSLocationRefType____ptr64 {
@@ -1737,7 +1737,7 @@ impl crate::BSScript__NativeFunction1_BGSLocation_unsigned_int_BGSLocationRefTyp
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55219, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55219, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSLocation_void_bool {
@@ -1747,7 +1747,7 @@ impl crate::BSScript__NativeFunction1_BGSLocation_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55221, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55221, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSRefAlias_void_TESForm____ptr64 {
@@ -1757,14 +1757,14 @@ impl crate::BSScript__NativeFunction1_BGSRefAlias_void_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(55294, (&Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(55294, (*const Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<BGSRefAlias,void,TESForm*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55297, rva 0xa1c0d0).
     /// `NativeFunction1<BGSRefAlias,void,TESForm*___ptr64> * vdtor(NativeFunction1<BGSRefAlias,void,TESForm*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55297, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55297, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSRefAlias_void_TESObjectREFR____ptr64 {
@@ -1774,7 +1774,7 @@ impl crate::BSScript__NativeFunction1_BGSRefAlias_void_TESObjectREFR____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55298, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55298, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSReferenceEffect_void_TESObjectREFR____ptr64 {
@@ -1784,7 +1784,7 @@ impl crate::BSScript__NativeFunction1_BGSReferenceEffect_void_TESObjectREFR____p
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55312, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55312, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSScene_bool_unsigned_int {
@@ -1794,7 +1794,7 @@ impl crate::BSScript__NativeFunction1_BGSScene_bool_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55328, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55328, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSShaderParticleGeometryData_void_float {
@@ -1804,7 +1804,7 @@ impl crate::BSScript__NativeFunction1_BGSShaderParticleGeometryData_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55345, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55345, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BGSSoundCategory_void_float {
@@ -1814,7 +1814,7 @@ impl crate::BSScript__NativeFunction1_BGSSoundCategory_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55358, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55358, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_unsigned_int {
@@ -1824,7 +1824,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_BSFixedString_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(524056, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(524056, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int {
@@ -1834,7 +1834,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESForm____ptr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55535, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55535, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESWeather____ptr64_unsigned_int {
@@ -1844,7 +1844,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESWeather____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56785, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56785, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64 {
@@ -1854,7 +1854,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55401, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55401, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_TESWordOfPower____ptr64 {
@@ -1864,7 +1864,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_TESWordOf
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55543, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55543, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_float {
@@ -1874,7 +1874,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56820, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56820, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_unsigned_int {
@@ -1884,7 +1884,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_unsigned_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(524058, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(524058, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64 {
@@ -1894,7 +1894,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55534, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55534, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_float {
@@ -1904,7 +1904,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55712, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55712, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_BSFixedString_const____ptr64 {
@@ -1914,14 +1914,14 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_BSFixedStr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(55516, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(55516, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55532, rva 0xa2a530).
     /// `NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64> * vdtor(NativeFunction1<BSScript::StaticFunctionTag,int,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55532, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55532, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_float {
@@ -1931,7 +1931,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55711, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55711, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_unsigned_int {
@@ -1941,7 +1941,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_unsigned_i
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(524057, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(524057, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_unsigned_int_unsigned_int {
@@ -1951,7 +1951,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_unsigned_int_u
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55533, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55533, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_Actor____ptr64 {
@@ -1961,14 +1961,14 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_Actor____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55518, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55518, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55539, rva 0xa2a730).
     /// `NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64> * vdtor(NativeFunction1<BSScript::StaticFunctionTag,void,Actor*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55539, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55539, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64 {
@@ -1978,14 +1978,14 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(55517, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(55517, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55260, rva 0xa1a500).
     /// `NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64> * vdtor(NativeFunction1<BSScript::StaticFunctionTag,void,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55260, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55260, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESImageSpaceModifier____ptr64 {
@@ -1995,7 +1995,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESImageS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55540, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55540, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64 {
@@ -2005,7 +2005,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESObject
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55541, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55541, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESQuest____ptr64 {
@@ -2015,7 +2015,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESQuest_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55399, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55399, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESWordOfPower____ptr64 {
@@ -2025,14 +2025,14 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESWordOf
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55519, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55519, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55542, rva 0xa2a7f0).
     /// `NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64> * vdtor(NativeFunction1<BSScript::StaticFunctionTag,void,TESWordOfPower*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55542, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55542, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_bool {
@@ -2042,14 +2042,14 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(55520, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(55520, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55400, rva 0xa21630).
     /// `NativeFunction1<BSScript::StaticFunctionTag,void,bool> * vdtor(NativeFunction1<BSScript::StaticFunctionTag,void,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55400, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55400, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_float {
@@ -2059,7 +2059,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55538, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55538, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_int {
@@ -2069,7 +2069,7 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55536, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55536, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_unsigned_int {
@@ -2079,14 +2079,14 @@ impl crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_unsigned_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(524055, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(524055, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55537, rva 0xa2a6b0).
     /// `NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int> * vdtor(NativeFunction1<BSScript::StaticFunctionTag,void,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55537, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55537, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_IngredientItem_void_unsigned_int {
@@ -2096,7 +2096,7 @@ impl crate::BSScript__NativeFunction1_IngredientItem_void_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55654, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55654, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESEffectShader_void_TESObjectREFR____ptr64 {
@@ -2106,7 +2106,7 @@ impl crate::BSScript__NativeFunction1_TESEffectShader_void_TESObjectREFR____ptr6
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55783, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55783, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESFaction_bool_TESFaction____ptr64 {
@@ -2116,7 +2116,7 @@ impl crate::BSScript__NativeFunction1_TESFaction_bool_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55831, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55831, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESFaction_int_TESFaction____ptr64 {
@@ -2126,7 +2126,7 @@ impl crate::BSScript__NativeFunction1_TESFaction_int_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55828, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55828, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESFaction_void_bool {
@@ -2136,7 +2136,7 @@ impl crate::BSScript__NativeFunction1_TESFaction_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55830, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55830, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESFaction_void_unsigned_int {
@@ -2146,7 +2146,7 @@ impl crate::BSScript__NativeFunction1_TESFaction_void_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55829, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55829, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64 {
@@ -2156,7 +2156,7 @@ impl crate::BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55897, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55897, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESForm_void_float {
@@ -2166,7 +2166,7 @@ impl crate::BSScript__NativeFunction1_TESForm_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55896, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55896, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESGlobal_void_float {
@@ -2176,7 +2176,7 @@ impl crate::BSScript__NativeFunction1_TESGlobal_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55928, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55928, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESImageSpaceModifier_void_float {
@@ -2186,7 +2186,7 @@ impl crate::BSScript__NativeFunction1_TESImageSpaceModifier_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55943, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55943, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESNPC_void_bool {
@@ -2196,7 +2196,7 @@ impl crate::BSScript__NativeFunction1_TESNPC_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56000, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56000, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64 {
@@ -2206,7 +2206,7 @@ impl crate::BSScript__NativeFunction1_TESObjectCELL_void_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56050, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56050, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64 {
@@ -2216,7 +2216,7 @@ impl crate::BSScript__NativeFunction1_TESObjectCELL_void_TESNPC____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56051, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56051, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectCELL_void_bool {
@@ -2226,7 +2226,7 @@ impl crate::BSScript__NativeFunction1_TESObjectCELL_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56052, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56052, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectCELL_void_float {
@@ -2236,7 +2236,7 @@ impl crate::BSScript__NativeFunction1_TESObjectCELL_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56049, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56049, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKeyword____ptr64 {
@@ -2246,7 +2246,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_BGSKe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56430, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56430, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int {
@@ -2256,7 +2256,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_TESObjectREFR____ptr64_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56429, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56429, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64 {
@@ -2266,7 +2266,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BGSKeyword____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56441, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56441, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____ptr64 {
@@ -2276,7 +2276,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BGSLocationRefType____p
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56442, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56442, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64 {
@@ -2286,14 +2286,14 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56382, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56382, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56438, rva 0xa55510).
     /// `NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64> * vdtor(NativeFunction1<TESObjectREFR,bool,BSFixedString_const&___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56438, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56438, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64 {
@@ -2303,14 +2303,14 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_TESObjectREFR____ptr64 
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56383, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56383, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56440, rva 0xa55590).
     /// `NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64> * vdtor(NativeFunction1<TESObjectREFR,bool,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56440, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56440, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_bool {
@@ -2320,14 +2320,14 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56384, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56384, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<TESObjectREFR,bool,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56443, rva 0xa55650).
     /// `NativeFunction1<TESObjectREFR,bool,bool> * vdtor(NativeFunction1<TESObjectREFR,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56443, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56443, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_float {
@@ -2337,7 +2337,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_bool_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56439, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56439, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const____ptr64 {
@@ -2347,7 +2347,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_float_BSFixedString_const___
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56427, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56427, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64 {
@@ -2357,14 +2357,14 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_float_TESObjectREFR____ptr64
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56378, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56378, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56428, rva 0xa55290).
     /// `NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64> * vdtor(NativeFunction1<TESObjectREFR,float,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56428, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56428, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____ptr64 {
@@ -2374,7 +2374,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_int_BSFixedString_const____p
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56424, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56424, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr64 {
@@ -2384,7 +2384,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_unsigned_int_TESForm____ptr6
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56426, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56426, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int {
@@ -2394,7 +2394,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_unsigned_int_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56425, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56425, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64 {
@@ -2404,14 +2404,14 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_void_Actor____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56379, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56379, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<TESObjectREFR,void,Actor*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56433, rva 0xa553d0).
     /// `NativeFunction1<TESObjectREFR,void,Actor*___ptr64> * vdtor(NativeFunction1<TESObjectREFR,void,Actor*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56433, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56433, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64 {
@@ -2421,7 +2421,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESFaction____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56434, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56434, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64 {
@@ -2431,14 +2431,14 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESForm____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56380, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56380, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<TESObjectREFR,void,TESForm*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56435, rva 0xa55450).
     /// `NativeFunction1<TESObjectREFR,void,TESForm*___ptr64> * vdtor(NativeFunction1<TESObjectREFR,void,TESForm*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56435, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56435, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64 {
@@ -2448,7 +2448,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESNPC____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56436, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56436, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64 {
@@ -2458,14 +2458,14 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_void_TESObjectREFR____ptr64 
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(442745, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(442745, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56432, rva 0xa55390).
     /// `NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64> * vdtor(NativeFunction1<TESObjectREFR,void,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56432, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56432, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_void_bool {
@@ -2475,14 +2475,14 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56381, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56381, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction1<TESObjectREFR,void,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56437, rva 0xa554d0).
     /// `NativeFunction1<TESObjectREFR,void,bool> * vdtor(NativeFunction1<TESObjectREFR,void,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56437, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56437, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int {
@@ -2492,7 +2492,7 @@ impl crate::BSScript__NativeFunction1_TESObjectREFR_void_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56431, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56431, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_int {
@@ -2502,7 +2502,7 @@ impl crate::BSScript__NativeFunction1_TESQuest_BGSBaseAlias____ptr64_unsigned_in
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56694, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56694, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64 {
@@ -2512,7 +2512,7 @@ impl crate::BSScript__NativeFunction1_TESQuest_bool_TESGlobal____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56697, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56697, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESQuest_bool_unsigned_int {
@@ -2522,7 +2522,7 @@ impl crate::BSScript__NativeFunction1_TESQuest_bool_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56696, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56696, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESQuest_void_bool {
@@ -2532,7 +2532,7 @@ impl crate::BSScript__NativeFunction1_TESQuest_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56695, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56695, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64 {
@@ -2542,7 +2542,7 @@ impl crate::BSScript__NativeFunction1_TESSound_bool_TESObjectREFR____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56748, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56748, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr64 {
@@ -2552,7 +2552,7 @@ impl crate::BSScript__NativeFunction1_TESSound_unsigned_int_TESObjectREFR____ptr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56747, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56747, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction1_TESWeather_void_bool {
@@ -2562,7 +2562,7 @@ impl crate::BSScript__NativeFunction1_TESWeather_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56786, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56786, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -2572,7 +2572,7 @@ impl crate::BSScript__NativeFunction2_ActiveEffect_bool_TESObjectREFR____ptr64_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54613, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54613, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObjectREFR____ptr64 {
@@ -2582,14 +2582,14 @@ impl crate::BSScript__NativeFunction2_ActiveEffect_void_Actor____ptr64_TESObject
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54604, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54604, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54611, rva 0x9fde10).
     /// `NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64> * vdtor(NativeFunction2<ActiveEffect,void,Actor*___ptr64,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54611, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54611, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -2599,7 +2599,7 @@ impl crate::BSScript__NativeFunction2_ActiveEffect_void_TESObjectREFR____ptr64_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54612, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54612, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Actor____ptr64 {
@@ -2609,7 +2609,7 @@ impl crate::BSScript__NativeFunction2_Actor_bool_BGSAssociationType____ptr64_Act
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54900, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54900, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool {
@@ -2619,7 +2619,7 @@ impl crate::BSScript__NativeFunction2_Actor_bool_SpellItem____ptr64_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54901, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54901, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectREFR____ptr64 {
@@ -2629,7 +2629,7 @@ impl crate::BSScript__NativeFunction2_Actor_bool_TESIdleForm____ptr64_TESObjectR
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54902, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54902, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float {
@@ -2639,7 +2639,7 @@ impl crate::BSScript__NativeFunction2_Actor_bool_TESObjectREFR____ptr64_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54903, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54903, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_Actor____ptr64_int {
@@ -2649,7 +2649,7 @@ impl crate::BSScript__NativeFunction2_Actor_void_Actor____ptr64_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54894, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54894, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool {
@@ -2659,7 +2659,7 @@ impl crate::BSScript__NativeFunction2_Actor_void_BGSOutfit____ptr64_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54895, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54895, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_float {
@@ -2669,14 +2669,14 @@ impl crate::BSScript__NativeFunction2_Actor_void_BSFixedString_const____ptr64_fl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54835, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(54835, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54891, rva 0xa0ceb0).
     /// `NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float> * vdtor(NativeFunction2<Actor,void,BSFixedString_const&___ptr64,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54891, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54891, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREFR____ptr64 {
@@ -2686,7 +2686,7 @@ impl crate::BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_TESObjectREF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54890, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54890, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int {
@@ -2696,14 +2696,14 @@ impl crate::BSScript__NativeFunction2_Actor_void_SpellItem____ptr64_unsigned_int
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54836, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54836, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54896, rva 0xa0cff0).
     /// `NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int> * vdtor(NativeFunction2<Actor,void,SpellItem*___ptr64,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54896, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54896, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int {
@@ -2713,14 +2713,14 @@ impl crate::BSScript__NativeFunction2_Actor_void_TESFaction____ptr64_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54837, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54837, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction2<Actor,void,TESFaction*___ptr64,int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54897, rva 0xa0d030).
     /// `NativeFunction2<Actor,void,TESFaction*___ptr64,int> * vdtor(NativeFunction2<Actor,void,TESFaction*___ptr64,int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54897, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54897, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool {
@@ -2730,7 +2730,7 @@ impl crate::BSScript__NativeFunction2_Actor_void_TESObjectREFR____ptr64_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54898, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54898, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_bool_bool {
@@ -2740,7 +2740,7 @@ impl crate::BSScript__NativeFunction2_Actor_void_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54899, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54899, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_float_bool {
@@ -2750,7 +2750,7 @@ impl crate::BSScript__NativeFunction2_Actor_void_float_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54893, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54893, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int {
@@ -2760,7 +2760,7 @@ impl crate::BSScript__NativeFunction2_Actor_void_unsigned_int_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54892, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54892, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -2770,7 +2770,7 @@ impl crate::BSScript__NativeFunction2_BGSBaseAlias_bool_TESObjectREFR____ptr64_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55154, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55154, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObjectREFR____ptr64 {
@@ -2780,14 +2780,14 @@ impl crate::BSScript__NativeFunction2_BGSBaseAlias_void_Actor____ptr64_TESObject
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55148, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55148, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55152, rva 0xa15490).
     /// `NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64> * vdtor(NativeFunction2<BGSBaseAlias,void,Actor*___ptr64,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55152, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55152, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -2797,7 +2797,7 @@ impl crate::BSScript__NativeFunction2_BGSBaseAlias_void_TESObjectREFR____ptr64_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55153, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55153, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSKeyword____ptr64 {
@@ -2807,7 +2807,7 @@ impl crate::BSScript__NativeFunction2_BGSLocation_bool_BGSLocation____ptr64_BGSK
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55225, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55225, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float {
@@ -2817,7 +2817,7 @@ impl crate::BSScript__NativeFunction2_BGSLocation_void_BGSKeyword____ptr64_float
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55224, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55224, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int_BSFixedString_const____ptr64 {
@@ -2827,7 +2827,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_TESForm____ptr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55544, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55544, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_float {
@@ -2837,7 +2837,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_float_float_fl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55713, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55713, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int {
@@ -2847,7 +2847,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_int_int_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56821, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56821, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
@@ -2857,7 +2857,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55402, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55402, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool {
@@ -2867,7 +2867,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56822, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56822, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_float {
@@ -2877,7 +2877,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55546, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55546, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_int {
@@ -2887,7 +2887,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55545, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55545, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_unsigned_int {
@@ -2897,7 +2897,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55403, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55403, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -2907,7 +2907,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_TESObject
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55404, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55404, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_int_float {
@@ -2917,7 +2917,7 @@ impl crate::BSScript__NativeFunction2_BSScript__StaticFunctionTag_void_unsigned_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56749, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56749, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64 {
@@ -2927,7 +2927,7 @@ impl crate::BSScript__NativeFunction2_ScrollItem_bool_TESObjectREFR____ptr64_TES
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55735, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55735, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESObjectREFR____ptr64 {
@@ -2937,7 +2937,7 @@ impl crate::BSScript__NativeFunction2_SpellItem_bool_TESObjectREFR____ptr64_TESO
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55760, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55760, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr64_float {
@@ -2947,7 +2947,7 @@ impl crate::BSScript__NativeFunction2_TESEffectShader_void_TESObjectREFR____ptr6
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55784, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55784, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESFaction_bool_bool_bool {
@@ -2957,7 +2957,7 @@ impl crate::BSScript__NativeFunction2_TESFaction_bool_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55835, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55835, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int {
@@ -2967,14 +2967,14 @@ impl crate::BSScript__NativeFunction2_TESFaction_void_TESFaction____ptr64_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55822, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55822, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction2<TESFaction,void,TESFaction*___ptr64,int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55833, rva 0xa36490).
     /// `NativeFunction2<TESFaction,void,TESFaction*___ptr64,int> * vdtor(NativeFunction2<TESFaction,void,TESFaction*___ptr64,int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55833, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55833, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESFaction_void_bool_bool {
@@ -2984,7 +2984,7 @@ impl crate::BSScript__NativeFunction2_TESFaction_void_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55834, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55834, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESFaction_void_int_bool {
@@ -2994,7 +2994,7 @@ impl crate::BSScript__NativeFunction2_TESFaction_void_int_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55832, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55832, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -3004,7 +3004,7 @@ impl crate::BSScript__NativeFunction2_TESForm_bool_TESObjectREFR____ptr64_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55900, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55900, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR____ptr64 {
@@ -3014,14 +3014,14 @@ impl crate::BSScript__NativeFunction2_TESForm_void_Actor____ptr64_TESObjectREFR_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55891, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55891, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55898, rva 0xa39100).
     /// `NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64> * vdtor(NativeFunction2<TESForm,void,Actor*___ptr64,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55898, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55898, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -3031,7 +3031,7 @@ impl crate::BSScript__NativeFunction2_TESForm_void_TESObjectREFR____ptr64_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55899, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55899, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceModifier____ptr64_float {
@@ -3041,7 +3041,7 @@ impl crate::BSScript__NativeFunction2_TESImageSpaceModifier_void_TESImageSpaceMo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55944, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55944, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsigned_int {
@@ -3051,7 +3051,7 @@ impl crate::BSScript__NativeFunction2_TESLevCharacter_void_TESForm____ptr64_unsi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55958, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55958, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned_int {
@@ -3061,7 +3061,7 @@ impl crate::BSScript__NativeFunction2_TESLevSpell_void_TESForm____ptr64_unsigned
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55980, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55980, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool {
@@ -3071,7 +3071,7 @@ impl crate::BSScript__NativeFunction2_TESNPC_void_BGSOutfit____ptr64_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56001, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56001, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectCELL_void_float_float {
@@ -3081,7 +3081,7 @@ impl crate::BSScript__NativeFunction2_TESObjectCELL_void_float_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56053, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56053, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
@@ -3091,7 +3091,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56452, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56452, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsigned_int {
@@ -3101,7 +3101,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESForm____ptr64_unsign
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56456, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56456, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -3111,7 +3111,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56454, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56454, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_bool {
@@ -3121,7 +3121,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_TESObjectREFR____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56455, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56455, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool {
@@ -3131,14 +3131,14 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_bool_unsigned_int_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56385, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56385, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction2<TESObjectREFR,bool,unsigned_int,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56453, rva 0xa558d0).
     /// `NativeFunction2<TESObjectREFR,bool,unsigned_int,bool> * vdtor(NativeFunction2<TESObjectREFR,bool,unsigned_int,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56453, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56453, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float {
@@ -3148,7 +3148,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56450, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56450, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned_int {
@@ -3158,7 +3158,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_void_Actor____ptr64_unsigned
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56449, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56449, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
@@ -3168,7 +3168,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56444, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56444, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_bool {
@@ -3178,7 +3178,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56447, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56447, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_float {
@@ -3188,7 +3188,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56446, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56446, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____ptr64_int {
@@ -3198,7 +3198,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_void_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56445, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56445, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_void_bool_bool {
@@ -3208,7 +3208,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_void_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56451, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56451, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectREFR_void_float_float {
@@ -3218,7 +3218,7 @@ impl crate::BSScript__NativeFunction2_TESObjectREFR_void_float_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56448, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56448, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_TESAmmo____ptr64 {
@@ -3228,14 +3228,14 @@ impl crate::BSScript__NativeFunction2_TESObjectWEAP_void_TESObjectREFR____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56656, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(56656, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56657, rva 0xa5e4d0).
     /// `NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64> * vdtor(NativeFunction2<TESObjectWEAP,void,TESObjectREFR*___ptr64,TESAmmo*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56657, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56657, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool {
@@ -3245,7 +3245,7 @@ impl crate::BSScript__NativeFunction2_TESQuest_void_unsigned_int_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56698, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56698, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction2_TESWeather_void_bool_bool {
@@ -3255,7 +3255,7 @@ impl crate::BSScript__NativeFunction2_TESWeather_void_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56787, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56787, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool {
@@ -3265,14 +3265,14 @@ impl crate::BSScript__NativeFunction3_Actor_void_TESForm____ptr64_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54838, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(54838, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54904, rva 0xa0d1f0).
     /// `NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool> * vdtor(NativeFunction3<Actor,void,TESForm*___ptr64,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54904, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54904, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_Actor_void_bool_bool_bool {
@@ -3282,7 +3282,7 @@ impl crate::BSScript__NativeFunction3_Actor_void_bool_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54905, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54905, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____ptr64_float_TESObjectREFR____ptr64 {
@@ -3292,7 +3292,7 @@ impl crate::BSScript__NativeFunction3_BGSReferenceEffect_void_TESObjectREFR____p
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55313, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55313, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64_BSFixedS_cebe0cb5d35d {
@@ -3302,7 +3302,7 @@ impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_bool_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55405, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55405, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64_float_float {
@@ -3312,7 +3312,7 @@ impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_TESObject
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55548, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55548, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool_bool {
@@ -3322,7 +3322,7 @@ impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_bool_bool
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55549, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55549, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_float_float {
@@ -3332,7 +3332,7 @@ impl crate::BSScript__NativeFunction3_BSScript__StaticFunctionTag_void_float_flo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55547, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55547, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64 {
@@ -3342,7 +3342,7 @@ impl crate::BSScript__NativeFunction3_SpellItem_bool_TESObjectREFR____ptr64_Acto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55761, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55761, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_bool {
@@ -3352,14 +3352,14 @@ impl crate::BSScript__NativeFunction3_TESFaction_void_TESFaction____ptr64_bool_b
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55823, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55823, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55836, rva 0xa36550).
     /// `NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool> * vdtor(NativeFunction3<TESFaction,void,TESFaction*___ptr64,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55836, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55836, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_int_unsigned_int {
@@ -3369,7 +3369,7 @@ impl crate::BSScript__NativeFunction3_TESLevItem_void_TESForm____ptr64_unsigned_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55969, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55969, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr64_unsigned_int_BGSEncounterZone____ptr64 {
@@ -3379,7 +3379,7 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_Actor____ptr64_TESNPC____ptr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56457, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56457, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_TESObjectREFR____ptr64_53c46d626bbe {
@@ -3389,7 +3389,7 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56460, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56460, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____ptr64_bool_float {
@@ -3399,7 +3399,7 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56461, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56461, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool {
@@ -3409,7 +3409,7 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_TESForm____ptr64_unsign
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56463, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56463, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float {
@@ -3419,7 +3419,7 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_bool_float_float_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56462, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56462, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_bool_bool {
@@ -3429,7 +3429,7 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESObjectREFR____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56458, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56458, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor____ptr64_bool {
@@ -3439,7 +3439,7 @@ impl crate::BSScript__NativeFunction3_TESObjectREFR_void_TESTopic____ptr64_Actor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56459, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56459, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool {
@@ -3449,7 +3449,7 @@ impl crate::BSScript__NativeFunction3_TESQuest_void_unsigned_int_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56699, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56699, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_bool {
@@ -3459,7 +3459,7 @@ impl crate::BSScript__NativeFunction4_Actor_bool_bool_BGSListForm____ptr64_bool_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54906, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54906, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr64_float_float_int {
@@ -3469,7 +3469,7 @@ impl crate::BSScript__NativeFunction4_BGSMessage_void_BSFixedString_const____ptr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55261, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55261, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64_float_float_float_float {
@@ -3479,14 +3479,14 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_Actor____ptr64
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55521, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55521, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55550, rva 0xa2aa30).
     /// `NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float> * vdtor(NativeFunction4<BSScript::StaticFunctionTag,Actor*___ptr64,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55550, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55550, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString__b10d5899ba36 {
@@ -3496,7 +3496,7 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_bool_TESObject
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55552, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55552, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool_float_float {
@@ -3506,7 +3506,7 @@ impl crate::BSScript__NativeFunction4_BSScript__StaticFunctionTag_void_bool_bool
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55551, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55551, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int_bool_bool {
@@ -3516,7 +3516,7 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_TESObjectREFR____ptr64_TESFo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56464, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56464, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64 {
@@ -3526,7 +3526,7 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_TESForm____ptr64_unsign
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56466, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56466, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float {
@@ -3536,7 +3536,7 @@ impl crate::BSScript__NativeFunction4_TESObjectREFR_bool_float_float_float_float
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56465, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56465, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289 {
@@ -3546,7 +3546,7 @@ impl crate::BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESOb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55179, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55179, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413 {
@@ -3556,7 +3556,7 @@ impl crate::BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESOb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55178, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55178, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55 {
@@ -3566,14 +3566,14 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(55522, (&Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(55522, (*const Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55553, rva 0xa2aaf0).
     /// `NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float> * vdtor(NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55553, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55553, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_TESForm____ptr64_float_float_float_float {
@@ -3583,14 +3583,14 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55523, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55523, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55554, rva 0xa2ab30).
     /// `NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float> * vdtor(NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,TESForm*___ptr64,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55554, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55554, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64_bool_bool_bool_bool {
@@ -3600,7 +3600,7 @@ impl crate::BSScript__NativeFunction5_BSScript__StaticFunctionTag_void_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55555, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55555, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____d65118ed5622 {
@@ -3610,7 +3610,7 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_BSFixedString_const____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56468, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56468, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_float_float_float_bool {
@@ -3620,7 +3620,7 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_bool_TESObjectREFR____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56469, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56469, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_float_float_float {
@@ -3630,7 +3630,7 @@ impl crate::BSScript__NativeFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56467, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56467, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_int_unsigned_int_unsigned_int_4cf828fffc9c {
@@ -3640,7 +3640,7 @@ impl crate::BSScript__NativeFunction6_TESObjectCELL_void_unsigned_int_unsigned_i
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56054, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56054, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr64_BSFixedString_const____pt_5d9a4796be0a {
@@ -3650,14 +3650,14 @@ impl crate::BSScript__NativeFunction8_TESObjectREFR_bool_BGSImpactDataSet____ptr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(56386, (&Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut i32) -> *mut c_void { unsafe { function!(56386, (*const Self, *mut c_char, *mut c_char, u64, *mut i32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56471, rva 0xa55d50).
     /// `NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool> * vdtor(NativeFunction8<TESObjectREFR,bool,BGSImpactDataSet*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,bool,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56471, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56471, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float_float_float_float_float {
@@ -3667,7 +3667,7 @@ impl crate::BSScript__NativeFunction8_TESObjectREFR_void_float_float_float_float
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56470, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56470, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_float_float_float_float_float_float {
@@ -3677,7 +3677,7 @@ impl crate::BSScript__NativeFunction9_Actor_void_Actor____ptr64_float_float_floa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54907, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54907, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_float_float_float_float_float {
@@ -3687,7 +3687,7 @@ impl crate::BSScript__NativeFunction9_BGSMessage_bool_float_float_float_float_fl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55262, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55262, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool_bool_bool_bool_bool_bool_bool_unsigned_int {
@@ -3697,14 +3697,14 @@ impl crate::BSScript__NativeFunction9_BSScript__StaticFunctionTag_void_bool_bool
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(55524, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(55524, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55556, rva 0xa2abb0).
     /// `NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int> * vdtor(NativeFunction9<BSScript::StaticFunctionTag,void,bool,bool,bool,bool,bool,bool,bool,bool,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55556, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55556, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float_float_float_float_float_float {
@@ -3714,7 +3714,7 @@ impl crate::BSScript__NativeFunction9_TESObjectREFR_void_float_float_float_float
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56472, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56472, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction0_Actor_void {
@@ -3724,7 +3724,7 @@ impl crate::BSScript__NativeLatentFunction0_Actor_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54908, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54908, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedString_const____ptr64 {
@@ -3734,7 +3734,7 @@ impl crate::BSScript__NativeLatentFunction0_BSScript__StaticFunctionTag_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55406, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55406, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const____ptr64 {
@@ -3744,7 +3744,7 @@ impl crate::BSScript__NativeLatentFunction0_EffectSetting_BSFixedString_const___
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55435, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55435, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction0_TESObjectREFR_void {
@@ -3754,7 +3754,7 @@ impl crate::BSScript__NativeLatentFunction0_TESObjectREFR_void {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56473, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56473, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction0_TESQuest_bool {
@@ -3764,7 +3764,7 @@ impl crate::BSScript__NativeLatentFunction0_TESQuest_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56700, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56700, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixed_05afeaf1fbe1 {
@@ -3774,14 +3774,14 @@ impl crate::BSScript__NativeLatentFunction10_BSScript__StaticFunctionTag_bool_TE
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55525, (&Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(55525, (*const Self, *mut c_char, *mut c_char, u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 55557, rva 0xa2abf0).
     /// `NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float> * vdtor(NativeLatentFunction10<BSScript::StaticFunctionTag,bool,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,TESObjectREFR*___ptr64,BSFixedString_const&___ptr64,float,float,float,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55557, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55557, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
@@ -3791,7 +3791,7 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55558, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55558, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_float {
@@ -3801,7 +3801,7 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56823, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56823, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64 {
@@ -3811,7 +3811,7 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_float_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55407, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55407, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_float {
@@ -3821,7 +3821,7 @@ impl crate::BSScript__NativeLatentFunction1_BSScript__StaticFunctionTag_void_flo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56824, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56824, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_const____ptr64 {
@@ -3831,7 +3831,7 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_bool_BSFixedString_con
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56477, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56477, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____ptr64 {
@@ -3841,7 +3841,7 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_TESObjectREFR____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56475, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56475, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_bool {
@@ -3851,7 +3851,7 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56476, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56476, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_float {
@@ -3861,14 +3861,14 @@ impl crate::BSScript__NativeLatentFunction1_TESObjectREFR_void_float {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56387, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56387, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeLatentFunction1<TESObjectREFR,void,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56474, rva 0xa55e10).
     /// `NativeLatentFunction1<TESObjectREFR,void,float> * vdtor(NativeLatentFunction1<TESObjectREFR,void,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56474, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56474, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int {
@@ -3878,7 +3878,7 @@ impl crate::BSScript__NativeLatentFunction1_TESQuest_bool_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56701, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56701, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64 {
@@ -3888,7 +3888,7 @@ impl crate::BSScript__NativeLatentFunction1_TESSound_bool_TESObjectREFR____ptr64
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56750, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56750, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_float {
@@ -3898,7 +3898,7 @@ impl crate::BSScript__NativeLatentFunction2_Actor_bool_TESObjectREFR____ptr64_fl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54909, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54909, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64 {
@@ -3908,7 +3908,7 @@ impl crate::BSScript__NativeLatentFunction2_ScrollItem_void_TESObjectREFR____ptr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55736, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55736, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr64_TESObjectREFR____ptr64 {
@@ -3918,7 +3918,7 @@ impl crate::BSScript__NativeLatentFunction2_SpellItem_void_TESObjectREFR____ptr6
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55762, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55762, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESFaction_void_bool_bool {
@@ -3928,7 +3928,7 @@ impl crate::BSScript__NativeLatentFunction2_TESFaction_void_bool_bool {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55837, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55837, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64_TESForm____ptr64_unsigned_int {
@@ -3938,7 +3938,7 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_TESObjectREFR____ptr64
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56478, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56478, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64 {
@@ -3948,7 +3948,7 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_con
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56481, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56481, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64 {
@@ -3958,7 +3958,7 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56480, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56480, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool {
@@ -3968,7 +3968,7 @@ impl crate::BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56479, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56479, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64 {
@@ -3978,7 +3978,7 @@ impl crate::BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr6
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55763, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55763, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool {
@@ -3988,7 +3988,7 @@ impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56483, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56483, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float {
@@ -3998,14 +3998,14 @@ impl crate::BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56388, (&Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(56388, (*const Self, *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::NativeLatentFunction3<TESObjectREFR,void,float,float,float>::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 56482, rva 0xa56010).
     /// `NativeLatentFunction3<TESObjectREFR,void,float,float,float> * vdtor(NativeLatentFunction3<TESObjectREFR,void,float,float,float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56482, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56482, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_bool_bool {
@@ -4015,7 +4015,7 @@ impl crate::BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54910, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54910, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedS_d8b5dbe1c137 {
@@ -4025,7 +4025,7 @@ impl crate::BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TES
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55559, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55559, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64 {
@@ -4035,7 +4035,7 @@ impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56485, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56485, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_float {
@@ -4045,7 +4045,7 @@ impl crate::BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56484, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56484, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESO_34fa37a7470b {
@@ -4055,7 +4055,7 @@ impl crate::BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55180, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55180, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_co_3dc1935df090 {
@@ -4065,7 +4065,7 @@ impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_con
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56487, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56487, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool {
@@ -4075,7 +4075,7 @@ impl crate::BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56486, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56486, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float {
@@ -4085,7 +4085,7 @@ impl crate::BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_flo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55263, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55263, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__ObjectBindPolicy {
@@ -4095,7 +4095,7 @@ impl crate::BSScript__ObjectBindPolicy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut u64 { unsafe { function!(104173, (&Self, u64, u64, u64) -> *mut u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut u64 { unsafe { function!(104173, (*const Self, u64, u64, u64) -> *mut u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__SimpleAllocMemoryPagePolicy {
@@ -4105,14 +4105,14 @@ impl crate::BSScript__SimpleAllocMemoryPagePolicy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u32, param_2: u32, param_3: u32) -> *mut c_void { unsafe { function!(104563, (&Self, u32, u32, u32) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: u32, param_2: u32, param_3: u32) -> *mut c_void { unsafe { function!(104563, (*const Self, u32, u32, u32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::SimpleAllocMemoryPagePolicy::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 104570, rva 0x14a3f80).
     /// `SimpleAllocMemoryPagePolicy * vdtor(SimpleAllocMemoryPagePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(104570, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(104570, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__UnlinkedTypes__InstructionStream__InstructionFunctor {
@@ -4122,7 +4122,7 @@ impl crate::BSScript__UnlinkedTypes__InstructionStream__InstructionFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__BuildInstructionOffsetMapFunctor {
@@ -4132,7 +4132,7 @@ impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__BuildInstructionOffsetMapFu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105342, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105342, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__CollectStringsFunctor {
@@ -4142,7 +4142,7 @@ impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__CollectStringsFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105343, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105343, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__CountInstructionInfo {
@@ -4152,7 +4152,7 @@ impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__CountInstructionInfo {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105344, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105344, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__UnpackInstructionsFunctor {
@@ -4162,14 +4162,14 @@ impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__UnpackInstructionsFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: *mut *mut c_char, param_2: *mut c_char, param_3: u64) -> u64 { unsafe { function!(105319, (&Self, *mut *mut c_char, *mut c_char, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: *mut *mut c_char, param_2: *mut c_char, param_3: u64) -> u64 { unsafe { function!(105319, (*const Self, *mut *mut c_char, *mut c_char, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::UnlinkedTypes::_anon_E61FEF15::UnpackInstructionsFunctor::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105348, rva 0x14dcb40).
     /// `UnpackInstructionsFunctor * vdtor(UnpackInstructionsFunctor * this, char * * param_1, char * param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: *mut *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(105348, (&Self, *mut *mut c_char, *mut c_char, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: *mut *mut c_char, param_2: *mut c_char, param_3: u64) -> *mut c_void { unsafe { function!(105348, (*const Self, *mut *mut c_char, *mut c_char, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor {
@@ -4179,7 +4179,7 @@ impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__WriteInstructionsFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105349, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105349, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_14 {
@@ -4189,7 +4189,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54791, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54791, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_10 {
@@ -4199,7 +4199,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54803, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54803, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_21 {
@@ -4209,7 +4209,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54797, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54797, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__AddItemFunctor_20 {
@@ -4219,7 +4219,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56351, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56351, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor_17 {
@@ -4229,7 +4229,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56318, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56318, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DamageObjectFunctor_2 {
@@ -4239,7 +4239,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56262, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56262, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DeleteFunctor_5 {
@@ -4249,7 +4249,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56282, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56282, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DisableFunctor_4 {
@@ -4259,7 +4259,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56276, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56276, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DropObjectFunctor_12 {
@@ -4269,7 +4269,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56306, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56306, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__EnableFunctor_3 {
@@ -4279,7 +4279,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56269, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56269, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor_16 {
@@ -4289,7 +4289,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56312, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56312, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToFunctor_0 {
@@ -4299,7 +4299,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56094, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56094, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor_1 {
@@ -4309,7 +4309,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56256, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56256, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor_9 {
@@ -4319,7 +4319,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56288, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56288, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__RemoveItemFunctor_24 {
@@ -4329,7 +4329,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56357, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56357, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ResetFunctor_18 {
@@ -4339,7 +4339,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56324, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56324, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetAngleFunctor_7 {
@@ -4349,7 +4349,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56300, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56300, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetMotionTypeFunctor_8 {
@@ -4359,7 +4359,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56338, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56338, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetPositionFunctor_6 {
@@ -4369,7 +4369,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56294, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56294, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetScaleFunctor_11 {
@@ -4379,7 +4379,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56345, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56345, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__TetherFunctor_13 {
@@ -4389,7 +4389,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56331, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56331, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor_23 {
@@ -4399,7 +4399,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BCEAF3
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55733, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55733, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor_15 {
@@ -4409,7 +4409,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BDD43B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55509, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55509, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_C56CCD02__CastFunctor_22 {
@@ -4419,7 +4419,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_C56CCD
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55756, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55756, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor_19 {
@@ -4429,7 +4429,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_EF7C75
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55821, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55821, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__DelayFunctor {
@@ -4439,7 +4439,7 @@ impl crate::SkyrimScript__DelayFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__DelayFunctorFactory {
@@ -4449,7 +4449,7 @@ impl crate::SkyrimScript__DelayFunctorFactory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__Internal__AnimationCallbacks {
@@ -4459,21 +4459,21 @@ impl crate::SkyrimScript__Internal__AnimationCallbacks {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u32, param_3: *mut i64) -> *mut c_void { unsafe { function!(53354, (&Self, u64, u32, *mut i64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u32, param_3: *mut i64) -> *mut c_void { unsafe { function!(53354, (*const Self, u64, u32, *mut i64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::Internal::AnimationCallbacks::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 53355, rva 0x9ae640).
     /// `undefined dtor(AnimationCallbacks * this, AnimationCallbacks * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: *mut c_void, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53355, (&Self, *mut c_void, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: *mut c_void, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53355, (*const Self, *mut c_void, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::Internal::AnimationCallbacks::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53393, rva 0x9b10d0).
     /// `AnimationCallbacks * vdtor(AnimationCallbacks * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53393, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53393, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__Internal__CallbackList {
@@ -4483,14 +4483,14 @@ impl crate::SkyrimScript__Internal__CallbackList {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53349, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53349, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::Internal::CallbackList::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53383, rva 0x9b0d60).
     /// `CallbackList * ctor(CallbackList * this, undefined8 param_1, undefined4 param_2, longlong * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u32, param_3: *mut i64) -> *mut c_void { unsafe { function!(53383, (&Self, u64, u32, *mut i64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u32, param_3: *mut i64) -> *mut c_void { unsafe { function!(53383, (*const Self, u64, u32, *mut i64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__Logger {
@@ -4500,14 +4500,14 @@ impl crate::SkyrimScript__Logger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53550, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53550, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::Logger::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53553, rva 0x9bbe20).
     /// `Logger * vdtor(Logger * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53553, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53553, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__PathingCallbackMgr {
@@ -4517,21 +4517,21 @@ impl crate::SkyrimScript__PathingCallbackMgr {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53634, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53634, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::PathingCallbackMgr::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 53635, rva 0x9c1cd0).
     /// `undefined dtor(PathingCallbackMgr * this, undefined8 param_1, undefined1 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u8, param_3: u64) -> u64 { unsafe { function!(53635, (&Self, u64, u8, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u8, param_3: u64) -> u64 { unsafe { function!(53635, (*const Self, u64, u8, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::PathingCallbackMgr::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53649, rva 0x9c2ab0).
     /// `PathingCallbackMgr * vdtor(PathingCallbackMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53649, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53649, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__Profiler {
@@ -4541,14 +4541,14 @@ impl crate::SkyrimScript__Profiler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53657, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53657, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::Profiler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53683, rva 0x9c55a0).
     /// `Profiler * vdtor(Profiler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53683, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53683, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__QuestCallbackMgr {
@@ -4558,28 +4558,28 @@ impl crate::SkyrimScript__QuestCallbackMgr {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bgs_event_processed_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: *mut i64) -> u64 { unsafe { function!(53707, (&Self, *mut u32, u64, *mut i64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bgs_event_processed_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: *mut i64) -> u64 { unsafe { function!(53707, (*const Self, *mut u32, u64, *mut i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_TESQuestStartStopEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53706, rva 0x9c69e0).
     /// `undefined8 BSTEventSink_TESQuestStartStopEvent_vfunc_1(QuestCallbackMgr * this, uint * param_1, undefined8 param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_quest_start_stop_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53706, (&Self, *mut u32, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_quest_start_stop_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53706, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::QuestCallbackMgr::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53701, rva 0x9c6260).
     /// `QuestCallbackMgr * ctor(QuestCallbackMgr * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53701, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53701, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::QuestCallbackMgr::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 53755, rva 0x9cb120).
     /// `QuestCallbackMgr * vdtor(QuestCallbackMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53755, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53755, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__SavePatcher {
@@ -4589,7 +4589,7 @@ impl crate::SkyrimScript__SavePatcher {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53784, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53784, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__SoundCallbackMgr {
@@ -4599,14 +4599,14 @@ impl crate::SkyrimScript__SoundCallbackMgr {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::SoundCallbackMgr::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53786, rva 0x9cd310).
     /// `undefined ctor(SoundCallbackMgr * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53786, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53786, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__Store {
@@ -4616,14 +4616,14 @@ impl crate::SkyrimScript__Store {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53804, (&Self, *mut u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53804, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::Store::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 53814, rva 0x9cf0a0).
     /// `Store * vdtor(Store * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53814, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53814, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor {
@@ -4633,7 +4633,7 @@ impl crate::SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor {
@@ -4643,7 +4643,7 @@ impl crate::SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_0D8D4B7E__ResurrectFunctor {
@@ -4653,7 +4653,7 @@ impl crate::SkyrimScript___anon_0D8D4B7E__ResurrectFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc {
@@ -4663,7 +4663,7 @@ impl crate::SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54911, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54911, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_3A897AB3__LatentPlayerMover {
@@ -4673,7 +4673,7 @@ impl crate::SkyrimScript___anon_3A897AB3__LatentPlayerMover {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55408, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(55408, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_74852251__FindActiveEffectFunctor {
@@ -4683,7 +4683,7 @@ impl crate::SkyrimScript___anon_74852251__FindActiveEffectFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53540, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53540, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_74852251__FindBaseObjVisitor {
@@ -4693,7 +4693,7 @@ impl crate::SkyrimScript___anon_74852251__FindBaseObjVisitor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53541, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53541, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_74852251__FindRefrObjVisitor {
@@ -4703,7 +4703,7 @@ impl crate::SkyrimScript___anon_74852251__FindRefrObjVisitor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53542, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53542, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_42c90c5185a3 {
@@ -4713,7 +4713,7 @@ impl crate::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___ano
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: i64, param_2: u64, param_3: *mut c_char, param_4: *mut c_char, param_5: *mut c_char, param_6: *mut c_char) -> *mut c_void { unsafe { function!(53838, (&Self, i64, u64, *mut c_char, *mut c_char, *mut c_char, *mut c_char) -> *mut c_void)(self, param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn ctor(&self, param_1: i64, param_2: u64, param_3: *mut c_char, param_4: *mut c_char, param_5: *mut c_char, param_6: *mut c_char) -> *mut c_void { unsafe { function!(53838, (*const Self, i64, u64, *mut c_char, *mut c_char, *mut c_char, *mut c_char) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
 }
 
 impl crate::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b2cc26fa2a2 {
@@ -4723,7 +4723,7 @@ impl crate::SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___ano
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: i64, param_2: u64, param_3: *mut c_char, param_4: *mut c_char, param_5: *mut c_char, param_6: *mut c_char) -> *mut c_void { unsafe { function!(53839, (&Self, i64, u64, *mut c_char, *mut c_char, *mut c_char, *mut c_char) -> *mut c_void)(self, param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn ctor(&self, param_1: i64, param_2: u64, param_3: *mut c_char, param_4: *mut c_char, param_5: *mut c_char, param_6: *mut c_char) -> *mut c_void { unsafe { function!(53839, (*const Self, i64, u64, *mut c_char, *mut c_char, *mut c_char, *mut c_char) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__AddItemFunctor {
@@ -4733,7 +4733,7 @@ impl crate::SkyrimScript___anon_A72C052E__AddItemFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor {
@@ -4743,7 +4743,7 @@ impl crate::SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__DamageObjectFunctor {
@@ -4753,7 +4753,7 @@ impl crate::SkyrimScript___anon_A72C052E__DamageObjectFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__DeleteFunctor {
@@ -4763,7 +4763,7 @@ impl crate::SkyrimScript___anon_A72C052E__DeleteFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__DisableFunctor {
@@ -4773,7 +4773,7 @@ impl crate::SkyrimScript___anon_A72C052E__DisableFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56273, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56273, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__DropObjectFunctor {
@@ -4783,7 +4783,7 @@ impl crate::SkyrimScript___anon_A72C052E__DropObjectFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__EnableFunctor {
@@ -4793,7 +4793,7 @@ impl crate::SkyrimScript___anon_A72C052E__EnableFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56266, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56266, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor {
@@ -4803,7 +4803,7 @@ impl crate::SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__MoveToFunctor {
@@ -4813,7 +4813,7 @@ impl crate::SkyrimScript___anon_A72C052E__MoveToFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56360, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56360, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor {
@@ -4823,7 +4823,7 @@ impl crate::SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56253, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56253, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor {
@@ -4833,7 +4833,7 @@ impl crate::SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56285, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(56285, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__RemoveItemFunctor {
@@ -4843,7 +4843,7 @@ impl crate::SkyrimScript___anon_A72C052E__RemoveItemFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__ResetFunctor {
@@ -4853,7 +4853,7 @@ impl crate::SkyrimScript___anon_A72C052E__ResetFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__SetAngleFunctor {
@@ -4863,7 +4863,7 @@ impl crate::SkyrimScript___anon_A72C052E__SetAngleFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__SetMotionTypeFunctor {
@@ -4873,7 +4873,7 @@ impl crate::SkyrimScript___anon_A72C052E__SetMotionTypeFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__SetPositionFunctor {
@@ -4883,7 +4883,7 @@ impl crate::SkyrimScript___anon_A72C052E__SetPositionFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__SetScaleFunctor {
@@ -4893,7 +4893,7 @@ impl crate::SkyrimScript___anon_A72C052E__SetScaleFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_A72C052E__TetherFunctor {
@@ -4903,7 +4903,7 @@ impl crate::SkyrimScript___anon_A72C052E__TetherFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor {
@@ -4913,7 +4913,7 @@ impl crate::SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor {
@@ -4923,7 +4923,7 @@ impl crate::SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_BDD43BCC__FadeThenMainMenuCallback {
@@ -4933,7 +4933,7 @@ impl crate::SkyrimScript___anon_BDD43BCC__FadeThenMainMenuCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_C56CCD02__CastFunctor {
@@ -4943,7 +4943,7 @@ impl crate::SkyrimScript___anon_C56CCD02__CastFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor {
@@ -4953,7 +4953,7 @@ impl crate::SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimVM {
@@ -4963,679 +4963,679 @@ impl crate::SkyrimVM {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_i_stack_callback_save_interface_vfunc_1(&self, param_1: *mut i64, param_2: *mut u8, param_3: u64) -> u8 { unsafe { function!(53923, (&Self, *mut i64, *mut u8, u64) -> u8)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_i_stack_callback_save_interface_vfunc_1(&self, param_1: *mut i64, param_2: *mut u8, param_3: u64) -> u8 { unsafe { function!(53923, (*const Self, *mut i64, *mut u8, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSScript_IStackCallbackSaveInterface_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 53924, rva 0x9d7250).
     /// `char BSScript_IStackCallbackSaveInterface_vfunc_2(SkyrimVM * this, longlong * param_1, undefined8 param_2, longlong * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_i_stack_callback_save_interface_vfunc_2(&self, param_1: *mut i64, param_2: u64, param_3: *mut i64) -> c_char { unsafe { function!(53924, (&Self, *mut i64, u64, *mut i64) -> c_char)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_i_stack_callback_save_interface_vfunc_2(&self, param_1: *mut i64, param_2: u64, param_3: *mut i64) -> c_char { unsafe { function!(53924, (*const Self, *mut i64, u64, *mut i64) -> c_char)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_BSScript_StatsEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 524039, rva 0x9ef7f0).
     /// `undefined BSTEventSink_BSScript_StatsEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_script_stats_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(524039, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_script_stats_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(524039, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_BSScript_StatsEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54006, rva 0x9e0ca0).
     /// `undefined8 BSTEventSink_BSScript_StatsEvent_vfunc_1(SkyrimVM * this, longlong param_1, undefined8 param_2, IFunctionArguments * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_script_stats_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(54006, (&Self, i64, u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_script_stats_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(54006, (*const Self, i64, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_PositionPlayerEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 524038, rva 0x9ef7e4).
     /// `undefined BSTEventSink_PositionPlayerEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(524038, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(524038, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_PositionPlayerEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54005, rva 0x9e0c70).
     /// `undefined8 BSTEventSink_PositionPlayerEvent_vfunc_1(SkyrimVM * this, int * param_1, ulonglong * param_2, IFunctionArguments * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_position_player_event_vfunc_1(&self, param_1: *mut i32, param_2: *mut u64, param_3: *mut c_void) -> u64 { unsafe { function!(54005, (&Self, *mut i32, *mut u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_position_player_event_vfunc_1(&self, param_1: *mut i32, param_2: *mut u64, param_3: *mut c_void) -> u64 { unsafe { function!(54005, (*const Self, *mut i32, *mut u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESActiveEffectApplyRemoveEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54273, rva 0x9ef7a8).
     /// `undefined BSTEventSink_TESActiveEffectApplyRemoveEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_active_effect_apply_remove_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54273, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_active_effect_apply_remove_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54273, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESActiveEffectApplyRemoveEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53960, rva 0x9db230).
     /// `undefined8 BSTEventSink_TESActiveEffectApplyRemoveEvent_vfunc_1(SkyrimVM * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_active_effect_apply_remove_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(53960, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_active_effect_apply_remove_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(53960, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESActorLocationChangeEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54278, rva 0x9ef7fc).
     /// `undefined BSTEventSink_TESActorLocationChangeEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_actor_location_change_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54278, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_actor_location_change_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54278, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESActorLocationChangeEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53961, rva 0x9db370).
     /// `undefined8 BSTEventSink_TESActorLocationChangeEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_actor_location_change_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53961, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_actor_location_change_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53961, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESAmiiboForcedStopDetectionEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54275, rva 0x9ef7c0).
     /// `undefined BSTEventSink_TESAmiiboForcedStopDetectionEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54275, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54275, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESAmiiboTouchEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54274, rva 0x9ef7b4).
     /// `undefined BSTEventSink_TESAmiiboTouchEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_touch_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54274, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_touch_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54274, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESAmiiboTouchEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 524032, rva 0x9e0990).
     /// `undefined8 BSTEventSink_TESAmiiboTouchEvent_vfunc_1(SkyrimVM * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_touch_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(524032, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_touch_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(524032, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESBookReadEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54279, rva 0x9ef808).
     /// `undefined BSTEventSink_TESBookReadEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_book_read_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54279, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_book_read_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54279, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESBookReadEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53962, rva 0x9db4e0).
     /// `undefined8 BSTEventSink_TESBookReadEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_book_read_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53962, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_book_read_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53962, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESCellAttachDetachEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54280, rva 0x9ef814).
     /// `undefined BSTEventSink_TESCellAttachDetachEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_cell_attach_detach_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54280, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_cell_attach_detach_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54280, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESCellAttachDetachEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53963, rva 0x9db6c0).
     /// `undefined8 BSTEventSink_TESCellAttachDetachEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_cell_attach_detach_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53963, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_cell_attach_detach_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53963, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESCellFullyLoadedEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54281, rva 0x9ef820).
     /// `undefined BSTEventSink_TESCellFullyLoadedEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_cell_fully_loaded_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54281, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_cell_fully_loaded_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54281, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESCellFullyLoadedEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53964, rva 0x9db8a0).
     /// `undefined8 BSTEventSink_TESCellFullyLoadedEvent_vfunc_1(SkyrimVM * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_cell_fully_loaded_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53964, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_cell_fully_loaded_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53964, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESCombatEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54282, rva 0x9ef82c).
     /// `undefined BSTEventSink_TESCombatEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_combat_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54282, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_combat_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54282, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESCombatEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53965, rva 0x9db950).
     /// `undefined8 BSTEventSink_TESCombatEvent_vfunc_1(SkyrimVM * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_combat_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(53965, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_combat_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(53965, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESContainerChangedEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54283, rva 0x9ef838).
     /// `undefined BSTEventSink_TESContainerChangedEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_container_changed_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54283, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_container_changed_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54283, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESDeathEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54284, rva 0x9ef844).
     /// `undefined BSTEventSink_TESDeathEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_death_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54284, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_death_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54284, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESDeathEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53967, rva 0x9dbf40).
     /// `undefined8 BSTEventSink_TESDeathEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_death_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53967, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_death_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53967, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESDestructionStageChangedEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54285, rva 0x9ef850).
     /// `undefined BSTEventSink_TESDestructionStageChangedEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_destruction_stage_changed_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54285, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_destruction_stage_changed_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54285, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESDestructionStageChangedEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53968, rva 0x9dc1f0).
     /// `undefined8 BSTEventSink_TESDestructionStageChangedEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_destruction_stage_changed_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53968, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_destruction_stage_changed_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53968, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESEnterBleedoutEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54286, rva 0x9ef85c).
     /// `undefined BSTEventSink_TESEnterBleedoutEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_enter_bleedout_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54286, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_enter_bleedout_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54286, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESEnterBleedoutEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53969, rva 0x9dc350).
     /// `undefined8 BSTEventSink_TESEnterBleedoutEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_enter_bleedout_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53969, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_enter_bleedout_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53969, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESEquipEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54287, rva 0x9ef868).
     /// `undefined BSTEventSink_TESEquipEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_equip_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54287, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_equip_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54287, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESFastTravelEndEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54277, rva 0x9ef7d8).
     /// `undefined BSTEventSink_TESFastTravelEndEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_fast_travel_end_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54277, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_fast_travel_end_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54277, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESFastTravelEndEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54008, rva 0x9e0ff0).
     /// `undefined8 BSTEventSink_TESFastTravelEndEvent_vfunc_1(SkyrimVM * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_fast_travel_end_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(54008, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_fast_travel_end_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(54008, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESFormDeleteEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54288, rva 0x9ef874).
     /// `undefined BSTEventSink_TESFormDeleteEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_form_delete_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54288, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_form_delete_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54288, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESFormDeleteEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53971, rva 0x9dc950).
     /// `undefined8 BSTEventSink_TESFormDeleteEvent_vfunc_1(SkyrimVM * this, uint * param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_form_delete_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53971, (&Self, *mut u32, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_form_delete_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53971, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESFurnitureEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54289, rva 0x9ef880).
     /// `undefined BSTEventSink_TESFurnitureEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54289, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54289, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESFurnitureEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53972, rva 0x9dc9b0).
     /// `undefined8 BSTEventSink_TESFurnitureEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53972, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53972, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESGrabReleaseEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54290, rva 0x9ef88c).
     /// `undefined BSTEventSink_TESGrabReleaseEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_grab_release_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54290, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_grab_release_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54290, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESGrabReleaseEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53973, rva 0x9dcc60).
     /// `undefined8 BSTEventSink_TESGrabReleaseEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_grab_release_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53973, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_grab_release_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53973, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESHitEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54291, rva 0x9ef898).
     /// `undefined BSTEventSink_TESHitEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_hit_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54291, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_hit_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54291, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESInitScriptEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54292, rva 0x9ef8a4).
     /// `undefined BSTEventSink_TESInitScriptEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_init_script_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54292, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_init_script_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54292, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESInitScriptEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53975, rva 0x9dcf60).
     /// `undefined8 BSTEventSink_TESInitScriptEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_init_script_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53975, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_init_script_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53975, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESLoadGameEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54293, rva 0x9ef8b0).
     /// `undefined BSTEventSink_TESLoadGameEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_load_game_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54293, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_load_game_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54293, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESLockChangedEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54294, rva 0x9ef8bc).
     /// `undefined BSTEventSink_TESLockChangedEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_lock_changed_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54294, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_lock_changed_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54294, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESLockChangedEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53977, rva 0x9dd110).
     /// `undefined8 BSTEventSink_TESLockChangedEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_lock_changed_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53977, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_lock_changed_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53977, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESMagicEffectApplyEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54295, rva 0x9ef8c8).
     /// `undefined BSTEventSink_TESMagicEffectApplyEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_magic_effect_apply_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54295, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_magic_effect_apply_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54295, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESMagicEffectApplyEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53978, rva 0x9dd260).
     /// `undefined8 BSTEventSink_TESMagicEffectApplyEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_magic_effect_apply_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53978, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_magic_effect_apply_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53978, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESMagicWardHitEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54296, rva 0x9ef8d4).
     /// `undefined BSTEventSink_TESMagicWardHitEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_magic_ward_hit_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54296, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_magic_ward_hit_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54296, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESMagicWardHitEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53979, rva 0x9dd3c0).
     /// `undefined8 BSTEventSink_TESMagicWardHitEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_magic_ward_hit_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53979, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_magic_ward_hit_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53979, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESMoveAttachDetachEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54297, rva 0x9ef8e0).
     /// `undefined BSTEventSink_TESMoveAttachDetachEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_move_attach_detach_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54297, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_move_attach_detach_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54297, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESMoveAttachDetachEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53980, rva 0x9dd520).
     /// `undefined8 BSTEventSink_TESMoveAttachDetachEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_move_attach_detach_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53980, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_move_attach_detach_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53980, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESObjectLoadedEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54298, rva 0x9ef8ec).
     /// `undefined BSTEventSink_TESObjectLoadedEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_object_loaded_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54298, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_object_loaded_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54298, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESObjectLoadedEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53981, rva 0x9dd6e0).
     /// `undefined8 BSTEventSink_TESObjectLoadedEvent_vfunc_1(SkyrimVM * this, uint * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_object_loaded_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(53981, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_object_loaded_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(53981, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESObjectREFRTranslationEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54299, rva 0x9ef8f8).
     /// `undefined BSTEventSink_TESObjectREFRTranslationEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_object_refr_translation_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54299, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_object_refr_translation_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54299, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESObjectREFRTranslationEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53982, rva 0x9dd8e0).
     /// `undefined8 BSTEventSink_TESObjectREFRTranslationEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_object_refr_translation_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53982, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_object_refr_translation_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53982, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESOpenCloseEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54300, rva 0x9ef904).
     /// `undefined BSTEventSink_TESOpenCloseEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_open_close_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54300, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_open_close_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54300, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESOpenCloseEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53983, rva 0x9ddb90).
     /// `undefined8 BSTEventSink_TESOpenCloseEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_open_close_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53983, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_open_close_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53983, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESPackageEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54301, rva 0x9ef910).
     /// `undefined BSTEventSink_TESPackageEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_package_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54301, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_package_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54301, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESPackageEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53984, rva 0x9ddd80).
     /// `undefined8 BSTEventSink_TESPackageEvent_vfunc_1(SkyrimVM * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_package_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53984, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_package_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53984, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESPerkEntryRunEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54302, rva 0x9ef91c).
     /// `undefined BSTEventSink_TESPerkEntryRunEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_perk_entry_run_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54302, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_perk_entry_run_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54302, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESPerkEntryRunEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53985, rva 0x9de150).
     /// `undefined8 BSTEventSink_TESPerkEntryRunEvent_vfunc_1(SkyrimVM * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_perk_entry_run_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53985, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_perk_entry_run_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53985, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESPlayerBowShotEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54276, rva 0x9ef7cc).
     /// `undefined BSTEventSink_TESPlayerBowShotEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_player_bow_shot_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54276, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_player_bow_shot_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54276, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESPlayerBowShotEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54007, rva 0x9e0e80).
     /// `undefined8 BSTEventSink_TESPlayerBowShotEvent_vfunc_1(SkyrimVM * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_player_bow_shot_event_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(54007, (&Self, u64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_player_bow_shot_event_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(54007, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESQuestInitEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54303, rva 0x9ef928).
     /// `undefined BSTEventSink_TESQuestInitEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_quest_init_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54303, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_quest_init_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54303, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESQuestInitEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53986, rva 0x9de370).
     /// `undefined8 BSTEventSink_TESQuestInitEvent_vfunc_1(SkyrimVM * this, int * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_quest_init_event_vfunc_1(&self, param_1: *mut i32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53986, (&Self, *mut i32, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_quest_init_event_vfunc_1(&self, param_1: *mut i32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53986, (*const Self, *mut i32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESQuestStageEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54304, rva 0x9ef934).
     /// `undefined BSTEventSink_TESQuestStageEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_quest_stage_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54304, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_quest_stage_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54304, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESQuestStageEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53987, rva 0x9de4c0).
     /// `undefined8 BSTEventSink_TESQuestStageEvent_vfunc_1(SkyrimVM * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_quest_stage_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53987, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_quest_stage_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53987, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESResetEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54305, rva 0x9ef940).
     /// `undefined BSTEventSink_TESResetEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_reset_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54305, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_reset_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54305, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESResetEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53988, rva 0x9de760).
     /// `undefined8 BSTEventSink_TESResetEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_reset_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53988, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_reset_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53988, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESResolveNPCTemplatesEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53989, rva 0x9de8e0).
     /// `undefined8 BSTEventSink_TESResolveNPCTemplatesEvent_vfunc_1(SkyrimVM * this, int * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_resolve_npc_templates_event_vfunc_1(&self, param_1: *mut i32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53989, (&Self, *mut i32, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_resolve_npc_templates_event_vfunc_1(&self, param_1: *mut i32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53989, (*const Self, *mut i32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESSceneActionEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53991, rva 0x9debc0).
     /// `undefined8 BSTEventSink_TESSceneActionEvent_vfunc_1(SkyrimVM * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_scene_action_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53991, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_scene_action_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53991, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESSceneEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53990, rva 0x9de930).
     /// `undefined8 BSTEventSink_TESSceneEvent_vfunc_1(SkyrimVM * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_scene_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53990, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_scene_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53990, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESScenePhaseEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54260, rva 0x9ef70c).
     /// `undefined BSTEventSink_TESScenePhaseEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_scene_phase_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54260, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_scene_phase_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54260, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESScenePhaseEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53992, rva 0x9dee70).
     /// `undefined8 BSTEventSink_TESScenePhaseEvent_vfunc_1(SkyrimVM * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_scene_phase_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53992, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_scene_phase_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53992, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESSellEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54261, rva 0x9ef718).
     /// `undefined BSTEventSink_TESSellEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_sell_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54261, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_sell_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54261, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESSellEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53993, rva 0x9df100).
     /// `undefined8 BSTEventSink_TESSellEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_sell_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53993, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_sell_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53993, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESSleepStartEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54262, rva 0x9ef724).
     /// `undefined BSTEventSink_TESSleepStartEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_sleep_start_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54262, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_sleep_start_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54262, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESSleepStartEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53994, rva 0x9df260).
     /// `undefined8 BSTEventSink_TESSleepStartEvent_vfunc_1(SkyrimVM * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_sleep_start_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(53994, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_sleep_start_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(53994, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESSleepStopEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54263, rva 0x9ef730).
     /// `undefined BSTEventSink_TESSleepStopEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_sleep_stop_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54263, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_sleep_stop_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54263, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESSleepStopEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53995, rva 0x9df470).
     /// `undefined8 BSTEventSink_TESSleepStopEvent_vfunc_1(SkyrimVM * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_sleep_stop_event_vfunc_1(&self, param_1: *mut u8) -> u64 { unsafe { function!(53995, (&Self, *mut u8) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_sleep_stop_event_vfunc_1(&self, param_1: *mut u8) -> u64 { unsafe { function!(53995, (*const Self, *mut u8) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESSpellCastEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54264, rva 0x9ef73c).
     /// `undefined BSTEventSink_TESSpellCastEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_spell_cast_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54264, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_spell_cast_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54264, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESSpellCastEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53996, rva 0x9df670).
     /// `undefined8 BSTEventSink_TESSpellCastEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_spell_cast_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53996, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_spell_cast_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53996, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESSwitchRaceCompleteEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54272, rva 0x9ef79c).
     /// `undefined BSTEventSink_TESSwitchRaceCompleteEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_switch_race_complete_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54272, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_switch_race_complete_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54272, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESSwitchRaceCompleteEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54004, rva 0x9e0840).
     /// `undefined8 BSTEventSink_TESSwitchRaceCompleteEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_switch_race_complete_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(54004, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_switch_race_complete_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(54004, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESTopicInfoEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54265, rva 0x9ef748).
     /// `undefined BSTEventSink_TESTopicInfoEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_topic_info_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54265, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_topic_info_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54265, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESTopicInfoEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53997, rva 0x9df7d0).
     /// `undefined8 BSTEventSink_TESTopicInfoEvent_vfunc_1(SkyrimVM * this, longlong * param_1, undefined8 param_2, int * * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_topic_info_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: *mut *mut i32) -> u64 { unsafe { function!(53997, (&Self, *mut i64, u64, *mut *mut i32) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_topic_info_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: *mut *mut i32) -> u64 { unsafe { function!(53997, (*const Self, *mut i64, u64, *mut *mut i32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESTrackedStatsEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54266, rva 0x9ef754).
     /// `undefined BSTEventSink_TESTrackedStatsEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_tracked_stats_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54266, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_tracked_stats_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54266, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESTrackedStatsEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53998, rva 0x9dfa40).
     /// `undefined8 BSTEventSink_TESTrackedStatsEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_tracked_stats_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53998, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_tracked_stats_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53998, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESTrapHitEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54267, rva 0x9ef760).
     /// `undefined BSTEventSink_TESTrapHitEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_trap_hit_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54267, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_trap_hit_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54267, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESTrapHitEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53999, rva 0x9dfc80).
     /// `undefined8 BSTEventSink_TESTrapHitEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_trap_hit_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53999, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_trap_hit_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53999, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESTriggerEnterEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54269, rva 0x9ef778).
     /// `undefined BSTEventSink_TESTriggerEnterEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_trigger_enter_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54269, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_trigger_enter_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54269, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESTriggerEnterEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54001, rva 0x9e01a0).
     /// `undefined8 BSTEventSink_TESTriggerEnterEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_trigger_enter_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(54001, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_trigger_enter_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(54001, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESTriggerEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54268, rva 0x9ef76c).
     /// `undefined BSTEventSink_TESTriggerEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_trigger_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54268, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_trigger_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54268, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESTriggerEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54000, rva 0x9e0000).
     /// `undefined8 BSTEventSink_TESTriggerEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_trigger_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(54000, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_trigger_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(54000, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESTriggerLeaveEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54270, rva 0x9ef784).
     /// `undefined BSTEventSink_TESTriggerLeaveEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_trigger_leave_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54270, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_trigger_leave_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54270, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESTriggerLeaveEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54002, rva 0x9e0340).
     /// `undefined8 BSTEventSink_TESTriggerLeaveEvent_vfunc_1(SkyrimVM * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_trigger_leave_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(54002, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bst_event_sink_tes_trigger_leave_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(54002, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESUniqueIDChangeEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54271, rva 0x9ef790).
     /// `undefined BSTEventSink_TESUniqueIDChangeEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_unique_id_change_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54271, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_unique_id_change_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54271, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESUniqueIDChangeEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54003, rva 0x9e04e0).
     /// `undefined8 BSTEventSink_TESUniqueIDChangeEvent_vfunc_1(SkyrimVM * this, uint * param_1, undefined8 param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_unique_id_change_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54003, (&Self, *mut u32, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_unique_id_change_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54003, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimVM::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 53920, rva 0x9d6580).
     /// `undefined dtor(SkyrimVM * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53920, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53920, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimVM__EffectEventRelayFunctor {
@@ -5645,7 +5645,7 @@ impl crate::SkyrimVM__EffectEventRelayFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54366, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54366, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimVM__EventRelayFunctor {
@@ -5655,6 +5655,6 @@ impl crate::SkyrimVM__EventRelayFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54368, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54368, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 

@@ -27,35 +27,35 @@ impl crate::BSDismemberSkinInstance {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn create_clone(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70765, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn create_clone(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70765, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSDismemberSkinInstance::IsEqual` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70771, rva 0xef6310).
     /// `ulonglong IsEqual(BSDismemberSkinInstance * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn is_equal(&self, param_1: *mut i64) -> u64 { unsafe { function!(70771, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn is_equal(&self, param_1: *mut i64) -> u64 { unsafe { function!(70771, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSDismemberSkinInstance::LoadBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70767, rva 0xef6000).
     /// `undefined LoadBinary(BSDismemberSkinInstance * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(70767, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(70767, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSDismemberSkinInstance::RenderPartitions` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70776, rva 0xef6970).
     /// `undefined RenderPartitions(BSDismemberSkinInstance * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn render_partitions(&self, param_1: u64) -> u64 { unsafe { function!(70776, (&Self, u64) -> u64)(self, param_1) } }
+    pub unsafe fn render_partitions(&self, param_1: u64) -> u64 { unsafe { function!(70776, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSDismemberSkinInstance::SaveBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70770, rva 0xef61a0).
     /// `undefined SaveBinary(BSDismemberSkinInstance * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_binary(&self, param_1: i64) -> u64 { unsafe { function!(70770, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_binary(&self, param_1: i64) -> u64 { unsafe { function!(70770, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSFaceGenNiNode {
@@ -65,14 +65,14 @@ impl crate::BSFaceGenNiNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn create_clone(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut crate::NiNode { unsafe { function!(26980, (&Self, u64, u64, u64) -> *mut crate::NiNode)(self, param_1, param_2, param_3) } }
+    pub unsafe fn create_clone(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut crate::NiNode { unsafe { function!(26980, (*const Self, u64, u64, u64) -> *mut crate::NiNode)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSFaceGenNiNode::UpdateDownwardPass` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 26985, rva 0x439650).
     /// `undefined UpdateDownwardPass(BSFaceGenNiNode * this, undefined8 param_1, undefined4 param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update_downward_pass(&self, param_1: u64, param_2: u32) -> u64 { unsafe { function!(26985, (&Self, u64, u32) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn update_downward_pass(&self, param_1: u64, param_2: u32) -> u64 { unsafe { function!(26985, (*const Self, u64, u32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::BShkbAnimationGraph {
@@ -169,14 +169,14 @@ impl crate::IAnimationGraphManagerHolder {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn create_animation_graph(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u8 { unsafe { function!(37979, (&Self, *mut i64, u64, u64) -> u8)(self, param_1, param_2, param_3) } }
+    pub unsafe fn create_animation_graph(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u8 { unsafe { function!(37979, (*const Self, *mut i64, u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `IAnimationGraphManagerHolder::GetAnimationGraphManager` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 38046, rva 0x6b60b0).
     /// `bool GetAnimationGraphManager(IAnimationGraphManagerHolder * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_animation_graph_manager_2(&self, param_1: *mut i64) -> u8 { unsafe { function!(38046, (&Self, *mut i64) -> u8)(self, param_1) } }
+    pub unsafe fn get_animation_graph_manager_2(&self, param_1: *mut i64) -> u8 { unsafe { function!(38046, (*const Self, *mut i64) -> u8)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::NiSkinData {

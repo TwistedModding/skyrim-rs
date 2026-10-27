@@ -10,7 +10,7 @@ impl crate::ActiveEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(34042, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(34042, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__IFunctionArguments {
@@ -20,315 +20,315 @@ impl crate::BSScript__IFunctionArguments {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(53841, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(53841, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53842, rva 0x9d2930).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(53842, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(53842, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53843, rva 0x9d2940).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(53843, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(53843, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53844, rva 0x9d2950).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(53844, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(53844, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53845, rva 0x9d2960).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(53845, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(53845, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53846, rva 0x9d2970).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(53846, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(53846, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53847, rva 0x9d2980).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(53847, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(53847, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53848, rva 0x9d2990).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(53848, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(53848, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53849, rva 0x9d29a0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(53849, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(53849, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53850, rva 0x9d29b0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(53850, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(53850, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53851, rva 0x9d29c0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(53851, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(53851, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53852, rva 0x9d29d0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(53852, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(53852, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53853, rva 0x9d29e0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(53853, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(53853, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53854, rva 0x9d29f0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(53854, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(53854, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53855, rva 0x9d2a00).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(53855, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(53855, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53856, rva 0x9d2a10).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(53856, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(53856, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53857, rva 0x9d2a20).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(53857, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(53857, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53858, rva 0x9d2a30).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(53858, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(53858, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53859, rva 0x9d2a40).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(53859, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(53859, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53860, rva 0x9d2a50).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(53860, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(53860, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53861, rva 0x9d2a60).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(53861, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(53861, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53862, rva 0x9d2a70).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(53862, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(53862, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 53863, rva 0x9d2a80).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(53863, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(53863, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54187, rva 0x9ece10).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(54187, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(54187, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54188, rva 0x9ece20).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(54188, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(54188, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54189, rva 0x9ece30).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(54189, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(54189, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54190, rva 0x9ece40).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(54190, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(54190, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54191, rva 0x9ece50).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(54191, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(54191, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54196, rva 0x9ecf00).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(54196, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(54196, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54197, rva 0x9ecf10).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(54197, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(54197, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54198, rva 0x9ecf20).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(54198, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(54198, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54203, rva 0x9ed260).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(54203, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(54203, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54205, rva 0x9ed290).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(54205, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(54205, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54206, rva 0x9ed2a0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(54206, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(54206, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54207, rva 0x9ed2b0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(54207, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(54207, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54209, rva 0x9ed340).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(54209, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(54209, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54211, rva 0x9ed3d0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(54211, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(54211, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54220, rva 0x9ed8c0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(54220, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(54220, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54221, rva 0x9ed8d0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(54221, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(54221, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54222, rva 0x9ed8e0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(54222, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(54222, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54223, rva 0x9ed8f0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(54223, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(54223, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54224, rva 0x9ed900).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(54224, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(54224, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54226, rva 0x9ed930).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(54226, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(54226, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 105005, rva 0x14c7c90).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_46(&self) -> u64 { unsafe { function!(105005, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_46(&self) -> u64 { unsafe { function!(105005, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 524036, rva 0x9ece60).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_47(&self) -> u64 { unsafe { function!(524036, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_47(&self) -> u64 { unsafe { function!(524036, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor_caller` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54210, rva 0x9ed350).
     /// `undefined dtor_caller(IFunctionArguments * param_1)`
     ///
@@ -775,7 +775,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(56408, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(56408, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraAliasInstanceArray {

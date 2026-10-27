@@ -10,7 +10,7 @@ impl crate::ExtraAction {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12429, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12429, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraAnimNoteReceiver {
@@ -20,7 +20,7 @@ impl crate::ExtraAnimNoteReceiver {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12662, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12662, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraCellGrassData {
@@ -30,7 +30,7 @@ impl crate::ExtraCellGrassData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12818, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12818, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraDismemberedLimbs {
@@ -40,7 +40,7 @@ impl crate::ExtraDismemberedLimbs {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12384, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12384, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraDistantData {
@@ -50,7 +50,7 @@ impl crate::ExtraDistantData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12522, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12522, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraEditorRef3DData {
@@ -60,7 +60,7 @@ impl crate::ExtraEditorRef3DData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12626, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12626, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraEditorRefMoveData {
@@ -80,7 +80,7 @@ impl crate::ExtraFactionChanges {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12147, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12147, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraFollower {
@@ -90,7 +90,7 @@ impl crate::ExtraFollower {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12148, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12148, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraFollowerSwimBreadcrumbs {
@@ -100,7 +100,7 @@ impl crate::ExtraFollowerSwimBreadcrumbs {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12708, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12708, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraFriendHits {
@@ -110,7 +110,7 @@ impl crate::ExtraFriendHits {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12149, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12149, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraGhost {
@@ -120,7 +120,7 @@ impl crate::ExtraGhost {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12455, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12455, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraGroupConstraint {
@@ -130,7 +130,7 @@ impl crate::ExtraGroupConstraint {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12832, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12832, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraGuardedRefData {
@@ -140,7 +140,7 @@ impl crate::ExtraGuardedRefData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12150, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12150, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraLeveledCreature {
@@ -150,7 +150,7 @@ impl crate::ExtraLeveledCreature {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12415, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12415, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraMagicCaster {
@@ -160,7 +160,7 @@ impl crate::ExtraMagicCaster {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_caster_vfunc_0(&self) -> u64 { unsafe { function!(34712, (&Self) -> u64)(self) } }
+    pub unsafe fn magic_caster_vfunc_0(&self) -> u64 { unsafe { function!(34712, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraOcclusionShape {
@@ -170,7 +170,7 @@ impl crate::ExtraOcclusionShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12608, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12608, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraPackage {
@@ -180,7 +180,7 @@ impl crate::ExtraPackage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12490, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12490, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraPackageData {
@@ -190,7 +190,7 @@ impl crate::ExtraPackageData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12681, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12681, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraPoison {
@@ -200,7 +200,7 @@ impl crate::ExtraPoison {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12585, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12585, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraPortal {
@@ -210,7 +210,7 @@ impl crate::ExtraPortal {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12605, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12605, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraPrimitive {
@@ -220,7 +220,7 @@ impl crate::ExtraPrimitive {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12102, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12102, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraPromotedRef {
@@ -230,7 +230,7 @@ impl crate::ExtraPromotedRef {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12151, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12151, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraRaceData {
@@ -240,7 +240,7 @@ impl crate::ExtraRaceData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12847, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12847, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraReflectedRefs {
@@ -250,7 +250,7 @@ impl crate::ExtraReflectedRefs {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12152, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12152, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraReflectorRefs {
@@ -260,7 +260,7 @@ impl crate::ExtraReflectorRefs {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12153, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12153, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraReservedMarkers {
@@ -270,7 +270,7 @@ impl crate::ExtraReservedMarkers {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(20284, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(20284, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraResourcesPreload {
@@ -280,7 +280,7 @@ impl crate::ExtraResourcesPreload {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12602, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12602, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraSayToTopicInfo {
@@ -290,14 +290,14 @@ impl crate::ExtraSayToTopicInfo {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12699, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12699, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `ExtraSayToTopicInfo::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 12701, rva 0x186f00).
     /// `undefined dtor(ExtraSayToTopicInfo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12701, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(12701, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraScriptedAnimDependence {
@@ -307,7 +307,7 @@ impl crate::ExtraScriptedAnimDependence {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12154, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12154, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraSeenData {
@@ -317,7 +317,7 @@ impl crate::ExtraSeenData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11554, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11554, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraWaterCurrentZoneData {
@@ -327,6 +327,6 @@ impl crate::ExtraWaterCurrentZoneData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12155, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12155, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 

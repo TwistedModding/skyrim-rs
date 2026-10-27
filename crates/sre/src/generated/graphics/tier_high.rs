@@ -10,13 +10,13 @@ impl crate::ImageSpaceModifierInstanceForm {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(18564, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(18564, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `ImageSpaceModifierInstanceForm::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 18593, rva 0x2a5350).
     /// `undefined ctor(ImageSpaceModifierInstanceForm * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(18593, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(18593, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 

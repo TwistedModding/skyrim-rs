@@ -3,6 +3,580 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Wrap___std_type_info_compare_ID_447422` (decompiler signature, tier low; ledger os_api evidence, name medium; id 447422, rva 0x1348c60).
+/// `longlong Wrap___std_type_info_compare_ID_447422(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap___std_type_info_compare_id_447422(param_1: i64, param_2: i64) -> i64 { unsafe { function!(447422, (i64, i64) -> i64)(param_1, param_2) } }
+/// `Wrap___std_type_info_compare_ID_97358` (decompiler signature, tier low; ledger os_api evidence, name medium; id 97358, rva 0x139b3f0).
+/// `longlong Wrap___std_type_info_compare_ID_97358(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap___std_type_info_compare_id_97358(param_1: i64, param_2: i64) -> i64 { unsafe { function!(97358, (i64, i64) -> i64)(param_1, param_2) } }
+/// `Wrap__getcwd` (decompiler signature, tier low; ledger os_api evidence, name medium; id 69154, rva 0xead8a0).
+/// `bool Wrap__getcwd(char * param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__getcwd(param_1: *mut c_char, param_2: i32) -> u8 { unsafe { function!(69154, (*mut c_char, i32) -> u8)(param_1, param_2) } }
+/// `Wrap__invalid_parameter_noinfo_noreturn` (decompiler signature, tier low; ledger os_api evidence, name medium; id 522979, rva 0x10c170).
+/// `undefined Wrap__invalid_parameter_noinfo_noreturn(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__invalid_parameter_noinfo_noreturn(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(522979, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `Wrap__seh_filter_exe_ID_165300` (decompiler signature, tier low; ledger os_api evidence, name medium; id 165300, rva 0x17364ad).
+/// `undefined Wrap__seh_filter_exe_ID_165300(undefined8 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__seh_filter_exe_id_165300(param_1: *mut u64) -> u64 { unsafe { function!(165300, (*mut u64) -> u64)(param_1) } }
+/// `Wrap__stat64i32` (decompiler signature, tier low; ledger os_api evidence, name medium; id 69011, rva 0xeacf20).
+/// `undefined4 Wrap__stat64i32(undefined8 param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__stat64i32(param_1: u64) -> u32 { unsafe { function!(69011, (u64) -> u32)(param_1) } }
+/// `Wrap__stricmp_ID_454057` (decompiler signature, tier low; ledger os_api evidence, name medium; id 454057, rva 0x15e4c20).
+/// `bool Wrap__stricmp_ID_454057(char * param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__stricmp_id_454057(param_1: *mut c_char, param_2: *mut c_char) -> u8 { unsafe { function!(454057, (*mut c_char, *mut c_char) -> u8)(param_1, param_2) } }
+/// `Wrap__stricmp_ID_454058` (decompiler signature, tier low; ledger os_api evidence, name medium; id 454058, rva 0x15e4c50).
+/// `bool Wrap__stricmp_ID_454058(char * param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__stricmp_id_454058(param_1: *mut c_char, param_2: *mut c_char) -> u8 { unsafe { function!(454058, (*mut c_char, *mut c_char) -> u8)(param_1, param_2) } }
+/// `Wrap__stricmp_ID_96381` (decompiler signature, tier low; ledger os_api evidence, name medium; id 96381, rva 0x1459310).
+/// `bool Wrap__stricmp_ID_96381(char * param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__stricmp_id_96381(param_1: *mut c_char, param_2: *mut c_char) -> u8 { unsafe { function!(96381, (*mut c_char, *mut c_char) -> u8)(param_1, param_2) } }
+/// `Wrap__strnicmp_ID_109289` (decompiler signature, tier low; ledger os_api evidence, name medium; id 109289, rva 0x159ab60).
+/// `undefined4 Wrap__strnicmp_ID_109289(char * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__strnicmp_id_109289(param_1: *mut c_char) -> u32 { unsafe { function!(109289, (*mut c_char) -> u32)(param_1) } }
+/// `Wrap__strnicmp_ID_109290` (decompiler signature, tier low; ledger os_api evidence, name medium; id 109290, rva 0x159aba0).
+/// `undefined4 Wrap__strnicmp_ID_109290(char * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__strnicmp_id_109290(param_1: *mut c_char) -> u32 { unsafe { function!(109290, (*mut c_char) -> u32)(param_1) } }
+/// `Wrap__strnicmp_ID_109291` (decompiler signature, tier low; ledger os_api evidence, name medium; id 109291, rva 0x159abe0).
+/// `undefined4 Wrap__strnicmp_ID_109291(char * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__strnicmp_id_109291(param_1: *mut c_char) -> u32 { unsafe { function!(109291, (*mut c_char) -> u32)(param_1) } }
+/// `Wrap__strnicmp_ID_15004` (decompiler signature, tier low; ledger os_api evidence, name medium; id 15004, rva 0x1f3e80).
+/// `bool Wrap__strnicmp_ID_15004(undefined8 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__strnicmp_id_15004(param_1: *mut u64) -> u8 { unsafe { function!(15004, (*mut u64) -> u8)(param_1) } }
+/// `Wrap__strtoi64` (decompiler signature, tier low; ledger os_api evidence, name medium; id 449920, rva 0x13da7b0).
+/// `undefined Wrap__strtoi64(undefined8 param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__strtoi64(param_1: u64) -> u64 { unsafe { function!(449920, (u64) -> u64)(param_1) } }
+/// `Wrap__strtoui64_ID_527203` (decompiler signature, tier low; ledger os_api evidence, name medium; id 527203, rva 0x13da870).
+/// `undefined Wrap__strtoui64_ID_527203(char * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__strtoui64_id_527203(param_1: *mut c_char) -> u64 { unsafe { function!(527203, (*mut c_char) -> u64)(param_1) } }
+/// `Wrap__time64` (decompiler signature, tier low; ledger os_api evidence, name medium; id 60120, rva 0xb2da20).
+/// `undefined Wrap__time64(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap__time64() -> u64 { unsafe { function!(60120, () -> u64)() } }
+/// `Wrap_atan2_ID_82712` (decompiler signature, tier low; ledger os_api evidence, name medium; id 82712, rva 0xd038e0).
+/// `undefined Wrap_atan2_ID_82712(float * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_atan2_id_82712(param_1: *mut f32) -> u64 { unsafe { function!(82712, (*mut f32) -> u64)(param_1) } }
+/// `Wrap_atan2f_ID_91792` (decompiler signature, tier low; ledger os_api evidence, name medium; id 91792, rva 0x120e4a0).
+/// `undefined Wrap_atan2f_ID_91792(float * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_atan2f_id_91792(param_1: *mut f32) -> u64 { unsafe { function!(91792, (*mut f32) -> u64)(param_1) } }
+/// `Wrap_atan2f_ID_91793` (decompiler signature, tier low; ledger os_api evidence, name medium; id 91793, rva 0x120e4c0).
+/// `undefined Wrap_atan2f_ID_91793(float * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_atan2f_id_91793(param_1: *mut f32) -> u64 { unsafe { function!(91793, (*mut f32) -> u64)(param_1) } }
+/// `Wrap_fclose_ID_109492` (decompiler signature, tier low; ledger os_api evidence, name medium; id 109492, rva 0x15a09d0).
+/// `undefined Wrap_fclose_ID_109492(undefined8 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_fclose_id_109492(param_1: *mut u64) -> u64 { unsafe { function!(109492, (*mut u64) -> u64)(param_1) } }
+/// `Wrap_fclose_ID_57448` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57448, rva 0xaad180).
+/// `undefined Wrap_fclose_ID_57448(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_fclose_id_57448(param_1: i64) -> u64 { unsafe { function!(57448, (i64) -> u64)(param_1) } }
+/// `Wrap_fflush_ID_90089` (decompiler signature, tier low; ledger os_api evidence, name medium; id 90089, rva 0xeaa700).
+/// `bool Wrap_fflush_ID_90089(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_fflush_id_90089(param_1: i64) -> u8 { unsafe { function!(90089, (i64) -> u8)(param_1) } }
+/// `Wrap_fopen` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57447, rva 0xaad150).
+/// `undefined Wrap_fopen(longlong param_1, char * param_2, char * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_fopen(param_1: i64, param_2: *mut c_char, param_3: *mut c_char) -> u64 { unsafe { function!(57447, (i64, *mut c_char, *mut c_char) -> u64)(param_1, param_2, param_3) } }
+/// `Wrap_fread_ID_69022` (decompiler signature, tier low; ledger os_api evidence, name medium; id 69022, rva 0xeadda0).
+/// `undefined Wrap_fread_ID_69022(longlong param_1, void * param_2, uint param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_fread_id_69022(param_1: i64, param_2: *mut c_void, param_3: u32) -> u64 { unsafe { function!(69022, (i64, *mut c_void, u32) -> u64)(param_1, param_2, param_3) } }
+/// `Wrap_free_ID_110042` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110042, rva 0x15b5fc0).
+/// `undefined8 Wrap_free_ID_110042(void * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_free_id_110042(param_1: *mut c_void) -> u64 { unsafe { function!(110042, (*mut c_void) -> u64)(param_1) } }
+/// `Wrap_free_ID_110043` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110043, rva 0x15b5fe0).
+/// `undefined8 Wrap_free_ID_110043(void * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_free_id_110043(param_1: *mut c_void) -> u64 { unsafe { function!(110043, (*mut c_void) -> u64)(param_1) } }
+/// `Wrap_free_ID_110073` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110073, rva 0x15b8440).
+/// `undefined8 Wrap_free_ID_110073(void * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_free_id_110073(param_1: *mut c_void) -> u64 { unsafe { function!(110073, (*mut c_void) -> u64)(param_1) } }
+/// `Wrap_free_ID_110074` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110074, rva 0x15b8460).
+/// `undefined8 Wrap_free_ID_110074(void * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_free_id_110074(param_1: *mut c_void) -> u64 { unsafe { function!(110074, (*mut c_void) -> u64)(param_1) } }
+/// `Wrap_free_ID_110084` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110084, rva 0x15b89c0).
+/// `undefined8 Wrap_free_ID_110084(void * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_free_id_110084(param_1: *mut c_void) -> u64 { unsafe { function!(110084, (*mut c_void) -> u64)(param_1) } }
+/// `Wrap_free_ID_110090` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110090, rva 0x15b8fb0).
+/// `undefined8 Wrap_free_ID_110090(void * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_free_id_110090(param_1: *mut c_void) -> u64 { unsafe { function!(110090, (*mut c_void) -> u64)(param_1) } }
+/// `Wrap_free_ID_442967` (decompiler signature, tier low; ledger os_api evidence, name medium; id 442967, rva 0xa7c620).
+/// `undefined Wrap_free_ID_442967(undefined8 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_free_id_442967(param_1: *mut u64) -> u64 { unsafe { function!(442967, (*mut u64) -> u64)(param_1) } }
+/// `Wrap_free_ID_56947` (decompiler signature, tier low; ledger os_api evidence, name medium; id 56947, rva 0xa9b490).
+/// `undefined Wrap_free_ID_56947(undefined8 param_1, void * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_free_id_56947(param_1: u64, param_2: *mut c_void) -> u64 { unsafe { function!(56947, (u64, *mut c_void) -> u64)(param_1, param_2) } }
+/// `Wrap_malloc_ID_110072` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110072, rva 0x15b8430).
+/// `undefined Wrap_malloc_ID_110072(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_malloc_id_110072() -> u64 { unsafe { function!(110072, () -> u64)() } }
+/// `Wrap_malloc_ID_56946` (decompiler signature, tier low; ledger os_api evidence, name medium; id 56946, rva 0xa9b480).
+/// `undefined Wrap_malloc_ID_56946(undefined8 param_1, int param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_malloc_id_56946(param_1: u64, param_2: i32, param_3: i32) -> u64 { unsafe { function!(56946, (u64, i32, i32) -> u64)(param_1, param_2, param_3) } }
+/// `Wrap_memcmp_ID_15314` (decompiler signature, tier low; ledger os_api evidence, name medium; id 15314, rva 0x203fb0).
+/// `bool Wrap_memcmp_ID_15314(void * param_1, void * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcmp_id_15314(param_1: *mut c_void, param_2: *mut c_void) -> u8 { unsafe { function!(15314, (*mut c_void, *mut c_void) -> u8)(param_1, param_2) } }
+/// `Wrap_memcmp_ID_31` (decompiler signature, tier low; ledger os_api evidence, name medium; id 31, rva 0x184c).
+/// `bool Wrap_memcmp_ID_31(longlong param_1, longlong param_2, longlong param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcmp_id_31(param_1: i64, param_2: i64, param_3: i64, param_4: i64) -> u8 { unsafe { function!(31, (i64, i64, i64, i64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memcmp_ID_440952` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440952, rva 0x122c80).
+/// `ulonglong Wrap_memcmp_ID_440952(void * param_1, size_t param_2, void * param_3, size_t param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcmp_id_440952(param_1: *mut c_void, param_2: usize, param_3: *mut c_void, param_4: usize) -> u64 { unsafe { function!(440952, (*mut c_void, usize, *mut c_void, usize) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memcmp_ID_57152` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57152, rva 0xaa5fe0).
+/// `undefined Wrap_memcmp_ID_57152(void * param_1, void * param_2, uint param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcmp_id_57152(param_1: *mut c_void, param_2: *mut c_void, param_3: u32) -> u64 { unsafe { function!(57152, (*mut c_void, *mut c_void, u32) -> u64)(param_1, param_2, param_3) } }
+/// `Wrap_memcmp_ID_71759` (decompiler signature, tier low; ledger os_api evidence, name medium; id 71759, rva 0xf1d330).
+/// `ulonglong Wrap_memcmp_ID_71759(uint * param_1, uint * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcmp_id_71759(param_1: *mut u32, param_2: *mut u32) -> u64 { unsafe { function!(71759, (*mut u32, *mut u32) -> u64)(param_1, param_2) } }
+/// `Wrap_memcpy_ID_106906` (decompiler signature, tier low; ledger os_api evidence, name medium; id 106906, rva 0x152b1b0).
+/// `undefined Wrap_memcpy_ID_106906(longlong param_1, int param_2, void * param_3, int param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_106906(param_1: i64, param_2: i32, param_3: *mut c_void, param_4: i32) -> u64 { unsafe { function!(106906, (i64, i32, *mut c_void, i32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memcpy_ID_439867` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439867, rva 0x10d2c0).
+/// `undefined Wrap_memcpy_ID_439867(undefined8 param_1, void * param_2, size_t param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_439867(param_1: u64, param_2: *mut c_void, param_3: usize, param_4: *mut c_void) -> u64 { unsafe { function!(439867, (u64, *mut c_void, usize, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memcpy_ID_440341` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440341, rva 0x10b800).
+/// `void * Wrap_memcpy_ID_440341(void * param_1, void * param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_440341(param_1: *mut c_void, param_2: *mut c_void, param_3: i64) -> *mut c_void { unsafe { function!(440341, (*mut c_void, *mut c_void, i64) -> *mut c_void)(param_1, param_2, param_3) } }
+/// `Wrap_memcpy_ID_522977` (decompiler signature, tier low; ledger os_api evidence, name medium; id 522977, rva 0x10c0c0).
+/// `void * Wrap_memcpy_ID_522977(void * param_1, void * param_2, size_t param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_522977(param_1: *mut c_void, param_2: *mut c_void, param_3: usize) -> *mut c_void { unsafe { function!(522977, (*mut c_void, *mut c_void, usize) -> *mut c_void)(param_1, param_2, param_3) } }
+/// `Wrap_memcpy_ID_523233` (decompiler signature, tier low; ledger os_api evidence, name medium; id 523233, rva 0x121250).
+/// `void * Wrap_memcpy_ID_523233(void * param_1, void * param_2, size_t param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_523233(param_1: *mut c_void, param_2: *mut c_void, param_3: usize) -> *mut c_void { unsafe { function!(523233, (*mut c_void, *mut c_void, usize) -> *mut c_void)(param_1, param_2, param_3) } }
+/// `Wrap_memcpy_ID_57148` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57148, rva 0xaa5f70).
+/// `undefined Wrap_memcpy_ID_57148(void * param_1, void * param_2, uint param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_57148(param_1: *mut c_void, param_2: *mut c_void, param_3: u32) -> u64 { unsafe { function!(57148, (*mut c_void, *mut c_void, u32) -> u64)(param_1, param_2, param_3) } }
+/// `Wrap_memcpy_ID_57368` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57368, rva 0xaaa8a0).
+/// `undefined Wrap_memcpy_ID_57368(void * param_1, void * param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_57368(param_1: *mut c_void, param_2: *mut c_void, param_3: i32) -> u64 { unsafe { function!(57368, (*mut c_void, *mut c_void, i32) -> u64)(param_1, param_2, param_3) } }
+/// `Wrap_memcpy_ID_84873` (decompiler signature, tier low; ledger os_api evidence, name medium; id 84873, rva 0xd72a10).
+/// `undefined Wrap_memcpy_ID_84873(longlong param_1, void * param_2, size_t param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_84873(param_1: i64, param_2: *mut c_void, param_3: usize) -> u64 { unsafe { function!(84873, (i64, *mut c_void, usize) -> u64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_439889` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439889, rva 0x10ee90).
+/// `longlong Wrap_memmove_ID_439889(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_439889(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(439889, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_439904` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439904, rva 0x10fae0).
+/// `longlong Wrap_memmove_ID_439904(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_439904(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(439904, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_439908` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439908, rva 0x10ff30).
+/// `longlong Wrap_memmove_ID_439908(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_439908(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(439908, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440082` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440082, rva 0x1183e0).
+/// `longlong Wrap_memmove_ID_440082(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440082(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440082, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440088` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440088, rva 0x118650).
+/// `longlong Wrap_memmove_ID_440088(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440088(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440088, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440167` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440167, rva 0x115c20).
+/// `longlong Wrap_memmove_ID_440167(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440167(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440167, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440169` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440169, rva 0x115e70).
+/// `longlong Wrap_memmove_ID_440169(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440169(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440169, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440172` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440172, rva 0x115fb0).
+/// `longlong Wrap_memmove_ID_440172(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440172(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440172, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440176` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440176, rva 0x1162b0).
+/// `longlong Wrap_memmove_ID_440176(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440176(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440176, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440254` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440254, rva 0x11e8d0).
+/// `longlong Wrap_memmove_ID_440254(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440254(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440254, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440260` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440260, rva 0x11ea90).
+/// `longlong Wrap_memmove_ID_440260(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440260(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440260, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440309` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440309, rva 0x11fe00).
+/// `longlong Wrap_memmove_ID_440309(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440309(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440309, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440724` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440724, rva 0x12fff0).
+/// `longlong Wrap_memmove_ID_440724(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440724(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440724, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440777` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440777, rva 0x136670).
+/// `longlong Wrap_memmove_ID_440777(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440777(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440777, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440782` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440782, rva 0x1367e0).
+/// `longlong Wrap_memmove_ID_440782(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440782(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440782, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440784` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440784, rva 0x1369e0).
+/// `longlong Wrap_memmove_ID_440784(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440784(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440784, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440786` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440786, rva 0x136a20).
+/// `longlong Wrap_memmove_ID_440786(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440786(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440786, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440794` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440794, rva 0x136b90).
+/// `longlong Wrap_memmove_ID_440794(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440794(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440794, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440796` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440796, rva 0x136c10).
+/// `longlong Wrap_memmove_ID_440796(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440796(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440796, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440798` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440798, rva 0x136d70).
+/// `longlong Wrap_memmove_ID_440798(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440798(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440798, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440799` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440799, rva 0x136da0).
+/// `longlong Wrap_memmove_ID_440799(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440799(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440799, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440819` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440819, rva 0x12fb30).
+/// `longlong Wrap_memmove_ID_440819(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440819(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440819, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440827` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440827, rva 0x130180).
+/// `longlong Wrap_memmove_ID_440827(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440827(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440827, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440887` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440887, rva 0x12ca50).
+/// `longlong Wrap_memmove_ID_440887(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440887(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440887, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440891` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440891, rva 0x12cce0).
+/// `longlong Wrap_memmove_ID_440891(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440891(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440891, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440895` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440895, rva 0x12ce50).
+/// `longlong Wrap_memmove_ID_440895(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440895(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440895, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_440898` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440898, rva 0x12cef0).
+/// `longlong Wrap_memmove_ID_440898(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440898(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440898, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440900` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440900, rva 0x12cf90).
+/// `longlong Wrap_memmove_ID_440900(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440900(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440900, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440902` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440902, rva 0x12cfe0).
+/// `longlong Wrap_memmove_ID_440902(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440902(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440902, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440906` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440906, rva 0x12d060).
+/// `longlong Wrap_memmove_ID_440906(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440906(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440906, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440908` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440908, rva 0x12d100).
+/// `longlong Wrap_memmove_ID_440908(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440908(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440908, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_440910` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440910, rva 0x12d140).
+/// `longlong Wrap_memmove_ID_440910(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_440910(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440910, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_441173` (decompiler signature, tier low; ledger os_api evidence, name medium; id 441173, rva 0x138200).
+/// `longlong Wrap_memmove_ID_441173(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_441173(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(441173, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memmove_ID_441174` (decompiler signature, tier low; ledger os_api evidence, name medium; id 441174, rva 0x138340).
+/// `longlong Wrap_memmove_ID_441174(void * param_1, longlong param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_441174(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(441174, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
+/// `Wrap_memmove_ID_441207` (decompiler signature, tier low; ledger os_api evidence, name medium; id 441207, rva 0x143b30).
+/// `longlong Wrap_memmove_ID_441207(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memmove_id_441207(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(441207, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
 /// `Wrap_memmove_ID_441208` (decompiler signature, tier low; ledger os_api evidence, name medium; id 441208, rva 0x143c70).
 /// `longlong Wrap_memmove_ID_441208(void * param_1, longlong param_2, void * param_3)`
 ///

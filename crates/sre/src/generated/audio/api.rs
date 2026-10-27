@@ -95,13 +95,13 @@ impl crate::BGSMusicType {
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BGSMusicType* this)`
     #[inline]
-    pub fn clear_data(&self) { unsafe { virtual_function!(self, 5, (&Self))(self) } }
+    pub fn clear_data(&self) { unsafe { virtual_function!(self, 5, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSMusicType::InitItemImpl`, vtable slot 19: resolves track ids to wrapper interfaces
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BGSMusicType* this)`
     #[inline]
-    pub fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (&Self))(self) } }
+    pub fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSMusicType::Load`, vtable slot 6: FNAM, VMAD, EDID, OBND, PNAM, TNAM, WNAM
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
@@ -110,7 +110,7 @@ impl crate::BGSMusicType {
     /// # Safety
     /// `file` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut crate::TESFile) -> bool)(self, file) } }
+    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::TESFile) -> bool)(core::ptr::from_ref(self), file) } }
 }
 
 impl crate::BGSSoundCategory {
@@ -128,7 +128,7 @@ impl crate::BGSSoundCategory {
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BGSSoundCategory* this)`
     #[inline]
-    pub fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (&Self))(self) } }
+    pub fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSSoundCategory::InitializeData`, vtable slot 4: resets +0x4c = 0xffff/0xffff, flags and parent
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -137,7 +137,7 @@ impl crate::BGSSoundCategory {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn initialize_data(&self) { unsafe { virtual_function!(self, 4, (&Self))(self) } }
+    pub unsafe fn initialize_data(&self) { unsafe { virtual_function!(self, 4, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSSoundCategory::Load`, vtable slot 6: checks the record type is 0x82, then FNAM, VMAD, EDID, OBND, FULL, PNAM, SNAM, UNAM, VNAM
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
@@ -146,7 +146,7 @@ impl crate::BGSSoundCategory {
     /// # Safety
     /// `file` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut crate::TESFile) -> bool)(self, file) } }
+    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::TESFile) -> bool)(core::ptr::from_ref(self), file) } }
 }
 
 impl crate::BGSSoundDescriptor {
@@ -155,7 +155,7 @@ impl crate::BGSSoundDescriptor {
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BGSSoundDescriptor* this, TESForm* owner)`
     #[inline]
-    pub fn init_item(&self, owner: &crate::TESForm) { unsafe { virtual_function!(self, 3, (&Self, &crate::TESForm))(self, owner) } }
+    pub fn init_item(&self, owner: &crate::TESForm) { unsafe { virtual_function!(self, 3, (*const Self, *const crate::TESForm))(core::ptr::from_ref(self), core::ptr::from_ref(owner)) } }
     /// `BGSSoundDescriptor::LoadChunk`, vtable slot 4: reads GNAM (category id) and SNAM (linked id)
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
@@ -164,7 +164,7 @@ impl crate::BGSSoundDescriptor {
     /// # Safety
     /// `file` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load_chunk(&self, file: *mut crate::TESFile) { unsafe { virtual_function!(self, 4, (&Self, *mut crate::TESFile))(self, file) } }
+    pub unsafe fn load_chunk(&self, file: *mut crate::TESFile) { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::TESFile))(core::ptr::from_ref(self), file) } }
     /// `BGSSoundDescriptor::category` at +0x8: the sound's category (GNAM form id, resolved in InitItem)
     ///
     /// Semantic field, audio pass, high; `None` while the pointer is null.
@@ -184,13 +184,13 @@ impl crate::BGSSoundDescriptorForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn clear_data(&self) { unsafe { virtual_function!(self, 5, (&Self))(self) } }
+    pub unsafe fn clear_data(&self) { unsafe { virtual_function!(self, 5, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSSoundDescriptorForm::GetDescriptorTypeCRC`, vtable slot 59: forwards to descriptor slot 5 (crc32 of the descriptor class name)
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `u32 (BGSSoundDescriptorForm* this)`
     #[inline]
-    pub fn get_descriptor_type_crc(&self) -> u32 { unsafe { virtual_function!(self, 59, (&Self) -> u32)(self) } }
+    pub fn get_descriptor_type_crc(&self) -> u32 { unsafe { virtual_function!(self, 59, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BGSSoundDescriptorForm::InitItemImpl`, vtable slot 19: resolves the descriptor's form references (descriptor slot 3) once; if this form's id is in the SNAM-id list 0x31df9d8 it is removed and the descriptor is precached via ID_67720(audio manager, this+0x20, 0x200)
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -199,7 +199,7 @@ impl crate::BGSSoundDescriptorForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (&Self))(self) } }
+    pub unsafe fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSSoundDescriptorForm::Load`, vtable slot 6: reads VMAD, EDID, OBND, CNAM; CNAM picks the descriptor class; returns false when the CNAM type is unknown
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
@@ -208,7 +208,7 @@ impl crate::BGSSoundDescriptorForm {
     /// # Safety
     /// `file` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut crate::TESFile) -> bool)(self, file) } }
+    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::TESFile) -> bool)(core::ptr::from_ref(self), file) } }
     /// `BGSSoundDescriptorForm::descriptor` at +0x28: the descriptor object (BGSStandardSoundDef in 1.7.104), created from CNAM's type CRC
     ///
     /// Semantic field, audio pass, high; `None` while the pointer is null.
@@ -225,13 +225,13 @@ impl crate::BGSSoundOutput {
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BGSSoundOutput* this)`
     #[inline]
-    pub fn clear_data(&self) { unsafe { virtual_function!(self, 5, (&Self))(self) } }
+    pub fn clear_data(&self) { unsafe { virtual_function!(self, 5, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSSoundOutput::InitItemImpl`, vtable slot 19: only sets the initialised bit
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BGSSoundOutput* this)`
     #[inline]
-    pub fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (&Self))(self) } }
+    pub fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BGSSoundOutput::Load`, vtable slot 6: type gate 0x83, then ANAM, NAM1, VMAD, EDID, OBND, FNAM, MNAM, ONAM, SNAM
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
@@ -240,7 +240,7 @@ impl crate::BGSSoundOutput {
     /// # Safety
     /// `file` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut crate::TESFile) -> bool)(self, file) } }
+    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::TESFile) -> bool)(core::ptr::from_ref(self), file) } }
     /// `BGSSoundOutput::attenuation` at +0x30: ANAM attenuation: min/max distance and a 5-point curve
     ///
     /// Semantic field, audio pass, high; `None` while the pointer is null.
@@ -254,7 +254,7 @@ impl crate::BGSStandardSoundDef {
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `float (BGSStandardSoundDef* this)`
     #[inline]
-    pub fn get_max_distance(&self) -> f32 { unsafe { virtual_function!(self, 6, (&Self) -> f32)(self) } }
+    pub fn get_max_distance(&self) -> f32 { unsafe { virtual_function!(self, 6, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BGSStandardSoundDef::outputModel` at +0x48: ONAM: output model (spatialisation and attenuation)
     ///
     /// Semantic field, audio pass, high; `None` while the pointer is null.
@@ -271,7 +271,7 @@ impl crate::BSAudioManager {
     /// # Safety
     /// `copyFrom` must point to what the engine expects, and the result is an untyped pointer.
     #[inline]
-    pub unsafe fn allocate_command_node(&self, copyFrom: *const c_void) -> *mut c_void { unsafe { function!(67731, (&Self, *const c_void) -> *mut c_void)(self, copyFrom) } }
+    pub unsafe fn allocate_command_node(&self, copyFrom: *const c_void) -> *mut c_void { unsafe { function!(67731, (*const Self, *const c_void) -> *mut c_void)(core::ptr::from_ref(self), copyFrom) } }
     /// `BSAudioManager::BuildSoundHandle`: descriptor slot 1 fills the playback params, the backend creates the sound, next id from 0x3273924, flags merged, status inserted (write lock), command 0x19 posted; out = {id,0,0} or {-1,0,0}
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67666, rva 0xccb320.
@@ -280,7 +280,7 @@ impl crate::BSAudioManager {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn build_sound_handle(&self, out: *mut crate::SoundHandle, descriptor: *mut crate::BSISoundDescriptor, flags: u32) -> bool { unsafe { function!(67666, (&Self, *mut crate::SoundHandle, *mut crate::BSISoundDescriptor, u32) -> bool)(self, out, descriptor, flags) } }
+    pub unsafe fn build_sound_handle(&self, out: *mut crate::SoundHandle, descriptor: *mut crate::BSISoundDescriptor, flags: u32) -> bool { unsafe { function!(67666, (*const Self, *mut crate::SoundHandle, *mut crate::BSISoundDescriptor, u32) -> bool)(core::ptr::from_ref(self), out, descriptor, flags) } }
     /// `BSAudioManager::BuildSoundHandleByEditorId`: resolver +0x180 then BuildSoundHandle
     ///
     /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67665, rva 0xccb290.
@@ -289,7 +289,7 @@ impl crate::BSAudioManager {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn build_sound_handle_by_editor_id(&self, out: *mut crate::SoundHandle, editorId: *const c_char, flags: u32) { unsafe { function!(67665, (&Self, *mut crate::SoundHandle, *const c_char, u32))(self, out, editorId, flags) } }
+    pub unsafe fn build_sound_handle_by_editor_id(&self, out: *mut crate::SoundHandle, editorId: *const c_char, flags: u32) { unsafe { function!(67665, (*const Self, *mut crate::SoundHandle, *const c_char, u32))(core::ptr::from_ref(self), out, editorId, flags) } }
     /// `BSAudioManager::BuildSoundHandleByFormId`: resolver +0x178 then BuildSoundHandle
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67663, rva 0xccb0e0.
@@ -298,7 +298,7 @@ impl crate::BSAudioManager {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn build_sound_handle_by_form_id(&self, out: *mut crate::SoundHandle, formId: u32, flags: u32) { unsafe { function!(67663, (&Self, *mut crate::SoundHandle, u32, u32))(self, out, formId, flags) } }
+    pub unsafe fn build_sound_handle_by_form_id(&self, out: *mut crate::SoundHandle, formId: u32, flags: u32) { unsafe { function!(67663, (*const Self, *mut crate::SoundHandle, u32, u32))(core::ptr::from_ref(self), out, formId, flags) } }
     /// `BSAudioManager::BuildSoundHandleRaw`: sound from raw params without a descriptor (dialogue, music tracks)
     ///
     /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67664, rva 0xccb170.
@@ -307,13 +307,13 @@ impl crate::BSAudioManager {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn build_sound_handle_raw(&self, out: *mut crate::SoundHandle, params: *const c_void, flags: u32, priority: u32) { unsafe { function!(67664, (&Self, *mut crate::SoundHandle, *const c_void, u32, u32))(self, out, params, flags, priority) } }
+    pub unsafe fn build_sound_handle_raw(&self, out: *mut crate::SoundHandle, params: *const c_void, flags: u32, priority: u32) { unsafe { function!(67664, (*const Self, *mut crate::SoundHandle, *const c_void, u32, u32))(core::ptr::from_ref(self), out, params, flags, priority) } }
     /// `BSAudioManager::DrainCommands`: audio thread: urgent list, then every node of the read list through ProcessCommand, then the list swap under the spin lock
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67725, rva 0xccdab0.
     /// `void (BSAudioManager* this)`
     #[inline]
-    pub fn drain_commands(&self) { unsafe { function!(67725, (&Self))(self) } }
+    pub fn drain_commands(&self) { unsafe { function!(67725, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSAudioManager::Init`: copies the settings, recreates the backend by sAudioAPI, preallocates 256 command nodes, starts LibAudioUpdate, posts command 1 and waits for it, sets flags bit0
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67657, rva 0xcca900.
@@ -322,19 +322,19 @@ impl crate::BSAudioManager {
     /// # Safety
     /// `settings` must point to what the engine expects.
     #[inline]
-    pub unsafe fn init(&self, settings: *const c_void) { unsafe { function!(67657, (&Self, *const c_void))(self, settings) } }
+    pub unsafe fn init(&self, settings: *const c_void) { unsafe { function!(67657, (*const Self, *const c_void))(core::ptr::from_ref(self), settings) } }
     /// `BSAudioManager::IsFlag16CBit3Set`: (+0x16c >> 3) & 1
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 67715, rva 0xccd130.
     /// `bool (BSAudioManager* this)`
     #[inline]
-    pub fn is_flag16_c_bit3_set(&self) -> bool { unsafe { function!(67715, (&Self) -> bool)(self) } }
+    pub fn is_flag16_c_bit3_set(&self) -> bool { unsafe { function!(67715, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSAudioManager::ParkThread`: posts 0x27 and waits for the park
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67659, rva 0xccafe0.
     /// `void (BSAudioManager* this)`
     #[inline]
-    pub fn park_thread(&self) { unsafe { function!(67659, (&Self))(self) } }
+    pub fn park_thread(&self) { unsafe { function!(67659, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSAudioManager::PostCategoryCommand`: posts 0x33/0xc: each sound of the category fades to the category attenuation, then followUp (5 pause)
     ///
     /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67681, rva 0xccbd30.
@@ -343,7 +343,7 @@ impl crate::BSAudioManager {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn post_category_command(&self, category: *mut crate::BSISoundCategory, fadeMs: u16, followUp: u32) { unsafe { function!(67681, (&Self, *mut crate::BSISoundCategory, u16, u32))(self, category, fadeMs, followUp) } }
+    pub unsafe fn post_category_command(&self, category: *mut crate::BSISoundCategory, fadeMs: u16, followUp: u32) { unsafe { function!(67681, (*const Self, *mut crate::BSISoundCategory, u16, u32))(core::ptr::from_ref(self), category, fadeMs, followUp) } }
     /// `BSAudioManager::PostCommand`: 0x40 node under the spin lock 0x3273958 appended to the write list; dropped unless flags bit0 or type 1/2
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67717, rva 0xccd1a0.
@@ -352,7 +352,7 @@ impl crate::BSAudioManager {
     /// # Safety
     /// `ref_`, `vec3` must point to what the engine expects.
     #[inline]
-    pub unsafe fn post_command(&self, type_: u32, id: u32, arg: u32, ptrArg: u64, ref_: *mut c_void, vec3: *const f32) -> u32 { unsafe { function!(67717, (&Self, u32, u32, u32, u64, *mut c_void, *const f32) -> u32)(self, type_, id, arg, ptrArg, ref_, vec3) } }
+    pub unsafe fn post_command(&self, type_: u32, id: u32, arg: u32, ptrArg: u64, ref_: *mut c_void, vec3: *const f32) -> u32 { unsafe { function!(67717, (*const Self, u32, u32, u32, u64, *mut c_void, *const f32) -> u32)(core::ptr::from_ref(self), type_, id, arg, ptrArg, ref_, vec3) } }
     /// `BSAudioManager::ProcessCommand`: switch over the command type (enum AudioCommandType); returns 1 when the node was kept, 2 to stop draining (0x27), else 0
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67726, rva 0xccdc90.
@@ -361,13 +361,13 @@ impl crate::BSAudioManager {
     /// # Safety
     /// `cmd` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_command(&self, cmd: *mut c_void) -> u32 { unsafe { function!(67726, (&Self, *mut c_void) -> u32)(self, cmd) } }
+    pub unsafe fn process_command(&self, cmd: *mut c_void) -> u32 { unsafe { function!(67726, (*const Self, *mut c_void) -> u32)(core::ptr::from_ref(self), cmd) } }
     /// `BSAudioManager::ReapplyAllVolumes`: posts 0x10
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67741, rva 0xcd0db0.
     /// `void (BSAudioManager* this)`
     #[inline]
-    pub fn reapply_all_volumes(&self) { unsafe { function!(67741, (&Self))(self) } }
+    pub fn reapply_all_volumes(&self) { unsafe { function!(67741, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSAudioManager::RefreshStatuses`: copies id, frequency, volume, flags, +0x60, playing bit and position of every non-loading sound into its status
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67751, rva 0xcd1850.
@@ -394,7 +394,7 @@ impl crate::BSAudioManager {
     /// # Safety
     /// `forward`, `up` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_listener_orientation(&self, forward: *const f32, up: *const f32) { unsafe { function!(67709, (&Self, *const f32, *const f32))(self, forward, up) } }
+    pub unsafe fn set_listener_orientation(&self, forward: *const f32, up: *const f32) { unsafe { function!(67709, (*const Self, *const f32, *const f32))(core::ptr::from_ref(self), forward, up) } }
     /// `BSAudioManager::SetListenerPosition`: posts 0x28
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67708, rva 0xccce50.
@@ -403,25 +403,25 @@ impl crate::BSAudioManager {
     /// # Safety
     /// `xyz` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_listener_position(&self, xyz: *const f32) { unsafe { function!(67708, (&Self, *const f32))(self, xyz) } }
+    pub unsafe fn set_listener_position(&self, xyz: *const f32) { unsafe { function!(67708, (*const Self, *const f32))(core::ptr::from_ref(self), xyz) } }
     /// `BSAudioManager::SetThreadSleepMs`: thread+0x64
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67661, rva 0xccb0a0.
     /// `void (BSAudioManager* this, uint32 ms)`
     #[inline]
-    pub fn set_thread_sleep_ms(&self, ms: u32) { unsafe { function!(67661, (&Self, u32))(self, ms) } }
+    pub fn set_thread_sleep_ms(&self, ms: u32) { unsafe { function!(67661, (*const Self, u32))(core::ptr::from_ref(self), ms) } }
     /// `BSAudioManager::StopAllAndWait`: posts 0x1b and optionally polls until the sound map is empty
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67668, rva 0xccb540.
     /// `void (BSAudioManager* this, bool wait, uint32 timeoutMs)`
     #[inline]
-    pub fn stop_all_and_wait(&self, wait: bool, timeoutMs: u32) { unsafe { function!(67668, (&Self, bool, u32))(self, wait, timeoutMs) } }
+    pub fn stop_all_and_wait(&self, wait: bool, timeoutMs: u32) { unsafe { function!(67668, (*const Self, bool, u32))(core::ptr::from_ref(self), wait, timeoutMs) } }
     /// `BSAudioManager::UpdateFollowedSounds`: per followed id: node gone -> fade to 4000 over 1000 ms then release; sound playing (or 0x20000) -> SetPosition(node+0xa0)
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67707, rva 0xcccb80.
     /// `void (BSAudioManager* this)`
     #[inline]
-    pub fn update_followed_sounds(&self) { unsafe { function!(67707, (&Self))(self) } }
+    pub fn update_followed_sounds(&self) { unsafe { function!(67707, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSAudioManager::UpdateSound`: finishes a load (replays pending commands), ticks the sound (slot 14), marks flag-0x10 sounds released once played and neither playing nor paused, collects released ids
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67648, rva 0xcc9f90.
@@ -436,13 +436,13 @@ impl crate::BSAudioManager {
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67727, rva 0xccf5a0.
     /// `void (BSAudioManager* this)`
     #[inline]
-    pub fn update_sounds(&self) { unsafe { function!(67727, (&Self))(self) } }
+    pub fn update_sounds(&self) { unsafe { function!(67727, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSAudioManager::WakeThread`: releases the resume semaphore when parked
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67660, rva 0xccb060.
     /// `void (BSAudioManager* this)`
     #[inline]
-    pub fn wake_thread(&self) { unsafe { function!(67660, (&Self))(self) } }
+    pub fn wake_thread(&self) { unsafe { function!(67660, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSAudioManager::ctor`: maps, 256 status entries into the free list 0x3273928, the two command lists and the two node pools
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67723, rva 0xccd660.
@@ -451,7 +451,7 @@ impl crate::BSAudioManager {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(67723, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(67723, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `BSAudioManager::thread` at +0xF8: the audio thread object
     ///
     /// Semantic field, audio pass, high; `None` while the pointer is null.
@@ -465,7 +465,7 @@ impl crate::BSAudioManagerThread {
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `uint32 (BSAudioManagerThread* this)`
     #[inline]
-    pub fn run(&self) -> u32 { unsafe { virtual_function!(self, 1, (&Self) -> u32)(self) } }
+    pub fn run(&self) -> u32 { unsafe { virtual_function!(self, 1, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSIMusicTrack {
@@ -477,7 +477,7 @@ impl crate::BSIMusicTrack {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_duck(&self, attenuation: u16) { unsafe { virtual_function!(self, 9, (&Self, u16))(self, attenuation) } }
+    pub unsafe fn do_duck(&self, attenuation: u16) { unsafe { virtual_function!(self, 9, (*const Self, u16))(core::ptr::from_ref(self), attenuation) } }
     /// `BSIMusicTrack::DoFinish`, vtable slot 4: not immediate and cue points exist: state 3 (finishing, may start the finale handle +0x74); else state 4 and fade both handles out
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -486,7 +486,7 @@ impl crate::BSIMusicTrack {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_finish(&self, immediate: bool, fadeSeconds: f32) { unsafe { virtual_function!(self, 4, (&Self, bool, f32))(self, immediate, fadeSeconds) } }
+    pub unsafe fn do_finish(&self, immediate: bool, fadeSeconds: f32) { unsafe { virtual_function!(self, 4, (*const Self, bool, f32))(core::ptr::from_ref(self), immediate, fadeSeconds) } }
     /// `BSIMusicTrack::DoPause`, vtable slot 3: pauses the handle (state 2), or stops both handles if finishing
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -495,7 +495,7 @@ impl crate::BSIMusicTrack {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_pause(&self) { unsafe { virtual_function!(self, 3, (&Self))(self) } }
+    pub unsafe fn do_pause(&self) { unsafe { virtual_function!(self, 3, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicTrack::DoPlay`, vtable slot 2: creates (if needed) and plays the track's sound handle (+0x68) from its file id, in the default-object 0x8e category, fade-in 1000; state 1
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -504,7 +504,7 @@ impl crate::BSIMusicTrack {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_play(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
+    pub unsafe fn do_play(&self) { unsafe { virtual_function!(self, 2, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicTrack::DoUnduck`, vtable slot 10: fades the handle's attenuation back to 0 over fMusicUnDuckingSeconds
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -513,7 +513,7 @@ impl crate::BSIMusicTrack {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_unduck(&self) { unsafe { virtual_function!(self, 10, (&Self))(self) } }
+    pub unsafe fn do_unduck(&self) { unsafe { virtual_function!(self, 10, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicTrack::DoUpdate`, vtable slot 1: per frame: handles loop points and the finale crossfade, marks finished (state 4) when the sound handles stop
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -522,7 +522,7 @@ impl crate::BSIMusicTrack {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_update(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
+    pub unsafe fn do_update(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicTrack::GetPositionSeconds`, vtable slot 5: handle position * 0.001
     ///
     /// Semantic, audio pass, low; called through the object's vtable.
@@ -531,7 +531,7 @@ impl crate::BSIMusicTrack {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn get_position_seconds(&self) -> f32 { unsafe { virtual_function!(self, 5, (&Self) -> f32)(self) } }
+    pub unsafe fn get_position_seconds(&self) -> f32 { unsafe { virtual_function!(self, 5, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSIMusicTrack::GetState`, vtable slot 8: +8: 1 playing, 2 paused, 3 finishing, 4 finished
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -540,13 +540,13 @@ impl crate::BSIMusicTrack {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_state(&self) -> u32 { unsafe { virtual_function!(self, 8, (&Self) -> u32)(self) } }
+    pub unsafe fn get_state(&self) -> u32 { unsafe { virtual_function!(self, 8, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSIMusicTrack::TestConditions`, vtable slot 7: true without conditions, else evaluates them on the player
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `bool (BSIMusicTrack* this)`
     #[inline]
-    pub fn test_conditions(&self) -> bool { unsafe { virtual_function!(self, 7, (&Self) -> bool)(self) } }
+    pub fn test_conditions(&self) -> bool { unsafe { virtual_function!(self, 7, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSIMusicType {
@@ -558,25 +558,25 @@ impl crate::BSIMusicType {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_duck(&self, attenuation: u16) { unsafe { virtual_function!(self, 4, (&Self, u16))(self, attenuation) } }
+    pub unsafe fn do_duck(&self, attenuation: u16) { unsafe { virtual_function!(self, 4, (*const Self, u16))(core::ptr::from_ref(self), attenuation) } }
     /// `BSIMusicType::DoFinish`, vtable slot 3: asks the current track to finish over max(fadeDuration, 4 s); state = track state. The immediate argument is ignored (the track gets false)
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSIMusicType* this, bool immediate)`
     #[inline]
-    pub fn do_finish(&self, immediate: bool) { unsafe { virtual_function!(self, 3, (&Self, bool))(self, immediate) } }
+    pub fn do_finish(&self, immediate: bool) { unsafe { virtual_function!(self, 3, (*const Self, bool))(core::ptr::from_ref(self), immediate) } }
     /// `BSIMusicType::DoPause`, vtable slot 2: pauses the current track, state 2
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSIMusicType* this)`
     #[inline]
-    pub fn do_pause(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
+    pub fn do_pause(&self) { unsafe { virtual_function!(self, 2, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicType::DoPlay`, vtable slot 1: unless paused, picks the next track (random with no repeat, or from the sequence when flag bit 2), then plays it; state 1, or 4 if no track qualifies
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSIMusicType* this)`
     #[inline]
-    pub fn do_play(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
+    pub fn do_play(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicType::DoPrepare`, vtable slot 6: state 0; with flag bit 2 and an empty sequence, fills and (unless bit 3) shuffles the track sequence
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -585,7 +585,7 @@ impl crate::BSIMusicType {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_prepare(&self) { unsafe { virtual_function!(self, 6, (&Self))(self) } }
+    pub unsafe fn do_prepare(&self) { unsafe { virtual_function!(self, 6, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicType::DoUnduck`, vtable slot 5: forwards to the current track's slot 10
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -594,7 +594,7 @@ impl crate::BSIMusicType {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_unduck(&self) { unsafe { virtual_function!(self, 5, (&Self))(self) } }
+    pub unsafe fn do_unduck(&self) { unsafe { virtual_function!(self, 5, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicType::DoUpdate`, vtable slot 0: per-frame: no tracks -> finished; otherwise follows the track's state (finished track: flag bit 0 -> set bit 4 and finished, else ready), then updates the track
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -603,7 +603,7 @@ impl crate::BSIMusicType {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn do_update(&self) { unsafe { virtual_function!(self, 0, (&Self))(self) } }
+    pub unsafe fn do_update(&self) { unsafe { virtual_function!(self, 0, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSIMusicType::vdtor`, vtable slot 7: deleting destructor
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
@@ -612,7 +612,7 @@ impl crate::BSIMusicType {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u32) -> *mut c_void { unsafe { virtual_function!(self, 7, (&Self, u32) -> *mut c_void)(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u32) -> *mut c_void { unsafe { virtual_function!(self, 7, (*const Self, u32) -> *mut c_void)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::BSISoundCategory {
@@ -624,37 +624,37 @@ impl crate::BSISoundCategory {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_effective_attenuation(&self) -> u16 { unsafe { virtual_function!(self, 6, (&Self) -> u16)(self) } }
+    pub unsafe fn get_effective_attenuation(&self) -> u16 { unsafe { virtual_function!(self, 6, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
     /// `BSISoundCategory::GetEffectiveFrequency`, vtable slot 4: frequency * parent's effective frequency
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `float (BSISoundCategory* this)`
     #[inline]
-    pub fn get_effective_frequency(&self) -> f32 { unsafe { virtual_function!(self, 4, (&Self) -> f32)(self) } }
+    pub fn get_effective_frequency(&self) -> f32 { unsafe { virtual_function!(self, 4, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSISoundCategory::GetEffectiveVolume`, vtable slot 2: staticVolume/65535 * volume * parent's effective volume (1.0 at the root)
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `float (BSISoundCategory* this)`
     #[inline]
-    pub fn get_effective_volume(&self) -> f32 { unsafe { virtual_function!(self, 2, (&Self) -> f32)(self) } }
+    pub fn get_effective_volume(&self) -> f32 { unsafe { virtual_function!(self, 2, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSISoundCategory::IsMuted`, vtable slot 10: muted bit here or in any ancestor
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `bool (BSISoundCategory* this)`
     #[inline]
-    pub fn is_muted(&self) -> bool { unsafe { virtual_function!(self, 10, (&Self) -> bool)(self) } }
+    pub fn is_muted(&self) -> bool { unsafe { virtual_function!(self, 10, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSISoundCategory::IsPaused`, vtable slot 8: paused bit here or in any ancestor
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `bool (BSISoundCategory* this)`
     #[inline]
-    pub fn is_paused(&self) -> bool { unsafe { virtual_function!(self, 8, (&Self) -> bool)(self) } }
+    pub fn is_paused(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSISoundCategory::IsSameOrChildOf`, vtable slot 1: true if other is this category or one of its ancestors
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `bool (BSISoundCategory* this, BSISoundCategory* other)`
     #[inline]
-    pub fn is_same_or_child_of(&self, other: &Self) -> bool { unsafe { virtual_function!(self, 1, (&Self, &Self) -> bool)(self, other) } }
+    pub fn is_same_or_child_of(&self, other: &Self) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const Self) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `BSISoundCategory::SetAttenuation`, vtable slot 7: stores the runtime attenuation
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -663,31 +663,31 @@ impl crate::BSISoundCategory {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_attenuation(&self, attenuation: u16) { unsafe { virtual_function!(self, 7, (&Self, u16))(self, attenuation) } }
+    pub unsafe fn set_attenuation(&self, attenuation: u16) { unsafe { virtual_function!(self, 7, (*const Self, u16))(core::ptr::from_ref(self), attenuation) } }
     /// `BSISoundCategory::SetFrequency`, vtable slot 5: stores the runtime frequency multiplier
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSISoundCategory* this, float frequency)`
     #[inline]
-    pub fn set_frequency(&self, frequency: f32) { unsafe { virtual_function!(self, 5, (&Self, f32))(self, frequency) } }
+    pub fn set_frequency(&self, frequency: f32) { unsafe { virtual_function!(self, 5, (*const Self, f32))(core::ptr::from_ref(self), frequency) } }
     /// `BSISoundCategory::SetMuted`, vtable slot 11: sets/clears the muted bit
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSISoundCategory* this, bool muted)`
     #[inline]
-    pub fn set_muted(&self, muted: bool) { unsafe { virtual_function!(self, 11, (&Self, bool))(self, muted) } }
+    pub fn set_muted(&self, muted: bool) { unsafe { virtual_function!(self, 11, (*const Self, bool))(core::ptr::from_ref(self), muted) } }
     /// `BSISoundCategory::SetPaused`, vtable slot 9: sets/clears the paused bit
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSISoundCategory* this, bool paused)`
     #[inline]
-    pub fn set_paused(&self, paused: bool) { unsafe { virtual_function!(self, 9, (&Self, bool))(self, paused) } }
+    pub fn set_paused(&self, paused: bool) { unsafe { virtual_function!(self, 9, (*const Self, bool))(core::ptr::from_ref(self), paused) } }
     /// `BSISoundCategory::SetVolume`, vtable slot 3: stores the runtime volume; for menu categories (flags bit 1) also writes the menu slot table entry
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSISoundCategory* this, float volume)`
     #[inline]
-    pub fn set_volume(&self, volume: f32) { unsafe { virtual_function!(self, 3, (&Self, f32))(self, volume) } }
+    pub fn set_volume(&self, volume: f32) { unsafe { virtual_function!(self, 3, (*const Self, f32))(core::ptr::from_ref(self), volume) } }
 }
 
 impl crate::BSISoundDescriptor {
@@ -699,7 +699,7 @@ impl crate::BSISoundDescriptor {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn fill_play_data(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut c_void) -> bool)(self, out) } }
+    pub unsafe fn fill_play_data(&self, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), out) } }
     /// `BSISoundDescriptor::ShouldPlayAtDistance`, vtable slot 2: true when an output model exists and either it does not attenuate or distance < the attenuation max distance, and the conditions pass
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -708,7 +708,7 @@ impl crate::BSISoundDescriptor {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn should_play_at_distance(&self, distance: f32) -> bool { unsafe { virtual_function!(self, 2, (&Self, f32) -> bool)(self, distance) } }
+    pub unsafe fn should_play_at_distance(&self, distance: f32) -> bool { unsafe { virtual_function!(self, 2, (*const Self, f32) -> bool)(core::ptr::from_ref(self), distance) } }
 }
 
 impl crate::BSMusicManager {
@@ -720,7 +720,7 @@ impl crate::BSMusicManager {
     /// # Safety
     /// `event`, `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_event(&self, event: *const c_void, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (&Self, *const c_void, *mut c_void) -> u32)(self, event, source) } }
+    pub unsafe fn process_event(&self, event: *const c_void, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (*const Self, *const c_void, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
     /// `BSMusicManager::PushType`: heap push keyed on byte +0xc (lowest on top)
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 90333, rva 0x11b5140.
@@ -744,13 +744,13 @@ impl crate::BSMusicManager {
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 90318, rva 0x11b4780.
     /// `void (BSMusicManager* this)`
     #[inline]
-    pub fn reset(&self) { unsafe { function!(90318, (&Self))(self) } }
+    pub fn reset(&self) { unsafe { function!(90318, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSMusicManager::Update`: try-locks the music lock; if the heap top is the current type: drops it when finished-for-good (bit 4), plays it when ready; else displaces the current type (finish, or duck when the new top has flag bit 5), makes the top current, prepares+plays it unless already playing, unducks it, re-pauses it if the old one was paused; finally calls current slot 0
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 90319, rva 0x11b48b0.
     /// `void (BSMusicManager* this)`
     #[inline]
-    pub fn update(&self) { unsafe { function!(90319, (&Self))(self) } }
+    pub fn update(&self) { unsafe { function!(90319, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSXAudio2GameSound {
@@ -759,31 +759,31 @@ impl crate::BSXAudio2GameSound {
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSXAudio2GameSound* this)`
     #[inline]
-    pub fn apply_frequency(&self) { unsafe { virtual_function!(self, 19, (&Self))(self) } }
+    pub fn apply_frequency(&self) { unsafe { virtual_function!(self, 19, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSXAudio2GameSound::ApplyVolume`, vtable slot 24: ComputeAmplitude 0xcd5410 to the voice
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSXAudio2GameSound* this)`
     #[inline]
-    pub fn apply_volume(&self) { unsafe { virtual_function!(self, 24, (&Self))(self) } }
+    pub fn apply_volume(&self) { unsafe { virtual_function!(self, 24, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSXAudio2GameSound::GetPositionMs`, vtable slot 4: playback position in ms
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `uint32 (BSXAudio2GameSound* this)`
     #[inline]
-    pub fn get_position_ms(&self) -> u32 { unsafe { virtual_function!(self, 4, (&Self) -> u32)(self) } }
+    pub fn get_position_ms(&self) -> u32 { unsafe { virtual_function!(self, 4, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSXAudio2GameSound::Pause`, vtable slot 22: stop the voice without flushing
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSXAudio2GameSound* this)`
     #[inline]
-    pub fn pause(&self) { unsafe { virtual_function!(self, 22, (&Self))(self) } }
+    pub fn pause(&self) { unsafe { virtual_function!(self, 22, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSXAudio2GameSound::Play`, vtable slot 21: start the voice
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSXAudio2GameSound* this)`
     #[inline]
-    pub fn play(&self) { unsafe { virtual_function!(self, 21, (&Self))(self) } }
+    pub fn play(&self) { unsafe { virtual_function!(self, 21, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSXAudio2GameSound::SeekMs`, vtable slot 20: restart at a time offset
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -792,7 +792,7 @@ impl crate::BSXAudio2GameSound {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn seek_ms(&self, ms: u32) { unsafe { virtual_function!(self, 20, (&Self, u32))(self, ms) } }
+    pub unsafe fn seek_ms(&self, ms: u32) { unsafe { virtual_function!(self, 20, (*const Self, u32))(core::ptr::from_ref(self), ms) } }
     /// `BSXAudio2GameSound::SetAttenuationCurve`, vtable slot 18: five curve values in percent
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -801,7 +801,7 @@ impl crate::BSXAudio2GameSound {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_attenuation_curve(&self, a1: u16, a2: u16, a3: u16, a4: u16, a5: u16) { unsafe { virtual_function!(self, 18, (&Self, u16, u16, u16, u16, u16))(self, a1, a2, a3, a4, a5) } }
+    pub unsafe fn set_attenuation_curve(&self, a1: u16, a2: u16, a3: u16, a4: u16, a5: u16) { unsafe { virtual_function!(self, 18, (*const Self, u16, u16, u16, u16, u16))(core::ptr::from_ref(self), a1, a2, a3, a4, a5) } }
     /// `BSXAudio2GameSound::SetMinMaxDistance`, vtable slot 17: attenuation distances
     ///
     /// Semantic, audio pass, medium; called through the object's vtable.
@@ -810,7 +810,7 @@ impl crate::BSXAudio2GameSound {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_min_max_distance(&self, min: f32, max: f32) { unsafe { virtual_function!(self, 17, (&Self, f32, f32))(self, min, max) } }
+    pub unsafe fn set_min_max_distance(&self, min: f32, max: f32) { unsafe { virtual_function!(self, 17, (*const Self, f32, f32))(core::ptr::from_ref(self), min, max) } }
     /// `BSXAudio2GameSound::SetPosition`, vtable slot 15: stores the position, the listener distance (+0x80) and state 0x100000
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
@@ -819,25 +819,25 @@ impl crate::BSXAudio2GameSound {
     /// # Safety
     /// `xyz` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_position(&self, xyz: *const f32) { unsafe { virtual_function!(self, 15, (&Self, *const f32))(self, xyz) } }
+    pub unsafe fn set_position(&self, xyz: *const f32) { unsafe { virtual_function!(self, 15, (*const Self, *const f32))(core::ptr::from_ref(self), xyz) } }
     /// `BSXAudio2GameSound::Stop`, vtable slot 23: stop and flush; a looping sound with a loop region seeks to the loop end and plays out
     ///
     /// Semantic, audio pass, high; called through the object's vtable.
     /// `void (BSXAudio2GameSound* this)`
     #[inline]
-    pub fn stop(&self) { unsafe { virtual_function!(self, 23, (&Self))(self) } }
+    pub fn stop(&self) { unsafe { virtual_function!(self, 23, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSXAudio2GameSound::ComputeAmplitude`: the volume combination (answers)
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67873, rva 0xcd5410.
     /// `float (BSXAudio2GameSound* this)`
     #[inline]
-    pub fn compute_amplitude(&self) -> f32 { unsafe { function!(67873, (&Self) -> f32)(self) } }
+    pub fn compute_amplitude(&self) -> f32 { unsafe { function!(67873, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSXAudio2GameSound::ComputeFrequencyRatio`: +0xc0% +- random(+0xc1%) times category slot 4
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67890, rva 0xcd5cc0.
     /// `float (BSXAudio2GameSound* this)`
     #[inline]
-    pub fn compute_frequency_ratio(&self) -> f32 { unsafe { function!(67890, (&Self) -> f32)(self) } }
+    pub fn compute_frequency_ratio(&self) -> f32 { unsafe { function!(67890, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SoundHandle {
@@ -846,37 +846,37 @@ impl crate::SoundHandle {
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67645, rva 0xcc9e90.
     /// `bool (SoundHandle* this, uint16 fadeMs)`
     #[inline]
-    pub fn fade_in_play(&self, fadeMs: u16) -> bool { unsafe { function!(67645, (&Self, u16) -> bool)(self, fadeMs) } }
+    pub fn fade_in_play(&self, fadeMs: u16) -> bool { unsafe { function!(67645, (*const Self, u16) -> bool)(core::ptr::from_ref(self), fadeMs) } }
     /// `SoundHandle::FadeOutAndRelease`: posts 0x12 to 4000 over fadeMs with follow-up 0x1a; id = -1
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67646, rva 0xcc9ee0.
     /// `bool (SoundHandle* this, uint16 fadeMs)`
     #[inline]
-    pub fn fade_out_and_release(&self, fadeMs: u16) -> bool { unsafe { function!(67646, (&Self, u16) -> bool)(self, fadeMs) } }
+    pub fn fade_out_and_release(&self, fadeMs: u16) -> bool { unsafe { function!(67646, (*const Self, u16) -> bool)(core::ptr::from_ref(self), fadeMs) } }
     /// `SoundHandle::FadeToAttenuation`: posts 0x12 (+0x68 ramp, min 100 ms)
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67644, rva 0xcc9e20.
     /// `bool (SoundHandle* this, uint16 attenuation, uint16 fadeMs)`
     #[inline]
-    pub fn fade_to_attenuation(&self, attenuation: u16, fadeMs: u16) -> bool { unsafe { function!(67644, (&Self, u16, u16) -> bool)(self, attenuation, fadeMs) } }
+    pub fn fade_to_attenuation(&self, attenuation: u16, fadeMs: u16) -> bool { unsafe { function!(67644, (*const Self, u16, u16) -> bool)(core::ptr::from_ref(self), attenuation, fadeMs) } }
     /// `SoundHandle::FollowNode`: hook 0x3273910(node), posts 0x13 with node+0xa0 and 0x1d with a reference
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67636, rva 0xcc9bb0.
     /// `void (SoundHandle* this, NiAVObject* node)`
     #[inline]
-    pub fn follow_node(&self, node: &crate::NiAVObject) { unsafe { function!(67636, (&Self, &crate::NiAVObject))(self, node) } }
+    pub fn follow_node(&self, node: &crate::NiAVObject) { unsafe { function!(67636, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(node)) } }
     /// `SoundHandle::GetFlags`: status +0xc
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67622, rva 0xcc9760.
     /// `uint32 (const SoundHandle* this)`
     #[inline]
-    pub fn get_flags(&self) -> u32 { unsafe { function!(67622, (&Self) -> u32)(self) } }
+    pub fn get_flags(&self) -> u32 { unsafe { function!(67622, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::GetPositionMs`: status +0x18
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67639, rva 0xcc9c80.
     /// `uint32 (const SoundHandle* this)`
     #[inline]
-    pub fn get_position_ms(&self) -> u32 { unsafe { function!(67639, (&Self) -> u32)(self) } }
+    pub fn get_position_ms(&self) -> u32 { unsafe { function!(67639, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::GetStatus10`: status +0x10
     ///
     /// Semantic, audio pass, low; ledger semantic evidence, name low; id 67630, rva 0xcc9990.
@@ -885,49 +885,49 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn get_status10(&self) -> u32 { unsafe { function!(67630, (&Self) -> u32)(self) } }
+    pub unsafe fn get_status10(&self) -> u32 { unsafe { function!(67630, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::GetVolume`: status +8
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67625, rva 0xcc9820.
     /// `float (const SoundHandle* this)`
     #[inline]
-    pub fn get_volume(&self) -> f32 { unsafe { function!(67625, (&Self) -> f32)(self) } }
+    pub fn get_volume(&self) -> f32 { unsafe { function!(67625, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::IsPlaying`: assumeState ? state==1 : status.playing
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67620, rva 0xcc96e0.
     /// `bool (const SoundHandle* this)`
     #[inline]
-    pub fn is_playing(&self) -> bool { unsafe { function!(67620, (&Self) -> bool)(self) } }
+    pub fn is_playing(&self) -> bool { unsafe { function!(67620, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::IsValid`: status entry for the id exists
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67621, rva 0xcc9730.
     /// `bool (const SoundHandle* this)`
     #[inline]
-    pub fn is_valid(&self) -> bool { unsafe { function!(67621, (&Self) -> bool)(self) } }
+    pub fn is_valid(&self) -> bool { unsafe { function!(67621, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::Pause`: state 3, posts 5
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67618, rva 0xcc9660.
     /// `bool (SoundHandle* this)`
     #[inline]
-    pub fn pause(&self) -> bool { unsafe { function!(67618, (&Self) -> bool)(self) } }
+    pub fn pause(&self) -> bool { unsafe { function!(67618, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::Play`: state 1, posts 4
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67616, rva 0xcc95d0.
     /// `bool (SoundHandle* this)`
     #[inline]
-    pub fn play(&self) -> bool { unsafe { function!(67616, (&Self) -> bool)(self) } }
+    pub fn play(&self) -> bool { unsafe { function!(67616, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::PlayDelayed`: state 1, posts 8 with GetTickCount()+min(delayMs,10000); runs as 4 when due
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67617, rva 0xcc9610.
     /// `bool (SoundHandle* this, uint32 delayMs)`
     #[inline]
-    pub fn play_delayed(&self, delayMs: u32) -> bool { unsafe { function!(67617, (&Self, u32) -> bool)(self, delayMs) } }
+    pub fn play_delayed(&self, delayMs: u32) -> bool { unsafe { function!(67617, (*const Self, u32) -> bool)(core::ptr::from_ref(self), delayMs) } }
     /// `SoundHandle::Release`: posts 0x1a (stop if playing/paused, mark released), id = -1
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67643, rva 0xcc9dd0.
     /// `bool (SoundHandle* this)`
     #[inline]
-    pub fn release(&self) -> bool { unsafe { function!(67643, (&Self) -> bool)(self) } }
+    pub fn release(&self) -> bool { unsafe { function!(67643, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::SeekMs`: posts 0x2d
     ///
     /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67638, rva 0xcc9c40.
@@ -936,7 +936,7 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn seek_ms(&self, ms: u32) { unsafe { function!(67638, (&Self, u32))(self, ms) } }
+    pub unsafe fn seek_ms(&self, ms: u32) { unsafe { function!(67638, (*const Self, u32))(core::ptr::from_ref(self), ms) } }
     /// `SoundHandle::SetAttenuation66`: posts 0x16
     ///
     /// Semantic, audio pass, low; ledger semantic evidence, name low; id 67635, rva 0xcc9b70.
@@ -945,7 +945,7 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn set_attenuation66(&self, value: u16) { unsafe { function!(67635, (&Self, u16))(self, value) } }
+    pub unsafe fn set_attenuation66(&self, value: u16) { unsafe { function!(67635, (*const Self, u16))(core::ptr::from_ref(self), value) } }
     /// `SoundHandle::SetAttenuationCurve`: posts 0x18
     ///
     /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67634, rva 0xcc9af0.
@@ -954,7 +954,7 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_attenuation_curve(&self, a1: u16, a2: u16, a3: u16, a4: u16, a5: u16) { unsafe { function!(67634, (&Self, u16, u16, u16, u16, u16))(self, a1, a2, a3, a4, a5) } }
+    pub unsafe fn set_attenuation_curve(&self, a1: u16, a2: u16, a3: u16, a4: u16, a5: u16) { unsafe { function!(67634, (*const Self, u16, u16, u16, u16, u16))(core::ptr::from_ref(self), a1, a2, a3, a4, a5) } }
     /// `SoundHandle::SetCallback2`: posts 0x2c; with audio not running calls cb(ctx,5000)
     ///
     /// Semantic, audio pass, low; ledger semantic evidence, name low; id 67642, rva 0xcc9d60.
@@ -963,13 +963,13 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn set_callback2(&self, cb: *const c_void, ctx: *mut c_void) { unsafe { function!(67642, (&Self, *const c_void, *mut c_void))(self, cb, ctx) } }
+    pub unsafe fn set_callback2(&self, cb: *const c_void, ctx: *mut c_void) { unsafe { function!(67642, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), cb, ctx) } }
     /// `SoundHandle::SetCategory`: posts 0x31; a playing sound fades to the new category's attenuation
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67623, rva 0xcc9790.
     /// `void (SoundHandle* this, BSISoundCategory* category, uint16 fadeMs)`
     #[inline]
-    pub fn set_category(&self, category: &crate::BSISoundCategory, fadeMs: u16) { unsafe { function!(67623, (&Self, &crate::BSISoundCategory, u16))(self, category, fadeMs) } }
+    pub fn set_category(&self, category: &crate::BSISoundCategory, fadeMs: u16) { unsafe { function!(67623, (*const Self, *const crate::BSISoundCategory, u16))(core::ptr::from_ref(self), core::ptr::from_ref(category), fadeMs) } }
     /// `SoundHandle::SetFinishCallback`: posts 0x2b; with audio not running calls cb(ctx,0) at once
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67641, rva 0xcc9cf0.
@@ -978,13 +978,13 @@ impl crate::SoundHandle {
     /// # Safety
     /// `cb`, `ctx` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_finish_callback(&self, cb: *const c_void, ctx: *mut c_void) { unsafe { function!(67641, (&Self, *const c_void, *mut c_void))(self, cb, ctx) } }
+    pub unsafe fn set_finish_callback(&self, cb: *const c_void, ctx: *mut c_void) { unsafe { function!(67641, (*const Self, *const c_void, *mut c_void))(core::ptr::from_ref(self), cb, ctx) } }
     /// `SoundHandle::SetFrequency`: posts 0xe with ratio*1000; stored clamp(0.1,2.0100
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67627, rva 0xcc98a0.
     /// `bool (SoundHandle* this, float ratio)`
     #[inline]
-    pub fn set_frequency(&self, ratio: f32) -> bool { unsafe { function!(67627, (&Self, f32) -> bool)(self, ratio) } }
+    pub fn set_frequency(&self, ratio: f32) -> bool { unsafe { function!(67627, (*const Self, f32) -> bool)(core::ptr::from_ref(self), ratio) } }
     /// `SoundHandle::SetFrequencyVariance`: posts 0xf
     ///
     /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67628, rva 0xcc98f0.
@@ -993,7 +993,7 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_frequency_variance(&self, percent: u8) -> bool { unsafe { function!(67628, (&Self, u8) -> bool)(self, percent) } }
+    pub unsafe fn set_frequency_variance(&self, percent: u8) -> bool { unsafe { function!(67628, (*const Self, u8) -> bool)(core::ptr::from_ref(self), percent) } }
     /// `SoundHandle::SetMinMaxDistance`: posts 0x17 when max > 0 and min != max
     ///
     /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67633, rva 0xcc9aa0.
@@ -1002,25 +1002,25 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_min_max_distance(&self, min: f32, max: f32) { unsafe { function!(67633, (&Self, f32, f32))(self, min, max) } }
+    pub unsafe fn set_min_max_distance(&self, min: f32, max: f32) { unsafe { function!(67633, (*const Self, f32, f32))(core::ptr::from_ref(self), min, max) } }
     /// `SoundHandle::SetMuted`: posts 0x2e (flags 0x400)
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67640, rva 0xcc9cb0.
     /// `void (SoundHandle* this, bool muted)`
     #[inline]
-    pub fn set_muted(&self, muted: bool) { unsafe { function!(67640, (&Self, bool))(self, muted) } }
+    pub fn set_muted(&self, muted: bool) { unsafe { function!(67640, (*const Self, bool))(core::ptr::from_ref(self), muted) } }
     /// `SoundHandle::SetOutputModel`: posts 0x32
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67624, rva 0xcc97e0.
     /// `void (SoundHandle* this, BSISoundOutputModel* model)`
     #[inline]
-    pub fn set_output_model(&self, model: &crate::BSISoundOutputModel) { unsafe { function!(67624, (&Self, &crate::BSISoundOutputModel))(self, model) } }
+    pub fn set_output_model(&self, model: &crate::BSISoundOutputModel) { unsafe { function!(67624, (*const Self, *const crate::BSISoundOutputModel))(core::ptr::from_ref(self), core::ptr::from_ref(model)) } }
     /// `SoundHandle::SetPosition`: posts 0x13
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67631, rva 0xcc99c0.
     /// `bool (SoundHandle* this, float x, float y, float z)`
     #[inline]
-    pub fn set_position(&self, x: f32, y: f32, z: f32) -> bool { unsafe { function!(67631, (&Self, f32, f32, f32) -> bool)(self, x, y, z) } }
+    pub fn set_position(&self, x: f32, y: f32, z: f32) -> bool { unsafe { function!(67631, (*const Self, f32, f32, f32) -> bool)(core::ptr::from_ref(self), x, y, z) } }
     /// `SoundHandle::SetPriority`: posts 0x2f
     ///
     /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67647, rva 0xcc9f60.
@@ -1029,13 +1029,13 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_priority(&self, priority: u32) { unsafe { function!(67647, (&Self, u32))(self, priority) } }
+    pub unsafe fn set_priority(&self, priority: u32) { unsafe { function!(67647, (*const Self, u32))(core::ptr::from_ref(self), priority) } }
     /// `SoundHandle::SetStaticAttenuation`: posts 0x15 (min 10000)
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67629, rva 0xcc9940.
     /// `bool (SoundHandle* this, uint16 attenuation)`
     #[inline]
-    pub fn set_static_attenuation(&self, attenuation: u16) -> bool { unsafe { function!(67629, (&Self, u16) -> bool)(self, attenuation) } }
+    pub fn set_static_attenuation(&self, attenuation: u16) -> bool { unsafe { function!(67629, (*const Self, u16) -> bool)(core::ptr::from_ref(self), attenuation) } }
     /// `SoundHandle::SetVector20`: posts 0x14
     ///
     /// Semantic, audio pass, low; ledger semantic evidence, name low; id 67632, rva 0xcc9a30.
@@ -1044,25 +1044,25 @@ impl crate::SoundHandle {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn set_vector20(&self, a1: f32, a2: f32, a3: f32) -> bool { unsafe { function!(67632, (&Self, f32, f32, f32) -> bool)(self, a1, a2, a3) } }
+    pub unsafe fn set_vector20(&self, a1: f32, a2: f32, a3: f32) -> bool { unsafe { function!(67632, (*const Self, f32, f32, f32) -> bool)(core::ptr::from_ref(self), a1, a2, a3) } }
     /// `SoundHandle::SetVolume`: posts 0xd with volume*1000
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67626, rva 0xcc9850.
     /// `bool (SoundHandle* this, float volume)`
     #[inline]
-    pub fn set_volume(&self, volume: f32) -> bool { unsafe { function!(67626, (&Self, f32) -> bool)(self, volume) } }
+    pub fn set_volume(&self, volume: f32) -> bool { unsafe { function!(67626, (*const Self, f32) -> bool)(core::ptr::from_ref(self), volume) } }
     /// `SoundHandle::Stop`: state 2, posts 7
     ///
     /// Semantic, audio pass, high; ledger runtime evidence, name high; id 67619, rva 0xcc96a0.
     /// `bool (SoundHandle* this)`
     #[inline]
-    pub fn stop(&self) -> bool { unsafe { function!(67619, (&Self) -> bool)(self) } }
+    pub fn stop(&self) -> bool { unsafe { function!(67619, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `SoundHandle::StopFollowing`: posts 0x1e
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67637, rva 0xcc9c10.
     /// `void (SoundHandle* this)`
     #[inline]
-    pub fn stop_following(&self) { unsafe { function!(67637, (&Self))(self) } }
+    pub fn stop_following(&self) { unsafe { function!(67637, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TESAudio__ScriptedMusicState {
@@ -1071,13 +1071,13 @@ impl crate::TESAudio__ScriptedMusicState {
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 35145, rva 0x5e9f70.
     /// `void (ScriptedMusicState* this, BGSMusicType* type)`
     #[inline]
-    pub fn add(&self, type_: &crate::BGSMusicType) { unsafe { function!(35145, (&Self, &crate::BGSMusicType))(self, type_) } }
+    pub fn add(&self, type_: &crate::BGSMusicType) { unsafe { function!(35145, (*const Self, *const crate::BGSMusicType))(core::ptr::from_ref(self), core::ptr::from_ref(type_)) } }
     /// `TESAudio::ScriptedMusicState::Remove`: removes the type from the scripted list and sends BSMusicEvent{type+0x20, 1}
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 35146, rva 0x5ea010.
     /// `void (ScriptedMusicState* this, BGSMusicType* type)`
     #[inline]
-    pub fn remove(&self, type_: &crate::BGSMusicType) { unsafe { function!(35146, (&Self, &crate::BGSMusicType))(self, type_) } }
+    pub fn remove(&self, type_: &crate::BGSMusicType) { unsafe { function!(35146, (*const Self, *const crate::BGSMusicType))(core::ptr::from_ref(self), core::ptr::from_ref(type_)) } }
 }
 
 /// `ApplySettingsDefaults`: re-applies the settings values; for every SNCT with flags bit 1 calls SetCategoryVolume(&p with p = form+0x30)
@@ -1142,7 +1142,7 @@ pub fn is_audio_ready() -> bool { unsafe { function!(67654, () -> bool)() } }
 /// Semantic, audio pass, high; ledger semantic evidence, name high; id 35142, rva 0x5e9d80.
 /// `void (BGSLoadFormBuffer* buf)`
 #[inline]
-pub fn load_audio_global_data(buf: &crate::BGSLoadFormBuffer) { unsafe { function!(35142, (&crate::BGSLoadFormBuffer))(buf) } }
+pub fn load_audio_global_data(buf: &crate::BGSLoadFormBuffer) { unsafe { function!(35142, (*const crate::BGSLoadFormBuffer))(core::ptr::from_ref(buf)) } }
 /// `LookupSoundDescriptorByEditorId`: editor-id map lookup: TESSound (type 0x0f) -> its +0x30 after its slot 0x98; BGSSoundDescriptorForm (0x80) -> itself
 ///
 /// Semantic, audio pass, high; ledger semantic evidence, name high; id 33044, rva 0x559a70.
@@ -1292,7 +1292,7 @@ pub unsafe fn precache_sound_descriptor(mgr: *mut crate::BSAudioManager, desc: *
 /// Semantic, audio pass, high; ledger semantic evidence, name high; id 21216, rva 0x3297b0.
 /// `void (BGSSoundCategory* cat)`
 #[inline]
-pub fn refresh_category_volume_from_slot(cat: &crate::BGSSoundCategory) { unsafe { function!(21216, (&crate::BGSSoundCategory))(cat) } }
+pub fn refresh_category_volume_from_slot(cat: &crate::BGSSoundCategory) { unsafe { function!(21216, (*const crate::BGSSoundCategory))(core::ptr::from_ref(cat)) } }
 /// `RevertAudioGlobalData`: resets queued sound handles, sends kind-2 events for every scripted music type, clears the list, reverts the player music changer
 ///
 /// Semantic, audio pass, high; ledger semantic evidence, name high; id 35143, rva 0x5e9e30.
@@ -1304,7 +1304,7 @@ pub fn revert_audio_global_data() { unsafe { function!(35143, ())() } }
 /// Semantic, audio pass, high; ledger semantic evidence, name high; id 35141, rva 0x5e9cd0.
 /// `void (BGSSaveFormBuffer* buf)`
 #[inline]
-pub fn save_audio_global_data(buf: &crate::BGSSaveFormBuffer) { unsafe { function!(35141, (&crate::BGSSaveFormBuffer))(buf) } }
+pub fn save_audio_global_data(buf: &crate::BGSSaveFormBuffer) { unsafe { function!(35141, (*const crate::BGSSaveFormBuffer))(core::ptr::from_ref(buf)) } }
 /// `SetCategoryAttenuation`: slot 7 then command 0x33/0xc with the fade (used for dialogue ducking and speech highlight)
 ///
 /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67844, rva 0xcd4a70.

@@ -10,7 +10,7 @@ impl crate::BSGamepadDevice {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68695, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68695, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSKeyboardDevice {
@@ -20,7 +20,7 @@ impl crate::BSKeyboardDevice {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68778, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68778, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSMouseDevice {
@@ -30,7 +30,7 @@ impl crate::BSMouseDevice {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68798, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68798, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSPCGamepadDeviceHandler {
@@ -40,14 +40,14 @@ impl crate::BSPCGamepadDeviceHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68752, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68752, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `BSPCGamepadDeviceHandler::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 68753, rva 0xe11e70).
     /// `undefined dtor(BSPCGamepadDeviceHandler * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(68753, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(68753, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSWin32VirtualKeyboardDevice {
@@ -57,7 +57,7 @@ impl crate::BSWin32VirtualKeyboardDevice {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68788, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68788, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PlayerControls {
@@ -67,21 +67,21 @@ impl crate::PlayerControls {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self) -> u64 { unsafe { function!(42391, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self) -> u64 { unsafe { function!(42391, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `PlayerControls::BSTEventSink_MenuOpenCloseEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42390, rva 0x7b1938).
     /// `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(PlayerControls * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(42390, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(42390, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `PlayerControls::BSTEventSink_TESFurnitureEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42392, rva 0x7b1950).
     /// `undefined BSTEventSink_TESFurnitureEvent_vdtor(PlayerControls * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(42392, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(42392, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SixaxisEvent {
@@ -91,6 +91,6 @@ impl crate::SixaxisEvent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(523957, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(523957, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 

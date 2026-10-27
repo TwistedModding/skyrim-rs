@@ -30,14 +30,14 @@ impl crate::BSScript__IHandleReaderWriter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(14691, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(14691, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IHandleReaderWriter::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54214, rva 0x9ed5c0).
     /// `undefined ctor(IHandleReaderWriter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(54214, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(54214, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__Internal__RawFuncCallQuery {
@@ -477,14 +477,14 @@ impl crate::BSScript__UnlinkedTypes__Function__ConvertTypeFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(104508, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(104508, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::UnlinkedTypes::Function::ConvertTypeFunctor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 105423, rva 0x14e36b0).
     /// `undefined ctor(ConvertTypeFunctor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(105423, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(105423, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__UnlinkedTypes___anon_E61FEF15__BuildInstructionOffsetMapFunctor {
@@ -974,7 +974,7 @@ impl crate::SkyrimVM__EffectEventRelayFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn operator(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn operator(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::SkyrimVM__EventRelayFunctor {
@@ -984,7 +984,7 @@ impl crate::SkyrimVM__EventRelayFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn operator(&self, param_1: u64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, u64) -> u64)(self, param_1) } }
+    pub unsafe fn operator(&self, param_1: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::SkyrimVM__InventoryEventFilter {

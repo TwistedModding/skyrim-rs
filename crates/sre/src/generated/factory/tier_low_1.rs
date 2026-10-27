@@ -10,7 +10,7 @@ impl crate::AutoRegisterCombatObject_CombatAimController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44411, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44411, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatApproachTargetSpeedController {
@@ -20,7 +20,7 @@ impl crate::AutoRegisterCombatObject_CombatApproachTargetSpeedController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50332, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50332, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatAreaHoldPosition {
@@ -30,7 +30,7 @@ impl crate::AutoRegisterCombatObject_CombatAreaHoldPosition {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44503, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44503, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatAreaRadius {
@@ -40,7 +40,7 @@ impl crate::AutoRegisterCombatObject_CombatAreaRadius {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44485, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44485, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatAreaReference {
@@ -50,7 +50,7 @@ impl crate::AutoRegisterCombatObject_CombatAreaReference {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44491, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44491, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatAreaStandard {
@@ -60,7 +60,7 @@ impl crate::AutoRegisterCombatObject_CombatAreaStandard {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44497, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44497, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatCoverLocation {
@@ -70,7 +70,7 @@ impl crate::AutoRegisterCombatObject_CombatCoverLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44649, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44649, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatCoverSearch {
@@ -80,7 +80,7 @@ impl crate::AutoRegisterCombatObject_CombatCoverSearch {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44637, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44637, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatCoverSearchDebugData {
@@ -90,7 +90,7 @@ impl crate::AutoRegisterCombatObject_CombatCoverSearchDebugData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44655, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44655, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatCoverSearchResult {
@@ -100,7 +100,7 @@ impl crate::AutoRegisterCombatObject_CombatCoverSearchResult {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44643, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44643, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatDisableActionController {
@@ -110,7 +110,7 @@ impl crate::AutoRegisterCombatObject_CombatDisableActionController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49329, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49329, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatDisableAimController {
@@ -120,7 +120,7 @@ impl crate::AutoRegisterCombatObject_CombatDisableAimController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44346, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44346, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatFlankingSearchData {
@@ -130,7 +130,7 @@ impl crate::AutoRegisterCombatObject_CombatFlankingSearchData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48412, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48412, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor__ {
@@ -140,7 +140,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46437, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46437, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem__ {
@@ -150,7 +150,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46343, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46343, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak__ {
@@ -160,7 +160,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45929, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45929, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm__ {
@@ -170,7 +170,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45789, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45789, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility__ {
@@ -180,7 +180,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46203, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46203, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight__ {
@@ -190,7 +190,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46069, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46069, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive__ {
@@ -200,7 +200,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45235, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45235, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze__ {
@@ -210,7 +210,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45174, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45174, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate__ {
@@ -220,7 +220,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46531, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46531, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore__ {
@@ -230,7 +230,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45516, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45516, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript__ {
@@ -240,7 +240,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45241, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45241, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger__ {
@@ -250,7 +250,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45646, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45646, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon__ {
@@ -260,7 +260,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45564, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45564, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect__ {
@@ -270,7 +270,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46479, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46479, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard__ {
@@ -280,7 +280,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45315, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45315, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor__ {
@@ -290,7 +290,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46455, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46455, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem__ {
@@ -300,7 +300,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46402, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46402, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak__ {
@@ -310,7 +310,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45994, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45994, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm__ {
@@ -320,7 +320,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45852, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45852, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility__ {
@@ -330,7 +330,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46262, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46262, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight__ {
@@ -340,7 +340,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46128, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46128, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive__ {
@@ -350,7 +350,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45276, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45276, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze__ {
@@ -360,7 +360,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45197, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45197, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate__ {
@@ -370,7 +370,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46554, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46554, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore__ {
@@ -380,7 +380,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45539, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45539, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript__ {
@@ -390,7 +390,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45282, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45282, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger__ {
@@ -400,7 +400,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45707, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45707, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon__ {
@@ -410,7 +410,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45582, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45582, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect__ {
@@ -420,7 +420,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46502, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46502, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard__ {
@@ -430,7 +430,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45490, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45490, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor__ {
@@ -440,7 +440,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46461, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46461, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem__ {
@@ -450,7 +450,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46423, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46423, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak__ {
@@ -460,7 +460,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46012, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46012, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm__ {
@@ -470,7 +470,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45874, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45874, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility__ {
@@ -480,7 +480,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46283, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46283, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight__ {
@@ -490,7 +490,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46150, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46150, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive__ {
@@ -500,7 +500,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45288, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45288, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze__ {
@@ -510,7 +510,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45208, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45208, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate__ {
@@ -520,7 +520,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45156, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45156, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore__ {
@@ -530,7 +530,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45547, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45547, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript__ {
@@ -540,7 +540,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45297, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45297, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger__ {
@@ -550,7 +550,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45730, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45730, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon__ {
@@ -560,7 +560,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45588, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45588, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect__ {
@@ -570,7 +570,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46513, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46513, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard__ {
@@ -580,7 +580,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45498, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45498, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor__ {
@@ -590,7 +590,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46443, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46443, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem__ {
@@ -600,7 +600,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46362, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46362, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak__ {
@@ -610,7 +610,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45951, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45951, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm__ {
@@ -620,7 +620,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45812, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45812, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility__ {
@@ -630,7 +630,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46225, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46225, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight__ {
@@ -640,7 +640,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46091, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46091, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive__ {
@@ -650,7 +650,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45247, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45247, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze__ {
@@ -660,7 +660,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45180, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45180, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate__ {
@@ -670,7 +670,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46538, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46538, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore__ {
@@ -680,7 +680,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45522, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45522, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript__ {
@@ -690,7 +690,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45253, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45253, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger__ {
@@ -700,7 +700,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45663, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45663, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon__ {
@@ -710,7 +710,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45570, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45570, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect__ {
@@ -720,7 +720,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46489, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46489, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard__ {
@@ -730,7 +730,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45460, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45460, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor__ {
@@ -740,7 +740,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46449, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46449, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem__ {
@@ -750,7 +750,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46380, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46380, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak__ {
@@ -760,7 +760,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45973, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45973, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm__ {
@@ -770,7 +770,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45832, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45832, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility__ {
@@ -780,7 +780,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46246, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46246, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight__ {
@@ -790,7 +790,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46106, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46106, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive__ {
@@ -800,7 +800,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45264, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45264, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze__ {
@@ -810,7 +810,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45191, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45191, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate__ {
@@ -820,7 +820,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46548, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46548, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore__ {
@@ -830,7 +830,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45528, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45528, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript__ {
@@ -840,7 +840,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45270, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45270, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger__ {
@@ -850,7 +850,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45685, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45685, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon__ {
@@ -860,7 +860,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45576, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45576, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect__ {
@@ -870,7 +870,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46496, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46496, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard__ {
@@ -880,7 +880,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45471, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45471, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemMelee {
@@ -890,7 +890,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemMelee {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45112, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45112, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemOneHandedBlock {
@@ -900,7 +900,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemOneHandedBlock {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45130, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45130, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemRanged {
@@ -910,7 +910,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemRanged {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45118, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45118, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemShield {
@@ -920,7 +920,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemShield {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45124, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45124, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatInventoryItemTorch {
@@ -930,7 +930,7 @@ impl crate::AutoRegisterCombatObject_CombatInventoryItemTorch {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45136, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45136, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterArmor {
@@ -940,7 +940,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterArmor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46431, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46431, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterBoundItem {
@@ -950,7 +950,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterBoundItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46321, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46321, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterCloak {
@@ -960,7 +960,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterCloak {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45914, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45914, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterDisarm {
@@ -970,7 +970,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterDisarm {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45765, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45765, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterInvisibility {
@@ -980,7 +980,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterInvisibility {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46186, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46186, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterLight {
@@ -990,7 +990,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterLight {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46048, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46048, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterOffensive {
@@ -1000,7 +1000,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterOffensive {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45218, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45218, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterParalyze {
@@ -1010,7 +1010,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterParalyze {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45168, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45168, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterReanimate {
@@ -1020,7 +1020,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterReanimate {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46525, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46525, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterRestore {
@@ -1030,7 +1030,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterRestore {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45510, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45510, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterScript {
@@ -1040,7 +1040,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterScript {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45229, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45229, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterStagger {
@@ -1050,7 +1050,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterStagger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45627, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45627, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterSummon {
@@ -1060,7 +1060,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterSummon {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45556, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45556, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterTargetEffect {
@@ -1070,7 +1070,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterTargetEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46473, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46473, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMagicCasterWard {
@@ -1080,7 +1080,7 @@ impl crate::AutoRegisterCombatObject_CombatMagicCasterWard {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45304, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45304, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatMeleeAimController {
@@ -1090,7 +1090,7 @@ impl crate::AutoRegisterCombatObject_CombatMeleeAimController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44334, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44334, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__ {
@@ -1100,7 +1100,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatP
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50296, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50296, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__ {
@@ -1110,7 +1110,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatP
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50302, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50302, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone__ {
@@ -1120,7 +1120,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlyingAttack_C
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50326, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50326, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_C_e463a47891ad {
@@ -1130,7 +1130,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49322, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49322, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttackL_f76efc85ebc3 {
@@ -1140,7 +1140,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48163, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48163, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover_C_2b36146409f6 {
@@ -1150,7 +1150,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49834, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49834, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideCov_5cb8cb2c81aa {
@@ -1160,7 +1160,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48581, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48581, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTargetL_ef21ca16a9d4 {
@@ -1170,7 +1170,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47081, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47081, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_Comba_50afa57b0fde {
@@ -1180,7 +1180,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48282, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48282, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistan_e50330f087bf {
@@ -1190,7 +1190,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48297, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48297, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_Combat_679bde30b65d {
@@ -1200,7 +1200,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48612, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48612, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_Com_d4376868b256 {
@@ -1210,7 +1210,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50514, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50514, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCom_8e82b01780a7 {
@@ -1220,7 +1220,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49291, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49291, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_Comb_f36cf7eb8dda {
@@ -1230,7 +1230,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49569, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49569, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWande_5db9c8857c7b {
@@ -1240,7 +1240,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestGeneric_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49593, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49593, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__ {
@@ -1250,7 +1250,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50320, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50320, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation__ {
@@ -1260,7 +1260,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestLanding_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50314, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50314, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__ {
@@ -1270,7 +1270,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50260, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50260, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__ {
@@ -1280,7 +1280,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50266, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50266, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation__ {
@@ -1290,7 +1290,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestOrbit_CombatPa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50308, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50308, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation__ {
@@ -1300,7 +1300,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestRotatePath_Com
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50290, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50290, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__ {
@@ -1310,7 +1310,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_Comba
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50248, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50248, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__ {
@@ -1320,7 +1320,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_Comba
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50254, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50254, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation__ {
@@ -1330,7 +1330,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestStraightPath_C
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50284, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50284, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__ {
@@ -1340,7 +1340,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50272, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50272, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__ {
@@ -1350,7 +1350,7 @@ impl crate::AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50278, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50278, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatPathingDebugData {
@@ -1360,7 +1360,7 @@ impl crate::AutoRegisterCombatObject_CombatPathingDebugData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50193, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50193, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatProjectileAimController {
@@ -1370,7 +1370,7 @@ impl crate::AutoRegisterCombatObject_CombatProjectileAimController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44340, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44340, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatTargetLocation {
@@ -1380,7 +1380,7 @@ impl crate::AutoRegisterCombatObject_CombatTargetLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46988, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46988, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatTargetLocationSearch {
@@ -1390,7 +1390,7 @@ impl crate::AutoRegisterCombatObject_CombatTargetLocationSearch {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46994, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46994, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatTargetLocationSearchResult {
@@ -1400,7 +1400,7 @@ impl crate::AutoRegisterCombatObject_CombatTargetLocationSearchResult {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47000, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47000, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatTargetSelectorFixed {
@@ -1410,7 +1410,7 @@ impl crate::AutoRegisterCombatObject_CombatTargetSelectorFixed {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47215, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47215, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatTargetSelectorStandard {
@@ -1420,7 +1420,7 @@ impl crate::AutoRegisterCombatObject_CombatTargetSelectorStandard {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47209, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47209, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatThreat {
@@ -1430,7 +1430,7 @@ impl crate::AutoRegisterCombatObject_CombatThreat {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47254, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47254, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_CombatTrackTargetAimController {
@@ -1440,7 +1440,7 @@ impl crate::AutoRegisterCombatObject_CombatTrackTargetAimController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44417, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44417, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatObject_DiveBombSpeedController {
@@ -1450,7 +1450,7 @@ impl crate::AutoRegisterCombatObject_DiveBombSpeedController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48867, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48867, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPoli_ca6380244f5c {
@@ -1460,21 +1460,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitW
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_exit_water_comb_57511b9ec5f2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49370, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_exit_water_comb_57511b9ec5f2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49370, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49323, rva 0x8bf900).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49323, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49323, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier low; ledger rtti evidence, name high; id 49371, rva 0x8c0b9c).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49371, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49371, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingS_936155741965 {
@@ -1484,21 +1484,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindA
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_attack_loca_7786c715a1d6(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48192, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_attack_loca_7786c715a1d6(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48192, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48164, rva 0x88f860).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48164, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48164, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier low; ledger rtti evidence, name high; id 48193, rva 0x890f40).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48193, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48193, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPoli_a434439f14e8 {
@@ -1508,7 +1508,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindC
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49835, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49835, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearch_66d976d86545 {
@@ -1518,7 +1518,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindH
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48582, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48582, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingS_490a9d51f8c9 {
@@ -1528,7 +1528,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47082, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47082, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFl_587247669599 {
@@ -1538,21 +1538,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flank_combat_pa_189b253cfffd(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48403, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flank_combat_pa_189b253cfffd(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48403, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank,CombatPathDestinationRef>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48283, rva 0x893970).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank,CombatPathDestinationRef> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank,CombatPathDestinationRef> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48283, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48283, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank,CombatPathDestinationRef>::vfunc_0_vt10` (decompiler signature, tier low; ledger rtti evidence, name high; id 48404, rva 0x89b750).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank,CombatPathDestinationRef> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48404, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48404, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchP_2756cef5bf66 {
@@ -1562,21 +1562,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flank_distant_c_0ac1d2c3d2a7(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48405, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flank_distant_c_0ac1d2c3d2a7(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48405, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48298, rva 0x893e30).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48298, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48298, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation>::vfunc_0_vt10` (decompiler signature, tier low; ledger rtti evidence, name high; id 48406, rva 0x89b768).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48406, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48406, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicySta_6062d1a3211b {
@@ -1586,7 +1586,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48613, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48613, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicy_f4d3b56a4a35 {
@@ -1596,7 +1596,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50515, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50515, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingS_7846c2cd3e5c {
@@ -1606,21 +1606,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetur
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_return_to_combat_84b0d065a11f(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49368, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_return_to_combat_84b0d065a11f(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49368, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49292, rva 0x8bdaf0).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49292, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49292, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation>::vfunc_0_vt10` (decompiler signature, tier low; ledger rtti evidence, name high; id 49369, rva 0x8c0b84).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49369, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49369, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyS_5b9c1e73c5dc {
@@ -1630,21 +1630,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_search_combat_p_7f4bb4a2fcba(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49589, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_search_combat_p_7f4bb4a2fcba(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49589, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49570, rva 0x8cbf00).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49570, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49570, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier low; ledger rtti evidence, name high; id 49591, rva 0x8cc4a8).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49591, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49591, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchP_8f247c02bb4b {
@@ -1654,7 +1654,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49594, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49594, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ActionActivateDoneHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFu_9f7bf5242f82 {
@@ -1664,7 +1664,7 @@ impl crate::AutoRegisterCreator_ActionActivateDoneHandler_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43002, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43002, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AddRagdollHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_9406b63b6cc3 {
@@ -1674,7 +1674,7 @@ impl crate::AutoRegisterCreator_AddRagdollHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43003, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43003, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AllowRotationHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_0436c13a2f8b {
@@ -1684,7 +1684,7 @@ impl crate::AutoRegisterCreator_AllowRotationHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43004, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43004, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AnimatedCameraDeltaStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHan_a45e02d7dd9e {
@@ -1694,7 +1694,7 @@ impl crate::AutoRegisterCreator_AnimatedCameraDeltaStartHandler_BSTCreateFactory
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43005, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43005, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AnimatedCameraEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFun_653351b5f4a6 {
@@ -1704,7 +1704,7 @@ impl crate::AutoRegisterCreator_AnimatedCameraEndHandler_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43006, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43006, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AnimatedCameraStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerF_0f9b00f846f2 {
@@ -1714,7 +1714,7 @@ impl crate::AutoRegisterCreator_AnimatedCameraStartHandler_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43007, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43007, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AnimationDrivenHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunct_2f337db5365c {
@@ -1724,7 +1724,7 @@ impl crate::AutoRegisterCreator_AnimationDrivenHandler_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43008, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43008, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AnimationObjectDrawHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerF_abb81fa1e76b {
@@ -1734,7 +1734,7 @@ impl crate::AutoRegisterCreator_AnimationObjectDrawHandler_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43009, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43009, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AnimationObjectLoadHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerF_4057779f9256 {
@@ -1744,7 +1744,7 @@ impl crate::AutoRegisterCreator_AnimationObjectLoadHandler_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43010, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43010, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AnticipateAttackHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunc_629f2688a7e8 {
@@ -1754,7 +1754,7 @@ impl crate::AutoRegisterCreator_AnticipateAttackHandler_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43011, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43011, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ArrowAttachHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_A_fc5363a8c313 {
@@ -1764,7 +1764,7 @@ impl crate::AutoRegisterCreator_ArrowAttachHandler_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43012, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43012, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ArrowDetachHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_A_c9754caeb44a {
@@ -1774,7 +1774,7 @@ impl crate::AutoRegisterCreator_ArrowDetachHandler_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43013, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43013, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ArrowReleaseHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor__e5cb4cfec028 {
@@ -1784,7 +1784,7 @@ impl crate::AutoRegisterCreator_ArrowReleaseHandler_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43014, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43014, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AttackStopHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_0ea41b2a13a4 {
@@ -1794,7 +1794,7 @@ impl crate::AutoRegisterCreator_AttackStopHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43015, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43015, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AttackWinEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor__8be92495b029 {
@@ -1804,7 +1804,7 @@ impl crate::AutoRegisterCreator_AttackWinEndHandler_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43016, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43016, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_AttackWinStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_e10bf70f8634 {
@@ -1814,7 +1814,7 @@ impl crate::AutoRegisterCreator_AttackWinStartHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43017, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43017, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSAIWorldLocationInteriorCell_BGSAIWorldLocationFactory {
@@ -1824,7 +1824,7 @@ impl crate::AutoRegisterCreator_BGSAIWorldLocationInteriorCell_BGSAIWorldLocatio
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27871, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27871, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSAIWorldLocationPointRadius_BGSAIWorldLocationFactory {
@@ -1834,7 +1834,7 @@ impl crate::AutoRegisterCreator_BGSAIWorldLocationPointRadius_BGSAIWorldLocation
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27872, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27872, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSAIWorldLocationRefRadius_BGSAIWorldLocationFactory {
@@ -1844,7 +1844,7 @@ impl crate::AutoRegisterCreator_BGSAIWorldLocationRefRadius_BGSAIWorldLocationFa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27873, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27873, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSMusicPaletteTrack_BSTCreateFactoryManager_unsigned_int_BSIMusicTrack_8__ {
@@ -1854,7 +1854,7 @@ impl crate::AutoRegisterCreator_BGSMusicPaletteTrack_BSTCreateFactoryManager_uns
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21033, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21033, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSMusicSilenceTrack_BSTCreateFactoryManager_unsigned_int_BSIMusicTrack_8__ {
@@ -1864,7 +1864,7 @@ impl crate::AutoRegisterCreator_BGSMusicSilenceTrack_BSTCreateFactoryManager_uns
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21078, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21078, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSMusicSingleTrack_BSTCreateFactoryManager_unsigned_int_BSIMusicTrack_8__ {
@@ -1874,7 +1874,7 @@ impl crate::AutoRegisterCreator_BGSMusicSingleTrack_BSTCreateFactoryManager_unsi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21084, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21084, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataBool_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1884,7 +1884,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataBool_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27636, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27636, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataFloat_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1894,7 +1894,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataFloat_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27626, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27626, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataInt_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1904,7 +1904,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataInt_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27631, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27631, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataLocation_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1914,7 +1914,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataLocation_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27611, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27611, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataLocationWrapper_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1924,7 +1924,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataLocationWrapper_BSTCreateFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27641, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27641, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataObjectList_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1934,7 +1934,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataObjectList_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27727, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27727, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataRef_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1944,7 +1944,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataRef_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27791, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27791, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataRefOLD_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1954,7 +1954,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataRefOLD_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27621, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27621, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataTargetSelector_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1964,7 +1964,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataTargetSelector_BSTCreateFactoryMan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27616, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27616, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSPackageDataTopic_BSTCreateFactoryManager_BSFixedString_IPackageData_256__ {
@@ -1974,7 +1974,7 @@ impl crate::AutoRegisterCreator_BGSPackageDataTopic_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27806, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27806, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureAcquire_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -1984,7 +1984,7 @@ impl crate::AutoRegisterCreator_BGSProcedureAcquire_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28285, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28285, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureAcquireExecState_BGSProcedureTreeExecStateFactory {
@@ -1994,7 +1994,7 @@ impl crate::AutoRegisterCreator_BGSProcedureAcquireExecState_BGSProcedureTreeExe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27874, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27874, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureActivate_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2004,7 +2004,7 @@ impl crate::AutoRegisterCreator_BGSProcedureActivate_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28324, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28324, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureActivateExecState_BGSProcedureTreeExecStateFactory {
@@ -2014,7 +2014,7 @@ impl crate::AutoRegisterCreator_BGSProcedureActivateExecState_BGSProcedureTreeEx
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27875, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27875, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureDialogue_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2024,7 +2024,7 @@ impl crate::AutoRegisterCreator_BGSProcedureDialogue_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28356, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28356, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureDialogueActivate_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2034,7 +2034,7 @@ impl crate::AutoRegisterCreator_BGSProcedureDialogueActivate_BSTCreateFactoryMan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28391, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28391, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureDialogueActivateExecState_BGSProcedureTreeExecStateFactory {
@@ -2044,7 +2044,7 @@ impl crate::AutoRegisterCreator_BGSProcedureDialogueActivateExecState_BGSProcedu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27876, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27876, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureDialogueExecState_BGSProcedureTreeExecStateFactory {
@@ -2054,7 +2054,7 @@ impl crate::AutoRegisterCreator_BGSProcedureDialogueExecState_BGSProcedureTreeEx
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27877, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27877, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureDone_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2064,7 +2064,7 @@ impl crate::AutoRegisterCreator_BGSProcedureDone_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28210, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28210, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureDoneExecState_BGSProcedureTreeExecStateFactory {
@@ -2074,7 +2074,7 @@ impl crate::AutoRegisterCreator_BGSProcedureDoneExecState_BGSProcedureTreeExecSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27878, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27878, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureEat_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2084,7 +2084,7 @@ impl crate::AutoRegisterCreator_BGSProcedureEat_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28426, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28426, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureEatExecState_BGSProcedureTreeExecStateFactory {
@@ -2094,7 +2094,7 @@ impl crate::AutoRegisterCreator_BGSProcedureEatExecState_BGSProcedureTreeExecSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27879, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27879, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureEscort_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2104,7 +2104,7 @@ impl crate::AutoRegisterCreator_BGSProcedureEscort_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28473, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28473, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureEscortExecState_BGSProcedureTreeExecStateFactory {
@@ -2114,7 +2114,7 @@ impl crate::AutoRegisterCreator_BGSProcedureEscortExecState_BGSProcedureTreeExec
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27880, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27880, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFind_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2124,7 +2124,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFind_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28515, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28515, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFindExecState_BGSProcedureTreeExecStateFactory {
@@ -2134,7 +2134,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFindExecState_BGSProcedureTreeExecSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27881, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27881, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFlee_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2144,7 +2144,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFlee_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28564, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28564, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFleeExecState_BGSProcedureTreeExecStateFactory {
@@ -2154,7 +2154,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFleeExecState_BGSProcedureTreeExecSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27882, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27882, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFlightGrab_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2164,7 +2164,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFlightGrab_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28600, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28600, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFlightGrabExecState_BGSProcedureTreeExecStateFactory {
@@ -2174,7 +2174,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFlightGrabExecState_BGSProcedureTree
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27883, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27883, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFollow_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2184,7 +2184,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFollow_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28651, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28651, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFollowExecState_BGSProcedureTreeExecStateFactory {
@@ -2194,7 +2194,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFollowExecState_BGSProcedureTreeExec
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27884, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27884, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureFollowTo_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2204,7 +2204,7 @@ impl crate::AutoRegisterCreator_BGSProcedureFollowTo_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28652, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28652, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureForceGreet_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2214,7 +2214,7 @@ impl crate::AutoRegisterCreator_BGSProcedureForceGreet_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28703, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28703, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureGuard_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2224,7 +2224,7 @@ impl crate::AutoRegisterCreator_BGSProcedureGuard_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28732, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28732, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureGuardExecState_BGSProcedureTreeExecStateFactory {
@@ -2234,7 +2234,7 @@ impl crate::AutoRegisterCreator_BGSProcedureGuardExecState_BGSProcedureTreeExecS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27885, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27885, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureHoldPosition_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2244,7 +2244,7 @@ impl crate::AutoRegisterCreator_BGSProcedureHoldPosition_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28756, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28756, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureHoldPositionExecState_BGSProcedureTreeExecStateFactory {
@@ -2254,7 +2254,7 @@ impl crate::AutoRegisterCreator_BGSProcedureHoldPositionExecState_BGSProcedureTr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27886, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27886, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureHover_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2264,7 +2264,7 @@ impl crate::AutoRegisterCreator_BGSProcedureHover_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28789, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28789, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureHoverExecState_BGSProcedureTreeExecStateFactory {
@@ -2274,7 +2274,7 @@ impl crate::AutoRegisterCreator_BGSProcedureHoverExecState_BGSProcedureTreeExecS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27887, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27887, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureKeepAnEyeOn_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2284,7 +2284,7 @@ impl crate::AutoRegisterCreator_BGSProcedureKeepAnEyeOn_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28817, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28817, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureKeepAnEyeOnExecState_BGSProcedureTreeExecStateFactory {
@@ -2294,7 +2294,7 @@ impl crate::AutoRegisterCreator_BGSProcedureKeepAnEyeOnExecState_BGSProcedureTre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27888, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27888, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureLock_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2304,7 +2304,7 @@ impl crate::AutoRegisterCreator_BGSProcedureLock_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28853, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28853, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureLockUnlockExecState_BGSProcedureTreeExecStateFactory {
@@ -2314,7 +2314,7 @@ impl crate::AutoRegisterCreator_BGSProcedureLockUnlockExecState_BGSProcedureTree
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27889, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27889, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureOrbit_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2324,7 +2324,7 @@ impl crate::AutoRegisterCreator_BGSProcedureOrbit_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28901, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28901, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureOrbitExecState_BGSProcedureTreeExecStateFactory {
@@ -2334,7 +2334,7 @@ impl crate::AutoRegisterCreator_BGSProcedureOrbitExecState_BGSProcedureTreeExecS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27890, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27890, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedurePatrol_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2344,7 +2344,7 @@ impl crate::AutoRegisterCreator_BGSProcedurePatrol_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28951, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28951, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedurePatrolExecState_BGSProcedureTreeExecStateFactory {
@@ -2354,7 +2354,7 @@ impl crate::AutoRegisterCreator_BGSProcedurePatrolExecState_BGSProcedureTreeExec
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27891, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27891, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedurePursue_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2364,7 +2364,7 @@ impl crate::AutoRegisterCreator_BGSProcedurePursue_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28975, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28975, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureSandbox_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2374,7 +2374,7 @@ impl crate::AutoRegisterCreator_BGSProcedureSandbox_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29035, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29035, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureSandboxExecState_BGSProcedureTreeExecStateFactory {
@@ -2384,7 +2384,7 @@ impl crate::AutoRegisterCreator_BGSProcedureSandboxExecState_BGSProcedureTreeExe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27892, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27892, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureSay_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2394,7 +2394,7 @@ impl crate::AutoRegisterCreator_BGSProcedureSay_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29063, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29063, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureSayExecState_BGSProcedureTreeExecStateFactory {
@@ -2404,7 +2404,7 @@ impl crate::AutoRegisterCreator_BGSProcedureSayExecState_BGSProcedureTreeExecSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27893, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27893, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureShout_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2414,7 +2414,7 @@ impl crate::AutoRegisterCreator_BGSProcedureShout_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29097, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29097, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureShoutExecState_BGSProcedureTreeExecStateFactory {
@@ -2424,7 +2424,7 @@ impl crate::AutoRegisterCreator_BGSProcedureShoutExecState_BGSProcedureTreeExecS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27894, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27894, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureSit_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2434,7 +2434,7 @@ impl crate::AutoRegisterCreator_BGSProcedureSit_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29156, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29156, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureSitSleepExecState_BGSProcedureTreeExecStateFactory {
@@ -2444,7 +2444,7 @@ impl crate::AutoRegisterCreator_BGSProcedureSitSleepExecState_BGSProcedureTreeEx
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27895, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27895, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureSleep_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2454,7 +2454,7 @@ impl crate::AutoRegisterCreator_BGSProcedureSleep_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29157, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29157, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTravel_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2464,7 +2464,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTravel_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29204, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29204, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTravelExecState_BGSProcedureTreeExecStateFactory {
@@ -2474,7 +2474,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTravelExecState_BGSProcedureTreeExec
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27896, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27896, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeProcedure_BSTCreateFactoryManager_BSFixedString_IProcedureTreeItem_32__ {
@@ -2484,7 +2484,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeProcedure_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27897, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27897, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeRandom_BSTCreateFactoryManager_BSFixedString_IProcedureTreeItem_32__ {
@@ -2494,7 +2494,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeRandom_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27898, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27898, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeRandomExecState_BGSProcedureTreeExecStateFactory {
@@ -2504,7 +2504,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeRandomExecState_BGSProcedureTree
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27899, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27899, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeSequence_BSTCreateFactoryManager_BSFixedString_IProcedureTreeItem_32__ {
@@ -2514,7 +2514,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeSequence_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27900, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27900, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeSequenceExecState_BGSProcedureTreeExecStateFactory {
@@ -2524,7 +2524,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeSequenceExecState_BGSProcedureTr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27901, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27901, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeSimultaneous_BSTCreateFactoryManager_BSFixedString_IProcedureTreeItem_32__ {
@@ -2534,7 +2534,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeSimultaneous_BSTCreateFactoryMan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27902, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27902, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeSimultaneousExecState_BGSProcedureTreeExecStateFactory {
@@ -2544,7 +2544,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeSimultaneousExecState_BGSProcedu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27903, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27903, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeStacked_BSTCreateFactoryManager_BSFixedString_IProcedureTreeItem_32__ {
@@ -2554,7 +2554,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeStacked_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27904, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27904, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureTreeStackedExecState_BGSProcedureTreeExecStateFactory {
@@ -2564,7 +2564,7 @@ impl crate::AutoRegisterCreator_BGSProcedureTreeStackedExecState_BGSProcedureTre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27905, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27905, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureUnlock_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2574,7 +2574,7 @@ impl crate::AutoRegisterCreator_BGSProcedureUnlock_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28854, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28854, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureUseIdleMarker_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2584,7 +2584,7 @@ impl crate::AutoRegisterCreator_BGSProcedureUseIdleMarker_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29326, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29326, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureUseIdleMarkerExecState_BGSProcedureTreeExecStateFactory {
@@ -2594,7 +2594,7 @@ impl crate::AutoRegisterCreator_BGSProcedureUseIdleMarkerExecState_BGSProcedureT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27906, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27906, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureUseMagic_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2604,7 +2604,7 @@ impl crate::AutoRegisterCreator_BGSProcedureUseMagic_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29361, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29361, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureUseMagicExecState_BGSProcedureTreeExecStateFactory {
@@ -2614,7 +2614,7 @@ impl crate::AutoRegisterCreator_BGSProcedureUseMagicExecState_BGSProcedureTreeEx
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27907, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27907, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureUseWeapon_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2624,7 +2624,7 @@ impl crate::AutoRegisterCreator_BGSProcedureUseWeapon_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29396, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29396, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureUseWeaponExecState_BGSProcedureTreeExecStateFactory {
@@ -2634,7 +2634,7 @@ impl crate::AutoRegisterCreator_BGSProcedureUseWeaponExecState_BGSProcedureTreeE
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27908, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27908, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureWait_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2644,7 +2644,7 @@ impl crate::AutoRegisterCreator_BGSProcedureWait_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29422, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29422, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureWaitExecState_BGSProcedureTreeExecStateFactory {
@@ -2654,7 +2654,7 @@ impl crate::AutoRegisterCreator_BGSProcedureWaitExecState_BGSProcedureTreeExecSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27909, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27909, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureWander_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -2664,7 +2664,7 @@ impl crate::AutoRegisterCreator_BGSProcedureWander_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29455, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29455, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSProcedureWanderExecState_BGSProcedureTreeExecStateFactory {
@@ -2674,7 +2674,7 @@ impl crate::AutoRegisterCreator_BGSProcedureWanderExecState_BGSProcedureTreeExec
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27910, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27910, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGSStandardSoundDef_BSTCreateFactoryManager_unsigned_int_BGSSoundDescriptor_8__ {
@@ -2684,7 +2684,7 @@ impl crate::AutoRegisterCreator_BGSStandardSoundDef_BSTCreateFactoryManager_unsi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21310, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21310, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGShkMatFadeController_BSTCreateFactoryManager_BSFixedString_BShkNonTransformController_32__ {
@@ -2694,7 +2694,7 @@ impl crate::AutoRegisterCreator_BGShkMatFadeController_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43653, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43653, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BGShkPhonemeController_BSTCreateFactoryManager_BSFixedString_BShkNonTransformController_32__ {
@@ -2704,7 +2704,7 @@ impl crate::AutoRegisterCreator_BGShkPhonemeController_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26541, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26541, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BSNullImplAudio_BSTCreateFactoryManager_BSFixedStringCI_BSAudio_4__ {
@@ -2714,7 +2714,7 @@ impl crate::AutoRegisterCreator_BSNullImplAudio_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(67910, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(67910, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BSPathingRequest_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -2724,7 +2724,7 @@ impl crate::AutoRegisterCreator_BSPathingRequest_BSTSmartPointerPathingFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90634, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90634, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BSPathingSolution_BSTSmartPointerPathingFactoryManager_BSPathingSolution_64__ {
@@ -2734,7 +2734,7 @@ impl crate::AutoRegisterCreator_BSPathingSolution_BSTSmartPointerPathingFactoryM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90959, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90959, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BSUIMessageData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -2744,7 +2744,7 @@ impl crate::AutoRegisterCreator_BSUIMessageData_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82070, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82070, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BSUIScaleformData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -2754,7 +2754,7 @@ impl crate::AutoRegisterCreator_BSUIScaleformData_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82065, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82065, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BSXAudio2Audio_BSTCreateFactoryManager_BSFixedStringCI_BSAudio_4__ {
@@ -2764,7 +2764,7 @@ impl crate::AutoRegisterCreator_BSXAudio2Audio_BSTCreateFactoryManager_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(67966, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(67966, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BShkVisibilityController_BSTCreateFactoryManager_BSFixedString_BShkNonTransformController_32__ {
@@ -2774,7 +2774,7 @@ impl crate::AutoRegisterCreator_BShkVisibilityController_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(63842, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(63842, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BedEnterHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -2784,7 +2784,7 @@ impl crate::AutoRegisterCreator_BedEnterHandler_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43018, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43018, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BedFurnitureExitHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunc_5505a97e7805 {
@@ -2794,7 +2794,7 @@ impl crate::AutoRegisterCreator_BedFurnitureExitHandler_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43019, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43019, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BowDrawnHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -2804,7 +2804,7 @@ impl crate::AutoRegisterCreator_BowDrawnHandler_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43020, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43020, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BowReleaseHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_7e6a90eec23a {
@@ -2814,7 +2814,7 @@ impl crate::AutoRegisterCreator_BowReleaseHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43021, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43021, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BowZoomStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor__93dbd1cf12c2 {
@@ -2824,7 +2824,7 @@ impl crate::AutoRegisterCreator_BowZoomStartHandler_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43022, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43022, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_BowZoomStopHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_A_ad555269ffb1 {
@@ -2834,7 +2834,7 @@ impl crate::AutoRegisterCreator_BowZoomStopHandler_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43023, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43023, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CameraOverrideStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerF_d0a7c935405f {
@@ -2844,7 +2844,7 @@ impl crate::AutoRegisterCreator_CameraOverrideStartHandler_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43024, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43024, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CameraOverrideStopHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFu_a684f46585a2 {
@@ -2854,7 +2854,7 @@ impl crate::AutoRegisterCreator_CameraOverrideStopHandler_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43025, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43025, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CameraShakeHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_A_35300266d8c9 {
@@ -2864,7 +2864,7 @@ impl crate::AutoRegisterCreator_CameraShakeHandler_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43026, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43026, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ChairEnterHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_19f12629a25a {
@@ -2874,7 +2874,7 @@ impl crate::AutoRegisterCreator_ChairEnterHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43027, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43027, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ChairFurnitureExitHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFu_f00b03e83a1c {
@@ -2884,7 +2884,7 @@ impl crate::AutoRegisterCreator_ChairFurnitureExitHandler_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43028, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43028, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2894,7 +2894,7 @@ impl crate::AutoRegisterCreator_CombatAimController_BSTCreateFactoryManager_unsi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44410, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44410, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatApproachTargetSpeedController_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2904,7 +2904,7 @@ impl crate::AutoRegisterCreator_CombatApproachTargetSpeedController_BSTCreateFac
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50331, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50331, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatAreaHoldPosition_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2914,7 +2914,7 @@ impl crate::AutoRegisterCreator_CombatAreaHoldPosition_BSTCreateFactoryManager_u
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44502, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44502, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatAreaRadius_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2924,7 +2924,7 @@ impl crate::AutoRegisterCreator_CombatAreaRadius_BSTCreateFactoryManager_unsigne
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44484, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44484, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatAreaReference_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2934,7 +2934,7 @@ impl crate::AutoRegisterCreator_CombatAreaReference_BSTCreateFactoryManager_unsi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44490, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44490, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatAreaStandard_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2944,7 +2944,7 @@ impl crate::AutoRegisterCreator_CombatAreaStandard_BSTCreateFactoryManager_unsig
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44496, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44496, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatCoverLocation_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2954,7 +2954,7 @@ impl crate::AutoRegisterCreator_CombatCoverLocation_BSTCreateFactoryManager_unsi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44648, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44648, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatCoverSearch_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2964,7 +2964,7 @@ impl crate::AutoRegisterCreator_CombatCoverSearch_BSTCreateFactoryManager_unsign
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44636, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44636, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatCoverSearchDebugData_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2974,7 +2974,7 @@ impl crate::AutoRegisterCreator_CombatCoverSearchDebugData_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44654, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44654, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatCoverSearchResult_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2984,7 +2984,7 @@ impl crate::AutoRegisterCreator_CombatCoverSearchResult_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44642, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44642, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatDisableActionController_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -2994,7 +2994,7 @@ impl crate::AutoRegisterCreator_CombatDisableActionController_BSTCreateFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49328, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49328, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatDisableAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3004,7 +3004,7 @@ impl crate::AutoRegisterCreator_CombatDisableAimController_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44345, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44345, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatFlankingSearchData_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3014,7 +3014,7 @@ impl crate::AutoRegisterCreator_CombatFlankingSearchData_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48411, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48411, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor_BS_afdbe2130692 {
@@ -3024,7 +3024,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46436, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46436, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundIte_27d97b1b592e {
@@ -3034,7 +3034,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46335, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46335, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak_BS_22a226d786dd {
@@ -3044,7 +3044,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45928, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45928, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm_B_0a1583352671 {
@@ -3054,7 +3054,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45787, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45787, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibi_d2f28b3dcc8e {
@@ -3064,7 +3064,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46202, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46202, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight_BS_0dd580761194 {
@@ -3074,7 +3074,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46064, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46064, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensiv_90fd6f88dc3a {
@@ -3084,7 +3084,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45233, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45233, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze_74211fe8a435 {
@@ -3094,7 +3094,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45173, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45173, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimat_328527e2fe65 {
@@ -3104,7 +3104,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46530, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46530, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore__a9c8a4285f7f {
@@ -3114,7 +3114,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45515, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45515, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript_B_c650e3292dc0 {
@@ -3124,7 +3124,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45239, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45239, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger__a3954fcb048b {
@@ -3134,7 +3134,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45640, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45640, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon_B_8b644dd9fcfb {
@@ -3144,7 +3144,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45563, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45563, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEf_3f85401efa66 {
@@ -3154,7 +3154,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46478, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46478, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard_BST_b1571f80d03d {
@@ -3164,7 +3164,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemMag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45314, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45314, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor_B_3eefba6d6bb0 {
@@ -3174,7 +3174,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46454, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46454, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundIt_70b110d70cb4 {
@@ -3184,7 +3184,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46398, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46398, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak_B_3f52442d6233 {
@@ -3194,7 +3194,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45986, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45986, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm__bf0f70906038 {
@@ -3204,7 +3204,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45851, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45851, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisib_7f7dd92130ef {
@@ -3214,7 +3214,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46260, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46260, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight_B_a34b69f1136d {
@@ -3224,7 +3224,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46126, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46126, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensi_e1af60a80791 {
@@ -3234,7 +3234,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45274, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45274, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyz_4479e7dc032a {
@@ -3244,7 +3244,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45196, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45196, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanima_1c6e94b5db3d {
@@ -3254,7 +3254,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46553, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46553, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore_6e2fc4ef9260 {
@@ -3264,7 +3264,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45533, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45533, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript__414c3149b84e {
@@ -3274,7 +3274,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45280, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45280, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger_6b714bdd6f46 {
@@ -3284,7 +3284,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45699, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45699, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon__40d838adccdd {
@@ -3294,7 +3294,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45581, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45581, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetE_95f0761a35bb {
@@ -3304,7 +3304,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46501, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46501, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard_BS_e94c928e93d9 {
@@ -3314,7 +3314,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemPot
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45486, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45486, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor_B_25ca1d048a3d {
@@ -3324,7 +3324,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46460, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46460, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundIt_552fbe7ebdd1 {
@@ -3334,7 +3334,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46415, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46415, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak_B_b5d42dc9124e {
@@ -3344,7 +3344,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46008, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46008, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm__1607ae18424f {
@@ -3354,7 +3354,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45872, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45872, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisib_22e991a60fb3 {
@@ -3364,7 +3364,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46281, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46281, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight_B_76565bb6ca44 {
@@ -3374,7 +3374,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46147, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46147, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensi_4620bf4cb2fd {
@@ -3384,7 +3384,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45286, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45286, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyz_748f70eb02af {
@@ -3394,7 +3394,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45207, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45207, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanima_f3d7c3ac8853 {
@@ -3404,7 +3404,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45155, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45155, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore_bf3c2ce4a333 {
@@ -3414,7 +3414,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45546, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45546, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript__d89d2a1f08fb {
@@ -3424,7 +3424,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45295, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45295, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger_101be70e90a5 {
@@ -3434,7 +3434,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45722, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45722, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon__2daf8874e27a {
@@ -3444,7 +3444,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45587, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45587, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetE_d34279c4143b {
@@ -3454,7 +3454,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46512, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46512, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard_BS_302259eb5cf5 {
@@ -3464,7 +3464,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemScr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45497, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45497, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor_BS_8045c238b1dc {
@@ -3474,7 +3474,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46442, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46442, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundIte_1d356a53d24f {
@@ -3484,7 +3484,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46357, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46357, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak_BS_21ba3b0a1de2 {
@@ -3494,7 +3494,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45949, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45949, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm_B_349e01962845 {
@@ -3504,7 +3504,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45807, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45807, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibi_8a905b9ffe56 {
@@ -3514,7 +3514,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46222, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46222, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight_BS_73d100450392 {
@@ -3524,7 +3524,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46083, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46083, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensiv_6888b69982d0 {
@@ -3534,7 +3534,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45245, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45245, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze_fdb8295cedfe {
@@ -3544,7 +3544,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45179, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45179, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimat_dd72d2cb2d46 {
@@ -3554,7 +3554,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46536, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46536, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore__7e58a4129bf9 {
@@ -3564,7 +3564,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45521, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45521, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript_B_a00edf0c0667 {
@@ -3574,7 +3574,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45251, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45251, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger__9597b554460d {
@@ -3584,7 +3584,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45662, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45662, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon_B_5caeea220bd7 {
@@ -3594,7 +3594,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45569, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45569, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEf_4c5776ceb473 {
@@ -3604,7 +3604,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(523977, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(523977, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard_BST_eb1ada950f2c {
@@ -3614,7 +3614,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSho
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45459, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45459, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor_BS_2e84bdf12f64 {
@@ -3624,7 +3624,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46448, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46448, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundIte_a045b7920102 {
@@ -3634,7 +3634,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46378, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46378, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak_BS_cbdd0629483b {
@@ -3644,7 +3644,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45971, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45971, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_B_ab49863d896a {
@@ -3654,7 +3654,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45827, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45827, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibi_5eefa22b2457 {
@@ -3664,7 +3664,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46240, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46240, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight_BS_9dac58508503 {
@@ -3674,7 +3674,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46104, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46104, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensiv_9838bbd6af69 {
@@ -3684,7 +3684,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45262, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45262, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze_9fcd2f580f59 {
@@ -3694,7 +3694,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45190, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45190, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimat_194a71f5903a {
@@ -3704,7 +3704,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46547, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46547, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore__b99a59fba79d {
@@ -3714,7 +3714,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45527, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45527, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript_B_970187c506a0 {
@@ -3724,7 +3724,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45268, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45268, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger__04a789ab981c {
@@ -3734,7 +3734,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45683, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45683, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon_B_2bc9aa252927 {
@@ -3744,7 +3744,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45575, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45575, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEf_c93a46a4625a {
@@ -3754,7 +3754,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46495, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46495, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_BST_f0cb53e3133b {
@@ -3764,7 +3764,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45470, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45470, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemMelee_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3774,7 +3774,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemMelee_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45111, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45111, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemOneHandedBlock_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3784,7 +3784,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemOneHandedBlock_BSTCreateFacto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45129, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45129, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemRanged_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3794,7 +3794,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemRanged_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45117, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45117, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemShield_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3804,7 +3804,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemShield_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45123, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45123, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatInventoryItemTorch_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3814,7 +3814,7 @@ impl crate::AutoRegisterCreator_CombatInventoryItemTorch_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45135, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45135, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterArmor_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3824,7 +3824,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterArmor_BSTCreateFactoryManager_u
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46430, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46430, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterBoundItem_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3834,7 +3834,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterBoundItem_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46315, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46315, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterCloak_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3844,7 +3844,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterCloak_BSTCreateFactoryManager_u
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45906, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45906, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterDisarm_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3854,7 +3854,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterDisarm_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45763, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45763, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterInvisibility_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3864,7 +3864,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterInvisibility_BSTCreateFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46180, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46180, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterLight_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3874,7 +3874,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterLight_BSTCreateFactoryManager_u
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46046, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46046, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterOffensive_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3884,7 +3884,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterOffensive_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45216, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45216, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterParalyze_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3894,7 +3894,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterParalyze_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45167, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45167, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterReanimate_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3904,7 +3904,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterReanimate_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46524, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46524, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterRestore_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3914,7 +3914,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterRestore_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45509, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45509, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterScript_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3924,7 +3924,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterScript_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45224, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45224, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterStagger_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3934,7 +3934,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterStagger_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45623, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45623, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterSummon_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3944,7 +3944,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterSummon_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45555, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45555, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterTargetEffect_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3954,7 +3954,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterTargetEffect_BSTCreateFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46472, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46472, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMagicCasterWard_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3964,7 +3964,7 @@ impl crate::AutoRegisterCreator_CombatMagicCasterWard_BSTCreateFactoryManager_un
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45303, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45303, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatMeleeAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -3974,7 +3974,7 @@ impl crate::AutoRegisterCreator_CombatMeleeAimController_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44333, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44333, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation_BSTCreateF_f3efdc55c6e1 {
@@ -3984,7 +3984,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestFlight_CombatPathDe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50295, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50295, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef_BSTCreateFactor_7d205ac641a4 {
@@ -3994,7 +3994,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestFlight_CombatPathDe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50301, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50301, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone_BSTCreat_0275a5762974 {
@@ -4004,7 +4004,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestFlyingAttack_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50325, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50325, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_Combat_0c1bbb432a9c {
@@ -4014,7 +4014,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49320, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49320, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttackLocati_a47448f90d1b {
@@ -4024,7 +4024,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48162, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48162, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover_Combat_652cfb10ada5 {
@@ -4034,7 +4034,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49833, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49833, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideCover_Co_deca1d982d23 {
@@ -4044,7 +4044,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48580, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48580, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTargetLocati_6ffd3a9f37f1 {
@@ -4054,7 +4054,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47080, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47080, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPath_6abecc4600cd {
@@ -4064,7 +4064,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48281, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48281, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_Com_7eb25615776b {
@@ -4074,7 +4074,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48296, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48296, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathi_215037529c68 {
@@ -4084,7 +4084,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48611, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48611, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPa_09656a64b35c {
@@ -4094,7 +4094,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50513, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50513, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCombatAr_0769dc3e6bc0 {
@@ -4104,7 +4104,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49290, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49290, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_CombatPat_21a43c9e0a18 {
@@ -4114,7 +4114,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49568, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49568, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWander_Com_251abdb698a7 {
@@ -4124,7 +4124,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49592, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49592, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone_BSTCreateFactor_eca49bc8273e {
@@ -4134,7 +4134,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestHover_CombatPathDes
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50319, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50319, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation_BSTCreate_d3f4a17d9cf6 {
@@ -4144,7 +4144,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestLanding_CombatPathD
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50313, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50313, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations_BSTCre_8dfc9282d1d8 {
@@ -4154,7 +4154,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50259, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50259, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs_BSTCreateFa_6f464963c3bb {
@@ -4164,7 +4164,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50265, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50265, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation_BSTCreateFa_588672f5f2e8 {
@@ -4174,7 +4174,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestOrbit_CombatPathDes
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50307, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50307, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation_BSTCre_c24543d57cca {
@@ -4184,7 +4184,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestRotatePath_CombatPa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50289, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50289, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation_BSTCreat_5f3b456b835d {
@@ -4194,7 +4194,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestStandard_CombatPath
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50247, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50247, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef_BSTCreateFact_25eb3c5930ba {
@@ -4204,7 +4204,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestStandard_CombatPath
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50253, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50253, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation_BSTC_fef6a7e87aae {
@@ -4214,7 +4214,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestStraightPath_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50283, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50283, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocation_56898c01f6a0 {
@@ -4224,7 +4224,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_C
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50271, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50271, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs_BST_28f40e172405 {
@@ -4234,7 +4234,7 @@ impl crate::AutoRegisterCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_C
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50277, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50277, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingDebugData_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4244,7 +4244,7 @@ impl crate::AutoRegisterCreator_CombatPathingDebugData_BSTCreateFactoryManager_u
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50192, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50192, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestAdapter_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -4254,7 +4254,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestAdapter_BSTSmartPointerPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50141, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50141, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSe_45c6c197d1c2 {
@@ -4264,7 +4264,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49297, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49297, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_Combat_701d74ccf6a6 {
@@ -4274,7 +4274,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48154, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48154, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSe_a1af93249b5b {
@@ -4284,7 +4284,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49823, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49823, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathi_011a26fb2a9a {
@@ -4294,7 +4294,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48572, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48572, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_Combat_d09cc64d7209 {
@@ -4304,7 +4304,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47072, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47072, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearch_7988206ecb2b {
@@ -4314,7 +4314,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48273, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48273, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathin_95942bb6e89f {
@@ -4324,7 +4324,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48288, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48288, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchP_48c6da5901b2 {
@@ -4334,7 +4334,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48603, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48603, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSear_3f5977f03529 {
@@ -4344,7 +4344,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50505, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50505, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_Combat_2a7fd2b1fb56 {
@@ -4354,7 +4354,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49282, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49282, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearc_669f09e2f713 {
@@ -4364,7 +4364,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49560, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49560, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathin_c7a41ecfc47f {
@@ -4374,7 +4374,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49582, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49582, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestMultiGoal_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -4384,7 +4384,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestMultiGoal_BSTSmartPointerPat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50147, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50147, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatPathingRequestStandard_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -4394,7 +4394,7 @@ impl crate::AutoRegisterCreator_CombatPathingRequestStandard_BSTSmartPointerPath
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50135, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50135, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatProjectileAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4404,7 +4404,7 @@ impl crate::AutoRegisterCreator_CombatProjectileAimController_BSTCreateFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44339, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44339, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatSearchLockData_BSTSmartPointerPathingFactoryManager_BSPathingLockData_64__ {
@@ -4414,7 +4414,7 @@ impl crate::AutoRegisterCreator_CombatSearchLockData_BSTSmartPointerPathingFacto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49577, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49577, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatTargetLocation_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4424,7 +4424,7 @@ impl crate::AutoRegisterCreator_CombatTargetLocation_BSTCreateFactoryManager_uns
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46987, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46987, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatTargetLocationSearch_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4434,7 +4434,7 @@ impl crate::AutoRegisterCreator_CombatTargetLocationSearch_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46993, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46993, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatTargetLocationSearchResult_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4444,7 +4444,7 @@ impl crate::AutoRegisterCreator_CombatTargetLocationSearchResult_BSTCreateFactor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46999, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46999, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatTargetSelectorFixed_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4454,7 +4454,7 @@ impl crate::AutoRegisterCreator_CombatTargetSelectorFixed_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47214, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47214, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatTargetSelectorStandard_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4464,7 +4464,7 @@ impl crate::AutoRegisterCreator_CombatTargetSelectorStandard_BSTCreateFactoryMan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47208, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47208, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatThreat_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4474,7 +4474,7 @@ impl crate::AutoRegisterCreator_CombatThreat_BSTCreateFactoryManager_unsigned_in
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47253, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47253, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_CombatTrackTargetAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4484,7 +4484,7 @@ impl crate::AutoRegisterCreator_CombatTrackTargetAimController_BSTCreateFactoryM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44416, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44416, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ConsoleData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -4494,7 +4494,7 @@ impl crate::AutoRegisterCreator_ConsoleData_BSTCreateFactoryManager_BSFixedStrin
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52792, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52792, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_DeathEmoteHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_43c88979f635 {
@@ -4504,7 +4504,7 @@ impl crate::AutoRegisterCreator_DeathEmoteHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43029, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43029, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_DeathStopHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -4514,7 +4514,7 @@ impl crate::AutoRegisterCreator_DeathStopHandler_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43030, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43030, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_DecapitateHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_57b85d24c4bd {
@@ -4524,7 +4524,7 @@ impl crate::AutoRegisterCreator_DecapitateHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43031, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43031, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_DisableCharacterBumperHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandl_a5b6c2bd03f5 {
@@ -4534,7 +4534,7 @@ impl crate::AutoRegisterCreator_DisableCharacterBumperHandler_BSTCreateFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43032, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43032, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_DisableCharacterPitchHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandle_052d94012c7a {
@@ -4544,7 +4544,7 @@ impl crate::AutoRegisterCreator_DisableCharacterPitchHandler_BSTCreateFactoryMan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43033, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43033, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_DiveBombSpeedController_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -4554,7 +4554,7 @@ impl crate::AutoRegisterCreator_DiveBombSpeedController_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48866, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48866, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_EnableCharacterBumperHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandle_06fbc0dd3d6c {
@@ -4564,7 +4564,7 @@ impl crate::AutoRegisterCreator_EnableCharacterBumperHandler_BSTCreateFactoryMan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43034, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43034, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_EnableCharacterPitchHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandler_29023a7b751f {
@@ -4574,7 +4574,7 @@ impl crate::AutoRegisterCreator_EnableCharacterPitchHandler_BSTCreateFactoryMana
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43035, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43035, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_EndSummonAnimationHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFu_fda38c4b8efb {
@@ -4584,7 +4584,7 @@ impl crate::AutoRegisterCreator_EndSummonAnimationHandler_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43036, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43036, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ExitCartBeginHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_299c6e339981 {
@@ -4594,7 +4594,7 @@ impl crate::AutoRegisterCreator_ExitCartBeginHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43037, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43037, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ExitCartEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_A_e2e9b2768b12 {
@@ -4604,7 +4604,7 @@ impl crate::AutoRegisterCreator_ExitCartEndHandler_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43038, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43038, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FaderData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -4614,7 +4614,7 @@ impl crate::AutoRegisterCreator_FaderData_BSTCreateFactoryManager_BSFixedString_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52802, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52802, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightActionEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunct_7253222b54d2 {
@@ -4624,7 +4624,7 @@ impl crate::AutoRegisterCreator_FlightActionEndHandler_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43039, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43039, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightActionEntryEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandler_55aa43ffea05 {
@@ -4634,7 +4634,7 @@ impl crate::AutoRegisterCreator_FlightActionEntryEndHandler_BSTCreateFactoryMana
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43040, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43040, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightActionGrabHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunc_b717ea5c92c4 {
@@ -4644,7 +4644,7 @@ impl crate::AutoRegisterCreator_FlightActionGrabHandler_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43041, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43041, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightActionHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor__c9eea2f7114c {
@@ -4654,7 +4654,7 @@ impl crate::AutoRegisterCreator_FlightActionHandler_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43042, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43042, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightActionReleaseHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerF_af36fdf54b31 {
@@ -4664,7 +4664,7 @@ impl crate::AutoRegisterCreator_FlightActionReleaseHandler_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43043, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43043, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightCrashLandStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandler_83b8a58034c6 {
@@ -4674,7 +4674,7 @@ impl crate::AutoRegisterCreator_FlightCrashLandStartHandler_BSTCreateFactoryMana
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43044, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43044, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightCruisingHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_c86df976210f {
@@ -4684,7 +4684,7 @@ impl crate::AutoRegisterCreator_FlightCruisingHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43045, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43045, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightHoveringHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_7da0241515f3 {
@@ -4694,7 +4694,7 @@ impl crate::AutoRegisterCreator_FlightHoveringHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43046, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43046, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightLandEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_b165ec2af98f {
@@ -4704,7 +4704,7 @@ impl crate::AutoRegisterCreator_FlightLandEndHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43047, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43047, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightLandHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_0ad790329cb3 {
@@ -4714,7 +4714,7 @@ impl crate::AutoRegisterCreator_FlightLandHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43048, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43048, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightLandingHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_7274f1d931bf {
@@ -4724,7 +4724,7 @@ impl crate::AutoRegisterCreator_FlightLandingHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43049, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43049, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightPerchingHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_3ceb1e409863 {
@@ -4734,7 +4734,7 @@ impl crate::AutoRegisterCreator_FlightPerchingHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43050, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43050, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_FlightTakeOffHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_417d8c1a698c {
@@ -4744,7 +4744,7 @@ impl crate::AutoRegisterCreator_FlightTakeOffHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43051, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43051, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_GetUpEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -4754,7 +4754,7 @@ impl crate::AutoRegisterCreator_GetUpEndHandler_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43052, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43052, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_GetUpStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_3067924fc48e {
@@ -4764,7 +4764,7 @@ impl crate::AutoRegisterCreator_GetUpStartHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43053, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43053, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_HUDData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -4774,7 +4774,7 @@ impl crate::AutoRegisterCreator_HUDData_BSTCreateFactoryManager_BSFixedString_IU
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52787, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52787, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_HeadTrackingOffHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunct_ce4928621b75 {
@@ -4784,7 +4784,7 @@ impl crate::AutoRegisterCreator_HeadTrackingOffHandler_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43054, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43054, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_HeadTrackingOnHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_e8c1d6f57bb1 {
@@ -4794,7 +4794,7 @@ impl crate::AutoRegisterCreator_HeadTrackingOnHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43055, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43055, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_HitFrameHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -4804,7 +4804,7 @@ impl crate::AutoRegisterCreator_HitFrameHandler_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43056, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43056, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_IdleDialogueEnterHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFun_38848d3a2988 {
@@ -4814,7 +4814,7 @@ impl crate::AutoRegisterCreator_IdleDialogueEnterHandler_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43057, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43057, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_IdleDialogueExitHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunc_0a90f9ff5671 {
@@ -4824,7 +4824,7 @@ impl crate::AutoRegisterCreator_IdleDialogueExitHandler_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43058, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43058, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_InterruptCastHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_b6a1d0f2bb9a {
@@ -4834,7 +4834,7 @@ impl crate::AutoRegisterCreator_InterruptCastHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43059, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43059, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_InventoryUpdateData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -4844,7 +4844,7 @@ impl crate::AutoRegisterCreator_InventoryUpdateData_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52807, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52807, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_JumpAnimEventHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_716b698c1640 {
@@ -4854,7 +4854,7 @@ impl crate::AutoRegisterCreator_JumpAnimEventHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43060, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43060, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_KillActorHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -4864,7 +4864,7 @@ impl crate::AutoRegisterCreator_KillActorHandler_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43061, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43061, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_KillMoveEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_A_eaa9e30ec81a {
@@ -4874,7 +4874,7 @@ impl crate::AutoRegisterCreator_KillMoveEndHandler_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43062, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43062, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_KillMoveStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_a53899b813a4 {
@@ -4884,7 +4884,7 @@ impl crate::AutoRegisterCreator_KillMoveStartHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43063, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43063, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_KinectStateChangeData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -4894,7 +4894,7 @@ impl crate::AutoRegisterCreator_KinectStateChangeData_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52829, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52829, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_KinectUserEventData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -4904,7 +4904,7 @@ impl crate::AutoRegisterCreator_KinectUserEventData_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52834, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52834, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_LeftHandSpellCastHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFun_a7a134744b9f {
@@ -4914,7 +4914,7 @@ impl crate::AutoRegisterCreator_LeftHandSpellCastHandler_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43064, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43064, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_LeftHandSpellFireHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFun_bff52c680554 {
@@ -4924,7 +4924,7 @@ impl crate::AutoRegisterCreator_LeftHandSpellFireHandler_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43065, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43065, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_LoadingMenuData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -4934,7 +4934,7 @@ impl crate::AutoRegisterCreator_LoadingMenuData_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52824, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52824, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MTStateHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -4944,7 +4944,7 @@ impl crate::AutoRegisterCreator_MTStateHandler_BSTCreateFactoryManager_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43066, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43066, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MessageBoxData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -4954,7 +4954,7 @@ impl crate::AutoRegisterCreator_MessageBoxData_BSTCreateFactoryManager_BSFixedSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52797, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52797, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MotionDrivenHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor__ad6b4e2e35ac {
@@ -4964,7 +4964,7 @@ impl crate::AutoRegisterCreator_MotionDrivenHandler_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43067, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43067, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MountDismountEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunc_a93eec400e63 {
@@ -4974,7 +4974,7 @@ impl crate::AutoRegisterCreator_MountDismountEndHandler_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43068, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43068, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MountInteraction_BSTCreateFactoryManager_RefrInteraction__INTERACT_METHOD_RefrInteraction_1__ {
@@ -4984,7 +4984,7 @@ impl crate::AutoRegisterCreator_MountInteraction_BSTCreateFactoryManager_RefrInt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(40343, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(40343, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementAgentActorAvoider_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -4994,7 +4994,7 @@ impl crate::AutoRegisterCreator_MovementAgentActorAvoider_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92174, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92174, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementAgentActorState_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5004,7 +5004,7 @@ impl crate::AutoRegisterCreator_MovementAgentActorState_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90594, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90594, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementAgentPathFollowerFlight_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5014,7 +5014,7 @@ impl crate::AutoRegisterCreator_MovementAgentPathFollowerFlight_BSTCreateFactory
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92478, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92478, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementAgentPathFollowerStandard_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5024,7 +5024,7 @@ impl crate::AutoRegisterCreator_MovementAgentPathFollowerStandard_BSTCreateFacto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90667, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90667, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementAgentPathFollowerVirtual_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5034,7 +5034,7 @@ impl crate::AutoRegisterCreator_MovementAgentPathFollowerVirtual_BSTCreateFactor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92526, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92526, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentAngleController_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5044,7 +5044,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentAngleController_BSTCreateFac
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92568, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92568, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentAngleGain_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5054,7 +5054,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentAngleGain_BSTCreateFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92587, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92587, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentAnglePassThrough_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5064,7 +5064,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentAnglePassThrough_BSTCreateFa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92619, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92619, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentDirectControl_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5074,7 +5074,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentDirectControl_BSTCreateFacto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41952, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41952, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentDirectionPassThrough_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5084,7 +5084,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentDirectionPassThrough_BSTCrea
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92635, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92635, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentLargeDeltaIdle_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5094,7 +5094,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentLargeDeltaIdle_BSTCreateFact
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92667, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92667, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentPlayerControls_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5104,7 +5104,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentPlayerControls_BSTCreateFact
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41986, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41986, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentPlayerControlsActionTrigger_BSTCreateFactoryManager_BSFi_76337d098fea {
@@ -5114,7 +5114,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentPlayerControlsActionTrigger_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42020, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42020, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentSpeedPassThrough_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5124,7 +5124,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentSpeedPassThrough_BSTCreateFa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92603, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92603, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentSprintActionTrigger_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5134,7 +5134,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentSprintActionTrigger_BSTCreat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42039, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42039, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentStairsHelper_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5144,7 +5144,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentStairsHelper_BSTCreateFactor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42067, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42067, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentStrafing_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5154,7 +5154,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentStrafing_BSTCreateFactoryMan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92651, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92651, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerAgentTranslationController_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5164,7 +5164,7 @@ impl crate::AutoRegisterCreator_MovementHandlerAgentTranslationController_BSTCre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92274, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92274, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementHandlerArbiter_BSTCreateFactoryManager_BSFixedString_MovementArbiter_32__ {
@@ -5174,7 +5174,7 @@ impl crate::AutoRegisterCreator_MovementHandlerArbiter_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92328, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92328, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageActivateDoor_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5184,7 +5184,7 @@ impl crate::AutoRegisterCreator_MovementMessageActivateDoor_BSTSmartPointerPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91946, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91946, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageActorCollision_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5194,7 +5194,7 @@ impl crate::AutoRegisterCreator_MovementMessageActorCollision_BSTSmartPointerPat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42088, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42088, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageBlocked_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5204,7 +5204,7 @@ impl crate::AutoRegisterCreator_MovementMessageBlocked_BSTSmartPointerPathingFac
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92014, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92014, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageFreezeDirection_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5214,7 +5214,7 @@ impl crate::AutoRegisterCreator_MovementMessageFreezeDirection_BSTSmartPointerPa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92059, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92059, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageJump_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5224,7 +5224,7 @@ impl crate::AutoRegisterCreator_MovementMessageJump_BSTSmartPointerPathingFactor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92089, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92089, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageMovementTypeChange_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5234,7 +5234,7 @@ impl crate::AutoRegisterCreator_MovementMessageMovementTypeChange_BSTSmartPointe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42107, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42107, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageNewPath_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5244,7 +5244,7 @@ impl crate::AutoRegisterCreator_MovementMessageNewPath_BSTSmartPointerPathingFac
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92935, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92935, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessagePathComplete_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5254,7 +5254,7 @@ impl crate::AutoRegisterCreator_MovementMessagePathComplete_BSTSmartPointerPathi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92941, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92941, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessagePathFailed_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5264,7 +5264,7 @@ impl crate::AutoRegisterCreator_MovementMessagePathFailed_BSTSmartPointerPathing
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92947, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92947, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessagePlayIdle_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5274,7 +5274,7 @@ impl crate::AutoRegisterCreator_MovementMessagePlayIdle_BSTSmartPointerPathingFa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92044, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92044, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageSetStaticPath_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5284,7 +5284,7 @@ impl crate::AutoRegisterCreator_MovementMessageSetStaticPath_BSTSmartPointerPath
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92075, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92075, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageWarpToLocation_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5294,7 +5294,7 @@ impl crate::AutoRegisterCreator_MovementMessageWarpToLocation_BSTSmartPointerPat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91976, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91976, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementMessageWarpToMultiple_BSTSmartPointerPathingFactoryManager_MovementMessage_64__ {
@@ -5304,7 +5304,7 @@ impl crate::AutoRegisterCreator_MovementMessageWarpToMultiple_BSTSmartPointerPat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91992, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91992, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementParameters_BSTSmartPointerPathingFactoryManager_IMovementParameters_64__ {
@@ -5314,7 +5314,7 @@ impl crate::AutoRegisterCreator_MovementParameters_BSTSmartPointerPathingFactory
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41598, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41598, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementParametersFixed_BSTSmartPointerPathingFactoryManager_IMovementParameters_64__ {
@@ -5324,7 +5324,7 @@ impl crate::AutoRegisterCreator_MovementParametersFixed_BSTSmartPointerPathingFa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41604, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41604, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPathManagerAgentAvoidBox_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5334,7 +5334,7 @@ impl crate::AutoRegisterCreator_MovementPathManagerAgentAvoidBox_BSTCreateFactor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92741, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92741, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPathManagerAgentLoadedAreaMonitor_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5344,7 +5344,7 @@ impl crate::AutoRegisterCreator_MovementPathManagerAgentLoadedAreaMonitor_BSTCre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92456, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92456, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPathManagerAgentStaticAvoider_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5354,7 +5354,7 @@ impl crate::AutoRegisterCreator_MovementPathManagerAgentStaticAvoider_BSTCreateF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92136, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92136, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPathManagerArbiter_BSTCreateFactoryManager_BSFixedString_MovementArbiter_32__ {
@@ -5364,7 +5364,7 @@ impl crate::AutoRegisterCreator_MovementPathManagerArbiter_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90831, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90831, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPlannerAgentDirectControl_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5374,7 +5374,7 @@ impl crate::AutoRegisterCreator_MovementPlannerAgentDirectControl_BSTCreateFacto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42125, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42125, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPlannerAgentHorseControls_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5384,7 +5384,7 @@ impl crate::AutoRegisterCreator_MovementPlannerAgentHorseControls_BSTCreateFacto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42152, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42152, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPlannerAgentKeepOffset_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5394,7 +5394,7 @@ impl crate::AutoRegisterCreator_MovementPlannerAgentKeepOffset_BSTCreateFactoryM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42172, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42172, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPlannerAgentNavmeshBounds_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5404,7 +5404,7 @@ impl crate::AutoRegisterCreator_MovementPlannerAgentNavmeshBounds_BSTCreateFacto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92688, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92688, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPlannerAgentWarp_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5414,7 +5414,7 @@ impl crate::AutoRegisterCreator_MovementPlannerAgentWarp_BSTCreateFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42198, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42198, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPlannerArbiter_BSTCreateFactoryManager_BSFixedString_MovementArbiter_32__ {
@@ -5424,7 +5424,7 @@ impl crate::AutoRegisterCreator_MovementPlannerArbiter_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92374, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92374, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementPostUpdateArbiter_BSTCreateFactoryManager_BSFixedString_MovementArbiter_32__ {
@@ -5434,7 +5434,7 @@ impl crate::AutoRegisterCreator_MovementPostUpdateArbiter_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92108, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92108, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementStateFollowPath_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5444,7 +5444,7 @@ impl crate::AutoRegisterCreator_MovementStateFollowPath_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92874, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92874, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementStateTweener_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5454,7 +5454,7 @@ impl crate::AutoRegisterCreator_MovementStateTweener_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92835, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92835, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementTweenerAgentAnimationDriven_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5464,7 +5464,7 @@ impl crate::AutoRegisterCreator_MovementTweenerAgentAnimationDriven_BSTCreateFac
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42233, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42233, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementTweenerAgentFixedDelta_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5474,7 +5474,7 @@ impl crate::AutoRegisterCreator_MovementTweenerAgentFixedDelta_BSTCreateFactoryM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92301, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92301, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementTweenerAgentNodeFollower_BSTCreateFactoryManager_BSFixedString_MovementAgent_32__ {
@@ -5484,7 +5484,7 @@ impl crate::AutoRegisterCreator_MovementTweenerAgentNodeFollower_BSTCreateFactor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42257, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42257, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_MovementTweenerArbiter_BSTCreateFactoryManager_BSFixedString_MovementArbiter_32__ {
@@ -5494,7 +5494,7 @@ impl crate::AutoRegisterCreator_MovementTweenerArbiter_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92778, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92778, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_NPCAttachHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -5504,7 +5504,7 @@ impl crate::AutoRegisterCreator_NPCAttachHandler_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43069, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43069, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_NPCDetachHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -5514,7 +5514,7 @@ impl crate::AutoRegisterCreator_NPCDetachHandler_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43070, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43070, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PairedStopHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_692c2ea9cb6a {
@@ -5524,7 +5524,7 @@ impl crate::AutoRegisterCreator_PairedStopHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43071, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43071, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingCell_BSTSmartPointerPathingFactoryManager_BSPathingCell_64__ {
@@ -5534,7 +5534,7 @@ impl crate::AutoRegisterCreator_PathingCell_BSTSmartPointerPathingFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30772, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30772, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingDoor_BSTSmartPointerPathingFactoryManager_BSPathingDoor_64__ {
@@ -5544,7 +5544,7 @@ impl crate::AutoRegisterCreator_PathingDoor_BSTSmartPointerPathingFactoryManager
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30806, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30806, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingLockData_BSTSmartPointerPathingFactoryManager_BSPathingLockData_64__ {
@@ -5554,7 +5554,7 @@ impl crate::AutoRegisterCreator_PathingLockData_BSTSmartPointerPathingFactoryMan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30843, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30843, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequest_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5564,7 +5564,7 @@ impl crate::AutoRegisterCreator_PathingRequest_BSTSmartPointerPathingFactoryMana
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30873, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(30873, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestClosePoint_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5574,7 +5574,7 @@ impl crate::AutoRegisterCreator_PathingRequestClosePoint_BSTSmartPointerPathingF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31164, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31164, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestClosestGoal_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5584,7 +5584,7 @@ impl crate::AutoRegisterCreator_PathingRequestClosestGoal_BSTSmartPointerPathing
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31179, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31179, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestCover_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5594,7 +5594,7 @@ impl crate::AutoRegisterCreator_PathingRequestCover_BSTSmartPointerPathingFactor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31228, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31228, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestFlee_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5604,7 +5604,7 @@ impl crate::AutoRegisterCreator_PathingRequestFlee_BSTSmartPointerPathingFactory
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31255, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31255, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestFly_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5614,7 +5614,7 @@ impl crate::AutoRegisterCreator_PathingRequestFly_BSTSmartPointerPathingFactoryM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31271, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31271, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestFlyAction_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5624,7 +5624,7 @@ impl crate::AutoRegisterCreator_PathingRequestFlyAction_BSTSmartPointerPathingFa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31287, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31287, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestFlyHover_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5634,7 +5634,7 @@ impl crate::AutoRegisterCreator_PathingRequestFlyHover_BSTSmartPointerPathingFac
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31303, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31303, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestFlyLand_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5644,7 +5644,7 @@ impl crate::AutoRegisterCreator_PathingRequestFlyLand_BSTSmartPointerPathingFact
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31332, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31332, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestFlyOrbit_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5654,7 +5654,7 @@ impl crate::AutoRegisterCreator_PathingRequestFlyOrbit_BSTSmartPointerPathingFac
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31348, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31348, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestFlyTakeOff_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5664,7 +5664,7 @@ impl crate::AutoRegisterCreator_PathingRequestFlyTakeOff_BSTSmartPointerPathingF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31367, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31367, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestHide_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5674,7 +5674,7 @@ impl crate::AutoRegisterCreator_PathingRequestHide_BSTSmartPointerPathingFactory
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31383, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31383, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestLOS_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5684,7 +5684,7 @@ impl crate::AutoRegisterCreator_PathingRequestLOS_BSTSmartPointerPathingFactoryM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31399, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31399, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestOptimalLocation_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5694,7 +5694,7 @@ impl crate::AutoRegisterCreator_PathingRequestOptimalLocation_BSTSmartPointerPat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31426, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31426, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestRotate_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5704,7 +5704,7 @@ impl crate::AutoRegisterCreator_PathingRequestRotate_BSTSmartPointerPathingFacto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31442, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31442, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestSafeStraightLine_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5714,7 +5714,7 @@ impl crate::AutoRegisterCreator_PathingRequestSafeStraightLine_BSTSmartPointerPa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31455, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31455, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PathingRequestStopMoving_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64__ {
@@ -5724,7 +5724,7 @@ impl crate::AutoRegisterCreator_PathingRequestStopMoving_BSTSmartPointerPathingF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31471, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31471, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PickNewIdleHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_A_6b7ff1f6fcce {
@@ -5734,7 +5734,7 @@ impl crate::AutoRegisterCreator_PickNewIdleHandler_BSTCreateFactoryManager_BSFix
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43072, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43072, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PitchOverrideEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunc_91a3b28442ec {
@@ -5744,7 +5744,7 @@ impl crate::AutoRegisterCreator_PitchOverrideEndHandler_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43073, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43073, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PitchOverrideStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFu_290a22fda64f {
@@ -5754,7 +5754,7 @@ impl crate::AutoRegisterCreator_PitchOverrideStartHandler_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43074, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43074, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PlayerBedEnterHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_96296fe156c2 {
@@ -5764,7 +5764,7 @@ impl crate::AutoRegisterCreator_PlayerBedEnterHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43075, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43075, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PlayerChairEnterHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunc_71fbd73bdfc5 {
@@ -5774,7 +5774,7 @@ impl crate::AutoRegisterCreator_PlayerChairEnterHandler_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43076, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43076, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_PlayerFurnitureExitHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerF_7de55b3290dd {
@@ -5784,7 +5784,7 @@ impl crate::AutoRegisterCreator_PlayerFurnitureExitHandler_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43077, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43077, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_RagdollStartHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor__1120ec7fa22a {
@@ -5794,7 +5794,7 @@ impl crate::AutoRegisterCreator_RagdollStartHandler_BSTCreateFactoryManager_BSFi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43078, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43078, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_RecoilStopHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Ac_c53d3ee3a350 {
@@ -5804,7 +5804,7 @@ impl crate::AutoRegisterCreator_RecoilStopHandler_BSTCreateFactoryManager_BSFixe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43079, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43079, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_RefHandleUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -5814,7 +5814,7 @@ impl crate::AutoRegisterCreator_RefHandleUIData_BSTCreateFactoryManager_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52812, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52812, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_RemoveRagdollHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_533dbdf31cb6 {
@@ -5824,7 +5824,7 @@ impl crate::AutoRegisterCreator_RemoveRagdollHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43080, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43080, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_RightHandSpellCastHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFu_16796c456118 {
@@ -5834,7 +5834,7 @@ impl crate::AutoRegisterCreator_RightHandSpellCastHandler_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43081, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43081, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_RightHandSpellFireHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFu_64a533fda468 {
@@ -5844,7 +5844,7 @@ impl crate::AutoRegisterCreator_RightHandSpellFireHandler_BSTCreateFactoryManage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43082, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43082, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_RightHandWeaponDrawHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerF_e39ae2e326fe {
@@ -5854,7 +5854,7 @@ impl crate::AutoRegisterCreator_RightHandWeaponDrawHandler_BSTCreateFactoryManag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43083, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43083, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_RightHandWeaponSheatheHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandl_a262cd971ba1 {
@@ -5864,7 +5864,7 @@ impl crate::AutoRegisterCreator_RightHandWeaponSheatheHandler_BSTCreateFactoryMa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43084, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43084, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_StaggeredStopHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_30380bcc3218 {
@@ -5874,7 +5874,7 @@ impl crate::AutoRegisterCreator_StaggeredStopHandler_BSTCreateFactoryManager_BSF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43085, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43085, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_StopMountCameraHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunct_6d7e6f88f9c0 {
@@ -5884,7 +5884,7 @@ impl crate::AutoRegisterCreator_StopMountCameraHandler_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43086, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43086, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_TESFormUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -5894,7 +5894,7 @@ impl crate::AutoRegisterCreator_TESFormUIData_BSTCreateFactoryManager_BSFixedStr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52817, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52817, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_VampireFeedEndHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_3f78091efad7 {
@@ -5904,7 +5904,7 @@ impl crate::AutoRegisterCreator_VampireFeedEndHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43087, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43087, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_VoiceSpellCastHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_23b6cc258960 {
@@ -5914,7 +5914,7 @@ impl crate::AutoRegisterCreator_VoiceSpellCastHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43088, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43088, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_VoiceSpellFireHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFuncto_c360f90905b9 {
@@ -5924,7 +5924,7 @@ impl crate::AutoRegisterCreator_VoiceSpellFireHandler_BSTCreateFactoryManager_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43089, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43089, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_WeaponBeginDrawRightHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandler_10361442e0c1 {
@@ -5934,7 +5934,7 @@ impl crate::AutoRegisterCreator_WeaponBeginDrawRightHandler_BSTCreateFactoryMana
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43090, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43090, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_WeaponBeginSheatheRightHandler_BSTCreateFactoryManager_BSFixedStringCI_IHand_ec041456ff8f {
@@ -5944,7 +5944,7 @@ impl crate::AutoRegisterCreator_WeaponBeginSheatheRightHandler_BSTCreateFactoryM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43091, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43091, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_WeaponLeftSwingHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunct_6a2d1f17fcd7 {
@@ -5954,7 +5954,7 @@ impl crate::AutoRegisterCreator_WeaponLeftSwingHandler_BSTCreateFactoryManager_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43092, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43092, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_WeaponRightSwingHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunc_91c3e4c1b4a9 {
@@ -5964,7 +5964,7 @@ impl crate::AutoRegisterCreator_WeaponRightSwingHandler_BSTCreateFactoryManager_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43093, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43093, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCreator_ZeroPitchHandler_BSTCreateFactoryManager_BSFixedStringCI_IHandlerFunctor_Actor_BSFixedStringCI_256__ {
@@ -5974,7 +5974,7 @@ impl crate::AutoRegisterCreator_ZeroPitchHandler_BSTCreateFactoryManager_BSFixed
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43094, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43094, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ActionActivateDoneHandler_IHandlerFunctor_Actor_BSFixedStr_3f5c53b87b53 {
@@ -5984,7 +5984,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ActionActivateDoneHandler_IHan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43095, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43095, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AddRagdollHandler_IHandlerFunctor_Actor_BSFixedStringCI____f04945817836 {
@@ -5994,7 +5994,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AddRagdollHandler_IHandlerFunc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43096, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43096, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AllowRotationHandler_IHandlerFunctor_Actor_BSFixedStringCI_dd84434e545b {
@@ -6004,7 +6004,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AllowRotationHandler_IHandlerF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43097, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43097, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimatedCameraDeltaStartHandler_IHandlerFunctor_Actor_BSFi_31dc9e3a0ee4 {
@@ -6014,7 +6014,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimatedCameraDeltaStartHandle
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43098, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43098, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimatedCameraEndHandler_IHandlerFunctor_Actor_BSFixedStri_4b1a40e58c45 {
@@ -6024,7 +6024,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimatedCameraEndHandler_IHand
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43099, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43099, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimatedCameraStartHandler_IHandlerFunctor_Actor_BSFixedSt_b957e44241ba {
@@ -6034,7 +6034,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimatedCameraStartHandler_IHa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43100, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43100, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimationDrivenHandler_IHandlerFunctor_Actor_BSFixedString_c6b110405a75 {
@@ -6044,7 +6044,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimationDrivenHandler_IHandle
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43101, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43101, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimationObjectDrawHandler_IHandlerFunctor_Actor_BSFixedSt_936e4c8edd0a {
@@ -6054,7 +6054,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimationObjectDrawHandler_IHa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43102, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43102, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimationObjectLoadHandler_IHandlerFunctor_Actor_BSFixedSt_bd420e5b425e {
@@ -6064,7 +6064,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AnimationObjectLoadHandler_IHa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43103, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43103, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AnticipateAttackHandler_IHandlerFunctor_Actor_BSFixedStrin_a7465b7a3606 {
@@ -6074,7 +6074,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AnticipateAttackHandler_IHandl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43104, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43104, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ArrowAttachHandler_IHandlerFunctor_Actor_BSFixedStringCI___717a17e46d4d {
@@ -6084,7 +6084,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ArrowAttachHandler_IHandlerFun
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43105, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43105, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ArrowDetachHandler_IHandlerFunctor_Actor_BSFixedStringCI___1634e946c664 {
@@ -6094,7 +6094,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ArrowDetachHandler_IHandlerFun
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43106, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43106, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ArrowReleaseHandler_IHandlerFunctor_Actor_BSFixedStringCI__7bab73aebacc {
@@ -6104,7 +6104,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ArrowReleaseHandler_IHandlerFu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43107, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43107, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AttackStopHandler_IHandlerFunctor_Actor_BSFixedStringCI____9d03787e4ba6 {
@@ -6114,7 +6114,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AttackStopHandler_IHandlerFunc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43108, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43108, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AttackWinEndHandler_IHandlerFunctor_Actor_BSFixedStringCI__9f17f5af58a6 {
@@ -6124,7 +6124,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AttackWinEndHandler_IHandlerFu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43109, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43109, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_AttackWinStartHandler_IHandlerFunctor_Actor_BSFixedStringC_effa0e3fe3c9 {
@@ -6134,7 +6134,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_AttackWinStartHandler_IHandler
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43110, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43110, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSAIWorldLocationInteriorCell_IAIWorldLocation_BGSAIWorldLocationFactory {
@@ -6144,7 +6144,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSAIWorldLocationInteriorCell
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27911, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27911, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSAIWorldLocationPointRadius_IAIWorldLocation_BGSAIWorldLocationFactory {
@@ -6154,7 +6154,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSAIWorldLocationPointRadius_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27912, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27912, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSAIWorldLocationRefRadius_IAIWorldLocation_BGSAIWorldLocationFactory {
@@ -6164,7 +6164,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSAIWorldLocationRefRadius_IA
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27913, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27913, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSMusicPaletteTrack_BSIMusicTrack_BSTCreateFactoryManager_a4bf3a33882e {
@@ -6174,7 +6174,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSMusicPaletteTrack_BSIMusicT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21032, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21032, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSMusicSilenceTrack_BSIMusicTrack_BSTCreateFactoryManager_cb4bd3e273ad {
@@ -6184,7 +6184,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSMusicSilenceTrack_BSIMusicT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21077, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21077, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSMusicSingleTrack_BSIMusicTrack_BSTCreateFactoryManager__10328f0f8d6f {
@@ -6194,7 +6194,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSMusicSingleTrack_BSIMusicTr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21083, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21083, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataBool_IPackageData_BSTCreateFactoryManager_BS_a33ecce778bc {
@@ -6204,7 +6204,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataBool_IPackageDat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27635, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27635, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataFloat_IPackageData_BSTCreateFactoryManager_B_5e1a991756ea {
@@ -6214,7 +6214,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataFloat_IPackageDa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27625, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27625, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataInt_IPackageData_BSTCreateFactoryManager_BSF_6c8304e50d15 {
@@ -6224,7 +6224,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataInt_IPackageData
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27630, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27630, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataLocation_IPackageData_BSTCreateFactoryManage_bdc5b29cba5d {
@@ -6234,7 +6234,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataLocation_IPackag
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27610, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27610, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataLocationWrapper_IPackageData_BSTCreateFactor_5026f6a72d6a {
@@ -6244,7 +6244,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataLocationWrapper_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27640, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27640, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataObjectList_IPackageData_BSTCreateFactoryMana_68e1d72f3795 {
@@ -6254,7 +6254,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataObjectList_IPack
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27726, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27726, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataRef_IPackageData_BSTCreateFactoryManager_BSF_c0a065f6a5e2 {
@@ -6264,7 +6264,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataRef_IPackageData
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27790, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27790, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataRefOLD_IPackageData_BSTCreateFactoryManager__79d0f9be2510 {
@@ -6274,7 +6274,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataRefOLD_IPackageD
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27620, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27620, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataTargetSelector_IPackageData_BSTCreateFactory_7b63c81ff0ba {
@@ -6284,7 +6284,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataTargetSelector_I
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27615, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27615, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataTopic_IPackageData_BSTCreateFactoryManager_B_337cf9d1103d {
@@ -6294,7 +6294,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSPackageDataTopic_IPackageDa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27807, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27807, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureAcquire_IProcedure_BSTCreateFactoryManager_BSF_899ce1e4c017 {
@@ -6304,7 +6304,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureAcquire_IProcedure
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28286, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28286, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureAcquireExecState_IProcedureTreeExecState_BGSPr_f398ea8d1f00 {
@@ -6314,7 +6314,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureAcquireExecState_I
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27914, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27914, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureActivate_IProcedure_BSTCreateFactoryManager_BS_87d012339bcc {
@@ -6324,7 +6324,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureActivate_IProcedur
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28325, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28325, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureActivateExecState_IProcedureTreeExecState_BGSP_2540a0cf12c6 {
@@ -6334,7 +6334,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureActivateExecState_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27915, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27915, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDialogue_IProcedure_BSTCreateFactoryManager_BS_515c57f28915 {
@@ -6344,7 +6344,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDialogue_IProcedur
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28357, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28357, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDialogueActivate_IProcedure_BSTCreateFactoryMa_4e23d95eaeee {
@@ -6354,7 +6354,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDialogueActivate_I
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28392, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28392, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDialogueActivateExecState_IProcedureTreeExecSt_6f9fcccac797 {
@@ -6364,7 +6364,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDialogueActivateEx
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27916, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27916, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDialogueExecState_IProcedureTreeExecState_BGSP_b93fe4ec23bc {
@@ -6374,7 +6374,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDialogueExecState_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27917, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27917, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDone_IProcedure_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -6384,7 +6384,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDone_IProcedure_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28211, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28211, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDoneExecState_IProcedureTreeExecState_BGSProcedureTreeExecStateFactory {
@@ -6394,7 +6394,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureDoneExecState_IPro
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27918, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27918, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureEat_IProcedure_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -6404,7 +6404,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureEat_IProcedure_BST
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28427, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28427, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureEatExecState_IProcedureTreeExecState_BGSProcedureTreeExecStateFactory {
@@ -6414,7 +6414,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureEatExecState_IProc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27919, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27919, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureEscort_IProcedure_BSTCreateFactoryManager_BSFi_de7111f51287 {
@@ -6424,7 +6424,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureEscort_IProcedure_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28474, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28474, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureEscortExecState_IProcedureTreeExecState_BGSPro_cd7af3b09fd8 {
@@ -6434,7 +6434,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureEscortExecState_IP
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27920, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27920, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFind_IProcedure_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -6444,7 +6444,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFind_IProcedure_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28516, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28516, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFindExecState_IProcedureTreeExecState_BGSProcedureTreeExecStateFactory {
@@ -6454,7 +6454,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFindExecState_IPro
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27921, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27921, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFlee_IProcedure_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -6464,7 +6464,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFlee_IProcedure_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28565, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28565, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFleeExecState_IProcedureTreeExecState_BGSProcedureTreeExecStateFactory {
@@ -6474,7 +6474,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFleeExecState_IPro
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27922, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27922, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFlightGrab_IProcedure_BSTCreateFactoryManager__bb5754430db6 {
@@ -6484,7 +6484,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFlightGrab_IProced
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28601, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28601, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFlightGrabExecState_IProcedureTreeExecState_BG_141fd2cce63e {
@@ -6494,7 +6494,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFlightGrabExecStat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27923, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27923, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFollow_IProcedure_BSTCreateFactoryManager_BSFi_ee83139773ad {
@@ -6504,7 +6504,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFollow_IProcedure_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28653, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28653, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFollowExecState_IProcedureTreeExecState_BGSPro_af3619b4ca2d {
@@ -6514,7 +6514,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFollowExecState_IP
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27924, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27924, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFollowTo_IProcedure_BSTCreateFactoryManager_BS_2725d8e9a777 {
@@ -6524,7 +6524,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureFollowTo_IProcedur
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28654, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28654, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureForceGreet_IProcedure_BSTCreateFactoryManager__1d354c7d7cc0 {
@@ -6534,7 +6534,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureForceGreet_IProced
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28704, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28704, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureGuard_IProcedure_BSTCreateFactoryManager_BSFix_17d3238c56c2 {
@@ -6544,7 +6544,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureGuard_IProcedure_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28733, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28733, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureGuardExecState_IProcedureTreeExecState_BGSProc_5f92b6f7f530 {
@@ -6554,7 +6554,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureGuardExecState_IPr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27925, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27925, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureHoldPosition_IProcedure_BSTCreateFactoryManage_c110837392a9 {
@@ -6564,7 +6564,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureHoldPosition_IProc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28757, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28757, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__2c106ce2e001 {
@@ -6574,7 +6574,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureHoldPositionExecSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27926, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27926, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureHover_IProcedure_BSTCreateFactoryManager_BSFix_bae03f753e08 {
@@ -6584,7 +6584,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureHover_IProcedure_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28790, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28790, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureHoverExecState_IProcedureTreeExecState_BGSProc_1abdb0209fa0 {
@@ -6594,7 +6594,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureHoverExecState_IPr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27927, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27927, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure_BSTCreateFactoryManager_ade27905bd3d {
@@ -6604,7 +6604,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProce
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28818, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28818, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState_B_12ce845d4da6 {
@@ -6614,7 +6614,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureKeepAnEyeOnExecSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27928, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27928, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureLock_IProcedure_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -6624,7 +6624,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureLock_IProcedure_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28855, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28855, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureLockUnlockExecState_IProcedureTreeExecState_BG_f57c1258b3fc {
@@ -6634,7 +6634,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureLockUnlockExecStat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27929, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27929, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureOrbit_IProcedure_BSTCreateFactoryManager_BSFix_abb893bd74af {
@@ -6644,7 +6644,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureOrbit_IProcedure_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28902, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28902, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureOrbitExecState_IProcedureTreeExecState_BGSProc_c6006cdb6d4d {
@@ -6654,7 +6654,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureOrbitExecState_IPr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27930, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27930, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedurePatrol_IProcedure_BSTCreateFactoryManager_BSFi_90ff1a9059a3 {
@@ -6664,7 +6664,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedurePatrol_IProcedure_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28952, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28952, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState_BGSPro_fc6b19617cfa {
@@ -6674,7 +6674,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedurePatrolExecState_IP
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27931, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27931, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedurePursue_IProcedure_BSTCreateFactoryManager_BSFi_7963e3b3c312 {
@@ -6684,7 +6684,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedurePursue_IProcedure_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28976, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28976, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSandbox_IProcedure_BSTCreateFactoryManager_BSF_51f9c2b9bb14 {
@@ -6694,7 +6694,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSandbox_IProcedure
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29036, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29036, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSandboxExecState_IProcedureTreeExecState_BGSPr_33417eee633f {
@@ -6704,7 +6704,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSandboxExecState_I
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27932, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27932, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSay_IProcedure_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -6714,7 +6714,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSay_IProcedure_BST
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29064, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29064, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSayExecState_IProcedureTreeExecState_BGSProcedureTreeExecStateFactory {
@@ -6724,7 +6724,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSayExecState_IProc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27933, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27933, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureShout_IProcedure_BSTCreateFactoryManager_BSFix_2f1bb2a73faa {
@@ -6734,7 +6734,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureShout_IProcedure_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29098, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29098, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureShoutExecState_IProcedureTreeExecState_BGSProc_6352c1569f16 {
@@ -6744,7 +6744,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureShoutExecState_IPr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27934, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27934, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSit_IProcedure_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -6754,7 +6754,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSit_IProcedure_BST
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29158, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29158, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSitSleepExecState_IProcedureTreeExecState_BGSP_da3f91f63682 {
@@ -6764,7 +6764,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSitSleepExecState_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27935, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27935, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSleep_IProcedure_BSTCreateFactoryManager_BSFix_686345864636 {
@@ -6774,7 +6774,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureSleep_IProcedure_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29159, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29159, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTravel_IProcedure_BSTCreateFactoryManager_BSFi_d622db01c3cf {
@@ -6784,7 +6784,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTravel_IProcedure_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29205, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29205, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTravelExecState_IProcedureTreeExecState_BGSPro_87785d57a274 {
@@ -6794,7 +6794,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTravelExecState_IP
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27936, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27936, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeProcedure_IProcedureTreeItem_BSTCreateFact_afb3b4ae419a {
@@ -6804,7 +6804,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeProcedure_IPro
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27937, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27937, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeRandom_IProcedureTreeItem_BSTCreateFactory_9f88dad9a35b {
@@ -6814,7 +6814,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeRandom_IProced
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27938, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27938, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeRandomExecState_IProcedureTreeExecState_BG_61b6b883c502 {
@@ -6824,7 +6824,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeRandomExecStat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27939, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27939, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeSequence_IProcedureTreeItem_BSTCreateFacto_929a83219cd1 {
@@ -6834,7 +6834,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeSequence_IProc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27940, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27940, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeSequenceExecState_IProcedureTreeExecState__eef8a1670688 {
@@ -6844,7 +6844,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeSequenceExecSt
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27941, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27941, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeSimultaneous_IProcedureTreeItem_BSTCreateF_90c5626d8c4a {
@@ -6854,7 +6854,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeSimultaneous_I
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27942, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27942, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecSt_46c04df822c7 {
@@ -6864,7 +6864,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeSimultaneousEx
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27943, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27943, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeStacked_IProcedureTreeItem_BSTCreateFactor_8ff50e5f424d {
@@ -6874,7 +6874,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeStacked_IProce
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27944, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27944, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeStackedExecState_IProcedureTreeExecState_B_7f256ec74fc9 {
@@ -6884,7 +6884,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureTreeStackedExecSta
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27945, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27945, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUnlock_IProcedure_BSTCreateFactoryManager_BSFi_2a0adbaf81b0 {
@@ -6894,7 +6894,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUnlock_IProcedure_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28856, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28856, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseIdleMarker_IProcedure_BSTCreateFactoryManag_a674617c7ee9 {
@@ -6904,7 +6904,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseIdleMarker_IPro
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29327, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29327, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseIdleMarkerExecState_IProcedureTreeExecState_3df9b17e5e8e {
@@ -6914,7 +6914,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseIdleMarkerExecS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27946, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27946, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseMagic_IProcedure_BSTCreateFactoryManager_BS_06a2c77dd94d {
@@ -6924,7 +6924,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseMagic_IProcedur
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29362, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29362, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseMagicExecState_IProcedureTreeExecState_BGSP_953626307237 {
@@ -6934,7 +6934,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseMagicExecState_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27947, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27947, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseWeapon_IProcedure_BSTCreateFactoryManager_B_235aa58d6c86 {
@@ -6944,7 +6944,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseWeapon_IProcedu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29397, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29397, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseWeaponExecState_IProcedureTreeExecState_BGS_082245b61842 {
@@ -6954,7 +6954,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureUseWeaponExecState
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27948, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27948, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureWait_IProcedure_BSTCreateFactoryManager_BSFixedString_IProcedure_256__ {
@@ -6964,7 +6964,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureWait_IProcedure_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29423, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29423, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureWaitExecState_IProcedureTreeExecState_BGSProcedureTreeExecStateFactory {
@@ -6974,7 +6974,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureWaitExecState_IPro
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27949, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27949, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureWander_IProcedure_BSTCreateFactoryManager_BSFi_3f19859e2fab {
@@ -6984,7 +6984,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureWander_IProcedure_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29456, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29456, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureWanderExecState_IProcedureTreeExecState_BGSPro_a24c39b22202 {
@@ -6994,7 +6994,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSProcedureWanderExecState_IP
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27950, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27950, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSStandardSoundDef_BGSSoundDescriptor_BSTCreateFactoryMan_9a5a99932507 {
@@ -7004,7 +7004,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGSStandardSoundDef_BGSSoundDe
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21309, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(21309, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGShkMatFadeController_BShkNonTransformController_BSTCreat_c4539ab3ca2a {
@@ -7014,7 +7014,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGShkMatFadeController_BShkNon
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43652, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43652, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController_BSTCreat_435b0030d88f {
@@ -7024,7 +7024,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BGShkPhonemeController_BShkNon
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26540, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26540, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BSNullImplAudio_BSAudio_BSTCreateFactoryManager_BSFixedStringCI_BSAudio_4__ {
@@ -7034,7 +7034,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BSNullImplAudio_BSAudio_BSTCre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(67909, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(67909, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BSPathingRequest_BSPathingRequest_BSTSmartPointerPathingFa_3b4cc492c43b {
@@ -7044,7 +7044,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BSPathingRequest_BSPathingRequ
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90633, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90633, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BSPathingSolution_BSPathingSolution_BSTSmartPointerPathing_311efeffc852 {
@@ -7054,7 +7054,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BSPathingSolution_BSPathingSol
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90958, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90958, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BSUIMessageData_IUIMessageData_BSTCreateFactoryManager_BSF_5b197b117f9a {
@@ -7064,7 +7064,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BSUIMessageData_IUIMessageData
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82069, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82069, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BSUIScaleformData_IUIMessageData_BSTCreateFactoryManager_B_b9c1d82131a9 {
@@ -7074,7 +7074,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BSUIScaleformData_IUIMessageDa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82064, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(82064, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BSXAudio2Audio_BSAudio_BSTCreateFactoryManager_BSFixedStringCI_BSAudio_4__ {
@@ -7084,7 +7084,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BSXAudio2Audio_BSAudio_BSTCrea
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(67967, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(67967, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController_BSTCre_b41c81b774ee {
@@ -7094,7 +7094,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BShkVisibilityController_BShkN
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(63841, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(63841, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI___BS_0a000159102e {
@@ -7104,7 +7104,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BedEnterHandler_IHandlerFuncto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43111, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43111, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BedFurnitureExitHandler_IHandlerFunctor_Actor_BSFixedStrin_b03460a7fcc7 {
@@ -7114,7 +7114,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BedFurnitureExitHandler_IHandl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43112, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43112, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BowDrawnHandler_IHandlerFunctor_Actor_BSFixedStringCI___BS_70ee19c5b1c4 {
@@ -7124,7 +7124,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BowDrawnHandler_IHandlerFuncto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43113, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43113, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BowReleaseHandler_IHandlerFunctor_Actor_BSFixedStringCI____cb73e95e2488 {
@@ -7134,7 +7134,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BowReleaseHandler_IHandlerFunc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43114, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43114, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BowZoomStartHandler_IHandlerFunctor_Actor_BSFixedStringCI__23df7eda4dca {
@@ -7144,7 +7144,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BowZoomStartHandler_IHandlerFu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43115, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43115, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_BowZoomStopHandler_IHandlerFunctor_Actor_BSFixedStringCI___62fc32b7874d {
@@ -7154,7 +7154,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_BowZoomStopHandler_IHandlerFun
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43116, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43116, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CameraOverrideStartHandler_IHandlerFunctor_Actor_BSFixedSt_1d0ddf458b4c {
@@ -7164,7 +7164,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CameraOverrideStartHandler_IHa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43117, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43117, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CameraOverrideStopHandler_IHandlerFunctor_Actor_BSFixedStr_f71f4d4dc51c {
@@ -7174,7 +7174,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CameraOverrideStopHandler_IHan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43118, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43118, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CameraShakeHandler_IHandlerFunctor_Actor_BSFixedStringCI___9c8e659bd77f {
@@ -7184,7 +7184,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CameraShakeHandler_IHandlerFun
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43119, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43119, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ChairEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____b054a83d79c3 {
@@ -7194,7 +7194,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ChairEnterHandler_IHandlerFunc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43120, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43120, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ChairFurnitureExitHandler_IHandlerFunctor_Actor_BSFixedStr_8039b2ed73d5 {
@@ -7204,7 +7204,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ChairFurnitureExitHandler_IHan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43121, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43121, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAimController_CombatObject_BSTCreateFactoryManager_u_95cb42892504 {
@@ -7214,7 +7214,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAimController_CombatObje
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44409, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44409, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatApproachTargetSpeedController_CombatObject_BSTCreate_94bc6d4c04a0 {
@@ -7224,7 +7224,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatApproachTargetSpeedContr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50330, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50330, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAreaHoldPosition_CombatObject_BSTCreateFactoryManage_f766eb3b1619 {
@@ -7234,7 +7234,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAreaHoldPosition_CombatO
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44501, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44501, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAreaRadius_CombatObject_BSTCreateFactoryManager_unsi_6b7ca9ea215f {
@@ -7244,7 +7244,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAreaRadius_CombatObject_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44483, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44483, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAreaReference_CombatObject_BSTCreateFactoryManager_u_cafa3fad0fa8 {
@@ -7254,7 +7254,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAreaReference_CombatObje
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44489, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44489, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAreaStandard_CombatObject_BSTCreateFactoryManager_un_88d2c7c43725 {
@@ -7264,7 +7264,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatAreaStandard_CombatObjec
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44495, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44495, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatCoverLocation_CombatObject_BSTCreateFactoryManager_u_7d60c449923e {
@@ -7274,7 +7274,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatCoverLocation_CombatObje
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44647, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44647, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatCoverSearch_CombatObject_BSTCreateFactoryManager_uns_1d8d52119c54 {
@@ -7284,7 +7284,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatCoverSearch_CombatObject
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44635, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44635, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatCoverSearchDebugData_CombatObject_BSTCreateFactoryMa_9e74a38bcf99 {
@@ -7294,7 +7294,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatCoverSearchDebugData_Com
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44653, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44653, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatCoverSearchResult_CombatObject_BSTCreateFactoryManag_eda35e77bcae {
@@ -7304,7 +7304,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatCoverSearchResult_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44641, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44641, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatDisableActionController_CombatObject_BSTCreateFactor_56ee015cf681 {
@@ -7314,7 +7314,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatDisableActionController_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49327, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49327, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatDisableAimController_CombatObject_BSTCreateFactoryMa_ad5064881469 {
@@ -7324,7 +7324,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatDisableAimController_Com
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44344, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44344, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatFlankingSearchData_CombatObject_BSTCreateFactoryMana_0532ca0371bd {
@@ -7334,7 +7334,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatFlankingSearchData_Comba
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48410, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48410, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_b5f66ef28211 {
@@ -7344,7 +7344,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46435, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46435, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_8a4dd00deb96 {
@@ -7354,7 +7354,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46333, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46333, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_04a53ee8e8e2 {
@@ -7364,7 +7364,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45926, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45926, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_3e1c2f7f5418 {
@@ -7374,7 +7374,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45778, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45778, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_95247f81e0ed {
@@ -7384,7 +7384,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46200, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46200, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_6f6902084c2b {
@@ -7394,7 +7394,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46060, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46060, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_9ce5f4fd7a74 {
@@ -7404,7 +7404,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45230, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45230, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_0ea024318d4b {
@@ -7414,7 +7414,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45172, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45172, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_bb28d3c4de85 {
@@ -7424,7 +7424,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46529, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46529, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_4428736f098d {
@@ -7434,7 +7434,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45514, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45514, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_37ed6dc7d14a {
@@ -7444,7 +7444,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45236, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45236, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_48dc524aa201 {
@@ -7454,7 +7454,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45639, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45639, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_2237569a32b6 {
@@ -7464,7 +7464,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45561, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45561, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_5386b8780ed9 {
@@ -7474,7 +7474,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46477, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46477, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatM_71a4434cd6db {
@@ -7484,7 +7484,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45313, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45313, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_8b6cb7247f55 {
@@ -7494,7 +7494,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46453, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46453, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_e8a83e4285b7 {
@@ -7504,7 +7504,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46392, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46392, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_bf6fe5fe3997 {
@@ -7514,7 +7514,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45985, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45985, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_65c27827ca07 {
@@ -7524,7 +7524,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45846, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45846, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_d4261dc11d57 {
@@ -7534,7 +7534,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46258, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46258, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_cf08bb0f1ff9 {
@@ -7544,7 +7544,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46118, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46118, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_beec6b4302b8 {
@@ -7554,7 +7554,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45271, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45271, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_b83b6e9be50a {
@@ -7564,7 +7564,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45195, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45195, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_14769271b451 {
@@ -7574,7 +7574,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46552, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46552, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_d6a3d5ba9e70 {
@@ -7584,7 +7584,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45532, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45532, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_c49443ba80b0 {
@@ -7594,7 +7594,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45277, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45277, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_37da909ec342 {
@@ -7604,7 +7604,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45697, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45697, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_683df000e3b5 {
@@ -7614,7 +7614,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45580, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45580, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_2535333d5752 {
@@ -7624,7 +7624,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46500, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46500, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemPotion_Combat_6a754c799867 {
@@ -7634,7 +7634,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45482, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45482, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_bdc8b8f5d299 {
@@ -7644,7 +7644,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46459, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46459, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_596ca02d231e {
@@ -7654,7 +7654,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46414, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46414, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_e5587f84bae3 {
@@ -7664,7 +7664,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46006, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46006, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_6c0922474a6a {
@@ -7674,7 +7674,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45865, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45865, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_4d1340cf6a79 {
@@ -7684,7 +7684,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46276, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46276, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_a6e6ea523463 {
@@ -7694,7 +7694,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46140, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46140, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_8e4572579c88 {
@@ -7704,7 +7704,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45283, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45283, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_17a30377f5ab {
@@ -7714,7 +7714,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45206, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45206, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_fd148d98645a {
@@ -7724,7 +7724,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45154, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45154, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_a948d113d89c {
@@ -7734,7 +7734,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45545, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45545, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_caeeee998e66 {
@@ -7744,7 +7744,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45292, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45292, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_5195af5fed64 {
@@ -7754,7 +7754,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45719, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45719, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_b804885862b3 {
@@ -7764,7 +7764,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45586, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45586, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_1d2e43d3e5e5 {
@@ -7774,7 +7774,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46511, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46511, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemScroll_Combat_208cc09da710 {
@@ -7784,7 +7784,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45496, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45496, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_922834ff1b44 {
@@ -7794,7 +7794,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46441, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46441, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_3fae8b345b37 {
@@ -7804,7 +7804,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46355, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46355, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_60c673ebf604 {
@@ -7814,7 +7814,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45942, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45942, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_b9991f78830a {
@@ -7824,7 +7824,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45802, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45802, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_8c2f55765c7b {
@@ -7834,7 +7834,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46215, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46215, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_23789a76238d {
@@ -7844,7 +7844,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46082, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46082, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_16a2ee979045 {
@@ -7854,7 +7854,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45242, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45242, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_e51c2a741a22 {
@@ -7864,7 +7864,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45178, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45178, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_d0f4a928f262 {
@@ -7874,7 +7874,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46535, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46535, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_be1ae863eeb8 {
@@ -7884,7 +7884,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45520, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45520, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_bbab8d3c190f {
@@ -7894,7 +7894,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45248, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45248, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_f8e817bc58c0 {
@@ -7904,7 +7904,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45660, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45660, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_dbd5ffa55490 {
@@ -7914,7 +7914,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45568, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45568, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_d9a17aa7169e {
@@ -7924,7 +7924,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46483, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46483, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatM_39d30d6edcf4 {
@@ -7934,7 +7934,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45458, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45458, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_b5e100383238 {
@@ -7944,7 +7944,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46447, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46447, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_9ab1a4f55b40 {
@@ -7954,7 +7954,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46370, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46370, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_e2f8353509c6 {
@@ -7964,7 +7964,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45963, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45963, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_287b04640228 {
@@ -7974,7 +7974,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45825, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45825, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_c843c4f34f72 {
@@ -7984,7 +7984,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46237, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46237, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_33b5f82efb96 {
@@ -7994,7 +7994,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46100, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46100, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_45867d58e983 {
@@ -8004,7 +8004,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45254, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45254, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_2404e9a778d6 {
@@ -8014,7 +8014,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45189, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45189, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_a0795effef1f {
@@ -8024,7 +8024,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46546, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46546, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_af4979a614e7 {
@@ -8034,7 +8034,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45526, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45526, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_f511d85d7cbe {
@@ -8044,7 +8044,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45265, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45265, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_1b36688d553c {
@@ -8054,7 +8054,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45678, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45678, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_c98c5e13dc0f {
@@ -8064,7 +8064,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45574, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45574, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_eb74f31248ce {
@@ -8074,7 +8074,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46494, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46494, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatM_7a083e76fb92 {
@@ -8084,7 +8084,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMagicT_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45464, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45464, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMelee_CombatObject_BSTCreateFactoryMana_44005d2bb79d {
@@ -8094,7 +8094,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemMelee_Comba
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45110, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45110, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemOneHandedBlock_CombatObject_BSTCreateFa_dbe2725125a0 {
@@ -8104,7 +8104,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemOneHandedBl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45128, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45128, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemRanged_CombatObject_BSTCreateFactoryMan_68ffebb0442b {
@@ -8114,7 +8114,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemRanged_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45116, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45116, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemShield_CombatObject_BSTCreateFactoryMan_4abcfdd67890 {
@@ -8124,7 +8124,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemShield_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45122, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45122, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemTorch_CombatObject_BSTCreateFactoryMana_ce83cbeb34e5 {
@@ -8134,7 +8134,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatInventoryItemTorch_Comba
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45134, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45134, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterArmor_CombatObject_BSTCreateFactoryManage_8fe19f0fa50c {
@@ -8144,7 +8144,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterArmor_CombatO
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46429, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46429, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterBoundItem_CombatObject_BSTCreateFactoryMa_2b9cf29f1fe0 {
@@ -8154,7 +8154,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterBoundItem_Com
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46312, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46312, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterCloak_CombatObject_BSTCreateFactoryManage_20aa5180e138 {
@@ -8164,7 +8164,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterCloak_CombatO
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45905, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45905, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterDisarm_CombatObject_BSTCreateFactoryManag_95de2f8b08aa {
@@ -8174,7 +8174,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterDisarm_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45758, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45758, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterInvisibility_CombatObject_BSTCreateFactor_6b3b67f2961d {
@@ -8184,7 +8184,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterInvisibility_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46178, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46178, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterLight_CombatObject_BSTCreateFactoryManage_2d30c1aab0dc {
@@ -8194,7 +8194,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterLight_CombatO
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46038, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46038, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterOffensive_CombatObject_BSTCreateFactoryMa_7a2e45a860a5 {
@@ -8204,7 +8204,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterOffensive_Com
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45213, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45213, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterParalyze_CombatObject_BSTCreateFactoryMan_05a6434a27bb {
@@ -8214,7 +8214,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterParalyze_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45161, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45161, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterReanimate_CombatObject_BSTCreateFactoryMa_1b7b3ed59fc4 {
@@ -8224,7 +8224,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterReanimate_Com
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46518, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46518, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterRestore_CombatObject_BSTCreateFactoryMana_885f50adf61b {
@@ -8234,7 +8234,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterRestore_Comba
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45508, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45508, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterScript_CombatObject_BSTCreateFactoryManag_f62f1feeb4f8 {
@@ -8244,7 +8244,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterScript_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45219, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45219, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterStagger_CombatObject_BSTCreateFactoryMana_604e35da3741 {
@@ -8254,7 +8254,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterStagger_Comba
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45617, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45617, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterSummon_CombatObject_BSTCreateFactoryManag_5ec9ad1a3265 {
@@ -8264,7 +8264,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterSummon_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45553, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45553, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterTargetEffect_CombatObject_BSTCreateFactor_acbd0949e24f {
@@ -8274,7 +8274,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterTargetEffect_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46469, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46469, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterWard_CombatObject_BSTCreateFactoryManager_a114d6820f1f {
@@ -8284,7 +8284,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMagicCasterWard_CombatOb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45302, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(45302, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMeleeAimController_CombatObject_BSTCreateFactoryMana_b30562482f82 {
@@ -8294,7 +8294,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatMeleeAimController_Comba
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44332, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44332, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestFlight_CombatPathDestinationL_0b8dee7776d1 {
@@ -8304,7 +8304,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50294, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50294, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestFlight_CombatPathDestinationR_e82516545bf9 {
@@ -8314,7 +8314,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50300, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50300, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestin_6a1908461d8f {
@@ -8324,7 +8324,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50324, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50324, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_dee9c3c24a8e {
@@ -8334,7 +8334,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49313, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49313, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_d17d77500867 {
@@ -8344,7 +8344,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48161, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48161, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_2dd81adf9d72 {
@@ -8354,7 +8354,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49832, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49832, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_6554368980dc {
@@ -8364,7 +8364,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48579, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48579, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_8f3faf0229b4 {
@@ -8374,7 +8374,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47079, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47079, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_71ca447ea628 {
@@ -8384,7 +8384,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48280, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48280, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_b81cf78abe37 {
@@ -8394,7 +8394,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48295, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48295, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_9f7970bba7bf {
@@ -8404,7 +8404,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48610, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48610, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_7e49cd0afe20 {
@@ -8414,7 +8414,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50512, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50512, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_d9affbe014fb {
@@ -8424,7 +8424,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49289, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49289, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_97e94d138973 {
@@ -8434,7 +8434,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49567, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49567, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPoli_ccf506832f03 {
@@ -8444,7 +8444,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestG
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49590, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49590, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestHover_CombatPathDestinationNo_d457b994ff41 {
@@ -8454,7 +8454,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestH
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50318, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50318, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestLanding_CombatPathDestination_b71397946227 {
@@ -8464,7 +8464,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestL
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50312, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50312, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinati_75aeea12f549 {
@@ -8474,7 +8474,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50258, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50258, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinati_e10caf4cd931 {
@@ -8484,7 +8484,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestM
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50264, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50264, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLo_83707dc68de5 {
@@ -8494,7 +8494,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestO
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50306, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50306, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinat_ec3cbf671677 {
@@ -8504,7 +8504,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestR
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50288, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50288, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinatio_d5ea38b48fca {
@@ -8514,7 +8514,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50246, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50246, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinatio_18995e73ba6c {
@@ -8524,7 +8524,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50252, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50252, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestStraightPath_CombatPathDestin_94c6ae9188f1 {
@@ -8534,7 +8534,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50282, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50282, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathD_7aafce9d08cd {
@@ -8544,7 +8544,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestW
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50270, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50270, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathD_e0e1a62d7d17 {
@@ -8554,7 +8554,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathT_CombatPathRequestW
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50276, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50276, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingDebugData_CombatObject_BSTCreateFactoryManage_aef23b135f2c {
@@ -8564,7 +8564,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingDebugData_CombatO
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50191, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50191, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestAdapter_BSPathingRequest_BSTSmartPoint_62691b408271 {
@@ -8574,7 +8574,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestAdapter_BS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50140, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50140, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWat_e9329fcf460a {
@@ -8584,7 +8584,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49296, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49296, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAtt_8f5fe4f16633 {
@@ -8594,7 +8594,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48153, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48153, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCov_1f97273a4afc {
@@ -8604,7 +8604,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49822, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49822, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHid_105504cc4d23 {
@@ -8614,7 +8614,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48571, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48571, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTar_caf0147e4103 {
@@ -8624,7 +8624,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47071, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47071, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_C_daf19c9219b1 {
@@ -8634,7 +8634,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48272, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48272, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDi_43c5ac40c0a8 {
@@ -8644,7 +8644,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48287, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48287, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_Co_ae315d8735a8 {
@@ -8654,7 +8654,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48602, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48602, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_c1b61914842f {
@@ -8664,7 +8664,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50504, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50504, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnT_5dfef7d04cc9 {
@@ -8674,7 +8674,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49281, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49281, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicySearch__0deae4336f9d {
@@ -8684,7 +8684,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49559, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49559, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicySearchW_8f7f16691728 {
@@ -8694,7 +8694,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestGeneric_Co
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49581, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49581, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestMultiGoal_BSPathingRequest_BSTSmartPoi_c7d7385f2d72 {
@@ -8704,7 +8704,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestMultiGoal_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50146, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50146, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestStandard_BSPathingRequest_BSTSmartPoin_e62f92b4a8f3 {
@@ -8714,7 +8714,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatPathingRequestStandard_B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50134, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(50134, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatProjectileAimController_CombatObject_BSTCreateFactor_4e42bade5a67 {
@@ -8724,7 +8724,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatProjectileAimController_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44338, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44338, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatSearchLockData_BSPathingLockData_BSTSmartPointerPath_8c51e71b21fc {
@@ -8734,7 +8734,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatSearchLockData_BSPathing
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49576, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(49576, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetLocation_CombatObject_BSTCreateFactoryManager__568e45810945 {
@@ -8744,7 +8744,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetLocation_CombatObj
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46986, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46986, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetLocationSearch_CombatObject_BSTCreateFactoryMa_71bf2e3a108d {
@@ -8754,7 +8754,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetLocationSearch_Com
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46992, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46992, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetLocationSearchResult_CombatObject_BSTCreateFac_dda7b7499a84 {
@@ -8764,7 +8764,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetLocationSearchResu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46998, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(46998, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetSelectorFixed_CombatObject_BSTCreateFactoryMan_9509ad19a1de {
@@ -8774,7 +8774,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetSelectorFixed_Comb
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47213, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47213, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetSelectorStandard_CombatObject_BSTCreateFactory_1bdad71fa812 {
@@ -8784,7 +8784,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTargetSelectorStandard_C
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47207, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47207, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatThreat_CombatObject_BSTCreateFactoryManager_unsigned_int_CombatObject_256__ {
@@ -8794,7 +8794,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatThreat_CombatObject_BSTC
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47252, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(47252, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTrackTargetAimController_CombatObject_BSTCreateFacto_8ec2fb3fea06 {
@@ -8804,7 +8804,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_CombatTrackTargetAimController
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44415, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(44415, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ConsoleData_IUIMessageData_BSTCreateFactoryManager_BSFixed_14733610b491 {
@@ -8814,7 +8814,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ConsoleData_IUIMessageData_BST
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52791, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52791, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_DeathEmoteHandler_IHandlerFunctor_Actor_BSFixedStringCI____598901d8d403 {
@@ -8824,7 +8824,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_DeathEmoteHandler_IHandlerFunc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43122, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43122, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_DeathStopHandler_IHandlerFunctor_Actor_BSFixedStringCI___B_db2d94abe59e {
@@ -8834,7 +8834,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_DeathStopHandler_IHandlerFunct
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43123, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43123, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_DecapitateHandler_IHandlerFunctor_Actor_BSFixedStringCI____9508329c84a7 {
@@ -8844,7 +8844,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_DecapitateHandler_IHandlerFunc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43124, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43124, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_DisableCharacterBumperHandler_IHandlerFunctor_Actor_BSFixe_376b7fce83af {
@@ -8854,7 +8854,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_DisableCharacterBumperHandler_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43125, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43125, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_DisableCharacterPitchHandler_IHandlerFunctor_Actor_BSFixed_a4902a3f67e2 {
@@ -8864,7 +8864,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_DisableCharacterPitchHandler_I
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43126, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43126, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_DiveBombSpeedController_CombatObject_BSTCreateFactoryManag_190581c3fc64 {
@@ -8874,7 +8874,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_DiveBombSpeedController_Combat
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48865, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(48865, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_EnableCharacterBumperHandler_IHandlerFunctor_Actor_BSFixed_b6ac47aea1c2 {
@@ -8884,7 +8884,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_EnableCharacterBumperHandler_I
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43127, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43127, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_EnableCharacterPitchHandler_IHandlerFunctor_Actor_BSFixedS_8da14dee5dca {
@@ -8894,7 +8894,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_EnableCharacterPitchHandler_IH
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43128, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43128, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_EndSummonAnimationHandler_IHandlerFunctor_Actor_BSFixedStr_07b07d91c4c0 {
@@ -8904,7 +8904,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_EndSummonAnimationHandler_IHan
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43129, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43129, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ExitCartBeginHandler_IHandlerFunctor_Actor_BSFixedStringCI_cf72d9019aa2 {
@@ -8914,7 +8914,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ExitCartBeginHandler_IHandlerF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43130, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43130, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_ExitCartEndHandler_IHandlerFunctor_Actor_BSFixedStringCI___900ed23ea847 {
@@ -8924,7 +8924,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_ExitCartEndHandler_IHandlerFun
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43131, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43131, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FaderData_IUIMessageData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -8934,7 +8934,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FaderData_IUIMessageData_BSTCr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52801, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52801, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionEndHandler_IHandlerFunctor_Actor_BSFixedString_3554153600c9 {
@@ -8944,7 +8944,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionEndHandler_IHandle
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43132, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43132, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionEntryEndHandler_IHandlerFunctor_Actor_BSFixedS_2d1821acedf8 {
@@ -8954,7 +8954,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionEntryEndHandler_IH
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43133, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43133, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionGrabHandler_IHandlerFunctor_Actor_BSFixedStrin_197c0372bc2f {
@@ -8964,7 +8964,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionGrabHandler_IHandl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43134, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43134, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionHandler_IHandlerFunctor_Actor_BSFixedStringCI__fdd0a2f256fb {
@@ -8974,7 +8974,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionHandler_IHandlerFu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43135, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43135, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionReleaseHandler_IHandlerFunctor_Actor_BSFixedSt_cfda9e334279 {
@@ -8984,7 +8984,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightActionReleaseHandler_IHa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43136, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43136, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightCrashLandStartHandler_IHandlerFunctor_Actor_BSFixedS_6470ae5381c9 {
@@ -8994,7 +8994,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightCrashLandStartHandler_IH
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43137, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43137, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightCruisingHandler_IHandlerFunctor_Actor_BSFixedStringC_da4598a120b7 {
@@ -9004,7 +9004,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightCruisingHandler_IHandler
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43138, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43138, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightHoveringHandler_IHandlerFunctor_Actor_BSFixedStringC_45b92751f99d {
@@ -9014,7 +9014,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightHoveringHandler_IHandler
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43139, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43139, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightLandEndHandler_IHandlerFunctor_Actor_BSFixedStringCI_e5b9302563b7 {
@@ -9024,7 +9024,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightLandEndHandler_IHandlerF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43140, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43140, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightLandHandler_IHandlerFunctor_Actor_BSFixedStringCI____2e44d0d025c4 {
@@ -9034,7 +9034,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightLandHandler_IHandlerFunc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43141, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43141, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightLandingHandler_IHandlerFunctor_Actor_BSFixedStringCI_8557862b75f6 {
@@ -9044,7 +9044,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightLandingHandler_IHandlerF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43142, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43142, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightPerchingHandler_IHandlerFunctor_Actor_BSFixedStringC_1f5dac58b90a {
@@ -9054,7 +9054,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightPerchingHandler_IHandler
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43143, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43143, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightTakeOffHandler_IHandlerFunctor_Actor_BSFixedStringCI_51aa81b0b4dd {
@@ -9064,7 +9064,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_FlightTakeOffHandler_IHandlerF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43144, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43144, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_GetUpEndHandler_IHandlerFunctor_Actor_BSFixedStringCI___BS_d6d60cba3f89 {
@@ -9074,7 +9074,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_GetUpEndHandler_IHandlerFuncto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43145, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43145, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_GetUpStartHandler_IHandlerFunctor_Actor_BSFixedStringCI____0659e0156c99 {
@@ -9084,7 +9084,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_GetUpStartHandler_IHandlerFunc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43146, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43146, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_HUDData_IUIMessageData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__ {
@@ -9094,7 +9094,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_HUDData_IUIMessageData_BSTCrea
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52786, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52786, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_HeadTrackingOffHandler_IHandlerFunctor_Actor_BSFixedString_29e433c04fc1 {
@@ -9104,7 +9104,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_HeadTrackingOffHandler_IHandle
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43147, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43147, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_HeadTrackingOnHandler_IHandlerFunctor_Actor_BSFixedStringC_0d07d7b322c8 {
@@ -9114,7 +9114,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_HeadTrackingOnHandler_IHandler
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43148, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43148, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_HitFrameHandler_IHandlerFunctor_Actor_BSFixedStringCI___BS_519636885d5e {
@@ -9124,7 +9124,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_HitFrameHandler_IHandlerFuncto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43149, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43149, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_IdleDialogueEnterHandler_IHandlerFunctor_Actor_BSFixedStri_db6618578959 {
@@ -9134,7 +9134,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_IdleDialogueEnterHandler_IHand
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43150, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43150, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_IdleDialogueExitHandler_IHandlerFunctor_Actor_BSFixedStrin_148b47ec475e {
@@ -9144,7 +9144,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_IdleDialogueExitHandler_IHandl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43151, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43151, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_InterruptCastHandler_IHandlerFunctor_Actor_BSFixedStringCI_ecba9e7762da {
@@ -9154,7 +9154,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_InterruptCastHandler_IHandlerF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43152, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43152, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_InventoryUpdateData_IUIMessageData_BSTCreateFactoryManager_25a9e5b91e6c {
@@ -9164,7 +9164,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_InventoryUpdateData_IUIMessage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52806, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52806, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_JumpAnimEventHandler_IHandlerFunctor_Actor_BSFixedStringCI_b0bf11d68c78 {
@@ -9174,7 +9174,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_JumpAnimEventHandler_IHandlerF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43153, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43153, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_KillActorHandler_IHandlerFunctor_Actor_BSFixedStringCI___B_d4445b9fdd28 {
@@ -9184,7 +9184,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_KillActorHandler_IHandlerFunct
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43154, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43154, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_KillMoveEndHandler_IHandlerFunctor_Actor_BSFixedStringCI___a0f799a9d5fc {
@@ -9194,7 +9194,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_KillMoveEndHandler_IHandlerFun
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43155, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43155, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_KillMoveStartHandler_IHandlerFunctor_Actor_BSFixedStringCI_1b326307c7d8 {
@@ -9204,7 +9204,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_KillMoveStartHandler_IHandlerF
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43156, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43156, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_KinectStateChangeData_IUIMessageData_BSTCreateFactoryManag_be0a10cdf211 {
@@ -9214,7 +9214,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_KinectStateChangeData_IUIMessa
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52828, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52828, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_KinectUserEventData_IUIMessageData_BSTCreateFactoryManager_b3c8a20fcdea {
@@ -9224,7 +9224,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_KinectUserEventData_IUIMessage
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52833, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52833, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_LeftHandSpellCastHandler_IHandlerFunctor_Actor_BSFixedStri_40b40fc73516 {
@@ -9234,7 +9234,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_LeftHandSpellCastHandler_IHand
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43157, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43157, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_LeftHandSpellFireHandler_IHandlerFunctor_Actor_BSFixedStri_b4dd880bc166 {
@@ -9244,7 +9244,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_LeftHandSpellFireHandler_IHand
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43158, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43158, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_LoadingMenuData_IUIMessageData_BSTCreateFactoryManager_BSF_077a38056d2e {
@@ -9254,7 +9254,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_LoadingMenuData_IUIMessageData
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52822, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52822, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MTStateHandler_IHandlerFunctor_Actor_BSFixedStringCI___BST_9bf512da1e41 {
@@ -9264,7 +9264,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MTStateHandler_IHandlerFunctor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43159, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43159, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MessageBoxData_IUIMessageData_BSTCreateFactoryManager_BSFi_782f29761151 {
@@ -9274,7 +9274,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MessageBoxData_IUIMessageData_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52796, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52796, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MotionDrivenHandler_IHandlerFunctor_Actor_BSFixedStringCI__74b178cdce3e {
@@ -9284,7 +9284,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MotionDrivenHandler_IHandlerFu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43160, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43160, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MountDismountEndHandler_IHandlerFunctor_Actor_BSFixedStrin_0de1eb39a2ff {
@@ -9294,7 +9294,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MountDismountEndHandler_IHandl
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43161, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43161, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MountInteraction_RefrInteraction_BSTCreateFactoryManager_R_917f7e7de3f7 {
@@ -9304,7 +9304,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MountInteraction_RefrInteracti
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(40342, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(40342, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentActorAvoider_MovementAgent_BSTCreateFactoryMa_40745cd82dc7 {
@@ -9314,7 +9314,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentActorAvoider_Move
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92173, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92173, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentActorState_MovementAgent_BSTCreateFactoryMana_39e0bc2d8c1f {
@@ -9324,7 +9324,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentActorState_Moveme
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90593, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90593, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentPathFollowerFlight_MovementAgent_BSTCreateFac_ae225f7c7420 {
@@ -9334,7 +9334,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentPathFollowerFligh
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92477, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92477, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentPathFollowerStandard_MovementAgent_BSTCreateF_f07f16d4b2c2 {
@@ -9344,7 +9344,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentPathFollowerStand
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90666, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(90666, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentPathFollowerVirtual_MovementAgent_BSTCreateFa_9c184615610a {
@@ -9354,7 +9354,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementAgentPathFollowerVirtu
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92525, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92525, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentAngleController_MovementAgent_BSTCreat_247904265f89 {
@@ -9364,7 +9364,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentAngleContr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92567, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92567, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentAngleGain_MovementAgent_BSTCreateFacto_3d581df91f34 {
@@ -9374,7 +9374,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentAngleGain_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92586, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92586, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentAnglePassThrough_MovementAgent_BSTCrea_1d4305e37b6e {
@@ -9384,7 +9384,7 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentAnglePassT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92618, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92618, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentDirectControl_MovementAgent_BSTCreateF_c7efb3fe321f {
@@ -9394,246 +9394,6 @@ impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentDirectCont
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41951, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentDirectionPassThrough_MovementAgent_BST_88aa4b683226 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentDirectionPassThrough,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92634, rva 0x122c470).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentDirectionPassThrough,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentDirectionPassThrough,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92634, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentLargeDeltaIdle_MovementAgent_BSTCreate_2bd611b054c3 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentLargeDeltaIdle,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92666, rva 0x122ce00).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentLargeDeltaIdle,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentLargeDeltaIdle,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92666, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentPlayerControls_MovementAgent_BSTCreate_0045733d3d21 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentPlayerControls,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 41985, rva 0x7a3ae0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentPlayerControls,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentPlayerControls,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41985, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentPlayerControlsActionTrigger_MovementAg_f4fbb5873865 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentPlayerControlsActionTrigger,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42019, rva 0x7a55f0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentPlayerControlsActionTrigger,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentPlayerControlsActionTrigger,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42019, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentSpeedPassThrough_MovementAgent_BSTCrea_c31cadb491c2 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentSpeedPassThrough,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92602, rva 0x122bdf0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentSpeedPassThrough,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentSpeedPassThrough,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92602, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentSprintActionTrigger_MovementAgent_BSTC_e299425071ab {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentSprintActionTrigger,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42038, rva 0x7a59e0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentSprintActionTrigger,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentSprintActionTrigger,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42038, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentStairsHelper_MovementAgent_BSTCreateFa_237eb6edfbfa {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentStairsHelper,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42066, rva 0x7a6580).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentStairsHelper,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentStairsHelper,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42066, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentStrafing_MovementAgent_BSTCreateFactor_5fed31531283 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentStrafing,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92650, rva 0x122c9e0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentStrafing,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentStrafing,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92650, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerAgentTranslationController_MovementAgent_BS_e03c7e64920b {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentTranslationController,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92273, rva 0x12210e0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentTranslationController,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerAgentTranslationController,MovementAgent>,BSTCreateFactoryManager<BSFixedString,MovementAgent,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92273, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementHandlerArbiter_MovementArbiter_BSTCreateFactoryMan_7eeb61bb8b50 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerArbiter,MovementArbiter>,BSTCreateFactoryManager<BSFixedString,MovementArbiter,32>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92327, rva 0x12235a0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementHandlerArbiter,MovementArbiter>,BSTCreateFactoryManager<BSFixedString,MovementArbiter,32>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementHandlerArbiter,MovementArbiter>,BSTCreateFactoryManager<BSFixedString,MovementArbiter,32>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92327, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageActivateDoor_MovementMessage_BSTSmartPointe_9ac5f45d5dc8 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActivateDoor,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 91945, rva 0x12170e0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActivateDoor,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageActivateDoor,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91945, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageActorCollision_MovementMessage_BSTSmartPoin_2ca5c238e9f2 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42087, rva 0x7a6a20).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42087, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageBlocked_MovementMessage_BSTSmartPointerPath_f85652925317 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageBlocked,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92013, rva 0x1218660).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageBlocked,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageBlocked,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92013, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageFreezeDirection_MovementMessage_BSTSmartPoi_46fdb4671715 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92060, rva 0x121ac90).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92060, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageJump_MovementMessage_BSTSmartPointerPathing_091e46332d8f {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageJump,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92088, rva 0x121b220).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageJump,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageJump,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92088, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageMovementTypeChange_MovementMessage_BSTSmart_01dd7f75f0de {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageMovementTypeChange,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42106, rva 0x7a7220).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageMovementTypeChange,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageMovementTypeChange,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42106, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageNewPath_MovementMessage_BSTSmartPointerPath_1e701d59d7e0 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageNewPath,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92934, rva 0x1237270).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageNewPath,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageNewPath,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92934, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessagePathComplete_MovementMessage_BSTSmartPointe_74915b6af66c {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessagePathComplete,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92940, rva 0x12373c0).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessagePathComplete,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessagePathComplete,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92940, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessagePathFailed_MovementMessage_BSTSmartPointerP_497ba912a063 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessagePathFailed,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92946, rva 0x1237510).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessagePathFailed,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessagePathFailed,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92946, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessagePlayIdle_MovementMessage_BSTSmartPointerPat_096f78b4cd70 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessagePlayIdle,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92043, rva 0x121a700).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessagePlayIdle,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessagePlayIdle,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92043, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageSetStaticPath_MovementMessage_BSTSmartPoint_3c5203bb8c7b {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageSetStaticPath,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 92074, rva 0x121af60).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageSetStaticPath,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageSetStaticPath,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(92074, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageWarpToLocation_MovementMessage_BSTSmartPoin_cf3e835adeb8 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageWarpToLocation,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 91975, rva 0x1217b00).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageWarpToLocation,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageWarpToLocation,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91975, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementMessageWarpToMultiple_MovementMessage_BSTSmartPoin_2aaefa3f822a {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageWarpToMultiple,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 91991, rva 0x1217f30).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageWarpToMultiple,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageWarpToMultiple,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(91991, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl crate::AutoRegisterFactory_BSTDerivedCreator_MovementParameters_IMovementParameters_BSTSmartPointerPath_266bc892a713 {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementParameters,IMovementParameters>,BSTSmartPointerPathingFactoryManager<IMovementParameters,64>_>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 41597, rva 0x78fa60).
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementParameters,IMovementParameters>,BSTSmartPointerPathingFactoryManager<IMovementParameters,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementParameters,IMovementParameters>,BSTSmartPointerPathingFactoryManager<IMovementParameters,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41597, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(41951, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 

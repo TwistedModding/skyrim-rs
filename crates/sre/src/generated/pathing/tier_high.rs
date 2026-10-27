@@ -10,14 +10,14 @@ impl crate::MovementAgent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92229, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92229, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementAgent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92230, rva 0x12200c0).
     /// `undefined dtor(MovementAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92230, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92230, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementAgentActorAvoider {
@@ -27,42 +27,42 @@ impl crate::MovementAgentActorAvoider {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92212, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92212, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorAvoider::IMovementPathManagerAgent_vfunc_5` (decompiler signature, tier high; ledger rtti evidence, name high; id 92194, rva 0x121e4e0).
     /// `undefined IMovementPathManagerAgent_vfunc_5(MovementAgentActorAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_5(&self) -> u64 { unsafe { function!(92194, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_5(&self) -> u64 { unsafe { function!(92194, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorAvoider::IMovementPathManagerAgent_vfunc_6` (decompiler signature, tier high; ledger rtti evidence, name high; id 92195, rva 0x121e500).
     /// `undefined IMovementPathManagerAgent_vfunc_6(MovementAgentActorAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_6(&self) -> u64 { unsafe { function!(92195, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_6(&self) -> u64 { unsafe { function!(92195, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorAvoider::IMovementPlannerAgent_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 92211, rva 0x121f918).
     /// `undefined IMovementPlannerAgent_vfunc_0(MovementAgentActorAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92211, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92211, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorAvoider::IMovementQueryActorAvoidance_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92213, rva 0x121f930).
     /// `undefined IMovementQueryActorAvoidance_vdtor(MovementAgentActorAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_actor_avoidance_vdtor(&self) -> u64 { unsafe { function!(92213, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_actor_avoidance_vdtor(&self) -> u64 { unsafe { function!(92213, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorAvoider::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92177, rva 0x121d9a0).
     /// `MovementAgentActorAvoider * ctor(MovementAgentActorAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92177, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92177, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementAgentActorState {
@@ -72,42 +72,42 @@ impl crate::MovementAgentActorState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(90617, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(90617, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorState::IMovementQueryState_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 90619, rva 0x11caf38).
     /// `undefined IMovementQueryState_vdtor(MovementAgentActorState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_state_vdtor(&self) -> u64 { unsafe { function!(90619, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_state_vdtor(&self) -> u64 { unsafe { function!(90619, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorState::IMovementQueryState_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 90609, rva 0x11cad40).
     /// `undefined4 * IMovementQueryState_vfunc_1(MovementAgentActorState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_state_vfunc_1(&self) -> *mut u32 { unsafe { function!(90609, (&Self) -> *mut u32)(self) } }
+    pub unsafe fn i_movement_query_state_vfunc_1(&self) -> *mut u32 { unsafe { function!(90609, (*const Self) -> *mut u32)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorState::IMovementQueryState_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 90610, rva 0x11cad90).
     /// `undefined8 IMovementQueryState_vfunc_2(MovementAgentActorState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_state_vfunc_2(&self) -> u64 { unsafe { function!(90610, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_state_vfunc_2(&self) -> u64 { unsafe { function!(90610, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorState::IMovementSetState_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 90618, rva 0x11caf2c).
     /// `undefined IMovementSetState_vdtor(MovementAgentActorState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_state_vdtor(&self) -> u64 { unsafe { function!(90618, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_state_vdtor(&self) -> u64 { unsafe { function!(90618, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentActorState::IMovementSetState_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 90607, rva 0x11cac60).
     /// `undefined IMovementSetState_vfunc_2(MovementAgentActorState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_state_vfunc_2(&self) -> u64 { unsafe { function!(90607, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_state_vfunc_2(&self) -> u64 { unsafe { function!(90607, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementAgentPathFollowerFlight {
@@ -117,77 +117,77 @@ impl crate::MovementAgentPathFollowerFlight {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92515, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92515, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementPathManagerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92490, rva 0x12280d0).
     /// `undefined IMovementPathManagerAgent_vfunc_1(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(92490, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(92490, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementPlannerAgent_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 92514, rva 0x1229670).
     /// `undefined IMovementPlannerAgent_vfunc_0(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92514, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92514, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementPlannerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92489, rva 0x12280b0).
     /// `undefined IMovementPlannerAgent_vfunc_1(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(92489, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(92489, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementPlannerAgent_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 92492, rva 0x1228170).
     /// `undefined IMovementPlannerAgent_vfunc_3(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_3(&self) -> u64 { unsafe { function!(92492, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_3(&self) -> u64 { unsafe { function!(92492, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementQueryFlight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92517, rva 0x1229694).
     /// `undefined IMovementQueryFlight_vdtor(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_flight_vdtor(&self) -> u64 { unsafe { function!(92517, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_flight_vdtor(&self) -> u64 { unsafe { function!(92517, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementQueryPathFollowing_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92516, rva 0x1229688).
     /// `undefined IMovementQueryPathFollowing_vdtor(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vdtor(&self) -> u64 { unsafe { function!(92516, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_path_following_vdtor(&self) -> u64 { unsafe { function!(92516, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementQueryPathFollowing_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92496, rva 0x12284c0).
     /// `bool IMovementQueryPathFollowing_vfunc_1(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_1(&self) -> u8 { unsafe { function!(92496, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_1(&self) -> u8 { unsafe { function!(92496, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementQueryPathFollowing_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 92498, rva 0x1228530).
     /// `bool IMovementQueryPathFollowing_vfunc_3(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_3(&self) -> u8 { unsafe { function!(92498, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_3(&self) -> u8 { unsafe { function!(92498, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::IMovementQueryPathFollowing_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 92499, rva 0x1228580).
     /// `bool IMovementQueryPathFollowing_vfunc_4(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_4(&self) -> u8 { unsafe { function!(92499, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_4(&self) -> u8 { unsafe { function!(92499, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerFlight::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92480, rva 0x1227cd0).
     /// `MovementAgentPathFollowerFlight * ctor(MovementAgentPathFollowerFlight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92480, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92480, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementAgentPathFollowerStandard {
@@ -197,112 +197,112 @@ impl crate::MovementAgentPathFollowerStandard {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_1(&self) -> u64 { unsafe { function!(90740, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_1(&self) -> u64 { unsafe { function!(90740, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementPathManagerAgent_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 90801, rva 0x11d2a0c).
     /// `undefined IMovementPathManagerAgent_vfunc_0(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(90801, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(90801, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementPathManagerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 90710, rva 0x11cd130).
     /// `undefined IMovementPathManagerAgent_vfunc_1(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(90710, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(90710, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementPlannerAgent_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 90800, rva 0x11d2a00).
     /// `undefined IMovementPlannerAgent_vfunc_0(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(90800, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(90800, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementPlannerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 90709, rva 0x11cd110).
     /// `undefined IMovementPlannerAgent_vfunc_1(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(90709, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(90709, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementPlayIdleResult_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 90804, rva 0x11d2a30).
     /// `undefined IMovementPlayIdleResult_vfunc_0(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_play_idle_result_vfunc_0(&self) -> u64 { unsafe { function!(90804, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_play_idle_result_vfunc_0(&self) -> u64 { unsafe { function!(90804, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementPlayIdleResult_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 90773, rva 0x11d1f80).
     /// `undefined IMovementPlayIdleResult_vfunc_2(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_play_idle_result_vfunc_2(&self) -> u64 { unsafe { function!(90773, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_play_idle_result_vfunc_2(&self) -> u64 { unsafe { function!(90773, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementPlayIdleResult_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 90774, rva 0x11d1f90).
     /// `int IMovementPlayIdleResult_vfunc_3(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_play_idle_result_vfunc_3(&self) -> i32 { unsafe { function!(90774, (&Self) -> i32)(self) } }
+    pub unsafe fn i_movement_play_idle_result_vfunc_3(&self) -> i32 { unsafe { function!(90774, (*const Self) -> i32)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementQueryPathFollowing_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 90802, rva 0x11d2a18).
     /// `undefined IMovementQueryPathFollowing_vdtor(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vdtor(&self) -> u64 { unsafe { function!(90802, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_path_following_vdtor(&self) -> u64 { unsafe { function!(90802, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementQueryPathFollowing_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 90717, rva 0x11ce3d0).
     /// `undefined8 IMovementQueryPathFollowing_vfunc_1(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_1(&self) -> u64 { unsafe { function!(90717, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_1(&self) -> u64 { unsafe { function!(90717, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementQueryPathFollowing_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 90718, rva 0x11ce470).
     /// `bool IMovementQueryPathFollowing_vfunc_2(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_2(&self) -> u8 { unsafe { function!(90718, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_2(&self) -> u8 { unsafe { function!(90718, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementQueryPathFollowing_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 90719, rva 0x11ce4d0).
     /// `undefined8 IMovementQueryPathFollowing_vfunc_3(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_3(&self) -> u64 { unsafe { function!(90719, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_3(&self) -> u64 { unsafe { function!(90719, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementQueryPathFollowing_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 90720, rva 0x11ce540).
     /// `undefined8 IMovementQueryPathFollowing_vfunc_4(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_4(&self) -> u64 { unsafe { function!(90720, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_4(&self) -> u64 { unsafe { function!(90720, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementQueryPathFollowing_vfunc_8` (decompiler signature, tier high; ledger rtti evidence, name high; id 90723, rva 0x11ce770).
     /// `bool IMovementQueryPathFollowing_vfunc_8(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_8(&self) -> u8 { unsafe { function!(90723, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_8(&self) -> u8 { unsafe { function!(90723, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::IMovementSetPathFollowing_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 90803, rva 0x11d2a24).
     /// `undefined IMovementSetPathFollowing_vdtor(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_path_following_vdtor(&self) -> u64 { unsafe { function!(90803, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_path_following_vdtor(&self) -> u64 { unsafe { function!(90803, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerStandard::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90699, rva 0x11cca00).
     /// `MovementAgentPathFollowerStandard * ctor(MovementAgentPathFollowerStandard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(90699, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(90699, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementAgentPathFollowerVirtual {
@@ -312,77 +312,77 @@ impl crate::MovementAgentPathFollowerVirtual {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92560, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92560, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementPathManagerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92539, rva 0x1229fb0).
     /// `undefined IMovementPathManagerAgent_vfunc_1(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(92539, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(92539, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementPlannerAgent_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 92559, rva 0x122abfc).
     /// `undefined IMovementPlannerAgent_vfunc_0(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92559, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92559, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementPlannerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92538, rva 0x1229f90).
     /// `undefined IMovementPlannerAgent_vfunc_1(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(92538, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(92538, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementQueryPathFollowing_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92561, rva 0x122ac14).
     /// `undefined IMovementQueryPathFollowing_vdtor(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vdtor(&self) -> u64 { unsafe { function!(92561, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_path_following_vdtor(&self) -> u64 { unsafe { function!(92561, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementQueryPathFollowing_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92546, rva 0x122a340).
     /// `bool IMovementQueryPathFollowing_vfunc_1(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_1(&self) -> u8 { unsafe { function!(92546, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_1(&self) -> u8 { unsafe { function!(92546, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementQueryPathFollowing_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 92547, rva 0x122a3a0).
     /// `bool IMovementQueryPathFollowing_vfunc_2(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_2(&self) -> u8 { unsafe { function!(92547, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_2(&self) -> u8 { unsafe { function!(92547, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementQueryPathFollowing_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 92548, rva 0x122a3f0).
     /// `bool IMovementQueryPathFollowing_vfunc_3(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_3(&self) -> u8 { unsafe { function!(92548, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_3(&self) -> u8 { unsafe { function!(92548, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementQueryPathFollowing_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 92549, rva 0x122a440).
     /// `undefined IMovementQueryPathFollowing_vfunc_4(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_path_following_vfunc_4(&self) -> u64 { unsafe { function!(92549, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_path_following_vfunc_4(&self) -> u64 { unsafe { function!(92549, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::IMovementSetPathFollowing_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92562, rva 0x122ac20).
     /// `undefined IMovementSetPathFollowing_vdtor(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_path_following_vdtor(&self) -> u64 { unsafe { function!(92562, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_path_following_vdtor(&self) -> u64 { unsafe { function!(92562, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementAgentPathFollowerVirtual::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92528, rva 0x1229c00).
     /// `MovementAgentPathFollowerVirtual * ctor(MovementAgentPathFollowerVirtual * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92528, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92528, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementArbiter {
@@ -392,14 +392,14 @@ impl crate::MovementArbiter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92248, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92248, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementArbiter::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92249, rva 0x1220890).
     /// `undefined dtor(MovementArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92249, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92249, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementArbitrationVectorAdd {
@@ -409,7 +409,7 @@ impl crate::MovementArbitrationVectorAdd {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93377, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93377, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementAvoidanceManager {
@@ -419,7 +419,7 @@ impl crate::MovementAvoidanceManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41661, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41661, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementControllerNPC {
@@ -429,105 +429,105 @@ impl crate::MovementControllerNPC {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_direct_control_vdtor(&self) -> u64 { unsafe { function!(41798, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_direct_control_vdtor(&self) -> u64 { unsafe { function!(41798, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementDirectControl_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 41720, rva 0x797d00).
     /// `undefined IMovementDirectControl_vfunc_1(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_direct_control_vfunc_1(&self) -> u64 { unsafe { function!(41720, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_direct_control_vfunc_1(&self) -> u64 { unsafe { function!(41720, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementDirectControl_vfunc_8` (decompiler signature, tier high; ledger rtti evidence, name high; id 41727, rva 0x7980c0).
     /// `undefined IMovementDirectControl_vfunc_8(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_direct_control_vfunc_8(&self) -> u64 { unsafe { function!(41727, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_direct_control_vfunc_8(&self) -> u64 { unsafe { function!(41727, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementMessageInterface_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 41795, rva 0x79a628).
     /// `undefined IMovementMessageInterface_vdtor(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_message_interface_vdtor(&self) -> u64 { unsafe { function!(41795, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_message_interface_vdtor(&self) -> u64 { unsafe { function!(41795, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 41796, rva 0x79a634).
     /// `undefined IMovementMotionDrivenControl_vdtor(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vdtor(&self) -> u64 { unsafe { function!(41796, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_motion_driven_control_vdtor(&self) -> u64 { unsafe { function!(41796, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 41701, rva 0x796460).
     /// `undefined IMovementMotionDrivenControl_vfunc_1(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vfunc_1(&self) -> u64 { unsafe { function!(41701, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_motion_driven_control_vfunc_1(&self) -> u64 { unsafe { function!(41701, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 41702, rva 0x7964d0).
     /// `undefined IMovementMotionDrivenControl_vfunc_2(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vfunc_2(&self) -> u64 { unsafe { function!(41702, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_motion_driven_control_vfunc_2(&self) -> u64 { unsafe { function!(41702, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 41704, rva 0x796760).
     /// `undefined IMovementMotionDrivenControl_vfunc_3(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vfunc_3(&self) -> u64 { unsafe { function!(41704, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_motion_driven_control_vfunc_3(&self) -> u64 { unsafe { function!(41704, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_6` (decompiler signature, tier high; ledger rtti evidence, name high; id 41706, rva 0x7968b0).
     /// `longlong IMovementMotionDrivenControl_vfunc_6(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vfunc_6(&self) -> i64 { unsafe { function!(41706, (&Self) -> i64)(self) } }
+    pub unsafe fn i_movement_motion_driven_control_vfunc_6(&self) -> i64 { unsafe { function!(41706, (*const Self) -> i64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_7` (decompiler signature, tier high; ledger rtti evidence, name high; id 41707, rva 0x7968e0).
     /// `longlong IMovementMotionDrivenControl_vfunc_7(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vfunc_7(&self) -> i64 { unsafe { function!(41707, (&Self) -> i64)(self) } }
+    pub unsafe fn i_movement_motion_driven_control_vfunc_7(&self) -> i64 { unsafe { function!(41707, (*const Self) -> i64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_8` (decompiler signature, tier high; ledger rtti evidence, name high; id 41708, rva 0x796910).
     /// `longlong IMovementMotionDrivenControl_vfunc_8(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vfunc_8(&self) -> i64 { unsafe { function!(41708, (&Self) -> i64)(self) } }
+    pub unsafe fn i_movement_motion_driven_control_vfunc_8(&self) -> i64 { unsafe { function!(41708, (*const Self) -> i64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementPlannerDirectControl_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 41728, rva 0x798150).
     /// `undefined IMovementPlannerDirectControl_vfunc_1(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_direct_control_vfunc_1(&self) -> u64 { unsafe { function!(41728, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_direct_control_vfunc_1(&self) -> u64 { unsafe { function!(41728, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementPlannerDirectControl_vfunc_5` (decompiler signature, tier high; ledger rtti evidence, name high; id 41732, rva 0x798330).
     /// `undefined IMovementPlannerDirectControl_vfunc_5(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_direct_control_vfunc_5(&self) -> u64 { unsafe { function!(41732, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_direct_control_vfunc_5(&self) -> u64 { unsafe { function!(41732, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementSelectIdle_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 41797, rva 0x79a640).
     /// `undefined IMovementSelectIdle_vdtor(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_select_idle_vdtor(&self) -> u64 { unsafe { function!(41797, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_select_idle_vdtor(&self) -> u64 { unsafe { function!(41797, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementControllerNPC::IMovementSelectIdle_vfunc_5` (decompiler signature, tier high; ledger rtti evidence, name high; id 41697, rva 0x795ea0).
     /// `bool IMovementSelectIdle_vfunc_5(MovementControllerNPC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_select_idle_vfunc_5(&self) -> u8 { unsafe { function!(41697, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_select_idle_vfunc_5(&self) -> u8 { unsafe { function!(41697, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgent {
@@ -537,28 +537,28 @@ impl crate::MovementHandlerAgent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92356, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92356, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgent::IMovementHandlerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name medium; id 92351, rva 0x1223f90).
     /// `undefined IMovementHandlerAgent_vfunc_1(MovementHandlerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_1(&self) -> u64 { unsafe { function!(92351, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_1(&self) -> u64 { unsafe { function!(92351, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgent::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92349, rva 0x1223f10).
     /// `MovementHandlerAgent * ctor(MovementHandlerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92349, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92349, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92350, rva 0x1223f50).
     /// `undefined dtor(MovementHandlerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92350, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92350, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentAngleController {
@@ -568,14 +568,14 @@ impl crate::MovementHandlerAgentAngleController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92581, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92581, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentAngleController::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92570, rva 0x122aee0).
     /// `MovementHandlerAgentAngleController * ctor(MovementHandlerAgentAngleController * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92570, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92570, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentAngleGain {
@@ -585,14 +585,14 @@ impl crate::MovementHandlerAgentAngleGain {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92597, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92597, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentAngleGain::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92589, rva 0x122b590).
     /// `MovementHandlerAgentAngleGain * ctor(MovementHandlerAgentAngleGain * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92589, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92589, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentAnglePassThrough {
@@ -602,14 +602,14 @@ impl crate::MovementHandlerAgentAnglePassThrough {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92629, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92629, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentAnglePassThrough::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92621, rva 0x122c190).
     /// `MovementHandlerAgentAnglePassThrough * ctor(MovementHandlerAgentAnglePassThrough * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92621, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92621, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentDirectControl {
@@ -619,14 +619,14 @@ impl crate::MovementHandlerAgentDirectControl {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(41979, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(41979, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentDirectControl::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 41954, rva 0x7a2900).
     /// `MovementHandlerAgentDirectControl * ctor(MovementHandlerAgentDirectControl * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41954, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41954, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentDirectionPassThrough {
@@ -636,14 +636,14 @@ impl crate::MovementHandlerAgentDirectionPassThrough {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92645, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92645, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentDirectionPassThrough::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92637, rva 0x122c500).
     /// `MovementHandlerAgentDirectionPassThrough * ctor(MovementHandlerAgentDirectionPassThrough * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92637, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92637, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentLargeDeltaIdle {
@@ -653,14 +653,14 @@ impl crate::MovementHandlerAgentLargeDeltaIdle {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92682, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92682, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentLargeDeltaIdle::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92669, rva 0x122ce90).
     /// `MovementHandlerAgentLargeDeltaIdle * ctor(MovementHandlerAgentLargeDeltaIdle * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92669, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92669, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentPlayerControls {
@@ -670,21 +670,21 @@ impl crate::MovementHandlerAgentPlayerControls {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(42009, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(42009, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentPlayerControls::IMovementSetPlayerControls_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42010, rva 0x7a4d38).
     /// `undefined IMovementSetPlayerControls_vdtor(MovementHandlerAgentPlayerControls * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_player_controls_vdtor(&self) -> u64 { unsafe { function!(42010, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_player_controls_vdtor(&self) -> u64 { unsafe { function!(42010, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentPlayerControls::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 41988, rva 0x7a3b70).
     /// `MovementHandlerAgentPlayerControls * ctor(MovementHandlerAgentPlayerControls * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41988, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41988, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentPlayerControlsActionTrigger {
@@ -694,14 +694,14 @@ impl crate::MovementHandlerAgentPlayerControlsActionTrigger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(42033, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(42033, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentPlayerControlsActionTrigger::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42022, rva 0x7a5680).
     /// `MovementHandlerAgentPlayerControlsActionTrigger * ctor(MovementHandlerAgentPlayerControlsActionTrigger * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42022, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42022, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentSpeedPassThrough {
@@ -711,14 +711,14 @@ impl crate::MovementHandlerAgentSpeedPassThrough {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92613, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92613, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentSpeedPassThrough::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92605, rva 0x122be80).
     /// `MovementHandlerAgentSpeedPassThrough * ctor(MovementHandlerAgentSpeedPassThrough * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92605, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92605, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentSprintActionTrigger {
@@ -728,35 +728,35 @@ impl crate::MovementHandlerAgentSprintActionTrigger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(42058, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(42058, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentSprintActionTrigger::IMovementSetSprinting_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42059, rva 0x7a63dc).
     /// `undefined IMovementSetSprinting_vdtor(MovementHandlerAgentSprintActionTrigger * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_sprinting_vdtor(&self) -> u64 { unsafe { function!(42059, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_sprinting_vdtor(&self) -> u64 { unsafe { function!(42059, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentSprintActionTrigger::IMovementSetSprinting_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 42062, rva 0x7a6490).
     /// `undefined1 IMovementSetSprinting_vfunc_2(MovementHandlerAgentSprintActionTrigger * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_sprinting_vfunc_2(&self) -> u8 { unsafe { function!(42062, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_set_sprinting_vfunc_2(&self) -> u8 { unsafe { function!(42062, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentSprintActionTrigger::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42041, rva 0x7a5a70).
     /// `MovementHandlerAgentSprintActionTrigger * ctor(MovementHandlerAgentSprintActionTrigger * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42041, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42041, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentSprintActionTrigger::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42042, rva 0x7a5ac0).
     /// `undefined dtor(MovementHandlerAgentSprintActionTrigger * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42042, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42042, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentStairsHelper {
@@ -766,14 +766,14 @@ impl crate::MovementHandlerAgentStairsHelper {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(42081, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(42081, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentStairsHelper::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42069, rva 0x7a6610).
     /// `MovementHandlerAgentStairsHelper * ctor(MovementHandlerAgentStairsHelper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42069, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42069, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentStrafing {
@@ -783,14 +783,14 @@ impl crate::MovementHandlerAgentStrafing {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92661, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92661, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentStrafing::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92653, rva 0x122ca70).
     /// `MovementHandlerAgentStrafing * ctor(MovementHandlerAgentStrafing * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92653, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92653, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerAgentTranslationController {
@@ -800,28 +800,28 @@ impl crate::MovementHandlerAgentTranslationController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92293, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_handler_agent_vfunc_0(&self) -> u64 { unsafe { function!(92293, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentTranslationController::IMovementSetTranslationControllerType_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92294, rva 0x1221bc8).
     /// `undefined IMovementSetTranslationControllerType_vdtor(MovementHandlerAgentTranslationController * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_translation_controller_type_vdtor(&self) -> u64 { unsafe { function!(92294, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_translation_controller_type_vdtor(&self) -> u64 { unsafe { function!(92294, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentTranslationController::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92277, rva 0x1221190).
     /// `MovementHandlerAgentTranslationController * ctor(MovementHandlerAgentTranslationController * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92277, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92277, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementHandlerAgentTranslationController::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92278, rva 0x12211e0).
     /// `undefined dtor(MovementHandlerAgentTranslationController * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92278, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92278, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementHandlerArbiter {
@@ -831,7 +831,7 @@ impl crate::MovementHandlerArbiter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92330, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92330, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessage {
@@ -841,7 +841,7 @@ impl crate::MovementMessage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92949, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92949, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessageActivateDoor {
@@ -851,14 +851,14 @@ impl crate::MovementMessageActivateDoor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_path_follower_action_vdtor(&self) -> u64 { unsafe { function!(91968, (&Self) -> u64)(self) } }
+    pub unsafe fn i_path_follower_action_vdtor(&self) -> u64 { unsafe { function!(91968, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementMessageActivateDoor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 91959, rva 0x12174c0).
     /// `undefined dtor(MovementMessageActivateDoor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(91959, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(91959, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessageBlocked {
@@ -868,7 +868,7 @@ impl crate::MovementMessageBlocked {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92015, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92015, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessageDoor {
@@ -878,14 +878,14 @@ impl crate::MovementMessageDoor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(91948, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(91948, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementMessageDoor::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 91954, rva 0x1217370).
     /// `undefined ctor(MovementMessageDoor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(91954, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(91954, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessageFreezeDirection {
@@ -895,7 +895,7 @@ impl crate::MovementMessageFreezeDirection {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92064, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92064, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessageJump {
@@ -905,14 +905,14 @@ impl crate::MovementMessageJump {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_path_follower_action_vdtor(&self) -> u64 { unsafe { function!(92102, (&Self) -> u64)(self) } }
+    pub unsafe fn i_path_follower_action_vdtor(&self) -> u64 { unsafe { function!(92102, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementMessageJump::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92093, rva 0x121b310).
     /// `undefined dtor(MovementMessageJump * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92093, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92093, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessageMovementTypeChange {
@@ -922,7 +922,7 @@ impl crate::MovementMessageMovementTypeChange {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42113, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42113, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessagePathEvent {
@@ -932,7 +932,7 @@ impl crate::MovementMessagePathEvent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92952, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92952, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessagePlayIdle {
@@ -942,7 +942,7 @@ impl crate::MovementMessagePlayIdle {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92046, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92046, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessageWarpToLocation {
@@ -952,14 +952,14 @@ impl crate::MovementMessageWarpToLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(91978, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(91978, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementMessageWarpToLocation::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 91980, rva 0x1217c60).
     /// `undefined dtor(MovementMessageWarpToLocation * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(91980, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(91980, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementMessageWarpToMultiple {
@@ -969,14 +969,14 @@ impl crate::MovementMessageWarpToMultiple {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(91994, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(91994, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementMessageWarpToMultiple::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 91995, rva 0x1218020).
     /// `undefined ctor(MovementMessageWarpToMultiple * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(91995, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(91995, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPathManagerAgent {
@@ -986,28 +986,28 @@ impl crate::MovementPathManagerAgent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(90902, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(90902, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgent::IMovementPathManagerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name medium; id 90837, rva 0x11d3170).
     /// `undefined IMovementPathManagerAgent_vfunc_1(MovementPathManagerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(90837, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(90837, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgent::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90835, rva 0x11d30f0).
     /// `MovementPathManagerAgent * ctor(MovementPathManagerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(90835, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(90835, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90836, rva 0x11d3130).
     /// `undefined dtor(MovementPathManagerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(90836, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(90836, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPathManagerAgentAvoidBox {
@@ -1017,14 +1017,14 @@ impl crate::MovementPathManagerAgentAvoidBox {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92768, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92768, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentAvoidBox::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92743, rva 0x122f370).
     /// `MovementPathManagerAgentAvoidBox * ctor(MovementPathManagerAgentAvoidBox * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92743, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92743, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPathManagerAgentLoadedAreaMonitor {
@@ -1034,14 +1034,14 @@ impl crate::MovementPathManagerAgentLoadedAreaMonitor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92472, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92472, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentLoadedAreaMonitor::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92458, rva 0x1227560).
     /// `MovementPathManagerAgentLoadedAreaMonitor * ctor(MovementPathManagerAgentLoadedAreaMonitor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92458, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92458, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPathManagerAgentStaticAvoider {
@@ -1051,63 +1051,63 @@ impl crate::MovementPathManagerAgentStaticAvoider {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92162, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92162, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentStaticAvoider::IMovementPathManagerAgent_vfunc_6` (decompiler signature, tier high; ledger rtti evidence, name high; id 92152, rva 0x121cff0).
     /// `undefined IMovementPathManagerAgent_vfunc_6(MovementPathManagerAgentStaticAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_6(&self) -> u64 { unsafe { function!(92152, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_6(&self) -> u64 { unsafe { function!(92152, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentStaticAvoider::IMovementQueryStaticAvoider_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92163, rva 0x121d2d8).
     /// `undefined IMovementQueryStaticAvoider_vdtor(MovementPathManagerAgentStaticAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_static_avoider_vdtor(&self) -> u64 { unsafe { function!(92163, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_static_avoider_vdtor(&self) -> u64 { unsafe { function!(92163, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentStaticAvoider::IMovementQueryStaticAvoider_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92153, rva 0x121d030).
     /// `MovementPathManagerAgentStaticAvoider_vtbl_20 * * IMovementQueryStaticAvoider_vfunc_1(MovementPathManagerAgentStaticAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_static_avoider_vfunc_1(&self) -> *mut *mut c_void { unsafe { function!(92153, (&Self) -> *mut *mut c_void)(self) } }
+    pub unsafe fn i_movement_query_static_avoider_vfunc_1(&self) -> *mut *mut c_void { unsafe { function!(92153, (*const Self) -> *mut *mut c_void)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentStaticAvoider::IMovementQueryStaticAvoider_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 92154, rva 0x121d040).
     /// `undefined1 IMovementQueryStaticAvoider_vfunc_2(MovementPathManagerAgentStaticAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_static_avoider_vfunc_2(&self) -> u8 { unsafe { function!(92154, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_static_avoider_vfunc_2(&self) -> u8 { unsafe { function!(92154, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentStaticAvoider::IMovementQueryStaticAvoider_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 92155, rva 0x121d070).
     /// `bool IMovementQueryStaticAvoider_vfunc_3(MovementPathManagerAgentStaticAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_static_avoider_vfunc_3(&self) -> u8 { unsafe { function!(92155, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_query_static_avoider_vfunc_3(&self) -> u8 { unsafe { function!(92155, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentStaticAvoider::IMovementSetStaticAvoider_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92164, rva 0x121d2e4).
     /// `undefined IMovementSetStaticAvoider_vdtor(MovementPathManagerAgentStaticAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_static_avoider_vdtor(&self) -> u64 { unsafe { function!(92164, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_static_avoider_vdtor(&self) -> u64 { unsafe { function!(92164, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentStaticAvoider::IMovementSetStaticAvoider_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92156, rva 0x121d090).
     /// `undefined IMovementSetStaticAvoider_vfunc_1(MovementPathManagerAgentStaticAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_static_avoider_vfunc_1(&self) -> u64 { unsafe { function!(92156, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_static_avoider_vfunc_1(&self) -> u64 { unsafe { function!(92156, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerAgentStaticAvoider::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92140, rva 0x121c470).
     /// `MovementPathManagerAgentStaticAvoider * ctor(MovementPathManagerAgentStaticAvoider * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92140, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92140, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPathManagerArbiter {
@@ -1117,56 +1117,56 @@ impl crate::MovementPathManagerArbiter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_pathing_state_vdtor(&self) -> u64 { unsafe { function!(90904, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_pathing_state_vdtor(&self) -> u64 { unsafe { function!(90904, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerArbiter::IMovementQueryPathingState_vfunc_10` (decompiler signature, tier high; ledger rtti evidence, name high; id 90869, rva 0x11d44d0).
     /// `undefined8 IMovementQueryPathingState_vfunc_10(MovementPathManagerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_pathing_state_vfunc_10(&self) -> u64 { unsafe { function!(90869, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_pathing_state_vfunc_10(&self) -> u64 { unsafe { function!(90869, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerArbiter::IMovementQueryPathingState_vfunc_11` (decompiler signature, tier high; ledger rtti evidence, name high; id 90870, rva 0x11d4530).
     /// `undefined8 IMovementQueryPathingState_vfunc_11(MovementPathManagerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_pathing_state_vfunc_11(&self) -> u64 { unsafe { function!(90870, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_pathing_state_vfunc_11(&self) -> u64 { unsafe { function!(90870, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerArbiter::IMovementQueryPathingState_vfunc_12` (decompiler signature, tier high; ledger rtti evidence, name high; id 90871, rva 0x11d4590).
     /// `undefined8 IMovementQueryPathingState_vfunc_12(MovementPathManagerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_pathing_state_vfunc_12(&self) -> u64 { unsafe { function!(90871, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_pathing_state_vfunc_12(&self) -> u64 { unsafe { function!(90871, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerArbiter::IMovementQueryPathingState_vfunc_13` (decompiler signature, tier high; ledger rtti evidence, name high; id 90872, rva 0x11d45f0).
     /// `undefined8 IMovementQueryPathingState_vfunc_13(MovementPathManagerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_pathing_state_vfunc_13(&self) -> u64 { unsafe { function!(90872, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_pathing_state_vfunc_13(&self) -> u64 { unsafe { function!(90872, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerArbiter::IMovementQueryPathingState_vfunc_7` (decompiler signature, tier high; ledger rtti evidence, name high; id 90863, rva 0x11d4290).
     /// `undefined4 IMovementQueryPathingState_vfunc_7(MovementPathManagerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_pathing_state_vfunc_7(&self) -> u32 { unsafe { function!(90863, (&Self) -> u32)(self) } }
+    pub unsafe fn i_movement_query_pathing_state_vfunc_7(&self) -> u32 { unsafe { function!(90863, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerArbiter::IMovementQueryPathingState_vfunc_9` (decompiler signature, tier high; ledger rtti evidence, name high; id 90868, rva 0x11d4470).
     /// `undefined8 IMovementQueryPathingState_vfunc_9(MovementPathManagerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_pathing_state_vfunc_9(&self) -> u64 { unsafe { function!(90868, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_pathing_state_vfunc_9(&self) -> u64 { unsafe { function!(90868, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPathManagerArbiter::IMovementSetGoal_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 90903, rva 0x11d5984).
     /// `undefined IMovementSetGoal_vdtor(MovementPathManagerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_goal_vdtor(&self) -> u64 { unsafe { function!(90903, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_goal_vdtor(&self) -> u64 { unsafe { function!(90903, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPlannerAgent {
@@ -1176,28 +1176,28 @@ impl crate::MovementPlannerAgent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92424, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92424, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgent::IMovementPlannerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name medium; id 92407, rva 0x12266d0).
     /// `undefined IMovementPlannerAgent_vfunc_1(MovementPlannerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(92407, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(92407, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgent::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92404, rva 0x1226620).
     /// `MovementPlannerAgent * ctor(MovementPlannerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92404, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92404, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92405, rva 0x1226660).
     /// `undefined dtor(MovementPlannerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92405, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92405, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPlannerAgentDirectControl {
@@ -1207,14 +1207,14 @@ impl crate::MovementPlannerAgentDirectControl {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(42146, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(42146, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgentDirectControl::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42127, rva 0x7a77b0).
     /// `MovementPlannerAgentDirectControl * ctor(MovementPlannerAgentDirectControl * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42127, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42127, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPlannerAgentHorseControls {
@@ -1224,14 +1224,14 @@ impl crate::MovementPlannerAgentHorseControls {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(42166, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(42166, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgentHorseControls::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42154, rva 0x7a7ef0).
     /// `MovementPlannerAgentHorseControls * ctor(MovementPlannerAgentHorseControls * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42154, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42154, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPlannerAgentKeepOffset {
@@ -1241,21 +1241,21 @@ impl crate::MovementPlannerAgentKeepOffset {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(42190, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(42190, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgentKeepOffset::IMovementSetKeepOffsetFromActor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42191, rva 0x7a8d94).
     /// `undefined IMovementSetKeepOffsetFromActor_vdtor(MovementPlannerAgentKeepOffset * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_keep_offset_from_actor_vdtor(&self) -> u64 { unsafe { function!(42191, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_keep_offset_from_actor_vdtor(&self) -> u64 { unsafe { function!(42191, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgentKeepOffset::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42175, rva 0x7a84d0).
     /// `MovementPlannerAgentKeepOffset * ctor(MovementPlannerAgentKeepOffset * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42175, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42175, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPlannerAgentNavmeshBounds {
@@ -1265,28 +1265,28 @@ impl crate::MovementPlannerAgentNavmeshBounds {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92725, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_0(&self) -> u64 { unsafe { function!(92725, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgentNavmeshBounds::IMovementPathManagerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92700, rva 0x122d750).
     /// `undefined IMovementPathManagerAgent_vfunc_1(MovementPlannerAgentNavmeshBounds * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(92700, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_path_manager_agent_vfunc_1(&self) -> u64 { unsafe { function!(92700, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgentNavmeshBounds::IMovementPlannerAgent_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 92724, rva 0x122ec7c).
     /// `undefined IMovementPlannerAgent_vfunc_0(MovementPlannerAgentNavmeshBounds * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92724, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(92724, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgentNavmeshBounds::IMovementPlannerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92699, rva 0x122d730).
     /// `undefined IMovementPlannerAgent_vfunc_1(MovementPlannerAgentNavmeshBounds * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(92699, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_1(&self) -> u64 { unsafe { function!(92699, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPlannerAgentWarp {
@@ -1296,14 +1296,14 @@ impl crate::MovementPlannerAgentWarp {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(42225, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_0(&self) -> u64 { unsafe { function!(42225, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerAgentWarp::IMovementSetWarp_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42226, rva 0x7aa820).
     /// `undefined IMovementSetWarp_vdtor(MovementPlannerAgentWarp * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_warp_vdtor(&self) -> u64 { unsafe { function!(42226, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_warp_vdtor(&self) -> u64 { unsafe { function!(42226, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPlannerArbiter {
@@ -1313,28 +1313,28 @@ impl crate::MovementPlannerArbiter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_set_arbitration_vdtor(&self) -> u64 { unsafe { function!(92425, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_set_arbitration_vdtor(&self) -> u64 { unsafe { function!(92425, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerArbiter::IMovementPlannerSetArbitration_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 92394, rva 0x1225030).
     /// `undefined IMovementPlannerSetArbitration_vfunc_4(MovementPlannerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_set_arbitration_vfunc_4(&self) -> u64 { unsafe { function!(92394, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_planner_set_arbitration_vfunc_4(&self) -> u64 { unsafe { function!(92394, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerArbiter::IMovementPlannerSetArbitration_vfunc_5` (decompiler signature, tier high; ledger rtti evidence, name high; id 92395, rva 0x1225040).
     /// `undefined1 IMovementPlannerSetArbitration_vfunc_5(MovementPlannerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_planner_set_arbitration_vfunc_5(&self) -> u8 { unsafe { function!(92395, (&Self) -> u8)(self) } }
+    pub unsafe fn i_movement_planner_set_arbitration_vfunc_5(&self) -> u8 { unsafe { function!(92395, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `MovementPlannerArbiter::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92376, rva 0x12247c0).
     /// `MovementPlannerArbiter * ctor(MovementPlannerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92376, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92376, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementPostUpdateArbiter {
@@ -1344,28 +1344,28 @@ impl crate::MovementPostUpdateArbiter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_deltas_vdtor(&self) -> u64 { unsafe { function!(92129, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_deltas_vdtor(&self) -> u64 { unsafe { function!(92129, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementPostUpdateArbiter::IMovementQueryDeltas_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 92124, rva 0x121be00).
     /// `undefined4 * IMovementQueryDeltas_vfunc_2(MovementPostUpdateArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_deltas_vfunc_2(&self) -> *mut u32 { unsafe { function!(92124, (&Self) -> *mut u32)(self) } }
+    pub unsafe fn i_movement_query_deltas_vfunc_2(&self) -> *mut u32 { unsafe { function!(92124, (*const Self) -> *mut u32)(core::ptr::from_ref(self)) } }
     /// `MovementPostUpdateArbiter::IMovementQueryDeltas_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 92125, rva 0x121be10).
     /// `MovementPostUpdateArbiter_vtbl_18 * * IMovementQueryDeltas_vfunc_3(MovementPostUpdateArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_deltas_vfunc_3(&self) -> *mut *mut c_void { unsafe { function!(92125, (&Self) -> *mut *mut c_void)(self) } }
+    pub unsafe fn i_movement_query_deltas_vfunc_3(&self) -> *mut *mut c_void { unsafe { function!(92125, (*const Self) -> *mut *mut c_void)(core::ptr::from_ref(self)) } }
     /// `MovementPostUpdateArbiter::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92110, rva 0x121b7a0).
     /// `MovementPostUpdateArbiter * ctor(MovementPostUpdateArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92110, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92110, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementStateFollowPath {
@@ -1375,112 +1375,112 @@ impl crate::MovementStateFollowPath {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vdtor(&self) -> u64 { unsafe { function!(92906, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vdtor(&self) -> u64 { unsafe { function!(92906, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92884, rva 0x1234230).
     /// `undefined IMovementState_vfunc_1(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_1(&self) -> u64 { unsafe { function!(92884, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_1(&self) -> u64 { unsafe { function!(92884, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_10` (decompiler signature, tier high; ledger rtti evidence, name high; id 92893, rva 0x12348d0).
     /// `undefined IMovementState_vfunc_10(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_10(&self) -> u64 { unsafe { function!(92893, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_10(&self) -> u64 { unsafe { function!(92893, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_11` (decompiler signature, tier high; ledger rtti evidence, name high; id 92894, rva 0x12348f0).
     /// `undefined IMovementState_vfunc_11(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_11(&self) -> u64 { unsafe { function!(92894, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_11(&self) -> u64 { unsafe { function!(92894, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_12` (decompiler signature, tier high; ledger rtti evidence, name high; id 92895, rva 0x1234910).
     /// `undefined IMovementState_vfunc_12(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_12(&self) -> u64 { unsafe { function!(92895, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_12(&self) -> u64 { unsafe { function!(92895, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_13` (decompiler signature, tier high; ledger rtti evidence, name high; id 92896, rva 0x1234930).
     /// `undefined IMovementState_vfunc_13(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_13(&self) -> u64 { unsafe { function!(92896, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_13(&self) -> u64 { unsafe { function!(92896, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_14` (decompiler signature, tier high; ledger rtti evidence, name high; id 92897, rva 0x1234950).
     /// `undefined IMovementState_vfunc_14(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_14(&self) -> u64 { unsafe { function!(92897, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_14(&self) -> u64 { unsafe { function!(92897, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_15` (decompiler signature, tier high; ledger rtti evidence, name high; id 92898, rva 0x1234970).
     /// `undefined IMovementState_vfunc_15(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_15(&self) -> u64 { unsafe { function!(92898, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_15(&self) -> u64 { unsafe { function!(92898, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_16` (decompiler signature, tier high; ledger rtti evidence, name high; id 92899, rva 0x1234990).
     /// `undefined IMovementState_vfunc_16(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_16(&self) -> u64 { unsafe { function!(92899, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_16(&self) -> u64 { unsafe { function!(92899, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_17` (decompiler signature, tier high; ledger rtti evidence, name high; id 92900, rva 0x12349b0).
     /// `undefined IMovementState_vfunc_17(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_17(&self) -> u64 { unsafe { function!(92900, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_17(&self) -> u64 { unsafe { function!(92900, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_18` (decompiler signature, tier high; ledger rtti evidence, name high; id 92901, rva 0x12349d0).
     /// `undefined IMovementState_vfunc_18(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_18(&self) -> u64 { unsafe { function!(92901, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_18(&self) -> u64 { unsafe { function!(92901, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_19` (decompiler signature, tier high; ledger rtti evidence, name high; id 92902, rva 0x12349f0).
     /// `undefined IMovementState_vfunc_19(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_19(&self) -> u64 { unsafe { function!(92902, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_19(&self) -> u64 { unsafe { function!(92902, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_6` (decompiler signature, tier high; ledger rtti evidence, name high; id 92889, rva 0x1234700).
     /// `float IMovementState_vfunc_6(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_6(&self) -> f32 { unsafe { function!(92889, (&Self) -> f32)(self) } }
+    pub unsafe fn i_movement_state_vfunc_6(&self) -> f32 { unsafe { function!(92889, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_8` (decompiler signature, tier high; ledger rtti evidence, name high; id 92891, rva 0x1234890).
     /// `undefined IMovementState_vfunc_8(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_8(&self) -> u64 { unsafe { function!(92891, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_8(&self) -> u64 { unsafe { function!(92891, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::IMovementState_vfunc_9` (decompiler signature, tier high; ledger rtti evidence, name high; id 92892, rva 0x12348b0).
     /// `undefined IMovementState_vfunc_9(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_9(&self) -> u64 { unsafe { function!(92892, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_9(&self) -> u64 { unsafe { function!(92892, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateFollowPath::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92876, rva 0x1233fe0).
     /// `MovementStateFollowPath * ctor(MovementStateFollowPath * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92876, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92876, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementStateTweener {
@@ -1490,112 +1490,112 @@ impl crate::MovementStateTweener {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vdtor(&self) -> u64 { unsafe { function!(92868, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vdtor(&self) -> u64 { unsafe { function!(92868, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 92845, rva 0x12333e0).
     /// `undefined IMovementState_vfunc_1(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_1(&self) -> u64 { unsafe { function!(92845, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_1(&self) -> u64 { unsafe { function!(92845, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_10` (decompiler signature, tier high; ledger rtti evidence, name high; id 92855, rva 0x1233c10).
     /// `undefined IMovementState_vfunc_10(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_10(&self) -> u64 { unsafe { function!(92855, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_10(&self) -> u64 { unsafe { function!(92855, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_11` (decompiler signature, tier high; ledger rtti evidence, name high; id 92856, rva 0x1233c30).
     /// `undefined IMovementState_vfunc_11(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_11(&self) -> u64 { unsafe { function!(92856, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_11(&self) -> u64 { unsafe { function!(92856, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_12` (decompiler signature, tier high; ledger rtti evidence, name high; id 92857, rva 0x1233c50).
     /// `undefined IMovementState_vfunc_12(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_12(&self) -> u64 { unsafe { function!(92857, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_12(&self) -> u64 { unsafe { function!(92857, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_13` (decompiler signature, tier high; ledger rtti evidence, name high; id 92858, rva 0x1233c70).
     /// `undefined IMovementState_vfunc_13(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_13(&self) -> u64 { unsafe { function!(92858, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_13(&self) -> u64 { unsafe { function!(92858, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_14` (decompiler signature, tier high; ledger rtti evidence, name high; id 92859, rva 0x1233c90).
     /// `undefined IMovementState_vfunc_14(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_14(&self) -> u64 { unsafe { function!(92859, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_14(&self) -> u64 { unsafe { function!(92859, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_15` (decompiler signature, tier high; ledger rtti evidence, name high; id 92860, rva 0x1233cb0).
     /// `undefined IMovementState_vfunc_15(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_15(&self) -> u64 { unsafe { function!(92860, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_15(&self) -> u64 { unsafe { function!(92860, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_16` (decompiler signature, tier high; ledger rtti evidence, name high; id 92861, rva 0x1233cd0).
     /// `undefined IMovementState_vfunc_16(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_16(&self) -> u64 { unsafe { function!(92861, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_16(&self) -> u64 { unsafe { function!(92861, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_17` (decompiler signature, tier high; ledger rtti evidence, name high; id 92862, rva 0x1233cf0).
     /// `undefined IMovementState_vfunc_17(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_17(&self) -> u64 { unsafe { function!(92862, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_17(&self) -> u64 { unsafe { function!(92862, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_18` (decompiler signature, tier high; ledger rtti evidence, name high; id 92863, rva 0x1233d10).
     /// `undefined IMovementState_vfunc_18(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_18(&self) -> u64 { unsafe { function!(92863, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_18(&self) -> u64 { unsafe { function!(92863, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_19` (decompiler signature, tier high; ledger rtti evidence, name high; id 92864, rva 0x1233d30).
     /// `undefined IMovementState_vfunc_19(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_19(&self) -> u64 { unsafe { function!(92864, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_19(&self) -> u64 { unsafe { function!(92864, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_6` (decompiler signature, tier high; ledger rtti evidence, name high; id 92851, rva 0x1233a40).
     /// `float IMovementState_vfunc_6(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_6(&self) -> f32 { unsafe { function!(92851, (&Self) -> f32)(self) } }
+    pub unsafe fn i_movement_state_vfunc_6(&self) -> f32 { unsafe { function!(92851, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_8` (decompiler signature, tier high; ledger rtti evidence, name high; id 92853, rva 0x1233bd0).
     /// `undefined IMovementState_vfunc_8(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_8(&self) -> u64 { unsafe { function!(92853, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_8(&self) -> u64 { unsafe { function!(92853, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::IMovementState_vfunc_9` (decompiler signature, tier high; ledger rtti evidence, name high; id 92854, rva 0x1233bf0).
     /// `undefined IMovementState_vfunc_9(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_state_vfunc_9(&self) -> u64 { unsafe { function!(92854, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_state_vfunc_9(&self) -> u64 { unsafe { function!(92854, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementStateTweener::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92837, rva 0x1233190).
     /// `MovementStateTweener * ctor(MovementStateTweener * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92837, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92837, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementTweenerAgent {
@@ -1605,28 +1605,28 @@ impl crate::MovementTweenerAgent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_tweener_agent_vfunc_0(&self) -> u64 { unsafe { function!(92819, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_tweener_agent_vfunc_0(&self) -> u64 { unsafe { function!(92819, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerAgent::IMovementTweenerAgent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name medium; id 92811, rva 0x1232a00).
     /// `undefined IMovementTweenerAgent_vfunc_1(MovementTweenerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_tweener_agent_vfunc_1(&self) -> u64 { unsafe { function!(92811, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_tweener_agent_vfunc_1(&self) -> u64 { unsafe { function!(92811, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerAgent::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92807, rva 0x1232910).
     /// `MovementTweenerAgent * ctor(MovementTweenerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92807, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92807, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerAgent::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92808, rva 0x1232950).
     /// `undefined dtor(MovementTweenerAgent * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92808, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(92808, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementTweenerAgentAnimationDriven {
@@ -1636,14 +1636,14 @@ impl crate::MovementTweenerAgentAnimationDriven {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_tweener_agent_vfunc_0(&self) -> u64 { unsafe { function!(42251, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_tweener_agent_vfunc_0(&self) -> u64 { unsafe { function!(42251, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerAgentAnimationDriven::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42235, rva 0x7aab10).
     /// `MovementTweenerAgentAnimationDriven * ctor(MovementTweenerAgentAnimationDriven * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42235, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42235, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementTweenerAgentFixedDelta {
@@ -1653,21 +1653,21 @@ impl crate::MovementTweenerAgentFixedDelta {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_correction_data_vdtor(&self) -> u64 { unsafe { function!(92321, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_correction_data_vdtor(&self) -> u64 { unsafe { function!(92321, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerAgentFixedDelta::IMovementTweenerAgent_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 92320, rva 0x122329c).
     /// `undefined IMovementTweenerAgent_vfunc_0(MovementTweenerAgentFixedDelta * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_tweener_agent_vfunc_0(&self) -> u64 { unsafe { function!(92320, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_tweener_agent_vfunc_0(&self) -> u64 { unsafe { function!(92320, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerAgentFixedDelta::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92304, rva 0x1221f50).
     /// `MovementTweenerAgentFixedDelta * ctor(MovementTweenerAgentFixedDelta * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92304, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92304, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementTweenerAgentNodeFollower {
@@ -1677,21 +1677,21 @@ impl crate::MovementTweenerAgentNodeFollower {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_tweener_agent_vfunc_0(&self) -> u64 { unsafe { function!(42274, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_tweener_agent_vfunc_0(&self) -> u64 { unsafe { function!(42274, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerAgentNodeFollower::ITweenerNodeFollowerSetup_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42275, rva 0x7ab9bc).
     /// `undefined ITweenerNodeFollowerSetup_vdtor(MovementTweenerAgentNodeFollower * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_tweener_node_follower_setup_vdtor(&self) -> u64 { unsafe { function!(42275, (&Self) -> u64)(self) } }
+    pub unsafe fn i_tweener_node_follower_setup_vdtor(&self) -> u64 { unsafe { function!(42275, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerAgentNodeFollower::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42259, rva 0x7ab410).
     /// `MovementTweenerAgentNodeFollower * ctor(MovementTweenerAgentNodeFollower * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42259, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42259, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MovementTweenerArbiter {
@@ -1701,42 +1701,42 @@ impl crate::MovementTweenerArbiter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_tweener_vdtor(&self) -> u64 { unsafe { function!(92821, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_query_tweener_vdtor(&self) -> u64 { unsafe { function!(92821, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerArbiter::IMovementQueryTweener_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 92797, rva 0x1231100).
     /// `undefined8 * IMovementQueryTweener_vfunc_3(MovementTweenerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_tweener_vfunc_3(&self) -> *mut u64 { unsafe { function!(92797, (&Self) -> *mut u64)(self) } }
+    pub unsafe fn i_movement_query_tweener_vfunc_3(&self) -> *mut u64 { unsafe { function!(92797, (*const Self) -> *mut u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerArbiter::IMovementSetTweener_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 92820, rva 0x1232cec).
     /// `undefined IMovementSetTweener_vdtor(MovementTweenerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_tweener_vdtor(&self) -> u64 { unsafe { function!(92820, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_tweener_vdtor(&self) -> u64 { unsafe { function!(92820, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerArbiter::IMovementSetTweener_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 92793, rva 0x1230e70).
     /// `undefined IMovementSetTweener_vfunc_2(MovementTweenerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_tweener_vfunc_2(&self) -> u64 { unsafe { function!(92793, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_tweener_vfunc_2(&self) -> u64 { unsafe { function!(92793, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerArbiter::IMovementSetTweener_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 92794, rva 0x1230f20).
     /// `undefined IMovementSetTweener_vfunc_3(MovementTweenerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_set_tweener_vfunc_3(&self) -> u64 { unsafe { function!(92794, (&Self) -> u64)(self) } }
+    pub unsafe fn i_movement_set_tweener_vfunc_3(&self) -> u64 { unsafe { function!(92794, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MovementTweenerArbiter::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92780, rva 0x1230990).
     /// `MovementTweenerArbiter * ctor(MovementTweenerArbiter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92780, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(92780, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathFollowerStateFollowPathToParameter {
@@ -1746,14 +1746,14 @@ impl crate::PathFollowerStateFollowPathToParameter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93202, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93202, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `PathFollowerStateFollowPathToParameter::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 93203, rva 0x1245e30).
     /// `undefined dtor(PathFollowerStateFollowPathToParameter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(93203, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(93203, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathFollowerStateKeepLastDirection {
@@ -1763,14 +1763,14 @@ impl crate::PathFollowerStateKeepLastDirection {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93222, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93222, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `PathFollowerStateKeepLastDirection::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 93223, rva 0x1246b50).
     /// `undefined dtor(PathFollowerStateKeepLastDirection * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(93223, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(93223, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathFollowerStatePlayIdle {
@@ -1780,7 +1780,7 @@ impl crate::PathFollowerStatePlayIdle {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93193, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93193, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathFollowerStateTurnToAngle {
@@ -1790,14 +1790,14 @@ impl crate::PathFollowerStateTurnToAngle {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93215, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(93215, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `PathFollowerStateTurnToAngle::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 93216, rva 0x12468e0).
     /// `undefined dtor(PathFollowerStateTurnToAngle * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(93216, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(93216, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathSmootherRayCastUseTrianglePath {
@@ -1807,7 +1807,7 @@ impl crate::PathSmootherRayCastUseTrianglePath {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(91764, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(91764, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::Pathing {
@@ -1817,14 +1817,14 @@ impl crate::Pathing {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_pathing_cell_manager_vdtor(&self) -> u64 { unsafe { function!(30737, (&Self) -> u64)(self) } }
+    pub unsafe fn bs_pathing_cell_manager_vdtor(&self) -> u64 { unsafe { function!(30737, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `Pathing::vfunc_0_vt20` (decompiler signature, tier high; ledger rtti evidence, name high; id 30738, rva 0x4deebc).
     /// `undefined vfunc_0_vt20(Pathing * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt20(&self) -> u64 { unsafe { function!(30738, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt20(&self) -> u64 { unsafe { function!(30738, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingCoverLocation {
@@ -1834,7 +1834,7 @@ impl crate::PathingCoverLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30731, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30731, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingDoor {
@@ -1844,14 +1844,14 @@ impl crate::PathingDoor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(30807, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(30807, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `PathingDoor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 30808, rva 0x4e0dc0).
     /// `undefined dtor(PathingDoor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30808, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30808, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingLockData {
@@ -1861,7 +1861,7 @@ impl crate::PathingLockData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(30844, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(30844, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequest {
@@ -1871,14 +1871,14 @@ impl crate::PathingRequest {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(30875, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(30875, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `PathingRequest::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 30876, rva 0x4e3290).
     /// `undefined dtor(PathingRequest * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30876, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30876, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestClosePoint {
@@ -1888,7 +1888,7 @@ impl crate::PathingRequestClosePoint {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31166, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31166, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestClosestGoal {
@@ -1898,7 +1898,7 @@ impl crate::PathingRequestClosestGoal {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31184, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31184, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestCover {
@@ -1908,7 +1908,7 @@ impl crate::PathingRequestCover {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31230, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31230, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestFlee {
@@ -1918,7 +1918,7 @@ impl crate::PathingRequestFlee {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31257, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31257, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestFly {
@@ -1928,7 +1928,7 @@ impl crate::PathingRequestFly {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31273, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31273, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestFlyAction {
@@ -1938,7 +1938,7 @@ impl crate::PathingRequestFlyAction {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31289, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31289, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestFlyHover {
@@ -1948,7 +1948,7 @@ impl crate::PathingRequestFlyHover {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31305, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31305, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestFlyLand {
@@ -1958,7 +1958,7 @@ impl crate::PathingRequestFlyLand {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31334, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31334, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestFlyOrbit {
@@ -1968,7 +1968,7 @@ impl crate::PathingRequestFlyOrbit {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31350, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31350, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestFlyTakeOff {
@@ -1978,7 +1978,7 @@ impl crate::PathingRequestFlyTakeOff {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31369, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31369, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestHide {
@@ -1988,7 +1988,7 @@ impl crate::PathingRequestHide {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31385, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31385, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestLOS {
@@ -1998,7 +1998,7 @@ impl crate::PathingRequestLOS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31401, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31401, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestOptimalLocation {
@@ -2008,7 +2008,7 @@ impl crate::PathingRequestOptimalLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31428, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31428, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestRotate {
@@ -2018,7 +2018,7 @@ impl crate::PathingRequestRotate {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31444, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31444, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestSafeStraightLine {
@@ -2028,7 +2028,7 @@ impl crate::PathingRequestSafeStraightLine {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31457, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31457, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestStopMoving {
@@ -2038,7 +2038,7 @@ impl crate::PathingRequestStopMoving {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31473, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(31473, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingTaskData {
@@ -2048,7 +2048,7 @@ impl crate::PathingTaskData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(91410, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(91410, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta {
@@ -2058,6 +2058,6 @@ impl crate::_anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(90486, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(90486, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 

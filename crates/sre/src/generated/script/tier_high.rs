@@ -10,7 +10,7 @@ impl crate::BSScript__ByteCode__PackedInstructionStream__InstructionFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104552, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104552, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__ErrorLogger {
@@ -20,14 +20,14 @@ impl crate::BSScript__ErrorLogger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(104430, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(104430, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
     /// `BSScript::ErrorLogger::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 104431, rva 0x1499d60).
     /// `undefined dtor(ErrorLogger * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104431, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104431, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IForEachScriptObjectFunctor {
@@ -37,7 +37,7 @@ impl crate::BSScript__IForEachScriptObjectFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104363, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104363, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IFreezeQuery {
@@ -47,7 +47,7 @@ impl crate::BSScript__IFreezeQuery {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104364, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104364, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IFunction {
@@ -57,14 +57,14 @@ impl crate::BSScript__IFunction {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104656, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104656, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunction::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 105424, rva 0x14e36c0).
     /// `undefined dtor(IFunction * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105424, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105424, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__ILoader {
@@ -74,7 +74,7 @@ impl crate::BSScript__ILoader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(54204, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(54204, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IMemoryPagePolicy {
@@ -84,7 +84,7 @@ impl crate::BSScript__IMemoryPagePolicy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104564, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104564, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IObjectProcessor {
@@ -94,14 +94,14 @@ impl crate::BSScript__IObjectProcessor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104999, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104999, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IObjectProcessor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 105000, rva 0x14c79e0).
     /// `undefined dtor(IObjectProcessor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105000, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105000, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IProfilePolicy {
@@ -111,7 +111,7 @@ impl crate::BSScript__IProfilePolicy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104473, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104473, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__ISavePatcherInterface {
@@ -121,7 +121,7 @@ impl crate::BSScript__ISavePatcherInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104366, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104366, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IStackCallbackSaveInterface {
@@ -131,7 +131,7 @@ impl crate::BSScript__IStackCallbackSaveInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104365, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104365, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IVMDebugInterface {
@@ -141,7 +141,7 @@ impl crate::BSScript__IVMDebugInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104368, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104368, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IVMObjectBindInterface {
@@ -151,7 +151,7 @@ impl crate::BSScript__IVMObjectBindInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104172, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104172, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IVMSaveLoadInterface {
@@ -161,7 +161,7 @@ impl crate::BSScript__IVMSaveLoadInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104367, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104367, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IVirtualMachine {
@@ -171,7 +171,7 @@ impl crate::BSScript__IVirtualMachine {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104369, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104369, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__Internal__IFuncCallQuery {
@@ -181,7 +181,7 @@ impl crate::BSScript__Internal__IFuncCallQuery {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104998, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104998, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__UnlinkedTypes__InstructionStream__InstructionFunctor {
@@ -191,21 +191,21 @@ impl crate::BSScript__UnlinkedTypes__InstructionStream__InstructionFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(105311, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(105311, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::UnlinkedTypes::InstructionStream::InstructionFunctor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 105314, rva 0x14dbb50).
     /// `undefined dtor(InstructionFunctor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105314, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105314, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::UnlinkedTypes::InstructionStream::InstructionFunctor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 105322, rva 0x14dbfa0).
     /// `undefined dtor(InstructionFunctor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(105322, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(105322, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_14 {
@@ -215,7 +215,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(54841, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(54841, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_10 {
@@ -225,7 +225,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(54842, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(54842, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_21 {
@@ -235,7 +235,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_0D8D4B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(54843, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(54843, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__AddItemFunctor_20 {
@@ -245,7 +245,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56390, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56390, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ApplyHavokImpulseFunctor_17 {
@@ -255,7 +255,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56391, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56391, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DamageObjectFunctor_2 {
@@ -265,7 +265,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56392, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56392, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DeleteFunctor_5 {
@@ -275,7 +275,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56393, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56393, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DisableFunctor_4 {
@@ -285,7 +285,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56394, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56394, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__DropObjectFunctor_12 {
@@ -295,7 +295,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56395, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56395, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__EnableFunctor_3 {
@@ -305,7 +305,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56396, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56396, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ForceAddRemoveRagdollFunctor_16 {
@@ -315,7 +315,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56397, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56397, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToFunctor_0 {
@@ -325,7 +325,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56398, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56398, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__MoveToOwnEditorLocFunctor_1 {
@@ -335,7 +335,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56399, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56399, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__NonLatentDeleteFunctor_9 {
@@ -345,7 +345,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56400, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56400, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__RemoveItemFunctor_24 {
@@ -355,7 +355,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56401, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56401, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__ResetFunctor_18 {
@@ -365,7 +365,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56402, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56402, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetAngleFunctor_7 {
@@ -375,7 +375,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56403, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56403, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetMotionTypeFunctor_8 {
@@ -385,7 +385,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56404, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56404, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetPositionFunctor_6 {
@@ -395,7 +395,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56405, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56405, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__SetScaleFunctor_11 {
@@ -405,7 +405,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56406, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56406, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C052E__TetherFunctor_13 {
@@ -415,7 +415,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_A72C05
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56407, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(56407, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BCEAF3CE__ScrollCastFunctor_23 {
@@ -425,7 +425,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BCEAF3
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(55734, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(55734, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BDD43BCC__AddRemoveConstraintFunctor_15 {
@@ -435,7 +435,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_BDD43B
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(55527, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(55527, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_C56CCD02__CastFunctor_22 {
@@ -445,7 +445,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_C56CCD
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(55757, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(55757, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_EF7C75B8__SendPlayerToJailFunctor_19 {
@@ -455,7 +455,7 @@ impl crate::SkyrimScript__ConcreteDelayFunctorFactory_SkyrimScript___anon_EF7C75
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(55824, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(55824, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__DelayFunctor {
@@ -465,7 +465,7 @@ impl crate::SkyrimScript__DelayFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53416, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53416, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__DelayFunctorFactory {
@@ -475,7 +475,7 @@ impl crate::SkyrimScript__DelayFunctorFactory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53421, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53421, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__QuestCallbackMgr {
@@ -485,21 +485,21 @@ impl crate::SkyrimScript__QuestCallbackMgr {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bgs_event_processed_event_vdtor(&self) -> u64 { unsafe { function!(53753, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_bgs_event_processed_event_vdtor(&self) -> u64 { unsafe { function!(53753, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_TESQuestStartStopEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 53752, rva 0x9cb0d4).
     /// `undefined BSTEventSink_TESQuestStartStopEvent_vdtor(QuestCallbackMgr * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_quest_start_stop_event_vdtor(&self) -> u64 { unsafe { function!(53752, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_tes_quest_start_stop_event_vdtor(&self) -> u64 { unsafe { function!(53752, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimScript::QuestCallbackMgr::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 53702, rva 0x9c6380).
     /// `undefined dtor(QuestCallbackMgr * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53702, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53702, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__SavePatcher {
@@ -509,7 +509,7 @@ impl crate::SkyrimScript__SavePatcher {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53781, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53781, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript__SoundCallbackMgr {
@@ -519,7 +519,7 @@ impl crate::SkyrimScript__SoundCallbackMgr {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(53785, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(53785, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimVM {
@@ -529,55 +529,55 @@ impl crate::SkyrimVM {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_i_stack_callback_save_interface_vfunc_0(&self) -> u64 { unsafe { function!(54255, (&Self) -> u64)(self) } }
+    pub unsafe fn bs_script_i_stack_callback_save_interface_vfunc_0(&self) -> u64 { unsafe { function!(54255, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::BSTEventSink_TESActivateEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 54256, rva 0x9ef6dc).
     /// `undefined BSTEventSink_TESActivateEvent_vdtor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_activate_event_vdtor(&self) -> u64 { unsafe { function!(54256, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_tes_activate_event_vdtor(&self) -> u64 { unsafe { function!(54256, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::BSTEventSink_TESAmiiboForcedStopDetectionEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 524033, rva 0x9e0b20).
     /// `undefined8 BSTEventSink_TESAmiiboForcedStopDetectionEvent_vfunc_1(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vfunc_1(&self) -> u64 { unsafe { function!(524033, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vfunc_1(&self) -> u64 { unsafe { function!(524033, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::BSTEventSink_TESLoadGameEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 53976, rva 0x9dcfc0).
     /// `undefined8 BSTEventSink_TESLoadGameEvent_vfunc_1(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_load_game_event_vfunc_1(&self) -> u64 { unsafe { function!(53976, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_tes_load_game_event_vfunc_1(&self) -> u64 { unsafe { function!(53976, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::BSTEventSink_TESResolveNPCTemplatesEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 54257, rva 0x9ef6e8).
     /// `undefined BSTEventSink_TESResolveNPCTemplatesEvent_vdtor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_resolve_npc_templates_event_vdtor(&self) -> u64 { unsafe { function!(54257, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_tes_resolve_npc_templates_event_vdtor(&self) -> u64 { unsafe { function!(54257, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::BSTEventSink_TESSceneActionEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 54259, rva 0x9ef700).
     /// `undefined BSTEventSink_TESSceneActionEvent_vdtor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_scene_action_event_vdtor(&self) -> u64 { unsafe { function!(54259, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_tes_scene_action_event_vdtor(&self) -> u64 { unsafe { function!(54259, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::BSTEventSink_TESSceneEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 54258, rva 0x9ef6f4).
     /// `undefined BSTEventSink_TESSceneEvent_vdtor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_scene_event_vdtor(&self) -> u64 { unsafe { function!(54258, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_tes_scene_event_vdtor(&self) -> u64 { unsafe { function!(54258, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 53919, rva 0x9d5760).
     /// `SkyrimVM * ctor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(53919, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(53919, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 

@@ -75,13 +75,13 @@ impl crate::ActivateHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ActivateHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `ActivateHandler::TryActivateCurrentFurniture`: activate key with no target: unless a menu pauses the game, the controls disallow it, the camera is in cameraStates[6] (transition) or +0xbe9 bit 5 is set, activates the reference in the player's process furniture handle (ActivateReference(ref, player, 0, 0, 1, 0)); on failure plays the no-activation feedback
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40749, rva 0x760600.
     /// `void (PlayerCharacter* player)`
     #[inline]
-    pub fn try_activate_current_furniture(player: &crate::PlayerCharacter) { unsafe { function!(40749, (&crate::PlayerCharacter))(player) } }
+    pub fn try_activate_current_furniture(player: &crate::PlayerCharacter) { unsafe { function!(40749, (*const crate::PlayerCharacter))(core::ptr::from_ref(player)) } }
 }
 
 impl crate::AttackBlockHandler {
@@ -90,7 +90,7 @@ impl crate::AttackBlockHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (AttackBlockHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::AutoMoveHandler {
@@ -99,7 +99,7 @@ impl crate::AutoMoveHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (AutoMoveHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::BSGamepadDevice {
@@ -108,7 +108,7 @@ impl crate::BSGamepadDevice {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (BSGamepadDevice* this)`
     #[inline]
-    pub fn is_enabled(&self) -> bool { unsafe { virtual_function!(self, 7, (&Self) -> bool)(self) } }
+    pub fn is_enabled(&self) -> bool { unsafe { virtual_function!(self, 7, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSGamepadDevice::NormalizeStick`, vtable slot 13: raw * (1/32767) clamped to [-1, 1]
     ///
     /// Semantic, input pass, high; called through the object's vtable.
@@ -117,13 +117,13 @@ impl crate::BSGamepadDevice {
     /// # Safety
     /// `outX`, `outY` must point to what the engine expects.
     #[inline]
-    pub unsafe fn normalize_stick(&self, x: i32, y: i32, outX: *mut f32, outY: *mut f32) { unsafe { virtual_function!(self, 13, (&Self, i32, i32, *mut f32, *mut f32))(self, x, y, outX, outY) } }
+    pub unsafe fn normalize_stick(&self, x: i32, y: i32, outX: *mut f32, outY: *mut f32) { unsafe { virtual_function!(self, 13, (*const Self, i32, i32, *mut f32, *mut f32))(core::ptr::from_ref(self), x, y, outX, outY) } }
     /// `NormalizeTriggerWithDeadzone`: (raw - dz*255) / (255 - dz*255), 0 below
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68699, rva 0xcfbd40.
     /// `float (BSGamepadDevice* this, int raw, float deadzone)`
     #[inline]
-    pub fn normalize_trigger_with_deadzone(&self, raw: i32, deadzone: f32) -> f32 { unsafe { function!(68699, (&Self, i32, f32) -> f32)(self, raw, deadzone) } }
+    pub fn normalize_trigger_with_deadzone(&self, raw: i32, deadzone: f32) -> f32 { unsafe { function!(68699, (*const Self, i32, f32) -> f32)(core::ptr::from_ref(self), raw, deadzone) } }
 }
 
 impl crate::BSInputDevice {
@@ -132,7 +132,7 @@ impl crate::BSInputDevice {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `BSInputDevice* (BSInputDevice* this, u32 flags)`
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
     /// `BSInputDevice::GetKeyCode`, vtable slot 6: third column of the definition line (record +0xc)
     ///
     /// Semantic, input pass, high; called through the object's vtable.
@@ -141,13 +141,13 @@ impl crate::BSInputDevice {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_key_code(&self, id: u32, out: *mut u32) -> bool { unsafe { virtual_function!(self, 6, (&Self, u32, *mut u32) -> bool)(self, id, out) } }
+    pub unsafe fn get_key_code(&self, id: u32, out: *mut u32) -> bool { unsafe { virtual_function!(self, 6, (*const Self, u32, *mut u32) -> bool)(core::ptr::from_ref(self), id, out) } }
     /// `BSInputDevice::GetKeyIDByName`, vtable slot 5: id for a name, 0xffffffff if unknown
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `u32 (BSInputDevice* this, const BSFixedString* name)`
     #[inline]
-    pub fn get_key_id_by_name(&self, name: &crate::BSFixedString) -> u32 { unsafe { virtual_function!(self, 5, (&Self, &crate::BSFixedString) -> u32)(self, name) } }
+    pub fn get_key_id_by_name(&self, name: &crate::BSFixedString) -> u32 { unsafe { virtual_function!(self, 5, (*const Self, *const crate::BSFixedString) -> u32)(core::ptr::from_ref(self), core::ptr::from_ref(name)) } }
     /// `BSInputDevice::GetKeyName`, vtable slot 4: name of an id
     ///
     /// Semantic, input pass, high; called through the object's vtable.
@@ -156,13 +156,13 @@ impl crate::BSInputDevice {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_key_name(&self, id: u32, out: *mut crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 4, (&Self, u32, *mut crate::BSFixedString) -> bool)(self, id, out) } }
+    pub unsafe fn get_key_name(&self, id: u32, out: *mut crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 4, (*const Self, u32, *mut crate::BSFixedString) -> bool)(core::ptr::from_ref(self), id, out) } }
     /// `BSInputDevice::IsEnabled`, vtable slot 7: true in the base; pads: connected
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (BSInputDevice* this)`
     #[inline]
-    pub fn is_enabled(&self) -> bool { unsafe { virtual_function!(self, 7, (&Self) -> bool)(self) } }
+    pub fn is_enabled(&self) -> bool { unsafe { virtual_function!(self, 7, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSInputDevice::LoadDefinitionFile`: clear the maps, parse each non-comment line
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68745, rva 0xd6efd0.
@@ -171,7 +171,7 @@ impl crate::BSInputDevice {
     /// # Safety
     /// `path` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load_definition_file(&self, path: *const c_char) -> bool { unsafe { function!(68745, (&Self, *const c_char) -> bool)(self, path) } }
+    pub unsafe fn load_definition_file(&self, path: *const c_char) -> bool { unsafe { function!(68745, (*const Self, *const c_char) -> bool)(core::ptr::from_ref(self), path) } }
     /// `BSInputDevice::ParseDefinitionLine`: parses 'name	%x id	%u code' into a KeyDefinition{name, held 0, code} stored in the id map (+0x18, id -> KeyDefinition*) and records name -> id (u32) in the name map (+0x48)
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68746, rva 0xd6f0e0.
@@ -180,7 +180,7 @@ impl crate::BSInputDevice {
     /// # Safety
     /// `line` must point to what the engine expects.
     #[inline]
-    pub unsafe fn parse_definition_line(&self, line: *mut c_char) { unsafe { function!(68746, (&Self, *mut c_char))(self, line) } }
+    pub unsafe fn parse_definition_line(&self, line: *mut c_char) { unsafe { function!(68746, (*const Self, *mut c_char))(core::ptr::from_ref(self), line) } }
 }
 
 impl crate::BSMouseDevice {
@@ -192,7 +192,7 @@ impl crate::BSMouseDevice {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn reinitialize(&self, background: bool) { unsafe { virtual_function!(self, 9, (&Self, bool))(self, background) } }
+    pub unsafe fn reinitialize(&self, background: bool) { unsafe { virtual_function!(self, 9, (*const Self, bool))(core::ptr::from_ref(self), background) } }
 }
 
 impl crate::BSPCGamepadDeviceHandler {
@@ -201,25 +201,25 @@ impl crate::BSPCGamepadDeviceHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSPCGamepadDeviceHandler* this)`
     #[inline]
-    pub fn initialize(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
+    pub fn initialize(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSPCGamepadDeviceHandler::IsEnabled`, vtable slot 7: a pad is present
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (BSPCGamepadDeviceHandler* this)`
     #[inline]
-    pub fn is_enabled(&self) -> bool { unsafe { virtual_function!(self, 7, (&Self) -> bool)(self) } }
+    pub fn is_enabled(&self) -> bool { unsafe { virtual_function!(self, 7, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSPCGamepadDeviceHandler::Poll`, vtable slot 2: detect when none (bGamepadEnable), then forward Poll
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSPCGamepadDeviceHandler* this, float realDelta)`
     #[inline]
-    pub fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (&Self, f32))(self, realDelta) } }
+    pub fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (*const Self, f32))(core::ptr::from_ref(self), realDelta) } }
     /// `BSPCGamepadDeviceHandler::ReleaseDevice`: DeviceConnectEvent(2, false), delete +8
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68761, rva 0xe11fd0.
     /// `void (BSPCGamepadDeviceHandler* this)`
     #[inline]
-    pub fn release_device(&self) { unsafe { function!(68761, (&Self))(self) } }
+    pub fn release_device(&self) { unsafe { function!(68761, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSPCGamepadDeviceHandler::device` at +0x8: the pad (BSWin32GamepadDevice or BSPCOrbisGamepadDevice) or null
     ///
     /// Semantic field, input pass, high; `None` while the pointer is null.
@@ -236,7 +236,7 @@ impl crate::BSPCOrbisGamepadDevice {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (&Self, f32))(self, realDelta) } }
+    pub unsafe fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (*const Self, f32))(core::ptr::from_ref(self), realDelta) } }
 }
 
 impl crate::BSWin32GamepadDevice {
@@ -248,19 +248,19 @@ impl crate::BSWin32GamepadDevice {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn initialize(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
+    pub unsafe fn initialize(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSWin32GamepadDevice::Poll`, vtable slot 2: XInputGetState; buttons per mask; analog 9/10; ThumbstickEvent 0xb/0xc while this or the previous frame was off-centre; ERROR_DEVICE_NOT_CONNECTED (0x48f) or bGamepadEnable off: clear and release (DeviceConnectEvent(2, false))
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32GamepadDevice* this, float realDelta)`
     #[inline]
-    pub fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (&Self, f32))(self, realDelta) } }
+    pub fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (*const Self, f32))(core::ptr::from_ref(self), realDelta) } }
     /// `BSWin32GamepadDevice::Reset`, vtable slot 8: clear the state block
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32GamepadDevice* this)`
     #[inline]
-    pub fn reset(&self) { unsafe { virtual_function!(self, 8, (&Self))(self) } }
+    pub fn reset(&self) { unsafe { virtual_function!(self, 8, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSWin32KeyboardDevice {
@@ -269,37 +269,37 @@ impl crate::BSWin32KeyboardDevice {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32KeyboardDevice* this)`
     #[inline]
-    pub fn initialize(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
+    pub fn initialize(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSWin32KeyboardDevice::Poll`, vtable slot 2: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down only, a CharEvent: numpad digits with Num Lock, otherwise MapVirtualKeyA(scan, 1) and ToUnicode with a key state built from the device (Shift, Caps Lock toggled on its press, Alt/Ctrl); no flag or menu gates it and a held key repeats nothing; then a hold for every scan code down in both arrays
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32KeyboardDevice* this, float realDelta)`
     #[inline]
-    pub fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (&Self, f32))(self, realDelta) } }
+    pub fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (*const Self, f32))(core::ptr::from_ref(self), realDelta) } }
     /// `BSWin32KeyboardDevice::Release`, vtable slot 3: release the DirectInput device
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32KeyboardDevice* this)`
     #[inline]
-    pub fn release(&self) { unsafe { virtual_function!(self, 3, (&Self))(self) } }
+    pub fn release(&self) { unsafe { virtual_function!(self, 3, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSWin32KeyboardDevice::Reset`, vtable slot 8: zero both state arrays
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32KeyboardDevice* this)`
     #[inline]
-    pub fn reset(&self) { unsafe { virtual_function!(self, 8, (&Self))(self) } }
+    pub fn reset(&self) { unsafe { virtual_function!(self, 8, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSWin32KeyboardDevice::Unk10`, vtable slot 10: empty
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32KeyboardDevice* this)`
     #[inline]
-    pub fn unk10(&self) { unsafe { virtual_function!(self, 10, (&Self))(self) } }
+    pub fn unk10(&self) { unsafe { virtual_function!(self, 10, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSWin32KeyboardDevice::Unk9`, vtable slot 9: empty
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32KeyboardDevice* this)`
     #[inline]
-    pub fn unk9(&self) { unsafe { virtual_function!(self, 9, (&Self))(self) } }
+    pub fn unk9(&self) { unsafe { virtual_function!(self, 9, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSWin32MouseDevice {
@@ -308,25 +308,25 @@ impl crate::BSWin32MouseDevice {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32MouseDevice* this)`
     #[inline]
-    pub fn initialize(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
+    pub fn initialize(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSWin32MouseDevice::Poll`, vtable slot 2: unless reinitializing or BSSystemUtility+0x120: MouseMoveEvent(dx, dy) when this or the previous frame moved; buttons 0-7 from prev/cur; wheel: press and release of id 8 (wheel > 0) or 9 (wheel < 0) in the same frame
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32MouseDevice* this, float realDelta)`
     #[inline]
-    pub fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (&Self, f32))(self, realDelta) } }
+    pub fn poll(&self, realDelta: f32) { unsafe { virtual_function!(self, 2, (*const Self, f32))(core::ptr::from_ref(self), realDelta) } }
     /// `BSWin32MouseDevice::Release`, vtable slot 3: release the DirectInput device
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32MouseDevice* this)`
     #[inline]
-    pub fn release(&self) { unsafe { virtual_function!(self, 3, (&Self))(self) } }
+    pub fn release(&self) { unsafe { virtual_function!(self, 3, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSWin32MouseDevice::Reset`, vtable slot 8: zero both states
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (BSWin32MouseDevice* this)`
     #[inline]
-    pub fn reset(&self) { unsafe { virtual_function!(self, 8, (&Self))(self) } }
+    pub fn reset(&self) { unsafe { virtual_function!(self, 8, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSWin32VirtualKeyboardDevice {
@@ -338,7 +338,7 @@ impl crate::BSWin32VirtualKeyboardDevice {
     /// # Safety
     /// `params` must point to what the engine expects.
     #[inline]
-    pub unsafe fn start(&self, params: *mut c_void) { unsafe { virtual_function!(self, 11, (&Self, *mut c_void))(self, params) } }
+    pub unsafe fn start(&self, params: *mut c_void) { unsafe { virtual_function!(self, 11, (*const Self, *mut c_void))(core::ptr::from_ref(self), params) } }
 }
 
 impl crate::ClickHandler {
@@ -347,13 +347,13 @@ impl crate::ClickHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ClickHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `ClickHandler::ProcessButtonEvent`, vtable slot 7: mouse button to Scaleform
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ClickHandler* this, ButtonEvent* event)`
     #[inline]
-    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (&Self, &crate::ButtonEvent) -> bool)(self, event) } }
+    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::CommandTableEntry {
@@ -373,7 +373,7 @@ impl crate::ConsoleCommandTask {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, script: *mut *mut crate::Script, ref_: *mut *mut crate::TESObjectREFR, compiler: *mut c_void) -> *mut Self { unsafe { function!(52948, (&Self, *mut *mut crate::Script, *mut *mut crate::TESObjectREFR, *mut c_void) -> *mut Self)(self, script, ref_, compiler) } }
+    pub unsafe fn ctor(&self, script: *mut *mut crate::Script, ref_: *mut *mut crate::TESObjectREFR, compiler: *mut c_void) -> *mut Self { unsafe { function!(52948, (*const Self, *mut *mut crate::Script, *mut *mut crate::TESObjectREFR, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), script, ref_, compiler) } }
     /// `ConsoleCommandTask::script` at +0x0: owned Script with the line as text; deleted through slot 0 after running
     ///
     /// Semantic field, input pass, high; `None` while the pointer is null.
@@ -387,13 +387,13 @@ impl crate::ConsoleOpenHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ConsoleOpenHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `ConsoleOpenHandler::ProcessButtonEvent`, vtable slot 7: press edge -> open/close console
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ConsoleOpenHandler* this, ButtonEvent* event)`
     #[inline]
-    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (&Self, &crate::ButtonEvent) -> bool)(self, event) } }
+    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::DirectionHandler {
@@ -402,7 +402,7 @@ impl crate::DirectionHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (DirectionHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::EventSourceHolder_User {
@@ -419,7 +419,7 @@ impl crate::FavoritesHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (FavoritesHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::HeldStateHandler {
@@ -428,13 +428,13 @@ impl crate::HeldStateHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (HeldStateHandler* this, bool held)`
     #[inline]
-    pub fn set_held_state(&self, held: bool) { unsafe { virtual_function!(self, 8, (&Self, bool))(self, held) } }
+    pub fn set_held_state(&self, held: bool) { unsafe { virtual_function!(self, 8, (*const Self, bool))(core::ptr::from_ref(self), held) } }
     /// `HeldStateHandler::UpdateHeldState`, vtable slot 7: after ProcessButton, held = !(value == 0 && heldDownSecs >= 0)
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (HeldStateHandler* this, ButtonEvent* event)`
     #[inline]
-    pub fn update_held_state(&self, event: &crate::ButtonEvent) { unsafe { virtual_function!(self, 7, (&Self, &crate::ButtonEvent))(self, event) } }
+    pub fn update_held_state(&self, event: &crate::ButtonEvent) { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent))(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::InputEventQueue {
@@ -448,19 +448,19 @@ impl crate::InputEventQueue {
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68685, rva 0xcfb340.
     /// `void (InputEventQueue* q, u32 device, u32 idCode, float value, float heldDownSecs)`
     #[inline]
-    pub fn add_button_event(&self, device: u32, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68685, (&Self, u32, u32, f32, f32))(self, device, idCode, value, heldDownSecs) } }
+    pub fn add_button_event(&self, device: u32, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68685, (*const Self, u32, u32, f32, f32))(core::ptr::from_ref(self), device, idCode, value, heldDownSecs) } }
     /// `InputEventQueue::AddCharEvent`: next of 5 CharEvents, device 0, the UTF-16 code at +0x18; the keyboard poll is its only caller, so character input exists only for keys DirectInput reports (real or SendInput keystrokes, not events injected into the queue)
     ///
     /// Semantic, input pass, high; ledger runtime evidence, name high; id 68686, rva 0xcfb3f0.
     /// `void (InputEventQueue* q, u32 charCode)`
     #[inline]
-    pub fn add_char_event(&self, charCode: u32) { unsafe { function!(68686, (&Self, u32))(self, charCode) } }
+    pub fn add_char_event(&self, charCode: u32) { unsafe { function!(68686, (*const Self, u32))(core::ptr::from_ref(self), charCode) } }
     /// `InputEventQueue::AddDeviceConnectEvent`: the single DeviceConnectEvent
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68689, rva 0xcfb5d0.
     /// `void (InputEventQueue* q, u32 device, bool connected)`
     #[inline]
-    pub fn add_device_connect_event(&self, device: u32, connected: bool) { unsafe { function!(68689, (&Self, u32, bool))(self, device, connected) } }
+    pub fn add_device_connect_event(&self, device: u32, connected: bool) { unsafe { function!(68689, (*const Self, u32, bool))(core::ptr::from_ref(self), device, connected) } }
     /// `InputEventQueue::AddKinectEvent`: the single KinectEvent
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 68690, rva 0xcfb640.
@@ -469,7 +469,7 @@ impl crate::InputEventQueue {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn add_kinect_event(&self, userEvent: *const crate::BSFixedString, heard: *const crate::BSFixedString) { unsafe { function!(68690, (&Self, *const crate::BSFixedString, *const crate::BSFixedString))(self, userEvent, heard) } }
+    pub unsafe fn add_kinect_event(&self, userEvent: *const crate::BSFixedString, heard: *const crate::BSFixedString) { unsafe { function!(68690, (*const Self, *const crate::BSFixedString, *const crate::BSFixedString))(core::ptr::from_ref(self), userEvent, heard) } }
     /// `InputEventQueue::AddMotionGestureEvent`: next of 2 (no static caller)
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 524148, rva 0xcfb830.
@@ -478,25 +478,25 @@ impl crate::InputEventQueue {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn add_motion_gesture_event(&self, id: u32, a: u32, b: u32, flag: u8, c: u32) { unsafe { function!(524148, (&Self, u32, u32, u32, u8, u32))(self, id, a, b, flag, c) } }
+    pub unsafe fn add_motion_gesture_event(&self, id: u32, a: u32, b: u32, flag: u8, c: u32) { unsafe { function!(524148, (*const Self, u32, u32, u32, u8, u32))(core::ptr::from_ref(self), id, a, b, flag, c) } }
     /// `InputEventQueue::AddMouseMoveEvent`: the single MouseMoveEvent, device 1
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68687, rva 0xcfb460.
     /// `void (InputEventQueue* q, int dx, int dy)`
     #[inline]
-    pub fn add_mouse_move_event(&self, dx: i32, dy: i32) { unsafe { function!(68687, (&Self, i32, i32))(self, dx, dy) } }
+    pub fn add_mouse_move_event(&self, dx: i32, dy: i32) { unsafe { function!(68687, (*const Self, i32, i32))(core::ptr::from_ref(self), dx, dy) } }
     /// `InputEventQueue::AddThumbstickEvent`: next of 2, device 2
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68688, rva 0xcfb510.
     /// `void (InputEventQueue* q, u32 idCode, float x, float y)`
     #[inline]
-    pub fn add_thumbstick_event(&self, idCode: u32, x: f32, y: f32) { unsafe { function!(68688, (&Self, u32, f32, f32))(self, idCode, x, y) } }
+    pub fn add_thumbstick_event(&self, idCode: u32, x: f32, y: f32) { unsafe { function!(68688, (*const Self, u32, f32, f32))(core::ptr::from_ref(self), idCode, x, y) } }
     /// `InputEventQueue::Reset`: zero the nine counts and head/tail
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68691, rva 0xcfba10.
     /// `void (InputEventQueue* q)`
     #[inline]
-    pub fn reset(&self) { unsafe { function!(68691, (&Self))(self) } }
+    pub fn reset(&self) { unsafe { function!(68691, (*const Self))(core::ptr::from_ref(self)) } }
     /// `InputEventQueue::head` at +0x558: first event of the frame
     ///
     /// Semantic field, input pass, high; `None` while the pointer is null.
@@ -515,7 +515,7 @@ impl crate::JumpHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (JumpHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::LookHandler {
@@ -524,7 +524,7 @@ impl crate::LookHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (LookHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `LookHandler::ProcessMotion`, vtable slot 3: motion-controller aiming: only with bEnableSixaxisBowAiming and a bow/crossbow drawn (weapon types 7 / 12) or bEnableSixaxisMagicAiming with a usable hand caster; otherwise resets the embedded event. When look input is zero: the relative rotation between the new orientation and the stored one gives pitch/heading deltas, smoothed by alpha in [fSixaxisAlphaMin, 1] (scaled by fSixaxisAlphaMaxThreshold), scaled during bow zoom (PlayerCamera+0x161) by the FOV ratio (bSixaxisAimingRespectsFOV) and the time multiplier (bSixaxisAimingRespectsTimeMultiplier); applies ApplyClampedPitchDelta (not mounted) and the heading delta to the player, sets data+0x26, stores the event and the deltas
     ///
     /// Semantic, input pass, high; called through the object's vtable.
@@ -533,7 +533,7 @@ impl crate::LookHandler {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_motion(&self, event: *mut crate::SixaxisEvent, data: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut crate::SixaxisEvent, *mut c_void))(self, event, data) } }
+    pub unsafe fn process_motion(&self, event: *mut crate::SixaxisEvent, data: *mut c_void) { unsafe { virtual_function!(self, 3, (*const Self, *mut crate::SixaxisEvent, *mut c_void))(core::ptr::from_ref(self), event, data) } }
 }
 
 impl crate::MovementHandler {
@@ -542,7 +542,7 @@ impl crate::MovementHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (MovementHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::PlayerControls {
@@ -568,7 +568,7 @@ impl crate::PlayerControls {
     /// # Safety
     /// `head`, `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (&Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(self, head, source) } }
+    pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (*const Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), head, source) } }
     /// `ApplyLookInputSensitivity`: bInvertYValues:Controls -> look.y negated first; mouse: x *= fMouseHeadingSensitivity * fMouseHeadingXScale / g_FrameDeltaReal, y *= sensitivity * YScale (mounted: both * fHorseHeadingMovementMult); gamepad: snap-to-axis, look curve, exponent, acceleration, sensitivity threshold, X/Y scale, optional time normalisation
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 42354, rva 0x7aeba0.
@@ -577,13 +577,13 @@ impl crate::PlayerControls {
     /// # Safety
     /// `look` must point to what the engine expects.
     #[inline]
-    pub unsafe fn apply_look_input_sensitivity(&self, look: *mut c_void) { unsafe { function!(42354, (&Self, *mut c_void))(self, look) } }
+    pub unsafe fn apply_look_input_sensitivity(&self, look: *mut c_void) { unsafe { function!(42354, (*const Self, *mut c_void))(core::ptr::from_ref(self), look) } }
     /// `PlayerControls::AddHandler`: appends and enables (deferred while dispatching); camera states add their embedded handler in Begin
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 42356, rva 0x7af240.
     /// `void (PlayerControls* this, PlayerInputHandler* handler, bool heldState)`
     #[inline]
-    pub fn add_handler(&self, handler: &crate::PlayerInputHandler, heldState: bool) { unsafe { function!(42356, (&Self, &crate::PlayerInputHandler, bool))(self, handler, heldState) } }
+    pub fn add_handler(&self, handler: &crate::PlayerInputHandler, heldState: bool) { unsafe { function!(42356, (*const Self, *const crate::PlayerInputHandler, bool))(core::ptr::from_ref(self), core::ptr::from_ref(handler), heldState) } }
     /// `PlayerControls::ApplyLookInputWithDialogueLimits`: applies look input sensitivity to lookInput (+0x2c) and clamps it to the dialogue speaker yaw offset limits (first person when camera +0x28 == +0xb8)
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 42372, rva 0x7b06a0.
@@ -592,55 +592,55 @@ impl crate::PlayerControls {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn apply_look_input_with_dialogue_limits(&self) { unsafe { function!(42372, (&Self))(self) } }
+    pub unsafe fn apply_look_input_with_dialogue_limits(&self) { unsafe { function!(42372, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerControls::CanSwitchPOV`: ControlMap enabledControls bit 5 && PlayerControls +0x4c == 0 && +0x4d == 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42342, rva 0x7ae030.
     /// `bool (PlayerControls* this)`
     #[inline]
-    pub fn can_switch_pov(&self) -> bool { unsafe { function!(42342, (&Self) -> bool)(self) } }
+    pub fn can_switch_pov(&self) -> bool { unsafe { function!(42342, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `PlayerControls::CreateHandlers`: allocates the 13 handlers and registers them in order Movement, Look, ReadyWeapon, AutoMove, ToggleRun, Activate*, Jump, Shout, Sprint*, AttackBlock*, Run*, Sneak, TogglePOV* (* = held-state list too)
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 42376, rva 0x7b0920.
     /// `void (PlayerControls* this)`
     #[inline]
-    pub fn create_handlers(&self) { unsafe { function!(42376, (&Self))(self) } }
+    pub fn create_handlers(&self) { unsafe { function!(42376, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerControls::DispatchEvent`: offers one event to every enabled handler in list order; CanProcess, then the per-type slot with this+0x24; ButtonEvents also update held-state handlers
     ///
     /// Semantic, input pass, high; ledger runtime evidence, name high; id 523956, rva 0x7b0130.
     /// `void (PlayerControls* this, InputEvent* event)`
     #[inline]
-    pub fn dispatch_event(&self, event: &crate::InputEvent) { unsafe { function!(523956, (&Self, &crate::InputEvent))(self, event) } }
+    pub fn dispatch_event(&self, event: &crate::InputEvent) { unsafe { function!(523956, (*const Self, *const crate::InputEvent))(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `PlayerControls::GetSixaxisLookPitch`: Look handler (+0x178) +0xa8, or 0 without a handler: the filtered sixaxis pitch
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523951, rva 0x7ae110.
     /// `float (PlayerControls* this)`
     #[inline]
-    pub fn get_sixaxis_look_pitch(&self) -> f32 { unsafe { function!(523951, (&Self) -> f32)(self) } }
+    pub fn get_sixaxis_look_pitch(&self) -> f32 { unsafe { function!(523951, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `PlayerControls::GetSixaxisLookYaw`: Look handler (+0x178) +0xac, or 0: the filtered sixaxis yaw
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523952, rva 0x7ae130.
     /// `float (PlayerControls* this)`
     #[inline]
-    pub fn get_sixaxis_look_yaw(&self) -> f32 { unsafe { function!(523952, (&Self) -> f32)(self) } }
+    pub fn get_sixaxis_look_yaw(&self) -> f32 { unsafe { function!(523952, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `PlayerControls::HasHandler`: linear search of the handler array (data +0x58, size +0x68) for handler
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42359, rva 0x7af690.
     /// `bool (PlayerControls* this, PlayerInputHandler* handler)`
     #[inline]
-    pub fn has_handler(&self, handler: &crate::PlayerInputHandler) -> bool { unsafe { function!(42359, (&Self, &crate::PlayerInputHandler) -> bool)(self, handler) } }
+    pub fn has_handler(&self, handler: &crate::PlayerInputHandler) -> bool { unsafe { function!(42359, (*const Self, *const crate::PlayerInputHandler) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(handler)) } }
     /// `PlayerControls::HasSixaxisLookReference`: true when the Look handler (+0x178) exists and its sixaxis reference index (+0xb0) is not -1
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523950, rva 0x7ae0e0.
     /// `bool (PlayerControls* this)`
     #[inline]
-    pub fn has_sixaxis_look_reference(&self) -> bool { unsafe { function!(523950, (&Self) -> bool)(self) } }
+    pub fn has_sixaxis_look_reference(&self) -> bool { unsafe { function!(523950, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `PlayerControls::InterruptPlayerActions`: stops the player's current actions (same body as 0x7afb40 without the +0x4e store)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523954, rva 0x7aea30.
     /// `void (PlayerControls* this)`
     #[inline]
-    pub fn interrupt_player_actions(&self) { unsafe { function!(523954, (&Self))(self) } }
+    pub fn interrupt_player_actions(&self) { unsafe { function!(523954, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerControls::InterruptPlayerActionsAndCasting`: global-data finish-load handler of PlayerControls (type 110): stops the player's actions and casting and clears +0x4e
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523955, rva 0x7afb40.
@@ -649,7 +649,7 @@ impl crate::PlayerControls {
     /// # Safety
     /// `unusedLoadBuffer` must point to what the engine expects.
     #[inline]
-    pub unsafe fn interrupt_player_actions_and_casting(&self, unusedLoadBuffer: *mut c_void) { unsafe { function!(523955, (&Self, *mut c_void))(self, unusedLoadBuffer) } }
+    pub unsafe fn interrupt_player_actions_and_casting(&self, unusedLoadBuffer: *mut c_void) { unsafe { function!(523955, (*const Self, *mut c_void))(core::ptr::from_ref(self), unusedLoadBuffer) } }
     /// `PlayerControls::LoadResponseGraph`: reads f%sGraphX%d/f%sGraphY%d:Controls into one of two curves
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 42366, rva 0x7afd10.
@@ -658,13 +658,13 @@ impl crate::PlayerControls {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn load_response_graph(&self, which: u32) { unsafe { function!(42366, (&Self, u32))(self, which) } }
+    pub unsafe fn load_response_graph(&self, which: u32) { unsafe { function!(42366, (*const Self, u32))(core::ptr::from_ref(self), which) } }
     /// `PlayerControls::RemoveHandler`: removes from both lists (deferred and disabled while dispatching)
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 42357, rva 0x7af3e0.
     /// `void (PlayerControls* this, PlayerInputHandler* handler)`
     #[inline]
-    pub fn remove_handler(&self, handler: &crate::PlayerInputHandler) { unsafe { function!(42357, (&Self, &crate::PlayerInputHandler))(self, handler) } }
+    pub fn remove_handler(&self, handler: &crate::PlayerInputHandler) { unsafe { function!(42357, (*const Self, *const crate::PlayerInputHandler))(core::ptr::from_ref(self), core::ptr::from_ref(handler)) } }
     /// `PlayerControls::SetTurnRateFromLookInput`: player process turn delta = lookInput.x * pi, or 0 in third-person free look (AIProcess::SetTurnDelta tail call)
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 42373, rva 0x7b0790.
@@ -673,7 +673,7 @@ impl crate::PlayerControls {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_turn_rate_from_look_input(&self) { unsafe { function!(42373, (&Self))(self) } }
+    pub unsafe fn set_turn_rate_from_look_input(&self) { unsafe { function!(42373, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerControls::UpdateMovementState`: applies auto-move and computes the player movement state after the events
     ///
     /// Semantic, input pass, low; ledger semantic evidence, name low; id 42371, rva 0x7b03c0.
@@ -682,7 +682,7 @@ impl crate::PlayerControls {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn update_movement_state(&self) { unsafe { function!(42371, (&Self))(self) } }
+    pub unsafe fn update_movement_state(&self) { unsafe { function!(42371, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerControls::ctor`: sets the vtables and globals, registers 4 sinks, creates handlers
     ///
     /// Semantic, input pass, high; ledger layout_inference evidence, name high; id 42336, rva 0x7ad450.
@@ -691,7 +691,7 @@ impl crate::PlayerControls {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42336, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42336, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::QuickSaveLoadHandler {
@@ -700,13 +700,13 @@ impl crate::QuickSaveLoadHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (QuickSaveLoadHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `QuickSaveLoadHandler::ProcessButtonEvent`, vtable slot 7: queues the request
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (QuickSaveLoadHandler* this, ButtonEvent* event)`
     #[inline]
-    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (&Self, &crate::ButtonEvent) -> bool)(self, event) } }
+    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::ReadyWeaponHandler {
@@ -715,7 +715,7 @@ impl crate::ReadyWeaponHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ReadyWeaponHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::RunHandler {
@@ -724,7 +724,7 @@ impl crate::RunHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (RunHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::ScreenshotHandler {
@@ -733,7 +733,7 @@ impl crate::ScreenshotHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ScreenshotHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::Script {
@@ -745,7 +745,7 @@ impl crate::Script {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_ref_variable(&self, index: i32, locals: *mut c_void) -> *mut c_void { unsafe { function!(21909, (&Self, i32, *mut c_void) -> *mut c_void)(self, index, locals) } }
+    pub unsafe fn get_ref_variable(&self, index: i32, locals: *mut c_void) -> *mut c_void { unsafe { function!(21909, (*const Self, i32, *mut c_void) -> *mut c_void)(core::ptr::from_ref(self), index, locals) } }
     /// `Script::SetText`: replaces the owned text at +0x38
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21883, rva 0x3435e0.
@@ -754,7 +754,7 @@ impl crate::Script {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_text(&self, text: *const c_char) { unsafe { function!(21883, (&Self, *const c_char))(self, text) } }
+    pub unsafe fn set_text(&self, text: *const c_char) { unsafe { function!(21883, (*const Self, *const c_char))(core::ptr::from_ref(self), text) } }
     /// `Script::ctor`: TESForm ctor, zeroes the Script fields, formType 0x13
     ///
     /// Semantic, input pass, high; ledger layout_inference evidence, name high; id 441580, rva 0x342a40.
@@ -763,7 +763,7 @@ impl crate::Script {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(441580, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(441580, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `Script::ownerQuest` at +0x58: quest scope; console lines get g_ConsoleScopeQuest
     ///
     /// Semantic field, input pass, high; `None` while the pointer is null.
@@ -777,7 +777,7 @@ impl crate::ShoutHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ShoutHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::SneakHandler {
@@ -786,7 +786,7 @@ impl crate::SneakHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (SneakHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::SprintHandler {
@@ -795,7 +795,7 @@ impl crate::SprintHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (SprintHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::TogglePOVHandler {
@@ -804,13 +804,13 @@ impl crate::TogglePOVHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (TogglePOVHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `TogglePOVHandler::Destroy`, vtable slot 0: 
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `TogglePOVHandler* (TogglePOVHandler* this, u32 flags)`
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
     /// `TogglePOVHandler::ProcessButton`, vtable slot 6: sets PlayerControls+0x4b (vanity held)
     ///
     /// Semantic, input pass, high; called through the object's vtable.
@@ -819,7 +819,7 @@ impl crate::TogglePOVHandler {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_button(&self, event: *mut crate::ButtonEvent, data: *mut c_void) { unsafe { virtual_function!(self, 6, (&Self, *mut crate::ButtonEvent, *mut c_void))(self, event, data) } }
+    pub unsafe fn process_button(&self, event: *mut crate::ButtonEvent, data: *mut c_void) { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::ButtonEvent, *mut c_void))(core::ptr::from_ref(self), event, data) } }
 }
 
 impl crate::ToggleRunHandler {
@@ -828,7 +828,7 @@ impl crate::ToggleRunHandler {
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ToggleRunHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
 
 impl crate::UserEventNames {
@@ -840,7 +840,7 @@ impl crate::UserEventNames {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68736, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68736, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 /// `BSTEventSource<UserEventEnabledEvent>::Notify`: template Notify instance (stops at the first non-zero result)
@@ -857,7 +857,7 @@ pub unsafe fn bst_event_source_user_event_enabled_event__notify(this: *mut c_voi
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68573, rva 0xcf1770.
 /// `int (const UserEventMapping* a, const UserEventMapping* b)`
 #[inline]
-pub fn compare_mapping_key(a: &crate::UserEventMapping, b: &crate::UserEventMapping) -> i32 { unsafe { function!(68573, (&crate::UserEventMapping, &crate::UserEventMapping) -> i32)(a, b) } }
+pub fn compare_mapping_key(a: &crate::UserEventMapping, b: &crate::UserEventMapping) -> i32 { unsafe { function!(68573, (*const crate::UserEventMapping, *const crate::UserEventMapping) -> i32)(core::ptr::from_ref(a), core::ptr::from_ref(b)) } }
 /// `CompileAndRunScript`: compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run
 ///
 /// Semantic, input pass, high; ledger runtime evidence, name high; id 441582, rva 0x343d00.
@@ -1157,7 +1157,7 @@ pub fn create_input_device(slot: i32) -> Option<&'static crate::BSIInputDevice> 
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68762, rva 0xe12020.
 /// `void (BSPCGamepadDeviceHandler* handler)`
 #[inline]
-pub fn detect_and_create_gamepad_device(handler: &crate::BSPCGamepadDeviceHandler) { unsafe { function!(68762, (&crate::BSPCGamepadDeviceHandler))(handler) } }
+pub fn detect_and_create_gamepad_device(handler: &crate::BSPCGamepadDeviceHandler) { unsafe { function!(68762, (*const crate::BSPCGamepadDeviceHandler))(core::ptr::from_ref(handler)) } }
 /// `EvaluateScriptOperandAsDouble`: evaluates one numeric operand ('n' int literal, 'z' double literal, variables)
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21911, rva 0x3455a0.
@@ -1238,13 +1238,13 @@ pub fn poll_controls_job() { unsafe { function!(36578, ())() } }
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68749, rva 0xd6f530.
 /// `void (BSInputDevice* device, u32 id, float realDelta, float prev, float cur)`
 #[inline]
-pub fn process_analog_button_state(device: &crate::BSInputDevice, id: u32, realDelta: f32, prev: f32, cur: f32) { unsafe { function!(68749, (&crate::BSInputDevice, u32, f32, f32, f32))(device, id, realDelta, prev, cur) } }
+pub fn process_analog_button_state(device: &crate::BSInputDevice, id: u32, realDelta: f32, prev: f32, cur: f32) { unsafe { function!(68749, (*const crate::BSInputDevice, u32, f32, f32, f32))(core::ptr::from_ref(device), id, realDelta, prev, cur) } }
 /// `ProcessDigitalButtonState`: none: return; press: value 1, held 0; hold: record.held += delta, held = it; release: held = record.held, record.held = 0, value 0; then AddButtonEvent(queue, device->deviceType, id, value, held). Ids without a definition record report held 0 on every frame
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68748, rva 0xd6f410.
 /// `void (BSInputDevice* device, u32 id, float realDelta, bool wasDown, bool isDown)`
 #[inline]
-pub fn process_digital_button_state(device: &crate::BSInputDevice, id: u32, realDelta: f32, wasDown: bool, isDown: bool) { unsafe { function!(68748, (&crate::BSInputDevice, u32, f32, bool, bool))(device, id, realDelta, wasDown, isDown) } }
+pub fn process_digital_button_state(device: &crate::BSInputDevice, id: u32, realDelta: f32, wasDown: bool, isDown: bool) { unsafe { function!(68748, (*const crate::BSInputDevice, u32, f32, bool, bool))(core::ptr::from_ref(device), id, realDelta, wasDown, isDown) } }
 /// `QueueConsoleLine`: echoes the line, handles 'macro', 'hotkey', 'reload console' (0x90d680), splits it into pieces and for each appends a Script pair to g_PendingConsoleLines (the piece, and for 'ForEachRef[cond]' a filter script 'float fresult / ref refr / set refr to GetSelectedRef / set fresult to <cond>')
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 442672, rva 0x909f90.

@@ -17,7 +17,7 @@ impl crate::bnet__AsyncOperationProxy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(525618, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(525618, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::bnet__Mods__BaseUpdatePreferenceInfo {
@@ -27,14 +27,14 @@ impl crate::bnet__Mods__BaseUpdatePreferenceInfo {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(448876, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(448876, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
     /// `bnet::Mods::BaseUpdatePreferenceInfo::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 446185, rva 0x12c8f80).
     /// `undefined dtor(BaseUpdatePreferenceInfo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(446185, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(446185, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::bnet__impl__AsyncOperation {
@@ -44,6 +44,6 @@ impl crate::bnet__impl__AsyncOperation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(448891, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(448891, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 

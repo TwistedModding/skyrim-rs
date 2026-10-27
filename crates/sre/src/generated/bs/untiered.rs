@@ -10,14 +10,14 @@ impl crate::BSAnimGraphVisit__BShkbVisitor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(22779, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(22779, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSAnimGraphVisit::BShkbVisitor::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 63738, rva 0xbd9250).
     /// `undefined dtor(BShkbVisitor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(63738, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(63738, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSAnimGroupSequence {
@@ -145,7 +145,7 @@ impl crate::BSEffectShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn setup_technique(&self, param_1: i32) -> u64 { unsafe { virtual_function!(self, 2, (&Self, i32) -> u64)(self, param_1) } }
+    pub unsafe fn setup_technique(&self, param_1: i32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSEffectShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108972, rva 0x158dab0).
     /// `uint vfunc_2_sub0(uint param_1)`
     ///
@@ -277,7 +277,7 @@ impl crate::BSImagespaceShaderISSAOCameraZ {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_shader_macros(&self, param_1: *mut u64) -> *mut u64 { unsafe { virtual_function!(self, 13, (&Self, *mut u64) -> *mut u64)(self, param_1) } }
+    pub unsafe fn get_shader_macros(&self, param_1: *mut u64) -> *mut u64 { unsafe { virtual_function!(self, 13, (*const Self, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSImagespaceShaderISSAOCameraZAndMipsCS {
@@ -287,7 +287,7 @@ impl crate::BSImagespaceShaderISSAOCameraZAndMipsCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_shader_macros(&self, param_1: *mut u64) -> *mut u64 { unsafe { virtual_function!(self, 13, (&Self, *mut u64) -> *mut u64)(self, param_1) } }
+    pub unsafe fn get_shader_macros(&self, param_1: *mut u64) -> *mut u64 { unsafe { virtual_function!(self, 13, (*const Self, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSLODMultiIndexTriShape {
@@ -527,7 +527,7 @@ impl crate::BSParticleShaderEmitter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_caller(&self, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(34947, (&Self, u64, u64, u64) -> u64)(self, param_2, param_3, param_4) } }
+    pub unsafe fn dtor_caller(&self, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(34947, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
 }
 
 impl crate::BSParticleShaderGeometryEmitter {
@@ -561,7 +561,7 @@ impl crate::BSPassByTargetTriggerModifierInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_target_position(&self, param_1: *mut f32) -> u64 { unsafe { virtual_function!(self, 2, (&Self, *mut f32) -> u64)(self, param_1) } }
+    pub unsafe fn get_target_position(&self, param_1: *mut f32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSPathEventManager {
@@ -605,7 +605,7 @@ impl crate::BSPathing__EdgeFoundVisitor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(93279, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(93279, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSPathingLOSGridMap {
@@ -892,7 +892,7 @@ impl crate::BSPointerListBase_TriggerEntry__TriggerEvent____ptr64 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26070, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26070, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSPortalGraphEntry {
@@ -1369,7 +1369,7 @@ impl crate::BSSceneGraph {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_far_distance(&self) -> f32 { unsafe { virtual_function!(self, 62, (&Self) -> f32)(self) } }
+    pub unsafe fn get_far_distance(&self) -> f32 { unsafe { virtual_function!(self, 62, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSShaderResourceManager {
@@ -1508,70 +1508,70 @@ impl crate::BSShapeConstructor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(108211, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(108211, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108212, rva 0x1573d80).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(108212, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(108212, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108213, rva 0x1573d90).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(108213, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(108213, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108214, rva 0x1573da0).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_4(&self) -> u64 { unsafe { function!(108214, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_4(&self) -> u64 { unsafe { function!(108214, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108215, rva 0x1573db0).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_5(&self) -> u64 { unsafe { function!(108215, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_5(&self) -> u64 { unsafe { function!(108215, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108216, rva 0x1573dc0).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_6(&self) -> u64 { unsafe { function!(108216, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_6(&self) -> u64 { unsafe { function!(108216, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108217, rva 0x1573dd0).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_7(&self) -> u64 { unsafe { function!(108217, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_7(&self) -> u64 { unsafe { function!(108217, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108218, rva 0x1573de0).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_8(&self) -> u64 { unsafe { function!(108218, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_8(&self) -> u64 { unsafe { function!(108218, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108219, rva 0x1573df0).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_9(&self) -> u64 { unsafe { function!(108219, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_9(&self) -> u64 { unsafe { function!(108219, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShapeConstructor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 108220, rva 0x1573e00).
     /// `undefined ctor(BSShapeConstructor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_10(&self) -> u64 { unsafe { function!(108220, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_10(&self) -> u64 { unsafe { function!(108220, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSSkyShader {
@@ -1632,14 +1632,14 @@ impl crate::BSStorage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35662, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_3(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35662, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSStorage::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 54194, rva 0x9ecea0).
     /// `undefined dtor(BSStorage * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54194, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_4(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54194, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSStream {
@@ -1704,14 +1704,14 @@ impl crate::BSSynchronizedClipGeneratorUtils__FindEventFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(63731, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(63731, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSSynchronizedClipGeneratorUtils::FindEventFunctor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 63909, rva 0xbe3670).
     /// `undefined ctor(FindEventFunctor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(63909, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(63909, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSSystemFileAsyncFunctor {
@@ -1721,7 +1721,7 @@ impl crate::BSSystemFileAsyncFunctor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(70005, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(70005, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSSystemMonitor__MemOpsThread {
@@ -2116,7 +2116,7 @@ impl crate::BSTask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(18258, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(18258, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSTaskManager {
@@ -2184,14 +2184,14 @@ impl crate::BSThread {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(36711, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(36711, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSThread::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 109158, rva 0x1596570).
     /// `undefined dtor(BSThread * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(109158, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(109158, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSTreadTransfInterpolator {
@@ -2211,7 +2211,7 @@ impl crate::BSTreeManager__IQueryCullingCamera {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSTreeNode {
@@ -2221,7 +2221,7 @@ impl crate::BSTreeNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn on_visible(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 52, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn on_visible(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 52, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSTriShape {
@@ -2231,7 +2231,7 @@ impl crate::BSTriShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(76342, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(76342, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSTweenerModifier {
@@ -2251,7 +2251,7 @@ impl crate::BSUtilityShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn setup_technique(&self, param_1: i32) -> c_char { unsafe { virtual_function!(self, 2, (&Self, i32) -> c_char)(self, param_1) } }
+    pub unsafe fn setup_technique(&self, param_1: i32) -> c_char { unsafe { virtual_function!(self, 2, (*const Self, i32) -> c_char)(core::ptr::from_ref(self), param_1) } }
     /// `BSUtilityShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 109050, rva 0x158e990).
     /// `uint vfunc_2_sub0(uint param_1)`
     ///
@@ -2289,7 +2289,7 @@ impl crate::BSWaterShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn setup_technique(&self, param_1: i32) -> u64 { unsafe { virtual_function!(self, 2, (&Self, i32) -> u64)(self, param_1) } }
+    pub unsafe fn setup_technique(&self, param_1: i32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSWaterShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108859, rva 0x158d0b0).
     /// `undefined4 vfunc_2_sub0(undefined4 param_1)`
     ///

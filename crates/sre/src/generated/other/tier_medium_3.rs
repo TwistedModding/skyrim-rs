@@ -3,6 +3,13 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `OpenSlotAtStride18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 47167, rva 0x861570).
+/// `undefined OpenSlotAtStride18(longlong * param_1, uint param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_slot_at_stride18(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(47167, (*mut i64, u32) -> u64)(param_1, param_2) } }
 /// `OpenSlotAtStride4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 47165, rva 0x8614d0).
 /// `undefined OpenSlotAtStride4(longlong * param_1, uint param_2)`
 ///
@@ -13464,10 +13471,3 @@ pub unsafe fn resize_scrap_array(param_1: *mut i64, param_2: u32, param_3: u64, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resize_scrap_array12(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> c_char { unsafe { function!(527791, (*mut i64, u32, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
-/// `ResizeScrapArrayOfDwords` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 71507, rva 0xf15200).
-/// `ulonglong ResizeScrapArrayOfDwords(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_scrap_array_of_dwords(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(71507, (*mut i64, u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

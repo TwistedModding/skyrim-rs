@@ -20,14 +20,14 @@ impl crate::BSGeometry {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn on_visible(&self, param_1: *mut i64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 52, (&Self, *mut i64, u64) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn on_visible(&self, param_1: *mut i64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 52, (*const Self, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSGeometry::UpdateWorldBound` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70925, rva 0xefc810).
     /// `undefined UpdateWorldBound(BSGeometry * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update_world_bound(&self) -> u64 { unsafe { function!(70925, (&Self) -> u64)(self) } }
+    pub unsafe fn update_world_bound(&self) -> u64 { unsafe { function!(70925, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSLight {
@@ -61,7 +61,7 @@ impl crate::BSLightingShaderProperty {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_depth_render_passes(&self, param_1: i64, param_2: i32, param_3: i64) -> *mut i64 { unsafe { function!(106517, (&Self, i64, i32, i64) -> *mut i64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn get_depth_render_passes(&self, param_1: i64, param_2: i32, param_3: i64) -> *mut i64 { unsafe { function!(106517, (*const Self, i64, i32, i64) -> *mut i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSLightingShaderProperty::vfunc_42_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 105553, rva 0x14e8420).
     /// `undefined1 vfunc_42_sub0(float param_1, float param_2, float param_3, float * param_4)`
     ///
@@ -102,28 +102,28 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn link_object(&self, param_1: i64) -> u64 { unsafe { function!(105515, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn link_object(&self, param_1: i64) -> u64 { unsafe { function!(105515, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSShaderProperty::LoadBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 105514, rva 0x14e7390).
     /// `undefined LoadBinary(BSShaderProperty * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(105514, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_binary(&self, param_1: i64) -> u64 { unsafe { function!(105514, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSShaderProperty::RegisterStreamables` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 105516, rva 0x14e7440).
     /// `undefined8 RegisterStreamables(BSShaderProperty * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn register_streamables(&self, param_1: *mut i64) -> u64 { unsafe { function!(105516, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn register_streamables(&self, param_1: *mut i64) -> u64 { unsafe { function!(105516, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSShaderProperty::SaveBinary` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 105517, rva 0x14e7450).
     /// `undefined SaveBinary(BSShaderProperty * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_binary(&self, param_1: *mut i64) -> u64 { unsafe { function!(105517, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_binary(&self, param_1: *mut i64) -> u64 { unsafe { function!(105517, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSShadowDirectionalLight {
@@ -133,21 +133,21 @@ impl crate::BSShadowDirectionalLight {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn cull_casters(&self, param_1: *mut u32) -> u64 { unsafe { function!(108488, (&Self, *mut u32) -> u64)(self, param_1) } }
+    pub unsafe fn cull_casters(&self, param_1: *mut u32) -> u64 { unsafe { function!(108488, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSShadowDirectionalLight::ReleaseShadowMaps` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 108491, rva 0x157ed20).
     /// `undefined ReleaseShadowMaps(BSShadowDirectionalLight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn release_shadow_maps(&self) -> u64 { unsafe { function!(108491, (&Self) -> u64)(self) } }
+    pub unsafe fn release_shadow_maps(&self) -> u64 { unsafe { function!(108491, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSShadowDirectionalLight::UpdateCascadeFrusta` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 108487, rva 0x157ea50).
     /// `undefined UpdateCascadeFrusta(BSShadowDirectionalLight * this, float * param_1, undefined8 * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update_cascade_frusta(&self, param_1: *mut f32, param_2: *mut u64) -> u64 { unsafe { function!(108487, (&Self, *mut f32, *mut u64) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn update_cascade_frusta(&self, param_1: *mut f32, param_2: *mut u64) -> u64 { unsafe { function!(108487, (*const Self, *mut f32, *mut u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSShadowDirectionalLight::vfunc_15_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 106454, rva 0x1516c40).
     /// `undefined vfunc_15_sub0(float * param_1, undefined8 * param_2, longlong param_3)`
     ///
@@ -215,7 +215,7 @@ impl crate::NiNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn remove_from_array_and_detach_child(&self, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(15291, (&Self, *mut i64, *mut i64) -> u64)(self, param_2, param_3) } }
+    pub unsafe fn remove_from_array_and_detach_child(&self, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(15291, (*const Self, *mut i64, *mut i64) -> u64)(core::ptr::from_ref(self), param_2, param_3) } }
 }
 
 impl crate::NiSkinInstance {

@@ -1560,7 +1560,7 @@ impl crate::NiBoneMatrixSetterI {
     /// # Safety
     /// `partition`, `geometryWorld` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_bone_matrices(&self, skin: *mut crate::NiSkinInstance, partition: *mut crate::NiSkinPartition__Partition, geometryWorld: *const c_void) { unsafe { function!(108322, (&Self, *mut crate::NiSkinInstance, *mut crate::NiSkinPartition__Partition, *const c_void))(self, skin, partition, geometryWorld) } }
+    pub unsafe fn set_bone_matrices(&self, skin: *mut crate::NiSkinInstance, partition: *mut crate::NiSkinPartition__Partition, geometryWorld: *const c_void) { unsafe { function!(108322, (*const Self, *mut crate::NiSkinInstance, *mut crate::NiSkinPartition__Partition, *const c_void))(core::ptr::from_ref(self), skin, partition, geometryWorld) } }
 }
 
 impl crate::NiCullingProcess {
@@ -1572,7 +1572,7 @@ impl crate::NiCullingProcess {
     /// # Safety
     /// `frustum` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_frustum(&self, frustum: *const c_void) { unsafe { function!(71081, (&Self, *const c_void))(self, frustum) } }
+    pub unsafe fn set_frustum(&self, frustum: *const c_void) { unsafe { function!(71081, (*const Self, *const c_void))(core::ptr::from_ref(self), frustum) } }
 }
 
 impl crate::NiDirectionalLight {
@@ -1584,7 +1584,7 @@ impl crate::NiDirectionalLight {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_world_data(&self, data: *mut crate::NiUpdateData) { unsafe { function!(71074, (&Self, *mut crate::NiUpdateData))(self, data) } }
+    pub unsafe fn update_world_data(&self, data: *mut crate::NiUpdateData) { unsafe { function!(71074, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), data) } }
 }
 
 /// `g_NiNode_ptr` at 0x3230510, id 403441 (xref_inference, medium)

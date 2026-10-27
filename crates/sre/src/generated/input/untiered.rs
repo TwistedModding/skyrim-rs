@@ -147,7 +147,7 @@ impl crate::BSWin32MouseDevice {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn reinitialize(&self, param_1: u8) -> u32 { unsafe { function!(68805, (&Self, u8) -> u32)(self, param_1) } }
+    pub unsafe fn reinitialize(&self, param_1: u8) -> u32 { unsafe { function!(68805, (*const Self, u8) -> u32)(core::ptr::from_ref(self), param_1) } }
     /// `BSWin32MouseDevice::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 68677, rva 0xcfaee0).
     /// `undefined vfunc_2_sub0(undefined8 param_1, longlong * param_2, ulonglong param_3, void * param_4)`
     ///
@@ -208,21 +208,21 @@ impl crate::LookHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42402, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42402, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `LookHandler::ProcessMouseMove` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 42424, rva 0x7b3270).
     /// `undefined ProcessMouseMove(LookHandler * this, longlong param_1, longlong param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_mouse_move(&self, param_1: i64, param_2: i64) -> u64 { unsafe { function!(42424, (&Self, i64, i64) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn process_mouse_move(&self, param_1: i64, param_2: i64) -> u64 { unsafe { function!(42424, (*const Self, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `LookHandler::ProcessThumbstick` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 523968, rva 0x7b37b0).
     /// `undefined ProcessThumbstick(LookHandler * this, longlong param_1, longlong param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_thumbstick(&self, param_1: i64, param_2: i64) -> u64 { unsafe { function!(523968, (&Self, i64, i64) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn process_thumbstick(&self, param_1: i64, param_2: i64) -> u64 { unsafe { function!(523968, (*const Self, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `LookHandler::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 523973, rva 0x7b5200).
     /// `ulonglong vfunc_1_sub0(longlong param_1, longlong param_2)`
     ///

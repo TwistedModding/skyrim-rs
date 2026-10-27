@@ -81,19 +81,19 @@ impl crate::AIProcess {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39499, rva 0x6ff230.
     /// `void (AIProcess* this)`
     #[inline]
-    pub fn clear_death_force(&self) { unsafe { function!(39499, (&Self))(self) } }
+    pub fn clear_death_force(&self) { unsafe { function!(39499, (*const Self))(core::ptr::from_ref(self)) } }
     /// `AIProcess::ClearKnockState`: ends the actor's knock/ragdoll state: restores its 3D and graph, clears the ragdoll extra, clears Actor+0xc8 bits 25..27 (AND 0xf1ffffff) and, for the player, PlayerCamera::LeaveBleedout(camera, 1) (instant leave of the bleedout camera)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 39897, rva 0x723ff0.
     /// `void (AIProcess* this, Actor* actor)`
     #[inline]
-    pub fn clear_knock_state(&self, actor: &crate::Actor) { unsafe { function!(39897, (&Self, &crate::Actor))(self, actor) } }
+    pub fn clear_knock_state(&self, actor: &crate::Actor) { unsafe { function!(39897, (*const Self, *const crate::Actor))(core::ptr::from_ref(self), core::ptr::from_ref(actor)) } }
     /// `AIProcess::DecayAimChaseLooking`: middle-high +0x2a0 -= +0x2a0 * g_FrameDelta * fAimChaseLookingMult:Combat, snapped to 0 when it crosses zero or lies within (-eps, eps)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39899, rva 0x724370.
     /// `void (AIProcess* this)`
     #[inline]
-    pub fn decay_aim_chase_looking(&self) { unsafe { function!(39899, (&Self))(self) } }
+    pub fn decay_aim_chase_looking(&self) { unsafe { function!(39899, (*const Self))(core::ptr::from_ref(self)) } }
     /// `AIProcess::GetAnimationGraphManager`: copies middleHigh->animationGraphManager into out (ref-counted); false when none
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 39840, rva 0x7217e0.
@@ -102,25 +102,25 @@ impl crate::AIProcess {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_animation_graph_manager(&self, out: *mut c_void) -> bool { unsafe { function!(39840, (&Self, *mut c_void) -> bool)(self, out) } }
+    pub unsafe fn get_animation_graph_manager(&self, out: *mut c_void) -> bool { unsafe { function!(39840, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), out) } }
     /// `AIProcess::GetEquippedEntry`: equipped weapon entry of a hand
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 39806, rva 0x720660.
     /// `InventoryEntry* AIProcess::GetEquippedEntry(AIProcess* this, bool leftHand)`
     #[inline]
-    pub fn get_equipped_entry(&self, leftHand: bool) -> Option<&'static crate::InventoryEntry> { unsafe { function!(39806, (&Self, bool) -> Option<&'static crate::InventoryEntry>)(self, leftHand) } }
+    pub fn get_equipped_entry(&self, leftHand: bool) -> Option<&'static crate::InventoryEntry> { unsafe { function!(39806, (*const Self, bool) -> Option<&'static crate::InventoryEntry>)(core::ptr::from_ref(self), leftHand) } }
     /// `AIProcess::GetEquippedLeftObject`: object in the left hand
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 39195, rva 0x6eb4a0.
     /// `TESForm* AIProcess::GetEquippedLeftObject(AIProcess* this)`
     #[inline]
-    pub fn get_equipped_left_object(&self) -> Option<&'static crate::TESForm> { unsafe { function!(39195, (&Self) -> Option<&'static crate::TESForm>)(self) } }
+    pub fn get_equipped_left_object(&self) -> Option<&'static crate::TESForm> { unsafe { function!(39195, (*const Self) -> Option<&'static crate::TESForm>)(core::ptr::from_ref(self)) } }
     /// `AIProcess::GetEquippedRightObject`: object in the right hand
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 39196, rva 0x6eb4b0.
     /// `TESForm* AIProcess::GetEquippedRightObject(AIProcess* this)`
     #[inline]
-    pub fn get_equipped_right_object(&self) -> Option<&'static crate::TESForm> { unsafe { function!(39196, (&Self) -> Option<&'static crate::TESForm>)(self) } }
+    pub fn get_equipped_right_object(&self) -> Option<&'static crate::TESForm> { unsafe { function!(39196, (*const Self) -> Option<&'static crate::TESForm>)(core::ptr::from_ref(self)) } }
     /// `AIProcess::GetHighField3B8Address`: &high(+0x10)+0x3b8, or the static default 0x32441a0 without high data
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39374, rva 0x6f60c0.
@@ -129,7 +129,7 @@ impl crate::AIProcess {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_high_field3_b8_address(&self) -> *mut *mut c_void { unsafe { function!(39374, (&Self) -> *mut *mut c_void)(self) } }
+    pub unsafe fn get_high_field3_b8_address(&self) -> *mut *mut c_void { unsafe { function!(39374, (*const Self) -> *mut *mut c_void)(core::ptr::from_ref(self)) } }
     /// `AIProcess::GetHighPoint424`: &high+0x424, or the zero NiPoint3 0x331c458
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39597, rva 0x7024d0.
@@ -138,25 +138,25 @@ impl crate::AIProcess {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_high_point424(&self) -> *mut c_void { unsafe { function!(39597, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn get_high_point424(&self) -> *mut c_void { unsafe { function!(39597, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
     /// `AIProcess::GetLoadingMenuClosed`: high process data (+0x10) byte +0x45e != 0 (false without high data)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39543, rva 0x700d60.
     /// `bool (AIProcess* this)`
     #[inline]
-    pub fn get_loading_menu_closed(&self) -> bool { unsafe { function!(39543, (&Self) -> bool)(self) } }
+    pub fn get_loading_menu_closed(&self) -> bool { unsafe { function!(39543, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `AIProcess::HasMiddleHighField210`: middle-high data (+0x8) +0x210 != null
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39792, rva 0x71fe00.
     /// `bool (AIProcess* this)`
     #[inline]
-    pub fn has_middle_high_field210(&self) -> bool { unsafe { function!(39792, (&Self) -> bool)(self) } }
+    pub fn has_middle_high_field210(&self) -> bool { unsafe { function!(39792, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `AIProcess::ResetHighField3F8Pair`: high data +0x3f8 = +0x3fa = 0xffff
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39522, rva 0x6ffef0.
     /// `void (AIProcess* this)`
     #[inline]
-    pub fn reset_high_field3_f8_pair(&self) { unsafe { function!(39522, (&Self))(self) } }
+    pub fn reset_high_field3_f8_pair(&self) { unsafe { function!(39522, (*const Self))(core::ptr::from_ref(self)) } }
     /// `AIProcess::SetAnimationGraphManager`: stores the manager at middleHigh+0x1a8, caches manager+0x70 at +0x1b0, refreshes the equipped item types at +0x304/+0x306
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 39841, rva 0x721850.
@@ -165,67 +165,67 @@ impl crate::AIProcess {
     /// # Safety
     /// `mgr` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_animation_graph_manager(&self, mgr: *mut c_void) -> bool { unsafe { function!(39841, (&Self, *mut c_void) -> bool)(self, mgr) } }
+    pub unsafe fn set_animation_graph_manager(&self, mgr: *mut c_void) -> bool { unsafe { function!(39841, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), mgr) } }
     /// `AIProcess::SetField94`: +0x94 = time
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39185, rva 0x6eab10.
     /// `void (AIProcess* this, float time)`
     #[inline]
-    pub fn set_field94(&self, time: f32) { unsafe { function!(39185, (&Self, f32))(self, time) } }
+    pub fn set_field94(&self, time: f32) { unsafe { function!(39185, (*const Self, f32))(core::ptr::from_ref(self), time) } }
     /// `AIProcess::SetHeadTrackResetTimer`: high data +0x174 = seconds
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39473, rva 0x6fe910.
     /// `void (AIProcess* this, float seconds)`
     #[inline]
-    pub fn set_head_track_reset_timer(&self, seconds: f32) { unsafe { function!(39473, (&Self, f32))(self, seconds) } }
+    pub fn set_head_track_reset_timer(&self, seconds: f32) { unsafe { function!(39473, (*const Self, f32))(core::ptr::from_ref(self), seconds) } }
     /// `AIProcess::SetHighField324`: high data (+0x10) +0x324 = value
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39351, rva 0x6f5200.
     /// `void (AIProcess* this, float value)`
     #[inline]
-    pub fn set_high_field324(&self, value: f32) { unsafe { function!(39351, (&Self, f32))(self, value) } }
+    pub fn set_high_field324(&self, value: f32) { unsafe { function!(39351, (*const Self, f32))(core::ptr::from_ref(self), value) } }
     /// `AIProcess::SetHighField32C`: high data +0x32c = value
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39419, rva 0x6f7080.
     /// `void (AIProcess* this, float value)`
     #[inline]
-    pub fn set_high_field32_c(&self, value: f32) { unsafe { function!(39419, (&Self, f32))(self, value) } }
+    pub fn set_high_field32_c(&self, value: f32) { unsafe { function!(39419, (*const Self, f32))(core::ptr::from_ref(self), value) } }
     /// `AIProcess::SetLoadingMenuClosed`: high process data (+0x10) byte +0x45e = closed
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39544, rva 0x700d80.
     /// `void (AIProcess* this, bool closed)`
     #[inline]
-    pub fn set_loading_menu_closed(&self, closed: bool) { unsafe { function!(39544, (&Self, bool))(self, closed) } }
+    pub fn set_loading_menu_closed(&self, closed: bool) { unsafe { function!(39544, (*const Self, bool))(core::ptr::from_ref(self), closed) } }
     /// `AIProcess::SetMiddleHighByte32A`: middle-high +0x32a = value
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40010, rva 0x727f00.
     /// `void (AIProcess* this, bool value)`
     #[inline]
-    pub fn set_middle_high_byte32_a(&self, value: bool) { unsafe { function!(40010, (&Self, bool))(self, value) } }
+    pub fn set_middle_high_byte32_a(&self, value: bool) { unsafe { function!(40010, (*const Self, bool))(core::ptr::from_ref(self), value) } }
     /// `AIProcess::SetMiddleHighByte331`: middle-high +0x331 = value
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40012, rva 0x727f40.
     /// `void (AIProcess* this, bool value)`
     #[inline]
-    pub fn set_middle_high_byte331(&self, value: bool) { unsafe { function!(40012, (&Self, bool))(self, value) } }
+    pub fn set_middle_high_byte331(&self, value: bool) { unsafe { function!(40012, (*const Self, bool))(core::ptr::from_ref(self), value) } }
     /// `AIProcess::SetMiddleHighField294`: middle-high +0x294 = value
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39920, rva 0x7253a0.
     /// `void (AIProcess* this, float value)`
     #[inline]
-    pub fn set_middle_high_field294(&self, value: f32) { unsafe { function!(39920, (&Self, f32))(self, value) } }
+    pub fn set_middle_high_field294(&self, value: f32) { unsafe { function!(39920, (*const Self, f32))(core::ptr::from_ref(self), value) } }
     /// `AIProcess::SetMiddleHighField2E8`: middle-high +0x2e8 = value (integer store)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39915, rva 0x7252e0.
     /// `void (AIProcess* this, u32 value)`
     #[inline]
-    pub fn set_middle_high_field2_e8(&self, value: u32) { unsafe { function!(39915, (&Self, u32))(self, value) } }
+    pub fn set_middle_high_field2_e8(&self, value: u32) { unsafe { function!(39915, (*const Self, u32))(core::ptr::from_ref(self), value) } }
     /// `AIProcess::SetMiddleHighField2E8_2`: middle-high +0x2e8 = value (byte-identical twin of 0x7252e0)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39922, rva 0x7253e0.
     /// `void (AIProcess* this, u32 value)`
     #[inline]
-    pub fn set_middle_high_field2_e8_2(&self, value: u32) { unsafe { function!(39922, (&Self, u32))(self, value) } }
+    pub fn set_middle_high_field2_e8_2(&self, value: u32) { unsafe { function!(39922, (*const Self, u32))(core::ptr::from_ref(self), value) } }
     /// `AIProcess::SetMiddleHighPointD4`: middle-high +0xd4..+0xdc = *value
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39918, rva 0x725350.
@@ -234,43 +234,43 @@ impl crate::AIProcess {
     /// # Safety
     /// `value` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_middle_high_point_d4(&self, value: *const c_void) { unsafe { function!(39918, (&Self, *const c_void))(self, value) } }
+    pub unsafe fn set_middle_high_point_d4(&self, value: *const c_void) { unsafe { function!(39918, (*const Self, *const c_void))(core::ptr::from_ref(self), value) } }
     /// `AIProcess::SetPitch`: middle-high +0xb0 (pitch, the graph's Pitch channel) = pitch
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39880, rva 0x723430.
     /// `void (AIProcess* this, float pitch)`
     #[inline]
-    pub fn set_pitch(&self, pitch: f32) { unsafe { function!(39880, (&Self, f32))(self, pitch) } }
+    pub fn set_pitch(&self, pitch: f32) { unsafe { function!(39880, (*const Self, f32))(core::ptr::from_ref(self), pitch) } }
     /// `AIProcess::SetPitchDelta`: middle-high +0xbc (pitchDelta, ledger) = delta
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39886, rva 0x7234f0.
     /// `void (AIProcess* this, float delta)`
     #[inline]
-    pub fn set_pitch_delta(&self, delta: f32) { unsafe { function!(39886, (&Self, f32))(self, delta) } }
+    pub fn set_pitch_delta(&self, delta: f32) { unsafe { function!(39886, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `AIProcess::SetRoll`: middle-high +0xb4 (roll) = roll
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39882, rva 0x723470.
     /// `void (AIProcess* this, float roll)`
     #[inline]
-    pub fn set_roll(&self, roll: f32) { unsafe { function!(39882, (&Self, f32))(self, roll) } }
+    pub fn set_roll(&self, roll: f32) { unsafe { function!(39882, (*const Self, f32))(core::ptr::from_ref(self), roll) } }
     /// `AIProcess::SetTargetSpeed`: middle-high +0x2ac (targetSpeed, ledger) = speed
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39875, rva 0x723390.
     /// `void (AIProcess* this, float speed)`
     #[inline]
-    pub fn set_target_speed(&self, speed: f32) { unsafe { function!(39875, (&Self, f32))(self, speed) } }
+    pub fn set_target_speed(&self, speed: f32) { unsafe { function!(39875, (*const Self, f32))(core::ptr::from_ref(self), speed) } }
     /// `AIProcess::SetTurnDelta`: stores the heading turn rate into the middle-high process data +0xc4 (no-op without middle-high data)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39884, rva 0x7234b0.
     /// `void (AIProcess* this, float turnDelta)`
     #[inline]
-    pub fn set_turn_delta(&self, turnDelta: f32) { unsafe { function!(39884, (&Self, f32))(self, turnDelta) } }
+    pub fn set_turn_delta(&self, turnDelta: f32) { unsafe { function!(39884, (*const Self, f32))(core::ptr::from_ref(self), turnDelta) } }
     /// `AIProcess::StartDeferredKill`: middle-high data: deferred-kill state +0x2f8 = 1 when 0, +0x332 |= flags, timer +0x2d4 = fBetaDeferredKillTimer:General
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40033, rva 0x7285a0.
     /// `void (AIProcess* this, u8 flags)`
     #[inline]
-    pub fn start_deferred_kill(&self, flags: u8) { unsafe { function!(40033, (&Self, u8))(self, flags) } }
+    pub fn start_deferred_kill(&self, flags: u8) { unsafe { function!(40033, (*const Self, u8))(core::ptr::from_ref(self), flags) } }
     /// `AIProcess::ctor`: constructs an AI process
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 39107, rva 0x6e66a0.
@@ -279,7 +279,7 @@ impl crate::AIProcess {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(39107, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(39107, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `DispatchEventToField8Sinks`: dispatches the 8-byte event {u32 type, u8 value} to the sinks of the process's middle-high data
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40028, rva 0x728500.
@@ -288,7 +288,7 @@ impl crate::AIProcess {
     /// # Safety
     /// `event` must point to what the engine expects.
     #[inline]
-    pub unsafe fn dispatch_event_to_field8_sinks(&self, event: *const c_void) { unsafe { function!(40028, (&Self, *const c_void))(self, event) } }
+    pub unsafe fn dispatch_event_to_field8_sinks(&self, event: *const c_void) { unsafe { function!(40028, (*const Self, *const c_void))(core::ptr::from_ref(self), event) } }
     /// `AIProcess::equippedLeft` at +0xF0: object in the left hand
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -339,37 +339,37 @@ impl crate::Actor {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_alpha_multiplier(&self) -> f32 { unsafe { virtual_function!(self, 226, (&Self) -> f32)(self) } }
+    pub unsafe fn get_alpha_multiplier(&self) -> f32 { unsafe { virtual_function!(self, 226, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `Actor::IsChild`, vtable slot 94: whether the actor is a child
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `bool IsChild(const Actor* this)`
     #[inline]
-    pub fn is_child(&self) -> bool { unsafe { virtual_function!(self, 94, (&Self) -> bool)(self) } }
+    pub fn is_child(&self) -> bool { unsafe { virtual_function!(self, 94, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsDead`, vtable slot 153: whether the actor is dead or dying
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `bool IsDead(const Actor* this, bool ignoreBleedout)`
     #[inline]
-    pub fn is_dead(&self, ignoreBleedout: bool) -> bool { unsafe { virtual_function!(self, 153, (&Self, bool) -> bool)(self, ignoreBleedout) } }
+    pub fn is_dead(&self, ignoreBleedout: bool) -> bool { unsafe { virtual_function!(self, 153, (*const Self, bool) -> bool)(core::ptr::from_ref(self), ignoreBleedout) } }
     /// `Actor::IsInCombat`, vtable slot 227: whether the actor has a combat controller
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `bool IsInCombat(const Actor* this)`
     #[inline]
-    pub fn is_in_combat(&self) -> bool { unsafe { virtual_function!(self, 227, (&Self) -> bool)(self) } }
+    pub fn is_in_combat(&self) -> bool { unsafe { virtual_function!(self, 227, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::Kill`, vtable slot 270: kills the actor: stops sounds and casts, clears combat, applies the death state and action, sends the kill events; for the player closes menus and pushes the bleedout camera
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (Actor* this, Actor* killer, float deathEventValue, bool sendStoryEvent, bool skipDeathAction)`
     #[inline]
-    pub fn kill(&self, killer: &Self, deathEventValue: f32, sendStoryEvent: bool, skipDeathAction: bool) { unsafe { virtual_function!(self, 270, (&Self, &Self, f32, bool, bool))(self, killer, deathEventValue, sendStoryEvent, skipDeathAction) } }
+    pub fn kill(&self, killer: &Self, deathEventValue: f32, sendStoryEvent: bool, skipDeathAction: bool) { unsafe { virtual_function!(self, 270, (*const Self, *const Self, f32, bool, bool))(core::ptr::from_ref(self), core::ptr::from_ref(killer), deathEventValue, sendStoryEvent, skipDeathAction) } }
     /// `Actor::SetAlpha`, vtable slot 225: stores the alpha in the process and in NiAVObject.fadeAmount (+0x100) of the 3D; for the player (this == ID_401069) on both roots
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (Actor* this, float alpha)`
     #[inline]
-    pub fn set_alpha(&self, alpha: f32) { unsafe { virtual_function!(self, 225, (&Self, f32))(self, alpha) } }
+    pub fn set_alpha(&self, alpha: f32) { unsafe { virtual_function!(self, 225, (*const Self, f32))(core::ptr::from_ref(self), alpha) } }
     /// `Actor::SetMiddleHighProcessField150`, vtable slot 140: stores value in currentProcess->middleHigh (+8) +0x150 when both exist
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -378,13 +378,13 @@ impl crate::Actor {
     /// # Safety
     /// `value` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_middle_high_process_field150(&self, value: *mut c_void) { unsafe { virtual_function!(self, 140, (&Self, *mut c_void))(self, value) } }
+    pub unsafe fn set_middle_high_process_field150(&self, value: *mut c_void) { unsafe { virtual_function!(self, 140, (*const Self, *mut c_void))(core::ptr::from_ref(self), value) } }
     /// `Actor::Update`, vtable slot 173: the actor's per-frame update (movement, water, process, animation); PlayerCharacter::Update chains to it
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (Actor* this, float delta)`
     #[inline]
-    pub fn update(&self, delta: f32) { unsafe { virtual_function!(self, 173, (&Self, f32))(self, delta) } }
+    pub fn update(&self, delta: f32) { unsafe { virtual_function!(self, 173, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `Actor::UpdateAlpha`, vtable slot 224: alpha = process fade * (1 - invisibility(av 0x36) * k) * distance factor, or the value of extra type 0x47; applied through slot 225
     ///
     /// Semantic, actors pass, medium; called through the object's vtable.
@@ -393,43 +393,43 @@ impl crate::Actor {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_alpha(&self) { unsafe { virtual_function!(self, 224, (&Self))(self) } }
+    pub unsafe fn update_alpha(&self) { unsafe { virtual_function!(self, 224, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::UpdateEquippedWeaponAnimations`, vtable slot 178: re-reads the equipped hand types into the graph variables iLeftHandType/iRightHandType (g_AnimationVariableNames +0x388/+0x390), handles the mounted (war horse) case and the camera's combat offsets, and when the flag is set runs default object 0x51 'Action Force Equip'
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (Actor* this, bool sendForceEquipAction)`
     #[inline]
-    pub fn update_equipped_weapon_animations(&self, sendForceEquipAction: bool) { unsafe { virtual_function!(self, 178, (&Self, bool))(self, sendForceEquipAction) } }
+    pub fn update_equipped_weapon_animations(&self, sendForceEquipAction: bool) { unsafe { virtual_function!(self, 178, (*const Self, bool))(core::ptr::from_ref(self), sendForceEquipAction) } }
     /// `Actor::UpdateHeadTracking`, vtable slot 290: head tracking target choice and update
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (Actor* this, float delta)`
     #[inline]
-    pub fn update_head_tracking(&self, delta: f32) { unsafe { virtual_function!(self, 290, (&Self, f32))(self, delta) } }
+    pub fn update_head_tracking(&self, delta: f32) { unsafe { virtual_function!(self, 290, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `Actor::AdvanceDeferredKillState`: when the process (+0xf8) has middle-high data and its deferred-kill state (+0x2f8) is non-zero, increments it
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38617, rva 0x6cc930.
     /// `void (Actor* this)`
     #[inline]
-    pub fn advance_deferred_kill_state(&self) { unsafe { function!(38617, (&Self))(self) } }
+    pub fn advance_deferred_kill_state(&self) { unsafe { function!(38617, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::ApplyMovementStep`: the actor's movement step: position, heading += step yaw (SetField50Angle, skipped for the player while +0xbed bit 2), pitch = clamp(rotX + step pitch) with limits by mount state: horse (fMountedMaxLookingDown only when the mount's flags2 & 0xe0 is in 0x60..0xbf, fHorseMaxUpwardPitch), flying mount (fFlyingMountedMaxLookingDown, fDragonMaxUpwardPitch), sitting (fSittingMaxLookingDown), then SetAngleField48
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37356, rva 0x67c380.
     /// `void (Actor* this, float delta)`
     #[inline]
-    pub fn apply_movement_step(&self, delta: f32) { unsafe { function!(37356, (&Self, f32))(self, delta) } }
+    pub fn apply_movement_step(&self, delta: f32) { unsafe { function!(37356, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `Actor::BeginGetUp`: starts the get-up from a knockdown: resets the knock data, and when the flag is set sets the graph variable at names+0x590 and runs default object 0x6c 'Action Get Up' (for the player in cameraStates[11] it also resets the VATS time multiplier); finally sets Actor+0xc8 knock bits to 5 (OR 0xa000000, clear 0x4000000)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40150, rva 0x735c20.
     /// `void (Actor* this, bool sendGetUpAction)`
     #[inline]
-    pub fn begin_get_up(&self, sendGetUpAction: bool) { unsafe { function!(40150, (&Self, bool))(self, sendGetUpAction) } }
+    pub fn begin_get_up(&self, sendGetUpAction: bool) { unsafe { function!(40150, (*const Self, bool))(core::ptr::from_ref(self), sendGetUpAction) } }
     /// `Actor::GetActorValueModifier`: one modifier of a value
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38469, rva 0x6c5440.
     /// `float Actor::GetActorValueModifier(Actor* this, int modifier, int value)`
     #[inline]
-    pub fn get_actor_value_modifier(&self, modifier: i32, value: i32) -> f32 { unsafe { function!(38469, (&Self, i32, i32) -> f32)(self, modifier, value) } }
+    pub fn get_actor_value_modifier(&self, modifier: i32, value: i32) -> f32 { unsafe { function!(38469, (*const Self, i32, i32) -> f32)(core::ptr::from_ref(self), modifier, value) } }
     /// `Actor::GetActorValuePercentage`: current / permanent value
     ///
     /// Semantic, actors pass, medium; ledger semantic evidence, name medium; id 37337, rva 0x679a00.
@@ -438,19 +438,19 @@ impl crate::Actor {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_actor_value_percentage(&self, value: i32) -> f32 { unsafe { function!(37337, (&Self, i32) -> f32)(self, value) } }
+    pub unsafe fn get_actor_value_percentage(&self, value: i32) -> f32 { unsafe { function!(37337, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
     /// `Actor::GetBodyPartNode`: body part data = the player override 0x31e0180 when this is the player and it is set, else race (+0x1f8) -> 0x3e6250 (race's body part data), else the default 0x31e0178; part = GetPart(partIndex); node = LookupNamedObject 0xfddac0(TESObjectREFR::Get3D(this), part->nodeName, true) -> slot 3 (AsNode) by tail jump; null when any step fails
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37182, rva 0x671b40.
     /// `NiNode* (Actor* this, u32 partIndex)`
     #[inline]
-    pub fn get_body_part_node(&self, partIndex: u32) -> Option<&'static crate::NiNode> { unsafe { function!(37182, (&Self, u32) -> Option<&'static crate::NiNode>)(self, partIndex) } }
+    pub fn get_body_part_node(&self, partIndex: u32) -> Option<&'static crate::NiNode> { unsafe { function!(37182, (*const Self, u32) -> Option<&'static crate::NiNode>)(core::ptr::from_ref(self), partIndex) } }
     /// `Actor::GetCharController`: Actor->currentProcess->middleHigh->charController (+0x250), null without process
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 37258, rva 0x675310.
     /// `bhkCharacterController* (Actor* this)`
     #[inline]
-    pub fn get_char_controller(&self) -> Option<&'static crate::bhkCharacterController> { unsafe { function!(37258, (&Self) -> Option<&'static crate::bhkCharacterController>)(self) } }
+    pub fn get_char_controller(&self) -> Option<&'static crate::bhkCharacterController> { unsafe { function!(37258, (*const Self) -> Option<&'static crate::bhkCharacterController>)(core::ptr::from_ref(self)) } }
     /// `Actor::GetCombatState`: 0 none, 1 combat, 2 searching
     ///
     /// Semantic, actors pass, medium; ledger runtime evidence, name medium; id 38556, rva 0x6c90b0.
@@ -459,55 +459,55 @@ impl crate::Actor {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_combat_state(&self) -> u32 { unsafe { function!(38556, (&Self) -> u32)(self) } }
+    pub unsafe fn get_combat_state(&self) -> u32 { unsafe { function!(38556, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `Actor::GetCurrentSpeed`: middleHigh+0x2a8, 0 without process
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 37957, rva 0x6af0d0.
     /// `float (Actor* this)`
     #[inline]
-    pub fn get_current_speed(&self) -> f32 { unsafe { function!(37957, (&Self) -> f32)(self) } }
+    pub fn get_current_speed(&self) -> f32 { unsafe { function!(37957, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `Actor::GetEquippedObject`: equipped weapon of a hand
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38574, rva 0x6ca140.
     /// `TESForm* Actor::GetEquippedObject(Actor* this, bool leftHand)`
     #[inline]
-    pub fn get_equipped_object(&self, leftHand: bool) -> Option<&'static crate::TESForm> { unsafe { function!(38574, (&Self, bool) -> Option<&'static crate::TESForm>)(self, leftHand) } }
+    pub fn get_equipped_object(&self, leftHand: bool) -> Option<&'static crate::TESForm> { unsafe { function!(38574, (*const Self, bool) -> Option<&'static crate::TESForm>)(core::ptr::from_ref(self), leftHand) } }
     /// `Actor::GetEyeHeight`: the height above the actor's position that cameras and detection use: the player -> PlayerCamera::GetEyeHeightFromCam3 (Cam3 node local z); others -> the process cache (process+0x50 -> +0x14) when flag bit 9 of its +0x2c is set, else UpdateField1FChildHeight
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37477, rva 0x687450.
     /// `float (const Actor* actor)`
     #[inline]
-    pub fn get_eye_height(&self) -> f32 { unsafe { function!(37477, (&Self) -> f32)(self) } }
+    pub fn get_eye_height(&self) -> f32 { unsafe { function!(37477, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `Actor::GetLevel`: the actor's level
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 37334, rva 0x6797a0.
     /// `ushort Actor::GetLevel(Actor* this)`
     #[inline]
-    pub fn get_level(&self) -> u16 { unsafe { function!(37334, (&Self) -> u16)(self) } }
+    pub fn get_level(&self) -> u16 { unsafe { function!(37334, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
     /// `Actor::GetMovementDirection`: middleHigh+0xb8
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 37960, rva 0x6af1b0.
     /// `float (Actor* this)`
     #[inline]
-    pub fn get_movement_direction(&self) -> f32 { unsafe { function!(37960, (&Self) -> f32)(self) } }
+    pub fn get_movement_direction(&self) -> f32 { unsafe { function!(37960, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `Actor::GetPermanentActorValueImpl`: base plus permanent modifier
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38484, rva 0x6c62e0.
     /// `float Actor::GetPermanentActorValueImpl(Actor* this, int value)`
     #[inline]
-    pub fn get_permanent_actor_value_impl(&self, value: i32) -> f32 { unsafe { function!(38484, (&Self, i32) -> f32)(self, value) } }
+    pub fn get_permanent_actor_value_impl(&self, value: i32) -> f32 { unsafe { function!(38484, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
     /// `Actor::GetScaledHeight`: 0.57 (0x191c7b4) times either the actor's cached scaled bound extent z (eyeHeight false) or its eye height (Actor::GetEyeHeight's rule, inlined)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37445, rva 0x685b30.
     /// `float (const Actor* actor, bool eyeHeight)`
     #[inline]
-    pub fn get_scaled_height(&self, eyeHeight: bool) -> f32 { unsafe { function!(37445, (&Self, bool) -> f32)(self, eyeHeight) } }
+    pub fn get_scaled_height(&self, eyeHeight: bool) -> f32 { unsafe { function!(37445, (*const Self, bool) -> f32)(core::ptr::from_ref(self), eyeHeight) } }
     /// `Actor::IsBoolFlags2Bit3Clear`: !(boolFlags2 (+0x204) bit 3)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40729, rva 0x75e150.
     /// `bool (Actor* this)`
     #[inline]
-    pub fn is_bool_flags2_bit3_clear(&self) -> bool { unsafe { function!(40729, (&Self) -> bool)(self) } }
+    pub fn is_bool_flags2_bit3_clear(&self) -> bool { unsafe { function!(40729, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsGhost`: whether the actor is a ghost
     ///
     /// Semantic, actors pass, medium; ledger semantic evidence, name medium; id 37275, rva 0x6756b0.
@@ -516,19 +516,19 @@ impl crate::Actor {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn is_ghost(&self) -> bool { unsafe { function!(37275, (&Self) -> bool)(self) } }
+    pub unsafe fn is_ghost(&self) -> bool { unsafe { function!(37275, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsOnMount`: whether riding
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 17965, rva 0x285a30.
     /// `bool Actor::IsOnMount(Actor* this)`
     #[inline]
-    pub fn is_on_mount(&self) -> bool { unsafe { function!(17965, (&Self) -> bool)(self) } }
+    pub fn is_on_mount(&self) -> bool { unsafe { function!(17965, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsRunning`: whether moving at run speed
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 37234, rva 0x6742a0.
     /// `bool Actor::IsRunning(Actor* this)`
     #[inline]
-    pub fn is_running(&self) -> bool { unsafe { function!(37234, (&Self) -> bool)(self) } }
+    pub fn is_running(&self) -> bool { unsafe { function!(37234, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::ModActorValueImpl`: applies a modifier change
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38468, rva 0x6c5220.
@@ -537,13 +537,13 @@ impl crate::Actor {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn mod_actor_value_impl(&self, modifier: i32, value: i32, delta: f32, source: *mut c_void) { unsafe { function!(38468, (&Self, i32, i32, f32, *mut c_void))(self, modifier, value, delta, source) } }
+    pub unsafe fn mod_actor_value_impl(&self, modifier: i32, value: i32, delta: f32, source: *mut c_void) { unsafe { function!(38468, (*const Self, i32, i32, f32, *mut c_void))(core::ptr::from_ref(self), modifier, value, delta, source) } }
     /// `Actor::PerformKnockdownAction`: runs default object 0x6b 'Action Knockdown' on the actor (TESActionData slot 5); for the player also PlayerCamera::PushBleedout
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40151, rva 0x7360d0.
     /// `void (Actor* actor)`
     #[inline]
-    pub fn perform_knockdown_action(&self) { unsafe { function!(40151, (&Self))(self) } }
+    pub fn perform_knockdown_action(&self) { unsafe { function!(40151, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::ProcessAnimationGraphEvent`: handles the actor's own animation events after TESObjectREFR's handler; a tag found in the footstep source's filter list (BSTArray<BSFixedString> at source+0x60, tested by 0x737040) is re-sent as a BGSFootstepEvent {actor handle, tag} through g_FootstepEventSource_ptr
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 37997, rva 0x6b2000.
@@ -552,37 +552,37 @@ impl crate::Actor {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_animation_graph_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> u32 { unsafe { function!(37997, (&Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(self, event, source) } }
+    pub unsafe fn process_animation_graph_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> u32 { unsafe { function!(37997, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
     /// `Actor::ReapplySlot166FromFlags2`: when flags2 (+0xcc) bits 5-7 are 0x20 or 0x80, tail-calls Actor slot 166 (+0x530) with (bits == 0x20)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37280, rva 0x675b90.
     /// `void (Actor* this)`
     #[inline]
-    pub fn reapply_slot166_from_flags2(&self) { unsafe { function!(37280, (&Self))(self) } }
+    pub fn reapply_slot166_from_flags2(&self) { unsafe { function!(37280, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::SetLifeState`: stores the life state into bits 21..24 of Actor+0xc8 (flags1) and applies the transition: state 2 (dead) stops sounds and 3D effects; entering/leaving bleedout (states 7/8) pushes or leaves the player's bleedout camera
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 37612, rva 0x693200.
     /// `void (Actor* this, u32 lifeState)`
     #[inline]
-    pub fn set_life_state(&self, lifeState: u32) { unsafe { function!(37612, (&Self, u32))(self, lifeState) } }
+    pub fn set_life_state(&self, lifeState: u32) { unsafe { function!(37612, (*const Self, u32))(core::ptr::from_ref(self), lifeState) } }
     /// `Actor::StartKillMove`: for an actor whose process byte 0x137 is 0 or 1: kill-move time to max, deferred kill on the process, flag 0x4000 in +0x204, partner handle at +0x108; for the player with a partner and the VATS camera (+0xc8) neither current nor stacked: PlayerCamera::ForceThirdPerson
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38613, rva 0x6cc740.
     /// `void (Actor* actor, Actor* partner)`
     #[inline]
-    pub fn start_kill_move(&self, partner: &Self) { unsafe { function!(38613, (&Self, &Self))(self, partner) } }
+    pub fn start_kill_move(&self, partner: &Self) { unsafe { function!(38613, (*const Self, *const Self))(core::ptr::from_ref(self), core::ptr::from_ref(partner)) } }
     /// `Actor::StopUsingFurniture`: gets the actor out of its furniture: sets +0x204 bit 8; when instant, moves it to the furniture's exit point (default-object action 0x37 positions, slot 0x548 SetPosition), restores the player's controls and calls PlayerCamera::ExitFurnitureCamera(0); updates the furniture state and the process bytes +0x320 (= !instant) and +0x32c (= instant); mounted actors take the mount path (extra 0xa9)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 38697, rva 0x6d2a40.
     /// `void (Actor* this, bool instant)`
     #[inline]
-    pub fn stop_using_furniture(&self, instant: bool) { unsafe { function!(38697, (&Self, bool))(self, instant) } }
+    pub fn stop_using_furniture(&self, instant: bool) { unsafe { function!(38697, (*const Self, bool))(core::ptr::from_ref(self), instant) } }
     /// `Actor::UpdateStaminaRegen`: decrements the stamina regen delay (AV 0x1a) by delta; when it is not delayed and the actor may regenerate (process flag bit 23, not in the 0x100 state unless extra 0xa9 is present and +0x204 bit 1 clear), applies the stamina regen for delta, except for the player while bow zoom is active (PlayerCamera+0x161)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38452, rva 0x6c4620.
     /// `void (Actor* actor, float delta)`
     #[inline]
-    pub fn update_stamina_regen(&self, delta: f32) { unsafe { function!(38452, (&Self, f32))(self, delta) } }
+    pub fn update_stamina_regen(&self, delta: f32) { unsafe { function!(38452, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `Actor::currentProcess` at +0xF8: the AI process; null for actors without AI
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -601,31 +601,31 @@ impl crate::ActorState {
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `bool (ActorState* this, u32 state)`
     #[inline]
-    pub fn set_sit_sleep_state(&self, state: u32) -> bool { unsafe { virtual_function!(self, 20, (&Self, u32) -> bool)(self, state) } }
+    pub fn set_sit_sleep_state(&self, state: u32) -> bool { unsafe { virtual_function!(self, 20, (*const Self, u32) -> bool)(core::ptr::from_ref(self), state) } }
     /// `ActorState::SetWeaponDrawn`, vtable slot 21: sets the weapon state (flags2 bits 5-7) to 3 (drawn) or 0 (sheathed) unless it already is 4 resp. 1
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `bool (ActorState* this, bool drawn)`
     #[inline]
-    pub fn set_weapon_drawn(&self, drawn: bool) -> bool { unsafe { virtual_function!(self, 21, (&Self, bool) -> bool)(self, drawn) } }
+    pub fn set_weapon_drawn(&self, drawn: bool) -> bool { unsafe { virtual_function!(self, 21, (*const Self, bool) -> bool)(core::ptr::from_ref(self), drawn) } }
     /// `Actor::SetWeaponDrawn`: Actor's ActorState slot 21: sets graph ints iMagicEquipped, iLeftHandEquipped, iRightHandEquipped on every graph, then ActorState::SetWeaponDrawn
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 38821, rva 0x6d9a20.
     /// `void (ActorState* this, bool drawn)`
     #[inline]
-    pub fn set_weapon_drawn_2(&self, drawn: bool) { unsafe { function!(38821, (&Self, bool))(self, drawn) } }
+    pub fn set_weapon_drawn_2(&self, drawn: bool) { unsafe { function!(38821, (*const Self, bool))(core::ptr::from_ref(self), drawn) } }
     /// `ActorState::HasFlags`: whether every bit of the mask is set in flags1
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38986, rva 0x6e1530.
     /// `bool ActorState::HasFlags(const ActorState* this, ushort mask)`
     #[inline]
-    pub fn has_flags(&self, mask: u16) -> bool { unsafe { function!(38986, (&Self, u16) -> bool)(self, mask) } }
+    pub fn has_flags(&self, mask: u16) -> bool { unsafe { function!(38986, (*const Self, u16) -> bool)(core::ptr::from_ref(self), mask) } }
     /// `PlayerCharacter::SetWeaponDrawnState`: PlayerCamera+0x162 = !drawn when the player is the camera target or mounted; Actor::SetWeaponDrawn
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40752, rva 0x760e00.
     /// `void (ActorState* this, bool drawn)`
     #[inline]
-    pub fn set_weapon_drawn_state(&self, drawn: bool) { unsafe { function!(40752, (&Self, bool))(self, drawn) } }
+    pub fn set_weapon_drawn_state(&self, drawn: bool) { unsafe { function!(40752, (*const Self, bool))(core::ptr::from_ref(self), drawn) } }
 }
 
 impl crate::ActorValueInfo {
@@ -658,7 +658,7 @@ impl crate::ActorValueInfo {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, value: u32, name: *const c_char) -> *mut Self { unsafe { function!(27246, (&Self, u32, *const c_char) -> *mut Self)(self, value, name) } }
+    pub unsafe fn ctor(&self, value: u32, name: *const c_char) -> *mut Self { unsafe { function!(27246, (*const Self, u32, *const c_char) -> *mut Self)(core::ptr::from_ref(self), value, name) } }
 }
 
 impl crate::ActorValueList {
@@ -675,13 +675,13 @@ impl crate::ActorValueList {
     /// # Safety
     /// `name`, `callback`, `arg` must point to what the engine expects.
     #[inline]
-    pub unsafe fn add_actor_value(&self, value: u32, name: *const c_char, category: u32, flags: u32, callback: *mut c_void, arg: *mut c_void) -> *mut crate::ActorValueInfo { unsafe { function!(27245, (&Self, u32, *const c_char, u32, u32, *mut c_void, *mut c_void) -> *mut crate::ActorValueInfo)(self, value, name, category, flags, callback, arg) } }
+    pub unsafe fn add_actor_value(&self, value: u32, name: *const c_char, category: u32, flags: u32, callback: *mut c_void, arg: *mut c_void) -> *mut crate::ActorValueInfo { unsafe { function!(27245, (*const Self, u32, *const c_char, u32, u32, *mut c_void, *mut c_void) -> *mut crate::ActorValueInfo)(core::ptr::from_ref(self), value, name, category, flags, callback, arg) } }
     /// `ActorValueList::AddAllActorValues`: builds the 164 ActorValueInfo forms
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 27232, rva 0x443660.
     /// `void ActorValueList::AddAllActorValues(ActorValueList* this)`
     #[inline]
-    pub fn add_all_actor_values(&self) { unsafe { function!(27232, (&Self))(self) } }
+    pub fn add_all_actor_values(&self) { unsafe { function!(27232, (*const Self))(core::ptr::from_ref(self)) } }
     /// `ActorValueList::GetActorValueInfo`: the AVIF form of a value
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 27202, rva 0x4432f0.
@@ -711,7 +711,7 @@ impl crate::ActorValueList {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(27190, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(27190, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ActorValueOwner {
@@ -720,85 +720,85 @@ impl crate::ActorValueOwner {
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void AddBaseActorValue(ActorValueOwner* this, int value, float delta)`
     #[inline]
-    pub fn add_base_actor_value(&self, value: i32, delta: f32) { unsafe { virtual_function!(self, 5, (&Self, i32, f32))(self, value, delta) } }
+    pub fn add_base_actor_value(&self, value: i32, delta: f32) { unsafe { virtual_function!(self, 5, (*const Self, i32, f32))(core::ptr::from_ref(self), value, delta) } }
     /// `ActorValueOwner::GetActorValue`, vtable slot 1: current value
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `float GetActorValue(const ActorValueOwner* this, int value)`
     #[inline]
-    pub fn get_actor_value(&self, value: i32) -> f32 { unsafe { virtual_function!(self, 1, (&Self, i32) -> f32)(self, value) } }
+    pub fn get_actor_value(&self, value: i32) -> f32 { unsafe { virtual_function!(self, 1, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
     /// `ActorValueOwner::GetBaseActorValue`, vtable slot 3: base value
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `float GetBaseActorValue(const ActorValueOwner* this, int value)`
     #[inline]
-    pub fn get_base_actor_value(&self, value: i32) -> f32 { unsafe { virtual_function!(self, 3, (&Self, i32) -> f32)(self, value) } }
+    pub fn get_base_actor_value(&self, value: i32) -> f32 { unsafe { virtual_function!(self, 3, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
     /// `ActorValueOwner::GetPermanentActorValue`, vtable slot 2: base plus permanent modifier
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `float GetPermanentActorValue(const ActorValueOwner* this, int value)`
     #[inline]
-    pub fn get_permanent_actor_value(&self, value: i32) -> f32 { unsafe { virtual_function!(self, 2, (&Self, i32) -> f32)(self, value) } }
+    pub fn get_permanent_actor_value(&self, value: i32) -> f32 { unsafe { virtual_function!(self, 2, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
     /// `ActorValueOwner::IsPlayer`, vtable slot 8: whether the owner is the player or the player's base NPC
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `bool IsPlayer(const ActorValueOwner* this)`
     #[inline]
-    pub fn is_player(&self) -> bool { unsafe { virtual_function!(self, 8, (&Self) -> bool)(self) } }
+    pub fn is_player(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `ActorValueOwner::ModActorValue`, vtable slot 6: adds to a modifier (0 permanent, 1 temporary, 2 damage)
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void ModActorValue(ActorValueOwner* this, int modifier, int value, float delta)`
     #[inline]
-    pub fn mod_actor_value(&self, modifier: i32, value: i32, delta: f32) { unsafe { virtual_function!(self, 6, (&Self, i32, i32, f32))(self, modifier, value, delta) } }
+    pub fn mod_actor_value(&self, modifier: i32, value: i32, delta: f32) { unsafe { virtual_function!(self, 6, (*const Self, i32, i32, f32))(core::ptr::from_ref(self), modifier, value, delta) } }
     /// `ActorValueOwner::SetActorValue`, vtable slot 7: sets the value (base in the default implementation)
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void SetActorValue(ActorValueOwner* this, int value, float amount)`
     #[inline]
-    pub fn set_actor_value(&self, value: i32, amount: f32) { unsafe { virtual_function!(self, 7, (&Self, i32, f32))(self, value, amount) } }
+    pub fn set_actor_value(&self, value: i32, amount: f32) { unsafe { virtual_function!(self, 7, (*const Self, i32, f32))(core::ptr::from_ref(self), value, amount) } }
     /// `ActorValueOwner::StoreBaseActorValue`, vtable slot 4: sets the base value
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void StoreBaseActorValue(ActorValueOwner* this, int value, float amount)`
     #[inline]
-    pub fn store_base_actor_value(&self, value: i32, amount: f32) { unsafe { virtual_function!(self, 4, (&Self, i32, f32))(self, value, amount) } }
+    pub fn store_base_actor_value(&self, value: i32, amount: f32) { unsafe { virtual_function!(self, 4, (*const Self, i32, f32))(core::ptr::from_ref(self), value, amount) } }
     /// `Actor::ActorValueOwner_AddBaseActorValue`: adds to the base value
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38466, rva 0x6c5100.
     /// `void Actor::ActorValueOwner_AddBaseActorValue(ActorValueOwner* this, int value, float delta)`
     #[inline]
-    pub fn actor_value_owner_add_base_actor_value(&self, value: i32, delta: f32) { unsafe { function!(38466, (&Self, i32, f32))(self, value, delta) } }
+    pub fn actor_value_owner_add_base_actor_value(&self, value: i32, delta: f32) { unsafe { function!(38466, (*const Self, i32, f32))(core::ptr::from_ref(self), value, delta) } }
     /// `Actor::ActorValueOwner_GetActorValue`: current actor value
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38462, rva 0x6c4cb0.
     /// `float Actor::ActorValueOwner_GetActorValue(ActorValueOwner* this, int value)`
     #[inline]
-    pub fn actor_value_owner_get_actor_value(&self, value: i32) -> f32 { unsafe { function!(38462, (&Self, i32) -> f32)(self, value) } }
+    pub fn actor_value_owner_get_actor_value(&self, value: i32) -> f32 { unsafe { function!(38462, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
     /// `Actor::ActorValueOwner_GetBaseActorValue`: base actor value
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38464, rva 0x6c4ef0.
     /// `float Actor::ActorValueOwner_GetBaseActorValue(ActorValueOwner* this, int value)`
     #[inline]
-    pub fn actor_value_owner_get_base_actor_value(&self, value: i32) -> f32 { unsafe { function!(38464, (&Self, i32) -> f32)(self, value) } }
+    pub fn actor_value_owner_get_base_actor_value(&self, value: i32) -> f32 { unsafe { function!(38464, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
     /// `Actor::ActorValueOwner_GetPermanentActorValue`: base plus permanent modifier
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38463, rva 0x6c4e20.
     /// `float Actor::ActorValueOwner_GetPermanentActorValue(ActorValueOwner* this, int value)`
     #[inline]
-    pub fn actor_value_owner_get_permanent_actor_value(&self, value: i32) -> f32 { unsafe { function!(38463, (&Self, i32) -> f32)(self, value) } }
+    pub fn actor_value_owner_get_permanent_actor_value(&self, value: i32) -> f32 { unsafe { function!(38463, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
     /// `Actor::ActorValueOwner_ModActorValue`: adds to a modifier
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38467, rva 0x6c51f0.
     /// `void Actor::ActorValueOwner_ModActorValue(ActorValueOwner* this, int modifier, int value, float delta)`
     #[inline]
-    pub fn actor_value_owner_mod_actor_value(&self, modifier: i32, value: i32, delta: f32) { unsafe { function!(38467, (&Self, i32, i32, f32))(self, modifier, value, delta) } }
+    pub fn actor_value_owner_mod_actor_value(&self, modifier: i32, value: i32, delta: f32) { unsafe { function!(38467, (*const Self, i32, i32, f32))(core::ptr::from_ref(self), modifier, value, delta) } }
     /// `Actor::ActorValueOwner_StoreBaseActorValue`: sets the base value
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38465, rva 0x6c5030.
     /// `void Actor::ActorValueOwner_StoreBaseActorValue(ActorValueOwner* this, int value, float amount)`
     #[inline]
-    pub fn actor_value_owner_store_base_actor_value(&self, value: i32, amount: f32) { unsafe { function!(38465, (&Self, i32, f32))(self, value, amount) } }
+    pub fn actor_value_owner_store_base_actor_value(&self, value: i32, amount: f32) { unsafe { function!(38465, (*const Self, i32, f32))(core::ptr::from_ref(self), value, amount) } }
 }
 
 impl crate::ActorValueStorage {
@@ -810,7 +810,7 @@ impl crate::ActorValueStorage {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn find_modifiers(&self, value: c_char) -> *mut f32 { unsafe { function!(39020, (&Self, c_char) -> *mut f32)(self, value) } }
+    pub unsafe fn find_modifiers(&self, value: c_char) -> *mut f32 { unsafe { function!(39020, (*const Self, c_char) -> *mut f32)(core::ptr::from_ref(self), value) } }
 }
 
 impl crate::BSExtraData {
@@ -827,13 +827,13 @@ impl crate::BaseExtraList {
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 12329, rva 0x17e840.
     /// `BSExtraData* BaseExtraList::GetByType(BaseExtraList* this, uint type)`
     #[inline]
-    pub fn get_by_type(&self, type_: u32) -> Option<&'static crate::BSExtraData> { unsafe { function!(12329, (&Self, u32) -> Option<&'static crate::BSExtraData>)(self, type_) } }
+    pub fn get_by_type(&self, type_: u32) -> Option<&'static crate::BSExtraData> { unsafe { function!(12329, (*const Self, u32) -> Option<&'static crate::BSExtraData>)(core::ptr::from_ref(self), type_) } }
     /// `BaseExtraList::GetLeveledCreatureBase`: base form resolved from a leveled creature, or null
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 11810, rva 0x169670.
     /// `TESForm* BaseExtraList::GetLeveledCreatureBase(BaseExtraList* this)`
     #[inline]
-    pub fn get_leveled_creature_base(&self) -> Option<&'static crate::TESForm> { unsafe { function!(11810, (&Self) -> Option<&'static crate::TESForm>)(self) } }
+    pub fn get_leveled_creature_base(&self) -> Option<&'static crate::TESForm> { unsafe { function!(11810, (*const Self) -> Option<&'static crate::TESForm>)(core::ptr::from_ref(self)) } }
     /// `BaseExtraList::GetLocation`: location recorded by ExtraLocation
     ///
     /// Semantic, actors pass, medium; ledger semantic evidence, name medium; id 11830, rva 0x16a1f0.
@@ -842,7 +842,7 @@ impl crate::BaseExtraList {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_location(&self) -> *mut crate::BGSLocation { unsafe { function!(11830, (&Self) -> *mut crate::BGSLocation)(self) } }
+    pub unsafe fn get_location(&self) -> *mut crate::BGSLocation { unsafe { function!(11830, (*const Self) -> *mut crate::BGSLocation)(core::ptr::from_ref(self)) } }
     /// `BaseExtraList::GetPersistentCell`: cell recorded by ExtraPersistentCell
     ///
     /// Semantic, actors pass, medium; ledger semantic evidence, name medium; id 11728, rva 0x164e50.
@@ -851,7 +851,7 @@ impl crate::BaseExtraList {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_persistent_cell(&self) -> *mut crate::TESObjectCELL { unsafe { function!(11728, (&Self) -> *mut crate::TESObjectCELL)(self) } }
+    pub unsafe fn get_persistent_cell(&self) -> *mut crate::TESObjectCELL { unsafe { function!(11728, (*const Self) -> *mut crate::TESObjectCELL)(core::ptr::from_ref(self)) } }
     /// `BaseExtraList::GetReferenceHandle`: handle recorded by ExtraReferenceHandle
     ///
     /// Semantic, actors pass, medium; ledger semantic evidence, name medium; id 11719, rva 0x164c80.
@@ -860,13 +860,13 @@ impl crate::BaseExtraList {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_reference_handle(&self, out: *mut u32) -> *mut u32 { unsafe { function!(11719, (&Self, *mut u32) -> *mut u32)(self, out) } }
+    pub unsafe fn get_reference_handle(&self, out: *mut u32) -> *mut u32 { unsafe { function!(11719, (*const Self, *mut u32) -> *mut u32)(core::ptr::from_ref(self), out) } }
     /// `BaseExtraList::HasType`: whether a type is present
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 11582, rva 0x1573e0.
     /// `bool BaseExtraList::HasType(const BaseExtraList* this, uint type)`
     #[inline]
-    pub fn has_type(&self, type_: u32) -> bool { unsafe { function!(11582, (&Self, u32) -> bool)(self, type_) } }
+    pub fn has_type(&self, type_: u32) -> bool { unsafe { function!(11582, (*const Self, u32) -> bool)(core::ptr::from_ref(self), type_) } }
     /// `BaseExtraList::SetInventoryChanges`: attaches inventory changes to a reference
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 11629, rva 0x161520.
@@ -875,7 +875,7 @@ impl crate::BaseExtraList {
     /// # Safety
     /// `changes` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_inventory_changes(&self, changes: *mut crate::InventoryChanges) { unsafe { function!(11629, (&Self, *mut crate::InventoryChanges))(self, changes) } }
+    pub unsafe fn set_inventory_changes(&self, changes: *mut crate::InventoryChanges) { unsafe { function!(11629, (*const Self, *mut crate::InventoryChanges))(core::ptr::from_ref(self), changes) } }
     /// `BaseExtraList::head` at +0x8: first extra data node
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -917,13 +917,13 @@ impl crate::InventoryChanges {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn count_items_with_keyword(&self, keyword: *mut crate::BGSKeyword) -> u32 { unsafe { function!(16111, (&Self, *mut crate::BGSKeyword) -> u32)(self, keyword) } }
+    pub unsafe fn count_items_with_keyword(&self, keyword: *mut crate::BGSKeyword) -> u32 { unsafe { function!(16111, (*const Self, *mut crate::BGSKeyword) -> u32)(core::ptr::from_ref(self), keyword) } }
     /// `InventoryChanges::GetItemCount`: count of an item in the inventory
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 16108, rva 0x2395c0.
     /// `int InventoryChanges::GetItemCount(InventoryChanges* this, TESForm* item)`
     #[inline]
-    pub fn get_item_count(&self, item: &crate::TESForm) -> i32 { unsafe { function!(16108, (&Self, &crate::TESForm) -> i32)(self, item) } }
+    pub fn get_item_count(&self, item: &crate::TESForm) -> i32 { unsafe { function!(16108, (*const Self, *const crate::TESForm) -> i32)(core::ptr::from_ref(self), core::ptr::from_ref(item)) } }
     /// `InventoryChanges::entries` at +0x0: list of InventoryEntry*
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -1004,19 +1004,19 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn check_water_contact(&self, collidable: *const c_void, waterHeight: f32, waterParam: f32) -> bool { unsafe { virtual_function!(self, 156, (&Self, *const c_void, f32, f32) -> bool)(self, collidable, waterHeight, waterParam) } }
+    pub unsafe fn check_water_contact(&self, collidable: *const c_void, waterHeight: f32, waterParam: f32) -> bool { unsafe { virtual_function!(self, 156, (*const Self, *const c_void, f32, f32) -> bool)(core::ptr::from_ref(self), collidable, waterHeight, waterParam) } }
     /// `PlayerCharacter::FinishLoad`, vtable slot 17: post-load fix-up of the player: scale from the record (savedFlags bit 4), grab reference, flying mount, health heartbeat, camera and first-person state
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (PlayerCharacter* this, BGSLoadFormBuffer* buffer)`
     #[inline]
-    pub fn finish_load(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 17, (&Self, &crate::BGSLoadFormBuffer))(self, buffer) } }
+    pub fn finish_load(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 17, (*const Self, *const crate::BGSLoadFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
     /// `PlayerCharacter::Get3DFor`, vtable slot 111: the first-person root (+0x900) for true, the third-person root (loadedData->node3D) for false
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `NiNode* (PlayerCharacter* this, bool firstPerson)`
     #[inline]
-    pub fn get3_d_for(&self, firstPerson: bool) -> Option<&'static crate::NiNode> { unsafe { virtual_function!(self, 111, (&Self, bool) -> Option<&'static crate::NiNode>)(self, firstPerson) } }
+    pub fn get3_d_for(&self, firstPerson: bool) -> Option<&'static crate::NiNode> { unsafe { virtual_function!(self, 111, (*const Self, bool) -> Option<&'static crate::NiNode>)(core::ptr::from_ref(self), firstPerson) } }
     /// `PlayerCharacter::GetAnimationGraphFiles`, vtable slot 114: Actor's list plus strPlayerCharacterBehavior1stPGraph:Animation, the first-person behaviour graph (string 0x19249c8 'Actors\Character\_1stPerson\FirstPerson.hkx' is referenced by this function)
     ///
     /// Semantic, actors pass, medium; called through the object's vtable.
@@ -1025,7 +1025,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_animation_graph_files(&self, unused: *mut c_void, files: *mut crate::BSScrapArray) -> bool { unsafe { virtual_function!(self, 114, (&Self, *mut c_void, *mut crate::BSScrapArray) -> bool)(self, unused, files) } }
+    pub unsafe fn get_animation_graph_files(&self, unused: *mut c_void, files: *mut crate::BSScrapArray) -> bool { unsafe { virtual_function!(self, 114, (*const Self, *mut c_void, *mut crate::BSScrapArray) -> bool)(core::ptr::from_ref(self), unused, files) } }
     /// `PlayerCharacter::GetBiped`, vtable slot 126: &firstPersonBiped for true, the third-person biped holder otherwise
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -1034,13 +1034,13 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_biped(&self, firstPerson: bool) -> *mut *mut c_void { unsafe { virtual_function!(self, 126, (&Self, bool) -> *mut *mut c_void)(self, firstPerson) } }
+    pub unsafe fn get_biped(&self, firstPerson: bool) -> *mut *mut c_void { unsafe { virtual_function!(self, 126, (*const Self, bool) -> *mut *mut c_void)(core::ptr::from_ref(self), firstPerson) } }
     /// `PlayerCharacter::GetCurrent3DNoFallback`, vtable slot 141: like slot 112 but returns firstPersonRoot (even null) whenever IsThirdPerson is false
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `NiAVObject* (PlayerCharacter* this)`
     #[inline]
-    pub fn get_current3_d_no_fallback(&self) -> Option<&'static crate::NiAVObject> { unsafe { virtual_function!(self, 141, (&Self) -> Option<&'static crate::NiAVObject>)(self) } }
+    pub fn get_current3_d_no_fallback(&self) -> Option<&'static crate::NiAVObject> { unsafe { virtual_function!(self, 141, (*const Self) -> Option<&'static crate::NiAVObject>)(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::GetCurrentBiped`, vtable slot 127: first-person biped while IsThirdPerson is false and it exists, else the third-person one
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -1049,7 +1049,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_current_biped(&self) -> *mut *mut c_void { unsafe { virtual_function!(self, 127, (&Self) -> *mut *mut c_void)(self) } }
+    pub unsafe fn get_current_biped(&self) -> *mut *mut c_void { unsafe { virtual_function!(self, 127, (*const Self) -> *mut *mut c_void)(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::GetHeading`, vtable slot 164: Actor::vfunc_164(this, 0) plus the float at +0x930, wrapped into [0, 2pi)
     ///
     /// Semantic, actors pass, medium; called through the object's vtable.
@@ -1058,7 +1058,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_heading(&self, unused: bool) -> f32 { unsafe { virtual_function!(self, 164, (&Self, bool) -> f32)(self, unused) } }
+    pub unsafe fn get_heading(&self, unused: bool) -> f32 { unsafe { virtual_function!(self, 164, (*const Self, bool) -> f32)(core::ptr::from_ref(self), unused) } }
     /// `PlayerCharacter::GetProjectileLaunchAngles`, vtable slot 160: launch angles for the player's projectile: first person (camera in cameraStates[0]) = heading from slot 164 and pitch = rotX - f1PArrowTiltUpAngle (f1PBoltTiltUpAngle for bolts), then slot 279 with launchPos; otherwise the node's world-rotation Euler angles with pitch - f3PArrowTiltUpAngle
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -1067,31 +1067,31 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// `outPitch`, `outHeading`, `launchPos` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_projectile_launch_angles(&self, launchNode: *mut crate::NiAVObject, outPitch: *mut f32, outHeading: *mut f32, launchPos: *mut c_void) { unsafe { virtual_function!(self, 160, (&Self, *mut crate::NiAVObject, *mut f32, *mut f32, *mut c_void))(self, launchNode, outPitch, outHeading, launchPos) } }
+    pub unsafe fn get_projectile_launch_angles(&self, launchNode: *mut crate::NiAVObject, outPitch: *mut f32, outHeading: *mut f32, launchPos: *mut c_void) { unsafe { virtual_function!(self, 160, (*const Self, *mut crate::NiAVObject, *mut f32, *mut f32, *mut c_void))(core::ptr::from_ref(self), launchNode, outPitch, outHeading, launchPos) } }
     /// `PlayerCharacter::IsThirdPerson`, vtable slot 113: bit 0 of +0xbeb; Get3D (slot 112) returns the first-person root when this is false
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `bool (PlayerCharacter* this)`
     #[inline]
-    pub fn is_third_person(&self) -> bool { unsafe { virtual_function!(self, 113, (&Self) -> bool)(self) } }
+    pub fn is_third_person(&self) -> bool { unsafe { virtual_function!(self, 113, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::Load3D`, vtable slot 106: builds the first-person root from sFirstPersonSkeleton and its biped, then the third-person 3D through Actor slot 106 with the view bit forced to third person; hides the root not in view
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `NiAVObject* (PlayerCharacter* this, bool backgroundLoad)`
     #[inline]
-    pub fn load3_d(&self, backgroundLoad: bool) -> Option<&'static crate::NiAVObject> { unsafe { virtual_function!(self, 106, (&Self, bool) -> Option<&'static crate::NiAVObject>)(self, backgroundLoad) } }
+    pub fn load3_d(&self, backgroundLoad: bool) -> Option<&'static crate::NiAVObject> { unsafe { virtual_function!(self, 106, (*const Self, bool) -> Option<&'static crate::NiAVObject>)(core::ptr::from_ref(self), backgroundLoad) } }
     /// `PlayerCharacter::Resurrect`, vtable slot 171: the player's resurrect: replaces the AIProcess (new 0x140-byte AIProcess::ctor), re-registers in the process lists, recreates or destroys the camera caster (PlayerCamera::CreateCameraCaster with the character controller's filter >> 16, else DestroyCameraCaster), then Actor::Resurrect(this, 0, 0)
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (PlayerCharacter* this, bool resetState, bool has3D)`
     #[inline]
-    pub fn resurrect(&self, resetState: bool, has3D: bool) { unsafe { virtual_function!(self, 171, (&Self, bool, bool))(self, resetState, has3D) } }
+    pub fn resurrect(&self, resetState: bool, has3D: bool) { unsafe { virtual_function!(self, 171, (*const Self, bool, bool))(core::ptr::from_ref(self), resetState, has3D) } }
     /// `PlayerCharacter::Revert`, vtable slot 18: reverts the player before a load: tick counters, view flags (keeps bit 6 when buffer+0x48 bit 2), scale (buffer+0x44 bit 4), camera and process state
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (PlayerCharacter* this, BGSLoadFormBuffer* buffer)`
     #[inline]
-    pub fn revert(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 18, (&Self, &crate::BGSLoadFormBuffer))(self, buffer) } }
+    pub fn revert(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 18, (*const Self, *const crate::BGSLoadFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
     /// `PlayerCharacter::Set3D`, vtable slot 108: sets or clears the player's 3D: on clear, queues the first-person root and the third-person root for detach from the shadow scene node and releases the first-person biped objects and the first-person camera nodes; then Actor::Set3D
     ///
     /// Semantic, actors pass, medium; called through the object's vtable.
@@ -1100,25 +1100,25 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set3_d(&self, root: *mut crate::NiAVObject, flag: bool) { unsafe { virtual_function!(self, 108, (&Self, *mut crate::NiAVObject, bool))(self, root, flag) } }
+    pub unsafe fn set3_d(&self, root: *mut crate::NiAVObject, flag: bool) { unsafe { virtual_function!(self, 108, (*const Self, *mut crate::NiAVObject, bool))(core::ptr::from_ref(self), root, flag) } }
     /// `PlayerCharacter::SetParentCell`, vtable slot 152: the player's cell change: BGSActorCellEvent leave/enter, location change event (TESActorLocationChangeEvent), Actor::SetParentCell, then the camera (PlayerCamera slot via vfunc_152_sub5), the sky climate (TESWorldSpace::GetClimate), grass enable (TESWorldSpace::IsNoGrass), border-region flag
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (PlayerCharacter* this, TESObjectCELL* cell)`
     #[inline]
-    pub fn set_parent_cell(&self, cell: &crate::TESObjectCELL) { unsafe { virtual_function!(self, 152, (&Self, &crate::TESObjectCELL))(self, cell) } }
+    pub fn set_parent_cell(&self, cell: &crate::TESObjectCELL) { unsafe { virtual_function!(self, 152, (*const Self, *const crate::TESObjectCELL))(core::ptr::from_ref(self), core::ptr::from_ref(cell)) } }
     /// `PlayerCharacter::StartVampireFeed`, vtable slot 192: starts the player's AI-driven vampire feed: builds package type 0x25 at the player, stores the target's furniture handle in the process (+0x208), copies the target's process feed data, runs a type 0x1b package on the target (slot 0x6f8) and pushes the camera to third person (PlayerCamera::PushThirdPersonForAIDriven)
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (PlayerCharacter* this, Actor* target, TESObjectREFR* targetFurniture)`
     #[inline]
-    pub fn start_vampire_feed(&self, target: &crate::Actor, targetFurniture: &crate::TESObjectREFR) { unsafe { virtual_function!(self, 192, (&Self, &crate::Actor, &crate::TESObjectREFR))(self, target, targetFurniture) } }
+    pub fn start_vampire_feed(&self, target: &crate::Actor, targetFurniture: &crate::TESObjectREFR) { unsafe { virtual_function!(self, 192, (*const Self, *const crate::Actor, *const crate::TESObjectREFR))(core::ptr::from_ref(self), core::ptr::from_ref(target), core::ptr::from_ref(targetFurniture)) } }
     /// `PlayerCharacter::SyncRootTransforms`, vtable slot 287: writes both roots' local transforms from the reference: translation = position (+0x54..+0x5c), rotation = z rotation by the heading; the third-person root also gets the char controller's pitch (+0x24c) and roll (+0x250) when non-zero (the mount's controller when mounted)
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (PlayerCharacter* this)`
     #[inline]
-    pub fn sync_root_transforms(&self) { unsafe { virtual_function!(self, 287, (&Self))(self) } }
+    pub fn sync_root_transforms(&self) { unsafe { virtual_function!(self, 287, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::GetLookOriginAndDirection`: PlayerCharacter slot 194: origin = PlayerCamera::GetFirstPersonCameraNodePosition (the Cam1 node), plus GetThirdPersonOffsetVector(camera, ., false) when the flag is set and the current state's id > 8; direction = the forward column of Rz(heading, slot 164) * Rx(pitch, +0x48), normalized
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40505, rva 0x74a530.
@@ -1127,25 +1127,25 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// `origin`, `direction` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_look_origin_and_direction(&self, origin: *mut c_void, direction: *mut c_void, addThirdPersonOffset: bool) { unsafe { function!(40505, (&Self, *mut c_void, *mut c_void, bool))(self, origin, direction, addThirdPersonOffset) } }
+    pub unsafe fn get_look_origin_and_direction(&self, origin: *mut c_void, direction: *mut c_void, addThirdPersonOffset: bool) { unsafe { function!(40505, (*const Self, *mut c_void, *mut c_void, bool))(core::ptr::from_ref(self), origin, direction, addThirdPersonOffset) } }
     /// `PlayerCharacter::IsFlagBED4Set`: +0xbed bit 4
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40658, rva 0x75a640.
     /// `bool (PlayerCharacter* this)`
     #[inline]
-    pub fn is_flag_bed4_set(&self) -> bool { unsafe { function!(40658, (&Self) -> bool)(self) } }
+    pub fn is_flag_bed4_set(&self) -> bool { unsafe { function!(40658, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::LoadGame`: PlayerCharacter slot 15: restores the player's saved state from its change-form record after Character::LoadGame: the view (first/third person), many player flag bytes (+0xbe8..+0xbed) and fields (+0x8f4, +0x90c, +0x918, +0x930, firstPersonCameraHeight, +0x940), referenced forms, race data, control state, the camera, and version-gated extras.
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40540, rva 0x74e600.
     /// `void (PlayerCharacter* this, BGSLoadFormBuffer* buffer)`
     #[inline]
-    pub fn load_game(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { function!(40540, (&Self, &crate::BGSLoadFormBuffer))(self, buffer) } }
+    pub fn load_game(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { function!(40540, (*const Self, *const crate::BGSLoadFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
     /// `PlayerCharacter::OnDismountFinished`: after the player is placed at the dismount position: PlayerCamera::LeaveMountCamera, ControlMap::RestoreControlState, 'WarHorseMode' off, this+0x9d4 = -1, cached position reset, three user events re-appended (g_UserEventNames +0x78, +0x90, +0x250)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40726, rva 0x75e030.
     /// `void (PlayerCharacter* this)`
     #[inline]
-    pub fn on_dismount_finished(&self) { unsafe { function!(40726, (&Self))(self) } }
+    pub fn on_dismount_finished(&self) { unsafe { function!(40726, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::OnMountActivated`: the player mounts *mount: ownership check (stealing a horse), flying-mount setup (default object 0x16a 'Flying Mount - Fly Fast Worldspaces', fFlyingMountTutorialMessageDelay), clears the sneak flag 0x400 and the controller's +0x21c, and when the mount differs from the current one (slot 0x8a0 handle) switches the camera to the horse
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40725, rva 0x75ddc0.
@@ -1154,7 +1154,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// `mount` must point to what the engine expects.
     #[inline]
-    pub unsafe fn on_mount_activated(&self, mount: *mut *mut crate::Actor) { unsafe { function!(40725, (&Self, *mut *mut crate::Actor))(self, mount) } }
+    pub unsafe fn on_mount_activated(&self, mount: *mut *mut crate::Actor) { unsafe { function!(40725, (*const Self, *mut *mut crate::Actor))(core::ptr::from_ref(self), mount) } }
     /// `PlayerCharacter::PlaceFavorTravelMarker`: command-mode marker: casts a 5000-unit ray (71.4375 Havok units, ID_208093) from the camera, and places/moves the travel marker (default object 0xd0 'Favor travel marker location', or ID_401050) at the hit; writes its handle to outMarkerHandle and returns it
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40636, rva 0x7588d0.
@@ -1163,7 +1163,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// `outMarkerHandle` must point to what the engine expects, and the result is an untyped pointer.
     #[inline]
-    pub unsafe fn place_favor_travel_marker(&self, outMarkerHandle: *mut u32) -> *mut u32 { unsafe { function!(40636, (&Self, *mut u32) -> *mut u32)(self, outMarkerHandle) } }
+    pub unsafe fn place_favor_travel_marker(&self, outMarkerHandle: *mut u32) -> *mut u32 { unsafe { function!(40636, (*const Self, *mut u32) -> *mut u32)(core::ptr::from_ref(self), outMarkerHandle) } }
     /// `PlayerCharacter::ProcessMenuOpenCloseEvent`: compares event->menuName.data with the UI string table entries and reacts to the console, journal and container menus; returns 0
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 40740, rva 0x75eb40.
@@ -1172,7 +1172,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> u32 { unsafe { function!(40740, (&Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(self, event, source) } }
+    pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> u32 { unsafe { function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
     /// `PlayerCharacter::ResetField9C0Block`: ResetField9C0Block_impl(*holder)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41571, rva 0x78e930.
@@ -1196,55 +1196,55 @@ impl crate::PlayerCharacter {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40538, rva 0x74cec0.
     /// `void (PlayerCharacter* this, BGSSaveFormBuffer* buffer)`
     #[inline]
-    pub fn save_game(&self, buffer: &crate::BGSSaveFormBuffer) { unsafe { function!(40538, (&Self, &crate::BGSSaveFormBuffer))(self, buffer) } }
+    pub fn save_game(&self, buffer: &crate::BGSSaveFormBuffer) { unsafe { function!(40538, (*const Self, *const crate::BGSSaveFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
     /// `PlayerCharacter::SetFieldB10AndIncrement968`: +0xb10 = 1 and ++(+0x968)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40530, rva 0x74c500.
     /// `void (PlayerCharacter* this)`
     #[inline]
-    pub fn set_field_b10_and_increment968(&self) { unsafe { function!(40530, (&Self))(self) } }
+    pub fn set_field_b10_and_increment968(&self) { unsafe { function!(40530, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::SetFirstPerson`: switches the player's visible root: sets flags bit 0 on the root not shown and clears it on the other, stores !firstPerson in bit 0 of +0xbeb, copies the reference position and heading into both roots' local transforms and reattaches the camera
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 40476, rva 0x748d10.
     /// `void (PlayerCharacter* this, bool firstPerson)`
     #[inline]
-    pub fn set_first_person(&self, firstPerson: bool) { unsafe { function!(40476, (&Self, bool))(self, firstPerson) } }
+    pub fn set_first_person(&self, firstPerson: bool) { unsafe { function!(40476, (*const Self, bool))(core::ptr::from_ref(self), firstPerson) } }
     /// `PlayerCharacter::StartDialogueTurnTowardSpeaker`: in first person, when the topic manager's speaker is an actor other than the player: computes the yaw (atan2, unwrapped to within pi of PlayerCamera.yaw) and pitch (-asin(dz/|d|) + fDialogueRotationPitchOffset:Dialogue) toward its look position (slot 91 on both), and arms the blend globals: start (PlayerCamera.yaw, player pitch) 0x20b7624/28, target 0x20b762c/30, duration fDialogueRotationSecs * 1000 (0x20b7634), start time g_FrameTimeMs (0x20b7638), done flag 0x20b763c = 0; non-finite results fall back to zero
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40496, rva 0x749ed0.
     /// `void (PlayerCharacter* this)`
     #[inline]
-    pub fn start_dialogue_turn_toward_speaker(&self) { unsafe { function!(40496, (&Self))(self) } }
+    pub fn start_dialogue_turn_toward_speaker(&self) { unsafe { function!(40496, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::UpdateAnimation`: slot 125 for the player: collision transforms, graph update, then the first- and third-person biped graphs
     ///
     /// Semantic, animation pass, high; ledger runtime evidence, name high; id 40521, rva 0x74bf70.
     /// `void (PlayerCharacter* this, float delta)`
     #[inline]
-    pub fn update_animation(&self, delta: f32) { unsafe { function!(40521, (&Self, f32))(self, delta) } }
+    pub fn update_animation(&self, delta: f32) { unsafe { function!(40521, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `PlayerCharacter::UpdateCamera`: PlayerCamera::Update, then the audio listener position (GetPosition) and orientation (frame NiCamera world rotation columns)
     ///
     /// Semantic, frame pass, high; ledger runtime evidence, name high; id 40449, rva 0x7468b0.
     /// `void (PlayerCharacter* this)`
     #[inline]
-    pub fn update_camera(&self) { unsafe { function!(40449, (&Self))(self) } }
+    pub fn update_camera(&self) { unsafe { function!(40449, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::UpdateCameraControlImageSpace`: applies the camera-control image space modifier selected by the Camera Control node's x (as an index) with the node's y as strength
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40452, rva 0x746cb0.
     /// `void (PlayerCharacter* this, u16 index, float strength)`
     #[inline]
-    pub fn update_camera_control_image_space(&self, index: u16, strength: f32) { unsafe { function!(40452, (&Self, u16, f32))(self, index, strength) } }
+    pub fn update_camera_control_image_space(&self, index: u16, strength: f32) { unsafe { function!(40452, (*const Self, u16, f32))(core::ptr::from_ref(self), index, strength) } }
     /// `PlayerCharacter::UpdateCrosshairPick`: the 'Pick reference' job: returns while a game-pausing or 0x4000 menu is open; clears the pick when the camera/controls disallow it; origin = PlayerCamera::GetPosition when the player is the camera target in cameraStates[0], else the camera node position (+ the third-person offset for state ids > 8 unless +0xbed bit 2); direction = frame camera (g_SceneGraph+0x128) world rotation column 0 (+0x7c, +0x88, +0x94); calls CrosshairPickData::Pick(*ID_401585, cell world, &origin, &direction) at +0x1e7, then lock/owned and 'sWaitHere' prompts
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40620, rva 0x757700.
     /// `void (PlayerCharacter* this)`
     #[inline]
-    pub fn update_crosshair_pick(&self) { unsafe { function!(40620, (&Self))(self) } }
+    pub fn update_crosshair_pick(&self) { unsafe { function!(40620, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::UpdateDeathReloadAndActor`: part of PlayerCharacter::Update: Actor::UpdateState unless the camera is in cameraStates[6]; the death reload: with the actor state bits (+0xc8 & 0x1e00000) equal to 0x200000 or 0x400000 and fPlayerDeathReloadTime > 0, the timer 0x20b746c starts at the setting, counts down by delta and at < 0 queues save-load request 0xd0000100 (load the last save) or sets ID_403449+0x11; with the setting <= 0 and state 0x400000 shows the sMiscPlayerDeadMessage box once; then the base Actor slot 173, UpdateCamera and TESObjectCELL::AttachReference3D(parentCell, this, true, false)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40748, rva 0x7600f0.
     /// `void (PlayerCharacter* this, float delta)`
     #[inline]
-    pub fn update_death_reload_and_actor(&self, delta: f32) { unsafe { function!(40748, (&Self, f32))(self, delta) } }
+    pub fn update_death_reload_and_actor(&self, delta: f32) { unsafe { function!(40748, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `PlayerCharacter::UpdateDialogueTurnBlend`: blends the player's yaw/pitch toward the dialogue topic ref over time (g_FrameTimeMs, pi/2 scale); skipped in furniture (+0xc8 & 0x3c000)
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 40497, rva 0x74a1a0.
@@ -1253,7 +1253,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_dialogue_turn_blend(&self) { unsafe { function!(40497, (&Self))(self) } }
+    pub unsafe fn update_dialogue_turn_blend(&self) { unsafe { function!(40497, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::UpdateIronSightsDOF`: iron-sights depth of field driven by +0x6f0
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 41249, rva 0x778930.
@@ -1262,13 +1262,13 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_iron_sights_dof(&self) { unsafe { function!(41249, (&Self))(self) } }
+    pub unsafe fn update_iron_sights_dof(&self) { unsafe { function!(41249, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::UpdateNodesAfterRender`: slot 287 places the first-person root at the player, NiAVObject::Update(third-person root, {t, flags 0x2001}), waits main phase 7, NiAVObject::Update(first-person root)
     ///
     /// Semantic, animation pass, high; ledger runtime evidence, name high; id 40522, rva 0x74c080.
     /// `void (PlayerCharacter* this)`
     #[inline]
-    pub fn update_nodes_after_render(&self) { unsafe { function!(40522, (&Self))(self) } }
+    pub fn update_nodes_after_render(&self) { unsafe { function!(40522, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::UpdateVATSAndDialogueTurn`: when g_VATS mode (+0x20) is 4 runs UpdateVATS, then the same dialogue-turn yaw/pitch blend as 0x74a1a0
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 40448, rva 0x7466e0.
@@ -1277,7 +1277,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_vats_and_dialogue_turn(&self) { unsafe { function!(40448, (&Self))(self) } }
+    pub unsafe fn update_vats_and_dialogue_turn(&self) { unsafe { function!(40448, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::ctor`: Constructs the PlayerCharacter: Character base, its three event sources (BGSActorCellEvent, BGSActorDeathEvent, PositionPlayerEvent), vtables, per-player arrays and handles, difficulty from iDifficulty, image-space-modifier anim arrays (iPlayerCharacterImagespaceModifierAnimCount), menu/user/tracked-stats event sinks, and publishes g_PlayerRef_ptr.
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40411, rva 0x73f670.
@@ -1286,7 +1286,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(40411, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(40411, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::dtor`: Destroys the player: restores its vtables, clears g_PlayerRef_ptr, unregisters its TESTrackedStatsEvent, MenuOpenClose, MenuModeChange and UserEventEnabled sinks, frees its process, sound handles, lists, arrays, handle tables, the 0x2778-byte first-person biped and other owned objects, destroys CrosshairPickData and the player camera, then runs Actor::dtor.
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 40412, rva 0x740690.
@@ -1295,7 +1295,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(40412, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(40412, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::currentLocation` at +0xAD8: the player's current location
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -1314,7 +1314,7 @@ impl crate::TESActorBaseData {
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 14384, rva 0x1dd3b0.
     /// `uint TESActorBaseData::GetLevel(const TESActorBaseData* this)`
     #[inline]
-    pub fn get_level(&self) -> u32 { unsafe { function!(14384, (&Self) -> u32)(self) } }
+    pub fn get_level(&self) -> u32 { unsafe { function!(14384, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `TESActorBaseData::voiceType` at +0x28: voice type
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -1328,7 +1328,7 @@ impl crate::TESContainer {
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 14529, rva 0x1e0b10.
     /// `int TESContainer::CountObjectsInContainer(TESContainer* this, TESForm* item)`
     #[inline]
-    pub fn count_objects_in_container(&self, item: &crate::TESForm) -> i32 { unsafe { function!(14529, (&Self, &crate::TESForm) -> i32)(self, item) } }
+    pub fn count_objects_in_container(&self, item: &crate::TESForm) -> i32 { unsafe { function!(14529, (*const Self, *const crate::TESForm) -> i32)(core::ptr::from_ref(self), core::ptr::from_ref(item)) } }
 }
 
 impl crate::TESFullName {
@@ -1337,13 +1337,13 @@ impl crate::TESFullName {
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `const char* GetFullName(const TESFullName* this)`
     #[inline]
-    pub fn get_full_name(&self) -> *const c_char { unsafe { virtual_function!(self, 5, (&Self) -> *const c_char)(self) } }
+    pub fn get_full_name(&self) -> *const c_char { unsafe { virtual_function!(self, 5, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
     /// `TESFullName::GetFullNameLength`, vtable slot 4: length of the name
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `uint GetFullNameLength(const TESFullName* this)`
     #[inline]
-    pub fn get_full_name_length(&self) -> u32 { unsafe { virtual_function!(self, 4, (&Self) -> u32)(self) } }
+    pub fn get_full_name_length(&self) -> u32 { unsafe { virtual_function!(self, 4, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TESNPC {
@@ -1367,25 +1367,25 @@ impl crate::TESNPC {
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 24763, rva 0x3c65c0.
     /// `float TESNPC::GetHeight(const TESNPC* this)`
     #[inline]
-    pub fn get_height(&self) -> f32 { unsafe { function!(24763, (&Self) -> f32)(self) } }
+    pub fn get_height(&self) -> f32 { unsafe { function!(24763, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `TESNPC::GetSex`: 0 male, 1 female, -1 for a non-NPC form
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 24374, rva 0x3afeb0.
     /// `uint TESNPC::GetSex(const TESNPC* this)`
     #[inline]
-    pub fn get_sex(&self) -> u32 { unsafe { function!(24374, (&Self) -> u32)(self) } }
+    pub fn get_sex(&self) -> u32 { unsafe { function!(24374, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `TESNPC::SetDefaultOutfit`: stores +0x218 and tail-calls slot 10 (AddChange) with 0x1000
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 24694, rva 0x3bf500.
     /// `void (TESNPC* this, BGSOutfit* outfit)`
     #[inline]
-    pub fn set_default_outfit(&self, outfit: &crate::BGSOutfit) { unsafe { function!(24694, (&Self, &crate::BGSOutfit))(self, outfit) } }
+    pub fn set_default_outfit(&self, outfit: &crate::BGSOutfit) { unsafe { function!(24694, (*const Self, *const crate::BGSOutfit))(core::ptr::from_ref(self), core::ptr::from_ref(outfit)) } }
     /// `TESNPC::SetSleepOutfit`: stores +0x220 and tail-calls slot 10 with 0x2000
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 24695, rva 0x3bf520.
     /// `void (TESNPC* this, BGSOutfit* outfit)`
     #[inline]
-    pub fn set_sleep_outfit(&self, outfit: &crate::BGSOutfit) { unsafe { function!(24695, (&Self, &crate::BGSOutfit))(self, outfit) } }
+    pub fn set_sleep_outfit(&self, outfit: &crate::BGSOutfit) { unsafe { function!(24695, (*const Self, *const crate::BGSOutfit))(core::ptr::from_ref(self), core::ptr::from_ref(outfit)) } }
     /// `TESNPC::npcClass` at +0x1C0: the NPC's class
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -1416,13 +1416,13 @@ impl crate::TESObjectREFR {
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `NiNode* Get3D(const TESObjectREFR* this)`
     #[inline]
-    pub fn get3_d(&self) -> Option<&'static crate::NiNode> { unsafe { virtual_function!(self, 112, (&Self) -> Option<&'static crate::NiNode>)(self) } }
+    pub fn get3_d(&self) -> Option<&'static crate::NiNode> { unsafe { virtual_function!(self, 112, (*const Self) -> Option<&'static crate::NiNode>)(core::ptr::from_ref(self)) } }
     /// `TESObjectREFR::HasKeyword`, vtable slot 72: whether the reference or its base carries the keyword
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `bool HasKeyword(const TESObjectREFR* this, const BGSKeyword* keyword)`
     #[inline]
-    pub fn has_keyword(&self, keyword: &crate::BGSKeyword) -> bool { unsafe { virtual_function!(self, 72, (&Self, &crate::BGSKeyword) -> bool)(self, keyword) } }
+    pub fn has_keyword(&self, keyword: &crate::BGSKeyword) -> bool { unsafe { virtual_function!(self, 72, (*const Self, *const crate::BGSKeyword) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(keyword)) } }
     /// `TESObjectREFR::GetAnimationGraphEventSource`: ref+0x38 slot 2 then 0x765930; graphIndex 0xffffffff means the active graph
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 40850, rva 0x765b00.
@@ -1431,19 +1431,19 @@ impl crate::TESObjectREFR {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_animation_graph_event_source(&self, out: *mut *mut c_void, graphIndex: u32) -> bool { unsafe { function!(40850, (&Self, *mut *mut c_void, u32) -> bool)(self, out, graphIndex) } }
+    pub unsafe fn get_animation_graph_event_source(&self, out: *mut *mut c_void, graphIndex: u32) -> bool { unsafe { function!(40850, (*const Self, *mut *mut c_void, u32) -> bool)(core::ptr::from_ref(self), out, graphIndex) } }
     /// `TESObjectREFR::GetContainer`: the base container component
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 19702, rva 0x2e8660.
     /// `TESContainer* TESObjectREFR::GetContainer(TESObjectREFR* this)`
     #[inline]
-    pub fn get_container(&self) -> Option<&'static crate::TESContainer> { unsafe { function!(19702, (&Self) -> Option<&'static crate::TESContainer>)(self) } }
+    pub fn get_container(&self) -> Option<&'static crate::TESContainer> { unsafe { function!(19702, (*const Self) -> Option<&'static crate::TESContainer>)(core::ptr::from_ref(self)) } }
     /// `TESObjectREFR::GetCurrentLocation`: the location the reference is in
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 19812, rva 0x2f3b70.
     /// `BGSLocation* TESObjectREFR::GetCurrentLocation(TESObjectREFR* this)`
     #[inline]
-    pub fn get_current_location(&self) -> Option<&'static crate::BGSLocation> { unsafe { function!(19812, (&Self) -> Option<&'static crate::BGSLocation>)(self) } }
+    pub fn get_current_location(&self) -> Option<&'static crate::BGSLocation> { unsafe { function!(19812, (*const Self) -> Option<&'static crate::BGSLocation>)(core::ptr::from_ref(self)) } }
     /// `TESObjectREFR::GetHandle`: handle of a reference, created on first use
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 19846, rva 0x2f60c0.
@@ -1452,31 +1452,31 @@ impl crate::TESObjectREFR {
     /// # Safety
     /// `out` must point to what the engine expects, and the result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_handle(&self, out: *mut u32) -> *mut u32 { unsafe { function!(19846, (&Self, *mut u32) -> *mut u32)(self, out) } }
+    pub unsafe fn get_handle(&self, out: *mut u32) -> *mut u32 { unsafe { function!(19846, (*const Self, *mut u32) -> *mut u32)(core::ptr::from_ref(self), out) } }
     /// `TESObjectREFR::GetInventoryChanges`: the reference's inventory changes, or null
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 16039, rva 0x22b2c0.
     /// `InventoryChanges* TESObjectREFR::GetInventoryChanges(TESObjectREFR* this)`
     #[inline]
-    pub fn get_inventory_changes(&self) -> Option<&'static crate::InventoryChanges> { unsafe { function!(16039, (&Self) -> Option<&'static crate::InventoryChanges>)(self) } }
+    pub fn get_inventory_changes(&self) -> Option<&'static crate::InventoryChanges> { unsafe { function!(16039, (*const Self) -> Option<&'static crate::InventoryChanges>)(core::ptr::from_ref(self)) } }
     /// `TESObjectREFR::GetScale`: effective scale
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 19664, rva 0x2e6f30.
     /// `float TESObjectREFR::GetScale(TESObjectREFR* this)`
     #[inline]
-    pub fn get_scale(&self) -> f32 { unsafe { function!(19664, (&Self) -> f32)(self) } }
+    pub fn get_scale(&self) -> f32 { unsafe { function!(19664, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `TESObjectREFR::GetWorldspace`: the worldspace, null in interiors
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 19816, rva 0x2f3e00.
     /// `TESWorldSpace* TESObjectREFR::GetWorldspace(TESObjectREFR* this)`
     #[inline]
-    pub fn get_worldspace(&self) -> Option<&'static crate::TESWorldSpace> { unsafe { function!(19816, (&Self) -> Option<&'static crate::TESWorldSpace>)(self) } }
+    pub fn get_worldspace(&self) -> Option<&'static crate::TESWorldSpace> { unsafe { function!(19816, (*const Self) -> Option<&'static crate::TESWorldSpace>)(core::ptr::from_ref(self)) } }
     /// `TESObjectREFR::UpdateAnimationGraphs`: builds AnimationGraphUpdateData (slot 121), updates the holder's manager, then the 42 biped slots' graphs
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 20123, rva 0x2fdeb0.
     /// `void (TESObjectREFR* this, float delta)`
     #[inline]
-    pub fn update_animation_graphs(&self, delta: f32) { unsafe { function!(20123, (&Self, f32))(self, delta) } }
+    pub fn update_animation_graphs(&self, delta: f32) { unsafe { function!(20123, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `TESObjectREFR::baseObject` at +0x40: the base form (TESNPC for actors)
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.

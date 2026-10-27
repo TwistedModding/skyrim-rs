@@ -10,7 +10,7 @@ impl crate::GFxLog {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_log_base_g_fx_log_vdtor(&self) -> u64 { unsafe { function!(82358, (&Self) -> u64)(self) } }
+    pub unsafe fn g_fx_log_base_g_fx_log_vdtor(&self) -> u64 { unsafe { function!(82358, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::GFxState {
@@ -20,42 +20,42 @@ impl crate::GFxState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(84617, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(84617, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GFxState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 84674, rva 0xe2e950).
     /// `undefined ctor(GFxState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(84674, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(84674, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GFxState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 85563, rva 0xd8e3b0).
     /// `undefined ctor(GFxState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(85563, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(85563, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GFxState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 86770, rva 0xdd3650).
     /// `undefined ctor(GFxState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_4(&self) -> u64 { unsafe { function!(86770, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_4(&self) -> u64 { unsafe { function!(86770, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GFxState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 87288, rva 0xdf1450).
     /// `undefined ctor(GFxState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_5(&self) -> u64 { unsafe { function!(87288, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_5(&self) -> u64 { unsafe { function!(87288, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GFxState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 524189, rva 0xe6dce0).
     /// `undefined ctor(GFxState * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_6(&self) -> u64 { unsafe { function!(524189, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_6(&self) -> u64 { unsafe { function!(524189, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ScaleformFile__MemoryFile {
@@ -65,6 +65,6 @@ impl crate::ScaleformFile__MemoryFile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(82429, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(82429, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 

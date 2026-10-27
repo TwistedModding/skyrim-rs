@@ -3,6 +3,272 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetRefCountedField18_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 66183, rva 0xc64630).
+/// `undefined SetRefCountedField18_3(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field18_3(param_1: i64, param_2: i64) -> u64 { unsafe { function!(66183, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField20_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 67471, rva 0xcc0370).
+/// `undefined SetRefCountedField20_2(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field20_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(67471, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField20_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 88870, rva 0xe1f2a0).
+/// `undefined SetRefCountedField20_3(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field20_3(param_1: i64, param_2: i64) -> u64 { unsafe { function!(88870, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField20_4` (decompiler signature, tier high; ledger decompiler evidence, name high; id 88871, rva 0xe1f2e0).
+/// `undefined SetRefCountedField20_4(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field20_4(param_1: i64, param_2: i64) -> u64 { unsafe { function!(88871, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField28_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 67472, rva 0xcc03b0).
+/// `undefined SetRefCountedField28_2(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field28_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(67472, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField28_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 88869, rva 0xe1f260).
+/// `undefined SetRefCountedField28_3(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field28_3(param_1: i64, param_2: i64) -> u64 { unsafe { function!(88869, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField28_4` (decompiler signature, tier high; ledger decompiler evidence, name high; id 25791, rva 0x3fb2b0).
+/// `undefined SetRefCountedField28_4(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field28_4(param_1: i64, param_2: i64) -> u64 { unsafe { function!(25791, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField30` (decompiler signature, tier high; ledger decompiler evidence, name high; id 49948, rva 0x8d9500).
+/// `undefined SetRefCountedField30(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field30(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(49948, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField30200` (decompiler signature, tier high; ledger decompiler evidence, name high; id 108603, rva 0x1586d80).
+/// `undefined SetRefCountedField30200(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field30200(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(108603, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField30_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 91694, rva 0x1204030).
+/// `undefined SetRefCountedField30_2(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field30_2(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(91694, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField30_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61922, rva 0xb739f0).
+/// `undefined SetRefCountedField30_3(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field30_3(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61922, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField30_4` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61967, rva 0xb76210).
+/// `undefined SetRefCountedField30_4(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field30_4(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61967, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField40` (decompiler signature, tier high; ledger decompiler evidence, name high; id 59479, rva 0xaffe70).
+/// `undefined SetRefCountedField40(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field40(param_1: i64, param_2: i64) -> u64 { unsafe { function!(59479, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField50` (decompiler signature, tier high; ledger decompiler evidence, name high; id 59484, rva 0xb00080).
+/// `undefined SetRefCountedField50(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field50(param_1: i64, param_2: i64) -> u64 { unsafe { function!(59484, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField68` (decompiler signature, tier high; ledger decompiler evidence, name high; id 58460, rva 0xad7df0).
+/// `undefined SetRefCountedField68(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field68(param_1: i64, param_2: i64) -> u64 { unsafe { function!(58460, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField78` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61334, rva 0xb58b10).
+/// `undefined SetRefCountedField78(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field78(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61334, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField88` (decompiler signature, tier high; ledger decompiler evidence, name high; id 59262, rva 0xae96c0).
+/// `undefined SetRefCountedField88(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field88(param_1: i64, param_2: i64) -> u64 { unsafe { function!(59262, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField8_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 63810, rva 0xbdc870).
+/// `undefined SetRefCountedField8_2(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field8_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(63810, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedFieldD0_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61598, rva 0xb64ca0).
+/// `undefined SetRefCountedFieldD0_2(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field_d0_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61598, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedSlotInField100` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61635, rva 0xb65a00).
+/// `undefined SetRefCountedSlotInField100(longlong param_1, int param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_slot_in_field100(param_1: i64, param_2: i32, param_3: i64) -> u64 { unsafe { function!(61635, (i64, i32, i64) -> u64)(param_1, param_2, param_3) } }
+/// `SetRefField30` (decompiler signature, tier high; ledger decompiler evidence, name high; id 88500, rva 0xe45110).
+/// `undefined SetRefField30(longlong param_1, int * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_field30(param_1: i64, param_2: *mut i32) -> u64 { unsafe { function!(88500, (i64, *mut i32) -> u64)(param_1, param_2) } }
+/// `SetRefPtrField18_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 75861, rva 0xfcd510).
+/// `undefined SetRefPtrField18_3(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_ptr_field18_3(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(75861, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `SetRefPtrField28` (decompiler signature, tier high; ledger decompiler evidence, name high; id 76090, rva 0xfd8aa0).
+/// `undefined SetRefPtrField28(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_ptr_field28(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(76090, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `SetRefPtrField8` (decompiler signature, tier high; ledger decompiler evidence, name high; id 34212, rva 0x5c3130).
+/// `undefined SetRefPtrField8(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_ptr_field8(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(34212, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `SetShadowSceneNode` (decompiler signature, tier high; ledger decompiler evidence, name high; id 105635, rva 0x14ec000).
+/// `undefined SetShadowSceneNode(int param_1, undefined8 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_shadow_scene_node(param_1: i32, param_2: u64) -> u64 { unsafe { function!(105635, (i32, u64) -> u64)(param_1, param_2) } }
+/// `SetSlotPointers` (decompiler signature, tier high; ledger decompiler evidence, name high; id 107490, rva 0x1555390).
+/// `undefined SetSlotPointers(longlong param_1, byte param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_slot_pointers(param_1: i64, param_2: u8, param_3: i64) -> u64 { unsafe { function!(107490, (i64, u8, i64) -> u64)(param_1, param_2, param_3) } }
+/// `SetStaggerTimeToMaxDuration` (decompiler signature, tier high; ledger decompiler evidence, name high; id 40040, rva 0x7286f0).
+/// `undefined SetStaggerTimeToMaxDuration(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_stagger_time_to_max_duration(param_1: i64) -> u64 { unsafe { function!(40040, (i64) -> u64)(param_1) } }
+/// `SetStringField8` (decompiler signature, tier high; ledger decompiler evidence, name high; id 12951, rva 0x190aa0).
+/// `undefined SetStringField8(longlong param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_string_field8(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(12951, (i64, *mut c_char) -> u64)(param_1, param_2) } }
+/// `SetThreadPriorityLevel_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 69068, rva 0xeaedf0).
+/// `undefined8 SetThreadPriorityLevel_2(longlong param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_thread_priority_level_2(param_1: i64, param_2: i32) -> u64 { unsafe { function!(69068, (i64, i32) -> u64)(param_1, param_2) } }
+/// `SetThreeShorts` (decompiler signature, tier high; ledger decompiler evidence, name high; id 68662, rva 0xcfac30).
+/// `undefined2 * SetThreeShorts(undefined2 * param_1, undefined2 param_2, undefined2 param_3, undefined2 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_three_shorts(param_1: *mut u16, param_2: u16, param_3: u16, param_4: u16) -> *mut u16 { unsafe { function!(68662, (*mut u16, u16, u16, u16) -> *mut u16)(param_1, param_2, param_3, param_4) } }
+/// `SetValueAtIndex_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 71412, rva 0xf11850).
+/// `ulonglong SetValueAtIndex_2(longlong param_1, uint param_2, undefined4 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_value_at_index_2(param_1: i64, param_2: u32, param_3: u32) -> u64 { unsafe { function!(71412, (i64, u32, u32) -> u64)(param_1, param_2, param_3) } }
+/// `SetValueForKeyInMap98` (decompiler signature, tier high; ledger decompiler evidence, name high; id 32448, rva 0x538350).
+/// `undefined SetValueForKeyInMap98(longlong param_1, undefined8 param_2, undefined4 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_value_for_key_in_map98(param_1: i64, param_2: u64, param_3: u32) -> u64 { unsafe { function!(32448, (i64, u64, u32) -> u64)(param_1, param_2, param_3) } }
+/// `SetValueInStringMap158` (decompiler signature, tier high; ledger decompiler evidence, name high; id 57992, rva 0xabe150).
+/// `undefined SetValueInStringMap158(longlong param_1, byte * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_value_in_string_map158(param_1: i64, param_2: *mut u8, param_3: u64) -> u64 { unsafe { function!(57992, (i64, *mut u8, u64) -> u64)(param_1, param_2, param_3) } }
+/// `SetValueType7Ref` (decompiler signature, tier high; ledger decompiler evidence, name high; id 82902, rva 0xd0d620).
+/// `undefined SetValueType7Ref(char * param_1, int * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_value_type7_ref(param_1: *mut c_char, param_2: *mut i32) -> u64 { unsafe { function!(82902, (*mut c_char, *mut i32) -> u64)(param_1, param_2) } }
+/// `SetWordField16AndMarkChanged` (decompiler signature, tier high; ledger decompiler evidence, name high; id 14404, rva 0x1dd960).
+/// `undefined SetWordField16AndMarkChanged(longlong param_1, undefined2 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_word_field16_and_mark_changed(param_1: i64, param_2: u16) -> u64 { unsafe { function!(14404, (i64, u16) -> u64)(param_1, param_2) } }
+/// `SetWordField1CAndMarkChanged` (decompiler signature, tier high; ledger decompiler evidence, name high; id 14391, rva 0x1dd4f0).
+/// `undefined SetWordField1CAndMarkChanged(longlong param_1, undefined2 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_word_field1_c_and_mark_changed(param_1: i64, param_2: u16) -> u64 { unsafe { function!(14391, (i64, u16) -> u64)(param_1, param_2) } }
+/// `SetWordField1E` (decompiler signature, tier high; ledger decompiler evidence, name high; id 60185, rva 0xb2fc40).
+/// `undefined SetWordField1E(longlong param_1, undefined2 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_word_field1_e(param_1: i64, param_2: u16) -> u64 { unsafe { function!(60185, (i64, u16) -> u64)(param_1, param_2) } }
+/// `SetWordFieldCAndMarkChanged` (decompiler signature, tier high; ledger decompiler evidence, name high; id 14389, rva 0x1dd4b0).
+/// `undefined SetWordFieldCAndMarkChanged(longlong param_1, undefined2 param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_word_field_c_and_mark_changed(param_1: i64, param_2: u16) -> u64 { unsafe { function!(14389, (i64, u16) -> u64)(param_1, param_2) } }
 /// `SetWordFieldEAndMarkChanged` (decompiler signature, tier high; ledger decompiler evidence, name high; id 14390, rva 0x1dd4d0).
 /// `undefined SetWordFieldEAndMarkChanged(longlong param_1, undefined2 param_2)`
 ///

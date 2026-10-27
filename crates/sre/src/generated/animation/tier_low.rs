@@ -10,14 +10,14 @@ impl crate::BSAnimationGraphManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: i64, param_2: i32) -> *mut Self { unsafe { function!(63354, (&Self, i64, i32) -> *mut Self)(self, param_1, param_2) } }
+    pub unsafe fn ctor_2(&self, param_1: i64, param_2: i32) -> *mut Self { unsafe { function!(63354, (*const Self, i64, i32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSAnimationGraphManager::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 63355, rva 0xbc0280).
     /// `undefined dtor(BSAnimationGraphManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(63355, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(63355, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSDismemberSkinInstance {
@@ -34,21 +34,21 @@ impl crate::BSDismemberSkinInstance {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: i64, param_2: i64, param_3: u64) -> *mut Self { unsafe { function!(70773, (&Self, i64, i64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: i64, param_2: i64, param_3: u64) -> *mut Self { unsafe { function!(70773, (*const Self, i64, i64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSDismemberSkinInstance::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70783, rva 0xef6e20).
     /// `undefined ctor(BSDismemberSkinInstance * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70783, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70783, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSDismemberSkinInstance::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70784, rva 0xef6ea0).
     /// `BSDismemberSkinInstance * vdtor(BSDismemberSkinInstance * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70784, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70784, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSFaceGenAnimationData {
@@ -58,14 +58,14 @@ impl crate::BSFaceGenAnimationData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26557, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26557, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSFaceGenAnimationData::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 26611, rva 0x426b60).
     /// `BSFaceGenAnimationData * vdtor(BSFaceGenAnimationData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26611, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26611, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSFaceGenNiNode {
@@ -75,21 +75,21 @@ impl crate::BSFaceGenNiNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26982, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26982, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSFaceGenNiNode::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 26983, rva 0x439590).
     /// `undefined ctor(BSFaceGenNiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26983, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26983, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSFaceGenNiNode::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 27003, rva 0x43aba0).
     /// `BSFaceGenNiNode * vdtor(BSFaceGenNiNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27003, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27003, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BShkbAnimationGraph {
@@ -99,14 +99,14 @@ impl crate::BShkbAnimationGraph {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u8) -> *mut Self { unsafe { function!(63555, (&Self, u64, u8) -> *mut Self)(self, param_1, param_2) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u8) -> *mut Self { unsafe { function!(63555, (*const Self, u64, u8) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BShkbAnimationGraph::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 63556, rva 0xbc9cf0).
     /// `undefined dtor(BShkbAnimationGraph * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: *mut i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(63556, (&Self, *mut i64, *mut i64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: *mut i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(63556, (*const Self, *mut i64, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::NiSkinData {
@@ -123,14 +123,14 @@ impl crate::NiSkinData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(71287, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(71287, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `NiSkinData::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 71293, rva 0xf0ebc0).
     /// `NiSkinData * vdtor(NiSkinData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(71293, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(71293, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::NiSkinPartition {
@@ -147,7 +147,7 @@ impl crate::NiSkinPartition {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: i64, param_3: *mut c_void) -> *mut Self { unsafe { function!(524206, (&Self, u32, i64, *mut c_void) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: i64, param_3: *mut c_void) -> *mut Self { unsafe { function!(524206, (*const Self, u32, i64, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::hkaSkeleton {
@@ -157,7 +157,7 @@ impl crate::hkaSkeleton {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::hkbBehaviorGraph {
@@ -167,35 +167,35 @@ impl crate::hkbBehaviorGraph {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `hkbBehaviorGraph::copyVariablesToMembersRoot` (decompiler signature, tier low; ledger string evidence, name medium; id 58382, rva 0xad0d70).
     /// `undefined copyVariablesToMembersRoot(hkbBehaviorGraph * this, longlong param_1, char param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn copy_variables_to_members_root(&self, param_1: i64, param_2: c_char) -> u64 { unsafe { function!(58382, (&Self, i64, c_char) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn copy_variables_to_members_root(&self, param_1: i64, param_2: c_char) -> u64 { unsafe { function!(58382, (*const Self, i64, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `hkbBehaviorGraph::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 58325, rva 0xacb3d0).
     /// `hkbBehaviorGraph * ctor(hkbBehaviorGraph * this, longlong param_1, longlong param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: i64, param_2: i64) -> *mut Self { unsafe { function!(58325, (&Self, i64, i64) -> *mut Self)(self, param_1, param_2) } }
+    pub unsafe fn ctor_2(&self, param_1: i64, param_2: i64) -> *mut Self { unsafe { function!(58325, (*const Self, i64, i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `hkbBehaviorGraph::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 58374, rva 0xacf070).
     /// `hkbBehaviorGraph * ctor(hkbBehaviorGraph * this, longlong param_1, longlong param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_3(&self, param_1: i64, param_2: i64) -> *mut Self { unsafe { function!(58374, (&Self, i64, i64) -> *mut Self)(self, param_1, param_2) } }
+    pub unsafe fn ctor_3(&self, param_1: i64, param_2: i64) -> *mut Self { unsafe { function!(58374, (*const Self, i64, i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `hkbBehaviorGraph::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 58387, rva 0xad17c0).
     /// `hkbBehaviorGraph * ctor(hkbBehaviorGraph * this, int param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_4(&self, param_1: i32) -> *mut Self { unsafe { function!(58387, (&Self, i32) -> *mut Self)(self, param_1) } }
+    pub unsafe fn ctor_4(&self, param_1: i32) -> *mut Self { unsafe { function!(58387, (*const Self, i32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::hkbCharacter {
@@ -205,7 +205,7 @@ impl crate::hkbCharacter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::hkbRagdollDriver {
@@ -215,14 +215,14 @@ impl crate::hkbRagdollDriver {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `hkbRagdollDriver::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 58280, rva 0xac6930).
     /// `hkbRagdollDriver * ctor(hkbRagdollDriver * this, undefined8 param_1, undefined1 param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u8) -> *mut Self { unsafe { function!(58280, (&Self, u64, u8) -> *mut Self)(self, param_1, param_2) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u8) -> *mut Self { unsafe { function!(58280, (*const Self, u64, u8) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::hkbVariableValueSet {
@@ -232,6 +232,6 @@ impl crate::hkbVariableValueSet {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 

@@ -39,7 +39,7 @@ impl crate::BGSKeywordForm {
     /// Semantic, forms pass, high; called through the object's vtable.
     /// `bool HasKeyword(const BGSKeywordForm* this, const BGSKeyword* keyword)`
     #[inline]
-    pub fn has_keyword(&self, keyword: &crate::BGSKeyword) -> bool { unsafe { virtual_function!(self, 4, (&Self, &crate::BGSKeyword) -> bool)(self, keyword) } }
+    pub fn has_keyword(&self, keyword: &crate::BGSKeyword) -> bool { unsafe { virtual_function!(self, 4, (*const Self, *const crate::BGSKeyword) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(keyword)) } }
 }
 
 impl crate::BGSListForm {
@@ -48,19 +48,19 @@ impl crate::BGSListForm {
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 20906, rva 0x320140.
     /// `int BGSListForm::Find(BGSListForm* this, TESForm* form)`
     #[inline]
-    pub fn find(&self, form: &crate::TESForm) -> i32 { unsafe { function!(20906, (&Self, &crate::TESForm) -> i32)(self, form) } }
+    pub fn find(&self, form: &crate::TESForm) -> i32 { unsafe { function!(20906, (*const Self, *const crate::TESForm) -> i32)(core::ptr::from_ref(self), core::ptr::from_ref(form)) } }
     /// `BGSListForm::GetAt`: entry at index counting added forms first
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 20907, rva 0x320210.
     /// `TESForm* BGSListForm::GetAt(BGSListForm* this, uint index)`
     #[inline]
-    pub fn get_at(&self, index: u32) -> Option<&'static crate::TESForm> { unsafe { function!(20907, (&Self, u32) -> Option<&'static crate::TESForm>)(self, index) } }
+    pub fn get_at(&self, index: u32) -> Option<&'static crate::TESForm> { unsafe { function!(20907, (*const Self, u32) -> Option<&'static crate::TESForm>)(core::ptr::from_ref(self), index) } }
     /// `BGSListForm::GetFormsSize`: number of entries in the forms array
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 20911, rva 0x320390.
     /// `uint BGSListForm::GetFormsSize(BGSListForm* this)`
     #[inline]
-    pub fn get_forms_size(&self) -> u32 { unsafe { function!(20911, (&Self) -> u32)(self) } }
+    pub fn get_forms_size(&self) -> u32 { unsafe { function!(20911, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSReadWriteLock {
@@ -69,25 +69,25 @@ impl crate::BSReadWriteLock {
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 68233, rva 0xce3250.
     /// `void BSReadWriteLock::LockForRead(BSReadWriteLock* this)`
     #[inline]
-    pub fn lock_for_read(&self) { unsafe { function!(68233, (&Self))(self) } }
+    pub fn lock_for_read(&self) { unsafe { function!(68233, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSReadWriteLock::LockForWrite`: exclusive lock
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 68234, rva 0xce32d0.
     /// `void BSReadWriteLock::LockForWrite(BSReadWriteLock* this)`
     #[inline]
-    pub fn lock_for_write(&self) { unsafe { function!(68234, (&Self))(self) } }
+    pub fn lock_for_write(&self) { unsafe { function!(68234, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSReadWriteLock::UnlockForRead`: release shared lock
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 68239, rva 0xce3510.
     /// `void BSReadWriteLock::UnlockForRead(BSReadWriteLock* this)`
     #[inline]
-    pub fn unlock_for_read(&self) { unsafe { function!(68239, (&Self))(self) } }
+    pub fn unlock_for_read(&self) { unsafe { function!(68239, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSReadWriteLock::UnlockForWrite`: release exclusive lock
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 68240, rva 0xce3520.
     /// `void BSReadWriteLock::UnlockForWrite(BSReadWriteLock* this)`
     #[inline]
-    pub fn unlock_for_write(&self) { unsafe { function!(68240, (&Self))(self) } }
+    pub fn unlock_for_write(&self) { unsafe { function!(68240, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TESDataHandler {
@@ -104,7 +104,7 @@ impl crate::TESDataHandler {
     /// # Safety
     /// `file` must point to what the engine expects.
     #[inline]
-    pub unsafe fn add_compiled_file(&self, file: *mut crate::TESFile) { unsafe { function!(13741, (&Self, *mut crate::TESFile))(self, file) } }
+    pub unsafe fn add_compiled_file(&self, file: *mut crate::TESFile) { unsafe { function!(13741, (*const Self, *mut crate::TESFile))(core::ptr::from_ref(self), file) } }
     /// `TESDataHandler::BuildFileList`: builds the files list from the Data folder
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13743, rva 0x1bdd00.
@@ -113,19 +113,19 @@ impl crate::TESDataHandler {
     /// # Safety
     /// `dataDir` must point to what the engine expects.
     #[inline]
-    pub unsafe fn build_file_list(&self, dataDir: *const c_char) -> bool { unsafe { function!(13743, (&Self, *const c_char) -> bool)(self, dataDir) } }
+    pub unsafe fn build_file_list(&self, dataDir: *const c_char) -> bool { unsafe { function!(13743, (*const Self, *const c_char) -> bool)(core::ptr::from_ref(self), dataDir) } }
     /// `TESDataHandler::CallSlot19OnArray1D8`: calls virtual slot 19 (vtable+0x98) on every element of the array at +0x1d8 (count +0x1e8); the init thread runs it once at the init-step moment (call site 0x655977, with this = g_TESDataHandler)
     ///
     /// Semantic, moments pass, high; ledger runtime evidence, name high; id 13766, rva 0x1c2170.
     /// `void (TESDataHandler* this)`
     #[inline]
-    pub fn call_slot19_on_array1_d8(&self) { unsafe { function!(13766, (&Self))(self) } }
+    pub fn call_slot19_on_array1_d8(&self) { unsafe { function!(13766, (*const Self))(core::ptr::from_ref(self)) } }
     /// `TESDataHandler::FreeFormID`: returns a runtime form id for reuse
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13739, rva 0x1bd9f0.
     /// `void TESDataHandler::FreeFormID(TESDataHandler* this, uint formID)`
     #[inline]
-    pub fn free_form_id(&self, formID: u32) { unsafe { function!(13739, (&Self, u32))(self, formID) } }
+    pub fn free_form_id(&self, formID: u32) { unsafe { function!(13739, (*const Self, u32))(core::ptr::from_ref(self), formID) } }
     /// `TESDataHandler::GetFile`: file by name, case-insensitive, or null
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13731, rva 0x1bd730.
@@ -134,13 +134,13 @@ impl crate::TESDataHandler {
     /// # Safety
     /// `name` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_file(&self, name: *const c_char) -> *mut crate::TESFile { unsafe { function!(13731, (&Self, *const c_char) -> *mut crate::TESFile)(self, name) } }
+    pub unsafe fn get_file(&self, name: *const c_char) -> *mut crate::TESFile { unsafe { function!(13731, (*const Self, *const c_char) -> *mut crate::TESFile)(core::ptr::from_ref(self), name) } }
     /// `TESDataHandler::GetNextFormID`: allocates a runtime form id
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13740, rva 0x1bda30.
     /// `uint TESDataHandler::GetNextFormID(TESDataHandler* this)`
     #[inline]
-    pub fn get_next_form_id(&self) -> u32 { unsafe { function!(13740, (&Self) -> u32)(self) } }
+    pub fn get_next_form_id(&self) -> u32 { unsafe { function!(13740, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `TESDataHandler::SelectFiles`: applies the plugin list to the files list
     ///
     /// Semantic, forms pass, medium; ledger semantic evidence, name medium; id 441529, rva 0x1bfa80.
@@ -149,7 +149,7 @@ impl crate::TESDataHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn select_files(&self, keepActive: bool) -> bool { unsafe { function!(441529, (&Self, bool) -> bool)(self, keepActive) } }
+    pub unsafe fn select_files(&self, keepActive: bool) -> bool { unsafe { function!(441529, (*const Self, bool) -> bool)(core::ptr::from_ref(self), keepActive) } }
     /// `TESDataHandler::ctor`: constructs the data handler singleton
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13688, rva 0x1b6290.
@@ -158,7 +158,7 @@ impl crate::TESDataHandler {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(13688, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(13688, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `TESDataHandler::dtor`: destroys the data handler
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 13689, rva 0x1b6530.
@@ -167,7 +167,7 @@ impl crate::TESDataHandler {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(13689, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(13689, (*const Self))(core::ptr::from_ref(self)) } }
     /// `TESDataHandler::regionDataManager` at +0xDB0: region data manager
     ///
     /// Semantic field, forms pass, high; `None` while the pointer is null.
@@ -194,7 +194,7 @@ impl crate::TESEditorIDMap {
     /// # Safety
     /// `editorID`, `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn find(&self, editorID: *const c_char, out: *mut *mut crate::TESForm) -> bool { unsafe { function!(14705, (&Self, *const c_char, *mut *mut crate::TESForm) -> bool)(self, editorID, out) } }
+    pub unsafe fn find(&self, editorID: *const c_char, out: *mut *mut crate::TESForm) -> bool { unsafe { function!(14705, (*const Self, *const c_char, *mut *mut crate::TESForm) -> bool)(core::ptr::from_ref(self), editorID, out) } }
     /// `TESEditorIDMap::Insert`: bucket insert of the editor id map
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13808, rva 0x1c5fb0.
@@ -212,7 +212,7 @@ impl crate::TESEditorIDMap {
     /// # Safety
     /// `editorID` must point to what the engine expects.
     #[inline]
-    pub unsafe fn insert_editor_id(&self, editorID: *const c_char, form: *mut crate::TESForm) -> bool { unsafe { function!(13907, (&Self, *const c_char, *mut crate::TESForm) -> bool)(self, editorID, form) } }
+    pub unsafe fn insert_editor_id(&self, editorID: *const c_char, form: *mut crate::TESForm) -> bool { unsafe { function!(13907, (*const Self, *const c_char, *mut crate::TESForm) -> bool)(core::ptr::from_ref(self), editorID, form) } }
 }
 
 impl crate::TESEditorIDMapEntry {
@@ -232,43 +232,43 @@ impl crate::TESFile {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn duplicate(&self, key: u32, bufferSize: u32) -> *mut Self { unsafe { function!(14039, (&Self, u32, u32) -> *mut Self)(self, key, bufferSize) } }
+    pub unsafe fn duplicate(&self, key: u32, bufferSize: u32) -> *mut Self { unsafe { function!(14039, (*const Self, u32, u32) -> *mut Self)(core::ptr::from_ref(self), key, bufferSize) } }
     /// `TESFile::GetMaster`: master by 1-based index
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13946, rva 0x1cbc90.
     /// `TESFile* TESFile::GetMaster(const TESFile* this, uint index)`
     #[inline]
-    pub fn get_master(&self, index: u32) -> Option<&'static Self> { unsafe { function!(13946, (&Self, u32) -> Option<&'static Self>)(self, index) } }
+    pub fn get_master(&self, index: u32) -> Option<&'static Self> { unsafe { function!(13946, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), index) } }
     /// `TESFile::GetMasterCount`: number of masters
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 13950, rva 0x1cbd00.
     /// `uint TESFile::GetMasterCount(const TESFile* this)`
     #[inline]
-    pub fn get_master_count(&self) -> u32 { unsafe { function!(13950, (&Self) -> u32)(self) } }
+    pub fn get_master_count(&self) -> u32 { unsafe { function!(13950, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `TESFile::HasAllMasters`: whether every master is present in the files list
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 13959, rva 0x1cc4e0.
     /// `bool TESFile::HasAllMasters(const TESFile* this)`
     #[inline]
-    pub fn has_all_masters(&self) -> bool { unsafe { function!(13959, (&Self) -> bool)(self) } }
+    pub fn has_all_masters(&self) -> bool { unsafe { function!(13959, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `TESFile::IsLight`: ESL flag
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14002, rva 0x1ce420.
     /// `bool TESFile::IsLight(const TESFile* this)`
     #[inline]
-    pub fn is_light(&self) -> bool { unsafe { function!(14002, (&Self) -> bool)(self) } }
+    pub fn is_light(&self) -> bool { unsafe { function!(14002, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `TESFile::IsLoaded`: whether the file has a load index
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13964, rva 0x1cc700.
     /// `bool TESFile::IsLoaded(const TESFile* this)`
     #[inline]
-    pub fn is_loaded(&self) -> bool { unsafe { function!(13964, (&Self) -> bool)(self) } }
+    pub fn is_loaded(&self) -> bool { unsafe { function!(13964, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `TESFile::IsMaster`: ESM flag
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14001, rva 0x1ce3e0.
     /// `bool TESFile::IsMaster(const TESFile* this)`
     #[inline]
-    pub fn is_master(&self) -> bool { unsafe { function!(14001, (&Self) -> bool)(self) } }
+    pub fn is_master(&self) -> bool { unsafe { function!(14001, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `TESFile::ResolveFormID`: turns a file-relative form id into a runtime form id
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14003, rva 0x1ce440.
@@ -277,7 +277,7 @@ impl crate::TESFile {
     /// # Safety
     /// `formID` must point to what the engine expects.
     #[inline]
-    pub unsafe fn resolve_form_id(&self, formID: *mut u32) { unsafe { function!(14003, (&Self, *mut u32))(self, formID) } }
+    pub unsafe fn resolve_form_id(&self, formID: *mut u32) { unsafe { function!(14003, (*const Self, *mut u32))(core::ptr::from_ref(self), formID) } }
     /// `TESFile::ResolveMasters`: links master names to loaded files
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 13945, rva 0x1cbaf0.
@@ -286,19 +286,19 @@ impl crate::TESFile {
     /// # Safety
     /// `files` must point to what the engine expects.
     #[inline]
-    pub unsafe fn resolve_masters(&self, files: *mut crate::BSSimpleListNode) -> bool { unsafe { function!(13945, (&Self, *mut crate::BSSimpleListNode) -> bool)(self, files) } }
+    pub unsafe fn resolve_masters(&self, files: *mut crate::BSSimpleListNode) -> bool { unsafe { function!(13945, (*const Self, *mut crate::BSSimpleListNode) -> bool)(core::ptr::from_ref(self), files) } }
     /// `TESFile::SetActive`: marks a file selected for loading
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 14005, rva 0x1ce4e0.
     /// `void TESFile::SetActive(TESFile* this, bool active)`
     #[inline]
-    pub fn set_active(&self, active: bool) { unsafe { function!(14005, (&Self, bool))(self, active) } }
+    pub fn set_active(&self, active: bool) { unsafe { function!(14005, (*const Self, bool))(core::ptr::from_ref(self), active) } }
     /// `TESFile::SetCompileIndex`: sets the load index
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13962, rva 0x1cc6c0.
     /// `void TESFile::SetCompileIndex(TESFile* this, uchar index)`
     #[inline]
-    pub fn set_compile_index(&self, index: u8) { unsafe { function!(13962, (&Self, u8))(self, index) } }
+    pub fn set_compile_index(&self, index: u8) { unsafe { function!(13962, (*const Self, u8))(core::ptr::from_ref(self), index) } }
     /// `TESFile::ctor`: constructs a file object and reads its header
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 441548, rva 0x1c9b20.
@@ -307,7 +307,7 @@ impl crate::TESFile {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, path: *const c_char, name: *const c_char, bufferSize: i32, unused: u32, arg: *mut c_void) -> *mut Self { unsafe { function!(441548, (&Self, *const c_char, *const c_char, i32, u32, *mut c_void) -> *mut Self)(self, path, name, bufferSize, unused, arg) } }
+    pub unsafe fn ctor(&self, path: *const c_char, name: *const c_char, bufferSize: i32, unused: u32, arg: *mut c_void) -> *mut Self { unsafe { function!(441548, (*const Self, *const c_char, *const c_char, i32, u32, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), path, name, bufferSize, unused, arg) } }
 }
 
 impl crate::TESForm {
@@ -319,7 +319,7 @@ impl crate::TESForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn as_reference(&self) -> *mut crate::TESObjectREFR { unsafe { virtual_function!(self, 44, (&Self) -> *mut crate::TESObjectREFR)(self) } }
+    pub unsafe fn as_reference(&self) -> *mut crate::TESObjectREFR { unsafe { virtual_function!(self, 44, (*const Self) -> *mut crate::TESObjectREFR)(core::ptr::from_ref(self)) } }
     /// `TESForm::GetFormDetailedString`, vtable slot 22: debug description of the form
     ///
     /// Semantic, forms pass, high; called through the object's vtable.
@@ -328,19 +328,19 @@ impl crate::TESForm {
     /// # Safety
     /// `buf` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_form_detailed_string(&self, buf: *mut c_char, size: u32) { unsafe { virtual_function!(self, 22, (&Self, *mut c_char, u32))(self, buf, size) } }
+    pub unsafe fn get_form_detailed_string(&self, buf: *mut c_char, size: u32) { unsafe { virtual_function!(self, 22, (*const Self, *mut c_char, u32))(core::ptr::from_ref(self), buf, size) } }
     /// `TESForm::GetFormEditorID`, vtable slot 50: editor id of the form, empty unless the class keeps it
     ///
     /// Semantic, forms pass, high; called through the object's vtable.
     /// `const char* GetFormEditorID(const TESForm* this)`
     #[inline]
-    pub fn get_form_editor_id(&self) -> *const c_char { unsafe { virtual_function!(self, 50, (&Self) -> *const c_char)(self) } }
+    pub fn get_form_editor_id(&self) -> *const c_char { unsafe { virtual_function!(self, 50, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
     /// `TESForm::GetFormType`, vtable slot 21: the record type
     ///
     /// Semantic, forms pass, high; called through the object's vtable.
     /// `uchar GetFormType(const TESForm* this)`
     #[inline]
-    pub fn get_form_type(&self) -> u8 { unsafe { virtual_function!(self, 21, (&Self) -> u8)(self) } }
+    pub fn get_form_type(&self) -> u8 { unsafe { virtual_function!(self, 21, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `TESForm::GetLastFile`, vtable slot 20: the file that last defined the form
     ///
     /// Semantic, forms pass, medium; called through the object's vtable.
@@ -349,7 +349,7 @@ impl crate::TESForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_last_file(&self) -> *mut crate::TESFile { unsafe { virtual_function!(self, 20, (&Self) -> *mut crate::TESFile)(self) } }
+    pub unsafe fn get_last_file(&self) -> *mut crate::TESFile { unsafe { virtual_function!(self, 20, (*const Self) -> *mut crate::TESFile)(core::ptr::from_ref(self)) } }
     /// `TESForm::LoadGame`, vtable slot 15: restores the base form state
     ///
     /// Semantic, forms pass, medium; called through the object's vtable.
@@ -358,7 +358,7 @@ impl crate::TESForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn load_game(&self, buf: *mut c_void) { unsafe { virtual_function!(self, 15, (&Self, *mut c_void))(self, buf) } }
+    pub unsafe fn load_game(&self, buf: *mut c_void) { unsafe { virtual_function!(self, 15, (*const Self, *mut c_void))(core::ptr::from_ref(self), buf) } }
     /// `TESForm::PlayerKnows`, vtable slot 23: whether the player knows the form
     ///
     /// Semantic, forms pass, medium; called through the object's vtable.
@@ -367,7 +367,7 @@ impl crate::TESForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn player_knows(&self) -> bool { unsafe { virtual_function!(self, 23, (&Self) -> bool)(self) } }
+    pub unsafe fn player_knows(&self) -> bool { unsafe { virtual_function!(self, 23, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `TESForm::SaveGame`, vtable slot 14: serialises the base form state
     ///
     /// Semantic, forms pass, medium; called through the object's vtable.
@@ -376,7 +376,7 @@ impl crate::TESForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn save_game(&self, buf: *mut c_void) { unsafe { virtual_function!(self, 14, (&Self, *mut c_void))(self, buf) } }
+    pub unsafe fn save_game(&self, buf: *mut c_void) { unsafe { virtual_function!(self, 14, (*const Self, *mut c_void))(core::ptr::from_ref(self), buf) } }
     /// `TESForm::SetFormEditorID`, vtable slot 51: sets the editor id where the class keeps one
     ///
     /// Semantic, forms pass, high; called through the object's vtable.
@@ -385,13 +385,13 @@ impl crate::TESForm {
     /// # Safety
     /// `editorID` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_form_editor_id(&self, editorID: *const c_char) -> bool { unsafe { virtual_function!(self, 51, (&Self, *const c_char) -> bool)(self, editorID) } }
+    pub unsafe fn set_form_editor_id(&self, editorID: *const c_char) -> bool { unsafe { virtual_function!(self, 51, (*const Self, *const c_char) -> bool)(core::ptr::from_ref(self), editorID) } }
     /// `TESForm::SetFormID`, vtable slot 56: changes the form id and re-registers the form
     ///
     /// Semantic, forms pass, high; called through the object's vtable.
     /// `void SetFormID(TESForm* this, uint formID, bool updateFile)`
     #[inline]
-    pub fn set_form_id(&self, formID: u32, updateFile: bool) { unsafe { virtual_function!(self, 56, (&Self, u32, bool))(self, formID, updateFile) } }
+    pub fn set_form_id(&self, formID: u32, updateFile: bool) { unsafe { virtual_function!(self, 56, (*const Self, u32, bool))(core::ptr::from_ref(self), formID, updateFile) } }
     /// `TESForm::vdtor`, vtable slot 0: deleting destructor
     ///
     /// Semantic, forms pass, high; called through the object's vtable.
@@ -400,25 +400,25 @@ impl crate::TESForm {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u32) { unsafe { virtual_function!(self, 0, (&Self, u32))(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u32) { unsafe { virtual_function!(self, 0, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `TESForm::GetFile`: file the form came from; -1 for the last (winning) file
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14621, rva 0x1e5ae0.
     /// `TESFile* TESForm::GetFile(TESForm* this, int index)`
     #[inline]
-    pub fn get_file(&self, index: i32) -> Option<&'static crate::TESFile> { unsafe { function!(14621, (&Self, i32) -> Option<&'static crate::TESFile>)(self, index) } }
+    pub fn get_file(&self, index: i32) -> Option<&'static crate::TESFile> { unsafe { function!(14621, (*const Self, i32) -> Option<&'static crate::TESFile>)(core::ptr::from_ref(self), index) } }
     /// `TESForm::GetKeywordForm`: keyword component of a form, or null
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14258, rva 0x1d8a50.
     /// `BGSKeywordForm* TESForm::GetKeywordForm(TESForm* this)`
     #[inline]
-    pub fn get_keyword_form(&self) -> Option<&'static crate::BGSKeywordForm> { unsafe { function!(14258, (&Self) -> Option<&'static crate::BGSKeywordForm>)(self) } }
+    pub fn get_keyword_form(&self) -> Option<&'static crate::BGSKeywordForm> { unsafe { function!(14258, (*const Self) -> Option<&'static crate::BGSKeywordForm>)(core::ptr::from_ref(self)) } }
     /// `TESForm::RemoveFromFormMaps`: unregisters the form from the form id map
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14627, rva 0x1e5d60.
     /// `void TESForm::RemoveFromFormMaps(TESForm* this, bool force)`
     #[inline]
-    pub fn remove_from_form_maps(&self, force: bool) { unsafe { function!(14627, (&Self, bool))(self, force) } }
+    pub fn remove_from_form_maps(&self, force: bool) { unsafe { function!(14627, (*const Self, bool))(core::ptr::from_ref(self), force) } }
     /// `TESForm::SetFlagBit3`: sets form flag 0x8, whose meaning is open
     ///
     /// Semantic, forms pass, medium; ledger semantic evidence, name medium; id 14637, rva 0x1e60b0.
@@ -427,7 +427,7 @@ impl crate::TESForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_flag_bit3(&self, set: bool) { unsafe { function!(14637, (&Self, bool))(self, set) } }
+    pub unsafe fn set_flag_bit3(&self, set: bool) { unsafe { function!(14637, (*const Self, bool))(core::ptr::from_ref(self), set) } }
     /// `TESForm::UnregisterFormID`: removes the form from the maps for good
     ///
     /// Semantic, forms pass, medium; ledger runtime evidence, name medium; id 14642, rva 0x1e6260.
@@ -436,7 +436,7 @@ impl crate::TESForm {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn unregister_form_id(&self) { unsafe { function!(14642, (&Self))(self) } }
+    pub unsafe fn unregister_form_id(&self) { unsafe { function!(14642, (*const Self))(core::ptr::from_ref(self)) } }
     /// `TESForm::ctor`: base constructor of every form
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14593, rva 0x1e3020.
@@ -445,7 +445,7 @@ impl crate::TESForm {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14593, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14593, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `TESForm::sourceFiles` at +0x8: array of the files this form was read from; null for runtime-created forms
     ///
     /// Semantic field, forms pass, high; `None` while the pointer is null.
@@ -476,7 +476,7 @@ impl crate::TESFormIDMap {
     /// # Safety
     /// `formID`, `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn remove(&self, formID: *const u32, out: *mut *mut crate::TESForm) -> bool { unsafe { function!(14710, (&Self, *const u32, *mut *mut crate::TESForm) -> bool)(self, formID, out) } }
+    pub unsafe fn remove(&self, formID: *const u32, out: *mut *mut crate::TESForm) -> bool { unsafe { function!(14710, (*const Self, *const u32, *mut *mut crate::TESForm) -> bool)(core::ptr::from_ref(self), formID, out) } }
 }
 
 impl crate::TESFormIDMapEntry {
@@ -501,7 +501,7 @@ pub unsafe fn find_form_by_editor_id(editorID: *const c_char) -> *mut crate::TES
 /// Semantic, forms pass, high; ledger semantic evidence, name high; id 14618, rva 0x1e5910.
 /// `TESForm* FindFormByEditorID_BSFixedString(const BSFixedString* editorID)`
 #[inline]
-pub fn find_form_by_editor_id_bs_fixed_string(editorID: &crate::BSFixedString) -> Option<&'static crate::TESForm> { unsafe { function!(14618, (&crate::BSFixedString) -> Option<&'static crate::TESForm>)(editorID) } }
+pub fn find_form_by_editor_id_bs_fixed_string(editorID: &crate::BSFixedString) -> Option<&'static crate::TESForm> { unsafe { function!(14618, (*const crate::BSFixedString) -> Option<&'static crate::TESForm>)(core::ptr::from_ref(editorID)) } }
 /// `FindFormByID`: returns the form with that id or null
 ///
 /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14617, rva 0x1e5860.

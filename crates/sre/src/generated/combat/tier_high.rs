@@ -10,7 +10,7 @@ impl crate::CombatAimController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44350, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44350, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatAimControllerBase {
@@ -20,7 +20,7 @@ impl crate::CombatAimControllerBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44347, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44347, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatArea {
@@ -30,7 +30,7 @@ impl crate::CombatArea {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44508, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44508, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatBehaviorTree {
@@ -40,7 +40,7 @@ impl crate::CombatBehaviorTree {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(47514, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(47514, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatBehaviorTreeNode {
@@ -50,14 +50,14 @@ impl crate::CombatBehaviorTreeNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(47545, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(47545, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `CombatBehaviorTreeNode::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47546, rva 0x875320).
     /// `undefined dtor(CombatBehaviorTreeNode * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(47546, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(47546, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatBlackboardKeyBase {
@@ -67,7 +67,7 @@ impl crate::CombatBlackboardKeyBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44513, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44513, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatCoverSearch {
@@ -77,7 +77,7 @@ impl crate::CombatCoverSearch {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(44594, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(44594, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatCoverSearchResult {
@@ -87,7 +87,7 @@ impl crate::CombatCoverSearchResult {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(44603, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(44603, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatDisableActionController {
@@ -97,7 +97,7 @@ impl crate::CombatDisableActionController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(49263, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(49263, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatInventoryItem {
@@ -107,7 +107,7 @@ impl crate::CombatInventoryItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(44986, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(44986, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatMagicCaster {
@@ -117,7 +117,7 @@ impl crate::CombatMagicCaster {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(45331, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(45331, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatMagicCasterReanimate {
@@ -127,7 +127,7 @@ impl crate::CombatMagicCasterReanimate {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(45428, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(45428, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatPathBuilderStandard {
@@ -137,7 +137,7 @@ impl crate::CombatPathBuilderStandard {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50072, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50072, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatPathingDebugData {
@@ -147,7 +147,7 @@ impl crate::CombatPathingDebugData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50181, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50181, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatPathingRequest {
@@ -157,7 +157,7 @@ impl crate::CombatPathingRequest {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50153, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50153, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatTargetLocationSearchResult {
@@ -167,7 +167,7 @@ impl crate::CombatTargetLocationSearchResult {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(47026, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(47026, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CombatTargetSelector {
@@ -177,6 +177,6 @@ impl crate::CombatTargetSelector {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(47185, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(47185, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 

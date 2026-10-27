@@ -17,14 +17,14 @@ impl crate::BGSLoadGameBuffer {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(13838, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(13838, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BGSLoadGameBuffer::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 26306, rva 0x4197a0).
     /// `undefined dtor(BGSLoadGameBuffer * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(26306, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(26306, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BGSSaveGameBuffer {
@@ -34,7 +34,7 @@ impl crate::BGSSaveGameBuffer {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35626, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35626, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSSaveLoadManager {
@@ -44,7 +44,7 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_save_data_event(&self, param_1: *mut c_void, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35773, (&Self, *mut c_void, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_save_data_event(&self, param_1: *mut c_void, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35773, (*const Self, *mut c_void, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BGSSaveLoadManager::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 442582, rva 0x629c20).
     /// `char ctor_sub0(undefined8 param_1, char * param_2, longlong * param_3)`
     ///
@@ -124,7 +124,7 @@ impl crate::BGSSaveLoadManager__Thread {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn run(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35790, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn run(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35790, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::_anon_14F04957__Win32FileType {
@@ -134,21 +134,21 @@ impl crate::_anon_14F04957__Win32FileType {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_size(&self) -> u32 { unsafe { function!(109368, (&Self) -> u32)(self) } }
+    pub unsafe fn get_size(&self) -> u32 { unsafe { function!(109368, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `_anon_14F04957::Win32FileType::Open` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 109370, rva 0x159d770).
     /// `bool Open(Win32FileType * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn open(&self) -> u8 { unsafe { function!(109370, (&Self) -> u8)(self) } }
+    pub unsafe fn open(&self) -> u8 { unsafe { function!(109370, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `_anon_14F04957::Win32FileType::Seek` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 109375, rva 0x159d8c0).
     /// `int Seek(Win32FileType * this, int param_1, int param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn seek(&self, param_1: i32, param_2: i32) -> i32 { unsafe { function!(109375, (&Self, i32, i32) -> i32)(self, param_1, param_2) } }
+    pub unsafe fn seek(&self, param_1: i32, param_2: i32) -> i32 { unsafe { function!(109375, (*const Self, i32, i32) -> i32)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `_anon_14F04957::Win32FileType::vfunc_18_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 109376, rva 0x159d940).
     /// `bool vfunc_18_sub0(longlong param_1, longlong param_2)`
     ///

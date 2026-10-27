@@ -10,7 +10,7 @@ impl crate::Console {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(524000, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(524000, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ContainerMenu {
@@ -20,7 +20,7 @@ impl crate::ContainerMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51124, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51124, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::CursorMenu {
@@ -30,14 +30,14 @@ impl crate::CursorMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(51501, (&Self) -> u64)(self) } }
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(51501, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `CursorMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51495, rva 0x929f80).
     /// `CursorMenu * ctor(CursorMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51495, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51495, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::DialogueMenu {
@@ -47,21 +47,21 @@ impl crate::DialogueMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(51518, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(51518, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `DialogueMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51504, rva 0x92a450).
     /// `DialogueMenu * ctor(DialogueMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51504, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51504, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `DialogueMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 51505, rva 0x92a530).
     /// `undefined ctor(DialogueMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(51505, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(51505, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::GFxFunctionHandler {
@@ -71,7 +71,7 @@ impl crate::GFxFunctionHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(418782, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(418782, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::HUDMenu {
@@ -81,14 +81,14 @@ impl crate::HUDMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_remote_gamepad_event_vdtor(&self) -> u64 { unsafe { function!(51708, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_bs_remote_gamepad_event_vdtor(&self) -> u64 { unsafe { function!(51708, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `HUDMenu::BSTEventSink_UserEventEnabledEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 51707, rva 0x93bbb8).
     /// `undefined BSTEventSink_UserEventEnabledEvent_vdtor(HUDMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_user_event_enabled_event_vdtor(&self) -> u64 { unsafe { function!(51707, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_user_event_enabled_event_vdtor(&self) -> u64 { unsafe { function!(51707, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::HUDObject {
@@ -98,7 +98,7 @@ impl crate::HUDObject {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(51703, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(51703, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IMenu {
@@ -108,14 +108,14 @@ impl crate::IMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(82304, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(82304, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `IMenu::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 82305, rva 0x116ed80).
     /// `undefined dtor(IMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(82305, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(82305, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IMessageBoxCallback {
@@ -125,7 +125,7 @@ impl crate::IMessageBoxCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(418713, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(418713, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IUIMessageData {
@@ -135,7 +135,7 @@ impl crate::IUIMessageData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(33576, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(33576, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::InventoryMenu {
@@ -145,7 +145,7 @@ impl crate::InventoryMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51846, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51846, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::LoadingMenu {
@@ -155,7 +155,7 @@ impl crate::LoadingMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51922, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51922, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MagicMenu {
@@ -165,7 +165,7 @@ impl crate::MagicMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52026, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52026, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MainMenu {
@@ -175,21 +175,21 @@ impl crate::MainMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_save_data_event_vdtor(&self) -> u64 { unsafe { function!(52175, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_bs_save_data_event_vdtor(&self) -> u64 { unsafe { function!(52175, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MainMenu::BSTEventSink_BSSystemEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 52174, rva 0x95e344).
     /// `undefined BSTEventSink_BSSystemEvent_vdtor(MainMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(52174, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(52174, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MainMenu::GFxFunctionHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 52176, rva 0x95e35c).
     /// `undefined GFxFunctionHandler_vdtor(MainMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(52176, (&Self) -> u64)(self) } }
+    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(52176, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MainMenu::OpenCreationClubMenu` (decompiler signature, tier high; ledger decompiler evidence, name high; id 442713, rva 0x959b90).
     /// `undefined OpenCreationClubMenu(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -206,14 +206,14 @@ impl crate::MenuControls {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self) -> u64 { unsafe { function!(52232, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self) -> u64 { unsafe { function!(52232, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MenuControls::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52198, rva 0x95ed10).
     /// `MenuControls * ctor(MenuControls * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52198, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52198, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MenuEventHandler {
@@ -223,7 +223,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(33577, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(33577, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MessageBoxData {
@@ -233,7 +233,7 @@ impl crate::MessageBoxData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(418922, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(418922, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MessageBoxMenu {
@@ -243,7 +243,7 @@ impl crate::MessageBoxMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52267, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52267, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::StandardItemData {
@@ -253,7 +253,7 @@ impl crate::StandardItemData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(50998, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(50998, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TweenMenu {
@@ -263,6 +263,6 @@ impl crate::TweenMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52703, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52703, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 

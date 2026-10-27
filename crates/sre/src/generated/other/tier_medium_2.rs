@@ -3,6 +3,13 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `DetachResultSetField90_10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447576, rva 0x135bc10).
+/// `undefined8 * DetachResultSetField90_10(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_10(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447576, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
 /// `DetachResultSetField90_11` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447968, rva 0x135cdf0).
 /// `undefined8 * DetachResultSetField90_11(longlong param_1, undefined8 * param_2, undefined8 param_3)`
 ///
@@ -14143,10 +14150,3 @@ pub unsafe fn open_slot_at_index_in_scrap_array_size8(param_1: i64, param_2: u32
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn open_slot_at_stride10(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(47478, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenSlotAtStride18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 47167, rva 0x861570).
-/// `undefined OpenSlotAtStride18(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_slot_at_stride18(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(47167, (*mut i64, u32) -> u64)(param_1, param_2) } }

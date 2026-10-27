@@ -10,14 +10,14 @@ impl crate::BGSLoadGameBuffer {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(35993, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(35993, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `BGSLoadGameBuffer::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 35994, rva 0x637850).
     /// `undefined dtor(BGSLoadGameBuffer * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(35994, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(35994, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BGSSaveFormBuffer {
@@ -27,7 +27,7 @@ impl crate::BGSSaveFormBuffer {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(36035, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(36035, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BGSSaveGameBuffer {
@@ -37,7 +37,7 @@ impl crate::BGSSaveGameBuffer {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(36043, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(36043, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BGSSaveLoadManager {
@@ -47,14 +47,14 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(35836, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(35836, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BGSSaveLoadManager::BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 35835, rva 0x62dc84).
     /// `undefined BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vdtor(BGSSaveLoadManager * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_race_sex_menu_event_name_changed_event_vdtor(&self) -> u64 { unsafe { function!(35835, (&Self) -> u64)(self) } }
+    pub unsafe fn bst_event_sink_race_sex_menu_event_name_changed_event_vdtor(&self) -> u64 { unsafe { function!(35835, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_14F04957__Win32FileType {
@@ -64,7 +64,7 @@ impl crate::_anon_14F04957__Win32FileType {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(109362, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(109362, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::bgs__saveload__Request {
@@ -74,6 +74,6 @@ impl crate::bgs__saveload__Request {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(35920, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(35920, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 

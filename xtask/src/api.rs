@@ -386,14 +386,24 @@ fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &st
     let mut args: Vec<String> = Vec::new();
     if shape == Shape::Method {
         decl.push("&self".into());
-        types.push("&Self".into());
-        args.push("self".into());
+        types.push("*const Self".into());
+        args.push("core::ptr::from_ref(self)".into());
     }
+    // References cross as raw pointers: the engine writes through `this` and other objects it is
+    // handed, which a reference argument would tell the compiler it cannot.
     for (p, name) in rest.iter().zip(&names) {
         let ty = p.ty.render(safe, false, owner, ctx);
         decl.push(format!("{name}: {ty}"));
-        types.push(ty);
-        args.push(name.clone());
+        match ty.strip_prefix('&') {
+            Some(target) => {
+                types.push(format!("*const {target}"));
+                args.push(format!("core::ptr::from_ref({name})"));
+            }
+            None => {
+                types.push(ty);
+                args.push(name.clone());
+            }
+        }
     }
     let result = match sig.ret.render(safe, true, owner, ctx) {
         r if r.is_empty() => r,

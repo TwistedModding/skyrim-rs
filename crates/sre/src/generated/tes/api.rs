@@ -809,7 +809,7 @@ impl crate::TESImageSpaceModifiableForm {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20714, rva 0x31a0b0.
     /// `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
     #[inline]
-    pub fn tes_image_space_modifiable_form_destroy(&self, flags: u32) -> Option<&'static crate::BGSCameraShot> { unsafe { function!(20714, (&Self, u32) -> Option<&'static crate::BGSCameraShot>)(self, flags) } }
+    pub fn tes_image_space_modifiable_form_destroy(&self, flags: u32) -> Option<&'static crate::BGSCameraShot> { unsafe { function!(20714, (*const Self, u32) -> Option<&'static crate::BGSCameraShot>)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::TESImageSpaceModifier {
@@ -821,7 +821,7 @@ impl crate::TESImageSpaceModifier {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn apply_cross_fade(&self, seconds: f32) { unsafe { function!(18575, (&Self, f32))(self, seconds) } }
+    pub unsafe fn apply_cross_fade(&self, seconds: f32) { unsafe { function!(18575, (*const Self, f32))(core::ptr::from_ref(self), seconds) } }
 }
 
 impl crate::TESLevCharacter {
@@ -866,7 +866,7 @@ impl crate::TESModel {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20713, rva 0x31a0a4.
     /// `BGSCameraShot* (TESModel* this, u32 flags)`
     #[inline]
-    pub fn tes_model_destroy(&self, flags: u32) -> Option<&'static crate::BGSCameraShot> { unsafe { function!(20713, (&Self, u32) -> Option<&'static crate::BGSCameraShot>)(self, flags) } }
+    pub fn tes_model_destroy(&self, flags: u32) -> Option<&'static crate::BGSCameraShot> { unsafe { function!(20713, (*const Self, u32) -> Option<&'static crate::BGSCameraShot>)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::TESObjectACTI {
@@ -1091,7 +1091,7 @@ impl crate::TESObjectCELL {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19165, rva 0x2ca230.
     /// `void (TESObjectCELL* this, TESObjectREFR* ref, bool forceRoomSearch, bool skipOwnMultiBound)`
     #[inline]
-    pub fn attach_reference3_d(&self, ref_: &crate::TESObjectREFR, forceRoomSearch: bool, skipOwnMultiBound: bool) { unsafe { function!(19165, (&Self, &crate::TESObjectREFR, bool, bool))(self, ref_, forceRoomSearch, skipOwnMultiBound) } }
+    pub fn attach_reference3_d(&self, ref_: &crate::TESObjectREFR, forceRoomSearch: bool, skipOwnMultiBound: bool) { unsafe { function!(19165, (*const Self, *const crate::TESObjectREFR, bool, bool))(core::ptr::from_ref(self), core::ptr::from_ref(ref_), forceRoomSearch, skipOwnMultiBound) } }
 }
 
 impl crate::TESObjectCONT {
@@ -1565,13 +1565,13 @@ impl crate::TESWorldSpace {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20468, rva 0x30dad0.
     /// `TESClimate* (TESWorldSpace* this)`
     #[inline]
-    pub fn get_climate(&self) -> Option<&'static crate::TESClimate> { unsafe { function!(20468, (&Self) -> Option<&'static crate::TESClimate>)(self) } }
+    pub fn get_climate(&self) -> Option<&'static crate::TESClimate> { unsafe { function!(20468, (*const Self) -> Option<&'static crate::TESClimate>)(core::ptr::from_ref(self)) } }
     /// `TESWorldSpace::IsNoGrass`: bit 7 of the worldspace flags byte +0xa0; when set the player's cell change disables grass drawing
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20482, rva 0x30dde0.
     /// `bool (TESWorldSpace* this)`
     #[inline]
-    pub fn is_no_grass(&self) -> bool { unsafe { function!(20482, (&Self) -> bool)(self) } }
+    pub fn is_no_grass(&self) -> bool { unsafe { function!(20482, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
 }
 
 /// `g_TESAudio_ScriptedMusicState` at 0x3211aa0, id 403008 (layout_inference, medium)

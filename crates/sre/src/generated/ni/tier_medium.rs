@@ -10,7 +10,7 @@ impl crate::NiBSplineFloatInterpolator {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(73503, (&Self, f32) -> *mut Self)(self, param_1) } }
+    pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(73503, (*const Self, f32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::NiFloatInterpolator {
@@ -20,7 +20,7 @@ impl crate::NiFloatInterpolator {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(72688, (&Self, f32) -> *mut Self)(self, param_1) } }
+    pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(72688, (*const Self, f32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::NiStream {
@@ -30,6 +30,6 @@ impl crate::NiStream {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_from_path(&self, param_2: *mut c_char, param_3: *mut i64, param_4: u64) -> u8 { unsafe { function!(75949, (&Self, *mut c_char, *mut i64, u64) -> u8)(self, param_2, param_3, param_4) } }
+    pub unsafe fn load_from_path(&self, param_2: *mut c_char, param_3: *mut i64, param_4: u64) -> u8 { unsafe { function!(75949, (*const Self, *mut c_char, *mut i64, u64) -> u8)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
 }
 

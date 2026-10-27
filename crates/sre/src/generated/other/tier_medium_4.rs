@@ -3,6 +3,13 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ResizeScrapArrayOfDwords` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 71507, rva 0xf15200).
+/// `ulonglong ResizeScrapArrayOfDwords(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_scrap_array_of_dwords(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(71507, (*mut i64, u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ResizeScrapArrayOfRecord28` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 523762, rva 0x5adbf0).
 /// `char ResizeScrapArrayOfRecord28(longlong * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 ///

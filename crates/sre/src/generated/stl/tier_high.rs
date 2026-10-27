@@ -10,7 +10,7 @@ impl crate::std___Ref_count_obj_MarketplaceEvent__make_EventHandlerEnabler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(440677, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(440677, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::std__basic_filebuf_char_std__char_traits_char__ {
@@ -20,7 +20,7 @@ impl crate::std__basic_filebuf_char_std__char_traits_char__ {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(442829, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(442829, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::std__basic_ifstream_char_std__char_traits_char__ {
@@ -30,7 +30,7 @@ impl crate::std__basic_ifstream_char_std__char_traits_char__ {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt_b0(&self) -> u64 { unsafe { function!(442838, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt_b0(&self) -> u64 { unsafe { function!(442838, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::std__basic_ostringstream_char_std__char_traits_char_std__allocator_char__ {
@@ -40,7 +40,7 @@ impl crate::std__basic_ostringstream_char_std__char_traits_char_std__allocator_c
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt88(&self) -> u64 { unsafe { function!(442839, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt88(&self) -> u64 { unsafe { function!(442839, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::std__exception {
@@ -50,6 +50,6 @@ impl crate::std__exception {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(442988, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(442988, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 

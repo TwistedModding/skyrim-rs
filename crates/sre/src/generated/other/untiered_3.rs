@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ComputeItemScoreWithEquippedBonus` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44863, rva 0x824850).
+/// `float ComputeItemScoreWithEquippedBonus(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_item_score_with_equipped_bonus(param_1: i64, param_2: *mut i64) -> f32 { unsafe { function!(44863, (i64, *mut i64) -> f32)(param_1, param_2) } }
+/// `ComputeItemScoreWithRangeBonus` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44864, rva 0x8248d0).
+/// `float ComputeItemScoreWithRangeBonus(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_item_score_with_range_bonus(param_1: i64, param_2: *mut i64) -> f32 { unsafe { function!(44864, (i64, *mut i64) -> f32)(param_1, param_2) } }
+/// `ComputeItemStatDeltaVsEquipped` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51827, rva 0x941680).
+/// `undefined ComputeItemStatDeltaVsEquipped(longlong * param_1, longlong * param_2, float * param_3, int * param_4, char param_5, char param_6)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_item_stat_delta_vs_equipped(param_1: *mut i64, param_2: *mut i64, param_3: *mut f32, param_4: *mut i32, param_5: c_char, param_6: c_char) -> u64 { unsafe { function!(51827, (*mut i64, *mut i64, *mut f32, *mut i32, c_char, c_char) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
+/// `ComputeJailDays` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40662, rva 0x75ac10).
+/// `ulonglong ComputeJailDays(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_jail_days(param_1: *mut i64) -> u64 { unsafe { function!(40662, (*mut i64) -> u64)(param_1) } }
 /// `ComputeLandNormalAtPoint` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 18774, rva 0x2b1b70).
 /// `undefined8 ComputeLandNormalAtPoint(longlong param_1, longlong param_2, float * param_3, float * param_4)`
 ///
@@ -12428,31 +12456,3 @@ pub unsafe fn deleting_destructor_vtable243716_2(param_1: *mut u64, param_2: u32
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn deleting_destructor_vtable243716_3(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> *mut c_void { unsafe { function!(86149, (*mut c_void, u64, u64, u64) -> *mut c_void)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDestructorVtable243716_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86152, rva 0xdb4c30).
-/// `undefined8 * DeletingDestructorVtable243716_4(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_destructor_vtable243716_4(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(86152, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDtor98` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84381, rva 0xd6b310).
-/// `undefined8 * DeletingDtor98(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor98(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(84381, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDtorD8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84379, rva 0xd6b220).
-/// `undefined8 * DeletingDtorD8(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_d8(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(84379, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDtorD8_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84382, rva 0xd6b370).
-/// `undefined8 * DeletingDtorD8_2(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_d8_2(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(84382, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }

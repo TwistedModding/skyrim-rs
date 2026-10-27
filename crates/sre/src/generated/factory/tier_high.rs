@@ -10,7 +10,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindA
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(48199, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(48199, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPoli_a434439f14e8 {
@@ -20,21 +20,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindC
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_cover_comb_6400c448eac2(&self) -> u64 { unsafe { function!(49798, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_cover_comb_6400c448eac2(&self) -> u64 { unsafe { function!(49798, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49859, rva 0x8d6380).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * ctor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(49859, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(49859, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 49799, rva 0x8d3004).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(49799, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(49799, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearch_66d976d86545 {
@@ -44,14 +44,14 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindH
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_hide_cover__5b642284f25e(&self) -> u64 { unsafe { function!(48522, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_hide_cover__5b642284f25e(&self) -> u64 { unsafe { function!(48522, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 48523, rva 0x89e944).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(48523, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(48523, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingS_490a9d51f8c9 {
@@ -61,21 +61,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_target_loca_4e4b76957c58(&self) -> u64 { unsafe { function!(47102, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_target_loca_4e4b76957c58(&self) -> u64 { unsafe { function!(47102, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationRef>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47120, rva 0x860230).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationRef> * ctor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationRef> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(47120, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(47120, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationRef>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 47103, rva 0x8582d0).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationRef> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(47103, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(47103, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicySta_6062d1a3211b {
@@ -85,14 +85,14 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flee_combat_pat_8250c6461c28(&self) -> u64 { unsafe { function!(48524, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flee_combat_pat_8250c6461c28(&self) -> u64 { unsafe { function!(48524, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 48525, rva 0x89e95c).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(48525, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(48525, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicy_f4d3b56a4a35 {
@@ -102,21 +102,21 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_retreat_combat_4d5e274434b4(&self) -> u64 { unsafe { function!(50540, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_retreat_combat_4d5e274434b4(&self) -> u64 { unsafe { function!(50540, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50542, rva 0x8ee790).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * ctor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50542, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50542, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 50541, rva 0x8e8bcc).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(50541, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(50541, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchP_8f247c02bb4b {
@@ -126,14 +126,14 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_search_wander_c_5a7936a74b08(&self) -> u64 { unsafe { function!(49595, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_search_wander_c_5a7936a74b08(&self) -> u64 { unsafe { function!(49595, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 49596, rva 0x8cc570).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(49596, (&Self) -> u64)(self) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(49596, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteExplosionFactory_ChainExplosion_1 {
@@ -143,7 +143,7 @@ impl crate::ConcreteExplosionFactory_ChainExplosion_1 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(36424, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(36424, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_AlchemyItem_46 {
@@ -153,7 +153,7 @@ impl crate::ConcreteFormFactory_AlchemyItem_46 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(10849, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(10849, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSAcousticSpace_16 {
@@ -163,7 +163,7 @@ impl crate::ConcreteFormFactory_BGSAcousticSpace_16 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20626, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20626, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSAction_6 {
@@ -173,7 +173,7 @@ impl crate::ConcreteFormFactory_BGSAction_6 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23423, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23423, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSAddonNode_94 {
@@ -183,7 +183,7 @@ impl crate::ConcreteFormFactory_BGSAddonNode_94 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16833, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16833, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSApparatus_33 {
@@ -193,7 +193,7 @@ impl crate::ConcreteFormFactory_BGSApparatus_33 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16849, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16849, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSArtObject_125 {
@@ -203,7 +203,7 @@ impl crate::ConcreteFormFactory_BGSArtObject_125 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16886, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16886, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSAssociationType_123 {
@@ -213,7 +213,7 @@ impl crate::ConcreteFormFactory_BGSAssociationType_123 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23438, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23438, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSBodyPartData_93 {
@@ -223,7 +223,7 @@ impl crate::ConcreteFormFactory_BGSBodyPartData_93 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23485, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23485, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSCameraPath_97 {
@@ -233,7 +233,7 @@ impl crate::ConcreteFormFactory_BGSCameraPath_97 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20670, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20670, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSCameraShot_96 {
@@ -243,7 +243,7 @@ impl crate::ConcreteFormFactory_BGSCameraShot_96 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20712, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20712, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSCollisionLayer_132 {
@@ -253,7 +253,7 @@ impl crate::ConcreteFormFactory_BGSCollisionLayer_132 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20737, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20737, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSColorForm_133 {
@@ -263,7 +263,7 @@ impl crate::ConcreteFormFactory_BGSColorForm_133 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20761, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20761, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSConstructibleObject_49 {
@@ -273,7 +273,7 @@ impl crate::ConcreteFormFactory_BGSConstructibleObject_49 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16922, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16922, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSDebris_88 {
@@ -283,7 +283,7 @@ impl crate::ConcreteFormFactory_BGSDebris_88 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16956, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16956, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSDialogueBranch_115 {
@@ -293,7 +293,7 @@ impl crate::ConcreteFormFactory_BGSDialogueBranch_115 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23524, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23524, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSDualCastData_129 {
@@ -303,7 +303,7 @@ impl crate::ConcreteFormFactory_BGSDualCastData_129 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(10953, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(10953, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSEncounterZone_103 {
@@ -313,7 +313,7 @@ impl crate::ConcreteFormFactory_BGSEncounterZone_103 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18210, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18210, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSEquipSlot_120 {
@@ -323,7 +323,7 @@ impl crate::ConcreteFormFactory_BGSEquipSlot_120 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23612, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23612, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSExplosion_87 {
@@ -333,7 +333,7 @@ impl crate::ConcreteFormFactory_BGSExplosion_87 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17000, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17000, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSFootstep_110 {
@@ -343,7 +343,7 @@ impl crate::ConcreteFormFactory_BGSFootstep_110 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20800, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20800, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSFootstepSet_111 {
@@ -353,7 +353,7 @@ impl crate::ConcreteFormFactory_BGSFootstepSet_111 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20819, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20819, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSHazard_51 {
@@ -363,7 +363,7 @@ impl crate::ConcreteFormFactory_BGSHazard_51 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17032, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17032, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSHeadPart_12 {
@@ -373,7 +373,7 @@ impl crate::ConcreteFormFactory_BGSHeadPart_12 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23643, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23643, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSIdleMarker_47 {
@@ -383,7 +383,7 @@ impl crate::ConcreteFormFactory_BGSIdleMarker_47 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23676, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23676, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSImpactData_100 {
@@ -393,7 +393,7 @@ impl crate::ConcreteFormFactory_BGSImpactData_100 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20843, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20843, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSImpactDataSet_101 {
@@ -403,7 +403,7 @@ impl crate::ConcreteFormFactory_BGSImpactDataSet_101 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20872, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20872, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSKeyword_4 {
@@ -413,7 +413,7 @@ impl crate::ConcreteFormFactory_BGSKeyword_4 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23699, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23699, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSLensFlare_135 {
@@ -423,7 +423,7 @@ impl crate::ConcreteFormFactory_BGSLensFlare_135 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17052, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17052, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSLightingTemplate_108 {
@@ -433,7 +433,7 @@ impl crate::ConcreteFormFactory_BGSLightingTemplate_108 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18309, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18309, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSListForm_91 {
@@ -443,7 +443,7 @@ impl crate::ConcreteFormFactory_BGSListForm_91 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20921, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20921, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSLocation_104 {
@@ -453,7 +453,7 @@ impl crate::ConcreteFormFactory_BGSLocation_104 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18415, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18415, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSLocationRefType_5 {
@@ -463,7 +463,7 @@ impl crate::ConcreteFormFactory_BGSLocationRefType_5 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18466, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18466, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSMaterialObject_126 {
@@ -473,7 +473,7 @@ impl crate::ConcreteFormFactory_BGSMaterialObject_126 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20945, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20945, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSMaterialType_99 {
@@ -483,7 +483,7 @@ impl crate::ConcreteFormFactory_BGSMaterialType_99 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20976, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20976, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSMenuIcon_8 {
@@ -493,7 +493,7 @@ impl crate::ConcreteFormFactory_BGSMenuIcon_8 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20991, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20991, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSMessage_105 {
@@ -503,7 +503,7 @@ impl crate::ConcreteFormFactory_BGSMessage_105 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21023, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21023, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSMovableStatic_36 {
@@ -513,7 +513,7 @@ impl crate::ConcreteFormFactory_BGSMovableStatic_36 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17092, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17092, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSMovementType_127 {
@@ -523,7 +523,7 @@ impl crate::ConcreteFormFactory_BGSMovementType_127 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23732, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23732, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSMusicTrackFormWrapper_116 {
@@ -533,7 +533,7 @@ impl crate::ConcreteFormFactory_BGSMusicTrackFormWrapper_116 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21126, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21126, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSMusicType_109 {
@@ -543,7 +543,7 @@ impl crate::ConcreteFormFactory_BGSMusicType_109 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21163, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21163, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSNote_48 {
@@ -553,7 +553,7 @@ impl crate::ConcreteFormFactory_BGSNote_48 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23768, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23768, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSOutfit_124 {
@@ -563,7 +563,7 @@ impl crate::ConcreteFormFactory_BGSOutfit_124 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17115, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17115, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSPerk_92 {
@@ -573,7 +573,7 @@ impl crate::ConcreteFormFactory_BGSPerk_92 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23839, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23839, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSProjectile_50 {
@@ -583,7 +583,7 @@ impl crate::ConcreteFormFactory_BGSProjectile_50 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17148, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17148, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSRagdoll_106 {
@@ -593,7 +593,7 @@ impl crate::ConcreteFormFactory_BGSRagdoll_106 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23990, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23990, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSReferenceEffect_57 {
@@ -603,7 +603,7 @@ impl crate::ConcreteFormFactory_BGSReferenceEffect_57 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18484, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18484, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSRelationship_121 {
@@ -613,7 +613,7 @@ impl crate::ConcreteFormFactory_BGSRelationship_121 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24089, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24089, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSReverbParameters_134 {
@@ -623,7 +623,7 @@ impl crate::ConcreteFormFactory_BGSReverbParameters_134 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21201, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21201, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSScene_122 {
@@ -633,7 +633,7 @@ impl crate::ConcreteFormFactory_BGSScene_122 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24183, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24183, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSShaderParticleGeometryData_56 {
@@ -643,7 +643,7 @@ impl crate::ConcreteFormFactory_BGSShaderParticleGeometryData_56 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18505, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18505, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSSoundCategory_130 {
@@ -653,7 +653,7 @@ impl crate::ConcreteFormFactory_BGSSoundCategory_130 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21229, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21229, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSSoundDescriptorForm_128 {
@@ -663,7 +663,7 @@ impl crate::ConcreteFormFactory_BGSSoundDescriptorForm_128 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21263, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21263, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSSoundOutput_131 {
@@ -673,7 +673,7 @@ impl crate::ConcreteFormFactory_BGSSoundOutput_131 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21297, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21297, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSStaticCollection_35 {
@@ -683,7 +683,7 @@ impl crate::ConcreteFormFactory_BGSStaticCollection_35 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17167, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17167, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSStoryManagerBranchNode_112 {
@@ -693,7 +693,7 @@ impl crate::ConcreteFormFactory_BGSStoryManagerBranchNode_112 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(32402, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(32402, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSStoryManagerEventNode_114 {
@@ -703,7 +703,7 @@ impl crate::ConcreteFormFactory_BGSStoryManagerEventNode_114 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(32421, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(32421, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSStoryManagerQuestNode_113 {
@@ -713,7 +713,7 @@ impl crate::ConcreteFormFactory_BGSStoryManagerQuestNode_113 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(32468, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(32468, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSTalkingActivator_25 {
@@ -723,7 +723,7 @@ impl crate::ConcreteFormFactory_BGSTalkingActivator_25 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17189, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17189, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSTextureSet_7 {
@@ -733,7 +733,7 @@ impl crate::ConcreteFormFactory_BGSTextureSet_7 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21369, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21369, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSVoiceType_98 {
@@ -743,7 +743,7 @@ impl crate::ConcreteFormFactory_BGSVoiceType_98 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24343, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24343, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_BGSVolumetricLighting_137 {
@@ -753,7 +753,7 @@ impl crate::ConcreteFormFactory_BGSVolumetricLighting_137 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17077, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17077, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_EffectSetting_18 {
@@ -763,7 +763,7 @@ impl crate::ConcreteFormFactory_EffectSetting_18 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11124, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11124, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_EnchantmentItem_21 {
@@ -773,7 +773,7 @@ impl crate::ConcreteFormFactory_EnchantmentItem_21 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11198, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11198, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_IngredientItem_30 {
@@ -783,7 +783,7 @@ impl crate::ConcreteFormFactory_IngredientItem_30 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11255, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11255, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_NavMesh_73 {
@@ -793,7 +793,7 @@ impl crate::ConcreteFormFactory_NavMesh_73 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30279, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30279, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_Script_19 {
@@ -803,7 +803,7 @@ impl crate::ConcreteFormFactory_Script_19 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21932, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21932, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_ScrollItem_23 {
@@ -813,7 +813,7 @@ impl crate::ConcreteFormFactory_ScrollItem_23 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11453, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11453, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_SpellItem_22 {
@@ -823,7 +823,7 @@ impl crate::ConcreteFormFactory_SpellItem_22 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11505, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11505, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESAmmo_42 {
@@ -833,7 +833,7 @@ impl crate::ConcreteFormFactory_TESAmmo_42 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17241, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17241, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESClass_10 {
@@ -843,7 +843,7 @@ impl crate::ConcreteFormFactory_TESClass_10 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24459, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24459, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESClimate_55 {
@@ -853,7 +853,7 @@ impl crate::ConcreteFormFactory_TESClimate_55 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18619, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18619, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESCombatStyle_80 {
@@ -863,7 +863,7 @@ impl crate::ConcreteFormFactory_TESCombatStyle_80 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17306, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17306, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESEffectShader_85 {
@@ -873,7 +873,7 @@ impl crate::ConcreteFormFactory_TESEffectShader_85 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17345, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17345, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESEyes_13 {
@@ -883,7 +883,7 @@ impl crate::ConcreteFormFactory_TESEyes_13 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24477, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24477, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESFaction_11 {
@@ -893,7 +893,7 @@ impl crate::ConcreteFormFactory_TESFaction_11 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24545, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24545, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESFlora_39 {
@@ -903,7 +903,7 @@ impl crate::ConcreteFormFactory_TESFlora_39 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17372, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17372, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESFurniture_40 {
@@ -913,7 +913,7 @@ impl crate::ConcreteFormFactory_TESFurniture_40 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17432, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17432, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESGlobal_9 {
@@ -923,7 +923,7 @@ impl crate::ConcreteFormFactory_TESGlobal_9 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21814, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21814, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESGrass_37 {
@@ -933,7 +933,7 @@ impl crate::ConcreteFormFactory_TESGrass_37 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17475, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17475, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESIdleForm_78 {
@@ -943,7 +943,7 @@ impl crate::ConcreteFormFactory_TESIdleForm_78 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24582, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24582, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESImageSpace_89 {
@@ -953,7 +953,7 @@ impl crate::ConcreteFormFactory_TESImageSpace_89 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18636, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18636, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESImageSpaceModifier_90 {
@@ -963,7 +963,7 @@ impl crate::ConcreteFormFactory_TESImageSpaceModifier_90 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18679, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18679, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESKey_45 {
@@ -973,7 +973,7 @@ impl crate::ConcreteFormFactory_TESKey_45 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17508, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17508, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESLandTexture_20 {
@@ -983,7 +983,7 @@ impl crate::ConcreteFormFactory_TESLandTexture_20 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18855, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18855, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESLevCharacter_44 {
@@ -993,7 +993,7 @@ impl crate::ConcreteFormFactory_TESLevCharacter_44 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17538, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17538, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESLevItem_53 {
@@ -1003,7 +1003,7 @@ impl crate::ConcreteFormFactory_TESLevItem_53 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17560, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17560, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESLevSpell_82 {
@@ -1013,7 +1013,7 @@ impl crate::ConcreteFormFactory_TESLevSpell_82 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17584, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17584, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESLoadScreen_81 {
@@ -1023,7 +1023,7 @@ impl crate::ConcreteFormFactory_TESLoadScreen_81 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21840, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21840, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESNPC_43 {
@@ -1033,7 +1033,7 @@ impl crate::ConcreteFormFactory_TESNPC_43 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24847, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24847, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectACTI_24 {
@@ -1043,7 +1043,7 @@ impl crate::ConcreteFormFactory_TESObjectACTI_24 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17713, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17713, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectANIO_83 {
@@ -1053,7 +1053,7 @@ impl crate::ConcreteFormFactory_TESObjectANIO_83 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17740, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17740, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectARMA_102 {
@@ -1063,7 +1063,7 @@ impl crate::ConcreteFormFactory_TESObjectARMA_102 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17770, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17770, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectARMO_26 {
@@ -1073,7 +1073,7 @@ impl crate::ConcreteFormFactory_TESObjectARMO_26 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17800, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17800, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectBOOK_27 {
@@ -1083,7 +1083,7 @@ impl crate::ConcreteFormFactory_TESObjectBOOK_27 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17849, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17849, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectCELL_60 {
@@ -1093,7 +1093,7 @@ impl crate::ConcreteFormFactory_TESObjectCELL_60 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(19257, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(19257, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectCONT_28 {
@@ -1103,7 +1103,7 @@ impl crate::ConcreteFormFactory_TESObjectCONT_28 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17892, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17892, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectDOOR_29 {
@@ -1113,7 +1113,7 @@ impl crate::ConcreteFormFactory_TESObjectDOOR_29 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17953, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17953, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectLAND_72 {
@@ -1123,7 +1123,7 @@ impl crate::ConcreteFormFactory_TESObjectLAND_72 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18811, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18811, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectLIGH_31 {
@@ -1133,7 +1133,7 @@ impl crate::ConcreteFormFactory_TESObjectLIGH_31 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17628, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17628, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectMISC_32 {
@@ -1143,7 +1143,7 @@ impl crate::ConcreteFormFactory_TESObjectMISC_32 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17996, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(17996, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectSTAT_34 {
@@ -1153,7 +1153,7 @@ impl crate::ConcreteFormFactory_TESObjectSTAT_34 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18025, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18025, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectTREE_38 {
@@ -1163,7 +1163,7 @@ impl crate::ConcreteFormFactory_TESObjectTREE_38 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18049, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18049, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESObjectWEAP_41 {
@@ -1173,7 +1173,7 @@ impl crate::ConcreteFormFactory_TESObjectWEAP_41 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18120, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18120, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESQuest_77 {
@@ -1183,7 +1183,7 @@ impl crate::ConcreteFormFactory_TESQuest_77 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25153, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25153, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESRace_14 {
@@ -1193,7 +1193,7 @@ impl crate::ConcreteFormFactory_TESRace_14 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25437, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25437, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESRegion_58 {
@@ -1203,7 +1203,7 @@ impl crate::ConcreteFormFactory_TESRegion_58 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16458, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16458, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESShout_119 {
@@ -1213,7 +1213,7 @@ impl crate::ConcreteFormFactory_TESShout_119 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23375, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23375, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESSoulGem_52 {
@@ -1223,7 +1223,7 @@ impl crate::ConcreteFormFactory_TESSoulGem_52 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18169, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(18169, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESSound_15 {
@@ -1233,7 +1233,7 @@ impl crate::ConcreteFormFactory_TESSound_15 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23397, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23397, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESTopic_75 {
@@ -1243,7 +1243,7 @@ impl crate::ConcreteFormFactory_TESTopic_75 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25568, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25568, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESTopicInfo_76 {
@@ -1253,7 +1253,7 @@ impl crate::ConcreteFormFactory_TESTopicInfo_76 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25641, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25641, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESWaterForm_84 {
@@ -1263,7 +1263,7 @@ impl crate::ConcreteFormFactory_TESWaterForm_84 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20378, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20378, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESWeather_54 {
@@ -1273,7 +1273,7 @@ impl crate::ConcreteFormFactory_TESWeather_54 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20415, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20415, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESWordOfPower_118 {
@@ -1283,7 +1283,7 @@ impl crate::ConcreteFormFactory_TESWordOfPower_118 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23410, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23410, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteFormFactory_TESWorldSpace_71 {
@@ -1293,7 +1293,7 @@ impl crate::ConcreteFormFactory_TESWorldSpace_71 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20585, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20585, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteTempEffectFactory_BSTempEffectSPG_6 {
@@ -1303,7 +1303,7 @@ impl crate::ConcreteTempEffectFactory_BSTempEffectSPG_6 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30146, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30146, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteTempEffectFactory_BSTerrainEffect_0 {
@@ -1313,7 +1313,7 @@ impl crate::ConcreteTempEffectFactory_BSTerrainEffect_0 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30192, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30192, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteTempEffectFactory_ModelReferenceEffect_9 {
@@ -1323,7 +1323,7 @@ impl crate::ConcreteTempEffectFactory_ModelReferenceEffect_9 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(34676, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(34676, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteTempEffectFactory_ReferenceEffect_8 {
@@ -1333,7 +1333,7 @@ impl crate::ConcreteTempEffectFactory_ReferenceEffect_8 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(34779, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(34779, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteTempEffectFactory_ShaderReferenceEffect_10 {
@@ -1343,7 +1343,7 @@ impl crate::ConcreteTempEffectFactory_ShaderReferenceEffect_10 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(34944, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(34944, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConcreteTempEffectFactory_SummonPlacementEffect_11 {
@@ -1353,7 +1353,7 @@ impl crate::ConcreteTempEffectFactory_SummonPlacementEffect_11 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(35013, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(35013, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BGSSoundDescriptor {
@@ -1363,7 +1363,7 @@ impl crate::IBSTCreator_BGSSoundDescriptor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21328, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21328, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BSAudio {
@@ -1373,14 +1373,14 @@ impl crate::IBSTCreator_BSAudio {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(67912, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(67912, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSAudio>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 67965, rva 0xcd84e0).
     /// `undefined dtor(IBSTCreator<BSAudio> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(67965, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(67965, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BSIMusicTrack {
@@ -1390,21 +1390,21 @@ impl crate::IBSTCreator_BSIMusicTrack {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21047, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(21047, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSIMusicTrack>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 21079, rva 0x325d40).
     /// `undefined dtor(IBSTCreator<BSIMusicTrack> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(21079, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(21079, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSIMusicTrack>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 21099, rva 0x326ba0).
     /// `undefined dtor(IBSTCreator<BSIMusicTrack> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(21099, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(21099, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BSPathingCell {
@@ -1414,7 +1414,7 @@ impl crate::IBSTCreator_BSPathingCell {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30792, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30792, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BSPathingDoor {
@@ -1424,7 +1424,7 @@ impl crate::IBSTCreator_BSPathingDoor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30830, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30830, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BSPathingLockData {
@@ -1434,14 +1434,14 @@ impl crate::IBSTCreator_BSPathingLockData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30855, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30855, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingLockData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49661, rva 0x8ce6b0).
     /// `undefined dtor(IBSTCreator<BSPathingLockData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(49661, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(49661, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BSPathingRequest {
@@ -1451,315 +1451,315 @@ impl crate::IBSTCreator_BSPathingRequest {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30883, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(30883, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31173, rva 0x4f2570).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(31173, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(31173, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31201, rva 0x4f3780).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(31201, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(31201, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31249, rva 0x4f4cd0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(31249, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(31249, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31265, rva 0x4f5060).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(31265, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(31265, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31281, rva 0x4f56b0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(31281, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(31281, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31297, rva 0x4f5eb0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(31297, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(31297, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31317, rva 0x4f67a0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(31317, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(31317, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31342, rva 0x4f7120).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(31342, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(31342, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31361, rva 0x4f76d0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(31361, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(31361, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31377, rva 0x4f79c0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(31377, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(31377, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31393, rva 0x4f7e00).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(31393, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(31393, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31413, rva 0x4f8720).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(31413, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(31413, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31436, rva 0x4f8e10).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(31436, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(31436, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31449, rva 0x4f90f0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(31449, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(31449, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31465, rva 0x4f9440).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(31465, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(31465, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 31476, rva 0x4f96e0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(31476, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(31476, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47125, rva 0x8605f0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(47125, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(47125, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47133, rva 0x8607a0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(47133, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(47133, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48203, rva 0x891c50).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(48203, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(48203, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48207, rva 0x891cc0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(48207, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(48207, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48427, rva 0x89c630).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(48427, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(48427, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48428, rva 0x89c640).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(48428, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(48428, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48432, rva 0x89c680).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(48432, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(48432, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48433, rva 0x89c690).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(48433, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(48433, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48675, rva 0x8a65f0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(48675, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(48675, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48676, rva 0x8a6600).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(48676, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(48676, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48679, rva 0x8a6630).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(48679, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(48679, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48680, rva 0x8a6640).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(48680, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(48680, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49384, rva 0x8c1750).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(49384, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(49384, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49385, rva 0x8c1760).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(49385, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(49385, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49388, rva 0x8c1790).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(49388, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(49388, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49389, rva 0x8c17a0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(49389, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(49389, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49655, rva 0x8ce650).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(49655, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(49655, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49656, rva 0x8ce660).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(49656, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(49656, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49659, rva 0x8ce690).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(49659, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(49659, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49660, rva 0x8ce6a0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(49660, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(49660, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49862, rva 0x8d66b0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(49862, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(49862, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49864, rva 0x8d66d0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(49864, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(49864, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50210, rva 0x8e7460).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(50210, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(50210, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50211, rva 0x8e7470).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(50211, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(50211, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50212, rva 0x8e7480).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(50212, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(50212, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50554, rva 0x8ef490).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(50554, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(50554, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50570, rva 0x8ef5c0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(50570, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(50570, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BSPathingRequest>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90655, rva 0x11cc0f0).
     /// `undefined dtor(IBSTCreator<BSPathingRequest> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(90655, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(90655, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BSPathingSolution {
@@ -1769,7 +1769,7 @@ impl crate::IBSTCreator_BSPathingSolution {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(91015, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(91015, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_BShkNonTransformController {
@@ -1779,21 +1779,21 @@ impl crate::IBSTCreator_BShkNonTransformController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(26543, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(26543, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BShkNonTransformController>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 43654, rva 0x7db570).
     /// `undefined dtor(IBSTCreator<BShkNonTransformController> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(43654, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(43654, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<BShkNonTransformController>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63843, rva 0xbde540).
     /// `undefined dtor(IBSTCreator<BShkNonTransformController> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(63843, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(63843, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_CombatObject {
@@ -1803,1540 +1803,1540 @@ impl crate::IBSTCreator_CombatObject {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44419, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(44419, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44420, rva 0x80d8a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(44420, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(44420, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44421, rva 0x80d8b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(44421, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(44421, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44422, rva 0x80d8c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(44422, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(44422, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44423, rva 0x80d8d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(44423, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(44423, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44504, rva 0x80ffe0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(44504, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(44504, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44505, rva 0x80fff0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(44505, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(44505, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44506, rva 0x810000).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(44506, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(44506, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44507, rva 0x810010).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(44507, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(44507, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44657, rva 0x816b80).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(44657, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(44657, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44658, rva 0x816b90).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(44658, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(44658, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44659, rva 0x816ba0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(44659, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(44659, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44660, rva 0x816bb0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(44660, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(44660, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 45137, rva 0x82fa40).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(45137, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(45137, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 45138, rva 0x82fa50).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(45138, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(45138, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 45139, rva 0x82fa60).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(45139, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(45139, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 45140, rva 0x82fa70).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(45140, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(45140, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 45141, rva 0x82fa80).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(45141, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(45141, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46590, rva 0x84cda0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(46590, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(46590, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46591, rva 0x84cdb0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(46591, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(46591, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46592, rva 0x84cdc0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(46592, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(46592, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46593, rva 0x84cdd0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(46593, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(46593, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46594, rva 0x84cde0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(46594, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(46594, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46595, rva 0x84cdf0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(46595, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(46595, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46596, rva 0x84ce00).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(46596, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(46596, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46597, rva 0x84ce10).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(46597, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(46597, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46598, rva 0x84ce20).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(46598, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(46598, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46599, rva 0x84ce30).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(46599, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(46599, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46600, rva 0x84ce40).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(46600, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(46600, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46601, rva 0x84ce50).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(46601, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(46601, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46602, rva 0x84ce60).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(46602, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(46602, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46603, rva 0x84ce70).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(46603, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(46603, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46604, rva 0x84ce80).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(46604, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(46604, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46605, rva 0x84ce90).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(46605, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(46605, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46606, rva 0x84cea0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(46606, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(46606, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46607, rva 0x84ceb0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(46607, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(46607, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46608, rva 0x84cec0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(46608, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(46608, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46609, rva 0x84ced0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(46609, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(46609, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46610, rva 0x84cee0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(46610, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(46610, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46611, rva 0x84cef0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(46611, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(46611, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46612, rva 0x84cf00).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(46612, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(46612, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46613, rva 0x84cf10).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(46613, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(46613, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46614, rva 0x84cf20).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(46614, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(46614, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46615, rva 0x84cf30).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(46615, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(46615, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46616, rva 0x84cf40).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(46616, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(46616, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46617, rva 0x84cf50).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_46(&self) -> u64 { unsafe { function!(46617, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_46(&self) -> u64 { unsafe { function!(46617, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46618, rva 0x84cf60).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_47(&self) -> u64 { unsafe { function!(46618, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_47(&self) -> u64 { unsafe { function!(46618, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46619, rva 0x84cf70).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_48(&self) -> u64 { unsafe { function!(46619, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_48(&self) -> u64 { unsafe { function!(46619, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46620, rva 0x84cf80).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_49(&self) -> u64 { unsafe { function!(46620, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_49(&self) -> u64 { unsafe { function!(46620, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46621, rva 0x84cf90).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_50(&self) -> u64 { unsafe { function!(46621, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_50(&self) -> u64 { unsafe { function!(46621, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46622, rva 0x84cfa0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_51(&self) -> u64 { unsafe { function!(46622, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_51(&self) -> u64 { unsafe { function!(46622, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46623, rva 0x84cfb0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_52(&self) -> u64 { unsafe { function!(46623, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_52(&self) -> u64 { unsafe { function!(46623, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46624, rva 0x84cfc0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_53(&self) -> u64 { unsafe { function!(46624, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_53(&self) -> u64 { unsafe { function!(46624, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46625, rva 0x84cfd0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_54(&self) -> u64 { unsafe { function!(46625, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_54(&self) -> u64 { unsafe { function!(46625, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46626, rva 0x84cfe0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_55(&self) -> u64 { unsafe { function!(46626, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_55(&self) -> u64 { unsafe { function!(46626, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46627, rva 0x84cff0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_56(&self) -> u64 { unsafe { function!(46627, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_56(&self) -> u64 { unsafe { function!(46627, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46628, rva 0x84d000).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_57(&self) -> u64 { unsafe { function!(46628, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_57(&self) -> u64 { unsafe { function!(46628, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46629, rva 0x84d010).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_58(&self) -> u64 { unsafe { function!(46629, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_58(&self) -> u64 { unsafe { function!(46629, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46630, rva 0x84d020).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_59(&self) -> u64 { unsafe { function!(46630, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_59(&self) -> u64 { unsafe { function!(46630, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46631, rva 0x84d030).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_60(&self) -> u64 { unsafe { function!(46631, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_60(&self) -> u64 { unsafe { function!(46631, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46632, rva 0x84d040).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_61(&self) -> u64 { unsafe { function!(46632, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_61(&self) -> u64 { unsafe { function!(46632, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46633, rva 0x84d050).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_62(&self) -> u64 { unsafe { function!(46633, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_62(&self) -> u64 { unsafe { function!(46633, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46634, rva 0x84d060).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_63(&self) -> u64 { unsafe { function!(46634, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_63(&self) -> u64 { unsafe { function!(46634, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46635, rva 0x84d070).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_64(&self) -> u64 { unsafe { function!(46635, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_64(&self) -> u64 { unsafe { function!(46635, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46636, rva 0x84d080).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_65(&self) -> u64 { unsafe { function!(46636, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_65(&self) -> u64 { unsafe { function!(46636, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46637, rva 0x84d090).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_66(&self) -> u64 { unsafe { function!(46637, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_66(&self) -> u64 { unsafe { function!(46637, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46638, rva 0x84d0a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_67(&self) -> u64 { unsafe { function!(46638, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_67(&self) -> u64 { unsafe { function!(46638, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46639, rva 0x84d0b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_68(&self) -> u64 { unsafe { function!(46639, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_68(&self) -> u64 { unsafe { function!(46639, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46640, rva 0x84d0c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_69(&self) -> u64 { unsafe { function!(46640, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_69(&self) -> u64 { unsafe { function!(46640, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46641, rva 0x84d0d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_70(&self) -> u64 { unsafe { function!(46641, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_70(&self) -> u64 { unsafe { function!(46641, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46642, rva 0x84d0e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_71(&self) -> u64 { unsafe { function!(46642, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_71(&self) -> u64 { unsafe { function!(46642, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46643, rva 0x84d0f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_72(&self) -> u64 { unsafe { function!(46643, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_72(&self) -> u64 { unsafe { function!(46643, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46644, rva 0x84d100).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_73(&self) -> u64 { unsafe { function!(46644, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_73(&self) -> u64 { unsafe { function!(46644, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46645, rva 0x84d110).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_74(&self) -> u64 { unsafe { function!(46645, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_74(&self) -> u64 { unsafe { function!(46645, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46646, rva 0x84d120).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_75(&self) -> u64 { unsafe { function!(46646, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_75(&self) -> u64 { unsafe { function!(46646, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46647, rva 0x84d130).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_76(&self) -> u64 { unsafe { function!(46647, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_76(&self) -> u64 { unsafe { function!(46647, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46648, rva 0x84d140).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_77(&self) -> u64 { unsafe { function!(46648, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_77(&self) -> u64 { unsafe { function!(46648, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46649, rva 0x84d150).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_78(&self) -> u64 { unsafe { function!(46649, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_78(&self) -> u64 { unsafe { function!(46649, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46650, rva 0x84d160).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_79(&self) -> u64 { unsafe { function!(46650, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_79(&self) -> u64 { unsafe { function!(46650, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46651, rva 0x84d170).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_80(&self) -> u64 { unsafe { function!(46651, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_80(&self) -> u64 { unsafe { function!(46651, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46652, rva 0x84d180).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_81(&self) -> u64 { unsafe { function!(46652, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_81(&self) -> u64 { unsafe { function!(46652, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46653, rva 0x84d190).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_82(&self) -> u64 { unsafe { function!(46653, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_82(&self) -> u64 { unsafe { function!(46653, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46654, rva 0x84d1a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_83(&self) -> u64 { unsafe { function!(46654, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_83(&self) -> u64 { unsafe { function!(46654, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46655, rva 0x84d1b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_84(&self) -> u64 { unsafe { function!(46655, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_84(&self) -> u64 { unsafe { function!(46655, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46656, rva 0x84d1c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_85(&self) -> u64 { unsafe { function!(46656, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_85(&self) -> u64 { unsafe { function!(46656, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46657, rva 0x84d1d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_86(&self) -> u64 { unsafe { function!(46657, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_86(&self) -> u64 { unsafe { function!(46657, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46658, rva 0x84d1e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_87(&self) -> u64 { unsafe { function!(46658, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_87(&self) -> u64 { unsafe { function!(46658, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46659, rva 0x84d1f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_88(&self) -> u64 { unsafe { function!(46659, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_88(&self) -> u64 { unsafe { function!(46659, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46660, rva 0x84d200).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_89(&self) -> u64 { unsafe { function!(46660, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_89(&self) -> u64 { unsafe { function!(46660, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46661, rva 0x84d210).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_90(&self) -> u64 { unsafe { function!(46661, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_90(&self) -> u64 { unsafe { function!(46661, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46662, rva 0x84d220).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_91(&self) -> u64 { unsafe { function!(46662, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_91(&self) -> u64 { unsafe { function!(46662, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46663, rva 0x84d230).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_92(&self) -> u64 { unsafe { function!(46663, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_92(&self) -> u64 { unsafe { function!(46663, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46664, rva 0x84d240).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_93(&self) -> u64 { unsafe { function!(46664, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_93(&self) -> u64 { unsafe { function!(46664, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46665, rva 0x84d250).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_94(&self) -> u64 { unsafe { function!(46665, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_94(&self) -> u64 { unsafe { function!(46665, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46666, rva 0x84d260).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_95(&self) -> u64 { unsafe { function!(46666, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_95(&self) -> u64 { unsafe { function!(46666, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46667, rva 0x84d270).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_96(&self) -> u64 { unsafe { function!(46667, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_96(&self) -> u64 { unsafe { function!(46667, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46668, rva 0x84d280).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_97(&self) -> u64 { unsafe { function!(46668, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_97(&self) -> u64 { unsafe { function!(46668, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46669, rva 0x84d290).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_98(&self) -> u64 { unsafe { function!(46669, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_98(&self) -> u64 { unsafe { function!(46669, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46670, rva 0x84d2a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_99(&self) -> u64 { unsafe { function!(46670, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_99(&self) -> u64 { unsafe { function!(46670, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46671, rva 0x84d2b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_100(&self) -> u64 { unsafe { function!(46671, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_100(&self) -> u64 { unsafe { function!(46671, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46672, rva 0x84d2c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_101(&self) -> u64 { unsafe { function!(46672, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_101(&self) -> u64 { unsafe { function!(46672, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46673, rva 0x84d2d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_102(&self) -> u64 { unsafe { function!(46673, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_102(&self) -> u64 { unsafe { function!(46673, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46674, rva 0x84d2e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_103(&self) -> u64 { unsafe { function!(46674, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_103(&self) -> u64 { unsafe { function!(46674, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46675, rva 0x84d2f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_104(&self) -> u64 { unsafe { function!(46675, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_104(&self) -> u64 { unsafe { function!(46675, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46676, rva 0x84d300).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_105(&self) -> u64 { unsafe { function!(46676, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_105(&self) -> u64 { unsafe { function!(46676, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46677, rva 0x84d310).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_106(&self) -> u64 { unsafe { function!(46677, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_106(&self) -> u64 { unsafe { function!(46677, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46678, rva 0x84d320).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_107(&self) -> u64 { unsafe { function!(46678, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_107(&self) -> u64 { unsafe { function!(46678, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46679, rva 0x84d330).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_108(&self) -> u64 { unsafe { function!(46679, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_108(&self) -> u64 { unsafe { function!(46679, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46680, rva 0x84d340).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_109(&self) -> u64 { unsafe { function!(46680, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_109(&self) -> u64 { unsafe { function!(46680, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46681, rva 0x84d350).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_110(&self) -> u64 { unsafe { function!(46681, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_110(&self) -> u64 { unsafe { function!(46681, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46682, rva 0x84d360).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_111(&self) -> u64 { unsafe { function!(46682, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_111(&self) -> u64 { unsafe { function!(46682, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46683, rva 0x84d370).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_112(&self) -> u64 { unsafe { function!(46683, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_112(&self) -> u64 { unsafe { function!(46683, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46684, rva 0x84d380).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_113(&self) -> u64 { unsafe { function!(46684, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_113(&self) -> u64 { unsafe { function!(46684, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46685, rva 0x84d390).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_114(&self) -> u64 { unsafe { function!(46685, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_114(&self) -> u64 { unsafe { function!(46685, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46686, rva 0x84d3a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_115(&self) -> u64 { unsafe { function!(46686, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_115(&self) -> u64 { unsafe { function!(46686, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46687, rva 0x84d3b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_116(&self) -> u64 { unsafe { function!(46687, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_116(&self) -> u64 { unsafe { function!(46687, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46688, rva 0x84d3c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_117(&self) -> u64 { unsafe { function!(46688, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_117(&self) -> u64 { unsafe { function!(46688, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46689, rva 0x84d3d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_118(&self) -> u64 { unsafe { function!(46689, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_118(&self) -> u64 { unsafe { function!(46689, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46690, rva 0x84d3e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_119(&self) -> u64 { unsafe { function!(46690, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_119(&self) -> u64 { unsafe { function!(46690, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46691, rva 0x84d3f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_120(&self) -> u64 { unsafe { function!(46691, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_120(&self) -> u64 { unsafe { function!(46691, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46692, rva 0x84d400).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_121(&self) -> u64 { unsafe { function!(46692, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_121(&self) -> u64 { unsafe { function!(46692, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46693, rva 0x84d410).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_122(&self) -> u64 { unsafe { function!(46693, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_122(&self) -> u64 { unsafe { function!(46693, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46694, rva 0x84d420).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_123(&self) -> u64 { unsafe { function!(46694, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_123(&self) -> u64 { unsafe { function!(46694, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46695, rva 0x84d430).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_124(&self) -> u64 { unsafe { function!(46695, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_124(&self) -> u64 { unsafe { function!(46695, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46696, rva 0x84d440).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_125(&self) -> u64 { unsafe { function!(46696, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_125(&self) -> u64 { unsafe { function!(46696, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46697, rva 0x84d450).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_126(&self) -> u64 { unsafe { function!(46697, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_126(&self) -> u64 { unsafe { function!(46697, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46698, rva 0x84d460).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_127(&self) -> u64 { unsafe { function!(46698, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_127(&self) -> u64 { unsafe { function!(46698, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46699, rva 0x84d470).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_128(&self) -> u64 { unsafe { function!(46699, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_128(&self) -> u64 { unsafe { function!(46699, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46700, rva 0x84d480).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_129(&self) -> u64 { unsafe { function!(46700, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_129(&self) -> u64 { unsafe { function!(46700, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46701, rva 0x84d490).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_130(&self) -> u64 { unsafe { function!(46701, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_130(&self) -> u64 { unsafe { function!(46701, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46702, rva 0x84d4a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_131(&self) -> u64 { unsafe { function!(46702, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_131(&self) -> u64 { unsafe { function!(46702, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46703, rva 0x84d4b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_132(&self) -> u64 { unsafe { function!(46703, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_132(&self) -> u64 { unsafe { function!(46703, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46704, rva 0x84d4c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_133(&self) -> u64 { unsafe { function!(46704, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_133(&self) -> u64 { unsafe { function!(46704, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46705, rva 0x84d4d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_134(&self) -> u64 { unsafe { function!(46705, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_134(&self) -> u64 { unsafe { function!(46705, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46706, rva 0x84d4e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_135(&self) -> u64 { unsafe { function!(46706, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_135(&self) -> u64 { unsafe { function!(46706, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46707, rva 0x84d4f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_136(&self) -> u64 { unsafe { function!(46707, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_136(&self) -> u64 { unsafe { function!(46707, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46708, rva 0x84d500).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_137(&self) -> u64 { unsafe { function!(46708, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_137(&self) -> u64 { unsafe { function!(46708, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46709, rva 0x84d510).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_138(&self) -> u64 { unsafe { function!(46709, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_138(&self) -> u64 { unsafe { function!(46709, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46710, rva 0x84d520).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_139(&self) -> u64 { unsafe { function!(46710, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_139(&self) -> u64 { unsafe { function!(46710, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46711, rva 0x84d530).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_140(&self) -> u64 { unsafe { function!(46711, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_140(&self) -> u64 { unsafe { function!(46711, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46712, rva 0x84d540).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_141(&self) -> u64 { unsafe { function!(46712, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_141(&self) -> u64 { unsafe { function!(46712, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46713, rva 0x84d550).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_142(&self) -> u64 { unsafe { function!(46713, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_142(&self) -> u64 { unsafe { function!(46713, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46714, rva 0x84d560).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_143(&self) -> u64 { unsafe { function!(46714, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_143(&self) -> u64 { unsafe { function!(46714, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46715, rva 0x84d570).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_144(&self) -> u64 { unsafe { function!(46715, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_144(&self) -> u64 { unsafe { function!(46715, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46716, rva 0x84d580).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_145(&self) -> u64 { unsafe { function!(46716, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_145(&self) -> u64 { unsafe { function!(46716, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46717, rva 0x84d590).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_146(&self) -> u64 { unsafe { function!(46717, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_146(&self) -> u64 { unsafe { function!(46717, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46718, rva 0x84d5a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_147(&self) -> u64 { unsafe { function!(46718, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_147(&self) -> u64 { unsafe { function!(46718, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46719, rva 0x84d5b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_148(&self) -> u64 { unsafe { function!(46719, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_148(&self) -> u64 { unsafe { function!(46719, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46720, rva 0x84d5c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_149(&self) -> u64 { unsafe { function!(46720, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_149(&self) -> u64 { unsafe { function!(46720, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46721, rva 0x84d5d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_150(&self) -> u64 { unsafe { function!(46721, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_150(&self) -> u64 { unsafe { function!(46721, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46722, rva 0x84d5e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_151(&self) -> u64 { unsafe { function!(46722, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_151(&self) -> u64 { unsafe { function!(46722, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46723, rva 0x84d5f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_152(&self) -> u64 { unsafe { function!(46723, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_152(&self) -> u64 { unsafe { function!(46723, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46724, rva 0x84d600).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_153(&self) -> u64 { unsafe { function!(46724, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_153(&self) -> u64 { unsafe { function!(46724, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46725, rva 0x84d610).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_154(&self) -> u64 { unsafe { function!(46725, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_154(&self) -> u64 { unsafe { function!(46725, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46726, rva 0x84d620).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_155(&self) -> u64 { unsafe { function!(46726, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_155(&self) -> u64 { unsafe { function!(46726, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46727, rva 0x84d630).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_156(&self) -> u64 { unsafe { function!(46727, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_156(&self) -> u64 { unsafe { function!(46727, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46728, rva 0x84d640).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_157(&self) -> u64 { unsafe { function!(46728, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_157(&self) -> u64 { unsafe { function!(46728, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46729, rva 0x84d650).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_158(&self) -> u64 { unsafe { function!(46729, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_158(&self) -> u64 { unsafe { function!(46729, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46730, rva 0x84d660).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_159(&self) -> u64 { unsafe { function!(46730, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_159(&self) -> u64 { unsafe { function!(46730, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46731, rva 0x84d670).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_160(&self) -> u64 { unsafe { function!(46731, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_160(&self) -> u64 { unsafe { function!(46731, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46732, rva 0x84d680).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_161(&self) -> u64 { unsafe { function!(46732, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_161(&self) -> u64 { unsafe { function!(46732, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46733, rva 0x84d690).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_162(&self) -> u64 { unsafe { function!(46733, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_162(&self) -> u64 { unsafe { function!(46733, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46734, rva 0x84d6a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_163(&self) -> u64 { unsafe { function!(46734, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_163(&self) -> u64 { unsafe { function!(46734, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46735, rva 0x84d6b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_164(&self) -> u64 { unsafe { function!(46735, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_164(&self) -> u64 { unsafe { function!(46735, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46736, rva 0x84d6c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_165(&self) -> u64 { unsafe { function!(46736, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_165(&self) -> u64 { unsafe { function!(46736, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46737, rva 0x84d6d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_166(&self) -> u64 { unsafe { function!(46737, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_166(&self) -> u64 { unsafe { function!(46737, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46738, rva 0x84d6e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_167(&self) -> u64 { unsafe { function!(46738, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_167(&self) -> u64 { unsafe { function!(46738, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46739, rva 0x84d6f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_168(&self) -> u64 { unsafe { function!(46739, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_168(&self) -> u64 { unsafe { function!(46739, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46740, rva 0x84d700).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_169(&self) -> u64 { unsafe { function!(46740, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_169(&self) -> u64 { unsafe { function!(46740, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46741, rva 0x84d710).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_170(&self) -> u64 { unsafe { function!(46741, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_170(&self) -> u64 { unsafe { function!(46741, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46742, rva 0x84d720).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_171(&self) -> u64 { unsafe { function!(46742, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_171(&self) -> u64 { unsafe { function!(46742, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46743, rva 0x84d730).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_172(&self) -> u64 { unsafe { function!(46743, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_172(&self) -> u64 { unsafe { function!(46743, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46744, rva 0x84d740).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_173(&self) -> u64 { unsafe { function!(46744, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_173(&self) -> u64 { unsafe { function!(46744, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46745, rva 0x84d750).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_174(&self) -> u64 { unsafe { function!(46745, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_174(&self) -> u64 { unsafe { function!(46745, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46746, rva 0x84d760).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_175(&self) -> u64 { unsafe { function!(46746, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_175(&self) -> u64 { unsafe { function!(46746, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46747, rva 0x84d770).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_176(&self) -> u64 { unsafe { function!(46747, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_176(&self) -> u64 { unsafe { function!(46747, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46748, rva 0x84d780).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_177(&self) -> u64 { unsafe { function!(46748, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_177(&self) -> u64 { unsafe { function!(46748, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46749, rva 0x84d790).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_178(&self) -> u64 { unsafe { function!(46749, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_178(&self) -> u64 { unsafe { function!(46749, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46750, rva 0x84d7a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_179(&self) -> u64 { unsafe { function!(46750, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_179(&self) -> u64 { unsafe { function!(46750, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46751, rva 0x84d7b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_180(&self) -> u64 { unsafe { function!(46751, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_180(&self) -> u64 { unsafe { function!(46751, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46752, rva 0x84d7c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_181(&self) -> u64 { unsafe { function!(46752, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_181(&self) -> u64 { unsafe { function!(46752, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46753, rva 0x84d7d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_182(&self) -> u64 { unsafe { function!(46753, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_182(&self) -> u64 { unsafe { function!(46753, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46754, rva 0x84d7e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_183(&self) -> u64 { unsafe { function!(46754, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_183(&self) -> u64 { unsafe { function!(46754, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47132, rva 0x860790).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_184(&self) -> u64 { unsafe { function!(47132, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_184(&self) -> u64 { unsafe { function!(47132, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47134, rva 0x8607b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_185(&self) -> u64 { unsafe { function!(47134, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_185(&self) -> u64 { unsafe { function!(47134, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47135, rva 0x8607c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_186(&self) -> u64 { unsafe { function!(47135, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_186(&self) -> u64 { unsafe { function!(47135, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47136, rva 0x8607d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_187(&self) -> u64 { unsafe { function!(47136, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_187(&self) -> u64 { unsafe { function!(47136, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47218, rva 0x8631f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_188(&self) -> u64 { unsafe { function!(47218, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_188(&self) -> u64 { unsafe { function!(47218, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47219, rva 0x863200).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_189(&self) -> u64 { unsafe { function!(47219, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_189(&self) -> u64 { unsafe { function!(47219, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47262, rva 0x865c70).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_190(&self) -> u64 { unsafe { function!(47262, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_190(&self) -> u64 { unsafe { function!(47262, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48206, rva 0x891cb0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_191(&self) -> u64 { unsafe { function!(48206, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_191(&self) -> u64 { unsafe { function!(48206, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48430, rva 0x89c660).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_192(&self) -> u64 { unsafe { function!(48430, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_192(&self) -> u64 { unsafe { function!(48430, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48431, rva 0x89c670).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_193(&self) -> u64 { unsafe { function!(48431, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_193(&self) -> u64 { unsafe { function!(48431, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48434, rva 0x89c6a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_194(&self) -> u64 { unsafe { function!(48434, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_194(&self) -> u64 { unsafe { function!(48434, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48677, rva 0x8a6610).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_195(&self) -> u64 { unsafe { function!(48677, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_195(&self) -> u64 { unsafe { function!(48677, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48678, rva 0x8a6620).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_196(&self) -> u64 { unsafe { function!(48678, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_196(&self) -> u64 { unsafe { function!(48678, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 48876, rva 0x8af210).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_197(&self) -> u64 { unsafe { function!(48876, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_197(&self) -> u64 { unsafe { function!(48876, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49386, rva 0x8c1770).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_198(&self) -> u64 { unsafe { function!(49386, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_198(&self) -> u64 { unsafe { function!(49386, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49387, rva 0x8c1780).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_199(&self) -> u64 { unsafe { function!(49387, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_199(&self) -> u64 { unsafe { function!(49387, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49390, rva 0x8c17b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_200(&self) -> u64 { unsafe { function!(49390, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_200(&self) -> u64 { unsafe { function!(49390, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49657, rva 0x8ce670).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_201(&self) -> u64 { unsafe { function!(49657, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_201(&self) -> u64 { unsafe { function!(49657, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49658, rva 0x8ce680).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_202(&self) -> u64 { unsafe { function!(49658, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_202(&self) -> u64 { unsafe { function!(49658, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49863, rva 0x8d66c0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_203(&self) -> u64 { unsafe { function!(49863, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_203(&self) -> u64 { unsafe { function!(49863, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50209, rva 0x8e7450).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_204(&self) -> u64 { unsafe { function!(50209, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_204(&self) -> u64 { unsafe { function!(50209, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50555, rva 0x8ef4d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_205(&self) -> u64 { unsafe { function!(50555, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_205(&self) -> u64 { unsafe { function!(50555, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50556, rva 0x8ef4e0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_206(&self) -> u64 { unsafe { function!(50556, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_206(&self) -> u64 { unsafe { function!(50556, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50557, rva 0x8ef4f0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_207(&self) -> u64 { unsafe { function!(50557, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_207(&self) -> u64 { unsafe { function!(50557, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50558, rva 0x8ef500).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_208(&self) -> u64 { unsafe { function!(50558, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_208(&self) -> u64 { unsafe { function!(50558, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50559, rva 0x8ef510).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_209(&self) -> u64 { unsafe { function!(50559, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_209(&self) -> u64 { unsafe { function!(50559, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50560, rva 0x8ef520).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_210(&self) -> u64 { unsafe { function!(50560, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_210(&self) -> u64 { unsafe { function!(50560, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50561, rva 0x8ef530).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_211(&self) -> u64 { unsafe { function!(50561, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_211(&self) -> u64 { unsafe { function!(50561, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50562, rva 0x8ef540).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_212(&self) -> u64 { unsafe { function!(50562, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_212(&self) -> u64 { unsafe { function!(50562, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50563, rva 0x8ef550).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_213(&self) -> u64 { unsafe { function!(50563, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_213(&self) -> u64 { unsafe { function!(50563, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50564, rva 0x8ef560).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_214(&self) -> u64 { unsafe { function!(50564, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_214(&self) -> u64 { unsafe { function!(50564, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50565, rva 0x8ef570).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_215(&self) -> u64 { unsafe { function!(50565, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_215(&self) -> u64 { unsafe { function!(50565, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50566, rva 0x8ef580).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_216(&self) -> u64 { unsafe { function!(50566, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_216(&self) -> u64 { unsafe { function!(50566, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50567, rva 0x8ef590).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_217(&self) -> u64 { unsafe { function!(50567, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_217(&self) -> u64 { unsafe { function!(50567, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50568, rva 0x8ef5a0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_218(&self) -> u64 { unsafe { function!(50568, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_218(&self) -> u64 { unsafe { function!(50568, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50569, rva 0x8ef5b0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_219(&self) -> u64 { unsafe { function!(50569, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_219(&self) -> u64 { unsafe { function!(50569, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<CombatObject>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50571, rva 0x8ef5d0).
     /// `undefined dtor(IBSTCreator<CombatObject> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_220(&self) -> u64 { unsafe { function!(50571, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_220(&self) -> u64 { unsafe { function!(50571, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_IAIWorldLocation {
@@ -3346,21 +3346,21 @@ impl crate::IBSTCreator_IAIWorldLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27823, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27823, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IAIWorldLocation>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27824, rva 0x456b90).
     /// `undefined dtor(IBSTCreator<IAIWorldLocation> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(27824, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(27824, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IAIWorldLocation>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27825, rva 0x456ba0).
     /// `undefined dtor(IBSTCreator<IAIWorldLocation> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(27825, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(27825, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_IHandlerFunctor_Actor_BSFixedStringCI__ {
@@ -3370,651 +3370,651 @@ impl crate::IBSTCreator_IHandlerFunctor_Actor_BSFixedStringCI__ {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42909, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42909, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42910, rva 0x7cfca0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(42910, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(42910, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42911, rva 0x7cfcb0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(42911, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(42911, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42912, rva 0x7cfcc0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(42912, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(42912, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42913, rva 0x7cfcd0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(42913, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(42913, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42914, rva 0x7cfce0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(42914, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(42914, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42915, rva 0x7cfcf0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(42915, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(42915, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42916, rva 0x7cfd00).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(42916, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(42916, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42917, rva 0x7cfd10).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(42917, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(42917, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42918, rva 0x7cfd20).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(42918, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(42918, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42919, rva 0x7cfd30).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(42919, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(42919, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42920, rva 0x7cfd40).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(42920, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(42920, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42921, rva 0x7cfd50).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(42921, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(42921, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42922, rva 0x7cfd60).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(42922, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(42922, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42923, rva 0x7cfd70).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(42923, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(42923, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42924, rva 0x7cfd80).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(42924, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(42924, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42925, rva 0x7cfd90).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(42925, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(42925, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42926, rva 0x7cfda0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(42926, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(42926, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42927, rva 0x7cfdb0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(42927, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(42927, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42928, rva 0x7cfdc0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(42928, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(42928, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42929, rva 0x7cfdd0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(42929, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(42929, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42930, rva 0x7cfde0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(42930, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(42930, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42931, rva 0x7cfdf0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(42931, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(42931, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42932, rva 0x7cfe00).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(42932, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(42932, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42933, rva 0x7cfe10).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(42933, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(42933, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42934, rva 0x7cfe20).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(42934, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(42934, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42935, rva 0x7cfe30).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(42935, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(42935, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42936, rva 0x7cfe40).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(42936, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(42936, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42937, rva 0x7cfe50).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(42937, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(42937, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42938, rva 0x7cfe60).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(42938, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(42938, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42939, rva 0x7cfe70).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(42939, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(42939, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42940, rva 0x7cfe80).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(42940, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(42940, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42941, rva 0x7cfe90).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(42941, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(42941, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42942, rva 0x7cfea0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(42942, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(42942, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42943, rva 0x7cfeb0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(42943, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(42943, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42944, rva 0x7cfec0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(42944, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(42944, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42945, rva 0x7cfed0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(42945, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(42945, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42946, rva 0x7cfee0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(42946, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(42946, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42947, rva 0x7cfef0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(42947, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(42947, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42948, rva 0x7cff00).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(42948, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(42948, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42949, rva 0x7cff10).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(42949, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(42949, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42950, rva 0x7cff20).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(42950, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(42950, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42951, rva 0x7cff30).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(42951, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(42951, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42952, rva 0x7cff40).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(42952, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(42952, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42953, rva 0x7cff50).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(42953, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(42953, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42954, rva 0x7cff60).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_46(&self) -> u64 { unsafe { function!(42954, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_46(&self) -> u64 { unsafe { function!(42954, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42955, rva 0x7cff70).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_47(&self) -> u64 { unsafe { function!(42955, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_47(&self) -> u64 { unsafe { function!(42955, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42956, rva 0x7cff80).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_48(&self) -> u64 { unsafe { function!(42956, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_48(&self) -> u64 { unsafe { function!(42956, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42957, rva 0x7cff90).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_49(&self) -> u64 { unsafe { function!(42957, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_49(&self) -> u64 { unsafe { function!(42957, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42958, rva 0x7cffa0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_50(&self) -> u64 { unsafe { function!(42958, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_50(&self) -> u64 { unsafe { function!(42958, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42959, rva 0x7cffb0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_51(&self) -> u64 { unsafe { function!(42959, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_51(&self) -> u64 { unsafe { function!(42959, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42960, rva 0x7cffc0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_52(&self) -> u64 { unsafe { function!(42960, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_52(&self) -> u64 { unsafe { function!(42960, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42961, rva 0x7cffd0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_53(&self) -> u64 { unsafe { function!(42961, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_53(&self) -> u64 { unsafe { function!(42961, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42962, rva 0x7cffe0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_54(&self) -> u64 { unsafe { function!(42962, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_54(&self) -> u64 { unsafe { function!(42962, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42963, rva 0x7cfff0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_55(&self) -> u64 { unsafe { function!(42963, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_55(&self) -> u64 { unsafe { function!(42963, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42964, rva 0x7d0000).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_56(&self) -> u64 { unsafe { function!(42964, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_56(&self) -> u64 { unsafe { function!(42964, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42965, rva 0x7d0010).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_57(&self) -> u64 { unsafe { function!(42965, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_57(&self) -> u64 { unsafe { function!(42965, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42966, rva 0x7d0020).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_58(&self) -> u64 { unsafe { function!(42966, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_58(&self) -> u64 { unsafe { function!(42966, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42967, rva 0x7d0030).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_59(&self) -> u64 { unsafe { function!(42967, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_59(&self) -> u64 { unsafe { function!(42967, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42968, rva 0x7d0040).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_60(&self) -> u64 { unsafe { function!(42968, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_60(&self) -> u64 { unsafe { function!(42968, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42969, rva 0x7d0050).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_61(&self) -> u64 { unsafe { function!(42969, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_61(&self) -> u64 { unsafe { function!(42969, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42970, rva 0x7d0060).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_62(&self) -> u64 { unsafe { function!(42970, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_62(&self) -> u64 { unsafe { function!(42970, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42971, rva 0x7d0070).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_63(&self) -> u64 { unsafe { function!(42971, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_63(&self) -> u64 { unsafe { function!(42971, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42972, rva 0x7d0080).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_64(&self) -> u64 { unsafe { function!(42972, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_64(&self) -> u64 { unsafe { function!(42972, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42973, rva 0x7d0090).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_65(&self) -> u64 { unsafe { function!(42973, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_65(&self) -> u64 { unsafe { function!(42973, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42974, rva 0x7d00a0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_66(&self) -> u64 { unsafe { function!(42974, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_66(&self) -> u64 { unsafe { function!(42974, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42975, rva 0x7d00b0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_67(&self) -> u64 { unsafe { function!(42975, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_67(&self) -> u64 { unsafe { function!(42975, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42976, rva 0x7d00c0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_68(&self) -> u64 { unsafe { function!(42976, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_68(&self) -> u64 { unsafe { function!(42976, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42977, rva 0x7d00d0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_69(&self) -> u64 { unsafe { function!(42977, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_69(&self) -> u64 { unsafe { function!(42977, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42978, rva 0x7d00e0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_70(&self) -> u64 { unsafe { function!(42978, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_70(&self) -> u64 { unsafe { function!(42978, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42979, rva 0x7d00f0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_71(&self) -> u64 { unsafe { function!(42979, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_71(&self) -> u64 { unsafe { function!(42979, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42980, rva 0x7d0100).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_72(&self) -> u64 { unsafe { function!(42980, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_72(&self) -> u64 { unsafe { function!(42980, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42981, rva 0x7d0110).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_73(&self) -> u64 { unsafe { function!(42981, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_73(&self) -> u64 { unsafe { function!(42981, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42982, rva 0x7d0120).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_74(&self) -> u64 { unsafe { function!(42982, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_74(&self) -> u64 { unsafe { function!(42982, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42983, rva 0x7d0130).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_75(&self) -> u64 { unsafe { function!(42983, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_75(&self) -> u64 { unsafe { function!(42983, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42984, rva 0x7d0140).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_76(&self) -> u64 { unsafe { function!(42984, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_76(&self) -> u64 { unsafe { function!(42984, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42985, rva 0x7d0150).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_77(&self) -> u64 { unsafe { function!(42985, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_77(&self) -> u64 { unsafe { function!(42985, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42986, rva 0x7d0160).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_78(&self) -> u64 { unsafe { function!(42986, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_78(&self) -> u64 { unsafe { function!(42986, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42987, rva 0x7d0170).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_79(&self) -> u64 { unsafe { function!(42987, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_79(&self) -> u64 { unsafe { function!(42987, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42988, rva 0x7d0180).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_80(&self) -> u64 { unsafe { function!(42988, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_80(&self) -> u64 { unsafe { function!(42988, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42989, rva 0x7d0190).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_81(&self) -> u64 { unsafe { function!(42989, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_81(&self) -> u64 { unsafe { function!(42989, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42990, rva 0x7d01a0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_82(&self) -> u64 { unsafe { function!(42990, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_82(&self) -> u64 { unsafe { function!(42990, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42991, rva 0x7d01b0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_83(&self) -> u64 { unsafe { function!(42991, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_83(&self) -> u64 { unsafe { function!(42991, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42992, rva 0x7d01c0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_84(&self) -> u64 { unsafe { function!(42992, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_84(&self) -> u64 { unsafe { function!(42992, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42993, rva 0x7d01d0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_85(&self) -> u64 { unsafe { function!(42993, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_85(&self) -> u64 { unsafe { function!(42993, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42994, rva 0x7d01e0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_86(&self) -> u64 { unsafe { function!(42994, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_86(&self) -> u64 { unsafe { function!(42994, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42995, rva 0x7d01f0).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_87(&self) -> u64 { unsafe { function!(42995, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_87(&self) -> u64 { unsafe { function!(42995, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42996, rva 0x7d0200).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_88(&self) -> u64 { unsafe { function!(42996, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_88(&self) -> u64 { unsafe { function!(42996, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42997, rva 0x7d0210).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_89(&self) -> u64 { unsafe { function!(42997, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_89(&self) -> u64 { unsafe { function!(42997, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42998, rva 0x7d0220).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_90(&self) -> u64 { unsafe { function!(42998, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_90(&self) -> u64 { unsafe { function!(42998, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42999, rva 0x7d0230).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_91(&self) -> u64 { unsafe { function!(42999, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_91(&self) -> u64 { unsafe { function!(42999, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 43000, rva 0x7d0240).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_92(&self) -> u64 { unsafe { function!(43000, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_92(&self) -> u64 { unsafe { function!(43000, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 43001, rva 0x7d0250).
     /// `undefined dtor(IBSTCreator<IHandlerFunctor<Actor,BSFixedStringCI>_> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_93(&self) -> u64 { unsafe { function!(43001, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_93(&self) -> u64 { unsafe { function!(43001, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_IMovementParameters {
@@ -4024,14 +4024,14 @@ impl crate::IBSTCreator_IMovementParameters {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(41644, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(41644, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IMovementParameters>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 41645, rva 0x792d40).
     /// `undefined dtor(IBSTCreator<IMovementParameters> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(41645, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(41645, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_IPackageData {
@@ -4041,70 +4041,70 @@ impl crate::IBSTCreator_IPackageData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27654, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27654, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27655, rva 0x450710).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(27655, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(27655, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27656, rva 0x450720).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(27656, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(27656, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27657, rva 0x450730).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(27657, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(27657, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27658, rva 0x450740).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(27658, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(27658, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27659, rva 0x450750).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(27659, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(27659, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27660, rva 0x450760).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(27660, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(27660, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27739, rva 0x4531b0).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(27739, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(27739, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27795, rva 0x4543f0).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(27795, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(27795, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IPackageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27805, rva 0x454880).
     /// `undefined dtor(IBSTCreator<IPackageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(27805, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(27805, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_IProcedure {
@@ -4114,231 +4114,231 @@ impl crate::IBSTCreator_IProcedure {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(28204, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(28204, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28284, rva 0x45eb20).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(28284, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(28284, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28321, rva 0x461710).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(28321, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(28321, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28355, rva 0x4624c0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(28355, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(28355, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28390, rva 0x4642b0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(28390, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(28390, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28425, rva 0x465130).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(28425, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(28425, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28468, rva 0x467b60).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(28468, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(28468, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28514, rva 0x469460).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(28514, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(28514, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28560, rva 0x46cfd0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(28560, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(28560, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28596, rva 0x46e5c0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(28596, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(28596, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28649, rva 0x472290).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(28649, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(28649, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28650, rva 0x4722a0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(28650, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(28650, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28702, rva 0x473070).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(28702, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(28702, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28731, rva 0x473e30).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(28731, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(28731, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28755, rva 0x4745a0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(28755, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(28755, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28786, rva 0x4759d0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(28786, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(28786, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28816, rva 0x476780).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(28816, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(28816, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28849, rva 0x477540).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(28849, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(28849, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28850, rva 0x477550).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(28850, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(28850, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28898, rva 0x478f10).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(28898, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(28898, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28947, rva 0x47c7f0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(28947, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(28947, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 28974, rva 0x47d250).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(28974, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(28974, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29034, rva 0x482a60).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(29034, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(29034, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29062, rva 0x483580).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(29062, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(29062, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29094, rva 0x485180).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(29094, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(29094, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29152, rva 0x487990).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(29152, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(29152, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29153, rva 0x4879a0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(29153, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(29153, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29203, rva 0x489e80).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(29203, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(29203, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29325, rva 0x48ead0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(29325, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(29325, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29359, rva 0x490eb0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(29359, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(29359, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29395, rva 0x4940d0).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(29395, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(29395, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29421, rva 0x494820).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(29421, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(29421, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedure>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29452, rva 0x496020).
     /// `undefined dtor(IBSTCreator<IProcedure> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(29452, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(29452, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_IProcedureTreeExecState {
@@ -4348,224 +4348,224 @@ impl crate::IBSTCreator_IProcedureTreeExecState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27826, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27826, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27827, rva 0x456bc0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(27827, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(27827, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27828, rva 0x456bd0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(27828, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(27828, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27829, rva 0x456be0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(27829, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(27829, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27830, rva 0x456bf0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(27830, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(27830, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27831, rva 0x456c00).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(27831, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(27831, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27832, rva 0x456c10).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(27832, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(27832, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27833, rva 0x456c20).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(27833, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(27833, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27834, rva 0x456c30).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(27834, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(27834, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27835, rva 0x456c40).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(27835, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(27835, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27836, rva 0x456c50).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(27836, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(27836, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27837, rva 0x456c60).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(27837, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(27837, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27838, rva 0x456c70).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(27838, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(27838, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27839, rva 0x456c80).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(27839, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(27839, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27840, rva 0x456c90).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(27840, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(27840, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27841, rva 0x456ca0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(27841, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(27841, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27842, rva 0x456cb0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(27842, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(27842, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27843, rva 0x456cc0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(27843, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(27843, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27844, rva 0x456cd0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(27844, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(27844, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27845, rva 0x456ce0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(27845, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(27845, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27846, rva 0x456cf0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(27846, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(27846, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27847, rva 0x456d00).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(27847, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(27847, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27848, rva 0x456d10).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(27848, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(27848, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27851, rva 0x456d40).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(27851, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(27851, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27853, rva 0x456d60).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(27853, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(27853, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27855, rva 0x456d80).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(27855, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(27855, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27857, rva 0x456da0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(27857, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(27857, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27858, rva 0x456db0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(27858, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(27858, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27859, rva 0x456dc0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(27859, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(27859, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27860, rva 0x456dd0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(27860, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(27860, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27861, rva 0x456de0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(27861, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(27861, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeExecState>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27862, rva 0x456df0).
     /// `undefined dtor(IBSTCreator<IProcedureTreeExecState> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(27862, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(27862, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_IProcedureTreeItem {
@@ -4575,35 +4575,35 @@ impl crate::IBSTCreator_IProcedureTreeItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27849, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27849, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeItem>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27850, rva 0x456d30).
     /// `undefined dtor(IBSTCreator<IProcedureTreeItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(27850, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(27850, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeItem>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27852, rva 0x456d50).
     /// `undefined dtor(IBSTCreator<IProcedureTreeItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(27852, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(27852, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeItem>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27854, rva 0x456d70).
     /// `undefined dtor(IBSTCreator<IProcedureTreeItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(27854, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(27854, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IProcedureTreeItem>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 27856, rva 0x456d90).
     /// `undefined dtor(IBSTCreator<IProcedureTreeItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(27856, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(27856, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_IUIMessageData {
@@ -4613,84 +4613,84 @@ impl crate::IBSTCreator_IUIMessageData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(52863, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(52863, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52864, rva 0x98ea20).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(52864, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(52864, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52865, rva 0x98ea30).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(52865, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(52865, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52866, rva 0x98ea40).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(52866, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(52866, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52867, rva 0x98ea50).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(52867, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(52867, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52868, rva 0x98ea60).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(52868, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(52868, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52869, rva 0x98ea70).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(52869, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(52869, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52870, rva 0x98ea80).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(52870, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(52870, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52871, rva 0x98ea90).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(52871, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(52871, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52872, rva 0x98eaa0).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(52872, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(52872, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 82110, rva 0x116c530).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(82110, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(82110, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<IUIMessageData>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 82111, rva 0x116c540).
     /// `undefined dtor(IBSTCreator<IUIMessageData> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(82111, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(82111, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_MovementAgent {
@@ -4700,434 +4700,434 @@ impl crate::IBSTCreator_MovementAgent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(41977, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(41977, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 41978, rva 0x7a3720).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(41978, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(41978, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42005, rva 0x7a4cb0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(42005, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(42005, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42006, rva 0x7a4cc0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(42006, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(42006, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42031, rva 0x7a5870).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(42031, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(42031, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42032, rva 0x7a5880).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(42032, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(42032, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42056, rva 0x7a63a0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(42056, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(42056, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42057, rva 0x7a63b0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(42057, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(42057, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42079, rva 0x7a68b0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(42079, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(42079, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42080, rva 0x7a68c0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(42080, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(42080, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42144, rva 0x7a7cf0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(42144, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(42144, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42145, rva 0x7a7d00).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(42145, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(42145, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42164, rva 0x7a81f0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(42164, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(42164, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42165, rva 0x7a8200).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(42165, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_14(&self) -> u64 { unsafe { function!(42165, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42187, rva 0x7a8d60).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(42187, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_15(&self) -> u64 { unsafe { function!(42187, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42188, rva 0x7a8d70).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(42188, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_16(&self) -> u64 { unsafe { function!(42188, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42221, rva 0x7aa7c0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(42221, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_17(&self) -> u64 { unsafe { function!(42221, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42222, rva 0x7aa7d0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(42222, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_18(&self) -> u64 { unsafe { function!(42222, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42249, rva 0x7ab1f0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(42249, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_19(&self) -> u64 { unsafe { function!(42249, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42250, rva 0x7ab200).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(42250, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_20(&self) -> u64 { unsafe { function!(42250, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42271, rva 0x7ab980).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(42271, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_21(&self) -> u64 { unsafe { function!(42271, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42272, rva 0x7ab990).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(42272, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_22(&self) -> u64 { unsafe { function!(42272, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90613, rva 0x11caee0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(90613, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_23(&self) -> u64 { unsafe { function!(90613, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90614, rva 0x11caef0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(90614, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_24(&self) -> u64 { unsafe { function!(90614, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90787, rva 0x11d26e0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(90787, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_25(&self) -> u64 { unsafe { function!(90787, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90791, rva 0x11d27c0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(90791, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_26(&self) -> u64 { unsafe { function!(90791, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92160, rva 0x121d2b0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(92160, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_27(&self) -> u64 { unsafe { function!(92160, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92161, rva 0x121d2c0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(92161, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_28(&self) -> u64 { unsafe { function!(92161, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92207, rva 0x121f870).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(92207, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_29(&self) -> u64 { unsafe { function!(92207, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92210, rva 0x121f8d0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(92210, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_30(&self) -> u64 { unsafe { function!(92210, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92291, rva 0x1221ba0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(92291, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_31(&self) -> u64 { unsafe { function!(92291, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92292, rva 0x1221bb0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(92292, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_32(&self) -> u64 { unsafe { function!(92292, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92318, rva 0x1223280).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(92318, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_33(&self) -> u64 { unsafe { function!(92318, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92319, rva 0x1223290).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(92319, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_34(&self) -> u64 { unsafe { function!(92319, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92470, rva 0x1227a40).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(92470, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_35(&self) -> u64 { unsafe { function!(92470, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92471, rva 0x1227a50).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(92471, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_36(&self) -> u64 { unsafe { function!(92471, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92510, rva 0x12295b0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(92510, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_37(&self) -> u64 { unsafe { function!(92510, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92511, rva 0x12295c0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(92511, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_38(&self) -> u64 { unsafe { function!(92511, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92557, rva 0x122abe0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(92557, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_39(&self) -> u64 { unsafe { function!(92557, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92558, rva 0x122abf0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(92558, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_40(&self) -> u64 { unsafe { function!(92558, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92579, rva 0x122b3c0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(92579, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_41(&self) -> u64 { unsafe { function!(92579, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92580, rva 0x122b3d0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(92580, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_42(&self) -> u64 { unsafe { function!(92580, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92595, rva 0x122bcb0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(92595, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_43(&self) -> u64 { unsafe { function!(92595, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92596, rva 0x122bcc0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(92596, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_44(&self) -> u64 { unsafe { function!(92596, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92611, rva 0x122bfc0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(92611, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_45(&self) -> u64 { unsafe { function!(92611, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92612, rva 0x122bfd0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_46(&self) -> u64 { unsafe { function!(92612, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_46(&self) -> u64 { unsafe { function!(92612, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92627, rva 0x122c330).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_47(&self) -> u64 { unsafe { function!(92627, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_47(&self) -> u64 { unsafe { function!(92627, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92628, rva 0x122c340).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_48(&self) -> u64 { unsafe { function!(92628, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_48(&self) -> u64 { unsafe { function!(92628, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92643, rva 0x122c8a0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_49(&self) -> u64 { unsafe { function!(92643, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_49(&self) -> u64 { unsafe { function!(92643, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92644, rva 0x122c8b0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_50(&self) -> u64 { unsafe { function!(92644, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_50(&self) -> u64 { unsafe { function!(92644, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92659, rva 0x122ccb0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_51(&self) -> u64 { unsafe { function!(92659, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_51(&self) -> u64 { unsafe { function!(92659, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92660, rva 0x122ccc0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_52(&self) -> u64 { unsafe { function!(92660, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_52(&self) -> u64 { unsafe { function!(92660, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92680, rva 0x122d190).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_53(&self) -> u64 { unsafe { function!(92680, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_53(&self) -> u64 { unsafe { function!(92680, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92681, rva 0x122d1a0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_54(&self) -> u64 { unsafe { function!(92681, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_54(&self) -> u64 { unsafe { function!(92681, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92718, rva 0x122ead0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_55(&self) -> u64 { unsafe { function!(92718, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_55(&self) -> u64 { unsafe { function!(92718, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92719, rva 0x122eaf0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_56(&self) -> u64 { unsafe { function!(92719, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_56(&self) -> u64 { unsafe { function!(92719, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92759, rva 0x1230210).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_57(&self) -> u64 { unsafe { function!(92759, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_57(&self) -> u64 { unsafe { function!(92759, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92760, rva 0x1230220).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_58(&self) -> u64 { unsafe { function!(92760, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_58(&self) -> u64 { unsafe { function!(92760, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92866, rva 0x1233d90).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_59(&self) -> u64 { unsafe { function!(92866, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_59(&self) -> u64 { unsafe { function!(92866, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92867, rva 0x1233da0).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_60(&self) -> u64 { unsafe { function!(92867, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_60(&self) -> u64 { unsafe { function!(92867, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92904, rva 0x1234a50).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_61(&self) -> u64 { unsafe { function!(92904, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_61(&self) -> u64 { unsafe { function!(92904, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementAgent>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92905, rva 0x1234a60).
     /// `undefined dtor(IBSTCreator<MovementAgent> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_62(&self) -> u64 { unsafe { function!(92905, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_62(&self) -> u64 { unsafe { function!(92905, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_MovementArbiter {
@@ -5137,70 +5137,70 @@ impl crate::IBSTCreator_MovementArbiter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(90888, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(90888, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 90892, rva 0x11d57d0).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(90892, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(90892, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92127, rva 0x121c140).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(92127, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(92127, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92128, rva 0x121c150).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(92128, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(92128, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92354, rva 0x1224010).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(92354, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(92354, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92355, rva 0x1224020).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(92355, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(92355, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92410, rva 0x1226820).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(92410, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(92410, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92414, rva 0x1226920).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(92414, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(92414, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92815, rva 0x1232c80).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(92815, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(92815, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementArbiter>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92816, rva 0x1232c90).
     /// `undefined dtor(IBSTCreator<MovementArbiter> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(92816, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(92816, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_MovementMessage {
@@ -5210,91 +5210,91 @@ impl crate::IBSTCreator_MovementMessage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42098, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42098, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 42119, rva 0x7a7560).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(42119, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(42119, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 91966, rva 0x1217860).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(91966, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(91966, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 91986, rva 0x1217de0).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(91986, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(91986, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92003, rva 0x12183a0).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(92003, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_5(&self) -> u64 { unsafe { function!(92003, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92021, rva 0x12187e0).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(92021, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_6(&self) -> u64 { unsafe { function!(92021, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92054, rva 0x121ab20).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(92054, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_7(&self) -> u64 { unsafe { function!(92054, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92069, rva 0x121ae60).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(92069, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_8(&self) -> u64 { unsafe { function!(92069, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92083, rva 0x121b110).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(92083, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_9(&self) -> u64 { unsafe { function!(92083, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92101, rva 0x121b4c0).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(92101, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_10(&self) -> u64 { unsafe { function!(92101, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92965, rva 0x12375a0).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(92965, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_11(&self) -> u64 { unsafe { function!(92965, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92966, rva 0x12375b0).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(92966, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_12(&self) -> u64 { unsafe { function!(92966, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IBSTCreator<MovementMessage>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 92967, rva 0x12375c0).
     /// `undefined dtor(IBSTCreator<MovementMessage> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(92967, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_13(&self) -> u64 { unsafe { function!(92967, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IBSTCreator_RefrInteraction {
@@ -5304,7 +5304,7 @@ impl crate::IBSTCreator_RefrInteraction {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(40361, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(40361, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IExplosionFactory {
@@ -5314,7 +5314,7 @@ impl crate::IExplosionFactory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(43814, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(43814, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IFormFactory {
@@ -5324,7 +5324,7 @@ impl crate::IFormFactory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(10852, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(10852, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IFormFactory__IFactoryVisitor {
@@ -5334,21 +5334,21 @@ impl crate::IFormFactory__IFactoryVisitor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(14692, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(14692, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IFormFactory::IFactoryVisitor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 14693, rva 0x1e76f0).
     /// `undefined dtor(IFactoryVisitor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(14693, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(14693, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IFormFactory::IFactoryVisitor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 441585, rva 0x34c630).
     /// `undefined dtor(IFactoryVisitor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(441585, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(441585, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IMemoryManagerFileFactory {
@@ -5358,7 +5358,7 @@ impl crate::IMemoryManagerFileFactory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(68123, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(68123, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ITempEffectFactory {
@@ -5368,49 +5368,49 @@ impl crate::ITempEffectFactory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(29983, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(29983, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ITempEffectFactory::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 29984, rva 0x4a9d80).
     /// `undefined ctor(ITempEffectFactory * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(29984, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(29984, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ITempEffectFactory::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 29985, rva 0x4a9dd0).
     /// `undefined ctor(ITempEffectFactory * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(29985, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_3(&self) -> u64 { unsafe { function!(29985, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ITempEffectFactory::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 29986, rva 0x4a9e20).
     /// `undefined ctor(ITempEffectFactory * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_4(&self) -> u64 { unsafe { function!(29986, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_4(&self) -> u64 { unsafe { function!(29986, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ITempEffectFactory::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 29987, rva 0x4a9e70).
     /// `undefined ctor(ITempEffectFactory * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_5(&self) -> u64 { unsafe { function!(29987, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_5(&self) -> u64 { unsafe { function!(29987, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ITempEffectFactory::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 29988, rva 0x4a9ec0).
     /// `undefined ctor(ITempEffectFactory * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_6(&self) -> u64 { unsafe { function!(29988, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_6(&self) -> u64 { unsafe { function!(29988, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ITempEffectFactory::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 29989, rva 0x4a9f10).
     /// `undefined dtor(ITempEffectFactory * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(29989, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(29989, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PackageCreator {
@@ -5420,7 +5420,7 @@ impl crate::PackageCreator {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(29633, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(29633, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterArmor {
@@ -5430,42 +5430,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterArmor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45255, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45255, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45260, rva 0x831f48).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45260, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45260, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45261, rva 0x831f54).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45261, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45261, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45256, rva 0x831e88).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45256, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45256, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45258, rva 0x831f18).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45258, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45258, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46561, rva 0x84a8c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46561, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46561, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterBoundItem {
@@ -5475,42 +5475,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterBound
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45222, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45222, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45226, rva 0x831858).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45226, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45226, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45227, rva 0x831864).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45227, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45227, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45223, rva 0x831814).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45223, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45223, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45225, rva 0x83184c).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45225, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45225, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46562, rva 0x84aac0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46562, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46562, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak {
@@ -5520,42 +5520,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45162, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45162, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45165, rva 0x830cf0).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45165, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45165, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45166, rva 0x830cfc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45166, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45166, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45163, rva 0x830cd8).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45163, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45163, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45164, rva 0x830ce4).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45164, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45164, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46563, rva 0x84acc0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46563, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46563, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm {
@@ -5565,42 +5565,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisar
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45148, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45148, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45152, rva 0x830ae4).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45152, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45152, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45153, rva 0x830af0).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45153, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45153, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45150, rva 0x830acc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45150, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45150, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45151, rva 0x830ad8).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45151, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45151, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46564, rva 0x84aec0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46564, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46564, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility {
@@ -5610,42 +5610,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvis
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45201, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45201, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45204, rva 0x831420).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45204, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45204, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45205, rva 0x83142c).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45205, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45205, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45202, rva 0x831408).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45202, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45202, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45203, rva 0x831414).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45203, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45203, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46565, rva 0x84b0c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46565, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46565, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterLight {
@@ -5655,42 +5655,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterLight
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45181, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45181, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45184, rva 0x831050).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45184, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45184, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45185, rva 0x83105c).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45185, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45185, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45182, rva 0x831038).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45182, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45182, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45183, rva 0x831044).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45183, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45183, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46566, rva 0x84b2c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46566, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46566, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterOffensive {
@@ -5700,7 +5700,7 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterOffen
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46567, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46567, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterParalyze {
@@ -5710,7 +5710,7 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterParal
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46568, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46568, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterReanimate {
@@ -5720,7 +5720,7 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterReani
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46569, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46569, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterRestore {
@@ -5730,42 +5730,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterResto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46505, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46505, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46508, rva 0x83016c).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46508, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46508, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46510, rva 0x8301ac).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46510, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46510, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46506, rva 0x830154).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46506, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46506, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46507, rva 0x830160).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46507, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46507, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46570, rva 0x84bac0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46570, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46570, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterScript {
@@ -5775,7 +5775,7 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterScrip
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46571, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46571, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterStagger {
@@ -5785,28 +5785,28 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterStagg
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46537, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46537, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterStagger>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46539, rva 0x8306fc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterStagger> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46539, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46539, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterStagger>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46540, rva 0x830708).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterStagger> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46540, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46540, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterStagger>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46572, rva 0x84bec0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterStagger> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterStagger> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46572, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46572, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterSummon {
@@ -5816,42 +5816,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterSummo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46519, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46519, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46522, rva 0x8303b0).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46522, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46522, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46523, rva 0x8303bc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46523, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46523, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46520, rva 0x830398).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46520, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46520, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46521, rva 0x8303a4).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46521, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46521, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46573, rva 0x84c0c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46573, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46573, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterTargetEffect {
@@ -5861,7 +5861,7 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterTarge
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46574, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46574, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterWard {
@@ -5871,42 +5871,42 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterWard 
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46485, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46485, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46488, rva 0x82fda0).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46488, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46488, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46490, rva 0x82fddc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46490, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46490, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46486, rva 0x82fd88).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46486, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46486, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46487, rva 0x82fd94).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46487, (&Self) -> u64)(self) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46487, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46575, rva 0x84c4c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46575, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(46575, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_DF2AE3C3__ActorValueFormFactory {
@@ -5916,6 +5916,6 @@ impl crate::_anon_DF2AE3C3__ActorValueFormFactory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27269, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(27269, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 

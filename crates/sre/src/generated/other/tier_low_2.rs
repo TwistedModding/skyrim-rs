@@ -3,6 +3,496 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Cmd::ClearActorsFactionsPlayerEnemyFlag_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22528, rva 0x363c80).
+/// `undefined1 ClearActorsFactionsPlayerEnemyFlag_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_actors_factions_player_enemy_flag_execute(param_1: u64, param_2: u64, param_3: i64) -> u8 { unsafe { function!(22528, (u64, u64, i64) -> u8)(param_1, param_2, param_3) } }
+/// `Cmd::ClearAdaptedLight_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22992, rva 0x377920).
+/// `undefined1 ClearAdaptedLight_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_adapted_light_execute() -> u8 { unsafe { function!(22992, () -> u8)() } }
+/// `Cmd::ClearArrestState_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22663, rva 0x369080).
+/// `undefined8 ClearArrestState_Execute(undefined8 param_1, undefined8 param_2, TESObjectREFR * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_arrest_state_execute(param_1: u64, param_2: u64, param_3: *mut crate::TESObjectREFR) -> u64 { unsafe { function!(22663, (u64, u64, *mut crate::TESObjectREFR) -> u64)(param_1, param_2, param_3) } }
+/// `Cmd::ClearConsole_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23053, rva 0x379f30).
+/// `undefined1 ClearConsole_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_console_execute() -> u8 { unsafe { function!(23053, () -> u8)() } }
+/// `Cmd::ClearDestruction_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22536, rva 0x3642a0).
+/// `undefined1 ClearDestruction_Execute(undefined8 param_1, undefined8 param_2, BSMultiBoundRoom_vtbl * param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_destruction_execute(param_1: u64, param_2: u64, param_3: *mut c_void, param_4: u64) -> u8 { unsafe { function!(22536, (u64, u64, *mut c_void, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::ClearFactionPlayerEnemyFlag_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22527, rva 0x363c10).
+/// `ulonglong ClearFactionPlayerEnemyFlag_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_faction_player_enemy_flag_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22527, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::ClearLocationMarkers_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22486, rva 0x361600).
+/// `undefined8 ClearLocationMarkers_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_location_markers_execute() -> u64 { unsafe { function!(22486, () -> u64)() } }
+/// `Cmd::ClearMotionVectors_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23198, rva 0x380950).
+/// `undefined1 ClearMotionVectors_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_motion_vectors_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u8 { unsafe { function!(23198, (u64, u64, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::ClearNoActivationSound_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22558, rva 0x364ce0).
+/// `undefined1 ClearNoActivationSound_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_no_activation_sound_execute() -> u8 { unsafe { function!(22558, () -> u8)() } }
+/// `Cmd::ClearOwnership_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22462, rva 0x360a20).
+/// `undefined8 ClearOwnership_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_ownership_execute(param_1: u64, param_2: u64, param_3: *mut i64) -> u64 { unsafe { function!(22462, (u64, u64, *mut i64) -> u64)(param_1, param_2, param_3) } }
+/// `Cmd::ClearPlaystationModSpace_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 523555, rva 0x382030).
+/// `undefined1 ClearPlaystationModSpace_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_playstation_mod_space_execute() -> u8 { unsafe { function!(523555, () -> u8)() } }
+/// `Cmd::ClearQuestAliases_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22935, rva 0x3749c0).
+/// `ulonglong ClearQuestAliases_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_quest_aliases_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22935, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::ClearScreenBlood_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23006, rva 0x377f80).
+/// `undefined1 ClearScreenBlood_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_screen_blood_execute() -> u8 { unsafe { function!(23006, () -> u8)() } }
+/// `Cmd::CloseFile_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 441594, rva 0x377b20).
+/// `ulonglong CloseFile_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__close_file_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(441594, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CollisionMesh_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23098, rva 0x37bb90).
+/// `undefined1 CollisionMesh_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__collision_mesh_execute() -> u8 { unsafe { function!(23098, () -> u8)() } }
+/// `Cmd::CompleteAllObjectives_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22499, rva 0x362170).
+/// `ulonglong CompleteAllObjectives_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__complete_all_objectives_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22499, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CompleteAllQuestStages_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22987, rva 0x3776e0).
+/// `undefined8 CompleteAllQuestStages_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__complete_all_quest_stages_execute() -> u64 { unsafe { function!(22987, () -> u64)() } }
+/// `Cmd::CompleteQuest_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22260, rva 0x358c00).
+/// `ulonglong CompleteQuest_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__complete_quest_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22260, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::ConfigureDDOF_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23127, rva 0x37d0e0).
+/// `undefined8 ConfigureDDOF_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__configure_ddof_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(23127, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CopySaves_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22107, rva 0x353760).
+/// `ulonglong CopySaves_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__copy_saves_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22107, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::Cos_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22698, rva 0x36a920).
+/// `ulonglong Cos_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__cos_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: *mut f64, param_8: *mut u32) -> u64 { unsafe { function!(22698, (i64, i64, i64, u64, i64, i64, *mut f64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CreateDetectionEvent_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22556, rva 0x364bb0).
+/// `ulonglong CreateDetectionEvent_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_detection_event_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22556, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CreateEvent_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22587, rva 0x366730).
+/// `ulonglong CreateEvent_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_event_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22587, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CreateGameData_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23023, rva 0x378cd0).
+/// `undefined1 CreateGameData_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_game_data_execute() -> u8 { unsafe { function!(23023, () -> u8)() } }
+/// `Cmd::CreateGrassAt_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23072, rva 0x37a8f0).
+/// `undefined1 CreateGrassAt_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_grass_at_execute() -> u8 { unsafe { function!(23072, () -> u8)() } }
+/// `Cmd::CreateSaveData_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23022, rva 0x378cc0).
+/// `undefined1 CreateSaveData_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_save_data_execute() -> u8 { unsafe { function!(23022, () -> u8)() } }
+/// `Cmd::DamageActorValue_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22029, rva 0x34e910).
+/// `ulonglong DamageActorValue_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__damage_actor_value_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22029, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DamageObject_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22443, rva 0x35fdf0).
+/// `undefined8 DamageObject_Execute(longlong param_1, longlong param_2, double param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__damage_object_execute(param_1: i64, param_2: i64, param_3: f64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22443, (i64, i64, f64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DebugCombatBehavior_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22999, rva 0x377d80).
+/// `undefined8 DebugCombatBehavior_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__debug_combat_behavior_execute(param_1: u64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(22999, (u64, u64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `Cmd::DeleteMod_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23192, rva 0x37fdb0).
+/// `ulonglong DeleteMod_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__delete_mod_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(23192, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DisableAllActors_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22101, rva 0x3532d0).
+/// `undefined8 DisableAllActors_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, longlong param_6)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__disable_all_actors_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: i64) -> u64 { unsafe { function!(22101, (u64, u64, u64, u64, u64, i64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
+/// `Cmd::DisableAllMines_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22583, rva 0x3662e0).
+/// `undefined1 DisableAllMines_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__disable_all_mines_execute() -> u8 { unsafe { function!(22583, () -> u8)() } }
+/// `Cmd::DisableLinkedPathPoints_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22395, rva 0x35e350).
+/// `undefined1 DisableLinkedPathPoints_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__disable_linked_path_points_execute() -> u8 { unsafe { function!(22395, () -> u8)() } }
+/// `Cmd::DisablePlayerControls_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22239, rva 0x358320).
+/// `ulonglong DisablePlayerControls_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__disable_player_controls_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22239, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::Disable_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22096, rva 0x353160).
+/// `ulonglong Disable_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__disable_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22096, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DismountActor_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22696, rva 0x36a6d0).
+/// `char DismountActor_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dismount_actor_execute(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> c_char { unsafe { function!(22696, (i64, i64, *mut i64, u64, i64, i64, u64, *mut u32) -> c_char)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DispelAllSpells_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22075, rva 0x351a30).
+/// `undefined8 DispelAllSpells_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dispel_all_spells_execute(param_1: u64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(22075, (u64, u64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `Cmd::Dispel_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22074, rva 0x351940).
+/// `undefined8 Dispel_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, ulonglong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dispel_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: u64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22074, (i64, i64, i64, u64, u64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DisplayGraphVariable_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23039, rva 0x379b30).
+/// `undefined1 DisplayGraphVariable_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__display_graph_variable_execute() -> u8 { unsafe { function!(23039, () -> u8)() } }
+/// `Cmd::DisplayPlayerIDs_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22942, rva 0x375330).
+/// `undefined8 DisplayPlayerIDs_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__display_player_i_ds_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(22942, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::DisplaySaveCacheStatus_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22944, rva 0x375570).
+/// `undefined1 DisplaySaveCacheStatus_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__display_save_cache_status_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u8 { unsafe { function!(22944, (u64, u64, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::DoTrap_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22366, rva 0x35cfa0).
+/// `undefined8 DoTrap_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__do_trap_execute(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22366, (i64, i64, *mut i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DoesNotExist_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21612, rva 0x3390b0).
+/// `undefined1 DoesNotExist_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__does_not_exist_eval(param_1: i64, param_2: u64, param_3: u64, param_4: *mut u64) -> u8 { unsafe { function!(21612, (i64, u64, u64, *mut u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::DoesNotExist_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22489, rva 0x361c10).
+/// `undefined DoesNotExist_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__does_not_exist_execute(param_1: u64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(22489, (u64, u64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `Cmd::DownloadUGC_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 523545, rva 0x380b40).
+/// `undefined1 DownloadUGC_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__download_ugc_execute() -> u8 { unsafe { function!(523545, () -> u8)() } }
+/// `Cmd::DropMe_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22004, rva 0x34d9b0).
+/// `undefined8 DropMe_Execute(undefined8 param_1, undefined8 param_2, longlong param_3, longlong * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__drop_me_execute(param_1: u64, param_2: u64, param_3: i64, param_4: *mut i64) -> u64 { unsafe { function!(22004, (u64, u64, i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::Drop_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22002, rva 0x34d790).
+/// `ulonglong Drop_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__drop_execute(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22002, (i64, i64, *mut i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DualCast_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22639, rva 0x3686c0).
+/// `undefined8 DualCast_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dual_cast_execute(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22639, (i64, i64, *mut i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DumpConditionFunctions_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23104, rva 0x37bc80).
+/// `undefined1 DumpConditionFunctions_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dump_condition_functions_execute() -> u8 { unsafe { function!(23104, () -> u8)() } }
+/// `Cmd::DumpLoadedAnimationFiles_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23105, rva 0x37bc90).
+/// `undefined1 DumpLoadedAnimationFiles_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dump_loaded_animation_files_execute() -> u8 { unsafe { function!(23105, () -> u8)() } }
+/// `Cmd::DumpMasterFileSeekData_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22437, rva 0x35fc00).
+/// `undefined1 DumpMasterFileSeekData_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dump_master_file_seek_data_execute() -> u8 { unsafe { function!(22437, () -> u8)() } }
+/// `Cmd::DumpModelMap_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22953, rva 0x376100).
+/// `ulonglong DumpModelMap_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dump_model_map_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22953, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DumpNiUpdates_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23084, rva 0x37ae90).
+/// `undefined1 DumpNiUpdates_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dump_ni_updates_execute() -> u8 { unsafe { function!(23084, () -> u8)() } }
+/// `Cmd::DumpPapyrusStacks_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23068, rva 0x37a890).
+/// `undefined1 DumpPapyrusStacks_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dump_papyrus_stacks_execute() -> u8 { unsafe { function!(23068, () -> u8)() } }
+/// `Cmd::DumpPapyrusUpdates_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23069, rva 0x37a8b0).
+/// `undefined1 DumpPapyrusUpdates_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dump_papyrus_updates_execute() -> u8 { unsafe { function!(23069, () -> u8)() } }
+/// `Cmd::DumpTexturePalette_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22952, rva 0x3760f0).
+/// `undefined1 DumpTexturePalette_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__dump_texture_palette_execute() -> u8 { unsafe { function!(22952, () -> u8)() } }
+/// `Cmd::DuplicateAllItems_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22421, rva 0x35ef80).
+/// `ulonglong DuplicateAllItems_Execute(longlong param_1, longlong param_2, TypeDescriptor * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__duplicate_all_items_execute(param_1: i64, param_2: i64, param_3: *mut c_void, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22421, (i64, i64, *mut c_void, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DuplicateNPCStats_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22426, rva 0x35f190).
+/// `ulonglong DuplicateNPCStats_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__duplicate_npc_stats_execute(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22426, (i64, i64, *mut i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::EPAlchemyEffectHasKeyword_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21756, rva 0x33ed80).
+/// `undefined8 EPAlchemyEffectHasKeyword_Eval(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_alchemy_effect_has_keyword_eval(param_1: u64, param_2: i64, param_3: u64, param_4: *mut u64) -> u64 { unsafe { function!(21756, (u64, i64, u64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::EPAlchemyGetMakingPoison_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21755, rva 0x33ed40).
+/// `undefined8 EPAlchemyGetMakingPoison_Eval(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_alchemy_get_making_poison_eval() -> u64 { unsafe { function!(21755, () -> u64)() } }
+/// `Cmd::EPMagic_SpellHasKeyword_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21753, rva 0x33ec60).
+/// `undefined8 EPMagic_SpellHasKeyword_Eval(longlong param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_magic_spell_has_keyword_eval(param_1: i64, param_2: i64, param_3: u64, param_4: *mut u64) -> u64 { unsafe { function!(21753, (i64, i64, u64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::EPMagic_SpellHasSkill_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21754, rva 0x33ecc0).
+/// `undefined8 EPMagic_SpellHasSkill_Eval(longlong param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_magic_spell_has_skill_eval(param_1: i64, param_2: i64, param_3: u64, param_4: *mut u64) -> u64 { unsafe { function!(21754, (i64, i64, u64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::EPModSkillUsage_AdvanceObjectHasKeyword_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21750, rva 0x33eb50).
+/// `undefined8 EPModSkillUsage_AdvanceObjectHasKeyword_Eval(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_mod_skill_usage_advance_object_has_keyword_eval(param_1: u64, param_2: i64, param_3: u64, param_4: *mut u64) -> u64 { unsafe { function!(21750, (u64, i64, u64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::EPModSkillUsage_IsAdvanceAction_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21751, rva 0x33ebd0).
+/// `undefined8 EPModSkillUsage_IsAdvanceAction_Eval(undefined8 param_1, int param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_mod_skill_usage_is_advance_action_eval(param_1: u64, param_2: i32, param_3: u64, param_4: *mut u64) -> u64 { unsafe { function!(21751, (u64, i32, u64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::EPModSkillUsage_IsAdvanceSkill_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21749, rva 0x33eb10).
+/// `undefined8 EPModSkillUsage_IsAdvanceSkill_Eval(undefined8 param_1, int param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_mod_skill_usage_is_advance_skill_eval(param_1: u64, param_2: i32, param_3: u64, param_4: *mut u64) -> u64 { unsafe { function!(21749, (u64, i32, u64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::EPTemperingItemHasKeyword_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21758, rva 0x33ee50).
+/// `undefined8 EPTemperingItemHasKeyword_Eval(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_tempering_item_has_keyword_eval(param_1: u64, param_2: i64, param_3: u64, param_4: *mut u64) -> u64 { unsafe { function!(21758, (u64, i64, u64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::EPTemperingItemIsEnchanted_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21757, rva 0x33ede0).
+/// `undefined8 EPTemperingItemIsEnchanted_Eval(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__ep_tempering_item_is_enchanted_eval() -> u64 { unsafe { function!(21757, () -> u64)() } }
+/// `Cmd::EffectWasDualCast_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21719, rva 0x33da90).
+/// `undefined8 EffectWasDualCast_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__effect_was_dual_cast_eval(param_1: i64, param_2: u64, param_3: u64, param_4: *mut u64) -> u64 { unsafe { function!(21719, (i64, u64, u64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::EffectWasDualCast_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22641, rva 0x368810).
+/// `undefined EffectWasDualCast_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__effect_was_dual_cast_execute(param_1: u64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(22641, (u64, u64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `Cmd::EmptyRefAlias_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22609, rva 0x367520).
+/// `undefined8 EmptyRefAlias_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__empty_ref_alias_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22609, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::EnableFastTravel_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22370, rva 0x35d2f0).
 /// `ulonglong EnableFastTravel_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 ///
@@ -11903,577 +12393,3 @@ pub unsafe fn wrap___std_type_info_compare_id_447420(param_1: i64, param_2: i64)
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn wrap___std_type_info_compare_id_447421(param_1: i64, param_2: i64) -> i64 { unsafe { function!(447421, (i64, i64) -> i64)(param_1, param_2) } }
-/// `Wrap___std_type_info_compare_ID_447422` (decompiler signature, tier low; ledger os_api evidence, name medium; id 447422, rva 0x1348c60).
-/// `longlong Wrap___std_type_info_compare_ID_447422(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap___std_type_info_compare_id_447422(param_1: i64, param_2: i64) -> i64 { unsafe { function!(447422, (i64, i64) -> i64)(param_1, param_2) } }
-/// `Wrap___std_type_info_compare_ID_97358` (decompiler signature, tier low; ledger os_api evidence, name medium; id 97358, rva 0x139b3f0).
-/// `longlong Wrap___std_type_info_compare_ID_97358(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap___std_type_info_compare_id_97358(param_1: i64, param_2: i64) -> i64 { unsafe { function!(97358, (i64, i64) -> i64)(param_1, param_2) } }
-/// `Wrap__getcwd` (decompiler signature, tier low; ledger os_api evidence, name medium; id 69154, rva 0xead8a0).
-/// `bool Wrap__getcwd(char * param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__getcwd(param_1: *mut c_char, param_2: i32) -> u8 { unsafe { function!(69154, (*mut c_char, i32) -> u8)(param_1, param_2) } }
-/// `Wrap__invalid_parameter_noinfo_noreturn` (decompiler signature, tier low; ledger os_api evidence, name medium; id 522979, rva 0x10c170).
-/// `undefined Wrap__invalid_parameter_noinfo_noreturn(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__invalid_parameter_noinfo_noreturn(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(522979, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `Wrap__seh_filter_exe_ID_165300` (decompiler signature, tier low; ledger os_api evidence, name medium; id 165300, rva 0x17364ad).
-/// `undefined Wrap__seh_filter_exe_ID_165300(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__seh_filter_exe_id_165300(param_1: *mut u64) -> u64 { unsafe { function!(165300, (*mut u64) -> u64)(param_1) } }
-/// `Wrap__stat64i32` (decompiler signature, tier low; ledger os_api evidence, name medium; id 69011, rva 0xeacf20).
-/// `undefined4 Wrap__stat64i32(undefined8 param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__stat64i32(param_1: u64) -> u32 { unsafe { function!(69011, (u64) -> u32)(param_1) } }
-/// `Wrap__stricmp_ID_454057` (decompiler signature, tier low; ledger os_api evidence, name medium; id 454057, rva 0x15e4c20).
-/// `bool Wrap__stricmp_ID_454057(char * param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__stricmp_id_454057(param_1: *mut c_char, param_2: *mut c_char) -> u8 { unsafe { function!(454057, (*mut c_char, *mut c_char) -> u8)(param_1, param_2) } }
-/// `Wrap__stricmp_ID_454058` (decompiler signature, tier low; ledger os_api evidence, name medium; id 454058, rva 0x15e4c50).
-/// `bool Wrap__stricmp_ID_454058(char * param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__stricmp_id_454058(param_1: *mut c_char, param_2: *mut c_char) -> u8 { unsafe { function!(454058, (*mut c_char, *mut c_char) -> u8)(param_1, param_2) } }
-/// `Wrap__stricmp_ID_96381` (decompiler signature, tier low; ledger os_api evidence, name medium; id 96381, rva 0x1459310).
-/// `bool Wrap__stricmp_ID_96381(char * param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__stricmp_id_96381(param_1: *mut c_char, param_2: *mut c_char) -> u8 { unsafe { function!(96381, (*mut c_char, *mut c_char) -> u8)(param_1, param_2) } }
-/// `Wrap__strnicmp_ID_109289` (decompiler signature, tier low; ledger os_api evidence, name medium; id 109289, rva 0x159ab60).
-/// `undefined4 Wrap__strnicmp_ID_109289(char * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__strnicmp_id_109289(param_1: *mut c_char) -> u32 { unsafe { function!(109289, (*mut c_char) -> u32)(param_1) } }
-/// `Wrap__strnicmp_ID_109290` (decompiler signature, tier low; ledger os_api evidence, name medium; id 109290, rva 0x159aba0).
-/// `undefined4 Wrap__strnicmp_ID_109290(char * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__strnicmp_id_109290(param_1: *mut c_char) -> u32 { unsafe { function!(109290, (*mut c_char) -> u32)(param_1) } }
-/// `Wrap__strnicmp_ID_109291` (decompiler signature, tier low; ledger os_api evidence, name medium; id 109291, rva 0x159abe0).
-/// `undefined4 Wrap__strnicmp_ID_109291(char * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__strnicmp_id_109291(param_1: *mut c_char) -> u32 { unsafe { function!(109291, (*mut c_char) -> u32)(param_1) } }
-/// `Wrap__strnicmp_ID_15004` (decompiler signature, tier low; ledger os_api evidence, name medium; id 15004, rva 0x1f3e80).
-/// `bool Wrap__strnicmp_ID_15004(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__strnicmp_id_15004(param_1: *mut u64) -> u8 { unsafe { function!(15004, (*mut u64) -> u8)(param_1) } }
-/// `Wrap__strtoi64` (decompiler signature, tier low; ledger os_api evidence, name medium; id 449920, rva 0x13da7b0).
-/// `undefined Wrap__strtoi64(undefined8 param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__strtoi64(param_1: u64) -> u64 { unsafe { function!(449920, (u64) -> u64)(param_1) } }
-/// `Wrap__strtoui64_ID_527203` (decompiler signature, tier low; ledger os_api evidence, name medium; id 527203, rva 0x13da870).
-/// `undefined Wrap__strtoui64_ID_527203(char * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__strtoui64_id_527203(param_1: *mut c_char) -> u64 { unsafe { function!(527203, (*mut c_char) -> u64)(param_1) } }
-/// `Wrap__time64` (decompiler signature, tier low; ledger os_api evidence, name medium; id 60120, rva 0xb2da20).
-/// `undefined Wrap__time64(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap__time64() -> u64 { unsafe { function!(60120, () -> u64)() } }
-/// `Wrap_atan2_ID_82712` (decompiler signature, tier low; ledger os_api evidence, name medium; id 82712, rva 0xd038e0).
-/// `undefined Wrap_atan2_ID_82712(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_atan2_id_82712(param_1: *mut f32) -> u64 { unsafe { function!(82712, (*mut f32) -> u64)(param_1) } }
-/// `Wrap_atan2f_ID_91792` (decompiler signature, tier low; ledger os_api evidence, name medium; id 91792, rva 0x120e4a0).
-/// `undefined Wrap_atan2f_ID_91792(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_atan2f_id_91792(param_1: *mut f32) -> u64 { unsafe { function!(91792, (*mut f32) -> u64)(param_1) } }
-/// `Wrap_atan2f_ID_91793` (decompiler signature, tier low; ledger os_api evidence, name medium; id 91793, rva 0x120e4c0).
-/// `undefined Wrap_atan2f_ID_91793(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_atan2f_id_91793(param_1: *mut f32) -> u64 { unsafe { function!(91793, (*mut f32) -> u64)(param_1) } }
-/// `Wrap_fclose_ID_109492` (decompiler signature, tier low; ledger os_api evidence, name medium; id 109492, rva 0x15a09d0).
-/// `undefined Wrap_fclose_ID_109492(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_fclose_id_109492(param_1: *mut u64) -> u64 { unsafe { function!(109492, (*mut u64) -> u64)(param_1) } }
-/// `Wrap_fclose_ID_57448` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57448, rva 0xaad180).
-/// `undefined Wrap_fclose_ID_57448(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_fclose_id_57448(param_1: i64) -> u64 { unsafe { function!(57448, (i64) -> u64)(param_1) } }
-/// `Wrap_fflush_ID_90089` (decompiler signature, tier low; ledger os_api evidence, name medium; id 90089, rva 0xeaa700).
-/// `bool Wrap_fflush_ID_90089(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_fflush_id_90089(param_1: i64) -> u8 { unsafe { function!(90089, (i64) -> u8)(param_1) } }
-/// `Wrap_fopen` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57447, rva 0xaad150).
-/// `undefined Wrap_fopen(longlong param_1, char * param_2, char * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_fopen(param_1: i64, param_2: *mut c_char, param_3: *mut c_char) -> u64 { unsafe { function!(57447, (i64, *mut c_char, *mut c_char) -> u64)(param_1, param_2, param_3) } }
-/// `Wrap_fread_ID_69022` (decompiler signature, tier low; ledger os_api evidence, name medium; id 69022, rva 0xeadda0).
-/// `undefined Wrap_fread_ID_69022(longlong param_1, void * param_2, uint param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_fread_id_69022(param_1: i64, param_2: *mut c_void, param_3: u32) -> u64 { unsafe { function!(69022, (i64, *mut c_void, u32) -> u64)(param_1, param_2, param_3) } }
-/// `Wrap_free_ID_110042` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110042, rva 0x15b5fc0).
-/// `undefined8 Wrap_free_ID_110042(void * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_free_id_110042(param_1: *mut c_void) -> u64 { unsafe { function!(110042, (*mut c_void) -> u64)(param_1) } }
-/// `Wrap_free_ID_110043` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110043, rva 0x15b5fe0).
-/// `undefined8 Wrap_free_ID_110043(void * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_free_id_110043(param_1: *mut c_void) -> u64 { unsafe { function!(110043, (*mut c_void) -> u64)(param_1) } }
-/// `Wrap_free_ID_110073` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110073, rva 0x15b8440).
-/// `undefined8 Wrap_free_ID_110073(void * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_free_id_110073(param_1: *mut c_void) -> u64 { unsafe { function!(110073, (*mut c_void) -> u64)(param_1) } }
-/// `Wrap_free_ID_110074` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110074, rva 0x15b8460).
-/// `undefined8 Wrap_free_ID_110074(void * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_free_id_110074(param_1: *mut c_void) -> u64 { unsafe { function!(110074, (*mut c_void) -> u64)(param_1) } }
-/// `Wrap_free_ID_110084` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110084, rva 0x15b89c0).
-/// `undefined8 Wrap_free_ID_110084(void * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_free_id_110084(param_1: *mut c_void) -> u64 { unsafe { function!(110084, (*mut c_void) -> u64)(param_1) } }
-/// `Wrap_free_ID_110090` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110090, rva 0x15b8fb0).
-/// `undefined8 Wrap_free_ID_110090(void * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_free_id_110090(param_1: *mut c_void) -> u64 { unsafe { function!(110090, (*mut c_void) -> u64)(param_1) } }
-/// `Wrap_free_ID_442967` (decompiler signature, tier low; ledger os_api evidence, name medium; id 442967, rva 0xa7c620).
-/// `undefined Wrap_free_ID_442967(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_free_id_442967(param_1: *mut u64) -> u64 { unsafe { function!(442967, (*mut u64) -> u64)(param_1) } }
-/// `Wrap_free_ID_56947` (decompiler signature, tier low; ledger os_api evidence, name medium; id 56947, rva 0xa9b490).
-/// `undefined Wrap_free_ID_56947(undefined8 param_1, void * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_free_id_56947(param_1: u64, param_2: *mut c_void) -> u64 { unsafe { function!(56947, (u64, *mut c_void) -> u64)(param_1, param_2) } }
-/// `Wrap_malloc_ID_110072` (decompiler signature, tier low; ledger os_api evidence, name medium; id 110072, rva 0x15b8430).
-/// `undefined Wrap_malloc_ID_110072(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_malloc_id_110072() -> u64 { unsafe { function!(110072, () -> u64)() } }
-/// `Wrap_malloc_ID_56946` (decompiler signature, tier low; ledger os_api evidence, name medium; id 56946, rva 0xa9b480).
-/// `undefined Wrap_malloc_ID_56946(undefined8 param_1, int param_2, int param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_malloc_id_56946(param_1: u64, param_2: i32, param_3: i32) -> u64 { unsafe { function!(56946, (u64, i32, i32) -> u64)(param_1, param_2, param_3) } }
-/// `Wrap_memcmp_ID_15314` (decompiler signature, tier low; ledger os_api evidence, name medium; id 15314, rva 0x203fb0).
-/// `bool Wrap_memcmp_ID_15314(void * param_1, void * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcmp_id_15314(param_1: *mut c_void, param_2: *mut c_void) -> u8 { unsafe { function!(15314, (*mut c_void, *mut c_void) -> u8)(param_1, param_2) } }
-/// `Wrap_memcmp_ID_31` (decompiler signature, tier low; ledger os_api evidence, name medium; id 31, rva 0x184c).
-/// `bool Wrap_memcmp_ID_31(longlong param_1, longlong param_2, longlong param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcmp_id_31(param_1: i64, param_2: i64, param_3: i64, param_4: i64) -> u8 { unsafe { function!(31, (i64, i64, i64, i64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memcmp_ID_440952` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440952, rva 0x122c80).
-/// `ulonglong Wrap_memcmp_ID_440952(void * param_1, size_t param_2, void * param_3, size_t param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcmp_id_440952(param_1: *mut c_void, param_2: usize, param_3: *mut c_void, param_4: usize) -> u64 { unsafe { function!(440952, (*mut c_void, usize, *mut c_void, usize) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memcmp_ID_57152` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57152, rva 0xaa5fe0).
-/// `undefined Wrap_memcmp_ID_57152(void * param_1, void * param_2, uint param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcmp_id_57152(param_1: *mut c_void, param_2: *mut c_void, param_3: u32) -> u64 { unsafe { function!(57152, (*mut c_void, *mut c_void, u32) -> u64)(param_1, param_2, param_3) } }
-/// `Wrap_memcmp_ID_71759` (decompiler signature, tier low; ledger os_api evidence, name medium; id 71759, rva 0xf1d330).
-/// `ulonglong Wrap_memcmp_ID_71759(uint * param_1, uint * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcmp_id_71759(param_1: *mut u32, param_2: *mut u32) -> u64 { unsafe { function!(71759, (*mut u32, *mut u32) -> u64)(param_1, param_2) } }
-/// `Wrap_memcpy_ID_106906` (decompiler signature, tier low; ledger os_api evidence, name medium; id 106906, rva 0x152b1b0).
-/// `undefined Wrap_memcpy_ID_106906(longlong param_1, int param_2, void * param_3, int param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcpy_id_106906(param_1: i64, param_2: i32, param_3: *mut c_void, param_4: i32) -> u64 { unsafe { function!(106906, (i64, i32, *mut c_void, i32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memcpy_ID_439867` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439867, rva 0x10d2c0).
-/// `undefined Wrap_memcpy_ID_439867(undefined8 param_1, void * param_2, size_t param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcpy_id_439867(param_1: u64, param_2: *mut c_void, param_3: usize, param_4: *mut c_void) -> u64 { unsafe { function!(439867, (u64, *mut c_void, usize, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memcpy_ID_440341` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440341, rva 0x10b800).
-/// `void * Wrap_memcpy_ID_440341(void * param_1, void * param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcpy_id_440341(param_1: *mut c_void, param_2: *mut c_void, param_3: i64) -> *mut c_void { unsafe { function!(440341, (*mut c_void, *mut c_void, i64) -> *mut c_void)(param_1, param_2, param_3) } }
-/// `Wrap_memcpy_ID_522977` (decompiler signature, tier low; ledger os_api evidence, name medium; id 522977, rva 0x10c0c0).
-/// `void * Wrap_memcpy_ID_522977(void * param_1, void * param_2, size_t param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcpy_id_522977(param_1: *mut c_void, param_2: *mut c_void, param_3: usize) -> *mut c_void { unsafe { function!(522977, (*mut c_void, *mut c_void, usize) -> *mut c_void)(param_1, param_2, param_3) } }
-/// `Wrap_memcpy_ID_523233` (decompiler signature, tier low; ledger os_api evidence, name medium; id 523233, rva 0x121250).
-/// `void * Wrap_memcpy_ID_523233(void * param_1, void * param_2, size_t param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcpy_id_523233(param_1: *mut c_void, param_2: *mut c_void, param_3: usize) -> *mut c_void { unsafe { function!(523233, (*mut c_void, *mut c_void, usize) -> *mut c_void)(param_1, param_2, param_3) } }
-/// `Wrap_memcpy_ID_57148` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57148, rva 0xaa5f70).
-/// `undefined Wrap_memcpy_ID_57148(void * param_1, void * param_2, uint param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcpy_id_57148(param_1: *mut c_void, param_2: *mut c_void, param_3: u32) -> u64 { unsafe { function!(57148, (*mut c_void, *mut c_void, u32) -> u64)(param_1, param_2, param_3) } }
-/// `Wrap_memcpy_ID_57368` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57368, rva 0xaaa8a0).
-/// `undefined Wrap_memcpy_ID_57368(void * param_1, void * param_2, int param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcpy_id_57368(param_1: *mut c_void, param_2: *mut c_void, param_3: i32) -> u64 { unsafe { function!(57368, (*mut c_void, *mut c_void, i32) -> u64)(param_1, param_2, param_3) } }
-/// `Wrap_memcpy_ID_84873` (decompiler signature, tier low; ledger os_api evidence, name medium; id 84873, rva 0xd72a10).
-/// `undefined Wrap_memcpy_ID_84873(longlong param_1, void * param_2, size_t param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memcpy_id_84873(param_1: i64, param_2: *mut c_void, param_3: usize) -> u64 { unsafe { function!(84873, (i64, *mut c_void, usize) -> u64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_439889` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439889, rva 0x10ee90).
-/// `longlong Wrap_memmove_ID_439889(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_439889(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(439889, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_439904` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439904, rva 0x10fae0).
-/// `longlong Wrap_memmove_ID_439904(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_439904(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(439904, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_439908` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439908, rva 0x10ff30).
-/// `longlong Wrap_memmove_ID_439908(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_439908(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(439908, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440082` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440082, rva 0x1183e0).
-/// `longlong Wrap_memmove_ID_440082(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440082(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440082, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440088` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440088, rva 0x118650).
-/// `longlong Wrap_memmove_ID_440088(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440088(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440088, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440167` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440167, rva 0x115c20).
-/// `longlong Wrap_memmove_ID_440167(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440167(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440167, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440169` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440169, rva 0x115e70).
-/// `longlong Wrap_memmove_ID_440169(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440169(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440169, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440172` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440172, rva 0x115fb0).
-/// `longlong Wrap_memmove_ID_440172(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440172(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440172, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440176` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440176, rva 0x1162b0).
-/// `longlong Wrap_memmove_ID_440176(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440176(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440176, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440254` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440254, rva 0x11e8d0).
-/// `longlong Wrap_memmove_ID_440254(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440254(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440254, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440260` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440260, rva 0x11ea90).
-/// `longlong Wrap_memmove_ID_440260(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440260(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440260, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440309` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440309, rva 0x11fe00).
-/// `longlong Wrap_memmove_ID_440309(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440309(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440309, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440724` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440724, rva 0x12fff0).
-/// `longlong Wrap_memmove_ID_440724(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440724(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440724, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440777` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440777, rva 0x136670).
-/// `longlong Wrap_memmove_ID_440777(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440777(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440777, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440782` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440782, rva 0x1367e0).
-/// `longlong Wrap_memmove_ID_440782(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440782(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440782, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440784` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440784, rva 0x1369e0).
-/// `longlong Wrap_memmove_ID_440784(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440784(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440784, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440786` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440786, rva 0x136a20).
-/// `longlong Wrap_memmove_ID_440786(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440786(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440786, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440794` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440794, rva 0x136b90).
-/// `longlong Wrap_memmove_ID_440794(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440794(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440794, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440796` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440796, rva 0x136c10).
-/// `longlong Wrap_memmove_ID_440796(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440796(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440796, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440798` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440798, rva 0x136d70).
-/// `longlong Wrap_memmove_ID_440798(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440798(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440798, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440799` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440799, rva 0x136da0).
-/// `longlong Wrap_memmove_ID_440799(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440799(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440799, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440819` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440819, rva 0x12fb30).
-/// `longlong Wrap_memmove_ID_440819(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440819(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440819, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440827` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440827, rva 0x130180).
-/// `longlong Wrap_memmove_ID_440827(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440827(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440827, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440887` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440887, rva 0x12ca50).
-/// `longlong Wrap_memmove_ID_440887(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440887(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440887, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440891` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440891, rva 0x12cce0).
-/// `longlong Wrap_memmove_ID_440891(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440891(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440891, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440895` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440895, rva 0x12ce50).
-/// `longlong Wrap_memmove_ID_440895(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440895(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440895, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440898` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440898, rva 0x12cef0).
-/// `longlong Wrap_memmove_ID_440898(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440898(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440898, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440900` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440900, rva 0x12cf90).
-/// `longlong Wrap_memmove_ID_440900(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440900(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440900, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440902` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440902, rva 0x12cfe0).
-/// `longlong Wrap_memmove_ID_440902(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440902(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440902, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440906` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440906, rva 0x12d060).
-/// `longlong Wrap_memmove_ID_440906(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440906(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440906, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440908` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440908, rva 0x12d100).
-/// `longlong Wrap_memmove_ID_440908(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440908(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440908, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_440910` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440910, rva 0x12d140).
-/// `longlong Wrap_memmove_ID_440910(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440910(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440910, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_441173` (decompiler signature, tier low; ledger os_api evidence, name medium; id 441173, rva 0x138200).
-/// `longlong Wrap_memmove_ID_441173(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_441173(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(441173, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_441174` (decompiler signature, tier low; ledger os_api evidence, name medium; id 441174, rva 0x138340).
-/// `longlong Wrap_memmove_ID_441174(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_441174(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(441174, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }
-/// `Wrap_memmove_ID_441207` (decompiler signature, tier low; ledger os_api evidence, name medium; id 441207, rva 0x143b30).
-/// `longlong Wrap_memmove_ID_441207(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_441207(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(441207, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }

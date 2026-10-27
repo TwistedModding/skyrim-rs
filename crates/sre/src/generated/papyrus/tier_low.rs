@@ -10,21 +10,21 @@ impl crate::ActiveEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 19, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 19, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ActiveEffect::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 34049, rva 0x5baa30).
     /// `ActiveEffect * ctor(ActiveEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: i64, param_2: u64, param_3: *mut u32) -> *mut Self { unsafe { function!(34049, (&Self, i64, u64, *mut u32) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: i64, param_2: u64, param_3: *mut u32) -> *mut Self { unsafe { function!(34049, (*const Self, i64, u64, *mut u32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ActiveEffect::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 34090, rva 0x5bccd0).
     /// `undefined dtor(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(34090, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(34090, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSBaseAlias {
@@ -34,7 +34,7 @@ impl crate::BGSBaseAlias {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__Internal__VirtualMachine {
@@ -44,84 +44,84 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_debug_interface_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(105020, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_debug_interface_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(105020, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 104818, rva 0x14b4dd0).
     /// `undefined8 BSScript_IVMObjectBindInterface_vfunc_1(VirtualMachine * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(104818, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(104818, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_10` (decompiler signature, tier low; ledger rtti evidence, name high; id 104827, rva 0x14b5fc0).
     /// `undefined8 BSScript_IVMObjectBindInterface_vfunc_10(VirtualMachine * this, ulonglong * param_1, int * param_2, int * * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_10(&self, param_1: *mut u64, param_2: *mut i32, param_3: *mut *mut i32) -> u64 { unsafe { function!(104827, (&Self, *mut u64, *mut i32, *mut *mut i32) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_10(&self, param_1: *mut u64, param_2: *mut i32, param_3: *mut *mut i32) -> u64 { unsafe { function!(104827, (*const Self, *mut u64, *mut i32, *mut *mut i32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 104819, rva 0x14b4e00).
     /// `undefined1 BSScript_IVMObjectBindInterface_vfunc_2(VirtualMachine * this, int * param_1, int * * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_2(&self, param_1: *mut i32, param_2: *mut *mut i32) -> u8 { unsafe { function!(104819, (&Self, *mut i32, *mut *mut i32) -> u8)(self, param_1, param_2) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_2(&self, param_1: *mut i32, param_2: *mut *mut i32) -> u8 { unsafe { function!(104819, (*const Self, *mut i32, *mut *mut i32) -> u8)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 104822, rva 0x14b54d0).
     /// `undefined BSScript_IVMObjectBindInterface_vfunc_5(VirtualMachine * this, uint * * * * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_5(&self, param_1: *mut *mut *mut *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104822, (&Self, *mut *mut *mut *mut u32, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_5(&self, param_1: *mut *mut *mut *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104822, (*const Self, *mut *mut *mut *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 104823, rva 0x14b5680).
     /// `ulonglong BSScript_IVMObjectBindInterface_vfunc_6(VirtualMachine * this, ulonglong param_1, undefined8 param_2, undefined1 * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_6(&self, param_1: u64, param_2: u64, param_3: *mut u8) -> u64 { unsafe { function!(104823, (&Self, u64, u64, *mut u8) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_6(&self, param_1: u64, param_2: u64, param_3: *mut u8) -> u64 { unsafe { function!(104823, (*const Self, u64, u64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_7` (decompiler signature, tier low; ledger rtti evidence, name high; id 104824, rva 0x14b5820).
     /// `undefined BSScript_IVMObjectBindInterface_vfunc_7(VirtualMachine * this, ulonglong * * * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_7(&self, param_1: *mut *mut *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104824, (&Self, *mut *mut *mut u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_7(&self, param_1: *mut *mut *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104824, (*const Self, *mut *mut *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name high; id 104825, rva 0x14b5a10).
     /// `undefined BSScript_IVMObjectBindInterface_vfunc_8(VirtualMachine * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_8(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104825, (&Self, *mut u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_8(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104825, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name high; id 104826, rva 0x14b5e10).
     /// `char BSScript_IVMObjectBindInterface_vfunc_9(VirtualMachine * this, int * * param_1, ulonglong param_2, int * * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_9(&self, param_1: *mut *mut i32, param_2: u64, param_3: *mut *mut i32) -> c_char { unsafe { function!(104826, (&Self, *mut *mut i32, u64, *mut *mut i32) -> c_char)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vfunc_9(&self, param_1: *mut *mut i32, param_2: u64, param_3: *mut *mut i32) -> c_char { unsafe { function!(104826, (*const Self, *mut *mut i32, u64, *mut *mut i32) -> c_char)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 104828, rva 0x14b6850).
     /// `bool BSScript_IVMSaveLoadInterface_vfunc_1(VirtualMachine * this, VirtualMachine_vtbl_18 * param_2, VirtualMachine * param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_1(&self, param_2: *mut c_void, param_3: *mut c_void, param_4: u64) -> u8 { unsafe { function!(104828, (&Self, *mut c_void, *mut c_void, u64) -> u8)(self, param_2, param_3, param_4) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_1(&self, param_2: *mut c_void, param_3: *mut c_void, param_4: u64) -> u8 { unsafe { function!(104828, (*const Self, *mut c_void, *mut c_void, u64) -> u8)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_10` (decompiler signature, tier low; ledger rtti evidence, name high; id 104837, rva 0x14b8b80).
     /// `undefined1 BSScript_IVMSaveLoadInterface_vfunc_10(VirtualMachine * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_10(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> u8 { unsafe { function!(104837, (&Self, u64, *mut u64, u64) -> u8)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_10(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> u8 { unsafe { function!(104837, (*const Self, u64, *mut u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name high; id 104838, rva 0x14b8c40).
     /// `undefined8 BSScript_IVMSaveLoadInterface_vfunc_11(VirtualMachine * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_11(&self, param_1: u64) -> u64 { unsafe { function!(104838, (&Self, u64) -> u64)(self, param_1) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_11(&self, param_1: u64) -> u64 { unsafe { function!(104838, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_12` (decompiler signature, tier low; ledger rtti evidence, name high; id 104839, rva 0x14b8c50).
     /// `undefined BSScript_IVMSaveLoadInterface_vfunc_12(void)`
     ///
@@ -135,70 +135,70 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_13(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> u8 { unsafe { function!(104840, (&Self, u64, *mut u64, u64) -> u8)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_13(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> u8 { unsafe { function!(104840, (*const Self, u64, *mut u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_14` (decompiler signature, tier low; ledger rtti evidence, name high; id 104841, rva 0x14b8d20).
     /// `bool BSScript_IVMSaveLoadInterface_vfunc_14(VirtualMachine * this, longlong * param_1, ulonglong * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_14(&self, param_1: *mut i64, param_2: *mut u64) -> u8 { unsafe { function!(104841, (&Self, *mut i64, *mut u64) -> u8)(self, param_1, param_2) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_14(&self, param_1: *mut i64, param_2: *mut u64) -> u8 { unsafe { function!(104841, (*const Self, *mut i64, *mut u64) -> u8)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_15` (decompiler signature, tier low; ledger rtti evidence, name high; id 104842, rva 0x14b8dd0).
     /// `undefined1 BSScript_IVMSaveLoadInterface_vfunc_15(VirtualMachine * this, uint param_1, undefined8 * param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_15(&self, param_1: u32, param_2: *mut u64, param_3: u64) -> u8 { unsafe { function!(104842, (&Self, u32, *mut u64, u64) -> u8)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_15(&self, param_1: u32, param_2: *mut u64, param_3: u64) -> u8 { unsafe { function!(104842, (*const Self, u32, *mut u64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 104829, rva 0x14b7160).
     /// `char BSScript_IVMSaveLoadInterface_vfunc_2(VirtualMachine * this, VirtualMachine_vtbl * param_1, VirtualMachine * param_2, VirtualMachine * param_3, undefined1 * param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_2(&self, param_1: *mut c_void, param_2: *mut c_void, param_3: *mut c_void, param_4: *mut u8) -> c_char { unsafe { function!(104829, (&Self, *mut c_void, *mut c_void, *mut c_void, *mut u8) -> c_char)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_2(&self, param_1: *mut c_void, param_2: *mut c_void, param_3: *mut c_void, param_4: *mut u8) -> c_char { unsafe { function!(104829, (*const Self, *mut c_void, *mut c_void, *mut c_void, *mut u8) -> c_char)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_22` (decompiler signature, tier low; ledger rtti evidence, name high; id 104843, rva 0x14b8eb0).
     /// `undefined8 BSScript_IVMSaveLoadInterface_vfunc_22(VirtualMachine * this, longlong param_1, longlong * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_22(&self, param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(104843, (&Self, i64, *mut i64) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_22(&self, param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(104843, (*const Self, i64, *mut i64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 104830, rva 0x14b7c80).
     /// `undefined BSScript_IVMSaveLoadInterface_vfunc_3(VirtualMachine * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_3(&self, param_1: *mut i64) -> u64 { unsafe { function!(104830, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_3(&self, param_1: *mut i64) -> u64 { unsafe { function!(104830, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 104832, rva 0x14b7d10).
     /// `undefined BSScript_IVMSaveLoadInterface_vfunc_5(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_5(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104832, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_5(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104832, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 104833, rva 0x14b7d90).
     /// `undefined BSScript_IVMSaveLoadInterface_vfunc_6(VirtualMachine * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_6(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104833, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_6(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104833, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_7` (decompiler signature, tier low; ledger rtti evidence, name high; id 104834, rva 0x14b7e90).
     /// `undefined BSScript_IVMSaveLoadInterface_vfunc_7(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_7(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104834, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_7(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104834, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name high; id 104835, rva 0x14b8b60).
     /// `undefined8 BSScript_IVMSaveLoadInterface_vfunc_8(VirtualMachine * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_8(&self, param_1: u64) -> u64 { unsafe { function!(104835, (&Self, u64) -> u64)(self, param_1) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_8(&self, param_1: u64) -> u64 { unsafe { function!(104835, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name high; id 104836, rva 0x14b8b70).
     /// `undefined BSScript_IVMSaveLoadInterface_vfunc_9(void)`
     ///
@@ -212,21 +212,21 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u64, param_7: u64, param_8: u64) -> *mut c_void { unsafe { function!(104763, (&Self, u64, u64, u64, u64, u64, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u64, param_7: u64, param_8: u64) -> *mut c_void { unsafe { function!(104763, (*const Self, u64, u64, u64, u64, u64, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
     /// `BSScript::Internal::VirtualMachine::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 104764, rva 0x14afeb0).
     /// `undefined dtor(VirtualMachine * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104764, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(104764, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 105033, rva 0x14c8ab0).
     /// `VirtualMachine * vdtor(VirtualMachine * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105033, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105033, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSScript__NF_util__NativeFunctionBase {
@@ -236,14 +236,14 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: *mut c_char, param_4: u8, param_5: u32) -> *mut c_void { unsafe { function!(104652, (&Self, *mut c_char, *mut c_char, *mut c_char, u8, u32) -> *mut c_void)(self, param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn ctor_2(&self, param_1: *mut c_char, param_2: *mut c_char, param_3: *mut c_char, param_4: u8, param_5: u32) -> *mut c_void { unsafe { function!(104652, (*const Self, *mut c_char, *mut c_char, *mut c_char, u8, u32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
     /// `BSScript::NF_util::NativeFunctionBase::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 104658, rva 0x14aa3d0).
     /// `NativeFunctionBase * vdtor(NativeFunctionBase * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(104658, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(104658, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::ExtraAliasInstanceArray {
@@ -253,14 +253,14 @@ impl crate::ExtraAliasInstanceArray {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(12717, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(12717, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ExtraAliasInstanceArray::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 12191, rva 0x17c1e0).
     /// `ExtraAliasInstanceArray * vdtor(ExtraAliasInstanceArray * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(12191, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(12191, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::SkyrimScript__HandlePolicy {
@@ -270,13 +270,13 @@ impl crate::SkyrimScript__HandlePolicy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54202, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54202, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `SkyrimScript::HandlePolicy::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 54369, rva 0x9f0760).
     /// `HandlePolicy * vdtor(HandlePolicy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54369, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(54369, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 

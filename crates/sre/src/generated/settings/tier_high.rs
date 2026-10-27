@@ -10,7 +10,7 @@ impl crate::SettingCollection_Setting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11032, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(11032, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SettingT_INIPrefSettingCollection {
@@ -20,6 +20,6 @@ impl crate::SettingT_INIPrefSettingCollection {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(21228, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(21228, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 

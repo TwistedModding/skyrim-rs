@@ -10,42 +10,42 @@ impl crate::BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn pop(&self) -> u8 { unsafe { function!(82143, (&Self) -> u8)(self) } }
+    pub unsafe fn pop(&self) -> u8 { unsafe { function!(82143, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PopImpl` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82132, rva 0x116ccd0).
     /// `bool PopImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn pop_impl(&self, param_1: *mut u64) -> u8 { unsafe { function!(82132, (&Self, *mut u64) -> u8)(self, param_1) } }
+    pub unsafe fn pop_impl(&self, param_1: *mut u64) -> u8 { unsafe { function!(82132, (*const Self, *mut u64) -> u8)(core::ptr::from_ref(self), param_1) } }
     /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Push` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82144, rva 0x116d790).
     /// `undefined1 Push(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn push(&self) -> u8 { unsafe { function!(82144, (&Self) -> u8)(self) } }
+    pub unsafe fn push(&self) -> u8 { unsafe { function!(82144, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PushImpl` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82134, rva 0x116cd40).
     /// `longlong PushImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn push_impl(&self, param_1: *mut u64) -> i64 { unsafe { function!(82134, (&Self, *mut u64) -> i64)(self, param_1) } }
+    pub unsafe fn push_impl(&self, param_1: *mut u64) -> i64 { unsafe { function!(82134, (*const Self, *mut u64) -> i64)(core::ptr::from_ref(self), param_1) } }
     /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPop` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82151, rva 0x116dc70).
     /// `uint TryPop(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn try_pop(&self) -> u32 { unsafe { function!(82151, (&Self) -> u32)(self) } }
+    pub unsafe fn try_pop(&self) -> u32 { unsafe { function!(82151, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPush` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82152, rva 0x116dcd0).
     /// `uint TryPush(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn try_push(&self) -> u32 { unsafe { function!(82152, (&Self) -> u32)(self) } }
+    pub unsafe fn try_push(&self) -> u32 { unsafe { function!(82152, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ContainerMenu {
@@ -142,7 +142,7 @@ impl crate::CursorMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_message(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51496, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_message(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51496, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `CursorMenu::vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51500, rva 0x92a220).
     /// `undefined vfunc_4_sub0(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -465,7 +465,7 @@ impl crate::IMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_message(&self, param_1: i64) -> u64 { unsafe { function!(82306, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn process_message(&self, param_1: i64) -> u64 { unsafe { function!(82306, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::InventoryMenu {
@@ -878,7 +878,7 @@ impl crate::TweenMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_message(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52705, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_message(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52705, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `TweenMenu::vfunc_1_cb0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52712, rva 0x9884d0).
     /// `undefined vfunc_1_cb0(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///

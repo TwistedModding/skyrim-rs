@@ -2640,7 +2640,7 @@ impl crate::BSScript__IVMDebugInterface {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn dump_running_stacks_to_log(&self, logger: *mut c_void) { unsafe { function!(104844, (&Self, *mut c_void))(self, logger) } }
+    pub unsafe fn dump_running_stacks_to_log(&self, logger: *mut c_void) { unsafe { function!(104844, (*const Self, *mut c_void))(core::ptr::from_ref(self), logger) } }
 }
 
 impl crate::BSScript__ObjectBindPolicy {
@@ -2652,7 +2652,7 @@ impl crate::BSScript__ObjectBindPolicy {
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64) { unsafe { function!(104184, (&Self, *mut c_void, u64))(self, object, handle) } }
+    pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64) { unsafe { function!(104184, (*const Self, *mut c_void, u64))(core::ptr::from_ref(self), object, handle) } }
 }
 
 impl crate::SkyrimScript__QuestCallbackMgr {
@@ -2829,13 +2829,13 @@ impl crate::SkyrimVM {
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 54015, rva 0x9e19e0.
     /// `void (SkyrimVM*)`
     #[inline]
-    pub fn freeze_for_save(&self) { unsafe { function!(54015, (&Self))(self) } }
+    pub fn freeze_for_save(&self) { unsafe { function!(54015, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::LoadGame`: reads the VM; corrupt-save message box on failure
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 54018, rva 0x9e1c00.
     /// `void (SkyrimVM*, LoadStorageWrapper*)`
     #[inline]
-    pub fn load_game(&self, a1: &crate::LoadStorageWrapper) { unsafe { function!(54018, (&Self, &crate::LoadStorageWrapper))(self, a1) } }
+    pub fn load_game(&self, a1: &crate::LoadStorageWrapper) { unsafe { function!(54018, (*const Self, *const crate::LoadStorageWrapper))(core::ptr::from_ref(self), core::ptr::from_ref(a1)) } }
     /// `SkyrimVM::ProcessActivateEvent`: sends Papyrus OnActivate(actionRef) to objectActivated
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 53959, rva 0x9db090.
@@ -2844,7 +2844,7 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_activate_event(&self, event: *const crate::TESActivateEvent, source: *mut c_void) -> u32 { unsafe { function!(53959, (&Self, *const crate::TESActivateEvent, *mut c_void) -> u32)(self, event, source) } }
+    pub unsafe fn process_activate_event(&self, event: *const crate::TESActivateEvent, source: *mut c_void) -> u32 { unsafe { function!(53959, (*const Self, *const crate::TESActivateEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
     /// `SkyrimVM::ProcessContainerChangedEvent`: sends OnContainerChanged to the item, OnItemRemoved to the old container and OnItemAdded to the new one
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 53966, rva 0x9dbac0.
@@ -2853,7 +2853,7 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_container_changed_event(&self, event: *const crate::TESContainerChangedEvent, source: *mut c_void) -> u32 { unsafe { function!(53966, (&Self, *const crate::TESContainerChangedEvent, *mut c_void) -> u32)(self, event, source) } }
+    pub unsafe fn process_container_changed_event(&self, event: *const crate::TESContainerChangedEvent, source: *mut c_void) -> u32 { unsafe { function!(53966, (*const Self, *const crate::TESContainerChangedEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
     /// `SkyrimVM::ProcessEquipEvent`: sends OnObjectEquipped / OnObjectUnequipped to the actor and OnEquipped / OnUnequipped to the item; returns 0
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 53970, rva 0x9dc4a0.
@@ -2862,7 +2862,7 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_equip_event(&self, event: *const crate::TESEquipEvent, source: *mut c_void) -> u32 { unsafe { function!(53970, (&Self, *const crate::TESEquipEvent, *mut c_void) -> u32)(self, event, source) } }
+    pub unsafe fn process_equip_event(&self, event: *const crate::TESEquipEvent, source: *mut c_void) -> u32 { unsafe { function!(53970, (*const Self, *const crate::TESEquipEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
     /// `SkyrimVM::ProcessHitEvent`: sends OnHit(aggressor, source, projectile, powerAttack, sneakAttack, bash, blocked) to the target through HitArguments
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 53974, rva 0x9dce00.
@@ -2871,13 +2871,13 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_hit_event(&self, event: *const crate::TESHitEvent, source: *mut c_void) -> u32 { unsafe { function!(53974, (&Self, *const crate::TESHitEvent, *mut c_void) -> u32)(self, event, source) } }
+    pub unsafe fn process_hit_event(&self, event: *const crate::TESHitEvent, source: *mut c_void) -> u32 { unsafe { function!(53974, (*const Self, *const crate::TESHitEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source) } }
     /// `SkyrimVM::RegisterEventSinks`: registers the VM's 49 holder sinks (every SkyrimVM+0x10+8*i except InitScript, which the ctor registers)
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 54028, rva 0x9e27f0.
     /// `void (SkyrimVM* vm)`
     #[inline]
-    pub fn register_event_sinks(&self) { unsafe { function!(54028, (&Self))(self) } }
+    pub fn register_event_sinks(&self) { unsafe { function!(54028, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::RegisterNatives`: registers the engine's native functions (every Papyrus::<class>::RegisterFuncs, passing the same pointer on); the script extender's Papyrus moment hooks its one call, at 0x9d645b in SkyrimVM::ctor, where rcx is &g_SkyrimVM+0x210, so *vm is the BSScript::Internal::VirtualMachine that g_SkyrimVM+0x210 holds from then on; rdx, r8 and r9 are passed through untouched to the RegisterFuncs, so a call-site detour should forward all four registers
     ///
     /// Semantic, moments pass, high; ledger runtime evidence, name high; id 55739, rva 0xa325a0.
@@ -2895,55 +2895,55 @@ impl crate::SkyrimVM {
     /// # Safety
     /// `filter` must point to what the engine expects.
     #[inline]
-    pub unsafe fn relay_event_to_ref_and_effects(&self, handle: u64, eventName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, filter: *mut c_void) { unsafe { function!(54033, (&Self, u64, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void))(self, handle, eventName, args, filter) } }
+    pub unsafe fn relay_event_to_ref_and_effects(&self, handle: u64, eventName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, filter: *mut c_void) { unsafe { function!(54033, (*const Self, u64, *const crate::BSFixedString, *mut crate::BSScript__IFunctionArguments, *mut c_void))(core::ptr::from_ref(self), handle, eventName, args, filter) } }
     /// `SkyrimVM::Revert`: 'Reverting game...' log, ClearPendingArraysLocked 0x9e3fb0, ObjectBindPolicy (+0x3a8) reset
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 54019, rva 0x9e1ca0.
     /// `void (SkyrimVM*)`
     #[inline]
-    pub fn revert(&self) { unsafe { function!(54019, (&Self))(self) } }
+    pub fn revert(&self) { unsafe { function!(54019, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::Revert`: clears the VM's pending lists, calls IVMSaveLoadInterface slot 7 (+0x38) and the handle policy's 0x9ba710
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 54040, rva 0x9e3fb0.
     /// `void (SkyrimVM* this)`
     #[inline]
-    pub fn revert_2(&self) { unsafe { function!(54040, (&Self))(self) } }
+    pub fn revert_2(&self) { unsafe { function!(54040, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::RunExtraTasklets`: when +0x210 is set: its slot 5 (+0x28) with budgetMs, or fExtraTaskletBudgetMS:Papyrus when budgetMs <= 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53927, rva 0x9d8410.
     /// `void (SkyrimVM* this, float budgetMs)`
     #[inline]
-    pub fn run_extra_tasklets(&self, budgetMs: f32) { unsafe { function!(53927, (&Self, f32))(self, budgetMs) } }
+    pub fn run_extra_tasklets(&self, budgetMs: f32) { unsafe { function!(53927, (*const Self, f32))(core::ptr::from_ref(self), budgetMs) } }
     /// `SkyrimVM::SaveGame`: writes the VM through +0x218; error string when not frozen
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 54017, rva 0x9e1b20.
     /// `void (SkyrimVM*, SaveStorageWrapper*)`
     #[inline]
-    pub fn save_game(&self, a1: &crate::SaveStorageWrapper) { unsafe { function!(54017, (&Self, &crate::SaveStorageWrapper))(self, a1) } }
+    pub fn save_game(&self, a1: &crate::SaveStorageWrapper) { unsafe { function!(54017, (*const Self, *const crate::SaveStorageWrapper))(core::ptr::from_ref(self), core::ptr::from_ref(a1)) } }
     /// `SkyrimVM::SaveVMData`: IVMSaveLoadInterface slot 1 with a SaveFileHandleReaderWriter, then u16 5 and the SkyrimVM registration lists
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 54041, rva 0x9e4760.
     /// `bool (SkyrimVM* this, SaveStorageWrapper* storage, bool sizeOnly)`
     #[inline]
-    pub fn save_vm_data(&self, storage: &crate::SaveStorageWrapper, sizeOnly: bool) -> bool { unsafe { function!(54041, (&Self, &crate::SaveStorageWrapper, bool) -> bool)(self, storage, sizeOnly) } }
+    pub fn save_vm_data(&self, storage: &crate::SaveStorageWrapper, sizeOnly: bool) -> bool { unsafe { function!(54041, (*const Self, *const crate::SaveStorageWrapper, bool) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(storage), sizeOnly) } }
     /// `SkyrimVM::Unfreeze`: IVMSaveLoadInterface (+0x218) slots 6 and 5, re-register sinks, clear the freeze flag
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 54016, rva 0x9e1ac0.
     /// `void (SkyrimVM*)`
     #[inline]
-    pub fn unfreeze(&self) { unsafe { function!(54016, (&Self))(self) } }
+    pub fn unfreeze(&self) { unsafe { function!(54016, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::UnregisterEventSinks`: the matching RemoveEventSink calls
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 54029, rva 0x9e2e30.
     /// `void (SkyrimVM* vm)`
     #[inline]
-    pub fn unregister_event_sinks(&self) { unsafe { function!(54029, (&Self))(self) } }
+    pub fn unregister_event_sinks(&self) { unsafe { function!(54029, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SkyrimVM::Update`: the game's per-frame script update: calls VirtualMachine::Update (slot 4) with the frame's budget
     ///
     /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 53926, rva 0x9d7450.
     /// `void (SkyrimVM* this, float elapsed)`
     #[inline]
-    pub fn update(&self, elapsed: f32) { unsafe { function!(53926, (&Self, f32))(self, elapsed) } }
+    pub fn update(&self, elapsed: f32) { unsafe { function!(53926, (*const Self, f32))(core::ptr::from_ref(self), elapsed) } }
 }
 
 /// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_0D8D4B7E_AttachAshPileFunctor_14` at 0x20bcb70, id 383759 (layout_inference, medium)

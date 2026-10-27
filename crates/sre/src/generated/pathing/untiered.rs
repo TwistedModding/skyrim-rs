@@ -1081,14 +1081,14 @@ impl crate::PathingRequest {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(30732, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(30732, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `PathingRequest::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 31318, rva 0x4f67b0).
     /// `undefined dtor(PathingRequest * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(31318, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(31318, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::PathingRequestFlyHover {

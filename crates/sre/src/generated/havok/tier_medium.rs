@@ -10,6 +10,6 @@ impl crate::hkpAllCdPointCollector {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_2(&self, param_2: u64, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(78207, (&Self, u64, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_2(&self, param_2: u64, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(78207, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
 }
 

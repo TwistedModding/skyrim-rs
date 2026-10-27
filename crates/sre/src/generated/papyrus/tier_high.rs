@@ -10,7 +10,7 @@ impl crate::BGSBaseAlias {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23708, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23708, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__IFunctionArguments {
@@ -20,14 +20,14 @@ impl crate::BSScript__IFunctionArguments {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104360, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104360, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 104361, rva 0x1496cf0).
     /// `undefined dtor(IFunctionArguments * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(104361, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(104361, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__Internal__VirtualMachine {
@@ -37,63 +37,63 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_object_bind_interface_vdtor(&self) -> u64 { unsafe { function!(105018, (&Self) -> u64)(self) } }
+    pub unsafe fn bs_script_ivm_object_bind_interface_vdtor(&self) -> u64 { unsafe { function!(105018, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105019, rva 0x14c8778).
     /// `undefined BSScript_IVMSaveLoadInterface_vdtor(VirtualMachine * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vdtor(&self) -> u64 { unsafe { function!(105019, (&Self) -> u64)(self) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vdtor(&self) -> u64 { unsafe { function!(105019, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_16` (decompiler signature, tier high; ledger rtti evidence, name high; id 105089, rva 0x14ca700).
     /// `undefined1 * BSScript_IVMSaveLoadInterface_vfunc_16(VirtualMachine * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_16(&self) -> *mut u8 { unsafe { function!(105089, (&Self) -> *mut u8)(self) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_16(&self) -> *mut u8 { unsafe { function!(105089, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_17` (decompiler signature, tier high; ledger rtti evidence, name high; id 105088, rva 0x14ca6f0).
     /// `undefined1 * BSScript_IVMSaveLoadInterface_vfunc_17(VirtualMachine * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_17(&self) -> *mut u8 { unsafe { function!(105088, (&Self) -> *mut u8)(self) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_17(&self) -> *mut u8 { unsafe { function!(105088, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_18` (decompiler signature, tier high; ledger rtti evidence, name high; id 105086, rva 0x14ca6d0).
     /// `VirtualMachine * BSScript_IVMSaveLoadInterface_vfunc_18(VirtualMachine * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_18(&self) -> *mut c_void { unsafe { function!(105086, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_18(&self) -> *mut c_void { unsafe { function!(105086, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_19` (decompiler signature, tier high; ledger rtti evidence, name high; id 105091, rva 0x14ca720).
     /// `VirtualMachine_vtbl_18 * * BSScript_IVMSaveLoadInterface_vfunc_19(VirtualMachine * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_19(&self) -> *mut *mut c_void { unsafe { function!(105091, (&Self) -> *mut *mut c_void)(self) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_19(&self) -> *mut *mut c_void { unsafe { function!(105091, (*const Self) -> *mut *mut c_void)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_20` (decompiler signature, tier high; ledger rtti evidence, name high; id 105090, rva 0x14ca710).
     /// `VirtualMachine_vtbl_18 * * BSScript_IVMSaveLoadInterface_vfunc_20(VirtualMachine * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_20(&self) -> *mut *mut c_void { unsafe { function!(105090, (&Self) -> *mut *mut c_void)(self) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_20(&self) -> *mut *mut c_void { unsafe { function!(105090, (*const Self) -> *mut *mut c_void)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_21` (decompiler signature, tier high; ledger rtti evidence, name high; id 105087, rva 0x14ca6e0).
     /// `VirtualMachine_vtbl_20 * * BSScript_IVMSaveLoadInterface_vfunc_21(VirtualMachine * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_21(&self) -> *mut *mut c_void { unsafe { function!(105087, (&Self) -> *mut *mut c_void)(self) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_21(&self) -> *mut *mut c_void { unsafe { function!(105087, (*const Self) -> *mut *mut c_void)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMSaveLoadInterface_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 104831, rva 0x14b7d00).
     /// `undefined2 BSScript_IVMSaveLoadInterface_vfunc_4(VirtualMachine * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_4(&self) -> u16 { unsafe { function!(104831, (&Self) -> u16)(self) } }
+    pub unsafe fn bs_script_ivm_save_load_interface_vfunc_4(&self) -> u16 { unsafe { function!(104831, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSScript__NF_util__NativeFunctionBase {
@@ -103,7 +103,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104655, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104655, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ExtraAliasInstanceArray {
@@ -113,6 +113,6 @@ impl crate::ExtraAliasInstanceArray {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12145, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(12145, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 

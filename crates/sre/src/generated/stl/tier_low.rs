@@ -10,7 +10,7 @@ impl crate::std___Func_impl_no_alloc_lambda_e6c73e78bebc5eef6f32d9f780dca163_voi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(442144, (&Self, *mut i64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(442144, (*const Self, *mut i64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void_BSPlatform__BNetResult_uns_9fe4280c756d {
@@ -20,7 +20,7 @@ impl crate::std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_voi
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(523887, (&Self, *mut u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(523887, (*const Self, *mut u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::std___Ref_count_obj_BSPlatform__searchResultHandler {
@@ -30,7 +30,7 @@ impl crate::std___Ref_count_obj_BSPlatform__searchResultHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: i64, param_2: *mut u32, param_3: *mut u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(445978, (&Self, i64, *mut u32, *mut u64, *mut u64) -> *mut c_void)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor(&self, param_1: i64, param_2: *mut u32, param_3: *mut u64, param_4: *mut u64) -> *mut c_void { unsafe { function!(445978, (*const Self, i64, *mut u32, *mut u64, *mut u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
 }
 
 impl crate::std___Ref_count_obj_MarketplaceEvent__make_EventHandlerEnabler {
@@ -40,7 +40,7 @@ impl crate::std___Ref_count_obj_MarketplaceEvent__make_EventHandlerEnabler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: *mut u32, param_2: i64, param_3: *mut u32) -> *mut c_void { unsafe { function!(440676, (&Self, *mut u32, i64, *mut u32) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_2(&self, param_1: *mut u32, param_2: i64, param_3: *mut u32) -> *mut c_void { unsafe { function!(440676, (*const Self, *mut u32, i64, *mut u32) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::std__basic_stringbuf_char_std__char_traits_char_std__allocator_char__ {
@@ -50,14 +50,14 @@ impl crate::std__basic_stringbuf_char_std__char_traits_char_std__allocator_char_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> u64 { unsafe { function!(441425, (&Self, u64, *mut c_void, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> u64 { unsafe { function!(441425, (*const Self, u64, *mut c_void, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 441433, rva 0x13b230).
     /// `basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * ctor(basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(441433, (&Self, *mut u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_2(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(441433, (*const Self, *mut u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::std__basic_stringstream_char_std__char_traits_char_std__allocator_char__ {
@@ -67,7 +67,7 @@ impl crate::std__basic_stringstream_char_std__char_traits_char_std__allocator_ch
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt98(&self, param_1: u64) -> u64 { unsafe { function!(23281, (&Self, u64) -> u64)(self, param_1) } }
+    pub unsafe fn vfunc_0_vt98(&self, param_1: u64) -> u64 { unsafe { function!(23281, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::std__exception {
@@ -77,27 +77,27 @@ impl crate::std__exception {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `std::exception::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 97174, rva 0x13906e0).
     /// `exception * ctor(exception * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: i64) -> *mut c_void { unsafe { function!(97174, (&Self, i64) -> *mut c_void)(self, param_1) } }
+    pub unsafe fn ctor(&self, param_1: i64) -> *mut c_void { unsafe { function!(97174, (*const Self, i64) -> *mut c_void)(core::ptr::from_ref(self), param_1) } }
     /// `std::exception::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 97176, rva 0x1390740).
     /// `exception * ctor(exception * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: i64) -> *mut c_void { unsafe { function!(97176, (&Self, i64) -> *mut c_void)(self, param_1) } }
+    pub unsafe fn ctor_2(&self, param_1: i64) -> *mut c_void { unsafe { function!(97176, (*const Self, i64) -> *mut c_void)(core::ptr::from_ref(self), param_1) } }
     /// `std::exception::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 97246, rva 0x1392e20).
     /// `exception * ctor(exception * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_3(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(97246, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_3(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(97246, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 

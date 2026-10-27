@@ -81,25 +81,25 @@ impl crate::BSCullingProcess {
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSCullingProcess* this, BSGeometry* geometry)`
     #[inline]
-    pub fn append_geometry(&self, geometry: &crate::BSGeometry) { unsafe { virtual_function!(self, 25, (&Self, &crate::BSGeometry))(self, geometry) } }
+    pub fn append_geometry(&self, geometry: &crate::BSGeometry) { unsafe { virtual_function!(self, 25, (*const Self, *const crate::BSGeometry))(core::ptr::from_ref(self), core::ptr::from_ref(geometry)) } }
     /// `BSCullingProcess::AppendVisible`, vtable slot 24: group -1 and no deferral: slot 25 AppendGeometry(object, appendTag); otherwise queue {object, group, appendTag} for the ordered pass
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSCullingProcess* this, NiAVObject* object, i32 groupIndex)`
     #[inline]
-    pub fn append_visible(&self, object: &crate::NiAVObject, groupIndex: i32) { unsafe { virtual_function!(self, 24, (&Self, &crate::NiAVObject, i32))(self, object, groupIndex) } }
+    pub fn append_visible(&self, object: &crate::NiAVObject, groupIndex: i32) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiAVObject, i32))(core::ptr::from_ref(self), core::ptr::from_ref(object), groupIndex) } }
     /// `BSCullingProcess::CullNode`, vtable slot 22: tests the node against the frustum and portals by cullMode (narrowing the frustum mask at +0x9c) and calls the node's slot 52 (OnVisible) when it passes, handing the ordered-group index on
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSCullingProcess* this, NiAVObject* node, u32 orderedGroup)`
     #[inline]
-    pub fn cull_node(&self, node: &crate::NiAVObject, orderedGroup: u32) { unsafe { virtual_function!(self, 22, (&Self, &crate::NiAVObject, u32))(self, node, orderedGroup) } }
+    pub fn cull_node(&self, node: &crate::NiAVObject, orderedGroup: u32) { unsafe { virtual_function!(self, 22, (*const Self, *const crate::NiAVObject, u32))(core::ptr::from_ref(self), core::ptr::from_ref(node), orderedGroup) } }
     /// `BSCullingProcess::Process`, vtable slot 23: stores the camera, sets up the planes, culls the scene root (through NiAVObject::Cull when the cull is parallel)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSCullingProcess* this, NiCamera* camera, NiAVObject* scene, BSShaderAccumulator* accumulator)`
     #[inline]
-    pub fn process(&self, camera: &crate::NiCamera, scene: &crate::NiAVObject, accumulator: &crate::BSShaderAccumulator) { unsafe { virtual_function!(self, 23, (&Self, &crate::NiCamera, &crate::NiAVObject, &crate::BSShaderAccumulator))(self, camera, scene, accumulator) } }
+    pub fn process(&self, camera: &crate::NiCamera, scene: &crate::NiAVObject, accumulator: &crate::BSShaderAccumulator) { unsafe { virtual_function!(self, 23, (*const Self, *const crate::NiCamera, *const crate::NiAVObject, *const crate::BSShaderAccumulator))(core::ptr::from_ref(self), core::ptr::from_ref(camera), core::ptr::from_ref(scene), core::ptr::from_ref(accumulator)) } }
     /// `BSCullingProcess::TestBoundAgainstPlanes`, vtable slot 28: false when the sphere is outside an active plane; clears the bits of planes it is fully inside when +0x120
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -108,7 +108,7 @@ impl crate::BSCullingProcess {
     /// # Safety
     /// `bound` must point to what the engine expects.
     #[inline]
-    pub unsafe fn test_bound_against_planes(&self, bound: *const c_void) -> bool { unsafe { virtual_function!(self, 28, (&Self, *const c_void) -> bool)(self, bound) } }
+    pub unsafe fn test_bound_against_planes(&self, bound: *const c_void) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const c_void) -> bool)(core::ptr::from_ref(self), bound) } }
     /// `BSCullingProcess::DrainQueuedVisible`: moves queued {object, group} records into groupBuckets[group]; negative group: slot 25 directly
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 76559, rva 0xfee400.
@@ -117,7 +117,7 @@ impl crate::BSCullingProcess {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn drain_queued_visible(&self) { unsafe { function!(76559, (&Self))(self) } }
+    pub unsafe fn drain_queued_visible(&self) { unsafe { function!(76559, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSCullingProcess::FlushGroupsToAccumulator`: after the jobs: drains the queue, dispatches the culler's +0x128 list, then per group finds the BSOrderedNode ancestor of its first object, opens a group on the accumulator with that bound (accumulator slot 40, +0x140), dispatches the group's objects in order and closes it (slot 41, +0x148)
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 76558, rva 0xfee1d0.
@@ -126,13 +126,13 @@ impl crate::BSCullingProcess {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn flush_groups_to_accumulator(&self, accumulator: *mut crate::BSShaderAccumulator) { unsafe { function!(76558, (&Self, *mut crate::BSShaderAccumulator))(self, accumulator) } }
+    pub unsafe fn flush_groups_to_accumulator(&self, accumulator: *mut crate::BSShaderAccumulator) { unsafe { function!(76558, (*const Self, *mut crate::BSShaderAccumulator))(core::ptr::from_ref(self), accumulator) } }
     /// `BSCullingProcess::TestPlanesAndVisit`: CullNode's path with descend on: sphere against the active planes, narrows the mask, node slot 52 with groupIndex, restores the mask
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 71083, rva 0xf049c0.
     /// `void (BSCullingProcess* this, NiAVObject* node, i32 groupIndex)`
     #[inline]
-    pub fn test_planes_and_visit(&self, node: &crate::NiAVObject, groupIndex: i32) { unsafe { function!(71083, (&Self, &crate::NiAVObject, i32))(self, node, groupIndex) } }
+    pub fn test_planes_and_visit(&self, node: &crate::NiAVObject, groupIndex: i32) { unsafe { function!(71083, (*const Self, *const crate::NiAVObject, i32))(core::ptr::from_ref(self), core::ptr::from_ref(node), groupIndex) } }
     /// `BSCullingProcess::camera` at +0x18: the camera of the current walk
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -149,7 +149,7 @@ impl crate::BSGeometry {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn slot54_returns_null(&self) -> *mut c_void { unsafe { virtual_function!(self, 54, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn slot54_returns_null(&self) -> *mut c_void { unsafe { virtual_function!(self, 54, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
     /// `BSGeometry::skinInstance` at +0x130: skin instance of a skinned geometry, null otherwise
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -163,7 +163,7 @@ impl crate::BSLight {
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSLight* this)`
     #[inline]
-    pub fn is_shadow_light(&self) -> bool { unsafe { virtual_function!(self, 3, (&Self) -> bool)(self) } }
+    pub fn is_shadow_light(&self) -> bool { unsafe { virtual_function!(self, 3, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSLight::light` at +0x48: the scene graph light
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -185,7 +185,7 @@ impl crate::BSLightingShaderProperty {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn get_depth_only_render_passes(&self, g: *mut crate::BSGeometry) -> *mut *mut c_void { unsafe { virtual_function!(self, 45, (&Self, *mut crate::BSGeometry) -> *mut *mut c_void)(self, g) } }
+    pub unsafe fn get_depth_only_render_passes(&self, g: *mut crate::BSGeometry) -> *mut *mut c_void { unsafe { virtual_function!(self, 45, (*const Self, *mut crate::BSGeometry) -> *mut *mut c_void)(core::ptr::from_ref(self), g) } }
     /// `BSLightingShaderProperty::GetOcclusionPass`, vtable slot 47: one pooled depth pass (requires bit 32, no refraction)
     ///
     /// Semantic, render pass, low; called through the object's vtable.
@@ -194,7 +194,7 @@ impl crate::BSLightingShaderProperty {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn get_occlusion_pass(&self, g: *mut crate::BSGeometry) -> *mut c_void { unsafe { virtual_function!(self, 47, (&Self, *mut crate::BSGeometry) -> *mut c_void)(self, g) } }
+    pub unsafe fn get_occlusion_pass(&self, g: *mut crate::BSGeometry) -> *mut c_void { unsafe { virtual_function!(self, 47, (*const Self, *mut crate::BSGeometry) -> *mut c_void)(core::ptr::from_ref(self), g) } }
     /// `BSLightingShaderProperty::GetRenderPasses`, vtable slot 42: builds the lighting pass (technique bits from the flags, see flags) plus refraction, overlay and stipple passes; returns &renderPasses
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -203,7 +203,7 @@ impl crate::BSLightingShaderProperty {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_render_passes(&self, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void { unsafe { virtual_function!(self, 42, (&Self, *mut crate::BSGeometry, u32, *mut crate::BSShaderAccumulator) -> *mut *mut c_void)(self, g, renderMode, acc) } }
+    pub unsafe fn get_render_passes(&self, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void { unsafe { virtual_function!(self, 42, (*const Self, *mut crate::BSGeometry, u32, *mut crate::BSShaderAccumulator) -> *mut *mut c_void)(core::ptr::from_ref(self), g, renderMode, acc) } }
     /// `BSLightingShaderProperty::UpdateFlagsFromGeometry`, vtable slot 39: sets bit 37 from the vertex descriptor (+0x148), hides geometry that lacks normals, clears tree-anim without vertex colours, eye without a skin instance (+0x130), specular when colour*strength is black
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -212,7 +212,7 @@ impl crate::BSLightingShaderProperty {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_flags_from_geometry(&self, g: *mut crate::BSGeometry) -> bool { unsafe { virtual_function!(self, 39, (&Self, *mut crate::BSGeometry) -> bool)(self, g) } }
+    pub unsafe fn update_flags_from_geometry(&self, g: *mut crate::BSGeometry) -> bool { unsafe { virtual_function!(self, 39, (*const Self, *mut crate::BSGeometry) -> bool)(core::ptr::from_ref(self), g) } }
     /// `BSLightingShaderProperty::fadeNode` at +0x60: fade node whose currentFade (+0x130) gates depth and shadow passes
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -234,7 +234,7 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_rtti(&self) -> *mut c_void { unsafe { virtual_function!(self, 2, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn get_rtti(&self) -> *mut c_void { unsafe { virtual_function!(self, 2, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
     /// `BSShaderAccumulator::PopDepthGroup`, vtable slot 41: closes the group opened by slot 40
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -243,7 +243,7 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn pop_depth_group(&self, group: *mut c_void) { unsafe { virtual_function!(self, 41, (&Self, *mut c_void))(self, group) } }
+    pub unsafe fn pop_depth_group(&self, group: *mut c_void) { unsafe { virtual_function!(self, 41, (*const Self, *mut c_void))(core::ptr::from_ref(self), group) } }
     /// `BSShaderAccumulator::PushDepthGroup`, vtable slot 40: opens a depth-keyed pass group in the batch renderer: key = dot(camera axis +0x7c/+0x88/+0x94, center) (minus radius when +0x51), from the pool 0x3693a00 (0x28 each, count 0x36939d0)
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -252,55 +252,55 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn push_depth_group(&self, bound: *mut f32) -> *mut c_void { unsafe { virtual_function!(self, 40, (&Self, *mut f32) -> *mut c_void)(self, bound) } }
+    pub unsafe fn push_depth_group(&self, bound: *mut f32) -> *mut c_void { unsafe { virtual_function!(self, 40, (*const Self, *mut f32) -> *mut c_void)(core::ptr::from_ref(self), bound) } }
     /// `BSShaderAccumulator::Render`, vtable slot 38: slot 42 then slot 43: the whole draw of the accumulator
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
-    pub fn render(&self, flags: u32) { unsafe { virtual_function!(self, 38, (&Self, u32))(self, flags) } }
+    pub fn render(&self, flags: u32) { unsafe { virtual_function!(self, 38, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderOpaque`, vtable slot 42: activates the mode (SetActiveIndexWithFallback(renderMode)); mode 0: the opaque half ID_106583; any other mode: the whole per-mode draw g_AccumulatorRenderFns[renderMode] (fallback entry 0)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
-    pub fn render_opaque(&self, flags: u32) { unsafe { virtual_function!(self, 42, (&Self, u32))(self, flags) } }
+    pub fn render_opaque(&self, flags: u32) { unsafe { virtual_function!(self, 42, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderTransparent`, vtable slot 43: mode 0 only: the blended half ID_106584 (water, blended groups, sorted alpha, last sky technique); then the empty NiAccumulator slot 38
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
-    pub fn render_transparent(&self, flags: u32) { unsafe { virtual_function!(self, 43, (&Self, u32))(self, flags) } }
+    pub fn render_transparent(&self, flags: u32) { unsafe { virtual_function!(self, 43, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::SetCamera`, vtable slot 37: stores the camera at +0x10
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderAccumulator* this, NiCamera* camera)`
     #[inline]
-    pub fn set_camera(&self, camera: &crate::NiCamera) { unsafe { virtual_function!(self, 37, (&Self, &crate::NiCamera))(self, camera) } }
+    pub fn set_camera(&self, camera: &crate::NiCamera) { unsafe { virtual_function!(self, 37, (*const Self, *const crate::NiCamera))(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
     /// `BSShaderAccumulator::vfunc_39`, vtable slot 39: inherited empty NiAlphaAccumulator slot (pure in NiAccumulator)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderAccumulator* this)`
     #[inline]
-    pub fn vfunc_39(&self) { unsafe { virtual_function!(self, 39, (&Self))(self) } }
+    pub fn vfunc_39(&self) { unsafe { virtual_function!(self, 39, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSShaderAccumulator::vfunc_44`, vtable slot 44: empty
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderAccumulator* this)`
     #[inline]
-    pub fn vfunc_44(&self) { unsafe { virtual_function!(self, 44, (&Self))(self) } }
+    pub fn vfunc_44(&self) { unsafe { virtual_function!(self, 44, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSShaderAccumulator::GetBatchGroup5Field24`: batchRenderer (+0x130) ->groups[5] (+0x98) ->+0x24
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 106598, rva 0x15209f0.
     /// `u16 (BSShaderAccumulator* this)`
     #[inline]
-    pub fn get_batch_group5_field24(&self) -> u16 { unsafe { function!(106598, (&Self) -> u16)(self) } }
+    pub fn get_batch_group5_field24(&self) -> u16 { unsafe { function!(106598, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
     /// `BSShaderAccumulator::RegisterDepthGeometry`: for the depth and shadow modes: skips properties with flags 0xc000000 (unless allowed), asks the property for its passes in renderMode (slot 43), stamps passFrame and batches the passes
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 106576, rva 0x151ec10.
     /// `bool (BSShaderAccumulator* this, BSGeometry* geometry, BSShaderProperty* property)`
     #[inline]
-    pub fn register_depth_geometry(&self, geometry: &crate::BSGeometry, property: &crate::BSShaderProperty) -> bool { unsafe { function!(106576, (&Self, &crate::BSGeometry, &crate::BSShaderProperty) -> bool)(self, geometry, property) } }
+    pub fn register_depth_geometry(&self, geometry: &crate::BSGeometry, property: &crate::BSShaderProperty) -> bool { unsafe { function!(106576, (*const Self, *const crate::BSGeometry, *const crate::BSShaderProperty) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(geometry), core::ptr::from_ref(property)) } }
     /// `BSShaderAccumulator::RegisterGeometry`: the culler's entry point: skips unrenderable geometry (no property, no buffers, dismember skin without parts) and calls g_AccumulatorRegisterFns[renderMode](this, geometry, geometry->shaderProperty (+0x128), arg); stamps the shadow-map receiver mask
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106567, rva 0x151e2f0.
@@ -309,7 +309,7 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// `arg` must point to what the engine expects.
     #[inline]
-    pub unsafe fn register_geometry(&self, geometry: *mut crate::BSGeometry, arg: *mut c_void) -> bool { unsafe { function!(106567, (&Self, *mut crate::BSGeometry, *mut c_void) -> bool)(self, geometry, arg) } }
+    pub unsafe fn register_geometry(&self, geometry: *mut crate::BSGeometry, arg: *mut c_void) -> bool { unsafe { function!(106567, (*const Self, *mut crate::BSGeometry, *mut c_void) -> bool)(core::ptr::from_ref(self), geometry, arg) } }
     /// `BSShaderAccumulator::RegisterStandard`: default register (modes 0..0xb, 0x16, 0x1b, 0x1d): property slot 42 GetRenderPasses(geometry, renderMode); each pass filed by accumulationHint into a group, hint 1 into the alpha group, others into the main technique buckets (batch slot 2); passes of the geometry's second property (geometry slot 53 -> +0x1b0) get hint 0xc into group 2
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106570, rva 0x151e4e0.
@@ -318,13 +318,13 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// `group` must point to what the engine expects.
     #[inline]
-    pub unsafe fn register_standard(&self, geometry: *mut crate::BSGeometry, property: *mut crate::BSShaderProperty, group: *mut c_void) -> bool { unsafe { function!(106570, (&Self, *mut crate::BSGeometry, *mut crate::BSShaderProperty, *mut c_void) -> bool)(self, geometry, property, group) } }
+    pub unsafe fn register_standard(&self, geometry: *mut crate::BSGeometry, property: *mut crate::BSShaderProperty, group: *mut c_void) -> bool { unsafe { function!(106570, (*const Self, *mut crate::BSGeometry, *mut crate::BSShaderProperty, *mut c_void) -> bool)(core::ptr::from_ref(self), geometry, property, group) } }
     /// `BSShaderAccumulator::RenderBatches`: draws the technique range from the main buckets (group -1) or from group i's sub-batch, then clears that group and resets the shader cache
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106609, rva 0x1521190.
     /// `void (BSShaderAccumulator* this, u32 firstTechnique, u32 lastTechnique, u32 flags, int group)`
     #[inline]
-    pub fn render_batches(&self, firstTechnique: u32, lastTechnique: u32, flags: u32, group: i32) { unsafe { function!(106609, (&Self, u32, u32, u32, i32))(self, firstTechnique, lastTechnique, flags, group) } }
+    pub fn render_batches(&self, firstTechnique: u32, lastTechnique: u32, flags: u32, group: i32) { unsafe { function!(106609, (*const Self, u32, u32, u32, i32))(core::ptr::from_ref(self), firstTechnique, lastTechnique, flags, group) } }
     /// `BSShaderAccumulator::RenderDecals`: when drawDecals: group 3 then group 2 under stencil modes 6/7 and 8/9
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106586, rva 0x151fd60.
@@ -333,19 +333,19 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn render_decals(&self, flags: u32) { unsafe { function!(106586, (&Self, u32))(self, flags) } }
+    pub unsafe fn render_decals(&self, flags: u32) { unsafe { function!(106586, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderDepth`: render for modes 0xc..0x11: lighting 0x2b..0x4000002b, grass 0x5c000030..0x5c00005c, group 1, group 9, decal group 4; with flags & 0x100 only group 0xf (the cascade pre-pass) with cull none
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106592, rva 0x15206a0.
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
-    pub fn render_depth(&self, flags: u32) { unsafe { function!(106592, (&Self, u32))(self, flags) } }
+    pub fn render_depth(&self, flags: u32) { unsafe { function!(106592, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderFirstPersonPasses`: render for mode 0x16 (the first-person accumulator 0x3436240): techniques 1..0x5c00006c, group 8, decals, sorted alpha, groups 0xb, 0xc, 7, 0x5c006072, then frees the batches
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106588, rva 0x15200d0.
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
-    pub fn render_first_person_passes(&self, flags: u32) { unsafe { function!(106588, (&Self, u32))(self, flags) } }
+    pub fn render_first_person_passes(&self, flags: u32) { unsafe { function!(106588, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderGroup4`: when +0x12c or +0x12d: group 4 (hint 3, lighting properties with flags 0xc000000) with depth mode 1 and stencil 10/11
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106587, rva 0x151ff00.
@@ -354,7 +354,7 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn render_group4(&self, flags: u32) { unsafe { function!(106587, (&Self, u32))(self, flags) } }
+    pub unsafe fn render_group4(&self, flags: u32) { unsafe { function!(106587, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderLateGroups`: draws group 6 (hint 5) into target 0xd and group 5 (hint 4) with blend 2 and depth mode 1 using the given camera; called after the main draw when group 5 has passes and from RenderFirstPerson
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106599, rva 0x1520a10.
@@ -363,13 +363,13 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn render_late_groups(&self, camera: *mut crate::NiCamera) -> bool { unsafe { function!(106599, (&Self, *mut crate::NiCamera) -> bool)(self, camera) } }
+    pub unsafe fn render_late_groups(&self, camera: *mut crate::NiCamera) -> bool { unsafe { function!(106599, (*const Self, *mut crate::NiCamera) -> bool)(core::ptr::from_ref(self), camera) } }
     /// `BSShaderAccumulator::RenderOpaquePasses`: mode-0 first half; order in answers[0]
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106583, rva 0x151ef40.
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
-    pub fn render_opaque_passes(&self, flags: u32) { unsafe { function!(106583, (&Self, u32))(self, flags) } }
+    pub fn render_opaque_passes(&self, flags: u32) { unsafe { function!(106583, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderSortedAlpha`: draws the alpha group back to front by depth slices (qsort, ID_107673/ID_107672) and releases it
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106585, rva 0x151fb80.
@@ -378,19 +378,19 @@ impl crate::BSShaderAccumulator {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn render_sorted_alpha(&self, flags: u32) { unsafe { function!(106585, (&Self, u32))(self, flags) } }
+    pub unsafe fn render_sorted_alpha(&self, flags: u32) { unsafe { function!(106585, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderStandard`: render table entry 0: RenderOpaquePasses then RenderTransparentPasses (used by modes without their own entry)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106580, rva 0x151ee60.
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
-    pub fn render_standard(&self, flags: u32) { unsafe { function!(106580, (&Self, u32))(self, flags) } }
+    pub fn render_standard(&self, flags: u32) { unsafe { function!(106580, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::RenderTransparentPasses`: mode-0 second half; order in answers[0]
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106584, rva 0x151f540.
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
-    pub fn render_transparent_passes(&self, flags: u32) { unsafe { function!(106584, (&Self, u32))(self, flags) } }
+    pub fn render_transparent_passes(&self, flags: u32) { unsafe { function!(106584, (*const Self, u32))(core::ptr::from_ref(self), flags) } }
     /// `BSShaderAccumulator::batchRenderer` at +0x130: batch renderer the passes are sorted into
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -409,7 +409,7 @@ impl crate::BSShaderProperty {
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderProperty* this)`
     #[inline]
-    pub fn clear_render_passes(&self) { unsafe { virtual_function!(self, 52, (&Self))(self) } }
+    pub fn clear_render_passes(&self) { unsafe { virtual_function!(self, 52, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSShaderProperty::CreateClone`, vtable slot 23: clone; the base returns null, derived classes allocate their size and copy
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -418,7 +418,7 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn create_clone(&self, p: *mut c_void) -> *mut crate::NiObject { unsafe { virtual_function!(self, 23, (&Self, *mut c_void) -> *mut crate::NiObject)(self, p) } }
+    pub unsafe fn create_clone(&self, p: *mut c_void) -> *mut crate::NiObject { unsafe { virtual_function!(self, 23, (*const Self, *mut c_void) -> *mut crate::NiObject)(core::ptr::from_ref(self), p) } }
     /// `BSShaderProperty::GetBaseTexture`, vtable slot 55: lighting returns material+0x48 (texture slot 0), effect material+0x58
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -427,7 +427,7 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_base_texture(&self) -> *mut crate::NiSourceTexture { unsafe { virtual_function!(self, 55, (&Self) -> *mut crate::NiSourceTexture)(self) } }
+    pub unsafe fn get_base_texture(&self) -> *mut crate::NiSourceTexture { unsafe { virtual_function!(self, 55, (*const Self) -> *mut crate::NiSourceTexture)(core::ptr::from_ref(self)) } }
     /// `BSShaderProperty::GetDepthRenderPasses`, vtable slot 43: pass list for the depth/shadow modes 0xc-0xf; base returns null (the existing ledger row calls the lighting override GetRenderPasses)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -436,13 +436,13 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_depth_render_passes(&self, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void { unsafe { virtual_function!(self, 43, (&Self, *mut crate::BSGeometry, u32, *mut crate::BSShaderAccumulator) -> *mut *mut c_void)(self, g, renderMode, acc) } }
+    pub unsafe fn get_depth_render_passes(&self, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void { unsafe { virtual_function!(self, 43, (*const Self, *mut crate::BSGeometry, u32, *mut crate::BSShaderAccumulator) -> *mut *mut c_void)(core::ptr::from_ref(self), g, renderMode, acc) } }
     /// `BSShaderProperty::GetDepthTechnique`, vtable slot 61: utility technique bits of the depth passes (lighting 0x151a0b0): TEXTURE|NORMALS|BINORMAL_TANGENT (0x1a), TEXTURE only with bit 12, SKINNED from bit 1, VC from bit 37, 0x20 from bits 14/46, LOD_LANDSCAPE from bit 33, 0x40 from bit 17, TREE_ANIM from bit 61
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `u32 (BSShaderProperty* this)`
     #[inline]
-    pub fn get_depth_technique(&self) -> u32 { unsafe { virtual_function!(self, 61, (&Self) -> u32)(self) } }
+    pub fn get_depth_technique(&self) -> u32 { unsafe { virtual_function!(self, 61, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSShaderProperty::GetLocalMapRenderPasses`, vtable slot 44: lighting override 0x151bcb0 builds a RENDER_BASE_TEXTURE (0x2000000) or LOCALMAP_FOGOFWAR (0x10000000) utility pass; landscape (bit 14) goes through slot 42
     ///
     /// Semantic, render pass, low; called through the object's vtable.
@@ -451,13 +451,13 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn get_local_map_render_passes(&self, g: *mut crate::BSGeometry, mode: u32) -> *mut *mut c_void { unsafe { virtual_function!(self, 44, (&Self, *mut crate::BSGeometry, u32) -> *mut *mut c_void)(self, g, mode) } }
+    pub unsafe fn get_local_map_render_passes(&self, g: *mut crate::BSGeometry, mode: u32) -> *mut *mut c_void { unsafe { virtual_function!(self, 44, (*const Self, *mut crate::BSGeometry, u32) -> *mut *mut c_void)(core::ptr::from_ref(self), g, mode) } }
     /// `BSShaderProperty::GetMaterialAlpha`, vtable slot 50: lighting reads material+0x80, effect material+0x54, base 1.0
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `float (BSShaderProperty* this)`
     #[inline]
-    pub fn get_material_alpha(&self) -> f32 { unsafe { virtual_function!(self, 50, (&Self) -> f32)(self) } }
+    pub fn get_material_alpha(&self) -> f32 { unsafe { virtual_function!(self, 50, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSShaderProperty::GetMaterialType`, vtable slot 62: material family: base 0, effect 1, lighting (and grass) 2, water 3; the values of BSShaderMaterial::GetType
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -466,7 +466,7 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_material_type(&self) -> u32 { unsafe { virtual_function!(self, 62, (&Self) -> u32)(self) } }
+    pub unsafe fn get_material_type(&self) -> u32 { unsafe { virtual_function!(self, 62, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSShaderProperty::GetPropertyType`, vtable slot 37: 1 for shade/shader properties (NiAlphaProperty returns 0)
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -475,7 +475,7 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_property_type(&self) -> u32 { unsafe { virtual_function!(self, 37, (&Self) -> u32)(self) } }
+    pub unsafe fn get_property_type(&self) -> u32 { unsafe { virtual_function!(self, 37, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSShaderProperty::GetShaderTypeId`, vtable slot 53: constant per class: base 0, effect 1, grass 2, distant tree 4, particle 5, sky 10, lighting 0xb, blood splatter 0xc, water 0x11
     ///
     /// Semantic, render pass, low; called through the object's vtable.
@@ -484,7 +484,7 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn get_shader_type_id(&self) -> u32 { unsafe { virtual_function!(self, 53, (&Self) -> u32)(self) } }
+    pub unsafe fn get_shader_type_id(&self) -> u32 { unsafe { virtual_function!(self, 53, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSShaderProperty::IsEquivalent`, vtable slot 48: same flags and material IsEqual (material slot 3); lighting adds the emit colour and scale
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -493,7 +493,7 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn is_equivalent(&self, other: *mut Self) -> bool { unsafe { virtual_function!(self, 48, (&Self, *mut Self) -> bool)(self, other) } }
+    pub unsafe fn is_equivalent(&self, other: *mut Self) -> bool { unsafe { virtual_function!(self, 48, (*const Self, *mut Self) -> bool)(core::ptr::from_ref(self), other) } }
     /// `BSShaderProperty::IsNotRefractive`, vtable slot 57: lighting: true when flag bits 2 and 15 are both clear
     ///
     /// Semantic, render pass, low; called through the object's vtable.
@@ -502,13 +502,13 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn is_not_refractive(&self) -> bool { unsafe { virtual_function!(self, 57, (&Self) -> bool)(self) } }
+    pub unsafe fn is_not_refractive(&self) -> bool { unsafe { virtual_function!(self, 57, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSShaderProperty::SetMaterialAlpha`, vtable slot 49: lighting writes material+0x80, effect material+0x54 (clamped at 0); base does nothing
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderProperty* this, float alpha)`
     #[inline]
-    pub fn set_material_alpha(&self, alpha: f32) { unsafe { virtual_function!(self, 49, (&Self, f32))(self, alpha) } }
+    pub fn set_material_alpha(&self, alpha: f32) { unsafe { virtual_function!(self, 49, (*const Self, f32))(core::ptr::from_ref(self), alpha) } }
     /// `BSShaderProperty::SetShadowLightBit`, vtable slot 41: sets bit lightIndex-1 of lightData+0x1c; 0xffff clears the mask and invalidates lastRenderPassState
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -517,7 +517,7 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_shadow_light_bit(&self, lightIndex: u32) { unsafe { virtual_function!(self, 41, (&Self, u32))(self, lightIndex) } }
+    pub unsafe fn set_shadow_light_bit(&self, lightIndex: u32) { unsafe { virtual_function!(self, 41, (*const Self, u32))(core::ptr::from_ref(self), lightIndex) } }
     /// `BSShaderProperty::Update`, vtable slot 38: runs every controller of the +0x18 chain (controller slot 39)
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -526,19 +526,19 @@ impl crate::BSShaderProperty {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update(&self, d: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 38, (&Self, *mut crate::NiUpdateData))(self, d) } }
+    pub unsafe fn update(&self, d: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 38, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), d) } }
     /// `BSShaderProperty::SetFlag`: sets or clears a flags bit; invalidates lastRenderPassState (+0x34 = 0x7fffffff) when the bit changes
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 105540, rva 0x14e7ef0.
     /// `void (BSShaderProperty* this, u8 bit, bool value)`
     #[inline]
-    pub fn set_flag(&self, bit: u8, value: bool) { unsafe { function!(105540, (&Self, u8, bool))(self, bit, value) } }
+    pub fn set_flag(&self, bit: u8, value: bool) { unsafe { function!(105540, (*const Self, u8, bool))(core::ptr::from_ref(self), bit, value) } }
     /// `BSShaderProperty::SetMaterial`: stores the cache entry for material at +0x78 (unique when asked or when the property has controllers) and releases the previous one
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 105544, rva 0x14e8000.
     /// `void (BSShaderProperty* this, BSShaderMaterial* material, bool unique)`
     #[inline]
-    pub fn set_material(&self, material: &crate::BSShaderMaterial, unique: bool) { unsafe { function!(105544, (&Self, &crate::BSShaderMaterial, bool))(self, material, unique) } }
+    pub fn set_material(&self, material: &crate::BSShaderMaterial, unique: bool) { unsafe { function!(105544, (*const Self, *const crate::BSShaderMaterial, bool))(core::ptr::from_ref(self), core::ptr::from_ref(material), unique) } }
     /// `BSShaderProperty::fadeNode` at +0x60: fade node whose fade (+0x130) scales the alpha; g_DefaultFadeNode (fade 1.0) by default
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -560,7 +560,7 @@ impl crate::BSShadowDirectionalLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn is_directional_light(&self) -> bool { unsafe { virtual_function!(self, 6, (&Self) -> bool)(self) } }
+    pub unsafe fn is_directional_light(&self) -> bool { unsafe { virtual_function!(self, 6, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSShadowDirectionalLight::RenderShadowMaps`, vtable slot 10: renders each map into depth target 2 slice k (and target 3 with iEnableShadowCastingFlag 2), then the focus maps into target 4 when focusShadowsActive
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -569,13 +569,13 @@ impl crate::BSShadowDirectionalLight {
     /// # Safety
     /// `counter` must point to what the engine expects.
     #[inline]
-    pub unsafe fn render_shadow_maps(&self, counter: *mut u32) { unsafe { virtual_function!(self, 10, (&Self, *mut u32))(self, counter) } }
+    pub unsafe fn render_shadow_maps(&self, counter: *mut u32) { unsafe { virtual_function!(self, 10, (*const Self, *mut u32))(core::ptr::from_ref(self), counter) } }
     /// `BSShadowDirectionalLight::UpdateForCamera`, vtable slot 16: per-frame setup against the scene camera: sun direction, cascade split and camera placement (bDisableShadowJumps, fSunStaticTimeUpdateScale)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSShadowLight* this, NiCamera* camera)`
     #[inline]
-    pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (&Self, &crate::NiCamera) -> bool)(self, camera) } }
+    pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::NiCamera) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
     /// `BSShadowDirectionalLight::BlendDirection`: smooth sun direction: snap on a camera jump, restart the blend when the change exceeds fSunUpdateThreshold (cos cached in 0x20d9528), advance by frameDelta / fSunShadowUpdateTime
     ///
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 108497, rva 0x1581730.
@@ -584,7 +584,7 @@ impl crate::BSShadowDirectionalLight {
     /// # Safety
     /// `inOutDirection` must point to what the engine expects.
     #[inline]
-    pub unsafe fn blend_direction(&self, inOutDirection: *mut f32, previousCameraJumped: u32) { unsafe { function!(108497, (&Self, *mut f32, u32))(self, inOutDirection, previousCameraJumped) } }
+    pub unsafe fn blend_direction(&self, inOutDirection: *mut f32, previousCameraJumped: u32) { unsafe { function!(108497, (*const Self, *mut f32, u32))(core::ptr::from_ref(self), inOutDirection, previousCameraJumped) } }
     /// `BSShadowDirectionalLight::BuildCullPlanes`: six cull planes (+ mask 0x3f) from the 2D convex hull of the projected frustum corners, copied into the culler's +0xac..+0x118
     ///
     /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 108499, rva 0x1581a80.
@@ -593,7 +593,7 @@ impl crate::BSShadowDirectionalLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn build_cull_planes(&self, outPlanes: *mut f32, corners: *mut f32, hull: *mut u32, hullCount: u32, lightAxes: *mut f32, origin: *mut f32, farCorner: u32) { unsafe { function!(108499, (&Self, *mut f32, *mut f32, *mut u32, u32, *mut f32, *mut f32, u32))(self, outPlanes, corners, hull, hullCount, lightAxes, origin, farCorner) } }
+    pub unsafe fn build_cull_planes(&self, outPlanes: *mut f32, corners: *mut f32, hull: *mut u32, hullCount: u32, lightAxes: *mut f32, origin: *mut f32, farCorner: u32) { unsafe { function!(108499, (*const Self, *mut f32, *mut f32, *mut u32, u32, *mut f32, *mut f32, u32))(core::ptr::from_ref(self), outPlanes, corners, hull, hullCount, lightAxes, origin, farCorner) } }
     /// `BSShadowDirectionalLight::lightCamera` at +0x578: camera looking along the sun used by the geometry list cull (0x157ed80)
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -610,7 +610,7 @@ impl crate::BSShadowFrustumLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn cull_casters(&self, mapCounter: *mut u32, mode: i32) { unsafe { virtual_function!(self, 9, (&Self, *mut u32, i32))(self, mapCounter, mode) } }
+    pub unsafe fn cull_casters(&self, mapCounter: *mut u32, mode: i32) { unsafe { virtual_function!(self, 9, (*const Self, *mut u32, i32))(core::ptr::from_ref(self), mapCounter, mode) } }
     /// `BSShadowFrustumLight::IsFrustumLight`, vtable slot 5: true only for the frustum light
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -619,7 +619,7 @@ impl crate::BSShadowFrustumLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn is_frustum_light(&self) -> bool { unsafe { virtual_function!(self, 5, (&Self) -> bool)(self) } }
+    pub unsafe fn is_frustum_light(&self) -> bool { unsafe { virtual_function!(self, 5, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSShadowFrustumLight::RenderShadowMaps`, vtable slot 10: RenderShadowMap on its single map, then the focus maps when focusShadowsActive
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -628,7 +628,7 @@ impl crate::BSShadowFrustumLight {
     /// # Safety
     /// `counter` must point to what the engine expects.
     #[inline]
-    pub unsafe fn render_shadow_maps(&self, counter: *mut i32) { unsafe { virtual_function!(self, 10, (&Self, *mut i32))(self, counter) } }
+    pub unsafe fn render_shadow_maps(&self, counter: *mut i32) { unsafe { virtual_function!(self, 10, (*const Self, *mut i32))(core::ptr::from_ref(self), counter) } }
     /// `BSShadowFrustumLight::SetLight`, vtable slot 2: BSLight slot 2, then sizes the map camera's frustum (far = light radius) and copies the light's local transform into it
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -637,13 +637,13 @@ impl crate::BSShadowFrustumLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_light(&self, light: *mut crate::NiLight) { unsafe { virtual_function!(self, 2, (&Self, *mut crate::NiLight))(self, light) } }
+    pub unsafe fn set_light(&self, light: *mut crate::NiLight) { unsafe { virtual_function!(self, 2, (*const Self, *mut crate::NiLight))(core::ptr::from_ref(self), light) } }
     /// `BSShadowFrustumLight::UpdateForCamera`, vtable slot 16: per-frame shadow light update against the frame camera: distance test scaled by the camera's lodAdjust (+0x184); returns false when the light is dropped (+0x5c == 0xff)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSShadowFrustumLight* this, NiCamera* camera)`
     #[inline]
-    pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (&Self, &crate::NiCamera) -> bool)(self, camera) } }
+    pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::NiCamera) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
 }
 
 impl crate::BSShadowLight {
@@ -655,13 +655,13 @@ impl crate::BSShadowLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn release_shadow_maps(&self) { unsafe { virtual_function!(self, 12, (&Self))(self) } }
+    pub unsafe fn release_shadow_maps(&self) { unsafe { virtual_function!(self, 12, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSShadowLight::SetShadowMapCount`, vtable slot 11: resizes shadowMaps and initialises new records (+0xcc 1.0, +0xe8 1, accumulator released)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShadowLight* this, u32 count)`
     #[inline]
-    pub fn set_shadow_map_count(&self, count: u32) { unsafe { virtual_function!(self, 11, (&Self, u32))(self, count) } }
+    pub fn set_shadow_map_count(&self, count: u32) { unsafe { virtual_function!(self, 11, (*const Self, u32))(core::ptr::from_ref(self), count) } }
     /// `BSShadowLight::SupportsFocusShadows`, vtable slot 4: whether the light may own the focus shadow maps: true for directional (0x1582010) and frustum (0x1587f70), false in BSShadowLight and parabolic
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -670,7 +670,7 @@ impl crate::BSShadowLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn supports_focus_shadows(&self) -> bool { unsafe { virtual_function!(self, 4, (&Self) -> bool)(self) } }
+    pub unsafe fn supports_focus_shadows(&self) -> bool { unsafe { virtual_function!(self, 4, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSShadowLight::vfunc_13`, vtable slot 13: 0 in BSShadowLight, frustum and parabolic; the directional light returns its argument (0x157ed10)
     ///
     /// Semantic, render pass, low; called through the object's vtable.
@@ -679,7 +679,7 @@ impl crate::BSShadowLight {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn vfunc_13(&self, value: u32) -> u32 { unsafe { virtual_function!(self, 13, (&Self, u32) -> u32)(self, value) } }
+    pub unsafe fn vfunc_13(&self, value: u32) -> u32 { unsafe { virtual_function!(self, 13, (*const Self, u32) -> u32)(core::ptr::from_ref(self), value) } }
     /// `BSShadowLight::vfunc_14`, vtable slot 14: true for directional (0x1582030) and parabolic (0x1588e40), false in BSShadowLight and frustum; purpose not established
     ///
     /// Semantic, render pass, low; called through the object's vtable.
@@ -688,7 +688,7 @@ impl crate::BSShadowLight {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn vfunc_14(&self) -> bool { unsafe { virtual_function!(self, 14, (&Self) -> bool)(self) } }
+    pub unsafe fn vfunc_14(&self) -> bool { unsafe { virtual_function!(self, 14, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSShadowLight::CullFocusShadowCasters`: per focus node i: accumulator +0x1a8 + i*0xf0 (mode 0xe, shadowMapIndex 0), registers the node's subtree (0x151e430 -> 0x1521890)
     ///
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107603, rva 0x155d110.
@@ -697,7 +697,7 @@ impl crate::BSShadowLight {
     /// # Safety
     /// `mapCounter` must point to what the engine expects.
     #[inline]
-    pub unsafe fn cull_focus_shadow_casters(&self, mapCounter: *mut u32) { unsafe { function!(107603, (&Self, *mut u32))(self, mapCounter) } }
+    pub unsafe fn cull_focus_shadow_casters(&self, mapCounter: *mut u32) { unsafe { function!(107603, (*const Self, *mut u32))(core::ptr::from_ref(self), mapCounter) } }
     /// `BSShadowLight::CullMapCasters`: one map's caster cull with the static culler 0x33d57a0: map camera, map accumulator, cull mode 3 + light+0x47, the map culler's planes; sun: replay each geometry list (RunCullingWithStaticProcess mode 2); local light: cull light+0x528 (mode 1) or the scene root (mode 0); ++*mapCounter
     ///
     /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107602, rva 0x155cea0.
@@ -706,7 +706,7 @@ impl crate::BSShadowLight {
     /// # Safety
     /// `map`, `mapCounter`, `geometryLists` must point to what the engine expects.
     #[inline]
-    pub unsafe fn cull_map_casters(&self, map: *mut crate::ShadowMapData, mapCounter: *mut u32, geometryLists: *mut crate::BSTArray, cullTag: u32) { unsafe { function!(107602, (&Self, *mut crate::ShadowMapData, *mut u32, *mut crate::BSTArray, u32))(self, map, mapCounter, geometryLists, cullTag) } }
+    pub unsafe fn cull_map_casters(&self, map: *mut crate::ShadowMapData, mapCounter: *mut u32, geometryLists: *mut crate::BSTArray, cullTag: u32) { unsafe { function!(107602, (*const Self, *mut crate::ShadowMapData, *mut u32, *mut crate::BSTArray, u32))(core::ptr::from_ref(self), map, mapCounter, geometryLists, cullTag) } }
     /// `BSShadowLight::RenderShadowMap`: assigns a slice when the record has none (target 4 from the free mask 0x20d8ff8), binds and clears the depth target when clearBeforeRender, draws the accumulator with the map's camera (0x1515230) and scales the frustum to the viewport
     ///
     /// Semantic, render pass, high; ledger semantic evidence, name high; id 107604, rva 0x155d270.
@@ -715,13 +715,13 @@ impl crate::BSShadowLight {
     /// # Safety
     /// `map`, `counter` must point to what the engine expects.
     #[inline]
-    pub unsafe fn render_shadow_map(&self, map: *mut crate::ShadowMapData, counter: *mut u32, flags: u32) { unsafe { function!(107604, (&Self, *mut crate::ShadowMapData, *mut u32, u32))(self, map, counter, flags) } }
+    pub unsafe fn render_shadow_map(&self, map: *mut crate::ShadowMapData, counter: *mut u32, flags: u32) { unsafe { function!(107604, (*const Self, *mut crate::ShadowMapData, *mut u32, u32))(core::ptr::from_ref(self), map, counter, flags) } }
     /// `BSShadowLight::SetupFocusShadows`: aims each focus map's camera at a focus actor and sizes its viewport by distance (ffocusShadowMapDoubleEveryXUnit, at most iShadowMapResolution)
     ///
     /// Semantic, render pass, high; ledger semantic evidence, name high; id 107601, rva 0x155ca00.
     /// `void (BSShadowLight* this, NiAVObject* camera)`
     #[inline]
-    pub fn setup_focus_shadows(&self, camera: &crate::NiAVObject) { unsafe { function!(107601, (&Self, &crate::NiAVObject))(self, camera) } }
+    pub fn setup_focus_shadows(&self, camera: &crate::NiAVObject) { unsafe { function!(107601, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
 }
 
 impl crate::BSShadowParabolicLight {
@@ -733,7 +733,7 @@ impl crate::BSShadowParabolicLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn cull_casters(&self, mapCounter: *mut u32, lightOrdinal: u32) { unsafe { virtual_function!(self, 9, (&Self, *mut u32, u32))(self, mapCounter, lightOrdinal) } }
+    pub unsafe fn cull_casters(&self, mapCounter: *mut u32, lightOrdinal: u32) { unsafe { virtual_function!(self, 9, (*const Self, *mut u32, u32))(core::ptr::from_ref(self), mapCounter, lightOrdinal) } }
     /// `BSShadowParabolicLight::IsParabolicLight`, vtable slot 7: true only for the parabolic light
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -742,7 +742,7 @@ impl crate::BSShadowParabolicLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn is_parabolic_light(&self) -> bool { unsafe { virtual_function!(self, 7, (&Self) -> bool)(self) } }
+    pub unsafe fn is_parabolic_light(&self) -> bool { unsafe { virtual_function!(self, 7, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `BSShadowParabolicLight::RenderShadowMaps`, vtable slot 10: RenderShadowMap per map
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -751,19 +751,19 @@ impl crate::BSShadowParabolicLight {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn render_shadow_maps(&self, drawCounter: *mut i32) { unsafe { virtual_function!(self, 10, (&Self, *mut i32))(self, drawCounter) } }
+    pub unsafe fn render_shadow_maps(&self, drawCounter: *mut i32) { unsafe { virtual_function!(self, 10, (*const Self, *mut i32))(core::ptr::from_ref(self), drawCounter) } }
     /// `BSShadowParabolicLight::UpdateForCamera`, vtable slot 16: copies the NiLight's world transform into the map cameras (second map mirrored), visible = light sphere (radius NiLight+0x128) inside the camera frustum, then dropped when +0x63 and (d^2 - r^2) * camera+0x184 >= g_ShadowDistanceSq
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSShadowParabolicLight* this, NiCamera* camera)`
     #[inline]
-    pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (&Self, &crate::NiCamera) -> bool)(self, camera) } }
+    pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::NiCamera) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
     /// `BSShadowParabolicLight::UsesTwoMaps`, vtable slot 8: shadowMapCount == 2 (both hemispheres)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSShadowParabolicLight* this)`
     #[inline]
-    pub fn uses_two_maps(&self) -> bool { unsafe { virtual_function!(self, 8, (&Self) -> bool)(self) } }
+    pub fn uses_two_maps(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::NiAVObject {
@@ -775,7 +775,7 @@ impl crate::NiAVObject {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn accept_visitor(&self, v: *mut c_void) { unsafe { virtual_function!(self, 38, (&Self, *mut c_void))(self, v) } }
+    pub unsafe fn accept_visitor(&self, v: *mut c_void) { unsafe { virtual_function!(self, 38, (*const Self, *mut c_void))(core::ptr::from_ref(self), v) } }
     /// `NiAVObject::CreateClone`, vtable slot 23: allocates a copy (NiNode's version 0x128 bytes, NiCamera's 0x188, BSFadeNode's 0x158)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -784,13 +784,13 @@ impl crate::NiAVObject {
     /// # Safety
     /// `process` must point to what the engine expects.
     #[inline]
-    pub unsafe fn create_clone(&self, process: *mut c_void) -> *mut crate::NiObject { unsafe { virtual_function!(self, 23, (&Self, *mut c_void) -> *mut crate::NiObject)(self, process) } }
+    pub unsafe fn create_clone(&self, process: *mut c_void) -> *mut crate::NiObject { unsafe { virtual_function!(self, 23, (*const Self, *mut c_void) -> *mut crate::NiObject)(core::ptr::from_ref(self), process) } }
     /// `NiAVObject::GetObjectByName`, vtable slot 42: this when this->name == *name (pointer compare), else null; NiNode 0xee23a0 then searches the children depth-first in array order
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `NiAVObject* (NiAVObject* this, const BSFixedString* name)`
     #[inline]
-    pub fn get_object_by_name(&self, name: &crate::BSFixedString) -> Option<&'static Self> { unsafe { virtual_function!(self, 42, (&Self, &crate::BSFixedString) -> Option<&'static Self>)(self, name) } }
+    pub fn get_object_by_name(&self, name: &crate::BSFixedString) -> Option<&'static Self> { unsafe { virtual_function!(self, 42, (*const Self, *const crate::BSFixedString) -> Option<&'static Self>)(core::ptr::from_ref(self), core::ptr::from_ref(name)) } }
     /// `NiAVObject::SetSelectiveUpdateFlags`, vtable slot 43: recomputes flags bit 1 (selected for update), bit 2 (update transforms) and bit 4 (rigid: set by NiAVObject, cleared by NiNode 0xee2e30) from the controllers and flag bit 7
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -799,7 +799,7 @@ impl crate::NiAVObject {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_selective_update_flags(&self, selectiveUpdate: *mut bool, updateTransforms: bool, rigid: *mut bool) { unsafe { virtual_function!(self, 43, (&Self, *mut bool, bool, *mut bool))(self, selectiveUpdate, updateTransforms, rigid) } }
+    pub unsafe fn set_selective_update_flags(&self, selectiveUpdate: *mut bool, updateTransforms: bool, rigid: *mut bool) { unsafe { virtual_function!(self, 43, (*const Self, *mut bool, bool, *mut bool))(core::ptr::from_ref(self), selectiveUpdate, updateTransforms, rigid) } }
     /// `NiAVObject::Slot39Recursive`, vtable slot 39: no-op on NiAVObject; NiNode 0xee3010 forwards the argument to every child's slot 39
     ///
     /// Semantic, render pass, low; called through the object's vtable.
@@ -808,7 +808,7 @@ impl crate::NiAVObject {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn slot39_recursive(&self, arg: *mut c_void) { unsafe { virtual_function!(self, 39, (&Self, *mut c_void))(self, arg) } }
+    pub unsafe fn slot39_recursive(&self, arg: *mut c_void) { unsafe { virtual_function!(self, 39, (*const Self, *mut c_void))(core::ptr::from_ref(self), arg) } }
     /// `NiAVObject::UpdateControllers`, vtable slot 37: runs each controller's slot 39 when data->flags bit 0 is set; NiNode 0xee2420 also recurses into the children's slot 37
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -817,7 +817,7 @@ impl crate::NiAVObject {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_controllers(&self, data: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 37, (&Self, *mut crate::NiUpdateData))(self, data) } }
+    pub unsafe fn update_controllers(&self, data: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 37, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), data) } }
     /// `NiAVObject::UpdateDownwardPass`, vtable slot 44: full update of the subtree: controllers (data bit 0), UpdateWorldData (slot 48), bound; NiNode 0xee24d0 runs slot 44 on every child and merges their bounds (unless flags bit 13)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -826,7 +826,7 @@ impl crate::NiAVObject {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_downward_pass(&self, data: *mut crate::NiUpdateData, parentFlags: u32) { unsafe { virtual_function!(self, 44, (&Self, *mut crate::NiUpdateData, u32))(self, data, parentFlags) } }
+    pub unsafe fn update_downward_pass(&self, data: *mut crate::NiUpdateData, parentFlags: u32) { unsafe { virtual_function!(self, 44, (*const Self, *mut crate::NiUpdateData, u32))(core::ptr::from_ref(self), data, parentFlags) } }
     /// `NiAVObject::UpdateDownwardPassUnderParent`, vtable slot 50: temporarily sets parent, runs slot 44, clears parent
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -835,7 +835,7 @@ impl crate::NiAVObject {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_downward_pass_under_parent(&self, parent: *mut crate::NiNode, data: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 50, (&Self, *mut crate::NiNode, *mut crate::NiUpdateData))(self, parent, data) } }
+    pub unsafe fn update_downward_pass_under_parent(&self, parent: *mut crate::NiNode, data: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 50, (*const Self, *mut crate::NiNode, *mut crate::NiUpdateData))(core::ptr::from_ref(self), parent, data) } }
     /// `NiAVObject::UpdateRigidDownwardPass`, vtable slot 46: as slot 45 for rigid subtrees: NiNode 0xee2a40 recurses with slot 46 into children with flags bit 1 and does not rebuild the bound
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -844,7 +844,7 @@ impl crate::NiAVObject {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_rigid_downward_pass(&self, data: *mut crate::NiUpdateData, parentFlags: u32) { unsafe { virtual_function!(self, 46, (&Self, *mut crate::NiUpdateData, u32))(self, data, parentFlags) } }
+    pub unsafe fn update_rigid_downward_pass(&self, data: *mut crate::NiUpdateData, parentFlags: u32) { unsafe { virtual_function!(self, 46, (*const Self, *mut crate::NiUpdateData, u32))(core::ptr::from_ref(self), data, parentFlags) } }
     /// `NiAVObject::UpdateSelectedDownwardPass`, vtable slot 45: selective update: controllers only with flags bit 3, transforms only with flags bit 2 and data bit 1 clear; NiNode 0xee2680 visits only children with flags bit 1, through slot 46 for children with bit 4
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -853,7 +853,7 @@ impl crate::NiAVObject {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_selected_downward_pass(&self, data: *mut crate::NiUpdateData, parentFlags: u32) { unsafe { virtual_function!(self, 45, (&Self, *mut crate::NiUpdateData, u32))(self, data, parentFlags) } }
+    pub unsafe fn update_selected_downward_pass(&self, data: *mut crate::NiUpdateData, parentFlags: u32) { unsafe { virtual_function!(self, 45, (*const Self, *mut crate::NiUpdateData, u32))(core::ptr::from_ref(self), data, parentFlags) } }
     /// `NiAVObject::UpdateTransformsAndBound`, vtable slot 49: update without controllers: UpdateWorldData when flags bit 2, then UpdateWorldBound; NiNode 0xee2b70 recurses with slot 49 and merges bounds
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -862,19 +862,19 @@ impl crate::NiAVObject {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_transforms_and_bound(&self, data: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 49, (&Self, *mut crate::NiUpdateData))(self, data) } }
+    pub unsafe fn update_transforms_and_bound(&self, data: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 49, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), data) } }
     /// `NiAVObject::UpdateUpwardPass`, vtable slot 51: asks the parent to rebuild its bound upward (parent slot 61)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiAVObject* this)`
     #[inline]
-    pub fn update_upward_pass(&self) { unsafe { virtual_function!(self, 51, (&Self))(self) } }
+    pub fn update_upward_pass(&self) { unsafe { virtual_function!(self, 51, (*const Self))(core::ptr::from_ref(self)) } }
     /// `NiAVObject::UpdateWorldBound`, vtable slot 47: rebuilds worldBound: no-op on NiAVObject, union of the children on NiNode 0xee2920 (skipped with flags bit 13), the camera position on NiCamera 0xef1950
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiAVObject* this)`
     #[inline]
-    pub fn update_world_bound(&self) { unsafe { virtual_function!(self, 47, (&Self))(self) } }
+    pub fn update_world_bound(&self) { unsafe { virtual_function!(self, 47, (*const Self))(core::ptr::from_ref(self)) } }
     /// `NiAVObject::UpdateWorldData`, vtable slot 48: snapshots previousWorld once per render frame, then world = parent.world * local (MultiplyTransforms 0x3059a0), world = parent.world with flags bit 9, world = local without a parent, or the collision object's slot 38 when +0x40 is set
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -883,19 +883,19 @@ impl crate::NiAVObject {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_world_data(&self, data: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 48, (&Self, *mut crate::NiUpdateData))(self, data) } }
+    pub unsafe fn update_world_data(&self, data: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 48, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), data) } }
     /// `NiAVObject::Cull`: the per-node gate of the tree walks (pass 12: the sun's cascade replay of its geometry lists, 0xfee650, and the focus maps, 0x1521ad0, do not call it): does nothing when flags bit 0 (hidden) is set, else tail-calls culler slot 22 CullNode(culler, node, orderedGroup) with r8 untouched; r8 is the BSOrderedNode group index (0xffffffff outside an ordered node; BSOrderedNode::OnVisible 0x1570700 hands its children 0, 1, 2 ...) that slot 24 uses to queue geometry for in-order drawing, not a plane mask (pass 6; the frustum mask is BSCullingProcess +0x9c)
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 70267, rva 0xee0f30.
     /// `void (NiAVObject* this, NiCullingProcess* culler, u32 orderedGroup)`
     #[inline]
-    pub fn cull(&self, culler: &crate::NiCullingProcess, orderedGroup: u32) { unsafe { function!(70267, (&Self, &crate::NiCullingProcess, u32))(self, culler, orderedGroup) } }
+    pub fn cull(&self, culler: &crate::NiCullingProcess, orderedGroup: u32) { unsafe { function!(70267, (*const Self, *const crate::NiCullingProcess, u32))(core::ptr::from_ref(self), core::ptr::from_ref(culler), orderedGroup) } }
     /// `NiAVObject::SetParentDetachingFromOld`: old parent's slot 56 DetachChild(child), then child->parent = newParent
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70266, rva 0xee0ef0.
     /// `void (NiAVObject* child, NiNode* newParent)`
     #[inline]
-    pub fn set_parent_detaching_from_old(&self, newParent: &crate::NiNode) { unsafe { function!(70266, (&Self, &crate::NiNode))(self, newParent) } }
+    pub fn set_parent_detaching_from_old(&self, newParent: &crate::NiNode) { unsafe { function!(70266, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), core::ptr::from_ref(newParent)) } }
     /// `NiAVObject::UpdateNode`: slot 44 (+0x160) with (data, 0), then tail jump to the parent's (+0x30) slot 61 (+0x1e8); the call to make after writing a local transform (all camera states use it with a zeroed 8-byte record)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70251, rva 0xee0930.
@@ -904,13 +904,13 @@ impl crate::NiAVObject {
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_node(&self, data: *mut crate::NiUpdateData) { unsafe { function!(70251, (&Self, *mut crate::NiUpdateData))(self, data) } }
+    pub unsafe fn update_node(&self, data: *mut crate::NiUpdateData) { unsafe { function!(70251, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), data) } }
     /// `NiAVObject::UpdateWorldTransformFromParent`: world = parent.world * local (or local, or parent.world with flags bit 9) without the frame snapshot, controllers or children
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70540, rva 0xeec1a0.
     /// `void (NiAVObject* this)`
     #[inline]
-    pub fn update_world_transform_from_parent(&self) { unsafe { function!(70540, (&Self))(self) } }
+    pub fn update_world_transform_from_parent(&self) { unsafe { function!(70540, (*const Self))(core::ptr::from_ref(self)) } }
     /// `NiAVObject::collisionObject` at +0x40: physics object of this node (refcounted); when set it, not the parent, produces the world transform
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -924,13 +924,13 @@ impl crate::NiNode {
     /// Semantic, render pass, high; called through the object's vtable.
     /// `NiNode* (NiObject* this)`
     #[inline]
-    pub fn as_node(&self) -> Option<&'static Self> { unsafe { virtual_function!(self, 3, (&Self) -> Option<&'static Self>)(self) } }
+    pub fn as_node(&self) -> Option<&'static Self> { unsafe { virtual_function!(self, 3, (*const Self) -> Option<&'static Self>)(core::ptr::from_ref(self)) } }
     /// `NiNode::AttachChild`, vtable slot 53: reparents child under this: the old parent's slot 56 detaches it, child->parent = this, child stored at the end (or the first null slot when firstAvailable), child->parentIndex = slot
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, NiAVObject* child, bool firstAvailable)`
     #[inline]
-    pub fn attach_child(&self, child: &crate::NiAVObject, firstAvailable: bool) { unsafe { virtual_function!(self, 53, (&Self, &crate::NiAVObject, bool))(self, child, firstAvailable) } }
+    pub fn attach_child(&self, child: &crate::NiAVObject, firstAvailable: bool) { unsafe { virtual_function!(self, 53, (*const Self, *const crate::NiAVObject, bool))(core::ptr::from_ref(self), core::ptr::from_ref(child), firstAvailable) } }
     /// `NiNode::DetachChild`, vtable slot 55: detaches child by child->parentIndex through slot 57 when it is not -1, else by a linear search; the detached object is returned in *out
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -939,13 +939,13 @@ impl crate::NiNode {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn detach_child(&self, child: *mut crate::NiAVObject, out: *mut c_void) { unsafe { virtual_function!(self, 55, (&Self, *mut crate::NiAVObject, *mut c_void))(self, child, out) } }
+    pub unsafe fn detach_child(&self, child: *mut crate::NiAVObject, out: *mut c_void) { unsafe { virtual_function!(self, 55, (*const Self, *mut crate::NiAVObject, *mut c_void))(core::ptr::from_ref(self), child, out) } }
     /// `NiNode::DetachChild2`, vtable slot 56: slot 55 with a temporary out pointer that is released (the child dies here unless someone else holds it)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, NiAVObject* child)`
     #[inline]
-    pub fn detach_child2(&self, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 56, (&Self, &crate::NiAVObject))(self, child) } }
+    pub fn detach_child2(&self, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 56, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(child)) } }
     /// `NiNode::DetachChildAt`, vtable slot 57: removes the child at index: parent = 0, parentIndex = -1, slot nulled (no shift)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -954,25 +954,25 @@ impl crate::NiNode {
     /// # Safety
     /// `out` must point to what the engine expects.
     #[inline]
-    pub unsafe fn detach_child_at(&self, index: u32, out: *mut c_void) { unsafe { virtual_function!(self, 57, (&Self, u32, *mut c_void))(self, index, out) } }
+    pub unsafe fn detach_child_at(&self, index: u32, out: *mut c_void) { unsafe { virtual_function!(self, 57, (*const Self, u32, *mut c_void))(core::ptr::from_ref(self), index, out) } }
     /// `NiNode::DetachChildAt2`, vtable slot 58: slot 57 with a temporary out pointer
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, u32 index)`
     #[inline]
-    pub fn detach_child_at2(&self, index: u32) { unsafe { virtual_function!(self, 58, (&Self, u32))(self, index) } }
+    pub fn detach_child_at2(&self, index: u32) { unsafe { virtual_function!(self, 58, (*const Self, u32))(core::ptr::from_ref(self), index) } }
     /// `NiNode::InsertChildAt`, vtable slot 54: inserts child at index, shifting later children up; sets only the inserted child's parentIndex
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, u32 index, NiAVObject* child)`
     #[inline]
-    pub fn insert_child_at(&self, index: u32, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 54, (&Self, u32, &crate::NiAVObject))(self, index, child) } }
+    pub fn insert_child_at(&self, index: u32, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 54, (*const Self, u32, *const crate::NiAVObject))(core::ptr::from_ref(self), index, core::ptr::from_ref(child)) } }
     /// `NiNode::OnVisible`, vtable slot 52: visits every child through NiAVObject::Cull, passing the ordered-group index on, when the bound radius is non-zero or flag bit 11 is set
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, NiCullingProcess* culler, u32 orderedGroup)`
     #[inline]
-    pub fn on_visible(&self, culler: &crate::NiCullingProcess, orderedGroup: u32) { unsafe { virtual_function!(self, 52, (&Self, &crate::NiCullingProcess, u32))(self, culler, orderedGroup) } }
+    pub fn on_visible(&self, culler: &crate::NiCullingProcess, orderedGroup: u32) { unsafe { virtual_function!(self, 52, (*const Self, *const crate::NiCullingProcess, u32))(core::ptr::from_ref(self), core::ptr::from_ref(culler), orderedGroup) } }
     /// `NiNode::SetAt`, vtable slot 59: replaces (or appends at) index, detaching the previous occupant into *outOld
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -981,19 +981,19 @@ impl crate::NiNode {
     /// # Safety
     /// `outOld` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_at(&self, index: u32, child: *mut crate::NiAVObject, outOld: *mut c_void) { unsafe { virtual_function!(self, 59, (&Self, u32, *mut crate::NiAVObject, *mut c_void))(self, index, child, outOld) } }
+    pub unsafe fn set_at(&self, index: u32, child: *mut crate::NiAVObject, outOld: *mut c_void) { unsafe { virtual_function!(self, 59, (*const Self, u32, *mut crate::NiAVObject, *mut c_void))(core::ptr::from_ref(self), index, child, outOld) } }
     /// `NiNode::SetAt2`, vtable slot 60: slot 59 without the out pointer
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, u32 index, NiAVObject* child)`
     #[inline]
-    pub fn set_at2(&self, index: u32, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 60, (&Self, u32, &crate::NiAVObject))(self, index, child) } }
+    pub fn set_at2(&self, index: u32, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 60, (*const Self, u32, *const crate::NiAVObject))(core::ptr::from_ref(self), index, core::ptr::from_ref(child)) } }
     /// `NiNode::UpdateUpwardPass`, vtable slot 61: UpdateWorldBound on this node, then the same on the parent, up to the root
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this)`
     #[inline]
-    pub fn update_upward_pass(&self) { unsafe { virtual_function!(self, 61, (&Self))(self) } }
+    pub fn update_upward_pass(&self) { unsafe { virtual_function!(self, 61, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::NiSkinInstance {
@@ -1005,31 +1005,31 @@ impl crate::NiSkinInstance {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn create_clone(&self, cp: *mut c_void) -> *mut crate::NiObject { unsafe { virtual_function!(self, 23, (&Self, *mut c_void) -> *mut crate::NiObject)(self, cp) } }
+    pub unsafe fn create_clone(&self, cp: *mut c_void) -> *mut crate::NiObject { unsafe { virtual_function!(self, 23, (*const Self, *mut c_void) -> *mut crate::NiObject)(core::ptr::from_ref(self), cp) } }
     /// `NiSkinInstance::IsEqual`, vtable slot 28: compares skin data and partition with their slot 28
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (NiSkinInstance* this, NiObject* other)`
     #[inline]
-    pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (&Self, &crate::NiObject) -> bool)(self, other) } }
+    pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const crate::NiObject) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `NiSkinInstance::LinkObject`, vtable slot 25: resolves skinData, skinPartition, rootParent, boneNodes and builds boneWorldTransforms
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiSkinInstance* this, NiStream* s)`
     #[inline]
-    pub fn link_object(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 25, (&Self, &crate::NiStream))(self, s) } }
+    pub fn link_object(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 25, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinInstance::LoadBinary`, vtable slot 24: reads three link ids and the bone link list
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiSkinInstance* this, NiStream* s)`
     #[inline]
-    pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (&Self, &crate::NiStream))(self, s) } }
+    pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinInstance::RegisterStreamables`, vtable slot 26: registers skin data, partition, root and every bone
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (NiSkinInstance* this, NiStream* s)`
     #[inline]
-    pub fn register_streamables(&self, s: &crate::NiStream) -> bool { unsafe { virtual_function!(self, 26, (&Self, &crate::NiStream) -> bool)(self, s) } }
+    pub fn register_streamables(&self, s: &crate::NiStream) -> bool { unsafe { virtual_function!(self, 26, (*const Self, *const crate::NiStream) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinInstance::RenderPartitions`, vtable slot 37: draws every partition of skinPartition through NiSkinPartition slot 37
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -1038,13 +1038,13 @@ impl crate::NiSkinInstance {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn render_partitions(&self, ctx: *mut c_void) { unsafe { virtual_function!(self, 37, (&Self, *mut c_void))(self, ctx) } }
+    pub unsafe fn render_partitions(&self, ctx: *mut c_void) { unsafe { virtual_function!(self, 37, (*const Self, *mut c_void))(core::ptr::from_ref(self), ctx) } }
     /// `NiSkinInstance::SaveBinary`, vtable slot 27: writes the three links, the bone count and the bone links
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiSkinInstance* this, NiStream* s)`
     #[inline]
-    pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (&Self, &crate::NiStream))(self, s) } }
+    pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinInstance::ComputeBound`: merges every bone's bound sphere (boneData[i]+0x34) moved by its world transform (*(+0x30)[i])
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 71212, rva 0xf09cb0.
@@ -1053,7 +1053,7 @@ impl crate::NiSkinInstance {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn compute_bound(&self, out: *mut c_void) { unsafe { function!(71212, (&Self, *mut c_void))(self, out) } }
+    pub unsafe fn compute_bound(&self, out: *mut c_void) { unsafe { function!(71212, (*const Self, *mut c_void))(core::ptr::from_ref(self), out) } }
     /// `NiSkinInstance::UpdatePalette`: rebuilds the bone matrix palette once per render frame (paletteFrame against g_RenderFrameCounter), keeping the previous palette
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 77461, rva 0x1015800.
@@ -1062,7 +1062,7 @@ impl crate::NiSkinInstance {
     /// # Safety
     /// `geometryWorld` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_palette(&self, geometryWorld: *const c_void) { unsafe { function!(77461, (&Self, *const c_void))(self, geometryWorld) } }
+    pub unsafe fn update_palette(&self, geometryWorld: *const c_void) { unsafe { function!(77461, (*const Self, *const c_void))(core::ptr::from_ref(self), geometryWorld) } }
     /// `NiSkinInstance::rootParent` at +0x20: the node the skin is bound to (the actor's root BSFadeNode for body parts)
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -1104,7 +1104,7 @@ impl crate::ShadowSceneNode {
     /// Semantic, render pass, high; ledger semantic evidence, name high; id 106328, rva 0x150cbf0.
     /// `BSLight* (ShadowSceneNode* this, BSLight* light)`
     #[inline]
-    pub fn add_light(&self, light: &crate::BSLight) -> Option<&'static crate::BSLight> { unsafe { function!(106328, (&Self, &crate::BSLight) -> Option<&'static crate::BSLight>)(self, light) } }
+    pub fn add_light(&self, light: &crate::BSLight) -> Option<&'static crate::BSLight> { unsafe { function!(106328, (*const Self, *const crate::BSLight) -> Option<&'static crate::BSLight>)(core::ptr::from_ref(self), core::ptr::from_ref(light)) } }
     /// `ShadowSceneNode::AssignLightsToGeometry`: rebuilds the geometry's light list (shader property +0x128 -> +0x70) from every non-shadow light whose radius reaches the bound, taken from the room's, the shared portal node's or the scene's list; sets flags bit 22
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106352, rva 0x150ee90.
@@ -1122,7 +1122,7 @@ impl crate::ShadowSceneNode {
     /// # Safety
     /// `params` must point to what the engine expects.
     #[inline]
-    pub unsafe fn create_light(&self, light: *mut crate::NiLight, params: *const c_void) -> *mut crate::BSLight { unsafe { function!(106326, (&Self, *mut crate::NiLight, *const c_void) -> *mut crate::BSLight)(self, light, params) } }
+    pub unsafe fn create_light(&self, light: *mut crate::NiLight, params: *const c_void) -> *mut crate::BSLight { unsafe { function!(106326, (*const Self, *mut crate::NiLight, *const c_void) -> *mut crate::BSLight)(core::ptr::from_ref(self), light, params) } }
     /// `ShadowSceneNode::QueueDetach`: appends to +0x1b0 and optionally removes the object from the portal graph
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106339, rva 0x150e1f0.
@@ -1131,13 +1131,13 @@ impl crate::ShadowSceneNode {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn queue_detach(&self, object: *mut crate::NiAVObject, fromPortalGraph: bool, keepInGraph: bool) { unsafe { function!(106339, (&Self, *mut crate::NiAVObject, bool, bool))(self, object, fromPortalGraph, keepInGraph) } }
+    pub unsafe fn queue_detach(&self, object: *mut crate::NiAVObject, fromPortalGraph: bool, keepInGraph: bool) { unsafe { function!(106339, (*const Self, *mut crate::NiAVObject, bool, bool))(core::ptr::from_ref(self), object, fromPortalGraph, keepInGraph) } }
     /// `ShadowSceneNode::QueueLightAdd`: appends to +0x160 and stores the scene's portal graph in light+0x120
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106327, rva 0x150cb10.
     /// `void (ShadowSceneNode* this, BSLight* light)`
     #[inline]
-    pub fn queue_light_add(&self, light: &crate::BSLight) { unsafe { function!(106327, (&Self, &crate::BSLight))(self, light) } }
+    pub fn queue_light_add(&self, light: &crate::BSLight) { unsafe { function!(106327, (*const Self, *const crate::BSLight))(core::ptr::from_ref(self), core::ptr::from_ref(light)) } }
     /// `ShadowSceneNode::QueueLightRemoval`: appends to +0x178 once the scene was processed
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106332, rva 0x150d120.
@@ -1146,31 +1146,31 @@ impl crate::ShadowSceneNode {
     /// # Safety
     /// `light` must point to what the engine expects.
     #[inline]
-    pub unsafe fn queue_light_removal(&self, light: *mut c_void) { unsafe { function!(106332, (&Self, *mut c_void))(self, light) } }
+    pub unsafe fn queue_light_removal(&self, light: *mut c_void) { unsafe { function!(106332, (*const Self, *mut c_void))(core::ptr::from_ref(self), light) } }
     /// `ShadowSceneNode::QueueLightUpdate`: appends to +0x190; the current name RemoveFromCollection190Locked is wrong
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106341, rva 0x150e330.
     /// `void (ShadowSceneNode* this, BSLight* light)`
     #[inline]
-    pub fn queue_light_update(&self, light: &crate::BSLight) { unsafe { function!(106341, (&Self, &crate::BSLight))(self, light) } }
+    pub fn queue_light_update(&self, light: &crate::BSLight) { unsafe { function!(106341, (*const Self, *const crate::BSLight))(core::ptr::from_ref(self), core::ptr::from_ref(light)) } }
     /// `ShadowSceneNode::QueueRelight`: appends to +0x1e0 (true) or +0x1c8 (false) under geometryQueueLock
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106349, rva 0x150e780.
     /// `void (ShadowSceneNode* this, NiAVObject* object, bool activeLightsOnly)`
     #[inline]
-    pub fn queue_relight(&self, object: &crate::NiAVObject, activeLightsOnly: bool) { unsafe { function!(106349, (&Self, &crate::NiAVObject, bool))(self, object, activeLightsOnly) } }
+    pub fn queue_relight(&self, object: &crate::NiAVObject, activeLightsOnly: bool) { unsafe { function!(106349, (*const Self, *const crate::NiAVObject, bool))(core::ptr::from_ref(self), core::ptr::from_ref(object), activeLightsOnly) } }
     /// `ShadowSceneNode::QueueRelightVisible`: appends a non-hidden object to +0x1c8
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106330, rva 0x150cf20.
     /// `void (ShadowSceneNode* this, NiAVObject* object)`
     #[inline]
-    pub fn queue_relight_visible(&self, object: &crate::NiAVObject) { unsafe { function!(106330, (&Self, &crate::NiAVObject))(self, object) } }
+    pub fn queue_relight_visible(&self, object: &crate::NiAVObject) { unsafe { function!(106330, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(object)) } }
     /// `ShadowSceneNode::UpdateLight`: drops a hidden or zero-radius light, else stores the portal graph in the light and culls its receivers (0x1512540 with a parabolic culler or 0x1513290)
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 106342, rva 0x150e400.
     /// `void (ShadowSceneNode* this, BSLight* light)`
     #[inline]
-    pub fn update_light(&self, light: &crate::BSLight) { unsafe { function!(106342, (&Self, &crate::BSLight))(self, light) } }
+    pub fn update_light(&self, light: &crate::BSLight) { unsafe { function!(106342, (*const Self, *const crate::BSLight))(core::ptr::from_ref(self), core::ptr::from_ref(light)) } }
     /// `ShadowSceneNode::fogProperty` at +0x220: fog property shared by the scene
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -1194,37 +1194,37 @@ impl crate::TESCamera {
     /// Semantic, render pass, high; called through the object's vtable.
     /// `TESCamera* (TESCamera* this, u32 flags)`
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
     /// `TESCamera::SetCameraRoot`, vtable slot 1: refcounted assignment of cameraRoot (+0x20)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (TESCamera* this, NiNode* root)`
     #[inline]
-    pub fn set_camera_root(&self, root: &crate::NiNode) { unsafe { virtual_function!(self, 1, (&Self, &crate::NiNode))(self, root) } }
+    pub fn set_camera_root(&self, root: &crate::NiNode) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), core::ptr::from_ref(root)) } }
     /// `TESCamera::Update`, vtable slot 2: if a state is current and enabled: calls the state's slot 3 Update(&next); when next is set, End (slot 2) on the old state, swap currentState, Begin (slot 1) on the new one; then zeroes the input accumulators +0x8..+0x1c
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (TESCamera* this)`
     #[inline]
-    pub fn update(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
+    pub fn update(&self) { unsafe { virtual_function!(self, 2, (*const Self))(core::ptr::from_ref(self)) } }
     /// `TESCamera::AddZoomInput`: TESCamera zoom input (+0x1c) += delta
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33022, rva 0x558db0.
     /// `void (TESCamera* this, float delta)`
     #[inline]
-    pub fn add_zoom_input(&self, delta: f32) { unsafe { function!(33022, (&Self, f32))(self, delta) } }
+    pub fn add_zoom_input(&self, delta: f32) { unsafe { function!(33022, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
     /// `TESCamera::BeginCurrentState`: tail-calls currentState->Begin (slot 1); resets the local map view
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16327, rva 0x2480e0.
     /// `void (TESCamera* this)`
     #[inline]
-    pub fn begin_current_state(&self) { unsafe { function!(16327, (&Self))(self) } }
+    pub fn begin_current_state(&self) { unsafe { function!(16327, (*const Self))(core::ptr::from_ref(self)) } }
     /// `TESCamera::SetState`: End (slot 2) on the current state, refcounted swap of +0x28, Begin (slot 1) on the new one
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 33026, rva 0x558f90.
     /// `void (TESCamera* this, TESCameraState* state)`
     #[inline]
-    pub fn set_state(&self, state: &crate::TESCameraState) { unsafe { function!(33026, (&Self, &crate::TESCameraState))(self, state) } }
+    pub fn set_state(&self, state: &crate::TESCameraState) { unsafe { function!(33026, (*const Self, *const crate::TESCameraState))(core::ptr::from_ref(self), core::ptr::from_ref(state)) } }
     /// `TESCamera::ctor`: base constructor: vtable 0x18ebbe0, rotationInput (+0x8) and translationInput (+0x10) from zero constants (0x20ccb20, 0x20ccb24, 0x20ccc28, 0x20ccc2c, 0x20ccc30), zoomInput 0, cameraRoot null, currentState null, enabled (+0x30) = 1
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33018, rva 0x558c80.
@@ -1233,7 +1233,7 @@ impl crate::TESCamera {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(33018, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(33018, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `TESCamera::dtor`: base destructor: restores TESCamera's vtable, releases currentState (refcount +8, slot 0 with 1 at zero) and cameraRoot (NiRefObject refcount +8, slot 1 at zero)
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 33019, rva 0x558cf0.
@@ -1242,7 +1242,7 @@ impl crate::TESCamera {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(33019, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(33019, (*const Self))(core::ptr::from_ref(self)) } }
     /// `TESCamera::cameraRoot` at +0x20: the camera's scene graph node
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -1267,7 +1267,7 @@ pub fn present_frame() { unsafe { function!(77246, ())() } }
 /// Semantic, render pass, high; ledger runtime evidence, name high; id 106337, rva 0x150e040.
 /// `void (BSCullingProcess* culler)`
 #[inline]
-pub fn process_shadow_scene_node_queues(culler: &crate::BSCullingProcess) { unsafe { function!(106337, (&crate::BSCullingProcess))(culler) } }
+pub fn process_shadow_scene_node_queues(culler: &crate::BSCullingProcess) { unsafe { function!(106337, (*const crate::BSCullingProcess))(core::ptr::from_ref(culler)) } }
 /// `RenderFirstPerson`: draws the first-person root (arms and weapon) after the main scene; runs only when the first-person root is shown at frame start and the camera is not the free camera
 ///
 /// Semantic, render pass, high; ledger runtime evidence, name high; id 107129, rva 0x1537b10.

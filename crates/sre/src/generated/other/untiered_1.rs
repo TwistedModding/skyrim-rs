@@ -102,7 +102,7 @@ impl crate::ActorMediator {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_event(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_event(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ActorMediator::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 15000, rva 0x1f3c40).
     /// `undefined8 vfunc_1_sub0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -146,14 +146,14 @@ impl crate::AlarmPackage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(42522, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(42522, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `AlarmPackage::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 42521, rva 0x7b8300).
     /// `undefined SaveGame(AlarmPackage * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(42521, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(42521, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::AnimationClipDataSingleton {
@@ -301,14 +301,14 @@ impl crate::ArrowProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43708, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43708, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ArrowProjectile::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 43707, rva 0x7de120).
     /// `undefined SaveGame(ArrowProjectile * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43707, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43707, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ArrowProjectile::vfunc_172_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 44096, rva 0x7f8670).
     /// `undefined vfunc_172_sub0(longlong param_1, longlong param_2)`
     ///
@@ -444,14 +444,14 @@ impl crate::BarrierProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(43726, (&Self, *mut c_void, u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(43726, (*const Self, *mut c_void, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BarrierProjectile::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 43725, rva 0x7df6b0).
     /// `undefined SaveGame(BarrierProjectile * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43725, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43725, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BarterMenu {
@@ -603,14 +603,14 @@ impl crate::BowZoomStartHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BowZoomStartHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42860, rva 0x7cdee0).
     /// `undefined8 Handle(BowZoomStartHandler * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn handle(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn handle(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BowZoomStopHandler {
@@ -620,14 +620,14 @@ impl crate::BowZoomStopHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BowZoomStopHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42861, rva 0x7cdfc0).
     /// `undefined8 Handle(BowZoomStopHandler * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn handle(&self, param_1: *mut u64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut u64) -> u64)(self, param_1) } }
+    pub unsafe fn handle(&self, param_1: *mut u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::CellLoaderTask {
@@ -647,14 +647,14 @@ impl crate::ChainExplosion {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(36410, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(36410, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `ChainExplosion::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 36409, rva 0x64b7b0).
     /// `undefined SaveGame(ChainExplosion * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(36409, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(36409, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `ChainExplosion::vfunc_163_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 43831, rva 0x7e4750).
     /// `undefined vfunc_163_sub0(longlong * param_1)`
     ///
@@ -728,7 +728,7 @@ impl crate::Compass {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn update(&self) -> u64 { unsafe { virtual_function!(self, 1, (&Self) -> u64)(self) } }
+    pub unsafe fn update(&self) -> u64 { unsafe { virtual_function!(self, 1, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ConeProjectile {
@@ -738,14 +738,14 @@ impl crate::ConeProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(43795, (&Self, *mut c_void, u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(43795, (*const Self, *mut c_void, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ConeProjectile::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 43794, rva 0x7e1c40).
     /// `undefined SaveGame(ConeProjectile * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43794, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43794, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ConeProjectile::vfunc_171_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 43806, rva 0x7e2e50).
     /// `undefined vfunc_171_sub0(longlong * param_1, float param_2)`
     ///
@@ -1096,14 +1096,14 @@ impl crate::DialoguePackage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(42541, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(42541, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `DialoguePackage::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 42540, rva 0x7b8f70).
     /// `undefined SaveGame(DialoguePackage * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(42540, (&Self, i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(42540, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `DialoguePackage::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40435, rva 0x7429c0).
     /// `undefined ctor_sub0(undefined8 param_1, longlong * param_2, longlong * param_3, longlong param_4)`
     ///
@@ -1157,7 +1157,7 @@ impl crate::EffectSetting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_has_keyword(&self, param_1: *mut c_void) -> u64 { unsafe { function!(11072, (&Self, *mut c_void) -> u64)(self, param_1) } }
+    pub unsafe fn bgs_keyword_form_has_keyword(&self, param_1: *mut c_void) -> u64 { unsafe { function!(11072, (*const Self, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `EffectSetting::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 11122, rva 0x14c5d0).
     /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -1211,14 +1211,14 @@ impl crate::Explosion {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(43840, (&Self, *mut c_void, u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(43840, (*const Self, *mut c_void, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Explosion::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 43839, rva 0x7e5180).
     /// `undefined SaveGame(Explosion * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43839, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43839, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Explosion::vfunc_163_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 43851, rva 0x7e6850).
     /// `undefined vfunc_163_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, bhkFilteredCdBodyCollector * param_4)`
     ///
@@ -1362,14 +1362,14 @@ impl crate::FleePackage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(42575, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(42575, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `FleePackage::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 42574, rva 0x7bb4b0).
     /// `undefined SaveGame(FleePackage * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(42574, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(42574, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::FlightActionEntryEndHandler {
@@ -1436,70 +1436,70 @@ impl crate::GRefCountImplCore {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size10(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83708, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size10(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83708, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtorSize10_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83709, rva 0xd40740).
     /// `GRefCountImplCore * ScalarDeletingDtorSize10_2(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size10_2(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83709, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size10_2(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83709, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtorSize10_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83710, rva 0xd407a0).
     /// `GRefCountImplCore * ScalarDeletingDtorSize10_3(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size10_3(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83710, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size10_3(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83710, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtorSize10_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83711, rva 0xd40800).
     /// `GRefCountImplCore * ScalarDeletingDtorSize10_4(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size10_4(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83711, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size10_4(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83711, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtorSize10_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83712, rva 0xd40860).
     /// `GRefCountImplCore * ScalarDeletingDtorSize10_5(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size10_5(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83712, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size10_5(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83712, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtorSize10_6` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83713, rva 0xd408c0).
     /// `GRefCountImplCore * ScalarDeletingDtorSize10_6(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size10_6(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83713, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size10_6(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83713, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtorSize10_7` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83714, rva 0xd40920).
     /// `GRefCountImplCore * ScalarDeletingDtorSize10_7(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size10_7(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83714, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size10_7(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83714, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtorSize10_8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83726, rva 0xd411c0).
     /// `GRefCountImplCore * ScalarDeletingDtorSize10_8(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size10_8(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83726, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size10_8(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83726, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ScalarDeletingDtorSize18` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83729, rva 0xd41380).
     /// `GRefCountImplCore * ScalarDeletingDtorSize18(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn scalar_deleting_dtor_size18(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83729, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
+    pub unsafe fn scalar_deleting_dtor_size18(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(83729, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
     /// `GRefCountImplCore::ctor_caller` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 83411, rva 0xd30880).
     /// `undefined ctor_caller(GRefCountImplCore * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_caller(&self) -> u64 { unsafe { function!(83411, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_caller(&self) -> u64 { unsafe { function!(83411, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GRefCountImplCore::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 89055, rva 0xe56d50).
     /// `uint * ctor_sub0(uint * param_1)`
     ///
@@ -1513,42 +1513,42 @@ impl crate::GRefCountImplCore {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(440344, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(440344, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GRefCountImplCore::dtor_caller` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 440347, rva 0x1210d0).
     /// `undefined dtor_caller(GRefCountImplCore * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_caller(&self) -> u64 { unsafe { function!(440347, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_caller(&self) -> u64 { unsafe { function!(440347, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GRefCountImplCore::dtor_caller_1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 84440, rva 0xd6dd80).
     /// `undefined dtor_caller_1(GRefCountImplCore * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_caller_1(&self) -> u64 { unsafe { function!(84440, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_caller_1(&self) -> u64 { unsafe { function!(84440, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GRefCountImplCore::dtor_caller_2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 87495, rva 0xe03a90).
     /// `undefined dtor_caller_2(GRefCountImplCore * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_caller_2(&self) -> u64 { unsafe { function!(87495, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_caller_2(&self) -> u64 { unsafe { function!(87495, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GRefCountImplCore::dtor_caller_3` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 89022, rva 0xe557e0).
     /// `undefined dtor_caller_3(GRefCountImplCore * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_caller_3(&self) -> u64 { unsafe { function!(89022, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_caller_3(&self) -> u64 { unsafe { function!(89022, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GRefCountImplCore::dtor_caller_4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 524184, rva 0xe698d0).
     /// `undefined dtor_caller_4(GRefCountImplCore * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_caller_4(&self) -> u64 { unsafe { function!(524184, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_caller_4(&self) -> u64 { unsafe { function!(524184, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `GRefCountImplCore::dtor_caller_5` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 84747, rva 0x1182e40).
     /// `undefined dtor_caller_5(longlong param_1)`
     ///
@@ -1668,14 +1668,14 @@ impl crate::GrenadeProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(43926, (&Self, *mut c_void, u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(43926, (*const Self, *mut c_void, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GrenadeProjectile::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 43925, rva 0x7ec740).
     /// `undefined SaveGame(GrenadeProjectile * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43925, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43925, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `GrenadeProjectile::vfunc_14_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 15228, rva 0x201670).
     /// `undefined vfunc_14_sub0(undefined1 * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -1802,14 +1802,14 @@ impl crate::Hazard {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: *mut c_void, param_3: *mut c_void) -> u64 { unsafe { function!(43962, (&Self, *mut c_void, *mut c_void, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: *mut c_void, param_3: *mut c_void) -> u64 { unsafe { function!(43962, (*const Self, *mut c_void, *mut c_void, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Hazard::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 43961, rva 0x7ee360).
     /// `undefined SaveGame(Hazard * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43961, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(43961, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::HeadTrackingOffHandler {
@@ -1839,7 +1839,7 @@ impl crate::IAIWorldLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(28949, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(28949, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IAnimationGraphManagerLoadingTask {
@@ -1849,7 +1849,7 @@ impl crate::IAnimationGraphManagerLoadingTask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_caller(&self) -> u64 { unsafe { function!(13175, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_caller(&self) -> u64 { unsafe { function!(13175, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IConvexOverlapImpl {
@@ -1869,14 +1869,14 @@ impl crate::IMovementInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(42007, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(42007, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IMovementInterface::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 42189, rva 0x7a8d80).
     /// `undefined dtor(IMovementInterface * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(42189, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(42189, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IMovementQueryPathFollowing__INodeVisitor {
@@ -1886,14 +1886,14 @@ impl crate::IMovementQueryPathFollowing__INodeVisitor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(92762, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(92762, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IMovementQueryPathFollowing::INodeVisitor::ctor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 92765, rva 0x12302b0).
     /// `undefined ctor(INodeVisitor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(92765, (&Self) -> u64)(self) } }
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(92765, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IOManager {
@@ -1941,21 +1941,21 @@ impl crate::IPipelineStageInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(90793, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(90793, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IPipelineStageInterface::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 90794, rva 0x11d2840).
     /// `undefined dtor(IPipelineStageInterface * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(90794, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(90794, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `IPipelineStageInterface::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 90795, rva 0x11d2850).
     /// `undefined dtor(IPipelineStageInterface * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(90795, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_4(&self) -> u64 { unsafe { function!(90795, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IdleDialogueExitHandler {
@@ -1985,7 +1985,7 @@ impl crate::ImageSpaceEffectVolumetricLighting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn render(&self) -> u64 { unsafe { virtual_function!(self, 7, (&Self) -> u64)(self) } }
+    pub unsafe fn render(&self) -> u64 { unsafe { virtual_function!(self, 7, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ImageSpaceModifierInstance {
@@ -1995,7 +1995,7 @@ impl crate::ImageSpaceModifierInstance {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(18594, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(18594, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::IngredientItem {
@@ -2005,14 +2005,14 @@ impl crate::IngredientItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 15, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 15, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `IngredientItem::SaveGame`, vtable slot 14, through the object's vtable (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 11239, rva 0x14f3b0).
     /// `undefined SaveGame(IngredientItem * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 14, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 14, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::InitTESThread {
@@ -2032,7 +2032,7 @@ impl crate::InstalledContent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_load_game_event(&self, param_1: *mut *mut c_void, param_2: *mut *mut u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut *mut c_void, *mut *mut u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_load_game_event(&self, param_1: *mut *mut c_void, param_2: *mut *mut u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut *mut c_void, *mut *mut u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::InstantInteractionCallback {
@@ -2062,7 +2062,7 @@ impl crate::InventoryUtils__ItemFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(16923, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(16923, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::InventoryUtils___anon_3F954FDF__IsWornVisitor {
@@ -2082,7 +2082,7 @@ impl crate::JobListManager__ServingThread {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn run(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn run(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `JobListManager::ServingThread::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 39039, rva 0x6e4c20).
     /// `undefined vfunc_1_sub0(undefined8 param_1, ulonglong param_2, undefined8 param_3, longlong * param_4)`
     ///
@@ -2120,7 +2120,7 @@ impl crate::JournalMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn post_display(&self) -> u64 { unsafe { virtual_function!(self, 6, (&Self) -> u64)(self) } }
+    pub unsafe fn post_display(&self) -> u64 { unsafe { virtual_function!(self, 6, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `JournalMenu::vfunc_1_cb0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 53319, rva 0x9ac6d0).
     /// `undefined vfunc_1_cb0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -2463,7 +2463,7 @@ impl crate::LocalMapMenu__InputHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_button_event(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 7, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn process_button_event(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 7, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::LockpickingMenu {
@@ -2534,7 +2534,7 @@ impl crate::MagicItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_has_keyword(&self, param_1: i64) -> u64 { unsafe { function!(11336, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn bgs_keyword_form_has_keyword(&self, param_1: i64) -> u64 { unsafe { function!(11336, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `MagicItem::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 11003, rva 0x148660).
     /// `undefined vfunc_19_sub0(longlong param_1, longlong param_2)`
     ///
@@ -2578,14 +2578,14 @@ impl crate::MagicTarget__IPostCreationModification {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(34246, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(34246, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `MagicTarget::IPostCreationModification::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 34473, rva 0x5d01d0).
     /// `undefined dtor(IPostCreationModification * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(34473, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(34473, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::Main {
@@ -2619,14 +2619,14 @@ impl crate::MapMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn advance_movie(&self, param_1: f32, param_2: *mut f32, param_3: *mut c_char) -> u64 { unsafe { virtual_function!(self, 5, (&Self, f32, *mut f32, *mut c_char) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn advance_movie(&self, param_1: f32, param_2: *mut f32, param_3: *mut c_char) -> u64 { unsafe { virtual_function!(self, 5, (*const Self, f32, *mut f32, *mut c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MapMenu::ProcessMessage`, vtable slot 4, through the object's vtable (decompiler signature, tier untiered; ledger runtime evidence, name high; id 53102, rva 0x99c180).
     /// `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_message(&self, param_1: i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 4, (&Self, i64, *mut i64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_message(&self, param_1: i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 4, (*const Self, i64, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MapMenu::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52964, rva 0x992f30).
     /// `undefined8 * ctor_sub0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -2783,21 +2783,21 @@ impl crate::MapZoomHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn can_process(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn can_process(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `MapZoomHandler::Destroy`, vtable slot 0, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 53137, rva 0x99f9f0).
     /// `MapZoomHandler * Destroy(MapZoomHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MapZoomHandler::ProcessButtonEvent`, vtable slot 7, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 53068, rva 0x998ff0).
     /// `undefined8 ProcessButtonEvent(MapZoomHandler * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_button_event(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 7, (&Self, *mut i64) -> u64)(self, param_1) } }
+    pub unsafe fn process_button_event(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 7, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::MarketplaceBundleContent {
@@ -2983,14 +2983,14 @@ impl crate::MissileProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(44036, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(44036, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `MissileProjectile::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 44035, rva 0x7f4d70).
     /// `undefined SaveGame(MissileProjectile * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(44035, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(44035, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `MissileProjectile::vfunc_169_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 44198, rva 0x7ffa80).
     /// `undefined8 * vfunc_169_sub0(longlong * param_1, float * param_2)`
     ///
@@ -3028,7 +3028,7 @@ impl crate::MistMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn advance_movie(&self, param_1: f32, param_2: *mut f32, param_3: *mut f32) -> u64 { unsafe { virtual_function!(self, 5, (&Self, f32, *mut f32, *mut f32) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn advance_movie(&self, param_1: f32, param_2: *mut f32, param_3: *mut f32) -> u64 { unsafe { virtual_function!(self, 5, (*const Self, f32, *mut f32, *mut f32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MistMenu::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52737, rva 0x98af00).
     /// `undefined ctor_sub0(longlong param_1)`
     ///
@@ -3200,7 +3200,7 @@ impl crate::NavMesh {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_form_detailed_string(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(30337, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn get_form_detailed_string(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(30337, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `NavMesh::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 30223, rva 0x4b9170).
     /// `undefined vfunc_19_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -3580,7 +3580,7 @@ impl crate::PlayerBedEnterHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn handle(&self, param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut crate::TESObjectREFR) -> u64)(self, param_1) } }
+    pub unsafe fn handle(&self, param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut crate::TESObjectREFR) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::PlayerChairEnterHandler {
@@ -3590,7 +3590,7 @@ impl crate::PlayerChairEnterHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn handle(&self, param_1: *mut crate::TESObjectREFR) -> u8 { unsafe { virtual_function!(self, 1, (&Self, *mut crate::TESObjectREFR) -> u8)(self, param_1) } }
+    pub unsafe fn handle(&self, param_1: *mut crate::TESObjectREFR) -> u8 { unsafe { virtual_function!(self, 1, (*const Self, *mut crate::TESObjectREFR) -> u8)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::PlayerFurnitureExitHandler {
@@ -3600,7 +3600,7 @@ impl crate::PlayerFurnitureExitHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn handle(&self, param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut crate::TESObjectREFR) -> u64)(self, param_1) } }
+    pub unsafe fn handle(&self, param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut crate::TESObjectREFR) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::PlayerRegionState {
@@ -3664,21 +3664,21 @@ impl crate::Projectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn has_keyword(&self) -> u64 { unsafe { function!(44170, (&Self) -> u64)(self) } }
+    pub unsafe fn has_keyword(&self) -> u64 { unsafe { function!(44170, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `Projectile::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 44134, rva 0x7fb3b0).
     /// `undefined LoadGame(Projectile * this, TESObjectREFR_vtbl * param_1, undefined8 param_2, TypeDescriptor * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(44134, (&Self, *mut c_void, u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn load_game(&self, param_1: *mut c_void, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(44134, (*const Self, *mut c_void, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Projectile::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 44133, rva 0x7fb000).
     /// `undefined SaveGame(Projectile * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(44133, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn save_game(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(44133, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Projectile::vfunc_14_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 16029, rva 0x22a570).
     /// `undefined vfunc_14_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -3783,7 +3783,7 @@ impl crate::QueuedReference {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_caller(&self) -> u64 { unsafe { function!(13174, (&Self) -> u64)(self) } }
+    pub unsafe fn dtor_caller(&self) -> u64 { unsafe { function!(13174, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::QueuedTree {
@@ -3803,7 +3803,7 @@ impl crate::RaceSexMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_message(&self, param_1: i64, param_2: u64, param_3: *mut c_char) -> *mut i64 { unsafe { virtual_function!(self, 4, (&Self, i64, u64, *mut c_char) -> *mut i64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_message(&self, param_1: i64, param_2: u64, param_3: *mut c_char) -> *mut i64 { unsafe { virtual_function!(self, 4, (*const Self, i64, u64, *mut c_char) -> *mut i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `RaceSexMenu::ctor_cb0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52425, rva 0x972570).
     /// `undefined8 * ctor_cb0(undefined8 * param_1)`
     ///
@@ -3983,7 +3983,7 @@ impl crate::RightHandWeaponDrawHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn handle(&self, param_1: *mut i64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut i64, u64) -> u64)(self, param_1, param_2) } }
+    pub unsafe fn handle(&self, param_1: *mut i64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `RightHandWeaponDrawHandler::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40419, rva 0x741820).
     /// `undefined vfunc_1_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -4000,7 +4000,7 @@ impl crate::SceneGraph {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_near_distance(&self) -> u64 { unsafe { virtual_function!(self, 63, (&Self) -> u64)(self) } }
+    pub unsafe fn get_near_distance(&self) -> u64 { unsafe { virtual_function!(self, 63, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `SceneGraph::vfunc_62_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18952, rva 0x2bc4d0).
     /// `undefined4 vfunc_62_sub0(longlong param_1)`
     ///
@@ -4146,14 +4146,14 @@ impl crate::SpectatorPackage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(42667, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(42667, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SpectatorPackage::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 42666, rva 0x7c1f40).
     /// `undefined SaveGame(SpectatorPackage * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(42666, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(42666, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `SpectatorPackage::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 42669, rva 0x7c29f0).
     /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -4217,7 +4217,7 @@ impl crate::StatsMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_message(&self, param_1: i64, param_2: *mut c_char, param_3: *mut i64) -> *mut i64 { unsafe { virtual_function!(self, 4, (&Self, i64, *mut c_char, *mut i64) -> *mut i64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn process_message(&self, param_1: i64, param_2: *mut c_char, param_3: *mut i64) -> *mut i64 { unsafe { virtual_function!(self, 4, (*const Self, i64, *mut c_char, *mut i64) -> *mut i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `StatsMenu::MenuEventHandler_vfunc_7_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52585, rva 0x981f00).
     /// `undefined MenuEventHandler_vfunc_7_sub0(longlong param_1)`
     ///
@@ -4449,14 +4449,14 @@ impl crate::TrespassPackage {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(42682, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(42682, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `TrespassPackage::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 42681, rva 0x7c2ff0).
     /// `undefined SaveGame(TrespassPackage * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(42681, (&Self, i64) -> u64)(self, param_1) } }
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(42681, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::TrianglePathWaterAndLedgeSplitter {
@@ -4640,7 +4640,7 @@ impl crate::UI_element {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn dtor_2(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> u64 { unsafe { function!(440703, (&Self, u64, *mut c_void, u64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> u64 { unsafe { function!(440703, (*const Self, u64, *mut c_void, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::UI_homePage {
@@ -4783,7 +4783,7 @@ impl crate::WeaponBeginDrawRightHandler {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn handle(&self, param_1: *mut i64, param_2: *mut u32, param_3: i64) -> u64 { unsafe { virtual_function!(self, 1, (&Self, *mut i64, *mut u32, i64) -> u64)(self, param_1, param_2, param_3) } }
+    pub unsafe fn handle(&self, param_1: *mut i64, param_2: *mut u32, param_3: i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64, *mut u32, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::WeaponEnchantmentController {
@@ -13898,31 +13898,3 @@ pub unsafe fn assign_named_qs_transform(param_1: *mut u64, param_2: *mut u64, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_next_token_as_pooled_string(param_1: *mut i64, param_2: *mut *mut *mut *mut c_char, param_3: *mut u64, param_4: *mut *mut *mut *mut c_char) -> u64 { unsafe { function!(69174, (*mut i64, *mut *mut *mut *mut c_char, *mut u64, *mut *mut *mut *mut c_char) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `AssignObjectToValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82903, rva 0xd0d660).
-/// `undefined AssignObjectToValue(char * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_object_to_value(param_1: *mut c_char, param_2: *mut i64) -> u64 { unsafe { function!(82903, (*mut c_char, *mut i64) -> u64)(param_1, param_2) } }
-/// `AssignObjectVariant` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 105009, rva 0x14c7d60).
-/// `int * AssignObjectVariant(int * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_object_variant(param_1: *mut i32, param_2: *mut i32, param_3: u64, param_4: u64) -> *mut i32 { unsafe { function!(105009, (*mut i32, *mut i32, u64, u64) -> *mut i32)(param_1, param_2, param_3, param_4) } }
-/// `AssignOperandValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 105214, rva 0x14d4cc0).
-/// `ulonglong AssignOperandValue(longlong param_1, int * param_2, ulonglong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_operand_value(param_1: i64, param_2: *mut i32, param_3: u64) -> u64 { unsafe { function!(105214, (i64, *mut i32, u64) -> u64)(param_1, param_2, param_3) } }
-/// `AssignOptionalFixedString80Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 443545, rva 0x1261e30).
-/// `longlong * AssignOptionalFixedString80Vector(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_optional_fixed_string80_vector(param_1: *mut i64, param_2: *mut i64, param_3: u64, param_4: u64) -> *mut i64 { unsafe { function!(443545, (*mut i64, *mut i64, u64, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }

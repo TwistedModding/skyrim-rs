@@ -10,7 +10,7 @@ impl crate::BSGrabIKNote {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(74037, (&Self, f32) -> *mut Self)(self, param_1) } }
+    pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(74037, (*const Self, f32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BSLookIKNote {
@@ -20,6 +20,6 @@ impl crate::BSLookIKNote {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(74061, (&Self, f32) -> *mut Self)(self, param_1) } }
+    pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(74061, (*const Self, f32) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
 }
 

@@ -10,21 +10,21 @@ impl crate::bnet__AsyncOperationProxy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: *mut i64) -> *mut c_void { unsafe { function!(446609, (&Self, *mut i64) -> *mut c_void)(self, param_1) } }
+    pub unsafe fn ctor_2(&self, param_1: *mut i64) -> *mut c_void { unsafe { function!(446609, (*const Self, *mut i64) -> *mut c_void)(core::ptr::from_ref(self), param_1) } }
     /// `bnet::AsyncOperationProxy::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 525000, rva 0x12b3440).
     /// `AsyncOperationProxy * ctor(AsyncOperationProxy * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_3(&self, param_1: i64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(525000, (&Self, i64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor_3(&self, param_1: i64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(525000, (*const Self, i64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `bnet::AsyncOperationProxy::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 525617, rva 0x12ed530).
     /// `AsyncOperationProxy * ctor(AsyncOperationProxy * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_4(&self, param_1: u64) -> *mut c_void { unsafe { function!(525617, (&Self, u64) -> *mut c_void)(self, param_1) } }
+    pub unsafe fn ctor_4(&self, param_1: u64) -> *mut c_void { unsafe { function!(525617, (*const Self, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo {
@@ -34,14 +34,14 @@ impl crate::bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: i64) -> *mut c_void { unsafe { function!(525723, (&Self, i64) -> *mut c_void)(self, param_1) } }
+    pub unsafe fn ctor(&self, param_1: i64) -> *mut c_void { unsafe { function!(525723, (*const Self, i64) -> *mut c_void)(core::ptr::from_ref(self), param_1) } }
     /// `bnet::Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 525724, rva 0x12f52b0).
     /// `Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * ctor(Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: i64) -> *mut c_void { unsafe { function!(525724, (&Self, i64) -> *mut c_void)(self, param_1) } }
+    pub unsafe fn ctor_2(&self, param_1: i64) -> *mut c_void { unsafe { function!(525724, (*const Self, i64) -> *mut c_void)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::bnet__Mods__BaseUpdatePreferenceInfo {
@@ -51,7 +51,7 @@ impl crate::bnet__Mods__BaseUpdatePreferenceInfo {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::bnet__Mods__UpdateContentPreferenceInfo {
@@ -61,7 +61,7 @@ impl crate::bnet__Mods__UpdateContentPreferenceInfo {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(446238, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(446238, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo {
@@ -71,7 +71,7 @@ impl crate::bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__Ht
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self, param_1: i64, param_2: *mut u8, param_3: u64) -> *mut c_void { unsafe { function!(524740, (&Self, i64, *mut u8, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: i64, param_2: *mut u8, param_3: u64) -> *mut c_void { unsafe { function!(524740, (*const Self, i64, *mut u8, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::bnet__impl__AsyncOperation {
@@ -81,7 +81,7 @@ impl crate::bnet__impl__AsyncOperation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64) -> *mut c_void { unsafe { function!(448892, (&Self, u64) -> *mut c_void)(self, param_1) } }
+    pub unsafe fn ctor_2(&self, param_1: u64) -> *mut c_void { unsafe { function!(448892, (*const Self, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1) } }
 }
 
 /// `bnet::Account::CredentialsAuthenticate` (decompiler signature, tier low; ledger string evidence, name medium; id 445323, rva 0x12a39d0).

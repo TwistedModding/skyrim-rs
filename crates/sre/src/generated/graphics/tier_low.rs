@@ -10,13 +10,13 @@ impl crate::ImageSpaceModifierInstanceForm {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_3(&self, param_1: u64, param_2: f32, param_3: f32, param_4: i64) -> *mut Self { unsafe { function!(18565, (&Self, u64, f32, f32, i64) -> *mut Self)(self, param_1, param_2, param_3, param_4) } }
+    pub unsafe fn ctor_3(&self, param_1: u64, param_2: f32, param_3: f32, param_4: i64) -> *mut Self { unsafe { function!(18565, (*const Self, u64, f32, f32, i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `ImageSpaceModifierInstanceForm::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 18599, rva 0x2a55a0).
     /// `ImageSpaceModifierInstanceForm * vdtor(ImageSpaceModifierInstanceForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(18599, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(18599, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 

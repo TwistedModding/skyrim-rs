@@ -10,6 +10,6 @@ impl crate::CombatMagicCaster {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn load_object_and_actor_handle(&self, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(45437, (&Self, i64, u64, u64) -> u64)(self, param_2, param_3, param_4) } }
+    pub unsafe fn load_object_and_actor_handle(&self, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(45437, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
 }
 

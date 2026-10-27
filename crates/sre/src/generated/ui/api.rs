@@ -53,7 +53,7 @@ impl crate::BSScaleformManager {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn shutdown(&self) { unsafe { function!(82324, (&Self))(self) } }
+    pub unsafe fn shutdown(&self) { unsafe { function!(82324, (*const Self))(core::ptr::from_ref(self)) } }
     /// `BSScaleformManager::ctor`: constructs the manager in the static block 0x3241bc0 and publishes it in 0x369b060
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82323, rva 0x116f630.
@@ -62,7 +62,7 @@ impl crate::BSScaleformManager {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(82323, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(82323, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `BSScaleformManager::imageLoader` at +0x20: image loader, loader state 5
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -81,7 +81,7 @@ impl crate::Console {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (Console* this, FxDelegateHandler::CallbackProcessor* p)`
     #[inline]
-    pub fn accept(&self, p: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (&Self, &crate::FxDelegateHandler__CallbackProcessor))(self, p) } }
+    pub fn accept(&self, p: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::FxDelegateHandler__CallbackProcessor))(core::ptr::from_ref(self), core::ptr::from_ref(p)) } }
     /// `Console::Dtor`, vtable slot 0: deleting destructor
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -90,7 +90,7 @@ impl crate::Console {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `Console::ProcessMessage`, vtable slot 4: ConsoleData updates (flush log, select ref, execute, clear history), show/hide, key input
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -99,7 +99,7 @@ impl crate::Console {
     /// # Safety
     /// `msg` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (&Self, *mut crate::UIMessage) -> u32)(self, msg) } }
+    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), msg) } }
     /// `Console::Create`: creator registered under 'Console'
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 442696, rva 0x90d400.
@@ -120,7 +120,7 @@ impl crate::Console {
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51094, rva 0x90bb40.
     /// `void (Console* this)`
     #[inline]
-    pub fn flush_log(&self) { unsafe { function!(51094, (&Self))(self) } }
+    pub fn flush_log(&self) { unsafe { function!(51094, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Console::HideComplete`: FxDelegate callback: QueueMessage(UI queue, 'Console', 3 (hide), null)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51085, rva 0x90a610.
@@ -144,7 +144,7 @@ impl crate::Console {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 51089, rva 0x90a930.
     /// `void (Console* this)`
     #[inline]
-    pub fn pick_references_at_cursor(&self) { unsafe { function!(51089, (&Self))(self) } }
+    pub fn pick_references_at_cursor(&self) { unsafe { function!(51089, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Console::SetSelectedRef`: stores g_ConsoleSelectedRef and Invokes 'Console.SetCurrentSelection' with "'%s' RefID: (%08x)..."
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51093, rva 0x90b9d0.
@@ -153,7 +153,7 @@ impl crate::Console {
     /// # Safety
     /// `handle` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_selected_ref(&self, handle: *const c_void) { unsafe { function!(51093, (&Self, *const c_void))(self, handle) } }
+    pub unsafe fn set_selected_ref(&self, handle: *const c_void) { unsafe { function!(51093, (*const Self, *const c_void))(core::ptr::from_ref(self), handle) } }
 }
 
 impl crate::ContainerMenu {
@@ -200,7 +200,7 @@ impl crate::GFxFunctionHandler {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `GFxFunctionHandler* (GFxFunctionHandler* this, uint flags)`
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::GFxFunctionHandler__Params {
@@ -225,7 +225,7 @@ impl crate::GFxMovieView {
     /// # Safety
     /// `path` must point to what the engine expects.
     #[inline]
-    pub unsafe fn invoke_args_to_string(&self, path: *const c_char, args: *const crate::GFxValue, argCount: i32) -> *const c_char { unsafe { function!(82665, (&Self, *const c_char, *const crate::GFxValue, i32) -> *const c_char)(self, path, args, argCount) } }
+    pub unsafe fn invoke_args_to_string(&self, path: *const c_char, args: *const crate::GFxValue, argCount: i32) -> *const c_char { unsafe { function!(82665, (*const Self, *const c_char, *const crate::GFxValue, i32) -> *const c_char)(core::ptr::from_ref(self), path, args, argCount) } }
     /// `GFxMovieView::InvokeOnLevel`: implementation behind Invoke slot 23
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 83883, rva 0xd4adb0.
@@ -234,13 +234,13 @@ impl crate::GFxMovieView {
     /// # Safety
     /// `level`, `path`, `result` must point to what the engine expects.
     #[inline]
-    pub unsafe fn invoke_on_level(&self, level: *mut c_void, path: *const c_char, result: *mut crate::GFxValue, args: *const crate::GFxValue, argCount: i32) -> bool { unsafe { function!(83883, (&Self, *mut c_void, *const c_char, *mut crate::GFxValue, *const crate::GFxValue, i32) -> bool)(self, level, path, result, args, argCount) } }
+    pub unsafe fn invoke_on_level(&self, level: *mut c_void, path: *const c_char, result: *mut crate::GFxValue, args: *const crate::GFxValue, argCount: i32) -> bool { unsafe { function!(83883, (*const Self, *mut c_void, *const c_char, *mut crate::GFxValue, *const crate::GFxValue, i32) -> bool)(core::ptr::from_ref(self), level, path, result, args, argCount) } }
     /// `GFxMovieView::UpdateViewport`: computes the visible frame rect and scale from viewport, scale mode and alignment
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 84012, rva 0xd54c00.
     /// `void (GFxMovieView* this)`
     #[inline]
-    pub fn update_viewport(&self) { unsafe { function!(84012, (&Self))(self) } }
+    pub fn update_viewport(&self) { unsafe { function!(84012, (*const Self))(core::ptr::from_ref(self)) } }
     /// `GFxMovieView::ctor`: sets vtable 0x1a2ade8 and initialises the view
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 83671, rva 0xd3e830.
@@ -249,7 +249,7 @@ impl crate::GFxMovieView {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, movieDefImpl: *mut c_void) -> *mut Self { unsafe { function!(83671, (&Self, *mut c_void) -> *mut Self)(self, movieDefImpl) } }
+    pub unsafe fn ctor(&self, movieDefImpl: *mut c_void) -> *mut Self { unsafe { function!(83671, (*const Self, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), movieDefImpl) } }
 }
 
 impl crate::GFxValue {
@@ -258,19 +258,19 @@ impl crate::GFxValue {
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 33582, rva 0x5759c0.
     /// `GFxValue* (GFxValue* this, const GFxValue* other)`
     #[inline]
-    pub fn assign(&self, other: &Self) -> Option<&'static Self> { unsafe { function!(33582, (&Self, &Self) -> Option<&'static Self>)(self, other) } }
+    pub fn assign(&self, other: &Self) -> Option<&'static Self> { unsafe { function!(33582, (*const Self, *const Self) -> Option<&'static Self>)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `GFxValue::ReleaseInternal`: GFx-side release of a managed value; clears +0
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82279, rva 0xcf6e60.
     /// `void (GFxValue* v)`
     #[inline]
-    pub fn release_internal(&self) { unsafe { function!(82279, (&Self))(self) } }
+    pub fn release_internal(&self) { unsafe { function!(82279, (*const Self))(core::ptr::from_ref(self)) } }
     /// `GFxValue::ReleaseManaged`: engine-side value destructor body
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 441651, rva 0x575960.
     /// `void (GFxValue* v)`
     #[inline]
-    pub fn release_managed(&self) { unsafe { function!(441651, (&Self))(self) } }
+    pub fn release_managed(&self) { unsafe { function!(441651, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::HUDMenu {
@@ -288,13 +288,13 @@ impl crate::HUDMenu {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn accept(&self, p: *mut crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (&Self, *mut crate::FxDelegateHandler__CallbackProcessor))(self, p) } }
+    pub unsafe fn accept(&self, p: *mut crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (*const Self, *mut crate::FxDelegateHandler__CallbackProcessor))(core::ptr::from_ref(self), p) } }
     /// `HUDMenu::AdvanceMovie`, vtable slot 5: IMenu's advance with the interval clamped to the constant ID_215451, then queues a HUD data message when the tracked globals change (only while numPausesGame == 0)
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (HUDMenu* this, float interval, u32 currentTimeMs)`
     #[inline]
-    pub fn advance_movie(&self, interval: f32, currentTimeMs: u32) { unsafe { virtual_function!(self, 5, (&Self, f32, u32))(self, interval, currentTimeMs) } }
+    pub fn advance_movie(&self, interval: f32, currentTimeMs: u32) { unsafe { virtual_function!(self, 5, (*const Self, f32, u32))(core::ptr::from_ref(self), interval, currentTimeMs) } }
     /// `HUDMenu::Dtor`, vtable slot 0: deleting destructor
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -303,7 +303,7 @@ impl crate::HUDMenu {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `HUDMenu::ProcessMessage`, vtable slot 4: handles HUD messages; HUDData (type at data+0x10) on 'HUD Menu' drives the AS calls
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -312,7 +312,7 @@ impl crate::HUDMenu {
     /// # Safety
     /// `msg` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (&Self, *mut crate::UIMessage) -> u32)(self, msg) } }
+    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), msg) } }
     /// `HUDMenu::Create`: menu creator registered under 'HUD Menu'
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51730, rva 0x93c8a0.
@@ -336,7 +336,7 @@ impl crate::HUDMenu {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51610, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(51610, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
     /// `HUDMenu::dtor`: destructor (currently named HUDMenu::ctor): deletes the objects, removes the sinks, releases the root
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51611, rva 0x933000.
@@ -345,7 +345,7 @@ impl crate::HUDMenu {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor_2(&self) { unsafe { function!(51611, (&Self))(self) } }
+    pub unsafe fn dtor_2(&self) { unsafe { function!(51611, (*const Self))(core::ptr::from_ref(self)) } }
     /// `HUDMenu::healthMeter` at +0x58: health bar (actor value 0x18 = Health)
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -384,7 +384,7 @@ impl crate::HUDNotifications {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (HUDNotifications* this)`
     #[inline]
-    pub fn cleanup(&self) { unsafe { virtual_function!(self, 4, (&Self))(self) } }
+    pub fn cleanup(&self) { unsafe { virtual_function!(self, 4, (*const Self))(core::ptr::from_ref(self)) } }
     /// `HUDNotifications::ProcessMessage`, vtable slot 2: queues HUDData types 0xe..0x1a (quest started/completed/failed, objectives, level up, shout)
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -393,7 +393,7 @@ impl crate::HUDNotifications {
     /// # Safety
     /// `msg` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 2, (&Self, *mut crate::UIMessage) -> bool)(self, msg) } }
+    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 2, (*const Self, *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), msg) } }
     /// `HUDNotifications::RegisterHUDComponent`, vtable slot 3: takes args[0] and args[1] and caches 'ObjectivesA'
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -402,13 +402,13 @@ impl crate::HUDNotifications {
     /// # Safety
     /// `args` must point to what the engine expects.
     #[inline]
-    pub unsafe fn register_hud_component(&self, args: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, args) } }
+    pub unsafe fn register_hud_component(&self, args: *mut c_void) { unsafe { virtual_function!(self, 3, (*const Self, *mut c_void))(core::ptr::from_ref(self), args) } }
     /// `HUDNotifications::Update`, vtable slot 1: if AS 'CanShowNotification' is true, shows the first ready entry via 'ShowNotification' (9 args) and removes it
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (HUDNotifications* this)`
     #[inline]
-    pub fn update(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
+    pub fn update(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::HUDObject {
@@ -420,7 +420,7 @@ impl crate::HUDObject {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn cleanup(&self) { unsafe { virtual_function!(self, 4, (&Self))(self) } }
+    pub unsafe fn cleanup(&self) { unsafe { virtual_function!(self, 4, (*const Self))(core::ptr::from_ref(self)) } }
     /// `HUDObject::Dtor`, vtable slot 0: deleting destructor
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -429,7 +429,7 @@ impl crate::HUDObject {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `HUDObject::ProcessMessage`, vtable slot 2: lets an element consume a HUD message; base returns false
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -438,7 +438,7 @@ impl crate::HUDObject {
     /// # Safety
     /// `msg` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 2, (&Self, *mut crate::UIMessage) -> bool)(self, msg) } }
+    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 2, (*const Self, *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), msg) } }
     /// `HUDObject::RegisterHUDComponent`, vtable slot 3: takes the element's AS object from the RegisterHUDComponents call
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -447,7 +447,7 @@ impl crate::HUDObject {
     /// # Safety
     /// `args` must point to what the engine expects.
     #[inline]
-    pub unsafe fn register_hud_component(&self, args: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, args) } }
+    pub unsafe fn register_hud_component(&self, args: *mut c_void) { unsafe { virtual_function!(self, 3, (*const Self, *mut c_void))(core::ptr::from_ref(self), args) } }
     /// `HUDObject::view` at +0x8: the HUD movie (ref counted)
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -461,31 +461,31 @@ impl crate::IMenu {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (IMenu* this, FxDelegateHandler::CallbackProcessor* processor)`
     #[inline]
-    pub fn accept(&self, processor: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (&Self, &crate::FxDelegateHandler__CallbackProcessor))(self, processor) } }
+    pub fn accept(&self, processor: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::FxDelegateHandler__CallbackProcessor))(core::ptr::from_ref(self), core::ptr::from_ref(processor)) } }
     /// `IMenu::AdvanceMovie`, vtable slot 5: per-frame advance: sets the movie variable "CurrentTime" (a number) and advances the movie by interval (movie slot 0x128 with frame catch-up 2)
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (IMenu* this, float interval, u32 currentTimeMs)`
     #[inline]
-    pub fn advance_movie(&self, interval: f32, currentTimeMs: u32) { unsafe { virtual_function!(self, 5, (&Self, f32, u32))(self, interval, currentTimeMs) } }
+    pub fn advance_movie(&self, interval: f32, currentTimeMs: u32) { unsafe { virtual_function!(self, 5, (*const Self, f32, u32))(core::ptr::from_ref(self), interval, currentTimeMs) } }
     /// `IMenu::PostCreate`, vtable slot 2: called once right after the creator returned the new menu, before it is stored in the UI table; empty in IMenu
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (IMenu* this)`
     #[inline]
-    pub fn post_create(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
+    pub fn post_create(&self) { unsafe { virtual_function!(self, 2, (*const Self))(core::ptr::from_ref(self)) } }
     /// `IMenu::PostDisplay`, vtable slot 6: draws the menu in the UI pass after the world: IMenu's default tail-calls movie slot 0x130 (display) when the movie exists
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (IMenu* this)`
     #[inline]
-    pub fn post_display(&self) { unsafe { virtual_function!(self, 6, (&Self))(self) } }
+    pub fn post_display(&self) { unsafe { virtual_function!(self, 6, (*const Self))(core::ptr::from_ref(self)) } }
     /// `IMenu::PreDisplay`, vtable slot 7: off-screen draw before the world: called each frame for menus with flag 0x1000; empty in IMenu
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (IMenu* this)`
     #[inline]
-    pub fn pre_display(&self) { unsafe { virtual_function!(self, 7, (&Self))(self) } }
+    pub fn pre_display(&self) { unsafe { virtual_function!(self, 7, (*const Self))(core::ptr::from_ref(self)) } }
     /// `IMenu::Refresh`, vtable slot 3: request to rebuild the menu's data on its next update; empty in IMenu
     ///
     /// Semantic, ui pass, low; called through the object's vtable.
@@ -494,13 +494,13 @@ impl crate::IMenu {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn refresh(&self) { unsafe { virtual_function!(self, 3, (&Self))(self) } }
+    pub unsafe fn refresh(&self) { unsafe { virtual_function!(self, 3, (*const Self))(core::ptr::from_ref(self)) } }
     /// `IMenu::RefreshPlatform`, vtable slot 8: re-applies the input platform: calls RefreshMenuPlatform 0x116ef00 ("_root.SetPlatform"(gamepad ? 1 : 0, false); for flag-0x400 menus sets/clears flag 4 and queues the cursor menu)
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (IMenu* this)`
     #[inline]
-    pub fn refresh_platform(&self) { unsafe { virtual_function!(self, 8, (&Self))(self) } }
+    pub fn refresh_platform(&self) { unsafe { virtual_function!(self, 8, (*const Self))(core::ptr::from_ref(self)) } }
     /// `IMenu::vdtor`, vtable slot 0: destructor; bit 0 frees: through the Scaleform heap (*0x3275ae0 slot 0x60) unless bit 2, then FreeDefaultHeapMemory(0x30)
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -509,7 +509,7 @@ impl crate::IMenu {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `IMenu::CreateFxDelegate`: creates the FxDelegate at +0x28, registers the menu with it (slot 1 Accept) and installs it on the movie
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82313, rva 0x116f2a0.
@@ -518,7 +518,7 @@ impl crate::IMenu {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn create_fx_delegate(&self, movie: *mut crate::GFxMovieView) { unsafe { function!(82313, (&Self, *mut crate::GFxMovieView))(self, movie) } }
+    pub unsafe fn create_fx_delegate(&self, movie: *mut crate::GFxMovieView) { unsafe { function!(82313, (*const Self, *mut crate::GFxMovieView))(core::ptr::from_ref(self), movie) } }
     /// `IMenu::RegisterNativeFunction`: view->CreateFunction(&fn, menu+0x30 handler, userData) then target.SetMember(name, fn)
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 524002, rva 0x929ca0.
@@ -527,7 +527,7 @@ impl crate::IMenu {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn register_native_function(&self, name: *const c_char, userData: i32, target: *mut crate::GFxValue) { unsafe { function!(524002, (&Self, *const c_char, i32, *mut crate::GFxValue))(self, name, userData, target) } }
+    pub unsafe fn register_native_function(&self, name: *const c_char, userData: i32, target: *mut crate::GFxValue) { unsafe { function!(524002, (*const Self, *const c_char, i32, *mut crate::GFxValue))(core::ptr::from_ref(self), name, userData, target) } }
     /// `IMenu::UnregisterFxDelegate`: detaches the menu from its FxDelegate (+0x28) when there is one
     ///
     /// Semantic, ui pass, low; ledger semantic evidence, name low; id 82311, rva 0x116f0e0.
@@ -536,7 +536,7 @@ impl crate::IMenu {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn unregister_fx_delegate(&self) { unsafe { function!(82311, (&Self))(self) } }
+    pub unsafe fn unregister_fx_delegate(&self) { unsafe { function!(82311, (*const Self))(core::ptr::from_ref(self)) } }
     /// `IMenu::movie` at +0x10: the menu's Scaleform movie view, null when the movie failed to load
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -553,7 +553,7 @@ impl crate::IMessageBoxCallback {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::InventoryMenu {
@@ -577,7 +577,7 @@ impl crate::InventoryMenu {
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51866, rva 0x9452b0.
     /// `void (InventoryMenu* this)`
     #[inline]
-    pub fn update_item_list(&self) { unsafe { function!(51866, (&Self))(self) } }
+    pub fn update_item_list(&self) { unsafe { function!(51866, (*const Self))(core::ptr::from_ref(self)) } }
     /// `InventoryMenu::itemList` at +0x48: the item list handed to Scaleform
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -594,25 +594,25 @@ impl crate::ItemList {
     /// # Safety
     /// `entry`, `owner` must point to what the engine expects.
     #[inline]
-    pub unsafe fn add_item(&self, entry: *mut crate::InventoryEntry, owner: *const c_void) -> *mut crate::StandardItemData { unsafe { function!(51011, (&Self, *mut crate::InventoryEntry, *const c_void) -> *mut crate::StandardItemData)(self, entry, owner) } }
+    pub unsafe fn add_item(&self, entry: *mut crate::InventoryEntry, owner: *const c_void) -> *mut crate::StandardItemData { unsafe { function!(51011, (*const Self, *mut crate::InventoryEntry, *const c_void) -> *mut crate::StandardItemData)(core::ptr::from_ref(self), entry, owner) } }
     /// `ItemList::Clear`: empties entryList and deletes every entry
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51014, rva 0x904f70.
     /// `void (ItemList* list)`
     #[inline]
-    pub fn clear(&self) { unsafe { function!(51014, (&Self))(self) } }
+    pub fn clear(&self) { unsafe { function!(51014, (*const Self))(core::ptr::from_ref(self)) } }
     /// `ItemList::GetSelectedEntry`: GetSelectedItem()->entry
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51018, rva 0x905370.
     /// `InventoryEntry* (ItemList* list)`
     #[inline]
-    pub fn get_selected_entry(&self) -> Option<&'static crate::InventoryEntry> { unsafe { function!(51018, (&Self) -> Option<&'static crate::InventoryEntry>)(self) } }
+    pub fn get_selected_entry(&self) -> Option<&'static crate::InventoryEntry> { unsafe { function!(51018, (*const Self) -> Option<&'static crate::InventoryEntry>)(core::ptr::from_ref(self)) } }
     /// `ItemList::GetSelectedItem`: reads root.selectedIndex (number) and returns items[index], null when stale or out of range
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51017, rva 0x905290.
     /// `StandardItemData* (ItemList* list)`
     #[inline]
-    pub fn get_selected_item(&self) -> Option<&'static crate::StandardItemData> { unsafe { function!(51017, (&Self) -> Option<&'static crate::StandardItemData>)(self) } }
+    pub fn get_selected_item(&self) -> Option<&'static crate::StandardItemData> { unsafe { function!(51017, (*const Self) -> Option<&'static crate::StandardItemData>)(core::ptr::from_ref(self)) } }
     /// `ItemList::Invalidate`: marks the list stale and queues an inventory update for ref
     ///
     /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 51031, rva 0x905930.
@@ -621,7 +621,7 @@ impl crate::ItemList {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn invalidate(&self, ref_: *mut crate::TESObjectREFR) { unsafe { function!(51031, (&Self, *mut crate::TESObjectREFR))(self, ref_) } }
+    pub unsafe fn invalidate(&self, ref_: *mut crate::TESObjectREFR) { unsafe { function!(51031, (*const Self, *mut crate::TESObjectREFR))(core::ptr::from_ref(self), ref_) } }
     /// `ItemList::view` at +0x0: the menu's movie (ref counted)
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -702,7 +702,7 @@ impl crate::MenuControls {
     /// # Safety
     /// `head`, `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (&Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(self, head, source) } }
+    pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (*const Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), head, source) } }
     /// `MenuControls::vdtor`, vtable slot 0: 
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -711,37 +711,37 @@ impl crate::MenuControls {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `MenuControls::AddHandler`: appends and enables the handler, or queues the add while dispatching
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52202, rva 0x95f4b0.
     /// `void (MenuControls* this, MenuEventHandler* handler)`
     #[inline]
-    pub fn add_handler(&self, handler: &crate::MenuEventHandler) { unsafe { function!(52202, (&Self, &crate::MenuEventHandler))(self, handler) } }
+    pub fn add_handler(&self, handler: &crate::MenuEventHandler) { unsafe { function!(52202, (*const Self, *const crate::MenuEventHandler))(core::ptr::from_ref(self), core::ptr::from_ref(handler)) } }
     /// `MenuControls::CreateHandlers`: creates and registers the seven built-in handlers (+0x48..+0x78)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52224, rva 0x960440.
     /// `void (MenuControls* this)`
     #[inline]
-    pub fn create_handlers(&self) { unsafe { function!(52224, (&Self))(self) } }
+    pub fn create_handlers(&self) { unsafe { function!(52224, (*const Self))(core::ptr::from_ref(self)) } }
     /// `MenuControls::RemoveHandler`: removes the handler, or disables and queues the removal while dispatching
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52203, rva 0x95f580.
     /// `void (MenuControls* this, MenuEventHandler* handler)`
     #[inline]
-    pub fn remove_handler(&self, handler: &crate::MenuEventHandler) { unsafe { function!(52203, (&Self, &crate::MenuEventHandler))(self, handler) } }
+    pub fn remove_handler(&self, handler: &crate::MenuEventHandler) { unsafe { function!(52203, (*const Self, *const crate::MenuEventHandler))(core::ptr::from_ref(self), core::ptr::from_ref(handler)) } }
     /// `MenuControls::TestAndClearFlag10`: when +0x78 exists and its byte +0x10 is set: clears it and returns true
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52210, rva 0x95f740.
     /// `bool (MenuControls* this)`
     #[inline]
-    pub fn test_and_clear_flag10(&self) -> bool { unsafe { function!(52210, (&Self) -> bool)(self) } }
+    pub fn test_and_clear_flag10(&self) -> bool { unsafe { function!(52210, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `MenuControls::TestAndClearFlag11`: as 0x95f740 for byte +0x11
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52211, rva 0x95f760.
     /// `bool (MenuControls* this)`
     #[inline]
-    pub fn test_and_clear_flag11(&self) -> bool { unsafe { function!(52211, (&Self) -> bool)(self) } }
+    pub fn test_and_clear_flag11(&self) -> bool { unsafe { function!(52211, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `MenuControls::clickHandler` at +0x48: 
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -793,7 +793,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_button_event(&self, event: *mut crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (&Self, *mut crate::ButtonEvent) -> bool)(self, event) } }
+    pub unsafe fn process_button_event(&self, event: *mut crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *mut crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::ProcessKinectEvent`, vtable slot 4: event type 5 (KinectEvent)
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -802,7 +802,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_kinect_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 4, (&Self, *mut crate::InputEvent) -> bool)(self, event) } }
+    pub unsafe fn process_kinect_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::ProcessMouseMoveEvent`, vtable slot 6: event type 1 (MouseMoveEvent)
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -811,7 +811,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_mouse_move_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut crate::InputEvent) -> bool)(self, event) } }
+    pub unsafe fn process_mouse_move_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::ProcessSixaxisEvent`, vtable slot 3: event type 6 (SixaxisEvent); returns handled
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -820,7 +820,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_sixaxis_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 3, (&Self, *mut crate::InputEvent) -> bool)(self, event) } }
+    pub unsafe fn process_sixaxis_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 3, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::ProcessThumbstickEvent`, vtable slot 5: event type 3 (ThumbstickEvent)
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -829,7 +829,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_thumbstick_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 5, (&Self, *mut crate::InputEvent) -> bool)(self, event) } }
+    pub unsafe fn process_thumbstick_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 5, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::Unk2`, vtable slot 2: returns false in the base; not called by MenuControls::ProcessEvent
     ///
     /// Semantic, ui pass, low; called through the object's vtable.
@@ -838,7 +838,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn unk2(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 2, (&Self, *mut crate::InputEvent) -> bool)(self, event) } }
+    pub unsafe fn unk2(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 2, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::vdtor`, vtable slot 0: destructor
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -847,7 +847,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::MenuOpenHandler {
@@ -856,13 +856,13 @@ impl crate::MenuOpenHandler {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `bool (MenuOpenHandler* this, InputEvent* event)`
     #[inline]
-    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &crate::InputEvent) -> bool)(self, event) } }
+    pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `MenuOpenHandler::ProcessButtonEvent`, vtable slot 7: 
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `bool (MenuOpenHandler* this, ButtonEvent* event)`
     #[inline]
-    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (&Self, &crate::ButtonEvent) -> bool)(self, event) } }
+    pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `MenuOpenHandler::ProcessKinectEvent`, vtable slot 4: 
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -871,7 +871,7 @@ impl crate::MenuOpenHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_kinect_event(&self, event: *mut crate::KinectEvent) -> bool { unsafe { virtual_function!(self, 4, (&Self, *mut crate::KinectEvent) -> bool)(self, event) } }
+    pub unsafe fn process_kinect_event(&self, event: *mut crate::KinectEvent) -> bool { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::KinectEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuOpenHandler::OpenTweenMenu`: opens the TweenMenu (UIStrings+0xf0 'TweenMenu') and closes the FavoritesMenu (+0x158) unless VATS is active, the player is busy, the camera is in cameraStates[8] or the +0xe0/+0x48 check holds (save-on-pause option)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52714, rva 0x988600.
@@ -902,7 +902,7 @@ impl crate::MessageBoxData {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, text: *const c_void, buttons: *const c_void, cb: *mut *mut crate::IMessageBoxCallback, buttonBase: u8, type_: u32, depth: u32) -> *mut Self { unsafe { function!(52292, (&Self, *const c_void, *const c_void, *mut *mut crate::IMessageBoxCallback, u8, u32, u32) -> *mut Self)(self, text, buttons, cb, buttonBase, type_, depth) } }
+    pub unsafe fn ctor(&self, text: *const c_void, buttons: *const c_void, cb: *mut *mut crate::IMessageBoxCallback, buttonBase: u8, type_: u32, depth: u32) -> *mut Self { unsafe { function!(52292, (*const Self, *const c_void, *const c_void, *mut *mut crate::IMessageBoxCallback, u8, u32, u32) -> *mut Self)(core::ptr::from_ref(self), text, buttons, cb, buttonBase, type_, depth) } }
     /// `MessageBoxData::callback` at +0x40: answer callback (ref counted)
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -916,7 +916,7 @@ impl crate::MessageBoxMenu {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (MessageBoxMenu* this, FxDelegateHandler::CallbackProcessor* p)`
     #[inline]
-    pub fn accept(&self, p: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (&Self, &crate::FxDelegateHandler__CallbackProcessor))(self, p) } }
+    pub fn accept(&self, p: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::FxDelegateHandler__CallbackProcessor))(core::ptr::from_ref(self), core::ptr::from_ref(p)) } }
     /// `MessageBoxMenu::Dtor`, vtable slot 0: deletes every queued MessageBoxData, clears g_MessageBoxMenu
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -925,7 +925,7 @@ impl crate::MessageBoxMenu {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `MessageBoxMenu::ProcessMessage`, vtable slot 4: on show (1) shows the top queued box unless 'Loading Menu' is open; refuses hide (3) while boxes remain
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
@@ -934,7 +934,7 @@ impl crate::MessageBoxMenu {
     /// # Safety
     /// `msg` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (&Self, *mut crate::UIMessage) -> u32)(self, msg) } }
+    pub unsafe fn process_message(&self, msg: *mut crate::UIMessage) -> u32 { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), msg) } }
     /// `MessageBoxMenu::ButtonPress`: AS 'buttonPress' callback: button = top.buttonBase + (u32)args[0]; stores top.type in g_LastMessageBoxType, plays 'UIMenuOK', removes and deletes the top box, showing=0, ShowNextMessage, then callback->Run(button)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52279, rva 0x962f50.
@@ -955,19 +955,19 @@ impl crate::MessageBoxMenu {
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 442727, rva 0x963370.
     /// `void (MessageBoxData* data)`
     #[inline]
-    pub fn dismiss_message(data: &crate::MessageBoxData) { unsafe { function!(442727, (&crate::MessageBoxData))(data) } }
+    pub fn dismiss_message(data: &crate::MessageBoxData) { unsafe { function!(442727, (*const crate::MessageBoxData))(core::ptr::from_ref(data)) } }
     /// `MessageBoxMenu::RemoveMessage`: removes data from g_MessageBoxQueue and deletes it
     ///
     /// Semantic, ui pass, high; ledger runtime evidence, name high; id 52284, rva 0x963410.
     /// `void (MessageBoxMenu* this, MessageBoxData* data)`
     #[inline]
-    pub fn remove_message(&self, data: &crate::MessageBoxData) { unsafe { function!(52284, (&Self, &crate::MessageBoxData))(self, data) } }
+    pub fn remove_message(&self, data: &crate::MessageBoxData) { unsafe { function!(52284, (*const Self, *const crate::MessageBoxData))(core::ptr::from_ref(self), core::ptr::from_ref(data)) } }
     /// `MessageBoxMenu::ShowNextMessage`: shows the last (highest-depth) queued box: Invokes setMessageText/setIsVertical/setIsCancellable/setButtons, sets the menu depth from +0x48, showing=1; drops disabled types; hides the menu (3) when nothing is left
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52285, rva 0x963530.
     /// `void (MessageBoxMenu* this)`
     #[inline]
-    pub fn show_next_message(&self) { unsafe { function!(52285, (&Self))(self) } }
+    pub fn show_next_message(&self) { unsafe { function!(52285, (*const Self))(core::ptr::from_ref(self)) } }
     /// `MessageBoxMenu::dtor`: destructor (currently named MessageBoxMenu::ctor)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52268, rva 0x962550.
@@ -976,7 +976,7 @@ impl crate::MessageBoxMenu {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor_2(&self) { unsafe { function!(52268, (&Self))(self) } }
+    pub unsafe fn dtor_2(&self) { unsafe { function!(52268, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback {
@@ -985,7 +985,7 @@ impl crate::SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (ScriptMessageBoxCallback* this, u8 button)`
     #[inline]
-    pub fn run(&self, button: u8) { unsafe { virtual_function!(self, 1, (&Self, u8))(self, button) } }
+    pub fn run(&self, button: u8) { unsafe { virtual_function!(self, 1, (*const Self, u8))(core::ptr::from_ref(self), button) } }
 }
 
 impl crate::StandardItemData {
@@ -994,37 +994,37 @@ impl crate::StandardItemData {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `i32 (StandardItemData* this)`
     #[inline]
-    pub fn get_count(&self) -> i32 { unsafe { virtual_function!(self, 2, (&Self) -> i32)(self) } }
+    pub fn get_count(&self) -> i32 { unsafe { virtual_function!(self, 2, (*const Self) -> i32)(core::ptr::from_ref(self)) } }
     /// `StandardItemData::GetEnabled`, vtable slot 6: always true -> 'enabled'
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `bool (StandardItemData* this)`
     #[inline]
-    pub fn get_enabled(&self) -> bool { unsafe { virtual_function!(self, 6, (&Self) -> bool)(self) } }
+    pub fn get_enabled(&self) -> bool { unsafe { virtual_function!(self, 6, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `StandardItemData::GetEquipState`, vtable slot 3: 0..4 worn/hand state -> 'equipState'
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `i32 (StandardItemData* this)`
     #[inline]
-    pub fn get_equip_state(&self) -> i32 { unsafe { virtual_function!(self, 3, (&Self) -> i32)(self) } }
+    pub fn get_equip_state(&self) -> i32 { unsafe { virtual_function!(self, 3, (*const Self) -> i32)(core::ptr::from_ref(self)) } }
     /// `StandardItemData::GetFavorite`, vtable slot 5: entry has a hotkey/favorite extra -> 'favorite'
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `bool (StandardItemData* this)`
     #[inline]
-    pub fn get_favorite(&self) -> bool { unsafe { virtual_function!(self, 5, (&Self) -> bool)(self) } }
+    pub fn get_favorite(&self) -> bool { unsafe { virtual_function!(self, 5, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `StandardItemData::GetFilterFlag`, vtable slot 4: category bits by form type (<< 10 when not the player's) -> 'filterFlag'
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `u32 (StandardItemData* this)`
     #[inline]
-    pub fn get_filter_flag(&self) -> u32 { unsafe { virtual_function!(self, 4, (&Self) -> u32)(self) } }
+    pub fn get_filter_flag(&self) -> u32 { unsafe { virtual_function!(self, 4, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `StandardItemData::GetName`, vtable slot 1: display name -> 'text'
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `const char* (StandardItemData* this)`
     #[inline]
-    pub fn get_name(&self) -> *const c_char { unsafe { virtual_function!(self, 1, (&Self) -> *const c_char)(self) } }
+    pub fn get_name(&self) -> *const c_char { unsafe { virtual_function!(self, 1, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
     /// `StandardItemData::ctor`: 
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 50981, rva 0x903e60.
@@ -1033,7 +1033,7 @@ impl crate::StandardItemData {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, view: *mut *mut crate::GFxMovieView, entry: *mut crate::InventoryEntry, owner: *const c_void) -> *mut Self { unsafe { function!(50981, (&Self, *mut *mut crate::GFxMovieView, *mut crate::InventoryEntry, *const c_void) -> *mut Self)(self, view, entry, owner) } }
+    pub unsafe fn ctor(&self, view: *mut *mut crate::GFxMovieView, entry: *mut crate::InventoryEntry, owner: *const c_void) -> *mut Self { unsafe { function!(50981, (*const Self, *mut *mut crate::GFxMovieView, *mut crate::InventoryEntry, *const c_void) -> *mut Self)(core::ptr::from_ref(self), view, entry, owner) } }
     /// `StandardItemData::dtor`: destructor (currently named StandardItemData::ctor)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 50992, rva 0x904500.
@@ -1042,7 +1042,7 @@ impl crate::StandardItemData {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(50992, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(50992, (*const Self))(core::ptr::from_ref(self)) } }
     /// `StandardItemData::entry` at +0x8: owned inventory entry (object, count, extra lists)
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
@@ -1064,7 +1064,7 @@ impl crate::TaskQueueHolder {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn drain(&self) { unsafe { function!(36891, (&Self))(self) } }
+    pub unsafe fn drain(&self) { unsafe { function!(36891, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TweenMenu {
@@ -1073,7 +1073,7 @@ impl crate::TweenMenu {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (TweenMenu* this)`
     #[inline]
-    pub fn post_display(&self) { unsafe { virtual_function!(self, 6, (&Self))(self) } }
+    pub fn post_display(&self) { unsafe { virtual_function!(self, 6, (*const Self))(core::ptr::from_ref(self)) } }
     /// `TweenMenu::Create`: menu creator registered under 'TweenMenu' (ctor inlined except ContainerMenu)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52723, rva 0x989000.
@@ -1085,7 +1085,7 @@ impl crate::TweenMenu {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52718, rva 0x988ba0.
     /// `void (TweenMenu* this, i32 selection)`
     #[inline]
-    pub fn on_menu_selected(&self, selection: i32) { unsafe { function!(52718, (&Self, i32))(self, selection) } }
+    pub fn on_menu_selected(&self, selection: i32) { unsafe { function!(52718, (*const Self, i32))(core::ptr::from_ref(self), selection) } }
 }
 
 impl crate::UIMessage {
@@ -1110,25 +1110,25 @@ impl crate::UIMessageQueue {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn acquire_pooled_data(&self, dataTypeName: *const crate::BSFixedString) -> *mut crate::IUIMessageData { unsafe { function!(82169, (&Self, *const crate::BSFixedString) -> *mut crate::IUIMessageData)(self, dataTypeName) } }
+    pub unsafe fn acquire_pooled_data(&self, dataTypeName: *const crate::BSFixedString) -> *mut crate::IUIMessageData { unsafe { function!(82169, (*const Self, *const crate::BSFixedString) -> *mut crate::IUIMessageData)(core::ptr::from_ref(self), dataTypeName) } }
     /// `UIMessageQueue::AddMessage`: enqueues a UI message; the request's UI::AddMessage hypothesis is confirmed as to behaviour, but it is a method of the queue object (g_UIMessageQueue_ptr), not of the UI singleton
     ///
     /// Semantic, ui pass, high; ledger runtime evidence, name high; id 13631, rva 0x1b47f0.
     /// `void (UIMessageQueue* this, const BSFixedString* menuName, u32 type, IUIMessageData* data)`
     #[inline]
-    pub fn add_message(&self, menuName: &crate::BSFixedString, type_: u32, data: &crate::IUIMessageData) { unsafe { function!(13631, (&Self, &crate::BSFixedString, u32, &crate::IUIMessageData))(self, menuName, type_, data) } }
+    pub fn add_message(&self, menuName: &crate::BSFixedString, type_: u32, data: &crate::IUIMessageData) { unsafe { function!(13631, (*const Self, *const crate::BSFixedString, u32, *const crate::IUIMessageData))(core::ptr::from_ref(self), core::ptr::from_ref(menuName), type_, core::ptr::from_ref(data)) } }
     /// `UIMessageQueue::HasQueuedMessage`: true if a message with this name (an empty name matches any) and type is still queued
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82168, rva 0x116e0d0.
     /// `bool (UIMessageQueue* this, const BSFixedString* menuName, u32 type)`
     #[inline]
-    pub fn has_queued_message(&self, menuName: &crate::BSFixedString, type_: u32) -> bool { unsafe { function!(82168, (&Self, &crate::BSFixedString, u32) -> bool)(self, menuName, type_) } }
+    pub fn has_queued_message(&self, menuName: &crate::BSFixedString, type_: u32) -> bool { unsafe { function!(82168, (*const Self, *const crate::BSFixedString, u32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(menuName), type_) } }
     /// `UIMessageQueue::ReleaseStaticMessages`: after a drain: deletes or un-pools the data of every static slot used and resets the slot count
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82167, rva 0x116e030.
     /// `void (UIMessageQueue* this)`
     #[inline]
-    pub fn release_static_messages(&self) { unsafe { function!(82167, (&Self))(self) } }
+    pub fn release_static_messages(&self) { unsafe { function!(82167, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::_anon_7C6875DF__OldMessageBoxCallback {
@@ -1137,7 +1137,7 @@ impl crate::_anon_7C6875DF__OldMessageBoxCallback {
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (OldMessageBoxCallback* this, u8 button)`
     #[inline]
-    pub fn run(&self, button: u8) { unsafe { virtual_function!(self, 1, (&Self, u8))(self, button) } }
+    pub fn run(&self, button: u8) { unsafe { virtual_function!(self, 1, (*const Self, u8))(core::ptr::from_ref(self), button) } }
 }
 
 /// `ASValueToGFxValue`: internal AS value to GFxValue (mapping in enum GFxValueType)
@@ -1484,7 +1484,7 @@ pub unsafe fn queue_message_box(text: *const c_void, callback: *mut *mut crate::
 /// Semantic, ui pass, high; ledger runtime evidence, name high; id 52271, rva 0x962a90.
 /// `bool (MessageBoxData* data)`
 #[inline]
-pub fn queue_message_box_data(data: &crate::MessageBoxData) -> bool { unsafe { function!(52271, (&crate::MessageBoxData) -> bool)(data) } }
+pub fn queue_message_box_data(data: &crate::MessageBoxData) -> bool { unsafe { function!(52271, (*const crate::MessageBoxData) -> bool)(core::ptr::from_ref(data)) } }
 /// `QueueScaleformEvent`: AddMessage(name, 6, BSUIScaleformData{event})
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82182, rva 0x116eca0.
@@ -1499,19 +1499,19 @@ pub unsafe fn queue_scaleform_event(menuName: *const crate::BSFixedString, scale
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82180, rva 0x116eb60.
 /// `void (const BSFixedString* menuName, u32 type, bool value)`
 #[inline]
-pub fn queue_ui_message_with_bool(menuName: &crate::BSFixedString, type_: u32, value: bool) { unsafe { function!(82180, (&crate::BSFixedString, u32, bool))(menuName, type_, value) } }
+pub fn queue_ui_message_with_bool(menuName: &crate::BSFixedString, type_: u32, value: bool) { unsafe { function!(82180, (*const crate::BSFixedString, u32, bool))(core::ptr::from_ref(menuName), type_, value) } }
 /// `QueueUIMessageWithFixedString`: AddMessage with a BSUIMessageData whose fixedString = text
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82179, rva 0x116eaa0.
 /// `void (const BSFixedString* menuName, u32 type, const BSFixedString* text)`
 #[inline]
-pub fn queue_ui_message_with_fixed_string(menuName: &crate::BSFixedString, type_: u32, text: &crate::BSFixedString) { unsafe { function!(82179, (&crate::BSFixedString, u32, &crate::BSFixedString))(menuName, type_, text) } }
+pub fn queue_ui_message_with_fixed_string(menuName: &crate::BSFixedString, type_: u32, text: &crate::BSFixedString) { unsafe { function!(82179, (*const crate::BSFixedString, u32, *const crate::BSFixedString))(core::ptr::from_ref(menuName), type_, core::ptr::from_ref(text)) } }
 /// `QueueUIMessageWithUInt`: AddMessage with BSUIMessageData value
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82181, rva 0x116ec00.
 /// `void (const BSFixedString* menuName, u32 type, u32 value)`
 #[inline]
-pub fn queue_ui_message_with_u_int(menuName: &crate::BSFixedString, type_: u32, value: u32) { unsafe { function!(82181, (&crate::BSFixedString, u32, u32))(menuName, type_, value) } }
+pub fn queue_ui_message_with_u_int(menuName: &crate::BSFixedString, type_: u32, value: u32) { unsafe { function!(82181, (*const crate::BSFixedString, u32, u32))(core::ptr::from_ref(menuName), type_, value) } }
 /// `RefreshMenuPlatform`: invokes _root.SetPlatform(gamepad ? 1 : 0, false) when the movie has it; for flag-0x400 menus sets flag 4 when no gamepad is active and the context is not 0xf, else clears it, and queues Cursor Menu show (1) or hide (3)
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82310, rva 0x116ef00.
@@ -1562,13 +1562,13 @@ pub unsafe fn toggle_game_suspend_state(begin: bool, loadingData: *mut c_void, f
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 35855, rva 0x62e6a0.
 /// `IUIMessageData* (const BSFixedString* dataTypeName)`
 #[inline]
-pub fn ui_message_data_factory__create(dataTypeName: &crate::BSFixedString) -> Option<&'static crate::IUIMessageData> { unsafe { function!(35855, (&crate::BSFixedString) -> Option<&'static crate::IUIMessageData>)(dataTypeName) } }
+pub fn ui_message_data_factory__create(dataTypeName: &crate::BSFixedString) -> Option<&'static crate::IUIMessageData> { unsafe { function!(35855, (*const crate::BSFixedString) -> Option<&'static crate::IUIMessageData>)(core::ptr::from_ref(dataTypeName)) } }
 /// `UpdateMeterValue`: sends the meter's fill percent to its AS method when changed or forced
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51656, rva 0x937c30.
 /// `void (HUDMeter* meter, bool force)`
 #[inline]
-pub fn update_meter_value(meter: &crate::HUDMeter, force: bool) { unsafe { function!(51656, (&crate::HUDMeter, bool))(meter, force) } }
+pub fn update_meter_value(meter: &crate::HUDMeter, force: bool) { unsafe { function!(51656, (*const crate::HUDMeter, bool))(core::ptr::from_ref(meter), force) } }
 /// `g_BSScaleformManager` at 0x3241bc0, id 504086 (semantic, high); static storage of the manager (high, ui pass), type `class:BSScaleformManager`
 #[inline]
 pub fn g_bs_scaleform_manager() -> &'static crate::BSScaleformManager { unsafe { &*(address!(504086) as *const crate::BSScaleformManager) } }

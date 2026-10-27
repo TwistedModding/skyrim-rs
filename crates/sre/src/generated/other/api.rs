@@ -4804,7 +4804,7 @@ impl crate::Explosion {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 43869, rva 0x7e9090.
     /// `bool (Explosion* this)`
     #[inline]
-    pub fn start_effects(&self) -> bool { unsafe { function!(43869, (&Self) -> bool)(self) } }
+    pub fn start_effects(&self) -> bool { unsafe { function!(43869, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::FOIslandActivationListener {
@@ -4840,7 +4840,7 @@ impl crate::IMovementHandlerAgent {
     /// # Safety
     /// `args` must point to what the engine expects.
     #[inline]
-    pub unsafe fn handle_movement(&self, args: *mut c_void) { unsafe { function!(41996, (&Self, *mut c_void))(self, args) } }
+    pub unsafe fn handle_movement(&self, args: *mut c_void) { unsafe { function!(41996, (*const Self, *mut c_void))(core::ptr::from_ref(self), args) } }
 }
 
 impl crate::IMovementPlannerAgent {
@@ -4852,7 +4852,7 @@ impl crate::IMovementPlannerAgent {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_2(&self, context: *mut c_void, outMovement: *mut c_void) { unsafe { function!(42162, (&Self, *mut c_void, *mut c_void))(self, context, outMovement) } }
+    pub unsafe fn i_movement_planner_agent_vfunc_2(&self, context: *mut c_void, outMovement: *mut c_void) { unsafe { function!(42162, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), context, outMovement) } }
 }
 
 impl crate::IPackageDataAIWorldLocationHandle {
@@ -4918,7 +4918,7 @@ impl crate::Inventory3DManager {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 51777, rva 0x93efe0.
     /// `void (Inventory3DManager* this)`
     #[inline]
-    pub fn update_item_zoom(&self) { unsafe { function!(51777, (&Self))(self) } }
+    pub fn update_item_zoom(&self) { unsafe { function!(51777, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::JournalMenu {
@@ -5029,7 +5029,7 @@ impl crate::MagicTarget {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_active_effect_list(&self) -> *mut c_void { unsafe { function!(38795, (&Self) -> *mut c_void)(self) } }
+    pub unsafe fn get_active_effect_list(&self) -> *mut c_void { unsafe { function!(38795, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::Main {
@@ -5041,13 +5041,13 @@ impl crate::Main {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36564, rva 0x658870.
     /// `void (Main* this)`
     #[inline]
-    pub fn update(&self) { unsafe { function!(36564, (&Self))(self) } }
+    pub fn update(&self) { unsafe { function!(36564, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Main::UpdatePlayer`: free camera current (cameraStates[3]): UpdateActorWithCamera(player, g_FrameDelta, Main+0x16) when the player has 3D; else unless paused (0x32303b3): player slot 173 (vtable +0x568) with g_FrameDelta * time scale, cell attach; paused: 0x743c10(player, camera)
     ///
     /// Semantic, frame pass, high; ledger runtime evidence, name high; id 36581, rva 0x659ea0.
     /// `void (Main* this)`
     #[inline]
-    pub fn update_player(&self) { unsafe { function!(36581, (&Self))(self) } }
+    pub fn update_player(&self) { unsafe { function!(36581, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Main::UpdateTimer`: eases the time multiplier (0xce39d0), updates g_FrameTimer from QueryPerformanceCounter, hands the delta to havok (0x104ab70)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 36577, rva 0x659d10.
@@ -5059,13 +5059,13 @@ impl crate::Main {
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 36601, rva 0x65b6c0.
     /// `void (Main* this)`
     #[inline]
-    pub fn reset_game(&self) { unsafe { function!(36601, (&Self))(self) } }
+    pub fn reset_game(&self) { unsafe { function!(36601, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SetupWorldRenderContext`: fills the frame's render context (first-person root +0x18, third-person root +0x20, world ShadowSceneNode +0x30, the two field-of-view values; PlayerCamera+0x140 copied into 0x34362cc), sorts the focus-shadow actors by distance (fMaxFocusShadowMapDistance) and returns the sun
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 36561, rva 0x657c90.
     /// `Sun* (Main* this)`
     #[inline]
-    pub fn setup_world_render_context(&self) -> Option<&'static crate::Sun> { unsafe { function!(36561, (&Self) -> Option<&'static crate::Sun>)(self) } }
+    pub fn setup_world_render_context(&self) -> Option<&'static crate::Sun> { unsafe { function!(36561, (*const Self) -> Option<&'static crate::Sun>)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MapMenu {
@@ -5080,7 +5080,7 @@ impl crate::MapMenu {
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 53016, rva 0x9969f0.
     /// `void (MapCamera* camera, float delta)`
     #[inline]
-    pub fn update_map_camera(camera: &crate::MapCamera, delta: f32) { unsafe { function!(53016, (&crate::MapCamera, f32))(camera, delta) } }
+    pub fn update_map_camera(camera: &crate::MapCamera, delta: f32) { unsafe { function!(53016, (*const crate::MapCamera, f32))(core::ptr::from_ref(camera), delta) } }
     /// `MapMenu::dtor`: removes the map input handlers, hides the cursor, clears the scene graph near/far overrides, SetFieldOfView(fDefaultFOV, force), restores the sky, MapCamera::dtor, releases the rest
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53094, rva 0x99b220.
@@ -5089,7 +5089,7 @@ impl crate::MapMenu {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn dtor(&self) { unsafe { function!(53094, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(53094, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MarketplaceMenu {
@@ -5134,7 +5134,7 @@ impl crate::MistMenu {
     /// # Safety
     /// `modelPath` must point to what the engine expects.
     #[inline]
-    pub unsafe fn init_mist_menu_camera_and_model(&self, modelPath: *const c_char) { unsafe { function!(52323, (&Self, *const c_char))(self, modelPath) } }
+    pub unsafe fn init_mist_menu_camera_and_model(&self, modelPath: *const c_char) { unsafe { function!(52323, (*const Self, *const c_char))(core::ptr::from_ref(self), modelPath) } }
     /// `MistMenu::AdjustLogoZoomFOV`: changes the main-menu logo camera FOV (+0x100) by delta within limits
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52325, rva 0x966890.
@@ -5143,7 +5143,7 @@ impl crate::MistMenu {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn adjust_logo_zoom_fov(&self, delta: f32) { unsafe { function!(52325, (&Self, f32))(self, delta) } }
+    pub unsafe fn adjust_logo_zoom_fov(&self, delta: f32) { unsafe { function!(52325, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
 }
 
 impl crate::ModManagerMenu {
@@ -5206,7 +5206,7 @@ impl crate::PitchOverrideEndHandler {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42899, rva 0x7cf420.
     /// `bool (PitchOverrideEndHandler* this, Actor* actor)`
     #[inline]
-    pub fn handle(&self, actor: &crate::Actor) -> bool { unsafe { function!(42899, (&Self, &crate::Actor) -> bool)(self, actor) } }
+    pub fn handle(&self, actor: &crate::Actor) -> bool { unsafe { function!(42899, (*const Self, *const crate::Actor) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(actor)) } }
 }
 
 impl crate::PitchOverrideStartHandler {
@@ -5215,7 +5215,7 @@ impl crate::PitchOverrideStartHandler {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42898, rva 0x7cf3f0.
     /// `bool (PitchOverrideStartHandler* this, Actor* actor)`
     #[inline]
-    pub fn handle(&self, actor: &crate::Actor) -> bool { unsafe { function!(42898, (&Self, &crate::Actor) -> bool)(self, actor) } }
+    pub fn handle(&self, actor: &crate::Actor) -> bool { unsafe { function!(42898, (*const Self, *const crate::Actor) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(actor)) } }
 }
 
 impl crate::PlayerSleepWaitMovementControllerAdapter {
@@ -5239,13 +5239,13 @@ impl crate::Projectile {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 44124, rva 0x7fadd0.
     /// `void (Projectile* this)`
     #[inline]
-    pub fn call_vfunc5_b8_if_flag1_d4_bit0(&self) { unsafe { function!(44124, (&Self))(self) } }
+    pub fn call_vfunc5_b8_if_flag1_d4_bit0(&self) { unsafe { function!(44124, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Projectile::ClearFlagBit4AndCallSlot169`: when bit 4 of +0x1d4 is set, clears it and tail-calls the projectile's slot 169 (vtable +0x548)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 44150, rva 0x7fc290.
     /// `void (Projectile* this)`
     #[inline]
-    pub fn clear_flag_bit4_and_call_slot169(&self) { unsafe { function!(44150, (&Self))(self) } }
+    pub fn clear_flag_bit4_and_call_slot169(&self) { unsafe { function!(44150, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Projectile::UpdateAimFromPlayerCamera`: for a projectile shot by the player, re-aims it from the camera (ComputeAutoAimAngles) and updates its rotation
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 44200, rva 0x7ffec0.
@@ -5254,7 +5254,7 @@ impl crate::Projectile {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update_aim_from_player_camera(&self) { unsafe { function!(44200, (&Self))(self) } }
+    pub unsafe fn update_aim_from_player_camera(&self) { unsafe { function!(44200, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::RaceSexMenu {
@@ -5266,7 +5266,7 @@ impl crate::RaceSexMenu {
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 52389, rva 0x96b930.
     /// `void (RaceSexMenu* this)`
     #[inline]
-    pub fn setup_player_look_at(&self) { unsafe { function!(52389, (&Self))(self) } }
+    pub fn setup_player_look_at(&self) { unsafe { function!(52389, (*const Self))(core::ptr::from_ref(self)) } }
     /// `RaceSexMenu::StartCameraZoom`: starts the race menu camera zoom interpolation in or out
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52414, rva 0x971760.
@@ -5281,7 +5281,7 @@ impl crate::RaceSexMenu {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52388, rva 0x96b7d0.
     /// `void (RaceSexMenu* this)`
     #[inline]
-    pub fn start_close_fade_out(&self) { unsafe { function!(52388, (&Self))(self) } }
+    pub fn start_close_fade_out(&self) { unsafe { function!(52388, (*const Self))(core::ptr::from_ref(self)) } }
     /// `RaceSexMenu::ZoomPCCallback`: the movie's 'ZoomPC' call: starts g_RaceMenuCameraInterp from the current eased pose (or from the opposite end when idle) to the zoomed-in or zoomed-out pose (args[0] bool) over fPlayerZoomTime:Interface ms from g_FrameTimeMs
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52348, rva 0x9691e0.
@@ -5305,25 +5305,25 @@ impl crate::SceneGraph {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36843, rva 0x665710.
     /// `void (SceneGraph* this)`
     #[inline]
-    pub fn clear_far_distance_override(&self) { unsafe { function!(36843, (&Self))(self) } }
+    pub fn clear_far_distance_override(&self) { unsafe { function!(36843, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SceneGraph::ClearNearDistanceOverride`: +0x148 = 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36841, rva 0x6656e0.
     /// `void (SceneGraph* this)`
     #[inline]
-    pub fn clear_near_distance_override(&self) { unsafe { function!(36841, (&Self))(self) } }
+    pub fn clear_near_distance_override(&self) { unsafe { function!(36841, (*const Self))(core::ptr::from_ref(self)) } }
     /// `SceneGraph::GetFarDistance`: see BSSceneGraph slot 62
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36845, rva 0x665740.
     /// `float (SceneGraph* this)`
     #[inline]
-    pub fn get_far_distance(&self) -> f32 { unsafe { function!(36845, (&Self) -> f32)(self) } }
+    pub fn get_far_distance(&self) -> f32 { unsafe { function!(36845, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `SceneGraph::SetFarDistanceOverride`: +0x144 = far, +0x149 = 1 (slot 62 then returns it)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36842, rva 0x6656f0.
     /// `void (SceneGraph* this, float farDistance)`
     #[inline]
-    pub fn set_far_distance_override(&self, farDistance: f32) { unsafe { function!(36842, (&Self, f32))(self, farDistance) } }
+    pub fn set_far_distance_override(&self, farDistance: f32) { unsafe { function!(36842, (*const Self, f32))(core::ptr::from_ref(self), farDistance) } }
     /// `SceneGraph::SetNearDistanceOverride`: +0x140 = *nearDistance, +0x148 = 1 (slot 63 then returns it)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 36840, rva 0x6656c0.
@@ -5332,7 +5332,7 @@ impl crate::SceneGraph {
     /// # Safety
     /// `nearDistance` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_near_distance_override(&self, nearDistance: *const f32) { unsafe { function!(36840, (&Self, *const f32))(self, nearDistance) } }
+    pub unsafe fn set_near_distance_override(&self, nearDistance: *const f32) { unsafe { function!(36840, (*const Self, *const f32))(core::ptr::from_ref(self), nearDistance) } }
     /// `SceneGraph::ctor`: BSSceneGraph::ctor with the same arguments, SceneGraph vtable, near/far overrides +0x140 = +0x148 = 0, then SetFieldOfView(this, fDefaultFOV:Display, force true, camera null, updateLod false)
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 36838, rva 0x665640.
@@ -5341,7 +5341,7 @@ impl crate::SceneGraph {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self, namePrefix: *const c_char, isMenuScene: bool, camera: *mut crate::NiCamera) -> *mut Self { unsafe { function!(36838, (&Self, *const c_char, bool, *mut crate::NiCamera) -> *mut Self)(self, namePrefix, isMenuScene, camera) } }
+    pub unsafe fn ctor(&self, namePrefix: *const c_char, isMenuScene: bool, camera: *mut crate::NiCamera) -> *mut Self { unsafe { function!(36838, (*const Self, *const c_char, bool, *mut crate::NiCamera) -> *mut Self)(core::ptr::from_ref(self), namePrefix, isMenuScene, camera) } }
 }
 
 impl crate::ScrollItem {
@@ -5440,7 +5440,7 @@ impl crate::StatsMenu {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52530, rva 0x97bd30.
     /// `void (StatsMenu* this)`
     #[inline]
-    pub fn create_camera(&self) { unsafe { function!(52530, (&Self))(self) } }
+    pub fn create_camera(&self) { unsafe { function!(52530, (*const Self))(core::ptr::from_ref(self)) } }
     /// `StatsMenu::InitSkillViewTable`: fills the static per-skill view records (ID_406482..ID_406564: camera/look-at vectors and angles) used by StatsMenu::vfunc_4_sub3
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52559, rva 0x980a30.
@@ -5452,7 +5452,7 @@ impl crate::StatsMenu {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52531, rva 0x97c4b0.
     /// `void (StatsMenu* this)`
     #[inline]
-    pub fn setup_scene(&self) { unsafe { function!(52531, (&Self))(self) } }
+    pub fn setup_scene(&self) { unsafe { function!(52531, (*const Self))(core::ptr::from_ref(self)) } }
     /// `StatsMenu::ctor`: constructs the StatsMenu: IMenu base, both vtables, menu controls handler, the constellation camera and look-at settings (fStatsStarCameraOffsetX/Y/Z, fStatsStarLookAtX/Y/Z, fStatsSkillsLookAtX/Y/Z), the skill view table (StatsMenu::InitSkillViewTable), music pause (uiMuteMusicPauseTime), the 3D scene mesh queue
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 52508, rva 0x975ff0.
@@ -5461,7 +5461,7 @@ impl crate::StatsMenu {
     /// # Safety
     /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52508, (&Self) -> *mut Self)(self) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52508, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::StatsNode {
@@ -5500,7 +5500,7 @@ impl crate::ZeroPitchHandler {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42901, rva 0x7cf480.
     /// `bool (ZeroPitchHandler* this, Actor* actor)`
     #[inline]
-    pub fn handle(&self, actor: &crate::Actor) -> bool { unsafe { function!(42901, (&Self, &crate::Actor) -> bool)(self, actor) } }
+    pub fn handle(&self, actor: &crate::Actor) -> bool { unsafe { function!(42901, (*const Self, *const crate::Actor) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(actor)) } }
 }
 
 impl crate::ahkpCharacterProxy {
