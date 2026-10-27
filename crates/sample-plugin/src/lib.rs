@@ -1,13 +1,16 @@
-//! Smallest complete plugin on the generated layouts: resolves ids through `sre`, installs
-//! two pass-through entry hooks and one call-site patch, and reads live forms through the generated `TESForm` struct.
+//! The template for a new mod: an SKSE plugin that, once the game data is loaded, reads the player
+//! and a form, logs every menu that opens or closes, and adds a console command.
 
-use core::ffi::c_void;
+use std::ffi::CStr;
 use std::fs::File;
 use std::io::Write;
-use std::sync::atomic::{AtomicU64, Ordering};
-use std::sync::{Mutex, OnceLock};
+use std::sync::Mutex;
 
-use sre::raw::{fns, globals, vtables};
+use skyrim::BSFixedString;
+use skyrim::events::{BSTEventSource, Event, EventSink, Sink};
+use skyrim::input::{Command, CommandContext, Param};
+use skyrim::prelude::*;
+use sre::{ActorValue, BSEventNotifyControl, FormType, MenuOpenCloseEvent, PlayerCharacter, TESNPC};
 
 skse::plugin! {
     name: "skyrim-rs-sample",
@@ -16,25 +19,7 @@ skse::plugin! {
     load: load,
 }
 
-type LookupFormById = extern "C" fn(form_id: u32) -> *mut c_void;
-type AddEventSink = extern "C" fn(source: *mut c_void, sink: *mut c_void) -> *mut c_void;
-
-/// `FindFormByID` on both runtimes; the AE id is `fns::FindFormByID`, the SE id has only the 1.5.97
-/// run behind it.
-const FIND_FORM_BY_ID_SE: u64 = 14461;
-const FIND_FORM_BY_ID_AE: u64 = 14617;
-/// Size of `PlayerCharacter::ctor` in the ledger (`data/funcs.json`, rva 0x73f670); the function holds one
-/// direct call to `BSTEventSource<MenuOpenCloseEvent>::AddEventSink`.
-const PLAYER_CHARACTER_CTOR_LEN: usize = 0x1012;
-
 static LOG: Mutex<Option<File>> = Mutex::new(None);
-static RELOC: OnceLock<hook::Reloc> = OnceLock::new();
-static LOOKUP: OnceLock<hook::Hook<LookupFormById>> = OnceLock::new();
-static ADD_SINK: OnceLock<hook::Hook<AddEventSink>> = OnceLock::new();
-static ADD_SINK_SITE: OnceLock<hook::CallSite<AddEventSink>> = OnceLock::new();
-static LOOKUP_CALLS: AtomicU64 = AtomicU64::new(0);
-static ADD_SINK_CALLS: AtomicU64 = AtomicU64::new(0);
-static ADD_SINK_SITE_CALLS: AtomicU64 = AtomicU64::new(0);
 
 macro_rules! log {
     ($($arg:tt) => {
@@ -44,148 +29,75 @@ macro_rules! log {
     };
 }
 
-extern "C" fn lookup_detour(form_id: u32) -> *mut c_void {
-    LOOKUP_CALLS.fetch_add(1, Ordering::Relaxed);
-    LOOKUP.get().unwrap().original()(form_id)
-}
-
-extern "C" fn add_sink_detour(source: *mut c_void, sink: *mut c_void) -> *mut c_void {
-    ADD_SINK_CALLS.fetch_add(1, Ordering::Relaxed);
-    ADD_SINK.get().unwrap().original()(source, sink)
-}
-
-extern "C" fn add_sink_site_detour(source: *mut c_void, sink: *mut c_void) -> *mut c_void {
-    ADD_SINK_SITE_CALLS.fetch_add(1, Ordering::Relaxed);
-    ADD_SINK_SITE.get().unwrap().original()(source, sink)
-}
-
-/// Redirects the `call AddEventSink` inside `PlayerCharacter::ctor` through `add_sink_site_detour`.
-fn patch_add_sink_call(reloc: &hook::Reloc, add_sink: usize) {
-    let ctor = match reloc.address(fns::PlayerCharacter__ctor) {
-        Ok(a) => a,
-        Err(e) => return log!("{e}"),
-    };
-    let Some(site) = hook::find_call(ctor, PLAYER_CHARACTER_CTOR_LEN, add_sink) else {
-        return log!("no direct call to AddEventSink in PlayerCharacter::ctor at {ctor:#x}");
-    };
-    match unsafe { hook::CallSite::install(site, add_sink_site_detour as AddEventSink) } {
-        Ok(c) => {
-            log!(
-                "patched the call to AddEventSink at {:#x} (PlayerCharacter::ctor, fns id {}, + {:#x}), previous target {:#x}",
-                c.site(),
-                fns::PlayerCharacter__ctor,
-                site - ctor,
-                c.original() as usize
-            );
-            let _ = ADD_SINK_SITE.set(c);
-        }
-        Err(e) => log!("{e}"),
-    }
-}
-
-/// What the generated `TESForm` layout says about a live object: its vtable's class and the raw fields.
-fn describe(form: *const sre::TESForm) -> String {
-    if form.is_null() {
-        return "null".into();
-    }
-    let f = unsafe { &*form };
-    let vt = f.__vftable as usize;
-    let class = u32::try_from(vt.wrapping_sub(RELOC.get().unwrap().base()))
-        .ok()
-        .and_then(vtables::find)
-        .map_or_else(
-            || format!("vtable {vt:#x} unknown to the ledger"),
-            |v| format!("{}::vftable{} (vtable id {})", v.class, if v.offset == 0 { String::new() } else { format!("_{:X}", v.offset) }, v.id),
-        );
-    format!(
-        "{form:p}: {class}, TESForm {{ sourceFiles: {:p}, formFlags: {:#x}, formID: {:#x}, inGameFlags: {:#x}, formType: {:#x} }}",
-        f.sourceFiles, f.formFlags, f.formID, f.inGameFlags, f.formType
-    )
-}
-
-fn read_layouts() {
-    let reloc = RELOC.get().unwrap();
-    match reloc.address(globals::g_PlayerCharacter_ptr) {
-        Ok(addr) => {
-            let player = unsafe { *(addr as *const *const sre::TESForm) };
-            log!("g_PlayerCharacter_ptr (global id {}) -> {}", globals::g_PlayerCharacter_ptr, describe(player));
-        }
-        Err(e) => log!("{e}"),
-    }
-    let lookup = LOOKUP.get().unwrap().original();
-    for form_id in [0x14u32, 0x7] {
-        log!("FindFormByID({form_id:#x}) -> {}", describe(lookup(form_id).cast()));
-    }
-    log!("generated PlayerCharacter is {:#x} bytes", size_of::<sre::PlayerCharacter>());
-}
-
-unsafe extern "C" fn on_message(msg: *mut skse::Message) {
-    let msg = unsafe { &*msg };
-    if msg.kind == skse::MessagingInterface::DATA_LOADED {
-        log!(
-            "data loaded, FindFormByID ran {} times, BSTEventSource<MenuOpenCloseEvent>::AddEventSink ran {} times, its call site in PlayerCharacter::ctor ran {} times",
-            LOOKUP_CALLS.load(Ordering::Relaxed),
-            ADD_SINK_CALLS.load(Ordering::Relaxed),
-            ADD_SINK_SITE_CALLS.load(Ordering::Relaxed)
-        );
-        if ADD_SINK.get().is_some() {
-            read_layouts();
-        }
-    }
-}
-
 fn load(skse: &skse::Interface) -> bool {
     let Ok(file) = skse::log::open(skse.runtime_version, "skyrim-rs-sample") else {
         return false;
     };
     *LOG.lock().unwrap() = Some(file);
-    let [major, minor, build, store] = skse::runtime::unpack(skse.runtime_version);
-    let known = skse::runtime::find(skse.runtime_version).map_or("unknown runtime", |r| r.name);
-    log!("runtime {major}.{minor}.{build} store {store} ({known}), skse {:08x}", skse.skse_version);
+    if let Err(e) = skyrim::init(skse) {
+        log!("{e}");
+        return false;
+    }
+    skse.messaging().is_some_and(|m| m.listen_skse(skse.plugin_handle(), on_message))
+}
 
-    let reloc = match hook::Reloc::open(skse.runtime_version) {
-        Ok(r) => r,
-        Err(e) => {
-            log!("{e}");
-            return false;
-        }
-    };
-    log!(
-        "address library format {} with {} ids, module base {:#x}",
-        reloc.db().format(),
-        reloc.db().len(),
-        reloc.base()
-    );
-    let reloc = RELOC.get_or_init(|| reloc);
+unsafe extern "C" fn on_message(message: *mut skse::Message) {
+    if unsafe { (*message).kind } == skse::MessagingInterface::DATA_LOADED {
+        data_loaded();
+    }
+}
 
-    let id = if skse::runtime::is_se(skse.runtime_version) { FIND_FORM_BY_ID_SE } else { FIND_FORM_BY_ID_AE };
-    match unsafe { reloc.hook(id, lookup_detour as LookupFormById) } {
-        Ok(h) => {
-            log!("hooked FindFormByID id {id} at {:#x}", h.target());
-            let _ = LOOKUP.set(h);
-        }
-        Err(e) => {
-            log!("{e}");
-            return false;
-        }
+fn data_loaded() {
+    log!("{}", describe_player().unwrap_or_else(|| "no player yet".into()));
+
+    if let Some(form) = sre::find_form_by_id(0x8F958) {
+        log!("form 0008F958 is {:?}, a {:?}", form.editor_id(), FormType::from_u8(form.get_form_type()));
     }
 
-    if [major, minor, build] == sre::VERSION {
-        let id = fns::BSTEventSource_MenuOpenCloseEvent__AddEventSink;
-        match unsafe { reloc.hook(id, add_sink_detour as AddEventSink) } {
-            Ok(h) => {
-                log!("hooked BSTEventSource<MenuOpenCloseEvent>::AddEventSink (fns id {id}) at {:#x}", h.target());
-                patch_add_sink_call(reloc, h.target());
-                let _ = ADD_SINK.set(h);
-            }
-            Err(e) => log!("{e}"),
-        }
-    } else {
-        log!("layouts are generated for 1.7.104 only; skipping the layout reads");
+    match MenuOpenCloseEvent::source() {
+        Some(menus) => menus.add_sink(&MENUS).leak(),
+        None => log!("no menu event source"),
     }
 
-    if let Some(m) = skse.messaging() {
-        let _ = m.listen_skse(skse.plugin_handle(), on_message);
+    match skyrim::input::register::<SampleCommand>() {
+        Ok(slot) => log!("console command SkyrimRsSample replaces {}", slot.replaced),
+        Err(e) => log!("console command not registered: {e}"),
     }
-    true
+}
+
+/// The player's name, race, health and race keywords.
+fn describe_player() -> Option<String> {
+    let player = PlayerCharacter::singleton()?;
+    let name = player.base_object()?.cast::<TESNPC>()?.as_tes_full_name().full_name()?;
+    let race = player.race()?;
+    let health = player.as_actor_value_owner().get_actor_value(ActorValue::Health as i32);
+    let keywords: Vec<&CStr> = race.keywords().iter().flatten().filter_map(|k| k.editor_id()).collect();
+    Some(format!("player {name:?}, race {:?} {:08X}, health {health}, race keywords {keywords:?}", race.editor_id()?, race.formID))
+}
+
+struct MenuLogger;
+
+impl EventSink<MenuOpenCloseEvent> for MenuLogger {
+    fn process(&self, event: &MenuOpenCloseEvent, _: &BSTEventSource<MenuOpenCloseEvent>) -> BSEventNotifyControl {
+        let name = BSFixedString::view(&event.menuName);
+        log!("menu {} {}", name.to_str().unwrap_or("?"), if event.opening != 0 { "opened" } else { "closed" });
+        BSEventNotifyControl::Continue
+    }
+}
+
+static MENUS: Sink<MenuOpenCloseEvent, MenuLogger> = Sink::new(MenuLogger);
+
+struct SampleCommand;
+
+impl Command for SampleCommand {
+    const NAME: &'static CStr = c"SkyrimRsSample";
+    const HELP: &'static CStr = c"skyrim-rs sample: prints the player's name, race and health";
+    const PARAMS: &'static [Param] = &[];
+
+    fn execute(_: &mut CommandContext<'_>) -> bool {
+        let line = describe_player().unwrap_or_else(|| "no player".into());
+        skyrim::input::print(&line);
+        log!("command: {line}");
+        true
+    }
 }

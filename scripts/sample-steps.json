@@ -1,0 +1,14 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 3000},
+  {"tool": "console", "args": {"command": "SkyrimRsSample", "capture": true}},
+  {"tool": "inspect", "args": {"kind": "player"}},
+  {"tool": "papyrus", "args": {"action": "call", "script": "Form", "function": "GetNumKeywords", "self": {"form": "NordRace"}}},
+  {"tool": "console", "args": {"command": "help VendorItemWeapon 4", "capture": true}},
+  {"tool": "menu", "args": {"action": "open", "name": "TweenMenu"}},
+  {"wait": 3000},
+  {"tool": "menu", "args": {"action": "close", "name": "TweenMenu"}},
+  {"wait": 3000}
+]

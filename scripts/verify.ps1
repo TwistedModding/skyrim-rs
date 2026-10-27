@@ -16,9 +16,10 @@
 # drives it through its console command and reads its report log. The crash suite installs the host with its crash-test
 # plugin and runs one game session per scenario (null, hook, overflow, write, form, deleted, script), each ending in the crash the plugin's
 # console command armed; the host's crash log and minidump of each session go to <OutDir>\<scenario>. Any suite's run
-# that leaves a skyrim-rs-crash-* file in the SKSE folder has it moved into <OutDir>. See docs/subsystems/<suite>.md.
+# that leaves a skyrim-rs-crash-* file in the SKSE folder has it moved into <OutDir>. The sample suite installs the sample
+# plugin of docs/MODS.md and compares its log with DevBench. See docs/subsystems/<suite>.md.
 param(
-    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy", "gui", "camera", "crash")][string]$Suite,
+    [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy", "gui", "camera", "crash", "sample")][string]$Suite,
     [string]$OutDir = "verify-$Suite-out",
     [string]$Mode = "",
     [ValidateSet("refuse", "stack")][string]$Compat = "refuse",
@@ -47,6 +48,7 @@ $Mods = @{
     shadows = @{ crate = "first-person-shadows"; dll = "skyrim_rs_first_person_shadows.dll"; log = "skyrim-rs-first-person-shadows.log" }
     bone = @{ crate = "bone-driver"; dll = "skyrim_rs_bone_driver.dll"; log = "skyrim-rs-bone-driver.log" }
     camera = @{ crate = "camera-demo"; dll = "skyrim_rs_camera_demo.dll"; log = "skyrim-rs-camera-demo.log"; report = $true }
+    sample = @{ crate = "sample-plugin"; dll = "skyrim_rs_sample.dll"; log = "skyrim-rs-sample.log"; report = $true }
     framework = @{ crate = "framework-test"; dll = "skyrim_rs_framework_test.dll"; log = "skyrim-rs-framework-test.log"; dir = "skyrim-rs"; report = $true;
                    crates = @("order-head", "order-tail", "order-cycle-a", "order-cycle-b")
                    dlls = @("skyrim_rs_order_head.dll", "skyrim_rs_order_tail.dll", "skyrim_rs_order_cycle_a.dll", "skyrim_rs_order_cycle_b.dll") }

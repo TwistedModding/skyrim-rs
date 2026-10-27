@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 skse.workspace = true
-hook.workspace = true
+skyrim.workspace = true
 sre.workspace = true
 
 [lints]
