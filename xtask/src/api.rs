@@ -394,15 +394,12 @@ fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &st
     for (p, name) in rest.iter().zip(&names) {
         let ty = p.ty.render(safe, false, owner, ctx);
         decl.push(format!("{name}: {ty}"));
-        match ty.strip_prefix('&') {
-            Some(target) => {
-                types.push(format!("*const {target}"));
-                args.push(format!("core::ptr::from_ref({name})"));
-            }
-            None => {
-                types.push(ty);
-                args.push(name.clone());
-            }
+        if let Some(target) = ty.strip_prefix('&') {
+            types.push(format!("*const {target}"));
+            args.push(format!("core::ptr::from_ref({name})"));
+        } else {
+            types.push(ty);
+            args.push(name.clone());
         }
     }
     let result = match sig.ret.render(safe, true, owner, ctx) {
