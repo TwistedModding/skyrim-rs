@@ -72,7 +72,7 @@ foreach ($s in $Mod.scenarios) {
                         ok = ($accessLine -eq 'reading address 0x0: null' -and $rcx -match '^rcx 0x[0-9a-f]+  TESObjectWEAP form 00012EB7 WEAP, from "Skyrim\.esm"') }
             $decoded = "$OutDir\$s\decoded.log"
             $dmpPath = if ($dump) { $dump.FullName } else { "" }
-            if ($dmpPath) { Push-Location $Root; try { & cargo run -q -p xtask -- crash $dmpPath $decoded 2>&1 | Out-Null } finally { Pop-Location } }
+            if ($dmpPath) { Push-Location $Root; try { & cargo run -q -p xtask --features decode -- crash $dmpPath $decoded 2>&1 | Out-Null } finally { Pop-Location } }
             $dec = if (Test-Path $decoded) { @(Get-Content $decoded) } else { @() }
             $decNote = First $dec '^\(decoded offline'
             $decCode = First $dec '^code 0x'

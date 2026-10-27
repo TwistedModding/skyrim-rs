@@ -9,7 +9,11 @@ csv = "1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 sha2 = "0.10"
-crash.workspace = true
+crash = { workspace = true, optional = true }
+
+[features]
+# The minidump decoder (`cargo xtask crash`); off by default so the generator never depends on the code it generates.
+decode = ["dep:crash"]
 
 [lints]
 workspace = true

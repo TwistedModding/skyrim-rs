@@ -8,7 +8,7 @@ fn main() -> ExitCode {
         Some("crash") if args.len() >= 3 => decode(Path::new(&args[2]), args.get(3).map(Path::new)),
         _ => {
             eprintln!("usage: cargo xtask gen                      (reads SKYRIMRE_DIR or ../{})", xtask::RE_REPO);
-            eprintln!("       cargo xtask crash <file.dmp> [out.log]  (the crash log from a minidump; stdout without out.log)");
+            eprintln!("       cargo crash-decode <file.dmp> [out.log]  (the crash log from a minidump; stdout without out.log; the decode feature)");
             ExitCode::FAILURE
         }
     }
@@ -72,6 +72,13 @@ fn generate() -> ExitCode {
     ExitCode::SUCCESS
 }
 
+#[cfg(not(feature = "decode"))]
+fn decode(_: &Path, _: Option<&Path>) -> ExitCode {
+    eprintln!("the decoder is behind the `decode` feature: cargo run -p xtask --features decode -- crash <file.dmp> [out.log]");
+    ExitCode::FAILURE
+}
+
+#[cfg(feature = "decode")]
 fn decode(dump: &Path, out: Option<&Path>) -> ExitCode {
     let text = match xtask::decode(dump) {
         Ok(text) => text,

@@ -55,6 +55,7 @@ pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>
 /// The crash log of a minidump the crash logger wrote: the record from its user stream (or what
 /// the dump's own streams give) formatted by the logger's own `report`, with DLL symbols from
 /// `DbgHelp` where their PDBs are found.
+#[cfg(feature = "decode")]
 pub fn decode(dump: &Path) -> Result<String, Box<dyn Error>> {
     let dump = crash::dump::Dump::open(dump)?;
     let (rec, note) = match dump.record() {
