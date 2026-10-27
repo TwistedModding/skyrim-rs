@@ -3,6 +3,160 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vftable` at 0x1824320, id 190149 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct NiTMap_TESForm____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6_____vtable {
+    /// `NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vdtor` at 0x2d3560 (layout_inference, medium); signature (low): `NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * vdtor(NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_1` at 0x2d47a0 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, ulonglong param_1)`
+    pub slot_1: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_2` at 0x2d4750 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, longlong param_1, longlong param_2)`
+    pub slot_2: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_3` at 0x2d6410 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
+    pub slot_3: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_4` at 0x2d4420 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_5` at 0x2d48a0 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+    /// `NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_6` at 0x2d44c0 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<TESForm*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_6: *const c_void,
+}
+impl NiTMap_TESForm____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6_____vtable {
+    pub const ID: u64 = 190149;
+}
+
+/// `NiTMap<TESForm*___ptr64,bool>::vftable` at 0x17f8c28, id 187718 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct NiTMap_TESForm____ptr64_bool_vtable {
+    /// `NiTMap<TESForm*___ptr64,bool>::vdtor` at 0x1de390 (layout_inference, medium); signature (low): `NiTMap<TESForm*___ptr64,bool> * vdtor(NiTMap<TESForm*___ptr64,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,bool>_>,TESForm*___ptr64,bool>::vfunc_1` at 0x1de610 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,bool>_>,TESForm*___ptr64,bool> * this, ulonglong param_1)`
+    pub slot_1: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,bool>_>,TESForm*___ptr64,bool>::vfunc_2` at 0x1de600 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,bool>_>,TESForm*___ptr64,bool> * this, longlong param_1, longlong param_2)`
+    pub slot_2: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,bool>_>,TESForm*___ptr64,bool>::vfunc_3` at 0x1de740 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,bool>_>,TESForm*___ptr64,bool> * this, longlong param_1, undefined8 param_2, undefined1 param_3)`
+    pub slot_3: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<TESForm*___ptr64,bool>_>,TESForm*___ptr64,bool>::vfunc_4` at 0x1de570 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiTMap<TESForm*___ptr64,bool>::vfunc_5` at 0x1de620 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<TESForm*___ptr64,bool> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+    /// `NiTMap<TESForm*___ptr64,bool>::vfunc_6` at 0x1de5a0 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<TESForm*___ptr64,bool> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_6: *const c_void,
+}
+impl NiTMap_TESForm____ptr64_bool_vtable {
+    pub const ID: u64 = 187718;
+}
+
+/// `NiTMap<char_const*___ptr64,Setting*___ptr64>::vftable` at 0x17e0450, id 186326 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct NiTMap_char_const____ptr64_Setting____ptr64_vtable {
+    /// `NiTMap<char_const*___ptr64,Setting*___ptr64>::vdtor` at 0x147a00 (layout_inference, medium); signature (low): `NiTMap<char_const*___ptr64,Setting*___ptr64> * vdtor(NiTMap<char_const*___ptr64,Setting*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<char_const*___ptr64,Setting*___ptr64>_>,char_const*___ptr64,Setting*___ptr64>::vfunc_1` at 0x147890 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<char_const*___ptr64,Setting*___ptr64>_>,char_const*___ptr64,Setting*___ptr64> * this, ulonglong param_1)`
+    pub slot_1: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<char_const*___ptr64,Setting*___ptr64>_>,char_const*___ptr64,Setting*___ptr64>::vfunc_2` at 0x1478a0 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<char_const*___ptr64,Setting*___ptr64>_>,char_const*___ptr64,Setting*___ptr64> * this, longlong param_1, longlong param_2)`
+    pub slot_2: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<char_const*___ptr64,Setting*___ptr64>_>,char_const*___ptr64,Setting*___ptr64>::vfunc_3` at 0x1478b0 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<char_const*___ptr64,Setting*___ptr64>_>,char_const*___ptr64,Setting*___ptr64> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<char_const*___ptr64,Setting*___ptr64>_>,char_const*___ptr64,Setting*___ptr64>::vfunc_4` at 0x1478c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiTMap<char_const*___ptr64,Setting*___ptr64>::vfunc_5` at 0x1479a0 (rtti, medium); signature (low): `undefined vfunc_5(NiTMap<char_const*___ptr64,Setting*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+    /// `NiTMap<char_const*___ptr64,Setting*___ptr64>::vfunc_6` at 0x1479e0 (rtti, medium); signature (low): `undefined vfunc_6(NiTMap<char_const*___ptr64,Setting*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_6: *const c_void,
+}
+impl NiTMap_char_const____ptr64_Setting____ptr64_vtable {
+    pub const ID: u64 = 186326;
+}
+
+/// `NiTMap<unsigned_char,bool>::vftable` at 0x1853918, id 195062 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct NiTMap_unsigned_char_bool_vtable {
+    /// `NiTMap<unsigned_char,bool>::vdtor` at 0x38c3f0 (layout_inference, medium); signature (low): `NiTMap<unsigned_char,bool> * vdtor(NiTMap<unsigned_char,bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_char,bool>_>,unsigned_char,bool>::vfunc_1` at 0x38c6e0 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<unsigned_char,bool>_>,unsigned_char,bool> * this, ulonglong param_1)`
+    pub slot_1: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_char,bool>_>,unsigned_char,bool>::vfunc_2` at 0x38c6c0 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<unsigned_char,bool>_>,unsigned_char,bool> * this, char param_1, char param_2)`
+    pub slot_2: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_char,bool>_>,unsigned_char,bool>::vfunc_3` at 0x38c8e0 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<unsigned_char,bool>_>,unsigned_char,bool> * this, longlong param_1, undefined1 param_2, undefined1 param_3)`
+    pub slot_3: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_char,bool>_>,unsigned_char,bool>::vfunc_4` at 0x38c660 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiTMap<unsigned_char,bool>::vfunc_5` at 0x38c700 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<unsigned_char,bool> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+    /// `NiTMap<unsigned_char,bool>::vfunc_6` at 0x38c680 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<unsigned_char,bool> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_6: *const c_void,
+}
+impl NiTMap_unsigned_char_bool_vtable {
+    pub const ID: u64 = 195062;
+}
+
+/// `NiTMap<unsigned_int,unsigned_char>::vftable` at 0x1929680, id 208038 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct NiTMap_unsigned_int_unsigned_char_vtable {
+    /// `NiTMap<unsigned_int,unsigned_char>::vdtor` at 0x7693c0 (layout_inference, medium); signature (low): `NiTMap<unsigned_int,unsigned_char> * vdtor(NiTMap<unsigned_int,unsigned_char> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char>::vfunc_1` at 0x76b0f0 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char> * this, ulonglong param_1)`
+    pub slot_1: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char>::vfunc_2` at 0x76b0d0 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char> * this, int param_1, int param_2)`
+    pub slot_2: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char>::vfunc_3` at 0x7730e0 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char> * this, longlong param_1, undefined4 param_2, undefined1 param_3)`
+    pub slot_3: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char>::vfunc_4` at 0x76a6d0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiTMap<unsigned_int,unsigned_char>::vfunc_5` at 0x76b100 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<unsigned_int,unsigned_char> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+    /// `NiTMap<unsigned_int,unsigned_char>::vfunc_6` at 0x76abd0 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<unsigned_int,unsigned_char> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_6: *const c_void,
+}
+impl NiTMap_unsigned_int_unsigned_char_vtable {
+    pub const ID: u64 = 208038;
+}
+
+/// `NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64>::vftable` at 0x1a4ade8, id 237312 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct NiTMap_unsigned_long_BSNiUpdateTracker____ptr64_vtable {
+    /// `NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64>::vdtor` at 0xf02990 (layout_inference, medium); signature (low): `NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64> * vdtor(NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_long,BSNiUpdateTracker*___ptr64>_>,unsigned_long,BSNiUpdateTracker*___ptr64>::vfunc_1` at 0xf02aa0 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<unsigned_long,BSNiUpdateTracker*___ptr64>_>,unsigned_long,BSNiUpdateTracker*___ptr64> * this, ulonglong param_1)`
+    pub slot_1: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_long,BSNiUpdateTracker*___ptr64>_>,unsigned_long,BSNiUpdateTracker*___ptr64>::vfunc_2` at 0xf02a90 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<unsigned_long,BSNiUpdateTracker*___ptr64>_>,unsigned_long,BSNiUpdateTracker*___ptr64> * this, int param_1, int param_2)`
+    pub slot_2: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_long,BSNiUpdateTracker*___ptr64>_>,unsigned_long,BSNiUpdateTracker*___ptr64>::vfunc_3` at 0xf02ba0 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<unsigned_long,BSNiUpdateTracker*___ptr64>_>,unsigned_long,BSNiUpdateTracker*___ptr64> * this, longlong param_1, undefined4 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<unsigned_long,BSNiUpdateTracker*___ptr64>_>,unsigned_long,BSNiUpdateTracker*___ptr64>::vfunc_4` at 0xf02a60 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64>::vfunc_5` at 0xf02ab0 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_5: *const c_void,
+    /// `NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64>::vfunc_6` at 0xf02a70 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_6: *const c_void,
+}
+impl NiTMap_unsigned_long_BSNiUpdateTracker____ptr64_vtable {
+    pub const ID: u64 = 237312;
+}
+
+/// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vftable` at 0x1824460, id 190159 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct NiTMapBase_DFALL_NiTMapItem_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPoi_ce74048cdb78_vtable {
+    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vdtor` at 0x2d36b0 (layout_inference, medium); signature (low): `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * vdtor(NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_1` at 0x2d4790 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, ulonglong param_1)`
+    pub slot_1: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_2` at 0x2d4740 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, longlong param_1, longlong param_2)`
+    pub slot_2: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_3` at 0x2d6400 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
+    pub slot_3: *const c_void,
+    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_4` at 0x2d4410 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_5: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_6: *const c_void,
+}
+impl NiTMapBase_DFALL_NiTMapItem_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPoi_ce74048cdb78_vtable {
+    pub const ID: u64 = 190159;
+}
+
 /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vftable` at 0x1829370, id 190308 (rtti, high); 7 slots.
 #[repr(C)]
 pub struct NiTMapBase_DFALL_NiTMapItem_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointe_d937cf8bd36a_vtable {
@@ -11949,111 +12103,5 @@ pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon
 }
 impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_152de8046f82_vtable {
     pub const ID: u64 = 216829;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d748, id 216819 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b2cc26fa2a2_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d51a0 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d40e0 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b2cc26fa2a2_vtable {
-    pub const ID: u64 = 216819;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d730, id 216817 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_873ba2cb5b4a_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d5160 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d3f20 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_873ba2cb5b4a_vtable {
-    pub const ID: u64 = 216817;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d880, id 216845 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_55a65e1f3b96_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d51e0 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d4270 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_55a65e1f3b96_vtable {
-    pub const ID: u64 = 216845;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d8b0, id 216849 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_9d96db5beed0_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d5360 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d4b60 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_9d96db5beed0_vtable {
-    pub const ID: u64 = 216849;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d868, id 216843 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__UIntStoryEventAr_f8f7b5f73441_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d53a0 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d4cc0 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__UIntStoryEventAr_f8f7b5f73441_vtable {
-    pub const ID: u64 = 216843;
-}
-
-/// `SkyrimScript::_anon_967A6C5B::FindAttachedObjectFunctor::vftable` at 0x198b878, id 216741 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_967A6C5B__FindAttachedObjectFunctor_vtable {
-    /// `SkyrimScript::_anon_967A6C5B::FindAttachedObjectFunctor::vfunc_0` at 0x9c0bb0 (rtti, high); signature (low): `FindAttachedObjectFunctor * vfunc_0(FindAttachedObjectFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_967A6C5B::FindAttachedObjectFunctor::vfunc_1` at 0x9c0a40 (rtti, high); signature (low): `bool vfunc_1(FindAttachedObjectFunctor * this, FindAttachedObjectFunctor_vtbl * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_967A6C5B__FindAttachedObjectFunctor_vtable {
-    pub const ID: u64 = 216741;
-}
-
-/// `SkyrimScript::_anon_967A6C5B::FindExactObjectFunctor::vftable` at 0x198b890, id 216743 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_967A6C5B__FindExactObjectFunctor_vtable {
-    /// `SkyrimScript::_anon_967A6C5B::FindExactObjectFunctor::vfunc_0` at 0x9c0c00 (rtti, high); signature (low): `FindExactObjectFunctor * vfunc_0(FindExactObjectFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_967A6C5B::FindExactObjectFunctor::vfunc_1` at 0x9c0b50 (rtti, high); signature (low): `bool vfunc_1(FindExactObjectFunctor * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_967A6C5B__FindExactObjectFunctor_vtable {
-    pub const ID: u64 = 216743;
-}
-
-/// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vftable` at 0x19a7f48, id 218372 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_A72C052E__AddItemFunctor_vtable {
-    /// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vdtor` at 0xa4fa30 (slot_propagation, medium); signature (low): `AddItemFunctor * vdtor(AddItemFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vfunc_1` at 0xa415c0 (rtti, high); signature (low): `ulonglong * vfunc_1(AddItemFunctor * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vfunc_2` at 0xa4fa10 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::DelayFunctor::vfunc_3` at 0x9b2670 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vfunc_4` at 0xa41720 (rtti, high); signature (low): `undefined8 vfunc_4(AddItemFunctor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vfunc_5` at 0xa4fa20 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::_anon_A72C052E::AddItemFunctor::vfunc_6` at 0xa417f0 (rtti, high); signature (low): `undefined8 vfunc_6(AddItemFunctor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl SkyrimScript___anon_A72C052E__AddItemFunctor_vtable {
-    pub const ID: u64 = 218372;
 }
 

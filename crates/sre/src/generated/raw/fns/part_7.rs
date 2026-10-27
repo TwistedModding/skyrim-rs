@@ -3,6 +3,8 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vfunc_4` at 0x8d7a90 (rtti, high); signature (low): `undefined vfunc_4(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * this, longlong param_1)`
+pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_feee67809d6b: u64 = 49908;
 /// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vfunc_9` at 0x8d73d0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
 pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_f1b5a53a4181: u64 = 49896;
 /// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vdtor` at 0x8a68b0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -5785,9 +5787,3 @@ pub const ComputeCellGridHashKey: u64 = 18885;
 pub const ComputeCellGridOrigin: u64 = 18785;
 /// `ComputeCellGridPriority` at 0x1a3b50 (decompiler, medium); signature (untiered): `undefined4 ComputeCellGridPriority(longlong param_1, longlong param_2, float * param_3)`
 pub const ComputeCellGridPriority: u64 = 13321;
-/// `ComputeCellPlacementPositionAndRotation` at 0x2c35c0 (decompiler, medium); signature (medium): `undefined ComputeCellPlacementPositionAndRotation(TESObjectCELL * param_1, TESObjectCELL * param_2, undefined4 * param_3, undefined8 param_4)`
-pub const ComputeCellPlacementPositionAndRotation: u64 = 19075;
-/// `ComputeCentroidIfUnset` at 0x10f89e0 (decompiler, medium); signature (untiered): `undefined ComputeCentroidIfUnset(longlong param_1)`
-pub const ComputeCentroidIfUnset: u64 = 80947;
-/// `ComputeChildrenBoundsUnion` at 0xd60840 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnion(longlong param_1, float * param_2, float * param_3)`
-pub const ComputeChildrenBoundsUnion: u64 = 84171;

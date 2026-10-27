@@ -238,6 +238,16 @@ impl crate::BGSSaveLoadManager {
     /// `stream` must point to what the engine expects.
     #[inline]
     pub unsafe fn load_game(&self, stream: *mut *mut c_void, entryValue: u32, ignoreMissing: bool, skipPluginMatch: bool, requestKind: crate::SaveLoadRequestKind) -> bool { unsafe { function!(442580, (*const Self, *mut *mut c_void, u32, bool, bool, crate::SaveLoadRequestKind) -> bool)(core::ptr::from_ref(self), stream, entryValue, ignoreMissing, skipPluginMatch, requestKind) } }
+    /// `BGSSaveLoadManager::MakeSaveName`: builds the file name with format '%s%u_%s_%u_%s_%s_%s_%s_%u_%u': prefix 'Save'/'Autosave'/'Quicksave' and a number first; the other arguments come from the player id formatted with ID_206654, the character name re-encoded byte by byte with format ID_206653, the location name, play time '%02u%02u%02u', the date '%u%02u%02u%02u%02u%02u' and the level (their order in the varargs was not decoded); file-name-invalid characters become spaces (a double quote becomes an apostrophe), as do bytes >= 0x80
+    ///
+    /// Semantic, save pass, high; ledger semantic evidence, name high; id 35749, rva 0x623da0.
+    /// `void (BGSSaveLoadManager*, char* out /*0x104*/, SaveKind kind)`
+    /// Retyped: kind i32 -> SaveKind: MakeSaveName: kind 3 'Autosave', 4 'Quicksave' prefixes (enum source).
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn make_save_name(&self, out: *mut c_char, kind: crate::SaveKind) { unsafe { function!(35749, (*const Self, *mut c_char, crate::SaveKind))(core::ptr::from_ref(self), out, kind) } }
     /// `BGSSaveLoadManager::OpenSaveFile`: path via BSSaveDataSystemUtility slot 2 (temp adds '.tmp'), stream via slot 11, stores the name at stream+0xab0, opens it
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35724, rva 0x622390.
@@ -281,6 +291,17 @@ impl crate::BGSSaveLoadManager {
     /// `name` must point to what the engine expects.
     #[inline]
     pub unsafe fn request_load(&self, name: *const c_char, entryValue: u32, value: u32, ignoreMissing: bool) -> bool { unsafe { function!(35728, (*const Self, *const c_char, u32, u32, bool) -> bool)(core::ptr::from_ref(self), name, entryValue, value, ignoreMissing) } }
+    /// `BGSSaveLoadManager::Save`: all saves: checks, name, stream, header, body, then write now (kind 2) or queue the write to the worker thread (3,4,5)
+    ///
+    /// Semantic, save pass, high; ledger runtime evidence, name high; id 35727, rva 0x6227f0.
+    /// `bool (BGSSaveLoadManager* this, SaveKind kind /*2 manual,3 auto,4 quick,5 forced*/, u32 value, const char* name /*null = generated*/)`
+    /// Retyped: kind i32 -> SaveKind: Save branches on kind 3, 4, 5 (enum source); meaning lists 2 manual, 3 auto, 4 quick, 5 forced.
+    /// May be null: `name`.
+    ///
+    /// # Safety
+    /// `name` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn save(&self, kind: crate::SaveKind, value: u32, name: *const c_char) -> bool { unsafe { function!(35727, (*const Self, crate::SaveKind, u32, *const c_char) -> bool)(core::ptr::from_ref(self), kind, value, name) } }
     /// `BGSSaveLoadManager::SetCurrentSaveName`: +0x138 = name, +0x250 = index
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35765, rva 0x624d70.
@@ -379,6 +400,15 @@ pub unsafe fn decode_three_byte_form_id(bytes: *const u8) -> u32 { unsafe { func
 /// `a0` must point to what the engine expects.
 #[inline]
 pub unsafe fn delete_save_entry(a0: *mut c_void) { unsafe { function!(35535, (*mut c_void))(a0) } }
+/// `EncodeFormIDTo3Bytes`: ids of plugin 0 store id|0x400000, 0xFF ids store id|0x800000 (22 bits kept), everything else and 0 stores the form-id index; big-endian 3 bytes
+///
+/// Semantic, save pass, high; ledger semantic evidence, name high; id 35928, rva 0x632d10.
+/// `void (u8 out[3], u32 formID)`
+///
+/// # Safety
+/// `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn encode_form_id_to3_bytes(out: *mut u8, formID: u32) { unsafe { function!(35928, (*mut u8, u32))(out, formID) } }
 /// `FormIDIndexMap::GetFormID`: index -> form id through the reverse map, 0 when absent
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35555, rva 0x614dc0.

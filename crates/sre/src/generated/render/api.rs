@@ -232,6 +232,15 @@ impl crate::BSLightingShaderProperty {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn update_flags_from_geometry(&self, g: *mut crate::BSGeometry) -> bool { unsafe { virtual_function!(self, 39, (*const Self, *mut crate::BSGeometry) -> bool)(core::ptr::from_ref(self), g) } }
+    /// `BSLightingShaderProperty::VisitTextures`, vtable slot 51: calls v slot 1 on every texture the material returns from its slot 11
+    ///
+    /// Semantic, render pass, low; called through the object's vtable.
+    /// `s32 (BSLightingShaderProperty* this, Visitor* v)`
+    ///
+    /// # Safety
+    /// The pass rates the signature low.
+    #[inline]
+    pub unsafe fn visit_textures(&self, v: *mut c_void) -> i32 { unsafe { virtual_function!(self, 51, (*const Self, *mut c_void) -> i32)(core::ptr::from_ref(self), v) } }
     /// `BSLightingShaderProperty::emitColor` at +0xF0: pointer to 3 floats of emissive colour ((0,0,0) by default); owned when flag bit 22 is set, otherwise shared with the clone source
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.

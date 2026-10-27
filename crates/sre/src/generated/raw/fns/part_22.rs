@@ -3,6 +3,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpPulleyConstraintData::ctor` at 0xb7a110 (layout_inference, medium); signature (high): `hkpPulleyConstraintData * ctor(hkpPulleyConstraintData * this)`
+pub const hkpPulleyConstraintData__ctor: u64 = 62061;
+/// `hkpPulleyConstraintData::vdtor` at 0xb52530 (layout_inference, medium); signature (low): `hkpPulleyConstraintData * vdtor(hkpPulleyConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpPulleyConstraintData__vdtor: u64 = 61224;
+/// `hkpPulleyConstraintData::vfunc_10` at 0xb7a170 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpPulleyConstraintData * this, undefined1 * param_1)`
+pub const hkpPulleyConstraintData__vfunc_10: u64 = 62062;
+/// `hkpPulleyConstraintData::vfunc_11` at 0xb7a1a0 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpPulleyConstraintData__vfunc_11: u64 = 62063;
+/// `hkpPulleyConstraintData::vfunc_12` at 0xb7a1d0 (rtti, high); signature (low): `undefined vfunc_12(hkpPulleyConstraintData * this, char param_1, undefined8 * param_2)`
+pub const hkpPulleyConstraintData__vfunc_12: u64 = 62065;
+/// `hkpPulleyConstraintData::vfunc_18` at 0xb7a1b0 (rtti, high); signature (low): `undefined vfunc_18(hkpPulleyConstraintData * this, int * param_1)`
+pub const hkpPulleyConstraintData__vfunc_18: u64 = 62064;
+/// `hkpRackAndPinionConstraintData::vdtor` at 0xb525c0 (layout_inference, medium); signature (low): `hkpRackAndPinionConstraintData * vdtor(hkpRackAndPinionConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpRackAndPinionConstraintData__vdtor: u64 = 61225;
 /// `hkpRackAndPinionConstraintData::vfunc_10` at 0xb74fe0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpRackAndPinionConstraintData * this, undefined1 * param_1)`
 pub const hkpRackAndPinionConstraintData__vfunc_10: u64 = 61939;
 /// `hkpRackAndPinionConstraintData::vfunc_11` at 0xb75070 (rtti, high); signature (low): `undefined8 vfunc_11(void)`

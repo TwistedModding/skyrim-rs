@@ -7309,6 +7309,13 @@ pub unsafe fn compute_random_sandbox_duration(param_1: f32, param_2: i32) -> u64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_random_wander_time(param_1: i32) -> u64 { unsafe { function!(26381, (i32) -> u64)(param_1) } }
+/// `ComputeRayFromWindowPoint` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 75860, rva 0xfcd3b0).
+/// `undefined8 ComputeRayFromWindowPoint(HWND param_1, longlong param_2, int param_3, int param_4, float * param_5, float * param_6)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_ray_from_window_point(param_1: *mut c_void, param_2: i64, param_3: i32, param_4: i32, param_5: *mut f32, param_6: *mut f32) -> u64 { unsafe { function!(75860, (*mut c_void, i64, i32, i32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
 /// `ComputeRelativeNormalVelocity` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 61300, rva 0xb53110).
 /// `float ComputeRelativeNormalVelocity(longlong param_1, longlong param_2, float * param_3, float * param_4, float * param_5)`
 ///
@@ -13763,17 +13770,3 @@ pub unsafe fn detach_result_set_field90(param_1: i64, param_2: *mut u64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn detach_result_set_field90_10(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447576, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_11` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447968, rva 0x135cdf0).
-/// `undefined8 * DetachResultSetField90_11(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_11(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447968, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447631, rva 0x135dc40).
-/// `undefined8 * DetachResultSetField90_12(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_12(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447631, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }

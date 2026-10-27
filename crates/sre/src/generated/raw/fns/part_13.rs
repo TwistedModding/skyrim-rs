@@ -3,6 +3,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fFadeOutThreshold_LOD__atexit` at 0x173f050 (crt_init, medium); signature (high): `void INISetting_fFadeOutThreshold_LOD__atexit(void)`
+pub const INISetting_fFadeOutThreshold_LOD__atexit: u64 = 165466;
+/// `INISetting_fFadeOutThreshold_LOD__init` at 0xbdf0 (crt_init, medium); signature (high): `void INISetting_fFadeOutThreshold_LOD__init(void)`
+pub const INISetting_fFadeOutThreshold_LOD__init: u64 = 271;
+/// `INISetting_fFadeOutTime_LOD__atexit` at 0x173f0a0 (crt_init, medium); signature (high): `void INISetting_fFadeOutTime_LOD__atexit(void)`
+pub const INISetting_fFadeOutTime_LOD__atexit: u64 = 165467;
+/// `INISetting_fFadeOutTime_LOD__init` at 0xbe70 (crt_init, medium); signature (high): `void INISetting_fFadeOutTime_LOD__init(void)`
+pub const INISetting_fFadeOutTime_LOD__init: u64 = 272;
 /// `INISetting_fFadeToBlackFadeSeconds_Interface__atexit` at 0x173f0f0 (crt_init, medium); signature (high): `void INISetting_fFadeToBlackFadeSeconds_Interface__atexit(void)`
 pub const INISetting_fFadeToBlackFadeSeconds_Interface__atexit: u64 = 165468;
 /// `INISetting_fFadeToBlackFadeSeconds_Interface__init` at 0xbef0 (crt_init, medium); signature (high): `void INISetting_fFadeToBlackFadeSeconds_Interface__init(void)`
@@ -8405,9 +8413,3 @@ pub const IsAddressInNonWritableImageSection: u64 = 109602;
 pub const IsAllowedWhileOnFlyingMount: u64 = 40996;
 /// `IsAncestorOrNull` at 0x8730a0 (decompiler, medium); signature (medium): `undefined8 IsAncestorOrNull(longlong param_1, longlong param_2)`
 pub const IsAncestorOrNull: u64 = 47490;
-/// `IsAnotherThreadInUpdatePhase` at 0x6e49e0 (semantic, medium); signature (untiered): `ulonglong IsAnotherThreadInUpdatePhase(void)`; true when a global state holds (ID_403107+0x6c == 1) and a thread other than the caller has its bit in the mask 0x3244170; callers then queue the work instead of doing it (medium); semantic signature: `bool ()`
-pub const IsAnotherThreadInUpdatePhase: u64 = 39033;
-/// `IsAnyMagicCasterCasting` at 0x6d6780 (decompiler, medium); signature (medium): `undefined8 IsAnyMagicCasterCasting(longlong param_1, longlong param_2)`
-pub const IsAnyMagicCasterCasting: u64 = 38759;
-/// `IsArgFinite` at 0xd18d10 (decompiler, high); signature (untiered): `undefined IsArgFinite(longlong param_1)`
-pub const IsArgFinite: u64 = 83133;

@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::ObjectReference::PushActorAway` at 0xa47fa0 (papyrus_native, high); signature (medium): `void PushActorAway(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0, float a1)`
+pub const Papyrus__ObjectReference__PushActorAway: u64 = 56213;
+/// `Papyrus::ObjectReference::RegisterFuncs` at 0xa4a610 (xref_inference, medium); signature (low): `undefined RegisterFuncs(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__ObjectReference__RegisterFuncs: u64 = 56246;
+/// `Papyrus::ObjectReference::RemoveAllInventoryEventFilters` at 0xa48080 (papyrus_native, high); signature (medium): `void RemoveAllInventoryEventFilters(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__RemoveAllInventoryEventFilters: u64 = 56214;
+/// `Papyrus::ObjectReference::RemoveAllItems` at 0xa480d0 (papyrus_native, high); signature (medium): `void RemoveAllItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, bool a1, bool a2)`
+pub const Papyrus__ObjectReference__RemoveAllItems: u64 = 56215;
+/// `Papyrus::ObjectReference::RemoveAllStolenItems` at 0xa48140 (papyrus_native, high); signature (medium): `void RemoveAllStolenItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
+pub const Papyrus__ObjectReference__RemoveAllStolenItems: u64 = 442744;
+/// `Papyrus::ObjectReference::RemoveDependentAnimatedObjectReference` at 0xa481a0 (papyrus_native, high); signature (medium): `bool RemoveDependentAnimatedObjectReference(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
+pub const Papyrus__ObjectReference__RemoveDependentAnimatedObjectReference: u64 = 56216;
 /// `Papyrus::ObjectReference::RemoveDependentAnimatedObjectReference_sub0` at 0x16e710 (callgraph, medium); signature (untiered): `undefined RemoveDependentAnimatedObjectReference_sub0(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const Papyrus__ObjectReference__RemoveDependentAnimatedObjectReference_sub0: u64 = 11924;
 /// `Papyrus::ObjectReference::RemoveInventoryEventFilter` at 0xa482d0 (papyrus_native, high); signature (medium): `void RemoveInventoryEventFilter(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0)`
@@ -8573,17 +8585,3 @@ pub const ReleaseThreeArrayBuffers_2: u64 = 104451;
 pub const ReleaseThreeArrayBuffers_3: u64 = 109231;
 /// `ReleaseThreeArrayBuffers_4` at 0xfc4040 (decompiler, medium); signature (untiered): `undefined ReleaseThreeArrayBuffers_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReleaseThreeArrayBuffers_4: u64 = 75658;
-/// `ReleaseThreeArrayBuffers_5` at 0xbd7fd0 (decompiler, medium); signature (untiered): `undefined ReleaseThreeArrayBuffers_5(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseThreeArrayBuffers_5: u64 = 63694;
-/// `ReleaseThreeArrayBuffers_6` at 0xbd8090 (decompiler, medium); signature (untiered): `undefined ReleaseThreeArrayBuffers_6(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseThreeArrayBuffers_6: u64 = 63695;
-/// `ReleaseThreeComPointers` at 0x10149a0 (decompiler, medium); signature (medium): `undefined ReleaseThreeComPointers(longlong * param_1)`
-pub const ReleaseThreeComPointers: u64 = 524256;
-/// `ReleaseThreeCountedBlocks` at 0xd3f8c0 (decompiler, medium); signature (untiered): `undefined ReleaseThreeCountedBlocks(undefined8 * param_1)`
-pub const ReleaseThreeCountedBlocks: u64 = 83692;
-/// `ReleaseThreeFixedStringArrays` at 0x62c3c0 (decompiler, medium); signature (untiered): `undefined ReleaseThreeFixedStringArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseThreeFixedStringArrays: u64 = 442591;
-/// `ReleaseThreeFixedStrings` at 0xc3f4d0 (decompiler, high); signature (untiered): `undefined ReleaseThreeFixedStrings(void)`
-pub const ReleaseThreeFixedStrings: u64 = 65158;
-/// `ReleaseThreeHeapArrays` at 0xcdeaa0 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseThreeHeapArrays: u64 = 68126;

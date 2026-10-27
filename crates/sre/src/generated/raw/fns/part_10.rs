@@ -3,6 +3,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FreeArrayBufferAndClearSize_28` at 0x1aeda0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_28(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_28: u64 = 523481;
+/// `FreeArrayBufferAndClearSize_29` at 0x1aee00 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_29(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_29: u64 = 523482;
+/// `FreeArrayBufferAndClearSize_3` at 0x39e6f0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_3: u64 = 23989;
+/// `FreeArrayBufferAndClearSize_30` at 0x1aee60 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_30(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_30: u64 = 523483;
 /// `FreeArrayBufferAndClearSize_31` at 0x1aeec0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_31(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FreeArrayBufferAndClearSize_31: u64 = 523484;
 /// `FreeArrayBufferAndClearSize_32` at 0x1aef20 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_32(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8577,13 +8585,3 @@ pub const GameSetting_fMagicPostDrawCastDelay__atexit: u64 = 168952;
 pub const GameSetting_fMagicPostDrawCastDelay__init: u64 = 3742;
 /// `GameSetting_fMagicProjectileMaxDistance__atexit` at 0x1778670 (crt_init, medium); signature (high): `void GameSetting_fMagicProjectileMaxDistance__atexit(void)`
 pub const GameSetting_fMagicProjectileMaxDistance__atexit: u64 = 168953;
-/// `GameSetting_fMagicProjectileMaxDistance__init` at 0x66e00 (crt_init, medium); signature (high): `void GameSetting_fMagicProjectileMaxDistance__init(void)`
-pub const GameSetting_fMagicProjectileMaxDistance__init: u64 = 3743;
-/// `GameSetting_fMagicRangeTargetCostMult__atexit` at 0x17786c0 (crt_init, medium); signature (high): `void GameSetting_fMagicRangeTargetCostMult__atexit(void)`
-pub const GameSetting_fMagicRangeTargetCostMult__atexit: u64 = 168954;
-/// `GameSetting_fMagicRangeTargetCostMult__init` at 0x66e80 (crt_init, medium); signature (high): `void GameSetting_fMagicRangeTargetCostMult__init(void)`
-pub const GameSetting_fMagicRangeTargetCostMult__init: u64 = 3744;
-/// `GameSetting_fMagicResistActorSkillBase__atexit` at 0x1778710 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillBase__atexit(void)`
-pub const GameSetting_fMagicResistActorSkillBase__atexit: u64 = 168955;
-/// `GameSetting_fMagicResistActorSkillBase__init` at 0x66f00 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillBase__init(void)`
-pub const GameSetting_fMagicResistActorSkillBase__init: u64 = 3745;

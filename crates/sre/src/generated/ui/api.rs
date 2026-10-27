@@ -195,6 +195,63 @@ impl crate::BSScaleformManager {
     pub fn translator(&self) -> Option<&crate::BSScaleformTranslator> { unsafe { { self.translator }.as_ref() } }
 }
 
+impl crate::BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Pop`, vtable slot 3: spins on the lock, calls slot 6
+    ///
+    /// Semantic, ui pass, high; called through the object's vtable.
+    /// `bool (this, UIMessage** out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn pop(&self, out: *mut *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 3, (*const Self, *mut *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), out) } }
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PopImpl`, vtable slot 6: ring remove, false when empty
+    ///
+    /// Semantic, ui pass, high; called through the object's vtable.
+    /// `bool (this, UIMessage** out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn pop_impl(&self, out: *mut *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), out) } }
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Push`, vtable slot 1: spins on the lock, calls slot 5
+    ///
+    /// Semantic, ui pass, high; called through the object's vtable.
+    /// `bool (this, UIMessage** msg)`
+    ///
+    /// # Safety
+    /// `msg` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn push(&self, msg: *mut *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *mut *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), msg) } }
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PushImpl`, vtable slot 5: ring insert, false when 100 are queued
+    ///
+    /// Semantic, ui pass, high; called through the object's vtable.
+    /// `bool (this, UIMessage** msg)`
+    ///
+    /// # Safety
+    /// `msg` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn push_impl(&self, msg: *mut *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 5, (*const Self, *mut *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), msg) } }
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPop`, vtable slot 4: one lock attempt, then slot 6
+    ///
+    /// Semantic, ui pass, high; called through the object's vtable.
+    /// `bool (this, UIMessage** out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn try_pop(&self, out: *mut *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 4, (*const Self, *mut *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), out) } }
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPush`, vtable slot 2: one lock attempt, then slot 5
+    ///
+    /// Semantic, ui pass, high; called through the object's vtable.
+    /// `bool (this, UIMessage** msg)`
+    ///
+    /// # Safety
+    /// `msg` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn try_push(&self, msg: *mut *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 2, (*const Self, *mut *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), msg) } }
+}
+
 impl crate::Console {
     /// `Console::Dtor`, vtable slot 0: deleting destructor
     ///
@@ -1139,6 +1196,15 @@ impl crate::TaskQueueHolder {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn drain(&self) { unsafe { function!(36891, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `TaskQueue::QueueTask`: the game's deferred-task push: when queuing is enabled (byte 0x20b64a0) pushes into the current queue under the recursive lock 0x3242688; otherwise, or when the push fails, runs ExecuteQueuedTask on the calling thread
+    ///
+    /// Semantic, ui pass, high; ledger semantic evidence, name high; id 36993, rva 0x66bfc0.
+    /// `void (TaskQueueHolder* this, const BSPackedTask* task /* u32 id at +0, args from +8 */)`
+    ///
+    /// # Safety
+    /// `task` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn queue_task(&self, task: *const c_void) { unsafe { function!(36993, (*const Self, *const c_void))(core::ptr::from_ref(self), task) } }
 }
 
 impl crate::TweenMenu {
@@ -1500,6 +1566,24 @@ pub unsafe fn g_fx_value_to_as_value(movie: *mut crate::GFxMovieView, v: *const 
 /// `void ()`
 #[inline]
 pub fn job_ui() { unsafe { function!(39042, ())() } }
+/// `MenuTable::Find`: table lookup: returns 1 and copies {menu, create} when the name is registered; this is the engine's GetMenu / IsMenuRegistered (no dedicated wrappers exist)
+///
+/// Semantic, ui pass, high; ledger semantic evidence, name high; id 82135, rva 0x116cda0.
+/// `bool (MenuTable* table /* ui+0x128 */, const BSFixedString* menuName, MenuTableEntryValue* out /* {IMenu* menu (AddRef'd), create} */)`
+///
+/// # Safety
+/// `table`, `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn menu_table__find(table: *mut c_void, menuName: *const crate::BSFixedString, out: *mut c_void) -> bool { unsafe { function!(82135, (*mut c_void, *const crate::BSFixedString, *mut c_void) -> bool)(table, menuName, out) } }
+/// `MenuTable::InsertOrAssign`: inserts or replaces {menu, create} for the name, growing and rehashing when full
+///
+/// Semantic, ui pass, high; ledger runtime evidence, name high; id 82100, rva 0x116bfb0.
+/// `bool (BSTHashMapBase* map /* ui+0x130 */, const BSFixedString* menuName, const MenuTableEntryValue* value)`
+///
+/// # Safety
+/// `map`, `value` must point to what the engine expects.
+#[inline]
+pub unsafe fn menu_table__insert_or_assign(map: *mut c_void, menuName: *const crate::BSFixedString, value: *const c_void) -> bool { unsafe { function!(82100, (*mut c_void, *const crate::BSFixedString, *const c_void) -> bool)(map, menuName, value) } }
 /// `Papyrus::Debug::MessageBox`: ShowMessageBox(text, null, 0, 4, 10, "OK", null)
 ///
 /// Semantic, ui pass, high; ledger papyrus_native evidence, name high; id 55376, rva 0xa1f520.

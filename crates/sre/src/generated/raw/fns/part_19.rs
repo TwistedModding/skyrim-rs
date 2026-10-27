@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESObjectANIO::SetFormEditorID` at 0x27b9f0 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(TESObjectANIO * this, char * param_1, undefined8 param_2, ulonglong param_3)`
+pub const TESObjectANIO__SetFormEditorID: u64 = 17739;
+/// `TESObjectANIO::TESModelTextureSwap_vdtor` at 0x27bad4 (slot_propagation, medium); signature (high): `undefined TESModelTextureSwap_vdtor(TESObjectANIO * this)`
+pub const TESObjectANIO__TESModelTextureSwap_vdtor: u64 = 17741;
+/// `TESObjectANIO::ctor` at 0x27b620 (layout_inference, high); signature (low): `TESObjectANIO * ctor(TESObjectANIO * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const TESObjectANIO__ctor: u64 = 17735;
+/// `TESObjectANIO::dtor` at 0x27b6e0 (layout_inference, high); signature (low): `undefined dtor(TESObjectANIO * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectANIO__dtor: u64 = 17736;
+/// `TESObjectANIO::vdtor` at 0x27bae0 (layout_inference, medium); signature (low): `TESObjectANIO * vdtor(TESObjectANIO * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectANIO__vdtor: u64 = 17742;
+/// `TESObjectANIO::vfunc_19` at 0x27b9b0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectANIO * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
+pub const TESObjectANIO__vfunc_19: u64 = 17738;
 /// `TESObjectANIO::vfunc_6` at 0x27b750 (rtti, high); signature (low): `undefined8 vfunc_6(TESObjectANIO * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
 pub const TESObjectANIO__vfunc_6: u64 = 17737;
 /// `TESObjectARMA::BGSBipedObjectForm_vdtor` at 0x27d3f8 (slot_propagation, medium); signature (high): `undefined BGSBipedObjectForm_vdtor(TESObjectARMA * this)`
@@ -1907,6 +1919,8 @@ pub const TargetValueModifierEffect__vfunc_20: u64 = 35028;
 pub const TaskQueue__Drain: u64 = 36891;
 /// `TaskQueue::QueueTask` at 0x66bfc0 (semantic, high); signature (untiered): `DWORD QueueTask(longlong param_1, undefined8 param_2)`; the game's deferred-task push: when queuing is enabled (byte 0x20b64a0) pushes into the current queue under the recursive lock 0x3242688; otherwise, or when the push fails, runs ExecuteQueuedTask on the calling thread (high); semantic signature: `void (TaskQueueHolder* this, const BSPackedTask* task /* u32 id at +0, args from +8 */)`
 pub const TaskQueue__QueueTask: u64 = 36993;
+/// `TaskQueue::QueueTask` as a function pointer type (high).
+pub type TaskQueue__QueueTask_fn = unsafe extern "C" fn(this: *mut crate::TaskQueueHolder, task: *const c_void);
 /// `TelekinesisEffect::vdtor` at 0x5e6050 (slot_propagation, medium); signature (low): `TelekinesisEffect * vdtor(TelekinesisEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TelekinesisEffect__vdtor: u64 = 35049;
 /// `TelekinesisEffect::vfunc_20` at 0x5e5c30 (rtti, high); signature (low): `undefined vfunc_20(TelekinesisEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -8705,15 +8719,3 @@ pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm_
 pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__AutoRegisterCombatObject__972354c97be4: u64 = 45150;
 /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vdtor` at 0x830ad8 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
 pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__AutoRegisterCombatObject__fa3ac5409b92: u64 = 45151;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor` at 0x84aec0 (layout_inference, high); signature (high): `AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor: u64 = 46564;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub0` at 0x84dcf0 (callgraph, medium); signature (untiered): `uint ctor_sub0(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub0: u64 = 46769;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub1` at 0x84e560 (callgraph, medium); signature (untiered): `uint ctor_sub1(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub1: u64 = 46784;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub2` at 0x84edd0 (callgraph, medium); signature (untiered): `uint ctor_sub2(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub2: u64 = 46799;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub3` at 0x84f640 (callgraph, medium); signature (untiered): `uint ctor_sub3(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub3: u64 = 46814;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub4` at 0x84feb0 (callgraph, medium); signature (untiered): `uint ctor_sub4(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub4: u64 = 46829;

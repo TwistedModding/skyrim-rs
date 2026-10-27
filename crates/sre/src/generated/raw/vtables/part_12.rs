@@ -3,6 +3,222 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vftable` at 0x194e978, id 211578 (rtti, high); 23 slots.
+#[repr(C)]
+pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore_vtable {
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vdtor` at 0x847200 (slot_propagation, medium); signature (low): `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore> * vdtor(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vfunc_2` at 0x847150 (rtti, high); signature (untiered): `uint vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_3` at 0x82eda0 (rtti, medium); signature (low): `undefined vfunc_3(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_4` at 0x82ee90 (rtti, medium); signature (low): `undefined vfunc_4(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_5` at 0x82e920 (rtti, medium); signature (low): `undefined4 vfunc_5(CombatInventoryItemMagic * this)`
+    pub slot_5: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_6` at 0x82e930 (rtti, medium); signature (low): `undefined4 vfunc_6(CombatInventoryItemMagic * this)`
+    pub slot_6: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_7` at 0x82e940 (rtti, medium); signature (high): `float vfunc_7(CombatInventoryItemMagic * this)`
+    pub slot_7: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_8` at 0x82e960 (rtti, medium); signature (high): `float vfunc_8(CombatInventoryItemMagic * this)`
+    pub slot_8: *const c_void,
+    /// `CombatInventoryItemScroll::vfunc_9` at 0x82f190 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_10` at 0x82e840 (rtti, medium); signature (low): `ulonglong vfunc_10(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_10: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vfunc_11` at 0x846fd0 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_12` at 0x82e980 (rtti, medium); signature (low): `undefined vfunc_12(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_12: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vfunc_13` at 0x846fe0 (rtti, high); signature (low): `CombatInventoryItem * vfunc_13(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_13: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_14` at 0x82ec80 (rtti, medium); signature (low): `undefined8 vfunc_14(CombatInventoryItemMagic * this, longlong * * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_14: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vfunc_15` at 0x8470a0 (rtti, high); signature (low): `undefined1 vfunc_15(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_15: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_16` at 0x82e890 (rtti, medium); signature (low): `ulonglong vfunc_16(CombatInventoryItemMagic * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_16: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vfunc_17` at 0x8470f0 (rtti, high); signature (low): `undefined vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vfunc_18` at 0x847100 (rtti, high); signature (low): `undefined vfunc_18(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore> * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
+    pub slot_18: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_19` at 0x82ed80 (rtti, medium); signature (high): `undefined1 vfunc_19(CombatInventoryItemMagic * this)`
+    pub slot_19: *const c_void,
+    /// `CombatInventoryItem::vfunc_20` at 0x82d040 (rtti, medium); signature (low): `undefined vfunc_20(CombatInventoryItem * this, char * param_1, ulonglong param_2)`
+    pub slot_20: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::vfunc_21` at 0x846f30 (rtti, high); signature (low): `CombatMagicCasterRestore * vfunc_21(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_21: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_22` at 0x82ec70 (rtti, medium); signature (high): `undefined8 vfunc_22(CombatInventoryItemMagic * this)`
+    pub slot_22: *const c_void,
+}
+impl CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore_vtable {
+    pub const ID: u64 = 211578;
+}
+
+/// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vftable` at 0x194a400, id 211026 (rtti, high); 23 slots.
+#[repr(C)]
+pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript_vtable {
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vdtor` at 0x83c760 (slot_propagation, medium); signature (low): `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript> * vdtor(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vfunc_2` at 0x83c710 (rtti, high); signature (untiered): `uint vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_3` at 0x82eda0 (rtti, medium); signature (low): `undefined vfunc_3(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_4` at 0x82ee90 (rtti, medium); signature (low): `undefined vfunc_4(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_5` at 0x82e920 (rtti, medium); signature (low): `undefined4 vfunc_5(CombatInventoryItemMagic * this)`
+    pub slot_5: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_6` at 0x82e930 (rtti, medium); signature (low): `undefined4 vfunc_6(CombatInventoryItemMagic * this)`
+    pub slot_6: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_7` at 0x82e940 (rtti, medium); signature (high): `float vfunc_7(CombatInventoryItemMagic * this)`
+    pub slot_7: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_8` at 0x82e960 (rtti, medium); signature (high): `float vfunc_8(CombatInventoryItemMagic * this)`
+    pub slot_8: *const c_void,
+    /// `CombatInventoryItemScroll::vfunc_9` at 0x82f190 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_10` at 0x82e840 (rtti, medium); signature (low): `ulonglong vfunc_10(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_10: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vfunc_11` at 0x83c5c0 (rtti, high); signature (high): `undefined8 vfunc_11(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript> * this)`
+    pub slot_11: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_12` at 0x82e980 (rtti, medium); signature (low): `undefined vfunc_12(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_12: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vfunc_13` at 0x83c5e0 (rtti, high); signature (low): `CombatInventoryItem * vfunc_13(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_13: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_14` at 0x82ec80 (rtti, medium); signature (low): `undefined8 vfunc_14(CombatInventoryItemMagic * this, longlong * * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_14: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vfunc_15` at 0x83c6a0 (rtti, high); signature (low): `undefined1 vfunc_15(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_15: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_16` at 0x82e890 (rtti, medium); signature (low): `ulonglong vfunc_16(CombatInventoryItemMagic * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_16: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vfunc_17` at 0x83c6f0 (rtti, high); signature (low): `undefined vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vfunc_18` at 0x83c700 (rtti, high); signature (low): `undefined vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_19` at 0x82ed80 (rtti, medium); signature (high): `undefined1 vfunc_19(CombatInventoryItemMagic * this)`
+    pub slot_19: *const c_void,
+    /// `CombatInventoryItem::vfunc_20` at 0x82d040 (rtti, medium); signature (low): `undefined vfunc_20(CombatInventoryItem * this, char * param_1, ulonglong param_2)`
+    pub slot_20: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::vfunc_21` at 0x83c550 (rtti, high); signature (low): `undefined8 vfunc_21(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_21: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_22` at 0x82ec70 (rtti, medium); signature (high): `undefined8 vfunc_22(CombatInventoryItemMagic * this)`
+    pub slot_22: *const c_void,
+}
+impl CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript_vtable {
+    pub const ID: u64 = 211026;
+}
+
+/// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vftable` at 0x194df78, id 211498 (rtti, high); 23 slots.
+#[repr(C)]
+pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger_vtable {
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vdtor` at 0x845630 (slot_propagation, medium); signature (low): `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger> * vdtor(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vfunc_2` at 0x845620 (rtti, high); signature (untiered): `uint vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_3` at 0x82eda0 (rtti, medium); signature (low): `undefined vfunc_3(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_4` at 0x82ee90 (rtti, medium); signature (low): `undefined vfunc_4(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_5` at 0x82e920 (rtti, medium); signature (low): `undefined4 vfunc_5(CombatInventoryItemMagic * this)`
+    pub slot_5: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_6` at 0x82e930 (rtti, medium); signature (low): `undefined4 vfunc_6(CombatInventoryItemMagic * this)`
+    pub slot_6: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_7` at 0x82e940 (rtti, medium); signature (high): `float vfunc_7(CombatInventoryItemMagic * this)`
+    pub slot_7: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_8` at 0x82e960 (rtti, medium); signature (high): `float vfunc_8(CombatInventoryItemMagic * this)`
+    pub slot_8: *const c_void,
+    /// `CombatInventoryItemScroll::vfunc_9` at 0x82f190 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_10` at 0x82e840 (rtti, medium); signature (low): `ulonglong vfunc_10(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_10: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vfunc_11` at 0x8454f0 (rtti, high); signature (high): `char vfunc_11(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger> * this)`
+    pub slot_11: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_12` at 0x82e980 (rtti, medium); signature (low): `undefined vfunc_12(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_12: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vfunc_13` at 0x845510 (rtti, high); signature (low): `CombatInventoryItem * vfunc_13(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_13: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_14` at 0x82ec80 (rtti, medium); signature (low): `undefined8 vfunc_14(CombatInventoryItemMagic * this, longlong * * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_14: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vfunc_15` at 0x8455d0 (rtti, high); signature (low): `undefined1 vfunc_15(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger> * this, longlong param_1)`
+    pub slot_15: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_16` at 0x82e890 (rtti, medium); signature (low): `ulonglong vfunc_16(CombatInventoryItemMagic * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_16: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vfunc_17` at 0x845600 (rtti, high); signature (low): `undefined vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vfunc_18` at 0x845610 (rtti, high); signature (low): `undefined vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_19` at 0x82ed80 (rtti, medium); signature (high): `undefined1 vfunc_19(CombatInventoryItemMagic * this)`
+    pub slot_19: *const c_void,
+    /// `CombatInventoryItem::vfunc_20` at 0x82d040 (rtti, medium); signature (low): `undefined vfunc_20(CombatInventoryItem * this, char * param_1, ulonglong param_2)`
+    pub slot_20: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::vfunc_21` at 0x845480 (rtti, high); signature (low): `undefined8 vfunc_21(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_21: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_22` at 0x82ec70 (rtti, medium); signature (high): `undefined8 vfunc_22(CombatInventoryItemMagic * this)`
+    pub slot_22: *const c_void,
+}
+impl CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger_vtable {
+    pub const ID: u64 = 211498;
+}
+
+/// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vftable` at 0x194e458, id 211536 (rtti, high); 23 slots.
+#[repr(C)]
+pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon_vtable {
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vdtor` at 0x846390 (slot_propagation, medium); signature (low): `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon> * vdtor(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vfunc_2` at 0x846350 (rtti, high); signature (untiered): `uint vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_3` at 0x82eda0 (rtti, medium); signature (low): `undefined vfunc_3(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_4` at 0x82ee90 (rtti, medium); signature (low): `undefined vfunc_4(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_5` at 0x82e920 (rtti, medium); signature (low): `undefined4 vfunc_5(CombatInventoryItemMagic * this)`
+    pub slot_5: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_6` at 0x82e930 (rtti, medium); signature (low): `undefined4 vfunc_6(CombatInventoryItemMagic * this)`
+    pub slot_6: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_7` at 0x82e940 (rtti, medium); signature (high): `float vfunc_7(CombatInventoryItemMagic * this)`
+    pub slot_7: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_8` at 0x82e960 (rtti, medium); signature (high): `float vfunc_8(CombatInventoryItemMagic * this)`
+    pub slot_8: *const c_void,
+    /// `CombatInventoryItemScroll::vfunc_9` at 0x82f190 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_10` at 0x82e840 (rtti, medium); signature (low): `ulonglong vfunc_10(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_10: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vfunc_11` at 0x846160 (rtti, high); signature (high): `char vfunc_11(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon> * this)`
+    pub slot_11: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_12` at 0x82e980 (rtti, medium); signature (low): `undefined vfunc_12(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_12: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vfunc_13` at 0x846180 (rtti, high); signature (low): `CombatInventoryItem * vfunc_13(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_13: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_14` at 0x82ec80 (rtti, medium); signature (low): `undefined8 vfunc_14(CombatInventoryItemMagic * this, longlong * * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_14: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vfunc_15` at 0x8462c0 (rtti, high); signature (low): `undefined1 vfunc_15(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_15: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_16` at 0x82e890 (rtti, medium); signature (low): `ulonglong vfunc_16(CombatInventoryItemMagic * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_16: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vfunc_17` at 0x846330 (rtti, high); signature (low): `undefined vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vfunc_18` at 0x846340 (rtti, high); signature (low): `undefined vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_19` at 0x82ed80 (rtti, medium); signature (high): `undefined1 vfunc_19(CombatInventoryItemMagic * this)`
+    pub slot_19: *const c_void,
+    /// `CombatInventoryItem::vfunc_20` at 0x82d040 (rtti, medium); signature (low): `undefined vfunc_20(CombatInventoryItem * this, char * param_1, ulonglong param_2)`
+    pub slot_20: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::vfunc_21` at 0x8460f0 (rtti, high); signature (low): `undefined8 vfunc_21(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_21: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_22` at 0x82ec70 (rtti, medium); signature (high): `undefined8 vfunc_22(CombatInventoryItemMagic * this)`
+    pub slot_22: *const c_void,
+}
+impl CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon_vtable {
+    pub const ID: u64 = 211536;
+}
+
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterTargetEffect>::vftable` at 0x194b630, id 211162 (rtti, high); 23 slots.
 #[repr(C)]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect_vtable {
@@ -10817,335 +11033,5 @@ pub struct ConeProjectile_vtable_30 {
 }
 impl ConeProjectile_vtable_30 {
     pub const ID: u64 = 209929;
-}
-
-/// `ConeProjectile::vftable_38` at 0x193e4f0, id 209931 (rtti, high); 19 slots.
-#[repr(C)]
-pub struct ConeProjectile_vtable_38 {
-    /// `ConeProjectile::IAnimationGraphManagerHolder_vdtor` at 0x7e3368 (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(ConeProjectile * this, TESObjectREFR * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `IAnimationGraphManagerHolder::NotifyAnimationGraph` at 0x554220 (runtime, high); signature (untiered): `undefined1 NotifyAnimationGraph(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_2` at 0x2fd720 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_2(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
-    /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_3` at 0x2fd6a0 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_3(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
-    /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_4` at 0x2fd4f0 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_4(TESObjectREFR * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_5` at 0x2fd570 (rtti, medium); signature (low): `bool IAnimationGraphManagerHolder_vfunc_5(TESObjectREFR * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `IAnimationGraphManagerHolder::SkipAnimationPreload` at 0x2fa380 (semantic, low); signature (untiered): `undefined1 SkipAnimationPreload(void)`
-    pub slot_6: *const c_void,
-    /// `IAnimationGraphManagerHolder::InitializeGraphVariables` at 0x554340 (semantic, high); signature (untiered): `undefined1 InitializeGraphVariables(void)`
-    pub slot_7: *const c_void,
-    /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_8` at 0x2fd750 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_8(TESObjectREFR * this, longlong * param_1)`
-    pub slot_8: *const c_void,
-    /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_9` at 0x2fd790 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `IAnimationGraphManagerHolder::CreateAnimationChannels` at 0x554370 (semantic, high); signature (untiered): `undefined1 CreateAnimationChannels(void)`
-    pub slot_10: *const c_void,
-    /// `IAnimationGraphManagerHolder::PostBuildAnimationGraphManager` at 0x5543a0 (semantic, medium); signature (untiered): `undefined PostBuildAnimationGraphManager(void)`
-    pub slot_11: *const c_void,
-    /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerReady` at 0x5543b0 (semantic, low); signature (untiered): `undefined OnAnimationGraphManagerReady(void)`
-    pub slot_12: *const c_void,
-    /// `TESObjectREFR::IAnimationGraphManagerHolder_vfunc_13` at 0x2fd630 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(TESObjectREFR * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_13: *const c_void,
-    /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
-    pub slot_14: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` at 0x5543e0 (semantic, high); signature (untiered): `undefined8 GetGraphVariableCacheSize(void)`
-    pub slot_15: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
-    pub slot_16: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `IAnimationGraphManagerHolder::GetGraphVariableBool` at 0x5543f0 (runtime, high); signature (untiered): `undefined1 GetGraphVariableBool(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
-    pub slot_18: *const c_void,
-}
-impl ConeProjectile_vtable_38 {
-    pub const ID: u64 = 209931;
-}
-
-/// `ConfirmResetCallback::vftable` at 0x18f0440, id 464977 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct ConfirmResetCallback_vtable {
-    /// `ConfirmResetCallback::vdtor` at 0x582340 (layout_inference, medium); signature (low): `ConfirmResetCallback * vdtor(ConfirmResetCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `ConfirmResetCallback::vfunc_1` at 0x582300 (rtti, high); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
-}
-impl ConfirmResetCallback_vtable {
-    pub const ID: u64 = 464977;
-}
-
-/// `Console::vftable` at 0x1970a80, id 215002 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct Console_vtable {
-    /// `Console::Dtor` at 0x90cf00 (semantic, high); signature (untiered): `Console * Dtor(Console * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Dtor`: deleting destructor (high); semantic signature: `Console* (Console* this, u32 flags)`
-    pub slot_0: *const c_void,
-    /// `Console::Accept` at 0x909ad0 (semantic, high); signature (untiered): `undefined Accept(Console * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `Accept`: registers 'ExecuteCommand' (0x909e00) and 'HideComplete' (0x90a610) (high); semantic signature: `void (Console* this, FxDelegateHandler::CallbackProcessor* p)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `Console::ProcessMessage` at 0x9092d0 (semantic, high); signature (untiered): `byte ProcessMessage(Console * this, longlong param_1)`; `ProcessMessage`: ConsoleData updates (flush log, select ref, execute, clear history), show/hide, key input (high); semantic signature: `u32 (Console* this, UIMessage* msg)`
-    pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
-}
-impl Console_vtable {
-    pub const ID: u64 = 215002;
-    pub const SLOT_Dtor: usize = 0;
-    /// Slot 0 as `Console_vtable_Dtor`, `None` when the slot is null.
-    #[must_use]
-    pub fn Dtor(&self) -> Option<Console_vtable_Dtor> {
-        unsafe { core::mem::transmute::<*const c_void, Option<Console_vtable_Dtor>>(self.slot_0) }
-    }
-    pub const SLOT_Accept: usize = 1;
-    /// Slot 1 as `Console_vtable_Accept`, `None` when the slot is null.
-    #[must_use]
-    pub fn Accept(&self) -> Option<Console_vtable_Accept> {
-        unsafe { core::mem::transmute::<*const c_void, Option<Console_vtable_Accept>>(self.slot_1) }
-    }
-    pub const SLOT_ProcessMessage: usize = 4;
-    /// Slot 4 as `Console_vtable_ProcessMessage`, `None` when the slot is null.
-    #[must_use]
-    pub fn ProcessMessage(&self) -> Option<Console_vtable_ProcessMessage> {
-        unsafe { core::mem::transmute::<*const c_void, Option<Console_vtable_ProcessMessage>>(self.slot_4) }
-    }
-}
-/// `Console::Dtor`, slot 0: deleting destructor (high).
-pub type Console_vtable_Dtor = unsafe extern "C" fn(this: *mut crate::Console, flags: u32) -> *mut crate::Console;
-/// `Console::Accept`, slot 1: registers 'ExecuteCommand' (0x909e00) and 'HideComplete' (0x90a610) (high).
-pub type Console_vtable_Accept = unsafe extern "C" fn(this: *mut crate::Console, p: *mut crate::FxDelegateHandler__CallbackProcessor);
-/// `Console::ProcessMessage`, slot 4: ConsoleData updates (flush log, select ref, execute, clear history), show/hide, key input (high).
-pub type Console_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::Console, msg: *mut crate::UIMessage) -> u32;
-
-/// `ConsoleData::vftable` at 0x1984818, id 216321 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct ConsoleData_vtable {
-    /// `ConsoleData::vdtor` at 0x98d520 (layout_inference, medium); signature (low): `ConsoleData * vdtor(ConsoleData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl ConsoleData_vtable {
-    pub const ID: u64 = 216321;
-}
-
-/// `ConsoleNativeUIMenu::vftable` at 0x19711d8, id 215046 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct ConsoleNativeUIMenu_vtable {
-    /// `ConsoleNativeUIMenu::vdtor` at 0x90f650 (layout_inference, medium); signature (low): `ConsoleNativeUIMenu * vdtor(ConsoleNativeUIMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `ConsoleNativeUIMenu::vfunc_4` at 0x90f610 (rtti, high); signature (low): `undefined8 vfunc_4(ConsoleNativeUIMenu * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
-}
-impl ConsoleNativeUIMenu_vtable {
-    pub const ID: u64 = 215046;
-}
-
-/// `ConsoleOpenHandler::vftable` at 0x197c308, id 215781 (rtti, high); 8 slots.
-#[repr(C)]
-pub struct ConsoleOpenHandler_vtable {
-    /// `ConsoleOpenHandler::vdtor` at 0x960b50 (layout_inference, medium); signature (low): `ConsoleOpenHandler * vdtor(ConsoleOpenHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `ConsoleOpenHandler::CanProcess` at 0x962030 (semantic, high); signature (untiered): `bool CanProcess(ConsoleOpenHandler * this, longlong * param_1)`; `CanProcess`: Console (high); semantic signature: `bool (ConsoleOpenHandler* this, InputEvent* event)`
-    pub slot_1: *const c_void,
-    /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
-    /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
-    /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
-    /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
-    pub slot_5: *const c_void,
-    /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
-    /// `ConsoleOpenHandler::ProcessButtonEvent` at 0x960e20 (semantic, high); signature (untiered): `undefined1 ProcessButtonEvent(ConsoleOpenHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent`: press edge -> open/close console (high); semantic signature: `bool (ConsoleOpenHandler* this, ButtonEvent* event)`
-    pub slot_7: *const c_void,
-}
-impl ConsoleOpenHandler_vtable {
-    pub const ID: u64 = 215781;
-    pub const SLOT_CanProcess: usize = 1;
-    /// Slot 1 as `ConsoleOpenHandler_vtable_CanProcess`, `None` when the slot is null.
-    #[must_use]
-    pub fn CanProcess(&self) -> Option<ConsoleOpenHandler_vtable_CanProcess> {
-        unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_CanProcess>>(self.slot_1) }
-    }
-    pub const SLOT_ProcessButtonEvent: usize = 7;
-    /// Slot 7 as `ConsoleOpenHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
-    #[must_use]
-    pub fn ProcessButtonEvent(&self) -> Option<ConsoleOpenHandler_vtable_ProcessButtonEvent> {
-        unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_ProcessButtonEvent>>(self.slot_7) }
-    }
-}
-/// `ConsoleOpenHandler::CanProcess`, slot 1: Console (high).
-pub type ConsoleOpenHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::ConsoleOpenHandler, event: *mut crate::InputEvent) -> bool;
-/// `ConsoleOpenHandler::ProcessButtonEvent`, slot 7: press edge -> open/close console (high).
-pub type ConsoleOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut crate::ConsoleOpenHandler, event: *mut crate::ButtonEvent) -> bool;
-
-/// `ContainerMenu::vftable` at 0x1971a90, id 215061 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct ContainerMenu_vtable {
-    /// `ContainerMenu::vdtor` at 0x914e50 (slot_propagation, medium); signature (low): `ContainerMenu * vdtor(ContainerMenu * this, ulonglong param_1, longlong param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `ContainerMenu::vfunc_1` at 0x910e90 (rtti, high); signature (low): `undefined vfunc_1(ContainerMenu * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `ContainerMenu::vfunc_4` at 0x90ff70 (rtti, high); signature (low): `longlong * vfunc_4(ContainerMenu * this, longlong * * param_1)`
-    pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `ContainerMenu::vfunc_6` at 0x910e50 (rtti, high); signature (low): `undefined vfunc_6(ContainerMenu * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
-}
-impl ContainerMenu_vtable {
-    pub const ID: u64 = 215061;
-}
-
-/// `ContentMenu::vftable` at 0x18eec08, id 422067 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct ContentMenu_vtable {
-    /// `ContentMenu::vfunc_0` at 0x573950 (rtti, high); signature (low): `undefined vfunc_0(ContentMenu * this, int param_1, int param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl ContentMenu_vtable {
-    pub const ID: u64 = 422067;
-}
-
-/// `ContentMenu::errorCallback::vftable` at 0x18eedd8, id 422072 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct ContentMenu__errorCallback_vtable {
-    /// `ContentMenu::errorCallback::vdtor` at 0x575ba0 (layout_inference, medium); signature (low): `errorCallback * vdtor(errorCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `ContentMenu::errorCallback::vfunc_1` at 0x575ab0 (rtti, high); signature (high): `undefined vfunc_1(errorCallback * this)`
-    pub slot_1: *const c_void,
-}
-impl ContentMenu__errorCallback_vtable {
-    pub const ID: u64 = 422072;
-}
-
-/// `CraftingMenu::vftable` at 0x1973868, id 215111 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct CraftingMenu_vtable {
-    /// `CraftingMenu::vdtor` at 0x91d350 (layout_inference, medium); signature (low): `CraftingMenu * vdtor(CraftingMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `IMenu::Accept` at 0x57b460 (semantic, high); signature (untiered): `undefined Accept(void)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `CraftingMenu::vfunc_4` at 0x9161c0 (rtti, high); signature (low): `undefined1 * vfunc_4(CraftingMenu * this, longlong param_1, undefined8 param_2, undefined1 * * param_3)`
-    pub slot_4: *const c_void,
-    /// `CraftingMenu::vfunc_5` at 0x9167d0 (rtti, high); signature (low): `undefined vfunc_5(CraftingMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `CraftingMenu::vfunc_6` at 0x916820 (rtti, high); signature (low): `undefined vfunc_6(CraftingMenu * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
-}
-impl CraftingMenu_vtable {
-    pub const ID: u64 = 215111;
-}
-
-/// `CraftingSubMenus::AlchemyMenu::vftable` at 0x1973ff8, id 215210 (rtti, high); 8 slots.
-#[repr(C)]
-pub struct CraftingSubMenus__AlchemyMenu_vtable {
-    /// `CraftingSubMenus::AlchemyMenu::vdtor` at 0x91d180 (slot_propagation, medium); signature (low): `AlchemyMenu * vdtor(AlchemyMenu * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CraftingSubMenus::AlchemyMenu::vfunc_1` at 0x91dba0 (rtti, high); signature (low): `undefined vfunc_1(AlchemyMenu * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-    /// `CraftingSubMenus::CraftingSubMenu::vfunc_2` at 0x923960 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `CraftingSubMenus::CraftingSubMenu::vfunc_3` at 0x926f80 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `CraftingSubMenus::CraftingSubMenu::vfunc_4` at 0x923060 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `CraftingSubMenus::AlchemyMenu::vfunc_5` at 0x923090 (rtti, high); signature (low): `undefined8 vfunc_5(AlchemyMenu * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_5: *const c_void,
-    /// `CraftingSubMenus::CraftingSubMenu::vfunc_6` at 0x924520 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `CraftingSubMenus::CraftingSubMenu::vfunc_7` at 0x924070 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-}
-impl CraftingSubMenus__AlchemyMenu_vtable {
-    pub const ID: u64 = 215210;
-}
-
-/// `CraftingSubMenus::AlchemyMenu::vftable_10` at 0x1974040, id 215212 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct CraftingSubMenus__AlchemyMenu_vtable_10 {
-    /// `CraftingSubMenus::AlchemyMenu::BSTEventSink_TESFurnitureEvent_vdtor` at 0x91d0a0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_TESFurnitureEvent_vdtor(AlchemyMenu * this)`
-    pub slot_0: *const c_void,
-    /// `CraftingSubMenus::CraftingSubMenu::BSTEventSink_TESFurnitureEvent_vfunc_1` at 0x9248e0 (rtti, medium); signature (low): `undefined8 BSTEventSink_TESFurnitureEvent_vfunc_1(CraftingSubMenu * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-}
-impl CraftingSubMenus__AlchemyMenu_vtable_10 {
-    pub const ID: u64 = 215212;
-}
-
-/// `CraftingSubMenus::AlchemyMenu::CraftItemCallback::vftable` at 0x1973fb0, id 215204 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct CraftingSubMenus__AlchemyMenu__CraftItemCallback_vtable {
-    /// `CraftingSubMenus::AlchemyMenu::CraftItemCallback::vdtor` at 0x91d2f0 (layout_inference, medium); signature (low): `CraftItemCallback * vdtor(CraftItemCallback * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CraftingSubMenus::AlchemyMenu::CraftItemCallback::vfunc_1` at 0x91c9e0 (rtti, high); signature (high): `undefined vfunc_1(CraftItemCallback * this)`
-    pub slot_1: *const c_void,
-}
-impl CraftingSubMenus__AlchemyMenu__CraftItemCallback_vtable {
-    pub const ID: u64 = 215204;
-}
-
-/// `CraftingSubMenus::AlchemyMenu::ModEffectivenessFunctor::vftable` at 0x1973fe0, id 215208 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct CraftingSubMenus__AlchemyMenu__ModEffectivenessFunctor_vtable {
-    /// `CraftingSubMenus::AlchemyMenu::ModEffectivenessFunctor::vdtor` at 0x91d9a0 (layout_inference, medium); signature (low): `ModEffectivenessFunctor * vdtor(ModEffectivenessFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CraftingSubMenus::AlchemyMenu::ModEffectivenessFunctor::vfunc_1` at 0x91cf10 (rtti, high); signature (low): `undefined8 vfunc_1(ModEffectivenessFunctor * this, float * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl CraftingSubMenus__AlchemyMenu__ModEffectivenessFunctor_vtable {
-    pub const ID: u64 = 215208;
-}
-
-/// `CraftingSubMenus::AlchemyMenu::QuitMenuCallback::vftable` at 0x1973fc8, id 215206 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct CraftingSubMenus__AlchemyMenu__QuitMenuCallback_vtable {
-    /// `CraftingSubMenus::AlchemyMenu::QuitMenuCallback::vdtor` at 0x91d9e0 (layout_inference, medium); signature (low): `QuitMenuCallback * vdtor(QuitMenuCallback * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CraftingSubMenus::AlchemyMenu::QuitMenuCallback::vfunc_1` at 0x91d080 (rtti, high); signature (low): `undefined vfunc_1(QuitMenuCallback * this, char param_1)`
-    pub slot_1: *const c_void,
-}
-impl CraftingSubMenus__AlchemyMenu__QuitMenuCallback_vtable {
-    pub const ID: u64 = 215206;
 }
 

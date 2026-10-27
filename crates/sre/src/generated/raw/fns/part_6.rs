@@ -3,6 +3,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CallOnExtraType78Locked` at 0x1719a0 (decompiler, medium); signature (untiered): `undefined CallOnExtraType78Locked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallOnExtraType78Locked: u64 = 12023;
+/// `CallOwnerVfunc20WithHeldObject` at 0xcbb1e0 (decompiler, medium); signature (untiered): `undefined CallOwnerVfunc20WithHeldObject(undefined8 * param_1, undefined8 * param_2)`
+pub const CallOwnerVfunc20WithHeldObject: u64 = 67393;
 /// `CallProxyVfunc0AndDrainLocked` at 0x13876a0 (decompiler, medium); signature (untiered): `undefined CallProxyVfunc0AndDrainLocked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CallProxyVfunc0AndDrainLocked: u64 = 98552;
 /// `CallRigidBodyVfunc88WithVectorRecursive` at 0x404ea0 (decompiler, medium); signature (untiered): `undefined CallRigidBodyVfunc88WithVectorRecursive(longlong * param_1, undefined1[12] * param_2, char param_3)`
@@ -7805,5 +7809,3 @@ pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehavio
 pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_8254b378a045: u64 = 48971;
 /// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vdtor` at 0x8d6820 (slot_propagation, medium); signature (low): `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_3944110546dd: u64 = 49870;
-/// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vfunc_4` at 0x8d7a90 (rtti, high); signature (low): `undefined vfunc_4(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_feee67809d6b: u64 = 49908;

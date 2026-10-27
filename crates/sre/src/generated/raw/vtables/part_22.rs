@@ -3,6 +3,146 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vftable` at 0x1ad8778, id 466631 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct std___Func_impl_no_alloc_lambda_f21a81f64b85badbc171b3f0231051b9_void_BSPlatform__BNetResult_unsigned___int64_vtable {
+    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_0` at 0x12b14b0 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this, undefined8 * param_1)`
+    pub slot_0: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_1` at 0x12b1b00 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this, undefined8 * param_1)`
+    pub slot_1: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_2` at 0x12b17f0 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this, undefined4 * param_1)`
+    pub slot_2: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_3` at 0x12b1c10 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_4` at 0x12b1610 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_5` at 0x12b18f0 (rtti, high); signature (high): `_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * vfunc_5(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this)`
+    pub slot_5: *const c_void,
+}
+impl std___Func_impl_no_alloc_lambda_f21a81f64b85badbc171b3f0231051b9_void_BSPlatform__BNetResult_unsigned___int64_vtable {
+    pub const ID: u64 = 466631;
+}
+
+/// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vftable` at 0x1ade940, id 466822 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct std___Func_impl_no_alloc_lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4_void_BSPlatform__BNetResult_uns_896b6f612d24_vtable {
+    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_0` at 0x12c2a10 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
+    pub slot_0: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_1` at 0x12c39e0 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
+    pub slot_1: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_2` at 0x12c34f0 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, int * param_1, longlong * param_2, longlong * param_3)`
+    pub slot_2: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_3` at 0x12c3b70 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_4` at 0x12c30e0 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_5` at 0x12c3620 (rtti, high); signature (high): `_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * vfunc_5(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this)`
+    pub slot_5: *const c_void,
+}
+impl std___Func_impl_no_alloc_lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4_void_BSPlatform__BNetResult_uns_896b6f612d24_vtable {
+    pub const ID: u64 = 466822;
+}
+
+/// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vftable` at 0x1adea90, id 466834 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct std___Func_impl_no_alloc_lambda_ff26ef2c8de59f0e95bcb7d77631d366_void_BSPlatform__BNetResult_uns_38b55c08c79e_vtable {
+    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_0` at 0x12c2a50 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
+    pub slot_0: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_1` at 0x12c3a20 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
+    pub slot_1: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_2` at 0x12c3500 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, int * param_1, longlong * param_2, longlong * param_3)`
+    pub slot_2: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_3` at 0x12c3b80 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_4` at 0x12c3160 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_5` at 0x12c3630 (rtti, high); signature (high): `_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * vfunc_5(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this)`
+    pub slot_5: *const c_void,
+}
+impl std___Func_impl_no_alloc_lambda_ff26ef2c8de59f0e95bcb7d77631d366_void_BSPlatform__BNetResult_uns_38b55c08c79e_vtable {
+    pub const ID: u64 = 466834;
+}
+
+/// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vftable` at 0x1904bb0, id 536568 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void_BSPlatform__BNetResult_uns_9fe4280c756d_vtable {
+    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_0` at 0x605420 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_1` at 0x605600 (rtti, high); signature (low): `undefined vfunc_1(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this, _Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_2` at 0x605570 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this, undefined4 * param_1, undefined8 * param_2, undefined4 * param_3)`
+    pub slot_2: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_3` at 0x605620 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_4` at 0x6054e0 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_5` at 0x6055e0 (rtti, high); signature (high): `undefined1 * vfunc_5(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this)`
+    pub slot_5: *const c_void,
+}
+impl std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void_BSPlatform__BNetResult_uns_9fe4280c756d_vtable {
+    pub const ID: u64 = 536568;
+}
+
+/// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vftable` at 0x18f2db0, id 465022 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct std___Func_impl_no_alloc_bool____cdecl_TextureCreator__createTask____ptr64_bool_TextureCreator__createTask____ptr64_vtable {
+    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_0` at 0x59f740 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this, undefined8 * param_1)`
+    pub slot_0: *const c_void,
+    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_1` at 0x59f7a0 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this, undefined8 * param_1)`
+    pub slot_1: *const c_void,
+    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_2` at 0x59f770 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_3` at 0x59f7c0 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_4` at 0x59f760 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_5` at 0x59f790 (rtti, high); signature (high): `_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * vfunc_5(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this)`
+    pub slot_5: *const c_void,
+}
+impl std___Func_impl_no_alloc_bool____cdecl_TextureCreator__createTask____ptr64_bool_TextureCreator__createTask____ptr64_vtable {
+    pub const ID: u64 = 465022;
+}
+
+/// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vftable` at 0x1b5b0a0, id 469840 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_bool____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void_vtable {
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_0` at 0x1402b0 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this, undefined8 * param_1)`
+    pub slot_0: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_1` at 0x140290 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this, undefined8 * param_1)`
+    pub slot_1: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_2` at 0x140320 (rtti, high); signature (high): `undefined vfunc_2(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this)`
+    pub slot_2: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_3` at 0x140280 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_4` at 0x140260 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_5` at 0x140270 (rtti, high); signature (high): `_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * vfunc_5(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this)`
+    pub slot_5: *const c_void,
+}
+impl std___Func_impl_no_alloc_std___Binder_std___Unforced_bool____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void_vtable {
+    pub const ID: u64 = 469840;
+}
+
+/// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vftable` at 0x1b59b28, id 469934 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DescriptionBox___void____ptr6_01cf4126f39a_vtable {
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_0` at 0x12e2c0 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this, undefined8 * param_1)`
+    pub slot_0: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_1` at 0x12e2a0 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this, undefined8 * param_1)`
+    pub slot_1: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_2` at 0x12e310 (rtti, high); signature (high): `undefined vfunc_2(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this)`
+    pub slot_2: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_3` at 0x12e290 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_4` at 0x12e270 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_5` at 0x12e280 (rtti, high); signature (high): `_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * vfunc_5(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this)`
+    pub slot_5: *const c_void,
+}
+impl std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DescriptionBox___void____ptr6_01cf4126f39a_vtable {
+    pub const ID: u64 = 469934;
+}
+
 /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DownloadProgressBar::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,DownloadProgressBar*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>::vftable` at 0x1b58208, id 469743 (rtti, high); 6 slots.
 #[repr(C)]
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DownloadProgressBar___Marketp_9c8d847795d9_vtable {

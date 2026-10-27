@@ -160,6 +160,15 @@ pub fn image_space_modifier__remove(imod: Option<&crate::TESImageSpaceModifier>)
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn image_space_modifier__remove_cross_fade(seconds: f32) { unsafe { function!(18577, (f32))(seconds) } }
+/// `MainWindowProc`: the game window's WNDPROC (ledger: Err_ThisApplicationCannotBeRunFrom_cb2): WM_ACTIVATE app activation, WM_NCACTIVATE, WM_SIZE/WM_WINDOWPOSCHANGED -> resize request and SetWindowPosition, WM_NCHITTEST, WM_DESTROY
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 36649, rva 0x65f270.
+/// `LRESULT (HWND hwnd, u32 msg, WPARAM wParam, LPARAM lParam)`
+///
+/// # Safety
+/// `hwnd` must point to what the engine expects.
+#[inline]
+pub unsafe fn main_window_proc(hwnd: *mut c_void, msg: u32, wParam: usize, lParam: isize) -> isize { unsafe { function!(36649, (*mut c_void, u32, usize, isize) -> isize)(hwnd, msg, wParam, lParam) } }
 /// `Msg_ClearLists_sub17_sub1`: improved-snow / sparkles / reflections composite in RenderWorldColor; reads g_CurrentRenderCamera near/far and frustum
 ///
 /// Semantic, graphics pass, low; ledger callgraph evidence, name low; id 107245, rva 0x1541f40.

@@ -3,51 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-impl crate::BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
-    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Pop` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82143, rva 0x116d740).
-    /// `undefined1 Pop(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn pop(&self) -> u8 { unsafe { function!(82143, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
-    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PopImpl` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82132, rva 0x116ccd0).
-    /// `bool PopImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn pop_impl(&self, param_1: *mut u64) -> u8 { unsafe { function!(82132, (*const Self, *mut u64) -> u8)(core::ptr::from_ref(self), param_1) } }
-    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Push` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82144, rva 0x116d790).
-    /// `undefined1 Push(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn push(&self) -> u8 { unsafe { function!(82144, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
-    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PushImpl` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82134, rva 0x116cd40).
-    /// `longlong PushImpl(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this, undefined8 * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn push_impl(&self, param_1: *mut u64) -> i64 { unsafe { function!(82134, (*const Self, *mut u64) -> i64)(core::ptr::from_ref(self), param_1) } }
-    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPop` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82151, rva 0x116dc70).
-    /// `uint TryPop(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn try_pop(&self) -> u32 { unsafe { function!(82151, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
-    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPush` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 82152, rva 0x116dcd0).
-    /// `uint TryPush(BSTCommonStaticMessageQueue<UIMessage*___ptr64,100> * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn try_push(&self) -> u32 { unsafe { function!(82152, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::Console {
     /// `Console::Accept` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51083, rva 0x909ad0).
     /// `undefined Accept(Console * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`

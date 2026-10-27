@@ -3,6 +3,8 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vdtor` at 0x7d2860 (layout_inference, medium); signature (low): `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * vdtor(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vdtor: u64 = 43204;
 /// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vfunc_1` at 0x7d4ea0 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vfunc_1: u64 = 43392;
 /// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vfunc_2` at 0x7d6d80 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, undefined8 * param_1)`
@@ -5759,7 +5761,3 @@ pub const CallIndexedHandleVfunc98: u64 = 65827;
 pub const CallIndexedHandleVfuncB0WithZero: u64 = 65825;
 /// `CallMotdListMessages` at 0x1257d50 (decompiler, medium); signature (untiered): `longlong CallMotdListMessages(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const CallMotdListMessages: u64 = 93716;
-/// `CallOnExtraType78Locked` at 0x1719a0 (decompiler, medium); signature (untiered): `undefined CallOnExtraType78Locked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallOnExtraType78Locked: u64 = 12023;
-/// `CallOwnerVfunc20WithHeldObject` at 0xcbb1e0 (decompiler, medium); signature (untiered): `undefined CallOwnerVfunc20WithHeldObject(undefined8 * param_1, undefined8 * param_2)`
-pub const CallOwnerVfunc20WithHeldObject: u64 = 67393;

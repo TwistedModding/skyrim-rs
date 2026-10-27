@@ -3,6 +3,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSWaterCollisionManager::BGSWaterUpdateI::vftable` at 0x1827600, id 190247 (rtti, high); 7 slots.
+#[repr(C)]
+pub struct BGSWaterCollisionManager__BGSWaterUpdateI_vtable {
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_0` at 0x2f8e60 (rtti, high); signature (low): `BGSWaterUpdateI * vfunc_0(BGSWaterUpdateI * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_2: *const c_void,
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_3` at 0x2fb9f0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_4` at 0x525280 (rtti, high); signature (low): `undefined vfunc_4(BGSWaterUpdateI * this, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
+    pub slot_4: *const c_void,
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_5` at 0x525740 (rtti, medium); signature (high): `undefined vfunc_5(BGSWaterUpdateI * this)`
+    pub slot_5: *const c_void,
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_6` at 0x2fa030 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
+    pub slot_6: *const c_void,
+}
+impl BGSWaterCollisionManager__BGSWaterUpdateI_vtable {
+    pub const ID: u64 = 190247;
+}
+
 /// `BGSWaterCollisionManager::bhkAutoWater::vftable` at 0x18e44c8, id 204832 (rtti, high); 51 slots.
 #[repr(C)]
 pub struct BGSWaterCollisionManager__bhkAutoWater_vtable {
@@ -7332,15 +7354,57 @@ pub struct BSISoundOutputModel_vtable {
 impl BSISoundOutputModel_vtable {
     pub const ID: u64 = 191120;
     pub const SLOT_IsType0: usize = 1;
+    /// Slot 1 as `BSISoundOutputModel_vtable_IsType0`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsType0(&self) -> Option<BSISoundOutputModel_vtable_IsType0> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundOutputModel_vtable_IsType0>>(self.slot_1) }
+    }
     pub const SLOT_IsType1: usize = 2;
+    /// Slot 2 as `BSISoundOutputModel_vtable_IsType1`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsType1(&self) -> Option<BSISoundOutputModel_vtable_IsType1> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundOutputModel_vtable_IsType1>>(self.slot_2) }
+    }
     pub const SLOT_GetSpeakerLevels: usize = 3;
     pub const SLOT_AttenuatesWithDistance: usize = 4;
+    /// Slot 4 as `BSISoundOutputModel_vtable_AttenuatesWithDistance`, `None` when the slot is null.
+    #[must_use]
+    pub fn AttenuatesWithDistance(&self) -> Option<BSISoundOutputModel_vtable_AttenuatesWithDistance> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundOutputModel_vtable_AttenuatesWithDistance>>(self.slot_4) }
+    }
     pub const SLOT_IsWithinMaxDistance: usize = 5;
+    /// Slot 5 as `BSISoundOutputModel_vtable_IsWithinMaxDistance`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsWithinMaxDistance(&self) -> Option<BSISoundOutputModel_vtable_IsWithinMaxDistance> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundOutputModel_vtable_IsWithinMaxDistance>>(self.slot_5) }
+    }
     pub const SLOT_Unk06: usize = 6;
+    /// Slot 6 as `BSISoundOutputModel_vtable_Unk06`, `None` when the slot is null.
+    #[must_use]
+    pub fn Unk06(&self) -> Option<BSISoundOutputModel_vtable_Unk06> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundOutputModel_vtable_Unk06>>(self.slot_6) }
+    }
     pub const SLOT_GetAttenuationCharacteristics: usize = 7;
+    /// Slot 7 as `BSISoundOutputModel_vtable_GetAttenuationCharacteristics`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetAttenuationCharacteristics(&self) -> Option<BSISoundOutputModel_vtable_GetAttenuationCharacteristics> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSISoundOutputModel_vtable_GetAttenuationCharacteristics>>(self.slot_7) }
+    }
     pub const SLOT_GetSendLevel: usize = 8;
     pub const SLOT_AllowsSend: usize = 9;
 }
+/// `BSISoundOutputModel::IsType0`, slot 1: outputType == 0 (high).
+pub type BSISoundOutputModel_vtable_IsType0 = unsafe extern "C" fn(this: *mut c_void) -> bool;
+/// `BSISoundOutputModel::IsType1`, slot 2: outputType == 1 (high).
+pub type BSISoundOutputModel_vtable_IsType1 = unsafe extern "C" fn(this: *mut c_void) -> bool;
+/// `BSISoundOutputModel::AttenuatesWithDistance`, slot 4: flags bit 0 (high).
+pub type BSISoundOutputModel_vtable_AttenuatesWithDistance = unsafe extern "C" fn(this: *mut c_void) -> bool;
+/// `BSISoundOutputModel::IsWithinMaxDistance`, slot 5: distance < attenuation max distance (FLT_MAX without attenuation) (high).
+pub type BSISoundOutputModel_vtable_IsWithinMaxDistance = unsafe extern "C" fn(this: *mut c_void, distance: f32) -> bool;
+/// `BSISoundOutputModel::Unk06`, slot 6: returns the constant 2 (high).
+pub type BSISoundOutputModel_vtable_Unk06 = unsafe extern "C" fn(this: *mut c_void) -> u32;
+/// `BSISoundOutputModel::GetAttenuationCharacteristics`, slot 7: returns form+0x30 (high).
+pub type BSISoundOutputModel_vtable_GetAttenuationCharacteristics = unsafe extern "C" fn(this: *mut c_void) -> *mut c_void;
 
 /// `BSISoundOutputModel::BSIAttenuationCharacteristics::vftable` at 0x1835750, id 191118 (rtti, high); 4 slots.
 #[repr(C)]
@@ -14020,43 +14084,5 @@ pub struct BSImagespaceShaderISSAOCompositeSAOFog_vtable_10 {
 }
 impl BSImagespaceShaderISSAOCompositeSAOFog_vtable_10 {
     pub const ID: u64 = 254428;
-}
-
-/// `BSImagespaceShaderISSAOCompositeSAOFog::vftable_18` at 0x1b3bd30, id 254430 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct BSImagespaceShaderISSAOCompositeSAOFog_vtable_18 {
-    /// `BSShader::BSReloadShaderI_vfunc_0` at 0x1578e50 (rtti, medium); signature (low): `undefined BSReloadShaderI_vfunc_0(BSShader * this, longlong param_1, undefined8 param_2, undefined1 * param_3)`
-    pub slot_0: *const c_void,
-}
-impl BSImagespaceShaderISSAOCompositeSAOFog_vtable_18 {
-    pub const ID: u64 = 254430;
-}
-
-/// `BSImagespaceShaderISSAOCompositeSAOFog::vftable_90` at 0x1b3bd40, id 254432 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct BSImagespaceShaderISSAOCompositeSAOFog_vtable_90 {
-    /// `BSImagespaceShaderISSAOCompositeSAOFog::ImageSpaceEffect_vdtor` at 0x150778c (slot_propagation, medium); signature (high): `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCompositeSAOFog * this)`
-    pub slot_0: *const c_void,
-    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_1` at 0x1564e30 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_1(BSImagespaceShader * this, undefined8 param_1, undefined * param_2)`
-    pub slot_1: *const c_void,
-    /// `ImageSpaceEffect::vfunc_2` at 0x150b9f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_3` at 0x15652a0 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_3(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
-    /// `ImageSpaceEffect::vfunc_4` at 0x1509bc0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `ImageSpaceEffect::vfunc_5` at 0x150b820 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `ImageSpaceEffect::vfunc_6` at 0x150b480 (rtti, medium); signature (high): `undefined1 vfunc_6(ImageSpaceEffect * this)`
-    pub slot_6: *const c_void,
-    /// `ImageSpaceEffect::vfunc_7` at 0x150ba40 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `ImageSpaceEffect::vfunc_9` at 0x150b810 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl BSImagespaceShaderISSAOCompositeSAOFog_vtable_90 {
-    pub const ID: u64 = 254432;
 }
 

@@ -3,6 +3,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fMagicProjectileMaxDistance__init` at 0x66e00 (crt_init, medium); signature (high): `void GameSetting_fMagicProjectileMaxDistance__init(void)`
+pub const GameSetting_fMagicProjectileMaxDistance__init: u64 = 3743;
+/// `GameSetting_fMagicRangeTargetCostMult__atexit` at 0x17786c0 (crt_init, medium); signature (high): `void GameSetting_fMagicRangeTargetCostMult__atexit(void)`
+pub const GameSetting_fMagicRangeTargetCostMult__atexit: u64 = 168954;
+/// `GameSetting_fMagicRangeTargetCostMult__init` at 0x66e80 (crt_init, medium); signature (high): `void GameSetting_fMagicRangeTargetCostMult__init(void)`
+pub const GameSetting_fMagicRangeTargetCostMult__init: u64 = 3744;
+/// `GameSetting_fMagicResistActorSkillBase__atexit` at 0x1778710 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillBase__atexit(void)`
+pub const GameSetting_fMagicResistActorSkillBase__atexit: u64 = 168955;
+/// `GameSetting_fMagicResistActorSkillBase__init` at 0x66f00 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillBase__init(void)`
+pub const GameSetting_fMagicResistActorSkillBase__init: u64 = 3745;
 /// `GameSetting_fMagicResistActorSkillMult__atexit` at 0x1778760 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillMult__atexit(void)`
 pub const GameSetting_fMagicResistActorSkillMult__atexit: u64 = 168956;
 /// `GameSetting_fMagicResistActorSkillMult__init` at 0x66f80 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillMult__init(void)`
@@ -9501,15 +9511,3 @@ pub const GetField0_4: u64 = 109322;
 pub const GetField0_5: u64 = 107481;
 /// `GetField0_6` at 0xab01f0 (decompiler, high); signature (high): `undefined8 GetField0_6(undefined8 * param_1)`
 pub const GetField0_6: u64 = 57558;
-/// `GetField0_7` at 0xab01e0 (decompiler, high); signature (untiered): `undefined8 GetField0_7(undefined8 * param_1)`
-pub const GetField0_7: u64 = 57557;
-/// `GetField0_8` at 0xe98100 (decompiler, high); signature (high): `undefined4 GetField0_8(undefined4 * param_1)`
-pub const GetField0_8: u64 = 90050;
-/// `GetField0_9` at 0x116f5b0 (decompiler, high); signature (high): `undefined8 GetField0_9(undefined8 * param_1)`
-pub const GetField0_9: u64 = 82320;
-/// `GetField0xF8Field50ValueOrScaledExtentY` at 0x6859f0 (decompiler, medium); signature (medium): `ulonglong GetField0xF8Field50ValueOrScaledExtentY(longlong param_1)`
-pub const GetField0xF8Field50ValueOrScaledExtentY: u64 = 37443;
-/// `GetField10` at 0x228e80 (decompiler, high); signature (untiered): `undefined4 GetField10(longlong param_1)`
-pub const GetField10: u64 = 16004;
-/// `GetField100` at 0xb657e0 (decompiler, high); signature (untiered): `undefined8 GetField100(longlong param_1)`
-pub const GetField100: u64 = 61623;

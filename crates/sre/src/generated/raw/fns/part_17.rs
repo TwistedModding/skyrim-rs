@@ -3,6 +3,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseThreeArrayBuffers_5` at 0xbd7fd0 (decompiler, medium); signature (untiered): `undefined ReleaseThreeArrayBuffers_5(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseThreeArrayBuffers_5: u64 = 63694;
+/// `ReleaseThreeArrayBuffers_6` at 0xbd8090 (decompiler, medium); signature (untiered): `undefined ReleaseThreeArrayBuffers_6(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseThreeArrayBuffers_6: u64 = 63695;
+/// `ReleaseThreeComPointers` at 0x10149a0 (decompiler, medium); signature (medium): `undefined ReleaseThreeComPointers(longlong * param_1)`
+pub const ReleaseThreeComPointers: u64 = 524256;
+/// `ReleaseThreeCountedBlocks` at 0xd3f8c0 (decompiler, medium); signature (untiered): `undefined ReleaseThreeCountedBlocks(undefined8 * param_1)`
+pub const ReleaseThreeCountedBlocks: u64 = 83692;
+/// `ReleaseThreeFixedStringArrays` at 0x62c3c0 (decompiler, medium); signature (untiered): `undefined ReleaseThreeFixedStringArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseThreeFixedStringArrays: u64 = 442591;
+/// `ReleaseThreeFixedStrings` at 0xc3f4d0 (decompiler, high); signature (untiered): `undefined ReleaseThreeFixedStrings(void)`
+pub const ReleaseThreeFixedStrings: u64 = 65158;
+/// `ReleaseThreeHeapArrays` at 0xcdeaa0 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseThreeHeapArrays: u64 = 68126;
 /// `ReleaseThreeHeapArrays_2` at 0xce1c20 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReleaseThreeHeapArrays_2: u64 = 68207;
 /// `ReleaseThreeHeapArrays_3` at 0xcfa270 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -1860,7 +1874,7 @@ pub type Renderer__FlushDirtyRenderState_fn = unsafe extern "C" fn(this: *mut cr
 /// `Renderer::Init` at 0x1007b70 (semantic, high); signature (untiered): `undefined Init(longlong param_1, longlong * param_2, int * param_3, undefined8 * param_4)`; stores the screen settings, registers the class, creates (or adopts) the window, creates device and swap chain, back buffer views, calls g_CreateRenderTargetsCallback, sets default state (high); semantic signature: `void (Renderer* this, const void* windowParams, const void* screenSettings, HWND* outHwnd)`
 pub const Renderer__Init: u64 = 77226;
 /// `Renderer::Init` as a function pointer type (high).
-pub type Renderer__Init_fn = unsafe extern "C" fn(this: *mut crate::Renderer, windowParams: *const c_void, screenSettings: *const c_void, outHwnd: *mut c_void);
+pub type Renderer__Init_fn = unsafe extern "C" fn(this: *mut crate::Renderer, windowParams: *const c_void, screenSettings: *const c_void, outHwnd: *mut *mut c_void);
 /// `Renderer::Lock` at 0x1009cf0 (semantic, high); signature (untiered): `undefined Lock(longlong param_1)`; EnterCriticalSection(this+0x27f0); 0x1009d10 unlocks (high); semantic signature: `void (Renderer* this)`
 pub const Renderer__Lock: u64 = 77243;
 /// `Renderer::Lock` as a function pointer type (high).
@@ -8975,19 +8989,3 @@ pub const SetField280SubField20AndShiftFields38And48: u64 = 78266;
 pub const SetField28AndBit0OfField88: u64 = 88352;
 /// `SetField28AndNotify` at 0x5cd200 (decompiler, medium); signature (untiered): `undefined SetField28AndNotify(longlong * param_1, longlong param_2)`
 pub const SetField28AndNotify: u64 = 34422;
-/// `SetField28AndNotify_2` at 0xe6cbe0 (decompiler, medium); signature (untiered): `undefined SetField28AndNotify_2(longlong param_1, longlong param_2)`
-pub const SetField28AndNotify_2: u64 = 87751;
-/// `SetField28AndOffsetFields3CAnd4C` at 0xb42a50 (decompiler, medium); signature (medium): `undefined SetField28AndOffsetFields3CAnd4C(longlong param_1, float param_2)`
-pub const SetField28AndOffsetFields3CAnd4C: u64 = 60722;
-/// `SetField28Buffer` at 0xf1c210 (decompiler, medium); signature (untiered): `undefined8 SetField28Buffer(longlong param_1, void * param_2, uint param_3, char param_4)`
-pub const SetField28Buffer: u64 = 71726;
-/// `SetField28Byte30` at 0xe4f7f0 (decompiler, high); signature (high): `undefined SetField28Byte30(longlong param_1)`
-pub const SetField28Byte30: u64 = 88634;
-/// `SetField28OfField10` at 0x6f2230 (decompiler, high); signature (untiered): `undefined SetField28OfField10(longlong param_1, undefined8 param_2)`
-pub const SetField28OfField10: u64 = 39275;
-/// `SetField28RefCounted` at 0x1091520 (decompiler, high); signature (high): `undefined SetField28RefCounted(longlong param_1, longlong param_2)`
-pub const SetField28RefCounted: u64 = 79014;
-/// `SetField28RefPtr` at 0xfcb740 (decompiler, high); signature (untiered): `undefined SetField28RefPtr(longlong param_1, longlong * param_2)`
-pub const SetField28RefPtr: u64 = 75825;
-/// `SetField28ToArgPlus28` at 0x4c3350 (decompiler, high); signature (high): `undefined SetField28ToArgPlus28(longlong param_1, longlong param_2)`
-pub const SetField28ToArgPlus28: u64 = 30363;

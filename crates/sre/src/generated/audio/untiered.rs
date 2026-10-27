@@ -71,30 +71,6 @@ impl crate::BGSSoundOutput {
     pub unsafe fn vfunc_6_sub0(param_1: *mut u64) -> *mut u64 { unsafe { function!(21296, (*mut u64) -> *mut u64)(param_1) } }
 }
 
-impl crate::BGSSoundOutput__DynamicAttenuationCharacteristics {
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetCurveValue` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21286, rva 0x32b5d0).
-    /// `ulonglong GetCurveValue(DynamicAttenuationCharacteristics * this, uint param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_curve_value(&self, param_1: u32) -> u64 { unsafe { function!(21286, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMaxDistance` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21284, rva 0x32b5b0).
-    /// `undefined4 GetMaxDistance(DynamicAttenuationCharacteristics * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_max_distance(&self) -> u32 { unsafe { function!(21284, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
-    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMinDistance` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 21285, rva 0x32b5c0).
-    /// `undefined4 GetMinDistance(DynamicAttenuationCharacteristics * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_min_distance(&self) -> u32 { unsafe { function!(21285, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BGSStandardSoundDef {
     /// `BGSStandardSoundDef::FillPlayData` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21324, rva 0x32c330).
     /// `ulonglong FillPlayData(BGSStandardSoundDef * this, undefined4 * param_1)`
@@ -131,30 +107,6 @@ impl crate::BGSStandardSoundDef {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn should_play_at_distance(&self, param_1: f32) -> u64 { unsafe { function!(21323, (*const Self, f32) -> u64)(core::ptr::from_ref(self), param_1) } }
-}
-
-impl crate::BGSStandardSoundDef__SoundPlaybackCharacteristics {
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyShift` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21316, rva 0x32c210).
-    /// `undefined1 GetFrequencyShift(SoundPlaybackCharacteristics * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_frequency_shift(&self) -> u8 { unsafe { function!(21316, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuation` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 21320, rva 0x32c250).
-    /// `undefined2 GetStaticAttenuation(SoundPlaybackCharacteristics * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_static_attenuation(&self) -> u16 { unsafe { function!(21320, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
-    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuationVariance` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21319, rva 0x32c240).
-    /// `undefined1 GetStaticAttenuationVariance(SoundPlaybackCharacteristics * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_static_attenuation_variance(&self) -> u8 { unsafe { function!(21319, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSIMusicTrack {
@@ -365,63 +317,63 @@ impl crate::BSISoundOutputModel {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn allows_send(&self, param_1: i32) -> u64 { unsafe { function!(21295, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn allows_send_2(&self, param_1: i32) -> u64 { unsafe { function!(21295, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSISoundOutputModel::AttenuatesWithDistance` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21290, rva 0x32b620).
     /// `byte AttenuatesWithDistance(BSISoundOutputModel * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn attenuates_with_distance(&self) -> u8 { unsafe { function!(21290, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    pub unsafe fn attenuates_with_distance_2(&self) -> u8 { unsafe { function!(21290, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `BSISoundOutputModel::GetAttenuationCharacteristics` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21291, rva 0x32b630).
     /// `undefined8 GetAttenuationCharacteristics(BSISoundOutputModel * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_attenuation_characteristics(&self) -> u64 { unsafe { function!(21291, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn get_attenuation_characteristics_2(&self) -> u64 { unsafe { function!(21291, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `BSISoundOutputModel::GetSendLevel` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 21294, rva 0x32b8b0).
     /// `float GetSendLevel(BSISoundOutputModel * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_send_level(&self) -> f32 { unsafe { function!(21294, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn get_send_level_2(&self) -> f32 { unsafe { function!(21294, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
     /// `BSISoundOutputModel::GetSpeakerLevels` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 21292, rva 0x32b640).
     /// `ulonglong GetSpeakerLevels(BSISoundOutputModel * this, uint param_1, int param_2, uint param_3, void * param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_speaker_levels(&self, param_1: u32, param_2: i32, param_3: u32, param_4: *mut c_void) -> u64 { unsafe { function!(21292, (*const Self, u32, i32, u32, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
+    pub unsafe fn get_speaker_levels_2(&self, param_1: u32, param_2: i32, param_3: u32, param_4: *mut c_void) -> u64 { unsafe { function!(21292, (*const Self, u32, i32, u32, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
     /// `BSISoundOutputModel::IsType0` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21287, rva 0x32b5f0).
     /// `bool IsType0(BSISoundOutputModel * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn is_type0(&self) -> u8 { unsafe { function!(21287, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    pub unsafe fn is_type0_2(&self) -> u8 { unsafe { function!(21287, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `BSISoundOutputModel::IsType1` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21288, rva 0x32b600).
     /// `bool IsType1(BSISoundOutputModel * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn is_type1(&self) -> u8 { unsafe { function!(21288, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    pub unsafe fn is_type1_2(&self) -> u8 { unsafe { function!(21288, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
     /// `BSISoundOutputModel::IsWithinMaxDistance` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21293, rva 0x32b860).
     /// `bool IsWithinMaxDistance(BSISoundOutputModel * this, float param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn is_within_max_distance(&self, param_1: f32) -> u8 { unsafe { function!(21293, (*const Self, f32) -> u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn is_within_max_distance_2(&self, param_1: f32) -> u8 { unsafe { function!(21293, (*const Self, f32) -> u8)(core::ptr::from_ref(self), param_1) } }
     /// `BSISoundOutputModel::Unk06` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 21289, rva 0x32b610).
     /// `undefined8 Unk06(void)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn unk06() -> u64 { unsafe { function!(21289, () -> u64)() } }
+    pub unsafe fn unk06_2() -> u64 { unsafe { function!(21289, () -> u64)() } }
 }
 
 impl crate::BSMusicManager {

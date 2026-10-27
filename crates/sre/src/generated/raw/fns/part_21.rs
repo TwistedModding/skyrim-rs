@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0` at 0x173c0e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0: u64 = 165305;
+/// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init` at 0x195a0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init: u64 = 922;
+/// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0` at 0x1747c50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0: u64 = 166126;
+/// `g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init` at 0x1ee70 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init: u64 = 1252;
+/// `g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0` at 0x174b050 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0: u64 = 166464;
+/// `g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init` at 0x161f0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init: u64 = 773;
 /// `g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0` at 0x1745860 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0: u64 = 165976;
 /// `g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init` at 0x1c430 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init(void)`
@@ -8721,17 +8733,3 @@ pub const hkpProjectileGun__vfunc_5: u64 = 62826;
 pub const hkpProjectileGun__vfunc_8: u64 = 62828;
 /// `hkpProjectileGun::vfunc_9` at 0xba9170 (rtti, high); signature (low): `undefined vfunc_9(void)`
 pub const hkpProjectileGun__vfunc_9: u64 = 62843;
-/// `hkpPulleyConstraintData::ctor` at 0xb7a110 (layout_inference, medium); signature (high): `hkpPulleyConstraintData * ctor(hkpPulleyConstraintData * this)`
-pub const hkpPulleyConstraintData__ctor: u64 = 62061;
-/// `hkpPulleyConstraintData::vdtor` at 0xb52530 (layout_inference, medium); signature (low): `hkpPulleyConstraintData * vdtor(hkpPulleyConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpPulleyConstraintData__vdtor: u64 = 61224;
-/// `hkpPulleyConstraintData::vfunc_10` at 0xb7a170 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpPulleyConstraintData * this, undefined1 * param_1)`
-pub const hkpPulleyConstraintData__vfunc_10: u64 = 62062;
-/// `hkpPulleyConstraintData::vfunc_11` at 0xb7a1a0 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
-pub const hkpPulleyConstraintData__vfunc_11: u64 = 62063;
-/// `hkpPulleyConstraintData::vfunc_12` at 0xb7a1d0 (rtti, high); signature (low): `undefined vfunc_12(hkpPulleyConstraintData * this, char param_1, undefined8 * param_2)`
-pub const hkpPulleyConstraintData__vfunc_12: u64 = 62065;
-/// `hkpPulleyConstraintData::vfunc_18` at 0xb7a1b0 (rtti, high); signature (low): `undefined vfunc_18(hkpPulleyConstraintData * this, int * param_1)`
-pub const hkpPulleyConstraintData__vfunc_18: u64 = 62064;
-/// `hkpRackAndPinionConstraintData::vdtor` at 0xb525c0 (layout_inference, medium); signature (low): `hkpRackAndPinionConstraintData * vdtor(hkpRackAndPinionConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpRackAndPinionConstraintData__vdtor: u64 = 61225;

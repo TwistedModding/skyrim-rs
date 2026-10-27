@@ -3,6 +3,27 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ResizeSmallArray0x18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 32673, rva 0x546420).
+/// `char ResizeSmallArray0x18(uint * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_small_array0x18(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> c_char { unsafe { function!(32673, (*mut u32, u64, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
+/// `ResizeSmallArray12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 93295, rva 0x124ada0).
+/// `char ResizeSmallArray12(uint * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_small_array12(param_1: *mut u32, param_2: u64) -> c_char { unsafe { function!(93295, (*mut u32, u64) -> c_char)(param_1, param_2) } }
+/// `ResizeSmallArray4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34213, rva 0x5c31b0).
+/// `undefined8 ResizeSmallArray4(uint * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_small_array4(param_1: *mut u32, param_2: u64) -> u64 { unsafe { function!(34213, (*mut u32, u64) -> u64)(param_1, param_2) } }
 /// `ResizeSmallDwordArrayZeroFilled` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 67818, rva 0xcd45b0).
 /// `char ResizeSmallDwordArrayZeroFilled(uint * param_1, uint param_2)`
 ///

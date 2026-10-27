@@ -63,7 +63,7 @@ fn generate() -> ExitCode {
     );
     for (tier, t) in &api.tiers {
         println!(
-            "{:>9}: methods {} safe + {} unsafe, associated {} + {}, free {} + {}, slots {} + {}, unexpressible {}",
+            "{:>9}: methods {} safe + {} unsafe, associated {} + {}, free {} + {}, slots {} + {}, unexpressible {} ({})",
             tier.label(),
             t.safe_methods,
             t.unsafe_methods,
@@ -73,7 +73,8 @@ fn generate() -> ExitCode {
             t.unsafe_free,
             t.safe_slots,
             t.unsafe_slots,
-            t.unexpressible
+            t.unexpressible.values().sum::<usize>(),
+            t.unexpressible.iter().map(|(why, n)| format!("{} {n}", why.label())).collect::<Vec<_>>().join(", ")
         );
     }
     ExitCode::SUCCESS

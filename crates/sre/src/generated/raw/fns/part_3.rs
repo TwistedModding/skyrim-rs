@@ -413,6 +413,8 @@ pub const BGSSaveLoadManager__LoadGame: u64 = 442580;
 pub type BGSSaveLoadManager__LoadGame_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, stream: *mut *mut c_void, entryValue: u32, ignoreMissing: bool, skipPluginMatch: bool, requestKind: u32) -> bool;
 /// `BGSSaveLoadManager::MakeSaveName` at 0x623da0 (semantic, high); signature (untiered): `undefined MakeSaveName(longlong param_1, longlong param_2, int param_3)`; builds the file name with format '%s%u_%s_%u_%s_%s_%s_%s_%u_%u': prefix 'Save'/'Autosave'/'Quicksave' and a number first; the other arguments come from the player id formatted with ID_206654, the character name re-encoded byte by byte with format ID_206653, the location name, play time '%02u%02u%02u', the date '%u%02u%02u%02u%02u%02u' and the level (their order in the varargs was not decoded); file-name-invalid characters become spaces (a double quote becomes an apostrophe), as do bytes >= 0x80 (high); semantic signature: `void (BGSSaveLoadManager*, char* out /*0x104*/, SaveKind kind)`
 pub const BGSSaveLoadManager__MakeSaveName: u64 = 35749;
+/// `BGSSaveLoadManager::MakeSaveName` as a function pointer type (high).
+pub type BGSSaveLoadManager__MakeSaveName_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, out: *mut c_char, kind: u32);
 /// `BGSSaveLoadManager::OpenSaveFile` at 0x622390 (semantic, high); signature (untiered): `longlong * OpenSaveFile(longlong param_1, longlong * param_2, char * param_3, undefined1 param_4, int param_5)`; path via BSSaveDataSystemUtility slot 2 (temp adds '.tmp'), stream via slot 11, stores the name at stream+0xab0, opens it (high); semantic signature: `Win32FileType** (BGSSaveLoadManager*, Win32FileType** out, const char* name, bool temp, i32 kind)`
 pub const BGSSaveLoadManager__OpenSaveFile: u64 = 35724;
 /// `BGSSaveLoadManager::OpenSaveFile` as a function pointer type (high).
@@ -437,6 +439,8 @@ pub const BGSSaveLoadManager__RequestLoad: u64 = 35728;
 pub type BGSSaveLoadManager__RequestLoad_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, name: *const c_char, entryValue: u32, value: u32, ignoreMissing: bool) -> bool;
 /// `BGSSaveLoadManager::Save` at 0x6227f0 (runtime, high); signature (untiered): `ulonglong Save(longlong param_1, int param_2, undefined8 param_3, char * param_4)`; all saves: checks, name, stream, header, body, then write now (kind 2) or queue the write to the worker thread (3,4,5) (high); semantic signature: `bool (BGSSaveLoadManager* this, SaveKind kind /*2 manual,3 auto,4 quick,5 forced*/, u32 value, const char* name /*null = generated*/)`
 pub const BGSSaveLoadManager__Save: u64 = 35727;
+/// `BGSSaveLoadManager::Save` as a function pointer type (high).
+pub type BGSSaveLoadManager__Save_fn = unsafe extern "C" fn(this: *mut crate::BGSSaveLoadManager, kind: u32, value: u32, name: *const c_char) -> bool;
 /// `BGSSaveLoadManager::SetCurrentSaveName` at 0x624d70 (semantic, high); signature (untiered): `undefined SetCurrentSaveName(longlong param_1, undefined1 * param_2, undefined4 param_3)`; +0x138 = name, +0x250 = index (high); semantic signature: `void (BGSSaveLoadManager*, const char* name, u32 index)`
 pub const BGSSaveLoadManager__SetCurrentSaveName: u64 = 35765;
 /// `BGSSaveLoadManager::SetCurrentSaveName` as a function pointer type (high).
@@ -8085,9 +8089,3 @@ pub const BSResource__CacheArchiveOp__ctor: u64 = 69728;
 pub const BSResource__CacheArchiveOp__vdtor: u64 = 69744;
 /// `BSResource::CacheArchiveOp::vfunc_1` at 0xecc310 (rtti, high); signature (low): `undefined vfunc_1(CacheArchiveOp * this, longlong * param_1)`
 pub const BSResource__CacheArchiveOp__vfunc_1: u64 = 69781;
-/// `BSResource::CacheArchiveOp::vfunc_2` at 0xecc2f0 (rtti, high); signature (low): `undefined vfunc_2(void)`
-pub const BSResource__CacheArchiveOp__vfunc_2: u64 = 69779;
-/// `BSResource::CacheArchiveOp::vfunc_3` at 0xecc300 (rtti, high); signature (low): `undefined vfunc_3(CacheArchiveOp * this, undefined8 param_1, longlong param_2)`
-pub const BSResource__CacheArchiveOp__vfunc_3: u64 = 69780;
-/// `BSResource::CacheArchiveOp::vfunc_5` at 0xecc2e0 (rtti, high); signature (low): `undefined vfunc_5(void)`
-pub const BSResource__CacheArchiveOp__vfunc_5: u64 = 69778;

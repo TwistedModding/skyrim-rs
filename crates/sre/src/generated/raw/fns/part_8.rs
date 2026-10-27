@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ComputeCellPlacementPositionAndRotation` at 0x2c35c0 (decompiler, medium); signature (medium): `undefined ComputeCellPlacementPositionAndRotation(TESObjectCELL * param_1, TESObjectCELL * param_2, undefined4 * param_3, undefined8 param_4)`
+pub const ComputeCellPlacementPositionAndRotation: u64 = 19075;
+/// `ComputeCentroidIfUnset` at 0x10f89e0 (decompiler, medium); signature (untiered): `undefined ComputeCentroidIfUnset(longlong param_1)`
+pub const ComputeCentroidIfUnset: u64 = 80947;
+/// `ComputeChildrenBoundsUnion` at 0xd60840 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnion(longlong param_1, float * param_2, float * param_3)`
+pub const ComputeChildrenBoundsUnion: u64 = 84171;
 /// `ComputeChildrenBoundsUnionMatrix4` at 0xd60a80 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnionMatrix4(longlong param_1, float * param_2, float * param_3, char param_4)`
 pub const ComputeChildrenBoundsUnionMatrix4: u64 = 84172;
 /// `ComputeChildrenBoundsUnionVfunc80` at 0xd61d30 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnionVfunc80(longlong param_1, float * param_2, undefined8 * param_3)`
@@ -257,6 +263,8 @@ pub const ComputeFollowerTeleportPosition: u64 = 37438;
 pub const ComputeFormHealthDamage: u64 = 47334;
 /// `ComputeFrustumPlanes` at 0xef7710 (semantic, high); signature (medium): `undefined ComputeFrustumPlanes(float * param_1, float * param_2, float * param_3)`; six inward planes in the order near, far, left, right, top, bottom (perspective and orthographic branches) (high); semantic signature: `void (NiPlane planes[6], const NiFrustum* frustum, const NiTransform* world)`
 pub const ComputeFrustumPlanes: u64 = 70808;
+/// `ComputeFrustumPlanes` as a function pointer type (high).
+pub type ComputeFrustumPlanes_fn = unsafe extern "C" fn(planes: *mut crate::NiPlane, frustum: *const crate::NiFrustum, world: *const crate::NiTransform);
 /// `ComputeFrustumPlanesFromObject` at 0xef76f0 (decompiler, high); signature (high): `undefined ComputeFrustumPlanesFromObject(float * param_1, longlong param_2)`
 pub const ComputeFrustumPlanesFromObject: u64 = 70807;
 /// `ComputeFurnitureCameraPosition` at 0x8f6a70 (semantic, high); signature (untiered): `undefined ComputeFurnitureCameraPosition(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; out = target 3D world translation + eye height + translate (+0x24) rotated by the target heading - zoom (+0x30) * rotation column 1, then ComputeCameraCasterCollision(camera, out, true) (high); semantic signature: `void (FurnitureCameraState* this, NiPoint3* out, const NiMatrix3* rotation)`
@@ -7783,13 +7791,3 @@ pub const DebugText__vfunc_3: u64 = 82499;
 pub const DebugText__vfunc_4: u64 = 82498;
 /// `DebugText::vfunc_5` at 0x1178d00 (rtti, high); signature (low): `undefined vfunc_5(DebugText * this, int param_2, int param_3, float param_4, undefined8 param_5, undefined8 param_6, undefined8 * param_7)`
 pub const DebugText__vfunc_5: u64 = 82500;
-/// `DebugText::vfunc_6` at 0x1178dd0 (rtti, high); signature (high): `undefined vfunc_6(DebugText * this)`
-pub const DebugText__vfunc_6: u64 = 82501;
-/// `DebugText::vfunc_7` at 0x1178e00 (rtti, high); signature (low): `undefined vfunc_7(DebugText * this, int param_2, float param_3, undefined8 param_4, undefined8 param_5, undefined8 * param_6)`
-pub const DebugText__vfunc_7: u64 = 82502;
-/// `DebugText::vfunc_8` at 0x1178f10 (rtti, high); signature (low): `undefined vfunc_8(DebugText * this, undefined8 param_1, undefined8 param_2, undefined4 param_3, undefined4 param_4, undefined8 param_5)`
-pub const DebugText__vfunc_8: u64 = 82504;
-/// `DebugText::vfunc_9` at 0x1178ed0 (rtti, high); signature (low): `undefined vfunc_9(DebugText * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const DebugText__vfunc_9: u64 = 82503;
-/// `DecRef` at 0xcf3250 (decompiler, high); signature (high): `undefined DecRef(undefined8 * param_1)`
-pub const DecRef: u64 = 82197;

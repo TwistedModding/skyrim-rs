@@ -5693,6 +5693,15 @@ impl crate::Main {
     /// `void (void)`
     #[inline]
     pub fn update_timer() { unsafe { function!(36577, ())() } }
+    /// `Main::ctor`: constructs the 0x270-byte Main: stores the window (+0x18) and instance (+0x20), creates DirectInput from the instance, the main cullers and accumulators (g_MainCullers 0x34362a0 / 0x3436048), the scene lists and the camera FOV offset
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36545, rva 0x6514e0.
+    /// `Main* (Main* this, HWND window, HINSTANCE instance)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, window: *mut c_void, instance: *mut c_void) -> *mut Self { unsafe { function!(36545, (*const Self, *mut c_void, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), window, instance) } }
     /// `ResetGame`: resets the game state for a reload or a full rebuild (this+0x12 selects the full path, +0x14 saved and restored)
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 36601, rva 0x65b6c0.

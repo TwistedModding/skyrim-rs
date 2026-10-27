@@ -67,7 +67,7 @@ impl Tier {
 }
 
 /// What one tier emitted.
-#[derive(Default, Clone, Copy)]
+#[derive(Default, Clone)]
 pub struct TierStats {
     pub safe_methods: usize,
     pub unsafe_methods: usize,
@@ -77,8 +77,8 @@ pub struct TierStats {
     pub unsafe_free: usize,
     pub safe_slots: usize,
     pub unsafe_slots: usize,
-    /// Functions or slots left out because a type in the signature has no Rust form.
-    pub unexpressible: usize,
+    /// Functions or slots left out because the signature has no Rust form, by reason.
+    pub unexpressible: BTreeMap<Unexpressible, usize>,
 }
 
 #[derive(Default)]
@@ -153,14 +153,15 @@ fn scalar(base: &str) -> Option<&'static str> {
     Some(match base {
         "uchar" | "u8" | "uint8" | "byte" | "undefined1" => "u8",
         "char" => "c_char",
-        "i8" | "int8" | "schar" => "i8",
+        "i8" | "int8" | "s8" | "schar" => "i8",
         "ushort" | "u16" | "uint16" | "undefined2" | "wchar_t" | "WORD" | "u_short" => "u16",
-        "short" | "i16" | "int16" => "i16",
+        "short" | "i16" | "int16" | "s16" => "i16",
         "uint" | "u32" | "uint32" | "undefined4" | "DWORD" | "UINT" | "ulong" | "u_int" => "u32",
-        "int" | "i32" | "int32" | "long" | "LONG" | "BOOL" | "HRESULT" | "errno_t" => "i32",
+        "int" | "i32" | "int32" | "s32" | "long" | "LONG" | "BOOL" | "HRESULT" | "errno_t" => "i32",
         "ulonglong" | "u64" | "uint64" | "undefined8" | "undefined" => "u64",
-        "longlong" | "i64" | "int64" | "__int64" => "i64",
-        "size_t" | "SIZE_T" | "rsize_t" | "uintptr_t" | "usize" => "usize",
+        "longlong" | "i64" | "int64" | "s64" | "__int64" => "i64",
+        "size_t" | "SIZE_T" | "rsize_t" | "uintptr_t" | "usize" | "WPARAM" | "UINT_PTR" => "usize",
+        "LPARAM" | "LRESULT" | "LONG_PTR" | "intptr_t" => "isize",
         "float" | "f32" => "f32",
         "double" | "f64" => "f64",
         _ => return None,
@@ -186,34 +187,64 @@ fn parts(text: &str) -> (String, usize, bool) {
     (base.to_owned(), depth, text.starts_with("const "))
 }
 
-/// A C type as the generator types it, `None` when it has no Rust form (a class or unknown type by value).
-fn c_type(text: &str, source: Source, ctx: &Ctx) -> Option<Ty> {
+/// Why a signature has no Rust form.
+#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Debug)]
+pub enum Unexpressible {
+    Varargs,
+    /// A laid-out class by value that is not a plain value the ABI can carry.
+    ClassByValue,
+    /// A type the ledger does not lay out, by value.
+    UnknownByValue,
+    /// A parameter name that is not an identifier (`this+0x58`), or text that is not a prototype.
+    Malformed,
+}
+
+impl Unexpressible {
+    #[must_use]
+    pub fn label(self) -> &'static str {
+        match self {
+            Self::Varargs => "varargs",
+            Self::ClassByValue => "class by value",
+            Self::UnknownByValue => "unknown type by value",
+            Self::Malformed => "malformed",
+        }
+    }
+}
+
+/// A C type as the generator types it, or why it has no Rust form.
+fn c_type(text: &str, source: Source, ctx: &Ctx) -> Result<Ty, Unexpressible> {
     let (base, depth, constant) = parts(text);
     let base = base.as_str();
-    let raw = |inner: &str| Some(Ty::Raw(pointer(inner, depth, constant)));
+    let raw = |inner: &str| Ok(Ty::Raw(pointer(inner, depth, constant)));
     match base {
         "void" | "undefined" | "code" if depth > 0 => return raw("c_void"),
-        "void" => return Some(Ty::Void),
-        "bool" if source == Source::Semantic => return if depth == 0 { Some(Ty::Bool) } else { raw("bool") },
-        "bool" => return if depth == 0 { Some(Ty::Scalar("u8")) } else { raw("u8") },
+        "void" => return Ok(Ty::Void),
+        "va_list" if depth == 0 => return Err(Unexpressible::Varargs),
+        "HWND" | "HINSTANCE" | "HMODULE" | "HANDLE" => return Ok(Ty::Raw(pointer("*mut c_void", depth, constant))),
+        "bool" if source == Source::Semantic => return if depth == 0 { Ok(Ty::Bool) } else { raw("bool") },
+        "bool" => return if depth == 0 { Ok(Ty::Scalar("u8")) } else { raw("u8") },
         _ => {}
     }
     if let Some(s) = scalar(base) {
-        return if depth == 0 { Some(Ty::Scalar(s)) } else { raw(s) };
+        return if depth == 0 { Ok(Ty::Scalar(s)) } else { raw(s) };
     }
     if source == Source::Semantic
         && let Some((repr, name)) = ctx.enums.get(base)
     {
-        return if depth == 0 { Some(Ty::Enum(format!("crate::{name}"), repr)) } else { raw(&format!("crate::{name}")) };
+        return if depth == 0 { Ok(Ty::Enum(format!("crate::{name}"), repr)) } else { raw(&format!("crate::{name}")) };
     }
     if let Some(class) = ctx.classes.get(base) {
         return match depth {
-            0 => None,
-            1 => Some(Ty::Class(base.to_owned(), constant)),
+            0 => Err(Unexpressible::ClassByValue),
+            1 => Ok(Ty::Class(base.to_owned(), constant)),
             _ => raw(&class.path()),
         };
     }
-    if depth == 0 { None } else { raw("c_void") }
+    if depth == 0 {
+        Err(Unexpressible::UnknownByValue)
+    } else {
+        raw("c_void")
+    }
 }
 
 /// Splits at `sep` outside `<>` and `()`.
@@ -254,9 +285,22 @@ fn is_ident(s: &str) -> bool {
     !s.is_empty() && !s.as_bytes()[0].is_ascii_digit() && s.bytes().all(|b| b.is_ascii_alphanumeric() || b == b'_')
 }
 
-/// A C prototype, with or without the function's name: `ret [name](type name, ...)`.
-fn parse_sig(sig: &str, source: Source, ctx: &Ctx) -> Option<Sig> {
-    let body = sig.trim().strip_suffix(')')?;
+/// The text without its `/* ... */` comments.
+fn strip_comments(text: &str) -> String {
+    let mut out = String::new();
+    let mut rest = text;
+    while let Some(start) = rest.find("/*") {
+        out.push_str(&rest[..start]);
+        rest = rest[start..].find("*/").map_or("", |end| &rest[start + end + 2..]);
+    }
+    out + rest
+}
+
+/// A C prototype, with or without the function's name: `ret [name](type name, ...)`. An array
+/// parameter is the pointer C passes; a bare `this` is the object as an untyped pointer.
+fn parse_sig(sig: &str, source: Source, ctx: &Ctx) -> Result<Sig, Unexpressible> {
+    let sig = strip_comments(sig);
+    let body = sig.trim().strip_suffix(')').ok_or(Unexpressible::Malformed)?;
     let mut depth = 0;
     let mut open = None;
     for (i, c) in body.char_indices().rev() {
@@ -270,7 +314,7 @@ fn parse_sig(sig: &str, source: Source, ctx: &Ctx) -> Option<Sig> {
             _ => {}
         }
     }
-    let open = open?;
+    let open = open.ok_or(Unexpressible::Malformed)?;
     let head = body[..open].trim();
     let ret = match last_top_space(head) {
         _ if head.ends_with(['*', '&']) => head,
@@ -284,24 +328,31 @@ fn parse_sig(sig: &str, source: Source, ctx: &Ctx) -> Option<Sig> {
         for (i, p) in split_top(list, ',').into_iter().enumerate() {
             let p = p.trim();
             if p == "..." {
-                return None;
+                return Err(Unexpressible::Varargs);
             }
             if let Some((_, rest)) = p.split_once("(*") {
-                params.push(Param { name: rest.split(')').next()?.trim().to_owned(), base: String::new(), ty: Ty::Raw("*const c_void".into()), nullable: false });
+                params.push(Param { name: rest.split(')').next().unwrap_or_default().trim().to_owned(), base: String::new(), ty: Ty::Raw("*const c_void".into()), nullable: false });
                 continue;
             }
+            if p == "this" {
+                params.push(Param { name: p.to_owned(), base: String::new(), ty: Ty::Raw("*mut c_void".into()), nullable: false });
+                continue;
+            }
+            let array = p.strip_suffix(']').and_then(|q| q.rfind('['));
+            let p = array.map_or(p, |at| p[..at].trim_end());
             let (ty, name) = match p.rfind(|c: char| c.is_whitespace() || c == '*' || c == '&') {
                 Some(at) => (&p[..=at], p[at + 1..].trim()),
                 None => (p, ""),
             };
             let name = if name.is_empty() { format!("a{i}") } else { name.to_owned() };
             if !is_ident(&name) {
-                return None;
+                return Err(Unexpressible::Malformed);
             }
-            params.push(Param { name, base: parts(ty).0, ty: c_type(ty, source, ctx)?, nullable: false });
+            let ty = if array.is_some() { format!("{ty}*") } else { ty.to_owned() };
+            params.push(Param { name, base: parts(&ty).0, ty: c_type(&ty, source, ctx)?, nullable: false });
         }
     }
-    Some(Sig { ret, params })
+    Ok(Sig { ret, params })
 }
 
 /// `GetFormEditorID` becomes `get_form_editor_id`; scopes keep their `__`.
@@ -507,7 +558,7 @@ pub(crate) fn context<'a>(inp: &'a Inputs, classes: &'a BTreeMap<&'a str, Class<
 /// in it has no Rust form. Enums stay integers: a detour of this type receives whatever the engine
 /// passes.
 pub(crate) fn fn_pointer_type(signature: &str, ctx: &Ctx) -> Option<String> {
-    let sig = parse_sig(signature, Source::Semantic, ctx)?;
+    let sig = parse_sig(signature, Source::Semantic, ctx).ok()?;
     let ty = |t: &Ty| if let Ty::Enum(_, repr) = t { (*repr).to_owned() } else { t.render(false, false, None, ctx) };
     let params: Vec<String> = sig.params.iter().map(|p| format!("{}: {}", ident(&p.name), ty(&p.ty))).collect();
     let ret = match sig.ret.render(false, true, None, ctx) {
@@ -662,7 +713,7 @@ fn slots(
                     format!("`{}`", slot.signature),
                 ];
                 let sig = annotate(parse_sig(&slot.signature, Source::Semantic, ctx), &slot.nullable, slot.retyped.as_deref(), &mut lines);
-                if sig.as_ref().is_some_and(|s| s.params.iter().skip(1).any(|p| matches!(p.ty, Ty::Class(..)) && !p.nullable)) {
+                if sig.as_ref().is_ok_and(|s| s.params.iter().skip(1).any(|p| matches!(p.ty, Ty::Class(..)) && !p.nullable)) {
                     lines.push("A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.".into());
                 }
                 (Tier::Semantic, slot.name.clone(), sig, lines, slot.confidence.as_str())
@@ -679,9 +730,16 @@ fn slots(
                 ];
                 (tier, last.to_owned(), parse_sig(&s.signature, Source::Decompiler, ctx), lines, "")
             };
-            let Some(sig) = sig.filter(|s| s.params.first().is_some_and(|p| p.name == "this")) else {
-                stats.tiers.entry(tier).or_default().unexpressible += 1;
-                continue;
+            let sig = match sig {
+                Ok(sig) if sig.params.first().is_some_and(|p| p.name == "this") => sig,
+                Ok(_) => {
+                    *stats.tiers.entry(tier).or_default().unexpressible.entry(Unexpressible::Malformed).or_default() += 1;
+                    continue;
+                }
+                Err(why) => {
+                    *stats.tiers.entry(tier).or_default().unexpressible.entry(why).or_default() += 1;
+                    continue;
+                }
             };
             let base = snake(split_scope(&engine).1);
             if ancestors(class, deref_target).iter().any(|a| named.get(&(*a, i)).is_some_and(|(n, t)| *n == base && *t <= tier)) {
@@ -707,7 +765,7 @@ fn slots(
 
 /// Marks the parameters a pass says may be null, and adds to the doc what the pass retyped and
 /// those marks.
-fn annotate(sig: Option<Sig>, nullable: &[String], retyped: Option<&str>, lines: &mut Vec<String>) -> Option<Sig> {
+fn annotate(sig: Result<Sig, Unexpressible>, nullable: &[String], retyped: Option<&str>, lines: &mut Vec<String>) -> Result<Sig, Unexpressible> {
     if let Some(r) = retyped {
         lines.push(format!("Retyped: {r}."));
     }
@@ -718,7 +776,7 @@ fn annotate(sig: Option<Sig>, nullable: &[String], retyped: Option<&str>, lines:
     for p in &mut sig.params {
         p.nullable = nullable.contains(&p.name);
     }
-    Some(sig)
+    Ok(sig)
 }
 
 /// The classes reachable from `class` through `Deref`, nearest first.
@@ -789,9 +847,12 @@ fn functions(
             Some((f, _)) => annotate(sig, &f.nullable, f.retyped.as_deref(), &mut notes),
             None => sig,
         };
-        let Some(sig) = sig else {
-            stats.tiers.entry(tier).or_default().unexpressible += 1;
-            continue;
+        let sig = match sig {
+            Ok(sig) => sig,
+            Err(why) => {
+                *stats.tiers.entry(tier).or_default().unexpressible.entry(why).or_default() += 1;
+                continue;
+            }
         };
         let (scope, last) = split_scope(name);
         let scope = scope.and_then(|c| ctx.classes.get(c));
@@ -956,10 +1017,10 @@ fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiSta
                     (None, Some(c.to_owned()), String::new())
                 } else {
                     match c_type(ty, Source::Semantic, ctx) {
-                        Some(Ty::Class(c, _)) => (None, Some(c), String::new()),
-                        Some(Ty::Scalar(t)) => (None, None, format!("*mut {t}")),
-                        Some(Ty::Bool) => (None, None, "*mut bool".into()),
-                        Some(Ty::Raw(r)) => (None, None, format!("*mut {r}")),
+                        Ok(Ty::Class(c, _)) => (None, Some(c), String::new()),
+                        Ok(Ty::Scalar(t)) => (None, None, format!("*mut {t}")),
+                        Ok(Ty::Bool) => (None, None, "*mut bool".into()),
+                        Ok(Ty::Raw(r)) => (None, None, format!("*mut {r}")),
                         _ if ctx.classes.contains_key(ty) => (Some(ty.to_owned()), None, String::new()),
                         _ if matches!(ty, "pointer" | "ptr") => (None, None, "*mut *mut c_void".into()),
                         _ => (None, None, "*mut c_void".into()),
@@ -1040,8 +1101,16 @@ mod tests {
         assert_eq!(sig.params[2].ty, Ty::Scalar("u8"));
         assert_eq!(sig.params[3].ty, Ty::Raw("*mut c_void".into()));
         assert_eq!(parse_sig("void (InputEvent* const* events)", Source::Semantic, &ctx).unwrap().params[0].ty, Ty::Raw("*mut *mut c_void".into()));
-        assert!(parse_sig("void Print(const char* fmt, ...)", Source::Semantic, &ctx).is_none());
-        assert!(parse_sig("void Set(NiPoint3 value)", Source::Semantic, &ctx).is_none());
+        assert_eq!(parse_sig("void Print(const char* fmt, ...)", Source::Semantic, &ctx).err(), Some(Unexpressible::Varargs));
+        assert_eq!(parse_sig("void Set(NiPoint3 value)", Source::Semantic, &ctx).err(), Some(Unexpressible::UnknownByValue));
+        assert_eq!(parse_sig("void Set(TESFile file)", Source::Semantic, &ctx).err(), Some(Unexpressible::ClassByValue));
+        assert_eq!(parse_sig("void (BGSMoviePlayer* this+0x58)", Source::Semantic, &ctx).err(), Some(Unexpressible::Malformed));
+        let sig = parse_sig("bool (this, TESForm forms[6] /* six */, u8 out[3], s32 n, HWND window)  /* note */", Source::Semantic, &ctx).unwrap();
+        assert_eq!(sig.params[0].ty, Ty::Raw("*mut c_void".into()));
+        assert_eq!(sig.params[1].ty, Ty::Class("TESForm".into(), false));
+        assert_eq!(sig.params[2].ty, Ty::Raw("*mut u8".into()));
+        assert_eq!(sig.params[3].ty, Ty::Scalar("i32"));
+        assert_eq!(sig.params[4].ty, Ty::Raw("*mut c_void".into()));
     }
 
     #[test]

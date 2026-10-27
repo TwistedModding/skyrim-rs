@@ -3,6 +3,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiBlendInterpolator::vfunc_29` at 0xf5c9f0 (rtti, medium); signature (low): `undefined vfunc_29(NiBlendInterpolator * this, longlong param_1)`
+pub const NiBlendInterpolator__vfunc_29: u64 = 72548;
+/// `NiBlendInterpolator::vfunc_49` at 0xf5c6b0 (rtti, medium); signature (high): `undefined vfunc_49(NiBlendInterpolator * this)`
+pub const NiBlendInterpolator__vfunc_49: u64 = 72545;
+/// `NiBlendInterpolator::vfunc_51` at 0xf5cb00 (rtti, medium); signature (low): `undefined vfunc_51(NiBlendInterpolator * this, undefined4 param_2, undefined4 param_3)`
+pub const NiBlendInterpolator__vfunc_51: u64 = 72549;
+/// `NiBlendInterpolator::vfunc_57` at 0xf5c410 (rtti, medium); signature (low): `byte vfunc_57(NiBlendInterpolator * this, longlong * param_2, undefined4 param_3, char param_4, undefined4 param_5)`
+pub const NiBlendInterpolator__vfunc_57: u64 = 72543;
+/// `NiBlendInterpolator::vfunc_58` at 0xf5c550 (rtti, medium); signature (low): `undefined vfunc_58(NiBlendInterpolator * this, byte param_1)`
+pub const NiBlendInterpolator__vfunc_58: u64 = 72544;
+/// `NiBlendInterpolator::vfunc_60` at 0xf5cd50 (rtti, medium); signature (low): `undefined8 vfunc_60(NiBlendInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBlendInterpolator__vfunc_60: u64 = 72552;
+/// `NiBlendPoint3Interpolator::Create` at 0xf743e0 (string, high); signature (low): `NiBlendInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiBlendPoint3Interpolator__Create: u64 = 73227;
 /// `NiBlendPoint3Interpolator::ctor` at 0xf73d60 (layout_inference, high); signature (low): `NiBlendPoint3Interpolator * ctor(NiBlendPoint3Interpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
 pub const NiBlendPoint3Interpolator__ctor: u64 = 73220;
 /// `NiBlendPoint3Interpolator::ctor` at 0xf74090 (layout_inference, high); signature (high): `NiBlendPoint3Interpolator * ctor(NiBlendPoint3Interpolator * this)`
@@ -8583,15 +8597,3 @@ pub const Papyrus__ObjectReference__PlaySyncedAnimationSS: u64 = 56209;
 pub const Papyrus__ObjectReference__PlayTerrainEffect: u64 = 56211;
 /// `Papyrus::ObjectReference::ProcessTrapHit` at 0xa47e60 (papyrus_native, high); signature (medium): `void ProcessTrapHit(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8, int a9, float a10)`
 pub const Papyrus__ObjectReference__ProcessTrapHit: u64 = 56212;
-/// `Papyrus::ObjectReference::PushActorAway` at 0xa47fa0 (papyrus_native, high); signature (medium): `void PushActorAway(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0, float a1)`
-pub const Papyrus__ObjectReference__PushActorAway: u64 = 56213;
-/// `Papyrus::ObjectReference::RegisterFuncs` at 0xa4a610 (xref_inference, medium); signature (low): `undefined RegisterFuncs(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__ObjectReference__RegisterFuncs: u64 = 56246;
-/// `Papyrus::ObjectReference::RemoveAllInventoryEventFilters` at 0xa48080 (papyrus_native, high); signature (medium): `void RemoveAllInventoryEventFilters(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__RemoveAllInventoryEventFilters: u64 = 56214;
-/// `Papyrus::ObjectReference::RemoveAllItems` at 0xa480d0 (papyrus_native, high); signature (medium): `void RemoveAllItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, bool a1, bool a2)`
-pub const Papyrus__ObjectReference__RemoveAllItems: u64 = 56215;
-/// `Papyrus::ObjectReference::RemoveAllStolenItems` at 0xa48140 (papyrus_native, high); signature (medium): `void RemoveAllStolenItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
-pub const Papyrus__ObjectReference__RemoveAllStolenItems: u64 = 442744;
-/// `Papyrus::ObjectReference::RemoveDependentAnimatedObjectReference` at 0xa481a0 (papyrus_native, high); signature (medium): `bool RemoveDependentAnimatedObjectReference(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
-pub const Papyrus__ObjectReference__RemoveDependentAnimatedObjectReference: u64 = 56216;

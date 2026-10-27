@@ -3,6 +3,150 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSProceduralLightningController::vftable` at 0x1a71e30, id 238536 (rtti, high); 60 slots.
+#[repr(C)]
+pub struct BSProceduralLightningController_vtable {
+    /// `BSProceduralLightningController::vdtor` at 0xffe320 (slot_propagation, medium); signature (low): `BSProceduralLightningController * vdtor(BSProceduralLightningController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `BSProceduralLightningController::vfunc_2` at 0xffe530 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `BSProceduralLightningController::vfunc_23` at 0xffc5e0 (rtti, high); signature (low): `longlong * vfunc_23(BSProceduralLightningController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `BSProceduralLightningController::vfunc_24` at 0xffc810 (rtti, high); signature (low): `undefined vfunc_24(BSProceduralLightningController * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `BSProceduralLightningController::vfunc_25` at 0xffc880 (rtti, high); signature (low): `undefined vfunc_25(BSProceduralLightningController * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `BSProceduralLightningController::vfunc_26` at 0xffc920 (rtti, high); signature (low): `char vfunc_26(BSProceduralLightningController * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `BSProceduralLightningController::vfunc_27` at 0xffc9c0 (rtti, high); signature (low): `undefined vfunc_27(BSProceduralLightningController * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `BSProceduralLightningController::vfunc_28` at 0xffca50 (rtti, high); signature (low): `ulonglong vfunc_28(BSProceduralLightningController * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `BSProceduralLightningController::vfunc_29` at 0xffd9f0 (rtti, high); signature (low): `undefined vfunc_29(BSProceduralLightningController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_29: *const c_void,
+    /// `BSProceduralLightningController::vfunc_30` at 0xffdb60 (rtti, high); signature (untiered): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiTimeController::vfunc_37` at 0xef8320 (rtti, medium); signature (low): `undefined vfunc_37(NiTimeController * this, undefined4 param_2)`
+    pub slot_37: *const c_void,
+    /// `NiTimeController::vfunc_38` at 0xef8340 (rtti, medium); signature (high): `undefined vfunc_38(NiTimeController * this)`
+    pub slot_38: *const c_void,
+    /// `BSProceduralLightningController::vfunc_39` at 0xffcec0 (rtti, high); signature (low): `undefined vfunc_39(BSProceduralLightningController * this, float * param_1, undefined8 param_2, undefined8 * * param_3)`
+    pub slot_39: *const c_void,
+    /// `NiTimeController::vfunc_40` at 0xef8370 (rtti, medium); signature (low): `undefined vfunc_40(NiTimeController * this, longlong param_1)`
+    pub slot_40: *const c_void,
+    /// `NiTimeController::vfunc_41` at 0x305d80 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiTimeController::vfunc_42` at 0x305d90 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `NiTimeController::vfunc_43` at 0xef86d0 (rtti, medium); signature (medium): `float vfunc_43(NiTimeController * this, float param_1)`
+    pub slot_43: *const c_void,
+    /// `NiTimeController::vfunc_44` at 0xef88f0 (rtti, medium); signature (low): `undefined vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `NiTimeController::vfunc_45` at 0x305d70 (rtti, medium); signature (low): `undefined1 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `BSProceduralLightningController::vfunc_46` at 0xffd790 (rtti, high); signature (high): `undefined8 vfunc_46(BSProceduralLightningController * this)`
+    pub slot_46: *const c_void,
+    /// `BSProceduralLightningController::vfunc_47` at 0xffd7c0 (rtti, high); signature (low): `undefined8 vfunc_47(void)`
+    pub slot_47: *const c_void,
+    /// `BSProceduralLightningController::vfunc_48` at 0xffd7d0 (rtti, high); signature (low): `undefined * vfunc_48(BSProceduralLightningController * this, ushort param_1)`
+    pub slot_48: *const c_void,
+    /// `BSProceduralLightningController::vfunc_49` at 0xffd7f0 (rtti, high); signature (low): `ushort vfunc_49(BSProceduralLightningController * this, longlong param_1)`
+    pub slot_49: *const c_void,
+    /// `BSProceduralLightningController::vfunc_50` at 0xffd860 (rtti, high); signature (low): `undefined vfunc_50(BSProceduralLightningController * this, undefined8 * param_1)`
+    pub slot_50: *const c_void,
+    /// `BSProceduralLightningController::vfunc_51` at 0xffd880 (rtti, high); signature (low): `undefined8 vfunc_51(BSProceduralLightningController * this, ushort param_1)`
+    pub slot_51: *const c_void,
+    /// `BSProceduralLightningController::vfunc_52` at 0xffd8a0 (rtti, high); signature (low): `undefined vfunc_52(BSProceduralLightningController * this, longlong * param_1, ushort param_2)`
+    pub slot_52: *const c_void,
+    /// `NiInterpController::vfunc_53` at 0xf5f840 (rtti, medium); signature (high): `undefined vfunc_53(NiInterpController * this)`
+    pub slot_53: *const c_void,
+    /// `BSProceduralLightningController::vfunc_54` at 0xffd780 (rtti, high); signature (low): `char * vfunc_54(void)`
+    pub slot_54: *const c_void,
+    /// `BSProceduralLightningController::vfunc_55` at 0xffd8f0 (rtti, high); signature (low): `undefined8 vfunc_55(void)`
+    pub slot_55: *const c_void,
+    /// `BSProceduralLightningController::vfunc_56` at 0xffd900 (rtti, high); signature (low): `undefined vfunc_56(void)`
+    pub slot_56: *const c_void,
+    /// `BSProceduralLightningController::vfunc_57` at 0xffd910 (rtti, high); signature (low): `NiBlendFloatInterpolator * vfunc_57(BSProceduralLightningController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, byte param_5)`
+    pub slot_57: *const c_void,
+    /// `BSProceduralLightningController::vfunc_58` at 0xffd9e0 (rtti, high); signature (low): `undefined vfunc_58(void)`
+    pub slot_58: *const c_void,
+    /// `BSProceduralLightningController::vfunc_59` at 0xffe540 (rtti, high); signature (low): `bool vfunc_59(BSProceduralLightningController * this, longlong * param_1, ushort param_2)`
+    pub slot_59: *const c_void,
+}
+impl BSProceduralLightningController_vtable {
+    pub const ID: u64 = 238536;
+}
+
+/// `BSProceduralLightningTasklet::vftable` at 0x1a72018, id 238538 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct BSProceduralLightningTasklet_vtable {
+    /// `BSProceduralLightningTasklet::vdtor` at 0xffe470 (slot_propagation, medium); signature (low): `BSProceduralLightningTasklet * vdtor(BSProceduralLightningTasklet * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTaskletData::vfunc_1` at 0xec3d20 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `BSProceduralLightningTasklet::vfunc_2` at 0xffe8f0 (rtti, high); signature (low): `undefined vfunc_2(BSProceduralLightningTasklet * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_2: *const c_void,
+    /// `BSProceduralLightningTasklet::vfunc_3` at 0xffe8e0 (rtti, high); signature (high): `undefined vfunc_3(BSProceduralLightningTasklet * this)`
+    pub slot_3: *const c_void,
+}
+impl BSProceduralLightningTasklet_vtable {
+    pub const ID: u64 = 238538;
+}
+
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>::vftable` at 0x18bf698, id 200275 (rtti, high); 19 slots.
 #[repr(C)]
 pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2_vtable {
@@ -10548,113 +10692,5 @@ pub struct BSScript__NativeFunction1_Actor_void_TESFaction____ptr64_vtable {
 }
 impl BSScript__NativeFunction1_Actor_void_TESFaction____ptr64_vtable {
     pub const ID: u64 = 217547;
-}
-
-/// `BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>::vftable` at 0x19962a8, id 217457 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction1_Actor_void_TESForm____ptr64_vtable {
-    /// `BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>::vdtor` at 0xa0cab0 (slot_propagation, medium); signature (low): `NativeFunction1<Actor,void,TESForm*___ptr64> * vdtor(NativeFunction1<Actor,void,TESForm*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>::vfunc_21` at 0xa0e390 (rtti, high); signature (high): `bool vfunc_21(NativeFunction1<Actor,void,TESForm*___ptr64> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,TESForm*___ptr64>::vfunc_22` at 0xa0ff60 (rtti, high); signature (low): `bool vfunc_22(NativeFunction1<Actor,void,TESForm*___ptr64> * this, uint * param_1, ulonglong param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction1_Actor_void_TESForm____ptr64_vtable {
-    pub const ID: u64 = 217457;
-}
-
-/// `BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>::vftable` at 0x19988e8, id 217559 (rtti, high); 23 slots.
-#[repr(C)]
-pub struct BSScript__NativeFunction1_Actor_void_TESObjectREFR____ptr64_vtable {
-    /// `BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>::vdtor` at 0xa0caf0 (slot_propagation, medium); signature (low): `NativeFunction1<Actor,void,TESObjectREFR*___ptr64> * vdtor(NativeFunction1<Actor,void,TESObjectREFR*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
-    pub slot_1: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
-    pub slot_2: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
-    pub slot_3: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
-    pub slot_5: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
-    pub slot_7: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
-    pub slot_8: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
-    pub slot_9: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
-    pub slot_10: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
-    pub slot_11: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
-    pub slot_12: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
-    pub slot_13: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
-    pub slot_14: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_15: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
-    pub slot_16: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
-    pub slot_17: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
-    pub slot_19: *const c_void,
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
-    pub slot_20: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>::vfunc_21` at 0xa0e3a0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction1<Actor,void,TESObjectREFR*___ptr64> * this)`
-    pub slot_21: *const c_void,
-    /// `BSScript::NativeFunction1<Actor,void,TESObjectREFR*___ptr64>::vfunc_22` at 0xa10040 (rtti, high); signature (low): `bool vfunc_22(NativeFunction1<Actor,void,TESObjectREFR*___ptr64> * this, uint * param_1, ulonglong param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
-    pub slot_22: *const c_void,
-}
-impl BSScript__NativeFunction1_Actor_void_TESObjectREFR____ptr64_vtable {
-    pub const ID: u64 = 217559;
 }
 

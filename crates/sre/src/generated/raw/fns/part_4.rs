@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSResource::CacheArchiveOp::vfunc_2` at 0xecc2f0 (rtti, high); signature (low): `undefined vfunc_2(void)`
+pub const BSResource__CacheArchiveOp__vfunc_2: u64 = 69779;
+/// `BSResource::CacheArchiveOp::vfunc_3` at 0xecc300 (rtti, high); signature (low): `undefined vfunc_3(CacheArchiveOp * this, undefined8 param_1, longlong param_2)`
+pub const BSResource__CacheArchiveOp__vfunc_3: u64 = 69780;
+/// `BSResource::CacheArchiveOp::vfunc_5` at 0xecc2e0 (rtti, high); signature (low): `undefined vfunc_5(void)`
+pub const BSResource__CacheArchiveOp__vfunc_5: u64 = 69778;
 /// `BSResource::CacheDrive::Impl::ctor` at 0xeda920 (layout_inference, medium); signature (high): `undefined ctor(Impl * this)`
 pub const BSResource__CacheDrive__Impl__ctor: u64 = 70130;
 /// `BSResource::CacheDrive::Impl::vdtor` at 0xedab20 (layout_inference, medium); signature (low): `Impl * vdtor(Impl * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -6225,5 +6231,3 @@ pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController_
 pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController__vfunc_1: u64 = 63838;
 /// `BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController>::vfunc_2` at 0xbde3b0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController> * this, undefined8 * param_1)`
 pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController__vfunc_2: u64 = 63839;
-/// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vdtor` at 0x7d2860 (layout_inference, medium); signature (low): `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * vdtor(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vdtor: u64 = 43204;

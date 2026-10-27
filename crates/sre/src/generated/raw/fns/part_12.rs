@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetField0_7` at 0xab01e0 (decompiler, high); signature (untiered): `undefined8 GetField0_7(undefined8 * param_1)`
+pub const GetField0_7: u64 = 57557;
+/// `GetField0_8` at 0xe98100 (decompiler, high); signature (high): `undefined4 GetField0_8(undefined4 * param_1)`
+pub const GetField0_8: u64 = 90050;
+/// `GetField0_9` at 0x116f5b0 (decompiler, high); signature (high): `undefined8 GetField0_9(undefined8 * param_1)`
+pub const GetField0_9: u64 = 82320;
+/// `GetField0xF8Field50ValueOrScaledExtentY` at 0x6859f0 (decompiler, medium); signature (medium): `ulonglong GetField0xF8Field50ValueOrScaledExtentY(longlong param_1)`
+pub const GetField0xF8Field50ValueOrScaledExtentY: u64 = 37443;
+/// `GetField10` at 0x228e80 (decompiler, high); signature (untiered): `undefined4 GetField10(longlong param_1)`
+pub const GetField10: u64 = 16004;
+/// `GetField100` at 0xb657e0 (decompiler, high); signature (untiered): `undefined8 GetField100(longlong param_1)`
+pub const GetField100: u64 = 61623;
 /// `GetField100Field30OrFlagDefault` at 0x2660b0 (decompiler, medium); signature (untiered): `undefined4 GetField100Field30OrFlagDefault(longlong param_1)`
 pub const GetField100Field30OrFlagDefault: u64 = 17136;
 /// `GetField100Ptr` at 0x6239f0 (decompiler, high); signature (high): `longlong GetField100Ptr(longlong param_1)`
@@ -9003,11 +9015,3 @@ pub const INISetting_fFadeInThreshold_LOD__init: u64 = 269;
 pub const INISetting_fFadeInTime_LOD__atexit: u64 = 165465;
 /// `INISetting_fFadeInTime_LOD__init` at 0xbd70 (crt_init, medium); signature (high): `void INISetting_fFadeInTime_LOD__init(void)`
 pub const INISetting_fFadeInTime_LOD__init: u64 = 270;
-/// `INISetting_fFadeOutThreshold_LOD__atexit` at 0x173f050 (crt_init, medium); signature (high): `void INISetting_fFadeOutThreshold_LOD__atexit(void)`
-pub const INISetting_fFadeOutThreshold_LOD__atexit: u64 = 165466;
-/// `INISetting_fFadeOutThreshold_LOD__init` at 0xbdf0 (crt_init, medium); signature (high): `void INISetting_fFadeOutThreshold_LOD__init(void)`
-pub const INISetting_fFadeOutThreshold_LOD__init: u64 = 271;
-/// `INISetting_fFadeOutTime_LOD__atexit` at 0x173f0a0 (crt_init, medium); signature (high): `void INISetting_fFadeOutTime_LOD__atexit(void)`
-pub const INISetting_fFadeOutTime_LOD__atexit: u64 = 165467;
-/// `INISetting_fFadeOutTime_LOD__init` at 0xbe70 (crt_init, medium); signature (high): `void INISetting_fFadeOutTime_LOD__init(void)`
-pub const INISetting_fFadeOutTime_LOD__init: u64 = 272;

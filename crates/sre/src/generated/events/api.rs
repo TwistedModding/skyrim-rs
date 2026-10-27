@@ -348,6 +348,16 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// `void (EventSourceHolder_MenuOpenClose* this, const BSFixedString* menuName)`
     #[inline]
     pub fn unload_menu(&self, menuName: &crate::BSFixedString) { unsafe { function!(82095, (*const Self, *const crate::BSFixedString))(core::ptr::from_ref(self), core::ptr::from_ref(menuName)) } }
+    /// `EventSourceHolder_MenuOpenClose::UpdateCursorMenu`: queues Cursor Menu show (1), update (0) or hide (3) so that it follows flag 0x4 of the shown menu, or of the topmost open menu with depth < 0xb and without flag 0x10000 after a hide
+    ///
+    /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82097, rva 0x116bbf0.
+    /// `void (EventSourceHolder_MenuOpenClose* this, IMenu* shownMenu /* null after a hide */)`
+    /// May be null: `shownMenu`.
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn update_cursor_menu(&self, shownMenu: *mut crate::IMenu) { unsafe { function!(82097, (*const Self, *mut crate::IMenu))(core::ptr::from_ref(self), shownMenu) } }
     /// `EventSourceHolder_MenuOpenClose::ctor`: constructs the UI singleton in place, stores g ptr, creates the UI message queue static and the object behind 0x3210e38
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82072, rva 0x1169070.

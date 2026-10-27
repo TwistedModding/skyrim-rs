@@ -3,6 +3,158 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>::vftable` at 0x1ad1c88, id 466049 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6dc4d27c5def_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>::vfunc_0` at 0x1283190 (rtti, high); signature (low): `CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_> * vfunc_0(CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>::vfunc_1` at 0x12842f0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>::vfunc_2` at 0x12840a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>::vfunc_3` at 0x1284d10 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6dc4d27c5def_vtable {
+    pub const ID: u64 = 466049;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_>::vftable` at 0x1af0000, id 468056 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_06b1cc70dabd_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_>::vfunc_0` at 0x1338a70 (rtti, high); signature (low): `CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_> * vfunc_0(CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e622e65e01ede8fdaf05876c07743ad3>_>::vfunc_1` at 0x133aa60 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e622e65e01ede8fdaf05876c07743ad3>_> * this, ulonglong * param_1)`
+    pub slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_>::vfunc_2` at 0x1339d50 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_>::vfunc_3` at 0x133b560 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_06b1cc70dabd_vtable {
+    pub const ID: u64 = 468056;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>::vftable` at 0x1aefd80, id 468030 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a138e0beac28_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>::vfunc_0` at 0x1338ad0 (rtti, high); signature (low): `CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_> * vfunc_0(CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>::vfunc_1` at 0x133aa70 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>::vfunc_2` at 0x1339e10 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>::vfunc_3` at 0x133b620 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a138e0beac28_vtable {
+    pub const ID: u64 = 468030;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_>::vftable` at 0x1af00a0, id 537480 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3d9e070a1d62_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_>::vfunc_0` at 0x1338b30 (rtti, high); signature (low): `CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_> * vfunc_0(CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_fe4b23abdcf156897a3e954dac9de83c>_>::vfunc_1` at 0x133ab10 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_fe4b23abdcf156897a3e954dac9de83c>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_>::vfunc_2` at 0x1339ed0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_>::vfunc_3` at 0x133b6e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3d9e070a1d62_vtable {
+    pub const ID: u64 = 537480;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vftable` at 0x1ad1868, id 466010 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3bdb359a53c2_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12832b0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_1: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3bdb359a53c2_vtable {
+    pub const ID: u64 = 466010;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1ad1880, id 466013 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe1d49cdf800_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12833a0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe1d49cdf800_vtable {
+    pub const ID: u64 = 466013;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>::vftable` at 0x1ae19a8, id 467148 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d71a9896b32_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>::vfunc_0` at 0x12d1f60 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>::vfunc_1` at 0x12d31e0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_> * this, undefined8 * param_1, undefined8 param_2, TypeDescriptor * param_3)`
+    pub slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d71a9896b32_vtable {
+    pub const ID: u64 = 467148;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>::vftable` at 0x1ae19d0, id 467150 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e4f7e67aafc1_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>::vfunc_0` at 0x12d21c0 (rtti, high); signature (low): `CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_> * vfunc_0(CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>::vfunc_1` at 0x12d31e0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_> * this, undefined8 * param_1, undefined8 param_2, TypeDescriptor * param_3)`
+    pub slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>::vfunc_2` at 0x12d2ec0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>::vfunc_3` at 0x12d3720 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    pub slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e4f7e67aafc1_vtable {
+    pub const ID: u64 = 467150;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vftable` at 0x1ae17a8, id 467115 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3a2ae5c05ed9_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12d2310 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_1: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3a2ae5c05ed9_vtable {
+    pub const ID: u64 = 467115;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1ae17c0, id 467118 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8634995cab4d_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12d23a0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8634995cab4d_vtable {
+    pub const ID: u64 = 467118;
+}
+
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_011b78ece2e776a201ecd4d2f293fd79>_>::vftable` at 0x1ad4a60, id 466230 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_818190ca3c5f_vtable {
@@ -11955,239 +12107,5 @@ pub struct hkbTwistModifier_vtable {
 }
 impl hkbTwistModifier_vtable {
     pub const ID: u64 = 226636;
-}
-
-/// `hkbVariableBindingSet::vftable` at 0x19dd498, id 226150 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbVariableBindingSet_vtable {
-    /// `hkbVariableBindingSet::vdtor` at 0xae5a60 (slot_propagation, medium); signature (low): `hkbVariableBindingSet * vdtor(hkbVariableBindingSet * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbVariableBindingSet_vtable {
-    pub const ID: u64 = 226150;
-}
-
-/// `hkbVariableValueSet::vftable` at 0x19c09a8, id 220282 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbVariableValueSet_vtable {
-    /// `hkbVariableValueSet::vdtor` at 0xad1f40 (slot_propagation, medium); signature (low): `hkbVariableValueSet * vdtor(hkbVariableValueSet * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbVariableValueSet_vtable {
-    pub const ID: u64 = 220282;
-}
-
-/// `hkbWorld::vftable` at 0x19c1000, id 220348 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbWorld_vtable {
-    /// `hkbWorld::vdtor` at 0xadb990 (slot_propagation, medium); signature (low): `hkbWorld * vdtor(hkbWorld * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbWorld_vtable {
-    pub const ID: u64 = 220348;
-}
-
-/// `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator>::vftable` at 0x1a97678, id 241503 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkgpAbstractMesh_hkgpConvexHullImpl__Edge_hkgpConvexHullImpl__Vertex_hkgpConvexHullImpl__Triangl_bd811a7019fb_vtable {
-    /// `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator>::vdtor` at 0x10f9d70 (layout_inference, medium); signature (low): `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator> * vdtor(hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x1100bc0 (rtti, high); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator> * this)`
-    pub slot_3: *const c_void,
-}
-impl hkgpAbstractMesh_hkgpConvexHullImpl__Edge_hkgpConvexHullImpl__Vertex_hkgpConvexHullImpl__Triangl_bd811a7019fb_vtable {
-    pub const ID: u64 = 241503;
-}
-
-/// `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator>::vftable` at 0x1a970d0, id 241474 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkgpAbstractMesh_hkgpIndexedMeshDefinitions__Edge_hkgpIndexedMeshDefinitions__Vertex_hkgpIndexed_71e358a51f1e_vtable {
-    /// `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator>::vdtor` at 0x10ebca0 (layout_inference, medium); signature (low): `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator> * vdtor(hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x10ec0e0 (rtti, medium); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator> * this)`
-    pub slot_3: *const c_void,
-}
-impl hkgpAbstractMesh_hkgpIndexedMeshDefinitions__Edge_hkgpIndexedMeshDefinitions__Vertex_hkgpIndexed_71e358a51f1e_vtable {
-    pub const ID: u64 = 241474;
-}
-
-/// `hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vftable` at 0x1a98f00, id 241798 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkgpAbstractMesh_hkgpMeshBase__Edge_hkgpMeshBase__Vertex_hkgpMeshBase__Triangle_hkContainerHeapAllocator_vtable {
-    /// `hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vdtor` at 0x11512c0 (layout_inference, medium); signature (low): `hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator> * vdtor(hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x11582c0 (rtti, high); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator> * this)`
-    pub slot_3: *const c_void,
-}
-impl hkgpAbstractMesh_hkgpMeshBase__Edge_hkgpMeshBase__Vertex_hkgpMeshBase__Triangle_hkContainerHeapAllocator_vtable {
-    pub const ID: u64 = 241798;
-}
-
-/// `hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vftable` at 0x1a99168, id 241820 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkgpAbstractMesh_hkgpTriangulatorType_hkContainerHeapAllocator_hkgpTriangulatorBase__VertexBase__ac6308a22a24_vtable {
-    /// `hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vdtor` at 0x1151200 (layout_inference, medium); signature (low): `hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator> * vdtor(hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x11582a0 (rtti, high); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator> * this)`
-    pub slot_3: *const c_void,
-}
-impl hkgpAbstractMesh_hkgpTriangulatorType_hkContainerHeapAllocator_hkgpTriangulatorBase__VertexBase__ac6308a22a24_vtable {
-    pub const ID: u64 = 241820;
-}
-
-/// `hkgpConvexHull::vftable` at 0x1a97658, id 241501 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkgpConvexHull_vtable {
-    /// `hkgpConvexHull::vdtor` at 0x10f9e30 (slot_propagation, medium); signature (low): `hkgpConvexHull * vdtor(hkgpConvexHull * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkgpConvexHull_vtable {
-    pub const ID: u64 = 241501;
-}
-
-/// `hkgpIndexedMesh::vftable` at 0x1a98290, id 241595 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkgpIndexedMesh_vtable {
-    /// `hkgpIndexedMesh::vdtor` at 0x1112f00 (slot_propagation, medium); signature (low): `hkgpIndexedMesh * vdtor(hkgpIndexedMesh * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x10ec0e0 (rtti, medium); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator> * this)`
-    pub slot_3: *const c_void,
-}
-impl hkgpIndexedMesh_vtable {
-    pub const ID: u64 = 241595;
-}
-
-/// `hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vftable` at 0x1a99488, id 241857 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct hkgpJobQueue__Box_hkgpMeshInternals__ConcaveEdgeJob__Handle_vtable {
-    /// `hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vdtor` at 0x1150f40 (layout_inference, medium); signature (low): `Box<hkgpMeshInternals::ConcaveEdgeJob::Handle> * vdtor(Box<hkgpMeshInternals::ConcaveEdgeJob::Handle> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vfunc_1` at 0x1158720 (rtti, high); signature (high): `undefined vfunc_1(Box<hkgpMeshInternals::ConcaveEdgeJob::Handle> * this)`
-    pub slot_1: *const c_void,
-}
-impl hkgpJobQueue__Box_hkgpMeshInternals__ConcaveEdgeJob__Handle_vtable {
-    pub const ID: u64 = 241857;
-}
-
-/// `hkgpJobQueue::IJob::vftable` at 0x1a98ee8, id 241796 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct hkgpJobQueue__IJob_vtable {
-    /// `hkgpJobQueue::IJob::vdtor` at 0x11515f0 (layout_inference, medium); signature (low): `IJob * vdtor(IJob * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-}
-impl hkgpJobQueue__IJob_vtable {
-    pub const ID: u64 = 241796;
-}
-
-/// `hkgpMesh::vftable` at 0x1a98ff0, id 241812 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkgpMesh_vtable {
-    /// `hkgpMesh::vdtor` at 0x1151920 (slot_propagation, medium); signature (low): `hkgpMesh * vdtor(hkgpMesh * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkgpMesh::vfunc_3` at 0x1140120 (rtti, high); signature (high): `undefined vfunc_3(hkgpMesh * this)`
-    pub slot_3: *const c_void,
-}
-impl hkgpMesh_vtable {
-    pub const ID: u64 = 241812;
-}
-
-/// `hkgpMesh::CollideShapeTriangle::vftable` at 0x1a98fc0, id 241808 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct hkgpMesh__CollideShapeTriangle_vtable {
-    /// `hkgpMesh::CollideShapeTriangle::vdtor` at 0x11514a0 (layout_inference, medium); signature (low): `CollideShapeTriangle * vdtor(CollideShapeTriangle * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkgpMesh::CollideShapeTriangle::vfunc_1` at 0x1151b70 (rtti, high); signature (low): `undefined4 vfunc_1(CollideShapeTriangle * this, longlong param_2)`
-    pub slot_1: *const c_void,
-}
-impl hkgpMesh__CollideShapeTriangle_vtable {
-    pub const ID: u64 = 241808;
-}
-
-/// `hkgpMesh::ExternShape::vftable` at 0x1a98f98, id 241806 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkgpMesh__ExternShape_vtable {
-    /// `hkgpMesh::ExternShape::vdtor` at 0x1151500 (layout_inference, medium); signature (low): `ExternShape * vdtor(ExternShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkgpMesh::IConvexOverlap::IConvexShape::vfunc_1` at 0x1153fd0 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkgpMesh::ExternShape::vfunc_2` at 0x1154050 (rtti, high); signature (low): `undefined vfunc_2(ExternShape * this, float * param_1, undefined8 * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkgpMesh::ExternShape::vfunc_3` at 0x1153c90 (rtti, high); signature (low): `uint * vfunc_3(ExternShape * this, uint * param_1)`
-    pub slot_3: *const c_void,
-}
-impl hkgpMesh__ExternShape_vtable {
-    pub const ID: u64 = 241806;
-}
-
-/// `hkgpMesh::IConvexOverlap::vftable` at 0x1a98f50, id 241802 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkgpMesh__IConvexOverlap_vtable {
-    /// `hkgpMesh::IConvexOverlap::vdtor` at 0x1151560 (layout_inference, medium); signature (low): `IConvexOverlap * vdtor(IConvexOverlap * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-}
-impl hkgpMesh__IConvexOverlap_vtable {
-    pub const ID: u64 = 241802;
-}
-
-/// `hkgpMesh::IConvexOverlap::IConvexShape::vftable` at 0x1a98f28, id 241800 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkgpMesh__IConvexOverlap__IConvexShape_vtable {
-    /// `hkgpMesh::IConvexOverlap::IConvexShape::vdtor` at 0x11515c0 (layout_inference, medium); signature (low): `IConvexShape * vdtor(IConvexShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkgpMesh::IConvexOverlap::IConvexShape::vfunc_1` at 0x1153fd0 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl hkgpMesh__IConvexOverlap__IConvexShape_vtable {
-    pub const ID: u64 = 241800;
 }
 

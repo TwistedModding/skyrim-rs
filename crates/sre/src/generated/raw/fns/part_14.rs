@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `IsAnotherThreadInUpdatePhase` at 0x6e49e0 (semantic, medium); signature (untiered): `ulonglong IsAnotherThreadInUpdatePhase(void)`; true when a global state holds (ID_403107+0x6c == 1) and a thread other than the caller has its bit in the mask 0x3244170; callers then queue the work instead of doing it (medium); semantic signature: `bool ()`
+pub const IsAnotherThreadInUpdatePhase: u64 = 39033;
+/// `IsAnyMagicCasterCasting` at 0x6d6780 (decompiler, medium); signature (medium): `undefined8 IsAnyMagicCasterCasting(longlong param_1, longlong param_2)`
+pub const IsAnyMagicCasterCasting: u64 = 38759;
+/// `IsArgFinite` at 0xd18d10 (decompiler, high); signature (untiered): `undefined IsArgFinite(longlong param_1)`
+pub const IsArgFinite: u64 = 83133;
 /// `IsArgNaN` at 0xd18c70 (decompiler, high); signature (untiered): `undefined IsArgNaN(longlong param_1)`
 pub const IsArgNaN: u64 = 83132;
 /// `IsArmorCasterUsable` at 0x836f60 (decompiler, medium); signature (untiered): `undefined1 IsArmorCasterUsable(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
@@ -3339,6 +3345,8 @@ pub const Main__UpdateTimer: u64 = 36577;
 pub type Main__UpdateTimer_fn = unsafe extern "C" fn();
 /// `Main::ctor` at 0x6514e0 (semantic, high); signature (low): `Main * ctor(Main * this, undefined8 param_1, undefined8 param_2)`; constructs the 0x270-byte Main: stores the window (+0x18) and instance (+0x20), creates DirectInput from the instance, the main cullers and accumulators (g_MainCullers 0x34362a0 / 0x3436048), the scene lists and the camera FOV offset (high); semantic signature: `Main* (Main* this, HWND window, HINSTANCE instance)`
 pub const Main__ctor: u64 = 36545;
+/// `Main::ctor` as a function pointer type (high).
+pub type Main__ctor_fn = unsafe extern "C" fn(this: *mut crate::Main, window: *mut c_void, instance: *mut c_void) -> *mut crate::Main;
 /// `Main::dtor` at 0x652600 (layout_inference, high); signature (low): `undefined dtor(Main * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
 pub const Main__dtor: u64 = 36546;
 /// `Main::dtor_sub1` at 0x669850 (callgraph, medium); signature (untiered): `undefined dtor_sub1(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -3441,6 +3449,8 @@ pub const MainMenu__vfunc_5_sub2: u64 = 35479;
 pub const MainMenu__vfunc_5_sub3: u64 = 416420;
 /// `MainWindowProc` at 0x65f270 (semantic, high); signature (untiered): `LRESULT MainWindowProc(HWND param_1, uint param_2, WPARAM param_3, int * param_4)`; the game window's WNDPROC (ledger: Err_ThisApplicationCannotBeRunFrom_cb2): WM_ACTIVATE app activation, WM_NCACTIVATE, WM_SIZE/WM_WINDOWPOSCHANGED -> resize request and SetWindowPosition, WM_NCHITTEST, WM_DESTROY (high); semantic signature: `LRESULT (HWND hwnd, u32 msg, WPARAM wParam, LPARAM lParam)`
 pub const MainWindowProc: u64 = 36649;
+/// `MainWindowProc` as a function pointer type (high).
+pub type MainWindowProc_fn = unsafe extern "C" fn(hwnd: *mut c_void, msg: u32, wParam: usize, lParam: isize) -> isize;
 /// `MakeAbsolutePathFromCwd` at 0xead360 (decompiler, medium); signature (untiered): `ulonglong MakeAbsolutePathFromCwd(char * param_1, ulonglong param_2)`
 pub const MakeAbsolutePathFromCwd: u64 = 69121;
 /// `MakeAsyncOperationProxyAndInvokeCallback` at 0x1422c30 (decompiler, medium); signature (untiered): `AsyncOperationProxy * MakeAsyncOperationProxyAndInvokeCallback(longlong param_1, AsyncOperationProxy * param_2, longlong * param_3)`
@@ -4143,8 +4153,12 @@ pub const MenuOpenHandler__vdtor: u64 = 52238;
 pub const MenuOpenHandler__vfunc_7_sub0: u64 = 52516;
 /// `MenuTable::Find` at 0x116cda0 (semantic, high); signature (untiered): `undefined8 Find(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; table lookup: returns 1 and copies {menu, create} when the name is registered; this is the engine's GetMenu / IsMenuRegistered (no dedicated wrappers exist) (high); semantic signature: `bool (MenuTable* table /* ui+0x128 */, const BSFixedString* menuName, MenuTableEntryValue* out /* {IMenu* menu (AddRef'd), create} */)`
 pub const MenuTable__Find: u64 = 82135;
+/// `MenuTable::Find` as a function pointer type (high).
+pub type MenuTable__Find_fn = unsafe extern "C" fn(table: *mut c_void, menuName: *const crate::BSFixedString, out: *mut c_void) -> bool;
 /// `MenuTable::InsertOrAssign` at 0x116bfb0 (runtime, high); signature (untiered): `undefined8 InsertOrAssign(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; inserts or replaces {menu, create} for the name, growing and rehashing when full (high); semantic signature: `bool (BSTHashMapBase* map /* ui+0x130 */, const BSFixedString* menuName, const MenuTableEntryValue* value)`
 pub const MenuTable__InsertOrAssign: u64 = 82100;
+/// `MenuTable::InsertOrAssign` as a function pointer type (high).
+pub type MenuTable__InsertOrAssign_fn = unsafe extern "C" fn(map: *mut c_void, menuName: *const crate::BSFixedString, value: *const c_void) -> bool;
 /// `MenuTopicManager::BSTEventSink_PositionPlayerEvent_vdtor` at 0x5f2378 (slot_propagation, medium); signature (high): `undefined BSTEventSink_PositionPlayerEvent_vdtor(MenuTopicManager * this)`
 pub const MenuTopicManager__BSTEventSink_PositionPlayerEvent_vdtor: u64 = 35317;
 /// `MenuTopicManager::BSTEventSink_PositionPlayerEvent_vfunc_1` at 0x5ee8e0 (rtti, high); signature (low): `undefined8 BSTEventSink_PositionPlayerEvent_vfunc_1(MenuTopicManager * this, int * param_1)`
@@ -8551,17 +8565,3 @@ pub const NiBlendInterpolator__vfunc_26: u64 = 72532;
 pub const NiBlendInterpolator__vfunc_27: u64 = 72533;
 /// `NiBlendInterpolator::vfunc_28` at 0xf5c190 (rtti, high); signature (low): `ulonglong vfunc_28(NiBlendInterpolator * this, longlong * param_1)`
 pub const NiBlendInterpolator__vfunc_28: u64 = 72534;
-/// `NiBlendInterpolator::vfunc_29` at 0xf5c9f0 (rtti, medium); signature (low): `undefined vfunc_29(NiBlendInterpolator * this, longlong param_1)`
-pub const NiBlendInterpolator__vfunc_29: u64 = 72548;
-/// `NiBlendInterpolator::vfunc_49` at 0xf5c6b0 (rtti, medium); signature (high): `undefined vfunc_49(NiBlendInterpolator * this)`
-pub const NiBlendInterpolator__vfunc_49: u64 = 72545;
-/// `NiBlendInterpolator::vfunc_51` at 0xf5cb00 (rtti, medium); signature (low): `undefined vfunc_51(NiBlendInterpolator * this, undefined4 param_2, undefined4 param_3)`
-pub const NiBlendInterpolator__vfunc_51: u64 = 72549;
-/// `NiBlendInterpolator::vfunc_57` at 0xf5c410 (rtti, medium); signature (low): `byte vfunc_57(NiBlendInterpolator * this, longlong * param_2, undefined4 param_3, char param_4, undefined4 param_5)`
-pub const NiBlendInterpolator__vfunc_57: u64 = 72543;
-/// `NiBlendInterpolator::vfunc_58` at 0xf5c550 (rtti, medium); signature (low): `undefined vfunc_58(NiBlendInterpolator * this, byte param_1)`
-pub const NiBlendInterpolator__vfunc_58: u64 = 72544;
-/// `NiBlendInterpolator::vfunc_60` at 0xf5cd50 (rtti, medium); signature (low): `undefined8 vfunc_60(NiBlendInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendInterpolator__vfunc_60: u64 = 72552;
-/// `NiBlendPoint3Interpolator::Create` at 0xf743e0 (string, high); signature (low): `NiBlendInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBlendPoint3Interpolator__Create: u64 = 73227;

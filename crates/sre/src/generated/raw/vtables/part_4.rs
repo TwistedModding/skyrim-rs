@@ -9456,9 +9456,23 @@ pub struct BGSSoundOutput__DynamicAttenuationCharacteristics_vtable {
 impl BGSSoundOutput__DynamicAttenuationCharacteristics_vtable {
     pub const ID: u64 = 191122;
     pub const SLOT_GetMaxDistance: usize = 1;
+    /// Slot 1 as `BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetMaxDistance`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetMaxDistance(&self) -> Option<BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetMaxDistance> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetMaxDistance>>(self.slot_1) }
+    }
     pub const SLOT_GetMinDistance: usize = 2;
     pub const SLOT_GetCurveValue: usize = 3;
+    /// Slot 3 as `BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetCurveValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetCurveValue(&self) -> Option<BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetCurveValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetCurveValue>>(self.slot_3) }
+    }
 }
+/// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMaxDistance`, slot 1: +0xc (high).
+pub type BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetMaxDistance = unsafe extern "C" fn(this: *mut c_void) -> f32;
+/// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetCurveValue`, slot 3: +0x10[i] for i < 5 (high).
+pub type BGSSoundOutput__DynamicAttenuationCharacteristics_vtable_GetCurveValue = unsafe extern "C" fn(this: *mut c_void, i: u32) -> u8;
 
 /// `BGSStandardSoundDef::vftable` at 0x1835ce0, id 191153 (rtti, high); 7 slots.
 #[repr(C)]
@@ -9549,11 +9563,25 @@ pub struct BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable {
 impl BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable {
     pub const ID: u64 = 191151;
     pub const SLOT_GetFrequencyShift: usize = 1;
+    /// Slot 1 as `BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable_GetFrequencyShift`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetFrequencyShift(&self) -> Option<BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable_GetFrequencyShift> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable_GetFrequencyShift>>(self.slot_1) }
+    }
     pub const SLOT_GetFrequencyVariance: usize = 2;
     pub const SLOT_GetPriority: usize = 3;
     pub const SLOT_GetStaticAttenuation: usize = 4;
     pub const SLOT_GetStaticAttenuationVariance: usize = 5;
+    /// Slot 5 as `BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable_GetStaticAttenuationVariance`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetStaticAttenuationVariance(&self) -> Option<BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable_GetStaticAttenuationVariance> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable_GetStaticAttenuationVariance>>(self.slot_5) }
+    }
 }
+/// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyShift`, slot 1: returns +8 (descriptor +0x38) (high).
+pub type BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable_GetFrequencyShift = unsafe extern "C" fn(this: *mut c_void) -> i8;
+/// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuationVariance`, slot 5: returns +0xb (descriptor +0x3b) (high).
+pub type BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable_GetStaticAttenuationVariance = unsafe extern "C" fn(this: *mut c_void) -> u8;
 
 /// `BGSStaticCollection::vftable` at 0x180efc0, id 189164 (rtti, high); 83 slots.
 #[repr(C)]
@@ -12589,27 +12617,5 @@ pub struct BGSVolumetricLighting_vtable {
 }
 impl BGSVolumetricLighting_vtable {
     pub const ID: u64 = 189109;
-}
-
-/// `BGSWaterCollisionManager::BGSWaterUpdateI::vftable` at 0x1827600, id 190247 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct BGSWaterCollisionManager__BGSWaterUpdateI_vtable {
-    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_0` at 0x2f8e60 (rtti, high); signature (low): `BGSWaterUpdateI * vfunc_0(BGSWaterUpdateI * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_3` at 0x2fb9f0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_4` at 0x525280 (rtti, high); signature (low): `undefined vfunc_4(BGSWaterUpdateI * this, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
-    pub slot_4: *const c_void,
-    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_5` at 0x525740 (rtti, medium); signature (high): `undefined vfunc_5(BGSWaterUpdateI * this)`
-    pub slot_5: *const c_void,
-    /// `BGSWaterCollisionManager::BGSWaterUpdateI::vfunc_6` at 0x2fa030 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
-    pub slot_6: *const c_void,
-}
-impl BGSWaterCollisionManager__BGSWaterUpdateI_vtable {
-    pub const ID: u64 = 190247;
 }
 

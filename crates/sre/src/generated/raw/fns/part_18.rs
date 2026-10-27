@@ -3,6 +3,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetField28AndNotify_2` at 0xe6cbe0 (decompiler, medium); signature (untiered): `undefined SetField28AndNotify_2(longlong param_1, longlong param_2)`
+pub const SetField28AndNotify_2: u64 = 87751;
+/// `SetField28AndOffsetFields3CAnd4C` at 0xb42a50 (decompiler, medium); signature (medium): `undefined SetField28AndOffsetFields3CAnd4C(longlong param_1, float param_2)`
+pub const SetField28AndOffsetFields3CAnd4C: u64 = 60722;
+/// `SetField28Buffer` at 0xf1c210 (decompiler, medium); signature (untiered): `undefined8 SetField28Buffer(longlong param_1, void * param_2, uint param_3, char param_4)`
+pub const SetField28Buffer: u64 = 71726;
+/// `SetField28Byte30` at 0xe4f7f0 (decompiler, high); signature (high): `undefined SetField28Byte30(longlong param_1)`
+pub const SetField28Byte30: u64 = 88634;
+/// `SetField28OfField10` at 0x6f2230 (decompiler, high); signature (untiered): `undefined SetField28OfField10(longlong param_1, undefined8 param_2)`
+pub const SetField28OfField10: u64 = 39275;
+/// `SetField28RefCounted` at 0x1091520 (decompiler, high); signature (high): `undefined SetField28RefCounted(longlong param_1, longlong param_2)`
+pub const SetField28RefCounted: u64 = 79014;
+/// `SetField28RefPtr` at 0xfcb740 (decompiler, high); signature (untiered): `undefined SetField28RefPtr(longlong param_1, longlong * param_2)`
+pub const SetField28RefPtr: u64 = 75825;
+/// `SetField28ToArgPlus28` at 0x4c3350 (decompiler, high); signature (high): `undefined SetField28ToArgPlus28(longlong param_1, longlong param_2)`
+pub const SetField28ToArgPlus28: u64 = 30363;
 /// `SetField28ToFrontHorseCarriage01Node` at 0x3f8690 (decompiler, medium); signature (untiered): `undefined8 SetField28ToFrontHorseCarriage01Node(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const SetField28ToFrontHorseCarriage01Node: u64 = 25739;
 /// `SetField28WithParamsAndNotify` at 0xe6cc40 (decompiler, medium); signature (untiered): `undefined SetField28WithParamsAndNotify(longlong param_1, longlong param_2, undefined4 param_3, undefined4 param_4)`
@@ -8241,15 +8257,3 @@ pub const TESObjectACTI__vfunc_76: u64 = 17703;
 pub const TESObjectACTI__vfunc_77: u64 = 17704;
 /// `TESObjectANIO::GetFormEditorID` at 0x27bb70 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(TESObjectANIO * this)`
 pub const TESObjectANIO__GetFormEditorID: u64 = 17743;
-/// `TESObjectANIO::SetFormEditorID` at 0x27b9f0 (slot_propagation, high); signature (untiered): `undefined8 SetFormEditorID(TESObjectANIO * this, char * param_1, undefined8 param_2, ulonglong param_3)`
-pub const TESObjectANIO__SetFormEditorID: u64 = 17739;
-/// `TESObjectANIO::TESModelTextureSwap_vdtor` at 0x27bad4 (slot_propagation, medium); signature (high): `undefined TESModelTextureSwap_vdtor(TESObjectANIO * this)`
-pub const TESObjectANIO__TESModelTextureSwap_vdtor: u64 = 17741;
-/// `TESObjectANIO::ctor` at 0x27b620 (layout_inference, high); signature (low): `TESObjectANIO * ctor(TESObjectANIO * this, undefined8 param_1, uint * param_2, longlong * param_3)`
-pub const TESObjectANIO__ctor: u64 = 17735;
-/// `TESObjectANIO::dtor` at 0x27b6e0 (layout_inference, high); signature (low): `undefined dtor(TESObjectANIO * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESObjectANIO__dtor: u64 = 17736;
-/// `TESObjectANIO::vdtor` at 0x27bae0 (layout_inference, medium); signature (low): `TESObjectANIO * vdtor(TESObjectANIO * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESObjectANIO__vdtor: u64 = 17742;
-/// `TESObjectANIO::vfunc_19` at 0x27b9b0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectANIO * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
-pub const TESObjectANIO__vfunc_19: u64 = 17738;

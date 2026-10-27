@@ -1938,7 +1938,7 @@ impl crate::Renderer {
     /// # Safety
     /// `windowParams`, `screenSettings`, `outHwnd` must point to what the engine expects.
     #[inline]
-    pub unsafe fn init(&self, windowParams: *const c_void, screenSettings: *const c_void, outHwnd: *mut c_void) { unsafe { function!(77226, (*const Self, *const c_void, *const c_void, *mut c_void))(core::ptr::from_ref(self), windowParams, screenSettings, outHwnd) } }
+    pub unsafe fn init(&self, windowParams: *const c_void, screenSettings: *const c_void, outHwnd: *mut *mut c_void) { unsafe { function!(77226, (*const Self, *const c_void, *const c_void, *mut *mut c_void))(core::ptr::from_ref(self), windowParams, screenSettings, outHwnd) } }
     /// `Renderer::Lock`: EnterCriticalSection(this+0x27f0); 0x1009d10 unlocks
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 77243, rva 0x1009cf0.
@@ -2409,6 +2409,12 @@ pub unsafe fn bs_timer__update(this: *mut c_void, nowMs: u32) { unsafe { functio
 /// May be null: `camera`.
 #[inline]
 pub fn begin_accumulator_draw(camera: Option<&crate::NiCamera>, acc: &crate::BSShaderAccumulator, flags: u32) { unsafe { function!(106437, (*const crate::NiCamera, *const crate::BSShaderAccumulator, u32))(camera.map_or(core::ptr::null(), core::ptr::from_ref), core::ptr::from_ref(acc), flags) } }
+/// `ComputeFrustumPlanes`: six inward planes in the order near, far, left, right, top, bottom (perspective and orthographic branches)
+///
+/// Semantic, frame pass, high; ledger semantic evidence, name high; id 70808, rva 0xef7710.
+/// `void (NiPlane planes[6], const NiFrustum* frustum, const NiTransform* world)`
+#[inline]
+pub fn compute_frustum_planes(planes: &mut crate::NiPlane, frustum: &crate::NiFrustum, world: &crate::NiTransform) { unsafe { function!(70808, (*mut crate::NiPlane, *const crate::NiFrustum, *const crate::NiTransform))(core::ptr::from_mut(planes), core::ptr::from_ref(frustum), core::ptr::from_ref(world)) } }
 /// `CreateDecalShaderProperty`: builds the NiAlphaProperty and a lighting (without a normal map, an effect) property for a dynamic decal: bit 27, VC, parallax / parallax occ / glow / envmap from the texture slots
 ///
 /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 30108, rva 0x4b2320.

@@ -3,6 +3,240 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkbVariableBindingSet::vftable` at 0x19dd498, id 226150 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct hkbVariableBindingSet_vtable {
+    /// `hkbVariableBindingSet::vdtor` at 0xae5a60 (slot_propagation, medium); signature (low): `hkbVariableBindingSet * vdtor(hkbVariableBindingSet * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+}
+impl hkbVariableBindingSet_vtable {
+    pub const ID: u64 = 226150;
+}
+
+/// `hkbVariableValueSet::vftable` at 0x19c09a8, id 220282 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct hkbVariableValueSet_vtable {
+    /// `hkbVariableValueSet::vdtor` at 0xad1f40 (slot_propagation, medium); signature (low): `hkbVariableValueSet * vdtor(hkbVariableValueSet * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+}
+impl hkbVariableValueSet_vtable {
+    pub const ID: u64 = 220282;
+}
+
+/// `hkbWorld::vftable` at 0x19c1000, id 220348 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct hkbWorld_vtable {
+    /// `hkbWorld::vdtor` at 0xadb990 (slot_propagation, medium); signature (low): `hkbWorld * vdtor(hkbWorld * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+}
+impl hkbWorld_vtable {
+    pub const ID: u64 = 220348;
+}
+
+/// `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator>::vftable` at 0x1a97678, id 241503 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct hkgpAbstractMesh_hkgpConvexHullImpl__Edge_hkgpConvexHullImpl__Vertex_hkgpConvexHullImpl__Triangl_bd811a7019fb_vtable {
+    /// `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator>::vdtor` at 0x10f9d70 (layout_inference, medium); signature (low): `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator> * vdtor(hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+    /// `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x1100bc0 (rtti, high); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator> * this)`
+    pub slot_3: *const c_void,
+}
+impl hkgpAbstractMesh_hkgpConvexHullImpl__Edge_hkgpConvexHullImpl__Vertex_hkgpConvexHullImpl__Triangl_bd811a7019fb_vtable {
+    pub const ID: u64 = 241503;
+}
+
+/// `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator>::vftable` at 0x1a970d0, id 241474 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct hkgpAbstractMesh_hkgpIndexedMeshDefinitions__Edge_hkgpIndexedMeshDefinitions__Vertex_hkgpIndexed_71e358a51f1e_vtable {
+    /// `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator>::vdtor` at 0x10ebca0 (layout_inference, medium); signature (low): `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator> * vdtor(hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+    /// `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x10ec0e0 (rtti, medium); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator> * this)`
+    pub slot_3: *const c_void,
+}
+impl hkgpAbstractMesh_hkgpIndexedMeshDefinitions__Edge_hkgpIndexedMeshDefinitions__Vertex_hkgpIndexed_71e358a51f1e_vtable {
+    pub const ID: u64 = 241474;
+}
+
+/// `hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vftable` at 0x1a98f00, id 241798 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct hkgpAbstractMesh_hkgpMeshBase__Edge_hkgpMeshBase__Vertex_hkgpMeshBase__Triangle_hkContainerHeapAllocator_vtable {
+    /// `hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vdtor` at 0x11512c0 (layout_inference, medium); signature (low): `hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator> * vdtor(hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+    /// `hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x11582c0 (rtti, high); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator> * this)`
+    pub slot_3: *const c_void,
+}
+impl hkgpAbstractMesh_hkgpMeshBase__Edge_hkgpMeshBase__Vertex_hkgpMeshBase__Triangle_hkContainerHeapAllocator_vtable {
+    pub const ID: u64 = 241798;
+}
+
+/// `hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vftable` at 0x1a99168, id 241820 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct hkgpAbstractMesh_hkgpTriangulatorType_hkContainerHeapAllocator_hkgpTriangulatorBase__VertexBase__ac6308a22a24_vtable {
+    /// `hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vdtor` at 0x1151200 (layout_inference, medium); signature (low): `hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator> * vdtor(hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+    /// `hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x11582a0 (rtti, high); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator> * this)`
+    pub slot_3: *const c_void,
+}
+impl hkgpAbstractMesh_hkgpTriangulatorType_hkContainerHeapAllocator_hkgpTriangulatorBase__VertexBase__ac6308a22a24_vtable {
+    pub const ID: u64 = 241820;
+}
+
+/// `hkgpConvexHull::vftable` at 0x1a97658, id 241501 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct hkgpConvexHull_vtable {
+    /// `hkgpConvexHull::vdtor` at 0x10f9e30 (slot_propagation, medium); signature (low): `hkgpConvexHull * vdtor(hkgpConvexHull * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+}
+impl hkgpConvexHull_vtable {
+    pub const ID: u64 = 241501;
+}
+
+/// `hkgpIndexedMesh::vftable` at 0x1a98290, id 241595 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct hkgpIndexedMesh_vtable {
+    /// `hkgpIndexedMesh::vdtor` at 0x1112f00 (slot_propagation, medium); signature (low): `hkgpIndexedMesh * vdtor(hkgpIndexedMesh * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+    /// `hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator>::vfunc_3` at 0x10ec0e0 (rtti, medium); signature (high): `undefined vfunc_3(hkgpAbstractMesh<hkgpIndexedMeshDefinitions::Edge,hkgpIndexedMeshDefinitions::Vertex,hkgpIndexedMeshDefinitions::Triangle,hkContainerHeapAllocator> * this)`
+    pub slot_3: *const c_void,
+}
+impl hkgpIndexedMesh_vtable {
+    pub const ID: u64 = 241595;
+}
+
+/// `hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vftable` at 0x1a99488, id 241857 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct hkgpJobQueue__Box_hkgpMeshInternals__ConcaveEdgeJob__Handle_vtable {
+    /// `hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vdtor` at 0x1150f40 (layout_inference, medium); signature (low): `Box<hkgpMeshInternals::ConcaveEdgeJob::Handle> * vdtor(Box<hkgpMeshInternals::ConcaveEdgeJob::Handle> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vfunc_1` at 0x1158720 (rtti, high); signature (high): `undefined vfunc_1(Box<hkgpMeshInternals::ConcaveEdgeJob::Handle> * this)`
+    pub slot_1: *const c_void,
+}
+impl hkgpJobQueue__Box_hkgpMeshInternals__ConcaveEdgeJob__Handle_vtable {
+    pub const ID: u64 = 241857;
+}
+
+/// `hkgpJobQueue::IJob::vftable` at 0x1a98ee8, id 241796 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct hkgpJobQueue__IJob_vtable {
+    /// `hkgpJobQueue::IJob::vdtor` at 0x11515f0 (layout_inference, medium); signature (low): `IJob * vdtor(IJob * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_1: *const c_void,
+}
+impl hkgpJobQueue__IJob_vtable {
+    pub const ID: u64 = 241796;
+}
+
+/// `hkgpMesh::vftable` at 0x1a98ff0, id 241812 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct hkgpMesh_vtable {
+    /// `hkgpMesh::vdtor` at 0x1151920 (slot_propagation, medium); signature (low): `hkgpMesh * vdtor(hkgpMesh * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
+    pub slot_2: *const c_void,
+    /// `hkgpMesh::vfunc_3` at 0x1140120 (rtti, high); signature (high): `undefined vfunc_3(hkgpMesh * this)`
+    pub slot_3: *const c_void,
+}
+impl hkgpMesh_vtable {
+    pub const ID: u64 = 241812;
+}
+
+/// `hkgpMesh::CollideShapeTriangle::vftable` at 0x1a98fc0, id 241808 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct hkgpMesh__CollideShapeTriangle_vtable {
+    /// `hkgpMesh::CollideShapeTriangle::vdtor` at 0x11514a0 (layout_inference, medium); signature (low): `CollideShapeTriangle * vdtor(CollideShapeTriangle * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkgpMesh::CollideShapeTriangle::vfunc_1` at 0x1151b70 (rtti, high); signature (low): `undefined4 vfunc_1(CollideShapeTriangle * this, longlong param_2)`
+    pub slot_1: *const c_void,
+}
+impl hkgpMesh__CollideShapeTriangle_vtable {
+    pub const ID: u64 = 241808;
+}
+
+/// `hkgpMesh::ExternShape::vftable` at 0x1a98f98, id 241806 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct hkgpMesh__ExternShape_vtable {
+    /// `hkgpMesh::ExternShape::vdtor` at 0x1151500 (layout_inference, medium); signature (low): `ExternShape * vdtor(ExternShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkgpMesh::IConvexOverlap::IConvexShape::vfunc_1` at 0x1153fd0 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `hkgpMesh::ExternShape::vfunc_2` at 0x1154050 (rtti, high); signature (low): `undefined vfunc_2(ExternShape * this, float * param_1, undefined8 * param_2)`
+    pub slot_2: *const c_void,
+    /// `hkgpMesh::ExternShape::vfunc_3` at 0x1153c90 (rtti, high); signature (low): `uint * vfunc_3(ExternShape * this, uint * param_1)`
+    pub slot_3: *const c_void,
+}
+impl hkgpMesh__ExternShape_vtable {
+    pub const ID: u64 = 241806;
+}
+
+/// `hkgpMesh::IConvexOverlap::vftable` at 0x1a98f50, id 241802 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct hkgpMesh__IConvexOverlap_vtable {
+    /// `hkgpMesh::IConvexOverlap::vdtor` at 0x1151560 (layout_inference, medium); signature (low): `IConvexOverlap * vdtor(IConvexOverlap * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_2: *const c_void,
+}
+impl hkgpMesh__IConvexOverlap_vtable {
+    pub const ID: u64 = 241802;
+}
+
+/// `hkgpMesh::IConvexOverlap::IConvexShape::vftable` at 0x1a98f28, id 241800 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct hkgpMesh__IConvexOverlap__IConvexShape_vtable {
+    /// `hkgpMesh::IConvexOverlap::IConvexShape::vdtor` at 0x11515c0 (layout_inference, medium); signature (low): `IConvexShape * vdtor(IConvexShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `hkgpMesh::IConvexOverlap::IConvexShape::vfunc_1` at 0x1153fd0 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_3: *const c_void,
+}
+impl hkgpMesh__IConvexOverlap__IConvexShape_vtable {
+    pub const ID: u64 = 241800;
+}
+
 /// `hkgpMesh::NearestFeaturePolicy::vftable` at 0x1a98fd8, id 241810 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct hkgpMesh__NearestFeaturePolicy_vtable {
@@ -11731,145 +11965,5 @@ pub struct std___Func_impl_no_alloc_lambda_f0df72efa3b74284f064342daac2cf7c_void
 }
 impl std___Func_impl_no_alloc_lambda_f0df72efa3b74284f064342daac2cf7c_void_BSPlatform__BNetResult_uns_987c0adaf2cf_vtable {
     pub const ID: u64 = 466818;
-}
-
-/// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vftable` at 0x1ad8778, id 466631 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct std___Func_impl_no_alloc_lambda_f21a81f64b85badbc171b3f0231051b9_void_BSPlatform__BNetResult_unsigned___int64_vtable {
-    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_0` at 0x12b14b0 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this, undefined8 * param_1)`
-    pub slot_0: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_1` at 0x12b1b00 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_2` at 0x12b17f0 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this, undefined4 * param_1)`
-    pub slot_2: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_3` at 0x12b1c10 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_4` at 0x12b1610 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this, char param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>::vfunc_5` at 0x12b18f0 (rtti, high); signature (high): `_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * vfunc_5(_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64> * this)`
-    pub slot_5: *const c_void,
-}
-impl std___Func_impl_no_alloc_lambda_f21a81f64b85badbc171b3f0231051b9_void_BSPlatform__BNetResult_unsigned___int64_vtable {
-    pub const ID: u64 = 466631;
-}
-
-/// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vftable` at 0x1ade940, id 466822 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct std___Func_impl_no_alloc_lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4_void_BSPlatform__BNetResult_uns_896b6f612d24_vtable {
-    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_0` at 0x12c2a10 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
-    pub slot_0: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_1` at 0x12c39e0 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_2` at 0x12c34f0 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, int * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_2: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_3` at 0x12c3b70 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_4` at 0x12c30e0 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, char param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_5` at 0x12c3620 (rtti, high); signature (high): `_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * vfunc_5(_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this)`
-    pub slot_5: *const c_void,
-}
-impl std___Func_impl_no_alloc_lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4_void_BSPlatform__BNetResult_uns_896b6f612d24_vtable {
-    pub const ID: u64 = 466822;
-}
-
-/// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vftable` at 0x1adea90, id 466834 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct std___Func_impl_no_alloc_lambda_ff26ef2c8de59f0e95bcb7d77631d366_void_BSPlatform__BNetResult_uns_38b55c08c79e_vtable {
-    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_0` at 0x12c2a50 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
-    pub slot_0: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_1` at 0x12c3a20 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_2` at 0x12c3500 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, int * param_1, longlong * param_2, longlong * param_3)`
-    pub slot_2: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_3` at 0x12c3b80 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_4` at 0x12c3160 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this, char param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>::vfunc_5` at 0x12c3630 (rtti, high); signature (high): `_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * vfunc_5(_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64> * this)`
-    pub slot_5: *const c_void,
-}
-impl std___Func_impl_no_alloc_lambda_ff26ef2c8de59f0e95bcb7d77631d366_void_BSPlatform__BNetResult_uns_38b55c08c79e_vtable {
-    pub const ID: u64 = 466834;
-}
-
-/// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vftable` at 0x1904bb0, id 536568 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void_BSPlatform__BNetResult_uns_9fe4280c756d_vtable {
-    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_0` at 0x605420 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_1` at 0x605600 (rtti, high); signature (low): `undefined vfunc_1(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this, _Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_2` at 0x605570 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this, undefined4 * param_1, undefined8 * param_2, undefined4 * param_3)`
-    pub slot_2: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_3` at 0x605620 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_4` at 0x6054e0 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>::vfunc_5` at 0x6055e0 (rtti, high); signature (high): `undefined1 * vfunc_5(_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId> * this)`
-    pub slot_5: *const c_void,
-}
-impl std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void_BSPlatform__BNetResult_uns_9fe4280c756d_vtable {
-    pub const ID: u64 = 536568;
-}
-
-/// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vftable` at 0x18f2db0, id 465022 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct std___Func_impl_no_alloc_bool____cdecl_TextureCreator__createTask____ptr64_bool_TextureCreator__createTask____ptr64_vtable {
-    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_0` at 0x59f740 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this, undefined8 * param_1)`
-    pub slot_0: *const c_void,
-    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_1` at 0x59f7a0 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
-    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_2` at 0x59f770 (rtti, high); signature (low): `undefined vfunc_2(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_3` at 0x59f7c0 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_4` at 0x59f760 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this, char param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>::vfunc_5` at 0x59f790 (rtti, high); signature (high): `_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * vfunc_5(_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64> * this)`
-    pub slot_5: *const c_void,
-}
-impl std___Func_impl_no_alloc_bool____cdecl_TextureCreator__createTask____ptr64_bool_TextureCreator__createTask____ptr64_vtable {
-    pub const ID: u64 = 465022;
-}
-
-/// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vftable` at 0x1b5b0a0, id 469840 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_bool____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void_vtable {
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_0` at 0x1402b0 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this, undefined8 * param_1)`
-    pub slot_0: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_1` at 0x140290 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_2` at 0x140320 (rtti, high); signature (high): `undefined vfunc_2(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this)`
-    pub slot_2: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_3` at 0x140280 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_4` at 0x140260 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this, char param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>::vfunc_5` at 0x140270 (rtti, high); signature (high): `_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * vfunc_5(_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void> * this)`
-    pub slot_5: *const c_void,
-}
-impl std___Func_impl_no_alloc_std___Binder_std___Unforced_bool____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void_vtable {
-    pub const ID: u64 = 469840;
-}
-
-/// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vftable` at 0x1b59b28, id 469934 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DescriptionBox___void____ptr6_01cf4126f39a_vtable {
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_0` at 0x12e2c0 (rtti, high); signature (low): `undefined8 * vfunc_0(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this, undefined8 * param_1)`
-    pub slot_0: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_1` at 0x12e2a0 (rtti, high); signature (low): `undefined8 * vfunc_1(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_2` at 0x12e310 (rtti, high); signature (high): `undefined vfunc_2(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this)`
-    pub slot_2: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_3` at 0x12e290 (rtti, high); signature (low): `TypeDescriptor * vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_4` at 0x12e270 (rtti, high); signature (low): `undefined vfunc_4(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this, char param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
-    /// `std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>::vfunc_5` at 0x12e280 (rtti, high); signature (high): `_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * vfunc_5(_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void> * this)`
-    pub slot_5: *const c_void,
-}
-impl std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DescriptionBox___void____ptr6_01cf4126f39a_vtable {
-    pub const ID: u64 = 469934;
 }
 

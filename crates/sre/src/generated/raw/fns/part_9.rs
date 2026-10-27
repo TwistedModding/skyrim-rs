@@ -3,6 +3,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `DebugText::vfunc_6` at 0x1178dd0 (rtti, high); signature (high): `undefined vfunc_6(DebugText * this)`
+pub const DebugText__vfunc_6: u64 = 82501;
+/// `DebugText::vfunc_7` at 0x1178e00 (rtti, high); signature (low): `undefined vfunc_7(DebugText * this, int param_2, float param_3, undefined8 param_4, undefined8 param_5, undefined8 * param_6)`
+pub const DebugText__vfunc_7: u64 = 82502;
+/// `DebugText::vfunc_8` at 0x1178f10 (rtti, high); signature (low): `undefined vfunc_8(DebugText * this, undefined8 param_1, undefined8 param_2, undefined4 param_3, undefined4 param_4, undefined8 param_5)`
+pub const DebugText__vfunc_8: u64 = 82504;
+/// `DebugText::vfunc_9` at 0x1178ed0 (rtti, high); signature (low): `undefined vfunc_9(DebugText * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const DebugText__vfunc_9: u64 = 82503;
+/// `DecRef` at 0xcf3250 (decompiler, high); signature (high): `undefined DecRef(undefined8 * param_1)`
+pub const DecRef: u64 = 82197;
 /// `DecRefAndDelete` at 0x435d30 (decompiler, medium); signature (untiered): `undefined DecRefAndDelete(int * param_1)`
 pub const DecRefAndDelete: u64 = 26894;
 /// `DecRefAndDestroy68ByteObject` at 0x3ec3b0 (decompiler, medium); signature (untiered): `undefined DecRefAndDestroy68ByteObject(int * param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
@@ -4015,6 +4025,8 @@ pub const EncodeBC5UnormBlock_2: u64 = 77724;
 pub const EncodeCodepointToUtf8: u64 = 443088;
 /// `EncodeFormIDTo3Bytes` at 0x632d10 (semantic, high); signature (medium): `undefined EncodeFormIDTo3Bytes(undefined1 * param_1, uint param_2)`; ids of plugin 0 store id|0x400000, 0xFF ids store id|0x800000 (22 bits kept), everything else and 0 stores the form-id index; big-endian 3 bytes (high); semantic signature: `void (u8 out[3], u32 formID)`
 pub const EncodeFormIDTo3Bytes: u64 = 35928;
+/// `EncodeFormIDTo3Bytes` as a function pointer type (high).
+pub type EncodeFormIDTo3Bytes_fn = unsafe extern "C" fn(out: *mut u8, formID: u32);
 /// `EncodeFourValuesToPagedBytes` at 0xe7fb60 (decompiler, medium); signature (untiered): `undefined8 EncodeFourValuesToPagedBytes(undefined8 * param_1, int param_2, int param_3, int param_4, int param_5)`
 pub const EncodeFourValuesToPagedBytes: u64 = 89821;
 /// `EncodeOneValueTag0ToPagedBytes` at 0xe7f5b0 (decompiler, medium); signature (untiered): `undefined8 EncodeOneValueTag0ToPagedBytes(undefined8 * param_1, int param_2)`
@@ -8765,11 +8777,3 @@ pub const FreeArrayBufferAndClearSize_25: u64 = 523478;
 pub const FreeArrayBufferAndClearSize_26: u64 = 523479;
 /// `FreeArrayBufferAndClearSize_27` at 0x1aed40 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_27(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FreeArrayBufferAndClearSize_27: u64 = 523480;
-/// `FreeArrayBufferAndClearSize_28` at 0x1aeda0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_28(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_28: u64 = 523481;
-/// `FreeArrayBufferAndClearSize_29` at 0x1aee00 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_29(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_29: u64 = 523482;
-/// `FreeArrayBufferAndClearSize_3` at 0x39e6f0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_3: u64 = 23989;
-/// `FreeArrayBufferAndClearSize_30` at 0x1aee60 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_30(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_30: u64 = 523483;

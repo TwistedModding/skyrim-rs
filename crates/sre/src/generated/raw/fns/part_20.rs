@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor` at 0x84aec0 (layout_inference, high); signature (high): `AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
+pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor: u64 = 46564;
+/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub0` at 0x84dcf0 (callgraph, medium); signature (untiered): `uint ctor_sub0(void)`
+pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub0: u64 = 46769;
+/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub1` at 0x84e560 (callgraph, medium); signature (untiered): `uint ctor_sub1(void)`
+pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub1: u64 = 46784;
+/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub2` at 0x84edd0 (callgraph, medium); signature (untiered): `uint ctor_sub2(void)`
+pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub2: u64 = 46799;
+/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub3` at 0x84f640 (callgraph, medium); signature (untiered): `uint ctor_sub3(void)`
+pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub3: u64 = 46814;
+/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub4` at 0x84feb0 (callgraph, medium); signature (untiered): `uint ctor_sub4(void)`
+pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub4: u64 = 46829;
 /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::vdtor` at 0x8411f0 (slot_propagation, medium); signature (low): `AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__vdtor: u64 = 45880;
 /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility_vdtor` at 0x8313fc (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
@@ -5539,15 +5551,3 @@ pub const g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init: u64 = 772;
 pub const g_ConcreteObjectFormFactory_BGSDebris_88_36_6__init_cb0: u64 = 165975;
 /// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init` at 0x7c00 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init: u64 = 115;
-/// `g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0` at 0x173c0e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0(void)`
-pub const g_ConcreteObjectFormFactory_BGSDualCastData_129_95_2__init_cb0: u64 = 165305;
-/// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init` at 0x195a0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init(void)`
-pub const g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init: u64 = 922;
-/// `g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0` at 0x1747c50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0(void)`
-pub const g_ConcreteObjectFormFactory_BGSEncounterZone_103_61_7__init_cb0: u64 = 166126;
-/// `g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init` at 0x1ee70 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init(void)`
-pub const g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init: u64 = 1252;
-/// `g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0` at 0x174b050 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0(void)`
-pub const g_ConcreteObjectFormFactory_BGSEquipSlot_120_81_5__init_cb0: u64 = 166464;
-/// `g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init` at 0x161f0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init(void)`
-pub const g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init: u64 = 773;

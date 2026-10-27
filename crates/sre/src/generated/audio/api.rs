@@ -260,6 +260,30 @@ impl crate::BGSSoundOutput {
     pub fn attenuation(&self) -> Option<&crate::BGSSoundOutput__DynamicAttenuationCharacteristics> { unsafe { { self.attenuation }.as_ref() } }
 }
 
+impl crate::BGSSoundOutput__DynamicAttenuationCharacteristics {
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetCurveValue`, vtable slot 3: +0x10[i] for i < 5
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `u8 (this, u32 i)`
+    #[inline]
+    pub fn get_curve_value(&self, i: u32) -> u8 { unsafe { virtual_function!(self, 3, (*const Self, u32) -> u8)(core::ptr::from_ref(self), i) } }
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMaxDistance`, vtable slot 1: +0xc
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `float (this)`
+    #[inline]
+    pub fn get_max_distance(&self) -> f32 { unsafe { virtual_function!(self, 1, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+    /// `BGSSoundOutput::DynamicAttenuationCharacteristics::GetMinDistance`, vtable slot 2: +8
+    ///
+    /// Semantic, audio pass, medium; called through the object's vtable.
+    /// `float (this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn get_min_distance(&self) -> f32 { unsafe { virtual_function!(self, 2, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BGSStandardSoundDef {
     /// `BGSStandardSoundDef::GetMaxDistance`, vtable slot 6: attenuation max distance when the output model attenuates, else FLT_MAX
     ///
@@ -272,6 +296,48 @@ impl crate::BGSStandardSoundDef {
     /// Semantic field, audio pass, high; `None` while the pointer is null.
     #[inline]
     pub fn output_model(&self) -> Option<&crate::BGSSoundOutput> { unsafe { { self.outputModel }.as_ref() } }
+}
+
+impl crate::BGSStandardSoundDef__SoundPlaybackCharacteristics {
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyShift`, vtable slot 1: returns +8 (descriptor +0x38)
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `i8 (this)`
+    #[inline]
+    pub fn get_frequency_shift(&self) -> i8 { unsafe { virtual_function!(self, 1, (*const Self) -> i8)(core::ptr::from_ref(self)) } }
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetFrequencyVariance`, vtable slot 2: returns +9 (descriptor +0x39)
+    ///
+    /// Semantic, audio pass, low; called through the object's vtable.
+    /// `u8 (this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature low.
+    #[inline]
+    pub unsafe fn get_frequency_variance(&self) -> u8 { unsafe { virtual_function!(self, 2, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetPriority`, vtable slot 3: returns +0xa (descriptor +0x3a)
+    ///
+    /// Semantic, audio pass, low; called through the object's vtable.
+    /// `u8 (this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature low.
+    #[inline]
+    pub unsafe fn get_priority(&self) -> u8 { unsafe { virtual_function!(self, 3, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuation`, vtable slot 4: returns +0xc (descriptor +0x3c)
+    ///
+    /// Semantic, audio pass, medium; called through the object's vtable.
+    /// `u16 (this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn get_static_attenuation(&self) -> u16 { unsafe { virtual_function!(self, 4, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
+    /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::GetStaticAttenuationVariance`, vtable slot 5: returns +0xb (descriptor +0x3b)
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `u8 (this)`
+    #[inline]
+    pub fn get_static_attenuation_variance(&self) -> u8 { unsafe { virtual_function!(self, 5, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSAudioManager {
@@ -722,6 +788,75 @@ impl crate::BSISoundDescriptor {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn should_play_at_distance(&self, distance: f32) -> bool { unsafe { virtual_function!(self, 2, (*const Self, f32) -> bool)(core::ptr::from_ref(self), distance) } }
+}
+
+impl crate::BSISoundOutputModel {
+    /// `BSISoundOutputModel::AllowsSend`, vtable slot 9: true if flags bit 1, else false for the two send ids returned by 0x55a420/0x55a430
+    ///
+    /// Semantic, audio pass, medium; called through the object's vtable.
+    /// `bool (this, u32 sendID)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn allows_send(&self, sendID: u32) -> bool { unsafe { virtual_function!(self, 9, (*const Self, u32) -> bool)(core::ptr::from_ref(self), sendID) } }
+    /// `BSISoundOutputModel::AttenuatesWithDistance`, vtable slot 4: flags bit 0
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `bool (this)`
+    #[inline]
+    pub fn attenuates_with_distance(&self) -> bool { unsafe { virtual_function!(self, 4, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `BSISoundOutputModel::GetAttenuationCharacteristics`, vtable slot 7: returns form+0x30
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `BSIAttenuationCharacteristics* (this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_attenuation_characteristics(&self) -> *mut c_void { unsafe { virtual_function!(self, 7, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
+    /// `BSISoundOutputModel::GetSendLevel`, vtable slot 8: byte form+0x2b * 0.01
+    ///
+    /// Semantic, audio pass, medium; called through the object's vtable.
+    /// `float (this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn get_send_level(&self) -> f32 { unsafe { virtual_function!(self, 8, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+    /// `BSISoundOutputModel::GetSpeakerLevels`, vtable slot 3: converts a row of speaker percent bytes to floats (mode < 3, count <= 8; mode 2 uses row index+1, otherwise row 0); zero-fills and returns false without a table
+    ///
+    /// Semantic, audio pass, medium; called through the object's vtable.
+    /// `bool (this, u32 mode, i32 index, u32 count, float* out)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn get_speaker_levels(&self, mode: u32, index: i32, count: u32, out: *mut f32) -> bool { unsafe { virtual_function!(self, 3, (*const Self, u32, i32, u32, *mut f32) -> bool)(core::ptr::from_ref(self), mode, index, count, out) } }
+    /// `BSISoundOutputModel::IsType0`, vtable slot 1: outputType == 0
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `bool (this)`
+    #[inline]
+    pub fn is_type0(&self) -> bool { unsafe { virtual_function!(self, 1, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `BSISoundOutputModel::IsType1`, vtable slot 2: outputType == 1
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `bool (this)`
+    #[inline]
+    pub fn is_type1(&self) -> bool { unsafe { virtual_function!(self, 2, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `BSISoundOutputModel::IsWithinMaxDistance`, vtable slot 5: distance < attenuation max distance (FLT_MAX without attenuation)
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `bool (this, float distance)`
+    #[inline]
+    pub fn is_within_max_distance(&self, distance: f32) -> bool { unsafe { virtual_function!(self, 5, (*const Self, f32) -> bool)(core::ptr::from_ref(self), distance) } }
+    /// `BSISoundOutputModel::Unk06`, vtable slot 6: returns the constant 2
+    ///
+    /// Semantic, audio pass, high; called through the object's vtable.
+    /// `u32 (this)`
+    #[inline]
+    pub fn unk06(&self) -> u32 { unsafe { virtual_function!(self, 6, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSMusicManager {

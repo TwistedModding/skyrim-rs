@@ -3,6 +3,114 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vftable` at 0x199a560, id 217691 (rtti, high); 23 slots.
+#[repr(C)]
+pub struct BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289_vtable {
+    /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vdtor` at 0xa16460 (slot_propagation, medium); signature (low): `NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * vdtor(NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    pub slot_1: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    pub slot_2: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    pub slot_3: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    pub slot_4: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    pub slot_5: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    pub slot_6: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    pub slot_7: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    pub slot_8: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    pub slot_9: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    pub slot_10: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    pub slot_11: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    pub slot_12: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    pub slot_13: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    pub slot_14: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    pub slot_15: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    pub slot_16: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    pub slot_17: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    pub slot_18: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    pub slot_19: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    pub slot_20: *const c_void,
+    /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vfunc_21` at 0xa166d0 (rtti, medium); signature (high): `bool vfunc_21(NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this)`
+    pub slot_21: *const c_void,
+    /// `BSScript::NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vfunc_22` at 0xa16960 (rtti, medium); signature (low): `bool vfunc_22(NativeFunction5<BGSKeyword,bool,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this, uint * param_1, undefined8 param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
+    pub slot_22: *const c_void,
+}
+impl BSScript__NativeFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_57ee2d9cb289_vtable {
+    pub const ID: u64 = 217691;
+}
+
+/// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vftable` at 0x199a4a0, id 217689 (rtti, high); 23 slots.
+#[repr(C)]
+pub struct BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413_vtable {
+    /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vdtor` at 0xa16420 (slot_propagation, medium); signature (low): `NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * vdtor(NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` at 0x14a99b0 (semantic, high); signature (untiered): `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    pub slot_1: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` at 0x14a99c0 (semantic, high); signature (untiered): `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    pub slot_2: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` at 0x14a99d0 (semantic, high); signature (untiered): `undefined1 * GetStateName(NativeFunctionBase * this)`
+    pub slot_3: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType` at 0x14a99e0 (semantic, high); signature (untiered): `undefined8 * CopyReturnType(NativeFunctionBase * this, undefined8 * param_1)`
+    pub slot_4: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` at 0x14a9a00 (semantic, high); signature (untiered): `undefined2 GetParamCount(NativeFunctionBase * this)`
+    pub slot_5: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType` at 0x14a9a10 (semantic, high); signature (untiered): `undefined GetParamNameAndType(NativeFunctionBase * this, uint param_1, longlong * param_2, longlong * param_3)`
+    pub slot_6: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` at 0x14a9a70 (semantic, high); signature (untiered): `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    pub slot_7: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative` at 0x14a9a80 (semantic, high); signature (untiered): `undefined1 GetIsNative(void)`
+    pub slot_8: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` at 0x14a9a90 (semantic, high); signature (untiered): `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    pub slot_9: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty` at 0x14a9aa0 (semantic, medium); signature (untiered): `undefined1 GetIsEmpty(void)`
+    pub slot_10: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType` at 0x14a9ab0 (semantic, medium); signature (untiered): `undefined8 GetFunctionType(void)`
+    pub slot_11: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` at 0x14a9ac0 (semantic, high); signature (untiered): `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    pub slot_12: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` at 0x14a9ad0 (semantic, high); signature (untiered): `undefined1 * GetDocString(NativeFunctionBase * this)`
+    pub slot_13: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals` at 0x14a9ae0 (semantic, medium); signature (untiered): `undefined InsertLocals(void)`
+    pub slot_14: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::Call` at 0x14a9c10 (runtime, high); signature (untiered): `undefined8 Call(NativeFunctionBase * this, longlong * param_1, longlong * param_2, longlong * param_3)`
+    pub slot_15: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename` at 0x14a9af0 (semantic, medium); signature (untiered): `undefined * GetSourceFilename(void)`
+    pub slot_16: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP` at 0x14a9b00 (runtime, high); signature (untiered): `undefined1 GetLineForIP(NativeFunctionBase * this, undefined8 param_1, undefined4 * param_2)`
+    pub slot_17: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName` at 0x14a9b10 (semantic, high); signature (untiered): `bool TryGetParamName(NativeFunctionBase * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+    pub slot_18: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` at 0x14a9bf0 (semantic, high); signature (untiered): `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    pub slot_19: *const c_void,
+    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet` at 0x14a9c00 (semantic, high); signature (untiered): `undefined SetIsCallableFromTasklet(NativeFunctionBase * this, undefined1 param_1)`
+    pub slot_20: *const c_void,
+    /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vfunc_21` at 0xa166c0 (rtti, high); signature (high): `bool vfunc_21(NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this)`
+    pub slot_21: *const c_void,
+    /// `BSScript::NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int>::vfunc_22` at 0xa166e0 (rtti, high); signature (low): `bool vfunc_22(NativeFunction5<BGSKeyword,void,BGSLocation*___ptr64,TESObjectREFR*___ptr64,TESObjectREFR*___ptr64,unsigned_int,unsigned_int> * this, uint * param_1, ulonglong param_2, undefined4 param_3, ulonglong * param_4, uint * param_5)`
+    pub slot_22: *const c_void,
+}
+impl BSScript__NativeFunction5_BGSKeyword_void_BGSLocation____ptr64_TESObjectREFR____ptr64_TESObjectR_182f5bf3b413_vtable {
+    pub const ID: u64 = 217689;
+}
+
 /// `BSScript::NativeFunction5<BSScript::StaticFunctionTag,TESObjectREFR*___ptr64,BGSListForm*___ptr64,float,float,float,float>::vftable` at 0x19a0158, id 217934 (rtti, high); 23 slots.
 #[repr(C)]
 pub struct BSScript__NativeFunction5_BSScript__StaticFunctionTag_TESObjectREFR____ptr64_BGSListForm____ptr6_79a7fdae4f55_vtable {
@@ -6496,12 +6604,54 @@ pub struct BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable {
 impl BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable {
     pub const ID: u64 = 241934;
     pub const SLOT_Push: usize = 1;
+    /// Slot 1 as `BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_Push`, `None` when the slot is null.
+    #[must_use]
+    pub fn Push(&self) -> Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_Push> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_Push>>(self.slot_1) }
+    }
     pub const SLOT_TryPush: usize = 2;
+    /// Slot 2 as `BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_TryPush`, `None` when the slot is null.
+    #[must_use]
+    pub fn TryPush(&self) -> Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_TryPush> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_TryPush>>(self.slot_2) }
+    }
     pub const SLOT_Pop: usize = 3;
+    /// Slot 3 as `BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_Pop`, `None` when the slot is null.
+    #[must_use]
+    pub fn Pop(&self) -> Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_Pop> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_Pop>>(self.slot_3) }
+    }
     pub const SLOT_TryPop: usize = 4;
+    /// Slot 4 as `BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_TryPop`, `None` when the slot is null.
+    #[must_use]
+    pub fn TryPop(&self) -> Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_TryPop> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_TryPop>>(self.slot_4) }
+    }
     pub const SLOT_PushImpl: usize = 5;
+    /// Slot 5 as `BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_PushImpl`, `None` when the slot is null.
+    #[must_use]
+    pub fn PushImpl(&self) -> Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_PushImpl> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_PushImpl>>(self.slot_5) }
+    }
     pub const SLOT_PopImpl: usize = 6;
+    /// Slot 6 as `BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_PopImpl`, `None` when the slot is null.
+    #[must_use]
+    pub fn PopImpl(&self) -> Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_PopImpl> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_PopImpl>>(self.slot_6) }
+    }
 }
+/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Push`, slot 1: spins on the lock, calls slot 5 (high).
+pub type BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_Push = unsafe extern "C" fn(this: *mut c_void, msg: *mut *mut crate::UIMessage) -> bool;
+/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPush`, slot 2: one lock attempt, then slot 5 (high).
+pub type BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_TryPush = unsafe extern "C" fn(this: *mut c_void, msg: *mut *mut crate::UIMessage) -> bool;
+/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::Pop`, slot 3: spins on the lock, calls slot 6 (high).
+pub type BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_Pop = unsafe extern "C" fn(this: *mut c_void, out: *mut *mut crate::UIMessage) -> bool;
+/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::TryPop`, slot 4: one lock attempt, then slot 6 (high).
+pub type BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_TryPop = unsafe extern "C" fn(this: *mut c_void, out: *mut *mut crate::UIMessage) -> bool;
+/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PushImpl`, slot 5: ring insert, false when 100 are queued (high).
+pub type BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_PushImpl = unsafe extern "C" fn(this: *mut c_void, msg: *mut *mut crate::UIMessage) -> bool;
+/// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::PopImpl`, slot 6: ring remove, false when empty (high).
+pub type BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable_PopImpl = unsafe extern "C" fn(this: *mut c_void, out: *mut *mut crate::UIMessage) -> bool;
 
 /// `BSTDerivedCreator<ActionActivateDoneHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vftable` at 0x1939c20, id 209445 (rtti, high); 3 slots.
 #[repr(C)]
@@ -10155,131 +10305,5 @@ pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicy
 }
 impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSear_2f4a6bce3959_vtable {
     pub const ID: u64 = 213840;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x195b760, id 212828 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPa_94555caadc8d_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x88f4e0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x88f400 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x88f4c0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPa_94555caadc8d_vtable {
-    pub const ID: u64 = 212828;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x19665b0, id 214291 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSear_47cd0a14fd9d_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x8d5030 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x8d4f70 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x8d5010 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSear_47cd0a14fd9d_vtable {
-    pub const ID: u64 = 214291;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x195de88, id 213152 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathing_0a840c3e8127_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x8a22a0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x8a21e0 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x8a2280 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathing_0a840c3e8127_vtable {
-    pub const ID: u64 = 213152;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x1954810, id 212044 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPa_76a8211ee745_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x85e210 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x85e140 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x85e1f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPa_76a8211ee745_vtable {
-    pub const ID: u64 = 212044;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,BSPathingRequest>::vftable` at 0x195c4a0, id 212940 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPo_3f9ffd5e50a8_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,BSPathingRequest>::vdtor` at 0x893570 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,BSPathingRequest>::vfunc_1` at 0x893470 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,BSPathingRequest>::vfunc_2` at 0x893550 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPo_3f9ffd5e50a8_vtable {
-    pub const ID: u64 = 212940;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x195c638, id 212975 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingS_47f11322e673_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x893a80 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x8939c0 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x893a60 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingS_47f11322e673_vtable {
-    pub const ID: u64 = 212975;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x195e0a8, id 213191 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPol_b0c032de37f7_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x8a3ec0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x8a3dd0 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x8a3ea0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPol_b0c032de37f7_vtable {
-    pub const ID: u64 = 213191;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x196a098, id 214748 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearch_33dd07a5aded_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x8ec680 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x8ec590 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x8ec660 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearch_33dd07a5aded_vtable {
-    pub const ID: u64 = 214748;
-}
-
-/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x1962738, id 213802 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPa_367b0a5db083_vtable {
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x8bd730 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x8bd660 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x8bd710 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPa_367b0a5db083_vtable {
-    pub const ID: u64 = 213802;
 }
 
